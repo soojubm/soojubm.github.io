@@ -6,6 +6,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -109,7 +110,7 @@ const main = html`
     >
       <mm-flex gap="2">
         <mm-avatar size="40">MM</mm-avatar>
-        <mm-avatar size="40" icon="profile-circle"></mm-avatar>
+        <mm-avatar size="40" icon=${ICON_NAMES.PROFILE}></mm-avatar>
         <mm-avatar size="40"></mm-avatar>
       </mm-flex>
     </mm-component-section>

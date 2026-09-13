@@ -14,10 +14,6 @@ export const iconStyles = css`
     --icon-color: currentColor;
   }
 
-  i {
-    font-style: normal;
-  }
-
   .icon {
     display: flex;
     align-items: center;

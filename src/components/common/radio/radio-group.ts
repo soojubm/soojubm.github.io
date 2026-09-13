@@ -7,11 +7,12 @@ import type { RadioCard } from '@/components/common/radio/semantics/radio-card'
 import { radioGroupStyles } from '@/components/common/radio/radio.styles'
 import { SelectionGroupController } from '@/controllers/selection-group-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
-  static styles = [radioGroupStyles]
+  static styles = [resetStyles, radioGroupStyles]
 
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''

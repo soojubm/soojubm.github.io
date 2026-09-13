@@ -35,10 +35,18 @@ export class Notice extends LitElement {
     return html`
       <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
       <div class="notice-content">
-        ${this.renderHeading()} ${this.renderDescription()}
+        ${this.renderText()}
         <slot></slot>
       </div>
       ${this.renderDismissButton()}
+    `
+  }
+
+  private renderText() {
+    if (!this.heading && !this.description) return nothing
+
+    return html`
+      <div class="notice-text">${this.renderHeading()} ${this.renderDescription()}</div>
     `
   }
 

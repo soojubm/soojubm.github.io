@@ -64,20 +64,12 @@ export const inputStyles = css`
     min-width: 0;
     height: auto;
     min-height: var(--input-height);
-    border: 0 none;
     outline: none;
-    background: inherit;
-    font: inherit;
-    font-family: inherit;
-    font-size: inherit;
     color: var(--foreground-color);
     padding: var(--input-padding-block) 0;
     box-sizing: border-box;
     resize: none;
 
-    &:focus {
-      -webkit-appearance: none;
-    }
     &:focus-visible {
       outline: 0;
     }
@@ -99,10 +91,6 @@ export const inputStyles = css`
 export const textfieldStyles = [
   inputStyles,
   css`
-    p {
-      margin: 0;
-    }
-
     mm-textfield-validation {
       margin: var(--space-1) 0 0;
     }

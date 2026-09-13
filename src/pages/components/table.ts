@@ -8,6 +8,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -134,7 +135,7 @@ const main = html`
       >
         <mm-text size="24">Products</mm-text>
         <mm-button-group>
-          <mm-button icon="import">가져오기</mm-button>
+          <mm-button icon=${ICON_NAMES.IMPORT}>가져오기</mm-button>
           <mm-button variant="primary">추가하기</mm-button>
         </mm-button-group>
       </header>

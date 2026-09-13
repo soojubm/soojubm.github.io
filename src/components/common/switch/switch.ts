@@ -6,11 +6,12 @@ import type { AriaTriState } from '@/types'
 
 import { switchStyles } from '@/components/common/switch/switch.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 
 @customElement('mm-switch')
 export class Switch extends LitElement {
-  static styles = [switchStyles]
+  static styles = [resetStyles, switchStyles]
 
   @property({ type: String }) name = ''
   @property({ type: Boolean }) checked = false

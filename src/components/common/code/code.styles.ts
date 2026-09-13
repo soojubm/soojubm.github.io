@@ -5,10 +5,6 @@ export const codeStyles = css`
     display: block;
   }
 
-  pre {
-    margin: 0;
-  }
-
   code {
     display: block;
     padding-left: var(--space-4);

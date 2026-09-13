@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { focusRingStyles } from '@/stylesheets/shared.styles'
+import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/text/text'
 
 export interface BreadcrumbItem {
@@ -17,46 +17,47 @@ export interface BreadcrumbItem {
  */
 @customElement('mm-breadcrumb')
 export class Breadcrumb extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
 
-      --breadcrumb-item-text-color: var(--primary-color);
-      --breadcrumb-item-text-color-current: var(--foreground-color);
-      --breadcrumb-divider-text-color: var(--border-color);
-      --breadcrumb-divider-space: var(--space-3);
-    }
-
-    .breadcrumb {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      /* 가로만 잘라 긴 경로를 truncate하고, focus 링이 위아래로 잘리지 않게 세로는 연다. */
-      overflow-x: clip;
-      overflow-y: visible;
-    }
-
-    .breadcrumb-divider {
-      margin: 0 var(--breadcrumb-divider-space);
-      color: var(--breadcrumb-divider-text-color);
-      font-style: normal;
-    }
-
-    .breadcrumb-item {
-      border-radius: var(--radius);
-      color: var(--breadcrumb-item-text-color);
-      text-decoration: none;
-      white-space: nowrap;
-
-      &[aria-current='page'] {
-        color: var(--breadcrumb-item-text-color-current);
+        --breadcrumb-item-text-color: var(--primary-color);
+        --breadcrumb-item-text-color-current: var(--foreground-color);
+        --breadcrumb-divider-text-color: var(--border-color);
+        --breadcrumb-divider-space: var(--space-3);
       }
 
-      &:focus-visible {
-        ${focusRingStyles}
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        /* 가로만 잘라 긴 경로를 truncate하고, focus 링이 위아래로 잘리지 않게 세로는 연다. */
+        overflow-x: clip;
+        overflow-y: visible;
       }
-    }
-  `
+
+      .breadcrumb-divider {
+        margin: 0 var(--breadcrumb-divider-space);
+        color: var(--breadcrumb-divider-text-color);
+      }
+
+      .breadcrumb-item {
+        border-radius: var(--radius);
+        color: var(--breadcrumb-item-text-color);
+        white-space: nowrap;
+
+        &[aria-current='page'] {
+          color: var(--breadcrumb-item-text-color-current);
+        }
+
+        &:focus-visible {
+          ${focusRingStyles}
+        }
+      }
+    `,
+  ]
 
   @property({ attribute: false }) items: BreadcrumbItem[] = []
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'

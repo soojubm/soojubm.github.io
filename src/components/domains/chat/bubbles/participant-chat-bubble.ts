@@ -5,7 +5,6 @@ import {
   chatBubbleStyles,
   participantChatBubbleStyles,
 } from '@/components/domains/chat/chat.styles'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
@@ -14,7 +13,7 @@ import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
  */
 @customElement('mm-participant-chat-bubble')
 export class ParticipantChatBubble extends withChatBubbleImage(LitElement) {
-  static styles = [resetStyles, chatBubbleStyles, participantChatBubbleStyles]
+  static styles = [chatBubbleStyles, participantChatBubbleStyles]
 
   render() {
     return renderChatBubbleShell(

@@ -5,6 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -92,7 +93,7 @@ const main = html`
         { placement: 'block-end', offset: 'calc(100% - 0.75rem)' },
       ]}
     >
-      <mm-tag tone="green" icon="check-circle">승인됨</mm-tag>
+      <mm-tag tone="green" icon=${ICON_NAMES.SUCCESS}>승인됨</mm-tag>
     </mm-component-anatomy>
 
     <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
@@ -124,7 +125,7 @@ const main = html`
         <mm-category-tag category="marketing">Branding</mm-category-tag>
         <mm-category-tag category="news">Breaking</mm-category-tag>
         <mm-category-tag category="lifestyle">Wellness</mm-category-tag>
-        <mm-category-tag category="sports" icon="graph-up">Football</mm-category-tag>
+        <mm-category-tag category="sports" icon=${ICON_NAMES.GRAPH}>Football</mm-category-tag>
       </mm-tag-group>
     </mm-component-section>
 

@@ -6,10 +6,9 @@ import { repeat } from 'lit/directives/repeat.js'
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { Popover, PopoverPlacement } from '@/components/overlay/popover/popover'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/button/button'
 import '@/components/common/menu-item/menu-item-group'
+import '@/components/indicators/expand-indicator/expand-indicator'
 import '@/components/overlay/popover/popover'
 import '@/components/overlay/popover/semantics/select-option'
 import { emit } from '@/utils'
@@ -26,26 +25,23 @@ export interface SelectOption {
  */
 @customElement('mm-select')
 export class Select extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        --select-width: auto;
-        display: block;
-        width: var(--select-width);
-      }
+  static styles = css`
+    :host {
+      --select-width: auto;
+      display: block;
+      width: var(--select-width);
+    }
 
-      /* full(100%)이 아니면 호스트가 트리거 폭이므로, 좌측 placement는 트리거 왼쪽에 앵커해 오른쪽으로 자란다. */
-      :host(:not([width='100%'])) mm-popover[placement='bottom-left']::part(panel),
-      :host(:not([width='100%'])) mm-popover[placement='top-left']::part(panel) {
-        right: auto;
-      }
+    /* full(100%)이 아니면 호스트가 트리거 폭이므로, 좌측 placement는 트리거 왼쪽에 앵커해 오른쪽으로 자란다. */
+    :host(:not([width='100%'])) mm-popover[placement='bottom-left']::part(panel),
+    :host(:not([width='100%'])) mm-popover[placement='top-left']::part(panel) {
+      right: auto;
+    }
 
-      :host([width='100%']) mm-popover {
-        display: block;
-      }
-    `,
-  ]
+    :host([width='100%']) mm-popover {
+      display: block;
+    }
+  `
 
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
@@ -54,6 +50,7 @@ export class Select extends LitElement {
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
   @state() private options: SelectOption[] = []
+  @state() private open = false
 
   @queryAssignedElements({ selector: 'option', flatten: true })
   private optionElements!: HTMLOptionElement[]
@@ -62,9 +59,14 @@ export class Select extends LitElement {
 
   render() {
     return html`
-      <mm-popover placement=${this.placement} padding=${ifDefined(this.padding)}>
-        <mm-button slot="trigger" size="small" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
+      <mm-popover
+        placement=${this.placement}
+        padding=${ifDefined(this.padding)}
+        @popover-toggle=${this.handlePopoverToggle}
+      >
+        <mm-button slot="trigger" size="small">
           ${this.currentLabel}
+          <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
         </mm-button>
         <mm-menu-item-group
           role="listbox"
@@ -111,6 +113,11 @@ export class Select extends LitElement {
       selected: option.hasAttribute('selected'),
       icon: (option.getAttribute('icon') as IconName | null) ?? undefined,
     }))
+  }
+
+  // 트리거의 펼침 표시를 popover의 열림 상태에 맞춘다.
+  private handlePopoverToggle(event: CustomEvent<{ open: boolean }>) {
+    this.open = event.detail.open
   }
 
   // 옵션 활성화 시: 값 반영 후 목록 닫기

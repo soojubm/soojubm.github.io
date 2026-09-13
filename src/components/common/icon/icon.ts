@@ -2,6 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { iconStyles } from '@/components/common/icon/icon.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 const ICONOIR_STYLESHEET_URL =
   'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'
@@ -33,7 +34,7 @@ const loadIconoirStylesheet = () => {
 
 @customElement('mm-icon')
 export class Icon extends LitElement {
-  static styles = [iconStyles]
+  static styles = [resetStyles, iconStyles]
 
   @property({ type: String }) name = ''
   @property({ type: String, reflect: true }) size = ''

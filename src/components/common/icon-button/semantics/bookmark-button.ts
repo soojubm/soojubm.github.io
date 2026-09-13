@@ -8,6 +8,7 @@ import {
   iconButtonStyles,
 } from '@/components/common/icon-button/icon-button.styles'
 import '@/components/common/icon'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 북마크/즐겨찾기 토글 버튼.
@@ -16,6 +17,7 @@ import '@/components/common/icon'
 @customElement('mm-bookmark-button')
 export class BookmarkButton extends withTogglePressed(LitElement) {
   static styles = [
+    resetStyles,
     iconButtonStyles,
     iconButtonSelectedStyles,
     css`

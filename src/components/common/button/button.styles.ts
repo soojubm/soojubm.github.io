@@ -61,8 +61,6 @@ export const buttonBaseStyles = [
       font-weight: var(--button-text-weight);
       text-transform: capitalize;
 
-      cursor: pointer;
-
       &:hover {
         --button-border: var(--border);
       }

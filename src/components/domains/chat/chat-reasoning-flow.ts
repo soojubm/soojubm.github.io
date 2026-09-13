@@ -2,7 +2,6 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon/icon'
 import '@/components/common/text/text'
 
@@ -24,20 +23,17 @@ const toneIconMap: Record<ChatReasoningFlowTone, IconName> = {
  */
 @customElement('mm-chat-reasoning-flow')
 export class ChatReasoningFlow extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-1);
-      }
+  static styles = css`
+    :host {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
 
-      :host([hidden]) {
-        display: none;
-      }
-    `,
-  ]
+    :host([hidden]) {
+      display: none;
+    }
+  `
 
   @property({ type: Boolean, reflect: true }) active = false
   @property({ type: String }) tone: ChatReasoningFlowTone = 'thinking'

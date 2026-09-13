@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AriaBoolean, AriaIdRef } from '@/types'
 
-import { focusRingStyles } from '@/stylesheets/shared.styles'
+import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 인라인 "더 보기 / 접기" 토글 버튼.
@@ -11,24 +11,25 @@ import { focusRingStyles } from '@/stylesheets/shared.styles'
  */
 @customElement('mm-read-more-button')
 export class ReadMoreButton extends LitElement {
-  static styles = css`
-    :host {
-      display: inline;
-    }
-
-    button {
-      all: unset;
-      border-radius: var(--radius);
-      font: inherit;
-      font-weight: var(--font-weight-bold);
-      color: var(--foreground-color);
-      cursor: pointer;
-
-      &:focus-visible {
-        ${focusRingStyles}
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: inline;
       }
-    }
-  `
+
+      button {
+        display: inline;
+        border-radius: var(--radius);
+        font-weight: var(--font-weight-bold);
+        color: var(--foreground-color);
+
+        &:focus-visible {
+          ${focusRingStyles}
+        }
+      }
+    `,
+  ]
 
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null

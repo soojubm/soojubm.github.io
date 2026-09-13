@@ -7,10 +7,11 @@ import {
   buttonSelectedStyles,
 } from '@/components/common/button/button.styles'
 import { withTogglePressed } from '@/components/common/button/button.utils'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-follow-button')
 export class FollowButton extends withTogglePressed(LitElement) {
-  static styles = [buttonBaseStyles, followButtonStyles, buttonSelectedStyles]
+  static styles = [resetStyles, buttonBaseStyles, followButtonStyles, buttonSelectedStyles]
 
   render() {
     return html`

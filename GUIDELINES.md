@@ -109,6 +109,8 @@
 - 콘텐츠나 레이아웃 구획을 위해 CSS `border`를 직접 사용하지 않는다. surface 또는 separator를 사용한다.
 - Shadow DOM 내부 구조는 외부 스타일 API로 노출하지 않고, 스타일 변형은 prop, token, CSS custom property로만 제공한다.
 - 시각 효과의 on/off·강도처럼 스타일 목적만 갖는 prop은 선언하지 않는다. 그 값을 담는 CSS custom property를 그대로 공개해 소비자가 직접 설정하게 한다.
+- 네이티브 요소의 기본값 리셋(`background: none`, `border: none`, `font: inherit` 등)은 `resetStyles`가 소유한다. 의미 class·컴포넌트 selector에는 리셋을 다시 적지 않고 그 요소의 고유 규칙만 둔다.
+- `resetStyles`는 shadow root 안에 네이티브 요소를 렌더하는 컴포넌트만 `static styles` 맨 앞에 두고, 공유 스타일 모듈은 품지 않는다. Lit은 중복된 스타일을 마지막 위치에 남기므로, 모듈 안의 리셋이 앞선 규칙을 덮기 때문이다.
 - 스타일 적용만을 위해 새 보조 class를 만들지 않고, 기존 의미 class나 컴포넌트 selector에 스타일을 둔다. 공유 스타일도 마찬가지로 DOM 보조 class 없이 `static styles`에서 의미 selector로 조합한다.
 - 여러 곳에서 재사용하는 선언 뭉치는 `:host` 같은 선택자를 이름에도 본문에도 두지 않는다. 어느 요소에 얹을지는 사용부가 정한다. 스타일 모듈 이름은 `*Styles`로 통일한다.
 - 상속되는 텍스트·아이콘 색은 `color`/`currentColor`로 흐르게 하고, 같은 색 의미를 별도 custom property 채널로 이중화하지 않는다.

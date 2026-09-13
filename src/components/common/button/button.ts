@@ -11,6 +11,7 @@ import {
   buttonVariantStyles,
 } from '@/components/common/button/button.styles'
 import '@/components/common/icon'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type ButtonSize = 'huge' | 'large' | 'medium' | 'small'
@@ -19,7 +20,7 @@ export type ButtonType = 'button' | 'submit' | 'reset'
 
 @customElement('mm-button')
 export class Button extends LitElement {
-  static styles = [buttonBaseStyles, buttonSizeStyles, buttonVariantStyles]
+  static styles = [resetStyles, buttonBaseStyles, buttonSizeStyles, buttonVariantStyles]
 
   @property({ type: String, reflect: true }) variant: ButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: ButtonSize = 'medium'

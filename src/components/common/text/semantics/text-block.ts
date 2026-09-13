@@ -1,7 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/tag/tag'
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
@@ -16,30 +15,27 @@ import '@/components/common/text/semantics/paragraph'
  */
 @customElement('mm-text-block')
 export class TextBlock extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: var(--space-2);
-      }
-      :host([level='1']) {
-        gap: var(--space-3);
-      }
-      :host([centered]) {
-        align-items: center;
-      }
-      :host([centered]) mm-heading {
-        text-align: center;
-      }
-      /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
-      :host([level='1']) mm-paragraph {
-        max-width: 720px;
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-2);
+    }
+    :host([level='1']) {
+      gap: var(--space-3);
+    }
+    :host([centered]) {
+      align-items: center;
+    }
+    :host([centered]) mm-heading {
+      text-align: center;
+    }
+    /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
+    :host([level='1']) mm-paragraph {
+      max-width: 720px;
+    }
+  `
 
   @property({ type: String }) eyebrow = ''
   @property({ type: String }) heading = ''

@@ -35,7 +35,6 @@ export class SocialLinks extends LitElement {
       }
 
       .compact a {
-        text-decoration: none;
         color: inherit;
       }
     `,

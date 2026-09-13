@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/icon/icon'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 펼침/접힘 상태를 나타내는 장식용 방향 표시.
@@ -11,22 +10,19 @@ import { resetStyles } from '@/stylesheets/shared.styles'
  */
 @customElement('mm-expand-indicator')
 export class ExpandIndicator extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: var(--size-24);
-        height: var(--size-24);
-      }
+  static styles = css`
+    :host {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--size-24);
+      height: var(--size-24);
+    }
 
-      :host([expanded]) mm-icon {
-        transform: rotate(180deg);
-      }
-    `,
-  ]
+    :host([expanded]) mm-icon {
+      transform: rotate(180deg);
+    }
+  `
 
   @property({ type: Boolean, reflect: true }) expanded = false
   @property({ type: String, attribute: 'aria-hidden', reflect: true }) ariaHidden = 'true'

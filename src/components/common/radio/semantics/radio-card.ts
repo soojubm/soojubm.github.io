@@ -5,6 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { radioCardStyles, radioStyles } from '@/components/common/radio/radio.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 
 /**
@@ -14,7 +15,7 @@ import { emit, uniqueId } from '@/utils'
  */
 @customElement('mm-radio-card')
 export class RadioCard extends LitElement {
-  static styles = [visuallyHiddenInputStyles, radioStyles, radioCardStyles]
+  static styles = [resetStyles, visuallyHiddenInputStyles, radioStyles, radioCardStyles]
 
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''

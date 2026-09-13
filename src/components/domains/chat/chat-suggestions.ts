@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { horizontalScrollRowStyles, resetStyles } from '@/stylesheets/shared.styles'
+import { horizontalScrollRowStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 채팅 입력 추천 버튼 그룹. 가로 스크롤 가능한 quick-reply 영역.
@@ -13,22 +13,19 @@ import { horizontalScrollRowStyles, resetStyles } from '@/stylesheets/shared.sty
  */
 @customElement('mm-chat-suggestions')
 export class ChatSuggestions extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        ${horizontalScrollRowStyles};
-      }
+  static styles = css`
+    :host {
+      ${horizontalScrollRowStyles};
+    }
 
-      :host::-webkit-scrollbar {
-        display: none;
-      }
+    :host::-webkit-scrollbar {
+      display: none;
+    }
 
-      ::slotted(mm-chat-suggestion) {
-        flex-shrink: 0;
-      }
-    `,
-  ]
+    ::slotted(mm-chat-suggestion) {
+      flex-shrink: 0;
+    }
+  `
 
   render() {
     return html`

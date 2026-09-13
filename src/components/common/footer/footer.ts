@@ -8,10 +8,11 @@ import '@/components/domains/user-snippet/index'
 import '@/components/domains/social-links/index'
 import '@/components/common/text/semantics/caption'
 import '@/components/common/icon-button/semantics/to-top-button'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {
-  static styles = footerStyles
+  static styles = [resetStyles, footerStyles]
 
   render() {
     return html`

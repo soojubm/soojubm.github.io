@@ -3,42 +3,38 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { AvatarSize } from '@/components/common/avatar/avatar'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/avatar/avatar'
 import '@/components/common/text/text'
 
 @customElement('mm-avatar-group')
 export class AvatarGroup extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-2);
-        border-radius: var(--radius);
-      }
+  static styles = css`
+    :host {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      border-radius: var(--radius);
+    }
 
-      .avatars {
-        display: flex;
-      }
+    .avatars {
+      display: flex;
+    }
 
-      .avatars mm-avatar {
-        margin-left: -6px;
-        outline: 4px solid var(--background-color);
-      }
+    .avatars mm-avatar {
+      margin-left: -6px;
+      outline: 4px solid var(--background-color);
+    }
 
-      .avatars mm-avatar:first-child {
-        margin-left: 0;
-      }
+    .avatars mm-avatar:first-child {
+      margin-left: 0;
+    }
 
-      .label {
-        font-size: var(--font-size-14);
-        line-height: var(--size-24);
-        color: var(--foreground-color);
-      }
-    `,
-  ]
+    .label {
+      font-size: var(--font-size-14);
+      line-height: var(--size-24);
+      color: var(--foreground-color);
+    }
+  `
 
   @property({ attribute: false }) avatars: string[] = []
 

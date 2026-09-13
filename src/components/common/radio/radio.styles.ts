@@ -9,9 +9,6 @@ export const radioGroupStyles = css`
   }
 
   fieldset {
-    border: none;
-    padding: 0;
-    margin: 0;
     min-width: 0;
   }
 

@@ -7,7 +7,6 @@ import '@/components/common/code/code'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/text-list'
 import '@/components/indicators/list-marker/list-marker'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type AnatomyMarkerPlacement = 'inline-start' | 'inline-end' | 'block-start' | 'block-end'
 
@@ -41,7 +40,6 @@ export interface AnatomyMarkerData {
 @customElement('mm-component-anatomy')
 export class ComponentAnatomy extends LitElement {
   static styles = [
-    resetStyles,
     componentContentFrameStyles,
     css`
       :host {

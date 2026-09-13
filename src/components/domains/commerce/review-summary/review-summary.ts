@@ -2,7 +2,6 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon'
 import '@/components/common/text'
 
@@ -12,22 +11,19 @@ import '@/components/common/text'
  */
 @customElement('mm-review-summary')
 export class ReviewSummary extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        align-items: center;
-        gap: var(--space-2);
-      }
+  static styles = css`
+    :host {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
 
-      .stars {
-        display: flex;
-        gap: var(--space-1);
-        color: var(--accent-color);
-      }
-    `,
-  ]
+    .stars {
+      display: flex;
+      gap: var(--space-1);
+      color: var(--accent-color);
+    }
+  `
 
   @property({ type: Number }) rating = 0
   @property({ type: Number, attribute: 'review-count' }) reviewCount = 0

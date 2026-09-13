@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 아이템·데이터를 영구 삭제하는 파괴적 액션 버튼.
@@ -15,6 +16,7 @@ export class DeleteButton extends iconActionElement({
   ariaLabel: '삭제',
 }) {
   static styles = [
+    resetStyles,
     iconButtonStyles,
     css`
       :host {

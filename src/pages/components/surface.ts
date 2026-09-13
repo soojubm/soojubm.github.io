@@ -6,6 +6,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './surface.css'
 
@@ -224,7 +225,11 @@ const main = html`
               <span aria-hidden="true">🔥</span>
               Most Popular
             </mm-tag>
-            <mm-user-row icon="user" label="수줍이" description="2 hour ago"></mm-user-row>
+            <mm-user-row
+              icon=${ICON_NAMES.USER}
+              label="수줍이"
+              description="2 hour ago"
+            ></mm-user-row>
           </header>
           <div class="feed-body">
             <mm-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></mm-thumbnail>
@@ -267,7 +272,7 @@ const main = html`
             </mm-surface>
           </div>
           <div>
-            <mm-menu-item-action icon="heart" label="192"></mm-menu-item-action>
+            <mm-menu-item-action icon=${ICON_NAMES.LIKE} label="192"></mm-menu-item-action>
           </div>
         </article>
       </section>
@@ -344,13 +349,13 @@ const main = html`
         <mm-button-group>
           <mm-icon-button
             variant="secondary"
-            icon="arrow-left"
+            icon=${ICON_NAMES.BACK}
             data-carousel-prev
             aria-label="이전"
           ></mm-icon-button>
           <mm-icon-button
             variant="secondary"
-            icon="arrow-right"
+            icon=${ICON_NAMES.NEXT}
             data-carousel-next
             aria-label="다음"
           ></mm-icon-button>

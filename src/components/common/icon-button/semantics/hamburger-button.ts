@@ -6,6 +6,7 @@ import type { AriaBoolean, AriaIdRef } from '@/types'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 사이드바/내비게이션 메뉴를 여닫는 햄버거 버튼.
@@ -13,6 +14,7 @@ import { renderIconAction } from '@/components/common/icon-button/icon-button.ut
 @customElement('mm-hamburger-button')
 export class HamburgerButton extends LitElement {
   static styles = [
+    resetStyles,
     iconButtonStyles,
     css`
       :host {

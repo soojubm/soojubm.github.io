@@ -1,7 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/text'
 
 /**
@@ -10,25 +9,22 @@ import '@/components/common/text'
  */
 @customElement('mm-product-price')
 export class ProductPrice extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-      }
+  static styles = css`
+    :host {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
 
-      .original {
-        display: flex;
-        gap: var(--space-2);
-      }
+    .original {
+      display: flex;
+      gap: var(--space-2);
+    }
 
-      del {
-        text-decoration: line-through;
-      }
-    `,
-  ]
+    del {
+      text-decoration: line-through;
+    }
+  `
 
   @property({ type: String }) price = ''
   @property({ type: String, attribute: 'original-price' }) originalPrice = ''

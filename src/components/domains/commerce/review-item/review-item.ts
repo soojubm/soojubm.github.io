@@ -2,7 +2,6 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/surface'
 import '@/components/common/icon'
 import '@/components/common/text/semantics/paragraph'
@@ -15,29 +14,26 @@ import '@/components/common/list-item'
  */
 @customElement('mm-review-item')
 export class ReviewItem extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-        width: 100%;
-      }
+  static styles = css`
+    :host {
+      display: block;
+      width: 100%;
+    }
 
-      .body {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-3);
-      }
+    .body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
 
-      .rating {
-        display: flex;
-      }
+    .rating {
+      display: flex;
+    }
 
-      .rating {
-        color: var(--accent-color);
-      }
-    `,
-  ]
+    .rating {
+      color: var(--accent-color);
+    }
+  `
 
   @property({ type: Number }) rating = 5
   @property({ type: String }) content = ''

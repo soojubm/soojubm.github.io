@@ -1,15 +1,12 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/tag/tag-group'
 import '@/components/common/tag/semantics/accent-tag'
 import '@/components/common/tag/semantics/keyword-tag'
 
 @customElement('mm-keyword-tag-group')
 export class KeywordTagGroup extends LitElement {
-  static styles = [resetStyles]
-
   @property({ type: String }) heading = ''
 
   @property({ attribute: false }) keywords: string[] = []

@@ -3,7 +3,6 @@ import { customElement, property, state } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/button/button'
 import '@/components/common/icon/icon'
 import { emit } from '@/utils'
@@ -14,14 +13,11 @@ import { emit } from '@/utils'
  */
 @customElement('mm-chat-source')
 export class ChatSource extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: inline-block;
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      display: inline-block;
+    }
+  `
 
   @property({ type: String }) href = ''
   @property({ type: String }) heading = ''

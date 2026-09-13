@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { resetStyles, scrollbarStyles } from '@/stylesheets/shared.styles'
+import { scrollbarStyles } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
 // 이게 왜 필요..
@@ -15,7 +15,6 @@ const scrollDirectionTokens = {
 }
 
 export const scrollStyles = [
-  resetStyles,
   css`
     :host {
       --scroll-gap: 0;

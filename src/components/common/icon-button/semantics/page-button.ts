@@ -5,6 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { AriaCurrent } from '@/types'
 
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 페이지네이션 번호 버튼.
@@ -13,6 +14,7 @@ import { iconButtonStyles } from '@/components/common/icon-button/icon-button.st
 @customElement('mm-page-button')
 export class PageButton extends LitElement {
   static styles = [
+    resetStyles,
     iconButtonStyles,
     css`
       :host {

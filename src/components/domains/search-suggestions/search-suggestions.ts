@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { horizontalScrollRowStyles, resetStyles } from '@/stylesheets/shared.styles'
+import { horizontalScrollRowStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 검색 추천 키워드 그룹. 가로 스크롤 가능한 추천어 영역.
@@ -16,31 +16,28 @@ import { horizontalScrollRowStyles, resetStyles } from '@/stylesheets/shared.sty
  */
 @customElement('mm-search-suggestions')
 export class SearchSuggestions extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        ${horizontalScrollRowStyles};
-        --_bleed: 0px;
+  static styles = css`
+    :host {
+      ${horizontalScrollRowStyles};
+      --_bleed: 0px;
 
-        margin-inline: calc(-1 * var(--_bleed));
-        padding-inline: var(--_bleed);
-      }
+      margin-inline: calc(-1 * var(--_bleed));
+      padding-inline: var(--_bleed);
+    }
 
-      :host::-webkit-scrollbar {
-        display: none;
-      }
+    :host::-webkit-scrollbar {
+      display: none;
+    }
 
-      :host([fade]) {
-        -webkit-mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
-        mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
-      }
+    :host([fade]) {
+      -webkit-mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
+      mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
+    }
 
-      ::slotted(mm-search-suggestion) {
-        flex-shrink: 0;
-      }
-    `,
-  ]
+    ::slotted(mm-search-suggestion) {
+      flex-shrink: 0;
+    }
+  `
 
   @property({ type: String }) bleed?: string
 

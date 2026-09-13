@@ -1,6 +1,7 @@
 import { html } from 'lit'
-import './dashboard.css'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import './dashboard.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const indexCards = [
@@ -94,21 +95,21 @@ const main = html`
             <mm-menu-item-action
               size="small"
               emoji="📦"
-              trailing-icon="arrow-right"
+              trailing-icon=${ICON_NAMES.FORWARD}
               label="출고 지연 주문 확인"
               description="오늘 오전 11:00까지"
             ></mm-menu-item-action>
             <mm-menu-item-action
               size="small"
               emoji="💬"
-              trailing-icon="arrow-right"
+              trailing-icon=${ICON_NAMES.FORWARD}
               label="고객 문의 답변"
               description="미응답 문의 17건"
             ></mm-menu-item-action>
             <mm-menu-item-action
               size="small"
               emoji="📊"
-              trailing-icon="arrow-right"
+              trailing-icon=${ICON_NAMES.FORWARD}
               label="주간 성과 보고서 공유"
               description="오늘 오후 4:00까지"
             ></mm-menu-item-action>

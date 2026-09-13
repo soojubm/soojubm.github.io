@@ -4,7 +4,6 @@ import { repeat } from 'lit/directives/repeat.js'
 
 import type { PropertyValues } from 'lit'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import { resolveSpaceToken } from '@/utils'
 
 type MarqueeDirection = 'left' | 'right'
@@ -15,79 +14,76 @@ type MarqueeDirection = 'left' | 'right'
  */
 @customElement('mm-marquee')
 export class Marquee extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-        max-width: 100%;
-        overflow: hidden;
-        --marquee-gap: var(--space-4);
-        --marquee-height: auto;
-        --marquee-distance: 0px;
-        --marquee-duration: 1s;
-      }
+  static styles = css`
+    :host {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      --marquee-gap: var(--space-4);
+      --marquee-height: auto;
+      --marquee-distance: 0px;
+      --marquee-duration: 1s;
+    }
 
-      .viewport {
-        width: 100%;
-        height: var(--marquee-height);
-        overflow: hidden;
-      }
+    .viewport {
+      width: 100%;
+      height: var(--marquee-height);
+      overflow: hidden;
+    }
 
+    .track {
+      display: flex;
+      width: max-content;
+      height: 100%;
+      animation: marquee-scroll var(--marquee-duration) linear infinite;
+      transform: translate3d(0, 0, 0);
+      will-change: transform;
+    }
+
+    :host([direction='right']) .track {
+      animation-name: marquee-scroll-right;
+    }
+
+    :host([pause-on-hover]:hover) .track {
+      animation-play-state: paused;
+    }
+
+    .group {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: var(--marquee-gap);
+      height: 100%;
+      padding-inline-end: var(--marquee-gap);
+      box-sizing: border-box;
+    }
+
+    ::slotted(*) {
+      flex: 0 0 auto;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
       .track {
-        display: flex;
-        width: max-content;
-        height: 100%;
-        animation: marquee-scroll var(--marquee-duration) linear infinite;
+        animation: none;
+      }
+    }
+
+    @keyframes marquee-scroll {
+      to {
+        transform: translate3d(calc(var(--marquee-distance) * -1), 0, 0);
+      }
+    }
+
+    @keyframes marquee-scroll-right {
+      from {
+        transform: translate3d(calc(var(--marquee-distance) * -1), 0, 0);
+      }
+
+      to {
         transform: translate3d(0, 0, 0);
-        will-change: transform;
       }
-
-      :host([direction='right']) .track {
-        animation-name: marquee-scroll-right;
-      }
-
-      :host([pause-on-hover]:hover) .track {
-        animation-play-state: paused;
-      }
-
-      .group {
-        display: flex;
-        flex: 0 0 auto;
-        align-items: center;
-        gap: var(--marquee-gap);
-        height: 100%;
-        padding-inline-end: var(--marquee-gap);
-        box-sizing: border-box;
-      }
-
-      ::slotted(*) {
-        flex: 0 0 auto;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .track {
-          animation: none;
-        }
-      }
-
-      @keyframes marquee-scroll {
-        to {
-          transform: translate3d(calc(var(--marquee-distance) * -1), 0, 0);
-        }
-      }
-
-      @keyframes marquee-scroll-right {
-        from {
-          transform: translate3d(calc(var(--marquee-distance) * -1), 0, 0);
-        }
-
-        to {
-          transform: translate3d(0, 0, 0);
-        }
-      }
-    `,
-  ]
+    }
+  `
 
   @property({ type: String, reflect: true }) role = 'marquee'
   @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'

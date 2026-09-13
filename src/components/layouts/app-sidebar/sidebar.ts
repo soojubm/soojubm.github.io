@@ -10,7 +10,6 @@ import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP, type SitemapNode } from '@/sitemap'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import { getCurrentPageId } from '@/utils'
 import '@/components/common/menu-item/semantics/menu-item-action'
 import '@/components/common/menu-item/semantics/menu-item-disclosure'
@@ -19,7 +18,7 @@ import '@/components/common/menu-item'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
-  static styles = [resetStyles, sidebarStyles]
+  static styles = [sidebarStyles]
 
   @property({ type: Boolean, reflect: true }) open = false
 

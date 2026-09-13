@@ -15,7 +15,6 @@ export const menuItemStyles = css`
     padding-inline: var(--menu-item-padding-inline);
     border-radius: var(--radius);
     color: inherit;
-    text-decoration: none;
     box-sizing: border-box;
     cursor: pointer;
     /* z-index: -1 배경 레이어가 조상 배경 뒤로 빠지지 않도록 행에서 쌓임 맥락을 만든다 */
@@ -70,9 +69,5 @@ export const menuItemStyles = css`
 
   mm-list-item {
     flex: 1;
-  }
-
-  button {
-    all: unset;
   }
 `

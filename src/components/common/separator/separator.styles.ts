@@ -16,7 +16,6 @@ export const separatorStyles = css`
   hr {
     width: 100%;
     margin: var(--separator-spacing) 0;
-    border: 0;
     border-top: var(--separator-border);
     position: relative;
     z-index: var(--material-zindex-base);

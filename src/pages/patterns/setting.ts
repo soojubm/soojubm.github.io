@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { findSitemapItem } from '@/sitemap'
 
@@ -28,7 +29,7 @@ const main = html`
       <mm-list-item
         avatar-variant="tertiary"
         size="48"
-        icon="user-badge-check"
+        icon=${ICON_NAMES.USER_BADGE_CHECK}
         label="사용자 정보"
         description="전자 메일, 일정, 연락처에서 사용하는 계정"
       ></mm-list-item>
@@ -36,19 +37,19 @@ const main = html`
         <mm-flex direction="column" gap="3">
           <mm-menu-item-group>
             <mm-menu-item-link
-              icon="mail"
+              icon=${ICON_NAMES.MAIL}
               label="soojubm@gmail.com"
               href="#"
               target="_self"
             ></mm-menu-item-link>
             <mm-menu-item-link
-              icon="lock"
+              icon=${ICON_NAMES.LOCK}
               label="비밀번호 변경"
               href="#"
               target="_self"
             ></mm-menu-item-link>
             <mm-menu-item-link
-              icon="user"
+              icon=${ICON_NAMES.USER}
               label="닉네임 변경"
               href="#"
               target="_self"
@@ -69,7 +70,7 @@ const main = html`
             description="문화/예술, 인권, 경제"
           ></mm-menu-item-link>
           <mm-menu-item-switch
-            icon="mail-in"
+            icon=${ICON_NAMES.MAIL_IN}
             label="시사 뉴스레터"
             value="newsletter"
           ></mm-menu-item-switch>
@@ -97,7 +98,7 @@ const main = html`
         </mm-flex>
       </mm-surface>
       <mm-link-prompt
-        icon="pipe-3d"
+        icon=${ICON_NAMES.PIPE}
         message="To delete your account permanently"
         link-label="로그아웃"
         href="#"
@@ -107,16 +108,16 @@ const main = html`
       <mm-list-item
         avatar-variant="tertiary"
         size="48"
-        icon="credit-card"
+        icon=${ICON_NAMES.CREDIT_CARD}
         label="소셜 네트워크로 로그인"
         description="전자 메일, 일정, 연락처에서 사용하는 계정"
       ></mm-list-item>
       <mm-surface variant="paper" radius="large">
         <mm-menu-item-group size="large">
-          <mm-setting-item icon="google" label="구글 계정으로 로그인">
+          <mm-setting-item icon=${ICON_NAMES.GOOGLE} label="구글 계정으로 로그인">
             <mm-button slot="action" disabled>Google 연동해제</mm-button>
           </mm-setting-item>
-          <mm-setting-item icon="apple" label="애플 계정으로 로그인">
+          <mm-setting-item icon=${ICON_NAMES.APPLE} label="애플 계정으로 로그인">
             <mm-button slot="action">Apple 연동</mm-button>
           </mm-setting-item>
           <mm-caption>계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.</mm-caption>
@@ -127,14 +128,14 @@ const main = html`
       <mm-list-item
         avatar-variant="tertiary"
         size="48"
-        icon="credit-card"
+        icon=${ICON_NAMES.CREDIT_CARD}
         label="구독 정보"
         description="멤버십, 결제수단, 청구서 등"
       ></mm-list-item>
       <mm-surface variant="paper" radius="large">
         <mm-flex direction="column" gap="2">
           <mm-menu-item-group size="large">
-            <mm-setting-item icon="credit-card" label="Premium 개인">
+            <mm-setting-item icon=${ICON_NAMES.CREDIT_CARD} label="Premium 개인">
               <mm-button slot="action" variant="ghost" aria-label="자세히보기">구독 관리</mm-button>
             </mm-setting-item>
             <mm-flex direction="column">
@@ -143,7 +144,7 @@ const main = html`
               <mm-meta-item label="결제수단" value="현대카드 ****-****-****-7922"></mm-meta-item>
             </mm-flex>
             <mm-button-group>
-              <mm-button icon="arrow-right">결제수단변경</mm-button>
+              <mm-button icon=${ICON_NAMES.FORWARD}>결제수단변경</mm-button>
             </mm-button-group>
           </mm-menu-item-group>
         </mm-flex>

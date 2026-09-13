@@ -7,7 +7,6 @@ import {
   renderSuggestionButton,
   suggestionButtonStyles,
 } from '@/components/domains/shared/suggestion-button'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
 /**
@@ -16,7 +15,7 @@ import { emit } from '@/utils'
  */
 @customElement('mm-chat-suggestion')
 export class ChatSuggestion extends LitElement {
-  static styles = [resetStyles, suggestionButtonStyles]
+  static styles = [suggestionButtonStyles]
 
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName

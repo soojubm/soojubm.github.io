@@ -4,10 +4,11 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { linkStyles } from '@/components/common/link/link.styles'
 import '@/components/common/icon'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-link')
 export class Link extends LitElement {
-  static styles = [linkStyles]
+  static styles = [resetStyles, linkStyles]
 
   @property({ type: String }) href = ''
   @property({ type: String }) target = ''

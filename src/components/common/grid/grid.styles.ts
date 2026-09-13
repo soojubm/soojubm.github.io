@@ -1,10 +1,8 @@
 import { css } from 'lit'
 
 import { MEDIA } from '@/constants'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 export const gridStyles = [
-  resetStyles,
   css`
     :host {
       --_col-count: 2;

@@ -10,6 +10,7 @@ import {
   iconButtonSecondarySkinStyles,
   iconButtonStyles,
 } from '@/components/common/icon-button/icon-button.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { type Constructor, emit } from '@/utils'
 import '@/components/overlay/tooltip'
 import '@/components/common/icon'
@@ -119,7 +120,7 @@ export interface IconActionDefinition {
  */
 export const iconActionElement = ({ event, icon, ariaLabel }: IconActionDefinition) => {
   class IconActionButton extends withIconAction(LitElement, event) {
-    static styles: CSSResultGroup = [iconButtonStyles, iconButtonSecondarySkinStyles]
+    static styles: CSSResultGroup = [resetStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
 
     render() {
       return renderIconAction({

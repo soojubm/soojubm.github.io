@@ -5,6 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -58,31 +59,31 @@ const main = html`
       <mm-button-group>
         <mm-icon-button
           variant="primary"
-          icon="arrow-right"
+          icon=${ICON_NAMES.FORWARD}
           tooltip="Primary"
           tooltip-placement="center"
         ></mm-icon-button>
         <mm-icon-button
           variant="secondary"
-          icon="arrow-right"
+          icon=${ICON_NAMES.FORWARD}
           tooltip="Secondary"
           tooltip-placement="center"
         ></mm-icon-button>
         <mm-icon-button
           variant="tertiary"
-          icon="arrow-right"
+          icon=${ICON_NAMES.FORWARD}
           tooltip="Tertiary"
           tooltip-placement="center"
         ></mm-icon-button>
         <mm-icon-button
           variant="ghost"
-          icon="arrow-right"
+          icon=${ICON_NAMES.FORWARD}
           tooltip="Ghost"
           tooltip-placement="center"
         ></mm-icon-button>
         <mm-icon-button
           variant="destructive"
-          icon="trash"
+          icon=${ICON_NAMES.DELETE}
           tooltip="Destructive"
           tooltip-placement="center"
         ></mm-icon-button>
@@ -91,20 +92,20 @@ const main = html`
       <mm-button-group>
         <mm-icon-button
           variant="primary"
-          icon="arrow-right"
+          icon=${ICON_NAMES.FORWARD}
           tooltip="다음"
           tooltip-placement="center"
           disabled
         ></mm-icon-button>
         <mm-icon-button
-          icon="heart"
+          icon=${ICON_NAMES.LIKE}
           tooltip="좋아요"
           tooltip-placement="center"
           disabled
         ></mm-icon-button>
         <mm-icon-button
           variant="secondary"
-          icon="arrow-left"
+          icon=${ICON_NAMES.BACK}
           tooltip="이전"
           tooltip-placement="center"
           disabled
@@ -112,8 +113,8 @@ const main = html`
       </mm-button-group>
       <mm-separator></mm-separator>
       <mm-button-group>
-        <mm-icon-button icon="xmark" size="medium" aria-label="medium"></mm-icon-button>
-        <mm-icon-button icon="xmark" size="small" aria-label="small"></mm-icon-button>
+        <mm-icon-button icon=${ICON_NAMES.CLOSE} size="medium" aria-label="medium"></mm-icon-button>
+        <mm-icon-button icon=${ICON_NAMES.CLOSE} size="small" aria-label="small"></mm-icon-button>
       </mm-button-group>
     </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -149,7 +150,7 @@ const main = html`
         <mm-icon-button
           slot="trigger"
           variant="primary"
-          icon="heart"
+          icon=${ICON_NAMES.LIKE}
           aria-label="좋아요"
         ></mm-icon-button>
       </mm-tooltip>
@@ -220,7 +221,7 @@ const main = html`
       <mm-icon-button
         variant="secondary"
         size="small"
-        icon="nav-arrow-down"
+        icon=${ICON_NAMES.EXPAND}
         tooltip="펼치기"
         tooltip-placement="center"
       ></mm-icon-button>

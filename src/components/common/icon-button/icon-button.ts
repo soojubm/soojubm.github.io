@@ -8,13 +8,14 @@ import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderWithOptionalTooltip } from '@/components/common/icon-button/icon-button.utils'
 import '@/components/common/icon'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
 export type IconButtonSize = 'small' | 'medium'
 
 @customElement('mm-icon-button')
 export class IconButton extends LitElement {
-  static styles = [iconButtonStyles]
+  static styles = [resetStyles, iconButtonStyles]
 
   @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'

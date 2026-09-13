@@ -2,7 +2,6 @@ import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
@@ -11,7 +10,7 @@ import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
  */
 @customElement('mm-ai-chat-bubble')
 export class AiChatBubble extends withChatBubbleImage(LitElement) {
-  static styles = [resetStyles, chatBubbleStyles]
+  static styles = [chatBubbleStyles]
 
   render() {
     return renderChatBubbleShell(

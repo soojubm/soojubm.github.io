@@ -28,6 +28,13 @@
       "runtimeArgs": ["webpack", "serve", "--mode=development", "--port", "9103"],
       "port": 9103,
       "autoPort": false
+    },
+    {
+      "name": "dev-9104",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["webpack", "serve", "--mode=development", "--port", "9104"],
+      "port": 9104,
+      "autoPort": false
     }
   ]
 }

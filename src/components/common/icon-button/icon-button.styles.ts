@@ -68,7 +68,6 @@ export const iconButtonStyles = [
     }
 
     button {
-      padding: 0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -83,8 +82,6 @@ export const iconButtonStyles = [
       -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
       color: var(--icon-button-text-color);
       font-family: var(--font-family);
-      font-size: inherit;
-      cursor: pointer;
 
       &:hover {
         --icon-button-border: var(--border);

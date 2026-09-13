@@ -16,7 +16,7 @@ const avatarVariantTokens = {
   },
   tertiary: {
     '--avatar-background-color': 'transparent',
-    '--avatar-border': 'var(--border-transparent)',
+    '--avatar-border': 'none',
     'box-shadow': 'none',
   },
 }

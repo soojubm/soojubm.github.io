@@ -9,12 +9,13 @@ import {
   buttonSelectedStyles,
 } from '@/components/common/button/button.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 
 @customElement('mm-toggle-button')
 export class ToggleButton extends LitElement {
-  static styles = [buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
+  static styles = [resetStyles, buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
 
   @property({ type: Boolean, reflect: true }) pressed = false
   @property({ type: String }) value = ''

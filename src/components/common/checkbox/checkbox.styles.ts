@@ -4,11 +4,10 @@ import { focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const checkboxGroupStyles = css`
   fieldset {
-    all: unset;
-
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
+    min-width: 0;
   }
 
   legend {

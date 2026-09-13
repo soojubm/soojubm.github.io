@@ -4,6 +4,8 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaIdRef, AriaInvalid } from '@/types'
 
+import { resetStyles } from '@/stylesheets/shared.styles'
+
 export type InputType =
   | 'text'
   | 'search'
@@ -30,93 +32,55 @@ export const INPUT_TYPE_UNION =
  */
 @customElement('mm-input')
 export class Input extends LitElement {
-  static styles = css`
-    :host {
-      display: flex;
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-
-    input {
-      width: 100%;
-      min-width: 0;
-      height: 100%;
-      border: 0;
-      outline: none;
-      background: inherit;
-      font: inherit;
-      color: var(--foreground-color);
-
-      &:focus-visible {
-        outline: 0;
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
       }
 
-      &::placeholder {
-        color: var(--foreground-subtle-color);
-      }
+      input {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        outline: none;
+        color: var(--foreground-color);
 
-      &:read-only {
-        color: var(--foreground-subtle-color);
-        cursor: default;
-      }
-
-      &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      &[type='text'],
-      &[type='date'],
-      &[type='password'],
-      &[type='search'] {
-        -webkit-appearance: none;
-      }
-
-      &[type='number'] {
-        -webkit-appearance: none;
-        -moz-appearance: textfield;
-
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-        }
-      }
-
-      &[type='date'] {
-        display: block;
-        max-height: var(--size-48);
-
-        &::-webkit-calendar-picker-indicator {
-          width: 100%;
-          opacity: 0;
-          position: absolute;
-          left: 0;
-          bottom: 0;
+        &:focus-visible {
+          outline: 0;
         }
 
-        &::-webkit-inner-spin-button {
-          display: none;
-          -webkit-appearance: none;
+        &::placeholder {
+          color: var(--foreground-subtle-color);
+        }
+
+        &:read-only {
+          color: var(--foreground-subtle-color);
+          cursor: default;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+
+        &[type='date'] {
+          display: block;
+          max-height: var(--size-48);
+
+          &::-webkit-calendar-picker-indicator {
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
         }
       }
-
-      &[type='password'] {
-      }
-
-      &[type='search'] {
-        font-family: inherit;
-        font-size: inherit;
-
-        &::-webkit-search-decoration,
-        &::-webkit-search-cancel-button,
-        &::-webkit-search-results-button,
-        &::-webkit-search-results-decoration {
-          display: none;
-        }
-      }
-    }
-  `
+    `,
+  ]
 
   @property({ attribute: 'input-id' }) inputId = ''
   @property() type: InputType = 'text'

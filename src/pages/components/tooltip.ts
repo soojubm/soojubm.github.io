@@ -5,6 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './tooltip.css'
 
@@ -49,10 +50,10 @@ const main = html`
     <mm-component-example>
       <mm-flex gap="2">
         <mm-tooltip content="로그인" placement="center">
-          <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
+          <mm-icon-button slot="trigger" icon=${ICON_NAMES.USER}></mm-icon-button>
         </mm-tooltip>
         <mm-tooltip content="우측 정렬" placement="right">
-          <mm-icon-button slot="trigger" icon="user"></mm-icon-button>
+          <mm-icon-button slot="trigger" icon=${ICON_NAMES.USER}></mm-icon-button>
         </mm-tooltip>
         <mm-tooltip
           content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다."

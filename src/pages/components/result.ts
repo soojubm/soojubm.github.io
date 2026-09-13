@@ -5,6 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ActionConfig } from '@/types'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -55,7 +56,7 @@ const main = html`
 
     <mm-component-example>
       <mm-result
-        avatar-icon="clipboard-check"
+        avatar-icon=${ICON_NAMES.DOCUMENT_CHECK}
         heading="주문을 확인해주세요."
         description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
         .primaryAction=${primaryAction}

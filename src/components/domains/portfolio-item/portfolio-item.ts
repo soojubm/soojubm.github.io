@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { focusRingStyles, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
+import { focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
 import '@/components/common/icon-button/semantics/more-button'
 import { emit } from '@/utils'
 import '@/components/common/tag/semantics/accent-tag'
@@ -14,77 +14,74 @@ export type PortfolioItemLayout = 'grid' | 'list'
 
 @customElement('mm-portfolio-item')
 export class PortfolioItem extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        width: 100%;
-        cursor: pointer;
-      }
+  static styles = css`
+    :host {
+      display: flex;
+      width: 100%;
+      cursor: pointer;
+    }
 
-      article {
-        --lift: none;
+    article {
+      --lift: none;
 
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: var(--space-3);
-        position: relative;
-        transform: var(--lift);
-        transition: transform var(--transition-duration) var(--transition-easing);
-      }
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: var(--space-3);
+      position: relative;
+      transform: var(--lift);
+      transition: transform var(--transition-duration) var(--transition-easing);
+    }
 
-      ${interactiveElement}:hover {
-        --lift: var(--interaction-hover-lift);
-      }
+    ${interactiveElement}:hover {
+      --lift: var(--interaction-hover-lift);
+    }
 
-      ${interactiveElement}:focus-visible {
-        ${focusRingStyles}
-      }
+    ${interactiveElement}:focus-visible {
+      ${focusRingStyles}
+    }
 
-      .badge,
-      .action {
-        position: absolute;
-        z-index: var(--material-zindex-raised);
-      }
+    .badge,
+    .action {
+      position: absolute;
+      z-index: var(--material-zindex-raised);
+    }
 
-      .badge {
-        top: calc(var(--space-1) * -1);
-        left: calc(var(--space-1) * -1);
-      }
+    .badge {
+      top: calc(var(--space-1) * -1);
+      left: calc(var(--space-1) * -1);
+    }
 
-      .action {
-        top: var(--space-2);
-        right: var(--space-2);
-      }
+    .action {
+      top: var(--space-2);
+      right: var(--space-2);
+    }
 
-      .content {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-1);
-      }
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
 
-      .keyword-tags {
-        margin-top: var(--space-2);
-      }
+    .keyword-tags {
+      margin-top: var(--space-2);
+    }
 
-      time {
-        color: var(--foreground-subtle-color);
-        font-size: var(--font-size-12);
-        line-height: var(--font-size-12);
-      }
+    time {
+      color: var(--foreground-subtle-color);
+      font-size: var(--font-size-12);
+      line-height: var(--font-size-12);
+    }
 
-      :host([layout='list']) article {
-        flex-direction: row;
-      }
+    :host([layout='list']) article {
+      flex-direction: row;
+    }
 
-      :host([layout='list']) mm-thumbnail {
-        width: 156px;
-        flex: none;
-      }
-    `,
-  ]
+    :host([layout='list']) mm-thumbnail {
+      width: 156px;
+      flex: none;
+    }
+  `
 
   @property({ type: String, reflect: true }) layout: PortfolioItemLayout = 'grid'
   @property({ type: String }) label = ''

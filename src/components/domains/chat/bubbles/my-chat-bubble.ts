@@ -2,7 +2,6 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { chatBubbleStyles, myChatBubbleStyles } from '@/components/domains/chat/chat.styles'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
@@ -14,7 +13,7 @@ import '@/components/common/text/text'
  */
 @customElement('mm-my-chat-bubble')
 export class MyChatBubble extends withChatBubbleImage(LitElement) {
-  static styles = [resetStyles, chatBubbleStyles, myChatBubbleStyles]
+  static styles = [chatBubbleStyles, myChatBubbleStyles]
 
   @property({ type: String }) status = ''
 

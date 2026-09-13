@@ -3,20 +3,20 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { textStyles } from '@/components/common/text/text.styles'
 import '@/components/indicators/list-marker/list-marker'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 type Variant = 'check' | 'number'
 
 @customElement('mm-text-list')
 export class TextList extends LitElement {
   static styles = [
+    resetStyles,
     textStyles,
     css`
       .list {
         display: flex;
         flex-direction: column;
         gap: var(--space-2);
-        margin: 0;
-        padding-left: 0;
       }
 
       .list li {
@@ -24,8 +24,6 @@ export class TextList extends LitElement {
         align-items: flex-start;
         gap: var(--space-2);
         list-style: none;
-        margin-left: 0;
-        padding-left: 0;
       }
     `,
   ]

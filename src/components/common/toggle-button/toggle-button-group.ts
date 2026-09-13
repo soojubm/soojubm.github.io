@@ -7,6 +7,7 @@ import type { Orientation } from '@/controllers/roving-focus-controller'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 import '@/components/common/toggle-button/semantics/view-mode-switcher'
@@ -28,6 +29,7 @@ export interface OptionItem {
 @customElement('mm-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
   static styles = [
+    resetStyles,
     buttonBaseStyles,
     buttonSelectedStyles,
     css`

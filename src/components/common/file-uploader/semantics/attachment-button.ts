@@ -2,21 +2,24 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { visuallyHiddenStyles } from '@/stylesheets/shared.styles'
+import { visuallyHiddenStyles, resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/button/semantics/add-button'
 
 @customElement('mm-attachment-button')
 export class AttachmentButton extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-    }
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+      }
 
-    input {
-      ${visuallyHiddenStyles};
-    }
-  `
+      input {
+        ${visuallyHiddenStyles};
+      }
+    `,
+  ]
 
   @property({ type: String }) label = ''
   @property({ type: String }) accept = ''

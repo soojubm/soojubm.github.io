@@ -16,7 +16,7 @@ export interface ComponentFeatureItem {
  * 어휘 자체는 foundations 문서가 정의하므로, 새 heading은 그 목록에 먼저 추가한다.
  * 어휘에 없는 일회성 heading은 항목에서 icon을 직접 지정한다.
  */
-const FEATURE_ICONS: Record<string, IconName> = {
+export const FEATURE_ICONS: Record<string, IconName> = {
   Disclosure: ICON_NAMES.EXPAND,
   Feedback: ICON_NAMES.NOTIFICATION,
   Glanceable: ICON_NAMES.VIEW,

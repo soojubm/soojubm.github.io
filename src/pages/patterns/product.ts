@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './product.css'
 
@@ -51,17 +52,17 @@ const main = html`
               <mm-button aria-controls="cart-sheet" variant="primary" size="large" full-width>
                 Add to Cart
               </mm-button>
-              <mm-icon-button variant="ghost" icon="star"></mm-icon-button>
+              <mm-icon-button variant="ghost" icon=${ICON_NAMES.FAVORITE}></mm-icon-button>
             </mm-button-group>
 
             <!-- TODO text-list -->
             <div>
               <mm-flex align-items="center" gap="1">
-                <mm-icon name="delivery-truck"></mm-icon>
+                <mm-icon name=${ICON_NAMES.DELIVERY}></mm-icon>
                 <mm-paragraph>Free shipping on all U.S. orders of $40+</mm-paragraph>
               </mm-flex>
               <mm-flex align-items="center" gap="1">
-                <mm-icon name="box-iso"></mm-icon>
+                <mm-icon name=${ICON_NAMES.BOX}></mm-icon>
                 <mm-paragraph>Free returns and exchanges</mm-paragraph>
               </mm-flex>
             </div>
@@ -108,25 +109,25 @@ const main = html`
           <mm-feature-group columns="4">
             <mm-feature
               centered
-              icon="flower"
+              icon=${ICON_NAMES.FLOWER}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
             ></mm-feature>
             <mm-feature
               centered
-              icon="sparks"
+              icon=${ICON_NAMES.SPARKS}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
             ></mm-feature>
             <mm-feature
               centered
-              icon="star"
+              icon=${ICON_NAMES.FAVORITE}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
             ></mm-feature>
             <mm-feature
               centered
-              icon="heart"
+              icon=${ICON_NAMES.LIKE}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
             ></mm-feature>
@@ -157,25 +158,25 @@ const main = html`
             <mm-feature-group columns="4">
               <mm-feature
                 centered
-                icon="heart"
+                icon=${ICON_NAMES.LIKE}
                 heading="Tangerine Oil"
                 description="A microbial substrate that has a positive impact on the oral environment"
               ></mm-feature>
               <mm-feature
                 centered
-                icon="star"
+                icon=${ICON_NAMES.FAVORITE}
                 heading="Tangerine Oil"
                 description="A microbial substrate that has a positive impact on the oral environment"
               ></mm-feature>
               <mm-feature
                 centered
-                icon="flower"
+                icon=${ICON_NAMES.FLOWER}
                 heading="Tangerine Oil"
                 description="A microbial substrate that has a positive impact on the oral environment"
               ></mm-feature>
               <mm-feature
                 centered
-                icon="sparks"
+                icon=${ICON_NAMES.SPARKS}
                 heading="Tangerine Oil"
                 description="A microbial substrate that has a positive impact on the oral environment"
               ></mm-feature>

@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
@@ -17,16 +18,10 @@ export class AccordionItem extends LitElement {
     resetStyles,
     css`
       :host {
-        display: block;
-        padding: var(--accordion-padding);
-        background: var(--accordion-background-color);
-        border: var(--accordion-border);
-        border-radius: var(--accordion-border-radius);
-
-        --accordion-padding: var(--space-2) var(--space-4);
-        --accordion-background-color: var(--background-subtle-color);
-        --accordion-border: var(--border-transparent);
-        --accordion-border-radius: var(--radius);
+        ${surfaceBaseStyles};
+        --surface-padding: var(--space-2) var(--space-4);
+        --surface-border: var(--border-transparent);
+        --surface-background-color: var(--background-subtle-color);
       }
 
       .summary-btn {
@@ -35,15 +30,7 @@ export class AccordionItem extends LitElement {
         justify-content: space-between;
         gap: var(--space-2);
         width: 100%;
-        height: var(--size-32);
-        padding: 0;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font: inherit;
         font-weight: var(--font-weight-bold);
-        color: inherit;
-        text-align: left;
       }
 
       .icon {
@@ -100,9 +87,7 @@ export class AccordionItem extends LitElement {
       </button>
 
       <div id=${this.panelId} aria-hidden=${this.open ? 'false' : 'true'}>
-        <div>
-          <slot></slot>
-        </div>
+        <div><slot></slot></div>
       </div>
     `
   }

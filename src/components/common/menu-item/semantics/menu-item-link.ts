@@ -11,10 +11,11 @@ import {
   renderMenuItemContent,
   withMenuItemPresentation,
 } from '@/components/common/menu-item/menu-item.utils'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends withMenuItemPresentation(LitElement) {
-  static styles = [menuItemStyles]
+  static styles = [resetStyles, menuItemStyles]
 
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) href = ''

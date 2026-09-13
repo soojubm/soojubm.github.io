@@ -42,15 +42,6 @@ export class Paragraph extends LitElement {
       :host([centered]) {
         text-align: center;
       }
-
-      p {
-        margin: 0;
-        font-family: inherit;
-        font-size: inherit;
-        line-height: inherit;
-        font-weight: inherit;
-        color: inherit;
-      }
     `,
   ]
 

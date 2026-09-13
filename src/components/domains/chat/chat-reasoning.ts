@@ -3,7 +3,6 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import type { ChatReasoningFlow } from '@/components/domains/chat/chat-reasoning-flow'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/domains/chat/chat-reasoning-flow'
 import '@/components/common/text/text'
 
@@ -17,29 +16,26 @@ import '@/components/common/text/text'
  */
 @customElement('mm-chat-reasoning')
 export class ChatReasoning extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-      }
+  static styles = css`
+    :host {
+      display: block;
+    }
 
-      ::slotted(mm-chat-reasoning-flow) {
-        grid-area: 1 / 1;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateY(var(--space-1));
-        transition: opacity var(--transition-duration) var(--transition-easing),
-          transform var(--transition-duration) var(--transition-easing);
-      }
+    ::slotted(mm-chat-reasoning-flow) {
+      grid-area: 1 / 1;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(var(--space-1));
+      transition: opacity var(--transition-duration) var(--transition-easing),
+        transform var(--transition-duration) var(--transition-easing);
+    }
 
-      ::slotted(mm-chat-reasoning-flow[active]) {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateY(0);
-      }
-    `,
-  ]
+    ::slotted(mm-chat-reasoning-flow[active]) {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  `
 
   @property({ type: Boolean }) thinking = false
   @property({ type: String }) duration = ''

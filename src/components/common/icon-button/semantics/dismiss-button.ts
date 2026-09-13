@@ -4,6 +4,7 @@ import { customElement } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 배너, 알림, 토스트 등 비파괴적 해제 버튼.
@@ -15,6 +16,7 @@ export class DismissButton extends iconActionElement({
   ariaLabel: '닫기',
 }) {
   static styles = [
+    resetStyles,
     iconButtonStyles,
     css`
       :host {

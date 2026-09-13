@@ -7,6 +7,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 import type { ActionConfig } from '@/types'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { INPUT_TYPE_UNION } from '@/components/common/input/input'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './input.css'
@@ -146,7 +147,7 @@ const main = html`
 
     <mm-component-section
       heading="Date"
-      description="type=\"date\"는 네이티브 날짜 피커를 씁니다. 기간처럼 짝을 이루는 필드는 나란히 두고 각각 레이블을 답니다."
+      description="type='date'는 네이티브 날짜 피커를 씁니다. 기간처럼 짝을 이루는 필드는 나란히 두고 각각 레이블을 답니다."
     >
       <mm-flex>
         <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
@@ -164,9 +165,9 @@ const main = html`
     >
       <mm-flex align-items="flex-end">
         <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
-        <mm-icon name="xmark"></mm-icon>
+        <mm-icon name=${ICON_NAMES.CLOSE}></mm-icon>
         <mm-textfield label="Width" placeholder="x means"></mm-textfield>
-        <mm-icon name="xmark"></mm-icon>
+        <mm-icon name=${ICON_NAMES.CLOSE}></mm-icon>
         <mm-textfield label="Height" placeholder="cm"></mm-textfield>
       </mm-flex>
     </mm-component-section>
@@ -346,7 +347,7 @@ const main = html`
     <mm-component-section heading="iOS, Android 패턴">
       <form class="ios" style="max-width: var(--layout-width-narrow)">
         <label>
-          <mm-icon name="search"></mm-icon>
+          <mm-icon name=${ICON_NAMES.SEARCH}></mm-icon>
         </label>
         <input class="searchfield-input" type="search" placeholder="iOS pattern" />
         <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
@@ -354,7 +355,7 @@ const main = html`
       </form>
       <form style="max-width: var(--layout-width-narrow); position: relative">
         <div style="position: absolute; left: 0">
-          <mm-icon-button icon="arrow-left" aria-label="뒤로"></mm-icon-button>
+          <mm-icon-button icon=${ICON_NAMES.BACK} aria-label="뒤로"></mm-icon-button>
         </div>
         <input
           class="searchfield-input"
@@ -380,8 +381,8 @@ const main = html`
 
     <mm-component-section heading="Search Suggestion">
       <mm-menu-item-group aria-label="검색 제안">
-        <mm-menu-item-action icon="search" label="자동완성"></mm-menu-item-action>
-        <mm-menu-item-action icon="search" label="자동완성유아이"></mm-menu-item-action>
+        <mm-menu-item-action icon=${ICON_NAMES.SEARCH} label="자동완성"></mm-menu-item-action>
+        <mm-menu-item-action icon=${ICON_NAMES.SEARCH} label="자동완성유아이"></mm-menu-item-action>
       </mm-menu-item-group>
     </mm-component-section>
 

@@ -4,7 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import type { AriaBoolean } from '@/types'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/button/button'
 
@@ -14,23 +13,20 @@ import '@/components/common/button/button'
  */
 @customElement('mm-show-more-button')
 export class ShowMoreButton extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        justify-content: center;
-      }
+  static styles = css`
+    :host {
+      display: flex;
+      justify-content: center;
+    }
 
-      mm-icon {
-        transition: transform var(--transition-duration) var(--transition-easing);
-      }
+    mm-icon {
+      transition: transform var(--transition-duration) var(--transition-easing);
+    }
 
-      mm-button[aria-expanded='true'] mm-icon {
-        transform: rotate(180deg);
-      }
-    `,
-  ]
+    mm-button[aria-expanded='true'] mm-icon {
+      transform: rotate(180deg);
+    }
+  `
 
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'

@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/caption'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
-import { focusRingStyles } from '@/stylesheets/shared.styles'
+import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/avatar'
 
@@ -24,66 +24,68 @@ const defaultItems: BottomBarItem[] = [
 
 @customElement('mm-bottom-bar')
 export class BottomBar extends LitElement {
-  static styles = css`
-    :host {
-    }
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+      }
 
-    nav {
-      display: flex;
-      justify-content: space-around;
-      margin: var(--space-2);
-      border: var(--surface-base-border);
-      border-radius: var(--radius-large);
-      background: var(--surface-base-background-color);
-      box-shadow: var(--surface-base-shadow);
-      backdrop-filter: var(--surface-base-backdrop-filter);
-      -webkit-backdrop-filter: var(--surface-base-backdrop-filter);
-      position: relative;
-    }
+      nav {
+        display: flex;
+        justify-content: space-around;
+        margin: var(--space-2);
+        border: var(--surface-base-border);
+        border-radius: var(--radius-large);
+        background: var(--surface-base-background-color);
+        box-shadow: var(--surface-base-shadow);
+        backdrop-filter: var(--surface-base-backdrop-filter);
+        -webkit-backdrop-filter: var(--surface-base-backdrop-filter);
+        position: relative;
+      }
 
-    a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex: 1;
-      min-width: var(--size-48);
-      padding-bottom: var(--space-1);
-      border-radius: var(--radius);
-      color: var(--foreground-color);
-      text-decoration: none;
-      position: relative;
-      z-index: var(--material-zindex-raised);
-    }
+      a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+        min-width: var(--size-48);
+        padding-bottom: var(--space-1);
+        border-radius: var(--radius);
+        color: var(--foreground-color);
+        position: relative;
+        z-index: var(--material-zindex-raised);
+      }
 
-    a:focus-visible {
-      ${focusRingStyles};
-    }
+      a:focus-visible {
+        ${focusRingStyles};
+      }
 
-    a[aria-current='page'] {
-      color: var(--interaction-selected-foreground-color);
-    }
+      a[aria-current='page'] {
+        color: var(--interaction-selected-foreground-color);
+      }
 
-    a[aria-current='page'] mm-avatar {
-      --avatar-icon-color: var(--interaction-selected-foreground-color);
-    }
+      a[aria-current='page'] mm-avatar {
+        --avatar-icon-color: var(--interaction-selected-foreground-color);
+      }
 
-    a[aria-current='page'] mm-caption {
-      --foreground-subtle-color: var(--interaction-selected-foreground-color);
-    }
+      a[aria-current='page'] mm-caption {
+        --foreground-subtle-color: var(--interaction-selected-foreground-color);
+      }
 
-    .indicator {
-      width: 0;
-      border-radius: var(--radius-large);
-      background: var(--interaction-selected-background-color);
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      transform: translateX(0);
-      transition: transform var(--transition-duration) var(--transition-easing);
-      pointer-events: none;
-    }
-  `
+      .indicator {
+        width: 0;
+        border-radius: var(--radius-large);
+        background: var(--interaction-selected-background-color);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(0);
+        transition: transform var(--transition-duration) var(--transition-easing);
+        pointer-events: none;
+      }
+    `,
+  ]
 
   @property({ attribute: false }) items: BottomBarItem[] = defaultItems
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'

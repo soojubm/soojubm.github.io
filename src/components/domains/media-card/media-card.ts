@@ -1,7 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/surface/surface'
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/paragraph'
@@ -12,25 +11,22 @@ import '@/components/common/text/semantics/paragraph'
  */
 @customElement('mm-media-card')
 export class MediaCard extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-      }
+  static styles = css`
+    :host {
+      display: flex;
+    }
 
-      mm-surface {
-        gap: var(--space-1);
-      }
+    mm-surface {
+      gap: var(--space-1);
+    }
 
-      header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--space-2);
-      }
-    `,
-  ]
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+    }
+  `
 
   @property({ type: String }) title = ''
   @property({ type: String }) subtitle = ''

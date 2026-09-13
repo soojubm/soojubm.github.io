@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
@@ -18,25 +19,25 @@ const main = html`
 
         <mm-flex direction="column" gap="3">
           <mm-list-item
-            icon="check-circle"
+            icon=${ICON_NAMES.SUCCESS}
             size="small"
             label="Success"
             description="작업이 성공적으로 완료되었음을 나타냅니다."
           ></mm-list-item>
           <mm-list-item
-            icon="info-circle"
+            icon=${ICON_NAMES.INFO}
             size="small"
             label="Info"
             description="사용자에게 참고 가능한 보조 정보를 제공합니다."
           ></mm-list-item>
           <mm-list-item
-            icon="warning-triangle"
+            icon=${ICON_NAMES.WARNING}
             size="small"
             label="Warning"
             description="진행 전에 사용자의 주의가 필요한 상태입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="xmark-circle"
+            icon=${ICON_NAMES.FAILURE}
             size="small"
             label="Error"
             description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
@@ -53,31 +54,31 @@ const main = html`
 
         <mm-flex direction="column" gap="3">
           <mm-list-item
-            icon="circle"
+            icon=${ICON_NAMES.IDLE}
             size="small"
             label="Idle"
             description="아직 아무 요청도 하지 않은 대기·초기 상태입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="refresh"
+            icon=${ICON_NAMES.REFRESH}
             size="small"
             label="Pending / Fetching"
             description="데이터를 가져오는 중입니다. 스켈레톤이나 스피너를 노출합니다."
           ></mm-list-item>
           <mm-list-item
-            icon="check-circle"
+            icon=${ICON_NAMES.SUCCESS}
             size="small"
             label="Resolved / Success"
             description="데이터를 성공적으로 가져와 정상 UI를 노출합니다."
           ></mm-list-item>
           <mm-list-item
-            icon="xmark-circle"
+            icon=${ICON_NAMES.FAILURE}
             size="small"
             label="Rejected / Failed"
             description="데이터를 가져오는 데 실패해 에러 화면을 노출합니다."
           ></mm-list-item>
           <mm-list-item
-            icon="glass-empty"
+            icon=${ICON_NAMES.EMPTY}
             size="small"
             label="Empty"
             description="완료되었으나 데이터가 0건일 때 빈 화면을 노출합니다."

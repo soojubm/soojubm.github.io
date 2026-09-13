@@ -4,29 +4,25 @@ import { customElement, property, state } from 'lit/decorators.js'
 import '@/components/common/button/semantics/read-more-button'
 import '@/components/common/text/text'
 import { DisclosureController } from '@/controllers/disclosure-controller'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-read-more-paragraph')
 export class ReadMoreParagraph extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-      }
+  static styles = css`
+    :host {
+      display: block;
+    }
 
-      mm-read-more-button {
-        margin: 0;
-        margin-left: var(--space-1);
-      }
+    mm-read-more-button {
+      margin: 0;
+      margin-left: var(--space-1);
+    }
 
-      mm-text {
-        display: inline;
-      }
-    `,
-  ]
+    mm-text {
+      display: inline;
+    }
+  `
 
   @property({ type: String }) content = ''
   @property({ type: Number }) limit = 100

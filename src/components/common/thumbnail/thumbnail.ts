@@ -2,76 +2,71 @@ import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/caption'
-import { focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
+import { focusRingStyles, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-thumbnail')
 export class Thumbnail extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      width: 100%;
-      --thumbnail-border: var(--border-transparent);
-      --thumbnail-border-radius: var(--radius);
-      --thumbnail-background-color-empty: var(--background-subtle-color);
-    }
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+        width: 100%;
+        --thumbnail-border: var(--border-transparent);
+        --thumbnail-border-radius: var(--radius);
+        --thumbnail-background-color-empty: var(--background-subtle-color);
+      }
 
-    figure {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      width: 100%;
-      padding: 0;
-      margin: 0;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+      figure {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+        width: 100%;
+      }
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
 
-    ${interactiveElement}:hover .image-wrapper {
-      --thumbnail-border: var(--border);
-    }
-    /* a:focus-visible {
+      ${interactiveElement}:hover .image-wrapper {
+        --thumbnail-border: var(--border);
+      }
+      /* a:focus-visible {
       ${focusRingStyles}
     } */
 
-    .image-wrapper {
-      width: 100%;
-      position: relative;
-      aspect-ratio: 16 / 9;
-      border: var(--thumbnail-border);
-      border-radius: var(--thumbnail-border-radius);
-      background-color: var(--thumbnail-background-color-empty);
-      overflow: hidden;
-    }
+      .image-wrapper {
+        width: 100%;
+        position: relative;
+        aspect-ratio: 16 / 9;
+        border: var(--thumbnail-border);
+        border-radius: var(--thumbnail-border-radius);
+        background-color: var(--thumbnail-background-color-empty);
+        overflow: hidden;
+      }
 
-    :host([ratio='1:1']) .image-wrapper {
-      aspect-ratio: 1 / 1;
-    }
+      :host([ratio='1:1']) .image-wrapper {
+        aspect-ratio: 1 / 1;
+      }
 
-    :host([ratio='4:3']) .image-wrapper {
-      aspect-ratio: 4 / 3;
-    }
+      :host([ratio='4:3']) .image-wrapper {
+        aspect-ratio: 4 / 3;
+      }
 
-    :host([ratio='full']) .image-wrapper {
-      aspect-ratio: auto;
-    }
-    :host([ratio='full']) img {
-      height: auto;
-    }
+      :host([ratio='full']) .image-wrapper {
+        aspect-ratio: auto;
+      }
+      :host([ratio='full']) img {
+        height: auto;
+      }
 
-    a {
-      display: block;
-      width: 100%;
-      padding: 0;
-      text-decoration: none;
-      color: inherit;
-      cursor: pointer;
-      transition: all var(--transition-duration) var(--transition-easing);
-    }
-  `
+      a {
+        display: block;
+        width: 100%;
+        transition: all var(--transition-duration) var(--transition-easing);
+      }
+    `,
+  ]
 
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''

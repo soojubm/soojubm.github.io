@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon'
 
@@ -12,7 +13,7 @@ import '@/components/common/icon'
  */
 @customElement('mm-reveal-button')
 export class RevealButton extends LitElement {
-  static styles = [iconButtonStyles]
+  static styles = [resetStyles, iconButtonStyles]
 
   @property({ type: Boolean }) revealed = false
   @property({ type: Boolean }) disabled = false
@@ -26,7 +27,7 @@ export class RevealButton extends LitElement {
         ?disabled=${this.disabled}
         @click=${this.handleClick}
       >
-        <mm-icon name=${this.revealed ? ICON_NAMES.HIDE : ICON_NAMES.REVEAL}></mm-icon>
+        <mm-icon name=${this.revealed ? ICON_NAMES.HIDE : ICON_NAMES.VIEW}></mm-icon>
       </button>
     `
   }

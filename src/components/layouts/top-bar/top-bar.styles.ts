@@ -14,6 +14,8 @@ export const topBarStyles = css`
   }
 
   .trailing-area {
+    display: flex;
+    gap: var(--space-2);
     margin: 0 0 0 auto;
   }
 `

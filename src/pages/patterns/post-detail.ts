@@ -1,8 +1,9 @@
 import { html } from 'lit'
-import './post-detail.css'
 
 import type { ActionConfig } from '@/types'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import './post-detail.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const membershipAction: ActionConfig = { label: '멤버십 가입하기' }
@@ -100,7 +101,11 @@ const main = html`
     </mm-button-group>
     <mm-separator></mm-separator>
     <section>
-      <mm-menu-item-action label="192" roloe="button" icon="message"></mm-menu-item-action>
+      <mm-menu-item-action
+        label="192"
+        roloe="button"
+        icon=${ICON_NAMES.COMMENT}
+      ></mm-menu-item-action>
     </section>
     <mm-comment-input
       class="comment"
@@ -154,7 +159,7 @@ const main = html`
 
   <nav class="post-pagination" style="margin: 2rem 0">
     <a class="post-pagination-previous" href="post.html">
-      <mm-icon-button variant="secondary" icon="arrow-left"></mm-icon-button>
+      <mm-icon-button variant="secondary" icon=${ICON_NAMES.BACK}></mm-icon-button>
       <mm-text-block
         level="3"
         heading="Return to all articles"
@@ -162,7 +167,7 @@ const main = html`
       ></mm-text-block>
     </a>
     <a class="post-pagination-next" href="#">
-      <mm-icon-button variant="secondary" icon="arrow-right"></mm-icon-button>
+      <mm-icon-button variant="secondary" icon=${ICON_NAMES.FORWARD}></mm-icon-button>
       <mm-text-block
         level="3"
         heading="Avoid invisible text during font loading"

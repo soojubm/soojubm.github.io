@@ -1,7 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/text/semantics/heading'
 
 /**
@@ -11,20 +10,17 @@ import '@/components/common/text/semantics/heading'
  */
 @customElement('mm-content-section')
 export class ContentSection extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-      }
+  static styles = css`
+    :host {
+      display: block;
+    }
 
-      section {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-3);
-      }
-    `,
-  ]
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+  `
 
   @property({ type: String }) heading = ''
   @property({ type: Number, attribute: 'heading-level' }) headingLevel = 2

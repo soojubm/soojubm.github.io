@@ -2,7 +2,6 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
 import { renderChatMessageTime } from './chat.helpers'
@@ -12,20 +11,17 @@ import '@/components/common/button/button-group'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-      }
+  static styles = css`
+    :host {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
 
-      ::slotted(mm-ai-chat-bubble) {
-        align-self: flex-start;
-      }
-    `,
-  ]
+    ::slotted(mm-ai-chat-bubble) {
+      align-self: flex-start;
+    }
+  `
 
   @property({ type: String }) datetime = ''
   @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false

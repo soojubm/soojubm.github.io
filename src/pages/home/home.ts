@@ -150,13 +150,45 @@ const samplerSections: SamplerSection[] = [
 
 const samplerOptions = samplerSections.map(({ id, label }) => ({ value: id, label }))
 
+interface Thought {
+  heading: string
+  body: string
+}
+
+const designSystemThoughts: Thought[] = [
+  {
+    heading: '디자인 시스템도 린하게',
+    body: '제품은 린하게 만들면서 디자인 시스템은 왜 린하지 않은가. 디자인 시스템에 대해 더 적게 이야기하고, 디자인 토큰에 대해 더 많이 이야기하자. 디자인 시스템에 대한 이야기는 갖춰야 할 것의 목록으로 불어나지만, 토큰에 대한 이야기는 무엇을 한 곳에서 결정하고 바꿀지로 좁혀진다. 결정이 한 곳에 모이면 일관성은 저절로 따라온다.',
+  },
+  {
+    heading: '결정은 토큰에',
+    body: '디자인 토큰을 모든 플랫폼에 일관되게 적용한다는 것은 거대담론이다. 먼저 할 일은 변경하기 쉽게 정의하고 추상화하는 것이다. 제품이 린하게 동작할 수 있는 최소 기능과 최대 효율은 컴포넌트가 아니라 어쩌면 토큰에서 나온다.',
+  },
+  {
+    heading: '안정된 구조, 두렵지 않은 중복',
+    body: '변경이 쉽도록 구조는 안정되게 두고, 중복을 두려워하지 않는다.',
+  },
+  {
+    heading: '규칙은 기본값이다',
+    body: '우리가 해결하려는 궁극적인 문제는 유저 인터페이스가 아니다. 세부사항에 대한 논의를 줄이자면서 규칙을 깰 이유는 없다. 출시를 앞당기거나 성과를 측정할 수 있다면 깰 수 있고, 새로운 규칙은 언제든 실험할 수 있다. 판을 뒤흔들고 싶다면 설득은 프로덕트 디자이너의 몫이다.',
+  },
+  {
+    heading: '적게 디자인하기',
+    body: '기술의 한계를 받아들이고, 새로운 학습이 필요한 인터페이스를 최소화한다.',
+  },
+  {
+    heading: '문서보다 피드백',
+    body: '문서의 완결성에 집착하지 않는다. 대신 동료의 피드백을 잘 모은다.',
+  },
+]
+
 const main = html`
   <mm-page style="display: flex; flex-direction: column; gap: var(--space-section)">
     <mm-flex gap="8" direction="column">
       <mm-heading level="1">
-        디자인 시스템
+        Design System
         <br />
-        사이드 프로젝트
+        Side Project
       </mm-heading>
       <mm-text-list
         .texts=${['Web Component - Lit', 'Github Actions', 'Constraint-driven design']}
@@ -215,7 +247,19 @@ const main = html`
       </mm-surface>
     </div>
 
-    <mm-content-section heading="가이드를 위한 가이드">
+    <mm-content-section heading="디자인 시스템에 대한 생각">
+      <mm-paragraph>틀릴 수도 있지만 오랫동안 고민한 것들.</mm-paragraph>
+
+      ${designSystemThoughts.map(
+        ({ heading, body }) => html`
+          <mm-content-section heading-level="3" heading=${heading}>
+            <mm-paragraph>${body}</mm-paragraph>
+          </mm-content-section>
+        `,
+      )}
+    </mm-content-section>
+
+    <mm-content-section heading="Meta Guidelines">
       <mm-paragraph>
         모든 것을 문서화하지 않는다. 반복해서 참조되고 자주 수행하는 것만 문서로 남긴다.
       </mm-paragraph>

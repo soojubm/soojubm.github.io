@@ -8,6 +8,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -112,9 +113,9 @@ const main = html`
 
     <mm-component-example>
       <mm-button-group>
-        <mm-toggle-button value="bold" icon="bold" pressed>굵게</mm-toggle-button>
-        <mm-toggle-button value="italic" icon="italic">기울임</mm-toggle-button>
-        <mm-toggle-button value="underline" icon="underline">밑줄</mm-toggle-button>
+        <mm-toggle-button value="bold" icon=${ICON_NAMES.BOLD} pressed>굵게</mm-toggle-button>
+        <mm-toggle-button value="italic" icon=${ICON_NAMES.ITALIC}>기울임</mm-toggle-button>
+        <mm-toggle-button value="underline" icon=${ICON_NAMES.UNDERLINE}>밑줄</mm-toggle-button>
         <mm-toggle-button value="disabled" disabled>비활성</mm-toggle-button>
       </mm-button-group>
     </mm-component-example>

@@ -22,7 +22,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'width', type: 'string', optional: true },
   { name: 'padding', type: 'string', optional: true },
   { name: 'slot: trigger', type: 'HTMLElement' },
-  { name: 'popover-close', type: 'CustomEvent', kind: 'event' },
+  { name: 'popover-toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [

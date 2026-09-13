@@ -6,6 +6,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -105,7 +106,7 @@ const main = html`
           size="small"
           aria-label="이용약관 바로가기"
           href="#"
-          icon="arrow-up-right"
+          icon=${ICON_NAMES.SHARE}
         ></mm-icon-button>
 
         <mm-checkbox-group name="terms-detail">

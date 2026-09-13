@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './checkout.css'
 
@@ -168,7 +169,7 @@ const main = html`
             <!-- TODO 카드 정보(소유자·번호·유효기간·CVV·청구지)는 별도 화면에서 관리한다. -->
             <mm-list-item
               size="48"
-              icon="credit-card"
+              icon=${ICON_NAMES.CREDIT_CARD}
               label="VISA 1988 XXXX 1111"
               description="Expires on 10/23"
             >

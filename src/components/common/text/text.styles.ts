@@ -8,7 +8,8 @@ export type TextColor = 'inherit' | 'light' | 'danger'
 export type TextMaxLength = '' | '1' | '2' | '3'
 
 export const textMaxLengthStyles = css`
-  :host([max-length]) > * {
+  /* max-length는 reflect라 값이 없을 때도 attribute가 남는다. 값이 있을 때만 자른다. */
+  :host([max-length]:not([max-length=''])) > * {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -66,20 +67,4 @@ export const textStyles = css`
   }
 
   ${textMaxLengthStyles}
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    color: inherit;
-  }
 `

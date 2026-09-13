@@ -6,13 +6,14 @@ import type { AriaIdRef, AriaInvalid } from '@/types'
 
 import { inputStyles } from '@/components/common/input/input.styles'
 import { TextareaAutoHeightController } from '@/controllers/textarea-auto-height-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
 let uniqueIdCounter = 0
 
 @customElement('mm-textarea')
 export class Textarea extends LitElement {
-  static styles = inputStyles
+  static styles = [resetStyles, inputStyles]
 
   @property({ type: String, attribute: 'input-id' }) inputId = ''
   @property({ type: String }) value = ''

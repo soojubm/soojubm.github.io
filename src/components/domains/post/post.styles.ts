@@ -2,7 +2,7 @@ import { css } from 'lit'
 
 /**
  * post 계열이 공유하는 링크 표면. 글 카드 전체가 하나의 링크가 되므로
- * 색과 밑줄은 흐르는 값을 따르고, hover 배경은 레이아웃 박스를 밀지 않도록
+ * 색은 흐르는 값을 따르고, hover 배경은 레이아웃 박스를 밀지 않도록
  * inset된 ::before 레이어로 깐다. 여백은 소비처가 `--post-link-inset`으로 넓힌다.
  */
 export const postLinkStyles = css`
@@ -13,7 +13,6 @@ export const postLinkStyles = css`
     display: flex;
     border-radius: var(--radius);
     color: inherit;
-    text-decoration: none;
     position: relative;
     isolation: isolate;
   }

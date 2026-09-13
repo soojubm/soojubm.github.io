@@ -2,7 +2,6 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/marquee/marquee'
 import '@/components/common/surface/surface'
 import '@/components/common/text/text'
@@ -17,14 +16,11 @@ const METRICS = ['font-family', 'font-size', 'line-height'] as const
  */
 @customElement('mm-type-specimen')
 export class TypeSpecimen extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `
 
   private themeChange = new ThemeChangeController(this)
 

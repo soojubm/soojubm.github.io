@@ -1,8 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
-
 /**
  * 채팅 화면 레이아웃 컨테이너
  *
@@ -14,18 +12,15 @@ import { resetStyles } from '@/stylesheets/shared.styles'
  */
 @customElement('mm-chat-room')
 export class ChatRoom extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        overflow: hidden;
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+    }
+  `
 
   render() {
     return html`

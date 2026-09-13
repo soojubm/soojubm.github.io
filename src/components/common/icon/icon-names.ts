@@ -4,14 +4,15 @@
  * 새 아이콘을 맞는 카테고리에 넣으면 문서 페이지의 목록에도 함께 나온다.
  */
 export const ICON_CATALOG = {
-  Action: {
+  actions: {
     ADD: 'plus',
     ADD_CIRCLE: 'plus-circle-solid',
+    DISMISS: 'xmark',
     CLOSE: 'xmark',
+    CLEAR: 'xmark',
     COPY: 'copy',
     COPY_SUCCESS: 'check',
     DELETE: 'trash',
-    DISMISS: 'xmark',
     FILTER: 'filter',
     INCREASE: 'plus',
     IMPORT: 'import',
@@ -20,14 +21,17 @@ export const ICON_CATALOG = {
     DECREASE: 'minus',
     REFRESH: 'refresh',
     RETRY: 'refresh-double',
-    SEND: 'send-diagonal',
     SETTINGS: 'settings',
     SUBMIT: 'arrow-up',
     SHARE: 'arrow-up-right',
     CAMERA: 'camera',
+    HIDE: 'eye-closed',
+    VIEW: 'eye',
+    THUMBS_UP: 'thumbs-up',
+    DISLIKE: 'thumbs-down',
   },
 
-  Navigation: {
+  navigations: {
     BACK: 'arrow-left',
     COMPASS: 'compass',
     COLLAPSE: 'nav-arrow-up',
@@ -43,7 +47,9 @@ export const ICON_CATALOG = {
     SITEMAP: 'nav-arrow-right',
   },
 
-  Status: {
+  indicators: {},
+
+  status: {
     DANGER: 'warning-circle',
     DONE: 'check-circle-solid',
     INFO: 'info-circle',
@@ -53,7 +59,7 @@ export const ICON_CATALOG = {
     IDLE: 'circle',
   },
 
-  Selection: {
+  selection: {
     BOOKMARK: 'bookmark',
     BOOKMARK_SELECTED: 'bookmark-solid',
     CHECK: 'check',
@@ -64,41 +70,24 @@ export const ICON_CATALOG = {
     SELECTED: 'check-circle',
   },
 
-  Visibility: {
-    HIDE: 'eye-closed',
-    REVEAL: 'eye-solid',
-    VIEW: 'eye',
-    XRAY: 'xray-view',
+  brand: {
+    APPLE: 'apple',
+    FACEBOOK: 'facebook',
+    GITHUB: 'github',
+    GOOGLE: 'google',
+    INSTAGRAM: 'instagram',
+    PINTEREST: 'pinterest',
+    TWITTER: 'twitter',
   },
 
-  Communication: {
-    ANNOUNCEMENT: 'megaphone',
-    COMMENT: 'message',
-    DISLIKE: 'thumbs-down',
-    MAIL: 'mail',
-    MAIL_IN: 'mail-in',
-    NOTIFICATION: 'bell',
-    REPLY: 'reply-to-message',
-    THUMBS_UP: 'thumbs-up',
+  theme: {
+    DARK_MODE: 'half-moon',
+    LIGHT_MODE: 'sun-light',
+    PALETTE: 'palette',
+    THEME: 'color-filter',
   },
 
-  Form: {
-    DATE: 'calendar',
-    FIELD: 'input-field',
-    LOCK: 'lock',
-    SEARCH: 'search',
-    SUBTRACT: 'minus',
-  },
-
-  Layout: {
-    GRID_VIEW: 'view-grid',
-    HOME: 'air-conditioner',
-    HOME_PAGE: 'home-simple-door',
-    LIST_VIEW: 'table-rows',
-    SORT: 'arrow-separate-vertical',
-  },
-
-  Content: {
+  etc: {
     ARTICLE: 'book',
     BOLD: 'bold',
     BOOK: 'book',
@@ -114,82 +103,54 @@ export const ICON_CATALOG = {
     TASK_LIST: 'task-list',
     UNDERLINE: 'underline',
     VIDEO: 'media-video',
-  },
-
-  Product: {
     APP_WINDOW: 'app-window',
     BOX: 'box-iso',
     CREDIT_CARD: 'credit-card',
     CUBE_SCAN: 'cube-scan',
     DELIVERY: 'delivery-truck',
-    DATABASE_CREATE: 'database-script-plus',
     PIPE: 'pipe-3d',
-  },
-
-  People: {
     GROUP: 'group',
     PEOPLE_TAG: 'people-tag',
     PROFILE: 'profile-circle',
     USER: 'user',
     USER_BADGE_CHECK: 'user-badge-check',
-    USER_CIRCLE: 'user-circle',
-  },
-
-  Brand: {
-    APPLE: 'apple',
-    FACEBOOK: 'facebook',
-    GITHUB: 'github',
-    GOOGLE: 'google',
-    INSTAGRAM: 'instagram',
-    PINTEREST: 'pinterest',
-    TWITTER: 'twitter',
-  },
-
-  Theme: {
-    DARK_MODE: 'half-moon',
-    LIGHT_MODE: 'sun-light',
-    PALETTE: 'palette',
-    THEME: 'color-filter',
-  },
-
-  Affordance: {
     CLICK: 'cursor-pointer',
     HELP_CIRCLE: 'help-circle',
     MOUSE_BUTTON: 'mouse-button-left',
-    ON_TAG: 'on-tag',
     PLACE: 'city',
     SPARKS: 'sparks',
     WIFI: 'wifi',
-  },
-
-  'Project-specific': {
-    CONSTRAINED_SURFACE: 'constrained-surface',
     EMPTY: 'glass-empty',
     FIGMA: 'figma',
-    ARCHERY: 'archery',
-    COMPRESS: 'compress',
-    STATS_REPORT: 'stats-report',
-    RULER_COMBINE: 'ruler-combine',
-    COINS_SWAP: 'coins-swap',
+    XRAY: 'xray-view',
+    ANNOUNCEMENT: 'megaphone',
+    COMMENT: 'message',
+    MAIL: 'mail',
+    MAIL_IN: 'mail-in',
+    NOTIFICATION: 'bell',
+    REPLY: 'reply-to-message',
+    GRID_VIEW: 'view-grid',
+    HOME: 'air-conditioner',
+    HOME_PAGE: 'home-simple-door',
+    LIST_VIEW: 'table-rows',
+    SORT: 'arrow-separate-vertical',
+    DATE: 'calendar',
+    FIELD: 'input-field',
+    LOCK: 'lock',
+    SEARCH: 'search',
+    SUBTRACT: 'minus',
   },
 } as const
 
 export const ICON_NAMES = {
-  ...ICON_CATALOG.Action,
-  ...ICON_CATALOG.Navigation,
-  ...ICON_CATALOG.Status,
-  ...ICON_CATALOG.Selection,
-  ...ICON_CATALOG.Visibility,
-  ...ICON_CATALOG.Communication,
-  ...ICON_CATALOG.Form,
-  ...ICON_CATALOG.Layout,
-  ...ICON_CATALOG.Content,
-  ...ICON_CATALOG.Product,
-  ...ICON_CATALOG.People,
-  ...ICON_CATALOG.Brand,
-  ...ICON_CATALOG.Theme,
-  ...ICON_CATALOG.Affordance,
-  ...ICON_CATALOG['Project-specific'],
+  ...ICON_CATALOG.actions,
+  ...ICON_CATALOG.navigations,
+  ...ICON_CATALOG.indicators,
+  ...ICON_CATALOG.status,
+  ...ICON_CATALOG.selection,
+  ...ICON_CATALOG.brand,
+  ...ICON_CATALOG.theme,
+  ...ICON_CATALOG.etc,
 } as const
 
 export type IconName = typeof ICON_NAMES[keyof typeof ICON_NAMES]

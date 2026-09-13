@@ -1,7 +1,6 @@
 import { css } from 'lit'
 
 import { MEDIA } from '@/constants'
-import { resetStyles } from '@/stylesheets/shared.styles'
 
 export const componentContentFrameStyles = css`
   .component-content-frame {
@@ -34,7 +33,6 @@ export const componentContentFrameStyles = css`
 `
 
 export const componentExampleStyles = [
-  resetStyles,
   componentContentFrameStyles,
   css`
     :host {
@@ -51,7 +49,6 @@ export const componentExampleStyles = [
 ]
 
 export const componentPropsStyles = [
-  resetStyles,
   componentContentFrameStyles,
   css`
     :host {
@@ -92,7 +89,6 @@ export const componentPropsStyles = [
 ]
 
 export const tokenStyles = [
-  resetStyles,
   css`
     .token-row {
       display: flex;
@@ -114,7 +110,6 @@ export const componentTokensStyles = [
       gap: var(--space-1);
     }
   `,
-  resetStyles,
   componentContentFrameStyles,
   css`
     :host {

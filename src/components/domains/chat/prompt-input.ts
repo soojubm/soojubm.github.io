@@ -5,7 +5,9 @@ import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/icon-button/icon-button'
 import { inputStyles } from '@/components/common/input/input.styles'
 import '@/components/common/input/textarea'
-import '@/components/overlay/popover/semantics/select'
+import '@/components/common/menu-item/menu-item-group'
+import '@/components/common/menu-item/semantics/menu-item-action'
+import '@/components/overlay/popover/popover'
 import { emit } from '@/utils'
 import '@/components/domains/chat/model-selector'
 
@@ -118,16 +120,24 @@ export class PromptInput extends LitElement {
   private renderStartActions() {
     return html`
       <div class="actions">
-        <mm-select placement="top-left">
+        <mm-popover placement="top-left">
           <mm-icon-button
             slot="trigger"
             icon=${ICON_NAMES.ADD_CIRCLE}
             aria-label="이미지 첨부"
           ></mm-icon-button>
-          <option value="upload" icon=${ICON_NAMES.IMPORT}>이미지 업로드</option>
-          <option value="camera" icon=${ICON_NAMES.CAMERA}>카메라 촬영</option>
-          <option value="url" icon=${ICON_NAMES.LINK}>URL로 추가</option>
-        </mm-select>
+          <mm-menu-item-group>
+            <mm-menu-item-action
+              icon=${ICON_NAMES.IMPORT}
+              label="이미지 업로드"
+            ></mm-menu-item-action>
+            <mm-menu-item-action
+              icon=${ICON_NAMES.CAMERA}
+              label="카메라 촬영"
+            ></mm-menu-item-action>
+            <mm-menu-item-action icon=${ICON_NAMES.LINK} label="URL로 추가"></mm-menu-item-action>
+          </mm-menu-item-group>
+        </mm-popover>
         <slot name="leading-actions"></slot>
         <!-- <mm-model-selector></mm-model-selector> -->
       </div>

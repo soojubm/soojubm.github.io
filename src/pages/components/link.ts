@@ -5,6 +5,7 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -60,13 +61,13 @@ const main = html`
       <section>
         <mm-flex direction="column" gap="2">
           <mm-link-prompt
-            icon="pipe-3d"
+            icon=${ICON_NAMES.PIPE}
             message="궁금증이 해결되지 않는다면?"
             link-label="지금 문의하기"
             href="#"
           ></mm-link-prompt>
           <mm-link-prompt
-            icon="pipe-3d"
+            icon=${ICON_NAMES.PIPE}
             message="Something's not right?"
             link-label="Get in touch with us."
             href="#"

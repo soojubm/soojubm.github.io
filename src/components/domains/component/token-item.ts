@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { computedTokenValue } from '@/components/domains/component/token-values'
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/meta-item/meta-item'
 
 /**
@@ -12,17 +11,14 @@ import '@/components/common/meta-item/meta-item'
  */
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: inline-flex;
-        padding: var(--space-3) var(--space-4);
-        border: var(--border);
-        border-radius: var(--radius);
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      display: inline-flex;
+      padding: var(--space-3) var(--space-4);
+      border: var(--border);
+      border-radius: var(--radius);
+    }
+  `
 
   private themeChange = new ThemeChangeController(this)
 

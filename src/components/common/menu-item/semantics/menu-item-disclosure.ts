@@ -8,6 +8,7 @@ import {
   withMenuItemPresentation,
 } from '@/components/common/menu-item/menu-item.utils'
 import { DisclosureController } from '@/controllers/disclosure-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 
 /**
@@ -17,6 +18,7 @@ import { emit, uniqueId } from '@/utils'
 @customElement('mm-menu-item-disclosure')
 export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
   static styles = [
+    resetStyles,
     menuItemStyles,
     css`
       :host {

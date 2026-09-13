@@ -6,13 +6,14 @@ import type { AriaIdRef } from '@/types'
 
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/common/surface'
 import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
-  static styles = [visuallyHiddenInputStyles, checkboxStyles]
+  static styles = [resetStyles, visuallyHiddenInputStyles, checkboxStyles]
 
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ type: String, reflect: true }) size = 'large'

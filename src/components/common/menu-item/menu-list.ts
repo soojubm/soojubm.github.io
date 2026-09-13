@@ -6,7 +6,6 @@ import '@/components/common/menu-item/menu-item-group'
 import '@/components/common/text/semantics/heading'
 import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 
 /**
@@ -16,20 +15,17 @@ import { uniqueId } from '@/utils'
  */
 @customElement('mm-menu-list')
 export class MenuList extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-      }
+  static styles = css`
+    :host {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
 
-      mm-heading {
-        color: var(--foreground-subtle-color);
-      }
-    `,
-  ]
+    mm-heading {
+      color: var(--foreground-subtle-color);
+    }
+  `
 
   @property({ type: String }) heading = ''
   @property({ type: String }) size: MenuItemGroupSize = ''

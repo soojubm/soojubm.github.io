@@ -35,7 +35,6 @@ export class Popover extends LitElement {
     getTrigger: () => this.triggerElements[0],
     dismissOn: ['outside', 'escape'],
     hasPopup: () => this.getAttribute('role') ?? 'true',
-    onDismiss: () => emit(this, 'popover-close'),
   })
 
   render() {
@@ -50,6 +49,9 @@ export class Popover extends LitElement {
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
+    // 트리거가 자기 펼침 표시를 맞출 수 있게, 열고 닫힐 때마다 알린다.
+    if (changedProperties.get('open') !== undefined)
+      emit(this, 'popover-toggle', { open: this.open })
     if (changedProperties.has('width')) {
       if (this.width) this.style.setProperty('--overlay-panel-max-width', this.width)
       else this.style.removeProperty('--overlay-panel-max-width')

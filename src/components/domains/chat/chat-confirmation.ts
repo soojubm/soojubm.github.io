@@ -1,13 +1,10 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/button/button'
 import '@/components/common/button/button-group'
 import '@/components/common/notice/notice'
-import '@/components/common/text/text'
 import { emit } from '@/utils'
-import '@/components/common/text/semantics/paragraph'
 
 export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'
 
@@ -19,15 +16,12 @@ export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'
  */
 @customElement('mm-chat-confirmation')
 export class ChatConfirmation extends LitElement {
-  static styles = [
-    resetStyles,
-    css`
-      :host {
-        display: block;
-        max-width: min(85%, 480px);
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      display: block;
+      max-width: min(85%, 480px);
+    }
+  `
 
   @property({ type: String }) status: ConfirmationStatus = 'pending'
   @property({ type: String }) message = ''
@@ -48,8 +42,8 @@ export class ChatConfirmation extends LitElement {
     }
 
     return html`
-      <mm-notice heading="승인 요청">
-        <mm-paragraph>${this.renderMessage()}</mm-paragraph>
+      <mm-notice heading="승인 요청" description=${this.message}>
+        <slot></slot>
         <mm-button-group>
           <mm-button variant="tertiary" size="medium" @click=${this.handleRejectClick}>
             ${this.rejectLabel}
@@ -59,14 +53,6 @@ export class ChatConfirmation extends LitElement {
           </mm-button>
         </mm-button-group>
       </mm-notice>
-    `
-  }
-
-  private renderMessage() {
-    if (this.message) return this.message
-
-    return html`
-      <slot></slot>
     `
   }
 

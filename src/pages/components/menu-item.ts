@@ -6,6 +6,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -100,10 +101,14 @@ const main = html`
     <mm-component-example>
       <mm-flex direction="column">
         <mm-menu-item-group aria-label="기본 메뉴">
-          <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
-          <mm-menu-item-action icon="trash" label="삭제" tone="danger"></mm-menu-item-action>
+          <mm-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></mm-menu-item-action>
           <mm-menu-item-action
-            icon="log-out"
+            icon=${ICON_NAMES.DELETE}
+            label="삭제"
+            tone="danger"
+          ></mm-menu-item-action>
+          <mm-menu-item-action
+            icon=${ICON_NAMES.LOG_OUT}
             label="로그아웃 (비활성)"
             disabled
           ></mm-menu-item-action>
@@ -117,7 +122,7 @@ const main = html`
           ></mm-menu-item-action>
           <mm-menu-item-action
             size="48"
-            icon="group"
+            icon=${ICON_NAMES.GROUP}
             label="Frontend Group"
             description="프론트엔드 개발자 모임"
           ></mm-menu-item-action>
@@ -150,7 +155,7 @@ const main = html`
         { placement: 'block-end', offset: '3.75rem' },
       ]}
     >
-      <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
+      <mm-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></mm-menu-item-action>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -166,28 +171,40 @@ const main = html`
     <mm-component-section heading="MenuItemCheckboxGroup">
       <mm-menu-item-checkbox-group aria-label="알림 설정">
         <mm-menu-item-checkbox
-          icon="bell"
+          icon=${ICON_NAMES.NOTIFICATION}
           label="푸시 알림"
           value="push"
           checked
         ></mm-menu-item-checkbox>
         <mm-menu-item-checkbox
-          icon="mail"
+          icon=${ICON_NAMES.MAIL}
           label="이메일 알림"
           value="email"
           checked
         ></mm-menu-item-checkbox>
-        <mm-menu-item-checkbox icon="message" label="문자 알림" value="sms"></mm-menu-item-checkbox>
+        <mm-menu-item-checkbox
+          icon=${ICON_NAMES.COMMENT}
+          label="문자 알림"
+          value="sms"
+        ></mm-menu-item-checkbox>
       </mm-menu-item-checkbox-group>
     </mm-component-section>
 
     <mm-component-section heading="MenuItemRadioGroup">
       <mm-menu-item-radio-group name="theme" value="dark" aria-label="테마 선택">
-        <mm-menu-item-radio value="light" icon="sun-light" label="라이트 모드"></mm-menu-item-radio>
-        <mm-menu-item-radio value="dark" icon="half-moon" label="다크 모드"></mm-menu-item-radio>
+        <mm-menu-item-radio
+          value="light"
+          icon=${ICON_NAMES.LIGHT_MODE}
+          label="라이트 모드"
+        ></mm-menu-item-radio>
+        <mm-menu-item-radio
+          value="dark"
+          icon=${ICON_NAMES.DARK_MODE}
+          label="다크 모드"
+        ></mm-menu-item-radio>
         <mm-menu-item-radio
           value="system"
-          icon="settings"
+          icon=${ICON_NAMES.SETTINGS}
           label="시스템 설정 동기화"
         ></mm-menu-item-radio>
       </mm-menu-item-radio-group>
@@ -198,20 +215,20 @@ const main = html`
         <mm-menu-item-radio
           size="small"
           value="public"
-          icon="group"
+          icon=${ICON_NAMES.GROUP}
           label="전체공개"
           description="모든 사용자"
         ></mm-menu-item-radio>
         <mm-menu-item-radio
           size="small"
           value="friends"
-          icon="group"
+          icon=${ICON_NAMES.GROUP}
           label="친구만"
           description="회원님의 친구"
         ></mm-menu-item-radio>
         <mm-menu-item-radio
           size="small"
-          icon="lock"
+          icon=${ICON_NAMES.LOCK}
           label="나만 보기"
           description="부끄러우니까 보지마요"
           value="private"
@@ -220,14 +237,14 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="MenuItemRadioSwitch">
-      <mm-menu-item-switch icon="wifi" label="Wi-Fi" value="wifi"></mm-menu-item-switch>
+      <mm-menu-item-switch icon=${ICON_NAMES.WIFI} label="Wi-Fi" value="wifi"></mm-menu-item-switch>
     </mm-component-section>
 
     <mm-component-section heading="MenuItemLink">
       <mm-menu-item-group size="large">
         <mm-menu-item-link
           size="small"
-          icon="app-window"
+          icon=${ICON_NAMES.APP_WINDOW}
           label="수줍이 앱"
           target="_self"
           description="앱에서 게시물을 엽니다."
@@ -236,14 +253,14 @@ const main = html`
         </mm-menu-item-link>
         <mm-menu-item-link
           size="small"
-          icon="open-in-browser"
+          icon=${ICON_NAMES.OPEN_EXTERNAL}
           label="MDN Web Docs"
           href="https://developer.mozilla.org"
           description="외부 링크"
         ></mm-menu-item-link>
         <mm-menu-item-link
           size="small"
-          icon="github"
+          icon=${ICON_NAMES.GITHUB}
           label="GitHub"
           href="https://github.com"
           description="외부 링크"
@@ -256,7 +273,7 @@ const main = html`
       description="하위 항목을 접었다 펴는 부모 메뉴 항목입니다. 트리거는 role=menuitem, 펼쳐지는 패널은 role=menu이며 열림 상태를 스스로 소유합니다."
     >
       <mm-menu-item-group size="large">
-        <mm-menu-item-disclosure icon="palette" label="Foundations" open>
+        <mm-menu-item-disclosure icon=${ICON_NAMES.PALETTE} label="Foundations" open>
           <mm-menu-item-link
             emoji="#"
             label="Interaction"
@@ -281,14 +298,14 @@ const main = html`
     >
       <mm-menu-item-group size="large" aria-label="설정 메뉴">
         <mm-setting-item
-          icon="code"
+          icon=${ICON_NAMES.CODE}
           label="철저한 코드 리뷰"
           description="추가 발견 사항을 계속 찾도록 합니다."
         >
           <mm-switch slot="action" checked></mm-switch>
         </mm-setting-item>
         <mm-setting-item
-          icon="half-moon"
+          icon=${ICON_NAMES.DARK_MODE}
           label="다크 모드"
           description="어두운 배경 테마를 사용합니다."
         >

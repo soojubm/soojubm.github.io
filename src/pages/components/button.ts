@@ -7,6 +7,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component/
 import type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -189,14 +190,14 @@ const main = html`
         '아이콘 — 레이블을 보조하는 선택적 메타포(icon).',
         '레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트.',
       ]}
-      .code=${'<mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>'}
+      .code=${'<mm-button variant="primary" size="large" icon="arrow-up">보내기</mm-button>'}
       .markers=${[
         { placement: 'inline-start' },
         { placement: 'block-end', offset: '1.75rem' },
         { placement: 'block-end', offset: 'calc(100% - 1.5rem)' },
       ]}
     >
-      <mm-button variant="primary" size="large" icon="send-diagonal">보내기</mm-button>
+      <mm-button variant="primary" size="large" icon=${ICON_NAMES.SUBMIT}>보내기</mm-button>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -242,10 +243,10 @@ const main = html`
 
     <mm-component-section heading="ViewMoreButton" description="TODO define expandable indicator">
       <mm-button-group>
-        <mm-button variant="ghost" icon="nav-arrow-down" icon-position="trailing">
+        <mm-button variant="ghost" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
           View More
         </mm-button>
-        <mm-button variant="ghost" icon="nav-arrow-up" icon-position="trailing">
+        <mm-button variant="ghost" icon=${ICON_NAMES.COLLAPSE} icon-position="trailing">
           View Less
         </mm-button>
       </mm-button-group>

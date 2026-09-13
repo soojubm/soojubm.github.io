@@ -7,10 +7,11 @@ import {
   iconButtonStyles,
 } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-to-top-button')
 export class ToTopButton extends LitElement {
-  static styles = [iconButtonStyles, iconButtonSecondarySkinStyles]
+  static styles = [resetStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
 
   render() {
     return renderIconAction({

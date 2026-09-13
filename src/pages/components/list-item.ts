@@ -7,6 +7,7 @@ import type { ComponentRelatedItemData } from '@/components/domains/component/co
 import type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'
 
 import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -168,7 +169,7 @@ const main = html`
           label="알 수 없는 사용자"
           description="아바타 이미지가 없을 때"
           avatar-variant="secondary"
-          icon="user"
+          icon=${ICON_NAMES.USER}
         >
           <mm-tag slot="trailing">테스트용 태그</mm-tag>
         </mm-user-row>
@@ -176,21 +177,12 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="OrderProductItem" description="커머스 맥락">
-      <mm-flex direction="column" gap="2">
-        <mm-order-product-item
-          image-src="/src/images/newneek-book.png"
-          name="뉴닉이 풀어 쓴 경제상식사전"
-          option="평생 소장"
-          price="₩ 11,900"
-        ></mm-order-product-item>
-        <mm-separator></mm-separator>
-        <mm-order-product-item
-          image-src="/src/images/cake_gosum.jpg"
-          name="폰타나 베네치아 로스티드 쉬림프 크림"
-          option="Brown, 3개"
-          price="₩ 22,500"
-        ></mm-order-product-item>
-      </mm-flex>
+      <mm-order-product-item
+        image-src="/src/images/cake_gosum.jpg"
+        name="뉴닉이 풀어 쓴 경제상식사전"
+        option="평생 소장"
+        price="₩ 11,900"
+      ></mm-order-product-item>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

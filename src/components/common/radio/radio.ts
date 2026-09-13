@@ -5,12 +5,13 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { radioStyles } from '@/components/common/radio/radio.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-radio')
 export class Radio extends LitElement {
-  static styles = [visuallyHiddenInputStyles, radioStyles]
+  static styles = [resetStyles, visuallyHiddenInputStyles, radioStyles]
 
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''

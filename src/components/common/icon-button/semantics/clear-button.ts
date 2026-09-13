@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * 입력값을 비우는 버튼. 입력 필드 안에 놓이므로 아이콘 버튼 중 가장 작은 크기를 쓴다.
@@ -11,6 +12,7 @@ import { renderIconAction } from '@/components/common/icon-button/icon-button.ut
 @customElement('mm-clear-button')
 export class ClearButton extends LitElement {
   static styles = [
+    resetStyles,
     iconButtonStyles,
     css`
       :host {

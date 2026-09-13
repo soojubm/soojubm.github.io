@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
@@ -35,20 +36,20 @@ const main = html`
                   href="https://www.figma.com/blog/how-figmas-design-system-scales/"
                   heading="How Figma's Design System Scales"
                   description="Figma 팀이 토큰 구조를 어떻게 계층화했는지 설명하는 공식 블로그 포스트입니다."
-                  icon="figma"
+                  icon=${ICON_NAMES.FIGMA}
                 ></mm-chat-source>
                 <mm-chat-source
                   href="https://atlassian.design/foundations/design-tokens"
                   heading="Design Tokens – Atlassian Design System"
                   description="Atlassian이 글로벌·앨리어스·컴포넌트 토큰을 어떻게 분리했는지 다룹니다."
-                  icon="book"
+                  icon=${ICON_NAMES.BOOK}
                 ></mm-chat-source>
                 <mm-chat-source
                   href="https://github.com/amzn/style-dictionary"
                   heading="Style Dictionary – Amazon"
                   description="토큰을 플랫폼별 변수로 변환하는 오픈소스 빌드 시스템입니다."
                   label="GitHub"
-                  icon="github"
+                  icon=${ICON_NAMES.GITHUB}
                 ></mm-chat-source>
               </mm-chat-source-group>
             </mm-ai-chat-message>
@@ -77,7 +78,7 @@ const main = html`
 
               <mm-surface variant="elevated" density="compact">
                 <mm-menu-item-action
-                  icon="page"
+                  icon=${ICON_NAMES.DOCUMENT}
                   label="design-tokens.md"
                   description="정리 완료 · 12KB"
                 >
@@ -132,7 +133,7 @@ const main = html`
             <span aria-hidden="true">👍</span>
           </mm-chat-suggestion>
           <mm-chat-suggestion>다시 설명해 주세요</mm-chat-suggestion>
-          <mm-chat-suggestion icon="calendar">일정 잡기</mm-chat-suggestion>
+          <mm-chat-suggestion icon=${ICON_NAMES.DATE}>일정 잡기</mm-chat-suggestion>
           <mm-chat-suggestion>나중에 할게요</mm-chat-suggestion>
         </mm-chat-suggestions>
         <mm-prompt-input

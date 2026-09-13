@@ -3,6 +3,7 @@ import { html } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './interaction.css'
 
@@ -273,19 +274,19 @@ const main = html`
         </mm-paragraph>
         <mm-flex direction="column" gap="3">
           <mm-list-item
-            icon="cursor-pointer"
+            icon=${ICON_NAMES.CLICK}
             size="small"
             label="Hover"
             description="포인터가 올라와 있다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="cube-scan"
+            icon=${ICON_NAMES.CUBE_SCAN}
             size="small"
             label="Focus"
             description="키보드가 지금 이 요소에 있다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="mouse-button-left"
+            icon=${ICON_NAMES.MOUSE_BUTTON}
             size="small"
             label="Active"
             description="지금 누르고 있다는 표시입니다."
@@ -297,13 +298,13 @@ const main = html`
             description="그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="check"
+            icon=${ICON_NAMES.CHECK}
             size="small"
             label="Checked"
             description="컨트롤의 on/off 값이 켜져 있다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="check-circle"
+            icon=${ICON_NAMES.SELECTED}
             size="small"
             label="Selected"
             description="목록에서 고른 항목이라는 표시입니다."
@@ -315,19 +316,19 @@ const main = html`
             description="내비게이션에서 지금 위치한 곳이라는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="nav-arrow-down"
+            icon=${ICON_NAMES.EXPAND}
             size="small"
             label="Expanded"
             description="토글 대상이 펼쳐져 있다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="warning-triangle"
+            icon=${ICON_NAMES.WARNING}
             size="small"
             label="Invalid"
             description="입력값이 유효하지 않다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="lock"
+            icon=${ICON_NAMES.LOCK}
             size="small"
             label="Disabled"
             description="지금은 조작을 받지 않는다는 표시입니다."
@@ -339,7 +340,7 @@ const main = html`
             description="disabled와 달리 이동·낭독은 되고 수정만 막힌다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="refresh"
+            icon=${ICON_NAMES.REFRESH}
             size="small"
             label="진행 중"
             description="결과가 올 때까지 다시 실행할 수 없다는 표시입니다."

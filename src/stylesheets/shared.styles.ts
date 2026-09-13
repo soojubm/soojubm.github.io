@@ -36,6 +36,51 @@ export const resetStyles = css`
     margin: 0;
     padding: 0;
   }
+
+  /* reset.css의 문서 본문용 목록 간격은 컴포넌트 안에서 되돌린다. 선택자 명시도를 맞춘다. */
+  ul li:not(:first-child) {
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font: inherit;
+  }
+
+  input,
+  textarea {
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+  }
+
+  input:is([type='text'], [type='search'], [type='password'], [type='date'], [type='number']),
+  textarea {
+    -webkit-appearance: none;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  input::-webkit-search-decoration,
+  input::-webkit-search-cancel-button,
+  input::-webkit-search-results-button,
+  input::-webkit-search-results-decoration {
+    display: none;
+  }
 `
 
 /**

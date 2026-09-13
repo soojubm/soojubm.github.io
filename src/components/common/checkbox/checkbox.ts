@@ -5,12 +5,13 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {
-  static styles = [visuallyHiddenInputStyles, checkboxStyles]
+  static styles = [resetStyles, visuallyHiddenInputStyles, checkboxStyles]
 
   @property({ type: String })
   name?: string

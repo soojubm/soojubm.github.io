@@ -9,12 +9,13 @@ import {
   SelectionGroupController,
   selectionItemValue,
 } from '@/controllers/selection-group-controller'
+import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/text'
 
 @customElement('mm-checkbox-group')
 export class CheckboxGroup extends LitElement {
-  static styles = [checkboxGroupStyles]
+  static styles = [resetStyles, checkboxGroupStyles]
 
   @property({ type: String }) name?: string
   @property({ type: String }) legend?: string
