@@ -99,7 +99,7 @@
   border-bottom: 2px solid var(--foreground-color);
   background: var(--background-color);
   position: relative;
-  z-index: var(--material-zindex-raised);
+  z-index: var(--material-zindex-elevated);
 }
 
 .home-mangrove:hover .mangrove1 {

@@ -144,7 +144,7 @@ const main = html`
         <mm-flex direction="column" gap="3">
           <mm-list-item
             size="small"
-            label="base · raised"
+            label="base · elevated"
             description="문서·리스트·카드처럼 본문 안에서 쌓이는 요소."
           ></mm-list-item>
           <mm-list-item

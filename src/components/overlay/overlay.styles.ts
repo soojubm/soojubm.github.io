@@ -34,9 +34,9 @@ export const overlaySurfaceStyles = css`
     gap: var(--overlay-panel-padding-block);
     padding: var(--overlay-panel-padding-block) var(--overlay-panel-padding-inline);
 
-    border: var(--surface-overlay-border);
+    border: var(--material-overlay-border);
     border-radius: var(--overlay-panel-border-radius);
-    box-shadow: var(--surface-overlay-shadow);
+    box-shadow: var(--material-overlay-shadow);
     background: var(--background-color);
     box-sizing: border-box;
     overflow: hidden;
@@ -47,9 +47,9 @@ export const overlaySurfaceStyles = css`
   .panel::before {
     content: '';
     border-radius: inherit;
-    background: var(--surface-overlay-background-color);
-    backdrop-filter: var(--surface-overlay-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-overlay-backdrop-filter);
+    background: var(--material-overlay-background-color);
+    backdrop-filter: var(--material-overlay-backdrop-filter);
+    -webkit-backdrop-filter: var(--material-overlay-backdrop-filter);
     position: absolute;
     inset: 0;
     z-index: -1;
@@ -271,7 +271,7 @@ export const sheetDragHandleStyles = css`
     position: absolute;
     top: 0;
     left: 50%;
-    z-index: var(--material-zindex-raised);
+    z-index: var(--material-zindex-elevated);
     transform: translateX(-50%);
   }
 
@@ -306,8 +306,8 @@ export const sheetHeaderStyles = css`
 
   :host::before {
     content: '';
-    background: var(--surface-overlay-background-color);
-    backdrop-filter: var(--surface-overlay-backdrop-filter);
+    background: var(--material-overlay-background-color);
+    backdrop-filter: var(--material-overlay-backdrop-filter);
     position: absolute;
     inset: 0;
     z-index: -1;
@@ -390,7 +390,7 @@ export const tooltipStyles = css`
     --tooltip-border-radius: var(--radius);
     --tooltip-background-color: var(--background-strong-color);
     --tooltip-text-color: var(--background-color);
-    --tooltip-shadow: var(--surface-base-shadow);
+    --tooltip-shadow: var(--material-base-shadow);
   }
 
   :host([open]) [role='tooltip'] {

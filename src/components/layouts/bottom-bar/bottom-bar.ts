@@ -34,12 +34,12 @@ export class BottomBar extends LitElement {
         display: flex;
         justify-content: space-around;
         margin: var(--space-2);
-        border: var(--surface-base-border);
+        border: var(--material-base-border);
         border-radius: var(--radius-large);
-        background: var(--surface-base-background-color);
-        box-shadow: var(--surface-base-shadow);
-        backdrop-filter: var(--surface-base-backdrop-filter);
-        -webkit-backdrop-filter: var(--surface-base-backdrop-filter);
+        background: var(--material-base-background-color);
+        box-shadow: var(--material-base-shadow);
+        backdrop-filter: var(--material-base-backdrop-filter);
+        -webkit-backdrop-filter: var(--material-base-backdrop-filter);
         position: relative;
       }
 
@@ -53,7 +53,7 @@ export class BottomBar extends LitElement {
         border-radius: var(--radius);
         color: var(--foreground-color);
         position: relative;
-        z-index: var(--material-zindex-raised);
+        z-index: var(--material-zindex-elevated);
       }
 
       a:focus-visible {

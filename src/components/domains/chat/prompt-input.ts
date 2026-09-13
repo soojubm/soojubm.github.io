@@ -19,13 +19,13 @@ export class PromptInput extends LitElement {
       :host {
         display: block;
         padding-inline: var(--space-2);
-        background: var(--surface-chrome-background-color);
-        border: var(--surface-chrome-border);
+        background: var(--material-chrome-background-color);
+        border: var(--material-chrome-border);
         border-radius: var(--radius);
-        box-shadow: var(--surface-chrome-shadow);
+        box-shadow: var(--material-chrome-shadow);
 
-        backdrop-filter: var(--surface-chrome-backdrop-filter);
-        -webkit-backdrop-filter: var(--surface-chrome-backdrop-filter);
+        backdrop-filter: var(--material-chrome-backdrop-filter);
+        -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
       }
 
       form {

@@ -44,7 +44,7 @@ export class PortfolioItem extends LitElement {
     .badge,
     .action {
       position: absolute;
-      z-index: var(--material-zindex-raised);
+      z-index: var(--material-zindex-elevated);
     }
 
     .badge {

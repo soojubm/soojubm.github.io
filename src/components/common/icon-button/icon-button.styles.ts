@@ -11,9 +11,9 @@ const iconButtonVariantTokens = {
   secondary: {
     '--icon-button-border-radius': 'var(--radius-full)',
     '--icon-button-border': 'var(--border)',
-    '--icon-button-background-color': 'var(--surface-base-background-color)',
-    '--icon-button-backdrop-filter': 'var(--surface-base-backdrop-filter)',
-    '--icon-button-shadow': 'var(--surface-base-shadow)',
+    '--icon-button-background-color': 'var(--material-base-background-color)',
+    '--icon-button-backdrop-filter': 'var(--material-base-backdrop-filter)',
+    '--icon-button-shadow': 'var(--material-base-shadow)',
   },
   ghost: {
     '--icon-button-background-color': 'transparent',
@@ -32,9 +32,9 @@ export const iconButtonSecondarySkinStyles = css`
   :host {
     --icon-button-border-radius: var(--radius-full);
     --icon-button-border: var(--border);
-    --icon-button-background-color: var(--surface-base-background-color);
-    --icon-button-backdrop-filter: var(--surface-base-backdrop-filter);
-    --icon-button-shadow: var(--surface-base-shadow);
+    --icon-button-background-color: var(--material-base-background-color);
+    --icon-button-backdrop-filter: var(--material-base-backdrop-filter);
+    --icon-button-shadow: var(--material-base-shadow);
   }
 `
 

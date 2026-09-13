@@ -13,7 +13,7 @@ export class Tab extends LitElement {
       position: relative;
       display: inline-flex;
       z-index: var(
-        --material-zindex-raised
+        --material-zindex-elevated
       ); /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
 
       --tab-height: var(--size-32);

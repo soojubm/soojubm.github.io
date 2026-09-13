@@ -2,7 +2,7 @@ import { html, nothing } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 
-import { rootTokenNames } from '@/components/domains/component/token-values'
+import { referencesOtherTokens, rootTokenNames } from '@/components/domains/component/token-values'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './tokens.css'
 
@@ -48,12 +48,14 @@ const sectionPatterns = {
   size: /^size-/,
   space: /^space-/,
   layout: /^(navbar-height$|layout-)/,
+  borderColor: /^border-(.+-)?color$/,
   border: /^border/,
   radius: /^radius/,
-  shadow: /(^shadow-|-shadow$)/,
-  material: /-(blur|opacity)$/,
-  surface: /^surface-/,
+  shadow: /^shadow-/,
+  blur: /^blur-/,
+  opacity: /^opacity-/,
   zIndex: /^material-zindex-/,
+  material: /^material-/,
   transition: /^(transition-|animation-delay-)/,
   palette: /^(gray|green|red|yellow|orange|blue)\d+$/,
   background: /^background-/,
@@ -186,15 +188,44 @@ const renderBackgroundTokens = (names: string[]) =>
 /** 음수 토큰은 폭으로 그릴 수 없어 스테이지에서 뺀다. 목록 끝에 있으므로 번호는 그대로 맞는다. */
 const spaceStageTokens = sectionTokens('space').filter(name => !name.endsWith('-minus'))
 
-// 티어가 둘뿐이라 토큰 이름을 조립하지 않고 그대로 적는다. 이름이 소스에 남아야 쓰임이 보인다.
-const blurSwatches = [
-  `background: rgb(255 255 255 / var(--surface-chrome-opacity));
-   backdrop-filter: blur(var(--surface-chrome-blur));
-   -webkit-backdrop-filter: blur(var(--surface-chrome-blur))`,
-  `background: rgb(255 255 255 / var(--surface-overlay-opacity));
-   backdrop-filter: blur(var(--surface-overlay-blur));
-   -webkit-backdrop-filter: blur(var(--surface-overlay-blur))`,
+const blurSwatches = (tokens: string[]) =>
+  tokens.map(
+    token =>
+      `background: transparent; backdrop-filter: blur(var(--${token})); -webkit-backdrop-filter: blur(var(--${token}))`,
+  )
+
+const opacitySwatches = (tokens: string[]) =>
+  tokens.map(
+    token => `background: color-mix(in srgb, var(--background-color) var(--${token}), transparent)`,
+  )
+
+/**
+ * 티어 스와치가 그리는 속성과 그 값을 담은 티어 토큰의 접미사.
+ * 티어가 선언하지 않은 속성은 base 값을 따르므로, 그림자만 가진 elevated도 온전한 면으로 그려진다.
+ */
+const MATERIAL_PROPERTIES = [
+  ['background', 'background-color'],
+  ['border', 'border'],
+  ['backdrop-filter', 'backdrop-filter'],
+  ['-webkit-backdrop-filter', 'backdrop-filter'],
+  ['box-shadow', 'shadow'],
 ]
+
+const materialSwatch = (tier: string, tokens: string[]) =>
+  MATERIAL_PROPERTIES.map(([property, suffix]) => {
+    const token = `material-${tier}-${suffix}`
+    return `${property}: var(--${tokens.includes(token) ? token : `material-base-${suffix}`})`
+  }).join('; ')
+
+/** 티어 이름은 토큰 이름에서 뽑아 선언 순서대로 늘어놓는다. 티어가 늘면 스테이지도 따라 는다. */
+const renderMaterialStage = (tokens: string[]) =>
+  [...new Set(tokens.map(token => token.split('-')[1]))].map(
+    tier => html`
+      <div class="material-swatch" style=${materialSwatch(tier, tokens)}>
+        <mm-caption>${tier}</mm-caption>
+      </div>
+    `,
+  )
 
 /**
  * 경계의 역할별 변형. border-color·border-width는 조립 재료라 혼자서는 그릴 수 없어
@@ -292,13 +323,18 @@ const main = html`
 
       <mm-token-section
         heading="Color"
-        description="원시 팔레트에 그 색을 참조하는 시맨틱 토큰을 태그로 붙입니다. background 역할 토큰은 대비쌍을 얹어 명도 대비를 함께 확인합니다."
+        description="원시 팔레트에는 그 색으로 상태를 표현하는 역할 토큰을 태그로 붙입니다. background 역할 토큰은 대비쌍을 얹어 명도 대비를 함께 확인합니다."
       >
         <mm-grid columns="6">${renderColorTokens(sectionTokens('palette'))}</mm-grid>
 
         <mm-separator variant="section"></mm-separator>
         <mm-grid columns="4" aria-label="background color tokens">
           ${renderBackgroundTokens(sectionTokens('background'))}
+        </mm-grid>
+
+        <mm-separator variant="section"></mm-separator>
+        <mm-grid columns="4" aria-label="border color tokens">
+          ${renderColorTokens(sectionTokens('borderColor'))}
         </mm-grid>
       </mm-token-section>
 
@@ -340,32 +376,38 @@ const main = html`
         heading="Layout"
         description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
       >
-        <mm-token-group>${renderTokenItems(sectionTokens('layout'))}</mm-token-group>
+        <mm-token-group aria-label="layout primitive tokens">
+          ${renderTokenItems(sectionTokens('layout').filter(name => !referencesOtherTokens(name)))}
+        </mm-token-group>
+
+        <mm-separator variant="section"></mm-separator>
+        <mm-token-group aria-label="layout component and semantic tokens">
+          ${renderTokenItems(sectionTokens('layout').filter(referencesOtherTokens))}
+        </mm-token-group>
       </mm-token-section>
 
       <mm-token-section
         heading="Border"
-        description="테두리는 표면의 경계와 클릭 가능성을 표현합니다."
+        description="테두리는 표면의 경계를 긋고, 모서리 곡률은 그 경계의 성격과 위계를 구분합니다."
       >
         <mm-token-stage>
           <mm-flex align-items="flex-end" gap="4">${renderStage(borderSwatches)}</mm-flex>
         </mm-token-stage>
-        <mm-token-group>${renderTokenItems(sectionTokens('border'))}</mm-token-group>
-      </mm-token-section>
+        <mm-token-group aria-label="border tokens">
+          ${renderTokenItems(sectionTokens('border'))}
+        </mm-token-group>
 
-      <mm-token-section
-        heading="Radius"
-        description="모서리 곡률은 요소의 성격과 위계를 시각적으로 구분합니다."
-      >
         <mm-token-stage>
           <mm-flex align-items="flex-end" gap="4">${renderStage(radiusSwatches)}</mm-flex>
         </mm-token-stage>
-        <mm-token-group>${renderTokenItems(sectionTokens('radius'))}</mm-token-group>
+        <mm-token-group aria-label="radius tokens">
+          ${renderTokenItems(sectionTokens('radius'))}
+        </mm-token-group>
       </mm-token-section>
 
       <mm-token-section
-        heading="Shadow"
-        description="그림자는 레이어의 고도와 부유감을 표현합니다."
+        heading="Material"
+        description="재질은 표면이 뒤 배경에서 떠 보이는 정도입니다. 원시값은 값의 종류와 크기로 이름 짓고, 소비처는 원시값을 색 토큰과 조합한 티어를 씁니다. 티어가 선언하지 않은 속성은 base를 따릅니다."
       >
         <mm-token-stage>
           <mm-flex align-items="flex-end" gap="4">
@@ -375,28 +417,26 @@ const main = html`
         <mm-token-group aria-label="shadow primitive tokens">
           ${renderTokenItems(sectionTokens('shadow'))}
         </mm-token-group>
-      </mm-token-section>
 
-      <mm-token-section
-        heading="Blur &amp; Opacity"
-        description="material은 뒤 배경을 얼마나 흐리고 덮을지 정하는 blur·opacity 쌍입니다. 단계가 오를수록 더 흐리고 더 불투명해집니다."
-      >
         <mm-token-stage>
-          <div class="blur-stage">
-            <mm-flex gap="4">${renderStage(blurSwatches)}</mm-flex>
+          <div class="material-stage">
+            <mm-flex gap="4">
+              ${renderStage([
+                ...blurSwatches(sectionTokens('blur')),
+                ...opacitySwatches(sectionTokens('opacity')),
+              ])}
+            </mm-flex>
           </div>
         </mm-token-stage>
-        <mm-token-group aria-label="material primitive tokens">
-          ${renderTokenItems(sectionTokens('material'))}
+        <mm-token-group aria-label="blur and opacity primitive tokens">
+          ${renderTokenItems([...sectionTokens('blur'), ...sectionTokens('opacity')])}
         </mm-token-group>
-      </mm-token-section>
 
-      <mm-token-section
-        heading="Surface"
-        description="surface 재질 티어는 z-index 역할 구분과 맞춰 나뉩니다. 한 티어의 표면 속성은 함께 선언되어 테마별로 교체됩니다."
-      >
-        <mm-token-group aria-label="surface tier tokens">
-          ${renderTokenItems(sectionTokens('surface'))}
+        <mm-token-stage>
+          <div class="material-stage">${renderMaterialStage(sectionTokens('material'))}</div>
+        </mm-token-stage>
+        <mm-token-group aria-label="material tier tokens">
+          ${renderTokenItems(sectionTokens('material'))}
         </mm-token-group>
       </mm-token-section>
 
@@ -409,7 +449,7 @@ const main = html`
         <mm-text-list
           .texts=${[
             'base — mm-separator의 구분선, 배경 위에 놓는 텍스트처럼 형제 요소 위에 그리기 위한 로컬 컨텍스트',
-            'raised — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-scroll-hint, mm-portfolio-item의 오버레이',
+            'elevated — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-scroll-hint, mm-portfolio-item의 오버레이',
             'chrome — 화면에 고정된 내비게이션·툴바. 예: mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)',
             'chrome-top — 그중 화면 전체를 덮는 전역 내비게이션. 페이지 고정 바 위에 남아야 한다. 예: mm-navbar, 사이드 메뉴',
             'overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)',

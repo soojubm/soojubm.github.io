@@ -16,10 +16,10 @@ export const sidebarStyles = css`
     /* margin-top으로 하면 brutal theme border가 연결되지 않음 */
     padding: var(--layout-sidebar-space-top) var(--space-3)
       calc(var(--space-4) + env(safe-area-inset-bottom)) calc(var(--layout-padding-inline));
-    background: var(--surface-chrome-background-color);
+    background: var(--material-chrome-background-color);
     border-right: var(--border-transparent);
-    backdrop-filter: var(--surface-chrome-backdrop-filter);
-    -webkit-backdrop-filter: var(--surface-chrome-backdrop-filter);
+    backdrop-filter: var(--material-chrome-backdrop-filter);
+    -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
     overflow-y: auto;
     transition: transform var(--transition-duration) var(--transition-easing);
     transform: translateX(-120%);

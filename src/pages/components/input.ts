@@ -364,7 +364,7 @@ const main = html`
           style="padding-left: 3rem"
         />
         <div
-          style="position: absolute; right: var(--space-3); top: var(--space-3); z-index: var(--material-zindex-raised)"
+          style="position: absolute; right: var(--space-3); top: var(--space-3); z-index: var(--material-zindex-elevated)"
         >
           <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
         </div>

@@ -6,21 +6,31 @@
   background: var(--background-color);
 }
 
-/* blur·opacity는 뒤에 무엇이 비치는지 보여야 하므로 색이 변하는 바탕 위에 얹는다. */
-.blur-stage {
+/* 재질은 뒤에 무엇이 비치는지 보여야 하므로 경계가 또렷한 줄무늬 바탕 위에 얹는다. */
+.material-stage {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-6);
   width: 100%;
-  height: var(--size-80);
+  box-sizing: border-box;
+  padding: var(--space-6);
   border-radius: var(--radius-large);
-  background: linear-gradient(
+  background: repeating-linear-gradient(
     135deg,
-    var(--primary-color) 0%,
-    var(--accent-color) 50%,
-    var(--danger-color) 100%
+    var(--primary-color) 0 var(--space-2),
+    var(--accent-color) var(--space-2) var(--space-4)
   );
-  overflow: hidden;
+}
+
+.material-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-80);
+  height: var(--size-80);
+  box-sizing: border-box;
+  border-radius: var(--radius);
 }
 
 .motion-track {

@@ -141,47 +141,54 @@
   --radius-large: 1rem;
   --radius-full: 50%;
 
-  /* 층위 그림자 원시값. 독립된 배경을 가진 표면 전용이며 컨트롤 요소에는 주지 않는다. */
-  --shadow-high: 0 4px 12px rgba(0, 0, 0, 0.15);
-
   /* navbar-user 같은 control pill의 모양 토큰(테마 무관 고정값이라 :root 선언이 안전하다) */
   --control-padding: var(--space-1) var(--space-2);
   --control-border-radius: var(--radius-large);
 
-  /* surface 재질 티어는 --material-zindex-*의 역할 구분과 맞춘다.
-     navbar·sidebar 같은 고정 내비게이션(chrome)과 popup·select·dialog·sheet 같은
-     화면 위로 뜨는 시스템 레벨 표면(overlay)을 각자의 티어로 분리하고,
-     그 외 콘텐츠 안에서 살짝 뜨는 표면은 surface-base를 쓴다. */
+  /* 재질 원시값. 값의 종류와 크기로 이름 짓고 테마가 건드리지 않는다.
+     소비처는 원시값을 직접 쓰지 않고, 아래 material 티어가 색 토큰과 조합해 내보낸다.
+     그림자는 깊이를 갖는 티어(elevated·chrome·overlay)마다 한 단계씩만 둔다. */
+  --shadow-12: 0 4px 12px rgb(0 0 0 / 15%);
+  --shadow-32: 0 16px 32px rgb(0 0 0 / 20%);
+  --shadow-48: 0 24px 48px rgb(0 0 0 / 28%);
+  --blur-20: 20px;
+  --blur-28: 28px;
+  --opacity-50: 50%;
+  --opacity-60: 60%;
+  --opacity-80: 80%;
 
-  /* ===== surface-base ===== */
-  --surface-base-background-color: var(--gray0);
-  --surface-base-border: none;
-  --surface-base-backdrop-filter: none;
-  --surface-base-shadow: none;
-  /* --surface-base-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
-  --surface-base-blur: 10px;
-  --surface-base-opacity: 0.35; */
-  /* --surface-base-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+  /* material 티어는 base, elevated, chrome, overlay로 나뉜다. chrome·overlay는
+     --material-zindex-*의 역할 구분과 맞춰 화면 위로 뜨는 시스템 레벨 표면(고정 내비게이션·
+     팝업 등)에 쓰고, elevated는 z-index를 옮기지 않고 그림자만 더해 형제보다 살짝 띄우는
+     표면(카드 등)에 쓴다. 그 외 뎁스가 필요 없는 표면은 material-base를 쓴다.
+     배경·테두리는 색 토큰을 참조하고, 그림자·blur·반투명만 원시값으로 얹는다. */
 
-  /* ===== material-zindex-chrome ===== */
-  --surface-chrome-background-color: var(--gray0);
-  --surface-chrome-border: var(--border);
-  --surface-chrome-backdrop-filter: none;
-  --surface-chrome-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-  --surface-chrome-blur: 20px;
-  --surface-chrome-opacity: 0.55;
+  /* ===== material-base ===== */
+  --material-base-background-color: var(--gray0);
+  --material-base-border: none;
+  --material-base-backdrop-filter: none;
+  --material-base-shadow: none;
 
-  /* ===== material-zindex-overlay ===== */
-  --surface-overlay-background-color: var(--gray0);
-  --surface-overlay-border: var(--border);
-  --surface-overlay-backdrop-filter: none;
-  --surface-overlay-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
-  --surface-overlay-blur: 28px;
-  --surface-overlay-opacity: 0.7;
+  /* ===== material-elevated ===== */
+  /* base와 배경·테두리를 공유하고 그림자만 더한다. 독립된 배경을 가진 표면 전용이며,
+     배경 안에 놓이는 컨트롤 요소에는 주지 않는다. */
+  --material-elevated-shadow: var(--shadow-12);
+
+  /* ===== material-chrome ===== */
+  --material-chrome-background-color: var(--gray0);
+  --material-chrome-border: var(--border);
+  --material-chrome-backdrop-filter: none;
+  --material-chrome-shadow: var(--shadow-32);
+
+  /* ===== material-overlay ===== */
+  --material-overlay-background-color: var(--gray0);
+  --material-overlay-border: var(--border);
+  --material-overlay-backdrop-filter: none;
+  --material-overlay-shadow: var(--shadow-48);
 
   /* z-index: 화면 위 높낮이를 표현하는 값. 같은 그룹 안에서만 값을 비교한다 */
   --material-zindex-base: 0; /* 기본 콘텐츠: 문서, 리스트, 배경 */
-  --material-zindex-raised: 10; /* 카드, 패널처럼 살짝 뜬 요소 */
+  --material-zindex-elevated: 10; /* 카드, 패널처럼 살짝 뜬 요소 */
   --material-zindex-chrome: 100; /* 내비게이션, 툴바 (Apple의 "기능 레이어"에 해당) */
   --material-zindex-chrome-top: 101; /* 그중 화면 전체를 덮는 전역 내비게이션: navbar, 사이드바 */
   --material-zindex-overlay: 200; /* 드롭다운, 툴팁, 팝오버 */
@@ -254,13 +261,11 @@
   --background-subtle-color: #292f2c;
   --background-strong-color: var(--gray0);
 
-  --surface-base-background-color: var(--background-color);
-  --surface-chrome-background-color: var(--background-color);
-  --surface-chrome-border: var(--border);
-  --surface-overlay-background-color: var(--background-color);
-  --surface-overlay-border: var(--border);
-
-  --shadow-high: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --material-base-background-color: var(--background-color);
+  --material-chrome-background-color: var(--background-color);
+  --material-chrome-border: var(--border);
+  --material-overlay-background-color: var(--background-color);
+  --material-overlay-border: var(--border);
 
   --interaction-hover-background-color: var(--background-subtle-color);
   --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--background-color);
@@ -277,8 +282,8 @@
   --border-color: #000;
   --border: var(--brutal-border);
   --border-transparent: var(--brutal-border);
-  --surface-chrome-border: var(--border);
-  --surface-overlay-border: var(--border);
+  --material-chrome-border: var(--border);
+  --material-overlay-border: var(--border);
 
   /* 테두리는 한 겹 검정으로 통일하므로 카테고리 팔레트도 배경·텍스트만 남기고 테두리는 같은 값을 쓴다 */
   --tag-category-1-border: var(--border-color);
@@ -290,8 +295,8 @@
   --tag-category-7-border: var(--border-color);
   --tag-category-8-border: var(--border-color);
 
-  --surface-chrome-shadow: none;
-  --surface-overlay-shadow: none;
+  --material-chrome-shadow: none;
+  --material-overlay-shadow: none;
 }
 
 :root [data-theme='glass'] {
@@ -304,17 +309,26 @@
   /* --radius: var(--radius-large); */
   /* --background-subtle-color: rgb(255 255 255 / 30%); */
 
-  /* ===== surface-chrome ===== */
-  --surface-chrome-background-color: rgba(250, 250, 252, 0.8);
-  --surface-chrome-border: var(--border-width) solid rgb(255 255 255 / 50%);
-  --surface-chrome-backdrop-filter: saturate(180%) blur(var(--surface-chrome-blur));
-  --surface-chrome-shadow: none;
+  /* ===== material-chrome ===== */
+  --material-chrome-background-color: color-mix(
+    in srgb,
+    var(--gray0) var(--opacity-80),
+    transparent
+  );
+  --material-chrome-border: var(--border-width) solid
+    color-mix(in srgb, var(--gray0) var(--opacity-50), transparent);
+  --material-chrome-backdrop-filter: saturate(180%) blur(var(--blur-20));
+  --material-chrome-shadow: none;
 
-  /* ===== surface-overlay ===== */
-  --surface-overlay-background-color: rgba(250, 250, 252, 0.5);
-  --surface-overlay-border: var(--border-width) solid rgb(255 255 255 / 60%);
-  --surface-overlay-backdrop-filter: saturate(180%) blur(var(--surface-overlay-blur));
-  --surface-overlay-shadow: 0 12px 48px rgba(0, 0, 0, 0.125);
+  /* ===== material-overlay ===== */
+  --material-overlay-background-color: color-mix(
+    in srgb,
+    var(--gray0) var(--opacity-50),
+    transparent
+  );
+  --material-overlay-border: var(--border-width) solid
+    color-mix(in srgb, var(--gray0) var(--opacity-60), transparent);
+  --material-overlay-backdrop-filter: saturate(180%) blur(var(--blur-28));
 }
 
 /* navbar 2px */

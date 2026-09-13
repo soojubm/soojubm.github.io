@@ -26,7 +26,7 @@ const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
     '--surface-background-color': 'var(--background-subtle-color)',
   },
   elevated: {
-    '--surface-shadow': 'var(--shadow-high)',
+    '--surface-shadow': 'var(--material-elevated-shadow)',
   },
 }
 
@@ -57,7 +57,7 @@ export const surfaceBaseStyles = css`
   box-shadow: var(--surface-shadow);
 
   position: relative;
-  z-index: var(--material-zindex-raised);
+  z-index: var(--material-zindex-elevated);
   transition: box-shadow var(--transition-duration) var(--transition-easing);
 `
 

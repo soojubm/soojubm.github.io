@@ -18,9 +18,9 @@
   height: var(--navbar-height);
   border-bottom: var(--border-transparent);
   box-sizing: border-box;
-  background: var(--surface-chrome-background-color);
-  backdrop-filter: var(--surface-chrome-backdrop-filter);
-  /* TODO: chrome 그림자 복구 시 var(--surface-chrome-shadow)로 되돌린다 */
+  background: var(--material-chrome-background-color);
+  backdrop-filter: var(--material-chrome-backdrop-filter);
+  /* TODO: chrome 그림자 복구 시 var(--material-chrome-shadow)로 되돌린다 */
   box-shadow: none;
   position: absolute;
   inset: 0;
@@ -48,12 +48,12 @@
   position: relative;
   isolation: isolate;
 
-  background: var(--surface-base-background-color);
-  backdrop-filter: var(--surface-base-backdrop-filter);
-  border: var(--surface-base-border);
+  background: var(--material-base-background-color);
+  backdrop-filter: var(--material-base-backdrop-filter);
+  border: var(--material-base-border);
   border-radius: var(--control-border-radius);
   padding: var(--control-padding);
-  box-shadow: var(--surface-base-shadow);
+  box-shadow: var(--material-base-shadow);
 }
 
 .site-bottom-bar {

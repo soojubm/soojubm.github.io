@@ -7,11 +7,11 @@ import '@/components/common/flex/flex'
 export class ChatFooter extends LitElement {
   static styles = css`
     :host {
-      background: var(--surface-chrome-background-color);
-      backdrop-filter: var(--surface-chrome-backdrop-filter);
+      background: var(--material-chrome-background-color);
+      backdrop-filter: var(--material-chrome-backdrop-filter);
       box-sizing: border-box;
 
-      z-index: var(--material-zindex-raised);
+      z-index: var(--material-zindex-elevated);
     }
 
     /* 화면 전체를 덮는 스크롤 위로 프롬프트 입력이 떠서

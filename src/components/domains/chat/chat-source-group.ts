@@ -29,7 +29,7 @@ export class ChatSourceGroup extends LitElement {
         background: var(--background-color);
         border: var(--border);
         border-radius: var(--radius);
-        box-shadow: var(--surface-base-shadow);
+        box-shadow: var(--material-base-shadow);
         padding: var(--space-3);
         transform: translateY(0);
         opacity: 1;
