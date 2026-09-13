@@ -57,7 +57,7 @@ export const radioStyles = css`
     --radio-background-color: var(--interaction-selected-foreground-color);
     --radio-border-color: var(--interaction-selected-border-color);
     animation: radiomark var(--transition-duration) ease-out;
-    box-shadow: 0 0 0 4px var(--background-color) inset;
+    box-shadow: 0 0 0 calc(var(--radio-size) / 4) var(--background-color) inset;
   }
 
   input:focus-visible + label > span {
@@ -67,6 +67,10 @@ export const radioStyles = css`
   input:disabled ~ label {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  :host([size='large']) {
+    --radio-size: var(--size-24);
   }
 `
 

@@ -37,6 +37,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
   { name: 'value', type: 'string', optional: true },
+  { name: 'size', type: "'large'", optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'mm-radio-group name', type: 'string', optional: true },
@@ -74,13 +75,21 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-example>
-      <fieldset role="radiogroup" style="max-width: 640px">
-        <mm-radio-group id="plan-group" name="membership" value="premium">
-          <mm-radio value="basic">베이직 요금제</mm-radio>
-          <mm-radio value="premium">프리미엄 요금제</mm-radio>
-          <mm-radio value="ultimate" disabled>얼티메이트 요금제</mm-radio>
+      <mm-flex direction="column" gap="6">
+        <fieldset role="radiogroup" style="max-width: 640px">
+          <mm-radio-group id="plan-group" name="membership" value="premium">
+            <mm-radio value="basic">베이직 요금제</mm-radio>
+            <mm-radio value="premium">프리미엄 요금제</mm-radio>
+            <mm-radio value="ultimate" disabled>얼티메이트 요금제</mm-radio>
+          </mm-radio-group>
+        </fieldset>
+
+        <mm-radio-group name="membership-large" value="premium">
+          <mm-radio size="large" value="basic">베이직 요금제</mm-radio>
+          <mm-radio size="large" value="premium">프리미엄 요금제</mm-radio>
+          <mm-radio size="large" value="ultimate" disabled>얼티메이트 요금제</mm-radio>
         </mm-radio-group>
-      </fieldset>
+      </mm-flex>
     </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -90,18 +99,26 @@ const main = html`
 
     <mm-component-anatomy
       .parts=${[
+        '그룹 — 라디오를 묶어 이름을 공유하고 하나만 선택되도록 보장합니다.',
         '컨트롤(인디케이터) — 선택 여부를 나타내는 원형 버튼입니다.',
         '선택 표식 — 선택 시 원 안에 채워지는 점(dot).',
         '레이블 — 선택지를 설명하는 클릭 가능한 텍스트.',
       ]}
-      .code=${'<mm-radio value="premium" checked>프리미엄 요금제</mm-radio>'}
+      .code=${`<mm-radio-group name="membership" value="premium">
+  <mm-radio value="basic">베이직 요금제</mm-radio>
+  <mm-radio value="premium">프리미엄 요금제</mm-radio>
+</mm-radio-group>`}
       .markers=${[
-        { placement: 'inline-start' },
-        { placement: 'block-end', offset: '0.45rem' },
-        { placement: 'inline-end' },
+        { placement: 'block-start' },
+        { placement: 'inline-start', offset: 'calc(100% - 0.5rem)' },
+        { placement: 'block-end', offset: '0.5rem' },
+        { placement: 'inline-end', offset: 'calc(100% - 0.5rem)' },
       ]}
     >
-      <mm-radio value="premium" checked>프리미엄 요금제</mm-radio>
+      <mm-radio-group name="membership-anatomy" value="premium">
+        <mm-radio value="basic">베이직 요금제</mm-radio>
+        <mm-radio value="premium">프리미엄 요금제</mm-radio>
+      </mm-radio-group>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -110,16 +127,22 @@ const main = html`
     >
       <mm-radio-group name="license" value="standard" style="max-width: 420px">
         <mm-radio-card value="standard" checked>
-          <mm-text weight="bold">Standard License</mm-text>
-          <mm-paragraph color="light">개인·사내 프로젝트에 사용할 수 있습니다.</mm-paragraph>
+          <mm-text-block
+            level="5"
+            heading="Standard License"
+            description="개인·사내 프로젝트에 사용할 수 있습니다."
+          ></mm-text-block>
           <mm-flex align-items="center" gap="2">
             <mm-text>₩ 2,000</mm-text>
             <mm-tag>460P 적립</mm-tag>
           </mm-flex>
         </mm-radio-card>
         <mm-radio-card value="extended">
-          <mm-text weight="bold">Extended License</mm-text>
-          <mm-paragraph color="light">재판매·배포용 제품에 포함할 수 있습니다.</mm-paragraph>
+          <mm-text-block
+            level="5"
+            heading="Extended License"
+            description="재판매·배포용 제품에 포함할 수 있습니다."
+          ></mm-text-block>
           <mm-flex align-items="center" gap="2">
             <mm-text>₩ 12,000</mm-text>
             <mm-tag>2,760P 적립</mm-tag>

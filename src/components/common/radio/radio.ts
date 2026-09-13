@@ -15,6 +15,7 @@ export class Radio extends LitElement {
 
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
+  @property({ type: String, reflect: true }) size?: string
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
 
