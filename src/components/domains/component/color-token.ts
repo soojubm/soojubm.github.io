@@ -3,6 +3,7 @@ import { customElement, property, query, queryAll, state } from 'lit/decorators.
 
 import {
   computedTokenValue,
+  primitiveTokenName,
   tokenAliases,
   tokenDisplayName,
 } from '@/components/domains/component/token-values'
@@ -12,6 +13,10 @@ import { contrastRatio } from '@/utils/color'
 import '@/components/common/text/text'
 import '@/components/common/tag/tag'
 import '@/components/common/tag/tag-group'
+
+// 원시 색 스와치에 태그로 붙이는 역할. 상태를 표현하는 색만 붙이고,
+// 표면·전경·테두리처럼 원시 색을 물려받는 나머지 역할은 각자의 목록에서 소개한다.
+const STATUS_ROLES = ['primary', 'accent', 'danger', 'warning', 'success']
 
 /**
  * 색상 토큰 카드.
@@ -100,7 +105,9 @@ export class ColorToken extends LitElement {
   }
 
   private renderTags() {
-    const aliases = tokenAliases(this.name).map(tokenDisplayName)
+    const aliases = tokenAliases(this.name)
+      .map(tokenDisplayName)
+      .filter(alias => STATUS_ROLES.includes(alias))
     if (!aliases.length) return nothing
 
     if (aliases.length === 1) {
@@ -135,11 +142,13 @@ export class ColorToken extends LitElement {
   private renderCaption() {
     if (!this.name) return nothing
 
+    // 시맨틱 토큰은 실제 색이 아니라 물려받는 원시 토큰 이름을 보여준다. 값은 테마마다 바뀌어도
+    // 어떤 원시 색을 참조하는지는 구조로 고정되어 있어, 그 구조를 그대로 문서화한다.
+    const value = primitiveTokenName(this.name) ?? computedTokenValue(this.name, this)
+
     return html`
       <figcaption>
-        <mm-text size="12" weight="bold">
-          ${tokenDisplayName(this.name)}: ${computedTokenValue(this.name, this)}
-        </mm-text>
+        <mm-text size="12" weight="bold">${tokenDisplayName(this.name)}: ${value}</mm-text>
       </figcaption>
     `
   }
