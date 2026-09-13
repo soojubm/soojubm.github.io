@@ -8,6 +8,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'bottom-bar.html', label: 'Bottom Bar' },
+  { href: 'sheet.html', label: 'Sheet' },
   { href: 'tabs.html', label: 'Tabs' },
 ]
 

@@ -6,7 +6,6 @@ import { repeat } from 'lit/directives/repeat.js'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/icon-button'
 import '@/components/overlay/sheet'
-import '@/components/layouts/top-bar/index'
 import '@/components/common/input/semantics/searchfield'
 import '@/components/domains/search-suggestions'
 import '@/components/common/menu-item'
@@ -65,7 +64,7 @@ export class NavbarSearch extends LitElement {
         ?open=${this.isOpen}
         @sheet-close=${this.closeSearch}
       >
-        <mm-top-bar type="back"></mm-top-bar>
+        <mm-sheet-header heading="검색"></mm-sheet-header>
         <mm-sheet-body>
           <form role="search" style="display: flex; flex-direction: column; gap: var(--space-2)">
             <mm-searchfield
