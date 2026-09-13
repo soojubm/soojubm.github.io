@@ -46,7 +46,7 @@ export class Token extends LitElement {
     return parts.reduce((result, word, index) => {
       if (index === 0) return word
 
-      const sameCategory = categories[index] && categories[index] === categories[index - 1]
+      const sameCategory = categories[index] === categories[index - 1]
       return `${result}${sameCategory ? '-' : '.'}${word}`
     }, '')
   }
