@@ -1,8 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { AvatarSize } from '@/components/common/avatar/avatar'
-
 import '@/components/common/avatar/avatar'
 import '@/components/common/text/text'
 
@@ -39,7 +37,6 @@ export class AvatarGroup extends LitElement {
   @property({ attribute: false }) avatars: string[] = []
 
   @property({ type: String }) label = ''
-  @property({ type: String }) size: AvatarSize = '32'
 
   /** 노출할 최대 아바타 수 (나머지는 +N으로 묶음) */
   private readonly maxVisible = 3
@@ -63,7 +60,7 @@ export class AvatarGroup extends LitElement {
 
   private renderAvatar(src: string) {
     return html`
-      <mm-avatar size=${this.size} .src=${src || undefined}></mm-avatar>
+      <mm-avatar size="32" .src=${src || undefined}></mm-avatar>
     `
   }
 
@@ -71,7 +68,7 @@ export class AvatarGroup extends LitElement {
     if (overflowCount <= 0) return nothing
 
     return html`
-      <mm-avatar size=${this.size}>
+      <mm-avatar size="32">
         <mm-text size="12">+${overflowCount}</mm-text>
       </mm-avatar>
     `

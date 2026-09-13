@@ -23,7 +23,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'aria-label', type: 'string', optional: true },
   { name: 'mm-avatar-group avatars', type: 'string[] = []', optional: true },
   { name: 'mm-avatar-group label', type: 'string', optional: true },
-  { name: 'mm-avatar-group size', type: "'80' | '48' | '40' | '32' = '32'", optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
