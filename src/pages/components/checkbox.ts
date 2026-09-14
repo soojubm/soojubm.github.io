@@ -140,16 +140,17 @@ const main = html`
         </mm-top-bar>
         <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
           <mm-menu-item-checkbox
-            value="euljiro-1"
+            value="euljiro"
             label="을지로 맛집"
-            description="test"
-            emoji="💳"
+            description="장소 12개"
+            emoji="🍜"
             checked
           ></mm-menu-item-checkbox>
           <mm-menu-item-checkbox
-            value="euljiro-2"
-            label="을지로 맛집"
-            emoji="💳"
+            value="seongsu"
+            label="성수 카페"
+            description="장소 8개"
+            emoji="☕"
           ></mm-menu-item-checkbox>
         </mm-menu-item-checkbox-group>
         <mm-separator></mm-separator>

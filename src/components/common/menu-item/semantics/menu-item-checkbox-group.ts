@@ -6,6 +6,7 @@ import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-
 import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
 
 import '@/components/common/menu-item/menu-item-group'
+import '@/components/common/menu-item/semantics/menu-item-checkbox'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import {
   SelectionGroupController,
@@ -28,7 +29,7 @@ export class MenuItemCheckboxGroup extends LitElement {
 
   @property({ type: String }) size: MenuItemGroupSize = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @property({ type: Array }) values: string[] = []
+  @property({ attribute: false }) values: string[] = []
 
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox' })
   private checkboxes!: MenuItemCheckbox[]

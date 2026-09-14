@@ -3,9 +3,10 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
+import type { MenuItemRadio } from '@/components/common/menu-item/semantics/menu-item-radio'
 
 import '@/components/common/menu-item/menu-item-group'
-import { MenuItemRadio } from '@/components/common/menu-item/semantics/menu-item-radio'
+import '@/components/common/menu-item/semantics/menu-item-radio'
 import { SelectionGroupController } from '@/controllers/selection-group-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { emit } from '@/utils'

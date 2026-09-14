@@ -122,27 +122,21 @@ const main = html`
 
         <mm-content-section-list>
           <mm-content-section heading="배송지" heading-level="3">
-            <mm-surface>
-              <mm-menu-item-radio-group name="shipping" value="default" aria-label="배송지 선택">
-                <mm-menu-item-radio value="default">
-                  <mm-flex direction="column" gap="1">
-                    <mm-flex gap="1">
-                      <mm-paragraph>수줍이 집</mm-paragraph>
-                      <mm-tag>기본배송지</mm-tag>
-                    </mm-flex>
-                    <mm-paragraph>[07655] 서울특별시 강서구 까치산로 182 1202호</mm-paragraph>
-                    <mm-paragraph color="light">010-3121-7045</mm-paragraph>
-                  </mm-flex>
-                </mm-menu-item-radio>
-                <mm-menu-item-radio value="office">
-                  <mm-flex direction="column" gap="1">
-                    <mm-paragraph>회사</mm-paragraph>
-                    <mm-paragraph>[03925] 서울특별시 마포구 월드컵북로 400 상암동</mm-paragraph>
-                    <mm-paragraph color="light">010-9876-5432</mm-paragraph>
-                  </mm-flex>
-                </mm-menu-item-radio>
-              </mm-menu-item-radio-group>
-            </mm-surface>
+            <mm-radio-card-group name="shipping" value="default" legend="배송지 선택">
+              <mm-radio-card value="default">
+                <mm-flex gap="1">
+                  <mm-paragraph>수줍이 집</mm-paragraph>
+                  <mm-tag>기본배송지</mm-tag>
+                </mm-flex>
+                <mm-paragraph>[07655] 서울특별시 강서구 까치산로 182 1202호</mm-paragraph>
+                <mm-paragraph color="light">010-3121-7045</mm-paragraph>
+              </mm-radio-card>
+              <mm-radio-card value="office">
+                <mm-paragraph>회사</mm-paragraph>
+                <mm-paragraph>[03925] 서울특별시 마포구 월드컵북로 400 상암동</mm-paragraph>
+                <mm-paragraph color="light">010-9876-5432</mm-paragraph>
+              </mm-radio-card>
+            </mm-radio-card-group>
             <mm-add-button>배송지 변경/추가</mm-add-button>
           </mm-content-section>
 
