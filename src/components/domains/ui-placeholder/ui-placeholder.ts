@@ -4,6 +4,7 @@ import { customElement } from 'lit/decorators.js'
 /**
  * 문서·예제에서 실제 UI가 들어갈 자리를 대신하는 장식용 박스.
  * 높이·배경·모서리는 소비처가 CSS custom property로 직접 설정한다.
+ * 슬롯에는 치수 같은 짧은 안내 텍스트를 넣으며, 가운데에 앉는다.
  */
 @customElement('mm-ui-placeholder')
 export class UiPlaceholder extends LitElement {
@@ -17,10 +18,13 @@ export class UiPlaceholder extends LitElement {
     }
 
     .placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       height: var(--ui-placeholder-height);
       box-sizing: border-box;
-      border: var(--border);
+      border: var(--border-transparent);
       border-radius: var(--ui-placeholder-border-radius);
       background: var(--ui-placeholder-background-color);
     }
@@ -28,7 +32,7 @@ export class UiPlaceholder extends LitElement {
 
   render() {
     return html`
-      <div class="placeholder" aria-hidden="true"></div>
+      <div class="placeholder" aria-hidden="true"><slot></slot></div>
     `
   }
 }

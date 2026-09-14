@@ -102,9 +102,25 @@ function sheetPageTemplate() {
 
       <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-      <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+      <mm-component-guide .features=${componentFeatures}>
+        <mm-text-list
+          .texts=${[
+            '안전마진의 소유 — 화면 아래 변에 닿는 배치(bottom·left·right)에서는 패널이 홈 인디케이터 영역만큼 아래 여백을 갖습니다. footer 유무와 상관없이 같은 여백을 유지하도록 footer나 소비처에서 따로 두지 않습니다.',
+          ]}
+        ></mm-text-list>
+      </mm-component-guide>
 
       <mm-component-anatomy
+        .parts=${[
+          '헤더 — 타이틀과 닫기 버튼. 닫기 버튼은 sheet-close 이벤트를 버블링합니다.',
+          '바디 — header·footer를 제외한 나머지를 채우고, 콘텐츠가 넘치면 내부에서 스크롤됩니다.',
+          '푸터 — primaryAction·secondaryAction 버튼을 배치합니다.',
+        ]}
+        .markers=${[
+          { placement: 'inline-start', offset: '1rem' },
+          { placement: 'inline-start', offset: '3.75rem' },
+          { placement: 'inline-start', offset: 'calc(100% - 1.5rem)' },
+        ]}
         .code=${`<mm-button aria-controls="filter-sheet">필터</mm-button>
 
 <mm-sheet id="filter-sheet" placement="bottom" height="360px">
@@ -114,26 +130,10 @@ function sheetPageTemplate() {
     </mm-sheet-body>
     <mm-sheet-footer .primaryAction=\${primaryAction}></mm-sheet-footer>
 </mm-sheet>`}
-      ></mm-component-anatomy>
-
-      <mm-component-section
-        heading="Sheet Header"
-        description="타이틀과 선택적인 닫기 버튼을 제공합니다. 닫기 버튼은 sheet-close 이벤트를 버블링합니다."
+        style="--component-anatomy-stage-width: var(--layout-width-narrow)"
       >
-        <mm-sheet-header heading="Sheet Title"></mm-sheet-header>
-      </mm-component-section>
-
-      <mm-component-section
-        heading="Sheet Body"
-        description="스크롤 가능한 콘텐츠 영역. flex: 1 1 auto로 header·footer를 제외한 나머지를 채웁니다."
-      >
-        <mm-sheet-body>
-          <mm-paragraph>sheet-body는 콘텐츠가 넘치면 내부에서 스크롤됩니다.</mm-paragraph>
-          <mm-paragraph>
-            mm-sheet에 height를 지정하면 고정 높이 내에서 body가 스크롤됩니다.
-          </mm-paragraph>
-        </mm-sheet-body>
-      </mm-component-section>
+        ${sheetAnatomyTemplate()}
+      </mm-component-anatomy>
 
       <mm-component-section heading="Filter" description="샘플">
         ${filterSheetTemplate()}
@@ -143,6 +143,27 @@ function sheetPageTemplate() {
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-page>
+  `
+}
+
+// 패널 gap(--overlay-panel-padding-block)이 벌리는 간격을 placeholder 높이로 드러낸다.
+function sheetAnatomyTemplate() {
+  const gapPlaceholder = html`
+    <mm-ui-placeholder style="--ui-placeholder-height: var(--space-4)">
+      <mm-text size="12" weight="bold">space-4</mm-text>
+    </mm-ui-placeholder>
+  `
+
+  return html`
+    <mm-flex direction="column">
+      <mm-sheet-header heading="필터"></mm-sheet-header>
+      ${gapPlaceholder}
+      <mm-sheet-body>
+        <mm-paragraph>넘치는 콘텐츠는 body 안에서 스크롤됩니다.</mm-paragraph>
+      </mm-sheet-body>
+      ${gapPlaceholder}
+      <mm-sheet-footer .primaryAction=${{ label: '적용' }}></mm-sheet-footer>
+    </mm-flex>
   `
 }
 

@@ -127,6 +127,13 @@ export const sheetPositionStyles = css`
     --overlay-panel-max-width: 100%;
   }
 
+  /* 화면 아래 변에 닿는 배치는 footer 유무와 상관없이 홈 인디케이터 영역만큼 여백을 더 둔다 */
+  :host([placement='bottom']) .panel,
+  :host([placement='left']) .panel,
+  :host([placement='right']) .panel {
+    padding-bottom: calc(var(--overlay-panel-padding-block) + env(safe-area-inset-bottom));
+  }
+
   /* bottom */
   :host([placement='bottom']) {
     --overlay-panel-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
@@ -309,7 +316,6 @@ export const sheetBodyStyles = css`
     display: flex;
     flex: 1 1 auto;
     min-height: 0;
-    padding-bottom: var(--space-2);
   }
 
   mm-scroll {
@@ -320,8 +326,6 @@ export const sheetBodyStyles = css`
 export const sheetFooterStyles = css`
   :host {
     display: block;
-    box-sizing: border-box;
-    padding: var(--overlay-panel-padding-block) 0 calc(0 + env(safe-area-inset-bottom));
   }
 `
 
