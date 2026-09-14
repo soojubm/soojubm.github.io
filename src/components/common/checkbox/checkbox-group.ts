@@ -1,54 +1,49 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
+import { repeat } from 'lit/directives/repeat.js'
 
-import type { Checkbox } from '@/components/common/checkbox/checkbox'
+import type { OptionItem } from '@/types'
 
-import { checkboxGroupStyles } from '@/components/common/checkbox/checkbox.styles'
+import { checkboxGroupStyles, checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
+import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
-import {
-  SelectionGroupController,
-  selectionItemValue,
-} from '@/controllers/selection-group-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils'
+import { emit, uniqueId } from '@/utils'
 import '@/components/common/text'
 
+// mm-radio-group처럼 mm-checkbox를 감싸지 않고, 공유 스타일 모듈(checkboxStyles)을 조합해 input을 직접 렌더한다.
+// 그래야 선택 상태를 shadow 경계 없이 그룹이 온전히 소유한다.
 @customElement('mm-checkbox-group')
 export class CheckboxGroup extends LitElement {
-  static styles = [resetStyles, checkboxGroupStyles]
+  static styles = [resetStyles, visuallyHiddenInputStyles, checkboxGroupStyles, checkboxStyles]
 
+  @property({ attribute: false }) options: OptionItem[] = []
+  @property({ attribute: false }) values: string[] = []
   @property({ type: String }) name?: string
+  @property({ type: String, reflect: true }) size?: string
   @property({ type: String }) legend?: string
-  @property({ type: Array }) values: string[] = []
 
-  @queryAssignedElements({ selector: 'mm-checkbox' })
-  private checkboxes!: Checkbox[]
+  // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
+  private idPrefix = uniqueId('checkbox-group')
 
   private selection = new MultipleSelectionController(this, {
     getValues: () => this.values,
     setValues: values => {
       this.values = values
     },
-    getOptions: () => this.checkboxes.map(checkbox => ({ value: selectionItemValue(checkbox) })),
-  })
-
-  private group = new SelectionGroupController<Checkbox>({
-    selection: this.selection,
-    getItems: () => this.checkboxes,
-    isEmpty: () => !this.values.length,
-    applyItem: checkbox => {
-      if (this.name) checkbox.name = this.name
-    },
-    onChange: () => {
-      this.dispatchValueChange()
-    },
+    getOptions: () => this.options,
   })
 
   render() {
     return html`
-      <fieldset @change=${this.group.handleItemChange}>
+      <fieldset>
         ${this.renderLegend()}
-        <slot @slotchange=${this.group.handleSlotChange}></slot>
+        ${repeat(
+          this.options,
+          option => option.value,
+          option => this.renderOption(option),
+        )}
       </fieldset>
     `
   }
@@ -63,45 +58,59 @@ export class CheckboxGroup extends LitElement {
     `
   }
 
-  protected updated(changed: Map<string, unknown>) {
-    if (!changed.has('values') && !changed.has('name')) return
+  private renderOption(option: OptionItem) {
+    const inputId = `${this.idPrefix}-${option.value}`
 
-    this.group.sync()
-  }
-
-  private dispatchValueChange() {
-    emit(this, 'change', {
-      values: this.values,
-    })
+    return html`
+      <input
+        type="checkbox"
+        id=${inputId}
+        name=${ifDefined(this.name)}
+        .value=${option.value}
+        .checked=${this.selection.isOptionSelected(option)}
+        ?disabled=${option.disabled}
+        @change=${() => this.handleOptionChange(option)}
+      />
+      <label for=${inputId}>
+        <span class="indicator"></span>
+        <mm-paragraph>${option.label}</mm-paragraph>
+      </label>
+    `
   }
 
   get checked() {
-    const selectable = this.selectableCheckboxes
-    return selectable.length > 0 && selectable.every(checkbox => this.isChecked(checkbox))
+    const selectable = this.selectableOptions
+    return (
+      selectable.length > 0 && selectable.every(option => this.selection.isOptionSelected(option))
+    )
   }
 
   get indeterminate() {
-    const selectable = this.selectableCheckboxes
-    const checkedCount = selectable.filter(checkbox => this.isChecked(checkbox)).length
+    const selectable = this.selectableOptions
+    const checkedCount = selectable.filter(option => this.selection.isOptionSelected(option)).length
 
     return checkedCount > 0 && checkedCount < selectable.length
   }
 
   toggleAll() {
     const checked = !this.checked
-    const selectableValues = this.selectableCheckboxes.map(checkbox => selectionItemValue(checkbox))
+    const selectableValues = this.selectableOptions.map(option => option.value)
     const otherValues = this.values.filter(value => !selectableValues.includes(value))
 
     this.values = checked ? [...otherValues, ...selectableValues] : otherValues
-    this.group.sync()
     this.dispatchValueChange()
   }
 
-  private get selectableCheckboxes() {
-    return this.checkboxes.filter(checkbox => !checkbox.disabled)
+  private get selectableOptions() {
+    return this.options.filter(option => !option.disabled)
   }
 
-  private isChecked(checkbox: Checkbox) {
-    return this.selection.isSelected(selectionItemValue(checkbox))
+  private handleOptionChange(option: OptionItem) {
+    this.selection.select(option)
+    this.dispatchValueChange()
+  }
+
+  private dispatchValueChange() {
+    emit(this, 'change', { values: this.values })
   }
 }

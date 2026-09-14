@@ -72,7 +72,7 @@ const singleSelectionRows = html`
 const multipleSelectionRows = html`
   <tr>
     <th scope="row"><code>mm-checkbox-group</code></th>
-    <td>자식 요소</td>
+    <td>배열</td>
     <td>폼에서 5개 이하 선택지 중 여럿을 고를 때.</td>
   </tr>
   <tr>

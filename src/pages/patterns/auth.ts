@@ -82,11 +82,16 @@ const main = html`
             <mm-paragraph>모두 동의합니다.</mm-paragraph>
           </mm-master-checkbox>
 
-          <mm-checkbox-group id="signup-terms-group" name="terms">
-            <mm-checkbox size="large" value="terms">이용약관 동의</mm-checkbox>
-            <mm-checkbox size="large" value="privacy">개인정보처리방침에 동의합니다.</mm-checkbox>
-            <mm-checkbox size="large" value="marketing">[선택] 광고성 정보 수신 동의</mm-checkbox>
-          </mm-checkbox-group>
+          <mm-checkbox-group
+            id="signup-terms-group"
+            name="terms"
+            size="large"
+            .options=${[
+              { value: 'terms', label: '이용약관 동의' },
+              { value: 'privacy', label: '개인정보처리방침에 동의합니다.' },
+              { value: 'marketing', label: '[선택] 광고성 정보 수신 동의' },
+            ]}
+          ></mm-checkbox-group>
         </fieldset>
 
         <footer>

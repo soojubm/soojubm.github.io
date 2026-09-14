@@ -93,7 +93,7 @@ export const checkboxStyles = css`
     transform: rotate(0deg);
   }
 
-  input:disabled ~ label {
+  input:disabled + label {
     opacity: 0.5;
     cursor: not-allowed;
   }

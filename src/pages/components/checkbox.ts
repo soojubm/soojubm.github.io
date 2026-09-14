@@ -23,10 +23,16 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'indeterminate', type: 'boolean', optional: true },
+  {
+    name: 'mm-checkbox-group options',
+    type: '{ value: string; label: string; disabled?: boolean }[] = []',
+  },
   { name: 'mm-checkbox-group name', type: 'string', optional: true },
+  { name: 'mm-checkbox-group size', type: "'large'", optional: true },
   { name: 'mm-checkbox-group legend', type: 'string', optional: true },
   { name: 'mm-checkbox-group values', type: 'string[] = []', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+  { name: 'mm-checkbox-group change', type: 'CustomEvent detail: values', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -62,13 +68,17 @@ const main = html`
     ></mm-page-header>
 
     <mm-component-example>
-      <mm-checkbox-group legend="관심 분야" name="interest">
-        <mm-checkbox size="large" value="basic" checked>체크박스 기본</mm-checkbox>
-        <mm-checkbox size="large" value="disabled" disabled>체크박스 비활성</mm-checkbox>
-        <mm-checkbox size="large" value="disabled-checked" checked disabled>
-          체크박스 비활성 체크
-        </mm-checkbox>
-      </mm-checkbox-group>
+      <mm-checkbox-group
+        legend="관심 분야"
+        name="interest"
+        size="large"
+        .values=${['basic', 'disabled-checked']}
+        .options=${[
+          { value: 'basic', label: '체크박스 기본' },
+          { value: 'disabled', label: '체크박스 비활성', disabled: true },
+          { value: 'disabled-checked', label: '체크박스 비활성 체크', disabled: true },
+        ]}
+      ></mm-checkbox-group>
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -101,19 +111,26 @@ const main = html`
         <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
       </mm-master-checkbox>
 
-      <mm-checkbox-group id="main-terms-group" name="terms">
-        <mm-checkbox value="terms5" size="large">이용약관 동의 (필수)</mm-checkbox>
+      <mm-checkbox-group
+        id="main-terms-group"
+        name="terms"
+        size="large"
+        .options=${[
+          { value: 'terms5', label: '이용약관 동의 (필수)' },
+          { value: 'terms6', label: '개인정보 수집/이용 동의' },
+          { value: 'terms7', label: '개인정보 제3자 제공 동의' },
+        ]}
+      ></mm-checkbox-group>
 
-        <mm-surface variant="outlined">
-          <mm-checkbox-group name="terms-detail">
-            <mm-checkbox value="gender" size="small">성별</mm-checkbox>
-            <mm-checkbox value="birth" size="small">생년월일</mm-checkbox>
-          </mm-checkbox-group>
-        </mm-surface>
-
-        <mm-checkbox value="terms6" size="large">개인정보 수집/이용 동의</mm-checkbox>
-        <mm-checkbox value="terms7" size="large">개인정보 제3자 제공 동의</mm-checkbox>
-      </mm-checkbox-group>
+      <mm-surface variant="outlined">
+        <mm-checkbox-group
+          name="terms-detail"
+          .options=${[
+            { value: 'gender', label: '성별' },
+            { value: 'birth', label: '생년월일' },
+          ]}
+        ></mm-checkbox-group>
+      </mm-surface>
     </mm-component-section>
 
     <mm-component-section heading="Sampler" description="연습">

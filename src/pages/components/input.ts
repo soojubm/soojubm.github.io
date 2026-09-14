@@ -243,11 +243,14 @@ const main = html`
           <mm-gender-selector stretch></mm-gender-selector>
         </mm-form-field>
         <mm-form-field label="관심 주제" optional helper="여러 개를 선택할 수 있습니다.">
-          <mm-checkbox-group name="topics">
-            <mm-checkbox value="tech">기술</mm-checkbox>
-            <mm-checkbox value="design">디자인</mm-checkbox>
-            <mm-checkbox value="biz">비즈니스</mm-checkbox>
-          </mm-checkbox-group>
+          <mm-checkbox-group
+            name="topics"
+            .options=${[
+              { value: 'tech', label: '기술' },
+              { value: 'design', label: '디자인' },
+              { value: 'biz', label: '비즈니스' },
+            ]}
+          ></mm-checkbox-group>
         </mm-form-field>
         <mm-form-field label="국가" helper="배송 가능한 국가만 표시됩니다.">
           <mm-select
