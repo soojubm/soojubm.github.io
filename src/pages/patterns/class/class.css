@@ -41,7 +41,6 @@
 }
 .class-order-price {
   border-top: var(--border);
-  font-size: var(--font-size-18);
 }
 .class-order-action {
   border-top: var(--border);

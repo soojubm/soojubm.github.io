@@ -1,10 +1,20 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { textMaxLengthStyles, type TextMaxLength } from '@/components/common/text/text.styles'
+import {
+  paragraphSizeToTextSize,
+  textMaxLengthStyles,
+  textSizeTokens,
+  type ParagraphSize,
+  type TextMaxLength,
+} from '@/components/common/text/text.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import { buildAttributeRules } from '@/utils'
 
-type ParagraphSize = 'small' | 'medium' | 'large'
+const paragraphSizeTokens = {
+  small: textSizeTokens[paragraphSizeToTextSize.small],
+  large: { ...textSizeTokens[paragraphSizeToTextSize.large], 'max-width': '800px' },
+}
 
 @customElement('mm-paragraph')
 export class Paragraph extends LitElement {
@@ -29,15 +39,7 @@ export class Paragraph extends LitElement {
         color: var(--danger-color);
       }
 
-      :host([size='small']) {
-        font-size: var(--font-size-12);
-        line-height: var(--font-line-height-16);
-      }
-      :host([size='large']) {
-        max-width: 800px;
-        font-size: var(--font-size-18);
-        line-height: var(--font-line-height-28);
-      }
+      ${unsafeCSS(buildAttributeRules('size', paragraphSizeTokens))}
 
       :host([centered]) {
         text-align: center;

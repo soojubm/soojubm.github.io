@@ -291,11 +291,12 @@ const main = html`
           ]}
         ></mm-text-list>
         <mm-separator variant="section"></mm-separator>
-        <div>
-          <del>₩ 30,000</del>
-          <ins>₩ 20,000</ins>
-          <em>(30%)</em>
-        </div>
+        <mm-product-price
+          size="large"
+          original-price="₩ 30,000"
+          price="₩ 20,000"
+          discount="30%"
+        ></mm-product-price>
       </div>
     </mm-component-section>
 

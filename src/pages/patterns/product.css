@@ -16,26 +16,3 @@
   background: var(--background-subtle-color);
   transform: translateX(-50%);
 }
-
-.product-quick {
-  display: flex;
-  align-items: center;
-  height: var(--size-80);
-  padding: 0 var(--layout-padding-inline);
-  background: var(--background-subtle-color);
-}
-.product-quick-head {
-  width: 35%;
-  position: relative;
-}
-.product-quick-total {
-  margin: 0 2rem 0 auto;
-  text-align: right;
-  position: relative;
-}
-.product-quick-total-price {
-  vertical-align: middle;
-}
-.product-quick-controls {
-  position: relative;
-}

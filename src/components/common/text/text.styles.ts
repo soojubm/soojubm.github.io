@@ -7,6 +7,15 @@ export type TextWeight = 'medium' | 'bold'
 export type TextColor = 'inherit' | 'light' | 'danger'
 export type TextMaxLength = '' | '1' | '2' | '3'
 
+/** 본문 텍스트 크기 이름(paragraph 등)과 TextSize 토큰의 대응. 본문 사이즈 값은 여기서만 정의한다. */
+export type ParagraphSize = 'small' | 'medium' | 'large'
+
+export const paragraphSizeToTextSize: Record<ParagraphSize, TextSize> = {
+  small: '12',
+  medium: '14',
+  large: '18',
+}
+
 export const textMaxLengthStyles = css`
   /* max-length는 reflect라 값이 없을 때도 attribute가 남는다. 값이 있을 때만 자른다. */
   :host([max-length]:not([max-length=''])) > * {
@@ -39,7 +48,7 @@ const textColorTokens = {
   danger: { color: 'var(--danger-color)' },
 }
 
-const textSizeTokens = {
+export const textSizeTokens: Record<TextSize, Record<string, string>> = {
   '12': { 'font-size': 'var(--font-size-12)', 'line-height': 'var(--font-line-height-16)' },
   '14': { 'font-size': 'var(--font-size-14)', 'line-height': 'var(--font-line-height-24)' },
   '18': { 'font-size': 'var(--font-size-18)', 'line-height': 'var(--font-line-height-28)' },

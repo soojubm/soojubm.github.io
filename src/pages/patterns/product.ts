@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './product.css'
 
@@ -33,6 +33,7 @@ const main = html`
           </mm-paragraph>
           <mm-heading level="1">センチメンタル通り</mm-heading>
           <mm-product-price
+            size="large"
             original-price="₩ 25,000"
             discount="36% 할인"
             price="₩ 16,000"
@@ -50,7 +51,8 @@ const main = html`
 
             <mm-button-group>
               <mm-button aria-controls="cart-sheet" variant="primary" size="large" full-width>
-                Add to Cart
+                장바구니 추가
+                <span hidden>Add to Cart</span>
               </mm-button>
               <mm-icon-button variant="ghost" icon=${ICON_NAMES.FAVORITE}></mm-icon-button>
             </mm-button-group>
@@ -72,30 +74,6 @@ const main = html`
     </mm-grid>
 
     <section style="margin: 4rem auto 0">
-      <mm-fixed-bottom>
-        <aside class="product-quick is-visible">
-          <mm-list-item
-            class="product-quick-head"
-            size="48"
-            avatar-src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
-            label="고슴이 생존기(경제 기본기편)"
-            description="10개 에피소드, 평생 열람가능"
-          ></mm-list-item>
-          <section class="product-quick-total">
-            <span class="product-quick-total-price" style="font-size: var(--font-size-18)">
-              <del>₩ 25,000</del>
-              <b>₩ 16,000</b>
-              <em>(36% 할인)</em>
-            </span>
-          </section>
-          <footer class="product-quick-controls">
-            <mm-button aria-controls="cart-sheet" variant="primary" size="large">
-              Add to Cart
-            </mm-button>
-          </footer>
-        </aside>
-      </mm-fixed-bottom>
-
       <mm-flex direction="column" gap="section">
         <!-- 마케팅 스토리: 중앙 정렬 + 특징 -->
         <mm-grid columns="1" gap="4">
@@ -239,6 +217,27 @@ const main = html`
         </section>
       </mm-flex>
     </section>
+
+    <mm-fixed-bottom>
+      <mm-flex>
+        <mm-flex>
+          <mm-order-product-item
+            image-src="/src/images/cake_gosum.jpg"
+            name="뉴닉이 풀어 쓴 경제상식사전"
+            option="평생 소장"
+          ></mm-order-product-item>
+          <mm-product-price
+            size="large"
+            original-price="₩ 25,000"
+            price="₩ 16,000"
+            discount="36% 할인"
+          ></mm-product-price>
+        </mm-flex>
+        <mm-button aria-controls="cart-sheet" variant="primary" size="large">
+          장바구니 추가
+        </mm-button>
+      </mm-flex>
+    </mm-fixed-bottom>
   </mm-page>
 
   <mm-sheet

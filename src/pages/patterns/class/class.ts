@@ -138,9 +138,12 @@ const main = html`
         </figure>
       </div>
       <div class="class-order-price" role="suggestion">
-        <del role="deletion">₩ 30,000</del>
-        <b role="insertion">₩ 20,000</b>
-        <em>(30%)</em>
+        <mm-product-price
+          size="large"
+          original-price="₩ 30,000"
+          price="₩ 20,000"
+          discount="30%"
+        ></mm-product-price>
       </div>
       <footer class="class-order-action">
         <button class="class-order-btn">
