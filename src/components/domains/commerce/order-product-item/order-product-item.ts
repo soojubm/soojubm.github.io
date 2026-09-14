@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
+import '@/components/domains/commerce/product-price'
 
 /**
  * mm-order-product-item
@@ -38,7 +39,7 @@ export class OrderProductItem extends LitElement {
     if (!this.price) return nothing
 
     return html`
-      <mm-text slot="trailing" size="18">${this.price}</mm-text>
+      <mm-product-price slot="trailing" size="large" price=${this.price}></mm-product-price>
     `
   }
 }
