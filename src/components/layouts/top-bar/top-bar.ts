@@ -15,7 +15,7 @@ export class TopBar extends LitElement {
 
   render() {
     return html`
-      <header role="navigation">
+      <header>
         ${this.renderBackButton()}
         <mm-heading level="3">${this.heading}</mm-heading>
         <div class="trailing-area">

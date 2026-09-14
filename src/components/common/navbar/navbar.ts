@@ -9,7 +9,7 @@ import './navbar.css'
 export class Navbar extends LitElement {
   render() {
     return html`
-      <nav class="navbar" role="navigation">
+      <nav class="navbar">
         <mm-flex gap="2">
           <mm-hamburger-button
             aria-label="전체메뉴"
