@@ -71,13 +71,13 @@ const main = html`
 
         <fieldset>
           <legend hidden>약관 동의</legend>
-          <strong>
+          <mm-text as="strong" weight="bold">
             회원가입 시
             <mm-link href="#">이용약관</mm-link>
             과
             <mm-link href="#">개인정보처리방침</mm-link>
             에 동의하는 것으로 간주합니다.
-          </strong>
+          </mm-text>
           <mm-master-checkbox aria-controls="signup-terms-group">
             <mm-paragraph>모두 동의합니다.</mm-paragraph>
           </mm-master-checkbox>

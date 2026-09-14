@@ -284,77 +284,77 @@ const main = html`
         <section><mm-heading level="1">Home</mm-heading></section>
         <section>
           <div>
-            <b>1</b>
+            <mm-text weight="bold">1</mm-text>
             <mm-heading level="2">design system</mm-heading>
           </div>
           <div>
-            <b>1-1</b>
+            <mm-text weight="bold">1-1</mm-text>
             <mm-heading level="3">Principles</mm-heading>
           </div>
           <div>
-            <b>1-2</b>
+            <mm-text weight="bold">1-2</mm-text>
             <mm-heading level="3">Components</mm-heading>
           </div>
           <div>
-            <b>1-3</b>
+            <mm-text weight="bold">1-3</mm-text>
             <mm-heading level="3">Writings or Voice & Tone</mm-heading>
           </div>
           <div>
-            <b>1-4</b>
+            <mm-text weight="bold">1-4</mm-text>
             <mm-heading level="3">Source Code or Coding Conventions</mm-heading>
           </div>
           <div>
-            <b>1-5</b>
+            <mm-text weight="bold">1-5</mm-text>
             <mm-heading level="3">Accessibility</mm-heading>
           </div>
         </section>
         <section>
           <div>
-            <b>2</b>
+            <mm-text weight="bold">2</mm-text>
             <mm-heading level="2">Pages</mm-heading>
           </div>
           <div>
-            <b>2-1</b>
+            <mm-text weight="bold">2-1</mm-text>
             <mm-heading level="3">Temp</mm-heading>
           </div>
           <div>
-            <b>2-2</b>
+            <mm-text weight="bold">2-2</mm-text>
             <mm-heading level="3">Temp</mm-heading>
           </div>
           <div>
-            <b>2-3</b>
+            <mm-text weight="bold">2-3</mm-text>
             <mm-heading level="3">Temp</mm-heading>
           </div>
         </section>
         <section>
           <div>
-            <b>5</b>
+            <mm-text weight="bold">5</mm-text>
             <mm-heading level="2">about</mm-heading>
           </div>
           <div>
-            <b>5-1</b>
+            <mm-text weight="bold">5-1</mm-text>
             <mm-heading level="3">about</mm-heading>
           </div>
           <div>
-            <b>5-2</b>
+            <mm-text weight="bold">5-2</mm-text>
             <mm-heading level="3">contact</mm-heading>
           </div>
         </section>
         <section>
           <div>
-            <b>0</b>
+            <mm-text weight="bold">0</mm-text>
             <mm-heading level="2">Login / Signup</mm-heading>
           </div>
           <div>
-            <b>0-1</b>
+            <mm-text weight="bold">0-1</mm-text>
             <mm-heading level="3">Forgot password</mm-heading>
           </div>
           <div>
-            <b>0-2</b>
+            <mm-text weight="bold">0-2</mm-text>
             <mm-heading level="3">User Profile</mm-heading>
           </div>
           <div>
-            <b>0-3</b>
+            <mm-text weight="bold">0-3</mm-text>
             <mm-heading level="3">Settings</mm-heading>
           </div>
         </section>

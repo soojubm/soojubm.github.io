@@ -35,15 +35,15 @@ const main = html`
         <section class="step">
           <div class="step-item is-active" aria-current="step">
             <span class="step-item-icon">1</span>
-            <b class="step-item-label">장바구니</b>
+            <mm-text class="step-item-label">장바구니</mm-text>
           </div>
           <div class="step-item">
             <span class="step-item-icon">2</span>
-            <b class="step-item-label">결제</b>
+            <mm-text class="step-item-label">결제</mm-text>
           </div>
           <div class="step-item">
             <span class="step-item-icon">3</span>
-            <b class="step-item-label">주문완료</b>
+            <mm-text class="step-item-label">주문완료</mm-text>
           </div>
           <div>
             <span></span>
@@ -225,15 +225,17 @@ const main = html`
 
       <mm-surface variant="outlined">
         <mm-flex direction="column" gap="4">
-          <mm-flex>
-            <mm-tag style="width: var(--size-48)">포장</mm-tag>
-            <mm-text as="time">2022. 12. 05. 15:32</mm-text>
-            <b style="margin-left: auto">배달완료</b>
+          <mm-flex justify-content="space-between">
+            <mm-flex>
+              <mm-tag style="width: var(--size-48)">포장</mm-tag>
+              <mm-text as="time">2022. 12. 05. 15:32</mm-text>
+            </mm-flex>
+            <mm-text weight="bold">배달완료</mm-text>
           </mm-flex>
           <mm-menu-item-action>
             <mm-avatar slot="avatar" size="48"></mm-avatar>
             <div slot="text">
-              <b>쩜순이네닭강정 요기요st</b>
+              <mm-text weight="bold">쩜순이네닭강정 요기요st</mm-text>
               <mm-flex align-items="center">
                 <span>떡볶이</span>
                 <span>x</span>
