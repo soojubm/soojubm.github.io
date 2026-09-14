@@ -35,19 +35,23 @@ export class Feature extends LitElement {
   }
 
   private renderVisual() {
-    if (this.emoji) {
-      return html`
-        <mm-avatar variant="secondary" size="48">
-          <span class="feature-emoji" aria-hidden="true">${this.emoji}</span>
-        </mm-avatar>
-      `
-    }
-    if (!this.icon) return nothing
+    if (!this.emoji && !this.icon) return nothing
 
     return html`
-      <mm-avatar variant="secondary" size="48">
-        <mm-icon size="large" name=${this.icon}></mm-icon>
-      </mm-avatar>
+      <mm-avatar variant="secondary" size="48">${this.renderGlyph()}</mm-avatar>
+    `
+  }
+
+  // 제품 의미를 갖는 기호는 icon, 콘텐츠로 고른 글자는 emoji로 받고, 둘이 함께 오면 emoji를 우선한다.
+  private renderGlyph() {
+    if (this.emoji) {
+      return html`
+        <span class="feature-emoji" aria-hidden="true">${this.emoji}</span>
+      `
+    }
+
+    return html`
+      <mm-icon size="large" name=${this.icon}></mm-icon>
     `
   }
 }
