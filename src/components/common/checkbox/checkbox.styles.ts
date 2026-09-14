@@ -3,6 +3,7 @@ import { css } from 'lit'
 import { focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const checkboxGroupStyles = css`
+  /* fieldset 기본값(min-width: min-content) 때문에 flex 부모 안에서 줄어들지 못하고 넘치는 것을 막는다. */
   fieldset {
     display: flex;
     flex-direction: column;
@@ -30,7 +31,7 @@ export const checkboxStyles = css`
     gap: var(--space-2);
   }
 
-  label > span {
+  label > .indicator {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -45,7 +46,7 @@ export const checkboxStyles = css`
     background: var(--checkbox-background-color);
   }
 
-  input[type='checkbox'] + label > span::after {
+  input[type='checkbox'] + label > .indicator::after {
     content: '';
     display: block;
     width: 6px;
@@ -59,30 +60,30 @@ export const checkboxStyles = css`
     transform: rotate(-50deg) scale(0);
   }
 
-  input[type='checkbox']:checked + label > span {
+  input[type='checkbox']:checked + label > .indicator {
     --checkbox-border-color: var(--interaction-selected-border-color);
   }
 
-  input[type='checkbox']:checked + label > span::after {
+  input[type='checkbox']:checked + label > .indicator::after {
     transform: rotate(-50deg) scale(1);
   }
 
-  input:focus-visible + label > span {
+  input:focus-visible + label > .indicator {
     ${focusRingStyles};
   }
 
-  :host([size='large']) input[type='checkbox']:checked + label > span::after {
+  :host([size='large']) input[type='checkbox']:checked + label > .indicator::after {
     left: 8px;
     top: 9px;
     transform: rotate(-50deg) scale(1.5);
   }
 
-  input[type='checkbox']:indeterminate + label > span {
+  input[type='checkbox']:indeterminate + label > .indicator {
     --checkbox-border-color: var(--interaction-selected-border-color);
     --checkbox-background-color: var(--interaction-selected-background-color);
   }
 
-  input[type='checkbox']:indeterminate + label > span::after {
+  input[type='checkbox']:indeterminate + label > .indicator::after {
     display: block;
     width: 8px;
     background: var(--interaction-selected-background-color);

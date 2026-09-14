@@ -8,7 +8,7 @@ export const radioGroupStyles = css`
     display: block;
   }
 
-  /* fieldset 기본값(min-width: auto)이 flex 부모 안에서 줄어드는 걸 막는 것을 방지한다. */
+  /* fieldset 기본값(min-width: min-content) 때문에 flex 부모 안에서 줄어들지 못하고 넘치는 것을 막는다. */
   fieldset {
     min-width: 0;
   }
