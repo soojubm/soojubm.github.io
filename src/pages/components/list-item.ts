@@ -8,8 +8,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { AVATAR_VARIANT_TYPE_UNION } from '@/components/common/avatar'
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { AVATAR_VARIANT_TYPE_UNION, ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [

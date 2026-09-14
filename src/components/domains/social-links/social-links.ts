@@ -1,10 +1,9 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/menu-item'
-import '@/components/common/avatar'
+import '@/components/common'
 
 const PLATFORMS = [
   { key: 'github', label: 'Github', icon: ICON_NAMES.GITHUB },

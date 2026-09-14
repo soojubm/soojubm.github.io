@@ -5,10 +5,7 @@ import type { ChatSource } from '@/components/domains/chat/chat-source'
 
 import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/button/button-group'
-import '@/components/common/icon/icon'
-import '@/components/common/text/text'
-import '@/components/common/text/semantics/paragraph'
+import '@/components/common'
 
 /**
  * 소스 칩 그룹 + inline sheet 컨테이너.

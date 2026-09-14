@@ -3,11 +3,10 @@ import { customElement, property, query, queryAssignedElements, state } from 'li
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import type { IconName } from '@/components/common/icon/icon-names'
+import type { IconName } from '@/components/common'
 import type { Popover, PopoverPlacement } from '@/components/overlay/popover/popover'
 
-import '@/components/common/button/button'
-import '@/components/common/menu-item/menu-item-group'
+import '@/components/common'
 import '@/components/indicators/expand-indicator/expand-indicator'
 import '@/components/overlay/popover/popover'
 import '@/components/overlay/popover/semantics/select-option'

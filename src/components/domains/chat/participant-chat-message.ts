@@ -4,8 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { renderChatMessageTime } from '@/components/domains/chat/chat.helpers'
 
-import '@/components/common/avatar/avatar'
-import '@/components/common/text/text'
+import '@/components/common'
 
 @customElement('mm-participant-chat-message')
 export class ParticipantChatMessage extends LitElement {

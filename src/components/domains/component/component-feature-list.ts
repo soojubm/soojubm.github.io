@@ -1,9 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/feature/feature-group'
-import '@/components/common/feature/feature'
-import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
+import '@/components/common'
+import { ICON_NAMES, type IconName } from '@/components/common'
 
 export interface ComponentFeatureItem {
   heading: string

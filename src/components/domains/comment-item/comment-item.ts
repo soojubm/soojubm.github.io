@@ -3,9 +3,7 @@ import { customElement, property, query } from 'lit/decorators.js'
 
 import type { Popover } from '@/components/overlay/popover/popover'
 
-import '@/components/common/button/button'
-import '@/components/common/icon-button/semantics/more-button'
-import '@/components/common/menu-item/semantics/menu-item-action'
+import '@/components/common'
 import '@/components/overlay/popover/popover'
 import { emit } from '@/utils'
 import '@/components/domains/user-row/index'

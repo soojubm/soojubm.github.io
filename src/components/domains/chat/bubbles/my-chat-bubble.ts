@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { renderChatBubbleShell, withChatBubbleImage } from '@/components/domains/chat/chat.helpers'
 import { chatBubbleStyles, myChatBubbleStyles } from '@/components/domains/chat/chat.styles'
 
-import '@/components/common/text/text'
+import '@/components/common'
 
 /**
  * 내가 보낸 메시지 버블. 우측 정렬 + primary 색상.

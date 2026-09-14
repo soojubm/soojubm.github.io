@@ -3,14 +3,10 @@ import { customElement, property, query } from 'lit/decorators.js'
 
 import type { Popover } from '@/components/overlay/popover/popover'
 
-import '@/components/common/icon-button/icon-button'
-import '@/components/common/menu-item/semantics/menu-item-radio-group'
-import '@/components/common/menu-item/semantics/menu-item-radio'
+import '@/components/common'
 import '@/components/overlay/popover/popover'
-import '@/components/common/radius-picker/radius-picker'
-import '@/components/common/separator/separator'
 
-import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
 @customElement('mm-theme-selector')

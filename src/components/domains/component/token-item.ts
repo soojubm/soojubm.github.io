@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { computedTokenValue } from '@/components/domains/component/token-values'
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
-import '@/components/common/text/text'
+import '@/components/common'
 
 /**
  * 토큰 이름과 값을 한 칸으로 보여준다.

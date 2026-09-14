@@ -11,4 +11,5 @@ import '@/components/common/input/semantics/number-input'
 import '@/components/common/input/textarea'
 import '@/components/common/input/semantics/textarea-field'
 
-export {}
+export { INPUT_TYPE_UNION } from '@/components/common/input/input'
+export type { Textarea } from '@/components/common/input/textarea'

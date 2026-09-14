@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import type { BreadcrumbItem } from '@/components/common/breadcrumb/breadcrumb'
+import type { BreadcrumbItem } from '@/components/common'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,

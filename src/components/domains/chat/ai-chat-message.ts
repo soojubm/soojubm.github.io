@@ -1,12 +1,11 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { renderChatMessageTime } from '@/components/domains/chat/chat.helpers'
 import { emit } from '@/utils'
 
-import '@/components/common/icon-button/icon-button'
-import '@/components/common/button/button-group'
+import '@/components/common'
 
 @customElement('mm-ai-chat-message')
 export class AiChatMessage extends LitElement {

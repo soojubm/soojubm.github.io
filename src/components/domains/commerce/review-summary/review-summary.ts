@@ -1,9 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import '@/components/common/icon'
-import '@/components/common/text'
+import { ICON_NAMES } from '@/components/common'
+import '@/components/common'
 
 /**
  * mm-review-summary

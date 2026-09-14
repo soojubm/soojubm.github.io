@@ -1,9 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/button/button-group'
-import '@/components/common/button/semantics/hashtag-link'
-import '@/components/common/text/semantics/heading'
+import '@/components/common'
 
 export interface ComponentRelatedItemData {
   href: string

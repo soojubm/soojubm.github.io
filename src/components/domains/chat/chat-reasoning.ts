@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { ChatReasoningFlow } from '@/components/domains/chat/chat-reasoning-flow'
 
 import '@/components/domains/chat/chat-reasoning-flow'
-import '@/components/common/text/text'
+import '@/components/common'
 
 /**
  * AI의 현재 상황만 보여주는 reasoning 컨테이너.

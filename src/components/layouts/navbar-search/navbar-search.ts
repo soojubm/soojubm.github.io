@@ -3,13 +3,10 @@ import { customElement, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import '@/components/common/icon-button'
+import { ICON_NAMES } from '@/components/common'
+import '@/components/common'
 import '@/components/overlay/sheet'
-import '@/components/common/input/semantics/searchfield'
 import '@/components/domains/search-suggestions'
-import '@/components/common/menu-item'
-import '@/components/common/text/semantics/paragraph'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {

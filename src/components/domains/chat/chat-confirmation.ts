@@ -1,9 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/button/button'
-import '@/components/common/button/button-group'
-import '@/components/common/notice/notice'
+import '@/components/common'
 import { emit } from '@/utils'
 
 export type ConfirmationStatus = 'pending' | 'accepted' | 'rejected'

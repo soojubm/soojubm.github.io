@@ -1,8 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import '@/components/common/surface/surface'
-import '@/components/common/scroll/scroll'
+import '@/components/common'
 
 @customElement('mm-token-stage')
 export class TokenStage extends LitElement {

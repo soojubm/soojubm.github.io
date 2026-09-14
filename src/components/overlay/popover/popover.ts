@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import { overlaySurfaceStyles, popoverPositionStyles } from '@/components/overlay/overlay.styles'
-import '@/components/common/scroll/scroll'
+import '@/components/common'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
 

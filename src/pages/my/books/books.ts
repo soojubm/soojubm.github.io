@@ -1,6 +1,6 @@
 import { html, render } from 'lit'
 
-import type { FilterOption } from '@/components/common/button'
+import type { FilterOption } from '@/components/common'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import '@/components/domains/media-card'

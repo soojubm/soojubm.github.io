@@ -3,9 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
-import '@/components/common/code/code'
-import '@/components/common/text/semantics/heading'
-import '@/components/common/text/semantics/text-list'
+import '@/components/common'
 import '@/components/indicators/list-marker/list-marker'
 
 export type AnatomyMarkerPlacement = 'inline-start' | 'inline-end' | 'block-start' | 'block-end'

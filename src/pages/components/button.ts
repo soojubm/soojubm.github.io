@@ -1,4 +1,4 @@
-import '@/components/common/table'
+import '@/components/common'
 import { html } from 'lit'
 
 import type {
@@ -9,7 +9,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [

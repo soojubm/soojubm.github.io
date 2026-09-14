@@ -1,10 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/tag/tag'
+import '@/components/common'
 
 import { componentExampleStyles } from '@/components/domains/component/component.styles'
-import '@/components/common/text/semantics/text-block'
 
 @customElement('mm-component-section')
 export class ComponentSection extends LitElement {

@@ -1,10 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/link/link'
-import '@/components/common/separator/separator'
-import '@/components/common/text/semantics/heading'
-import '@/components/common/surface'
+import '@/components/common'
 
 export interface ComponentReferenceItemData {
   href: string

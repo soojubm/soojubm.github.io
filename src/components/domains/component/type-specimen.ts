@@ -2,9 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
-import '@/components/common/marquee/marquee'
-import '@/components/common/surface/surface'
-import '@/components/common/text/text'
+import '@/components/common'
 
 /** 스펙시멘이 소개하는 속성. 값은 화면에서 재서 채운다. */
 const METRICS = ['font-family', 'font-size', 'line-height'] as const

@@ -3,9 +3,8 @@ import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 
 import type { TemplateResult } from 'lit'
 
-import '@/components/common/navbar/navbar'
+import '@/components/common'
 import '@/components/layouts/app-sidebar'
-import '@/components/common/footer/footer'
 import '@/components/layouts/fixed-bottom'
 import '@/components/layouts/fixed-top'
 

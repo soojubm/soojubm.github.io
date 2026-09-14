@@ -1,7 +1,6 @@
 import { html } from 'lit'
 
-import type { FilterOption } from '@/components/common/button'
-import type { OptionItem } from '@/components/common/toggle-button'
+import type { FilterOption, OptionItem } from '@/components/common'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -10,7 +9,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [

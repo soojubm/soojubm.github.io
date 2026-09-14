@@ -1,9 +1,9 @@
 import { html } from 'lit'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import './class.css'
 import { renderPage } from '@/components/layouts/base-layouts'
-import '@/components/common/link/link'
+import '@/components/common'
 
 /** 마키는 끊김 없이 흐르도록 같은 문구를 채워 트랙을 채운다. */
 const MARQUEE_REPEAT = 6

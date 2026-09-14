@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/meta-item'
+import '@/components/common'
 
 /**
  * mm-meta-item으로 name/type을 표시합니다.

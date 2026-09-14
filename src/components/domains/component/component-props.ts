@@ -2,11 +2,10 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import '@/components/common/button/semantics/read-more-button'
+import '@/components/common'
 import '@/components/domains/component/component-prop-item'
 import { componentPropsStyles } from '@/components/domains/component/component.styles'
 import { uniqueId } from '@/utils'
-import '@/components/common/text'
 
 export interface ComponentPropItemData {
   name: string

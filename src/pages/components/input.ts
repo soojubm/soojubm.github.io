@@ -9,8 +9,7 @@ import type {
 } from '@/components/domains/component'
 import type { ActionConfig } from '@/types'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { INPUT_TYPE_UNION } from '@/components/common/input/input'
+import { ICON_NAMES, INPUT_TYPE_UNION } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './input.css'
 

@@ -1,13 +1,11 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { footerStyles } from '@/components/common/footer/footer.styles'
-import '@/components/common/text/semantics/paragraph'
+import { footerStyles } from '@/components/layouts/footer/footer.styles'
+import '@/components/common'
 import soojubmImage from '@/images/soojubm.png'
 import '@/components/domains/user-snippet/index'
 import '@/components/domains/social-links/index'
-import '@/components/common/text/semantics/caption'
-import '@/components/common/icon-button/semantics/to-top-button'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-footer')

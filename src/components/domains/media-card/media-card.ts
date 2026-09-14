@@ -1,9 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/surface/surface'
-import '@/components/common/text/text'
-import '@/components/common/text/semantics/paragraph'
+import '@/components/common'
 
 /**
  * 감상 기록 한 편을 담는 카드. films·books 목록이 공유한다.

@@ -1,9 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
-import '@/components/common/icon/icon'
-import '@/components/common/text/text'
+import { ICON_NAMES, type IconName } from '@/components/common'
+import '@/components/common'
 
 export type ChatReasoningFlowTone = 'thinking' | 'searching' | 'reading' | 'writing'
 

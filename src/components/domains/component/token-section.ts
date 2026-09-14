@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/text/semantics/text-block'
+import '@/components/common'
 
 @customElement('mm-token-section')
 export class TokenSection extends LitElement {

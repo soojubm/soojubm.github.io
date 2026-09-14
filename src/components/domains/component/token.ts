@@ -1,11 +1,9 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/text/semantics/heading'
-import '@/components/common/tag/semantics/keyword-tag'
+import '@/components/common'
 import { tokenStyles } from '@/components/domains/component/component.styles'
 import { categoryNameAt, tokenCategoryLabel } from '@/components/domains/component/token.utils'
-import '@/components/common/meta-item'
 
 /**
  * 개별 CSS 커스텀 프로퍼티(토큰) 행.

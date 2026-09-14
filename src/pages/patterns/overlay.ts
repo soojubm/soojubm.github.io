@@ -1,5 +1,4 @@
-import '@/components/common/table'
-import '@/components/common/link/link'
+import '@/components/common'
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'

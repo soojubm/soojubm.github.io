@@ -10,9 +10,7 @@ import {
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { contrastRatio } from '@/utils/color'
-import '@/components/common/text/text'
-import '@/components/common/tag/tag'
-import '@/components/common/tag/tag-group'
+import '@/components/common'
 
 // 원시 색 스와치에 태그로 붙이는 역할. 상태를 표현하는 색만 붙이고,
 // 표면·전경·테두리처럼 원시 색을 물려받는 나머지 역할은 각자의 목록에서 소개한다.

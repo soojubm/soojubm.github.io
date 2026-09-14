@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/overlay/backdrop/backdrop'
 import '@/components/overlay/sheet/sheet-body'
 import '@/components/overlay/sheet/sheet-footer'
-import '@/components/common/text/semantics/status-message'
+import '@/components/common'
 import type { ActionConfig } from '@/types'
 
 import { sheetPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'

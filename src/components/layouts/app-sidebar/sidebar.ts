@@ -3,15 +3,13 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import '@/components/common/tag/tag'
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import '@/components/common'
+import { ICON_NAMES } from '@/components/common'
 import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { SITEMAP, type SitemapNode } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
-import '@/components/common/list-item'
-import '@/components/common/menu-item'
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {

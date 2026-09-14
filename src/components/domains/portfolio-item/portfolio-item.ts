@@ -2,13 +2,8 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
-import '@/components/common/icon-button/semantics/more-button'
+import '@/components/common'
 import { emit } from '@/utils'
-import '@/components/common/tag/semantics/accent-tag'
-import '@/components/common/thumbnail'
-import '@/components/common/text/semantics/heading'
-import '@/components/common/text/semantics/paragraph'
-import '@/components/common/tag/semantics/keyword-tag-group'
 
 export type PortfolioItemLayout = 'grid' | 'list'
 

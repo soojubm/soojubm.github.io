@@ -3,7 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import { tooltipStyles } from '@/components/overlay/overlay.styles'
 import { uniqueId } from '@/utils'
-import '@/components/common/text'
+import '@/components/common'
 
 @customElement('mm-tooltip')
 export class Tooltip extends LitElement {

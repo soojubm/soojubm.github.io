@@ -3,9 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { postLinkStyles } from '@/components/domains/post/post.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/thumbnail/thumbnail'
-import '@/components/common/text/text'
-import '@/components/common/text/semantics/text-block'
+import '@/components/common'
 
 /**
  * 블로그 글 목록의 한 행. 썸네일을 leading으로 두고 제목·설명·날짜를 세로로 쌓는다.

@@ -1,8 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/list-item/list-item'
-import '@/components/common/text/text'
+import '@/components/common'
 
 /**
  * mm-order-product-item

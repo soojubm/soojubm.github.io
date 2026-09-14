@@ -3,9 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { postLinkStyles } from '@/components/domains/post/post.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import '@/components/common/thumbnail/thumbnail'
-import '@/components/common/text/text'
-import '@/components/common/text/semantics/paragraph'
+import '@/components/common'
 
 /**
  * 목록 맨 위에서 한 편을 크게 내세우는 글 카드.

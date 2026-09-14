@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import '@/components/common/flex/flex'
+import '@/components/common'
 
 @customElement('mm-chat-footer')
 export class ChatFooter extends LitElement {

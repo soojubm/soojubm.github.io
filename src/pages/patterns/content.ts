@@ -1,6 +1,6 @@
 import { html, nothing } from 'lit'
 
-import { ICON_CATALOG } from '@/components/common/icon/icon-names'
+import { ICON_CATALOG } from '@/components/common'
 import { FEATURE_ICONS } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
