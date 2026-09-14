@@ -161,7 +161,7 @@ const main = html`
       </mm-notice>
 
       <mm-flex direction="column" gap="3">
-        <mm-top-bar heading="닉네임 변경" role="navigation">
+        <mm-top-bar heading="닉네임 변경">
           <mm-button slot="action" variant="ghost">저장</mm-button>
         </mm-top-bar>
         <form>

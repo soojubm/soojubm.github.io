@@ -4,6 +4,7 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
+  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -21,6 +22,12 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'nav-click', type: 'CustomEvent', kind: 'event' },
 ]
 
+const componentTokens: ComponentTokenItemData[] = [
+  { name: 'top-bar-min-height' },
+  { name: 'top-bar-gap' },
+  { name: 'top-bar-background-color' },
+]
+
 const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
@@ -32,15 +39,14 @@ const main = html`
 
     <mm-component-example>
       <mm-top-bar nav="close" heading="상세 정보"></mm-top-bar>
-      <mm-text>기본 뒤로가기 내비게이션을 포함한 상단 바입니다.</mm-text>
+      <mm-text>
+        기존 흐름 위에 띄워 연 화면은 뒤로가기 대신 닫기 버튼으로 원래 흐름에 돌아갑니다.
+      </mm-text>
       <mm-separator></mm-separator>
       <mm-top-bar heading="컬렉션에 추가">
         <mm-button slot="action" variant="ghost">완료</mm-button>
       </mm-top-bar>
-      <mm-text>
-        닫기 액션과 보조 액션을 함께 배치할 수 있습니다. 액션 갯수 제한. md에서 최대 3개. hamberger
-        case.
-      </mm-text>
+      <mm-text>화면의 작업을 마치는 액션 하나는 텍스트 버튼으로 오른쪽 끝에 둡니다.</mm-text>
       <mm-separator></mm-separator>
       <mm-top-bar heading="수줍이님">
         <mm-button-group slot="action">
@@ -48,12 +54,25 @@ const main = html`
           <mm-more-button></mm-more-button>
         </mm-button-group>
       </mm-top-bar>
-      <mm-text>닫기 액션과 보조 액션을 함께 배치할 수 있습니다.</mm-text>
+      <mm-text>
+        액션이 여럿이면 주요 액션만 꺼내 두고 나머지는 더보기 메뉴로 모읍니다. md 화면에서도 꺼내
+        두는 액션은 3개까지입니다.
+      </mm-text>
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+
+    <mm-component-guide .features=${componentFeatures}>
+      <mm-text-list
+        .texts=${[
+          'sheet-header와의 구별 — top-bar는 화면 단위 상단 바라 높이·배경을 스스로 갖습니다. sheet 안에서는 패널이 간격을 소유하므로 mm-sheet-header를 씁니다. 지금 형태가 닮았어도 맥락이 달라 각자 따로 확장합니다.',
+          '좌우 여백 — top-bar는 좌우 여백을 갖지 않습니다. 페이지 본문과 맞출지, 화면 끝까지 붙일지는 놓이는 맥락이 정하므로 사용처에서 지정합니다.',
+          'fixed-top과의 구별 — fixed-top은 viewport 상단에 붙이는 위치만 맡고 높이·간격·배경을 갖지 않습니다. 스크롤해도 남아야 하는 top-bar는 fixed-top 안에 둡니다.',
+        ]}
+      ></mm-text-list>
+    </mm-component-guide>
 
     <mm-component-anatomy
       .code=${`<mm-top-bar nav="close" heading="컬렉션에 추가">

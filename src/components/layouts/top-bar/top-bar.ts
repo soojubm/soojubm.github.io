@@ -6,9 +6,6 @@ import { topBarStyles } from '@/components/layouts/top-bar/top-bar.styles'
 import { emit } from '@/utils'
 import '@/components/common'
 
-// TODO
-// top-bar-titlte / sheet-header-title
-
 @customElement('mm-top-bar')
 export class TopBar extends LitElement {
   static styles = [topBarStyles]
