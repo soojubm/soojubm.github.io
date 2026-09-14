@@ -1,23 +1,16 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, query, queryAssignedElements, state } from 'lit/decorators.js'
+import { customElement, property, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import type { IconName } from '@/components/common'
 import type { Popover, PopoverPlacement } from '@/components/overlay/popover/popover'
+import type { OptionItem } from '@/types'
 
 import '@/components/common'
 import '@/components/indicators/expand-indicator/expand-indicator'
 import '@/components/overlay/popover/popover'
 import '@/components/overlay/popover/semantics/select-option'
 import { emit } from '@/utils'
-
-export interface SelectOption {
-  label: string
-  value: string
-  selected: boolean
-  icon?: IconName
-}
 
 /**
  * popover를 프리미티브로 하는 선택 입력.
@@ -42,17 +35,14 @@ export class Select extends LitElement {
     }
   `
 
+  @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: String }) padding?: string
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
-  @state() private options: SelectOption[] = []
   @state() private open = false
-
-  @queryAssignedElements({ selector: 'option', flatten: true })
-  private optionElements!: HTMLOptionElement[]
 
   @query('mm-popover') private popoverEl?: Popover
 
@@ -79,7 +69,6 @@ export class Select extends LitElement {
           )}
         </mm-menu-item-group>
       </mm-popover>
-      <slot hidden @slotchange=${this.handleOptionSlotChange}></slot>
     `
   }
 
@@ -87,31 +76,15 @@ export class Select extends LitElement {
     return this.options.find(option => option.value === this.value)?.label ?? ''
   }
 
-  firstUpdated() {
-    this.handleOptionSlotChange()
+  // 네이티브 select처럼 value가 비어 있으면 첫 번째 활성 옵션으로 채운다.
+  protected willUpdate() {
+    if (this.value) return
+
+    this.value = this.options.find(option => !option.disabled)?.value ?? ''
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('width')) this.style.setProperty('--select-width', this.width)
-  }
-
-  // 네이티브 select처럼 value가 비어 있으면 selected 옵션, 그마저 없으면 첫 옵션으로 채운다.
-  private handleOptionSlotChange() {
-    this.options = this.parseLightDomOptions()
-    if (!this.value) {
-      this.value =
-        this.options.find(option => option.selected)?.value ?? this.options[0]?.value ?? ''
-    }
-  }
-
-  // light DOM의 <option> 요소를 SelectOption 데이터로 변환
-  private parseLightDomOptions(): SelectOption[] {
-    return this.optionElements.map(option => ({
-      label: option.textContent || '',
-      value: option.value,
-      selected: option.hasAttribute('selected'),
-      icon: (option.getAttribute('icon') as IconName | null) ?? undefined,
-    }))
   }
 
   // 트리거의 펼침 표시를 popover의 열림 상태에 맞춘다.
@@ -129,11 +102,12 @@ export class Select extends LitElement {
   }
 
   // 옵션: 선택 시 닫히며 현재 선택된 옵션은 aria-selected로 강조
-  private renderOption(option: SelectOption) {
+  private renderOption(option: OptionItem) {
     return html`
       <mm-select-option
         .value=${option.value}
         icon=${ifDefined(option.icon)}
+        ?disabled=${option.disabled}
         ?selected=${option.value === this.value}
       >
         ${option.label}

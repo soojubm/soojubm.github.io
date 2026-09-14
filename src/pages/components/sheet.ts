@@ -268,11 +268,13 @@ function filterSheetTemplate() {
           </mm-form-field>
           <mm-separator></mm-separator>
           <mm-form-field label="릴리스 채널">
-            <mm-select>
-              <option value="stable">Stable</option>
-              <option value="beta">Beta</option>
-              <option value="canary">Canary</option>
-            </mm-select>
+            <mm-select
+              .options=${[
+                { value: 'stable', label: 'Stable' },
+                { value: 'beta', label: 'Beta' },
+                { value: 'canary', label: 'Canary' },
+              ]}
+            ></mm-select>
           </mm-form-field>
           <mm-separator></mm-separator>
           <mm-form-field label="데스크톱에서 활성 상태가 아닌 경우...">

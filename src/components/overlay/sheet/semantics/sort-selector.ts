@@ -1,14 +1,16 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { OptionItem } from '@/types'
+
 import '@/components/overlay/popover/semantics/select'
 
 type SortOrder = 'latest' | 'oldest'
 
-const SORT_OPTIONS = [
+const SORT_OPTIONS: OptionItem[] = [
   { label: '최신순', value: 'latest' },
   { label: '오래된순', value: 'oldest' },
-] as const
+]
 
 @customElement('mm-sort-selector')
 export class SortSelector extends LitElement {
@@ -22,13 +24,11 @@ export class SortSelector extends LitElement {
 
   render() {
     return html`
-      <mm-select .value=${this.value} @change=${this.handleSelectChange}>
-        ${SORT_OPTIONS.map(
-          option => html`
-            <option value=${option.value}>${option.label}</option>
-          `,
-        )}
-      </mm-select>
+      <mm-select
+        .value=${this.value}
+        .options=${SORT_OPTIONS}
+        @change=${this.handleSelectChange}
+      ></mm-select>
     `
   }
 

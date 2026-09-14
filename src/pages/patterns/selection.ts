@@ -51,7 +51,7 @@ const singleSelectionRows = html`
   </tr>
   <tr>
     <th scope="row"><code>mm-select</code></th>
-    <td>자식 요소</td>
+    <td>배열</td>
     <td>6개 이상 선택지 중 하나를 고를 때.</td>
   </tr>
   <tr>

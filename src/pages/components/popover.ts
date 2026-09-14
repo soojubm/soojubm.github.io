@@ -81,13 +81,17 @@ const main = html`
 
     <mm-component-section
       heading="Select"
-      description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 파싱·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다."
+      description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 목록·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다. 옵션은 .options 배열로 받습니다."
     >
-      <mm-select width="200px" value="stable">
-        <option value="stable" selected>Stable</option>
-        <option value="beta">Beta</option>
-        <option value="canary">Canary</option>
-      </mm-select>
+      <mm-select
+        width="200px"
+        value="stable"
+        .options=${[
+          { value: 'stable', label: 'Stable' },
+          { value: 'beta', label: 'Beta' },
+          { value: 'canary', label: 'Canary' },
+        ]}
+      ></mm-select>
     </mm-component-section>
 
     <mm-component-section
@@ -102,10 +106,13 @@ const main = html`
       description="목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
     확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
     >
-      <mm-select>
-        <option value="profile" selected>최신순</option>
-        <option value="settings">오래된순</option>
-      </mm-select>
+      <mm-select
+        value="latest"
+        .options=${[
+          { value: 'latest', label: '최신순' },
+          { value: 'oldest', label: '오래된순' },
+        ]}
+      ></mm-select>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>

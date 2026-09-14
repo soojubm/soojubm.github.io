@@ -250,11 +250,13 @@ const main = html`
           </mm-checkbox-group>
         </mm-form-field>
         <mm-form-field label="국가" helper="배송 가능한 국가만 표시됩니다.">
-          <mm-select>
-            <option value="kr">대한민국</option>
-            <option value="jp">일본</option>
-            <option value="us">미국</option>
-          </mm-select>
+          <mm-select
+            .options=${[
+              { value: 'kr', label: '대한민국' },
+              { value: 'jp', label: '일본' },
+              { value: 'us', label: '미국' },
+            ]}
+          ></mm-select>
         </mm-form-field>
       </mm-flex>
     </mm-component-section>
