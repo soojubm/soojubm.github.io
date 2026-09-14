@@ -23,6 +23,11 @@ const main = html`
           description="상호작용할 수 있는 요소와 그 반응 상태를 정의합니다."
         ></mm-foundation-item>
         <mm-foundation-item
+          href="./selection.html"
+          heading="Selection"
+          description="선택지를 고르는 컴포넌트의 선택 기준, 상태 소유, 옵션 모양을 정의합니다."
+        ></mm-foundation-item>
+        <mm-foundation-item
           href="./feedback.html"
           heading="Feedback"
           description="행동·시스템 결과를 알리는 상태와 비동기 데이터 흐름을 정의합니다."
@@ -49,6 +54,7 @@ const main = html`
             '상호작용 가능성은 형태로 드러낸다. 색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. — Interaction',
             '선택·피드백·오류 상태는 색상만으로 전달하지 않고 아이콘·텍스트·형태·ARIA를 함께 준다. — Interaction',
             '열기·선택·검증 같은 상호작용 상태와 그 닫힘 처리는 컴포넌트가 소유하고, 트리거는 표준 attribute로 대상을 가리키기만 한다. — Interaction',
+            '선택 상태는 항목이 아니라 그룹이 value·values로 소유하고, 옵션 배열은 공용 OptionItem 모양을 따른다. — Selection',
             '동종 항목은 계열 그룹 컴포넌트로 묶고 역할·간격·정렬은 그룹이 소유한다. — Component Level',
             '같은 텍스트 슬롯도 사용자 시점의 message와 시스템 시점의 description으로 이름을 나누고, 실행 레이블은 동사형으로 줄이지 않고 쓴다. — Content',
             '화면 위로 뜨는 표면은 외형이 아니라 modality·dismiss·앵커 기준으로 구분하고, 겹침 순서는 그룹 토큰으로 정한다. — Overlay',

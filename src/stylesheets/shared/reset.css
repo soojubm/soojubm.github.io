@@ -74,6 +74,14 @@ code {
   font-family: var(--font-family-code);
   font-size: var(--font-size-12);
 }
+/* 본문 속 인라인 코드만 면으로 구분한다. 코드 블록(pre > code)은 mm-code가 스타일을 소유한다. */
+:not(pre) > code {
+  font-weight: var(--font-weight-bold);
+  padding-inline: var(--space-2);
+  border-radius: var(--radius);
+  background: var(--background-subtle-color);
+  color: color-mix(in srgb, var(--foreground-danger-color) 85%, transparent);
+}
 
 select {
   -webkit-appearance: none;

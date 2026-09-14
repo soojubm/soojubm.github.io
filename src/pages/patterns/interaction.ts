@@ -419,7 +419,7 @@ const main = html`
           variant="check"
           .texts=${[
             '눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.',
-            '상태는 항목이 아니라 그룹이 소유하며, 하나를 고르면 value·여럿을 고르면 values로 두고 바뀌면 change로 알린다. 하나의 값을 이루는 항목 사이는 화살표 키로 옮기고 Tab은 그룹을 한 번만 지난다.',
+            '그룹의 상태 소유·옵션 모양·키보드 이동은 Selection 문서를 따른다.',
             '스킨은 상태 attribute selector를 기준으로 두고, 강조에는 --interaction-selected-* 토큰을 함께 쓴다.',
           ]}
         ></mm-text-list>

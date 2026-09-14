@@ -1,4 +1,5 @@
 import { LitElement, css, html } from 'lit'
+import type { TemplateResult } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { textStyles } from '@/components/common/text/text.styles'
@@ -28,7 +29,8 @@ export class TextList extends LitElement {
     `,
   ]
 
-  @property({ attribute: false }) texts: string[] = []
+  // 인라인 code처럼 마크업이 필요한 항목은 템플릿으로 넘긴다.
+  @property({ attribute: false }) texts: Array<string | TemplateResult> = []
   @property({ type: String }) variant: Variant = 'check'
 
   render() {
@@ -53,7 +55,7 @@ export class TextList extends LitElement {
     return this.texts.map((text, index) => this.renderItem(text, index))
   }
 
-  private renderItem(text: string, index: number) {
+  private renderItem(text: string | TemplateResult, index: number) {
     return html`
       <li>
         <mm-list-marker variant=${this.variant} value=${index + 1}></mm-list-marker>

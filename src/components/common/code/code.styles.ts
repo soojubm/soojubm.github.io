@@ -17,19 +17,24 @@ export const codeStyles = css`
 
   /* Prism이 붙이는 토큰 클래스. 테마마다 값이 정의된 색만 사용해 테마 전환을 그대로 따른다. */
   .token.punctuation,
+  .token.operator,
   .token.comment {
     color: var(--foreground-subtle-color);
   }
 
-  .token.tag {
+  .token.tag,
+  .token.keyword {
     color: color-mix(in srgb, var(--foreground-danger-color) 85%, transparent);
   }
 
-  .token.attr-name {
+  .token.attr-name,
+  .token.property {
     color: color-mix(in srgb, var(--foreground-warning-color) 85%, transparent);
   }
 
-  .token.attr-value {
+  .token.attr-value,
+  .token.builtin,
+  .token.class-name {
     color: color-mix(in srgb, var(--foreground-success-color) 85%, transparent);
   }
 `
