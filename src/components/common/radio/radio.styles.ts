@@ -8,6 +8,7 @@ export const radioGroupStyles = css`
     display: block;
   }
 
+  /* fieldset 기본값(min-width: auto)이 flex 부모 안에서 줄어드는 걸 막는 것을 방지한다. */
   fieldset {
     min-width: 0;
   }
@@ -38,7 +39,7 @@ export const radioStyles = css`
     gap: var(--space-2);
   }
 
-  label > span {
+  label > .indicator {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
@@ -53,14 +54,14 @@ export const radioStyles = css`
     background: var(--radio-background-color);
   }
 
-  input[type='radio']:checked + label > span {
+  input[type='radio']:checked + label > .indicator {
     --radio-background-color: var(--interaction-selected-foreground-color);
     --radio-border-color: var(--interaction-selected-border-color);
     animation: radiomark var(--transition-duration) ease-out;
     box-shadow: 0 0 0 calc(var(--radio-size) / 4) var(--background-color) inset;
   }
 
-  input:focus-visible + label > span {
+  input:focus-visible + label > .indicator {
     ${focusRingStyles};
   }
 
@@ -77,18 +78,23 @@ export const radioStyles = css`
 export const radioCardStyles = css`
   :host {
     display: block;
+    --radio-card-background-color: var(--background-color);
+    --radio-card-border: var(--border);
   }
 
   label {
     ${surfaceBaseStyles};
     --surface-border-radius: var(--radius-large);
+    --surface-background-color: var(--radio-card-background-color);
+    --surface-border: var(--radio-card-border);
 
     flex-direction: row;
     align-items: flex-start;
     gap: var(--space-3);
   }
 
-  label > span {
+  /* label이 align-items: flex-start라 슬롯 콘텐츠가 늘어나도 인디케이터가 첫 줄에 정렬되고 찌그러지지 않게 한다. */
+  label > .indicator {
     flex-shrink: 0;
     margin-block-start: var(--space-1);
   }
@@ -100,19 +106,19 @@ export const radioCardStyles = css`
   }
 
   input:not(:checked):not(:disabled) + label:hover {
-    --surface-background-color: var(--interaction-hover-background-color);
+    --radio-card-background-color: var(--interaction-hover-background-color);
   }
 
   input[type='radio']:checked + label {
-    --surface-border: var(--border-width) solid var(--interaction-selected-border-color);
-    --surface-background-color: var(--interaction-selected-background-color);
+    --radio-card-border: var(--border-width) solid var(--interaction-selected-border-color);
+    --radio-card-background-color: var(--interaction-selected-background-color);
   }
 
   input:focus-visible + label {
     ${focusRingStyles};
   }
 
-  input:focus-visible + label > span {
+  input:focus-visible + label > .indicator {
     outline: none;
   }
 `
