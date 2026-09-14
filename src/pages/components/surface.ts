@@ -8,7 +8,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './surface.css'
 
@@ -253,7 +253,7 @@ const main = html`
               ]}
             ></mm-text-list>
             <mm-keyword-tag-group .keywords=${['Google', 'Meta', 'Nvidia']}></mm-keyword-tag-group>
-            <mm-surface variant="elevated" density="compact">
+            <mm-surface variant="elevated">
               <mm-flex direction="column" gap="2">
                 <mm-tag>3월 14일 수정됨</mm-tag>
                 <mm-menu-item-group size="large">

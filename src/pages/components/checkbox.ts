@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import type { OptionItem } from '@/components/common/toggle-button'
+import type { OptionItem } from '@/components/common'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -8,7 +8,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -103,18 +103,13 @@ const main = html`
 
       <mm-checkbox-group id="main-terms-group" name="terms">
         <mm-checkbox value="terms5" size="large">이용약관 동의 (필수)</mm-checkbox>
-        <mm-icon-button
-          variant="secondary"
-          size="small"
-          aria-label="이용약관 바로가기"
-          href="#"
-          icon=${ICON_NAMES.SHARE}
-        ></mm-icon-button>
 
-        <mm-checkbox-group name="terms-detail">
-          <mm-checkbox value="gender" size="small">성별</mm-checkbox>
-          <mm-checkbox value="birth" size="small">생년월일</mm-checkbox>
-        </mm-checkbox-group>
+        <mm-surface variant="outlined">
+          <mm-checkbox-group name="terms-detail">
+            <mm-checkbox value="gender" size="small">성별</mm-checkbox>
+            <mm-checkbox value="birth" size="small">생년월일</mm-checkbox>
+          </mm-checkbox-group>
+        </mm-surface>
 
         <mm-checkbox value="terms6" size="large">개인정보 수집/이용 동의</mm-checkbox>
         <mm-checkbox value="terms7" size="large">개인정보 제3자 제공 동의</mm-checkbox>

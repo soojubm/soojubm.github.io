@@ -8,7 +8,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { AVATAR_VARIANT_TYPE_UNION, ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -46,6 +46,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'emoji', type: 'string', optional: true },
   { name: 'avatar-src', type: 'string', optional: true },
+  { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'tertiary'`, optional: true },
   { name: 'avatar-shape', type: "'circle' | 'square' = 'square'", optional: true },
   { name: 'tone', type: "'danger'", optional: true },
   { name: 'disabled', type: 'boolean', optional: true },

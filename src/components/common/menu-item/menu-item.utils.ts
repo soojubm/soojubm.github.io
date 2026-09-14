@@ -2,7 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { AvatarShape } from '@/components/common/avatar/avatar'
+import type { AvatarShape, AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { ListItem, ListItemSize } from '@/components/common/list-item/list-item'
 import type { AriaTriState } from '@/types'
@@ -18,7 +18,7 @@ import { type Constructor, emit } from '@/utils'
  */
 export type MenuItemPresentation = Pick<
   ListItem,
-  'size' | 'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarShape'
+  'size' | 'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarVariant' | 'avatarShape'
 > & { tone: string }
 
 /**
@@ -34,6 +34,7 @@ export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base
     @property({ type: String }) icon?: IconName
     @property({ type: String }) emoji = ''
     @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+    @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
     @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
   }
 
@@ -80,7 +81,7 @@ export function renderMenuItemContent(props: MenuItemPresentation, trailing: unk
       icon=${ifDefined(props.icon)}
       emoji=${ifDefined(props.emoji || undefined)}
       avatar-src=${ifDefined(props.avatarSrc || undefined)}
-      avatar-variant="tertiary"
+      avatar-variant=${props.avatarVariant}
       avatar-shape=${props.avatarShape}
     >
       ${renderTextSlots(props)} ${trailing}

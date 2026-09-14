@@ -2,7 +2,7 @@ import { html } from 'lit'
 
 import type { ActionConfig } from '@/types'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import './post-detail.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -57,8 +57,10 @@ const main = html`
           링크(네비게이션)
         </mm-paragraph>
 
-        <q style="display: block; font-style: italic; margin: 4rem 0">
-          <mm-paragraph>
+        <q
+          style="display: flex; flex-direction: column; gap: var(--space-4); margin: var(--space-section) 0"
+        >
+          <mm-paragraph size="large">
             Luxury brands around the world have been connecting with their ideal audience on
             Pinterest: one that is coming to the platform with intent, looking for inspiration to
             curate ideas and refine their taste for which luxury brands to invest in. With 3 in 5
@@ -66,13 +68,15 @@ const main = html`
             brands have the opportunity to reach this highly engaged audience the moment they form
             an opinion and make a purchase decision.
           </mm-paragraph>
-          <address><b>Kelly Emanuelli, Head of Luxury at Pinterest</b></address>
+          <address>
+            <mm-paragraph size="large">Kelly Emanuelli, Head of Luxury at Pinterest</mm-paragraph>
+          </address>
         </q>
 
+        <mm-text size="18" weight="bold" as="span">
+          포스트를 수정하고 삭제하기 위한 버튼이 필요하다.
+        </mm-text>
         <mm-paragraph size="large">
-          <mm-text size="18" weight="bold" as="span">
-            포스트를 수정하고 삭제하기 위한 버튼이 필요하다.
-          </mm-text>
           신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은
           콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다. Input zooming on iOS devices ::
           iOS devices will slightly zoom into the input when the font size is less than 16px.

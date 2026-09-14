@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
@@ -81,6 +81,7 @@ const main = html`
                   icon=${ICON_NAMES.DOCUMENT}
                   label="design-tokens.md"
                   description="정리 완료 · 12KB"
+                  avatar-variant="secondary"
                 >
                   <mm-button slot="trailing" variant="tertiary" size="small">열기</mm-button>
                 </mm-menu-item-action>

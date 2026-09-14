@@ -31,10 +31,10 @@ const main = html`
         <mm-flex direction="column">
           <mm-flex direction="column" gap="3">
             <mm-order-product-item
-              image-src="/src/images/newneek-book.png"
-              name="폰타나 베네치아 로스티드 쉬림프 크림"
-              option="Brown, 3개"
-              price="₩ 22,500"
+              image-src="/src/images/cake_gosum.jpg"
+              name="뉴닉이 풀어 쓴 경제상식사전"
+              option="평생 소장"
+              price="₩ 11,900"
             ></mm-order-product-item>
             <mm-button>수량/옵션 변경</mm-button>
           </mm-flex>
