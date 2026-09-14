@@ -301,16 +301,6 @@ export const sheetHeaderStyles = css`
     width: 100%;
 
     box-sizing: border-box;
-    position: relative;
-  }
-
-  :host::before {
-    content: '';
-    background: var(--material-overlay-background-color);
-    backdrop-filter: var(--material-overlay-backdrop-filter);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
   }
 `
 

@@ -9,7 +9,6 @@ import '@/components/common'
 export class SheetHeader extends LitElement {
   static styles = sheetHeaderStyles
 
-  @property({ type: String, reflect: true }) role = 'navigation'
   @property({ type: String }) heading = ''
 
   render() {
