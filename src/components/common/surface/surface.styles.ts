@@ -72,7 +72,7 @@ const surfaceRadiusStyles = css`
 
 const surfaceDensityTokens = {
   default: { '--surface-padding': 'var(--space-4)' },
-  compact: { '--surface-padding': 'var(--space-1)' },
+  compact: { '--surface-padding': 'var(--space-2)' },
 }
 
 const surfaceDensityStyles = css`
