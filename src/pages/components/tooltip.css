@@ -11,7 +11,7 @@
   /* hyphens: auto; */
   content: attr(data-tooltip);
   opacity: 0;
-  font-size: 12px;
+  font-size: var(--font-size-12);
   overflow: hidden;
   pointer-events: none;
   visibility: hidden;

@@ -135,7 +135,7 @@ const main = html`
       </mm-comment-item>
     </mm-flex>
 
-    <aside style="margin: 2rem 0">
+    <aside style="margin-block: var(--space-8)">
       <mm-result
         heading="다음 내용이 궁금하신가요?"
         description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
@@ -154,7 +154,7 @@ const main = html`
     </aside>
   </mm-page>
 
-  <nav class="post-pagination" style="margin: 2rem 0">
+  <nav class="post-pagination" style="margin-block: var(--space-8)">
     <a class="post-pagination-previous" href="post.html">
       <mm-icon-button variant="secondary" icon=${ICON_NAMES.BACK}></mm-icon-button>
       <mm-text-block

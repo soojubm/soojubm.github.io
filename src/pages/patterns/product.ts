@@ -6,21 +6,23 @@ import './product.css'
 
 const main = html`
   <mm-page class="product">
-    <mm-button>Back to Home</mm-button>
+    <mm-flex direction="column" gap="section">
+      <mm-flex direction="column" gap="4">
+        <mm-button>Back to Home</mm-button>
 
-    <mm-grid columns="2" gap="8" class="product-head" style="margin-top: var(--space-4)">
-      <section class="product-image" role="img" aria-labelledby="제품 이미지">
-        <mm-thumbnail
-          src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
-          alt="제품 이미지"
-          ratio="1:1"
-        ></mm-thumbnail>
-      </section>
+        <mm-grid columns="2" gap="8" class="product-head">
+          <section class="product-image" role="img" aria-labelledby="제품 이미지">
+            <mm-thumbnail
+              src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
+              alt="제품 이미지"
+              ratio="1:1"
+            ></mm-thumbnail>
+          </section>
 
-      <mm-flex direction="column" gap="section">
-        <mm-flex direction="column" gap="3">
-          <mm-paragraph
-            style="
+          <mm-flex direction="column" gap="section">
+            <mm-flex direction="column" gap="3">
+              <mm-paragraph
+                style="
             display: inline-flex;
             width: fit-content;
             background: var(--background-subtle-color);
@@ -28,54 +30,101 @@ const main = html`
             border-radius: 50px;
             font-weight: var(--font-weight-bold);
           "
-          >
-            <a href="#">Hachimitsupai</a>
-          </mm-paragraph>
-          <mm-heading level="1">センチメンタル通り</mm-heading>
-          <mm-product-price
-            size="large"
-            original-price="₩ 25,000"
-            discount="36% 할인"
-            price="₩ 16,000"
-          ></mm-product-price>
-          <mm-paragraph>
-            I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more
-            refreshed and ready to start the day
-          </mm-paragraph>
-          <mm-review-summary rating="4.8" review-count="116"></mm-review-summary>
-        </mm-flex>
+              >
+                <a href="#">Hachimitsupai</a>
+              </mm-paragraph>
+              <mm-heading level="1">センチメンタル通り</mm-heading>
+              <mm-product-price
+                size="large"
+                original-price="₩ 25,000"
+                discount="36% 할인"
+                price="₩ 16,000"
+              ></mm-product-price>
+              <mm-paragraph>
+                I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
+                more refreshed and ready to start the day
+              </mm-paragraph>
+              <mm-review-summary rating="4.8" review-count="116"></mm-review-summary>
+            </mm-flex>
 
-        <form style="margin: 2rem 0 1rem">
-          <mm-flex direction="column" gap="2">
-            <mm-number-input value="1" min="1" max="99" label="수량"></mm-number-input>
+            <form>
+              <mm-flex direction="column" gap="2">
+                <mm-number-input value="1" min="1" max="99" label="수량"></mm-number-input>
 
-            <mm-button-group>
-              <mm-button aria-controls="cart-sheet" variant="primary" size="large" full-width>
-                장바구니 추가
-                <span hidden>Add to Cart</span>
-              </mm-button>
-              <mm-icon-button variant="ghost" icon=${ICON_NAMES.FAVORITE}></mm-icon-button>
-            </mm-button-group>
+                <mm-button-group>
+                  <mm-button aria-controls="cart-sheet" variant="primary" size="large" full-width>
+                    장바구니 추가
+                  </mm-button>
+                  <mm-icon-button variant="ghost" icon=${ICON_NAMES.FAVORITE}></mm-icon-button>
+                </mm-button-group>
 
-            <!-- TODO text-list -->
-            <div>
-              <mm-flex align-items="center" gap="1">
-                <mm-icon name=${ICON_NAMES.DELIVERY}></mm-icon>
-                <mm-paragraph>Free shipping on all U.S. orders of $40+</mm-paragraph>
+                <!-- TODO text-list -->
+                <div>
+                  <mm-flex align-items="center" gap="1">
+                    <mm-icon name=${ICON_NAMES.DELIVERY}></mm-icon>
+                    <mm-paragraph>Free shipping on all U.S. orders of $40+</mm-paragraph>
+                  </mm-flex>
+                  <mm-flex align-items="center" gap="1">
+                    <mm-icon name=${ICON_NAMES.BOX}></mm-icon>
+                    <mm-paragraph>Free returns and exchanges</mm-paragraph>
+                  </mm-flex>
+                </div>
               </mm-flex>
-              <mm-flex align-items="center" gap="1">
-                <mm-icon name=${ICON_NAMES.BOX}></mm-icon>
-                <mm-paragraph>Free returns and exchanges</mm-paragraph>
-              </mm-flex>
-            </div>
+            </form>
           </mm-flex>
-        </form>
+        </mm-grid>
       </mm-flex>
-    </mm-grid>
 
-    <section style="margin: 4rem auto 0">
-      <mm-flex direction="column" gap="section">
-        <!-- 마케팅 스토리: 중앙 정렬 + 특징 -->
+      <!-- 마케팅 스토리: 중앙 정렬 + 특징 -->
+      <mm-grid columns="1" gap="4">
+        <mm-text-block
+          centered
+          level="1"
+          eyebrow="Why prebiotics?"
+          heading="Prebiotics are fibers that feed good bacteria"
+          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+        ></mm-text-block>
+        <mm-feature-group columns="4">
+          <mm-feature
+            centered
+            icon=${ICON_NAMES.FLOWER}
+            heading="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+          <mm-feature
+            centered
+            icon=${ICON_NAMES.SPARKS}
+            heading="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+          <mm-feature
+            centered
+            icon=${ICON_NAMES.FAVORITE}
+            heading="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+          <mm-feature
+            centered
+            icon=${ICON_NAMES.LIKE}
+            heading="Tangerine Oil"
+            description="A microbial substrate that has a positive impact on the oral environment"
+          ></mm-feature>
+        </mm-feature-group>
+      </mm-grid>
+
+      <!-- 마케팅 스토리: 이미지 + 텍스트 -->
+      <mm-grid columns="2" gap="8">
+        <mm-text-block
+          level="1"
+          eyebrow="Why prebiotics?"
+          heading="Prebiotics are fibers that feed good bacteria"
+          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+        ></mm-text-block>
+        <mm-thumbnail ratio="1:1"></mm-thumbnail>
+      </mm-grid>
+
+      <!-- 마케팅 스토리: bleed 배경 + 특징 -->
+      <section class="product-story-bleed">
         <mm-grid columns="1" gap="4">
           <mm-text-block
             centered
@@ -85,6 +134,18 @@ const main = html`
             description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
           ></mm-text-block>
           <mm-feature-group columns="4">
+            <mm-feature
+              centered
+              icon=${ICON_NAMES.LIKE}
+              heading="Tangerine Oil"
+              description="A microbial substrate that has a positive impact on the oral environment"
+            ></mm-feature>
+            <mm-feature
+              centered
+              icon=${ICON_NAMES.FAVORITE}
+              heading="Tangerine Oil"
+              description="A microbial substrate that has a positive impact on the oral environment"
+            ></mm-feature>
             <mm-feature
               centered
               icon=${ICON_NAMES.FLOWER}
@@ -97,126 +158,64 @@ const main = html`
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
             ></mm-feature>
-            <mm-feature
-              centered
-              icon=${ICON_NAMES.FAVORITE}
-              heading="Tangerine Oil"
-              description="A microbial substrate that has a positive impact on the oral environment"
-            ></mm-feature>
-            <mm-feature
-              centered
-              icon=${ICON_NAMES.LIKE}
-              heading="Tangerine Oil"
-              description="A microbial substrate that has a positive impact on the oral environment"
-            ></mm-feature>
           </mm-feature-group>
         </mm-grid>
+      </section>
 
-        <!-- 마케팅 스토리: 이미지 + 텍스트 -->
-        <mm-grid columns="2" gap="8">
-          <mm-text-block
-            level="1"
-            eyebrow="Why prebiotics?"
-            heading="Prebiotics are fibers that feed good bacteria"
-            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-          <mm-thumbnail ratio="1:1"></mm-thumbnail>
+      <!-- 마케팅 스토리: 이미지 + 텍스트 -->
+      <mm-grid columns="2" gap="8">
+        <mm-thumbnail ratio="1:1"></mm-thumbnail>
+        <mm-text-block
+          level="1"
+          eyebrow="Why prebiotics?"
+          heading="Prebiotics are fibers that feed good bacteria"
+          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+        ></mm-text-block>
+      </mm-grid>
+
+      <!-- 리뷰 -->
+      <mm-flex as="section" direction="column" gap="8">
+        <mm-text-block
+          centered
+          level="1"
+          heading="Loved By Over +70,000 Smiles!"
+          description="Toothpaste so good, you’ll actually look forward to brushing —just ask our customers."
+        ></mm-text-block>
+        <mm-grid columns="2" gap="4">
+          <mm-review-item
+            rating="5"
+            content="I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more refreshed and ready to start the day"
+            author="Fleet Foxes"
+            datetime="2020년 12월 1일"
+          ></mm-review-item>
+          <mm-review-item
+            rating="5"
+            content="I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more refreshed and ready to start the day"
+            author="Fleet Foxes"
+            datetime="2020년 12월 1일"
+          ></mm-review-item>
         </mm-grid>
-
-        <!-- 마케팅 스토리: bleed 배경 + 특징 -->
-        <section class="product-story-bleed">
-          <mm-grid columns="1" gap="4">
-            <mm-text-block
-              centered
-              level="1"
-              eyebrow="Why prebiotics?"
-              heading="Prebiotics are fibers that feed good bacteria"
-              description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-            ></mm-text-block>
-            <mm-feature-group columns="4">
-              <mm-feature
-                centered
-                icon=${ICON_NAMES.LIKE}
-                heading="Tangerine Oil"
-                description="A microbial substrate that has a positive impact on the oral environment"
-              ></mm-feature>
-              <mm-feature
-                centered
-                icon=${ICON_NAMES.FAVORITE}
-                heading="Tangerine Oil"
-                description="A microbial substrate that has a positive impact on the oral environment"
-              ></mm-feature>
-              <mm-feature
-                centered
-                icon=${ICON_NAMES.FLOWER}
-                heading="Tangerine Oil"
-                description="A microbial substrate that has a positive impact on the oral environment"
-              ></mm-feature>
-              <mm-feature
-                centered
-                icon=${ICON_NAMES.SPARKS}
-                heading="Tangerine Oil"
-                description="A microbial substrate that has a positive impact on the oral environment"
-              ></mm-feature>
-            </mm-feature-group>
-          </mm-grid>
-        </section>
-
-        <!-- 마케팅 스토리: 이미지 + 텍스트 -->
-        <mm-grid columns="2" gap="8">
-          <mm-thumbnail ratio="1:1"></mm-thumbnail>
-          <mm-text-block
-            level="1"
-            eyebrow="Why prebiotics?"
-            heading="Prebiotics are fibers that feed good bacteria"
-            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-        </mm-grid>
-
-        <!-- 리뷰 -->
-        <mm-flex as="section" direction="column" gap="8">
-          <mm-text-block
-            centered
-            level="1"
-            heading="Loved By Over +70,000 Smiles!"
-            description="Toothpaste so good, you’ll actually look forward to brushing —just ask our customers."
-          ></mm-text-block>
-          <mm-grid columns="2" gap="4">
-            <mm-review-item
-              rating="5"
-              content="I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more refreshed and ready to start the day"
-              author="Fleet Foxes"
-              datetime="2020년 12월 1일"
-            ></mm-review-item>
-            <mm-review-item
-              rating="5"
-              content="I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling more refreshed and ready to start the day"
-              author="Fleet Foxes"
-              datetime="2020년 12월 1일"
-            ></mm-review-item>
-          </mm-grid>
-        </mm-flex>
-
-        <!-- 상품 상세정보 고지 -->
-        <section class="product-detail-summary">
-          <mm-heading level="2">상품상세정보 고지</mm-heading>
-          <mm-meta-item-group style="margin: var(--space-3) 0">
-            <mm-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></mm-meta-item>
-            <mm-meta-item layout="inline" label="소재" value="금속"></mm-meta-item>
-            <mm-meta-item layout="inline" label="치수" value="20mm * 40mm"></mm-meta-item>
-            <mm-meta-item
-              layout="inline"
-              label="전성분"
-              value="정제수, 아리수, 활명수"
-            ></mm-meta-item>
-            <mm-meta-item layout="inline" label="제조일자" value="2019. 11. 08."></mm-meta-item>
-            <mm-meta-item layout="inline" label="제조업자" value="별도표기"></mm-meta-item>
-            <mm-meta-item layout="inline" label="제조국" value="대한민국"></mm-meta-item>
-            <mm-meta-item layout="inline" label="문의전화" value="02-000-2000"></mm-meta-item>
-          </mm-meta-item-group>
-        </section>
       </mm-flex>
-    </section>
+
+      <!-- 상품 상세정보 고지 -->
+      <section class="product-detail-summary">
+        <mm-heading level="2">상품상세정보 고지</mm-heading>
+        <mm-meta-item-group style="margin: var(--space-3) 0">
+          <mm-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></mm-meta-item>
+          <mm-meta-item layout="inline" label="소재" value="금속"></mm-meta-item>
+          <mm-meta-item layout="inline" label="치수" value="20mm * 40mm"></mm-meta-item>
+          <mm-meta-item
+            layout="inline"
+            label="전성분"
+            value="정제수, 아리수, 활명수"
+          ></mm-meta-item>
+          <mm-meta-item layout="inline" label="제조일자" value="2019. 11. 08."></mm-meta-item>
+          <mm-meta-item layout="inline" label="제조업자" value="별도표기"></mm-meta-item>
+          <mm-meta-item layout="inline" label="제조국" value="대한민국"></mm-meta-item>
+          <mm-meta-item layout="inline" label="문의전화" value="02-000-2000"></mm-meta-item>
+        </mm-meta-item-group>
+      </section>
+    </mm-flex>
 
     <mm-fixed-bottom>
       <mm-flex>
