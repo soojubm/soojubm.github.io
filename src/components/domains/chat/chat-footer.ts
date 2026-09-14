@@ -7,11 +7,21 @@ import '@/components/common'
 export class ChatFooter extends LitElement {
   static styles = css`
     :host {
+      box-sizing: border-box;
+      position: relative;
+      z-index: var(--material-zindex-elevated);
+      isolation: isolate;
+    }
+
+    /* 재질은 ::before 형제 레이어가 소유한다. 조상에 backdrop-filter가 걸리면 슬롯된 prompt-input의 blur가 죽기 때문이다. */
+    :host::before {
+      content: '';
       background: var(--material-chrome-background-color);
       backdrop-filter: var(--material-chrome-backdrop-filter);
-      box-sizing: border-box;
-
-      z-index: var(--material-zindex-elevated);
+      -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
+      position: absolute;
+      inset: 0;
+      z-index: -1;
     }
 
     /* 화면 전체를 덮는 스크롤 위로 프롬프트 입력이 떠서
