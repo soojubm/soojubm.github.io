@@ -1,3 +1,3 @@
-import './fixed-top'
+import '@/components/layouts/fixed-top/fixed-top'
 
 export {}

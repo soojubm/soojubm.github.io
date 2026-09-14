@@ -1,9 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { renderChatBubbleShell, withChatBubbleImage } from '@/components/domains/chat/chat.helpers'
 import { chatBubbleStyles, myChatBubbleStyles } from '@/components/domains/chat/chat.styles'
-
-import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
 import '@/components/common/text/text'
 

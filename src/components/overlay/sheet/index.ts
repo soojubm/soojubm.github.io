@@ -6,4 +6,4 @@ import '@/components/overlay/sheet/sheet-footer'
 import '@/components/overlay/sheet/semantics/sort-selector'
 import '@/components/overlay/sheet/semantics/theme-selector'
 
-export {}
+export type { Sheet } from '@/components/overlay/sheet/sheet'

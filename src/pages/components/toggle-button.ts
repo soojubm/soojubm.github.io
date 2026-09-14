@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
+import type { FilterOption } from '@/components/common/button'
 import type { OptionItem } from '@/components/common/toggle-button'
 import type {
   ComponentFeatureItem,

@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import type { ToggleButtonGroup } from '@/components/common/toggle-button/toggle-button-group'
+import type { ToggleButtonGroup } from '@/components/common/toggle-button'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'

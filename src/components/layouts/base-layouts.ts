@@ -6,8 +6,8 @@ import type { TemplateResult } from 'lit'
 import '@/components/common/navbar/navbar'
 import '@/components/layouts/app-sidebar'
 import '@/components/common/footer/footer'
-import './fixed-bottom'
-import './fixed-top'
+import '@/components/layouts/fixed-bottom'
+import '@/components/layouts/fixed-top'
 
 import '@/stylesheets/shared.css'
 

@@ -1,9 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+import { renderChatBubbleShell, withChatBubbleImage } from '@/components/domains/chat/chat.helpers'
 import { chatBubbleStyles } from '@/components/domains/chat/chat.styles'
-
-import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
 /**
  * 상대방/AI가 보낸 메시지 버블. 좌측 정렬.

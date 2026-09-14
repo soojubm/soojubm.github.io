@@ -9,7 +9,6 @@ import '@/components/overlay/sheet'
 import '@/components/common/input/semantics/searchfield'
 import '@/components/domains/search-suggestions'
 import '@/components/common/menu-item'
-import '@/components/common/menu-item/semantics/menu-item-action'
 import '@/components/common/text/semantics/paragraph'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }

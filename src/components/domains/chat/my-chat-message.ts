@@ -1,9 +1,11 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import {
+  renderChatMessageFailedActions,
+  renderChatMessageTime,
+} from '@/components/domains/chat/chat.helpers'
 import { emit } from '@/utils'
-
-import { renderChatMessageFailedActions, renderChatMessageTime } from './chat.helpers'
 
 @customElement('mm-my-chat-message')
 export class MyChatMessage extends LitElement {

@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
+import type { FilterOption } from '@/components/common/button'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import './cake.css'

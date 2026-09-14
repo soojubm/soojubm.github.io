@@ -8,4 +8,4 @@ import '@/components/common/button/semantics/read-more-button'
 import '@/components/common/button/semantics/show-more-button'
 import '@/components/common/button/semantics/hashtag-link'
 
-export {}
+export type { FilterOption } from '@/components/common/button/semantics/filter-button-group'

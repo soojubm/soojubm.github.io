@@ -2,9 +2,8 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { renderChatMessageTime } from '@/components/domains/chat/chat.helpers'
 import { emit } from '@/utils'
-
-import { renderChatMessageTime } from './chat.helpers'
 
 import '@/components/common/icon-button/icon-button'
 import '@/components/common/button/button-group'

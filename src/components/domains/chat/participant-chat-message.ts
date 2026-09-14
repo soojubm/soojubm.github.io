@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { renderChatMessageTime } from './chat.helpers'
+import { renderChatMessageTime } from '@/components/domains/chat/chat.helpers'
 
 import '@/components/common/avatar/avatar'
 import '@/components/common/text/text'

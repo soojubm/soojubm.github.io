@@ -1,11 +1,10 @@
 import { html, render } from 'lit'
 
-import type { FilterOption } from '@/components/common/button/semantics/filter-button-group'
+import type { FilterOption } from '@/components/common/button'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import '@/components/domains/media-card'
-
-import { renderList, getCountries, loadJson } from '../list-page'
+import { renderList, getCountries, loadJson } from '@/pages/my/list-page'
 
 const main = html`
   <mm-page>

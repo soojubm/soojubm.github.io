@@ -1,3 +1,3 @@
 import '@/components/domains/portfolio-item/portfolio-item'
 
-export {}
+export type { PortfolioItem } from '@/components/domains/portfolio-item/portfolio-item'

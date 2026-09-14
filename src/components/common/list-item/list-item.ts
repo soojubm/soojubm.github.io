@@ -9,7 +9,6 @@ import type { PropertyValues } from 'lit'
 import { listItemStyles } from '@/components/common/list-item/list-item.styles'
 import '@/components/common/avatar/avatar'
 import '@/components/common/flex/flex'
-import '@/components/common/text/semantics/caption'
 import '@/components/common/text'
 
 export type ListItemSize = 'small' | '48' | '80'

@@ -1,12 +1,11 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+import { renderChatBubbleShell, withChatBubbleImage } from '@/components/domains/chat/chat.helpers'
 import {
   chatBubbleStyles,
   participantChatBubbleStyles,
 } from '@/components/domains/chat/chat.styles'
-
-import { renderChatBubbleShell, withChatBubbleImage } from '../chat.helpers'
 
 /**
  * 다중 채팅 참여자가 보낸 메시지 버블. 좌측 정렬 + subtle 배경.

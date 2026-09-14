@@ -1,3 +1,3 @@
-import './fixed-bottom'
+import '@/components/layouts/fixed-bottom/fixed-bottom'
 
 export {}

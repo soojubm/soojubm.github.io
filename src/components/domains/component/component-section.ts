@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/tag/tag'
 
-import { componentExampleStyles } from './component.styles'
+import { componentExampleStyles } from '@/components/domains/component/component.styles'
 import '@/components/common/text/semantics/text-block'
 
 @customElement('mm-component-section')
