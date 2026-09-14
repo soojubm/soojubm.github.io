@@ -205,6 +205,7 @@ const main = html`
             orientation="vertical"
             stretch
             .options=${samplerOptions}
+            value=${samplerOptions[0].value}
           ></mm-toggle-button-group>
           <mm-scroll
             direction="column"
@@ -309,7 +310,7 @@ function setupScrollSpySampler() {
     root: scrollRoot,
     rootMargin: '0px 0px -55% 0px',
     onActiveChange: id => {
-      nav.selectedIndex = samplerSections.findIndex(section => section.id === id)
+      nav.value = id
     },
   })
 

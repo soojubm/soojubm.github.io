@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { Orientation } from '@/controllers/roving-focus-controller'
+import type { OptionItem } from '@/types'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
@@ -14,11 +15,7 @@ import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 
 type FilterMode = 'single' | 'multiple'
-export type FilterOption = {
-  value: string
-  label: string
-  icon?: IconName
-  disabled?: boolean
+export type FilterOption = OptionItem & {
   selectAll?: boolean
 }
 
@@ -38,8 +35,8 @@ export class FilterButtonGroup extends LitElement {
   ]
 
   @property({ type: String }) mode: FilterMode = 'single'
-  @property({ type: Array }) values: string[] = []
-  @property({ type: Array }) options: FilterOption[] = []
+  @property({ attribute: false }) values: string[] = []
+  @property({ attribute: false }) options: FilterOption[] = []
   @property({ type: String, reflect: true }) role = 'group'
   @property({ type: String }) orientation: Orientation = 'horizontal'
 
@@ -92,19 +89,22 @@ export class FilterButtonGroup extends LitElement {
         type="button"
         ?disabled=${option.disabled}
         aria-pressed=${selected ? 'true' : 'false'}
-        @click=${() => this.updateValues(option)}
+        @click=${() => this.handleOptionClick(option)}
       >
-        ${iconName
-          ? html`
-              <mm-icon name=${iconName}></mm-icon>
-            `
-          : nothing}
-        ${option.label}
+        ${this.renderIcon(iconName)} ${option.label}
       </button>
     `
   }
 
-  private updateValues(option: FilterOption) {
+  private renderIcon(icon?: IconName) {
+    if (!icon) return nothing
+
+    return html`
+      <mm-icon name=${icon}></mm-icon>
+    `
+  }
+
+  private handleOptionClick(option: FilterOption) {
     if (option.disabled) return
 
     this.select(option)

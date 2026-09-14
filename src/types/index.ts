@@ -1,3 +1,5 @@
+import type { IconName } from '@/components/common/icon/icon-names'
+
 // ARIA 상태 속성은 스펙이 허용하는 토큰만 받도록 좁혀 lit-analyzer 바인딩 검사를 통과시킨다.
 export type AriaBoolean = 'true' | 'false' | null
 export type AriaTriState = 'true' | 'false' | 'mixed' | null
@@ -11,5 +13,13 @@ export type AriaIdRef = string | null
 export type ActionConfig = {
   label: string
   onClick?: () => void
+  disabled?: boolean
+}
+
+// 옵션 배열을 받는 선택 UI(radio-group·toggle-button-group·filter-button-group)가 공유하는 옵션 모양.
+export type OptionItem = {
+  value: string
+  label: string
+  icon?: IconName
   disabled?: boolean
 }

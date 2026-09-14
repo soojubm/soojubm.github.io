@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { OptionItem } from '@/types'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -40,11 +41,19 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'size', type: "'large'", optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
+  {
+    name: 'mm-radio-group options',
+    type: '{ value: string; label: string; disabled?: boolean }[] = []',
+  },
   { name: 'mm-radio-group name', type: 'string', optional: true },
   { name: 'mm-radio-group value', type: 'string', optional: true },
+  { name: 'mm-radio-group size', type: "'large'", optional: true },
   { name: 'mm-radio-group legend', type: 'string', optional: true },
   { name: 'mm-radio-group disabled', type: 'boolean', optional: true },
+  { name: 'mm-radio-card-group name', type: 'string', optional: true },
+  { name: 'mm-radio-card-group value', type: 'string', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+  { name: 'mm-radio-group change', type: 'CustomEvent detail: value, name', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -67,6 +76,12 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const membershipOptions: OptionItem[] = [
+  { value: 'basic', label: '베이직 요금제' },
+  { value: 'premium', label: '프리미엄 요금제' },
+  { value: 'ultimate', label: '얼티메이트 요금제', disabled: true },
+]
+
 const main = html`
   <mm-page>
     <mm-page-header
@@ -76,19 +91,18 @@ const main = html`
 
     <mm-component-example>
       <mm-flex direction="column" gap="6">
-        <fieldset role="radiogroup" style="max-width: 640px">
-          <mm-radio-group id="plan-group" name="membership" value="premium">
-            <mm-radio value="basic">베이직 요금제</mm-radio>
-            <mm-radio value="premium">프리미엄 요금제</mm-radio>
-            <mm-radio value="ultimate" disabled>얼티메이트 요금제</mm-radio>
-          </mm-radio-group>
-        </fieldset>
+        <mm-radio-group
+          name="membership"
+          value="premium"
+          .options=${membershipOptions}
+        ></mm-radio-group>
 
-        <mm-radio-group name="membership-large" value="premium">
-          <mm-radio size="large" value="basic">베이직 요금제</mm-radio>
-          <mm-radio size="large" value="premium">프리미엄 요금제</mm-radio>
-          <mm-radio size="large" value="ultimate" disabled>얼티메이트 요금제</mm-radio>
-        </mm-radio-group>
+        <mm-radio-group
+          name="membership-large"
+          size="large"
+          value="premium"
+          .options=${membershipOptions}
+        ></mm-radio-group>
       </mm-flex>
     </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -104,10 +118,14 @@ const main = html`
         '선택 표식 — 선택 시 원 안에 채워지는 점(dot).',
         '레이블 — 선택지를 설명하는 클릭 가능한 텍스트.',
       ]}
-      .code=${`<mm-radio-group name="membership" value="premium">
-  <mm-radio value="basic">베이직 요금제</mm-radio>
-  <mm-radio value="premium">프리미엄 요금제</mm-radio>
-</mm-radio-group>`}
+      .code=${`<mm-radio-group
+    name="membership"
+    value="premium"
+    .options=\${[
+        { value: 'basic', label: '베이직 요금제' },
+        { value: 'premium', label: '프리미엄 요금제' },
+    ]}
+></mm-radio-group>`}
       .markers=${[
         { placement: 'block-start' },
         { placement: 'inline-start', offset: 'calc(100% - 0.5rem)' },
@@ -115,17 +133,18 @@ const main = html`
         { placement: 'inline-end', offset: 'calc(100% - 0.5rem)' },
       ]}
     >
-      <mm-radio-group name="membership-anatomy" value="premium">
-        <mm-radio value="basic">베이직 요금제</mm-radio>
-        <mm-radio value="premium">프리미엄 요금제</mm-radio>
-      </mm-radio-group>
+      <mm-radio-group
+        name="membership-anatomy"
+        value="premium"
+        .options=${membershipOptions.slice(0, 2)}
+      ></mm-radio-group>
     </mm-component-anatomy>
 
     <mm-component-section
       heading="RadioCard"
-      description="레이블만으로 부족해 가격·배지·설명을 담아야 할 때, 면 전체를 선택지로 만듭니다. 그룹·단일 선택 규칙은 라디오와 같아 mm-radio-group으로 묶습니다."
+      description="레이블만으로 부족해 가격·배지·설명을 담아야 할 때, 면 전체를 선택지로 만듭니다. 옵션 배열로 담을 수 없는 콘텐츠라 카드를 자식으로 받는 mm-radio-card-group으로 묶습니다."
     >
-      <mm-radio-group name="license" value="standard" style="max-width: 420px">
+      <mm-radio-card-group name="license" value="standard" style="max-width: 420px">
         <mm-radio-card value="standard" checked>
           <mm-text-block
             level="5"
@@ -148,7 +167,7 @@ const main = html`
             <mm-tag>2,760P 적립</mm-tag>
           </mm-flex>
         </mm-radio-card>
-      </mm-radio-group>
+      </mm-radio-card-group>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

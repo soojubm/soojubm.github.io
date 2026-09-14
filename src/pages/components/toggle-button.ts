@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
-import type { FilterOption, OptionItem } from '@/components/common'
+import type { FilterOption } from '@/components/common'
+import type { OptionItem } from '@/types'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -38,10 +39,11 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'aria-label', type: 'string', optional: true },
   {
     name: 'mm-toggle-button-group options',
-    type: '{ value: string; label?: string; icon?: IconName; disabled?: boolean }[] = []',
+    type: '{ value: string; label: string; icon?: IconName; disabled?: boolean }[] = []',
     optional: true,
   },
-  { name: 'mm-toggle-button-group selected-index', type: 'number = 0', optional: true },
+  { name: 'mm-toggle-button-group value', type: 'string', optional: true },
+  { name: 'mm-toggle-button-group hidden-label', type: 'boolean = false', optional: true },
   { name: 'mm-toggle-button-group stretch', type: 'boolean = false', optional: true },
   {
     name: 'mm-toggle-button-group orientation',
@@ -49,6 +51,7 @@ const componentProps: ComponentPropItemData[] = [
     optional: true,
   },
   { name: 'change', type: 'CustomEvent detail: pressed, value', kind: 'event' },
+  { name: 'mm-toggle-button-group change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [{ name: 'toggle-button-border-radius' }]
@@ -67,8 +70,8 @@ const anatomyViewOptions: OptionItem[] = [
 ]
 
 const iconOnlyViewOptions: OptionItem[] = [
-  { value: 'grid', icon: 'view-grid', ariaLabel: 'Grid view' },
-  { value: 'list', icon: 'table-rows', ariaLabel: 'List view' },
+  { value: 'grid', icon: 'view-grid', label: 'Grid view' },
+  { value: 'list', icon: 'table-rows', label: 'List view' },
 ]
 
 const labelOnlyViewOptions: OptionItem[] = [
@@ -125,7 +128,24 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}>
+      <mm-heading level="3">접근성</mm-heading>
+      <mm-text-block
+        level="4"
+        heading="레이블이 보일 때"
+        description="보이는 레이블이 곧 버튼의 이름이므로 aria-label을 따로 주지 않습니다. 누름 여부는 aria-pressed가 전달하므로 레이블에 '켜짐'·'선택됨' 같은 상태를 덧붙이지 않습니다."
+      ></mm-text-block>
+      <mm-text-block
+        level="4"
+        heading="아이콘만 보일 때"
+        description="단독 토글은 aria-label로 이름을 줍니다. 그룹은 옵션의 label을 그대로 두고 hidden-label을 켜서, label이 화면 대신 버튼의 이름으로 쓰이게 합니다."
+      ></mm-text-block>
+      <mm-text-block
+        level="4"
+        heading="그룹 이름"
+        description="옵션만으로 무엇을 고르는지 알기 어려우면 그룹에 aria-label을 주어 묶음 전체의 이름을 전달합니다."
+      ></mm-text-block>
+    </mm-component-guide>
 
     <mm-component-anatomy
       .parts=${[
@@ -135,6 +155,7 @@ const main = html`
         '구분선 — 옵션 사이의 시각적 경계(선택).',
       ]}
       .code=${`<mm-toggle-button-group
+    value="list"
     .options=\${[
         { value: 'list', icon: 'table-rows', label: '목록' },
         { value: 'grid', icon: 'view-grid', label: '그리드' },
@@ -147,7 +168,7 @@ const main = html`
         { placement: 'block-end' },
       ]}
     >
-      <mm-toggle-button-group .options=${anatomyViewOptions}></mm-toggle-button-group>
+      <mm-toggle-button-group value="list" .options=${anatomyViewOptions}></mm-toggle-button-group>
     </mm-component-anatomy>
 
     <mm-component-section
@@ -155,13 +176,23 @@ const main = html`
       description="여러 ToggleButton을 묶어 단일 선택(세그먼트 컨트롤)으로 동작합니다. 레이블·아이콘·아이콘 전용·disabled 옵션을 지원합니다."
     >
       <mm-flex direction="column" gap="4">
-        <mm-toggle-button-group .options=${iconOnlyViewOptions}></mm-toggle-button-group>
+        <mm-toggle-button-group
+          hidden-label
+          value="grid"
+          .options=${iconOnlyViewOptions}
+        ></mm-toggle-button-group>
 
-        <mm-toggle-button-group .options=${labelOnlyViewOptions}></mm-toggle-button-group>
+        <mm-toggle-button-group
+          value="grid"
+          .options=${labelOnlyViewOptions}
+        ></mm-toggle-button-group>
 
-        <mm-toggle-button-group .options=${labeledIconViewOptions}></mm-toggle-button-group>
+        <mm-toggle-button-group
+          value="grid"
+          .options=${labeledIconViewOptions}
+        ></mm-toggle-button-group>
 
-        <mm-toggle-button-group .options=${densityOptions}></mm-toggle-button-group>
+        <mm-toggle-button-group value="compact" .options=${densityOptions}></mm-toggle-button-group>
       </mm-flex>
     </mm-component-section>
 

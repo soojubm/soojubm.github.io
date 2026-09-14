@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import type { OptionItem } from '@/components/common'
+import type { OptionItem } from '@/types'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -50,8 +50,8 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const visibilityOptions: OptionItem[] = [
-  { label: '공개', value: 'apple' },
-  { label: '비공개', value: 'banana' },
+  { label: '공개', value: 'public' },
+  { label: '비공개', value: 'private' },
 ]
 
 const main = html`
@@ -141,8 +141,8 @@ const main = html`
         </mm-top-bar>
         <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
         <mm-toggle-button-group
-          id="button-list"
           .options=${visibilityOptions}
+          value="public"
         ></mm-toggle-button-group>
 
         <mm-add-button>이 컬렉션에 멤버 추가</mm-add-button>

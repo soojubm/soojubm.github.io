@@ -65,7 +65,7 @@ export const radioStyles = css`
     ${focusRingStyles};
   }
 
-  input:disabled ~ label {
+  input:disabled + label {
     opacity: 0.5;
     cursor: not-allowed;
   }

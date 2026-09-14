@@ -52,9 +52,9 @@ const columns: TableColumn[] = [
 ]
 
 const statusFilterOptions = [
-  { label: 'All', value: 'apple' },
-  { label: 'Draft', value: 'banana' },
-  { label: 'Cherry', value: 'cherry' },
+  { label: 'All', value: 'all' },
+  { label: 'Draft', value: 'draft' },
+  { label: 'Scheduled', value: 'scheduled' },
 ]
 
 const publishFilterOptions = [
@@ -143,10 +143,13 @@ const main = html`
 
       <mm-flex gap="2" wrap="wrap">
         <mm-toggle-button-group
-          id="button-list"
           .options=${statusFilterOptions}
+          value="all"
         ></mm-toggle-button-group>
-        <mm-toggle-button-group .options=${publishFilterOptions}></mm-toggle-button-group>
+        <mm-toggle-button-group
+          .options=${publishFilterOptions}
+          value="all"
+        ></mm-toggle-button-group>
       </mm-flex>
 
       <menu role="menubar" style="margin: var(--space-3) 0">

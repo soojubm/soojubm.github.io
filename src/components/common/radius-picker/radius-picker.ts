@@ -37,14 +37,14 @@ export class RadiusPicker extends LitElement {
       <mm-toggle-button-group
         stretch
         .options=${SHAPE_OPTIONS}
-        .selectedIndex=${this.shape === 'square' ? 1 : 0}
+        .value=${this.shape}
         @change=${this.handleShapeChange}
       ></mm-toggle-button-group>
 
       <mm-toggle-button-group
         stretch
         .options=${COLOR_OPTIONS}
-        .selectedIndex=${this.color === 'black' ? 1 : 0}
+        .value=${this.color}
         @change=${this.handleColorChange}
       ></mm-toggle-button-group>
     `

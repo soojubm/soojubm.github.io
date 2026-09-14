@@ -1,6 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { OptionItem } from '@/types'
+
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { emit } from '@/utils'
 import '@/components/common/toggle-button/toggle-button-group'
@@ -11,23 +13,20 @@ type ViewMode = 'grid' | 'list'
 export class ViewModeSwitcher extends LitElement {
   @property({ type: String }) value: ViewMode = 'grid'
 
-  private readonly options = [
-    { value: 'grid', icon: ICON_NAMES.GRID_VIEW, ariaLabel: '그리드 보기' },
-    { value: 'list', icon: ICON_NAMES.LIST_VIEW, ariaLabel: '목록 보기' },
+  private readonly options: OptionItem[] = [
+    { value: 'grid', icon: ICON_NAMES.GRID_VIEW, label: '그리드 보기' },
+    { value: 'list', icon: ICON_NAMES.LIST_VIEW, label: '목록 보기' },
   ]
 
   render() {
     return html`
       <mm-toggle-button-group
+        hidden-label
         .options=${this.options}
-        .selectedIndex=${this.selectedIndex}
+        .value=${this.value}
         @change=${this.handleOptionChange}
       ></mm-toggle-button-group>
     `
-  }
-
-  private get selectedIndex() {
-    return this.value === 'list' ? 1 : 0
   }
 
   private updateMode(mode: ViewMode) {

@@ -1,26 +1,31 @@
 import { LitElement, html } from 'lit'
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
+import { repeat } from 'lit/directives/repeat.js'
 
-import type { Radio } from '@/components/common/radio/radio'
-import type { RadioCard } from '@/components/common/radio/semantics/radio-card'
+import type { OptionItem } from '@/types'
 
-import { radioGroupStyles } from '@/components/common/radio/radio.styles'
-import { SelectionGroupController } from '@/controllers/selection-group-controller'
+import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
+import { radioGroupStyles, radioStyles } from '@/components/common/radio/radio.styles'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils'
+import { emit, uniqueId } from '@/utils'
+import '@/components/common/text/semantics/paragraph'
 
+// 같은 name의 네이티브 radio가 한 shadow root에 모여야 방향키 이동과 단일 선택을 브라우저가 처리한다.
+// 그래서 mm-radio를 감싸지 않고, 공유 스타일 모듈(radioStyles)을 조합해 input을 직접 렌더한다.
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
-  static styles = [resetStyles, radioGroupStyles]
+  static styles = [resetStyles, visuallyHiddenInputStyles, radioGroupStyles, radioStyles]
 
+  @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
+  @property({ type: String, reflect: true }) size?: string
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) legend = ''
 
-  @queryAssignedElements({ selector: 'mm-radio, mm-radio-card' })
-  private radios!: (Radio | RadioCard)[]
+  // name을 주지 않아도 네이티브 radio가 한 그룹으로 묶이도록 내부 이름을 둔다.
+  private fallbackName = uniqueId('radio-group')
 
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
@@ -29,38 +34,41 @@ export class RadioGroup extends LitElement {
     },
   })
 
-  private group = new SelectionGroupController<Radio | RadioCard>({
-    selection: this.selection,
-    getItems: () => this.radios,
-    isEmpty: () => !this.value,
-    applyItem: radio => {
-      if (this.name) radio.name = this.name
-      // 그룹 disabled는 항목 자신의 disabled를 덮지 않고 더한다.
-      // disabled는 reflect하지 않으므로 attribute가 마크업이 선언한 의도로 남는다.
-      radio.disabled = this.disabled || radio.hasAttribute('disabled')
-    },
-    onChange: () => {
-      emit(this, 'change', { value: this.value, name: this.name })
-    },
-  })
-
   render() {
     return html`
-      <fieldset
-        class="radio-group"
-        ?disabled=${this.disabled}
-        @change=${this.group.handleItemChange}
-      >
+      <fieldset class="radio-group" ?disabled=${this.disabled}>
         <legend>${this.legend}</legend>
-        <slot @slotchange=${this.group.handleSlotChange}></slot>
+        ${repeat(
+          this.options,
+          option => option.value,
+          option => this.renderOption(option),
+        )}
       </fieldset>
     `
   }
 
-  protected updated(changedProperties: Map<string, unknown>) {
-    const syncedProperties = ['value', 'name', 'disabled']
-    if (!syncedProperties.some(propertyName => changedProperties.has(propertyName))) return
+  private renderOption(option: OptionItem) {
+    const inputId = `${this.fallbackName}-${option.value}`
 
-    this.group.sync()
+    return html`
+      <input
+        type="radio"
+        id=${inputId}
+        name=${this.name || this.fallbackName}
+        .value=${option.value}
+        .checked=${this.selection.isOptionSelected(option)}
+        ?disabled=${option.disabled}
+        @change=${() => this.handleOptionChange(option)}
+      />
+      <label for=${inputId}>
+        <span class="indicator"></span>
+        <mm-paragraph>${option.label}</mm-paragraph>
+      </label>
+    `
+  }
+
+  private handleOptionChange(option: OptionItem) {
+    this.selection.select(option)
+    emit(this, 'change', { value: this.value, name: this.name })
   }
 }

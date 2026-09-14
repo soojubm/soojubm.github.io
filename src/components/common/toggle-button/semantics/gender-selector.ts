@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { OptionItem } from '@/components/common/toggle-button/toggle-button-group'
+import type { OptionItem } from '@/types'
 
 import { emit } from '@/utils'
 import '@/components/common/toggle-button/toggle-button-group'
@@ -34,16 +34,11 @@ export class GenderSelector extends LitElement {
       <mm-toggle-button-group
         aria-label="성별"
         .options=${this.options}
-        .selectedIndex=${this.selectedIndex}
+        .value=${this.value}
         ?stretch=${this.stretch}
         @change=${this.handleGenderChange}
       ></mm-toggle-button-group>
     `
-  }
-
-  private get selectedIndex() {
-    const index = this.options.findIndex(option => option.value === this.value)
-    return index === -1 ? 0 : index
   }
 
   private handleGenderChange(event: CustomEvent<{ value: Gender }>) {
