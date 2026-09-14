@@ -18,10 +18,16 @@ export class AccordionItem extends LitElement {
     resetStyles,
     css`
       :host {
+        --accordion-item-padding: var(--space-2) var(--space-4);
+        --accordion-item-border: var(--border-transparent);
+        --accordion-item-border-radius: var(--radius);
+        --accordion-item-background-color: var(--background-subtle-color);
+
         ${surfaceBaseStyles};
-        --surface-padding: var(--space-2) var(--space-4);
-        --surface-border: var(--border-transparent);
-        --surface-background-color: var(--background-subtle-color);
+        --surface-padding: var(--accordion-item-padding);
+        --surface-border: var(--accordion-item-border);
+        --surface-border-radius: var(--accordion-item-border-radius);
+        --surface-background-color: var(--accordion-item-background-color);
       }
 
       .summary-btn {

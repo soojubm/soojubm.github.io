@@ -37,10 +37,10 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'surface-padding' },
-  { name: 'surface-border' },
-  { name: 'surface-border-radius' },
-  { name: 'surface-background-color' },
+  { name: 'accordion-item-padding' },
+  { name: 'accordion-item-border' },
+  { name: 'accordion-item-border-radius' },
+  { name: 'accordion-item-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
