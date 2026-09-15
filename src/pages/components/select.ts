@@ -26,7 +26,6 @@ const componentProps: ComponentPropItemData[] = [
     type: "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'",
   },
   { name: 'width', type: "string = 'auto'" },
-  { name: 'padding', type: 'string', optional: true },
   { name: 'aria-label', type: 'string', optional: true },
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
 ]

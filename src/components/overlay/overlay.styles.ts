@@ -26,7 +26,6 @@ export const overlaySurfaceStyles = css`
   .panel {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
     min-width: var(--overlay-panel-min-width);
     max-width: var(--overlay-panel-max-width);
     height: var(--overlay-panel-height);
@@ -41,6 +40,8 @@ export const overlaySurfaceStyles = css`
     box-sizing: border-box;
     overflow: hidden;
 
+    /* ::before 재질 레이어와 드래그 핸들의 기준 박스. popover는 absolute로 덮어쓴다. */
+    position: relative;
     isolation: isolate;
   }
 
@@ -137,18 +138,14 @@ export const sheetPositionStyles = css`
   /* bottom */
   :host([placement='bottom']) {
     --overlay-panel-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
-    .panel {
-      width: 100%;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      margin-top: auto;
-      transform: translateY(100%);
-    }
   }
-  :host([open][placement='bottom']) {
-    .panel {
-      transform: translateY(0);
-    }
+
+  :host([placement='bottom']) .panel {
+    width: 100%;
+    margin-top: auto;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transform: translateY(100%);
   }
 
   /* left/right */
@@ -157,37 +154,29 @@ export const sheetPositionStyles = css`
     --overlay-panel-max-width: 640px;
   }
 
-  :host([placement='left']) {
-    .panel {
-      margin-right: auto;
-      height: 100%;
-      max-height: var(--overlay-panel-viewport-max-height);
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      transform: translateX(-100%);
-    }
+  :host([placement='left']) .panel {
+    height: 100%;
+    max-height: var(--overlay-panel-viewport-max-height);
+    margin-right: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transform: translateX(-100%);
   }
 
-  :host([open][placement='left']) {
-    .panel {
-      transform: translateX(0);
-    }
+  :host([placement='right']) .panel {
+    height: 100%;
+    max-height: var(--overlay-panel-viewport-max-height);
+    margin-left: auto;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transform: translateX(100%);
   }
 
-  :host([placement='right']) {
-    .panel {
-      margin-left: auto;
-      height: 100%;
-      max-height: var(--overlay-panel-viewport-max-height);
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      transform: translateX(100%);
-    }
-  }
-  :host([open][placement='right']) {
-    .panel {
-      transform: translateX(0);
-    }
+  /* :host() 안에 중첩하면 열림 규칙이 닫힘 규칙을 이기지 못하므로, 열림 상태는 최상위 선택자로 둔다 */
+  :host([open][placement='bottom']) .panel,
+  :host([open][placement='left']) .panel,
+  :host([open][placement='right']) .panel {
+    transform: none;
   }
 `
 
@@ -201,7 +190,7 @@ export const popoverPositionStyles = css`
   :host {
     /* 트리거가 아이콘 버튼처럼 좁아도 패널이 그 폭으로 눌리지 않게 하는 바닥값 */
     --overlay-panel-min-width: 240px;
-    --overlay-panel-max-width: auto;
+    --overlay-panel-max-width: none;
     --overlay-panel-height: auto;
     --overlay-panel-max-height: none;
     --overlay-panel-padding-block: var(--space-2);

@@ -24,12 +24,6 @@ export class Select extends LitElement {
       width: var(--select-width);
     }
 
-    /* full(100%)이 아니면 호스트가 트리거 폭이므로, 좌측 placement는 트리거 왼쪽에 앵커해 오른쪽으로 자란다. */
-    :host(:not([width='100%'])) mm-popover[placement='bottom-left']::part(panel),
-    :host(:not([width='100%'])) mm-popover[placement='top-left']::part(panel) {
-      right: auto;
-    }
-
     :host([width='100%']) mm-popover {
       display: block;
     }
@@ -38,7 +32,6 @@ export class Select extends LitElement {
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
-  @property({ type: String }) padding?: string
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
@@ -48,12 +41,13 @@ export class Select extends LitElement {
 
   render() {
     return html`
-      <mm-popover
-        placement=${this.placement}
-        padding=${ifDefined(this.padding)}
-        @popover-toggle=${this.handlePopoverToggle}
-      >
-        <mm-button slot="trigger" size="small" aria-label=${this.triggerLabel || nothing}>
+      <mm-popover placement=${this.placement} @popover-toggle=${this.handlePopoverToggle}>
+        <mm-button
+          slot="trigger"
+          size="small"
+          aria-haspopup="listbox"
+          aria-label=${this.triggerLabel || nothing}
+        >
           ${this.currentLabel}
           <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
         </mm-button>

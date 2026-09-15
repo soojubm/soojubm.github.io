@@ -132,8 +132,9 @@ export class PromptInput extends LitElement {
             slot="trigger"
             icon=${ICON_NAMES.ADD_CIRCLE}
             aria-label="이미지 첨부"
+            aria-haspopup="menu"
           ></mm-icon-button>
-          <mm-menu-item-group>
+          <mm-menu-item-group aria-label="이미지 첨부">
             <mm-menu-item-action
               icon=${ICON_NAMES.IMPORT}
               label="이미지 업로드"

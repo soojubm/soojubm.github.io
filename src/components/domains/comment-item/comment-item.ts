@@ -88,17 +88,19 @@ export class CommentItem extends LitElement {
     if (!this.editable) return nothing
 
     return html`
-      <mm-popover slot="trailing" role="menu" placement="bottom-right" width="240px">
+      <mm-popover slot="trailing" placement="bottom-right">
         <mm-more-button slot="trigger" aria-label="댓글 메뉴"></mm-more-button>
-        <mm-menu-item-action
-          label="수정"
-          @click=${() => this.onMenuAction('edit')}
-        ></mm-menu-item-action>
-        <mm-menu-item-action
-          label="삭제"
-          tone="danger"
-          @click=${() => this.onMenuAction('delete')}
-        ></mm-menu-item-action>
+        <mm-menu-item-group aria-label="댓글 메뉴">
+          <mm-menu-item-action
+            label="수정"
+            @click=${() => this.onMenuAction('edit')}
+          ></mm-menu-item-action>
+          <mm-menu-item-action
+            label="삭제"
+            tone="danger"
+            @click=${() => this.onMenuAction('delete')}
+          ></mm-menu-item-action>
+        </mm-menu-item-group>
       </mm-popover>
     `
   }

@@ -1,5 +1,7 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
+import { getDeepActiveElement } from '@/utils'
+
 type Host = ReactiveControllerHost & HTMLElement
 export type Orientation = 'horizontal' | 'vertical' | 'both'
 
@@ -87,7 +89,19 @@ export class RovingFocusController implements ReactiveController {
     return !item.hasAttribute('disabled') && item.getAttribute('aria-disabled') !== 'true'
   }
 
+  // 기준 항목(보통 선택된 항목)으로 포커스를 옮긴다. 목록 표면이 열릴 때 쓴다.
+  focusTabStop() {
+    const items = this.options.getItems()
+    const tabStop = this.resolveTabStop(items)
+    if (tabStop < 0) return
+
+    this.moveFocus(items, tabStop)
+  }
+
   private handleKeydown = (event: KeyboardEvent) => {
+    // 중첩된 그룹이 이미 처리한 키는 바깥 그룹이 다시 처리하지 않는다.
+    if (event.defaultPrevented) return
+
     const items = this.options.getItems()
     if (items.length === 0) return
 
@@ -120,7 +134,7 @@ export class RovingFocusController implements ReactiveController {
   }
 
   private currentIndex(items: HTMLElement[]) {
-    const active = items.indexOf(document.activeElement as HTMLElement)
+    const active = items.indexOf(getDeepActiveElement() as HTMLElement)
     if (active >= 0) return active
     return this.resolveTabStop(items)
   }

@@ -34,6 +34,16 @@ export const resolveSpaceToken = (value: string): string => {
   return /^\d+$/.test(value) ? `var(--space-${value})` : value
 }
 
+/**
+ * shadow 경계를 따라 내려가 실제로 포커스를 가진 요소를 찾는다.
+ * document.activeElement는 가장 바깥 shadow host에서 멈추기 때문이다.
+ */
+export const getDeepActiveElement = (): Element | null => {
+  let active = document.activeElement
+  while (active?.shadowRoot?.activeElement) active = active.shadowRoot.activeElement
+  return active
+}
+
 export const buildAttributeRules = (
   attribute: string,
   values: Record<string, Record<string, string>>,
