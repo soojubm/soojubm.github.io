@@ -25,7 +25,7 @@
   bottom: auto;
   left: 50%;
   top: 0;
-  z-index: var(--material-zindex-overlay);
+  z-index: var(--material-zindex-popover);
   margin-top: -5px;
   /* margin-bottom: auto; */
   -webkit-transform: translate(-50%, -100%);

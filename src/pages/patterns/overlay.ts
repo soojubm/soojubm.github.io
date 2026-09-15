@@ -16,42 +16,42 @@ const classificationRows = html`
     <td>${yes}</td>
     <td>Viewport</td>
     <td>dialog</td>
-    <td>modal</td>
+    <td>sheet</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./sheet.html">Bottom Sheet</mm-link></th>
     <td>${yes}</td>
     <td>Viewport</td>
     <td>dialog</td>
-    <td>modal</td>
+    <td>sheet</td>
   </tr>
   <tr>
     <th scope="row">Backdrop</th>
     <td>${yes}</td>
     <td>Viewport</td>
     <td>없음</td>
-    <td>modal</td>
+    <td>sheet</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
     <td>${no}</td>
     <td>Trigger</td>
     <td>없음</td>
-    <td>overlay</td>
+    <td>popover</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
     <td>${no}</td>
     <td>Trigger</td>
     <td>listbox</td>
-    <td>overlay</td>
+    <td>popover</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
     <td>${no}</td>
     <td>Trigger</td>
     <td>tooltip</td>
-    <td>overlay</td>
+    <td>popover</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./toast.html">Toast</mm-link></th>
@@ -125,7 +125,11 @@ const main = html`
             '닫기는 명시 버튼을 우선하고, 배경 클릭·ESC는 중요도가 낮은 작업에서만 허용한다',
           ]}
         ></mm-text-list>
-        <mm-paragraph>구현: mm-sheet, mm-dialog.</mm-paragraph>
+        <mm-paragraph>
+          <code>mm-sheet</code>
+          ·
+          <code>mm-dialog</code>
+        </mm-paragraph>
         <mm-paragraph size="small">
           모달 표면은 얕게 유지합니다. 이미 떠 있는 모달 위에 또 모달을 여는 흐름은 피하고, 다음
           단계는 같은 표면을 교체하거나 흐름을 나눕니다.
@@ -148,15 +152,32 @@ const main = html`
           ></mm-list-item>
           <mm-list-item
             size="small"
-            label="overlay · modal · chrome · toast"
+            label="popover · sheet · chrome · toast"
             description="드롭다운, 시트, 고정 내비게이션, 알림처럼 화면 위로 뜨는 요소."
           ></mm-list-item>
         </mm-flex>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Portal">
         <mm-paragraph>
-          여기서 정하는 건 paint order뿐입니다. 표면이 떠 보이게 하는 그림자·대비와 chrome 레이어를
-          쓰는 고정 내비게이션은
-          <mm-link href="./layout.html">Layout</mm-link>
-          이 다룹니다.
+          z-index는 같은 쌓임 맥락 안에서만 비교되므로, 표면을 어디에 렌더하느냐가 숫자보다 먼저
+          겹침을 결정합니다.
+        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            'Viewport overlay는 body로 옮겨 조상의 transform·contain·쌓임 맥락에 갇히지 않게 한다',
+            '이동은 열림 상태가 아니라 연결 시점에 묶는다. 열리는 순간 이동이 겹치면 전환 시작 스타일이 커밋되지 않아 애니메이션이 재생되지 않는다',
+            'Anchored overlay는 portal 없이 트리거 옆에 뜬다. 좌표 계산 없이 트리거를 따라가고, 포커스 순서와 조상의 테마 맥락도 그대로 이어진다',
+            '쌓임 맥락은 그 안의 anchored overlay를 가두므로, 본문 요소는 필요 없는 z-index로 쌓임 맥락을 만들지 않는다',
+          ]}
+        ></mm-text-list>
+        <mm-paragraph><code>PortalController</code></mm-paragraph>
+        <mm-paragraph size="small">
+          React로 옮길 때도 같은 기준을 따릅니다. React에서 popover portal은 흔하지만 주로 overflow
+          잘림을 풀기 위한 선택이고, 대신 좌표 계산·포커스 관리·조상 맥락 단절을 떠안습니다. 구현에
+          따라 같은 컴포넌트의 잘림 동작이 달라지지 않도록 anchored overlay는 portal 없이 두고,
+          잘림이 실제 문제가 되면 두 구현을 함께 옮깁니다.
         </mm-paragraph>
       </mm-content-section>
     </mm-content-section-list>

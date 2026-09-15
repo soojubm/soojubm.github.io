@@ -158,8 +158,8 @@
   --opacity-80: 80%;
 
   /* material 티어는 base, elevated, chrome, overlay로 나뉜다. chrome·overlay는
-     --material-zindex-*의 역할 구분과 맞춰 화면 위로 뜨는 시스템 레벨 표면(고정 내비게이션·
-     팝업 등)에 쓰고, elevated는 z-index를 옮기지 않고 그림자만 더해 형제보다 살짝 띄우는
+     화면 위로 뜨는 시스템 레벨 표면(고정 내비게이션, popover·sheet 레이어의 표면 등)에
+     쓰고, elevated는 z-index를 옮기지 않고 그림자만 더해 형제보다 살짝 띄우는
      표면(카드 등)에 쓴다. 그 외 뎁스가 필요 없는 표면은 material-base를 쓴다.
      배경·테두리는 색 토큰을 참조하고, 그림자·blur·반투명만 원시값으로 얹는다. */
 
@@ -191,8 +191,8 @@
   --material-zindex-elevated: 10; /* 카드, 패널처럼 살짝 뜬 요소 */
   --material-zindex-chrome: 100; /* 내비게이션, 툴바 (Apple의 "기능 레이어"에 해당) */
   --material-zindex-chrome-top: 101; /* 그중 화면 전체를 덮는 전역 내비게이션: navbar, 사이드바 */
-  --material-zindex-overlay: 200; /* 드롭다운, 툴팁, 팝오버 */
-  --material-zindex-modal: 300; /* 모달, 다이얼로그, 시트 */
+  --material-zindex-popover: 200; /* 트리거 기준 표면: popover, select, tooltip */
+  --material-zindex-sheet: 300; /* viewport 기준 표면: sheet, dialog, backdrop */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
   /* 기본 모션은 이 duration 하나를 쓰고, 등장 강조 모션만 더 길게 간다.

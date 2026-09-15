@@ -452,9 +452,9 @@ const main = html`
             'elevated — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-scroll-hint, mm-portfolio-item의 오버레이',
             'chrome — 화면에 고정된 내비게이션·툴바. 예: mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)',
             'chrome-top — 그중 화면 전체를 덮는 전역 내비게이션. 페이지 고정 바 위에 남아야 한다. 예: mm-navbar, 사이드 메뉴',
-            'overlay — 드롭다운·팝오버·툴팁류. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)',
-            'modal — 화면을 덮는 대화형 표면. 예: mm-backdrop, mm-sheet, mm-dialog, 긴급 배너',
-            'toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크',
+            'popover — 트리거에 앵커되어 뜨는 표면. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)',
+            'sheet — viewport를 기준으로 화면을 덮는 표면. 예: mm-backdrop, mm-sheet, mm-dialog',
+            'toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크, 오프라인 배너',
           ]}
         ></mm-text-list>
       </mm-token-section>

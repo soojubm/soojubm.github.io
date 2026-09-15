@@ -65,7 +65,7 @@ export const overlaySurfaceStyles = css`
  */
 export const sheetPositionStyles = css`
   :host {
-    --overlay-panel-z-index: var(--material-zindex-modal);
+    --overlay-panel-z-index: var(--material-zindex-sheet);
     --overlay-panel-min-width: auto;
     --overlay-panel-max-width: var(--layout-width-narrow);
     --overlay-panel-height: auto;
@@ -212,7 +212,7 @@ export const popoverPositionStyles = css`
     top: calc(100% + var(--popover-offset));
     left: 0;
     right: 0;
-    z-index: var(--material-zindex-overlay);
+    z-index: var(--material-zindex-popover);
 
     /* 호스트는 트리거를 감싸므로 늘 보인다. 뜨고 지는 것은 패널만의 상태다. */
     opacity: 0;
@@ -409,7 +409,7 @@ export const tooltipStyles = css`
     position: absolute;
     left: 0;
     top: calc(100% + var(--space-1));
-    z-index: var(--material-zindex-overlay);
+    z-index: var(--material-zindex-popover);
     pointer-events: none;
     transition: opacity var(--transition-duration) var(--transition-easing),
       visibility var(--transition-duration) var(--transition-easing);

@@ -43,7 +43,7 @@ body {
   left: 10%;
   right: 10%;
   top: 45%;
-  z-index: var(--material-zindex-modal);
+  z-index: var(--material-zindex-toast);
 }
 
 .skip {
