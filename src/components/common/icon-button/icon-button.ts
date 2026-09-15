@@ -19,7 +19,6 @@ export class IconButton extends LitElement {
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: AriaHasPopup = null
@@ -30,7 +29,6 @@ export class IconButton extends LitElement {
     return renderIconAction({
       icon: this.icon,
       ariaLabel: this.ariaLabel,
-      tooltip: this.tooltip,
       tooltipPlacement: this.tooltipPlacement,
       disabled: this.disabled,
       ariaHasPopup: this.ariaHasPopup,

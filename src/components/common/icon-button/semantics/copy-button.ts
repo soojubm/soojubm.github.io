@@ -55,7 +55,6 @@ export class CopyButton extends LitElement {
   ]
 
   @property({ type: String }) value = ''
-  @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @state() private copied = false
 
@@ -76,7 +75,6 @@ export class CopyButton extends LitElement {
     return renderIconAction({
       icon: this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY,
       ariaLabel: this.copied ? '복사됨' : '복사',
-      tooltip: this.copied ? '복사됨' : this.tooltip,
       tooltipPlacement: this.tooltipPlacement,
       onClick: this.handleClick,
     })

@@ -23,7 +23,6 @@ export class ClearButton extends LitElement {
   ]
 
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @property({ type: String }) tooltip = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false
 
@@ -31,7 +30,6 @@ export class ClearButton extends LitElement {
     return renderIconAction({
       icon: ICON_NAMES.CLOSE,
       ariaLabel: this.ariaLabel,
-      tooltip: this.tooltip,
       tooltipPlacement: this.tooltipPlacement,
       disabled: this.disabled,
     })

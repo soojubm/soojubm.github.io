@@ -16,7 +16,6 @@ import '@/components/overlay/tooltip'
 import '@/components/common/icon'
 
 export interface IconAction {
-  tooltip: string
   tooltipPlacement: string
   disabled: boolean
   handleActionClick(): void
@@ -24,12 +23,11 @@ export interface IconAction {
 
 /**
  * close·delete·dismiss·next·prev-button처럼 아이콘 하나로 단일 행동을 알리는
- * 시맨틱 버튼이 공유하는 tooltip/disabled 상태와 클릭 배선.
+ * 시맨틱 버튼이 공유하는 tooltip 위치·disabled 상태와 클릭 배선.
  * 행동의 의미는 이벤트 이름과 레이블로 구분되므로 컴포넌트 자체는 합치지 않는다.
  */
 export const withIconAction = <T extends Constructor<LitElement>>(Base: T, eventName: string) => {
   class IconActionElement extends Base {
-    @property({ type: String }) tooltip = ''
     @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
     @property({ type: Boolean }) disabled = false
 
@@ -43,25 +41,9 @@ export const withIconAction = <T extends Constructor<LitElement>>(Base: T, event
   return IconActionElement as Constructor<IconAction> & T
 }
 
-/**
- * tooltip이 있을 때만 mm-tooltip으로 감싼다. icon-button 베이스가 쓰는 조립 규칙.
- */
-export const renderWithOptionalTooltip = (
-  tooltip: string,
-  tooltipPlacement: string,
-  control: TemplateResult,
-): TemplateResult => {
-  if (!tooltip) return control
-
-  return html`
-    <mm-tooltip content=${tooltip} placement=${tooltipPlacement}>${control}</mm-tooltip>
-  `
-}
-
 export interface IconActionRenderOptions {
   icon?: IconName
   ariaLabel: string
-  tooltip?: string
   tooltipPlacement?: string
   disabled?: boolean
   onClick?: (event: Event) => void
@@ -72,38 +54,33 @@ export interface IconActionRenderOptions {
 
 /**
  * icon-button 계열(아이콘 하나로 동작을 알리는 시맨틱 버튼)이 공유하는 button+아이콘 조립 템플릿.
- * 아이콘만으로는 의미를 알 수 없으므로 aria-label은 필수이고 tooltip으로 항상 보인다.
- * tooltip은 단축키처럼 이름에 없는 정보를 더할 때만 따로 지정한다.
+ * 아이콘만으로는 의미를 알 수 없으므로 aria-label은 필수이고, 같은 이름을 tooltip으로 항상 보여준다.
  */
 export const renderIconAction = ({
   icon,
   ariaLabel,
-  tooltip,
   tooltipPlacement = '',
   disabled = false,
   onClick = () => {},
   ariaHasPopup,
   ariaExpanded,
   ariaControls,
-}: IconActionRenderOptions): TemplateResult =>
-  renderWithOptionalTooltip(
-    tooltip || ariaLabel,
-    tooltipPlacement,
-    html`
-      <button
-        slot="trigger"
-        type="button"
-        aria-label=${ariaLabel}
-        aria-haspopup=${ifDefined(ariaHasPopup ?? undefined)}
-        aria-expanded=${ifDefined(ariaExpanded ?? undefined)}
-        aria-controls=${ifDefined(ariaControls ?? undefined)}
-        ?disabled=${disabled}
-        @click=${onClick}
-      >
-        <mm-icon name=${icon}></mm-icon>
-      </button>
-    `,
-  )
+}: IconActionRenderOptions): TemplateResult => html`
+  <mm-tooltip content=${ariaLabel} placement=${tooltipPlacement}>
+    <button
+      slot="trigger"
+      type="button"
+      aria-label=${ariaLabel}
+      aria-haspopup=${ifDefined(ariaHasPopup ?? undefined)}
+      aria-expanded=${ifDefined(ariaExpanded ?? undefined)}
+      aria-controls=${ifDefined(ariaControls ?? undefined)}
+      ?disabled=${disabled}
+      @click=${onClick}
+    >
+      <mm-icon name=${icon}></mm-icon>
+    </button>
+  </mm-tooltip>
+`
 
 export interface IconActionDefinition {
   /** 이 버튼이 알리는 행동. 이벤트 이름이 된다. */
@@ -126,7 +103,6 @@ export const iconActionElement = ({ event, icon, ariaLabel }: IconActionDefiniti
       return renderIconAction({
         icon,
         ariaLabel,
-        tooltip: this.tooltip,
         tooltipPlacement: this.tooltipPlacement,
         disabled: this.disabled,
         onClick: this.handleActionClick,

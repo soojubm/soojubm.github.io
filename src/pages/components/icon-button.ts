@@ -23,7 +23,6 @@ const componentProps: ComponentPropItemData[] = [
   },
   { name: 'size', type: "'small' | 'medium' = 'medium'" },
   { name: 'aria-label', type: 'string' },
-  { name: 'tooltip', type: 'string', optional: true },
   { name: 'tooltip-placement', type: "'left' | 'center' | 'right'", optional: true },
   { name: 'aria-controls', type: 'string', optional: true },
   { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
@@ -46,7 +45,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Glanceable',
     description:
-      '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 합니다. aria-label은 필수이며 툴팁으로 그대로 보이고, tooltip은 단축키처럼 이름에 없는 정보를 더할 때만 지정합니다.',
+      '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 합니다. aria-label은 필수이며 툴팁으로 그대로 보입니다.',
   },
 ]
 
