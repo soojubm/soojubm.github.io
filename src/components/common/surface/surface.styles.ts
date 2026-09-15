@@ -57,7 +57,6 @@ export const surfaceBaseStyles = css`
   box-shadow: var(--surface-shadow);
 
   position: relative;
-  z-index: var(--material-zindex-elevated);
   transition: box-shadow var(--transition-duration) var(--transition-easing);
 `
 
