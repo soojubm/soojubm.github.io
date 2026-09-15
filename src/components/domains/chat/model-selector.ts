@@ -28,7 +28,13 @@ export class ModelSelector extends LitElement {
         .value=${this.value}
         .options=${MODEL_OPTIONS}
         placement="top-left"
+        @change=${this.handleSelectChange}
       ></mm-select>
     `
+  }
+
+  // select가 트리거 라벨을 스스로 소유하므로, 여기서는 외부에 노출하는 value 프로퍼티만 동기화한다.
+  private handleSelectChange(event: CustomEvent<{ value: string }>) {
+    this.value = event.detail.value
   }
 }
