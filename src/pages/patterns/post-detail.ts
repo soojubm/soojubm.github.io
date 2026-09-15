@@ -160,7 +160,7 @@ const main = html`
 
   <nav class="post-pagination" style="margin-block: var(--space-8)">
     <a class="post-pagination-previous" href="post.html">
-      <mm-icon-button variant="secondary" icon=${ICON_NAMES.BACK}></mm-icon-button>
+      <mm-icon name=${ICON_NAMES.BACK} aria-hidden="true"></mm-icon>
       <mm-text-block
         level="3"
         heading="Return to all articles"
@@ -168,7 +168,7 @@ const main = html`
       ></mm-text-block>
     </a>
     <a class="post-pagination-next" href="#">
-      <mm-icon-button variant="secondary" icon=${ICON_NAMES.FORWARD}></mm-icon-button>
+      <mm-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></mm-icon>
       <mm-text-block
         level="3"
         heading="Avoid invisible text during font loading"

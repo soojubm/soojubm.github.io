@@ -1,6 +1,5 @@
 import { html } from 'lit'
 
-import { ICON_NAMES } from '@/components/common'
 import './class.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 import '@/components/common'
@@ -73,7 +72,7 @@ const renderFaqItems = (questions: string[]) =>
     question => html`
       <button class="class-faq-item">
         <mm-paragraph size="large">${question}</mm-paragraph>
-        <mm-icon-button variant="secondary" icon=${ICON_NAMES.NAVIGATE_DOWN}></mm-icon-button>
+        <mm-expand-indicator></mm-expand-indicator>
       </button>
     `,
   )
