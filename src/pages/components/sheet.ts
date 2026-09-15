@@ -121,7 +121,7 @@ function sheetPageTemplate() {
           { placement: 'inline-start', offset: '3.75rem' },
           { placement: 'inline-start', offset: 'calc(100% - 1.5rem)' },
         ]}
-        .code=${`<mm-button aria-controls="filter-sheet">필터</mm-button>
+        .code=${`<mm-button aria-controls="filter-sheet" aria-haspopup="dialog">필터</mm-button>
 
 <mm-sheet id="filter-sheet" placement="bottom" height="360px">
     <mm-sheet-header heading="필터"></mm-sheet-header>
@@ -170,10 +170,10 @@ function sheetAnatomyTemplate() {
 function sheetExampleTemplate() {
   return html`
     <mm-button-group>
-      <mm-button aria-controls="center-sheet">Center</mm-button>
-      <mm-button aria-controls="bottom-sheet">Bottom</mm-button>
-      <mm-button aria-controls="left-sheet">Left</mm-button>
-      <mm-button aria-controls="right-sheet">Right</mm-button>
+      <mm-button aria-controls="center-sheet" aria-haspopup="dialog">Center</mm-button>
+      <mm-button aria-controls="bottom-sheet" aria-haspopup="dialog">Bottom</mm-button>
+      <mm-button aria-controls="left-sheet" aria-haspopup="dialog">Left</mm-button>
+      <mm-button aria-controls="right-sheet" aria-haspopup="dialog">Right</mm-button>
     </mm-button-group>
 
     <mm-sheet id="center-sheet" placement="center" width="medium">
@@ -220,6 +220,7 @@ function filterSheetTemplate() {
       icon=${ICON_NAMES.FILTER}
       aria-label="필터"
       aria-controls="filter-sheet"
+      aria-haspopup="dialog"
     ></mm-icon-button>
     <mm-sheet placement="bottom" id="filter-sheet">
       <mm-sheet-header heading="필터"></mm-sheet-header>

@@ -15,14 +15,13 @@ interface DisclosureOptions {
   getTrigger?: () => HTMLElement | undefined
   /** 스스로 닫히는 조건 (기본 없음) */
   dismissOn?: DismissOn[]
-  /** 트리거에 반영할 aria-haspopup 값 */
-  hasPopup?: () => string | undefined
   /** 스스로 닫힐 때 알린다 (예: close 이벤트 발행) */
   onDismiss?: () => void
 }
 
 /**
- * 열고 닫는 모든 disclosure의 트리거 클릭 토글과 aria-expanded·haspopup 동기화를 소유한다.
+ * 열고 닫는 모든 disclosure의 트리거 클릭 토글과 aria-expanded 동기화를 소유한다.
+ * 여는 표면의 종류(aria-haspopup)는 호스트가 추정하지 않고 트리거가 표준 attribute로 직접 선언한다.
  * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 컨트롤러는 읽기/쓰기만 위임받는다.
  * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 호스트를 가리키는 외부 요소를 기본값으로 찾는다.
  * 외부 클릭·ESC로 스스로 닫혀야 하는 dismissable 레이어(popover 등)는 dismissOn에 필요한 조건만 추가로 켠다.
@@ -83,8 +82,6 @@ export class DisclosureController implements ReactiveController {
     if (!trigger) return
 
     trigger.setAttribute('aria-expanded', String(this.options.isOpen()))
-    const hasPopup = this.options.hasPopup?.()
-    if (hasPopup) trigger.setAttribute('aria-haspopup', hasPopup)
   }
 
   private handleTriggerClick = () => {

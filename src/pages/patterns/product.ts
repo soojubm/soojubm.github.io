@@ -52,7 +52,13 @@ const main = html`
                 <mm-number-input value="1" min="1" max="99" label="수량"></mm-number-input>
 
                 <mm-button-group>
-                  <mm-button aria-controls="cart-sheet" variant="primary" size="large" full-width>
+                  <mm-button
+                    aria-controls="cart-sheet"
+                    aria-haspopup="dialog"
+                    variant="primary"
+                    size="large"
+                    full-width
+                  >
                     장바구니 추가
                   </mm-button>
                   <mm-icon-button
@@ -236,7 +242,7 @@ const main = html`
             discount="36% 할인"
           ></mm-product-price>
         </mm-flex>
-        <mm-button aria-controls="cart-sheet" variant="primary" size="large">
+        <mm-button aria-controls="cart-sheet" aria-haspopup="dialog" variant="primary" size="large">
           장바구니 추가
         </mm-button>
       </mm-flex>

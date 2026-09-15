@@ -20,8 +20,8 @@ interface SheetControllerOptions {
  * 배경(mm-backdrop)은 호스트의 shadow DOM 안에 있어 클릭이 호스트로 retarget되므로,
  * 닫기 판정은 호스트 자신을 target으로 보는 것으로 충분하다.
  * 여는 쪽은 popover와 같은 규약을 쓴다. aria-controls로 호스트를 가리키는 요소가 트리거가 되고,
- * 클릭 토글과 aria-expanded·haspopup 반영은 DisclosureController가 맡는다. 닫기는 이 컨트롤러가
- * 이미 소유하므로 dismissOn은 넘기지 않는다.
+ * 클릭 토글과 aria-expanded 반영은 DisclosureController가 맡고, aria-haspopup="dialog"는 트리거가
+ * 직접 선언한다. 닫기는 이 컨트롤러가 이미 소유하므로 dismissOn은 넘기지 않는다.
  * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 이 컨트롤러는
  * isOpen/setOpen/onDismiss로 읽기·쓰기·알림만 위임받는다.
  */
@@ -34,7 +34,6 @@ export class SheetController implements ReactiveController {
     new DisclosureController(host, {
       isOpen: options.isOpen,
       setOpen: options.setOpen,
-      hasPopup: () => host.getAttribute('role') ?? 'dialog',
     })
 
     host.addController(this)

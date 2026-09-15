@@ -61,8 +61,8 @@ const main = html`
 
     <mm-component-example>
       <mm-button-group>
-        <mm-button aria-controls="dialog-alert">Alert</mm-button>
-        <mm-button aria-controls="dialog-confirm">Confirm</mm-button>
+        <mm-button aria-controls="dialog-alert" aria-haspopup="dialog">Alert</mm-button>
+        <mm-button aria-controls="dialog-confirm" aria-haspopup="dialog">Confirm</mm-button>
       </mm-button-group>
 
       <mm-dialog
@@ -92,7 +92,7 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      .code=${`<mm-button aria-controls="confirm-dialog">나가기</mm-button>
+      .code=${`<mm-button aria-controls="confirm-dialog" aria-haspopup="dialog">나가기</mm-button>
 
 <mm-dialog
     id="confirm-dialog"

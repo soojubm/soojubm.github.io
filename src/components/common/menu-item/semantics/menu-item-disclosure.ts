@@ -58,7 +58,6 @@ export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
       this.open = open
       emit(this, 'toggle', { open })
     },
-    hasPopup: () => 'menu',
     getTrigger: () => this.shadowRoot?.querySelector('button') ?? undefined,
   })
 
