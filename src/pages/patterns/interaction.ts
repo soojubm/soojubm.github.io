@@ -380,7 +380,6 @@ const main = html`
         <mm-table
           .rows=${hoverRows}
           caption="컴포넌트별 hover 처리와 재할당 값"
-          style="--table-height: auto"
           .columns=${[
             { label: '컴포넌트', width: '200px' },
             { label: '처리', width: '120px' },

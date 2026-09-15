@@ -20,6 +20,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'caption', type: 'string' },
   { name: 'rows', type: 'TemplateResult', optional: true },
+  { name: 'height', type: 'string', optional: true },
   {
     name: 'columns',
     type: "{ label: string; width?: string; sortable?: boolean; textAlign?: 'left' | 'center' | 'right' }[] = []",
@@ -166,6 +167,7 @@ const main = html`
       <mm-table
         id="product-table"
         caption="히라가나 오십음도"
+        height="320px"
         .columns=${columns}
         .rows=${rows}
       ></mm-table>

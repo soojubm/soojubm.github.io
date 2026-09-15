@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { classMap } from 'lit/directives/class-map.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
@@ -94,7 +94,6 @@ export class Table extends LitElement {
       }
 
       :host {
-        --table-height: 320px;
         --table-width: 100%;
 
         display: block;
@@ -120,6 +119,8 @@ export class Table extends LitElement {
 
   @property({ attribute: false }) columns: TableColumn[] = []
 
+  @property({ type: String }) height?: string
+
   render() {
     return html`
       <table>
@@ -131,6 +132,17 @@ export class Table extends LitElement {
         <tbody>${this.rows}</tbody>
       </table>
     `
+  }
+
+  protected updated(changedProperties: PropertyValues) {
+    if (!changedProperties.has('height')) return
+
+    if (!this.height) {
+      this.style.removeProperty('--table-height')
+      return
+    }
+
+    this.style.setProperty('--table-height', this.height)
   }
 
   private renderColumns() {
