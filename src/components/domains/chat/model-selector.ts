@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { OptionItem } from '@/types'
 
-import '@/components/overlay/popover/semantics/select'
+import '@/components/overlay/select/select'
 
 const MODEL_OPTIONS: OptionItem[] = [
   { value: 'claude-opus', label: 'Claude Opus' },
@@ -23,7 +23,12 @@ export class ModelSelector extends LitElement {
 
   render() {
     return html`
-      <mm-select .value=${this.value} .options=${MODEL_OPTIONS} placement="top-left"></mm-select>
+      <mm-select
+        aria-label="모델"
+        .value=${this.value}
+        .options=${MODEL_OPTIONS}
+        placement="top-left"
+      ></mm-select>
     `
   }
 }

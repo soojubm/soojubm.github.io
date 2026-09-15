@@ -92,6 +92,7 @@ export const SITEMAP: SitemapNode[] = [
     items: [
       { id: 'tooltip', name: 'Tooltip' },
       { id: 'popover', name: 'Popover', badge: 'pattern' },
+      { id: 'select', name: 'Select' },
       { id: 'sheet', name: 'Sheet', badge: 'pattern' },
       { id: 'dialog', name: 'Dialog' },
       { id: 'toast', name: 'Toast' },

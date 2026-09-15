@@ -1,6 +1,7 @@
 import '@/components/common'
 
 import '@/components/overlay/popover'
+import '@/components/overlay/select'
 import '@/components/overlay/tooltip/tooltip'
 import '@/components/layouts/top-bar'
 import '@/components/layouts/bottom-bar'

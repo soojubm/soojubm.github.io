@@ -18,7 +18,7 @@ const noResultSecondaryAction: ActionConfig = { label: '애옹' }
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'textarea.html', label: 'Textarea' },
-  { href: 'popover.html', label: 'Popover' },
+  { href: 'select.html', label: 'Select' },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [

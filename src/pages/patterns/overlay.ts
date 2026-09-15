@@ -40,7 +40,7 @@ const classificationRows = html`
     <td>overlay</td>
   </tr>
   <tr>
-    <th scope="row">Select</th>
+    <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
     <td>${no}</td>
     <td>Trigger</td>
     <td>listbox</td>

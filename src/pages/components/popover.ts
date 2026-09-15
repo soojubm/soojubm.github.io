@@ -10,6 +10,7 @@ import type {
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
+  { href: 'select.html', label: 'Select' },
   { href: 'sheet.html', label: 'Sheet' },
   { href: 'tooltip.html', label: 'Tooltip' },
   { href: 'menu-item.html', label: 'menuItem' },
@@ -44,7 +45,7 @@ const main = html`
   <mm-page>
     <mm-page-header
       heading="Popover"
-      description="anchor 기준 non-modal 레이어 프리미티브입니다. TODO"
+      description="트리거에 앵커되어 뜨는 non-modal 레이어 프리미티브입니다. backdrop·스크롤 잠금 없이 패널 표면과 열림 상태만 책임집니다."
     ></mm-page-header>
 
     <mm-component-aka .items=${['Flyout', 'Dropdown Panel', 'Menu Surface']}></mm-component-aka>
@@ -67,7 +68,7 @@ const main = html`
           '패널 지오메트리를 밖에서 다듬을 때는 ::part(panel)을 사용한다.',
           'role=menu/listbox를 popover 요소에 직접 지정한다.',
           '트리거를 가리키는 화살표는 두지 않는다. 사용자가 직접 연 표면이라 어디에서 나왔는지 이미 분명하다.',
-          '용례: select, 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴.',
+          '용례: 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴. 값을 고르는 드롭다운은 Select를 사용한다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>
@@ -80,43 +81,13 @@ const main = html`
     ></mm-component-anatomy>
 
     <mm-component-section
-      heading="Select"
-      description="popover를 프리미티브로 하는 선택 입력입니다. 트리거·옵션 목록·선택 상태를 소유하고, 목록 표면은 popover에 맡깁니다. 옵션은 .options 배열로 받습니다."
-    >
-      <mm-select
-        width="200px"
-        value="stable"
-        .options=${[
-          { value: 'stable', label: 'Stable' },
-          { value: 'beta', label: 'Beta' },
-          { value: 'canary', label: 'Canary' },
-        ]}
-      ></mm-select>
-    </mm-component-section>
-
-    <mm-component-section
       heading="ThemeSelector"
       description="현재 테마를 아이콘 버튼으로 표시하고, 드롭다운에서 테마를 전환합니다."
     >
       <mm-theme-selector></mm-theme-selector>
     </mm-component-section>
-
-    <mm-component-section
-      heading="SortSelector"
-      description="목록의 재정렬Sort을 위한 옵션 목록을 group으로 제공하지 마세요. 현재 정렬 상태만 요약 표기하고
-    확장가능한 메뉴로 정렬 목록을 제공하세요. (bad case: 2022.04 구글 지도 바뀐 것)"
-    >
-      <mm-select
-        value="latest"
-        .options=${[
-          { value: 'latest', label: '최신순' },
-          { value: 'oldest', label: '오래된순' },
-        ]}
-      ></mm-select>
-    </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
   </mm-page>
 `
 
-// 트리거는 aria-controls로 popover를 가리키기만 하면 되고, 클릭 토글·외부 클릭·ESC 닫기·aria는 popover가 소유한다.
 renderPage(main)

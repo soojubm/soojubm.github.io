@@ -9,7 +9,7 @@ import type { OptionItem } from '@/types'
 import '@/components/common'
 import '@/components/indicators/expand-indicator/expand-indicator'
 import '@/components/overlay/popover/popover'
-import '@/components/overlay/popover/semantics/select-option'
+import '@/components/overlay/select/select-option'
 import { emit } from '@/utils'
 
 /**
@@ -53,7 +53,7 @@ export class Select extends LitElement {
         padding=${ifDefined(this.padding)}
         @popover-toggle=${this.handlePopoverToggle}
       >
-        <mm-button slot="trigger" size="small">
+        <mm-button slot="trigger" size="small" aria-label=${this.triggerLabel || nothing}>
           ${this.currentLabel}
           <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
         </mm-button>
@@ -74,6 +74,13 @@ export class Select extends LitElement {
 
   private get currentLabel() {
     return this.options.find(option => option.value === this.value)?.label ?? ''
+  }
+
+  // aria-label은 버튼 콘텐츠를 대체하므로, 컨트롤 이름에 현재 값을 이어 붙여 선택값이 함께 읽히게 한다.
+  private get triggerLabel() {
+    if (!this.ariaLabel) return ''
+
+    return `${this.ariaLabel}, ${this.currentLabel}`
   }
 
   // 네이티브 select처럼 value가 비어 있으면 첫 번째 활성 옵션으로 채운다.

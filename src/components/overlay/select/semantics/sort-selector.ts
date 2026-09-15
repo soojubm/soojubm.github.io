@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { OptionItem } from '@/types'
 
-import '@/components/overlay/popover/semantics/select'
+import '@/components/overlay/select/select'
 
 type SortOrder = 'latest' | 'oldest'
 
@@ -25,6 +25,7 @@ export class SortSelector extends LitElement {
   render() {
     return html`
       <mm-select
+        aria-label="정렬"
         .value=${this.value}
         .options=${SORT_OPTIONS}
         @change=${this.handleSelectChange}
