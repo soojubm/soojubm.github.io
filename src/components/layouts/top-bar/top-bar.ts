@@ -33,6 +33,7 @@ export class TopBar extends LitElement {
       <mm-icon-button
         variant="secondary"
         icon=${ICON_NAMES.BACK}
+        aria-label="뒤로"
         @click=${this.handleNavClick}
       ></mm-icon-button>
     `
@@ -45,6 +46,7 @@ export class TopBar extends LitElement {
       <mm-icon-button
         variant="secondary"
         icon=${ICON_NAMES.CLOSE}
+        aria-label="닫기"
         @click=${this.handleNavClick}
       ></mm-icon-button>
     `

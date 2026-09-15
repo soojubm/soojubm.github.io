@@ -59,7 +59,7 @@ export const renderWithOptionalTooltip = (
 }
 
 export interface IconActionRenderOptions {
-  icon: IconName
+  icon?: IconName
   ariaLabel: string
   tooltip?: string
   tooltipPlacement?: string
@@ -72,8 +72,8 @@ export interface IconActionRenderOptions {
 
 /**
  * icon-button 계열(아이콘 하나로 동작을 알리는 시맨틱 버튼)이 공유하는 button+아이콘 조립 템플릿.
- * 아이콘만으로는 의미를 알 수 없으므로 tooltip은 선택이 아니라 항상 보이며,
- * 따로 지정하지 않으면 aria-label을 그대로 tooltip 내용으로 쓴다.
+ * 아이콘만으로는 의미를 알 수 없으므로 aria-label은 필수이고 tooltip으로 항상 보인다.
+ * tooltip은 단축키처럼 이름에 없는 정보를 더할 때만 따로 지정한다.
  */
 export const renderIconAction = ({
   icon,

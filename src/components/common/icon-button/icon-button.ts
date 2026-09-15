@@ -1,13 +1,11 @@
-import { LitElement, html } from 'lit'
+import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
-import { renderWithOptionalTooltip } from '@/components/common/icon-button/icon-button.utils'
-import '@/components/common/icon'
+import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
@@ -29,26 +27,15 @@ export class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
   render() {
-    return renderWithOptionalTooltip(this.tooltip, this.tooltipPlacement, this.renderControl())
-  }
-
-  protected get accessibilityLabel(): string {
-    return this.ariaLabel || this.tooltip || this.icon || ''
-  }
-
-  protected renderControl() {
-    return html`
-      <button
-        slot="trigger"
-        type="button"
-        aria-label=${this.accessibilityLabel}
-        ?disabled=${this.disabled}
-        aria-haspopup=${ifDefined(this.ariaHasPopup ?? undefined)}
-        aria-expanded=${ifDefined(this.ariaExpanded ?? undefined)}
-        aria-controls=${ifDefined(this.ariaControls ?? undefined)}
-      >
-        <mm-icon name=${this.icon}></mm-icon>
-      </button>
-    `
+    return renderIconAction({
+      icon: this.icon,
+      ariaLabel: this.ariaLabel,
+      tooltip: this.tooltip,
+      tooltipPlacement: this.tooltipPlacement,
+      disabled: this.disabled,
+      ariaHasPopup: this.ariaHasPopup,
+      ariaExpanded: this.ariaExpanded,
+      ariaControls: this.ariaControls,
+    })
   }
 }

@@ -46,7 +46,6 @@ export class NumberInput extends withTextfieldState(LitElement) {
           size="small"
           icon=${ICON_NAMES.SUBTRACT}
           aria-label="감소"
-          tooltip="감소"
           tooltip-placement="center"
           ?disabled=${this.disabled}
           @click=${this.handleDecrementClick}
@@ -56,7 +55,6 @@ export class NumberInput extends withTextfieldState(LitElement) {
           size="small"
           icon=${ICON_NAMES.ADD}
           aria-label="증가"
-          tooltip="증가"
           tooltip-placement="center"
           ?disabled=${this.disabled}
           @click=${this.handleIncrementClick}

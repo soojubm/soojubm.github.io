@@ -216,7 +216,11 @@ function sheetExampleTemplate() {
 
 function filterSheetTemplate() {
   return html`
-    <mm-icon-button icon=${ICON_NAMES.FILTER} aria-controls="filter-sheet"></mm-icon-button>
+    <mm-icon-button
+      icon=${ICON_NAMES.FILTER}
+      aria-label="필터"
+      aria-controls="filter-sheet"
+    ></mm-icon-button>
     <mm-sheet placement="bottom" id="filter-sheet">
       <mm-sheet-header heading="필터"></mm-sheet-header>
       <mm-sheet-body>

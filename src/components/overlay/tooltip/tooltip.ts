@@ -2,7 +2,6 @@ import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import { tooltipStyles } from '@/components/overlay/overlay.styles'
-import { uniqueId } from '@/utils'
 import '@/components/common'
 
 @customElement('mm-tooltip')
@@ -16,7 +15,6 @@ export class Tooltip extends LitElement {
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: Element[]
 
-  private readonly contentId = uniqueId('tooltip')
   private descriptionTargets = new Set<HTMLElement>()
 
   private handleTriggerShow = () => {
@@ -31,7 +29,7 @@ export class Tooltip extends LitElement {
   render() {
     return html`
       <slot name="trigger" @slotchange=${this.syncDescription}></slot>
-      <div id=${this.contentId} role="tooltip" aria-label=${this.content}>
+      <div role="tooltip">
         <mm-text size="12">${this.content}</mm-text>
       </div>
     `
@@ -72,29 +70,20 @@ export class Tooltip extends LitElement {
   }
 
   private clearDescriptionTargets() {
-    this.descriptionTargets.forEach(target => {
-      const descriptions = (target.getAttribute('aria-describedby') || '')
-        .split(/\s+/)
-        .filter(id => id && id !== this.contentId)
-
-      if (descriptions.length) target.setAttribute('aria-describedby', descriptions.join(' '))
-      else target.removeAttribute('aria-describedby')
-    })
+    this.descriptionTargets.forEach(target => target.removeAttribute('aria-description'))
     this.descriptionTargets.clear()
   }
 
+  // 트리거는 대개 다른 shadow root 안에 있어 id 참조(aria-describedby)가 닿지 않으므로 내용을 직접 싣는다.
   private syncDescription = () => {
     this.clearDescriptionTargets()
 
     this.triggerElements.forEach(element => {
       const target = this.findDescriptionTarget(element)
-      if (!target) return
+      // 이름과 같은 내용을 설명으로 다시 읽히지 않게 한다.
+      if (!target || target.getAttribute('aria-label') === this.content) return
 
-      const descriptions = new Set(
-        (target.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean),
-      )
-      descriptions.add(this.contentId)
-      target.setAttribute('aria-describedby', [...descriptions].join(' '))
+      target.setAttribute('aria-description', this.content)
       this.descriptionTargets.add(target)
     })
   }

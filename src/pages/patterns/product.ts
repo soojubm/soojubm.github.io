@@ -55,7 +55,11 @@ const main = html`
                   <mm-button aria-controls="cart-sheet" variant="primary" size="large" full-width>
                     장바구니 추가
                   </mm-button>
-                  <mm-icon-button variant="ghost" icon=${ICON_NAMES.FAVORITE}></mm-icon-button>
+                  <mm-icon-button
+                    variant="ghost"
+                    icon=${ICON_NAMES.FAVORITE}
+                    aria-label="찜하기"
+                  ></mm-icon-button>
                 </mm-button-group>
 
                 <!-- TODO text-list -->
