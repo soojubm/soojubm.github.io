@@ -231,22 +231,24 @@ const main = html`
           </mm-scroll>
         </div>
       </mm-surface>
-      <mm-surface>
-        <mm-flex direction="column" gap="3">
-          <mm-text size="24" weight="bold" as="h2">TODO</mm-text>
-          <mm-text-list
-            .texts=${[
-              'ElementInternals 검토: host 기본 role과 ARIA를 DOM attribute/public prop 없이 접근성 트리에 제공할 수 있는지 확인한다.',
-              'ElementInternals 적용 후보: mm-tab, mm-tab-panel, mm-search-suggestions처럼 host 자체가 접근성 관계 대상인 컴포넌트부터 검토한다.',
-              'ElementInternals 도입 전제: 브라우저 지원, 디버깅 방식, React 마이그레이션 시 표현 방식을 함께 결정한다.',
-              'change 이벤트 2차 점검: 그룹/합성 컴포넌트가 자식 change를 번역할 때 stopPropagation 기준을 문서화한다.',
-              'ARIA 상태 소유자 2차 점검: host와 내부 native control 중 실제 접근성 의미를 갖는 요소에 상태를 모은다.',
-              'role override 정책 정리: role을 공개 API로 둘 때 허용 범위와 문서화 기준을 정한다.',
-            ]}
-          ></mm-text-list>
-        </mm-flex>
-      </mm-surface>
     </div>
+
+    <mm-surface>
+      <mm-flex direction="column" gap="3">
+        <mm-text size="24" weight="bold" as="h2">TODO</mm-text>
+        <mm-text-list
+          .texts=${[
+            'change 이벤트 2차 점검: 그룹/합성 컴포넌트가 자식 change를 번역할 때 stopPropagation 기준을 문서화한다.',
+            'ARIA 상태 소유자 2차 점검: host와 내부 native control 중 실제 접근성 의미를 갖는 요소에 상태를 모은다.',
+            'role override 정책 정리: role을 공개 API로 둘 때 허용 범위와 문서화 기준을 정한다.',
+            'menu-item 선택 계열 role 정정: mm-menu-item-radio·checkbox가 role="menu" 밖(결제수단, 필터 시트, 컬렉션 선택, 테마 선택)에서 쓰이는데 menuitemradio·menuitemcheckbox를 고정으로 붙인다. 겉모습이 아니라 쓰임에 맞춰 radio·checkbox로 바꾼다.',
+            'menu-item 선택 계열 부모·키보드 정합: menuitemradio가 radiogroup 안에 놓인 잘못된 트리를 바로잡고, radiogroup에 맞게 roving tabindex와 방향키 선택을 넣는다.',
+            'menu-item 선택 계열 문서 정리: Selection 패턴의 "메뉴·시트 안에서" 설명과 menu-item 페이지의 role 설명을 함께 고친다. 실제 role="menu" 안의 사용처가 생길 때만 menuitem* 분기를 따로 판단한다.',
+            'menu-item 선택 그룹이 options 배열을 받지 않는 이유 정리: radio·checkbox·select는 .options로 옮겼지만 mm-menu-item-radio-group·checkbox-group은 자식 요소를 유지했고 그 근거가 남아 있지 않다. 행이 description·emoji·avatar처럼 OptionItem에 담기지 않는 콘텐츠를 가져서인지 확인하고, 그렇다면 radio-card-group과 같은 근거로 문서에 남기고 아니라면 교차 타입으로 확장한 options 배열로 옮긴다.',
+          ]}
+        ></mm-text-list>
+      </mm-flex>
+    </mm-surface>
 
     <mm-content-section heading="디자인 시스템에 대한 생각">
       <mm-paragraph>틀릴 수도 있지만 오랫동안 고민한 것들.</mm-paragraph>
@@ -270,6 +272,16 @@ const main = html`
         .texts=${[
           '문서화할 가치가 있다고 판단하려면 특정 횟수(예: 3회)만큼 발생해야 합니까?',
           '자주(예: 월 1회 이상) 프로세스를 수행해야 합니까?',
+        ]}
+      ></mm-text-list>
+    </mm-content-section>
+
+    <mm-content-section heading="Code Conventions">
+      <mm-text-list
+        .texts=${[
+          '이벤트 핸들러 메서드는 handle 뒤에 대상과 이벤트 종류를 이어 붙인다. 예: handleFilesChange, handleRemoveClick',
+          'render() 안의 조건부 DOM 조각이 커지면 render*() helper로 분리하고, render()에는 각 helper를 직접 나열한다.',
+          'render*() 이름은 상태를 다시 중계하지 않고 실제 조각의 의미를 드러낸다. 예: renderContent()가 아니라 renderImage()',
         ]}
       ></mm-text-list>
     </mm-content-section>
