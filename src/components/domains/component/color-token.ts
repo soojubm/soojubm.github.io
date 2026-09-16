@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, queryAll, state } from 'lit/decorators.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 import {
   computedTokenValue,
@@ -87,7 +88,10 @@ export class ColorToken extends LitElement {
 
   render() {
     return html`
-      <figure class="swatch" style="--color-token-background-color: var(--${this.name})">
+      <figure
+        class="swatch"
+        style=${styleMap({ '--color-token-background-color': `var(--${this.name})` })}
+      >
         ${this.renderTags()} ${this.renderPairs()}
       </figure>
       ${this.renderCaption()}
@@ -125,7 +129,7 @@ export class ColorToken extends LitElement {
   private renderPairs() {
     return this.pairs.map(
       (pair, index) => html`
-        <div class="label-row" style="color: var(--${pair})">
+        <div class="label-row" style=${styleMap({ color: `var(--${pair})` })}>
           <mm-text size="12" weight="bold">${tokenDisplayName(pair)}</mm-text>
           <span class="contrast">${this.contrasts[index] ?? ''}</span>
         </div>
