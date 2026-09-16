@@ -1,26 +1,5 @@
-/* stylelint-disable color-no-hex -- 브라우저 리셋 파일이므로 hex 값 허용 */
-/* 문서에만 적용되는 규칙. 컴포넌트 shadow root에서는 매치될 수 없으므로
-   shared.styles의 resetStyles에 포함하지 않는다. */
-html {
-  min-width: 320px;
-  height: 100%;
-  overflow-x: hidden;
-  font-family: var(--font-family);
-  font-size: 16px;
-  line-height: var(--font-line-height-24);
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overscroll-behavior: contain;
-}
-
-body {
-  background: var(--background-color);
-  color: var(--foreground-color);
-  font-weight: var(--font-weight-normal);
-  font-size: 0.875rem;
-}
-
+/* index.html 문서 셸에 적용되는 규칙.
+   shadow root에서는 매치될 수 없으므로 resetStyles에 포함하지 않는다. */
 @media print {
   a::after {
     content: '(' attr(href) ')';

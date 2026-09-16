@@ -11,23 +11,8 @@ export const resetStyles = css`
     color: inherit;
   }
 
-  body,
-  dl,
-  dd,
-  figure,
-  blockquote,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  input[type='radio'],
-  input[type='checkbox'] {
-    margin: 0;
-  }
-
+  /* reset.css의 문서 본문용 목록 들여쓰기·간격은 컴포넌트 안에서 되돌린다.
+     인라인된 reset.css 뒤에 와야 하고, 선택자 명시도를 맞춘다. */
   ul,
   ol,
   menu,
@@ -37,7 +22,6 @@ export const resetStyles = css`
     padding: 0;
   }
 
-  /* reset.css의 문서 본문용 목록 간격은 컴포넌트 안에서 되돌린다. 선택자 명시도를 맞춘다. */
   ul li:not(:first-child) {
     margin: 0;
   }

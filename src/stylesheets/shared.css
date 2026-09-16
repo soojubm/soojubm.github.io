@@ -1,7 +1,7 @@
 @import '/src/stylesheets/shared/variables.css';
 @import '/src/stylesheets/shared/webfonts.css';
 @import '/src/stylesheets/shared/reset.css';
-@import '/src/stylesheets/shared/document.css';
+@import '/src/stylesheets/shared/shell.css';
 @import '/src/stylesheets/shared/keyframes.css';
 @import '/src/stylesheets/shared/sidebar.css';
 
