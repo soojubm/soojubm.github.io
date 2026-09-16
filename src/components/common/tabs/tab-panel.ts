@@ -14,7 +14,6 @@ export class TabPanel extends LitElement {
       display: block;
     }
   `
-
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) active = false
   @property({ type: String, reflect: true }) role = 'tabpanel'

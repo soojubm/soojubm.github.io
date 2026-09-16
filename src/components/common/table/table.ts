@@ -112,13 +112,9 @@ export class Table extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) caption = ''
-
   @property({ attribute: false }) rows: unknown = nothing
-
   @property({ attribute: false }) columns: TableColumn[] = []
-
   @property({ type: String }) height?: string
 
   render() {

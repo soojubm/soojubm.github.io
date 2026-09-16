@@ -66,7 +66,6 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
     @property({ type: Boolean }) disabled = false
     @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
-
     readonly inputId = uniqueId('input')
 
     handleInput(event: Event) {

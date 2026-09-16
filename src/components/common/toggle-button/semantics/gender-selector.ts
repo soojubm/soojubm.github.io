@@ -19,10 +19,8 @@ export class GenderSelector extends LitElement {
       display: block;
     }
   `
-
   @property({ type: String }) value: Gender = 'other'
   @property({ type: Boolean, reflect: true }) stretch = false
-
   private readonly options: OptionItem[] = [
     { value: 'other', label: '기타' },
     { value: 'female', label: '여성' },

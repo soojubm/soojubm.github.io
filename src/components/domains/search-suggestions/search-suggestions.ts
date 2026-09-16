@@ -38,9 +38,7 @@ export class SearchSuggestions extends LitElement {
       flex-shrink: 0;
     }
   `
-
   @property({ type: String }) bleed?: string
-
   @property({ type: Boolean, reflect: true }) fade = false
   @property({ type: String, reflect: true }) role = 'group'
 

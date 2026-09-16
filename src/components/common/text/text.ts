@@ -14,7 +14,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 @customElement('mm-text')
 export class Text extends LitElement {
   static styles = [resetStyles, textStyles]
-
   @property({ type: String }) as = 'span'
   @property({ type: String, reflect: true }) size: TextSize = '14'
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'

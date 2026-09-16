@@ -22,7 +22,6 @@ export class HamburgerButton extends LitElement {
       }
     `,
   ]
-
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '전체 메뉴'
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null

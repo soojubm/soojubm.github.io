@@ -25,7 +25,6 @@ export class DeleteButton extends iconActionElement({
       }
     `,
   ]
-
   @property({ type: String, attribute: 'confirm-message' })
   confirmMessage = '정말 삭제하시겠어요?'
 

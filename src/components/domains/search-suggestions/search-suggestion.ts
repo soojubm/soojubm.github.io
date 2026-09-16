@@ -16,7 +16,6 @@ import { emit } from '@/utils'
 @customElement('mm-search-suggestion')
 export class SearchSuggestion extends LitElement {
   static styles = [suggestionButtonStyles]
-
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
 

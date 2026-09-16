@@ -14,16 +14,12 @@ import { getCurrentPageId } from '@/utils'
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
   static styles = [sidebarStyles]
-
   @property({ type: Boolean, reflect: true }) open = false
-
   @state() private currentPageId = 'index'
   @state() private openGroupIds = new Set(
     SITEMAP.filter(node => node.type === 'group').map(node => node.id),
   )
-
   private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
-
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
     setOpen: open => {

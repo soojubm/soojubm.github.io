@@ -26,14 +26,11 @@ export class MenuItemCheckboxGroup extends LitElement {
       display: block;
     }
   `
-
   @property({ type: String }) size: MenuItemGroupSize = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ attribute: false }) values: string[] = []
-
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox' })
   private checkboxes!: MenuItemCheckbox[]
-
   private selection = new MultipleSelectionController(this, {
     getValues: () => this.values,
     setValues: values => {
@@ -41,7 +38,6 @@ export class MenuItemCheckboxGroup extends LitElement {
     },
     getOptions: () => this.checkboxes.map(checkbox => ({ value: selectionItemValue(checkbox) })),
   })
-
   private group = new SelectionGroupController<MenuItemCheckbox>({
     selection: this.selection,
     getItems: () => this.checkboxes,

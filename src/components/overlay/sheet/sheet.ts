@@ -22,19 +22,15 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 @customElement('mm-sheet')
 export class Sheet extends LitElement {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
-
   @property({ type: String, reflect: true }) role = 'dialog'
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'center'
   @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true }) open = false
-
   @query('.panel') private sheetEl!: HTMLElement
-
   private dragging = false
   private dragStartY = 0
-
   private sheet = new SheetController(this, {
     isOpen: () => this.open,
     setOpen: open => {
@@ -84,14 +80,12 @@ export class Sheet extends LitElement {
     this.dragStartY = e.clientY
     this.sheetEl.style.transition = 'none'
   }
-
   private handleDragMove = (e: PointerEvent) => {
     if (!this.dragging) return
 
     const deltaY = Math.max(0, e.clientY - this.dragStartY)
     this.sheetEl.style.transform = `translateY(${deltaY}px)`
   }
-
   private handleDragEnd = (e: PointerEvent) => {
     if (!this.dragging) return
     this.dragging = false

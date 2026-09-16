@@ -27,7 +27,6 @@ export class BookmarkButton extends withTogglePressed(LitElement) {
       }
     `,
   ]
-
   @property({ type: String }) shape: 'star' | 'bookmark' | 'heart' = 'star'
 
   render() {

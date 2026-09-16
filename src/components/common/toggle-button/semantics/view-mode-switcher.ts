@@ -12,7 +12,6 @@ type ViewMode = 'grid' | 'list'
 @customElement('mm-view-mode-switcher')
 export class ViewModeSwitcher extends LitElement {
   @property({ type: String }) value: ViewMode = 'grid'
-
   private readonly options: OptionItem[] = [
     { value: 'grid', icon: ICON_NAMES.GRID_VIEW, label: '그리드 보기' },
     { value: 'list', icon: ICON_NAMES.LIST_VIEW, label: '목록 보기' },

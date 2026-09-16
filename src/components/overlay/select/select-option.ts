@@ -16,7 +16,6 @@ import { emit } from '@/utils'
 @customElement('mm-select-option')
 export class SelectOption extends withMenuItemPresentation(LitElement) {
   static styles = [menuItemStyles]
-
   @property({ type: Boolean }) disabled = false
   @property({ type: Boolean }) selected = false
   @property({ type: String }) value = ''

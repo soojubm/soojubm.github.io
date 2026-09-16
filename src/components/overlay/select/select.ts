@@ -28,7 +28,6 @@ export class Select extends LitElement {
       display: block;
     }
   `
-
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
@@ -36,7 +35,6 @@ export class Select extends LitElement {
   /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
   @property({ type: String, reflect: true }) width = 'auto'
   @state() private open = false
-
   @query('mm-popover') private popoverEl?: Popover
 
   render() {

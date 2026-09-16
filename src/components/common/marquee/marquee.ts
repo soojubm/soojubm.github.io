@@ -84,21 +84,17 @@ export class Marquee extends LitElement {
       }
     }
   `
-
   @property({ type: String, reflect: true }) role = 'marquee'
   @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'
   @property({ type: String }) gap = '4'
   @property({ type: String }) height?: string
   @property({ type: Number }) speed = 80
   @property({ type: Boolean, reflect: true, attribute: 'pause-on-hover' }) pauseOnHover = false
-
   @state() private copyCount = 1
   @state() private distance = 0
   @state() private duration = 1
-
   @query('.source') private sourceElement?: HTMLElement
   @query('slot') private slotElement?: HTMLSlotElement
-
   private resizeObserver?: ResizeObserver
   private measureFrame = 0
 

@@ -81,7 +81,6 @@ export class Input extends LitElement {
       }
     `,
   ]
-
   @property({ attribute: 'input-id' }) inputId = ''
   @property() type: InputType = 'text'
   @property() value = ''

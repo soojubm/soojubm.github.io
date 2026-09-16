@@ -13,7 +13,6 @@ export class TextfieldLabel extends LitElement {
       line-height: var(--size-24);
     }
   `
-
   @property({ type: String, attribute: 'for' }) htmlFor = ''
   @property({ type: Boolean }) optional = false
 

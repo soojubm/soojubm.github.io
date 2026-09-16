@@ -15,7 +15,6 @@ import { uniqueId } from '@/utils'
 @customElement('mm-textarea-field')
 export class TextareaField extends LitElement {
   static styles = textfieldStyles
-
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
@@ -25,7 +24,6 @@ export class TextareaField extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
-
   private inputId = uniqueId('mm-textarea')
 
   render() {

@@ -57,7 +57,6 @@ export class SheetController implements ReactiveController {
     if (!this.options.isOpen()) return
     if (e.target === this.host) this.options.onDismiss()
   }
-
   private handleKeydown = (e: KeyboardEvent) => {
     if (e.key !== 'Escape' || !this.options.isOpen()) return
     this.options.onDismiss()

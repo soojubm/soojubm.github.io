@@ -24,11 +24,9 @@ export class CommentInput extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) name = 'comment'
   @property({ type: String }) placeholder = ''
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '댓글 게시'
-
   @query('mm-textarea') private textarea!: Textarea
 
   render() {

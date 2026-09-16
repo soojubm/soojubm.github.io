@@ -46,7 +46,6 @@ export class Spinner extends LitElement {
       }
     }
   `
-
   @property({ type: String, reflect: true }) size: 'small' | 'medium' | 'large' = 'medium'
   @property({ type: String }) label = '로딩 중'
 

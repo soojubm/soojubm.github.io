@@ -13,7 +13,6 @@ import '@/components/common'
 @customElement('mm-my-chat-bubble')
 export class MyChatBubble extends withChatBubbleImage(LitElement) {
   static styles = [chatBubbleStyles, myChatBubbleStyles]
-
   @property({ type: String }) status = ''
 
   render() {

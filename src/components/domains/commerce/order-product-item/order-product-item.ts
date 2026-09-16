@@ -16,7 +16,6 @@ export class OrderProductItem extends LitElement {
       display: block;
     }
   `
-
   @property({ type: String }) name = ''
   @property({ type: String }) option = ''
   @property({ type: String }) price = ''

@@ -14,7 +14,6 @@ import '@/components/common/avatar'
 @customElement('mm-result')
 export class Result extends LitElement {
   static styles = [resultStyles]
-
   @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''

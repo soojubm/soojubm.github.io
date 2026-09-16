@@ -25,7 +25,6 @@ export class AttachmentItem extends LitElement {
       top: var(--space-1-minus);
     }
   `
-
   @property({ type: String, attribute: 'file-name' }) fileName = ''
   @property({ type: String, attribute: 'file-size' }) fileSize = ''
   @property({ type: String, attribute: 'preview-url' }) previewUrl?: string

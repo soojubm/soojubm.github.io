@@ -35,7 +35,6 @@ export class MetaItemGroup extends LitElement {
       gap: var(--space-8);
     }
   `
-
   @property({ type: String, reflect: true }) role = 'group'
   @property({ type: String, reflect: true }) direction: Direction = 'row'
   @property({ type: String, reflect: true }) gap = '4'

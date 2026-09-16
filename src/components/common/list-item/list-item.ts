@@ -22,17 +22,14 @@ export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | '48' | '80' = 'small'"
 @customElement('mm-list-item')
 export class ListItem extends LitElement {
   static styles = [listItemStyles]
-
   @property({ type: String, reflect: true }) size: ListItemSize = 'small'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
-
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
   @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
-
   @state() private hasAvatar = false
   @state() private hasTrailing = false
 

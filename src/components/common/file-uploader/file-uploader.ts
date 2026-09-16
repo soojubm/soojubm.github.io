@@ -41,15 +41,12 @@ export class FileUploader extends LitElement {
       gap: var(--space-2);
     }
   `
-
   @property({ type: String }) label = '파일 업로드'
   @property({ type: String }) helper = ''
   @property({ type: String }) accept = ''
   @property({ type: Boolean }) multiple = false
   @property({ type: Boolean }) capture = false
-
   @state() private files: File[] = []
-
   private previewUrls = new Map<File, string>()
 
   async connectedCallback() {

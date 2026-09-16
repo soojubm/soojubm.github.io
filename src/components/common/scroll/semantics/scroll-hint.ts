@@ -44,9 +44,7 @@ export class ScrollHint extends LitElement {
       visibility: hidden;
     }
   `
-
   @property({ type: String, reflect: true }) placement: ScrollHintPlacement = 'end'
-
   private scrollRoot?: HTMLElement
   private resizeObserver?: ResizeObserver
 

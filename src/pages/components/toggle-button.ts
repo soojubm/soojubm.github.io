@@ -1,7 +1,6 @@
 import { html } from 'lit'
 
 import type { FilterOption } from '@/components/common'
-import type { OptionItem } from '@/types'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -9,6 +8,7 @@ import type {
   ComponentRelatedItemData,
   ComponentTokenItemData,
 } from '@/components/domains/component'
+import type { OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'

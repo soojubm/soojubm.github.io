@@ -9,13 +9,9 @@ type Columns = 1 | 2 | 3 | 4 | 6
 @customElement('mm-grid')
 export class Grid extends LitElement {
   static styles = gridStyles
-
   @property({ type: Number, reflect: true }) columns: Columns = 2
-
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
-
   @property({ attribute: 'column-min-width' }) columnMinWidth?: string
-
   @property({ type: String }) gap = '4'
 
   render() {

@@ -10,7 +10,6 @@ type SeparatorVariant = 'element' | 'section'
 @customElement('mm-separator')
 export class Separator extends LitElement {
   static styles = [resetStyles, separatorStyles]
-
   @property({ type: String, reflect: true }) variant: SeparatorVariant = 'element'
 
   render() {

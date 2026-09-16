@@ -21,7 +21,6 @@ export class ThemeSelector extends LitElement {
       display: inline-flex;
     }
   `
-
   @property({ type: String }) value: Theme = 'light'
 
   render() {

@@ -14,7 +14,6 @@ import '@/components/common/icon'
 @customElement('mm-reveal-button')
 export class RevealButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles]
-
   @property({ type: Boolean }) revealed = false
   @property({ type: Boolean }) disabled = false
 

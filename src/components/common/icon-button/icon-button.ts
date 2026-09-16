@@ -14,7 +14,6 @@ export type IconButtonSize = 'small' | 'medium'
 @customElement('mm-icon-button')
 export class IconButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles]
-
   @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'

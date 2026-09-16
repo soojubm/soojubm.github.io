@@ -58,7 +58,6 @@ export class Breadcrumb extends LitElement {
       }
     `,
   ]
-
   @property({ attribute: false }) items: BreadcrumbItem[] = []
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'breadcrumb'
   @property({ type: String }) divider = '/'

@@ -28,7 +28,6 @@ export class PageButton extends LitElement {
       }
     `,
   ]
-
   @property({ type: Number }) page = 1
   @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
     null

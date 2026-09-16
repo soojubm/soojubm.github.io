@@ -70,7 +70,6 @@ export class Main extends LitElement {
       min-height: 0;
     }
   `
-
   @property({ type: String, reflect: true }) role = 'main'
   @property({ type: String, reflect: true }) width: 'small' | 'medium' | '' = ''
   @property({ type: String, reflect: true }) layout: 'chat' | '' = ''

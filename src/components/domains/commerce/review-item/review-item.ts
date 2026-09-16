@@ -31,7 +31,6 @@ export class ReviewItem extends LitElement {
       color: var(--accent-color);
     }
   `
-
   @property({ type: Number }) rating = 5
   @property({ type: String }) content = ''
   @property({ type: String }) author = ''

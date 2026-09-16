@@ -33,7 +33,6 @@ export class ChatReasoningFlow extends LitElement {
       display: none;
     }
   `
-
   @property({ type: Boolean, reflect: true }) active = false
   @property({ type: String }) tone: ChatReasoningFlowTone = 'thinking'
   @property({ type: String }) label = ''

@@ -70,14 +70,12 @@ export class PromptInput extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = 'Ask me anything...'
   @property({ type: String }) model = 'claude-sonnet'
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
   @property({ type: Boolean }) loading = false
-
   @property({ type: Boolean, reflect: true, attribute: 'single-line' })
   private singleLine = true
 
@@ -105,11 +103,9 @@ export class PromptInput extends LitElement {
     this.value = e.detail.value
     emit(this, 'input', { value: this.value })
   }
-
   private handleSingleLineChange = (e: CustomEvent<{ isSingleLine: boolean }>) => {
     this.singleLine = e.detail.isSingleLine
   }
-
   private handleTextareaKeydown = (e: KeyboardEvent) => {
     if (e.isComposing) return
     if (e.key !== 'Enter' || e.shiftKey) return
@@ -117,7 +113,6 @@ export class PromptInput extends LitElement {
     e.preventDefault()
     this.handleSubmitClick()
   }
-
   private handleSubmitClick = () => {
     if (this.loading || !this.value.trim()) return
 

@@ -16,9 +16,7 @@ export class FeatureGroup extends LitElement {
       display: block;
     }
   `
-
   @property({ type: Number }) columns: Columns = 2
-
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
   render() {

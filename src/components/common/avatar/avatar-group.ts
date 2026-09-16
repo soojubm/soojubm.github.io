@@ -33,11 +33,8 @@ export class AvatarGroup extends LitElement {
       color: var(--foreground-color);
     }
   `
-
   @property({ attribute: false }) avatars: string[] = []
-
   @property({ type: String }) label = ''
-
   /** 노출할 최대 아바타 수 (나머지는 +N으로 묶음) */
   private readonly maxVisible = 3
 

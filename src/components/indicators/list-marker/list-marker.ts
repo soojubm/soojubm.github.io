@@ -29,7 +29,6 @@ export class ListMarker extends LitElement {
       height: 0.5rem;
     }
   `
-
   @property({ type: String }) variant: Variant = 'number'
   @property({ type: Number }) value = 1
 

@@ -40,7 +40,6 @@ export class Dot extends LitElement {
     ${unsafeCSS(buildAttributeRules('tone', toneTokens))}
     ${unsafeCSS(buildAttributeRules('variant', variantTokens))}
   `
-
   @property({ type: String, reflect: true, useDefault: true }) tone: TagTone = 'default'
   @property({ type: String, reflect: true }) variant?: DotVariant
 }

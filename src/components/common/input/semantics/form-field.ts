@@ -25,7 +25,6 @@ export class FormField extends LitElement {
       gap: var(--space-1);
     }
   `
-
   @property({ type: String }) label = ''
   @property({ type: String }) helper = ''
   @property({ type: String, attribute: 'validation-text' }) validationText = ''

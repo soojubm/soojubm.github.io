@@ -76,16 +76,12 @@ export class ColorToken extends LitElement {
       }
     `,
   ]
-
   private themeChange = new ThemeChangeController(this)
-
   /** 스와치로 보여줄 색상 토큰 이름 (예: gray800, background-subtle-color) */
   @property({ type: String }) name = ''
   /** 이 표면 위에 얹는 전경색 토큰 이름, 위에서 아래로 쌓인다. */
   @property({ attribute: false }) pairs: string[] = []
-
   @state() private contrasts: string[] = []
-
   @query('.swatch') private swatch!: HTMLElement
   @queryAll('.label-row') private labelRows!: NodeListOf<HTMLElement>
 

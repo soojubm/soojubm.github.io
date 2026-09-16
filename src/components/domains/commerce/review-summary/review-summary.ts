@@ -23,7 +23,6 @@ export class ReviewSummary extends LitElement {
       color: var(--accent-color);
     }
   `
-
   @property({ type: Number }) rating = 0
   @property({ type: Number, attribute: 'review-count' }) reviewCount = 0
 

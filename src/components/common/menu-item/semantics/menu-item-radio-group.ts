@@ -18,22 +18,18 @@ export class MenuItemRadioGroup extends LitElement {
       display: block;
     }
   `
-
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: String }) size: MenuItemGroupSize = ''
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-
   @queryAssignedElements({ selector: 'mm-menu-item-radio' })
   private radios!: MenuItemRadio[]
-
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
     setValue: value => {
       this.value = value
     },
   })
-
   private group = new SelectionGroupController<MenuItemRadio>({
     selection: this.selection,
     getItems: () => this.radios,

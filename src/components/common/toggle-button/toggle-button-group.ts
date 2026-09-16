@@ -54,7 +54,6 @@ export class ToggleButtonGroup extends LitElement {
       }
     `,
   ]
-
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) stretch = false
@@ -62,14 +61,12 @@ export class ToggleButtonGroup extends LitElement {
   @property({ type: Boolean, attribute: 'hidden-label' }) hiddenLabel = false
   @property({ type: String, reflect: true }) role = 'group'
   @property({ type: String }) orientation: Orientation = 'horizontal'
-
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
     setValue: value => {
       this.value = value
     },
   })
-
   private rovingFocus = new RovingFocusController(this, {
     getItems: () => Array.from(this.renderRoot.querySelectorAll('button')),
     orientation: () => this.orientation,

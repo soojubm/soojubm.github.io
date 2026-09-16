@@ -26,7 +26,6 @@ export class ProductPrice extends LitElement {
       text-decoration: none;
     }
   `
-
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
   @property({ type: String }) price = ''
   @property({ type: String, attribute: 'original-price' }) originalPrice = ''

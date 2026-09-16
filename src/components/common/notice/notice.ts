@@ -18,15 +18,12 @@ const VARIANT_ICONS: Record<string, string> = {
 @customElement('mm-notice')
 export class Notice extends LitElement {
   static styles = [noticeStyles]
-
   @property({ type: String, reflect: true }) role = 'note'
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true }) variant = ''
-
   @state() private dismissed = false
   @state() private dismissible = false
-
   private dismissListenerCount = 0
 
   render() {

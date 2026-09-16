@@ -70,12 +70,9 @@ export class AccordionItem extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) summary = ''
   @property({ type: Boolean, reflect: true }) open = false
-
   private readonly panelId = uniqueId('accordion-panel')
-
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
     setOpen: open => {

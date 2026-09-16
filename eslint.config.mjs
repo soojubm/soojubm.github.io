@@ -68,6 +68,12 @@ export default [
       // 클래스 필드는 검사 대상이 아니라, host에 스스로 등록하는 컨트롤러 필드는 그대로 남는다.
       '@typescript-eslint/no-unused-vars': ['error', { args: 'none' }],
 
+      // 한 줄짜리 필드 선언이 빈 줄로 흩어지지 않게 클래스 필드 사이의 빈 줄을 막는다.
+      'lines-between-class-members': [
+        'error',
+        { enforce: [{ blankLine: 'never', prev: 'field', next: 'field' }] },
+      ],
+
       curly: ['error', 'multi-or-nest', 'consistent'],
       'nonblock-statement-body-position': ['error', 'beside'],
       'import/order': [

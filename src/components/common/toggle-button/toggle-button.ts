@@ -16,13 +16,11 @@ import '@/components/common/icon/icon'
 @customElement('mm-toggle-button')
 export class ToggleButton extends LitElement {
   static styles = [resetStyles, buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
-
   @property({ type: Boolean, reflect: true }) pressed = false
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-
   private toggle = new ToggleController(this, 'pressed')
 
   render() {

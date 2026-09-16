@@ -19,7 +19,6 @@ export interface ComponentTokenItemData {
 @customElement('mm-component-tokens')
 export class ComponentTokens extends LitElement {
   static styles = componentTokensStyles
-
   @property({ attribute: false }) tokens: ComponentTokenItemData[] = []
 
   render() {

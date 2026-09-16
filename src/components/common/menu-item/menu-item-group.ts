@@ -21,12 +21,9 @@ export class MenuItemGroup extends LitElement {
       gap: var(--space-2);
     }
   `
-
   @property({ type: String, reflect: true }) role = 'menu'
   @property({ type: String, reflect: true }) size: MenuItemGroupSize = ''
-
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]
-
   private rovingFocus = new RovingFocusController(this, {
     getItems: () => this.items,
     orientation: 'vertical',

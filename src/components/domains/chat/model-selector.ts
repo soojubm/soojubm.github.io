@@ -18,7 +18,6 @@ export class ModelSelector extends LitElement {
       display: inline-flex;
     }
   `
-
   @property({ type: String }) value = 'claude-sonnet'
 
   render() {

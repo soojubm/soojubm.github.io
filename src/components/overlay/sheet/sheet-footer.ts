@@ -10,7 +10,6 @@ import '@/components/common'
 @customElement('mm-sheet-footer')
 export class SheetFooter extends LitElement {
   static styles = sheetFooterStyles
-
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
 
@@ -58,7 +57,6 @@ export class SheetFooter extends LitElement {
     this.primaryAction?.onClick?.()
     emit(this, 'primary-click')
   }
-
   private handleSecondaryClick = () => {
     this.secondaryAction?.onClick?.()
     emit(this, 'secondary-click')

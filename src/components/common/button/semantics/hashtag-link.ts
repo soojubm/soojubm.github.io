@@ -20,7 +20,6 @@ export class HashtagLink extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) href = ''
 
   render() {

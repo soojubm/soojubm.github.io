@@ -23,14 +23,10 @@ export class ReadMoreParagraph extends LitElement {
       display: inline;
     }
   `
-
   @property({ type: String }) content = ''
   @property({ type: Number }) limit = 100
-
   @state() private expanded = false
-
   private readonly contentId = uniqueId('read-more-content')
-
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.expanded,
     setOpen: open => {

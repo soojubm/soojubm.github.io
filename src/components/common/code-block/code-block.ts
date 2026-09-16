@@ -17,7 +17,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 @customElement('mm-code-block')
 export class CodeBlock extends LitElement {
   static styles = [resetStyles, codeBlockStyles]
-
   @property({ type: String }) code = ''
   @property({ type: String }) language = 'markup'
 

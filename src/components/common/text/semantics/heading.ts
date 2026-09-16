@@ -27,7 +27,6 @@ export class Heading extends LitElement {
       display: block;
     }
   `
-
   @property({ type: Number, reflect: true }) level: HeadingLevel = 2
 
   render() {

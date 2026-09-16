@@ -11,12 +11,10 @@ import '@/components/common/icon-button/semantics/clear-button'
 @customElement('mm-searchfield')
 export class SearchField extends LitElement {
   static styles = [inputStyles]
-
   @property({ type: String }) value = ''
   @property({ type: String }) placeholder = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String, reflect: true }) size: 'small' | '' = ''
-
   private inputId = uniqueId('input')
 
   render() {

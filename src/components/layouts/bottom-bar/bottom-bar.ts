@@ -85,15 +85,11 @@ export class BottomBar extends LitElement {
       }
     `,
   ]
-
   @property({ attribute: false }) items: BottomBarItem[] = defaultItems
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '하단 내비게이션'
-
   @state() private selectedIndex: number | null = null
-
   @query('nav') private bottomBar?: HTMLElement
   @query('.indicator') private indicator?: HTMLElement
-
   private indicatorPosition = new SelectionIndicatorController(this, {
     axis: 'x',
     autoUpdate: true,

@@ -12,11 +12,9 @@ import { emit, uniqueId } from '@/utils'
 @customElement('mm-switch')
 export class Switch extends LitElement {
   static styles = [resetStyles, switchStyles]
-
   @property({ type: String }) name = ''
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
-
   private inputId = uniqueId('switch')
   private toggle = new ToggleController(this, 'checked')
 

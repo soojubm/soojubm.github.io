@@ -65,9 +65,7 @@ export class ChatSourceGroup extends LitElement {
       }
     `,
   ]
-
   @state() private activeSource: ChatSource | null = null
-
   // 바깥을 누르면 열려 있는 소스 시트를 닫는다.
   private outsideClick = new OutsideClickController(
     this,

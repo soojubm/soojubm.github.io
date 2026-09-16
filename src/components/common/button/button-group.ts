@@ -38,7 +38,6 @@ export class ButtonGroup extends LitElement {
       --button-width: 100%;
     }
   `
-
   @property({ type: String, reflect: true }) direction: Direction = 'row'
   @property({ type: String, attribute: 'justify-content', reflect: true })
   justifyContent: Justify = 'start'

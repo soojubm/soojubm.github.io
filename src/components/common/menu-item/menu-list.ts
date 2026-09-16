@@ -26,10 +26,8 @@ export class MenuList extends LitElement {
       color: var(--foreground-subtle-color);
     }
   `
-
   @property({ type: String }) heading = ''
   @property({ type: String }) size: MenuItemGroupSize = ''
-
   private readonly headingId = uniqueId('menu-list-heading')
 
   render() {

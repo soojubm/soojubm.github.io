@@ -21,7 +21,6 @@ export type ButtonType = 'button' | 'submit' | 'reset'
 @customElement('mm-button')
 export class Button extends LitElement {
   static styles = [resetStyles, buttonBaseStyles, buttonSizeStyles, buttonVariantStyles]
-
   @property({ type: String, reflect: true }) variant: ButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: ButtonSize = 'medium'
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false

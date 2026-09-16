@@ -23,13 +23,10 @@ export class SettingItem extends LitElement {
       pointer-events: none;
     }
   `
-
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
-
   @property({ type: Boolean, reflect: true }) disabled = false
-
   @queryAssignedElements({ slot: 'action', flatten: true })
   private actions!: DisableableElement[]
 

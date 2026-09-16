@@ -22,11 +22,8 @@ export interface ComponentPropItemData {
 @customElement('mm-component-props')
 export class ComponentProps extends LitElement {
   static styles = componentPropsStyles
-
   @property({ attribute: false }) props: ComponentPropItemData[] = []
-
   @property({ type: Boolean, reflect: true }) open = false
-
   private readonly propsId = uniqueId('component-props')
 
   render() {

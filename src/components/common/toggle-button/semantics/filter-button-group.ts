@@ -33,13 +33,11 @@ export class FilterButtonGroup extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) mode: FilterMode = 'single'
   @property({ attribute: false }) values: string[] = []
   @property({ attribute: false }) options: FilterOption[] = []
   @property({ type: String, reflect: true }) role = 'group'
   @property({ type: String }) orientation: Orientation = 'horizontal'
-
   // single/multiple 모드가 런타임에 바뀔 수 있어 두 컨트롤러를 모두 들고 mode로 분기한다.
   private singleSelection = new SingleSelectionController(this, {
     getValue: () => this.values[0] ?? '',
@@ -47,7 +45,6 @@ export class FilterButtonGroup extends LitElement {
       this.values = value ? [value] : []
     },
   })
-
   private multipleSelection = new MultipleSelectionController(this, {
     getValues: () => this.values,
     setValues: values => {
@@ -55,7 +52,6 @@ export class FilterButtonGroup extends LitElement {
     },
     getOptions: () => this.options,
   })
-
   // 포커스 이동은 컨트롤러가, 선택은 네이티브 버튼 클릭이 담당한다.
   private rovingFocus = new RovingFocusController(this, {
     getItems: () => Array.from(this.renderRoot.querySelectorAll('button')),

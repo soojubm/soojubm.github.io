@@ -16,22 +16,18 @@ import { emit } from '@/utils'
 @customElement('mm-radio-card-group')
 export class RadioCardGroup extends LitElement {
   static styles = [resetStyles, radioGroupStyles]
-
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) legend = ''
-
   @queryAssignedElements({ selector: 'mm-radio-card' })
   private cards!: RadioCard[]
-
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
     setValue: value => {
       this.value = value
     },
   })
-
   private group = new SelectionGroupController<RadioCard>({
     selection: this.selection,
     getItems: () => this.cards,

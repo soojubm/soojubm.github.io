@@ -8,7 +8,6 @@ import '@/components/common'
 @customElement('mm-sheet-header')
 export class SheetHeader extends LitElement {
   static styles = sheetHeaderStyles
-
   @property({ type: String }) heading = ''
 
   render() {

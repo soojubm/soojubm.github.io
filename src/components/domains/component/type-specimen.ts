@@ -19,14 +19,10 @@ export class TypeSpecimen extends LitElement {
       display: block;
     }
   `
-
   private themeChange = new ThemeChangeController(this)
-
   /** 소개할 mm-text의 size 단계 */
   @property({ type: String }) size = ''
-
   @state() private values: string[] = []
-
   @query('mm-text') private sample!: HTMLElement
 
   render() {

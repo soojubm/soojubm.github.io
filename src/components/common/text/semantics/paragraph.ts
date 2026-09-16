@@ -46,7 +46,6 @@ export class Paragraph extends LitElement {
       }
     `,
   ]
-
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
   @property({ type: String, reflect: true }) color = 'inherit'
   @property({ type: String, attribute: 'max-length', reflect: true }) maxLength: TextMaxLength = ''

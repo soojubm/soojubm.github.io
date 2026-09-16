@@ -25,7 +25,6 @@ export class MediaCard extends LitElement {
       gap: var(--space-2);
     }
   `
-
   @property({ type: String }) title = ''
   @property({ type: String }) subtitle = ''
   @property({ type: String }) director = ''

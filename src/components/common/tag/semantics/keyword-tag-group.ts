@@ -8,7 +8,6 @@ import '@/components/common/tag/semantics/keyword-tag'
 @customElement('mm-keyword-tag-group')
 export class KeywordTagGroup extends LitElement {
   @property({ type: String }) heading = ''
-
   @property({ attribute: false }) keywords: string[] = []
 
   render() {

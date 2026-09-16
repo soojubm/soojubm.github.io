@@ -37,7 +37,6 @@ export class MyChatMessage extends LitElement {
       --chat-bubble-text-color: var(--foreground-color);
     }
   `
-
   @property({ type: String }) datetime = ''
   @property({ type: Boolean, reflect: true }) failed = false
 

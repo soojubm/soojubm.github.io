@@ -28,12 +28,10 @@ export class NavbarSearch extends LitElement {
       display: inline-flex;
     }
   `
-
   @state() private isOpen = false
   @state() private query = ''
   @state() private results: PagefindResult[] = []
   @state() private searching = false
-
   private pagefind: Pagefind | null = null
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
   private searchRequestId = 0
@@ -114,7 +112,6 @@ export class NavbarSearch extends LitElement {
     this.isOpen = false
     this.resetSearch(true)
   }
-
   private handleSearchInput = (e: Event) => {
     this.query = this.getInputValue(e)
     if (this.debounceTimer) clearTimeout(this.debounceTimer)

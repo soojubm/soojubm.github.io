@@ -25,7 +25,6 @@ export class PostFeature extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) href = ''
   @property({ type: String }) thumbnail = ''
   @property({ type: String }) title = ''

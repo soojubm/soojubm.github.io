@@ -21,7 +21,6 @@ export class ClearButton extends LitElement {
       }
     `,
   ]
-
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @property({ type: Boolean }) disabled = false

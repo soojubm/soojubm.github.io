@@ -15,7 +15,6 @@ export class ComponentGuide extends LitElement {
       padding: var(--space-section) 0 0;
     }
   `
-
   @property({ attribute: false }) features: ComponentFeatureItem[] = []
 
   render() {

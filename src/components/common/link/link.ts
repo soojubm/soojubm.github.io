@@ -9,7 +9,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 @customElement('mm-link')
 export class Link extends LitElement {
   static styles = [resetStyles, linkStyles]
-
   @property({ type: String }) href = ''
   @property({ type: String }) target = ''
   @property({ type: Boolean }) external = false

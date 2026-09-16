@@ -20,7 +20,6 @@ export class AiChatMessage extends LitElement {
       align-self: flex-start;
     }
   `
-
   @property({ type: String }) datetime = ''
   @property({ type: Boolean, attribute: 'hidden-reactions' }) hiddenReactions = false
 

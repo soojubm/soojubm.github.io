@@ -14,10 +14,8 @@ const DURATION = 3000
 @customElement('mm-toast')
 export class Toast extends LitElement {
   static styles = toastStyles
-
   @property({ type: String, reflect: true }) role = 'status'
   @property({ type: Boolean, reflect: true }) open = false
-
   private hideTimer: ReturnType<typeof setTimeout> | null = null
 
   render() {

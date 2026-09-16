@@ -35,9 +35,7 @@ export class ComponentReferences extends LitElement {
       padding: var(--space-section) 0;
     }
   `
-
   @property({ type: String }) heading = 'References'
-
   @property({ attribute: false }) items:
     | ComponentReferenceItemData[]
     | ComponentReferenceItemData[][] = []

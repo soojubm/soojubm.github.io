@@ -12,7 +12,6 @@ export class StatusMessage extends LitElement {
       width: 100%;
     }
   `
-
   @property({ type: String }) heading = ''
   @property({ type: String }) message = ''
 

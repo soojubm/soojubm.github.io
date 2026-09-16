@@ -16,7 +16,6 @@ import { emit } from '@/utils'
 @customElement('mm-chat-suggestion')
 export class ChatSuggestion extends LitElement {
   static styles = [suggestionButtonStyles]
-
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
 

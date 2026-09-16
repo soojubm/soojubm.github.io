@@ -20,7 +20,6 @@ export class ChatConfirmation extends LitElement {
       max-width: min(85%, 480px);
     }
   `
-
   @property({ type: String }) status: ConfirmationStatus = 'pending'
   @property({ type: String }) message = ''
   @property({ type: String, attribute: 'approve-label' }) approveLabel = '승인'

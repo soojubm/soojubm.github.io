@@ -10,7 +10,6 @@ import '@/components/common'
 @customElement('mm-user-snippet')
 export class UserSnippet extends LitElement {
   static styles = [entityStyles]
-
   @property({ type: String }) name = ''
   @property({ type: String }) phone = ''
   @property({ type: String }) email = ''

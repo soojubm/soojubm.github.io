@@ -20,12 +20,10 @@ export class AttachmentButton extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) label = ''
   @property({ type: String }) accept = ''
   @property({ type: Boolean }) multiple = false
   @property({ type: Boolean }) capture = false
-
   @query('input') private input!: HTMLInputElement
 
   render() {

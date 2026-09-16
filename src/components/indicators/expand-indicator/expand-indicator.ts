@@ -23,7 +23,6 @@ export class ExpandIndicator extends LitElement {
       transform: rotate(180deg);
     }
   `
-
   @property({ type: Boolean, reflect: true }) expanded = false
   @property({ type: String, attribute: 'aria-hidden', reflect: true }) ariaHidden = 'true'
 

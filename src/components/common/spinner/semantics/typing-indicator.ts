@@ -41,7 +41,6 @@ export class TypingIndicator extends LitElement {
       }
     }
   `
-
   @property({ type: String, reflect: true }) role = 'status'
   @property({ type: String, attribute: 'aria-label', reflect: true }) ariaLabel = '입력 중'
 

@@ -103,7 +103,6 @@ export class Flex extends LitElement {
       }
     `,
   ]
-
   @property({ type: String, reflect: true }) direction: Direction = 'row'
   @property({ type: String, attribute: 'justify-content', reflect: true })
   justifyContent: JustifyContent = 'flex-start'

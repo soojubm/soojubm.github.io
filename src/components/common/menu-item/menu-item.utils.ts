@@ -18,7 +18,14 @@ import { type Constructor, emit } from '@/utils'
  */
 export type MenuItemPresentation = Pick<
   ListItem,
-  'size' | 'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarVariant' | 'avatarShape'
+  | 'size'
+  | 'label'
+  | 'description'
+  | 'icon'
+  | 'emoji'
+  | 'avatarSrc'
+  | 'avatarVariant'
+  | 'avatarShape'
 > & { tone: string }
 
 /**
@@ -34,7 +41,8 @@ export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base
     @property({ type: String }) icon?: IconName
     @property({ type: String }) emoji = ''
     @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-    @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'tertiary'
+    @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant =
+      'tertiary'
     @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
   }
 
@@ -114,9 +122,7 @@ export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base:
     @property({ type: Boolean }) disabled = false
     @property({ type: Boolean }) checked = false
     @property({ type: String }) value = ''
-
     private toggle = new ToggleController(this, 'checked')
-
     activate = () => {
       if (!this.toggle.set(!this.checked)) return
 

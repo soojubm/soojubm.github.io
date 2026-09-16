@@ -13,7 +13,6 @@ export class PasswordField extends LitElement {
       display: block;
     }
   `
-
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
@@ -24,7 +23,6 @@ export class PasswordField extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
-
   @state() private revealed = false
 
   render() {

@@ -18,7 +18,6 @@ export class ComponentSection extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
 

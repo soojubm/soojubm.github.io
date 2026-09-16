@@ -16,7 +16,6 @@ export class LinkPrompt extends LitElement {
       gap: var(--space-1);
     }
   `
-
   @property({ type: String }) icon?: IconName
   @property({ type: String }) message = ''
   @property({ type: String, attribute: 'link-label' }) linkLabel = ''

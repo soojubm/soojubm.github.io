@@ -11,7 +11,6 @@ export class ChatDate extends LitElement {
       justify-content: center;
     }
   `
-
   @property({ type: String }) label = ''
 
   render() {

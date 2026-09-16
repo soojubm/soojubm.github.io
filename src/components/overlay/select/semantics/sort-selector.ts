@@ -19,7 +19,6 @@ export class SortSelector extends LitElement {
       display: inline-flex;
     }
   `
-
   @property({ type: String }) value: SortOrder = 'latest'
 
   render() {

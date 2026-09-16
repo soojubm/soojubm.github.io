@@ -13,7 +13,6 @@ export class ComponentAka extends LitElement {
       }
     `,
   ]
-
   @property({ attribute: false }) items: string[] = []
 
   render() {

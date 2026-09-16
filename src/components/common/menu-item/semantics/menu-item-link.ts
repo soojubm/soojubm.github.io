@@ -16,7 +16,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends withMenuItemPresentation(LitElement) {
   static styles = [resetStyles, menuItemStyles]
-
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'

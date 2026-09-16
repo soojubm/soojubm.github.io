@@ -27,7 +27,6 @@ export class ShowMoreButton extends LitElement {
       transform: rotate(180deg);
     }
   `
-
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
   @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'

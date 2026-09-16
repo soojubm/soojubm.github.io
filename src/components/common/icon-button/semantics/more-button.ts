@@ -17,7 +17,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
-
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null

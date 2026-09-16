@@ -10,15 +10,11 @@ import { emit, uniqueId } from '@/utils'
 @customElement('mm-tab-list')
 export class TabList extends LitElement {
   static styles = [tabsStyles]
-
   private readonly tabsId = uniqueId('tabs')
-
   @property({ type: String }) value = ''
   @property({ type: String, reflect: true }) variant = 'line'
-
   @queryAssignedElements({ flatten: true }) private assignedElements!: HTMLElement[]
   @query('.indicator') private indicator?: HTMLElement
-
   private indicatorPosition = new SelectionIndicatorController(this, {
     axis: 'x',
     getIndicator: () => this.indicator,
@@ -72,7 +68,6 @@ export class TabList extends LitElement {
   private handleSlotChange = () => {
     this.sync()
   }
-
   private handleTabSelect = (event: Event) => {
     // 탭 단위 이벤트는 여기서 끊고 탭리스트 단위 change로 승격한다.
     event.stopPropagation()
@@ -83,7 +78,6 @@ export class TabList extends LitElement {
     this.value = customEvent.detail.value
     emit(this, 'change', { value: this.value })
   }
-
   private handleKeydown = (event: KeyboardEvent) => {
     const currentTab = event.composedPath().find(element => element instanceof Tab) as
       | Tab

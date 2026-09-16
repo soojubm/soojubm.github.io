@@ -47,7 +47,6 @@ export class Tab extends LitElement {
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
     /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--interaction-selected-foreground-color); } */
   `
-
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) active = false
   @property({ type: String, reflect: true }) role = 'tab'

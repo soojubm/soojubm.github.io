@@ -53,16 +53,13 @@ export class CopyButton extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) value = ''
   @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
   @state() private copied = false
-
   private copiedFlag = new TransientFlagController(this, {
     duration: 1500,
     onChange: copied => (this.copied = copied),
   })
-
   private handleClick = async () => {
     const text = this.value || this.textContent?.trim() || ''
     if (!(await copyToClipboard(text))) return

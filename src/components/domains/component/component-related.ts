@@ -22,7 +22,6 @@ export class ComponentRelated extends LitElement {
       padding: var(--space-section) 0;
     }
   `
-
   @property({ attribute: false }) items: ComponentRelatedItemData[] = []
 
   render() {

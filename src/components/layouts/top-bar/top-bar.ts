@@ -14,7 +14,6 @@ import '@/components/common'
 @customElement('mm-top-bar')
 export class TopBar extends LitElement {
   static styles = [topBarStyles]
-
   @property({ type: String }) heading = ''
   @property({ type: String }) nav: 'back' | 'close' = 'back'
 

@@ -12,25 +12,18 @@ import '@/components/common/text/semantics/paragraph'
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {
   static styles = [resetStyles, visuallyHiddenInputStyles, checkboxStyles]
-
   @property({ type: String })
   name?: string
-
   @property({ type: String })
   value?: string
-
   @property({ type: String, reflect: true })
   size?: string
-
   @property({ type: Boolean, reflect: true })
   checked = false
-
   @property({ type: Boolean, reflect: true })
   disabled = false
-
   @property({ type: Boolean, reflect: true })
   indeterminate = false
-
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
   private inputId = uniqueId('checkbox')
   private toggle = new ToggleController(this, 'checked')

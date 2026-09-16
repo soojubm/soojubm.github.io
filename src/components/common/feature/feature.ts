@@ -10,12 +10,9 @@ import '@/components/common/icon'
 @customElement('mm-feature')
 export class Feature extends LitElement {
   static styles = [featureStyles]
-
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
-
   @property({ type: String }) heading = ''
-
   @property({ type: String }) description = ''
   @property({ type: Boolean, reflect: true }) centered = false
 

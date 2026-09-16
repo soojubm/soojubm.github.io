@@ -14,10 +14,8 @@ import '@/components/common/text/semantics/paragraph'
 @customElement('mm-master-checkbox')
 export class MasterCheckbox extends LitElement {
   static styles = [resetStyles, visuallyHiddenInputStyles, checkboxStyles]
-
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ type: String, reflect: true }) size = 'large'
-
   private inputId = uniqueId('master-checkbox')
   private group: CheckboxGroup | null = null
 
@@ -82,7 +80,6 @@ export class MasterCheckbox extends LitElement {
   private handleGroupChange = () => {
     this.requestUpdate()
   }
-
   private handleCheckboxInputChange = () => {
     this.group?.toggleAll()
   }

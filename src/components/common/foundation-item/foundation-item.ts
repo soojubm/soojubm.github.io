@@ -46,7 +46,6 @@ export class FoundationItem extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) href = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''

@@ -21,18 +21,13 @@ const LIST_ROLES = ['menu', 'listbox']
 @customElement('mm-popover')
 export class Popover extends LitElement {
   static styles = [overlaySurfaceStyles, popoverPositionStyles]
-
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-left'
-
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: HTMLElement[]
-
   @queryAssignedElements({ flatten: true })
   private contentElements!: HTMLElement[]
-
   private returnFocusElement?: HTMLElement
-
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
     setOpen: open => {

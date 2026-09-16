@@ -28,7 +28,6 @@ export class RadiusPicker extends LitElement {
       padding: var(--space-1);
     }
   `
-
   @state() private shape: Shape = 'circle'
   @state() private color: Color = 'green'
 

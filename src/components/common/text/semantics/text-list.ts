@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
-import type { TemplateResult } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
+import type { TemplateResult } from 'lit'
 
 import { textStyles } from '@/components/common/text/text.styles'
 import '@/components/indicators/list-marker/list-marker'
@@ -28,7 +29,6 @@ export class TextList extends LitElement {
       }
     `,
   ]
-
   // 인라인 code처럼 마크업이 필요한 항목은 템플릿으로 넘긴다.
   @property({ attribute: false }) texts: Array<string | TemplateResult> = []
   @property({ type: String }) variant: Variant = 'check'

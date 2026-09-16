@@ -13,7 +13,6 @@ import '@/components/common/radio'
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends withMenuItemPresentation(LitElement) {
   static styles = [menuItemStyles]
-
   @property({ type: Boolean }) disabled = false
   @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''

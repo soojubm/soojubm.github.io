@@ -16,7 +16,6 @@ import '@/components/common/input/input'
 @customElement('mm-textfield')
 export class Textfield extends withTextfieldState(LitElement) {
   static styles = textfieldStyles
-
   @property({ type: String }) type: InputType = 'text'
 
   render() {

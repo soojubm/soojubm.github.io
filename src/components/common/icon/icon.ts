@@ -35,11 +35,9 @@ const loadIconoirStylesheet = () => {
 @customElement('mm-icon')
 export class Icon extends LitElement {
   static styles = [resetStyles, iconStyles]
-
   @property({ type: String }) name = ''
   @property({ type: String, reflect: true }) size = ''
   @property({ type: String }) color = ''
-
   @state() private useStylesheetLink = false
 
   render() {

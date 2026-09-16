@@ -16,7 +16,6 @@ export class UserRow extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) size: ListItemSize = 'small'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''

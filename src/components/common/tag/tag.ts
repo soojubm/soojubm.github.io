@@ -9,7 +9,6 @@ import { tagStyles, type TagTone } from '@/components/common/tag/tag.styles'
 @customElement('mm-tag')
 export class Tag extends LitElement {
   static styles = [tagStyles]
-
   @property({ type: String, reflect: true, useDefault: true }) tone: TagTone = 'default'
   @property({ type: String }) icon?: IconName
 

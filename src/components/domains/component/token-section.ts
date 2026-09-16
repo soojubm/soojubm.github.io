@@ -18,7 +18,6 @@ export class TokenSection extends LitElement {
       gap: var(--space-4);
     }
   `
-
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
 

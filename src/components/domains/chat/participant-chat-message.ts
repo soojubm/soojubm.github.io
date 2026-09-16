@@ -32,7 +32,6 @@ export class ParticipantChatMessage extends LitElement {
       gap: var(--space-1);
     }
   `
-
   @property({ type: String }) name = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String }) datetime = ''

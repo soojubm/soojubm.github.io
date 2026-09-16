@@ -77,7 +77,6 @@ export class PortfolioItem extends LitElement {
       flex: none;
     }
   `
-
   @property({ type: String, reflect: true }) layout: PortfolioItemLayout = 'grid'
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''

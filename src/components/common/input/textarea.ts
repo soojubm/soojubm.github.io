@@ -14,7 +14,6 @@ let uniqueIdCounter = 0
 @customElement('mm-textarea')
 export class Textarea extends LitElement {
   static styles = [resetStyles, inputStyles]
-
   @property({ type: String, attribute: 'input-id' }) inputId = ''
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
@@ -23,11 +22,8 @@ export class Textarea extends LitElement {
   @property({ type: Number }) rows = 3
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
-
   @query('textarea') protected textarea!: HTMLTextAreaElement
-
   @state() protected defaultTextareaId = `mm-textarea-${uniqueIdCounter++}`
-
   private autoHeight = new TextareaAutoHeightController(this, {
     getTextarea: () => this.textarea,
     getMaxVisibleRows: () => this.maxVisibleRows,

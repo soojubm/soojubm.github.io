@@ -42,7 +42,6 @@ export class SelectionGroupController<T extends SelectionGroupItem> {
 
     this.sync()
   }
-
   /** 항목의 change가 올라오는 컨테이너에 그대로 연결한다. */
   handleItemChange = (event: Event) => {
     const item = this.options.getItems().find(candidate => candidate === event.target)

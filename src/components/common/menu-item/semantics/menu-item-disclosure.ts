@@ -47,11 +47,8 @@ export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
       }
     `,
   ]
-
   @property({ type: Boolean, reflect: true }) open = false
-
   private readonly panelId = uniqueId('menu-item-disclosure-panel')
-
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
     setOpen: open => {

@@ -17,13 +17,11 @@ export class ChatSource extends LitElement {
       display: inline-block;
     }
   `
-
   @property({ type: String }) href = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String }) label = ''
   @property({ type: String }) icon?: IconName
-
   @state() private open = false
 
   render() {

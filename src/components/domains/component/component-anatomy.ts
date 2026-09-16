@@ -114,7 +114,6 @@ export class ComponentAnatomy extends LitElement {
       }
     `,
   ]
-
   @property({ type: String }) heading = 'Anatomy'
   @property({ attribute: false }) parts: string[] = []
   @property({ attribute: false }) markers: AnatomyMarkerData[] = []

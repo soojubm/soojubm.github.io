@@ -17,7 +17,6 @@ import { emit } from '@/utils'
 @customElement('mm-number-input')
 export class NumberInput extends withTextfieldState(LitElement) {
   static styles = textfieldStyles
-
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step = 1

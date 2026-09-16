@@ -30,7 +30,6 @@ export class ReadMoreButton extends LitElement {
       }
     `,
   ]
-
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ type: String, attribute: 'more-label' }) moreLabel = '더 보기'

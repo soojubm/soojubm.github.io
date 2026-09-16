@@ -16,12 +16,10 @@ import { emit, uniqueId } from '@/utils'
 @customElement('mm-radio-card')
 export class RadioCard extends LitElement {
   static styles = [resetStyles, visuallyHiddenInputStyles, radioStyles, radioCardStyles]
-
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
-
   // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
   private inputId = uniqueId('radio-card')
   private toggle = new ToggleController(this, 'checked')

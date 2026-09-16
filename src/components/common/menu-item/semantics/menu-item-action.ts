@@ -16,7 +16,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends withMenuItemPresentation(LitElement) {
   static styles = [resetStyles, menuItemStyles]
-
   @property({ type: String, attribute: 'trailing-icon' }) trailingIcon?: IconName
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-current', reflect: true })

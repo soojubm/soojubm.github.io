@@ -17,16 +17,13 @@ import '@/components/common/text'
 @customElement('mm-checkbox-group')
 export class CheckboxGroup extends LitElement {
   static styles = [resetStyles, visuallyHiddenInputStyles, checkboxGroupStyles, checkboxStyles]
-
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ attribute: false }) values: string[] = []
   @property({ type: String }) name?: string
   @property({ type: String, reflect: true }) size?: string
   @property({ type: String }) legend?: string
-
   // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
   private idPrefix = uniqueId('checkbox-group')
-
   private selection = new MultipleSelectionController(this, {
     getValues: () => this.values,
     setValues: values => {

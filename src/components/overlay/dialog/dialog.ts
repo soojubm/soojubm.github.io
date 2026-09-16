@@ -23,7 +23,6 @@ export class Dialog extends LitElement {
       }
     `,
   ]
-
   @property({ type: String, reflect: true }) role = 'dialog'
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
   @property({ type: Boolean, reflect: true }) open = false
@@ -31,7 +30,6 @@ export class Dialog extends LitElement {
   @property({ type: String }) description = ''
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
-
   private sheet = new SheetController(this, {
     isOpen: () => this.open,
     setOpen: open => {

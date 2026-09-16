@@ -21,9 +21,7 @@ export class TokenItem extends LitElement {
       border-radius: var(--radius);
     }
   `
-
   private themeChange = new ThemeChangeController(this)
-
   @property({ type: String }) key = ''
 
   render() {

@@ -13,7 +13,6 @@ import { categoryNameAt, tokenCategoryLabel } from '@/components/domains/compone
 @customElement('mm-token')
 export class Token extends LitElement {
   static styles = [tokenStyles]
-
   @property({ type: String }) name = ''
   @property({ type: Boolean }) showCategory = true
 

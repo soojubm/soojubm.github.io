@@ -7,21 +7,16 @@ import '@/components/common'
 @customElement('mm-tooltip')
 export class Tooltip extends LitElement {
   static styles = [tooltipStyles]
-
   @property({ type: String }) content = ''
   @property({ type: String, reflect: true }) placement = ''
   @property({ type: Boolean, reflect: true }) open = false
-
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: Element[]
-
   private descriptionTargets = new Set<HTMLElement>()
-
   private handleTriggerShow = () => {
     this.syncDescription()
     this.open = true
   }
-
   private handleTriggerHide = () => {
     this.open = false
   }

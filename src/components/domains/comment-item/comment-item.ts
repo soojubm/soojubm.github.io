@@ -49,13 +49,11 @@ export class CommentItem extends LitElement {
       width: 100%;
     }
   `
-
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
   @property({ type: Boolean }) editable = false
-
   @query('mm-popover') private menu?: Popover
 
   render() {

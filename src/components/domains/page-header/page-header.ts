@@ -11,7 +11,6 @@ export class PageHeader extends LitElement {
       padding-bottom: 2rem;
     }
   `
-
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: Boolean, reflect: true }) centered = false

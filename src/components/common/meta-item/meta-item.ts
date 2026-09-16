@@ -7,7 +7,6 @@ import '@/components/common/text/semantics/paragraph'
 @customElement('mm-meta-item')
 export class MetaItem extends LitElement {
   static styles = [metaItemStyles]
-
   @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' =
     'horizontal'
   @property({ type: String }) label = ''

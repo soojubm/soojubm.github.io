@@ -38,7 +38,6 @@ export class ComponentFeatureList extends LitElement {
       display: block;
     }
   `
-
   @property({ attribute: false }) features: ComponentFeatureItem[] = []
 
   render() {

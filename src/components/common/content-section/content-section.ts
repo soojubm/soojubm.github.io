@@ -21,7 +21,6 @@ export class ContentSection extends LitElement {
       gap: var(--space-3);
     }
   `
-
   @property({ type: String }) heading = ''
   @property({ type: Number, attribute: 'heading-level' }) headingLevel = 2
 

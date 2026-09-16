@@ -39,7 +39,6 @@ export class TextBlock extends LitElement {
       max-width: 720px;
     }
   `
-
   @property({ type: String }) eyebrow = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
