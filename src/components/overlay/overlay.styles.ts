@@ -1,5 +1,7 @@
 import { css } from 'lit'
 
+import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
+
 /** modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다. */
 export const backdropStyles = css`
   :host {
@@ -42,19 +44,15 @@ export const overlaySurfaceStyles = css`
     overflow: hidden;
 
     /* ::before 재질 레이어와 드래그 핸들의 기준 박스. popover는 absolute로 덮어쓴다. */
-    position: relative;
-    isolation: isolate;
+    ${layerContainerStyles}
   }
 
   .panel::before {
-    content: '';
     border-radius: inherit;
     background: var(--material-overlay-background-color);
     backdrop-filter: var(--material-overlay-backdrop-filter);
     -webkit-backdrop-filter: var(--material-overlay-backdrop-filter);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
+    ${backgroundLayerStyles}
   }
 `
 

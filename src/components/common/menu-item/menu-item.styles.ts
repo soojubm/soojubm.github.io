@@ -1,6 +1,10 @@
 import { css } from 'lit'
 
-import { interactiveElement } from '@/stylesheets/shared.styles'
+import {
+  backgroundLayerStyles,
+  interactiveElement,
+  layerContainerStyles,
+} from '@/stylesheets/shared.styles'
 
 export const menuItemStyles = css`
   :host {
@@ -17,24 +21,13 @@ export const menuItemStyles = css`
     color: inherit;
     box-sizing: border-box;
     cursor: pointer;
-    /* z-index: -1 배경 레이어가 조상 배경 뒤로 빠지지 않도록 행에서 쌓임 맥락을 만든다 */
-    position: relative;
-    isolation: isolate;
+    ${layerContainerStyles}
 
     /* background state */
     &::before {
-      content: '';
-      display: block;
-      background-color: var(--menu-item-background-color);
       border-radius: var(--radius);
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      /* left: calc(var(--space-2) * -1); */
-      /* right: calc(var(--space-2) * -1); */
-      left: 0;
-      right: 0;
-      z-index: -1;
+      background-color: var(--menu-item-background-color);
+      ${backgroundLayerStyles}
     }
 
     &:hover {

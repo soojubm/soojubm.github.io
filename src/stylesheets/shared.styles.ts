@@ -83,6 +83,27 @@ export const focusRingStyles = css`
 `
 
 /**
+ * 뒤에 깔리는 ::before 레이어를 품는 요소의 선언. 레이어를 품을 선택자 안에 펼쳐 쓴다.
+ * z-index: -1 레이어가 조상 배경 뒤로 빠지지 않도록 요소에서 쌓임 맥락을 만든다.
+ */
+export const layerContainerStyles = css`
+  position: relative;
+  isolation: isolate;
+`
+
+/**
+ * 요소 뒤를 채우는 ::before 레이어 선언. 채울 선택자의 선언 맨 뒤에 펼쳐 쓴다.
+ * hover 배경은 레이아웃 박스를 밀지 않도록, 재질(배경+blur)은 조상 backdrop-filter가
+ * 자손의 blur를 죽이지 않도록 요소 대신 이 레이어가 소유한다.
+ */
+export const backgroundLayerStyles = css`
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+`
+
+/**
  * 화면에서만 감추고 접근성 트리에는 남기는 선언. 감출 요소의 선택자 안에 펼쳐 쓴다.
  * display·visibility로 감추면 스크린리더에서도 사라지므로 클립으로 밀어낸다.
  */

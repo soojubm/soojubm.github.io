@@ -1,5 +1,7 @@
 import { css } from 'lit'
 
+import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
+
 /**
  * post 계열이 공유하는 링크 표면. 글 카드 전체가 하나의 링크가 되므로
  * 색은 흐르는 값을 따르고, hover 배경은 레이아웃 박스를 밀지 않도록
@@ -13,17 +15,14 @@ export const postLinkStyles = css`
     display: flex;
     border-radius: var(--radius);
     color: inherit;
-    position: relative;
-    isolation: isolate;
+    ${layerContainerStyles}
   }
 
   .link::before {
-    content: '';
     border-radius: var(--radius);
     background-color: var(--post-link-background-color);
-    position: absolute;
+    ${backgroundLayerStyles}
     inset: 0 calc(var(--post-link-inset) * -1);
-    z-index: -1;
   }
 
   a.link:hover {

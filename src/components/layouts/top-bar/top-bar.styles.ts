@@ -1,5 +1,7 @@
 import { css } from 'lit'
 
+import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
+
 export const topBarStyles = css`
   :host {
     --top-bar-min-height: var(--size-48);
@@ -17,19 +19,15 @@ export const topBarStyles = css`
     min-height: var(--top-bar-min-height);
     gap: var(--top-bar-gap);
     box-sizing: border-box;
-    position: relative;
-    isolation: isolate;
+    ${layerContainerStyles}
   }
 
   /* 재질은 ::before 형제 레이어가 소유한다. 조상에 backdrop-filter가 걸리면 action slot 안 popover의 blur가 죽기 때문이다. */
   header::before {
-    content: '';
     background: var(--top-bar-background-color);
     backdrop-filter: var(--material-chrome-backdrop-filter);
     -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
-    position: absolute;
-    inset: 0;
-    z-index: -1;
+    ${backgroundLayerStyles}
   }
 
   .trailing-area {
