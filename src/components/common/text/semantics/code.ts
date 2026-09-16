@@ -1,7 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
@@ -18,13 +17,15 @@ export class Code extends LitElement {
         display: inline-block;
       }
 
-      /* code-block과 같은 면을 쓰되, 본문 줄 안에 앉도록 inline 박스로 좁힌다. */
       code {
-        ${surfaceBaseStyles};
-        --surface-padding: 0 var(--space-2);
-
-        display: inline-block;
-        width: auto;
+        display: inline-flex;
+        align-items: center;
+        height: 20px;
+        padding: 0 var(--space-1);
+        border: var(--border);
+        border-radius: var(--radius);
+        box-sizing: border-box;
+        background: var(--background-color);
         font-family: var(--font-family-code);
         font-size: var(--font-size-12);
         font-weight: var(--font-weight-bold);
