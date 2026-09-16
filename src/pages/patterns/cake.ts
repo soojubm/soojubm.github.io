@@ -13,7 +13,7 @@ const castFilterOptions: FilterOption[] = [
 ]
 
 const main = html`
-  <mm-page class="cake">
+  <mm-main class="cake">
     <mm-thumbnail ratio="" src="/src/images/coolhandluke.jpg" alt="Cool Hand Luke"></mm-thumbnail>
 
     <mm-flex direction="column" gap="section">
@@ -122,7 +122,7 @@ const main = html`
         </mm-content-section>
       </mm-flex>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, { closeSidebar: true })

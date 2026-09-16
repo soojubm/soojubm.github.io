@@ -48,7 +48,7 @@ const secondaryAction: ActionConfig = {
 }
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Result"
       description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트."
@@ -101,7 +101,7 @@ const main = html`
 </mm-result>`}
     ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

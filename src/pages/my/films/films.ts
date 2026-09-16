@@ -7,7 +7,7 @@ import '@/components/domains/media-card'
 import { renderList, getCountries, loadJson } from '@/pages/my/list-page'
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-flex direction="column" gap="4">
       <mm-page-header
         heading="영화감상 목록"
@@ -27,7 +27,7 @@ const main = html`
         <mm-show-more-button class="js-more-btn" more-label="더 보기"></mm-show-more-button>
       </div>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 interface Film {

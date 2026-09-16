@@ -124,7 +124,7 @@ const rows = html`
 `
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header heading="Table" description="표와 관련된 컴포넌트 및 패턴들."></mm-page-header>
     <mm-component-example>
       <header
@@ -194,7 +194,7 @@ const main = html`
     ></mm-component-anatomy>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

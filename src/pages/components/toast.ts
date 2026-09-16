@@ -50,7 +50,7 @@ function setupToastTrigger() {
 }
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Toast"
       description="하던 일을 멈추지 않고 작업 결과를 잠깐 알려주고, 따로 닫지 않아도 사라집니다."
@@ -79,7 +79,7 @@ const main = html`
     ></mm-component-anatomy>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, { initialize: setupToastTrigger })

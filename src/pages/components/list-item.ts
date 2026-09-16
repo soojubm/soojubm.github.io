@@ -73,7 +73,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="List Item"
       description="leading(아바타·아이콘) + 본문(제목·설명) + trailing(액션) 한 줄을 구성하는 표현 전용 primitive. 상호작용 의미가 필요하면 menuItem을 사용합니다."
@@ -189,7 +189,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

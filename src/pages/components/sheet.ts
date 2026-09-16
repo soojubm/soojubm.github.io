@@ -86,7 +86,7 @@ renderPage(sheetPageTemplate())
 
 function sheetPageTemplate() {
   return html`
-    <mm-page>
+    <mm-main>
       <mm-page-header
         heading="Sheet"
         description="viewport 기준 modal 시트로 화면 위에 표시합니다. center dialog만 써도 충분."
@@ -142,7 +142,7 @@ function sheetPageTemplate() {
       <mm-component-related .items=${relatedComponents}></mm-component-related>
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
-    </mm-page>
+    </mm-main>
   `
 }
 

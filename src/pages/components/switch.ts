@@ -37,7 +37,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Switch"
       description="켜고 끄는 옵션입니다. 사용자는 실행한 옵션의 결과를 즉시 확인할 수 있습니다."
@@ -74,7 +74,7 @@ const main = html`
       <mm-switch checked>뉴스레터 받아보기</mm-switch>
     </mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

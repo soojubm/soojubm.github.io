@@ -40,7 +40,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Notice"
       description="시스템 상태나 사용자 행동에 대한 피드백을 인라인으로 전달합니다."
@@ -92,7 +92,7 @@ const main = html`
 ></mm-notice>`}
     ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

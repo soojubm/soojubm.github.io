@@ -48,7 +48,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header heading="Textarea" description="long content field"></mm-page-header>
 
     <mm-component-example>
@@ -91,7 +91,7 @@ const main = html`
       <mm-prompt-input placeholder="Ask me anything..."></mm-prompt-input>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

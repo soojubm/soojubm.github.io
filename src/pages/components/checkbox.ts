@@ -61,7 +61,7 @@ const visibilityOptions: OptionItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Checkbox"
       description="옵션 목록에서 하나 이상의 옵션을 선택합니다."
@@ -173,7 +173,7 @@ const main = html`
       </mm-flex>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

@@ -22,7 +22,7 @@ const posts: PostSummary[] = Array.from({ length: 5 }, () => ({
 const [featured, ...rest] = posts
 
 const main = html`
-  <mm-page width="small">
+  <mm-main width="small">
     <mm-flex direction="column" gap="12">
       <mm-page-header
         heading="Latest updates"
@@ -51,7 +51,7 @@ const main = html`
         )}
       </mm-flex>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, { closeSidebar: true })

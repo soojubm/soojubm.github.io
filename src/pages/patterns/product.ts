@@ -5,7 +5,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 import './product.css'
 
 const main = html`
-  <mm-page class="product">
+  <mm-main class="product">
     <mm-flex direction="column" gap="section">
       <mm-flex direction="column" gap="4">
         <mm-button>Back to Home</mm-button>
@@ -247,7 +247,7 @@ const main = html`
         </mm-button>
       </mm-flex>
     </mm-fixed-bottom>
-  </mm-page>
+  </mm-main>
 
   <mm-sheet
     id="cart-sheet"

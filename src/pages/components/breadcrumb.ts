@@ -37,7 +37,7 @@ const breadcrumbItems: BreadcrumbItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Breadcrumb"
       description="사용자의 현재 위치를 계층 구조로 보여줍니다."
@@ -65,7 +65,7 @@ const main = html`
       .code=${'<mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>'}
     ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

@@ -83,7 +83,7 @@ const membershipOptions: OptionItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="RadioGroup"
       description="옵션 목록에서 하나의 옵션을 선택합니다."
@@ -173,7 +173,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

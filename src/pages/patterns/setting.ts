@@ -14,7 +14,7 @@ const main = html`
     "
     ></mm-top-bar>
   </mm-fixed-top>
-  <mm-page width="small" background="subtle">
+  <mm-main width="small" background="subtle">
     <mm-flex direction="column" align-items="center" gap="2" style="padding: var(--space-8)">
       <mm-avatar
         size="80"
@@ -196,7 +196,7 @@ const main = html`
         ></mm-text-list>
       </blockquote>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 const settingPage = findSitemapItem('setting')

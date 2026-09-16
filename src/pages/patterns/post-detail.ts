@@ -9,7 +9,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 const membershipAction: ActionConfig = { label: '멤버십 가입하기' }
 
 const main = html`
-  <mm-page width="small">
+  <mm-main width="small">
     <header class="post-head">
       <mm-flex direction="column" gap="3">
         <mm-link href="#post">Murmur</mm-link>
@@ -156,7 +156,7 @@ const main = html`
       </mm-result>
       <div class="post-attract-blur"></div>
     </aside>
-  </mm-page>
+  </mm-main>
 
   <nav class="post-pagination" style="margin-block: var(--space-8)">
     <a class="post-pagination-previous" href="post.html">

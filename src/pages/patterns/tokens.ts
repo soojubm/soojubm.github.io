@@ -286,7 +286,7 @@ const renderUncategorizedSection = () => {
 }
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-flex direction="column" gap="16">
       <mm-page-header
         heading="Tokens"
@@ -473,7 +473,7 @@ const main = html`
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

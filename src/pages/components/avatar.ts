@@ -45,7 +45,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 const groupAvatars = ['', '', '', '']
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Avatar"
       description="사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다."
@@ -122,7 +122,7 @@ const main = html`
       <mm-avatar-group .avatars=${groupAvatars} label="수줍이 외 3명"></mm-avatar-group>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

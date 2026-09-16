@@ -39,7 +39,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Link"
       description="사용자 여정 목적지. 페이지 이동. destination that can be bookmarked."
@@ -103,7 +103,7 @@ const main = html`
       <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
     </mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

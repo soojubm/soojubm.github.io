@@ -4,7 +4,7 @@ import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <mm-page layout="chat" full-width>
+  <mm-main layout="chat" full-width>
     <mm-chat-room>
       <mm-chat-header></mm-chat-header>
 
@@ -143,7 +143,7 @@ const main = html`
         ></mm-prompt-input>
       </mm-chat-footer>
     </mm-chat-room>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, { closeSidebar: true })

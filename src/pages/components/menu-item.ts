@@ -95,7 +95,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="MenuItem"
       description="사용자가 수행할 수 있는 행동 목록입니다. 단일 액션 또는 선택 액션을 포함할 수 있습니다"
@@ -320,7 +320,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

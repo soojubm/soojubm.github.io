@@ -41,7 +41,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Tooltip"
       description="용어를 설명하거나 정보의 근거를 보충합니다."
@@ -120,7 +120,7 @@ const main = html`
     ></mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

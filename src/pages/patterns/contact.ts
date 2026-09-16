@@ -3,7 +3,7 @@ import { html } from 'lit'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <mm-page full-width>
+  <mm-main full-width>
     <mm-flex wrap="wrap" gap="0">
       <div style="width:50%">
         <mm-thumbnail src=""></mm-thumbnail>
@@ -28,7 +28,7 @@ const main = html`
         </mm-flex>
       </mm-flex>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, { closeSidebar: true })

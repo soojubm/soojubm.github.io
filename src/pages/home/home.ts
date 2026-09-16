@@ -183,7 +183,7 @@ const designSystemThoughts: Thought[] = [
 ]
 
 const main = html`
-  <mm-page style="display: flex; flex-direction: column; gap: var(--space-section)">
+  <mm-main style="display: flex; flex-direction: column; gap: var(--space-section)">
     <mm-flex gap="8" direction="column">
       <mm-heading level="1">
         Design System
@@ -279,7 +279,7 @@ const main = html`
       heading="보완 영역"
       .items=${supplementaryReferences}
     ></mm-component-references>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, {

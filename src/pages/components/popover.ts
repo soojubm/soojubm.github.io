@@ -40,7 +40,7 @@ const componentTokens: ComponentTokenItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Popover"
       description="트리거에 앵커되어 뜨는 non-modal 레이어 프리미티브입니다. backdrop·스크롤 잠금 없이 패널 표면과 열림 상태만 책임집니다."
@@ -86,7 +86,7 @@ const main = html`
       <mm-theme-selector></mm-theme-selector>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

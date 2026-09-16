@@ -24,7 +24,7 @@ const main = html`
     "
     ></mm-top-bar>
   </mm-fixed-top>
-  <mm-page width="small" background="subtle">
+  <mm-main width="small" background="subtle">
     <mm-flex direction="column" gap="section">
       <!-- 장바구니 -->
       <mm-flex as="section" direction="column" gap="6">
@@ -276,7 +276,7 @@ const main = html`
         </mm-surface>
       </mm-flex>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 const checkoutPage = findSitemapItem('checkout')

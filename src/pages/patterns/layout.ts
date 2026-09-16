@@ -4,7 +4,7 @@ import './layout.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Layout"
       description="컨테이너 너비, 배경 대비, 표면 대비는 장식이 아니라 페이지의 성격과 작업 맥락을 담는 신호입니다. 사용자가 의식적으로 알아차리지는 못하지만, 일관되게 쓰면 맥락이 달라졌다는 미묘한 감각을 전달합니다."
@@ -63,7 +63,7 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="컨테이너 너비">
         <mm-paragraph>
-          너비는 토큰으로 정하고, 페이지 골격은 mm-page의 width로 지정합니다.
+          너비는 토큰으로 정하고, 본문 골격은 mm-main의 width로 지정합니다.
         </mm-paragraph>
         <mm-flex direction="column" gap="2">
           <mm-surface variant="filled" style="max-width: var(--layout-width-narrow)">
@@ -96,7 +96,7 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
     </mm-content-section-list>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

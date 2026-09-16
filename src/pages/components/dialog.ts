@@ -51,7 +51,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Dialog"
       description="사용자의 정보나 재산의 변경 또는 삭제 확인."
@@ -103,7 +103,7 @@ const main = html`
 ></mm-dialog>`}
     ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 type DialogElement = HTMLElement & {

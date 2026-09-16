@@ -4,7 +4,7 @@ import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Feedback"
       description="사용자 행동이나 시스템 상태의 결과를 알립니다. 사용자 귀책이 아닌 실패는 책임 소재를 문구에 드러냅니다."
@@ -86,7 +86,7 @@ const main = html`
         </mm-flex>
       </mm-content-section>
     </mm-content-section-list>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

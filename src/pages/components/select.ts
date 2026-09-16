@@ -33,7 +33,7 @@ const componentProps: ComponentPropItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Select"
       description="접힌 목록에서 하나의 옵션을 선택합니다."
@@ -87,7 +87,7 @@ const main = html`
       <mm-sort-selector></mm-sort-selector>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

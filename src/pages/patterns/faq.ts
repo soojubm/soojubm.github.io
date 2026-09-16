@@ -67,7 +67,7 @@ const renderFaqCategory = ({ heading, items }: FaqCategory) => html`
 `
 
 const main = html`
-  <mm-page width="small">
+  <mm-main width="small">
     <mm-flex direction="column" gap="8">
       <mm-page-header
         heading="자주 묻는 질문"
@@ -76,7 +76,7 @@ const main = html`
 
       <mm-flex direction="column" gap="6">${faqCategories.map(renderFaqCategory)}</mm-flex>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, { closeSidebar: true })

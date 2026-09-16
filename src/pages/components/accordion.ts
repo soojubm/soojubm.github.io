@@ -52,7 +52,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Accordion"
       description="콘텐츠를 펼치거나 접어 필요한 정보만 선택적으로 볼 수 있게 합니다. 반드시 숙지해야 할 중요 정보에는 사용하지 않아야 합니다."
@@ -118,7 +118,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

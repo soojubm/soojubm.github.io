@@ -6,7 +6,7 @@ import './auth.css'
 const codeInputs = [1, 2, 3, 4]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-flex direction="column" gap="12">
       <!-- 로그인 -->
       <form class="authentication" name="login" novalidate>
@@ -167,7 +167,7 @@ const main = html`
         </mm-flex>
       </form>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main, { closeSidebar: true })

@@ -34,7 +34,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Seperator"
       description="선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다."
@@ -73,7 +73,7 @@ const main = html`
 
     <mm-component-anatomy .code=${'<mm-separator>또는</mm-separator>'}></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

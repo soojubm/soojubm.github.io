@@ -107,7 +107,7 @@ const genreOptions: FilterOption[] = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="ToggleButton"
       description="클릭하면 선택/비선택 상태가 전환되는 버튼입니다. 독립적인 on/off 토글과, 단일 선택 세그먼트(ToggleButtonGroup)로 확장됩니다."
@@ -251,7 +251,7 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

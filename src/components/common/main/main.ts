@@ -3,19 +3,20 @@ import { customElement, property } from 'lit/decorators.js'
 
 /**
  * 모든 페이지의 본문 셸. main 랜드마크가 되어 상단 여백·좌우 패딩·최소 높이를 소유한다.
+ * 상단 바나 푸터는 이 안이 아니라 형제로 둔다.
  * 사이드바가 열릴 때 밀려나는 폭은 body가 노출하는 `--sidebar-content-shift`를 따르며,
  * 스스로 가운데 정렬되는 width·layout 변형은 그 대신 기본 좌우 패딩으로 되돌린다.
  */
-@customElement('mm-page')
-export class Page extends LitElement {
+@customElement('mm-main')
+export class Main extends LitElement {
   static styles = css`
     :host {
-      --page-padding-left: var(--sidebar-content-shift);
+      --main-padding-left: var(--sidebar-content-shift);
 
       display: block;
       min-height: calc(100vh - var(--navbar-height));
       padding: var(--layout-main-space-top) var(--layout-padding-inline) calc(var(--space-4) * 6);
-      padding-left: var(--page-padding-left);
+      padding-left: var(--main-padding-left);
       box-sizing: border-box;
       position: relative;
       transition: padding-left var(--transition-duration) var(--transition-easing);
@@ -28,7 +29,7 @@ export class Page extends LitElement {
     }
 
     :host([full-width]) {
-      --page-padding-left: 0;
+      --main-padding-left: 0;
 
       padding-right: 0;
     }
@@ -36,7 +37,7 @@ export class Page extends LitElement {
     :host([width='small']),
     :host([width='medium']),
     :host([layout='chat']) {
-      --page-padding-left: var(--layout-padding-inline);
+      --main-padding-left: var(--layout-padding-inline);
 
       margin: 0 auto;
     }

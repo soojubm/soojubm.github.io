@@ -97,7 +97,7 @@ const selectionTableColumns = [
 ]
 
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Selection"
       description="선택지 가운데 값을 고르는 컴포넌트가 공유하는 계약입니다."
@@ -247,7 +247,7 @@ const main = html`
     </mm-content-section-list>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

@@ -4,7 +4,7 @@ import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './foundations.css'
 const main = html`
-  <mm-page>
+  <mm-main>
     <mm-page-header
       heading="Foundations"
       description="제품 전체가 공유하는 시각 언어의 기본 축입니다. 각 문서가 하나의 축을 정의합니다."
@@ -171,7 +171,7 @@ const main = html`
         </mm-paragraph>
       </mm-content-section>
     </mm-flex>
-  </mm-page>
+  </mm-main>
 `
 
 renderPage(main)

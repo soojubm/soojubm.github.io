@@ -88,7 +88,7 @@ const main = html`
       }
     }
   </style>
-  <!-- 이 페이지는 mm-page를 쓰지 않는 유일한 페이지다. 브랜드 재현용 전면 레이아웃이라
+  <!-- 이 페이지는 mm-main을 쓰지 않는 유일한 페이지다. 브랜드 재현용 전면 레이아웃이라
        페이지 패딩이 없어야 하고, min-height·사이드바 shift·position 컨텍스트도 쓰지 않는다.
        벗겨낼 것만 있는 셸을 씌우지 않고 main 랜드마크를 그대로 둔다. -->
   <main class="class">

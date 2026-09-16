@@ -10,7 +10,7 @@ import './profile.css'
 const followerAvatars = ['', '', '', '']
 
 const main = html`
-  <mm-page class="profile">
+  <mm-main class="profile">
     <section class="profile-user">
       <mm-user-snippet
         name="수줍이"
@@ -124,7 +124,7 @@ const main = html`
         </mm-tab-panel>
       </mm-flex>
     </section>
-  </mm-page>
+  </mm-main>
 
   <!-- 포트폴리오 시트 -->
 
