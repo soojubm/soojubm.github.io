@@ -189,8 +189,9 @@
   --material-zindex-elevated: 10; /* 카드, 패널처럼 살짝 뜬 요소 */
   --material-zindex-chrome: 100; /* 내비게이션, 툴바 (Apple의 "기능 레이어"에 해당) */
   --material-zindex-chrome-top: 101; /* 그중 화면 전체를 덮는 전역 내비게이션: navbar, 사이드바 */
+  --material-zindex-backdrop: 150; /* modal 표면 뒤를 덮는 dim·blur 레이어: backdrop */
   --material-zindex-popover: 200; /* 트리거 기준 표면: popover, select, tooltip */
-  --material-zindex-sheet: 300; /* viewport 기준 표면: sheet, dialog, backdrop */
+  --material-zindex-sheet: 300; /* viewport 기준 표면: sheet, dialog */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
   /* 기본 모션은 이 duration 하나를 쓰고, 등장 강조 모션만 더 길게 간다.
