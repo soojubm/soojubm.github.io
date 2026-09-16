@@ -25,130 +25,139 @@ const main = html`
       <mm-paragraph size="large">수줍이님, 어서와요!</mm-paragraph>
     </mm-flex>
 
-    <mm-flex direction="column" gap="3">
-      <mm-list-item
-        avatar-variant="tertiary"
-        size="48"
-        icon=${ICON_NAMES.USER_BADGE_CHECK}
-        label="사용자 정보"
-        description="전자 메일, 일정, 연락처에서 사용하는 계정"
-      ></mm-list-item>
-      <mm-surface variant="paper" radius="large">
-        <mm-flex direction="column" gap="3">
-          <mm-menu-item-group>
-            <mm-menu-item-link
-              icon=${ICON_NAMES.MAIL}
-              label="soojubm@gmail.com"
-              href="#"
-              target="_self"
-            ></mm-menu-item-link>
-            <mm-menu-item-link
-              icon=${ICON_NAMES.LOCK}
-              label="비밀번호 변경"
-              href="#"
-              target="_self"
-            ></mm-menu-item-link>
-            <mm-menu-item-link
-              icon=${ICON_NAMES.USER}
-              label="닉네임 변경"
-              href="#"
-              target="_self"
-            ></mm-menu-item-link>
-          </mm-menu-item-group>
-        </mm-flex>
-      </mm-surface>
+    <mm-flex direction="column" gap="section">
+      <mm-flex direction="column" gap="3">
+        <mm-list-item
+          avatar-variant="tertiary"
+          size="48"
+          icon=${ICON_NAMES.USER_BADGE_CHECK}
+          label="사용자 정보"
+          description="전자 메일, 일정, 연락처에서 사용하는 계정"
+        ></mm-list-item>
+        <mm-surface variant="paper" radius="large">
+          <mm-flex direction="column" gap="3">
+            <mm-menu-item-group>
+              <mm-menu-item-link
+                icon=${ICON_NAMES.MAIL}
+                label="soojubm@gmail.com"
+                href="#"
+                target="_self"
+              ></mm-menu-item-link>
+              <mm-menu-item-link
+                icon=${ICON_NAMES.LOCK}
+                label="비밀번호 변경"
+                href="#"
+                target="_self"
+              ></mm-menu-item-link>
+              <mm-menu-item-link
+                icon=${ICON_NAMES.USER}
+                label="닉네임 변경"
+                href="#"
+                target="_self"
+              ></mm-menu-item-link>
+            </mm-menu-item-group>
+          </mm-flex>
+        </mm-surface>
 
-      <mm-surface variant="paper" radius="large">
-        <mm-menu-item-group size="large">
-          <mm-setting-item label="배송지" description="배송지를 관리하고 기본 배송지를 설정하세요.">
-            <mm-button slot="action">배송지 관리</mm-button>
-          </mm-setting-item>
-          <mm-separator></mm-separator>
-          <mm-menu-item-link
-            size="small"
-            label="관심분야"
-            description="문화/예술, 인권, 경제"
-          ></mm-menu-item-link>
-          <mm-menu-item-switch
-            icon=${ICON_NAMES.MAIL_IN}
-            label="시사 뉴스레터"
-            value="newsletter"
-          ></mm-menu-item-switch>
-          <mm-caption>
-            관심있는 분야의 콘텐츠를 추천 받으세요. 매주 월요일, 수요일, 금요일 아침에 받아볼 수
-            있어요.
-          </mm-caption>
-        </mm-menu-item-group>
-      </mm-surface>
-
-      <mm-surface variant="paper" radius="large">
-        <mm-flex direction="column" gap="3">
-          <mm-paragraph size="large">개인정보 & 보안</mm-paragraph>
+        <mm-surface variant="paper" radius="large">
           <mm-menu-item-group size="large">
-            <mm-setting-item label="이메일 주소" description="soojubm@gmail.com">
-              <mm-button slot="action">변경</mm-button>
-            </mm-setting-item>
             <mm-setting-item
-              label="계정 비활성화"
-              description="비활성화 페이지에서 할 수 있습니다."
+              label="배송지"
+              description="배송지를 관리하고 기본 배송지를 설정하세요."
             >
-              <mm-button slot="action" variant="destructive">영구 비활성화</mm-button>
+              <mm-button slot="action">배송지 관리</mm-button>
             </mm-setting-item>
+            <mm-separator></mm-separator>
+            <mm-menu-item-link
+              size="small"
+              label="관심분야"
+              description="문화/예술, 인권, 경제"
+            ></mm-menu-item-link>
+            <mm-menu-item-switch
+              icon=${ICON_NAMES.MAIL_IN}
+              label="시사 뉴스레터"
+              value="newsletter"
+            ></mm-menu-item-switch>
+            <mm-caption>
+              관심있는 분야의 콘텐츠를 추천 받으세요. 매주 월요일, 수요일, 금요일 아침에 받아볼 수
+              있어요.
+            </mm-caption>
           </mm-menu-item-group>
-        </mm-flex>
-      </mm-surface>
-      <mm-link-prompt
-        icon=${ICON_NAMES.PIPE}
-        message="To delete your account permanently"
-        link-label="로그아웃"
-        href="#"
-      ></mm-link-prompt>
+        </mm-surface>
 
-      <br />
-      <mm-list-item
-        avatar-variant="tertiary"
-        size="48"
-        icon=${ICON_NAMES.CREDIT_CARD}
-        label="소셜 네트워크로 로그인"
-        description="전자 메일, 일정, 연락처에서 사용하는 계정"
-      ></mm-list-item>
-      <mm-surface variant="paper" radius="large">
-        <mm-menu-item-group size="large">
-          <mm-setting-item icon=${ICON_NAMES.GOOGLE} label="구글 계정으로 로그인">
-            <mm-button slot="action" disabled>Google 연동해제</mm-button>
-          </mm-setting-item>
-          <mm-setting-item icon=${ICON_NAMES.APPLE} label="애플 계정으로 로그인">
-            <mm-button slot="action">Apple 연동</mm-button>
-          </mm-setting-item>
-          <mm-caption>계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.</mm-caption>
-        </mm-menu-item-group>
-      </mm-surface>
+        <mm-surface variant="paper" radius="large">
+          <mm-flex direction="column" gap="3">
+            <mm-paragraph size="large">개인정보 & 보안</mm-paragraph>
+            <mm-menu-item-group size="large">
+              <mm-setting-item label="이메일 주소" description="soojubm@gmail.com">
+                <mm-button slot="action">변경</mm-button>
+              </mm-setting-item>
+              <mm-setting-item
+                label="계정 비활성화"
+                description="비활성화 페이지에서 할 수 있습니다."
+              >
+                <mm-button slot="action" variant="destructive">영구 비활성화</mm-button>
+              </mm-setting-item>
+            </mm-menu-item-group>
+          </mm-flex>
+        </mm-surface>
+        <mm-link-prompt
+          icon=${ICON_NAMES.PIPE}
+          message="To delete your account permanently"
+          link-label="로그아웃"
+          href="#"
+        ></mm-link-prompt>
+      </mm-flex>
 
-      <br />
-      <mm-list-item
-        avatar-variant="tertiary"
-        size="48"
-        icon=${ICON_NAMES.CREDIT_CARD}
-        label="구독 정보"
-        description="멤버십, 결제수단, 청구서 등"
-      ></mm-list-item>
-      <mm-surface variant="paper" radius="large">
-        <mm-flex direction="column" gap="2">
+      <mm-flex direction="column" gap="3">
+        <mm-list-item
+          avatar-variant="tertiary"
+          size="48"
+          icon=${ICON_NAMES.CREDIT_CARD}
+          label="소셜 네트워크로 로그인"
+          description="전자 메일, 일정, 연락처에서 사용하는 계정"
+        ></mm-list-item>
+        <mm-surface variant="paper" radius="large">
           <mm-menu-item-group size="large">
-            <mm-setting-item icon=${ICON_NAMES.CREDIT_CARD} label="Premium 개인">
-              <mm-button slot="action" variant="ghost" aria-label="자세히보기">구독 관리</mm-button>
+            <mm-setting-item icon=${ICON_NAMES.GOOGLE} label="구글 계정으로 로그인">
+              <mm-button slot="action" disabled>Google 연동해제</mm-button>
             </mm-setting-item>
-            <mm-flex direction="column">
-              <mm-meta-item label="다음 결제 예정일" value="2024.04.02."></mm-meta-item>
-              <mm-meta-item label="결제금액" value="매달 46,800원"></mm-meta-item>
-              <mm-meta-item label="결제수단" value="현대카드 ****-****-****-7922"></mm-meta-item>
-            </mm-flex>
-            <mm-button-group>
-              <mm-button icon=${ICON_NAMES.FORWARD}>결제수단변경</mm-button>
-            </mm-button-group>
+            <mm-setting-item icon=${ICON_NAMES.APPLE} label="애플 계정으로 로그인">
+              <mm-button slot="action">Apple 연동</mm-button>
+            </mm-setting-item>
+            <mm-caption>계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.</mm-caption>
           </mm-menu-item-group>
-        </mm-flex>
-      </mm-surface>
+        </mm-surface>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="3">
+        <mm-list-item
+          avatar-variant="tertiary"
+          size="48"
+          icon=${ICON_NAMES.CREDIT_CARD}
+          label="구독 정보"
+          description="멤버십, 결제수단, 청구서 등"
+        ></mm-list-item>
+        <mm-surface variant="paper" radius="large">
+          <mm-flex direction="column" gap="2">
+            <mm-menu-item-group size="large">
+              <mm-setting-item icon=${ICON_NAMES.CREDIT_CARD} label="Premium 개인">
+                <mm-button slot="action" variant="ghost" aria-label="자세히보기">
+                  구독 관리
+                </mm-button>
+              </mm-setting-item>
+              <mm-flex direction="column">
+                <mm-meta-item label="다음 결제 예정일" value="2024.04.02."></mm-meta-item>
+                <mm-meta-item label="결제금액" value="매달 46,800원"></mm-meta-item>
+                <mm-meta-item label="결제수단" value="현대카드 ****-****-****-7922"></mm-meta-item>
+              </mm-flex>
+              <mm-button-group>
+                <mm-button icon=${ICON_NAMES.FORWARD}>결제수단변경</mm-button>
+              </mm-button-group>
+            </mm-menu-item-group>
+          </mm-flex>
+        </mm-surface>
+      </mm-flex>
 
       <mm-notice variant="danger">
         <mm-text-block
