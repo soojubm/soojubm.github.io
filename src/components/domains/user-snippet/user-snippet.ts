@@ -4,12 +4,12 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AvatarVariant } from '@/components/common'
 
-import { entityStyles } from '@/components/domains/user-snippet/user-snippet.styles'
+import { userSnippetStyles } from '@/components/domains/user-snippet/user-snippet.styles'
 import '@/components/common'
 
 @customElement('mm-user-snippet')
 export class UserSnippet extends LitElement {
-  static styles = [entityStyles]
+  static styles = [userSnippetStyles]
   @property({ type: String }) name = ''
   @property({ type: String }) phone = ''
   @property({ type: String }) email = ''
@@ -20,19 +20,17 @@ export class UserSnippet extends LitElement {
 
   render() {
     return html`
-      <div class="entity">
-        <mm-avatar
-          size="80"
-          variant=${this.avatarVariant}
-          src=${ifDefined(this.avatarSrc || undefined)}
-        ></mm-avatar>
-        ${this.renderTag()}
-        <div class="entity-detail">
-          <mm-heading level="2">${this.name}</mm-heading>
-          ${this.renderDescription()}
-          <mm-text size="12">${this.email}</mm-text>
-          <mm-text size="12">${this.phone}</mm-text>
-        </div>
+      <mm-avatar
+        size="80"
+        variant=${this.avatarVariant}
+        src=${ifDefined(this.avatarSrc || undefined)}
+      ></mm-avatar>
+      ${this.renderTag()}
+      <div class="detail">
+        <mm-heading level="2">${this.name}</mm-heading>
+        ${this.renderDescription()}
+        <mm-text size="12">${this.email}</mm-text>
+        <mm-text size="12">${this.phone}</mm-text>
       </div>
     `
   }
@@ -41,7 +39,7 @@ export class UserSnippet extends LitElement {
     if (!this.tagLabel) return nothing
 
     return html`
-      <mm-accent-tag class="entity-tag">${this.tagLabel}</mm-accent-tag>
+      <mm-accent-tag>${this.tagLabel}</mm-accent-tag>
     `
   }
 
