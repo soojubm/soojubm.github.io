@@ -3,7 +3,7 @@ import type { ReactiveController, ReactiveControllerHost } from 'lit'
 type Host = ReactiveControllerHost & HTMLElement
 
 /**
- * 연결된 동안 host를 document.body로 옮겨, 조상의 transform·contain·stacking context에
+ * 연결된 동안 host를 index.html의 portal 컨테이너(#portal-root)로 옮겨, 조상의 transform·contain·stacking context에
  * 갇히지 않게 하는 ReactiveController.
  *
  * React의 createPortal과 같은 역할을 하되 host 노드를 통째로 이동하므로,
@@ -28,7 +28,7 @@ export class PortalController implements ReactiveController {
     if (this.portaled || this.moving) return
 
     this.host.before(this.anchor)
-    this.move(() => document.body.appendChild(this.host))
+    this.move(() => document.getElementById('portal-root')?.append(this.host))
     this.portaled = true
   }
 

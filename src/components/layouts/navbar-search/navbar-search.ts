@@ -36,7 +36,7 @@ export class NavbarSearch extends LitElement {
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
   private searchRequestId = 0
 
-  // 검색 시트는 열릴 때 portal로 document.body로 이동하므로 renderRoot가 아닌 document에서 찾는다.
+  // 검색 시트는 열릴 때 portal 컨테이너(#portal-root)로 이동하므로 renderRoot가 아닌 document에서 찾는다.
   private getSearchField() {
     return document.querySelector<HTMLElement>('.js-search-sheet mm-searchfield') ?? undefined
   }

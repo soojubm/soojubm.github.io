@@ -35,6 +35,8 @@ export class Sheet extends LitElement {
     setOpen: open => {
       this.open = open
     },
+    // 시트는 닫아도 잃는 것이 없는 내용을 담으므로 배경 클릭과 ESC로 모두 닫힌다.
+    dismissOn: ['backdrop', 'escape'],
     onDismiss: () => emit(this, 'sheet-close'),
   })
 

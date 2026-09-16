@@ -46,7 +46,8 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
   {
     heading: 'Modality',
-    description: '닫기 버튼과 ESC로 사용자가 언제든 흐름을 중단하고 빠져나갈 수 있어야 합니다.',
+    description:
+      '확인이 필요한 작업이므로 배경 클릭으로는 닫히지 않습니다. ESC는 어느 액션도 실행하지 않고 닫아, 키보드 사용자가 언제든 흐름을 중단하고 빠져나갈 수 있습니다.',
   },
 ]
 

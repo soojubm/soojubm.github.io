@@ -10,6 +10,7 @@ export const backdropStyles = css`
     background: var(--backdrop-background-color);
     position: fixed;
     inset: 0;
+    z-index: var(--material-zindex-backdrop);
     backdrop-filter: blur(var(--backdrop-blur));
     -webkit-backdrop-filter: blur(var(--backdrop-blur));
   }
@@ -101,6 +102,16 @@ export const sheetPositionStyles = css`
     transition: opacity var(--transition-duration) var(--transition-easing), visibility 0s;
   }
 
+  /* 열릴 때 포커스를 받는 표면 자체는 화면 전체를 덮으므로 포커스 링을 그리지 않는다 */
+  :host(:focus) {
+    outline: none;
+  }
+
+  /* backdrop이 자기 층위를 명시하므로, 같은 stacking context 안의 패널도 층위를 밝혀야 덮이지 않는다 */
+  .panel {
+    z-index: var(--material-zindex-sheet);
+  }
+
   /* backdrop 재질은 mm-backdrop이 소유하고, sheet는 자기 공개 knob을 그쪽으로 잇는다. */
   mm-backdrop {
     --backdrop-background-color: var(--overlay-panel-backdrop-background-color);
@@ -117,8 +128,10 @@ export const sheetPositionStyles = css`
     --overlay-panel-max-width: 100%;
   }
 
-  /* center: 패널이 콘텐츠 폭으로 줄지 않고 max-width를 채운다 */
-  :host([placement='center']) .panel {
+  /* center·left·right: 패널이 콘텐츠 폭으로 줄지 않고 max-width를 채운다 */
+  :host([placement='center']) .panel,
+  :host([placement='left']) .panel,
+  :host([placement='right']) .panel {
     width: 100%;
   }
 
