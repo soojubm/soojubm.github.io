@@ -97,14 +97,14 @@ const main = html`
       <div>
         <mm-tag>고슴이 생존기 - 경제 기본기편</mm-tag>
       </div>
-      <div class="class-order-title">
+      <div>
         <mm-text size="32">
           고슴이와 함께
           <br />
           경제 기본기 마스터하겠슴?
         </mm-text>
       </div>
-      <div class="class-order-description">
+      <div>
         <mm-paragraph size="large">
           고슴이 에피소드 읽으면서 쉽고 재밌게
           <br />
@@ -136,7 +136,7 @@ const main = html`
           </mm-paragraph>
         </figure>
       </div>
-      <div class="class-order-price" role="suggestion">
+      <div>
         <mm-product-price
           size="large"
           original-price="₩ 30,000"
@@ -144,7 +144,7 @@ const main = html`
           discount="30%"
         ></mm-product-price>
       </div>
-      <footer class="class-order-action">
+      <footer>
         <button class="class-order-btn">
           기본기 구매하기
           <div class="cta-arrow">
