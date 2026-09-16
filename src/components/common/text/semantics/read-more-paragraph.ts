@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property, query, state } from 'lit/decorators.js'
 
 import '@/components/common/button/semantics/read-more-button'
 import '@/components/common/text/text'
@@ -26,13 +26,14 @@ export class ReadMoreParagraph extends LitElement {
   @property({ type: String }) content = ''
   @property({ type: Number }) limit = 100
   @state() private expanded = false
+  @query('mm-read-more-button') private trigger?: HTMLElement
   private readonly contentId = uniqueId('read-more-content')
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.expanded,
     setOpen: open => {
       this.expanded = open
     },
-    getTrigger: () => this.shadowRoot?.querySelector('mm-read-more-button') ?? undefined,
+    getTrigger: () => this.trigger ?? undefined,
   })
 
   render() {

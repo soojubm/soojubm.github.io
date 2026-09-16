@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { property } from 'lit/decorators.js'
+import { property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types'
@@ -66,11 +66,12 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
     @property({ type: Boolean }) disabled = false
     @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
+    @query('mm-input') private input?: HTMLElement
     readonly inputId = uniqueId('input')
 
     // 호스트는 포커스를 받지 않으므로 mm-input으로 넘긴다.
     focus(options?: FocusOptions) {
-      this.renderRoot.querySelector<HTMLElement>('mm-input')?.focus(options)
+      this.input?.focus(options)
     }
 
     handleInput(event: Event) {

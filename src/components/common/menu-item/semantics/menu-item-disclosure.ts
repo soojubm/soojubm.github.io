@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 
 import '@/components/indicators/expand-indicator/expand-indicator'
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
@@ -48,6 +48,7 @@ export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
     `,
   ]
   @property({ type: Boolean, reflect: true }) open = false
+  @query('button') private trigger?: HTMLElement
   private readonly panelId = uniqueId('menu-item-disclosure-panel')
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
@@ -55,7 +56,7 @@ export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
       this.open = open
       emit(this, 'toggle', { open })
     },
-    getTrigger: () => this.shadowRoot?.querySelector('button') ?? undefined,
+    getTrigger: () => this.trigger ?? undefined,
   })
 
   render() {

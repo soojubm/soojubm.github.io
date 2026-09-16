@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
@@ -72,6 +72,7 @@ export class AccordionItem extends LitElement {
   ]
   @property({ type: String }) summary = ''
   @property({ type: Boolean, reflect: true }) open = false
+  @query('button.summary-btn') private trigger?: HTMLElement
   private readonly panelId = uniqueId('accordion-panel')
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
@@ -79,7 +80,7 @@ export class AccordionItem extends LitElement {
       this.open = open
       emit(this, 'toggle', { open })
     },
-    getTrigger: () => this.shadowRoot?.querySelector('button.summary-btn') ?? undefined,
+    getTrigger: () => this.trigger ?? undefined,
   })
 
   render() {
