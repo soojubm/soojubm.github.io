@@ -50,7 +50,7 @@ export interface TextfieldState {
 }
 
 /**
- * textfield·number-input이 공유하는 필드 상태와 input 값 동기화.
+ * textfield·number-input이 공유하는 필드 상태, input 값 동기화, 포커스 위임.
  * 컨트롤 영역(슬롯 구성, 증감 버튼 등)은 각 컴포넌트가 소유한다.
  */
 export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) => {
@@ -67,6 +67,11 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: Boolean }) disabled = false
     @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
     readonly inputId = uniqueId('input')
+
+    // 호스트는 포커스를 받지 않으므로 mm-input으로 넘긴다.
+    focus(options?: FocusOptions) {
+      this.renderRoot.querySelector<HTMLElement>('mm-input')?.focus(options)
+    }
 
     handleInput(event: Event) {
       const target = event.target as HTMLInputElement

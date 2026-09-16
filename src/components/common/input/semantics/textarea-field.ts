@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types'
@@ -24,6 +24,7 @@ export class TextareaField extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
+  @query('mm-textarea') private textarea?: HTMLElement
   private inputId = uniqueId('mm-textarea')
 
   render() {
@@ -42,6 +43,11 @@ export class TextareaField extends LitElement {
       ></mm-textarea>
       ${renderFieldHelper(this.helper, this.helperId)}
     `
+  }
+
+  // 호스트는 포커스를 받지 않으므로 mm-textarea로 넘긴다.
+  focus(options?: FocusOptions) {
+    this.textarea?.focus(options)
   }
 
   private get helperId() {

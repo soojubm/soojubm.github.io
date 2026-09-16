@@ -1,5 +1,5 @@
 import { LitElement, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { inputStyles } from '@/components/common/input/input.styles'
@@ -15,6 +15,7 @@ export class SearchField extends LitElement {
   @property({ type: String }) placeholder = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String, reflect: true }) size: 'small' | '' = ''
+  @query('mm-input') private input?: HTMLElement
   private inputId = uniqueId('input')
 
   render() {
@@ -33,6 +34,11 @@ export class SearchField extends LitElement {
         ${this.renderClearButton()}
       </div>
     `
+  }
+
+  // 호스트는 포커스를 받지 않으므로 검색 입력으로 넘긴다.
+  focus(options?: FocusOptions) {
+    this.input?.focus(options)
   }
 
   private renderClearButton() {

@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaInvalid } from '@/types'
@@ -24,6 +24,7 @@ export class PasswordField extends LitElement {
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
   @state() private revealed = false
+  @query('mm-textfield') private textfield?: HTMLElement
 
   render() {
     return html`
@@ -49,6 +50,11 @@ export class PasswordField extends LitElement {
         ></mm-reveal-button>
       </mm-textfield>
     `
+  }
+
+  // 호스트는 포커스를 받지 않으므로 mm-textfield로 넘긴다.
+  focus(options?: FocusOptions) {
+    this.textfield?.focus(options)
   }
 
   private handleTextfieldInput(event: CustomEvent<{ value: string }>) {

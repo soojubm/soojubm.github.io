@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaIdRef, AriaInvalid } from '@/types'
@@ -93,6 +93,7 @@ export class Input extends LitElement {
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step?: number
+  @query('input') private input?: HTMLInputElement
 
   override render() {
     return html`
@@ -112,6 +113,11 @@ export class Input extends LitElement {
         @input=${this.handleInput}
       />
     `
+  }
+
+  // 호스트는 포커스를 받지 않으므로 실제 input으로 넘긴다.
+  focus(options?: FocusOptions) {
+    this.input?.focus(options)
   }
 
   private handleInput(event: Event) {
