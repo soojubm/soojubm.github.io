@@ -74,6 +74,8 @@ const main = html`
       <mm-switch checked>뉴스레터 받아보기</mm-switch>
     </mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

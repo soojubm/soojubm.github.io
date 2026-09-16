@@ -91,6 +91,8 @@ const main = html`
       <mm-prompt-input placeholder="Ask me anything..."></mm-prompt-input>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

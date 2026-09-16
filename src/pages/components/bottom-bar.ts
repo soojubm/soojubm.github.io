@@ -57,6 +57,8 @@ const main = html`
 ></mm-bottom-bar>`}
     ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

@@ -280,6 +280,8 @@ const main = html`
     </mm-content-section-list>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

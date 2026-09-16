@@ -85,6 +85,8 @@ const main = html`
       <mm-sort-selector></mm-sort-selector>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

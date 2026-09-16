@@ -231,6 +231,8 @@ const main = html`
       <mm-expand-indicator expanded></mm-expand-indicator>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

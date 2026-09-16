@@ -161,6 +161,8 @@ const main = html`
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

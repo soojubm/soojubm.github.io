@@ -270,6 +270,8 @@ const main = html`
       </mm-surface>
     </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

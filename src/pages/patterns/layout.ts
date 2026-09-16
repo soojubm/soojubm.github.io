@@ -1,6 +1,7 @@
 import { html } from 'lit'
 import './layout.css'
 
+import '@/components/domains/component/component-pager'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
@@ -124,6 +125,8 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
     </mm-content-section-list>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

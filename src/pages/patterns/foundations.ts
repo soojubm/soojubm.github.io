@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
+import '@/components/domains/component/component-pager'
 import { renderPage } from '@/components/layouts/base-layouts'
 const main = html`
   <mm-main>
@@ -175,6 +176,8 @@ const main = html`
         </mm-paragraph>
       </mm-content-section>
     </mm-flex>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

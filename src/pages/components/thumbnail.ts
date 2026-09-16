@@ -125,6 +125,8 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
+import '@/components/domains/component/component-pager'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
@@ -86,6 +87,8 @@ const main = html`
         </mm-flex>
       </mm-content-section>
     </mm-content-section-list>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

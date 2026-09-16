@@ -473,6 +473,8 @@ const main = html`
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-flex>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

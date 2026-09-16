@@ -103,6 +103,8 @@ const main = html`
       <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
     </mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

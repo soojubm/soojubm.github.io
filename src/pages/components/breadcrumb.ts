@@ -65,6 +65,8 @@ const main = html`
       .code=${'<mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>'}
     ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

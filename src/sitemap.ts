@@ -182,3 +182,17 @@ export const findSitemapItem = (id: string): SitemapItem | undefined => {
   }
   return undefined
 }
+
+/** 문서 페이지의 읽기 순서. 홈과 패턴 예시(Pages)는 문서 흐름에서 제외한다. */
+const DOC_SEQUENCE: SitemapItem[] = SITEMAP.flatMap(node => {
+  if (node.type === 'group') return node.id === 'patterns' ? [] : node.items
+  if (node.id === 'index') return []
+  return node.children ?? [{ id: node.id, name: node.title }]
+})
+
+export const findAdjacentDocs = (id: string) => {
+  const index = DOC_SEQUENCE.findIndex(item => item.id === id)
+  if (index < 0) return {}
+
+  return { previous: DOC_SEQUENCE[index - 1], next: DOC_SEQUENCE[index + 1] }
+}
