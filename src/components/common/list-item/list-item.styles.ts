@@ -49,6 +49,17 @@ export const listItemStyles = css`
     --list-item-size: var(--size-40);
   }
 
+  /* label(14/24)의 위 행간이 description(12/16)의 아래 행간보다 넓어 글자가 아래로 치우친다. 차이의 절반만큼 올려 시각 중심을 맞춘다. */
+  :host([size='small'][has-description]) .content {
+    translate: 0
+      calc(
+        (
+            (var(--font-line-height-24) - var(--font-size-14)) -
+              (var(--font-line-height-16) - var(--font-size-12))
+          ) / -4
+      );
+  }
+
   .emoji {
     display: inline-flex;
     align-items: center;

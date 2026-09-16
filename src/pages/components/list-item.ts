@@ -125,7 +125,29 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}>
+      <mm-content-section heading-level="3" heading="시각보정">
+        <mm-paragraph>
+          content 박스는 leading과 가운데 정렬되지만, 줄마다 행간이 달라 글자 묶음은 위아래 여백이
+          다르게 남습니다.
+        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <b>위아래 행간 차이의 절반만큼 content를 위로 옮긴다</b>
+                <br />
+                small 사이즈에 description이 있으면 label(14/24)의 위 행간이 description(12/16)의
+                아래 행간보다 넓어 글자가 아래로 치우쳐 보인다. 이동에는
+                <mm-code>translate</mm-code>
+                속성을 써서 레이아웃 박스와 정렬은 그대로 둔다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+    </mm-component-guide>
 
     <mm-component-anatomy
       style="--component-anatomy-stage-width: 320px"
