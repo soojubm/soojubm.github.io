@@ -68,11 +68,11 @@ const main = html`
         <mm-flex direction="column" gap="2">
           <mm-surface variant="filled" style="max-width: var(--layout-width-narrow)">
             <mm-caption>집중형 · 폼, 인증, 설정</mm-caption>
-            <code>--layout-width-narrow · 400px</code>
+            <mm-code>--layout-width-narrow · 400px</mm-code>
           </mm-surface>
           <mm-surface variant="filled" style="max-width: var(--layout-width-small)">
             <mm-caption>일반 문서 · 에디토리얼</mm-caption>
-            <code>--layout-width-small · 640px</code>
+            <mm-code>--layout-width-small · 640px</mm-code>
             <mm-flex gap="3">
               <mm-link href="post.html">Post</mm-link>
               <mm-link href="setting.html">Setting</mm-link>
@@ -80,7 +80,7 @@ const main = html`
           </mm-surface>
           <mm-surface variant="filled" style="max-width: var(--layout-width-wide)">
             <mm-caption>탐색·관리형 · 목록, 대시보드</mm-caption>
-            <code>--layout-width-wide · 1280px</code>
+            <mm-code>--layout-width-wide · 1280px</mm-code>
           </mm-surface>
         </mm-flex>
       </mm-content-section>

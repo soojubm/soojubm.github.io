@@ -27,66 +27,66 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const checkedComponentRows = html`
   <tr>
-    <th scope="row"><code>mm-checkbox-group</code></th>
-    <td><code>checked</code></td>
+    <th scope="row"><mm-code>mm-checkbox-group</mm-code></th>
+    <td><mm-code>checked</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-radio-group</code></th>
-    <td><code>checked</code></td>
+    <th scope="row"><mm-code>mm-radio-group</mm-code></th>
+    <td><mm-code>checked</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-switch</code></th>
-    <td><code>aria-checked</code></td>
+    <th scope="row"><mm-code>mm-switch</mm-code></th>
+    <td><mm-code>aria-checked</mm-code></td>
   </tr>
   <tr>
     <th scope="row">
-      <code>mm-menu-item-radio</code>
-      <code>mm-menu-item-checkbox</code>
+      <mm-code>mm-menu-item-radio</mm-code>
+      <mm-code>mm-menu-item-checkbox</mm-code>
     </th>
-    <td><code>aria-checked</code></td>
+    <td><mm-code>aria-checked</mm-code></td>
   </tr>
 `
 const currentComponentRows = html`
   <tr>
-    <th scope="row"><code>mm-breadcrumb</code></th>
-    <td><code>page</code></td>
+    <th scope="row"><mm-code>mm-breadcrumb</mm-code></th>
+    <td><mm-code>page</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-pagination</code></th>
-    <td><code>page</code></td>
+    <th scope="row"><mm-code>mm-pagination</mm-code></th>
+    <td><mm-code>page</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-page-button</code></th>
-    <td><code>page</code></td>
+    <th scope="row"><mm-code>mm-page-button</mm-code></th>
+    <td><mm-code>page</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-bottom-bar</code></th>
-    <td><code>page</code></td>
+    <th scope="row"><mm-code>mm-bottom-bar</mm-code></th>
+    <td><mm-code>page</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-app-sidebar</code></th>
-    <td><code>page</code></td>
+    <th scope="row"><mm-code>mm-app-sidebar</mm-code></th>
+    <td><mm-code>page</mm-code></td>
   </tr>
 `
 const expandedComponentRows = html`
   <tr>
-    <th scope="row"><code>mm-show-more-button</code></th>
+    <th scope="row"><mm-code>mm-show-more-button</mm-code></th>
     <td>잘린 텍스트</td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-read-more-button</code></th>
+    <th scope="row"><mm-code>mm-read-more-button</mm-code></th>
     <td>잘린 텍스트</td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-hamburger-button</code></th>
+    <th scope="row"><mm-code>mm-hamburger-button</mm-code></th>
     <td>내비게이션 메뉴</td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-more-button</code></th>
+    <th scope="row"><mm-code>mm-more-button</mm-code></th>
     <td>오버플로 메뉴</td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-app-sidebar</code></th>
+    <th scope="row"><mm-code>mm-app-sidebar</mm-code></th>
     <td>하위 트리</td>
   </tr>
   <tr>
@@ -105,76 +105,76 @@ const expandedComponentRows = html`
 const hoverRows = html`
   <tr>
     <th scope="row">
-      <code>mm-menu-item</code>
+      <mm-code>mm-menu-item</mm-code>
     </th>
     <td>배경 채움</td>
     <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
-    <td><code>\${interactiveElement}:hover</code></td>
+    <td><mm-code>\${interactiveElement}:hover</mm-code></td>
     <td>
-      <code>--menu-item-background-color: var(--interaction-hover-background-color)</code>
+      <mm-code>--menu-item-background-color: var(--interaction-hover-background-color)</mm-code>
     </td>
   </tr>
   <tr>
     <th scope="row">
-      <code>mm-table</code>
+      <mm-code>mm-table</mm-code>
       <br />
       (reset.css 전역 규칙)
     </th>
     <td>배경 채움</td>
     <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
-    <td><code>table tbody tr:hover</code></td>
+    <td><mm-code>table tbody tr:hover</mm-code></td>
     <td>
-      <code>--table-cell-background-color: var(--interaction-hover-background-color)</code>
+      <mm-code>--table-cell-background-color: var(--interaction-hover-background-color)</mm-code>
     </td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-portfolio-item</code></th>
+    <th scope="row"><mm-code>mm-portfolio-item</mm-code></th>
     <td>떠오름</td>
     <td>채울 배경이 없는 떠 있는 표면일 때.</td>
-    <td><code>\${interactiveElement}:hover</code></td>
-    <td><code>--lift: var(--interaction-hover-lift)</code></td>
+    <td><mm-code>\${interactiveElement}:hover</mm-code></td>
+    <td><mm-code>--lift: var(--interaction-hover-lift)</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-foundation-item</code></th>
+    <th scope="row"><mm-code>mm-foundation-item</mm-code></th>
     <td>떠오름</td>
     <td>채울 배경이 없는 떠 있는 표면일 때.</td>
-    <td><code>\${interactiveElement}:hover</code></td>
-    <td><code>--lift: var(--interaction-hover-lift)</code></td>
+    <td><mm-code>\${interactiveElement}:hover</mm-code></td>
+    <td><mm-code>--lift: var(--interaction-hover-lift)</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-button</code></th>
+    <th scope="row"><mm-code>mm-button</mm-code></th>
     <td>테두리 드러내기</td>
     <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><code>:is(button, a):hover</code></td>
-    <td><code>--button-border: var(--border)</code></td>
+    <td><mm-code>:is(button, a):hover</mm-code></td>
+    <td><mm-code>--button-border: var(--border)</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-icon-button</code></th>
+    <th scope="row"><mm-code>mm-icon-button</mm-code></th>
     <td>테두리 드러내기</td>
     <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><code>button:hover</code></td>
-    <td><code>--icon-button-border: var(--border)</code></td>
+    <td><mm-code>button:hover</mm-code></td>
+    <td><mm-code>--icon-button-border: var(--border)</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-input</code></th>
+    <th scope="row"><mm-code>mm-input</mm-code></th>
     <td>테두리 드러내기</td>
     <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><code>:host(:hover)</code></td>
-    <td><code>--input-border: var(--border)</code></td>
+    <td><mm-code>:host(:hover)</mm-code></td>
+    <td><mm-code>--input-border: var(--border)</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><code>mm-thumbnail</code></th>
+    <th scope="row"><mm-code>mm-thumbnail</mm-code></th>
     <td>테두리 드러내기</td>
     <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><code>\${interactiveElement}:hover .image-wrapper</code></td>
-    <td><code>--thumbnail-border: var(--border)</code></td>
+    <td><mm-code>\${interactiveElement}:hover .image-wrapper</mm-code></td>
+    <td><mm-code>--thumbnail-border: var(--border)</mm-code></td>
   </tr>
   <tr>
     <th scope="row">커스텀 스크롤바</th>
     <td>기능</td>
     <td></td>
-    <td><code>:hover::-webkit-scrollbar-thumb</code></td>
-    <td><code>background: var(--background-strong-color)</code></td>
+    <td><mm-code>:hover::-webkit-scrollbar-thumb</mm-code></td>
+    <td><mm-code>background: var(--background-strong-color)</mm-code></td>
   </tr>
 `
 
@@ -389,9 +389,9 @@ const main = html`
           ]}
         ></mm-table>
         <mm-paragraph>
-          <code>mm-marquee</code>
+          <mm-code>mm-marquee</mm-code>
           의
-          <code>pause-on-hover</code>
+          <mm-code>pause-on-hover</mm-code>
           는 상태 표현이 아니라 포인터가 있는 동안만 애니메이션을 멈추는 기능이라 위 표에 포함하지
           않습니다.
         </mm-paragraph>
@@ -399,9 +399,9 @@ const main = html`
       <mm-content-section heading-level="3" heading="Pressed">
         <mm-paragraph>
           스스로 눌림 상태를 유지하는 컨트롤은
-          <code>aria-pressed</code>
+          <mm-code>aria-pressed</mm-code>
           로 표현하고, 선택 상태와 같은 강조 토큰을 공유합니다.
-          <code>mm-toggle-button</code>
+          <mm-code>mm-toggle-button</mm-code>
           과 그 시맨틱 컴포넌트(follow·bookmark·reveal), toggle·filter 버튼 그룹이 씁니다.
         </mm-paragraph>
       </mm-content-section>
@@ -409,9 +409,9 @@ const main = html`
       <mm-content-section heading-level="3" heading="Checked">
         <mm-paragraph>
           컨트롤 자체의 on/off 값입니다. 네이티브
-          <code>checked</code>
+          <mm-code>checked</mm-code>
           가 있으면 그것을, 없으면
-          <code>aria-checked</code>
+          <mm-code>aria-checked</mm-code>
           를 씁니다.
         </mm-paragraph>
         <mm-text-list
@@ -432,15 +432,15 @@ const main = html`
       <mm-content-section heading-level="3" heading="Selected">
         <mm-paragraph>
           컬렉션에서 고른 항목입니다.
-          <code>mm-select</code>
+          <mm-code>mm-select</mm-code>
           의 옵션이
-          <code>aria-selected</code>
+          <mm-code>aria-selected</mm-code>
           로 고른 값을 나타내며, 그룹 소유·키보드·강조 토큰 규칙은 Checked와 같습니다.
         </mm-paragraph>
         <mm-paragraph>
-          <code>mm-tab</code>
+          <mm-code>mm-tab</mm-code>
           도
-          <code>aria-selected</code>
+          <mm-code>aria-selected</mm-code>
           로 활성 탭을 나타내지만, 폼 값이 아니라 지금 보이는 패널을 가리킵니다.
         </mm-paragraph>
       </mm-content-section>
@@ -448,9 +448,9 @@ const main = html`
       <mm-content-section heading-level="3" heading="Current">
         <mm-paragraph>
           지금 위치한 곳을
-          <code>aria-current</code>
+          <mm-code>aria-current</mm-code>
           로 표시합니다. 페이지·라우트를 가리키면
-          <code>page</code>
+          <mm-code>page</mm-code>
           를 씁니다.
         </mm-paragraph>
         <mm-table
@@ -466,7 +466,7 @@ const main = html`
       <mm-content-section heading-level="3" heading="Expanded">
         <mm-paragraph>
           펼침·접힘 여부는
-          <code>aria-expanded</code>
+          <mm-code>aria-expanded</mm-code>
           로 표시합니다.
         </mm-paragraph>
         <mm-table

@@ -300,6 +300,21 @@ const main = html`
       </div>
     </mm-component-section>
 
+    <mm-component-section
+      heading="Code"
+      description="본문 속 컴포넌트 이름·속성·토큰처럼 코드로 읽어야 하는 짧은 조각입니다. 여러 줄 스니펫은 Code Block으로 보여줍니다."
+    >
+      <mm-flex direction="column" gap="3">
+        <mm-paragraph>
+          열림 상태는 <mm-code>open</mm-code> 속성에 반영하고, 겹침 순서는
+          <mm-code>--material-zindex-popover</mm-code> 토큰으로 정합니다.
+        </mm-paragraph>
+        <mm-code-block
+          .code=${'<mm-paragraph>\n  <mm-code>open</mm-code> 속성에 반영합니다.\n</mm-paragraph>'}
+        ></mm-code-block>
+      </mm-flex>
+    </mm-component-section>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>

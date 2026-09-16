@@ -126,9 +126,9 @@ const main = html`
           ]}
         ></mm-text-list>
         <mm-paragraph>
-          <code>mm-sheet</code>
+          <mm-code>mm-sheet</mm-code>
           ·
-          <code>mm-dialog</code>
+          <mm-code>mm-dialog</mm-code>
         </mm-paragraph>
         <mm-paragraph size="small">
           모달 표면은 얕게 유지합니다. 이미 떠 있는 모달 위에 또 모달을 여는 흐름은 피하고, 다음
@@ -172,7 +172,7 @@ const main = html`
             '쌓임 맥락은 그 안의 anchored overlay를 가두므로, 본문 요소는 필요 없는 z-index로 쌓임 맥락을 만들지 않는다',
           ]}
         ></mm-text-list>
-        <mm-paragraph><code>PortalController</code></mm-paragraph>
+        <mm-paragraph><mm-code>PortalController</mm-code></mm-paragraph>
         <mm-paragraph size="small">
           React로 옮길 때도 같은 기준을 따릅니다. React에서 popover portal은 흔하지만 주로 overflow
           잘림을 풀기 위한 선택이고, 대신 좌표 계산·포커스 관리·조상 맥락 단절을 떠안습니다. 구현에

@@ -1,13 +1,20 @@
 import { css } from 'lit'
 
-export const codeStyles = css`
+import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
+
+export const codeBlockStyles = css`
   :host {
     display: block;
   }
 
+  /* 코드 면은 surface 면 선언을 조합한다. 누를 수 없는 면이라 채움 없이 테두리로 구분한다. */
+  pre {
+    ${surfaceBaseStyles};
+    --surface-border-radius: var(--radius-large);
+  }
+
   code {
     display: block;
-    padding-left: var(--space-4);
     font-family: var(--font-family);
     font-size: var(--font-size-14);
     line-height: var(--font-line-height-24);

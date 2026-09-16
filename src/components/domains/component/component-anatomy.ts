@@ -163,7 +163,7 @@ export class ComponentAnatomy extends LitElement {
 
     return html`
       <div class="component-content-frame">
-        <div class="measure"><mm-code .code=${this.code}></mm-code></div>
+        <div class="measure"><mm-code-block .code=${this.code}></mm-code-block></div>
       </div>
     `
   }
