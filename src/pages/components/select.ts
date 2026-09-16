@@ -59,10 +59,8 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          '선택지가 적으면 펼쳐 보이는 radio·toggle button group을 쓰고, 한눈에 담기 어려울 만큼 많을 때 select로 접는다.',
           '트리거·옵션 목록·선택 상태는 select가 소유하고, 목록 표면과 열림 상태는 popover에 맡긴다.',
           'value가 비어 있으면 네이티브 select처럼 첫 번째 활성 옵션으로 채운다.',
-          '옵션을 고르면 목록이 닫히고, 값이 실제로 바뀐 경우에만 change를 발행한다.',
           '보이는 레이블이 없으면 aria-label로 컨트롤 이름을 준다. 트리거는 이름과 현재 값을 함께 읽고, 목록은 이름만 읽는다. form field 안에서는 필드 레이블이 이름을 맡는다.',
           '폭은 기본적으로 트리거 콘텐츠를 따르며, 폼 필드 안에서 늘려야 할 때 width="100%"를 준다.',
         ]}

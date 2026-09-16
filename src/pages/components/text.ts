@@ -306,8 +306,11 @@ const main = html`
     >
       <mm-flex direction="column" gap="3">
         <mm-paragraph>
-          열림 상태는 <mm-code>open</mm-code> 속성에 반영하고, 겹침 순서는
-          <mm-code>--material-zindex-popover</mm-code> 토큰으로 정합니다.
+          열림 상태는
+          <mm-code>open</mm-code>
+          속성에 반영하고, 겹침 순서는
+          <mm-code>--material-zindex-popover</mm-code>
+          토큰으로 정합니다.
         </mm-paragraph>
         <mm-code-block
           .code=${'<mm-paragraph>\n  <mm-code>open</mm-code> 속성에 반영합니다.\n</mm-paragraph>'}
