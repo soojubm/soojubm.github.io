@@ -7,39 +7,20 @@ import type {
   ComponentRelatedItemData,
   ComponentTokenItemData,
 } from '@/components/domains/component'
-import type { ActionConfig } from '@/types'
 
 import { ICON_NAMES, INPUT_TYPE_UNION } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
-import './input.css'
-
-const noResultPrimaryAction: ActionConfig = { label: '검색어 제공' }
-const noResultSecondaryAction: ActionConfig = { label: '애옹' }
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'textarea.html', label: 'Textarea' },
   { href: 'select.html', label: 'Select' },
+  { href: 'search.html', label: 'Search' },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1',
     label: 'Google - Password Tips',
-    external: true,
-  },
-  {
-    href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
-    label: 'Apple Developer - UISearchBar',
-    external: true,
-  },
-  {
-    href: 'https://material.io/design/navigation/search.html',
-    label: 'Material Design - Search',
-    external: true,
-  },
-  {
-    href: 'https://developer.android.com/reference/android/widget/SearchView',
-    label: 'Android - SearchView',
     external: true,
   },
 ]
@@ -280,116 +261,6 @@ const main = html`
           </mm-textfield>
         </mm-flex>
       </form>
-    </mm-component-section>
-
-    <mm-component-guide>
-      <section class="step" data-align="vertical" style="margin: 1rem 0">
-        <div class="step-item">
-          <span class="step-item-icon">1</span>
-          <mm-paragraph>검색 인지, 검색 기표</mm-paragraph>
-          <div class="step-item-description">
-            <mm-text-list
-              .texts=${[
-                '키워드 입력으로 즉시 검색. 추천, 자동완성.',
-                '해시태그 또는 카테고리 목록으로 제안된 인기/추천 키워드로 검색',
-                'searchfield 형태의 버튼을 클릭하여 검색 뷰로 이동',
-              ]}
-            ></mm-text-list>
-          </div>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">2</span>
-          <mm-paragraph>onFocus</mm-paragraph>
-          <mm-caption>keyword.length === 0</mm-caption>
-          <div class="step-item-description">
-            <mm-text-list
-              .texts=${['이전 검색 내역', '제안Suggestions. 추천 및 인기 또는 개인화 큐레이션']}
-            ></mm-text-list>
-          </div>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">3</span>
-          <mm-paragraph>onChange</mm-paragraph>
-          <div class="step-item-description">
-            <mm-text-list
-              .texts=${[
-                '추천/자동완성/필터링',
-                '결과 없음 상태를 사용하지 않는다. 일치하는 결과가 없더라도 유사 콘텐츠 또는 추천 콘텐츠로 대체하여 하나 이상의 결과를 항상 보여주도록 합니다.',
-              ]}
-            ></mm-text-list>
-          </div>
-        </div>
-        <div class="step-item">
-          <span class="step-item-icon">4</span>
-          <mm-paragraph>onSubmit (엔터 키 또는 버튼 클릭)</mm-paragraph>
-          <div class="step-item-description">
-            <mm-text-list
-              .texts=${[
-                '검색 서비스 본문 결과, 전문 검색',
-                '입력한 결과물 노출 또는 바로가기를 최상단에 노출',
-                '일치하는 결과만 표시하고 새로운 검색을 유도',
-              ]}
-            ></mm-text-list>
-          </div>
-        </div>
-      </section>
-
-      <mm-paragraph-group>
-        <mm-paragraph>Checklist</mm-paragraph>
-        <mm-text-list
-          .texts=${[
-            '검색의 범위. 글로벌, 로컬',
-            '모바일 키보드의 높이를 고려한 쿼리의 적정 갯수',
-            '결과 페이지의 공유',
-            '검색 데이터의 수집',
-            '최근 검색 내역 삭제. 휘발성이 높은 정보이므로 편집 모듈 없이 우측 삭제 버튼으로 개별 삭제 기능을 제공해도 충분하다.',
-            '전체 검색 내역과 최근 검색 내역. 활동 로그. 검색 내역의 삭제는 개인화 콘텐츠에 영향을 주는가?',
-            'tabIndex: back -&gt; input',
-          ]}
-        ></mm-text-list>
-      </mm-paragraph-group>
-    </mm-component-guide>
-
-    <mm-component-section heading="iOS, Android 패턴">
-      <form class="ios" style="max-width: var(--layout-width-narrow)">
-        <label>
-          <mm-icon name=${ICON_NAMES.SEARCH}></mm-icon>
-        </label>
-        <input class="searchfield-input" type="search" placeholder="iOS pattern" />
-        <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
-        <mm-button variant="tertiary">취소</mm-button>
-      </form>
-      <form style="max-width: var(--layout-width-narrow); position: relative">
-        <div style="position: absolute; left: 0">
-          <mm-icon-button icon=${ICON_NAMES.BACK} aria-label="뒤로"></mm-icon-button>
-        </div>
-        <input
-          class="searchfield-input"
-          type="search"
-          placeholder="Android pattern"
-          style="padding-left: 3rem"
-        />
-        <div
-          style="position: absolute; right: var(--space-3); top: var(--space-3); z-index: var(--material-zindex-elevated)"
-        >
-          <mm-clear-button aria-label="검색어 지우기"></mm-clear-button>
-        </div>
-      </form>
-    </mm-component-section>
-
-    <mm-component-section heading="No Result" description="일치하는 결과가 없습니다.">
-      <mm-result
-        heading="'[키워드]'와(과) 일치하는 내용이 없습니다."
-        .primaryAction=${noResultPrimaryAction}
-        .secondaryAction=${noResultSecondaryAction}
-      ></mm-result>
-    </mm-component-section>
-
-    <mm-component-section heading="Search Suggestion">
-      <mm-menu-item-group aria-label="검색 제안">
-        <mm-menu-item-action icon=${ICON_NAMES.SEARCH} label="자동완성"></mm-menu-item-action>
-        <mm-menu-item-action icon=${ICON_NAMES.SEARCH} label="자동완성유아이"></mm-menu-item-action>
-      </mm-menu-item-group>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

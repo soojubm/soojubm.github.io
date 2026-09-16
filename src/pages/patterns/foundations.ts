@@ -27,6 +27,11 @@ const main = html`
           description="선택지를 고르는 컴포넌트의 선택 기준, 상태 소유, 옵션 모양을 정의합니다."
         ></mm-foundation-item>
         <mm-foundation-item
+          href="./search.html"
+          heading="Search"
+          description="키워드로 콘텐츠를 찾는 흐름의 단계별 제안과 결과 처리 방식을 정의합니다."
+        ></mm-foundation-item>
+        <mm-foundation-item
           href="./feedback.html"
           heading="Feedback"
           description="행동·시스템 결과를 알리는 상태와 비동기 데이터 흐름을 정의합니다."
