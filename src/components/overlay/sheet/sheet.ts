@@ -10,14 +10,13 @@ import '@/components/overlay/backdrop/backdrop'
 import { SheetController } from '@/controllers/sheet-controller'
 import { emit } from '@/utils'
 export type SheetPlacement = 'center' | 'bottom' | 'left' | 'right'
-export type SheetWidth = 'small' | 'medium' | 'large' | 'full'
 
 // 드래그로 내린 거리가 패널 높이의 이 비율을 넘으면 닫힘으로 판정한다.
 const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 
 /**
- * 높이·너비·위치(placement/width/height)와 스크롤 책임(mm-sheet-body)을
- * sheet 컴포넌트 계층에서 일관되게 관리한다.
+ * 높이·위치(placement/height)와 스크롤 책임(mm-sheet-body)을
+ * sheet 컴포넌트 계층에서 일관되게 관리한다. `full`은 폭 제한을 푼다.
  */
 @customElement('mm-sheet')
 export class Sheet extends LitElement {
@@ -25,8 +24,8 @@ export class Sheet extends LitElement {
   @property({ type: String, reflect: true }) role = 'dialog'
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'center'
-  @property({ type: String, reflect: true }) width: SheetWidth = 'medium'
   @property({ type: String }) height?: string
+  @property({ type: Boolean, reflect: true }) full = false
   @property({ type: Boolean, reflect: true }) open = false
   @query('.panel') private sheetEl!: HTMLElement
   private dragging = false

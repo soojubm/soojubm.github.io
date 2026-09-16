@@ -18,8 +18,8 @@ export class Dialog extends LitElement {
     sheetPositionStyles,
     css`
       :host {
-        --overlay-panel-min-width: 320px;
-        --overlay-panel-max-width: 320px;
+        --overlay-panel-min-width: var(--layout-width-narrow);
+        --overlay-panel-max-width: var(--layout-width-narrow);
       }
     `,
   ]

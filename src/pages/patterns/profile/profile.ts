@@ -128,7 +128,7 @@ const main = html`
 
   <!-- 포트폴리오 시트 -->
 
-  <mm-sheet id="sheet-newneek" placement="center" width="large" height="90vh">
+  <mm-sheet id="sheet-newneek" placement="center" height="90vh">
     <mm-sheet-header heading="뉴닉"></mm-sheet-header>
     <mm-sheet-body class="newneek-sheet-body">
       <mm-flex direction="column" gap="section">
@@ -228,7 +228,7 @@ const main = html`
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-etc-works" placement="center" width="large" height="90vh">
+  <mm-sheet id="sheet-etc-works" placement="center" height="90vh">
     <mm-sheet-header heading="스터디움 프로모션 웹사이트"></mm-sheet-header>
     <mm-sheet-body>
       <figure>
@@ -247,7 +247,7 @@ const main = html`
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-lettering" placement="center" width="large" height="90vh">
+  <mm-sheet id="sheet-lettering" placement="center" height="90vh">
     <mm-sheet-header heading="레터링"></mm-sheet-header>
     <mm-sheet-body>
       <figure>
@@ -257,7 +257,7 @@ const main = html`
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-flat_sitemap" placement="center" width="large" height="90vh">
+  <mm-sheet id="sheet-flat_sitemap" placement="center" height="90vh">
     <mm-sheet-header heading='"Flat" Site Architecture'></mm-sheet-header>
     <mm-sheet-body>
       <div>
@@ -362,7 +362,7 @@ const main = html`
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-woolf" placement="center" width="large" height="90vh">
+  <mm-sheet id="sheet-woolf" placement="center" height="90vh">
     <mm-sheet-header heading="울프"></mm-sheet-header>
     <mm-sheet-body></mm-sheet-body>
   </mm-sheet>

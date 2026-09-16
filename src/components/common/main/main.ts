@@ -34,35 +34,20 @@ export class Main extends LitElement {
       padding-right: 0;
     }
 
-    :host([width='small']),
-    :host([width='medium']),
-    :host([layout='chat']) {
+    :host([width='small']) {
       --main-padding-left: var(--layout-padding-inline);
 
-      margin: 0 auto;
-    }
-
-    :host([width='small']) {
       max-width: var(--layout-width-small);
-      box-sizing: content-box;
-    }
-
-    :host([width='medium']) {
-      max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
+      margin: 0 auto;
       box-sizing: content-box;
     }
 
     :host([layout='chat']) {
       display: flex;
       flex-direction: column;
-      max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
       height: calc(100vh - var(--navbar-height));
       padding: 0;
       overflow: hidden;
-    }
-
-    :host([layout='chat'][full-width]) {
-      max-width: none;
     }
 
     :host([layout='chat']) ::slotted(mm-chat-room) {
@@ -71,7 +56,7 @@ export class Main extends LitElement {
     }
   `
   @property({ type: String, reflect: true }) role = 'main'
-  @property({ type: String, reflect: true }) width: 'small' | 'medium' | '' = ''
+  @property({ type: String, reflect: true }) width: 'small' | '' = ''
   @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
   @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false

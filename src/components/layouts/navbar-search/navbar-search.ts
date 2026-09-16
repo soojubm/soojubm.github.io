@@ -53,7 +53,6 @@ export class NavbarSearch extends LitElement {
       <mm-sheet
         class="js-search-sheet"
         placement="center"
-        width="large"
         style="--overlay-panel-backdrop-blur: 2px"
         ?open=${this.isOpen}
         @sheet-close=${this.closeSearch}

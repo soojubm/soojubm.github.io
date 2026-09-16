@@ -67,7 +67,7 @@ export const sheetPositionStyles = css`
   :host {
     --overlay-panel-z-index: var(--material-zindex-sheet);
     --overlay-panel-min-width: auto;
-    --overlay-panel-max-width: var(--layout-width-narrow);
+    --overlay-panel-max-width: var(--layout-width-small);
     --overlay-panel-height: auto;
     --overlay-panel-max-height: 90vh;
     --overlay-panel-viewport-max-height: 100vh;
@@ -112,20 +112,14 @@ export const sheetPositionStyles = css`
     transition: transform var(--transition-duration) var(--transition-easing-emphasis);
   }
 
-  /* center: 패널이 콘텐츠 폭으로 줄지 않고 width prop이 고른 max-width를 채운다 */
-  :host([placement='center']) .panel {
-    width: 100%;
+  /* full은 placement와 상관없이 폭 제한을 푼다 */
+  :host([full]) {
+    --overlay-panel-max-width: 100%;
   }
 
-  /* center + width */
-  :host([placement='center'][width='small']) {
-    --overlay-panel-max-width: 320px;
-  }
-  :host([placement='center'][width='large']) {
-    --overlay-panel-max-width: var(--layout-width-wide);
-  }
-  :host([placement='center'][width='full']) {
-    --overlay-panel-max-width: 100%;
+  /* center: 패널이 콘텐츠 폭으로 줄지 않고 max-width를 채운다 */
+  :host([placement='center']) .panel {
+    width: 100%;
   }
 
   /* 화면 아래 변에 닿는 배치는 footer 유무와 상관없이 홈 인디케이터 영역만큼 여백을 더 둔다 */
@@ -136,10 +130,6 @@ export const sheetPositionStyles = css`
   }
 
   /* bottom */
-  :host([placement='bottom']) {
-    --overlay-panel-max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
-  }
-
   :host([placement='bottom']) .panel {
     width: 100%;
     margin-top: auto;
@@ -149,11 +139,6 @@ export const sheetPositionStyles = css`
   }
 
   /* left/right */
-  :host([placement='left']),
-  :host([placement='right']) {
-    --overlay-panel-max-width: 640px;
-  }
-
   :host([placement='left']) .panel {
     height: 100%;
     max-height: var(--overlay-panel-viewport-max-height);
@@ -368,7 +353,7 @@ export const tooltipStyles = css`
     display: inline-flex;
     position: relative;
 
-    --tooltip-max-width: 320px;
+    --tooltip-max-width: var(--layout-width-narrow);
     --tooltip-padding: 0.5rem var(--space-3);
     --tooltip-border-radius: var(--radius);
     --tooltip-background-color: var(--background-strong-color);

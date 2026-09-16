@@ -20,13 +20,11 @@
 
   --navbar-height: calc(var(--size-32) + 1.5rem);
 
-  --layout-width-wide: 1280px;
   --layout-width-small: 640px;
   --layout-width-narrow: 400px;
   --layout-width-sidebar: 244px;
   --layout-padding-inline: 5vw;
 
-  --layout-max-width: 100%;
   --layout-main-space-top: var(--space-6);
   --layout-sidebar-space-top: var(--space-2);
   /* --content-space-block-start */

@@ -7,7 +7,7 @@ export class ChatHeader extends LitElement {
     :host {
       display: block;
       width: 100%;
-      max-width: calc(var(--layout-width-small) + var(--space-4) * 10);
+      max-width: var(--layout-width-small);
       flex-shrink: 0;
       margin: 0 auto;
       padding: var(--space-3) var(--space-4);

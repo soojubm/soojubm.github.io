@@ -53,8 +53,8 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean' },
   { name: 'placement', type: "'center' | 'bottom' | 'left' | 'right' = 'center'" },
-  { name: 'width', type: "'small' | 'medium' | 'large' | 'full' = 'medium'", optional: true },
   { name: 'height', type: 'string', optional: true },
+  { name: 'full', type: 'boolean = false', optional: true },
   { name: 'mm-sheet-header heading', type: 'string', optional: true },
   { name: 'mm-sheet-footer primaryAction', type: 'ActionConfig', optional: true },
   { name: 'mm-sheet-footer secondaryAction', type: 'ActionConfig', optional: true },
@@ -176,7 +176,7 @@ function sheetExampleTemplate() {
       <mm-button aria-controls="right-sheet" aria-haspopup="dialog">Right</mm-button>
     </mm-button-group>
 
-    <mm-sheet id="center-sheet" placement="center" width="medium">
+    <mm-sheet id="center-sheet" placement="center">
       <mm-sheet-header heading="Center Sheet"></mm-sheet-header>
       <mm-sheet-body>
         <mm-paragraph>

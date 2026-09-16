@@ -2,7 +2,6 @@ import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
-import './foundations.css'
 const main = html`
   <mm-main>
     <mm-page-header
