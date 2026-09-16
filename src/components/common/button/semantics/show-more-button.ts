@@ -1,15 +1,12 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { AriaBoolean } from '@/types'
-
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { emit } from '@/utils'
 import '@/components/common/button/button'
 
 /**
- * 더보기/접기 토글 버튼.
- * aria-expanded 상태에 따라 레이블과 아이콘 방향이 전환됩니다.
+ * 목록의 다음 항목을 이어서 불러오는 버튼.
+ * 불러온 항목은 다시 접히지 않으므로 상태를 갖지 않는다.
  */
 @customElement('mm-show-more-button')
 export class ShowMoreButton extends LitElement {
@@ -18,35 +15,14 @@ export class ShowMoreButton extends LitElement {
       display: flex;
       justify-content: center;
     }
-
-    mm-icon {
-      transition: transform var(--transition-duration) var(--transition-easing);
-    }
-
-    mm-button[aria-expanded='true'] mm-icon {
-      transform: rotate(180deg);
-    }
   `
-  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
-  @property({ type: String, attribute: 'more-label' }) moreLabel = 'Show more'
-  @property({ type: String, attribute: 'less-label' }) lessLabel = 'Show less'
+  @property({ type: String }) label = 'Show more'
 
   render() {
     return html`
-      <mm-button
-        variant="tertiary"
-        icon=${ICON_NAMES.EXPAND}
-        icon-position="trailing"
-        @click=${this.handleClick}
-        aria-expanded=${this.ariaExpanded}
-      >
-        ${this.ariaExpanded === 'true' ? this.lessLabel : this.moreLabel}
+      <mm-button variant="tertiary" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
+        ${this.label}
       </mm-button>
     `
-  }
-
-  private handleClick() {
-    this.ariaExpanded = this.ariaExpanded === 'true' ? 'false' : 'true'
-    emit(this, 'toggle', { expanded: this.ariaExpanded === 'true' })
   }
 }

@@ -39,10 +39,11 @@ const checkedComponentRows = html`
     <td><mm-code>aria-checked</mm-code></td>
   </tr>
   <tr>
-    <th scope="row">
-      <mm-code>mm-menu-item-radio</mm-code>
-      <mm-code>mm-menu-item-checkbox</mm-code>
-    </th>
+    <th scope="row"><mm-code>mm-menu-item-radio</mm-code></th>
+    <td><mm-code>aria-checked</mm-code></td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>mm-menu-item-checkbox</mm-code></th>
     <td><mm-code>aria-checked</mm-code></td>
   </tr>
 `
@@ -64,15 +65,15 @@ const currentComponentRows = html`
     <td><mm-code>page</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-app-sidebar</mm-code></th>
+    <th scope="row"><mm-code>mm-menu-item-link</mm-code></th>
+    <td><mm-code>page</mm-code></td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>mm-menu-item-action</mm-code></th>
     <td><mm-code>page</mm-code></td>
   </tr>
 `
 const expandedComponentRows = html`
-  <tr>
-    <th scope="row"><mm-code>mm-show-more-button</mm-code></th>
-    <td>잘린 텍스트</td>
-  </tr>
   <tr>
     <th scope="row"><mm-code>mm-read-more-button</mm-code></th>
     <td>잘린 텍스트</td>
@@ -86,95 +87,24 @@ const expandedComponentRows = html`
     <td>오버플로 메뉴</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-app-sidebar</mm-code></th>
-    <td>하위 트리</td>
+    <th scope="row"><mm-code>mm-menu-item-disclosure</mm-code></th>
+    <td>하위 메뉴</td>
   </tr>
   <tr>
-    <th scope="row">navbar-search</th>
+    <th scope="row"><mm-code>mm-navbar-search</mm-code></th>
     <td>검색 패널</td>
   </tr>
   <tr>
-    <th scope="row">chat-source</th>
+    <th scope="row"><mm-code>mm-chat-source</mm-code></th>
     <td>출처 상세</td>
   </tr>
   <tr>
-    <th scope="row">model-selector</th>
-    <td>모델 목록</td>
-  </tr>
-`
-const hoverRows = html`
-  <tr>
-    <th scope="row">
-      <mm-code>mm-menu-item</mm-code>
-    </th>
-    <td>배경 채움</td>
-    <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
-    <td><mm-code>\${interactiveElement}:hover</mm-code></td>
-    <td>
-      <mm-code>--menu-item-background-color: var(--interaction-hover-background-color)</mm-code>
-    </td>
+    <th scope="row"><mm-code>mm-popover</mm-code></th>
+    <td>앵커된 패널</td>
   </tr>
   <tr>
-    <th scope="row">
-      <mm-code>mm-table</mm-code>
-      <br />
-      (reset.css 전역 규칙)
-    </th>
-    <td>배경 채움</td>
-    <td>배경을 가진 행·항목·카드처럼 채울 면이 있을 때.</td>
-    <td><mm-code>table tbody tr:hover</mm-code></td>
-    <td>
-      <mm-code>--table-cell-background-color: var(--interaction-hover-background-color)</mm-code>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-code>mm-portfolio-item</mm-code></th>
-    <td>떠오름</td>
-    <td>채울 배경이 없는 떠 있는 표면일 때.</td>
-    <td><mm-code>\${interactiveElement}:hover</mm-code></td>
-    <td><mm-code>--lift: var(--interaction-hover-lift)</mm-code></td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-code>mm-foundation-item</mm-code></th>
-    <td>떠오름</td>
-    <td>채울 배경이 없는 떠 있는 표면일 때.</td>
-    <td><mm-code>\${interactiveElement}:hover</mm-code></td>
-    <td><mm-code>--lift: var(--interaction-hover-lift)</mm-code></td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-code>mm-button</mm-code></th>
-    <td>테두리 드러내기</td>
-    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><mm-code>:is(button, a):hover</mm-code></td>
-    <td><mm-code>--button-border: var(--border)</mm-code></td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-code>mm-icon-button</mm-code></th>
-    <td>테두리 드러내기</td>
-    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><mm-code>button:hover</mm-code></td>
-    <td><mm-code>--icon-button-border: var(--border)</mm-code></td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-code>mm-input</mm-code></th>
-    <td>테두리 드러내기</td>
-    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><mm-code>:host(:hover)</mm-code></td>
-    <td><mm-code>--input-border: var(--border)</mm-code></td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-code>mm-thumbnail</mm-code></th>
-    <td>테두리 드러내기</td>
-    <td>평소 테두리를 감춰 둔 컨트롤일 때.</td>
-    <td><mm-code>\${interactiveElement}:hover .image-wrapper</mm-code></td>
-    <td><mm-code>--thumbnail-border: var(--border)</mm-code></td>
-  </tr>
-  <tr>
-    <th scope="row">커스텀 스크롤바</th>
-    <td>기능</td>
-    <td></td>
-    <td><mm-code>:hover::-webkit-scrollbar-thumb</mm-code></td>
-    <td><mm-code>background: var(--background-strong-color)</mm-code></td>
+    <th scope="row"><mm-code>mm-accordion-item</mm-code></th>
+    <td>패널 본문</td>
   </tr>
 `
 
@@ -353,47 +283,63 @@ const main = html`
           hover 처리는 요소가 무엇을 가졌는지에 따라 정해집니다. 상태 selector에서 속성을 다시
           선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을 재할당합니다.
         </mm-paragraph>
-        <mm-surface variant="filled">
-          <mm-grid columns="3" gap="4">
-            <mm-flex direction="column" gap="2">
-              <mm-menu-item-action icon="folder" label="배경 채움"></mm-menu-item-action>
-              <mm-caption>
-                배경을 가진 면이면 hover에 --interaction-hover-background-color로 채운다.
-              </mm-caption>
-            </mm-flex>
-            <mm-flex direction="column" gap="2">
-              <mm-foundation-item
-                href="#"
-                heading="떠오름"
-                description="채울 배경이 없는 떠 있는 표면."
-              ></mm-foundation-item>
-              <mm-caption>hover에 --interaction-hover-lift만큼 떠오른다.</mm-caption>
-            </mm-flex>
-            <mm-flex direction="column" gap="2">
-              <mm-button variant="tertiary">테두리 드러내기</mm-button>
-              <mm-caption>
-                평소 테두리를 감춘 컨트롤이면 hover에 border-color를 드러낸다.
-              </mm-caption>
-            </mm-flex>
-          </mm-grid>
-        </mm-surface>
-        <mm-table
-          .rows=${hoverRows}
-          caption="컴포넌트별 hover 처리와 재할당 값"
-          .columns=${[
-            { label: '컴포넌트', width: '200px' },
-            { label: '처리', width: '120px' },
-            { label: '언제', width: '260px' },
-            { label: 'Selector', width: '220px' },
-            { label: '변경 값' },
-          ]}
-        ></mm-table>
+        <mm-grid columns="2" gap="4" class="hover-example-grid">
+          <mm-surface variant="filled" radius="large">
+            <mm-menu-item-action icon="folder" label="배경 채움"></mm-menu-item-action>
+          </mm-surface>
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              '배경을 가진 행·항목·카드처럼 채울 면이 있을 때 고른다.',
+              html`
+                자기 배경 토큰에
+                <mm-code>--interaction-hover-background-color</mm-code>
+                를 재할당한다.
+              `,
+            ]}
+          ></mm-text-list>
+
+          <mm-surface variant="filled" radius="large">
+            <mm-foundation-item
+              href="#"
+              heading="떠오름"
+              description="채울 배경이 없는 떠 있는 표면."
+            ></mm-foundation-item>
+          </mm-surface>
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              '채울 배경이 없는 떠 있는 표면일 때 고른다.',
+              html`
+                <mm-code>--lift</mm-code>
+                에
+                <mm-code>--interaction-hover-lift</mm-code>
+                를 재할당한다.
+              `,
+            ]}
+          ></mm-text-list>
+
+          <mm-surface variant="filled" radius="large">
+            <mm-button variant="tertiary">테두리 드러내기</mm-button>
+          </mm-surface>
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              '평소 테두리를 감춰 둔 컨트롤일 때 고른다.',
+              html`
+                자기 border 토큰에
+                <mm-code>--border</mm-code>
+                를 재할당한다.
+              `,
+            ]}
+          ></mm-text-list>
+        </mm-grid>
         <mm-paragraph>
           <mm-code>mm-marquee</mm-code>
           의
           <mm-code>pause-on-hover</mm-code>
-          는 상태 표현이 아니라 포인터가 있는 동안만 애니메이션을 멈추는 기능이라 위 표에 포함하지
-          않습니다.
+          와 커스텀 스크롤바 thumb는 상태 표현이 아니라 포인터가 있는 동안만 동작이 달라지는
+          기능입니다.
         </mm-paragraph>
       </mm-content-section>
       <mm-content-section heading-level="3" heading="Pressed">

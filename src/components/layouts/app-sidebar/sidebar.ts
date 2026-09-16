@@ -4,7 +4,6 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import '@/components/common'
-import { ICON_NAMES } from '@/components/common'
 import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
@@ -16,9 +15,6 @@ export class Sidebar extends LitElement {
   static styles = [sidebarStyles]
   @property({ type: Boolean, reflect: true }) open = false
   @state() private currentPageId = 'index'
-  @state() private openGroupIds = new Set(
-    SITEMAP.filter(node => node.type === 'group').map(node => node.id),
-  )
   private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
@@ -85,23 +81,10 @@ export class Sidebar extends LitElement {
   `
 
   private renderGroup(node: Extract<SitemapNode, { type: 'group' }>) {
-    const isOpen = this.openGroupIds.has(node.id)
-
     return html`
-      <!-- <mm-list-item
-        id="${node.id}-btn"
-        label=${node.title}
-        icon=${node.icon}
-        avatar-variant="tertiary"
-        trailing-icon=${ICON_NAMES.EXPAND}
-        aria-haspopup="menu"
-        aria-controls="${node.id}-menu"
-        aria-expanded=${isOpen ? 'true' : 'false'}
-        @click=${() => this.handleGroupToggle(node.id)}
-      ></mm-list-item> -->
-      <mm-menu-list heading=${node.title}>
+      <mm-menu-item-disclosure open label=${node.title} icon=${node.icon}>
         ${repeat(node.items, item => item.id, this.renderItemLink)}
-      </mm-menu-list>
+      </mm-menu-item-disclosure>
     `
   }
 
@@ -147,15 +130,6 @@ export class Sidebar extends LitElement {
 
   private navigate(pageId: string) {
     window.location.href = `${pageId}.html`
-  }
-
-  private handleGroupToggle(groupId: string) {
-    const nextOpenGroupIds = new Set(this.openGroupIds)
-
-    if (nextOpenGroupIds.has(groupId)) nextOpenGroupIds.delete(groupId)
-    else nextOpenGroupIds.add(groupId)
-
-    this.openGroupIds = nextOpenGroupIds
   }
 
   private handleMenuItemClick() {

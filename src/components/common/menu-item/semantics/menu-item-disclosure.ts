@@ -60,7 +60,12 @@ export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
 
   render() {
     return html`
-      <button type="button" role="menuitem" aria-controls=${this.panelId}>
+      <button
+        type="button"
+        role="menuitem"
+        aria-controls=${this.panelId}
+        aria-expanded=${this.open ? 'true' : 'false'}
+      >
         ${renderMenuItemContent(this, this.renderIndicator())}
       </button>
 

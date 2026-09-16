@@ -31,11 +31,6 @@ export const sidebarStyles = css`
     ${scrollbarStyles};
   }
 
-  /* 섹션(제목 있는 그룹)은 앞선 항목과 시각적으로 떨어뜨린다 */
-  nav mm-menu-list {
-    margin-top: var(--space-4);
-  }
-
   :host([open]) nav {
     transform: translateX(0);
     overscroll-behavior: contain;
