@@ -244,6 +244,7 @@ const main = html`
             'menu-item 선택 계열 role 정정: mm-menu-item-radio·checkbox가 role="menu" 밖(결제수단, 필터 시트, 컬렉션 선택, 테마 선택)에서 쓰이는데 menuitemradio·menuitemcheckbox를 고정으로 붙인다. 겉모습이 아니라 쓰임에 맞춰 radio·checkbox로 바꾼다.',
             'menu-item 선택 계열 부모·키보드 정합: menuitemradio가 radiogroup 안에 놓인 잘못된 트리를 바로잡고, radiogroup에 맞게 roving tabindex와 방향키 선택을 넣는다.',
             'menu-item 선택 계열 문서 정리: Selection 패턴의 "메뉴·시트 안에서" 설명과 menu-item 페이지의 role 설명을 함께 고친다. 실제 role="menu" 안의 사용처가 생길 때만 menuitem* 분기를 따로 판단한다.',
+            '모바일 anchored overlay 전환 검토: 좁은 화면에서 popover를 바텀 시트로 바꿀지 정한다. 터치 타겟과 화면 가장자리 잘림에는 유리하지만, 시트 안에서 열리는 popover가 시트 위 시트가 되어 "모달 표면은 얕게 유지한다"와 부딪친다. 트리거 규약도 popover는 slot="trigger", sheet는 aria-controls로 달라서 한 컴포넌트가 둘을 오가려면 규약부터 맞춰야 한다. 스크롤 컨테이너 잘림은 이 전환으로 해결되지 않으므로 별건으로 다룬다.',
             'menu-item 선택 그룹이 options 배열을 받지 않는 이유 정리: radio·checkbox·select는 .options로 옮겼지만 mm-menu-item-radio-group·checkbox-group은 자식 요소를 유지했고 그 근거가 남아 있지 않다. 행이 description·emoji·avatar처럼 OptionItem에 담기지 않는 콘텐츠를 가져서인지 확인하고, 그렇다면 radio-card-group과 같은 근거로 문서에 남기고 아니라면 교차 타입으로 확장한 options 배열로 옮긴다.',
           ]}
         ></mm-text-list>
