@@ -65,19 +65,22 @@ const main = html`
       ]}
     ></mm-component-aka>
 
-    <mm-component-example>
-      <mm-tag-group>
-        <mm-tag tone="default">default</mm-tag>
-        <mm-tag tone="green">green</mm-tag>
-        <mm-tag tone="yellow">yellow</mm-tag>
-        <mm-tag tone="red">red</mm-tag>
-        <mm-tag tone="blue">blue</mm-tag>
-        <mm-tag tone="purple">purple</mm-tag>
-        <mm-tag tone="pink">pink</mm-tag>
-        <mm-tag tone="orange">orange</mm-tag>
-        <mm-tag tone="cyan">cyan</mm-tag>
-      </mm-tag-group>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="default" variant="pill">
+        <mm-tab value="default">Default</mm-tab>
+        <mm-tab value="icon">With Icon</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="default">
+        <mm-component-example>
+          <mm-tag>Tag</mm-tag>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="icon">
+        <mm-component-example>
+          <mm-tag icon=${ICON_NAMES.SUCCESS}>Tag</mm-tag>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 

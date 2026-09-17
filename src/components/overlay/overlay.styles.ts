@@ -364,7 +364,7 @@ export const tooltipStyles = css`
     display: inline-flex;
     position: relative;
 
-    --tooltip-max-width: var(--layout-width-narrow);
+    --tooltip-max-width: 280px;
     --tooltip-padding: 0.5rem var(--space-3);
     --tooltip-border-radius: var(--radius);
     --tooltip-background-color: var(--background-strong-color);

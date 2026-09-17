@@ -239,7 +239,7 @@ function filterSheetTemplate() {
           ></mm-menu-item-switch>
           <mm-separator></mm-separator>
           <mm-form-field label="예산">
-            <mm-menu-item-radio-group name="budget" aria-label="예산">
+            <mm-menu-item-radio-group name="budget">
               <mm-menu-item-radio value="50000" label="50,000원 미만"></mm-menu-item-radio>
               <mm-menu-item-radio value="100000" label="100,000원 미만"></mm-menu-item-radio>
               <mm-menu-item-radio value="150000" label="150,000원 미만"></mm-menu-item-radio>
@@ -261,7 +261,7 @@ function filterSheetTemplate() {
             label="접근성 편의"
             description="호스트가 제공하고 에어비앤비에서 검토한 정보입니다."
           >
-            <mm-menu-item-checkbox-group aria-label="접근성 편의">
+            <mm-menu-item-checkbox-group>
               <mm-menu-item-checkbox
                 value="no-stairs"
                 label="게스트 출입구에 계단이나 문턱 없음"

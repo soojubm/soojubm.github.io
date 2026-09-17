@@ -26,7 +26,7 @@ export const buttonBaseStyles = [
   css`
     :host {
       --button-height: var(--size-32);
-      --button-min-width: 5rem;
+      --button-min-width: 4rem;
       --button-border: var(--border-transparent);
       --button-padding-inline: var(--space-3);
       --button-border-radius: var(--radius);
@@ -47,7 +47,7 @@ export const buttonBaseStyles = [
       justify-content: center;
       /* max-content for trailing icons */
       width: var(--button-width);
-      gap: var(--space-2);
+      gap: var(--space-1);
       height: var(--button-height);
       padding: 0 var(--button-padding-inline);
       border: var(--button-border);

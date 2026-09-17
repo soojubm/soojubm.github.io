@@ -59,13 +59,16 @@
 }
 
 .newneek-sheet-body {
-  padding: var(--space-8) var(--layout-padding-inline);
+  /* padding: var(--space-8) var(--layout-padding-inline); */
 }
 
 .home-mangrove {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 4rem auto;
   border-top: 2px solid var(--foreground-color);
   background: var(--newneek-color);
   position: relative;
@@ -92,7 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--space-2);
   width: 100%;
   padding: 0.5rem 0;
   border-top: 1px solid var(--foreground-color);
@@ -100,6 +103,35 @@
   background: var(--background-color);
   position: relative;
   z-index: var(--material-zindex-elevated);
+}
+
+.cta-arrow {
+  max-width: 67px;
+  flex-grow: 1;
+  padding: 17px 0;
+}
+.cta-arrow .line {
+  width: 100%;
+  height: 2px;
+  background: var(--foreground-color);
+  position: relative;
+}
+.cta-arrow .line::before,
+.cta-arrow .line::after {
+  content: '';
+  width: 12px;
+  height: 2px;
+  background: inherit;
+  position: absolute;
+  right: 0;
+}
+.cta-arrow .line::before {
+  transform: rotate(-50deg);
+  transform-origin: top right;
+}
+.cta-arrow .line::after {
+  transform: rotate(50deg);
+  transform-origin: bottom right;
 }
 
 .home-mangrove:hover .mangrove1 {
@@ -113,6 +145,41 @@
   padding: 2rem 0 3rem;
   background: var(--newneek-color);
   box-sizing: border-box;
+}
+
+.today-poll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.today-poll div {
+  min-width: 80px;
+  background: var(--background-color);
+  text-align: center;
+}
+.today-poll div figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--foreground-color);
+  border-bottom-width: 1px;
+}
+.today-poll div figure span {
+  display: block;
+  margin-top: -3rem;
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+.today-poll .label {
+  display: block;
+  padding: 0.25rem 0;
+  border: 2px solid var(--foreground-color);
+  border-top: 0;
+  background: var(--background-subtle-color);
+  font-size: var(--font-size-18);
+  font-weight: bold;
 }
 
 .zigzag-border {
