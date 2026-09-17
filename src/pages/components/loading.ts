@@ -14,7 +14,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'size', type: "'small' | 'medium' | 'large' = 'medium'" },
+  { name: 'variant', type: "'element' | 'section' = 'element'" },
   { name: 'label', type: "string = '로딩 중'" },
 ]
 
@@ -31,21 +31,24 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Loading"
-        description="비동기 작업의 진행 중 상태를 나타냅니다."
+        description="작업이 끝나기를 기다리는 동안 보여 주는 진행 표시입니다. 요소 안에서는 아이콘 크기로, 영역 안에서는 레이블과 함께 회전하며 시스템이 응답하고 있음을 알리므로, 사용자는 결과를 기다리는 동안 불확실성 없이 머무를 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
     <mm-component-example>
-      <mm-flex>
-        <mm-spinner size="small"></mm-spinner>
-        <mm-spinner size="medium" label="저장 중..."></mm-spinner>
-        <mm-spinner size="large" label="불러오는 중..."></mm-spinner>
+      <mm-flex gap="2">
+        <mm-button variant="primary" disabled>
+          <mm-spinner label="저장 중"></mm-spinner>
+          저장
+        </mm-button>
+        <mm-button disabled>
+          <mm-spinner label="불러오는 중"></mm-spinner>
+          불러오기
+        </mm-button>
       </mm-flex>
-      <mm-separator></mm-separator>
-      <mm-spinner>
-        <mm-paragraph>커스텀 슬롯 레이블</mm-paragraph>
-      </mm-spinner>
+      <mm-separator variant="section"></mm-separator>
+      <mm-spinner variant="section" label="불러오는 중"></mm-spinner>
     </mm-component-example>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -53,7 +56,7 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-anatomy
-      .code=${'<mm-spinner size="large" label="불러오는 중..."></mm-spinner>'}
+      .code=${'<mm-spinner variant="section" label="불러오는 중"></mm-spinner>'}
     ></mm-component-anatomy>
 
     <mm-component-section
