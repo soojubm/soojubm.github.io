@@ -108,20 +108,24 @@ const main = html`
             ),
           ]}
         ></mm-text-list>
-        <mm-surface>
-          <mm-menu-item-group aria-label="검색 제안">
-            <mm-menu-item-action icon=${ICON_NAMES.SEARCH} label="자동완성"></mm-menu-item-action>
-            <mm-menu-item-action
-              icon=${ICON_NAMES.SEARCH}
-              label="자동완성유아이"
-            ></mm-menu-item-action>
-          </mm-menu-item-group>
-        </mm-surface>
-        <mm-result
-          heading="'[키워드]'와(과) 일치하는 내용이 없습니다."
-          .primaryAction=${noResultPrimaryAction}
-          .secondaryAction=${noResultSecondaryAction}
-        ></mm-result>
+        <mm-component-example>
+          <mm-surface>
+            <mm-menu-item-group aria-label="검색 제안">
+              <mm-menu-item-action icon=${ICON_NAMES.SEARCH} label="자동완성"></mm-menu-item-action>
+              <mm-menu-item-action
+                icon=${ICON_NAMES.SEARCH}
+                label="자동완성유아이"
+              ></mm-menu-item-action>
+            </mm-menu-item-group>
+          </mm-surface>
+        </mm-component-example>
+        <mm-component-example>
+          <mm-result
+            heading="'[키워드]'와(과) 일치하는 내용이 없습니다."
+            .primaryAction=${noResultPrimaryAction}
+            .secondaryAction=${noResultSecondaryAction}
+          ></mm-result>
+        </mm-component-example>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="검색 내역">
@@ -145,16 +149,18 @@ const main = html`
           검색 화면은 ${code('mm-searchfield')} 옆에 화면을 빠져나가는 액션을 둡니다. iOS는 필드
           뒤에 취소 버튼을, Android는 필드 앞에 뒤로 버튼을 둡니다.
         </mm-paragraph>
-        <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
-          <mm-flex align-items="center" gap="2">
-            <mm-searchfield placeholder="iOS pattern" style="flex: 1"></mm-searchfield>
-            <mm-button variant="tertiary">취소</mm-button>
+        <mm-component-example>
+          <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+            <mm-flex align-items="center" gap="2">
+              <mm-searchfield placeholder="iOS pattern" style="flex: 1"></mm-searchfield>
+              <mm-button variant="tertiary">취소</mm-button>
+            </mm-flex>
+            <mm-flex align-items="center" gap="2">
+              <mm-icon-button icon=${ICON_NAMES.BACK} aria-label="뒤로"></mm-icon-button>
+              <mm-searchfield placeholder="Android pattern" style="flex: 1"></mm-searchfield>
+            </mm-flex>
           </mm-flex>
-          <mm-flex align-items="center" gap="2">
-            <mm-icon-button icon=${ICON_NAMES.BACK} aria-label="뒤로"></mm-icon-button>
-            <mm-searchfield placeholder="Android pattern" style="flex: 1"></mm-searchfield>
-          </mm-flex>
-        </mm-flex>
+        </mm-component-example>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="설계 체크리스트">
