@@ -89,54 +89,126 @@ const main = html`
 
     <mm-component-aka .items=${['ListTile', 'Media Object']}></mm-component-aka>
 
-    <mm-component-example>
-      <mm-flex direction="column" gap="2">
-        <mm-menu-item-group>
-          <mm-list-item
-            size="small"
-            label="스몰 사이즈 / description 없음 → 32"
-            avatar-shape="circle"
-            avatar-variant="secondary"
-            avatar-src="/src/images/soojubm.png"
-          ></mm-list-item>
-        </mm-menu-item-group>
-        <mm-separator></mm-separator>
-        <mm-menu-item-group>
-          <mm-list-item
-            size="small"
-            label="스몰 사이즈 / description 있음 → 40"
-            description="Youtube Subscriber"
-            avatar-shape="circle"
-            avatar-variant="secondary"
-            avatar-src="/src/images/soojubm.png"
-          ></mm-list-item>
-        </mm-menu-item-group>
-        <mm-separator></mm-separator>
-        <mm-list-item
-          label="48 사이즈"
-          description="Youtube Subscriber"
-          size="48"
-          avatar-shape="circle"
-          avatar-variant="secondary"
-          avatar-src="/src/images/soojubm.png"
-        ></mm-list-item>
-        <mm-separator></mm-separator>
-        <mm-list-item
-          label="80 사이즈 용도 없음"
-          description="Youtube Subscriber"
-          size="80"
-          avatar-shape="circle"
-          avatar-variant="secondary"
-          avatar-src="/src/images/soojubm.png"
-        ></mm-list-item>
-      </mm-flex>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="size" variant="pill">
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="leading">Leading</mm-tab>
+        <mm-tab value="trailing">Trailing</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="4">
+              <mm-list-item
+                label="Small"
+                avatar-shape="circle"
+                avatar-src="/src/images/soojubm.png"
+              ></mm-list-item>
+              <mm-list-item
+                label="Small"
+                description="Youtube Subscriber"
+                avatar-shape="circle"
+                avatar-src="/src/images/soojubm.png"
+              ></mm-list-item>
+              <mm-list-item
+                size="48"
+                label="48"
+                description="Youtube Subscriber"
+                avatar-shape="circle"
+                avatar-src="/src/images/soojubm.png"
+              ></mm-list-item>
+              <mm-list-item
+                size="80"
+                label="80"
+                description="Youtube Subscriber"
+                avatar-shape="circle"
+                avatar-src="/src/images/soojubm.png"
+              ></mm-list-item>
+            </mm-flex>
+            <mm-paragraph>
+              small은 description이 없으면 아바타를 32로, 있으면 40으로 전환합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="leading">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="4">
+              <mm-list-item icon=${ICON_NAMES.USER} label="아이콘"></mm-list-item>
+              <mm-list-item emoji="🦔" label="이모지"></mm-list-item>
+              <mm-list-item
+                avatar-src="/src/images/soojubm.png"
+                avatar-shape="circle"
+                label="아바타"
+              ></mm-list-item>
+              <mm-list-item label="leading 없음"></mm-list-item>
+            </mm-flex>
+            <mm-paragraph>
+              icon·emoji·avatar-src 중 하나로 leading을 채우고, 모두 없으면 content가 왼쪽 끝에서
+              시작합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="trailing">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="4">
+              <mm-list-item
+                size="48"
+                label="수줍이"
+                description="UI Designer"
+                avatar-shape="circle"
+                avatar-src="/src/images/soojubm.png"
+              >
+                <mm-follow-button slot="trailing"></mm-follow-button>
+              </mm-list-item>
+              <mm-list-item icon=${ICON_NAMES.NOTIFICATION} label="알림">
+                <mm-tag slot="trailing">신규</mm-tag>
+              </mm-list-item>
+            </mm-flex>
+            <mm-paragraph>
+              trailing 슬롯에 액션 버튼·태그·메타 텍스트를 두어 행 오른쪽 끝에 정렬합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
+      <mm-content-section heading-level="3" heading="menu-item과는 어떤 차이가 있나요?">
+        <mm-paragraph>
+          <mm-code>mm-list-item</mm-code>
+          은 행의 골격만 그리고,
+          <mm-code>mm-menu-item-action</mm-code>
+          같은 menu-item 계열은 이 골격을 렌더한 뒤 role·포커스·키보드 조작·이벤트를 더합니다.
+        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <b>행 전체를 눌러 명령을 실행하거나 선택 상태를 바꾸면 menu-item을 쓴다</b>
+                <br />
+                menuitem·menuitemcheckbox·menuitemradio role과 hover·포커스 표시, Enter·Space
+                활성화를 컴포넌트가 소유한다
+              </span>
+            `,
+            html`
+              <span>
+                <b>정보를 보여주기만 하는 행은 list-item을 쓴다</b>
+                <br />
+                trailing에 버튼을 두어도 상호작용은 그 버튼이 갖고, 행 자체는 표현으로 남는다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
       <mm-content-section heading-level="3" heading="시각보정">
         <mm-paragraph>
           content 박스는 leading과 가운데 정렬되지만, 줄마다 행간이 달라 글자 묶음은 위아래 여백이

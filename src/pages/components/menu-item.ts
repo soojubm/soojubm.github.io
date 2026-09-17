@@ -104,37 +104,90 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-flex direction="column">
-        <mm-menu-item-group aria-label="기본 메뉴">
-          <mm-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></mm-menu-item-action>
-          <mm-menu-item-action
-            icon=${ICON_NAMES.DELETE}
-            label="삭제"
-            tone="danger"
-          ></mm-menu-item-action>
-          <mm-menu-item-action
-            icon=${ICON_NAMES.LOG_OUT}
-            label="로그아웃 (비활성)"
-            disabled
-          ></mm-menu-item-action>
-        </mm-menu-item-group>
-        <mm-separator></mm-separator>
-        <mm-menu-item-group aria-label="액션 메뉴" size="large">
-          <mm-menu-item-action
-            size="48"
-            label="Personal License"
-            description="1 user"
-          ></mm-menu-item-action>
-          <mm-menu-item-action
-            size="48"
-            icon=${ICON_NAMES.GROUP}
-            label="Frontend Group"
-            description="프론트엔드 개발자 모임"
-          ></mm-menu-item-action>
-        </mm-menu-item-group>
-      </mm-flex>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="size" variant="pill">
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="leading">Leading</mm-tab>
+        <mm-tab value="tone">Tone</mm-tab>
+        <mm-tab value="disabled">Disabled</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-menu-item-group aria-label="크기 메뉴" size="large">
+              <mm-menu-item-action icon=${ICON_NAMES.USER} label="Small"></mm-menu-item-action>
+              <mm-menu-item-action
+                size="48"
+                icon=${ICON_NAMES.GROUP}
+                label="Frontend Group"
+                description="프론트엔드 개발자 모임"
+              ></mm-menu-item-action>
+              <mm-menu-item-action
+                size="80"
+                avatar-src="/src/images/soojubm.png"
+                label="수줍이"
+                description="UI Designer"
+              ></mm-menu-item-action>
+            </mm-menu-item-group>
+            <mm-paragraph>
+              설명이 함께 놓이면 48을, 아바타로 개체를 대표하면 80을 씁니다. 큰 항목을 담는 그룹은
+              size="large"로 간격을 넓힙니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="leading">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-menu-item-group aria-label="리딩 메뉴">
+              <mm-menu-item-action icon=${ICON_NAMES.USER} label="아이콘"></mm-menu-item-action>
+              <mm-menu-item-action emoji="🦔" label="이모지"></mm-menu-item-action>
+              <mm-menu-item-action
+                avatar-src="/src/images/soojubm.png"
+                avatar-shape="circle"
+                label="아바타"
+              ></mm-menu-item-action>
+            </mm-menu-item-group>
+            <mm-paragraph>
+              icon·emoji·avatar-src 중 하나로 항목 앞에 시각 단서를 둡니다. 사람을 나타내면 아바타를
+              circle로 둡니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="tone">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-menu-item-group aria-label="톤 메뉴">
+              <mm-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></mm-menu-item-action>
+              <mm-menu-item-action
+                icon=${ICON_NAMES.DELETE}
+                label="삭제"
+                tone="danger"
+              ></mm-menu-item-action>
+            </mm-menu-item-group>
+            <mm-paragraph>되돌릴 수 없는 명령에는 tone="danger"를 줍니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="disabled">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-menu-item-group aria-label="비활성 메뉴">
+              <mm-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></mm-menu-item-action>
+              <mm-menu-item-action
+                icon=${ICON_NAMES.LOG_OUT}
+                label="로그아웃"
+                disabled
+              ></mm-menu-item-action>
+            </mm-menu-item-group>
+            <mm-paragraph>
+              지금 실행할 수 없는 명령은 disabled로 두어 목록 안의 위치를 유지합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
