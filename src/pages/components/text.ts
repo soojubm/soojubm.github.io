@@ -48,6 +48,44 @@ const componentProps: ComponentPropItemData[] = [
 
 const componentFeatures: ComponentFeatureItem[] = []
 
+const headingCode = `<mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
+<mm-heading level="2">섹션 레벨의 타이틀</mm-heading>`
+
+const captionCode = `<mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>`
+
+const paragraphCode = `<mm-paragraph-group>
+  <mm-paragraph>일반적인 UI 본문입니다.</mm-paragraph>
+  <mm-paragraph size="large">콘텐츠 뷰의 본문입니다.</mm-paragraph>
+  <mm-paragraph max-length="2">두 줄까지 노출되는 문단입니다.</mm-paragraph>
+</mm-paragraph-group>`
+
+const readMoreParagraphCode = `<mm-read-more-paragraph
+  limit="100"
+  content="긴 문단의 전체 내용"
+></mm-read-more-paragraph>`
+
+const textBlockCode = `<mm-text-block
+  level="1"
+  eyebrow="Eyebrow"
+  heading="Level 1 Title"
+  description="제목을 보충하는 설명"
+></mm-text-block>`
+
+const statusMessageCode = `<mm-status-message
+  heading="주문이 완료되었습니다."
+  message="주문 내역은 마이페이지에서 확인할 수 있습니다."
+></mm-status-message>`
+
+const metaItemGroupCode = `<mm-meta-item-group>
+  <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
+  <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
+</mm-meta-item-group>`
+
+const textListCode = `<mm-text-list
+  variant="check"
+  .texts=\${['첫 번째 항목', '두 번째 항목']}
+></mm-text-list>`
+
 const main = html`
   <mm-main>
     <mm-flex justify-content="between" align-items="start" gap="3">
@@ -58,22 +96,59 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-flex direction="column" gap="3">
-        <mm-flex direction="column" gap="1">
-          <mm-text size="32">font size 32px</mm-text>
-          <mm-text size="24">font size 24px</mm-text>
-          <mm-paragraph size="large">font size 18px</mm-paragraph>
-          <mm-paragraph>font size 14px</mm-paragraph>
-          <mm-text size="12">font size 12px</mm-text>
-        </mm-flex>
-        <mm-separator></mm-separator>
-        <mm-flex direction="column" gap="1">
-          <mm-text weight="medium">font weight normal</mm-text>
-          <mm-text weight="bold">font weight bold</mm-text>
-        </mm-flex>
-      </mm-flex>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="size" variant="pill">
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="weight">Weight</mm-tab>
+        <mm-tab value="color">Color</mm-tab>
+        <mm-tab value="max-length">Max Length</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="1">
+            <mm-text size="32">font size 32px</mm-text>
+            <mm-text size="24">font size 24px</mm-text>
+            <mm-text size="18">font size 18px</mm-text>
+            <mm-text size="14">font size 14px</mm-text>
+            <mm-text size="12">font size 12px</mm-text>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="weight">
+        <mm-component-example>
+          <mm-flex direction="column" gap="1">
+            <mm-text weight="medium">font weight medium</mm-text>
+            <mm-text weight="bold">font weight bold</mm-text>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="color">
+        <mm-component-example>
+          <mm-flex direction="column" gap="1">
+            <mm-text color="inherit">color inherit</mm-text>
+            <mm-text color="light">color light</mm-text>
+            <mm-text color="danger">color danger</mm-text>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="max-length">
+        <mm-component-example>
+          <mm-flex direction="column" gap="3">
+            <mm-text as="p" max-length="1">
+              한 줄에서 말줄임되는 텍스트입니다. 목록의 제목이나 카드의 이름처럼 한 줄 높이를
+              유지해야 하는 자리에 사용하며, 영역을 넘치는 나머지 내용은 말줄임으로 생략됩니다.
+            </mm-text>
+            <mm-text as="p" max-length="2">
+              두 줄까지 노출되는 텍스트입니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은
+              상세 화면에서 확인할 수 있습니다. 반복되는 목록 안에서 설명 길이가 제각각일 때 높이를
+              맞추는 데 유용합니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세
+              화면에서 확인할 수 있습니다. 넘치는 내용은 말줄임으로 생략됩니다.
+            </mm-text>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
+
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide .features=${componentFeatures}>
@@ -94,6 +169,7 @@ const main = html`
     <mm-component-section
       heading="Headings"
       description="level(1–5)로 의미 단계(h1–h5)와 크기를 함께 지정하며, 기본값은 2입니다."
+      .code=${headingCode}
     >
       <mm-flex direction="column" gap="3">
         <mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
@@ -107,15 +183,15 @@ const main = html`
     <mm-component-section
       heading="Caption"
       description="보조 설명, 메타 정보, 이미지 캡션처럼 낮은 위계의 텍스트입니다."
+      .code=${captionCode}
     >
-      <mm-flex direction="column" gap="3">
-        <mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>
-      </mm-flex>
+      <mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>
     </mm-component-section>
 
     <mm-component-section
       heading="Paragraph / ParagraphGroup"
       description="본문(Body). label, help text, caption / kicker/overline/eyebrow"
+      .code=${paragraphCode}
     >
       <mm-paragraph-group>
         <mm-paragraph>
@@ -149,6 +225,7 @@ const main = html`
     <mm-component-section
       heading="Read More Paragraph"
       description="긴 문단을 지정한 글자 수에서 줄이고, 더 보기와 접기 버튼으로 전체 내용을 전환합니다."
+      .code=${readMoreParagraphCode}
     >
       <mm-read-more-paragraph
         limit="100"
@@ -159,6 +236,7 @@ const main = html`
     <mm-component-section
       heading="Text Block"
       description="KeyValue(LabelDescription/DescriptionList),Question-Answer Pair,  Translation Pair"
+      .code=${textBlockCode}
     >
       <mm-text-block
         level="1"
@@ -195,6 +273,7 @@ const main = html`
     <mm-component-section
       heading="Status Message"
       description="시스템 상태를 사용자에게 전달하는 가운데 정렬 메시지 모듈입니다. message는 사용자의 관점에서, description은 시스템을 주어로 서술합니다. Dialog, Result에서 사용합니다."
+      .code=${statusMessageCode}
     >
       <mm-status-message
         heading="주문이 완료되었습니다."
@@ -205,6 +284,7 @@ const main = html`
     <mm-component-section
       heading="Meta Item Group"
       description="연관된 메타 정보를 Flex와 기본 gap 4로 묶습니다. direction으로 가로 또는 세로 배치를 선택합니다."
+      .code=${metaItemGroupCode}
     >
       <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
       <mm-meta-item label="배송비" value="무료"></mm-meta-item>
@@ -270,6 +350,7 @@ const main = html`
       heading="Text List"
       description="텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은
   화면에 적합하지 않다. 약관에서는 사용해야 할 수도."
+      .code=${textListCode}
     >
       <div>
         <mm-text-list

@@ -19,12 +19,12 @@ export const paragraphSizeToTextSize: Record<ParagraphSize, TextSize> = {
 export const textMaxLengthStyles = css`
   /* max-length는 reflect라 값이 없을 때도 attribute가 남는다. 값이 있을 때만 자른다. */
   :host([max-length]:not([max-length=''])) > * {
-    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   :host([max-length='1']) > * {
+    display: block;
     white-space: nowrap;
   }
 
