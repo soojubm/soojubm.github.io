@@ -27,6 +27,7 @@ export class BottomBar extends LitElement {
     resetStyles,
     css`
       :host {
+        display: block;
       }
 
       nav {

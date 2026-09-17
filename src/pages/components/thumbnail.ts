@@ -108,9 +108,7 @@ const main = html`
 
     <mm-component-anatomy
       .code=${'<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>'}
-    >
-      <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>
-    </mm-component-anatomy>
+    ></mm-component-anatomy>
 
     <mm-component-section
       heading="Caption"
