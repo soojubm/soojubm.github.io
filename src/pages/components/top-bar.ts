@@ -32,10 +32,13 @@ const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Top Bar"
-      description="화면 상단에서 현재 위치와 주요 내비게이션 액션을 제공합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Top Bar"
+        description="화면 상단에서 현재 위치와 주요 내비게이션 액션을 제공합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-top-bar nav="close" heading="상세 정보"></mm-top-bar>

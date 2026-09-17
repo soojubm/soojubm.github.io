@@ -41,10 +41,13 @@ const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Popover"
-      description="트리거에 앵커되어 뜨는 non-modal 레이어 프리미티브입니다. backdrop·스크롤 잠금 없이 패널 표면과 열림 상태만 책임집니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Popover"
+        description="트리거에 앵커되어 뜨는 non-modal 레이어 프리미티브입니다. backdrop·스크롤 잠금 없이 패널 표면과 열림 상태만 책임집니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['Flyout', 'Dropdown Panel', 'Menu Surface']}></mm-component-aka>
 

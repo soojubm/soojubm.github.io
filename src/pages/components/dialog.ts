@@ -53,10 +53,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Dialog"
-      description="사용자의 정보나 재산의 변경 또는 삭제 확인."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Dialog"
+        description="사용자의 정보나 재산의 변경 또는 삭제 확인."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['Alert', 'Modal', 'Prompt']}></mm-component-aka>
 

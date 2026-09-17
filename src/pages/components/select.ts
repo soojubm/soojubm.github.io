@@ -34,10 +34,13 @@ const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Select"
-      description="접힌 목록에서 하나의 옵션을 선택합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Select"
+        description="접힌 목록에서 하나의 옵션을 선택합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['Dropdown', 'Picker']}></mm-component-aka>
 

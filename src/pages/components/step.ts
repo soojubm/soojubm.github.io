@@ -26,7 +26,10 @@ const componentFeatures: ComponentFeatureItem[] = []
 
 const main = html`
   <mm-main>
-    <mm-page-header heading="Step " description="Workflow"></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header heading="Step " description="Workflow"></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['Timeline', 'Stepper']}></mm-component-aka>
 

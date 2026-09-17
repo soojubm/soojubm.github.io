@@ -102,10 +102,13 @@ const renderIconCatalog = () => [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Content"
-      description="텍스트 슬롯은 관점에 따라 이름과 어조를 나누고, 아이콘은 뜻을 지닐 때만 씁니다. 사용자가 빠르게 스캔할 수 있게 합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Content"
+        description="텍스트 슬롯은 관점에 따라 이름과 어조를 나누고, 아이콘은 뜻을 지닐 때만 씁니다. 사용자가 빠르게 스캔할 수 있게 합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="원칙">

@@ -61,10 +61,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Input"
-      description="사용자가 정보를 입력하고 제출할 수 있습니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Input"
+        description="사용자가 정보를 입력하고 제출할 수 있습니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['TextInput', 'Input']}></mm-component-aka>
 

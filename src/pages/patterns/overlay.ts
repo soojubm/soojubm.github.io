@@ -6,6 +6,7 @@ import type { TemplateResult } from 'lit'
 import '@/components/domains/comment-item'
 import '@/components/overlay/sheet'
 import '@/components/domains/component/component-pager'
+import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const yes = html`
@@ -82,10 +83,13 @@ const classificationRows = html`
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Overlay"
-      description="화면 위로 뜨는 표면은 시각적 형태가 아니라 행동 계약으로 구분합니다. 행동(modality·dismiss·reference)은 컨트롤러가 소유하고, 외형(surface·width·placement)은 각 컴포넌트가 조합합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Overlay"
+        description="화면 위로 뜨는 표면은 시각적 형태가 아니라 행동 계약으로 구분합니다. 행동(modality·dismiss·reference)은 컨트롤러가 소유하고, 외형(surface·width·placement)은 각 컴포넌트가 조합합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Overview">

@@ -34,10 +34,13 @@ const navItems: BottomBarItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Bottom Bar"
-      description="작은 화면 하단에서 주요 목적지 사이를 이동하는 내비게이션입니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Bottom Bar"
+        description="작은 화면 하단에서 주요 목적지 사이를 이동하는 내비게이션입니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-bottom-bar .items=${navItems}></mm-bottom-bar>

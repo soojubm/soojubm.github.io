@@ -87,10 +87,13 @@ renderPage(sheetPageTemplate())
 function sheetPageTemplate() {
   return html`
     <mm-main>
-      <mm-page-header
-        heading="Sheet"
-        description="viewport 기준 modal 시트로 화면 위에 표시합니다. center dialog만 써도 충분."
-      ></mm-page-header>
+      <mm-flex justify-content="between" align-items="start" gap="3">
+        <mm-page-header
+          heading="Sheet"
+          description="viewport 기준 modal 시트로 화면 위에 표시합니다. center dialog만 써도 충분."
+        ></mm-page-header>
+        <mm-copy-page-button></mm-copy-page-button>
+      </mm-flex>
 
       <mm-component-aka
         .items=${['Drawer', 'Panel', 'Bottom Sheet', 'Side Sheet', 'Modal']}

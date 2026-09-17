@@ -57,10 +57,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="File Uploader"
-      description="파일을 첨부하고 첨부한 목록을 관리합니다. 첨부 버튼과 파일 목록을 한 단위로 묶어 선택 상태를 스스로 소유합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="File Uploader"
+        description="파일을 첨부하고 첨부한 목록을 관리합니다. 첨부 버튼과 파일 목록을 한 단위로 묶어 선택 상태를 스스로 소유합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-file-uploader

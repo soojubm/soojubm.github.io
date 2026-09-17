@@ -49,10 +49,13 @@ const secondaryAction: ActionConfig = {
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Result"
-      description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Result"
+        description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['EmptyState', 'Blankslate']}></mm-component-aka>
 

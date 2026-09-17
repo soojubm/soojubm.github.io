@@ -64,10 +64,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Thumbnail"
-      description="이미지나 미디어를 정해진 비율 안에서 미리 보여줍니다. 콘텐츠의 성격을 빠르게 알아볼 수 있어야 하며, 장식 목적의 반복 사용은 피합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Thumbnail"
+        description="이미지나 미디어를 정해진 비율 안에서 미리 보여줍니다. 콘텐츠의 성격을 빠르게 알아볼 수 있어야 하며, 장식 목적의 반복 사용은 피합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-grid columns="4" column-min-width="160px" gap="4">

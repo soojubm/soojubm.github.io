@@ -84,10 +84,13 @@ const membershipOptions: OptionItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="RadioGroup"
-      description="옵션 목록에서 하나의 옵션을 선택합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="RadioGroup"
+        description="옵션 목록에서 하나의 옵션을 선택합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-flex direction="column" gap="6">

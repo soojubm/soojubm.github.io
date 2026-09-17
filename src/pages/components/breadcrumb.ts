@@ -38,10 +38,13 @@ const breadcrumbItems: BreadcrumbItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Breadcrumb"
-      description="사용자의 현재 위치를 계층 구조로 보여줍니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Breadcrumb"
+        description="사용자의 현재 위치를 계층 구조로 보여줍니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>

@@ -133,10 +133,13 @@ const chipNamingRows = html`
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Button"
-      description="페이지 이동이나 양식 제출 등 사용자 여정의 핵심 과업입니다. (이 디스크립션은 칩이 있었을 때 유효)"
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Button"
+        description="페이지 이동이나 양식 제출 등 사용자 여정의 핵심 과업입니다. (이 디스크립션은 칩이 있었을 때 유효)"
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-button-group>

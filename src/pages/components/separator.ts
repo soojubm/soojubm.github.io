@@ -35,10 +35,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Seperator"
-      description="선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Seperator"
+        description="선으로 콘텐츠를 구획합니다. 반복과 대비가 구획되었다는 인상을 주기 때문에 남용하지 않습니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-grid columns="2">

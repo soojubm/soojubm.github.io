@@ -288,10 +288,13 @@ const renderUncategorizedSection = () => {
 const main = html`
   <mm-main>
     <mm-flex direction="column" gap="16">
-      <mm-page-header
-        heading="Tokens"
-        description="제품의 시각 언어를 구성하는 원자 값입니다. 색상, 글꼴, 간격, 크기, 형태, 레이어, 모션을 토큰으로 관리해 컴포넌트와 패턴이 같은 기준을 공유하게 합니다."
-      ></mm-page-header>
+      <mm-flex justify-content="between" align-items="start" gap="3">
+        <mm-page-header
+          heading="Tokens"
+          description="제품의 시각 언어를 구성하는 원자 값입니다. 색상, 글꼴, 간격, 크기, 형태, 레이어, 모션을 토큰으로 관리해 컴포넌트와 패턴이 같은 기준을 공유하게 합니다."
+        ></mm-page-header>
+        <mm-copy-page-button></mm-copy-page-button>
+      </mm-flex>
 
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="계층">

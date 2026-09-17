@@ -51,10 +51,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Icon Button"
-      description="레이블 없이 메타포 아이콘만 사용하는 간결한 액션 버튼입니다. 사용자에게 툴팁으로 버튼의 용도를 명확히 전달합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Icon Button"
+        description="레이블 없이 메타포 아이콘만 사용하는 간결한 액션 버튼입니다. 사용자에게 툴팁으로 버튼의 용도를 명확히 전달합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-example>
       <mm-button-group>

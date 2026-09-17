@@ -40,10 +40,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Link"
-      description="사용자 여정 목적지. 페이지 이동. destination that can be bookmarked."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Link"
+        description="사용자 여정 목적지. 페이지 이동. destination that can be bookmarked."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['Anchor']}></mm-component-aka>
 

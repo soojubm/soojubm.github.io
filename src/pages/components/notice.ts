@@ -41,10 +41,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Notice"
-      description="시스템 상태나 사용자 행동에 대한 피드백을 인라인으로 전달합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Notice"
+        description="시스템 상태나 사용자 행동에 대한 피드백을 인라인으로 전달합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka
       .items=${['Alert', 'Callout', 'Banner', 'Inline message', 'Feedback']}

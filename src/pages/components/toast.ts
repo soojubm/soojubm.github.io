@@ -51,10 +51,13 @@ function setupToastTrigger() {
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Toast"
-      description="하던 일을 멈추지 않고 작업 결과를 잠깐 알려주고, 따로 닫지 않아도 사라집니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Toast"
+        description="하던 일을 멈추지 않고 작업 결과를 잠깐 알려주고, 따로 닫지 않아도 사라집니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['Snackbar']}></mm-component-aka>
 

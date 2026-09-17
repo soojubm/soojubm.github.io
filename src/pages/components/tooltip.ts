@@ -42,10 +42,13 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Tooltip"
-      description="용어를 설명하거나 정보의 근거를 보충합니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Tooltip"
+        description="용어를 설명하거나 정보의 근거를 보충합니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-component-aka .items=${['Coachmark']}></mm-component-aka>
 

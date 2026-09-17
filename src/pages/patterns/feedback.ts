@@ -2,14 +2,18 @@ import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-pager'
+import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
   <mm-main>
-    <mm-page-header
-      heading="Feedback"
-      description="사용자 행동이나 시스템 상태의 결과를 알립니다. 사용자 귀책이 아닌 실패는 책임 소재를 문구에 드러냅니다."
-    ></mm-page-header>
+    <mm-flex justify-content="between" align-items="start" gap="3">
+      <mm-page-header
+        heading="Feedback"
+        description="사용자 행동이나 시스템 상태의 결과를 알립니다. 사용자 귀책이 아닌 실패는 책임 소재를 문구에 드러냅니다."
+      ></mm-page-header>
+      <mm-copy-page-button></mm-copy-page-button>
+    </mm-flex>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Status states">
