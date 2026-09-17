@@ -13,7 +13,7 @@ const iconButtonVariantTokens = {
     '--icon-button-border': 'var(--border)',
     '--icon-button-background-color': 'var(--material-base-background-color)',
     '--icon-button-backdrop-filter': 'var(--material-base-backdrop-filter)',
-    '--icon-button-shadow': 'var(--material-base-shadow)',
+    '--icon-button-shadow': 'var(--material-elevated-shadow)',
   },
   ghost: {
     '--icon-button-background-color': 'transparent',
@@ -34,7 +34,7 @@ export const iconButtonSecondarySkinStyles = css`
     --icon-button-border: var(--border);
     --icon-button-background-color: var(--material-base-background-color);
     --icon-button-backdrop-filter: var(--material-base-backdrop-filter);
-    --icon-button-shadow: var(--material-base-shadow);
+    --icon-button-shadow: var(--material-elevated-shadow);
   }
 `
 

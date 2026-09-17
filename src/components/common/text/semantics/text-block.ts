@@ -26,7 +26,7 @@ export class TextBlock extends LitElement {
       gap: var(--space-3);
     }
     :host([level='5']) {
-      gap: 0;
+      gap: var(--space-1);
     }
     :host([centered]) {
       align-items: center;
