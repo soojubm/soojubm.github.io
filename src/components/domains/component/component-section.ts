@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
@@ -20,6 +20,8 @@ export class ComponentSection extends LitElement {
   ]
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
+  @property({ type: String }) code = ''
+  @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   render() {
     return html`
@@ -28,9 +30,18 @@ export class ComponentSection extends LitElement {
         heading=${this.heading}
         description=${this.description}
       ></mm-text-block>
+      ${this.renderCode()}
       <div class="component-content-frame">
         <slot></slot>
       </div>
+    `
+  }
+
+  private renderCode() {
+    if (!this.code) return nothing
+
+    return html`
+      <mm-code-block .code=${this.code}></mm-code-block>
     `
   }
 }
