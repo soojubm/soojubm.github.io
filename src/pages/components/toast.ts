@@ -54,7 +54,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Toast"
-        description="하던 일을 멈추지 않고 작업 결과를 잠깐 알려주고, 따로 닫지 않아도 사라집니다."
+        description="사용자 행동의 결과를 짧게 알리는 일시적인 피드백입니다. 화면 가장자리에 잠시 나타났다가 스스로 사라지므로, 사용자는 하던 일을 멈추거나 따로 닫지 않고도 작업이 반영되었음을 확인하고 흐름을 이어갈 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

@@ -381,6 +381,15 @@ const main = html`
             '자주(예: 월 1회 이상) 프로세스를 수행해야 합니까?',
           ]}
         ></mm-text-list>
+
+        <mm-content-section heading-level="3" heading="페이지 설명">
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              '컴포넌트 페이지 설명은 무엇인지, 어떻게 동작하는지, 사용자에게 어떤 이득인지 순서로 쓴다.',
+            ]}
+          ></mm-text-list>
+        </mm-content-section>
       </mm-content-section>
 
       <mm-content-section heading="Code Conventions">
