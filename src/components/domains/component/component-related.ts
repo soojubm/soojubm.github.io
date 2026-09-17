@@ -22,12 +22,13 @@ export class ComponentRelated extends LitElement {
       padding: var(--space-section) 0;
     }
   `
+  @property({ type: String }) heading = 'Related'
   @property({ attribute: false }) items: ComponentRelatedItemData[] = []
 
   render() {
     return html`
       <section class="component-related">
-        <mm-heading level="2">Related</mm-heading>
+        <mm-heading level="2">${this.heading}</mm-heading>
         <mm-button-group>
           ${this.items.map(
             item =>

@@ -40,6 +40,7 @@ export class ParticipantChatMessage extends LitElement {
     return html`
       <mm-avatar
         size="32"
+        shape="circle"
         variant="tertiary"
         src=${ifDefined(this.avatarSrc || undefined)}
       ></mm-avatar>

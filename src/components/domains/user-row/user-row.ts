@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { AvatarShape, AvatarVariant, IconName, ListItemSize } from '@/components/common'
+import type { AvatarVariant, IconName, ListItemSize } from '@/components/common'
 import '@/components/common'
 
 /**
@@ -21,7 +21,6 @@ export class UserRow extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
 
   render() {
@@ -33,7 +32,7 @@ export class UserRow extends LitElement {
         icon=${this.icon}
         avatar-variant=${this.avatarVariant}
         avatar-src=${this.avatarSrc}
-        avatar-shape=${this.avatarShape}
+        avatar-shape="circle"
       >
         <slot></slot>
         <slot name="trailing" slot="trailing"></slot>

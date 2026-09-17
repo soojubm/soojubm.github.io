@@ -22,6 +22,7 @@ export class UserSnippet extends LitElement {
     return html`
       <mm-avatar
         size="80"
+        shape="circle"
         variant=${this.avatarVariant}
         src=${ifDefined(this.avatarSrc || undefined)}
       ></mm-avatar>

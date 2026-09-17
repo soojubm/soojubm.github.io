@@ -88,12 +88,14 @@ const main = html`
           <mm-menu-item-group size="large">
             <mm-menu-item-action
               avatar-src="/src/images/soojubm.png"
+              avatar-shape="circle"
               size="80"
               label="스튜어트 로젠버그"
               description="감독"
             ></mm-menu-item-action>
             <mm-menu-item-action
               avatar-src="/src/images/soojubm.png"
+              avatar-shape="circle"
               size="80"
               label="폴 뉴먼"
               description="주연"

@@ -16,6 +16,11 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'menu-item.html', label: 'menuItem' },
 ]
 
+// 커머스 맥락 컴포넌트는 기반 페이지에 전시하지 않고, 실제로 쓰이는 페이지로 연결한다.
+const builtWithListItem: ComponentRelatedItemData[] = [
+  { href: 'checkout.html', label: 'OrderProductItem' },
+]
+
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.apple.com/documentation/SwiftUI/List',
@@ -90,6 +95,7 @@ const main = html`
           <mm-list-item
             size="small"
             label="스몰 사이즈 / description 없음 → 32"
+            avatar-shape="circle"
             avatar-variant="secondary"
             avatar-src="/src/images/soojubm.png"
           ></mm-list-item>
@@ -100,6 +106,7 @@ const main = html`
             size="small"
             label="스몰 사이즈 / description 있음 → 40"
             description="Youtube Subscriber"
+            avatar-shape="circle"
             avatar-variant="secondary"
             avatar-src="/src/images/soojubm.png"
           ></mm-list-item>
@@ -109,6 +116,7 @@ const main = html`
           label="48 사이즈"
           description="Youtube Subscriber"
           size="48"
+          avatar-shape="circle"
           avatar-variant="secondary"
           avatar-src="/src/images/soojubm.png"
         ></mm-list-item>
@@ -159,7 +167,7 @@ const main = html`
         'content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.',
         'trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
       ]}
-      .code=${`<mm-list-item label="수줍이" description="바보" size="48" avatar-src="...">
+      .code=${`<mm-list-item label="수줍이" description="바보" size="48" avatar-shape="circle" avatar-src="...">
     <mm-follow-button slot="trailing"></mm-follow-button>
 </mm-list-item>`}
       .markers=${[
@@ -202,16 +210,12 @@ const main = html`
       </mm-menu-item-group>
     </mm-component-section>
 
-    <mm-component-section heading="OrderProductItem" description="커머스 맥락">
-      <mm-order-product-item
-        image-src="/src/images/cake_gosum.jpg"
-        name="뉴닉이 풀어 쓴 경제상식사전"
-        option="평생 소장"
-        price="₩ 11,900"
-      ></mm-order-product-item>
-    </mm-component-section>
-
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-related
+      heading="Built with List Item"
+      .items=${builtWithListItem}
+    ></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
 

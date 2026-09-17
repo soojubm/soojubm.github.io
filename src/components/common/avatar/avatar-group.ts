@@ -57,7 +57,7 @@ export class AvatarGroup extends LitElement {
 
   private renderAvatar(src: string) {
     return html`
-      <mm-avatar size="32" .src=${src || undefined}></mm-avatar>
+      <mm-avatar size="32" shape="circle" .src=${src || undefined}></mm-avatar>
     `
   }
 
@@ -65,7 +65,7 @@ export class AvatarGroup extends LitElement {
     if (overflowCount <= 0) return nothing
 
     return html`
-      <mm-avatar size="32">
+      <mm-avatar size="32" shape="circle">
         <mm-text size="12">+${overflowCount}</mm-text>
       </mm-avatar>
     `
