@@ -81,6 +81,19 @@ const classificationRows = html`
   </tr>
 `
 
+const placementTypeCode = `type Side = 'top' | 'right' | 'bottom' | 'left'
+type Alignment = 'start' | 'end'
+
+// anchored overlay (popover · select · tooltip): \`\${Side}\` | \`\${Side}-\${Alignment}\`
+type PlacementType =
+  | 'top' | 'top-start' | 'top-end'
+  | 'right' | 'right-start' | 'right-end'
+  | 'bottom' | 'bottom-start' | 'bottom-end'
+  | 'left' | 'left-start' | 'left-end'
+
+// viewport overlay (sheet · dialog)
+type ViewportPlacementType = 'center' | Side`
+
 const main = html`
   <mm-main>
     <mm-flex justify-content="between" align-items="start" gap="3">
@@ -206,6 +219,45 @@ const main = html`
             </mm-comment-item>
           </mm-sheet-body>
         </mm-sheet>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Placement">
+        <mm-paragraph>
+          기준점의 어느 변에 붙을지(${code('bottom')})와 그 변의 어느 끝에
+          맞출지(${code('start')})를 ${code('bottom-start')}처럼 한 값으로 정합니다.
+        </mm-paragraph>
+        <mm-code-block language="typescript" .code=${placementTypeCode}></mm-code-block>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            rule(
+              html`
+                위치는 ${code('placement')} 하나로 표현한다
+              `,
+              html`
+                side와 alignment를 별도 prop으로 나누지 않고 ${code('bottom-start')}처럼 한 값에
+                담는다. ${code('align')}은 정렬 의미에만 쓴다
+              `,
+            ),
+            rule(
+              html`
+                alignment는 ${code('start')}·${code('end')}로 쓰고, 생략하면 가운데에 맞춘다
+              `,
+              html`
+                ${code('left')}·${code('right')} 대신 논리 방향을 써서 쓰기 방향이 바뀌어도 같은
+                값이 같은 의미를 갖는다. ${code('bottom')}은 트리거 가운데 아래에 놓인다
+              `,
+            ),
+            rule(
+              'placement는 선호 방향으로 두고, 자리가 없으면 반대 변으로 뒤집은 뒤 화면 안으로 밀어 넣는다',
+              '트리거가 화면 가장자리에 있어도 표면이 화면 밖으로 나가지 않는다',
+            ),
+            rule(
+              'anchored overlay는 트리거에 붙은 쪽에서 자라나고, viewport overlay는 붙은 변에서 밀려 들어온다',
+              '열리는 움직임만으로 표면이 어디에서 왔는지 이어진다',
+            ),
+          ]}
+        ></mm-text-list>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Dismiss">
