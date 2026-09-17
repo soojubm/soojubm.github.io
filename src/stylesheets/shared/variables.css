@@ -43,31 +43,34 @@
   --orange800: #fb7800;
   --blue800: #1d4ed8;
 
-  /* mm-tag 카테고리 팔레트: tag 전용 소유 토큰 (다른 컴포넌트가 재사용할 범용 색상 스케일이 아님) */
-  --tag-category-1-bg: #dbeafe;
-  --tag-category-1-border: #93c5fd;
-  --tag-category-1-text: #1d4ed8;
-  --tag-category-2-bg: #dcfce7;
-  --tag-category-2-border: #86efac;
-  --tag-category-2-text: #166534;
-  --tag-category-3-bg: #fce7f3;
-  --tag-category-3-border: #f9a8d4;
-  --tag-category-3-text: #be185d;
-  --tag-category-4-bg: #ffedd5;
-  --tag-category-4-border: #fdba74;
-  --tag-category-4-text: #c2410c;
-  --tag-category-5-bg: #cffafe;
-  --tag-category-5-border: #67e8f9;
-  --tag-category-5-text: #0e7490;
-  --tag-category-6-bg: #fef3c7;
-  --tag-category-6-border: #fcd34d;
-  --tag-category-6-text: #92400e;
-  --tag-category-7-bg: #fee2e2;
-  --tag-category-7-border: #fca5a5;
-  --tag-category-7-text: #991b1b;
-  --tag-category-8-bg: #f3e8ff;
-  --tag-category-8-border: #d8b4fe;
-  --tag-category-8-text: #7e22ce;
+  /*
+   * 카테고리컬 컬러. 순서나 크기 없이 서로 다른 항목(분류 태그, 차트 계열 등)을 구분하는 색이다.
+   * 번호는 항목에 배정하는 순서이며 의미를 담지 않는다. 한 번호의 배경·테두리·텍스트는 한 벌로 함께 쓴다.
+   */
+  --category-1-background-color: #dbeafe;
+  --category-1-border-color: #93c5fd;
+  --category-1-text-color: #1d4ed8;
+  --category-2-background-color: #dcfce7;
+  --category-2-border-color: #86efac;
+  --category-2-text-color: #166534;
+  --category-3-background-color: #fce7f3;
+  --category-3-border-color: #f9a8d4;
+  --category-3-text-color: #be185d;
+  --category-4-background-color: #ffedd5;
+  --category-4-border-color: #fdba74;
+  --category-4-text-color: #c2410c;
+  --category-5-background-color: #cffafe;
+  --category-5-border-color: #67e8f9;
+  --category-5-text-color: #0e7490;
+  --category-6-background-color: #fef3c7;
+  --category-6-border-color: #fcd34d;
+  --category-6-text-color: #92400e;
+  --category-7-background-color: #fee2e2;
+  --category-7-border-color: #fca5a5;
+  --category-7-text-color: #991b1b;
+  --category-8-background-color: #f3e8ff;
+  --category-8-border-color: #d8b4fe;
+  --category-8-text-color: #7e22ce;
 
   --newneek-color: #fb7800;
   --newneek-gray-color: #ebebeb;
@@ -221,31 +224,30 @@
 :root [data-theme='dark'] {
   --gray200: #252d29;
 
-  /* mm-tag 카테고리 팔레트: dark theme (같은 이름을 그대로 재정의) */
-  --tag-category-1-bg: #172554;
-  --tag-category-1-border: #1e40af;
-  --tag-category-1-text: #93c5fd;
-  --tag-category-2-bg: #052e16;
-  --tag-category-2-border: #166534;
-  --tag-category-2-text: #86efac;
-  --tag-category-3-bg: #500724;
-  --tag-category-3-border: #9d174d;
-  --tag-category-3-text: #f9a8d4;
-  --tag-category-4-bg: #431407;
-  --tag-category-4-border: #9a3412;
-  --tag-category-4-text: #fdba74;
-  --tag-category-5-bg: #083344;
-  --tag-category-5-border: #155e75;
-  --tag-category-5-text: #67e8f9;
-  --tag-category-6-bg: #422006;
-  --tag-category-6-border: #854d0e;
-  --tag-category-6-text: #fcd34d;
-  --tag-category-7-bg: #450a0a;
-  --tag-category-7-border: #991b1b;
-  --tag-category-7-text: #fca5a5;
-  --tag-category-8-bg: #3b0764;
-  --tag-category-8-border: #6b21a8;
-  --tag-category-8-text: #d8b4fe;
+  --category-1-background-color: #172554;
+  --category-1-border-color: #1e40af;
+  --category-1-text-color: #93c5fd;
+  --category-2-background-color: #052e16;
+  --category-2-border-color: #166534;
+  --category-2-text-color: #86efac;
+  --category-3-background-color: #500724;
+  --category-3-border-color: #9d174d;
+  --category-3-text-color: #f9a8d4;
+  --category-4-background-color: #431407;
+  --category-4-border-color: #9a3412;
+  --category-4-text-color: #fdba74;
+  --category-5-background-color: #083344;
+  --category-5-border-color: #155e75;
+  --category-5-text-color: #67e8f9;
+  --category-6-background-color: #422006;
+  --category-6-border-color: #854d0e;
+  --category-6-text-color: #fcd34d;
+  --category-7-background-color: #450a0a;
+  --category-7-border-color: #991b1b;
+  --category-7-text-color: #fca5a5;
+  --category-8-background-color: #3b0764;
+  --category-8-border-color: #6b21a8;
+  --category-8-text-color: #d8b4fe;
 
   --foreground-success-color: #93c5fd;
   --foreground-warning-color: #fdba74;
@@ -284,15 +286,15 @@
   --material-chrome-border: var(--border);
   --material-overlay-border: var(--border);
 
-  /* 테두리는 한 겹 검정으로 통일하므로 카테고리 팔레트도 배경·텍스트만 남기고 테두리는 같은 값을 쓴다 */
-  --tag-category-1-border: var(--border-color);
-  --tag-category-2-border: var(--border-color);
-  --tag-category-3-border: var(--border-color);
-  --tag-category-4-border: var(--border-color);
-  --tag-category-5-border: var(--border-color);
-  --tag-category-6-border: var(--border-color);
-  --tag-category-7-border: var(--border-color);
-  --tag-category-8-border: var(--border-color);
+  /* 테두리는 한 겹 검정으로 통일하므로 카테고리컬 컬러도 배경·텍스트만 남기고 테두리는 같은 값을 쓴다 */
+  --category-1-border-color: var(--border-color);
+  --category-2-border-color: var(--border-color);
+  --category-3-border-color: var(--border-color);
+  --category-4-border-color: var(--border-color);
+  --category-5-border-color: var(--border-color);
+  --category-6-border-color: var(--border-color);
+  --category-7-border-color: var(--border-color);
+  --category-8-border-color: var(--border-color);
 
   --material-chrome-shadow: none;
   --material-overlay-shadow: none;

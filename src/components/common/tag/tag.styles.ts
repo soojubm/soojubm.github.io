@@ -9,9 +9,9 @@ type ToneStyle = {
 }
 
 const categoryTone = (token: number): ToneStyle => ({
-  background: `var(--tag-category-${token}-bg)`,
-  textColor: `var(--tag-category-${token}-text)`,
-  border: `var(--border-width) solid var(--tag-category-${token}-border)`,
+  background: `var(--category-${token}-background-color)`,
+  textColor: `var(--category-${token}-text-color)`,
+  border: `var(--border-width) solid var(--category-${token}-border-color)`,
 })
 
 const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map

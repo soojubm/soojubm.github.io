@@ -57,6 +57,7 @@ const sectionPatterns = {
   zIndex: /^material-zindex-/,
   material: /^material-/,
   transition: /^(transition-|animation-delay-)/,
+  category: /^category-/,
   palette: /^(gray|green|red|yellow|orange|blue)\d+$/,
   background: /^background-/,
 }
@@ -67,7 +68,6 @@ const sectionPatterns = {
  */
 const documentedElsewhere = [
   /^interaction-/, // Interaction 페이지가 상태별로 소개한다
-  /^tag-category-/, // mm-tag가 소유하는 카테고리 팔레트
   /^(primary|accent|success|warning|danger|foreground)-/, // Color 섹션에 태그·대비쌍으로 나온다
   /^control-/, // control pill의 모양값
   /^newneek-/, // 포트폴리오 사례 전용 브랜드 색
@@ -118,6 +118,30 @@ const renderStage = (swatches: string[]) =>
       <mm-flex direction="column" align-items="center" gap="2">
         <div class="token-swatch" style=${swatch}></div>
         <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
+      </mm-flex>
+    `,
+  )
+
+/** 카테고리컬 컬러는 배경·테두리·텍스트를 한 벌로 쓰므로 번호마다 세 값을 한 스와치에 함께 칠한다. */
+const categoryNumbers = [...new Set(sectionTokens('category').map(name => name.split('-')[1]))]
+
+const renderCategoryStage = (numbers: string[]) =>
+  numbers.map(
+    number => html`
+      <mm-flex direction="column" align-items="center" gap="2">
+        <div
+          class="token-swatch"
+          style="
+            display: grid;
+            place-items: center;
+            border: var(--border-width) solid var(--category-${number}-border-color);
+            background: var(--category-${number}-background-color);
+            color: var(--category-${number}-text-color);
+          "
+        >
+          <mm-text size="12" weight="bold">Aa</mm-text>
+        </div>
+        <mm-list-marker variant="number" value=${number}></mm-list-marker>
       </mm-flex>
     `,
   )
@@ -339,6 +363,12 @@ const main = html`
         <mm-grid columns="4" aria-label="border color tokens">
           ${renderColorTokens(sectionTokens('borderColor'))}
         </mm-grid>
+
+        <mm-separator variant="section"></mm-separator>
+        <mm-token-stage>
+          <mm-flex gap="4" wrap="wrap">${renderCategoryStage(categoryNumbers)}</mm-flex>
+        </mm-token-stage>
+        <mm-token-group>${renderTokenItems(sectionTokens('category'))}</mm-token-group>
       </mm-token-section>
 
       <mm-token-section
