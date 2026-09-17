@@ -42,7 +42,6 @@ export class Select extends LitElement {
       <mm-popover placement=${this.placement} @popover-toggle=${this.handlePopoverToggle}>
         <mm-button
           slot="trigger"
-          size="small"
           aria-haspopup="listbox"
           aria-label=${this.triggerLabel || nothing}
         >

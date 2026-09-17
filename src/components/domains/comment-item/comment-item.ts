@@ -76,7 +76,7 @@ export class CommentItem extends LitElement {
     if (!this.replyLabel) return nothing
 
     return html`
-      <mm-button variant="ghost" size="small" @click=${() => this.emitAction('reply')}>
+      <mm-button variant="ghost" @click=${() => this.emitAction('reply')}>
         ${this.replyLabel}
       </mm-button>
     `

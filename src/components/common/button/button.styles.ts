@@ -70,18 +70,11 @@ export const buttonBaseStyles = [
 
 /** mm-button 크기 변형. */
 export const buttonSizeStyles = css`
-  :host([size='huge']) :is(button, a) {
-    --button-height: var(--size-80);
-    --button-text-size: var(--font-size-18);
-    padding-bottom: 5px;
+  :is(button, a) {
+    min-width: var(--button-min-width);
   }
   :host([size='large']) :is(button, a) {
     --button-height: var(--size-48);
-    min-width: var(--button-min-width);
-  }
-  :host([size='small']) :is(button, a) {
-    --button-height: var(--size-32);
-    min-width: 0;
   }
 `
 

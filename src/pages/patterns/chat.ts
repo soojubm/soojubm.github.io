@@ -83,7 +83,7 @@ const main = html`
                   description="정리 완료 · 12KB"
                   avatar-variant="secondary"
                 >
-                  <mm-button slot="trailing" variant="tertiary" size="small">열기</mm-button>
+                  <mm-button slot="trailing" variant="tertiary">열기</mm-button>
                 </mm-menu-item-action>
               </mm-surface>
             </mm-ai-chat-message>

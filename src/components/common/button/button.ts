@@ -14,7 +14,7 @@ import '@/components/common/icon'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
-export type ButtonSize = 'huge' | 'large' | 'medium' | 'small'
+export type ButtonSize = 'large' | 'medium'
 export type ButtonIconPosition = 'leading' | 'trailing'
 export type ButtonType = 'button' | 'submit' | 'reset'
 
