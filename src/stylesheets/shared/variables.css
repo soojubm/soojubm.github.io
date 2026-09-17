@@ -171,8 +171,7 @@
   --material-base-shadow: none;
 
   /* ===== material-elevated ===== */
-  /* base와 배경·테두리를 공유하고 그림자만 더한다. 독립된 배경을 가진 표면 전용이며,
-     배경 안에 놓이는 컨트롤 요소에는 주지 않는다. */
+  /* base와 배경·테두리를 공유하고 그림자만 더한다. */
   --material-elevated-shadow: var(--shadow-12);
 
   /* ===== material-chrome ===== */

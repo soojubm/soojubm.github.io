@@ -102,7 +102,7 @@
 ### 층위
 
 - 그림자·blur·반투명 원시값(`--shadow-*`·`--blur-*`·`--opacity-*`)은 소비처가 직접 쓰지 않고 `--material-*` 티어 토큰을 쓴다. 원시값은 티어 선언에서만 색 토큰과 조합한다.
-- 층위 그림자는 `--material-elevated-shadow`를 쓰고, 독립된 배경을 가진 표면에만 준다. 배경 안에 놓이는 컨트롤 요소에는 주지 않는다.
+- 층위 그림자는 `--material-elevated-shadow`를 쓴다.
 - 겹침 순서가 필요하면 숫자를 직접 쓰지 않고 `--material-zindex-*` 그룹 토큰을 쓴다. 같은 그룹 안에서만 값을 비교하고, 그룹을 벗어난 상대적 크기 비교에 기대지 않는다.
 - base·elevated는 콘텐츠 안에서 형제 요소보다 살짝 뜨는 로컬 정도만 표현한다.
 - popover·sheet·chrome·toast는 화면 위로 뜨는 시스템 레벨 요소가 쓴다: 트리거에 앵커되는 표면(드롭다운·팝오버·툴팁)은 popover, viewport를 기준으로 화면을 덮는 표면(backdrop·sheet·dialog)은 sheet, 화면에 고정된 내비게이션·툴바(navbar, 사이드 메뉴, top-bar의 sticky 상태, fixed-bottom 안의 bottom-bar)는 chrome, 항상 최상단이어야 하는 알림은 toast를 쓴다.
