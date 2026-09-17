@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
-import { buttonBaseStyles } from '@/components/common/button/button.styles'
+import '@/components/common/text/semantics/text-block'
 import { findAdjacentDocs } from '@/sitemap'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { getCurrentPageId } from '@/utils'
@@ -12,7 +12,6 @@ import { getCurrentPageId } from '@/utils'
 export class ComponentPager extends LitElement {
   static styles = [
     resetStyles,
-    buttonBaseStyles,
     css`
       :host {
         display: block;
@@ -21,12 +20,38 @@ export class ComponentPager extends LitElement {
       nav {
         display: flex;
         justify-content: space-between;
-        gap: var(--space-3);
+        gap: var(--space-4);
         padding: var(--space-section) 0;
       }
 
+      a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-3);
+        padding: var(--space-4);
+        border-radius: var(--radius);
+        background-color: var(--background-subtle-color);
+        color: var(--foreground-color);
+      }
+
+      a:hover {
+        background-color: var(--interaction-hover-background-color);
+      }
+
       a[rel='next'] {
-        margin-inline-start: auto;
+        align-items: flex-end;
+        text-align: right;
+      }
+
+      a[rel='next'] mm-text-block {
+        align-items: flex-end;
+      }
+
+      @media (max-width: 1100px) {
+        nav {
+          flex-direction: column-reverse;
+        }
       }
     `,
   ]
@@ -44,8 +69,8 @@ export class ComponentPager extends LitElement {
 
     return html`
       <a rel="prev" href="${previous.id}.html">
-        <mm-icon name=${ICON_NAMES.PREVIOUS}></mm-icon>
-        ${previous.name}
+        <mm-icon name=${ICON_NAMES.PREVIOUS} aria-hidden="true"></mm-icon>
+        <mm-text-block level="3" heading=${previous.name} description="이전 문서"></mm-text-block>
       </a>
     `
   }
@@ -56,8 +81,8 @@ export class ComponentPager extends LitElement {
 
     return html`
       <a rel="next" href="${next.id}.html">
-        ${next.name}
-        <mm-icon name=${ICON_NAMES.NEXT}></mm-icon>
+        <mm-icon name=${ICON_NAMES.NEXT} aria-hidden="true"></mm-icon>
+        <mm-text-block level="3" heading=${next.name} description="다음 문서"></mm-text-block>
       </a>
     `
   }
