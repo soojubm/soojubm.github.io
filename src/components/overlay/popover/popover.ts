@@ -8,8 +8,13 @@ import { emit, getDeepActiveElement } from '@/utils'
 
 export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 
-// 열리면 포커스를 받아 방향키로 탐색하는 목록 표면
-const LIST_ROLES = ['menu', 'listbox']
+// 열리면 포커스를 받아 방향키로 탐색하는 목록 표면. 선택 그룹은 목록 role을 shadow 안에 둬 태그로 찾는다.
+const LIST_SELECTOR = [
+  '[role="menu"]',
+  '[role="listbox"]',
+  'mm-menu-item-radio-group',
+  'mm-menu-item-checkbox-group',
+].join(', ')
 
 /**
  * viewport 기준 modal 표면(mm-sheet, mm-dialog)와 달리 backdrop·portal·스크롤 잠금 없이 트리거에 앵커되어 떠 있는 패널 표면만 책임집니다.
@@ -69,9 +74,7 @@ export class Popover extends LitElement {
   // 메뉴·목록이 열리면 포커스를 그 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.
   private focusList() {
     this.returnFocusElement = getDeepActiveElement() as HTMLElement | undefined
-    this.contentElements
-      .find(element => LIST_ROLES.includes(element.getAttribute('role') ?? ''))
-      ?.focus()
+    this.contentElements.find(element => element.matches(LIST_SELECTOR))?.focus()
   }
 
   // 포커스가 표면 안에 있던 채로 닫히면(ESC·항목 선택) 숨겨진 요소에 포커스가 남지 않게 트리거로 돌린다.

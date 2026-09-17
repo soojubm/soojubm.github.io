@@ -81,7 +81,9 @@ export const ICON_CATALOG = {
   },
 
   theme: {
+    BRUTAL_MODE: 'square',
     DARK_MODE: 'half-moon',
+    GLASS_MODE: 'droplet',
     LIGHT_MODE: 'sun-light',
     PALETTE: 'palette',
     THEME: 'color-filter',

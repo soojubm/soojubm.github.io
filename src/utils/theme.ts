@@ -8,8 +8,8 @@ export type Theme = 'light' | 'dark' | 'brutal' | 'glass'
 export const THEMES: { value: Theme; icon: IconName; label: string }[] = [
   { value: 'light', icon: ICON_NAMES.LIGHT_MODE, label: 'Day' },
   { value: 'dark', icon: ICON_NAMES.DARK_MODE, label: 'Night' },
-  { value: 'brutal', icon: ICON_NAMES.THEME, label: 'Brutal' },
-  { value: 'glass', icon: ICON_NAMES.THEME, label: 'Glass' },
+  { value: 'brutal', icon: ICON_NAMES.BRUTAL_MODE, label: 'Brutal' },
+  { value: 'glass', icon: ICON_NAMES.GLASS_MODE, label: 'Glass' },
 ]
 
 const DEFAULT_THEME: Theme = 'light'
