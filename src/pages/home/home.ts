@@ -3,6 +3,8 @@ import { html } from 'lit'
 import type { ToggleButtonGroup } from '@/components/common'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 
+import { ICON_NAMES } from '@/components/common'
+
 import { renderPage } from '@/components/layouts/base-layouts'
 import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import './home.css'
@@ -182,9 +184,112 @@ const designSystemThoughts: Thought[] = [
   },
 ]
 
+// 카드마다 내용 높이가 달라 열마다 세로로 쌓는다. 한 줄 grid로 두면 같은 줄 카드 높이가 맞춰져 빈 곳이 생긴다.
+const showcase = html`
+  <mm-content-section heading="Showcase">
+    <mm-paragraph>
+      컴포넌트를 조합한 실제 화면의 일부입니다. 각 카드에서 전체 페이지로 이동합니다.
+    </mm-paragraph>
+
+    <mm-grid columns="2">
+      <mm-flex direction="column" gap="4">
+        <mm-surface variant="outlined">
+          <mm-flex direction="column" gap="4">
+            <mm-user-snippet
+              name="수줍이"
+              email="soojubm@gmail.com"
+              description="UI Designer"
+              avatar-src="/src/images/soojubm.png"
+              avatar-variant="secondary"
+              tag-label="접속 중"
+            ></mm-user-snippet>
+            <mm-button-group>
+              <mm-follow-button></mm-follow-button>
+              <mm-button variant="tertiary">메시지</mm-button>
+            </mm-button-group>
+            <mm-link href="profile.html">User Profile 보기</mm-link>
+          </mm-flex>
+        </mm-surface>
+
+        <mm-surface variant="outlined">
+          <mm-flex direction="column" gap="4">
+            <mm-review-summary rating="4.8" review-count="116"></mm-review-summary>
+            <mm-review-item
+              rating="5"
+              content="아이 둘을 키우느라 잠이 부족했는데, 덕분에 아침에 한결 개운하게 일어나요."
+              author="Fleet Foxes"
+              datetime="2020년 12월 1일"
+            ></mm-review-item>
+            <mm-link href="product.html">Product 보기</mm-link>
+          </mm-flex>
+        </mm-surface>
+
+        <mm-surface variant="outlined">
+          <mm-flex direction="column" gap="4">
+            <mm-menu-item-group>
+              <mm-setting-item label="이메일 주소" description="soojubm@gmail.com">
+                <mm-button slot="action">변경</mm-button>
+              </mm-setting-item>
+              <mm-separator></mm-separator>
+              <mm-menu-item-switch
+                icon=${ICON_NAMES.MAIL_IN}
+                label="시사 뉴스레터"
+                value="newsletter"
+                checked
+              ></mm-menu-item-switch>
+              <mm-caption>매주 월요일, 수요일, 금요일 아침에 받아볼 수 있어요.</mm-caption>
+            </mm-menu-item-group>
+            <mm-link href="setting.html">Setting 보기</mm-link>
+          </mm-flex>
+        </mm-surface>
+      </mm-flex>
+
+      <mm-flex direction="column" gap="4">
+        <mm-surface variant="outlined">
+          <mm-flex direction="column" gap="4">
+            <mm-order-product-item
+              image-src="/src/images/cake_gosum.jpg"
+              name="뉴닉이 풀어 쓴 경제상식사전"
+              option="평생 소장"
+            ></mm-order-product-item>
+            <mm-meta-item-group direction="column">
+              <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
+              <mm-meta-item label="배송비" value="무료"></mm-meta-item>
+              <mm-meta-item label="총 결제 금액" value="₩ 16,000" value-size="large"></mm-meta-item>
+            </mm-meta-item-group>
+            <mm-notice
+              heading="결제 및 환불 안내"
+              description="신용카드 결제만 가능하며, 해외에서 발행된 카드는 이용할 수 없습니다."
+            ></mm-notice>
+            <mm-button variant="primary" size="large" full-width>₩ 16,000 결제하기</mm-button>
+            <mm-link href="checkout.html">Checkout 보기</mm-link>
+          </mm-flex>
+        </mm-surface>
+
+        <mm-surface variant="outlined">
+          <mm-flex direction="column" gap="4">
+            <mm-my-chat-message>
+              <mm-my-chat-bubble>뉴닉하면 어떤 색이 떠올라요?</mm-my-chat-bubble>
+            </mm-my-chat-message>
+            <mm-participant-chat-message name="찐뉴니커">
+              <mm-participant-chat-bubble>
+                주황색이요. 고슴이도 같이 떠올라요.
+              </mm-participant-chat-bubble>
+            </mm-participant-chat-message>
+            <mm-prompt-input placeholder="메시지를 입력하세요..."></mm-prompt-input>
+            <mm-link href="chat.html">Chat 보기</mm-link>
+          </mm-flex>
+        </mm-surface>
+      </mm-flex>
+    </mm-grid>
+  </mm-content-section>
+`
+
 const main = html`
   <mm-main>
     <mm-flex direction="column" gap="section">
+      ${showcase}
+
       <mm-flex gap="8" direction="column">
         <mm-heading level="1">
           Design System
