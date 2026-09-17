@@ -57,8 +57,8 @@ const main = html`
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="variant" variant="pill">
         <mm-tab value="variant">Variant</mm-tab>
-        <mm-tab value="shape">Shape</mm-tab>
         <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="shape">Shape</mm-tab>
         <mm-tab value="fallback">Fallback</mm-tab>
         <mm-tab value="aria-label">Accessible Label</mm-tab>
       </mm-tab-list>
@@ -77,19 +77,6 @@ const main = html`
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>
-      <mm-tab-panel value="shape">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex gap="2">
-              <mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-              <mm-avatar size="48" icon=${ICON_NAMES.GITHUB}></mm-avatar>
-            </mm-flex>
-            <mm-paragraph>
-              사람을 나타내면 circle을, 아이콘이나 조직·브랜드를 나타내면 기본값인 square를 씁니다.
-            </mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-      </mm-tab-panel>
       <mm-tab-panel value="size">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
@@ -100,6 +87,19 @@ const main = html`
               <mm-avatar size="32" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
             </mm-flex>
             <mm-paragraph>48 이상에서는 아이콘과 이니셜도 한 단계 커집니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="shape">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex gap="2">
+              <mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+              <mm-avatar size="48" icon=${ICON_NAMES.GITHUB}></mm-avatar>
+            </mm-flex>
+            <mm-paragraph>
+              사람을 나타내면 circle을, 아이콘이나 조직·브랜드를 나타내면 기본값인 square를 씁니다.
+            </mm-paragraph>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>

@@ -51,7 +51,7 @@ const componentProps: ComponentPropItemData[] = [
     name: 'variant',
     type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'",
   },
-  { name: 'size', type: "'huge' | 'large' | 'medium' | 'small' = 'medium'" },
+  { name: 'size', type: "'large' | 'medium' = 'medium'" },
   { name: 'type', type: "'button' | 'submit' | 'reset' = 'button'", optional: true },
   { name: 'full-width', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
@@ -141,26 +141,75 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-button-group>
-        <mm-button variant="primary" size="large">primary</mm-button>
-        <mm-button variant="secondary" size="large">secondary</mm-button>
-        <mm-button variant="tertiary" size="large">tertiary</mm-button>
-        <mm-button variant="destructive" size="large" aria-label="danger">destructive</mm-button>
-        <mm-button variant="ghost" size="large">ghost</mm-button>
-      </mm-button-group>
-      <mm-separator></mm-separator>
-      <mm-button-group>
-        <mm-button variant="primary" size="large">large</mm-button>
-        <mm-button variant="primary">small</mm-button>
-      </mm-button-group>
-      <mm-separator></mm-separator>
-      <mm-button-group>
-        <mm-button variant="tertiary">hovered</mm-button>
-        <mm-button variant="tertiary">focused</mm-button>
-        <mm-button variant="tertiary" disabled>disabled</mm-button>
-      </mm-button-group>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="variant" variant="pill">
+        <mm-tab value="variant">Variant</mm-tab>
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="icon">Icon</mm-tab>
+        <mm-tab value="state">State</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="variant">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-button-group>
+              <mm-button variant="primary" size="large">primary</mm-button>
+              <mm-button variant="secondary" size="large">secondary</mm-button>
+              <mm-button variant="tertiary" size="large">tertiary</mm-button>
+              <mm-button variant="destructive" size="large">destructive</mm-button>
+              <mm-button variant="ghost" size="large">ghost</mm-button>
+            </mm-button-group>
+            <mm-paragraph>
+              액션의 위계에 맞춰 배경과 글자 색을 고릅니다. destructive는 되돌리기 어려운 액션에
+              씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-button-group>
+              <mm-button variant="primary" size="large">large</mm-button>
+              <mm-button variant="primary">medium</mm-button>
+            </mm-button-group>
+            <mm-paragraph>
+              모든 크기는 최소 너비를 가져, 레이블이 짧아도 누를 영역을 확보합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="icon">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-button-group>
+              <mm-button variant="tertiary" icon=${ICON_NAMES.PREVIOUS}>이전</mm-button>
+              <mm-button variant="tertiary" icon=${ICON_NAMES.NEXT} icon-position="trailing">
+                다음
+              </mm-button>
+            </mm-button-group>
+            <mm-paragraph>
+              icon-position으로 아이콘을 레이블 앞(leading)이나 뒤(trailing)에 둡니다. 방향을
+              가리키는 아이콘은 가리키는 쪽에 둡니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="state">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-button-group>
+              <mm-button variant="tertiary">hovered</mm-button>
+              <mm-button variant="tertiary">focused</mm-button>
+              <mm-button variant="tertiary" disabled>disabled</mm-button>
+            </mm-button-group>
+            <mm-paragraph>
+              disabled는 누를 수 없는 상태를 흐리게 표시합니다. 가능하면 비활성화 대신 제출 후 오류
+              메시지로 이유를 알립니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 

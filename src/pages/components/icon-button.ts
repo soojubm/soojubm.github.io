@@ -59,68 +59,103 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-button-group>
-        <mm-icon-button
-          variant="primary"
-          icon=${ICON_NAMES.FORWARD}
-          aria-label="Primary"
-          tooltip-placement="center"
-        ></mm-icon-button>
-        <mm-icon-button
-          variant="secondary"
-          icon=${ICON_NAMES.FORWARD}
-          aria-label="Secondary"
-          tooltip-placement="center"
-        ></mm-icon-button>
-        <mm-icon-button
-          variant="tertiary"
-          icon=${ICON_NAMES.FORWARD}
-          aria-label="Tertiary"
-          tooltip-placement="center"
-        ></mm-icon-button>
-        <mm-icon-button
-          variant="ghost"
-          icon=${ICON_NAMES.FORWARD}
-          aria-label="Ghost"
-          tooltip-placement="center"
-        ></mm-icon-button>
-        <mm-icon-button
-          variant="destructive"
-          icon=${ICON_NAMES.DELETE}
-          aria-label="Destructive"
-          tooltip-placement="center"
-        ></mm-icon-button>
-      </mm-button-group>
-      <mm-separator></mm-separator>
-      <mm-button-group>
-        <mm-icon-button
-          variant="primary"
-          icon=${ICON_NAMES.FORWARD}
-          aria-label="다음"
-          tooltip-placement="center"
-          disabled
-        ></mm-icon-button>
-        <mm-icon-button
-          icon=${ICON_NAMES.LIKE}
-          aria-label="좋아요"
-          tooltip-placement="center"
-          disabled
-        ></mm-icon-button>
-        <mm-icon-button
-          variant="secondary"
-          icon=${ICON_NAMES.BACK}
-          aria-label="이전"
-          tooltip-placement="center"
-          disabled
-        ></mm-icon-button>
-      </mm-button-group>
-      <mm-separator></mm-separator>
-      <mm-button-group>
-        <mm-icon-button icon=${ICON_NAMES.CLOSE} size="medium" aria-label="medium"></mm-icon-button>
-        <mm-icon-button icon=${ICON_NAMES.CLOSE} size="small" aria-label="small"></mm-icon-button>
-      </mm-button-group>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="variant" variant="pill">
+        <mm-tab value="variant">Variant</mm-tab>
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="state">State</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="variant">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-button-group>
+              <mm-icon-button
+                variant="primary"
+                icon=${ICON_NAMES.FORWARD}
+                aria-label="Primary"
+                tooltip-placement="center"
+              ></mm-icon-button>
+              <mm-icon-button
+                variant="secondary"
+                icon=${ICON_NAMES.FORWARD}
+                aria-label="Secondary"
+                tooltip-placement="center"
+              ></mm-icon-button>
+              <mm-icon-button
+                variant="tertiary"
+                icon=${ICON_NAMES.FORWARD}
+                aria-label="Tertiary"
+                tooltip-placement="center"
+              ></mm-icon-button>
+              <mm-icon-button
+                variant="ghost"
+                icon=${ICON_NAMES.FORWARD}
+                aria-label="Ghost"
+                tooltip-placement="center"
+              ></mm-icon-button>
+              <mm-icon-button
+                variant="destructive"
+                icon=${ICON_NAMES.DELETE}
+                aria-label="Destructive"
+                tooltip-placement="center"
+              ></mm-icon-button>
+            </mm-button-group>
+            <mm-paragraph>
+              버튼과 같은 위계 체계를 따릅니다. destructive는 되돌리기 어려운 액션에 씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-button-group>
+              <mm-icon-button
+                icon=${ICON_NAMES.CLOSE}
+                size="medium"
+                aria-label="medium"
+              ></mm-icon-button>
+              <mm-icon-button
+                icon=${ICON_NAMES.CLOSE}
+                size="small"
+                aria-label="small"
+              ></mm-icon-button>
+            </mm-button-group>
+            <mm-paragraph>small은 콘텐츠 사이에 촘촘히 놓이는 보조 액션에 씁니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="state">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-button-group>
+              <mm-icon-button
+                variant="primary"
+                icon=${ICON_NAMES.FORWARD}
+                aria-label="다음"
+                tooltip-placement="center"
+                disabled
+              ></mm-icon-button>
+              <mm-icon-button
+                icon=${ICON_NAMES.LIKE}
+                aria-label="좋아요"
+                tooltip-placement="center"
+                disabled
+              ></mm-icon-button>
+              <mm-icon-button
+                variant="secondary"
+                icon=${ICON_NAMES.BACK}
+                aria-label="이전"
+                tooltip-placement="center"
+                disabled
+              ></mm-icon-button>
+            </mm-button-group>
+            <mm-paragraph>disabled는 누를 수 없는 상태를 흐리게 표시합니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
+
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>

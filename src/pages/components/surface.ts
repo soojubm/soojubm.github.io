@@ -101,76 +101,98 @@ const main = html`
       ]}
     ></mm-component-aka>
 
-    <mm-component-example>
-      <mm-flex direction="column" gap="3">
-        <mm-surface variant="ghost">
-          <mm-text-block
-            level="3"
-            heading="ghost"
-            description="투명한 배경. 클릭할 수 없다."
-          ></mm-text-block>
-        </mm-surface>
-        <mm-surface variant="outlined">
-          <mm-text-block
-            level="3"
-            heading="outlined"
-            description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."
-          ></mm-text-block>
-        </mm-surface>
-        <mm-surface variant="filled">
-          <mm-text-block
-            level="3"
-            heading="filled"
-            description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."
-          ></mm-text-block>
-        </mm-surface>
-        <mm-surface variant="elevated">
-          <mm-text-block
-            level="3"
-            heading="elevated"
-            description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
-          ></mm-text-block>
-        </mm-surface>
-
-        <mm-separator></mm-separator>
-
-        <mm-grid columns="2">
-          <mm-surface radius="default">
-            <mm-text-block
-              level="3"
-              heading="default radius"
-              description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."
-            ></mm-text-block>
-          </mm-surface>
-          <mm-surface radius="large">
-            <mm-text-block
-              level="3"
-              heading="large radius"
-              description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
-            ></mm-text-block>
-          </mm-surface>
-        </mm-grid>
-
-        <mm-separator></mm-separator>
-
-        <mm-grid columns="2">
-          <mm-surface density="default">
-            <mm-text-block
-              level="3"
-              heading="default density"
-              description="본문 콘텐츠를 담는 표면의 기본 여백이다."
-            ></mm-text-block>
-          </mm-surface>
-          <mm-surface density="compact">
-            <mm-text-block
-              level="3"
-              heading="compact density"
-              description="한 줄짜리 항목처럼 내부 콘텐츠가 얕을 때 사용한다."
-            ></mm-text-block>
-          </mm-surface>
-        </mm-grid>
-      </mm-flex>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="variant" variant="pill">
+        <mm-tab value="variant">Variant</mm-tab>
+        <mm-tab value="radius">Radius</mm-tab>
+        <mm-tab value="density">Density</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="variant">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="3">
+              <mm-surface variant="ghost">
+                <mm-text-block
+                  level="3"
+                  heading="ghost"
+                  description="투명한 배경. 클릭할 수 없다."
+                ></mm-text-block>
+              </mm-surface>
+              <mm-surface variant="outlined">
+                <mm-text-block
+                  level="3"
+                  heading="outlined"
+                  description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."
+                ></mm-text-block>
+              </mm-surface>
+              <mm-surface variant="filled">
+                <mm-text-block
+                  level="3"
+                  heading="filled"
+                  description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."
+                ></mm-text-block>
+              </mm-surface>
+              <mm-surface variant="elevated">
+                <mm-text-block
+                  level="3"
+                  heading="elevated"
+                  description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
+                ></mm-text-block>
+              </mm-surface>
+            </mm-flex>
+            <mm-paragraph>
+              배경·테두리·그림자로 표면의 층위를 드러내고, 그 차이로 클릭 가능 여부도 알립니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="radius">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-grid columns="2">
+              <mm-surface radius="default">
+                <mm-text-block
+                  level="3"
+                  heading="default radius"
+                  description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."
+                ></mm-text-block>
+              </mm-surface>
+              <mm-surface radius="large">
+                <mm-text-block
+                  level="3"
+                  heading="large radius"
+                  description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
+                ></mm-text-block>
+              </mm-surface>
+            </mm-grid>
+            <mm-paragraph>경계를 표현하는 범위에 맞춰 모서리 크기를 고릅니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="density">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-grid columns="2">
+              <mm-surface density="default">
+                <mm-text-block
+                  level="3"
+                  heading="default density"
+                  description="본문 콘텐츠를 담는 표면의 기본 여백이다."
+                ></mm-text-block>
+              </mm-surface>
+              <mm-surface density="compact">
+                <mm-text-block
+                  level="4"
+                  heading="compact density"
+                  description="한 줄짜리 항목처럼 내부 콘텐츠가 얕을 때 사용한다."
+                ></mm-text-block>
+              </mm-surface>
+            </mm-grid>
+            <mm-paragraph>내부 콘텐츠의 깊이에 맞춰 안쪽 여백을 고릅니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -193,6 +215,24 @@ const main = html`
           'inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다.',
         ]}
       ></mm-text-list>
+
+      <mm-content-section heading-level="3" heading="Density">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <b>compact 표면 안의 text-block은 default보다 한 단계 낮은 level을 쓴다</b>
+                <br />
+                <mm-code>density="compact"</mm-code>
+                는 안쪽 여백이 좁아서, default 표면과 같은 제목 크기를 두면 글자가 여백보다 커 보여
+                밀도가 맞지 않는다. default 표면에 level 3을 두었다면 compact 표면에는 level 4를
+                둔다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
     </mm-component-guide>
 
     <mm-component-anatomy
