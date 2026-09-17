@@ -54,6 +54,8 @@ export const componentExampleStyles = [
       --component-content-frame-margin: 0 0 var(--space-4)
         var(--component-content-offset-inline-start);
 
+      box-sizing: border-box;
+      min-height: calc(var(--size-40) * 2.5);
       border-left-color: var(--foreground-color);
     }
   `,
