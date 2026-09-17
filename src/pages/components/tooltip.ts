@@ -3,17 +3,40 @@ import { html } from 'lit'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
+  ComponentReferenceItemData,
   ComponentRelatedItemData,
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
-import './tooltip.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'popover.html', label: 'Popover' },
   { href: 'notice.html', label: 'Notice' },
+]
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://carbondesignsystem.com/components/toggletip/usage/',
+    label: 'Carbon - Toggletip',
+    external: true,
+  },
+  {
+    href: 'https://playbook.ebay.com/design-system/components/tooltip',
+    label: 'eBay Playbook - Tooltip',
+    external: true,
+  },
+  {
+    href: 'https://playbook.ebay.com/design-system/components/tourtip',
+    label: 'eBay Playbook - Tourtip',
+    external: true,
+  },
+  {
+    href: 'https://spectrum.adobe.com/page/coach-mark/',
+    label: 'Spectrum - Coach mark',
+    external: true,
+  },
 ]
 
 const componentProps: ComponentPropItemData[] = [
@@ -52,39 +75,48 @@ const main = html`
 
     <mm-component-aka .items=${['Coachmark']}></mm-component-aka>
 
-    <mm-component-example>
-      <mm-flex gap="2">
-        <mm-icon-button
-          icon=${ICON_NAMES.USER}
-          aria-label="로그인"
-          tooltip-placement="center"
-        ></mm-icon-button>
-        <mm-icon-button
-          icon=${ICON_NAMES.USER}
-          aria-label="우측 정렬"
-          tooltip-placement="right"
-        ></mm-icon-button>
-        <mm-tooltip
-          content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다."
-        >
-          <mm-icon
-            slot="trigger"
-            name="help-circle"
-            role="img"
-            aria-label="해임건의 요건 도움말"
-            tabindex="0"
-          ></mm-icon>
-        </mm-tooltip>
-      </mm-flex>
-      <mm-separator></mm-separator>
-      <span
-        class="tooltip has-tooltip-fade"
-        data-tooltip="Just like this one."
-        style="display: inline; width: auto; position: relative"
-      >
-        Any element
-      </span>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="default" variant="pill">
+        <mm-tab value="default">Default</mm-tab>
+        <mm-tab value="placement">Placement</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="default">
+        <mm-component-example>
+          <mm-tooltip
+            content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다."
+          >
+            <mm-icon
+              slot="trigger"
+              name="help-circle"
+              role="img"
+              aria-label="해임건의 요건 도움말"
+              tabindex="0"
+            ></mm-icon>
+          </mm-tooltip>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="placement">
+        <mm-component-example>
+          <mm-flex gap="2">
+            <mm-icon-button
+              icon=${ICON_NAMES.USER}
+              aria-label="좌측 정렬"
+              tooltip-placement="left"
+            ></mm-icon-button>
+            <mm-icon-button
+              icon=${ICON_NAMES.USER}
+              aria-label="가운데 정렬"
+              tooltip-placement="center"
+            ></mm-icon-button>
+            <mm-icon-button
+              icon=${ICON_NAMES.USER}
+              aria-label="우측 정렬"
+              tooltip-placement="right"
+            ></mm-icon-button>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
@@ -123,6 +155,8 @@ const main = html`
     ></mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-references .items=${componentReferences}></mm-component-references>
 
     <mm-component-pager></mm-component-pager>
   </mm-main>
