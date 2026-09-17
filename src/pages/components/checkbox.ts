@@ -64,19 +64,67 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-checkbox-group
-        legend="관심 분야"
-        name="interest"
-        size="large"
-        .values=${['basic', 'disabled-checked']}
-        .options=${[
-          { value: 'basic', label: '체크박스 기본' },
-          { value: 'disabled', label: '체크박스 비활성', disabled: true },
-          { value: 'disabled-checked', label: '체크박스 비활성 체크', disabled: true },
-        ]}
-      ></mm-checkbox-group>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="size" variant="pill">
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="single">Single</mm-tab>
+        <mm-tab value="state">State</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="4">
+              <mm-checkbox-group
+                name="size-default"
+                .options=${[
+                  { value: 'a', label: '기본 크기' },
+                  { value: 'b', label: '기본 크기' },
+                ]}
+              ></mm-checkbox-group>
+              <mm-checkbox-group
+                name="size-large"
+                size="large"
+                .options=${[
+                  { value: 'a', label: 'large 크기' },
+                  { value: 'b', label: 'large 크기' },
+                ]}
+              ></mm-checkbox-group>
+            </mm-flex>
+            <mm-paragraph>
+              size="large"는 약관 동의처럼 선택지가 화면의 주요 입력일 때 씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="single">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-checkbox name="remember" value="remember">로그인 상태 유지</mm-checkbox>
+            <mm-paragraph>
+              선택지가 하나면 그룹으로 감싸지 않고
+              <mm-code>mm-checkbox</mm-code>
+              를 단독으로 씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="state">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="3">
+              <mm-checkbox>Unchecked</mm-checkbox>
+              <mm-checkbox checked>Checked</mm-checkbox>
+              <mm-checkbox indeterminate>Indeterminate</mm-checkbox>
+              <mm-checkbox disabled>Disabled</mm-checkbox>
+              <mm-checkbox disabled checked>Disabled checked</mm-checkbox>
+            </mm-flex>
+            <mm-paragraph>
+              indeterminate는 하위 선택지 중 일부만 선택된 상위 체크박스에 씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 

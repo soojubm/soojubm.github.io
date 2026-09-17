@@ -92,22 +92,57 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-flex direction="column" gap="6">
-        <mm-radio-group
-          name="membership"
-          value="premium"
-          .options=${membershipOptions}
-        ></mm-radio-group>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="size" variant="pill">
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="state">State</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="4">
+              <mm-radio-group
+                name="membership-size-default"
+                value="basic"
+                .options=${membershipOptions.slice(0, 2)}
+              ></mm-radio-group>
+              <mm-radio-group
+                name="membership-size-large"
+                size="large"
+                value="basic"
+                .options=${membershipOptions.slice(0, 2)}
+              ></mm-radio-group>
+            </mm-flex>
+            <mm-paragraph>size="large"는 선택지가 화면의 주요 입력일 때 씁니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="state">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="4">
+              <mm-radio-group
+                name="membership-option-disabled"
+                value="premium"
+                .options=${membershipOptions}
+              ></mm-radio-group>
+              <mm-radio-group
+                name="membership-disabled"
+                value="premium"
+                disabled
+                .options=${membershipOptions.slice(0, 2)}
+              ></mm-radio-group>
+            </mm-flex>
+            <mm-paragraph>
+              선택지 하나만 막을 때는 option의 disabled를, 그룹 전체를 막을 때는
+              <mm-code>mm-radio-group</mm-code>
+              의 disabled를 씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
-        <mm-radio-group
-          name="membership-large"
-          size="large"
-          value="premium"
-          .options=${membershipOptions}
-        ></mm-radio-group>
-      </mm-flex>
-    </mm-component-example>
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
