@@ -4,6 +4,7 @@ type Host = ReactiveControllerHost & HTMLElement
 
 interface TextareaAutoHeightControllerOptions {
   getTextarea: () => HTMLTextAreaElement | undefined
+  getMinVisibleRows: () => number
   getMaxVisibleRows: () => number
   onSingleLineChange?: (isSingleLine: boolean) => void
 }
@@ -40,8 +41,10 @@ export class TextareaAutoHeightController implements ReactiveController {
 
     const metrics = this.measureTextArea(textarea)
     const contentHeight = textarea.scrollHeight
+    const minHeight = metrics.lineHeight * this.options.getMinVisibleRows() + metrics.paddingBlock
     const maxHeight = metrics.lineHeight * this.options.getMaxVisibleRows() + metrics.paddingBlock
-    const nextHeight = Math.min(contentHeight, maxHeight)
+    // 숨겨진 상태(scrollHeight 0)에서 측정돼도 rows 높이 아래로 줄어들지 않게 한다.
+    const nextHeight = Math.min(Math.max(contentHeight, minHeight), maxHeight)
 
     textarea.style.height = `${nextHeight}px`
     textarea.style.overflowY = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden'

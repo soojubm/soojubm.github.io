@@ -26,6 +26,7 @@ export class Textarea extends LitElement {
   @state() protected defaultTextareaId = `mm-textarea-${uniqueIdCounter++}`
   private autoHeight = new TextareaAutoHeightController(this, {
     getTextarea: () => this.textarea,
+    getMinVisibleRows: () => this.rows,
     getMaxVisibleRows: () => this.maxVisibleRows,
     onSingleLineChange: isSingleLine => emit(this, 'single-line-change', { isSingleLine }),
   })

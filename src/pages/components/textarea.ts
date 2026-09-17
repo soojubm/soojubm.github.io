@@ -43,7 +43,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - input',
     description:
-      '제한된 선택지가 아니라 자유 형식의 긴 텍스트를 받고, 규칙 검증과 오류 표시를 소유합니다. 글자 수 제한 같은 규칙은 오류가 나기 전에 미리 알리고, 여러 줄 입력이 예상되는 맥락에만 사용합니다.',
+      '제한된 선택지가 아니라 자유 형식의 긴 텍스트를 받고, 규칙 검증과 오류 표시를 소유합니다. 글자 수 제한 같은 규칙은 오류가 나기 전에 미리 알리고, 여러 줄 입력이 예상되는 맥락에만 사용합니다. 높이는 기본 3줄(rows)을 유지해 한 줄 입력 필드와 구분합니다.',
   },
 ]
 
@@ -54,17 +54,69 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-flex direction="column" gap="4" style="width: 100%">
-        <mm-textarea placeholder="Textarea placeholder..."></mm-textarea>
-
-        <mm-textarea-field
-          label="Textarea Field"
-          placeholder="Textarea placeholder..."
-          description="레이블과 헬퍼 텍스트를 가질 수 있다."
-        ></mm-textarea-field>
-      </mm-flex>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="default" variant="pill">
+        <mm-tab value="default">Default</mm-tab>
+        <mm-tab value="label">With Label</mm-tab>
+        <mm-tab value="optional">Optional</mm-tab>
+        <mm-tab value="state">State</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="default">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-textarea placeholder="자유롭게 적어주세요"></mm-textarea>
+            <mm-paragraph>
+              <mm-code>mm-textarea</mm-code>
+              는 레이블 없이 입력 영역만 렌더합니다. 주변 제목이나 맥락이 입력 항목을 설명할 때
+              씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="label">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-textarea-field
+              label="자기소개"
+              description="200자 이내로 입력하세요."
+              placeholder="자유롭게 적어주세요"
+            ></mm-textarea-field>
+            <mm-paragraph>
+              레이블과 설명이 필요하면
+              <mm-code>mm-textarea-field</mm-code>
+              를 씁니다. label은 입력 항목의 이름이며, 화면에 보이게 둡니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="optional">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-textarea-field
+              label="요청 사항"
+              placeholder="직접 입력"
+              optional
+            ></mm-textarea-field>
+            <mm-paragraph>
+              텍스트 영역은 기본적으로 필수 입력입니다. 입력하면 명확한 이점이 있을 때만 optional로
+              선택 입력을 표시합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="state">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex direction="column" gap="3">
+              <mm-textarea placeholder="Placeholder"></mm-textarea>
+              <mm-textarea placeholder="Disabled" disabled></mm-textarea>
+              <mm-textarea value="Invalid" aria-invalid="true"></mm-textarea>
+            </mm-flex>
+            <mm-paragraph>aria-invalid로 오류 상태를 표시합니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
