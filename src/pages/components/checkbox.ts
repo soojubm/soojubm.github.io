@@ -6,7 +6,6 @@ import type {
   ComponentRelatedItemData,
   ComponentTokenItemData,
 } from '@/components/domains/component'
-import type { OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -53,11 +52,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다.',
   },
-]
-
-const visibilityOptions: OptionItem[] = [
-  { label: '공개', value: 'public' },
-  { label: '비공개', value: 'private' },
 ]
 
 const main = html`
@@ -136,45 +130,6 @@ const main = html`
       </mm-surface>
     </mm-component-section>
 
-    <mm-component-section heading="Sampler" description="연습">
-      <mm-flex direction="column" gap="3" style="max-width: 400px">
-        <mm-top-bar nav="close" heading="컬렉션에 추가">
-          <mm-button slot="action" variant="ghost">새 컬렉션</mm-button>
-        </mm-top-bar>
-        <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
-          <mm-menu-item-checkbox
-            value="euljiro"
-            label="을지로 맛집"
-            description="장소 12개"
-            emoji="🍜"
-            checked
-          ></mm-menu-item-checkbox>
-          <mm-menu-item-checkbox
-            value="seongsu"
-            label="성수 카페"
-            description="장소 8개"
-            emoji="☕"
-          ></mm-menu-item-checkbox>
-        </mm-menu-item-checkbox-group>
-        <mm-separator></mm-separator>
-        <mm-top-bar heading="새 컬렉션">
-          <mm-button slot="action" variant="ghost">완료</mm-button>
-        </mm-top-bar>
-        <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
-        <mm-toggle-button-group
-          .options=${visibilityOptions}
-          value="public"
-        ></mm-toggle-button-group>
-
-        <mm-add-button>이 컬렉션에 멤버 추가</mm-add-button>
-
-        <mm-separator></mm-separator>
-        <mm-top-bar heading="멤버 추가">
-          <mm-button slot="action" variant="ghost">완료</mm-button>
-        </mm-top-bar>
-        <mm-textfield label="TODO 멤버 검색" placeholder="멤버 이름"></mm-textfield>
-      </mm-flex>
-    </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

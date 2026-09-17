@@ -47,6 +47,11 @@ const main = html`
           description="화면 위로 뜨는 표면의 행동 계약과 겹침 순서를 정의합니다."
         ></mm-foundation-item>
         <mm-foundation-item
+          href="./collection.html"
+          heading="Collection"
+          description="사용자가 만든 묶음에 항목을 담고 묶음을 만들고 관리하는 흐름을 정의합니다."
+        ></mm-foundation-item>
+        <mm-foundation-item
           href="./content.html"
           heading="Content"
           description="텍스트 슬롯의 이름과 어조, 아이콘의 의미, 스캔 가능한 문구 원칙입니다."
