@@ -54,18 +54,94 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
-      <mm-flex gap="2" align-items="center">
-        <mm-avatar
-          size="48"
-          shape="circle"
-          src="/src/images/soojubm.png"
-          aria-label="수줍이"
-        ></mm-avatar>
-        <mm-avatar size="48" variant="secondary">MM</mm-avatar>
-        <mm-avatar size="48" icon=${ICON_NAMES.GITHUB}></mm-avatar>
-      </mm-flex>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="variant" variant="pill">
+        <mm-tab value="variant">Variant</mm-tab>
+        <mm-tab value="shape">Shape</mm-tab>
+        <mm-tab value="size">Size</mm-tab>
+        <mm-tab value="fallback">Fallback</mm-tab>
+        <mm-tab value="aria-label">Accessible Label</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="variant">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex gap="2">
+              <mm-avatar variant="primary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+              <mm-avatar variant="secondary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+              <mm-avatar variant="tertiary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+            </mm-flex>
+            <mm-paragraph>
+              배경과 테두리로 주변 표면과의 대비를 정합니다. 이미지가 영역을 덮으면 차이가 드러나지
+              않으므로 아이콘·이니셜 아바타에서 고릅니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="shape">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex gap="2">
+              <mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+              <mm-avatar size="48" icon=${ICON_NAMES.GITHUB}></mm-avatar>
+            </mm-flex>
+            <mm-paragraph>
+              사람을 나타내면 circle을, 아이콘이나 조직·브랜드를 나타내면 기본값인 square를 씁니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex gap="2" align-items="end">
+              <mm-avatar size="80" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+              <mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+              <mm-avatar size="40" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+              <mm-avatar size="32" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+            </mm-flex>
+            <mm-paragraph>48 이상에서는 아이콘과 이니셜도 한 단계 커집니다.</mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="fallback">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex gap="2">
+              <mm-avatar size="40" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+              <mm-avatar size="40">MM</mm-avatar>
+              <mm-avatar size="40"></mm-avatar>
+            </mm-flex>
+            <mm-paragraph>
+              src가 없으면 icon, icon도 없으면 슬롯의 이니셜, 슬롯도 비어 있으면 기본 아이콘을
+              표시합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="aria-label">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-flex gap="4" align-items="center">
+              <mm-user-row
+                label="수줍이"
+                description="UI Designer"
+                avatar-src="/src/images/soojubm.png"
+              ></mm-user-row>
+              <mm-avatar
+                size="40"
+                shape="circle"
+                src="/src/images/soojubm.png"
+                aria-label="수줍이"
+              ></mm-avatar>
+            </mm-flex>
+            <mm-paragraph>
+              아바타가 이름 옆에 놓이면 장식으로 두고, 아바타만으로 개체를 알려야 할 때 aria-label을
+              줍니다. aria-label이 있으면 host가 role=img를 갖습니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -83,69 +159,6 @@ const main = html`
     >
       <mm-avatar size="80" variant="secondary"></mm-avatar>
     </mm-component-anatomy>
-
-    <mm-component-section
-      heading="Variant"
-      description="배경과 테두리로 주변 표면과의 대비를 정합니다. 이미지가 영역을 덮으면 차이가 드러나지 않으므로 아이콘·이니셜 아바타에서 고릅니다."
-    >
-      <mm-flex gap="2">
-        <mm-avatar variant="primary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-        <mm-avatar variant="secondary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-        <mm-avatar variant="tertiary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-      </mm-flex>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="Shape"
-      description="사람을 나타내면 circle을, 아이콘이나 조직·브랜드를 나타내면 기본값인 square를 씁니다."
-    >
-      <mm-flex gap="2">
-        <mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-        <mm-avatar size="48" icon=${ICON_NAMES.GITHUB}></mm-avatar>
-      </mm-flex>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="Size"
-      description="48 이상에서는 아이콘과 이니셜도 한 단계 커집니다."
-    >
-      <mm-flex gap="2" align-items="end">
-        <mm-avatar size="80" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-        <mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-        <mm-avatar size="40" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-        <mm-avatar size="32" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-      </mm-flex>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="Fallback"
-      description="src가 없으면 icon, icon도 없으면 슬롯의 이니셜, 슬롯도 비어 있으면 기본 아이콘을 표시합니다."
-    >
-      <mm-flex gap="2">
-        <mm-avatar size="40" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-        <mm-avatar size="40">MM</mm-avatar>
-        <mm-avatar size="40"></mm-avatar>
-      </mm-flex>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="Accessible Label"
-      description="아바타가 이름 옆에 놓이면 장식으로 두고, 아바타만으로 개체를 알려야 할 때 aria-label을 줍니다. aria-label이 있으면 host가 role=img를 갖습니다."
-    >
-      <mm-flex gap="4" align-items="center">
-        <mm-user-row
-          label="수줍이"
-          description="UI Designer"
-          avatar-src="/src/images/soojubm.png"
-        ></mm-user-row>
-        <mm-avatar
-          size="40"
-          shape="circle"
-          src="/src/images/soojubm.png"
-          aria-label="수줍이"
-        ></mm-avatar>
-      </mm-flex>
-    </mm-component-section>
 
     <mm-component-section
       heading="AvatarGroup"
