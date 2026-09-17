@@ -42,6 +42,11 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
   { href: 'https://ant.design/components/card', label: 'Ant Design - Card', external: true },
   {
+    href: 'https://ui.shadcn.com/docs/components/base/item',
+    label: 'shadcn/ui - Item',
+    external: true,
+  },
+  {
     href: 'https://getcssscan.com/css-box-shadow-examples',
     label: 'CSS box-shadow examples',
     external: true,
