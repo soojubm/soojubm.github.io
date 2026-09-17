@@ -9,7 +9,7 @@ import { serializeToMarkdown } from '@/utils/markdown'
 
 /** AI에 붙여넣을 수 있도록 현재 문서 본문을 마크다운으로 복사한다. 페이지 이동 링크와 자기 자신은 제외한다. */
 const isPageChrome = (element: Element) =>
-  element.tagName === 'MM-COMPONENT-PAGER' || element.tagName === 'MM-COPY-PAGE-BUTTON'
+  element.matches('mm-component-pager, mm-copy-page-button')
 
 @customElement('mm-copy-page-button')
 export class CopyPageButton extends LitElement {

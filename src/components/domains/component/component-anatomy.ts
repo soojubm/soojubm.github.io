@@ -43,7 +43,6 @@ export class ComponentAnatomy extends LitElement {
       :host {
         --component-anatomy-stage-width: auto;
         --component-anatomy-stage-padding: 0;
-        --component-content-max-width: calc(var(--size-80) * 6);
 
         display: flex;
         flex-direction: column;
@@ -71,15 +70,6 @@ export class ComponentAnatomy extends LitElement {
         width: var(--component-anatomy-stage-width);
         padding: var(--component-anatomy-stage-padding);
         position: relative;
-      }
-
-      /* 예제와 같은 좁은 폭을 기본으로 두고, 넓어야 하는 시연만 full-width로 푼다. */
-      :host([full-width]) {
-        --component-content-max-width: none;
-      }
-
-      ::slotted(*) {
-        max-width: var(--component-content-max-width);
       }
 
       /* 마커는 무대의 한 변을 기준으로 앉는다. 변 바깥으로 나가는 거리는

@@ -3,6 +3,19 @@ import { css } from 'lit'
 import { MEDIA } from '@/constants'
 
 export const componentContentFrameStyles = css`
+  /* 프레임 안 콘텐츠는 폭이 들쭉날쭉하지 않도록 좁은 폭을 기본으로 두고, 넓어야 하는 시연만 full-width로 푼다. */
+  :host {
+    --component-content-max-width: calc(var(--size-80) * 6);
+  }
+
+  :host([full-width]) {
+    --component-content-max-width: none;
+  }
+
+  ::slotted(*) {
+    max-width: var(--component-content-max-width);
+  }
+
   .component-content-frame {
     --component-content-offset-inline-start: calc(
       var(--layout-padding-inline) * -1 + var(--space-4)
@@ -35,19 +48,8 @@ export const componentContentFrameStyles = css`
 export const componentExampleStyles = [
   componentContentFrameStyles,
   css`
-    /* 예제마다 폭이 들쭉날쭉하지 않도록 좁은 폭을 기본으로 두고, 넓어야 하는 예제만 full-width로 푼다. */
     :host {
-      --component-content-max-width: calc(var(--size-80) * 6);
-
       display: block;
-    }
-
-    :host([full-width]) {
-      --component-content-max-width: none;
-    }
-
-    ::slotted(*) {
-      max-width: var(--component-content-max-width);
     }
 
     .component-example {

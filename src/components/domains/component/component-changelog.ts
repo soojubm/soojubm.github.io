@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
@@ -38,7 +38,7 @@ export class ComponentChangelog extends LitElement {
   @property({ attribute: false }) items: ComponentChangelogItemData[] = []
 
   render() {
-    if (this.items.length === 0) return null
+    if (this.items.length === 0) return nothing
 
     return html`
       <mm-heading>${this.heading}</mm-heading>
