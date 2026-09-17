@@ -35,7 +35,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'label', type: "string = '파일 업로드'" },
-  { name: 'helper', type: 'string', optional: true },
+  { name: 'description', type: 'string', optional: true },
   { name: 'accept', type: 'string', optional: true },
   { name: 'multiple', type: 'boolean = false', optional: true },
   { name: 'capture', type: 'boolean = false', optional: true },
@@ -51,7 +51,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Feedback',
     description:
-      '허용 형식과 용량은 helper로 미리 알리고, 선택 결과는 첨부 목록과 상태 텍스트로 전달합니다. 실패는 별도의 에러 메시지로 설명합니다.',
+      '허용 형식과 용량은 description으로 미리 알리고, 선택 결과는 첨부 목록과 상태 텍스트로 전달합니다. 실패는 별도의 에러 메시지로 설명합니다.',
   },
 ]
 
@@ -67,7 +67,7 @@ const main = html`
 
     <mm-component-example>
       <mm-file-uploader
-        helper="Only .jpg and .png files. 500kb max file size."
+        description="Only .jpg and .png files. 500kb max file size."
         accept=".jpg,.png"
         multiple
       ></mm-file-uploader>
@@ -88,7 +88,7 @@ const main = html`
     <mm-component-anatomy
       .parts=${[
         '첨부 버튼 — 파일 선택 대화상자를 여는 트리거(label).',
-        '상태 텍스트 — 허용 조건(helper)과 현재 선택 개수를 함께 전달합니다.',
+        '상태 텍스트 — 허용 조건(description)과 현재 선택 개수를 함께 전달합니다.',
         '첨부 목록 — 첨부한 파일을 유형·크기와 함께 보여주고 개별로 제거합니다.',
       ]}
       .code=${'<mm-file-uploader label="사진 업로드" accept=".jpg,.png" multiple></mm-file-uploader>'}

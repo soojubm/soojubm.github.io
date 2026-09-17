@@ -42,7 +42,7 @@ export class FileUploader extends LitElement {
     }
   `
   @property({ type: String }) label = '파일 업로드'
-  @property({ type: String }) helper = ''
+  @property({ type: String }) description = ''
   @property({ type: String }) accept = ''
   @property({ type: Boolean }) multiple = false
   @property({ type: Boolean }) capture = false
@@ -64,7 +64,7 @@ export class FileUploader extends LitElement {
         @change=${this.handleFilesChange}
       ></mm-attachment-button>
       <mm-keyword-tag-group
-        .keywords=${[this.helper, this.filesStatusText].filter(Boolean)}
+        .keywords=${[this.description, this.filesStatusText].filter(Boolean)}
       ></mm-keyword-tag-group>
       <div class="attachments">
         <mm-paragraph color="light">첨부한 파일</mm-paragraph>
