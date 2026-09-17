@@ -37,7 +37,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Bottom Bar"
-        description="작은 화면 하단에서 주요 목적지 사이를 이동하는 내비게이션입니다."
+        description="작은 화면 하단에 고정되는 주요 목적지 내비게이션입니다. 최상위 목적지를 아이콘과 레이블로 나란히 두고 현재 위치를 표시하므로, 사용자는 엄지가 닿는 자리에서 한 번의 탭으로 주요 화면 사이를 오갈 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

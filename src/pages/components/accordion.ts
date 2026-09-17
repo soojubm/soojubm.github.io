@@ -56,7 +56,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Accordion"
-        description="콘텐츠를 펼치거나 접어 필요한 정보만 선택적으로 볼 수 있게 합니다. 반드시 숙지해야 할 중요 정보에는 사용하지 않아야 합니다."
+        description="콘텐츠를 접어 두었다가 필요할 때 펼쳐 보는 목록입니다. 제목만 보여 주다가 누르면 같은 흐름 안에서 상세가 펼쳐지므로, 사용자는 긴 정보 더미에서 관심 있는 항목만 골라 읽을 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

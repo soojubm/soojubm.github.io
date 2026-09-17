@@ -82,7 +82,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="List Item"
-        description="leading(아바타·아이콘) + 본문(제목·설명) + trailing(액션) 한 줄을 구성하는 표현 전용 primitive. 상호작용 의미가 필요하면 menuItem을 사용합니다."
+        description="목록의 한 행을 이루는 표현 전용 골격입니다. 앞쪽 아바타·아이콘, 가운데 제목·설명, 뒤쪽 액션 자리를 행마다 같은 위치에 고정하므로, 사용자는 반복되는 행을 같은 리듬으로 훑으며 항목 사이의 차이에만 눈을 둘 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

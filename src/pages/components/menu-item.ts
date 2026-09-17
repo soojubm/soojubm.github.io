@@ -99,7 +99,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="MenuItem"
-        description="사용자가 수행할 수 있는 행동 목록입니다. 단일 액션 또는 선택 액션을 포함할 수 있습니다"
+        description="메뉴 안에서 실행하거나 선택할 수 있는 행동 하나입니다. hover·포커스·키보드 탐색을 항목이 직접 처리하고 체크 상태로 선택 여부를 표시하므로, 사용자는 펼쳐진 목록에서 원하는 명령을 빠르게 찾아 실행할 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

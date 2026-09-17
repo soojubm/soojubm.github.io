@@ -52,7 +52,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Result"
-        description="실행 결과를 피드백하는 섹션 또는 페이지 단위의 컴포넌트."
+        description="작업이 끝난 뒤 그 결과를 보여 주는 섹션 또는 페이지 단위의 화면입니다. 완료·오류·빈 상태를 아이콘과 메시지로 알리고 다음 행동을 버튼으로 제시하므로, 사용자는 결과를 확인한 자리에서 곧바로 다음 단계를 고를 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

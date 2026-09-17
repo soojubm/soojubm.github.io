@@ -59,7 +59,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Checkbox"
-        description="옵션 목록에서 하나 이상의 옵션을 선택합니다."
+        description="옵션 목록에서 여러 개를 고르거나 하나의 동의를 표시하는 선택 컨트롤입니다. 누를 때마다 체크 상태가 바뀌고 각 옵션이 서로 독립적으로 동작하므로, 사용자는 해당하는 항목을 모두 골라 원하는 조합을 만들 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

@@ -44,7 +44,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Popover"
-        description="트리거에 앵커되어 뜨는 non-modal 레이어 프리미티브입니다."
+        description="트리거에 붙어 뜨는 non-modal 레이어입니다. 트리거로 열고 바깥 클릭이나 ESC로 닫히며 배경 상호작용을 막지 않으므로, 사용자는 지금 보던 맥락을 떠나지 않고 추가 옵션이나 정보를 다룰 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

@@ -60,7 +60,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="File Uploader"
-        description="파일을 첨부하고 첨부한 목록을 관리합니다. 첨부 버튼과 파일 목록을 한 단위로 묶어 선택 상태를 스스로 소유합니다."
+        description="파일을 첨부하고 첨부한 목록을 관리하는 입력 컨트롤입니다. 첨부 버튼과 파일 목록을 한 단위로 묶어 허용 형식을 미리 알리고 파일마다 제거할 수 있게 하므로, 사용자는 무엇을 올렸는지 확인하며 제출 전에 첨부를 바로잡을 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

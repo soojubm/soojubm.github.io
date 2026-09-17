@@ -41,7 +41,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Switch"
-        description="켜고 끄는 옵션입니다. 사용자는 실행한 옵션의 결과를 즉시 확인할 수 있습니다."
+        description="설정을 켜고 끄는 즉시 반영형 컨트롤입니다. 누르는 순간 상태가 바뀌고 별도의 저장 없이 곧바로 적용되므로, 사용자는 실행한 설정의 결과를 즉시 확인할 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

@@ -111,7 +111,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="ToggleButton"
-        description="클릭하면 선택/비선택 상태가 전환되는 버튼입니다. 독립적인 on/off 토글과, 단일 선택 세그먼트(ToggleButtonGroup)로 확장됩니다."
+        description="누를 때마다 켜짐과 꺼짐이 바뀌는 버튼입니다. 눌린 상태를 버튼 스스로 표시하고, 여러 개를 묶으면 그중 하나만 선택되는 세그먼트로 동작하므로, 사용자는 현재 적용된 설정을 한눈에 보고 한 번의 클릭으로 전환할 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

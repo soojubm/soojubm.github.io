@@ -90,7 +90,7 @@ function sheetPageTemplate() {
       <mm-flex justify-content="between" align-items="start" gap="3">
         <mm-page-header
           heading="Sheet"
-          description="viewport 기준 modal 시트로 화면 위에 표시합니다. center dialog만 써도 충분."
+          description="화면 위를 덮어 독립된 작업 공간을 여는 modal 표면입니다. 화면 중앙이나 가장자리에서 열려 배경 상호작용을 막고 backdrop·ESC·닫기 버튼으로 닫히므로, 사용자는 현재 페이지를 벗어나지 않고 하위 작업에 집중한 뒤 원래 흐름으로 돌아갈 수 있습니다."
         ></mm-page-header>
         <mm-copy-page-button></mm-copy-page-button>
       </mm-flex>

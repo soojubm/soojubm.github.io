@@ -56,7 +56,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Dialog"
-        description="사용자의 정보나 재산의 변경 또는 삭제 확인."
+        description="되돌리기 어려운 작업 앞에서 확인을 받는 modal 창입니다. 제목과 설명, 확인·취소 액션만 담아 배경 클릭으로는 닫히지 않으므로, 사용자는 정보나 재산을 바꾸거나 지우기 전에 결과를 한 번 더 확인할 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>

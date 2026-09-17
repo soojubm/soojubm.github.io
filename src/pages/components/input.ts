@@ -73,7 +73,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Input"
-        description="사용자가 정보를 입력하고 제출할 수 있습니다."
+        description="한 줄의 자유 형식 값을 받는 입력 필드입니다. 레이블과 도움말로 입력할 내용을 안내하고 규칙에 어긋나면 필드 곁에 오류를 표시하므로, 사용자는 무엇을 입력해야 하는지 알고 잘못된 부분을 그 자리에서 고칠 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
