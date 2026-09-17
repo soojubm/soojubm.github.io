@@ -10,9 +10,14 @@ export const codeBlockStyles = css`
   /* 코드 면은 surface 면 선언을 조합한다. */
   pre {
     ${surfaceBaseStyles};
+  }
+
+  /* 이미 면을 가진 프레임 안에 놓일 때는 면을 걷고 코드만 그린다. */
+  :host([variant='plain']) pre {
     --surface-padding: 0;
     --surface-border: none;
     --surface-border-radius: 0;
+    --surface-background-color: transparent;
   }
 
   code {
