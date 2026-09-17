@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { AriaInvalid } from '@/types'
 
 import '@/components/common/input/semantics/textfield-label'
-import '@/components/common/input/semantics/textfield-helper'
+import '@/components/common/input/semantics/textfield-description'
 import '@/components/common/input/semantics/textfield-validation'
 import { type Constructor, emit, uniqueId } from '@/utils'
 
@@ -17,11 +17,11 @@ export const renderFieldLabel = (forId: string, label: string | undefined, optio
   `
 }
 
-export const renderFieldHelper = (helper: string | undefined, id?: string) => {
-  if (!helper) return nothing
+export const renderFieldDescription = (description: string | undefined, id?: string) => {
+  if (!description) return nothing
 
   return html`
-    <mm-textfield-helper id=${ifDefined(id)}>${helper}</mm-textfield-helper>
+    <mm-textfield-description id=${ifDefined(id)}>${description}</mm-textfield-description>
   `
 }
 
@@ -38,7 +38,7 @@ export interface TextfieldState {
   name: string
   placeholder: string
   label?: string
-  helper?: string
+  description?: string
   validationText?: string
   size: string
   optional: boolean
@@ -46,6 +46,7 @@ export interface TextfieldState {
   disabled: boolean
   ariaInvalid: AriaInvalid
   readonly inputId: string
+  readonly describedBy: string
   handleInput(event: Event): void
 }
 
@@ -59,7 +60,7 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: String }) name = ''
     @property({ type: String }) placeholder = ''
     @property({ type: String }) label?: string
-    @property({ type: String }) helper?: string
+    @property({ type: String }) description?: string
     @property({ type: String, attribute: 'validation-text' }) validationText?: string
     @property({ type: String, reflect: true }) size = ''
     @property({ type: Boolean }) optional = false
@@ -68,6 +69,16 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
     @query('mm-input') private input?: HTMLElement
     readonly inputId = uniqueId('input')
+
+    // input 아래에 놓이는 helper·validation을 input 설명으로 연결한다.
+    get describedBy() {
+      return [
+        this.description && `${this.inputId}-description`,
+        this.validationText && `${this.inputId}-validation`,
+      ]
+        .filter(Boolean)
+        .join(' ')
+    }
 
     // 호스트는 포커스를 받지 않으므로 mm-input으로 넘긴다.
     focus(options?: FocusOptions) {

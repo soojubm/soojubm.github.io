@@ -259,7 +259,7 @@ function filterSheetTemplate() {
           <mm-separator></mm-separator>
           <mm-form-field
             label="접근성 편의"
-            helper="호스트가 제공하고 에어비앤비에서 검토한 정보입니다."
+            description="호스트가 제공하고 에어비앤비에서 검토한 정보입니다."
           >
             <mm-menu-item-checkbox-group aria-label="접근성 편의">
               <mm-menu-item-checkbox

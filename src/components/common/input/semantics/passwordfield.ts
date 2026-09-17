@@ -17,7 +17,7 @@ export class PasswordField extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
   @property({ type: String }) label?: string
-  @property({ type: String }) helper?: string
+  @property({ type: String }) description?: string
   @property({ type: String, attribute: 'validation-text' }) validationText?: string
   @property({ type: String, reflect: true }) size = ''
   @property({ type: Boolean }) optional = false
@@ -34,7 +34,7 @@ export class PasswordField extends LitElement {
         .name=${this.name}
         .placeholder=${this.placeholder}
         .label=${this.label}
-        .helper=${this.helper}
+        .description=${this.description}
         .validationText=${this.validationText}
         .size=${this.size}
         ?optional=${this.optional}

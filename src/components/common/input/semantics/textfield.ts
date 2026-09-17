@@ -6,7 +6,7 @@ import type { InputType } from '@/components/common/input/input'
 
 import { textfieldStyles } from '@/components/common/input/input.styles'
 import {
-  renderFieldHelper,
+  renderFieldDescription,
   renderFieldLabel,
   renderFieldValidation,
   withTextfieldState,
@@ -20,7 +20,7 @@ export class Textfield extends withTextfieldState(LitElement) {
 
   render() {
     return html`
-      ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
+      ${renderFieldLabel(this.inputId, this.label, this.optional)}
       <slot name="link"></slot>
       <div class="textfield-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
         <slot name="leading"></slot>
@@ -33,11 +33,12 @@ export class Textfield extends withTextfieldState(LitElement) {
           aria-label=${this.label ?? this.placeholder ?? nothing}
           ?disabled=${this.disabled}
           aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
-          aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
+          aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
         ></mm-input>
         <slot name="trailing"></slot>
       </div>
+      ${renderFieldDescription(this.description, `${this.inputId}-description`)}
       ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
     `
   }

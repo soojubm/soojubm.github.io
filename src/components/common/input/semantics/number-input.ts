@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { textfieldStyles } from '@/components/common/input/input.styles'
 import {
-  renderFieldHelper,
+  renderFieldDescription,
   renderFieldLabel,
   renderFieldValidation,
   withTextfieldState,
@@ -23,7 +23,7 @@ export class NumberInput extends withTextfieldState(LitElement) {
 
   render() {
     return html`
-      ${renderFieldLabel(this.inputId, this.label, this.optional)} ${renderFieldHelper(this.helper)}
+      ${renderFieldLabel(this.inputId, this.label, this.optional)}
       <div class="textfield-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
         <mm-input
           input-id=${this.inputId}
@@ -37,7 +37,7 @@ export class NumberInput extends withTextfieldState(LitElement) {
           .step=${this.step}
           ?disabled=${this.disabled}
           aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
-          aria-describedby=${this.validationText ? `${this.inputId}-validation` : nothing}
+          aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
         ></mm-input>
         <mm-icon-button
@@ -59,6 +59,7 @@ export class NumberInput extends withTextfieldState(LitElement) {
           @click=${this.handleIncrementClick}
         ></mm-icon-button>
       </div>
+      ${renderFieldDescription(this.description, `${this.inputId}-description`)}
       ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
     `
   }

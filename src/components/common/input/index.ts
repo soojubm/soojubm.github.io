@@ -1,7 +1,7 @@
 import '@/components/common/input/input'
 
 import '@/components/common/input/semantics/textfield'
-import '@/components/common/input/semantics/textfield-helper'
+import '@/components/common/input/semantics/textfield-description'
 import '@/components/common/input/semantics/textfield-label'
 import '@/components/common/input/semantics/textfield-validation'
 import '@/components/common/input/semantics/form-field'

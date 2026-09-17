@@ -87,10 +87,11 @@ export const inputStyles = css`
   }
 `
 
-/** label·helper·validation을 함께 렌더하는 field 계열(textfield, textarea-field, number-input)의 공유 규칙. */
+/** label·description·validation을 함께 렌더하는 field 계열(textfield, textarea-field, number-input)의 공유 규칙. */
 export const textfieldStyles = [
   inputStyles,
   css`
+    mm-textfield-description,
     mm-textfield-validation {
       margin: var(--space-1) 0 0;
     }

@@ -19,7 +19,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
   { name: 'placeholder', type: 'string', optional: true },
   { name: 'label', type: 'string', optional: true },
-  { name: 'helper', type: 'string', optional: true },
+  { name: 'description', type: 'string', optional: true },
   { name: 'rows', type: 'number = 3', optional: true },
   { name: 'optional', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
@@ -61,7 +61,7 @@ const main = html`
         <mm-textarea-field
           label="Textarea Field"
           placeholder="Textarea placeholder..."
-          helper="레이블과 헬퍼 텍스트를 가질 수 있다."
+          description="레이블과 헬퍼 텍스트를 가질 수 있다."
         ></mm-textarea-field>
       </mm-flex>
     </mm-component-example>
@@ -76,7 +76,7 @@ const main = html`
       .code=${`<mm-textarea-field
     label="자기소개"
     placeholder="Textarea placeholder..."
-    helper="레이블과 헬퍼 텍스트를 가질 수 있다."
+    description="레이블과 헬퍼 텍스트를 가질 수 있다."
     rows="3"
 ></mm-textarea-field>`}
     ></mm-component-anatomy>

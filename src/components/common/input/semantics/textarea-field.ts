@@ -6,7 +6,7 @@ import type { AriaInvalid } from '@/types'
 
 import { textfieldStyles } from '@/components/common/input/input.styles'
 import {
-  renderFieldHelper,
+  renderFieldDescription,
   renderFieldLabel,
 } from '@/components/common/input/semantics/textfield.helpers'
 import '@/components/common/input/textarea'
@@ -19,7 +19,7 @@ export class TextareaField extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
   @property({ type: String }) label?: string
-  @property({ type: String }) helper?: string
+  @property({ type: String }) description?: string
   @property({ type: Number }) rows = 3
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean }) disabled = false
@@ -38,10 +38,10 @@ export class TextareaField extends LitElement {
         .rows=${this.rows}
         ?disabled=${this.disabled}
         aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
-        aria-describedby=${this.helper ? this.helperId : nothing}
+        aria-describedby=${this.description ? this.descriptionId : nothing}
         @input=${this.handleTextareaInput}
       ></mm-textarea>
-      ${renderFieldHelper(this.helper, this.helperId)}
+      ${renderFieldDescription(this.description, this.descriptionId)}
     `
   }
 
@@ -50,8 +50,8 @@ export class TextareaField extends LitElement {
     this.textarea?.focus(options)
   }
 
-  private get helperId() {
-    return `${this.inputId}-helper`
+  private get descriptionId() {
+    return `${this.inputId}-description`
   }
 
   private handleTextareaInput(event: CustomEvent<{ value: string }>) {

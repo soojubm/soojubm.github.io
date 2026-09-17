@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
 import type {
+  ComponentChangelogItemData,
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentReferenceItemData,
@@ -17,6 +18,14 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'search.html', label: 'Search' },
 ]
 
+const componentChangelog: ComponentChangelogItemData[] = [
+  {
+    date: '2026-09-17',
+    description:
+      'field 계열 전체에서 helper를 description으로 변경하고(mm-textfield-helper → mm-textfield-description), 설명 텍스트를 입력 필드 아래로 옮겼습니다.',
+  },
+]
+
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1',
@@ -31,7 +40,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
   { name: 'placeholder', type: 'string', optional: true },
   { name: 'label', type: 'string', optional: true },
-  { name: 'helper', type: 'string', optional: true },
+  { name: 'description', type: 'string', optional: true },
   { name: 'validation-text', type: 'string', optional: true },
   { name: 'size', type: "'small'", optional: true },
   { name: 'optional', type: 'boolean', optional: true },
@@ -102,7 +111,7 @@ const main = html`
                 <mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
                 <mm-textfield
                   label="이메일"
-                  helper="회사 이메일을 입력하세요."
+                  description="회사 이메일을 입력하세요."
                   placeholder="name@example.com"
                 ></mm-textfield>
               </mm-flex>
@@ -180,15 +189,15 @@ const main = html`
     <mm-component-anatomy
       .parts=${[
         '레이블 — 입력 항목의 이름을 나타냅니다(label).',
-        '헬퍼 텍스트 — 레이블 아래에서 입력 형식이나 보조 정보를 안내합니다(helper).',
         '입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.',
         '접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: leading / trailing).',
+        '설명 텍스트 — 입력 필드 아래에서 입력 형식이나 보조 정보를 안내합니다(description).',
         '검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text).',
       ]}
       .code=${`<mm-textfield
     label="이메일"
     placeholder="name@example.com"
-    helper="회사 이메일을 입력하세요."
+    description="회사 이메일을 입력하세요."
     validation-text="올바른 이메일 형식으로 입력하세요."
 >
     <mm-icon slot="leading" name="mail"></mm-icon>
@@ -196,15 +205,15 @@ const main = html`
       .markers=${[
         { placement: 'inline-start', offset: '0.75rem' },
         { placement: 'inline-start', offset: '2.5rem' },
+        { placement: 'inline-start', offset: '2.5rem', inset: true },
         { placement: 'inline-start', offset: '4.75rem' },
-        { placement: 'inline-start', offset: '4.75rem', inset: true },
         { placement: 'inline-start', offset: 'calc(100% - 0.75rem)' },
       ]}
     >
       <mm-textfield
         label="이메일"
         placeholder="name@example.com"
-        helper="회사 이메일을 입력하세요."
+        description="회사 이메일을 입력하세요."
         validation-text="올바른 이메일 형식으로 입력하세요."
         aria-invalid="true"
         style="width: 280px"
@@ -244,7 +253,7 @@ const main = html`
       heading="Feedback Message or Validation Message"
       description="help message와 mui에서는 error prop."
     >
-      <mm-textfield-helper>help message 이거 맞나</mm-textfield-helper>
+      <mm-textfield-description>description message 이거 맞나</mm-textfield-description>
       <mm-textfield-validation>validation message 이거 맞나</mm-textfield-validation>
     </mm-component-section>
 
@@ -260,7 +269,7 @@ const main = html`
           min="1"
           max="20"
           step="1"
-          helper="1개 이상 20개 이하로 입력하세요."
+          description="1개 이상 20개 이하로 입력하세요."
         ></mm-number-input>
 
         <mm-number-input
@@ -285,7 +294,7 @@ const main = html`
         <mm-passwordfield
           label="비밀번호"
           placeholder="비밀번호를 입력하세요"
-          helper="8자 이상, 영문·숫자·특수문자를 포함하세요."
+          description="8자 이상, 영문·숫자·특수문자를 포함하세요."
         ></mm-passwordfield>
         <mm-passwordfield label="비밀번호 확인" placeholder="6자리 이상"></mm-passwordfield>
       </mm-flex>
@@ -309,7 +318,7 @@ const main = html`
         <mm-form-field label="성별">
           <mm-gender-selector stretch></mm-gender-selector>
         </mm-form-field>
-        <mm-form-field label="관심 주제" optional helper="여러 개를 선택할 수 있습니다.">
+        <mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
           <mm-checkbox-group
             name="topics"
             .options=${[
@@ -319,7 +328,7 @@ const main = html`
             ]}
           ></mm-checkbox-group>
         </mm-form-field>
-        <mm-form-field label="국가" helper="배송 가능한 국가만 표시됩니다.">
+        <mm-form-field label="국가" description="배송 가능한 국가만 표시됩니다.">
           <mm-select
             .options=${[
               { value: 'kr', label: '대한민국' },
@@ -352,6 +361,8 @@ const main = html`
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
+
+    <mm-component-changelog .items=${componentChangelog}></mm-component-changelog>
 
     <mm-component-pager></mm-component-pager>
   </mm-main>
