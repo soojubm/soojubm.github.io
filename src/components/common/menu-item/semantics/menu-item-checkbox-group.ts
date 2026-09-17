@@ -1,11 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js'
+import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type {
-  MenuItemGroup,
-  MenuItemGroupSize,
-} from '@/components/common/menu-item/menu-item-group'
+import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
 import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
 
 import '@/components/common/menu-item/menu-item-group'
@@ -34,7 +31,6 @@ export class MenuItemCheckboxGroup extends LitElement {
   @property({ attribute: false }) values: string[] = []
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox' })
   private checkboxes!: MenuItemCheckbox[]
-  @query('mm-menu-item-group') private list?: MenuItemGroup
   private selection = new MultipleSelectionController(this, {
     getValues: () => this.values,
     setValues: values => {
@@ -62,11 +58,6 @@ export class MenuItemCheckboxGroup extends LitElement {
         <slot @slotchange=${this.group.handleSlotChange}></slot>
       </mm-menu-item-group>
     `
-  }
-
-  // 목록 role은 shadow 안의 mm-menu-item-group이 가지므로, 표면이 포커스를 옮길 때 그 목록에 넘긴다.
-  focus() {
-    this.list?.focus()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
