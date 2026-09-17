@@ -132,7 +132,7 @@ const main = html`
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
-    <mm-component-example>
+    <mm-component-example full-width>
       <header
         style="
           display: flex;

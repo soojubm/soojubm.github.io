@@ -242,7 +242,7 @@ const main = html`
     ></mm-component-anatomy>
 
     <mm-component-section heading="PricingSurface" description="">
-      <mm-flex direction="column" gap="4" style="max-width: 400px">
+      <mm-flex direction="column" gap="4">
         <mm-tag>
           <span aria-hidden="true">🔥</span>
           Most Popular

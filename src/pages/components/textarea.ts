@@ -55,7 +55,7 @@ const main = html`
     </mm-flex>
 
     <mm-component-example>
-      <mm-flex direction="column" gap="4" style="width: 100%; max-width: 400px">
+      <mm-flex direction="column" gap="4" style="width: 100%">
         <mm-textarea placeholder="Textarea placeholder..."></mm-textarea>
 
         <mm-textarea-field
@@ -82,12 +82,10 @@ const main = html`
     ></mm-component-anatomy>
 
     <mm-component-section heading="Comment Input" description="댓글 작성 입력 패턴">
-      <div style="max-width: 480px">
-        <mm-comment-input
-          placeholder="무슨 생각을 하고 계신가요?"
-          submit-label="댓글 게시"
-        ></mm-comment-input>
-      </div>
+      <mm-comment-input
+        placeholder="무슨 생각을 하고 계신가요?"
+        submit-label="댓글 게시"
+      ></mm-comment-input>
     </mm-component-section>
 
     <mm-component-section heading="Prompt Input" description="">

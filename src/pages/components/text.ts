@@ -109,11 +109,7 @@ const main = html`
       description="보조 설명, 메타 정보, 이미지 캡션처럼 낮은 위계의 텍스트입니다."
     >
       <mm-flex direction="column" gap="3">
-        <mm-thumbnail
-          ratio="16:9"
-          caption="이미지 하단에 배치되는 설명 텍스트"
-          style="max-width: 360px"
-        ></mm-thumbnail>
+        <mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>
       </mm-flex>
     </mm-component-section>
 

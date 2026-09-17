@@ -33,7 +33,7 @@ const main = html`
 
     <mm-component-aka .items=${['Timeline', 'Stepper']}></mm-component-aka>
 
-    <mm-component-example>
+    <mm-component-example full-width>
       <mm-flex direction="column" gap="4">
         <section class="step">
           <div class="step-item is-active" aria-current="step">

@@ -147,7 +147,7 @@ const main = html`
       heading="RadioCard"
       description="레이블만으로 부족해 가격·배지·설명을 담아야 할 때, 면 전체를 선택지로 만듭니다. 옵션 배열로 담을 수 없는 콘텐츠라 카드를 자식으로 받는 mm-radio-card-group으로 묶습니다."
     >
-      <mm-radio-card-group name="license" value="standard" style="max-width: 420px">
+      <mm-radio-card-group name="license" value="standard">
         <mm-radio-card value="standard" checked>
           <mm-text-block
             level="5"

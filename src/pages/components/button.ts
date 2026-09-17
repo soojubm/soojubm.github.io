@@ -149,7 +149,7 @@ const main = html`
         <mm-tab value="state">State</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="variant">
-        <mm-component-example>
+        <mm-component-example full-width>
           <mm-flex direction="column" gap="6">
             <mm-button-group>
               <mm-button variant="primary" size="large">primary</mm-button>
@@ -283,6 +283,7 @@ const main = html`
 
     <mm-component-section
       heading="ShowMoreButton"
+      full-width
       description="Image Button, CheckoutButton. full-width로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
     >
       <mm-grid columns="3">

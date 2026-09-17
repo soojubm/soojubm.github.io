@@ -91,12 +91,10 @@ const main = html`
       <mm-tab-panel value="size">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <div style="max-width: 400px">
-              <mm-flex direction="column" gap="3">
-                <mm-textfield placeholder="Default"></mm-textfield>
-                <mm-textfield size="small" placeholder="Small"></mm-textfield>
-              </mm-flex>
-            </div>
+            <mm-flex direction="column" gap="3">
+              <mm-textfield placeholder="Default"></mm-textfield>
+              <mm-textfield size="small" placeholder="Small"></mm-textfield>
+            </mm-flex>
             <mm-paragraph>
               small은 수량 입력처럼 다른 컨트롤 안에 들어가는 필드에 씁니다.
             </mm-paragraph>
@@ -106,16 +104,14 @@ const main = html`
       <mm-tab-panel value="label">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <div style="max-width: 400px">
-              <mm-flex direction="column" gap="3">
-                <mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
-                <mm-textfield
-                  label="이메일"
-                  description="회사 이메일을 입력하세요."
-                  placeholder="name@example.com"
-                ></mm-textfield>
-              </mm-flex>
-            </div>
+            <mm-flex direction="column" gap="3">
+              <mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
+              <mm-textfield
+                label="이메일"
+                description="가입 후에는 변경할 수 없어요."
+                placeholder="name@example.com"
+              ></mm-textfield>
+            </mm-flex>
             <mm-paragraph>label은 입력 항목의 이름이며, 화면에 보이게 둡니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
@@ -123,16 +119,14 @@ const main = html`
       <mm-tab-panel value="icon">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <div style="max-width: 400px">
-              <mm-flex direction="column" gap="3">
-                <mm-textfield placeholder="name@example.com">
-                  <mm-icon slot="leading" name=${ICON_NAMES.MAIL}></mm-icon>
-                </mm-textfield>
-                <mm-textfield type="date" placeholder="YYYY. MM. DD.">
-                  <mm-icon slot="trailing" name=${ICON_NAMES.DATE}></mm-icon>
-                </mm-textfield>
-              </mm-flex>
-            </div>
+            <mm-flex direction="column" gap="3">
+              <mm-textfield placeholder="name@example.com">
+                <mm-icon slot="leading" name=${ICON_NAMES.MAIL}></mm-icon>
+              </mm-textfield>
+              <mm-textfield type="date" placeholder="YYYY. MM. DD.">
+                <mm-icon slot="trailing" name=${ICON_NAMES.DATE}></mm-icon>
+              </mm-textfield>
+            </mm-flex>
             <mm-paragraph>
               leading 슬롯에는 입력값의 종류를 알리는 아이콘을, trailing 슬롯에는 입력을 돕는
               아이콘이나 단위를 둡니다. leading 아이콘은 레이블 역할을 하므로 label과 함께 쓰지
@@ -144,12 +138,10 @@ const main = html`
       <mm-tab-panel value="optional">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <div style="max-width: 400px">
-              <mm-flex direction="column" gap="3">
-                <mm-textfield label="받는 분" placeholder="이름"></mm-textfield>
-                <mm-textfield label="배송 메시지" placeholder="직접 입력" optional></mm-textfield>
-              </mm-flex>
-            </div>
+            <mm-flex direction="column" gap="3">
+              <mm-textfield label="받는 분" placeholder="이름"></mm-textfield>
+              <mm-textfield label="배송 메시지" placeholder="직접 입력" optional></mm-textfield>
+            </mm-flex>
             <mm-paragraph>
               텍스트필드는 기본적으로 필수 입력입니다. 입력하면 명확한 이점이 있을 때만 optional로
               선택 입력을 표시합니다.
@@ -160,18 +152,16 @@ const main = html`
       <mm-tab-panel value="state">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <div style="max-width: 400px">
-              <mm-flex direction="column" gap="3">
-                <mm-textfield placeholder="Placeholder"></mm-textfield>
-                <mm-textfield placeholder="Disabled" disabled></mm-textfield>
-                <mm-textfield
-                  value="Invalid"
-                  placeholder="Placeholder..."
-                  aria-invalid="true"
-                  validation-text="이미 등록된 이메일입니다."
-                ></mm-textfield>
-              </mm-flex>
-            </div>
+            <mm-flex direction="column" gap="3">
+              <mm-textfield placeholder="Placeholder"></mm-textfield>
+              <mm-textfield placeholder="Disabled" disabled></mm-textfield>
+              <mm-textfield
+                value="Invalid"
+                placeholder="Placeholder..."
+                aria-invalid="true"
+                validation-text="이미 등록된 이메일입니다."
+              ></mm-textfield>
+            </mm-flex>
             <mm-paragraph>
               aria-invalid로 오류 상태를 표시하고, validation-text로 이유를 필드 아래에 알립니다.
             </mm-paragraph>
@@ -197,7 +187,7 @@ const main = html`
       .code=${`<mm-textfield
     label="이메일"
     placeholder="name@example.com"
-    description="회사 이메일을 입력하세요."
+    description="가입 후에는 변경할 수 없어요."
     validation-text="올바른 이메일 형식으로 입력하세요."
 >
     <mm-icon slot="leading" name="mail"></mm-icon>
@@ -213,7 +203,7 @@ const main = html`
       <mm-textfield
         label="이메일"
         placeholder="name@example.com"
-        description="회사 이메일을 입력하세요."
+        description="가입 후에는 변경할 수 없어요."
         validation-text="올바른 이메일 형식으로 입력하세요."
         aria-invalid="true"
         style="width: 280px"
@@ -250,11 +240,13 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section
-      heading="Feedback Message or Validation Message"
-      description="help message와 mui에서는 error prop."
+      heading="Description & Validation Text"
+      description="description은 입력을 돕는 설명을, validation-text는 오류의 이유를 입력 필드 아래에 전달합니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
     >
-      <mm-textfield-description>description message 이거 맞나</mm-textfield-description>
-      <mm-textfield-validation>validation message 이거 맞나</mm-textfield-validation>
+      <mm-flex direction="column" gap="2">
+        <mm-textfield-description>가입 후에는 변경할 수 없어요.</mm-textfield-description>
+        <mm-textfield-validation>올바른 이메일 형식으로 입력하세요.</mm-textfield-validation>
+      </mm-flex>
     </mm-component-section>
 
     <mm-component-section
@@ -290,7 +282,7 @@ const main = html`
           제공할 필요가 없다. 비밀번호 확인 필드를 제공하지 않는 것은 국내 서비스에는 익숙하지 않은
           경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다"
     >
-      <mm-flex direction="column" gap="3" style="max-width: 400px">
+      <mm-flex direction="column" gap="3">
         <mm-passwordfield
           label="비밀번호"
           placeholder="비밀번호를 입력하세요"
@@ -304,7 +296,7 @@ const main = html`
       heading="SearchField"
       description="textfield를 확장하며, leading에 검색 인디케이터, trailing에 clear 버튼을 제공합니다."
     >
-      <mm-flex direction="column" gap="3" style="max-width: 400px">
+      <mm-flex direction="column" gap="3">
         <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
         <mm-searchfield size="small" placeholder="작은 검색 필드"></mm-searchfield>
       </mm-flex>
@@ -314,7 +306,7 @@ const main = html`
       heading="FormField"
       description="textfield가 아닌 컨트롤에 레이블·헬퍼·검증 텍스트를 같은 규칙으로 붙이는 래퍼입니다. 컨트롤은 slot으로 받고, 필드는 레이블이 붙은 role=group이 됩니다."
     >
-      <mm-flex direction="column" gap="3" style="max-width: 400px">
+      <mm-flex direction="column" gap="3">
         <mm-form-field label="성별">
           <mm-gender-selector stretch></mm-gender-selector>
         </mm-form-field>
@@ -341,7 +333,7 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="Newsletter">
-      <form style="max-width: 400px">
+      <form>
         <mm-flex direction="column" gap="4">
           <mm-text-block
             level="3"

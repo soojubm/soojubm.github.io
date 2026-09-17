@@ -35,8 +35,19 @@ export const componentContentFrameStyles = css`
 export const componentExampleStyles = [
   componentContentFrameStyles,
   css`
+    /* 예제마다 폭이 들쭉날쭉하지 않도록 좁은 폭을 기본으로 두고, 넓어야 하는 예제만 full-width로 푼다. */
     :host {
+      --component-content-max-width: calc(var(--size-80) * 6);
+
       display: block;
+    }
+
+    :host([full-width]) {
+      --component-content-max-width: none;
+    }
+
+    ::slotted(*) {
+      max-width: var(--component-content-max-width);
     }
 
     .component-example {

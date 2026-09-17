@@ -72,7 +72,7 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
-    <mm-component-example>
+    <mm-component-example full-width>
       <mm-grid columns="4" column-min-width="160px" gap="4">
         <mm-flex direction="column" gap="2">
           <mm-paragraph>1:1</mm-paragraph>
@@ -121,7 +121,6 @@ const main = html`
         alt="노을 지는 협재 해변"
         ratio="16:9"
         caption="제주 협재 해변, 2024년 봄"
-        style="max-width: 360px"
       ></mm-thumbnail>
     </mm-component-section>
 
