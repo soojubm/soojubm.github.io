@@ -25,7 +25,6 @@ export class ThemeSelector extends LitElement {
         <mm-icon-button
           slot="trigger"
           variant="ghost"
-          aria-haspopup="menu"
           icon=${this.currentIcon}
           aria-label="테마 변경"
         ></mm-icon-button>
