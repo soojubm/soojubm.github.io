@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
+import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common/text/semantics/text-block'
 import { findAdjacentDocs } from '@/sitemap'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -21,22 +22,23 @@ export class ComponentPager extends LitElement {
         display: flex;
         justify-content: space-between;
         gap: var(--space-4);
-        padding: var(--space-section) 0;
+        padding-top: var(--space-section);
       }
 
       a {
+        ${surfaceBaseStyles};
+        --surface-shadow: var(--material-elevated-shadow);
+        --lift: none;
+
         flex: 1;
-        display: flex;
-        flex-direction: column;
         gap: var(--space-3);
-        padding: var(--space-4);
-        border-radius: var(--radius);
-        background-color: var(--background-subtle-color);
-        color: var(--foreground-color);
+        transform: var(--lift);
+        transition: box-shadow var(--transition-duration) var(--transition-easing),
+          transform var(--transition-duration) var(--transition-easing);
       }
 
       a:hover {
-        background-color: var(--interaction-hover-background-color);
+        --lift: var(--interaction-hover-lift);
       }
 
       a[rel='next'] {
