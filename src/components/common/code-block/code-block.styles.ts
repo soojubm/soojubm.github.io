@@ -7,10 +7,12 @@ export const codeBlockStyles = css`
     display: block;
   }
 
-  /* 코드 면은 surface 면 선언을 조합한다. 누를 수 없는 면이라 채움 없이 테두리로 구분한다. */
+  /* 코드 면은 surface 면 선언을 조합한다. */
   pre {
     ${surfaceBaseStyles};
-    --surface-border-radius: var(--radius-large);
+    --surface-padding: 0;
+    --surface-border: none;
+    --surface-border-radius: 0;
   }
 
   code {
