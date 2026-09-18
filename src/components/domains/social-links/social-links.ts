@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
+import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common'
 
@@ -26,14 +27,16 @@ type SocialLink = {
 export class SocialLinks extends LitElement {
   static styles = [
     resetStyles,
+    interactiveRowStyles,
     css`
       .compact {
         display: flex;
         gap: var(--space-2);
       }
 
+      /* compact은 행이 아니라 아바타를 늘어놓은 묶음이라 행 스킨의 폭 규칙을 따르지 않는다 */
       .compact a {
-        color: inherit;
+        width: auto;
       }
     `,
   ]
@@ -60,7 +63,7 @@ export class SocialLinks extends LitElement {
 
   private renderDefault() {
     return html`
-      <mm-menu-item-group>${this.renderDefaultLinks()}</mm-menu-item-group>
+      <div role="list">${this.renderDefaultLinks()}</div>
     `
   }
 
@@ -76,7 +79,13 @@ export class SocialLinks extends LitElement {
 
   private renderDefaultLink({ label, icon, href }: SocialLink) {
     return html`
-      <mm-menu-item-link label=${label} icon=${icon} href=${href}></mm-menu-item-link>
+      <div role="listitem">
+        <a href=${href} target="_blank" rel="noopener noreferrer">
+          <mm-list-item label=${label} icon=${icon}>
+            <mm-icon slot="trailing" name=${ICON_NAMES.SHARE} size="small"></mm-icon>
+          </mm-list-item>
+        </a>
+      </div>
     `
   }
 
