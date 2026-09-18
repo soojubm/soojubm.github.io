@@ -17,13 +17,13 @@ const main = html`
           <mm-heading level="1">
             Runway enables next-generation content creation with AI and Vercel
           </mm-heading>
-          <mm-user-row
+          <mm-user-item
             size="medium"
             label="수줍이"
             description="Youtube Subscriber"
             avatar-variant="secondary"
             avatar-src="/src/images/soojubm.png"
-          ></mm-user-row>
+          ></mm-user-item>
         </mm-flex>
       </header>
 

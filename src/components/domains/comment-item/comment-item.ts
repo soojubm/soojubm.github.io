@@ -6,7 +6,7 @@ import type { Popover } from '@/components/overlay/popover/popover'
 import '@/components/common'
 import '@/components/overlay/popover/popover'
 import { emit } from '@/utils'
-import '@/components/domains/user-row/index'
+import '@/components/domains/user-item/index'
 
 /**
  * 댓글 목록의 개별 항목.
@@ -59,14 +59,14 @@ export class CommentItem extends LitElement {
   render() {
     return html`
       <article>
-        <mm-user-row
+        <mm-user-item
           size="medium"
           label=${this.author}
           description=${this.datetime}
           avatar-src=${this.avatarSrc}
         >
           ${this.renderMenu()}
-        </mm-user-row>
+        </mm-user-item>
 
         <slot></slot>
 

@@ -122,12 +122,12 @@ const main = html`
         <mm-component-example>
           <mm-flex direction="column" gap="6">
             <mm-flex gap="4" align-items="center">
-              <mm-user-row
+              <mm-user-item
                 size="medium"
                 label="수줍이"
                 description="UI Designer"
                 avatar-src="/src/images/soojubm.png"
-              ></mm-user-row>
+              ></mm-user-item>
               <mm-avatar
                 size="40"
                 shape="circle"

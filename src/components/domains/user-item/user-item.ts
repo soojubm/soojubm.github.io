@@ -7,8 +7,8 @@ import '@/components/common'
 /**
  * avatar를 leading으로 가지는 표현 전용 행.
  */
-@customElement('mm-user-row')
-export class UserRow extends LitElement {
+@customElement('mm-user-item')
+export class UserItem extends LitElement {
   static styles = [
     css`
       :host {

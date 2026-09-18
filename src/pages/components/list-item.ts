@@ -309,23 +309,23 @@ const main = html`
       </mm-list-item>
     </mm-component-anatomy>
 
-    <mm-component-section heading="UserRow" description="사용자 맥락">
+    <mm-component-section heading="UserItem" description="사용자 맥락">
       <mm-flex direction="column" gap="2">
-        <mm-user-row
+        <mm-user-item
           size="medium"
           label="수줍이"
           description="UI Designer"
           avatar-src="/src/images/soojubm.png"
-        ></mm-user-row>
-        <mm-user-row
+        ></mm-user-item>
+        <mm-user-item
           size="medium"
           label="수줍이"
           description="바보"
           avatar-src="/src/images/soojubm.png"
         >
           <mm-follow-button slot="trailing"></mm-follow-button>
-        </mm-user-row>
-        <mm-user-row
+        </mm-user-item>
+        <mm-user-item
           size="medium"
           label="알 수 없는 사용자"
           description="아바타 이미지가 없을 때"
@@ -333,7 +333,7 @@ const main = html`
           icon=${ICON_NAMES.USER}
         >
           <mm-tag slot="trailing">테스트용 태그</mm-tag>
-        </mm-user-row>
+        </mm-user-item>
       </mm-flex>
     </mm-component-section>
 

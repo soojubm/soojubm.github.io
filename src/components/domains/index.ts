@@ -11,7 +11,7 @@ import '@/components/domains/comment-input'
 import '@/components/domains/comment-item'
 import '@/components/domains/post'
 import '@/components/domains/search-suggestions'
-import '@/components/domains/user-row'
+import '@/components/domains/user-item'
 import '@/components/domains/user-snippet'
 import '@/components/domains/commerce'
 export {}

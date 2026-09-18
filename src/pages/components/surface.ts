@@ -275,12 +275,12 @@ const main = html`
               <span aria-hidden="true">🔥</span>
               Most Popular
             </mm-tag>
-            <mm-user-row
+            <mm-user-item
               size="medium"
               icon=${ICON_NAMES.USER}
               label="수줍이"
               description="2 hour ago"
-            ></mm-user-row>
+            ></mm-user-item>
           </header>
           <div class="feed-body">
             <mm-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></mm-thumbnail>
