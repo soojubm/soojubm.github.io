@@ -13,7 +13,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'select.html', label: 'Select' },
   { href: 'sheet.html', label: 'Sheet' },
   { href: 'tooltip.html', label: 'Tooltip' },
-  { href: 'menu-item.html', label: 'menuItem' },
+  { href: 'menu-item.html', label: 'Menu Item' },
 ]
 
 const componentProps: ComponentPropItemData[] = [

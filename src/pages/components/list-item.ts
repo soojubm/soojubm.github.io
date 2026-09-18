@@ -13,12 +13,12 @@ import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'avatar.html', label: 'Avatar' },
-  { href: 'menu-item.html', label: 'menuItem' },
+  { href: 'menu-item.html', label: 'Menu Item' },
 ]
 
 // 커머스 맥락 컴포넌트는 기반 페이지에 전시하지 않고, 실제로 쓰이는 페이지로 연결한다.
 const builtWithListItem: ComponentRelatedItemData[] = [
-  { href: 'checkout.html', label: 'OrderProductItem' },
+  { href: 'checkout.html', label: 'Order Product Item' },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [

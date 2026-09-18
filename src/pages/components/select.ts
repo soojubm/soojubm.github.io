@@ -12,7 +12,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'popover.html', label: 'Popover' },
   { href: 'radio.html', label: 'Radio' },
   { href: 'toggle-button.html', label: 'Toggle Button' },
-  { href: 'menu-item.html', label: 'menuItem' },
+  { href: 'menu-item.html', label: 'Menu Item' },
 ]
 
 const componentProps: ComponentPropItemData[] = [
