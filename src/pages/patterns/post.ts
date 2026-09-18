@@ -37,7 +37,7 @@ const main = html`
         date=${featured.date}
       ></mm-post-feature>
 
-      <mm-flex direction="column" gap="2">
+      <mm-post-list>
         ${rest.map(
           post => html`
             <mm-post-item
@@ -49,7 +49,7 @@ const main = html`
             ></mm-post-item>
           `,
         )}
-      </mm-flex>
+      </mm-post-list>
     </mm-flex>
   </mm-main>
 `

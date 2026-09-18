@@ -116,7 +116,7 @@ const main = html`
         submit-label="댓글 게시"
       ></mm-comment-input>
 
-      <mm-flex direction="column" gap="4">
+      <mm-comment-list>
         <mm-comment-item
           author="수줍이"
           datetime="1 day ago"
@@ -136,7 +136,7 @@ const main = html`
           우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
           우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
         </mm-comment-item>
-      </mm-flex>
+      </mm-comment-list>
 
       <aside>
         <mm-result
