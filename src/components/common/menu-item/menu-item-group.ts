@@ -6,7 +6,7 @@ import { RovingFocusController } from '@/controllers/roving-focus-controller'
 export type MenuItemGroupSize = '' | 'large'
 
 // 각 항목이 shadow 안에 렌더하는 포커스 대상. 행 조립 규칙은 menu-item 계열이 소유한다.
-const ITEM_SELECTOR = '[role^="menuitem"], [role="option"]'
+const ITEM_SELECTOR = '[role^="menuitem"], [role="option"], [role="radio"]'
 
 @customElement('mm-menu-item-group')
 export class MenuItemGroup extends LitElement {
@@ -33,6 +33,7 @@ export class MenuItemGroup extends LitElement {
           item.getAttribute('aria-selected') === 'true' ||
           item.getAttribute('aria-checked') === 'true',
       ),
+    onFocusMove: index => this.selectFocusedRadio(index),
   })
 
   render() {
@@ -44,6 +45,13 @@ export class MenuItemGroup extends LitElement {
   // 목록 표면이 열릴 때 선택된 항목(없으면 첫 항목)으로 포커스를 옮긴다.
   focus() {
     this.rovingFocus.focusTabStop()
+  }
+
+  // radiogroup은 방향키로 포커스를 옮기면 그 항목이 곧 선택된다. 선택은 행의 활성화 경로를 그대로 탄다.
+  private selectFocusedRadio(index: number) {
+    if (this.role !== 'radiogroup') return
+
+    this.items[index]?.click()
   }
 
   private get items() {

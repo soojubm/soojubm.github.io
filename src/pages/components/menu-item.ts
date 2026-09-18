@@ -90,7 +90,8 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
   {
     heading: 'Interactive - selection',
-    description: 'menuitemcheckbox·menuitemradio 항목이 체크 상태를 소유해 선택 여부를 드러냅니다.',
+    description:
+      '선택 항목이 체크 상태를 소유해 선택 여부를 드러냅니다. role은 놓이는 부모를 따라 radiogroup 안에서는 radio, 체크 그룹 안에서는 checkbox입니다.',
   },
 ]
 

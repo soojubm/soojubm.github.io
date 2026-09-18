@@ -85,7 +85,7 @@ const selectionRows = html`
     <th scope="row"><mm-code>mm-menu-item-radio-group</mm-code></th>
     <td>Single</td>
     <td>자식 요소</td>
-    <td>메뉴·시트 안에서 하나를 고를 때.</td>
+    <td>팝오버·시트·설정 화면의 행 목록에서 하나를 고를 때.</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-checkbox-group</mm-code></th>
@@ -106,7 +106,7 @@ const selectionRows = html`
     <th scope="row"><mm-code>mm-menu-item-checkbox-group</mm-code></th>
     <td>Multiple</td>
     <td>자식 요소</td>
-    <td>메뉴·시트 안에서 여럿을 고를 때.</td>
+    <td>팝오버·시트·설정 화면의 행 목록에서 여럿을 고를 때.</td>
   </tr>
 `
 

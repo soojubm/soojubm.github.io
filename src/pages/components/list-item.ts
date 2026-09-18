@@ -195,7 +195,7 @@ const main = html`
               <span>
                 <b>행 전체를 눌러 명령을 실행하거나 선택 상태를 바꾸면 menu-item을 쓴다</b>
                 <br />
-                menuitem·menuitemcheckbox·menuitemradio role과 hover·포커스 표시, Enter·Space
+                놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)과 hover·포커스 표시, Enter·Space
                 활성화를 컴포넌트가 소유한다
               </span>
             `,

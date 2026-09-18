@@ -14,7 +14,7 @@ export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresenta
   static styles = [menuItemStyles]
 
   render() {
-    return renderMenuItemToggleRow(this, this.renderAction())
+    return renderMenuItemToggleRow(this, 'menuitemcheckbox', this.renderAction())
   }
 
   private renderAction() {

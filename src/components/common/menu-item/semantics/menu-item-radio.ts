@@ -18,10 +18,11 @@ export class MenuItemRadio extends withMenuItemPresentation(LitElement) {
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
 
+  // menu 밖(radiogroup)에서 쓰이므로 menuitemradio가 아니라 radio로 둔다.
   render() {
     return renderMenuItemRow(
       {
-        role: 'menuitemradio',
+        role: 'radio',
         disabled: this.disabled,
         ariaChecked: this.checked ? 'true' : 'false',
         onActivate: this.activate,

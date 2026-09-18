@@ -50,7 +50,7 @@ export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base
 }
 
 export interface MenuItemRowOptions {
-  role: 'menuitemcheckbox' | 'menuitemradio' | 'menuitem' | 'option'
+  role: 'menuitemcheckbox' | 'menuitemradio' | 'menuitem' | 'option' | 'checkbox' | 'radio'
   disabled: boolean
   ariaChecked?: AriaTriState
   ariaSelected?: 'true' | 'false'
@@ -133,14 +133,18 @@ export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base:
   return MenuItemToggleStateElement as Constructor<MenuItemToggleState> & T
 }
 
-/** checkbox·switch 계열이 공유하는 menuitemcheckbox 행 조립. */
+/**
+ * checkbox·switch 계열이 공유하는 토글 행 조립.
+ * role은 겉모습이 아니라 행이 놓이는 부모에 맞춰 각 컴포넌트가 정한다.
+ */
 export function renderMenuItemToggleRow(
   props: MenuItemPresentation & MenuItemToggleState,
+  role: 'menuitemcheckbox' | 'checkbox',
   trailing: unknown,
 ) {
   return renderMenuItemRow(
     {
-      role: 'menuitemcheckbox',
+      role,
       disabled: props.disabled,
       ariaChecked: props.checked ? 'true' : 'false',
       onActivate: props.activate,

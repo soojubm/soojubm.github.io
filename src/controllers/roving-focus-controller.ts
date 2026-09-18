@@ -14,6 +14,8 @@ interface RovingFocusControllerOptions {
   getActiveIndex?: () => number
   // Enter/Space 활성화를 컨트롤러가 처리해야 하는 비네이티브 항목에서만 넘긴다.
   onActivate?: (index: number) => void
+  // 키보드로 포커스를 옮긴 뒤 호출한다. 이동이 곧 선택인 radiogroup에서 넘긴다.
+  onFocusMove?: (index: number) => void
 }
 
 // 방향키를 이동 방향(+1/-1)으로 좁힌다. 방향과 무관한 키는 undefined.
@@ -116,6 +118,7 @@ export class RovingFocusController implements ReactiveController {
     }
 
     this.moveFocus(items, target)
+    this.options.onFocusMove?.(target)
   }
 
   // 키를 목표 인덱스나 'activate'로 해석한다. 처리 대상이 아니면 undefined.

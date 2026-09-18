@@ -15,8 +15,9 @@ export class MenuItemCheckbox extends withMenuItemToggleState(
 ) {
   static styles = [menuItemStyles]
 
+  // menu 밖(체크 그룹)에서 쓰이므로 menuitemcheckbox가 아니라 checkbox로 둔다.
   render() {
-    return renderMenuItemToggleRow(this, this.renderAction())
+    return renderMenuItemToggleRow(this, 'checkbox', this.renderAction())
   }
 
   private renderAction() {
