@@ -205,7 +205,7 @@ const main = html`
         <mm-paragraph>
           상태 표현은 각 컴포넌트가 소유하며, Interaction tokens를 상태별로 재할당해 나타냅니다.
         </mm-paragraph>
-        <mm-flex direction="column" gap="3">
+        <mm-list-item-group>
           <mm-list-item
             icon=${ICON_NAMES.CLICK}
             size="medium"
@@ -278,7 +278,7 @@ const main = html`
             label="진행 중"
             description="결과가 올 때까지 다시 실행할 수 없다는 표시입니다."
           ></mm-list-item>
-        </mm-flex>
+        </mm-list-item-group>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Hover">

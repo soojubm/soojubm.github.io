@@ -117,7 +117,7 @@ const main = html`
           간격을 따로 판단하지 않고, 소속된 단계에 맞는 토큰만 참조합니다.
         </mm-paragraph>
 
-        <mm-flex direction="column" gap="3">
+        <mm-list-item-group>
           <mm-list-item
             icon=${ICON_NAMES.IDLE}
             size="medium"
@@ -136,7 +136,7 @@ const main = html`
             label="Section"
             description="제목과 본문 사이 --space-3. 구획끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
           ></mm-list-item>
-        </mm-flex>
+        </mm-list-item-group>
 
         <mm-keyword-tag-group
           heading="Group 컴포넌트"

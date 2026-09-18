@@ -22,7 +22,7 @@ const main = html`
           필드나 영역, 그리고 접근 가능한 관계를 함께 제공해 사용자가 원인과 대상을 이해하게 합니다.
         </mm-paragraph>
 
-        <mm-flex direction="column" gap="3">
+        <mm-list-item-group>
           <mm-list-item
             icon=${ICON_NAMES.SUCCESS}
             size="medium"
@@ -47,7 +47,7 @@ const main = html`
             label="Error"
             description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
           ></mm-list-item>
-        </mm-flex>
+        </mm-list-item-group>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Data/async states">
@@ -57,7 +57,7 @@ const main = html`
           부릅니다.
         </mm-paragraph>
 
-        <mm-flex direction="column" gap="3">
+        <mm-list-item-group>
           <mm-list-item
             icon=${ICON_NAMES.IDLE}
             size="medium"
@@ -88,7 +88,7 @@ const main = html`
             label="Empty"
             description="완료되었으나 데이터가 0건일 때 빈 화면을 노출합니다."
           ></mm-list-item>
-        </mm-flex>
+        </mm-list-item-group>
       </mm-content-section>
     </mm-content-section-list>
 

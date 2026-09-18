@@ -69,7 +69,7 @@ const renderRoleItem = ([key, name]: [string, string]) => {
 }
 
 const renderRoleList = (icons: Record<string, string>) => html`
-  <mm-flex direction="column" gap="3">${Object.entries(icons).map(renderRoleItem)}</mm-flex>
+  <mm-list-item-group>${Object.entries(icons).map(renderRoleItem)}</mm-list-item-group>
 `
 
 /** 역할을 목록으로 전시하는 그룹. 나머지는 아이콘 그리드로 둔다. */

@@ -64,6 +64,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'primary'`, optional: true },
   { name: 'avatar-shape', type: "'circle' | 'square' = 'square'", optional: true },
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
+  { name: 'mm-list-item-group role', type: "'list' | 'group' = 'list'", optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -101,7 +102,7 @@ const main = html`
       <mm-tab-panel value="size">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="4">
+            <mm-list-item-group>
               <mm-list-item
                 label="Small"
                 avatar-shape="circle"
@@ -121,7 +122,7 @@ const main = html`
                 avatar-shape="circle"
                 avatar-src="/src/images/soojubm.png"
               ></mm-list-item>
-            </mm-flex>
+            </mm-list-item-group>
             <mm-paragraph>
               small은 한 줄만 그리는 행이라 description을 받아도 그리지 않습니다. 설명이 필요하면
               medium 이상을 씁니다.
@@ -132,7 +133,7 @@ const main = html`
       <mm-tab-panel value="leading">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="4">
+            <mm-list-item-group>
               <mm-list-item icon=${ICON_NAMES.USER} label="아이콘"></mm-list-item>
               <mm-list-item emoji="🦔" label="이모지"></mm-list-item>
               <mm-list-item
@@ -140,19 +141,19 @@ const main = html`
                 avatar-shape="circle"
                 label="아바타"
               ></mm-list-item>
-            </mm-flex>
+            </mm-list-item-group>
             <mm-paragraph>
               icon·emoji·avatar-src 중 하나로 leading을 채웁니다. 사람·상품처럼 행이 개체를 대표할
               때 씁니다.
             </mm-paragraph>
-            <mm-flex direction="column" gap="4">
+            <mm-list-item-group>
               <mm-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
                 <mm-button slot="trailing">변경</mm-button>
               </mm-list-item>
               <mm-list-item size="medium" label="관심분야" description="문화/예술, 인권, 경제">
                 <mm-tag slot="trailing">3개</mm-tag>
               </mm-list-item>
-            </mm-flex>
+            </mm-list-item-group>
             <mm-paragraph>
               모두 없으면 content가 왼쪽 끝에서 시작합니다. 설정처럼 항목끼리 성격이 같은 목록은
               왼쪽 그림이 구분에 보태는 것이 없어 비워 둡니다.
@@ -163,7 +164,7 @@ const main = html`
       <mm-tab-panel value="trailing">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="4">
+            <mm-list-item-group>
               <mm-list-item
                 size="medium"
                 label="수줍이"
@@ -176,7 +177,7 @@ const main = html`
               <mm-list-item icon=${ICON_NAMES.NOTIFICATION} label="알림">
                 <mm-tag slot="trailing">신규</mm-tag>
               </mm-list-item>
-            </mm-flex>
+            </mm-list-item-group>
             <mm-paragraph>
               trailing 슬롯에 액션 버튼·태그·메타 텍스트를 두어 행 오른쪽 끝에 정렬합니다.
             </mm-paragraph>
@@ -233,7 +234,11 @@ const main = html`
                 는 보조기술에 명령 메뉴로 알려진다. 인물·게시물처럼 다른 곳으로 이동하는 목록에 쓰면
                 성격이 다르게 전달되고,
                 <mm-code>role="list"</mm-code>
-                는 그대로 목록으로 읽힌다
+                는 그대로 목록으로 읽힌다.
+                <mm-code>mm-list-item-group</mm-code>
+                이 목록의 role과 각 행의
+                <mm-code>listitem</mm-code>
+                을 채운다
               </span>
             `,
             html`
@@ -310,7 +315,7 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-section heading="UserItem" description="사용자 맥락">
-      <mm-flex direction="column" gap="2">
+      <mm-list-item-group>
         <mm-user-item
           size="medium"
           label="수줍이"
@@ -334,14 +339,14 @@ const main = html`
         >
           <mm-tag slot="trailing">테스트용 태그</mm-tag>
         </mm-user-item>
-      </mm-flex>
+      </mm-list-item-group>
     </mm-component-section>
 
     <mm-component-section
       heading="SettingItem"
       description="설정 맥락. 행은 라벨과 설명만 그리고, action 슬롯에 놓인 스위치·버튼이 조작을 직접 받습니다."
     >
-      <mm-flex direction="column" gap="2">
+      <mm-list-item-group>
         <mm-setting-item
           icon=${ICON_NAMES.CODE}
           label="철저한 코드 리뷰"
@@ -356,7 +361,7 @@ const main = html`
         >
           <mm-switch slot="action"></mm-switch>
         </mm-setting-item>
-      </mm-flex>
+      </mm-list-item-group>
     </mm-component-section>
 
     <mm-component-section
@@ -370,7 +375,7 @@ const main = html`
       heading="OrderProductItem"
       description="커머스 맥락. 상품 이미지와 이름, 선택한 옵션, 가격을 한 줄에 같은 위계로 놓아 장바구니·주문서·주문완료가 같은 행을 공유합니다."
     >
-      <mm-flex direction="column" gap="2">
+      <mm-list-item-group>
         <mm-order-product-item
           image-src="/src/images/cake_gosum.jpg"
           name="뉴닉이 풀어 쓴 경제상식사전"
@@ -382,7 +387,7 @@ const main = html`
           name="가격을 따로 두는 경우"
           option="평생 소장"
         ></mm-order-product-item>
-      </mm-flex>
+      </mm-list-item-group>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

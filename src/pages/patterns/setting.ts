@@ -35,28 +35,26 @@ const main = html`
           description="전자 메일, 일정, 연락처에서 사용하는 계정"
         ></mm-list-item>
         <mm-surface variant="paper" radius="large">
-          <mm-flex direction="column" gap="3">
-            <mm-menu-item-group>
-              <mm-menu-item-link
-                icon=${ICON_NAMES.MAIL}
-                label="soojubm@gmail.com"
-                href="#"
-                target="_self"
-              ></mm-menu-item-link>
-              <mm-menu-item-link
-                icon=${ICON_NAMES.LOCK}
-                label="비밀번호 변경"
-                href="#"
-                target="_self"
-              ></mm-menu-item-link>
-              <mm-menu-item-link
-                icon=${ICON_NAMES.USER}
-                label="닉네임 변경"
-                href="#"
-                target="_self"
-              ></mm-menu-item-link>
-            </mm-menu-item-group>
-          </mm-flex>
+          <mm-menu-item-group>
+            <mm-menu-item-link
+              icon=${ICON_NAMES.MAIL}
+              label="soojubm@gmail.com"
+              href="#"
+              target="_self"
+            ></mm-menu-item-link>
+            <mm-menu-item-link
+              icon=${ICON_NAMES.LOCK}
+              label="비밀번호 변경"
+              href="#"
+              target="_self"
+            ></mm-menu-item-link>
+            <mm-menu-item-link
+              icon=${ICON_NAMES.USER}
+              label="닉네임 변경"
+              href="#"
+              target="_self"
+            ></mm-menu-item-link>
+          </mm-menu-item-group>
         </mm-surface>
 
         <mm-surface variant="paper" radius="large">
@@ -92,7 +90,7 @@ const main = html`
         <mm-surface variant="paper" radius="large">
           <mm-flex direction="column" gap="3">
             <mm-paragraph size="large">개인정보 & 보안</mm-paragraph>
-            <mm-flex direction="column" gap="2">
+            <mm-list-item-group>
               <mm-setting-item label="이메일 주소" description="soojubm@gmail.com">
                 <mm-button slot="action">변경</mm-button>
               </mm-setting-item>
@@ -102,7 +100,7 @@ const main = html`
               >
                 <mm-button slot="action" variant="destructive">영구 비활성화</mm-button>
               </mm-setting-item>
-            </mm-flex>
+            </mm-list-item-group>
           </mm-flex>
         </mm-surface>
         <mm-link-prompt
@@ -123,12 +121,14 @@ const main = html`
         ></mm-list-item>
         <mm-surface variant="paper" radius="large">
           <mm-flex direction="column" gap="2">
-            <mm-setting-item icon=${ICON_NAMES.GOOGLE} label="구글 계정으로 로그인">
-              <mm-button slot="action" disabled>Google 연동해제</mm-button>
-            </mm-setting-item>
-            <mm-setting-item icon=${ICON_NAMES.APPLE} label="애플 계정으로 로그인">
-              <mm-button slot="action">Apple 연동</mm-button>
-            </mm-setting-item>
+            <mm-list-item-group>
+              <mm-setting-item icon=${ICON_NAMES.GOOGLE} label="구글 계정으로 로그인">
+                <mm-button slot="action" disabled>Google 연동해제</mm-button>
+              </mm-setting-item>
+              <mm-setting-item icon=${ICON_NAMES.APPLE} label="애플 계정으로 로그인">
+                <mm-button slot="action">Apple 연동</mm-button>
+              </mm-setting-item>
+            </mm-list-item-group>
             <mm-caption>계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.</mm-caption>
           </mm-flex>
         </mm-surface>
@@ -147,11 +147,11 @@ const main = html`
             <mm-setting-item icon=${ICON_NAMES.CREDIT_CARD} label="Premium 개인">
               <mm-button slot="action" variant="ghost" aria-label="자세히보기">구독 관리</mm-button>
             </mm-setting-item>
-            <mm-flex direction="column">
+            <mm-meta-item-group direction="column" gap="2">
               <mm-meta-item label="다음 결제 예정일" value="2024.04.02."></mm-meta-item>
               <mm-meta-item label="결제금액" value="매달 46,800원"></mm-meta-item>
               <mm-meta-item label="결제수단" value="현대카드 ****-****-****-7922"></mm-meta-item>
-            </mm-flex>
+            </mm-meta-item-group>
             <mm-button-group>
               <mm-button icon=${ICON_NAMES.FORWARD}>결제수단변경</mm-button>
             </mm-button-group>
