@@ -254,7 +254,7 @@ const main = html`
     <mm-sheet-body>
       <mm-flex direction="column" gap="4">
         <mm-list-item
-          size="80"
+          size="large"
           avatar-src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
           label="センチメンタル通り"
           description="Hachimitsupai"

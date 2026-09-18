@@ -29,7 +29,7 @@ const main = html`
       <mm-flex direction="column" gap="3">
         <mm-list-item
           avatar-variant="tertiary"
-          size="48"
+          size="medium"
           icon=${ICON_NAMES.USER_BADGE_CHECK}
           label="사용자 정보"
           description="전자 메일, 일정, 연락처에서 사용하는 계정"
@@ -112,7 +112,7 @@ const main = html`
       <mm-flex direction="column" gap="3">
         <mm-list-item
           avatar-variant="tertiary"
-          size="48"
+          size="medium"
           icon=${ICON_NAMES.CREDIT_CARD}
           label="소셜 네트워크로 로그인"
           description="전자 메일, 일정, 연락처에서 사용하는 계정"
@@ -133,7 +133,7 @@ const main = html`
       <mm-flex direction="column" gap="3">
         <mm-list-item
           avatar-variant="tertiary"
-          size="48"
+          size="medium"
           icon=${ICON_NAMES.CREDIT_CARD}
           label="구독 정보"
           description="멤버십, 결제수단, 청구서 등"

@@ -8,7 +8,11 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { AVATAR_VARIANT_TYPE_UNION, ICON_NAMES } from '@/components/common'
+import {
+  AVATAR_VARIANT_TYPE_UNION,
+  ICON_NAMES,
+  LIST_ITEM_SIZE_TYPE_LABEL,
+} from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -50,7 +54,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'size', type: "'small' | '48' | '80' = 'small'" },
+  { name: 'size', type: LIST_ITEM_SIZE_TYPE_LABEL },
   { name: 'label', type: 'string', optional: true },
   { name: 'description', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
@@ -111,15 +115,15 @@ const main = html`
                 avatar-src="/src/images/soojubm.png"
               ></mm-list-item>
               <mm-list-item
-                size="48"
-                label="48"
+                size="medium"
+                label="Medium"
                 description="Youtube Subscriber"
                 avatar-shape="circle"
                 avatar-src="/src/images/soojubm.png"
               ></mm-list-item>
               <mm-list-item
-                size="80"
-                label="80"
+                size="large"
+                label="Large"
                 description="Youtube Subscriber"
                 avatar-shape="circle"
                 avatar-src="/src/images/soojubm.png"
@@ -156,7 +160,7 @@ const main = html`
           <mm-flex direction="column" gap="6">
             <mm-flex direction="column" gap="4">
               <mm-list-item
-                size="48"
+                size="medium"
                 label="수줍이"
                 description="UI Designer"
                 avatar-shape="circle"
@@ -193,17 +197,18 @@ const main = html`
           .texts=${[
             html`
               <span>
-                <b>행 전체를 눌러 명령을 실행하거나 선택 상태를 바꾸면 menu-item을 쓴다</b>
+                <b>열렸다 닫히는 표면에서 명령을 고르는 행은 menu-item을 쓴다</b>
                 <br />
-                놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)과 hover·포커스 표시, Enter·Space
-                활성화를 컴포넌트가 소유한다
+                popover·sheet 안의 목록이 조건이다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop
+                하나가 되고, 항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다
               </span>
             `,
             html`
               <span>
-                <b>정보를 보여주기만 하는 행은 list-item을 쓴다</b>
+                <b>콘텐츠 안에 머무는 행은 list-item을 쓴다</b>
                 <br />
-                trailing에 버튼을 두어도 상호작용은 그 버튼이 갖고, 행 자체는 표현으로 남는다
+                눌러서 다른 곳으로 이동하더라도 메뉴가 아니라 목록이다. 링크는 list-item을 감싸는
+                도메인 컴포넌트가 소유해 행마다 Tab으로 닿게 한다
               </span>
             `,
           ]}
@@ -239,7 +244,7 @@ const main = html`
         'content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.',
         'trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
       ]}
-      .code=${`<mm-list-item label="수줍이" description="바보" size="48" avatar-shape="circle" avatar-src="...">
+      .code=${`<mm-list-item label="수줍이" description="바보" size="medium" avatar-shape="circle" avatar-src="...">
     <mm-follow-button slot="trailing"></mm-follow-button>
 </mm-list-item>`}
       .markers=${[
@@ -251,7 +256,7 @@ const main = html`
       <mm-list-item
         label="수줍이"
         description="바보"
-        size="48"
+        size="medium"
         avatar-variant="primary"
         avatar-shape="circle"
         avatar-src="/src/images/soojubm.png"

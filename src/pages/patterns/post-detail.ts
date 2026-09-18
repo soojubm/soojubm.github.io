@@ -18,7 +18,7 @@ const main = html`
             Runway enables next-generation content creation with AI and Vercel
           </mm-heading>
           <mm-user-row
-            size="48"
+            size="medium"
             label="수줍이"
             description="Youtube Subscriber"
             avatar-variant="secondary"

@@ -16,17 +16,14 @@ import { type Constructor, emit } from '@/utils'
  * 행 콘텐츠 prop은 mm-list-item의 계약에서 파생해 두 곳이 어긋나면 컴파일 에러로 잡히게 한다.
  * tone은 행으로 전달되지 않는 host 스타일 상태로, CSS 상속을 통해 행 내부 색에 영향을 준다.
  */
+/** 메뉴 항목은 명령을 고르는 행이라, 아바타로 개체를 대표하는 large는 갖지 않는다. */
+export type MenuItemSize = Exclude<ListItemSize, 'large'>
+export const MENU_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' = 'small'"
+
 export type MenuItemPresentation = Pick<
   ListItem,
-  | 'size'
-  | 'label'
-  | 'description'
-  | 'icon'
-  | 'emoji'
-  | 'avatarSrc'
-  | 'avatarVariant'
-  | 'avatarShape'
-> & { tone: string }
+  'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarVariant' | 'avatarShape'
+> & { size: MenuItemSize; tone: string }
 
 /**
  * 표시 prop을 한 곳에서 선언하는 mixin. role·상태·이벤트 같은 시멘틱은 각 컴포넌트가 소유하고,
@@ -34,7 +31,7 @@ export type MenuItemPresentation = Pick<
  */
 export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base: T) => {
   class MenuItemPresentationElement extends Base {
-    @property({ type: String, reflect: true }) size: ListItemSize = 'small'
+    @property({ type: String, reflect: true }) size: MenuItemSize = 'small'
     @property({ type: String, reflect: true }) tone = ''
     @property({ type: String }) label = ''
     @property({ type: String }) description = ''

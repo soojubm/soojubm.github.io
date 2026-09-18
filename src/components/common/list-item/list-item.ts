@@ -11,8 +11,8 @@ import '@/components/common/avatar/avatar'
 import '@/components/common/flex/flex'
 import '@/components/common/text'
 
-export type ListItemSize = 'small' | '48' | '80'
-export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | '48' | '80' = 'small'"
+export type ListItemSize = 'small' | 'medium' | 'large'
+export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' | 'large' = 'small'"
 
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
@@ -105,9 +105,7 @@ export class ListItem extends LitElement {
     }
 
     return html`
-      <mm-text size=${this.size === '48' || this.size === '80' ? '18' : '14'}>
-        ${this.label}
-      </mm-text>
+      <mm-text size=${this.size === 'small' ? '14' : '18'}>${this.label}</mm-text>
     `
   }
 
@@ -128,7 +126,7 @@ export class ListItem extends LitElement {
   private get avatarSize(): AvatarSize {
     if (this.size === 'small') return this.description ? '40' : '32'
 
-    return this.size
+    return this.size === 'medium' ? '48' : '80'
   }
 
   private get hasLeading() {

@@ -1,10 +1,20 @@
 import { html } from 'lit'
 
 import type { FilterOption } from '@/components/common'
+import type { CastMember } from '@/components/domains/cast-list/cast-list'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import './cake.css'
 
+const casts: CastMember[] = [
+  {
+    name: '스튜어트 로젠버그',
+    credit: '감독',
+    href: '#',
+    imageSrc: '/src/images/soojubm.png',
+  },
+  { name: '폴 뉴먼', credit: '주연', href: '#', imageSrc: '/src/images/soojubm.png' },
+]
 const castFilterValues = ['all']
 const castFilterOptions: FilterOption[] = [
   { value: 'all', label: '모두' },
@@ -85,22 +95,7 @@ const main = html`
             .values=${castFilterValues}
             .options=${castFilterOptions}
           ></mm-filter-button-group>
-          <mm-menu-item-group size="large">
-            <mm-menu-item-action
-              avatar-src="/src/images/soojubm.png"
-              avatar-shape="circle"
-              size="80"
-              label="스튜어트 로젠버그"
-              description="감독"
-            ></mm-menu-item-action>
-            <mm-menu-item-action
-              avatar-src="/src/images/soojubm.png"
-              avatar-shape="circle"
-              size="80"
-              label="폴 뉴먼"
-              description="주연"
-            ></mm-menu-item-action>
-          </mm-menu-item-group>
+          <mm-cast-list .casts=${casts}></mm-cast-list>
         </mm-content-section>
 
         <mm-content-section heading="수상내역">

@@ -194,13 +194,13 @@ function sheetExampleTemplate() {
       <mm-sheet-header heading="Bottom Sheet"></mm-sheet-header>
       <mm-sheet-body>
         <mm-menu-item-group size="large">
-          <mm-menu-item-action size="48" label="검색"></mm-menu-item-action>
-          <mm-menu-item-action size="48" label="저장"></mm-menu-item-action>
-          <mm-menu-item-action size="48" label="공유"></mm-menu-item-action>
-          <mm-menu-item-action size="48" label="보관"></mm-menu-item-action>
-          <mm-menu-item-action size="48" label="숨기기"></mm-menu-item-action>
-          <mm-menu-item-action size="48" label="신고"></mm-menu-item-action>
-          <mm-menu-item-action size="48" label="삭제" tone="danger"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="검색"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="저장"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="공유"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="보관"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="숨기기"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="신고"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="삭제" tone="danger"></mm-menu-item-action>
         </mm-menu-item-group>
       </mm-sheet-body>
       <mm-sheet-footer

@@ -1,14 +1,19 @@
 import { css, unsafeCSS } from 'lit'
 
+import {
+  backgroundLayerStyles,
+  interactiveElement,
+  layerContainerStyles,
+} from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
 const listItemSizeTokens = {
-  '48': {
+  medium: {
     '--list-item-size': 'var(--size-48)',
     '--list-item-gap': 'var(--space-2)',
     '--list-item-font-size': 'var(--font-size-24)',
   },
-  '80': {
+  large: {
     '--list-item-size': 'var(--size-80)',
     '--list-item-gap': 'var(--space-3)',
     '--list-item-font-size': 'var(--font-size-24)',
@@ -68,5 +73,63 @@ export const listItemStyles = css`
     height: var(--list-item-size);
     font-size: var(--list-item-font-size);
     line-height: 1;
+  }
+`
+
+/**
+ * list-item 행을 감싸 눌리는 요소(button·a·role 있는 행)에 얹는 상호작용 스킨.
+ * 행의 의미(role·이벤트)는 감싸는 컴포넌트가 소유하고, 여기서는 hover·포커스·선택·비활성 표시만 맡는다.
+ */
+export const interactiveRowStyles = css`
+  :host {
+    --interactive-row-background-color: transparent;
+    --interactive-row-padding-inline: 0;
+  }
+
+  ${interactiveElement} {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-inline: var(--interactive-row-padding-inline);
+    border-radius: var(--radius);
+    color: inherit;
+    box-sizing: border-box;
+    cursor: pointer;
+    ${layerContainerStyles}
+
+    /* background state */
+    &::before {
+      border-radius: var(--radius);
+      background-color: var(--interactive-row-background-color);
+      ${backgroundLayerStyles}
+    }
+
+    &:hover {
+      --interactive-row-background-color: var(--interaction-hover-background-color);
+    }
+
+    &:focus-visible {
+      outline: var(--interaction-focus-outline);
+      outline-offset: -1px;
+    }
+
+    &[aria-current='page'] {
+      --interactive-row-background-color: var(--interaction-selected-background-color);
+    }
+
+    &[aria-selected='true'] {
+      --interactive-row-background-color: var(--interaction-selected-background-color);
+      color: var(--interaction-selected-foreground-color);
+    }
+
+    &[disabled],
+    &[aria-disabled='true'] {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  mm-list-item {
+    flex: 1;
   }
 `

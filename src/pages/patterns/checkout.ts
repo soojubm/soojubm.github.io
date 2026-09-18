@@ -87,7 +87,7 @@ const main = html`
 
             <!-- TODO 카드 정보(소유자·번호·유효기간·CVV·청구지)는 별도 화면에서 관리한다. -->
             <mm-list-item
-              size="48"
+              size="medium"
               icon=${ICON_NAMES.CREDIT_CARD}
               label="VISA 1988 XXXX 1111"
               description="Expires on 10/23"

@@ -8,7 +8,11 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { AVATAR_VARIANT_TYPE_UNION, ICON_NAMES } from '@/components/common'
+import {
+  AVATAR_VARIANT_TYPE_UNION,
+  ICON_NAMES,
+  MENU_ITEM_SIZE_TYPE_LABEL,
+} from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -40,7 +44,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'size', type: "'small' | '48' | '80' = 'small'", optional: true },
+  { name: 'size', type: MENU_ITEM_SIZE_TYPE_LABEL, optional: true },
   { name: 'label', type: 'string' },
   { name: 'description', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
@@ -78,15 +82,15 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
-  { name: 'menu-item-background-color' },
-  { name: 'menu-item-padding-inline' },
+  { name: 'interactive-row-background-color' },
+  { name: 'interactive-row-padding-inline' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - action',
     description:
-      'hover·포커스·키보드 탐색과 명령 실행 상호작용을 항목이 소유합니다. 표현만 필요하면 list-item을 사용하세요.',
+      'hover·포커스·키보드 탐색과 명령 실행 상호작용을 항목이 소유합니다. 메뉴 표면 밖에서 반복되는 행은 list-item을 사용하세요.',
   },
   {
     heading: 'Interactive - selection',
@@ -118,21 +122,17 @@ const main = html`
             <mm-menu-item-group aria-label="크기 메뉴" size="large">
               <mm-menu-item-action icon=${ICON_NAMES.USER} label="Small"></mm-menu-item-action>
               <mm-menu-item-action
-                size="48"
+                size="medium"
                 icon=${ICON_NAMES.GROUP}
                 label="Frontend Group"
                 description="프론트엔드 개발자 모임"
               ></mm-menu-item-action>
-              <mm-menu-item-action
-                size="80"
-                avatar-src="/src/images/soojubm.png"
-                label="수줍이"
-                description="UI Designer"
-              ></mm-menu-item-action>
             </mm-menu-item-group>
             <mm-paragraph>
-              설명이 함께 놓이면 48을, 아바타로 개체를 대표하면 80을 씁니다. 큰 항목을 담는 그룹은
-              size="large"로 간격을 넓힙니다.
+              설명이 함께 놓이거나 시트처럼 손가락으로 누르는 메뉴에서는 medium으로 행을 키웁니다.
+              항목 사이 간격은 그룹 자체의
+              <mm-code>size="large"</mm-code>
+              가 넓힙니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>

@@ -9,4 +9,5 @@ import '@/components/common/menu-item/semantics/menu-item-switch'
 import '@/components/common/menu-item/semantics/menu-item-radio'
 import '@/components/common/menu-item/semantics/menu-item-radio-group'
 
-export {}
+export { MENU_ITEM_SIZE_TYPE_LABEL } from '@/components/common/menu-item/menu-item.utils'
+export type { MenuItemSize } from '@/components/common/menu-item/menu-item.utils'
