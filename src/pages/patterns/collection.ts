@@ -46,7 +46,7 @@ const main = html`
         ></mm-text-list>
         <mm-flex direction="column" gap="3" style="max-width: 400px">
           <mm-top-bar nav="close" heading="컬렉션에 추가">
-            <mm-button slot="action" variant="ghost">새 컬렉션</mm-button>
+            <mm-button slot="action" variant="ghost">완료</mm-button>
           </mm-top-bar>
           <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
             <mm-menu-item-checkbox
@@ -63,6 +63,7 @@ const main = html`
               emoji="☕"
             ></mm-menu-item-checkbox>
           </mm-menu-item-checkbox-group>
+          <mm-add-button>새 컬렉션 만들기</mm-add-button>
         </mm-flex>
       </mm-content-section>
 
