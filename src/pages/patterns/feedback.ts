@@ -25,25 +25,25 @@ const main = html`
         <mm-flex direction="column" gap="3">
           <mm-list-item
             icon=${ICON_NAMES.SUCCESS}
-            size="small"
+            size="medium"
             label="Success"
             description="작업이 성공적으로 완료되었음을 나타냅니다."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.INFO}
-            size="small"
+            size="medium"
             label="Info"
             description="사용자에게 참고 가능한 보조 정보를 제공합니다."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.WARNING}
-            size="small"
+            size="medium"
             label="Warning"
             description="진행 전에 사용자의 주의가 필요한 상태입니다."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.FAILURE}
-            size="small"
+            size="medium"
             label="Error"
             description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
           ></mm-list-item>
@@ -60,31 +60,31 @@ const main = html`
         <mm-flex direction="column" gap="3">
           <mm-list-item
             icon=${ICON_NAMES.IDLE}
-            size="small"
+            size="medium"
             label="Idle"
             description="아직 아무 요청도 하지 않은 대기·초기 상태입니다."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.REFRESH}
-            size="small"
+            size="medium"
             label="Pending / Fetching"
             description="데이터를 가져오는 중입니다. 스켈레톤이나 스피너를 노출합니다."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.SUCCESS}
-            size="small"
+            size="medium"
             label="Resolved / Success"
             description="데이터를 성공적으로 가져와 정상 UI를 노출합니다."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.FAILURE}
-            size="small"
+            size="medium"
             label="Rejected / Failed"
             description="데이터를 가져오는 데 실패해 에러 화면을 노출합니다."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.EMPTY}
-            size="small"
+            size="medium"
             label="Empty"
             description="완료되었으나 데이터가 0건일 때 빈 화면을 노출합니다."
           ></mm-list-item>

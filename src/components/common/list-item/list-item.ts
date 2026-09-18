@@ -12,20 +12,18 @@ import '@/components/common/flex/flex'
 import '@/components/common/text'
 
 export type ListItemSize = 'small' | 'medium' | 'large'
+/** description을 그리는 사이즈. small은 한 줄이라 설명 자리를 갖지 않는다. */
+type DescribableSize = Exclude<ListItemSize, 'small'>
 export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' | 'large' = 'small'"
 
 /* 행 높이 안에서 라벨과 설명 두 줄이 차지하는 크기. 두 줄의 line-height 합이 행 높이를 넘지 않는다. */
-const LABEL_TEXT_SIZE: Record<ListItemSize, string> = { small: '14', medium: '18', large: '24' }
-const DESCRIPTION_TEXT_SIZE: Record<ListItemSize, string> = {
-  small: '12',
-  medium: '12',
-  large: '14',
-}
+const LABEL_TEXT_SIZE: Record<ListItemSize, string> = { small: '14', medium: '14', large: '18' }
+const DESCRIPTION_TEXT_SIZE: Record<DescribableSize, string> = { medium: '12', large: '14' }
 
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
  * 상호작용(role, hover 등)은 포함하지 않는다. 메뉴 의미가 필요하면 mm-menu-item-action을 쓴다.
- * small 사이즈는 description 유무에 따라 아바타를 32/40으로 내부에서 전환한다.
+ * 두 줄이 되는 행은 medium부터다. small은 한 줄만 그리고 description을 받아도 무시한다.
  */
 @customElement('mm-list-item')
 export class ListItem extends LitElement {
@@ -42,9 +40,9 @@ export class ListItem extends LitElement {
   @state() private hasTrailing = false
 
   protected willUpdate(changed: PropertyValues) {
-    if (!changed.has('description')) return
+    if (!changed.has('description') && !changed.has('size')) return
 
-    this.toggleAttribute('has-description', Boolean(this.description))
+    this.toggleAttribute('has-description', this.size !== 'small' && !!this.description)
   }
 
   render() {
@@ -118,17 +116,18 @@ export class ListItem extends LitElement {
   }
 
   private renderDescription() {
-    if (!this.description) return nothing
+    const { size } = this
+    if (size === 'small' || !this.description) return nothing
 
     return html`
-      <mm-text size=${DESCRIPTION_TEXT_SIZE[this.size]} color="light">${this.description}</mm-text>
+      <mm-text size=${DESCRIPTION_TEXT_SIZE[size]} color="light">${this.description}</mm-text>
     `
   }
 
   private get avatarSize(): AvatarSize {
-    if (this.size === 'small') return this.description ? '40' : '32'
+    if (this.size === 'small') return '32'
 
-    return this.size === 'medium' ? '48' : '80'
+    return this.size === 'medium' ? '40' : '80'
   }
 
   private get hasLeading() {

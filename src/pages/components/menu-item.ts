@@ -273,21 +273,21 @@ const main = html`
 
       <mm-menu-item-radio-group name="access" value="public" size="large" aria-label="공개 범위">
         <mm-menu-item-radio
-          size="small"
+          size="medium"
           value="public"
           icon=${ICON_NAMES.GROUP}
           label="전체공개"
           description="모든 사용자"
         ></mm-menu-item-radio>
         <mm-menu-item-radio
-          size="small"
+          size="medium"
           value="friends"
           icon=${ICON_NAMES.GROUP}
           label="친구만"
           description="회원님의 친구"
         ></mm-menu-item-radio>
         <mm-menu-item-radio
-          size="small"
+          size="medium"
           icon=${ICON_NAMES.LOCK}
           label="나만 보기"
           description="부끄러우니까 보지마요"
@@ -303,7 +303,7 @@ const main = html`
     <mm-component-section heading="MenuItemLink">
       <mm-menu-item-group size="large">
         <mm-menu-item-link
-          size="small"
+          size="medium"
           icon=${ICON_NAMES.APP_WINDOW}
           label="수줍이 앱"
           target="_self"
@@ -312,14 +312,14 @@ const main = html`
           <mm-accent-tag slot="trailing">신규</mm-accent-tag>
         </mm-menu-item-link>
         <mm-menu-item-link
-          size="small"
+          size="medium"
           icon=${ICON_NAMES.OPEN_EXTERNAL}
           label="MDN Web Docs"
           href="https://developer.mozilla.org"
           description="외부 링크"
         ></mm-menu-item-link>
         <mm-menu-item-link
-          size="small"
+          size="medium"
           icon=${ICON_NAMES.GITHUB}
           label="GitHub"
           href="https://github.com"
@@ -349,28 +349,6 @@ const main = html`
             hidden-trailing
           ></mm-menu-item-link>
         </mm-menu-item-disclosure>
-      </mm-menu-item-group>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="Setting Item"
-      description="설정 메뉴에 적합한 레이아웃과 상호작용을 가진 MenuItemRow입니다."
-    >
-      <mm-menu-item-group size="large" aria-label="설정 메뉴">
-        <mm-setting-item
-          icon=${ICON_NAMES.CODE}
-          label="철저한 코드 리뷰"
-          description="추가 발견 사항을 계속 찾도록 합니다."
-        >
-          <mm-switch slot="action" checked></mm-switch>
-        </mm-setting-item>
-        <mm-setting-item
-          icon=${ICON_NAMES.DARK_MODE}
-          label="다크 모드"
-          description="어두운 배경 테마를 사용합니다."
-        >
-          <mm-switch slot="action"></mm-switch>
-        </mm-setting-item>
       </mm-menu-item-group>
     </mm-component-section>
 

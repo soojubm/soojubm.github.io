@@ -232,6 +232,7 @@ function filterSheetTemplate() {
       <mm-sheet-body>
         <form>
           <mm-menu-item-switch
+            size="medium"
             icon=${ICON_NAMES.DATE}
             label="즉시 예약"
             value="instant"

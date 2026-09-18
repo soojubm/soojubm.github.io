@@ -123,6 +123,7 @@ const main = html`
           <mm-flex direction="column" gap="6">
             <mm-flex gap="4" align-items="center">
               <mm-user-row
+                size="medium"
                 label="수줍이"
                 description="UI Designer"
                 avatar-src="/src/images/soojubm.png"

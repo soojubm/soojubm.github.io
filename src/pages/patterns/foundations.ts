@@ -120,19 +120,19 @@ const main = html`
         <mm-flex direction="column" gap="3">
           <mm-list-item
             icon=${ICON_NAMES.IDLE}
-            size="small"
+            size="medium"
             label="Element"
             description="단일 UI 유닛 안의 간격. --space-1 ~ --space-2."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.GROUP}
-            size="small"
+            size="medium"
             label="Group"
             description="묶음 안 항목 사이의 간격. 기본 --space-2, 조밀한 태그는 --space-1, 이어지는 묶음은 0."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.LIST_VIEW}
-            size="small"
+            size="medium"
             label="Section"
             description="제목과 본문 사이 --space-3. 구획끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
           ></mm-list-item>

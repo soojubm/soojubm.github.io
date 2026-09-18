@@ -69,7 +69,7 @@ const main = html`
             </mm-setting-item>
             <mm-separator></mm-separator>
             <mm-menu-item-link
-              size="small"
+              size="medium"
               label="관심분야"
               description="문화/예술, 인권, 경제"
             ></mm-menu-item-link>

@@ -59,7 +59,12 @@ export class CommentItem extends LitElement {
   render() {
     return html`
       <article>
-        <mm-user-row label=${this.author} description=${this.datetime} avatar-src=${this.avatarSrc}>
+        <mm-user-row
+          size="medium"
+          label=${this.author}
+          description=${this.datetime}
+          avatar-src=${this.avatarSrc}
+        >
           ${this.renderMenu()}
         </mm-user-row>
 

@@ -201,6 +201,7 @@ export class NavbarSearch extends LitElement {
           result => result.url,
           result => html`
             <mm-menu-item-action
+              size="medium"
               icon=${ICON_NAMES.SEARCH}
               label=${result.meta.title || result.url}
               description=${ifDefined(

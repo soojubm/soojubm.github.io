@@ -59,7 +59,7 @@ const renderRoleItem = ([key, name]: [string, string]) => {
   return html`
     <mm-list-item
       icon=${name}
-      size="small"
+      size="medium"
       label=${key.toLowerCase().replace(/_/g, ' ')}
       description=${detail?.description ?? ''}
     >

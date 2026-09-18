@@ -78,6 +78,7 @@ const main = html`
 
               <mm-surface variant="elevated" density="compact">
                 <mm-menu-item-action
+                  size="medium"
                   icon=${ICON_NAMES.DOCUMENT}
                   label="design-tokens.md"
                   description="정리 완료 · 12KB"

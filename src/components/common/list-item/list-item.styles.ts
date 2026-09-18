@@ -9,16 +9,16 @@ import { buildAttributeRules } from '@/utils'
 
 const listItemSizeTokens = {
   medium: {
-    '--list-item-size': 'var(--size-48)',
+    '--list-item-size': 'var(--size-40)',
     '--list-item-gap': 'var(--space-2)',
     '--list-item-font-size': 'var(--font-size-24)',
-    '--list-item-label-leading': 'calc(var(--font-line-height-28) - var(--font-size-18))',
+    '--list-item-label-leading': 'calc(var(--font-line-height-24) - var(--font-size-14))',
   },
   large: {
     '--list-item-size': 'var(--size-80)',
     '--list-item-gap': 'var(--space-3)',
     '--list-item-font-size': 'var(--font-size-24)',
-    '--list-item-label-leading': 'calc(var(--font-line-height-32) - var(--font-size-24))',
+    '--list-item-label-leading': 'calc(var(--font-line-height-28) - var(--font-size-18))',
     '--list-item-description-leading': 'calc(var(--font-line-height-24) - var(--font-size-14))',
   },
 }
@@ -53,10 +53,6 @@ export const listItemStyles = css`
     min-width: 0;
     min-height: var(--list-item-size);
     flex: 1;
-  }
-
-  :host([size='small'][has-description]) {
-    --list-item-size: var(--size-40);
   }
 
   /* label과 description의 행간이 다르면 글자 묶음이 넓은 쪽으로 치우친다.

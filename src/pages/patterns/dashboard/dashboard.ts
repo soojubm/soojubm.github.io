@@ -94,21 +94,21 @@ const main = html`
             ></mm-text-block>
             <mm-menu-item-group>
               <mm-menu-item-action
-                size="small"
+                size="medium"
                 emoji="📦"
                 trailing-icon=${ICON_NAMES.FORWARD}
                 label="출고 지연 주문 확인"
                 description="오늘 오전 11:00까지"
               ></mm-menu-item-action>
               <mm-menu-item-action
-                size="small"
+                size="medium"
                 emoji="💬"
                 trailing-icon=${ICON_NAMES.FORWARD}
                 label="고객 문의 답변"
                 description="미응답 문의 17건"
               ></mm-menu-item-action>
               <mm-menu-item-action
-                size="small"
+                size="medium"
                 emoji="📊"
                 trailing-icon=${ICON_NAMES.FORWARD}
                 label="주간 성과 보고서 공유"

@@ -276,6 +276,7 @@ const main = html`
               Most Popular
             </mm-tag>
             <mm-user-row
+              size="medium"
               icon=${ICON_NAMES.USER}
               label="수줍이"
               description="2 hour ago"
@@ -306,13 +307,13 @@ const main = html`
                 <mm-tag>3월 14일 수정됨</mm-tag>
                 <mm-menu-item-group size="large">
                   <mm-menu-item-action
-                    size="small"
+                    size="medium"
                     label="Kakao"
                     description="https://www.kakaocorp.com"
                     avatar-src="/src/images/soojubm.png"
                   ></mm-menu-item-action>
                   <mm-menu-item-action
-                    size="small"
+                    size="medium"
                     label="Naver"
                     description="https://www.naver.com"
                     avatar-src="/src/images/soojubm.png"

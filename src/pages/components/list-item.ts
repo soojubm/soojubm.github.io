@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { CastMember } from '@/components/domains/cast-list/cast-list'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -20,9 +21,9 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'menu-item.html', label: 'Menu Item' },
 ]
 
-// 커머스 맥락 컴포넌트는 기반 페이지에 전시하지 않고, 실제로 쓰이는 페이지로 연결한다.
-const builtWithListItem: ComponentRelatedItemData[] = [
-  { href: 'checkout.html', label: 'Order Product Item' },
+const casts: CastMember[] = [
+  { name: '스튜어트 로젠버그', credit: '감독', href: '#', imageSrc: '/src/images/soojubm.png' },
+  { name: '폴 뉴먼', credit: '주연', href: '#', imageSrc: '/src/images/soojubm.png' },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -109,12 +110,6 @@ const main = html`
                 avatar-src="/src/images/soojubm.png"
               ></mm-list-item>
               <mm-list-item
-                label="Small"
-                description="Youtube Subscriber"
-                avatar-shape="circle"
-                avatar-src="/src/images/soojubm.png"
-              ></mm-list-item>
-              <mm-list-item
                 size="medium"
                 label="Medium"
                 description="Youtube Subscriber"
@@ -130,7 +125,8 @@ const main = html`
               ></mm-list-item>
             </mm-flex>
             <mm-paragraph>
-              small은 description이 없으면 아바타를 32로, 있으면 40으로 전환합니다.
+              small은 한 줄만 그리는 행이라 description을 받아도 그리지 않습니다. 설명이 필요하면
+              medium 이상을 씁니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
@@ -226,8 +222,8 @@ const main = html`
               <span>
                 <b>위아래 행간 차이의 절반만큼 content를 위로 옮긴다</b>
                 <br />
-                small 사이즈에 description이 있으면 label(14/24)의 위 행간이 description(12/16)의
-                아래 행간보다 넓어 글자가 아래로 치우쳐 보인다. 이동에는
+                medium에 description이 있으면 label(14/24)의 위 행간이 description(12/16)의 아래
+                행간보다 넓어 글자가 아래로 치우쳐 보인다. 이동에는
                 <mm-code>translate</mm-code>
                 속성을 써서 레이아웃 박스와 정렬은 그대로 둔다
               </span>
@@ -267,16 +263,23 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-section heading="UserRow" description="사용자 맥락">
-      <mm-menu-item-group size="large">
+      <mm-flex direction="column" gap="2">
         <mm-user-row
+          size="medium"
           label="수줍이"
           description="UI Designer"
           avatar-src="/src/images/soojubm.png"
         ></mm-user-row>
-        <mm-user-row label="수줍이" description="바보" avatar-src="/src/images/soojubm.png">
+        <mm-user-row
+          size="medium"
+          label="수줍이"
+          description="바보"
+          avatar-src="/src/images/soojubm.png"
+        >
           <mm-follow-button slot="trailing"></mm-follow-button>
         </mm-user-row>
         <mm-user-row
+          size="medium"
           label="알 수 없는 사용자"
           description="아바타 이미지가 없을 때"
           avatar-variant="secondary"
@@ -284,15 +287,58 @@ const main = html`
         >
           <mm-tag slot="trailing">테스트용 태그</mm-tag>
         </mm-user-row>
-      </mm-menu-item-group>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="SettingItem"
+      description="설정 맥락. 행은 라벨과 설명만 그리고, action 슬롯에 놓인 스위치·버튼이 조작을 직접 받습니다."
+    >
+      <mm-flex direction="column" gap="2">
+        <mm-setting-item
+          icon=${ICON_NAMES.CODE}
+          label="철저한 코드 리뷰"
+          description="추가 발견 사항을 계속 찾도록 합니다."
+        >
+          <mm-switch slot="action" checked></mm-switch>
+        </mm-setting-item>
+        <mm-setting-item
+          icon=${ICON_NAMES.DARK_MODE}
+          label="다크 모드"
+          description="어두운 배경 테마를 사용합니다."
+        >
+          <mm-switch slot="action"></mm-switch>
+        </mm-setting-item>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="CastList"
+      description="크레딧 맥락. 행 전체가 인물 상세로 가는 링크이고, 명령이 아닌 탐색이므로 list로 읽혀 행마다 Tab으로 닿습니다."
+    >
+      <mm-cast-list .casts=${casts}></mm-cast-list>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="OrderProductItem"
+      description="커머스 맥락. 상품 이미지와 이름, 선택한 옵션, 가격을 한 줄에 같은 위계로 놓아 장바구니·주문서·주문완료가 같은 행을 공유합니다."
+    >
+      <mm-flex direction="column" gap="2">
+        <mm-order-product-item
+          image-src="/src/images/cake_gosum.jpg"
+          name="뉴닉이 풀어 쓴 경제상식사전"
+          option="평생 소장"
+          price="₩ 11,900"
+        ></mm-order-product-item>
+        <mm-order-product-item
+          image-src="/src/images/cake_gosum.jpg"
+          name="가격을 따로 두는 경우"
+          option="평생 소장"
+        ></mm-order-product-item>
+      </mm-flex>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
-
-    <mm-component-related
-      heading="Built with List Item"
-      .items=${builtWithListItem}
-    ></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
 

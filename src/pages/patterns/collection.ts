@@ -50,6 +50,7 @@ const main = html`
           </mm-top-bar>
           <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
             <mm-menu-item-checkbox
+              size="medium"
               value="euljiro"
               label="을지로 맛집"
               description="장소 12개"
@@ -57,6 +58,7 @@ const main = html`
               checked
             ></mm-menu-item-checkbox>
             <mm-menu-item-checkbox
+              size="medium"
               value="seongsu"
               label="성수 카페"
               description="장소 8개"

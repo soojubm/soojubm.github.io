@@ -33,6 +33,7 @@ const main = html`
             ${orderedProduct}
             <mm-button>수량/옵션 변경</mm-button>
             <mm-list-item
+              size="medium"
               label="AppleCare+ for Macbook/MacBook Air"
               description="Automatically registered with your Apple hardware."
             >
@@ -76,6 +77,7 @@ const main = html`
             <mm-surface>
               <mm-menu-item-radio-group name="payment" value="card" aria-label="결제수단 선택">
                 <mm-menu-item-radio
+                  size="medium"
                   value="card"
                   label="신용카드/체크카드"
                   description="개인/법인/카드사선택"
