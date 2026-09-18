@@ -132,22 +132,23 @@ const main = html`
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
-      <mm-heading level="3">접근성</mm-heading>
-      <mm-text-block
-        level="4"
-        heading="레이블이 보일 때"
-        description="보이는 레이블이 곧 버튼의 이름이므로 aria-label을 따로 주지 않습니다. 누름 여부는 aria-pressed가 전달하므로 레이블에 '켜짐'·'선택됨' 같은 상태를 덧붙이지 않습니다."
-      ></mm-text-block>
-      <mm-text-block
-        level="4"
-        heading="아이콘만 보일 때"
-        description="단독 토글은 aria-label로 이름을 줍니다. 그룹은 옵션의 label을 그대로 두고 hidden-label을 켜서, label이 화면 대신 버튼의 이름으로 쓰이게 합니다."
-      ></mm-text-block>
-      <mm-text-block
-        level="4"
-        heading="그룹 이름"
-        description="옵션만으로 무엇을 고르는지 알기 어려우면 그룹에 aria-label을 주어 묶음 전체의 이름을 전달합니다."
-      ></mm-text-block>
+      <mm-content-section heading="접근성" heading-level="3">
+        <mm-text-block
+          level="4"
+          heading="레이블이 보일 때"
+          description="보이는 레이블이 곧 버튼의 이름이므로 aria-label을 따로 주지 않습니다. 누름 여부는 aria-pressed가 전달하므로 레이블에 '켜짐'·'선택됨' 같은 상태를 덧붙이지 않습니다."
+        ></mm-text-block>
+        <mm-text-block
+          level="4"
+          heading="아이콘만 보일 때"
+          description="단독 토글은 aria-label로 이름을 줍니다. 그룹은 옵션의 label을 그대로 두고 hidden-label을 켜서, label이 화면 대신 버튼의 이름으로 쓰이게 합니다."
+        ></mm-text-block>
+        <mm-text-block
+          level="4"
+          heading="그룹 이름"
+          description="옵션만으로 무엇을 고르는지 알기 어려우면 그룹에 aria-label을 주어 묶음 전체의 이름을 전달합니다."
+        ></mm-text-block>
+      </mm-content-section>
     </mm-component-guide>
 
     <mm-component-anatomy

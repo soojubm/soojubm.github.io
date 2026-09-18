@@ -424,9 +424,8 @@ const main = html`
           .columns=${[{ label: '컴포넌트', width: '220px' }, { label: '펼치는 대상' }]}
         ></mm-table>
       </mm-content-section>
+      <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-content-section-list>
-
-    <mm-component-references .items=${componentReferences}></mm-component-references>
 
     <mm-component-pager></mm-component-pager>
   </mm-main>

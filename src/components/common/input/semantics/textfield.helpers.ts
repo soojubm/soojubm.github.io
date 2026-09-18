@@ -70,7 +70,6 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @query('mm-input') private input?: HTMLElement
     readonly inputId = uniqueId('input')
 
-    // input 아래에 놓이는 helper·validation을 input 설명으로 연결한다.
     get describedBy() {
       return [
         this.description && `${this.inputId}-description`,
