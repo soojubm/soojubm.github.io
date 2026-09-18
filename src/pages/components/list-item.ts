@@ -193,18 +193,20 @@ const main = html`
           .texts=${[
             html`
               <span>
-                <b>열렸다 닫히는 표면에서 명령을 고르는 행은 menu-item을 쓴다</b>
+                <b>행 전체가 하나의 클릭 영역이면 menu-item을 쓴다</b>
                 <br />
-                popover·sheet 안의 목록이 조건이다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop
-                하나가 되고, 항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다
+                눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에
+                붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop 하나가 되고,
+                항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다
               </span>
             `,
             html`
               <span>
-                <b>콘텐츠 안에 머무는 행은 list-item을 쓴다</b>
+                <b>이동하거나, 조작을 행 안의 컨트롤이 받으면 list-item을 쓴다</b>
                 <br />
-                눌러서 다른 곳으로 이동하더라도 메뉴가 아니라 목록이다. 링크는 list-item을 감싸는
-                도메인 컴포넌트가 소유해 행마다 Tab으로 닿게 한다
+                행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 링크는
+                list-item을 감싸는 도메인 컴포넌트가 소유하고, 버튼·스위치는 trailing에 두어 그
+                컨트롤마다 Tab으로 닿게 한다
               </span>
             `,
           ]}
