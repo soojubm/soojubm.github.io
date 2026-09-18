@@ -140,11 +140,22 @@ const main = html`
                 avatar-shape="circle"
                 label="아바타"
               ></mm-list-item>
-              <mm-list-item label="leading 없음"></mm-list-item>
             </mm-flex>
             <mm-paragraph>
-              icon·emoji·avatar-src 중 하나로 leading을 채우고, 모두 없으면 content가 왼쪽 끝에서
-              시작합니다.
+              icon·emoji·avatar-src 중 하나로 leading을 채웁니다. 사람·상품처럼 행이 개체를 대표할
+              때 씁니다.
+            </mm-paragraph>
+            <mm-flex direction="column" gap="4">
+              <mm-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
+                <mm-button slot="trailing">변경</mm-button>
+              </mm-list-item>
+              <mm-list-item size="medium" label="관심분야" description="문화/예술, 인권, 경제">
+                <mm-tag slot="trailing">3개</mm-tag>
+              </mm-list-item>
+            </mm-flex>
+            <mm-paragraph>
+              모두 없으면 content가 왼쪽 끝에서 시작합니다. 설정처럼 항목끼리 성격이 같은 목록은
+              왼쪽 그림이 구분에 보태는 것이 없어 비워 둡니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
@@ -205,6 +216,42 @@ const main = html`
                 행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 링크는
                 list-item을 감싸는 도메인 컴포넌트가 소유하고, 버튼·스위치는 trailing에 두어 그
                 컨트롤마다 Tab으로 닿게 한다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+      <mm-content-section heading-level="3" heading="접근성">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <b>이동하는 목록은 list로 읽히게 둔다</b>
+                <br />
+                <mm-code>role="menu"</mm-code>
+                는 보조기술에 명령 메뉴로 알려진다. 인물·게시물처럼 다른 곳으로 이동하는 목록에 쓰면
+                성격이 다르게 전달되고,
+                <mm-code>role="list"</mm-code>
+                는 그대로 목록으로 읽힌다
+              </span>
+            `,
+            html`
+              <span>
+                <b>한 그룹에는 같은 계열의 role을 갖는 행만 담는다</b>
+                <br />
+                <mm-code>mm-menu-item-group</mm-code>
+                의 roving focus는 자식의 shadow에서 menuitem 계열 role을 찾아 tab stop을 옮긴다.
+                다른 행이 섞이면 그 행만 방향키에서 빠져 Tab으로만 닿게 되고, 한 목록 안에서 키보드
+                동선이 둘로 갈린다
+              </span>
+            `,
+            html`
+              <span>
+                <b>description에는 행의 이름에 보탤 말만 쓴다</b>
+                <br />
+                label과 description이 role을 가진 요소 안에 함께 들어가 한 이름으로 읽힌다. 상태나
+                label을 되풀이하는 말은 이름만 길어지게 한다
               </span>
             `,
           ]}
