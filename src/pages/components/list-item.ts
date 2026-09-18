@@ -63,8 +63,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'avatar-src', type: 'string', optional: true },
   { name: 'avatar-variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'primary'`, optional: true },
   { name: 'avatar-shape', type: "'circle' | 'square' = 'square'", optional: true },
-  { name: 'slot: default', type: 'HTMLElement', optional: true },
-  { name: 'slot: avatar', type: 'HTMLElement', optional: true },
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
 ]
 

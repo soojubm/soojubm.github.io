@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -89,17 +89,8 @@ export function renderMenuItemContent(props: MenuItemPresentation, trailing: unk
       avatar-variant=${props.avatarVariant}
       avatar-shape=${props.avatarShape}
     >
-      ${renderTextSlots(props)} ${trailing}
+      ${trailing}
     </mm-list-item>
-  `
-}
-
-function renderTextSlots(props: MenuItemPresentation) {
-  if (props.label) return nothing
-
-  return html`
-    <slot name="text"></slot>
-    <slot></slot>
   `
 }
 

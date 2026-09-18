@@ -113,20 +113,16 @@ const main = html`
         <mm-separator></mm-separator>
         <mm-flex>
           <mm-menu-item-group>
-            <mm-menu-item-action>
-              <mm-avatar slot="avatar" size="40"></mm-avatar>
-              <div slot="text">
-                <mm-paragraph color="light">Step 1</mm-paragraph>
-                <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
-              </div>
-            </mm-menu-item-action>
-            <mm-menu-item-action>
-              <mm-avatar slot="avatar" size="40"></mm-avatar>
-              <div slot="text">
-                <mm-paragraph color="light">Step 2</mm-paragraph>
-                <mm-paragraph>UPLOAD 3D FILES</mm-paragraph>
-              </div>
-            </mm-menu-item-action>
+            <mm-menu-item-action
+              size="medium"
+              description="Step 1"
+              label="UPLOAD 3D FILES"
+            ></mm-menu-item-action>
+            <mm-menu-item-action
+              size="medium"
+              description="Step 2"
+              label="UPLOAD 3D FILES"
+            ></mm-menu-item-action>
           </mm-menu-item-group>
         </mm-flex>
       </mm-flex>
@@ -139,10 +135,10 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2022. 11. 4.</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar">
+            <mm-avatar>
               <span style="font-size: 0.75rem" aria-hidden="true">🐺</span>
             </mm-avatar>
-            <div slot="text">
+            <div>
               <span>폰트 디자인</span>
               <span>이도타입 / 한동훈</span>
             </div>
@@ -169,8 +165,8 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2020</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar"><span aria-hidden="true">🔢</span></mm-avatar>
-            <div slot="text">
+            <mm-avatar><span aria-hidden="true">🔢</span></mm-avatar>
+            <div>
               <span>그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법</span>
               <span>인프런 양승화</span>
             </div>
@@ -179,8 +175,8 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2019</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar"><span aria-hidden="true">🔢</span></mm-avatar>
-            <div slot="text">
+            <mm-avatar><span aria-hidden="true">🔢</span></mm-avatar>
+            <div>
               <span>FE CONF2020 프론트엔드 컨퍼런스</span>
               <span>롯데타워</span>
             </div>
@@ -189,7 +185,7 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2018.07 ~ 2018.09</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar"><span aria-hidden="true">🐺</span></mm-avatar>
+            <mm-avatar><span aria-hidden="true">🐺</span></mm-avatar>
             <span>자바스크립트 기본</span>
             <span>양재동코드랩 / 서울창업허브 세미나실 3 김영보</span>
           </div>
@@ -197,22 +193,22 @@ const main = html`
         <div class="timeline-item">
           <mm-tag>2017.07 ~ 2017.09</mm-tag>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar"><span aria-hidden="true">🔢</span></mm-avatar>
-            <div slot="text">
+            <mm-avatar><span aria-hidden="true">🔢</span></mm-avatar>
+            <div>
               <span>글자, 그리고 표현</span>
               <span>한글타이포그래피학교 현승재</span>
             </div>
           </div>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar"><span aria-hidden="true">🐺</span></mm-avatar>
-            <div slot="text">
+            <mm-avatar><span aria-hidden="true">🐺</span></mm-avatar>
+            <div>
               <span>GUI 디자인</span>
               <span>SK 상생협력센터 T아카데미</span>
             </div>
           </div>
           <div class="timeline-item-panel">
-            <mm-avatar slot="avatar"><span aria-hidden="true">🐺</span></mm-avatar>
-            <div slot="text">
+            <mm-avatar><span aria-hidden="true">🐺</span></mm-avatar>
+            <div>
               <span>크로스브라우징 디지털 퍼블리싱 4기</span>
               <span>경원직업전문학교</span>
             </div>
@@ -238,18 +234,11 @@ const main = html`
             </mm-flex>
             <mm-text weight="bold">배달완료</mm-text>
           </mm-flex>
-          <mm-menu-item-action>
-            <mm-avatar slot="avatar" size="48"></mm-avatar>
-            <div slot="text">
-              <mm-text weight="bold">쩜순이네닭강정 요기요st</mm-text>
-              <mm-flex align-items="center">
-                <span>떡볶이</span>
-                <span>x</span>
-                <span>5</span>
-                <span>외 1건</span>
-              </mm-flex>
-            </div>
-          </mm-menu-item-action>
+          <mm-menu-item-action
+            size="medium"
+            label="쩜순이네닭강정 요기요st"
+            description="떡볶이 x 5 외 1건"
+          ></mm-menu-item-action>
           <div class="step">
             <div class="step-item is-active">
               <span class="step-item-icon">1</span>

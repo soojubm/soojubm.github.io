@@ -34,7 +34,6 @@ export class UserRow extends LitElement {
         avatar-src=${this.avatarSrc}
         avatar-shape="circle"
       >
-        <slot></slot>
         <slot name="trailing" slot="trailing"></slot>
       </mm-list-item>
     `

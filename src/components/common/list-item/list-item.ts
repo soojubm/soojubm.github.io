@@ -36,7 +36,6 @@ export class ListItem extends LitElement {
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
   @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
-  @state() private hasAvatar = false
   @state() private hasTrailing = false
 
   protected willUpdate(changed: PropertyValues) {
@@ -68,11 +67,7 @@ export class ListItem extends LitElement {
   }
 
   private renderLeading() {
-    if (!this.hasLeading) {
-      return html`
-        <slot name="avatar" hidden @slotchange=${this.handleAvatarSlotChange}></slot>
-      `
-    }
+    if (!this.hasLeading) return nothing
 
     return html`
       <span slot="leading">${this.renderLeadingContent()}</span>
@@ -83,12 +78,6 @@ export class ListItem extends LitElement {
     if (this.emoji) {
       return html`
         <span class="emoji" aria-hidden="true">${this.emoji}</span>
-      `
-    }
-
-    if (this.hasAvatar) {
-      return html`
-        <slot name="avatar" @slotchange=${this.handleAvatarSlotChange}></slot>
       `
     }
 
@@ -104,11 +93,7 @@ export class ListItem extends LitElement {
   }
 
   private renderLabel() {
-    if (!this.label) {
-      return html`
-        <slot></slot>
-      `
-    }
+    if (!this.label) return nothing
 
     return html`
       <mm-text size=${LABEL_TEXT_SIZE[this.size]}>${this.label}</mm-text>
@@ -131,12 +116,7 @@ export class ListItem extends LitElement {
   }
 
   private get hasLeading() {
-    return !!(this.icon || this.avatarSrc || this.emoji || this.hasAvatar)
-  }
-
-  private handleAvatarSlotChange(event: Event) {
-    const slot = event.target as HTMLSlotElement
-    this.hasAvatar = this.hasAssignedContent(slot)
+    return !!(this.icon || this.avatarSrc || this.emoji)
   }
 
   private handleTrailingSlotChange(event: Event) {
