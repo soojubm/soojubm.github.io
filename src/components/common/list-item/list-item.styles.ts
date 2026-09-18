@@ -12,11 +12,14 @@ const listItemSizeTokens = {
     '--list-item-size': 'var(--size-48)',
     '--list-item-gap': 'var(--space-2)',
     '--list-item-font-size': 'var(--font-size-24)',
+    '--list-item-label-leading': 'calc(var(--font-line-height-28) - var(--font-size-18))',
   },
   large: {
     '--list-item-size': 'var(--size-80)',
     '--list-item-gap': 'var(--space-3)',
     '--list-item-font-size': 'var(--font-size-24)',
+    '--list-item-label-leading': 'calc(var(--font-line-height-32) - var(--font-size-24))',
+    '--list-item-description-leading': 'calc(var(--font-line-height-24) - var(--font-size-14))',
   },
 }
 
@@ -30,6 +33,8 @@ export const listItemStyles = css`
     --list-item-size: var(--size-32);
     --list-item-gap: var(--space-2);
     --list-item-font-size: var(--font-size-14);
+    --list-item-label-leading: calc(var(--font-line-height-24) - var(--font-size-14));
+    --list-item-description-leading: calc(var(--font-line-height-16) - var(--font-size-12));
   }
 
   ${unsafeCSS(buildAttributeRules('size', listItemSizeTokens))}
@@ -54,15 +59,10 @@ export const listItemStyles = css`
     --list-item-size: var(--size-40);
   }
 
-  /* label(14/24)의 위 행간이 description(12/16)의 아래 행간보다 넓어 글자가 아래로 치우친다. 차이의 절반만큼 올려 시각 중심을 맞춘다. */
-  :host([size='small'][has-description]) .content {
-    translate: 0
-      calc(
-        (
-            (var(--font-line-height-24) - var(--font-size-14)) -
-              (var(--font-line-height-16) - var(--font-size-12))
-          ) / -4
-      );
+  /* label과 description의 행간이 다르면 글자 묶음이 넓은 쪽으로 치우친다.
+     각 행간의 절반이 글자 위아래에 실리므로, 차이의 절반만큼 되밀어 시각 중심을 맞춘다. */
+  :host([has-description]) .content {
+    translate: 0 calc((var(--list-item-label-leading) - var(--list-item-description-leading)) / -4);
   }
 
   .emoji {

@@ -14,6 +14,14 @@ import '@/components/common/text'
 export type ListItemSize = 'small' | 'medium' | 'large'
 export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' | 'large' = 'small'"
 
+/* 행 높이 안에서 라벨과 설명 두 줄이 차지하는 크기. 두 줄의 line-height 합이 행 높이를 넘지 않는다. */
+const LABEL_TEXT_SIZE: Record<ListItemSize, string> = { small: '14', medium: '18', large: '24' }
+const DESCRIPTION_TEXT_SIZE: Record<ListItemSize, string> = {
+  small: '12',
+  medium: '12',
+  large: '14',
+}
+
 /**
  * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
  * 상호작용(role, hover 등)은 포함하지 않는다. 메뉴 의미가 필요하면 mm-menu-item-action을 쓴다.
@@ -105,21 +113,15 @@ export class ListItem extends LitElement {
     }
 
     return html`
-      <mm-text size=${this.size === 'small' ? '14' : '18'}>${this.label}</mm-text>
+      <mm-text size=${LABEL_TEXT_SIZE[this.size]}>${this.label}</mm-text>
     `
   }
 
   private renderDescription() {
     if (!this.description) return nothing
 
-    if (this.size === 'small') {
-      return html`
-        <mm-text size="12" color="light">${this.description}</mm-text>
-      `
-    }
-
     return html`
-      <mm-text size="14" color="light">${this.description}</mm-text>
+      <mm-text size=${DESCRIPTION_TEXT_SIZE[this.size]} color="light">${this.description}</mm-text>
     `
   }
 
