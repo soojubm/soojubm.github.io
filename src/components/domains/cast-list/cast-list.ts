@@ -26,7 +26,7 @@ export class CastList extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
-        gap: var(--space-2);
+        gap: var(--space-3);
       }
     `,
   ]
@@ -42,7 +42,7 @@ export class CastList extends LitElement {
       <div role="listitem">
         <a href=${cast.href}>
           <mm-list-item
-            size="large"
+            size="medium"
             label=${cast.name}
             description=${cast.credit}
             avatar-src=${cast.imageSrc ?? ''}
