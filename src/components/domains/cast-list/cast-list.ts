@@ -42,7 +42,7 @@ export class CastList extends LitElement {
       <div role="listitem">
         <a href=${cast.href}>
           <mm-list-item
-            size="medium"
+            size="large"
             label=${cast.name}
             description=${cast.credit}
             avatar-src=${cast.imageSrc ?? ''}
