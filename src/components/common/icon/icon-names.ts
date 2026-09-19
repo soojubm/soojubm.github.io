@@ -44,7 +44,6 @@ export const ICON_CATALOG = {
     PREVIOUS: 'arrow-left',
     NEXT: 'arrow-right',
     SCROLL_TOP: 'arrow-up',
-    SITEMAP: 'nav-arrow-right',
   },
 
   indicators: {},

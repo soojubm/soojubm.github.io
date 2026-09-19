@@ -1,12 +1,11 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
-import '@/components/common/icon'
+import '@/components/indicators/expand-indicator/expand-indicator'
 
 /**
  * 개별 아코디언 항목.
@@ -39,10 +38,6 @@ export class AccordionItem extends LitElement {
         font-weight: var(--font-weight-bold);
       }
 
-      .icon {
-        transition: transform var(--transition-duration) var(--transition-easing);
-      }
-
       /* grid trick: 0fr → 1fr 로 높이 애니메이션 */
       [aria-hidden] {
         display: grid;
@@ -57,9 +52,6 @@ export class AccordionItem extends LitElement {
       }
 
       :host([open]) {
-        & .icon {
-          transform: rotate(90deg);
-        }
         & [aria-hidden] {
           grid-template-rows: 1fr;
         }
@@ -87,7 +79,7 @@ export class AccordionItem extends LitElement {
     return html`
       <button class="summary-btn" aria-controls=${this.panelId}>
         <slot name="summary">${this.summary}</slot>
-        <mm-icon class="icon" name=${ICON_NAMES.SITEMAP}></mm-icon>
+        <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
       </button>
 
       <div id=${this.panelId} aria-hidden=${this.open ? 'false' : 'true'}>

@@ -19,6 +19,10 @@ export class ExpandIndicator extends LitElement {
       height: var(--size-24);
     }
 
+    mm-icon {
+      transition: transform var(--transition-duration) var(--transition-easing);
+    }
+
     :host([expanded]) mm-icon {
       transform: rotate(180deg);
     }
