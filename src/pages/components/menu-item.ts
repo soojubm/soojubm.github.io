@@ -58,8 +58,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-menu-item-action trailing-icon', type: 'IconName', optional: true },
   { name: 'mm-menu-item-link href', type: 'string', optional: true },
   { name: 'mm-menu-item-link target', type: "string = '_blank'", optional: true },
-  { name: 'mm-menu-item-link hidden-trailing', type: 'boolean = false', optional: true },
-  { name: 'mm-menu-item-link aria-current', type: 'AriaCurrent', optional: true },
   { name: 'mm-menu-item-checkbox checked', type: 'boolean = false', optional: true },
   { name: 'mm-menu-item-checkbox value', type: 'string', optional: true },
   { name: 'mm-menu-item-switch checked', type: 'boolean = false', optional: true },
@@ -197,7 +195,7 @@ const main = html`
       <mm-text-list
         .texts=${[
           'role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.',
-          '현재 위치를 가리키는 aria-current는 이동하는 mm-menu-item-link가 갖습니다.',
+          'mm-menu-item-link는 메뉴에서 다른 곳으로 나가는 링크라 현재 위치를 표시하지 않습니다. 지금 보고 있는 페이지를 가리키는 내비게이션 링크 목록은 menu가 아닌 list로 읽히게 두고 aria-current="page"를 링크가 갖습니다.',
           'target="_blank"인 링크는 새 창에서 열린다는 사실을 이름에 덧붙여, 아이콘으로만 전달되지 않게 합니다.',
         ]}
       ></mm-text-list>
@@ -335,20 +333,8 @@ const main = html`
     >
       <mm-menu-item-group size="large">
         <mm-menu-item-disclosure icon=${ICON_NAMES.PALETTE} label="Foundations" open>
-          <mm-menu-item-link
-            emoji="#"
-            label="Interaction"
-            href="interaction.html"
-            target="_self"
-            hidden-trailing
-          ></mm-menu-item-link>
-          <mm-menu-item-link
-            emoji="#"
-            label="Layout"
-            href="layout.html"
-            target="_self"
-            hidden-trailing
-          ></mm-menu-item-link>
+          <mm-menu-item-action emoji="#" label="Interaction"></mm-menu-item-action>
+          <mm-menu-item-action emoji="#" label="Layout"></mm-menu-item-action>
         </mm-menu-item-disclosure>
       </mm-menu-item-group>
     </mm-component-section>

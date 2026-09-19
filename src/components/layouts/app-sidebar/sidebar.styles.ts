@@ -12,7 +12,7 @@ export const sidebarStyles = css`
     flex-direction: column;
     width: 100%;
     max-width: var(--layout-width-sidebar);
-    gap: var(--space-2);
+    gap: var(--space-4);
     /* margin-top으로 하면 brutal theme border가 연결되지 않음 */
     padding: var(--layout-sidebar-space-top) var(--space-3)
       calc(var(--space-4) + env(safe-area-inset-bottom)) calc(var(--layout-padding-inline));
@@ -34,5 +34,20 @@ export const sidebarStyles = css`
   :host([open]) nav {
     transform: translateX(0);
     overscroll-behavior: contain;
+  }
+
+  [role='list'] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  mm-heading {
+    color: var(--foreground-subtle-color);
   }
 `

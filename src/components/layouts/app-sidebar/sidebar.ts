@@ -1,20 +1,30 @@
-import { LitElement, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
+import { LitElement, html } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
+import type { SitemapItem, SitemapNode } from '@/sitemap'
+
 import '@/components/common'
+import '@/components/layouts/app-sidebar/sidebar-page-link'
 import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
-import { SITEMAP, type SitemapNode } from '@/sitemap'
+import { SITEMAP } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
+
+type SidebarSection = Extract<SitemapNode, { type: 'standalone' }>
+type SidebarGroup = Extract<SitemapNode, { type: 'group' }>
+
+const standaloneNodes = SITEMAP.filter((node): node is SidebarSection => node.type === 'standalone')
+const groupNodes = SITEMAP.filter((node): node is SidebarGroup => node.type === 'group')
+
+const hasChildren = (node: SidebarSection) => !!node.children?.length
 
 @customElement('mm-sidebar')
 export class Sidebar extends LitElement {
   static styles = [sidebarStyles]
   @property({ type: Boolean, reflect: true }) open = false
-  @state() private currentPageId = 'index'
+  private currentPageId = getCurrentPageId()
   private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
@@ -26,74 +36,55 @@ export class Sidebar extends LitElement {
 
   render() {
     return html`
-      <nav>${repeat(SITEMAP, node => node.id, this.renderNode)}</nav>
+      <nav>
+        <div role="list">${repeat(standaloneNodes, node => node.id, this.renderStandalone)}</div>
+        ${repeat(groupNodes, node => node.id, this.renderGroup)}
+      </nav>
     `
   }
 
-  private renderNode = (node: SitemapNode) => {
-    if (node.type === 'standalone') return this.renderStandalone(node)
-    if (node.type === 'group') return this.renderGroup(node)
-
-    return nothing
-  }
-
-  private renderStandalone(node: Extract<SitemapNode, { type: 'standalone' }>) {
-    if (node.children?.length) return this.renderCollapsibleSection(node)
+  private renderStandalone = (node: SidebarSection) => {
+    if (hasChildren(node)) return this.renderSection(node)
 
     return html`
-      <mm-menu-item-link
+      <mm-sidebar-page-link
         href="${node.id}.html"
         label=${node.title}
         icon=${node.icon}
-        target="_self"
-        hidden-trailing
-        aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
-        @click=${this.handleMenuItemClick}
-      >
-        <!-- ${node.badge
-          ? html`
-              <mm-tag slot="trailing">${node.badge}</mm-tag>
-            `
-          : nothing} -->
-      </mm-menu-item-link>
+        @click=${this.handlePageLinkClick}
+      ></mm-sidebar-page-link>
     `
   }
-
-  private renderCollapsibleSection(node: Extract<SitemapNode, { type: 'standalone' }>) {
-    const children = node.children ?? []
-    const containsCurrent =
-      this.isCurrentPage(node.id) || children.some(item => this.isCurrentPage(item.id))
+  // 접었다 펴는 섹션은 아직 mm-menu-item-disclosure를 그대로 쓴다.
+  private renderSection = (node: SidebarSection) => html`
+    <mm-menu-item-disclosure
+      label=${node.title}
+      icon=${node.icon}
+      ?open=${this.containsCurrentPage(node)}
+    >
+      ${repeat(node.children ?? [], item => item.id, this.renderItemLink)}
+    </mm-menu-item-disclosure>
+  `
+  private renderGroup = (node: SidebarGroup) => {
+    const headingId = `sidebar-group-${node.id}`
 
     return html`
-      <mm-menu-item-disclosure label=${node.title} icon=${node.icon} ?open=${containsCurrent}>
-        ${repeat(children, item => item.id, this.renderItemLink)}
-      </mm-menu-item-disclosure>
+      <div class="group">
+        <mm-heading level="4" id=${headingId}>${node.title}</mm-heading>
+        <div role="list" aria-labelledby=${headingId}>
+          ${repeat(node.items, item => item.id, this.renderItemLink)}
+        </div>
+      </div>
     `
   }
-
-  private renderItemLink = (item: { id: string; name: string }) => html`
-    <mm-menu-item-link
+  private renderItemLink = (item: SitemapItem) => html`
+    <mm-sidebar-page-link
       emoji="#"
       href="${item.id}.html"
       label=${item.name}
-      target="_self"
-      hidden-trailing
-      aria-current=${ifDefined(this.isCurrentPage(item.id) ? 'page' : undefined)}
-      @click=${this.handleMenuItemClick}
-    ></mm-menu-item-link>
+      @click=${this.handlePageLinkClick}
+    ></mm-sidebar-page-link>
   `
-
-  private renderGroup(node: Extract<SitemapNode, { type: 'group' }>) {
-    return this.renderMenuList(node.title, node.items)
-  }
-
-  private renderMenuList(heading: string, items: { id: string; name: string }[]) {
-    return html`
-      <mm-menu-list heading=${heading}>
-        ${repeat(items, item => item.id, this.renderItemLink)}
-      </mm-menu-list>
-    `
-  }
 
   firstUpdated() {
     this.restoreScrollPosition()
@@ -101,7 +92,6 @@ export class Sidebar extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
-    this.currentPageId = getCurrentPageId()
 
     if (this.mobileQuery.matches) this.open = false
     this.mobileQuery.addEventListener('change', this.handleMobileChange)
@@ -130,7 +120,7 @@ export class Sidebar extends LitElement {
     if (saved) this.scrollTop = Number(saved)
   }
 
-  private handleMenuItemClick() {
+  private handlePageLinkClick() {
     this.saveScrollPosition()
   }
 
@@ -138,7 +128,9 @@ export class Sidebar extends LitElement {
     localStorage.setItem('sidebarScroll', String(this.scrollTop))
   }
 
-  private isCurrentPage(pageId: string) {
-    return this.currentPageId === pageId
+  private containsCurrentPage(node: SidebarSection) {
+    if (node.id === this.currentPageId) return true
+
+    return (node.children ?? []).some(item => item.id === this.currentPageId)
   }
 }

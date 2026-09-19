@@ -61,6 +61,15 @@ export const buildAttributeRules = (
     })
     .join('\n')
 
+function toPageId(path: string) {
+  return path.split('/').pop()?.replace('.html', '') || 'index'
+}
+
 export function getCurrentPageId() {
-  return window.location.pathname.split('/').pop()?.replace('.html', '') || 'index'
+  return toPageId(window.location.pathname)
+}
+
+/** 링크가 지금 보고 있는 페이지를 가리키는지 판단한다. 내비게이션 항목의 aria-current 기준. */
+export function isCurrentPage(href: string) {
+  return !!href && toPageId(href) === getCurrentPageId()
 }

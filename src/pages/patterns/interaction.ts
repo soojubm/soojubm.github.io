@@ -65,7 +65,7 @@ const currentComponentRows = html`
     <td><mm-code>page</mm-code></td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-menu-item-link</mm-code></th>
+    <th scope="row"><mm-code>mm-sidebar-page-link</mm-code></th>
     <td><mm-code>page</mm-code></td>
   </tr>
 `
