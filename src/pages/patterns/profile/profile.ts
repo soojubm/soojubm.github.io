@@ -42,10 +42,10 @@ const main = html`
         ]}
       ></mm-keyword-tag-group>
       <mm-flex direction="column" gap="1">
-        <mm-flex gap="2">
+        <mm-meta-item-group gap="2">
           <mm-meta-item layout="inline" label="팔로워" value="621.1K"></mm-meta-item>
           <mm-meta-item layout="inline" label="팔로우 중" value="1,284"></mm-meta-item>
-        </mm-flex>
+        </mm-meta-item-group>
         <mm-avatar-group
           .avatars=${followerAvatars}
           label="Followed by 수줍이 외 4명"
@@ -223,16 +223,18 @@ const main = html`
 
         <section class="subscribe-gosum">
           <mm-flex direction="column" gap="2">
-            <mm-paragraph>
-              지금 구독하면
-              <b>내일 아침</b>
-              에 읽을 수 있어요!
-            </mm-paragraph>
-            <mm-paragraph>
-              <span aria-hidden="true">✨</span>
-              <b>305,408명</b>
-              이 뉴닉을 읽고 있어요.
-            </mm-paragraph>
+            <mm-paragraph-group>
+              <mm-paragraph>
+                지금 구독하면
+                <b>내일 아침</b>
+                에 읽을 수 있어요!
+              </mm-paragraph>
+              <mm-paragraph>
+                <span aria-hidden="true">✨</span>
+                <b>305,408명</b>
+                이 뉴닉을 읽고 있어요.
+              </mm-paragraph>
+            </mm-paragraph-group>
             <mm-input placeholder="이메일 주소"></mm-input>
             <mm-input placeholder="닉네임"></mm-input>
             <mm-button variant="primary">뉴스레터 무료로 구독하기</mm-button>

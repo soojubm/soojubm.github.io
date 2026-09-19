@@ -234,8 +234,10 @@ const main = html`
               <mm-separator></mm-separator>
 
               <mm-flex direction="column" gap="4">
-                <mm-meta-item label="결제상세" value="카드 간편결제 + 마일리지"></mm-meta-item>
-                <mm-meta-item label="포인트 혜택" value="최대 1,147원"></mm-meta-item>
+                <mm-meta-item-group direction="column">
+                  <mm-meta-item label="결제상세" value="카드 간편결제 + 마일리지"></mm-meta-item>
+                  <mm-meta-item label="포인트 혜택" value="최대 1,147원"></mm-meta-item>
+                </mm-meta-item-group>
                 <mm-button variant="secondary" size="large" full-width>주문 상세 보기</mm-button>
               </mm-flex>
             </mm-flex>

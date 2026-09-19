@@ -111,12 +111,18 @@ const main = html`
       <mm-tab-panel value="state">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-checkbox>Unchecked</mm-checkbox>
-              <mm-checkbox checked>Checked</mm-checkbox>
+            <mm-flex direction="column" gap="4">
+              <mm-checkbox-group
+                name="state"
+                .options=${[
+                  { value: 'unchecked', label: 'Unchecked' },
+                  { value: 'checked', label: 'Checked' },
+                  { value: 'disabled', label: 'Disabled', disabled: true },
+                  { value: 'disabled-checked', label: 'Disabled checked', disabled: true },
+                ]}
+                .values=${['checked', 'disabled-checked']}
+              ></mm-checkbox-group>
               <mm-checkbox indeterminate>Indeterminate</mm-checkbox>
-              <mm-checkbox disabled>Disabled</mm-checkbox>
-              <mm-checkbox disabled checked>Disabled checked</mm-checkbox>
             </mm-flex>
             <mm-paragraph>
               indeterminate는 하위 선택지 중 일부만 선택된 상위 체크박스에 씁니다.

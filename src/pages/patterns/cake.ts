@@ -41,15 +41,17 @@ const main = html`
         <mm-flex direction="column" gap="2">
           <mm-flex gap="2">
             <time datetime="1967"><mm-text>1967</mm-text></time>
-            <mm-meta-item
-              layout="inline"
-              label="Directed by"
-              value="스튜어트 로젠버그"
-            ></mm-meta-item>
-            <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
-            <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
-            <mm-meta-item layout="inline" label="장르" value="드라마"></mm-meta-item>
-            <mm-meta-item layout="inline" label="러닝타임" value="103분"></mm-meta-item>
+            <mm-meta-item-group gap="2">
+              <mm-meta-item
+                layout="inline"
+                label="Directed by"
+                value="스튜어트 로젠버그"
+              ></mm-meta-item>
+              <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
+              <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
+              <mm-meta-item layout="inline" label="장르" value="드라마"></mm-meta-item>
+              <mm-meta-item layout="inline" label="러닝타임" value="103분"></mm-meta-item>
+            </mm-meta-item-group>
           </mm-flex>
 
           <mm-flex direction="column">

@@ -37,7 +37,7 @@ const main = html`
     </mm-flex>
 
     <mm-component-example>
-      <mm-flex gap="2">
+      <mm-button-group>
         <mm-button variant="primary" disabled>
           <mm-spinner label="저장 중"></mm-spinner>
           저장
@@ -46,7 +46,7 @@ const main = html`
           <mm-spinner label="불러오는 중"></mm-spinner>
           불러오기
         </mm-button>
-      </mm-flex>
+      </mm-button-group>
       <mm-separator variant="section"></mm-separator>
       <mm-spinner variant="section" label="불러오는 중"></mm-spinner>
     </mm-component-example>

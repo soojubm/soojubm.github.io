@@ -97,7 +97,7 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="placement">
         <mm-component-example>
-          <mm-flex gap="2">
+          <mm-button-group>
             <mm-icon-button
               icon=${ICON_NAMES.USER}
               aria-label="좌측 정렬"
@@ -113,7 +113,7 @@ const main = html`
               aria-label="우측 정렬"
               tooltip-placement="right"
             ></mm-icon-button>
-          </mm-flex>
+          </mm-button-group>
         </mm-component-example>
       </mm-tab-panel>
     </mm-flex>

@@ -18,14 +18,14 @@ const main = html`
           Contact To buy our products or to learn more about Sandy Shore, don’t hesitate to reach
           out. We’ll be happy to respond.
         </mm-text>
-        <mm-flex gap="6">
+        <mm-meta-item-group>
           <mm-meta-item layout="stacked" label="Phone" value="519-875-3382"></mm-meta-item>
           <mm-meta-item
             layout="stacked"
             label="Address"
             value="731 Lakeshore Road,Norfolk, ON, N0J 1T0"
           ></mm-meta-item>
-        </mm-flex>
+        </mm-meta-item-group>
       </mm-flex>
     </mm-flex>
   </mm-main>
