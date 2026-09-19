@@ -33,6 +33,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'pressed', type: 'boolean = false' },
+  { name: 'pressed-label', type: 'string', optional: true },
   { name: 'value', type: 'string' },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'disabled', type: 'boolean = false' },
@@ -142,6 +143,11 @@ const main = html`
           level="4"
           heading="아이콘만 보일 때"
           description="단독 토글은 aria-label로 이름을 줍니다. 그룹은 옵션의 label을 그대로 두고 hidden-label을 켜서, label이 화면 대신 버튼의 이름으로 쓰이게 합니다."
+        ></mm-text-block>
+        <mm-text-block
+          level="4"
+          heading="눌린 뒤 할 행동으로 레이블을 바꿀 때"
+          description="연동처럼 같은 버튼이 반대 행동을 이어서 맡으면 pressed-label에 그 행동을 적습니다. 현재 상태를 말하는 '켜짐'·'선택됨'은 aria-pressed가 이미 전달하므로 적지 않습니다."
         ></mm-text-block>
         <mm-text-block
           level="4"

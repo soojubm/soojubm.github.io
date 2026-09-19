@@ -17,6 +17,7 @@ import '@/components/common/icon/icon'
 export class ToggleButton extends LitElement {
   static styles = [resetStyles, buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
   @property({ type: Boolean, reflect: true }) pressed = false
+  @property({ type: String, attribute: 'pressed-label' }) pressedLabel?: string
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) disabled = false
@@ -32,8 +33,7 @@ export class ToggleButton extends LitElement {
         aria-label=${this.ariaLabel || nothing}
         @click=${this.handleClick}
       >
-        ${this.renderIcon()}
-        <slot></slot>
+        ${this.renderIcon()} ${this.renderLabel()}
       </button>
     `
   }
@@ -43,6 +43,14 @@ export class ToggleButton extends LitElement {
 
     return html`
       <mm-icon name=${this.icon}></mm-icon>
+    `
+  }
+
+  private renderLabel() {
+    if (this.pressed && this.pressedLabel) return this.pressedLabel
+
+    return html`
+      <slot></slot>
     `
   }
 
