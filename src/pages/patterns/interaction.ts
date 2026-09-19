@@ -68,43 +68,52 @@ const currentComponentRows = html`
     <th scope="row"><mm-code>mm-menu-item-link</mm-code></th>
     <td><mm-code>page</mm-code></td>
   </tr>
-  <tr>
-    <th scope="row"><mm-code>mm-menu-item-action</mm-code></th>
-    <td><mm-code>page</mm-code></td>
-  </tr>
 `
 const expandedComponentRows = html`
   <tr>
     <th scope="row"><mm-code>mm-read-more-button</mm-code></th>
     <td>잘린 텍스트</td>
+    <td>미사용</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-hamburger-button</mm-code></th>
     <td>내비게이션 메뉴</td>
+    <td>미사용</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-more-button</mm-code></th>
     <td>오버플로 메뉴</td>
+    <td>미사용</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-menu-item-disclosure</mm-code></th>
     <td>하위 메뉴</td>
+    <td>사용</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>mm-select</mm-code></th>
+    <td>옵션 목록</td>
+    <td>사용</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-navbar-search</mm-code></th>
     <td>검색 패널</td>
+    <td>미사용</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-chat-source</mm-code></th>
     <td>출처 상세</td>
+    <td>미사용</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-popover</mm-code></th>
     <td>앵커된 패널</td>
+    <td>미사용</td>
   </tr>
   <tr>
     <th scope="row"><mm-code>mm-accordion-item</mm-code></th>
     <td>패널 본문</td>
+    <td>사용</td>
   </tr>
 `
 
@@ -283,67 +292,59 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="Hover">
         <mm-paragraph>
-          hover 처리는 요소가 무엇을 가졌는지에 따라 정해집니다. 상태 selector에서 속성을 다시
-          선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을 재할당합니다.
+          hover는 배경 채움이 기본이고, 그것이 드러나지 않는 요소만 다른 처리를 씁니다. 상태
+          selector에서 속성을 다시 선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을
+          재할당합니다.
         </mm-paragraph>
         <mm-grid columns="2" gap="4" class="hover-example-grid">
-          <mm-surface variant="filled" radius="large">
+          <mm-surface variant="outlined" radius="large">
             <mm-menu-item-action icon="folder" label="배경 채움"></mm-menu-item-action>
           </mm-surface>
           <mm-text-list
             variant="check"
             .texts=${[
-              '배경을 가진 행·항목·카드처럼 채울 면이 있을 때 고른다.',
+              '가장 기본이 되는 hover 스타일이다.',
               html`
-                자기 배경 토큰에
                 <mm-code>--interaction-hover-background-color</mm-code>
-                를 재할당한다.
               `,
             ]}
           ></mm-text-list>
 
-          <mm-surface variant="filled" radius="large">
-            <mm-foundation-item
-              href="#"
-              heading="떠오름"
-              description="채울 배경이 없는 떠 있는 표면."
-            ></mm-foundation-item>
-          </mm-surface>
-          <mm-text-list
-            variant="check"
-            .texts=${[
-              '채울 배경이 없는 떠 있는 표면일 때 고른다.',
-              html`
-                <mm-code>--lift</mm-code>
-                에
-                <mm-code>--interaction-hover-lift</mm-code>
-                를 재할당한다.
-              `,
-            ]}
-          ></mm-text-list>
-
-          <mm-surface variant="filled" radius="large">
+          <mm-surface variant="outlined" radius="large">
             <mm-button variant="tertiary">테두리 드러내기</mm-button>
           </mm-surface>
           <mm-text-list
             variant="check"
             .texts=${[
-              '평소 테두리를 감춰 둔 컨트롤일 때 고른다.',
+              '이미 배경색을 가져 배경 채움으로는 hover가 드러나지 않는 컨트롤이 쓴다.',
               html`
-                자기 border 토큰에
                 <mm-code>--border</mm-code>
-                를 재할당한다.
+              `,
+            ]}
+          ></mm-text-list>
+
+          <mm-surface variant="outlined" radius="large">
+            <mm-foundation-item href="#" heading="" description="떠오름"></mm-foundation-item>
+          </mm-surface>
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              '채울 배경이 없는 떠 있는 표면이 쓴다.',
+              html`
+                <mm-code>--interaction-hover-lift</mm-code>
               `,
             ]}
           ></mm-text-list>
         </mm-grid>
-        <mm-paragraph>
-          <mm-code>mm-marquee</mm-code>
-          의
-          <mm-code>pause-on-hover</mm-code>
-          와 커스텀 스크롤바 thumb는 상태 표현이 아니라 포인터가 있는 동안만 동작이 달라지는
-          기능입니다.
-        </mm-paragraph>
+        <mm-notice>
+          <mm-text size="14">
+            <mm-code>mm-marquee</mm-code>
+            의
+            <mm-code>pause-on-hover</mm-code>
+            와 커스텀 스크롤바 thumb는 상태 표현이 아니라 포인터가 있는 동안만 동작이 달라지는
+            기능입니다.
+          </mm-text>
+        </mm-notice>
       </mm-content-section>
       <mm-content-section heading-level="3" heading="Pressed">
         <mm-paragraph>
@@ -416,12 +417,32 @@ const main = html`
         <mm-paragraph>
           펼침·접힘 여부는
           <mm-code>aria-expanded</mm-code>
-          로 표시합니다.
+          로 표시합니다. 방향 표시는
+          <mm-code>mm-expand-indicator</mm-code>
+          가
+          <mm-code>expanded</mm-code>
+          를 받아 아이콘 회전으로 반영하고, 열고 닫는 상호작용은 트리거가 소유합니다.
         </mm-paragraph>
+        <mm-surface variant="outlined" radius="large">
+          <mm-flex gap="6">
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-expand-indicator></mm-expand-indicator>
+              <mm-caption>접힘</mm-caption>
+            </mm-flex>
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-expand-indicator expanded></mm-expand-indicator>
+              <mm-caption>펼침</mm-caption>
+            </mm-flex>
+          </mm-flex>
+        </mm-surface>
         <mm-table
           .rows=${expandedComponentRows}
           caption="Expanded 컴포넌트와 펼치는 대상"
-          .columns=${[{ label: '컴포넌트', width: '220px' }, { label: '펼치는 대상' }]}
+          .columns=${[
+            { label: '컴포넌트', width: '220px' },
+            { label: '펼치는 대상' },
+            { label: 'mm-expand-indicator', width: '160px' },
+          ]}
         ></mm-table>
       </mm-content-section>
       <mm-component-references .items=${componentReferences}></mm-component-references>
