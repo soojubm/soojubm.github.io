@@ -3,7 +3,6 @@
 @import '/src/stylesheets/shared/reset.css';
 @import '/src/stylesheets/shared/shell.css';
 @import '/src/stylesheets/shared/keyframes.css';
-@import '/src/stylesheets/shared/sidebar.css';
 
 progress[value] {
   border: 0;
