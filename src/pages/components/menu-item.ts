@@ -56,7 +56,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'disabled', type: 'boolean', optional: true },
   { name: "slot='trailing'", type: 'HTMLElement', optional: true },
   { name: 'mm-menu-item-action trailing-icon', type: 'IconName', optional: true },
-  { name: 'mm-menu-item-action aria-current', type: 'AriaCurrent', optional: true },
   { name: 'mm-menu-item-link href', type: 'string', optional: true },
   { name: 'mm-menu-item-link target', type: "string = '_blank'", optional: true },
   { name: 'mm-menu-item-link hidden-trailing', type: 'boolean = false', optional: true },
@@ -198,6 +197,8 @@ const main = html`
       <mm-text-list
         .texts=${[
           'role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.',
+          '현재 위치를 가리키는 aria-current는 이동하는 mm-menu-item-link가 갖습니다.',
+          'target="_blank"인 링크는 새 창에서 열린다는 사실을 이름에 덧붙여, 아이콘으로만 전달되지 않게 합니다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>

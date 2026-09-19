@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -11,11 +11,19 @@ import {
   renderMenuItemContent,
   withMenuItemPresentation,
 } from '@/components/common/menu-item/menu-item.utils'
-import { resetStyles } from '@/stylesheets/shared.styles'
+import { resetStyles, visuallyHiddenStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends withMenuItemPresentation(LitElement) {
-  static styles = [resetStyles, menuItemStyles]
+  static styles = [
+    resetStyles,
+    menuItemStyles,
+    css`
+      a > span {
+        ${visuallyHiddenStyles};
+      }
+    `,
+  ]
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) href = ''
   @property({ type: String }) target = '_blank'
@@ -33,8 +41,17 @@ export class MenuItemLink extends withMenuItemPresentation(LitElement) {
         target=${this.target || nothing}
         rel=${this.target === '_blank' ? 'noopener noreferrer' : nothing}
       >
-        ${renderMenuItemContent(this, this.renderTrailing())}
+        ${renderMenuItemContent(this, this.renderTrailing())}${this.renderNewTabNote()}
       </a>
+    `
+  }
+
+  /** 새 창으로 열린다는 사실이 아이콘(시각)으로만 전달되지 않도록 링크 이름에 덧붙인다. */
+  private renderNewTabNote() {
+    if (this.target !== '_blank') return nothing
+
+    return html`
+      <span>새 창에서 열림</span>
     `
   }
 

@@ -41,18 +41,21 @@ export class Sidebar extends LitElement {
     if (node.children?.length) return this.renderCollapsibleSection(node)
 
     return html`
-      <mm-menu-item-action
+      <mm-menu-item-link
+        href="${node.id}.html"
         label=${node.title}
         icon=${node.icon}
+        target="_self"
+        hidden-trailing
         aria-current=${ifDefined(this.isCurrentPage(node.id) ? 'page' : undefined)}
-        @click=${() => this.handleStandaloneClick(node.id)}
+        @click=${this.handleMenuItemClick}
       >
         <!-- ${node.badge
           ? html`
               <mm-tag slot="trailing">${node.badge}</mm-tag>
             `
           : nothing} -->
-      </mm-menu-item-action>
+      </mm-menu-item-link>
     `
   }
 
@@ -81,10 +84,14 @@ export class Sidebar extends LitElement {
   `
 
   private renderGroup(node: Extract<SitemapNode, { type: 'group' }>) {
+    return this.renderMenuList(node.title, node.items)
+  }
+
+  private renderMenuList(heading: string, items: { id: string; name: string }[]) {
     return html`
-      <mm-menu-item-disclosure open label=${node.title} icon=${node.icon}>
-        ${repeat(node.items, item => item.id, this.renderItemLink)}
-      </mm-menu-item-disclosure>
+      <mm-menu-list heading=${heading}>
+        ${repeat(items, item => item.id, this.renderItemLink)}
+      </mm-menu-list>
     `
   }
 
@@ -121,15 +128,6 @@ export class Sidebar extends LitElement {
   private restoreScrollPosition() {
     const saved = localStorage.getItem('sidebarScroll')
     if (saved) this.scrollTop = Number(saved)
-  }
-
-  private handleStandaloneClick(pageId: string) {
-    this.saveScrollPosition()
-    this.navigate(pageId)
-  }
-
-  private navigate(pageId: string) {
-    window.location.href = `${pageId}.html`
   }
 
   private handleMenuItemClick() {
