@@ -5,7 +5,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 import { findSitemapItem } from '@/sitemap'
 
 const main = html`
-  <mm-fixed-top>
+  <mm-fixed-top style="background: var(--background-subtle-color)">
     <mm-top-bar
       id="setting-top-bar"
       heading="설정"
@@ -123,10 +123,12 @@ const main = html`
           <mm-flex direction="column" gap="2">
             <mm-list-item-group>
               <mm-setting-item icon=${ICON_NAMES.GOOGLE} label="구글 계정으로 로그인">
-                <mm-button slot="action" disabled>Google 연동해제</mm-button>
+                <mm-toggle-button slot="action" pressed disabled pressed-label="연동 해제">
+                  연동
+                </mm-toggle-button>
               </mm-setting-item>
               <mm-setting-item icon=${ICON_NAMES.APPLE} label="애플 계정으로 로그인">
-                <mm-button slot="action">Apple 연동</mm-button>
+                <mm-toggle-button slot="action" pressed-label="연동 해제">연동</mm-toggle-button>
               </mm-setting-item>
             </mm-list-item-group>
             <mm-caption>계정의 비밀번호를 설정한 후 소셜 계정을 연결을 해제하세요.</mm-caption>
@@ -152,9 +154,6 @@ const main = html`
               <mm-meta-item label="결제금액" value="매달 46,800원"></mm-meta-item>
               <mm-meta-item label="결제수단" value="현대카드 ****-****-****-7922"></mm-meta-item>
             </mm-meta-item-group>
-            <mm-button-group>
-              <mm-button icon=${ICON_NAMES.FORWARD}>결제수단변경</mm-button>
-            </mm-button-group>
           </mm-flex>
         </mm-surface>
       </mm-flex>

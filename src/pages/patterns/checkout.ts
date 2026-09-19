@@ -15,7 +15,7 @@ const orderedProduct = html`
 `
 
 const main = html`
-  <mm-fixed-top>
+  <mm-fixed-top style="background: var(--background-color)">
     <mm-top-bar
       id="checkout-top-bar"
       heading="주문/결제"

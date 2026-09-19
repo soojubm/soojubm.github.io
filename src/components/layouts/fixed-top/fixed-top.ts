@@ -17,6 +17,11 @@ export class FixedTop extends LitElement {
       top: 0;
       z-index: var(--material-zindex-chrome);
     }
+
+    /* slot이 사이에 끼면 배경 상속이 끊겨, 자식이 부모 배경을 따르지 못한다. */
+    slot {
+      background: inherit;
+    }
   `
 
   render() {

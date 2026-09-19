@@ -25,7 +25,6 @@ const componentProps: ComponentPropItemData[] = [
 const componentTokens: ComponentTokenItemData[] = [
   { name: 'top-bar-min-height' },
   { name: 'top-bar-gap' },
-  { name: 'top-bar-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []
