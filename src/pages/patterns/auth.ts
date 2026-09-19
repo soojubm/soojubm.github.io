@@ -17,7 +17,11 @@ const main = html`
         ></mm-text-block>
 
         <fieldset>
-          <mm-button size="large" full-width>페이스북으로 시작</mm-button>
+          <mm-social-auth-button
+            provider="facebook"
+            size="large"
+            full-width
+          ></mm-social-auth-button>
           <mm-separator>
             <mm-paragraph slot="text">또는</mm-paragraph>
           </mm-separator>
@@ -52,7 +56,11 @@ const main = html`
 
         <fieldset>
           <legend hidden>필수입력</legend>
-          <mm-button size="large" full-width>페이스북으로 시작</mm-button>
+          <mm-social-auth-button
+            provider="facebook"
+            size="large"
+            full-width
+          ></mm-social-auth-button>
           <mm-separator>
             <mm-paragraph slot="text">또는</mm-paragraph>
           </mm-separator>

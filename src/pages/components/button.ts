@@ -294,6 +294,17 @@ const main = html`
       <mm-add-button>항목 추가</mm-add-button>
     </mm-component-section>
 
+    <mm-component-section
+      heading="SocialAuthButton"
+      description="외부 계정으로 로그인·가입을 시작합니다. 레이블과 아이콘은 provider가 정합니다."
+    >
+      <mm-flex direction="column" gap="2">
+        <mm-social-auth-button provider="facebook" size="large"></mm-social-auth-button>
+        <mm-social-auth-button provider="google" size="large"></mm-social-auth-button>
+        <mm-social-auth-button provider="apple" size="large"></mm-social-auth-button>
+      </mm-flex>
+    </mm-component-section>
+
     <mm-component-section heading="ToTopButton" description="페이지 최상단으로 스크롤합니다.">
       <mm-to-top-button></mm-to-top-button>
     </mm-component-section>
