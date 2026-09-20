@@ -38,24 +38,24 @@ export class AccordionItem extends LitElement {
         font-weight: var(--font-weight-bold);
       }
 
-      /* grid trick: 0fr → 1fr 로 높이 애니메이션 */
-      [aria-hidden] {
+      /* auto 높이를 애니메이션하려고 0fr → 1fr 트랙을 쓴다 */
+      .panel {
         display: grid;
         grid-template-rows: 0fr;
         overflow: hidden;
         transition: grid-template-rows var(--transition-duration) var(--transition-easing);
       }
 
-      [aria-hidden] > div {
+      .panel > div {
         min-height: 0;
         transition: padding var(--transition-duration) var(--transition-easing);
       }
 
       :host([open]) {
-        & [aria-hidden] {
+        & .panel {
           grid-template-rows: 1fr;
         }
-        & [aria-hidden] > div {
+        & .panel > div {
           padding-top: var(--space-2);
           padding-bottom: var(--space-2);
         }
@@ -82,7 +82,7 @@ export class AccordionItem extends LitElement {
         <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
       </button>
 
-      <div id=${this.panelId} aria-hidden=${this.open ? 'false' : 'true'}>
+      <div id=${this.panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
         <div><slot></slot></div>
       </div>
     `
