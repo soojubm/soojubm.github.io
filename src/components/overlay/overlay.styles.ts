@@ -2,12 +2,13 @@ import { css } from 'lit'
 
 import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
 
-/** modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다. */
+/**
+ * modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다.
+ * `--backdrop-*` 기본값도 자신이 아니라 자신을 품은 표면이 선언한다.
+ * 여기서 선언하면 그 표면이 흘려보내는 값이 이 `:host`에 가려 닿지 못하기 때문이다.
+ */
 export const backdropStyles = css`
   :host {
-    --backdrop-background-color: transparent;
-    --backdrop-blur: 0px;
-
     display: block;
     background: var(--backdrop-background-color);
     position: fixed;
@@ -58,8 +59,8 @@ export const overlaySurfaceStyles = css`
 /**
  * viewport 기준 modal 표면(mm-sheet, mm-dialog)의 위치.
  * 호스트가 패널을 화면 기준으로 앉히는 고정 컨테이너가 되고, placement별로 패널을 어느 변에
- * 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가, 뒤를 덮는 재질은 mm-backdrop이 맡는다.
- * `--overlay-panel-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
+ * 붙일지 정한다. placement가 없는 표면(mm-dialog)은 화면 가운데에 앉는다. 표면 재질은 overlaySurfaceStyles가, 뒤를 덮는 재질은 mm-backdrop이 맡는다.
+ * `--overlay-panel-*`와 backdrop 토큰의 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
  */
 export const sheetPositionStyles = css`
   :host {
@@ -72,8 +73,8 @@ export const sheetPositionStyles = css`
     --overlay-panel-padding-block: var(--space-4);
     --overlay-panel-padding-inline: var(--space-4);
     --overlay-panel-border-radius: var(--radius-large);
-    --overlay-panel-backdrop-background-color: transparent;
-    --overlay-panel-backdrop-blur: 0px;
+    --backdrop-background-color: transparent;
+    --backdrop-blur: 0px;
 
     display: flex;
     justify-content: center;
@@ -104,32 +105,17 @@ export const sheetPositionStyles = css`
     outline: none;
   }
 
-  /* backdrop이 자기 층위를 명시하므로, 같은 stacking context 안의 패널도 층위를 밝혀야 덮이지 않는다 */
   .panel {
+    /* 패널이 콘텐츠 폭으로 줄지 않고 max-width를 채운다 */
+    width: 100%;
+
+    /* backdrop이 자기 층위를 명시하므로, 같은 stacking context 안의 패널도 층위를 밝혀야 덮이지 않는다 */
     z-index: var(--material-zindex-sheet);
   }
 
-  /* backdrop 재질은 mm-backdrop이 소유하고, sheet는 자기 공개 knob을 그쪽으로 잇는다. */
-  mm-backdrop {
-    --backdrop-background-color: var(--overlay-panel-backdrop-background-color);
-    --backdrop-blur: var(--overlay-panel-backdrop-blur);
-  }
-
-  :host([open]) .panel {
-    transform: scale(1);
-    transition: transform var(--transition-duration) var(--transition-easing-emphasis);
-  }
-
-  /* full은 placement와 상관없이 폭 제한을 푼다 */
-  :host([full]) {
+  /* full-width는 placement와 상관없이 폭 제한을 푼다 */
+  :host([full-width]) {
     --overlay-panel-max-width: 100%;
-  }
-
-  /* center·left·right: 패널이 콘텐츠 폭으로 줄지 않고 max-width를 채운다 */
-  :host([placement='center']) .panel,
-  :host([placement='left']) .panel,
-  :host([placement='right']) .panel {
-    width: 100%;
   }
 
   /* 화면 아래 변에 닿는 배치는 footer 유무와 상관없이 홈 인디케이터 영역만큼 여백을 더 둔다 */
@@ -139,9 +125,17 @@ export const sheetPositionStyles = css`
     padding-bottom: calc(var(--overlay-panel-padding-block) + env(safe-area-inset-bottom));
   }
 
+  /* top */
+  :host([placement='top']) .panel {
+    margin-bottom: auto;
+    padding-top: calc(var(--overlay-panel-padding-block) + env(safe-area-inset-top));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transform: translateY(-100%);
+  }
+
   /* bottom */
   :host([placement='bottom']) .panel {
-    width: 100%;
     margin-top: auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -167,11 +161,10 @@ export const sheetPositionStyles = css`
     transform: translateX(100%);
   }
 
-  /* :host() 안에 중첩하면 열림 규칙이 닫힘 규칙을 이기지 못하므로, 열림 상태는 최상위 선택자로 둔다 */
-  :host([open][placement='bottom']) .panel,
-  :host([open][placement='left']) .panel,
-  :host([open][placement='right']) .panel {
+  /* 닫힘 상태의 placement 규칙과 선택자 무게가 같으므로, open을 함께 걸어 열림 규칙이 이기게 한다 */
+  :host([open][placement]) .panel {
     transform: none;
+    transition: transform var(--transition-duration) var(--transition-easing-emphasis);
   }
 `
 

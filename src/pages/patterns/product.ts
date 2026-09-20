@@ -249,7 +249,7 @@ const main = html`
     </mm-fixed-bottom>
   </mm-main>
 
-  <mm-sheet id="cart-sheet" placement="right" style="--overlay-panel-backdrop-blur: 2px">
+  <mm-sheet id="cart-sheet" placement="right" style="--backdrop-blur: 2px">
     <mm-sheet-header heading="장바구니"></mm-sheet-header>
     <mm-sheet-body>
       <mm-flex direction="column" gap="4">

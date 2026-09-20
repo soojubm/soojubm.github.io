@@ -34,8 +34,8 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'overlay-panel-padding-block' },
   { name: 'overlay-panel-padding-inline' },
   { name: 'overlay-panel-border-radius' },
-  { name: 'overlay-panel-backdrop-background-color' },
-  { name: 'overlay-panel-backdrop-blur' },
+  { name: 'backdrop-background-color' },
+  { name: 'backdrop-blur' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

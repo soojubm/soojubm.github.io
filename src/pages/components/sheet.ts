@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
 import type {
+  ComponentChangelogItemData,
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentReferenceItemData,
@@ -15,6 +16,18 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
   { href: 'popover.html', label: 'Popover' },
   { href: 'surface.html', label: 'Surface' },
+]
+
+const componentChangelog: ComponentChangelogItemData[] = [
+  {
+    date: '2026-09-20',
+    description:
+      'placement에서 center를 빼고 top을 더했습니다. 기본값은 bottom이며, 화면 가운데에 뜨는 표면은 mm-dialog가 맡습니다. navbar 검색 패널은 top sheet로 바꿨습니다.',
+  },
+  {
+    date: '2026-09-20',
+    description: 'full을 다른 컴포넌트와 같은 이름인 full-width로 바꿨습니다.',
+  },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -52,9 +65,9 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean' },
-  { name: 'placement', type: "'center' | 'bottom' | 'left' | 'right' = 'center'" },
+  { name: 'placement', type: "'top' | 'bottom' | 'left' | 'right' = 'bottom'" },
   { name: 'height', type: 'string', optional: true },
-  { name: 'full', type: 'boolean = false', optional: true },
+  { name: 'full-width', type: 'boolean = false', optional: true },
   { name: 'mm-sheet-header heading', type: 'string', optional: true },
   { name: 'mm-sheet-footer primaryAction', type: 'ActionConfig', optional: true },
   { name: 'mm-sheet-footer secondaryAction', type: 'ActionConfig', optional: true },
@@ -70,8 +83,8 @@ const componentTokens: ComponentTokenItemData[] = [
   { name: 'overlay-panel-padding-block' },
   { name: 'overlay-panel-padding-inline' },
   { name: 'overlay-panel-border-radius' },
-  { name: 'overlay-panel-backdrop-background-color' },
-  { name: 'overlay-panel-backdrop-blur' },
+  { name: 'backdrop-background-color' },
+  { name: 'backdrop-blur' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -90,7 +103,7 @@ function sheetPageTemplate() {
       <mm-flex justify-content="between" align-items="start" gap="3">
         <mm-page-header
           heading="Sheet"
-          description="화면 위를 덮어 독립된 작업 공간을 여는 modal 표면입니다. 화면 중앙이나 가장자리에서 열려 배경 상호작용을 막고 backdrop·ESC·닫기 버튼으로 닫히므로, 사용자는 현재 페이지를 벗어나지 않고 하위 작업에 집중한 뒤 원래 흐름으로 돌아갈 수 있습니다."
+          description="화면 위를 덮어 독립된 작업 공간을 여는 modal 표면입니다. 화면 가장자리에서 밀려 들어와 배경 상호작용을 막고 backdrop·ESC·닫기 버튼으로 닫히므로, 사용자는 현재 페이지를 벗어나지 않고 하위 작업에 집중한 뒤 원래 흐름으로 돌아갈 수 있습니다."
         ></mm-page-header>
         <mm-copy-page-button></mm-copy-page-button>
       </mm-flex>
@@ -108,7 +121,8 @@ function sheetPageTemplate() {
       <mm-component-guide .features=${componentFeatures}>
         <mm-text-list
           .texts=${[
-            '안전마진의 소유 — 화면 아래 변에 닿는 배치(bottom·left·right)에서는 패널이 홈 인디케이터 영역만큼 아래 여백을 갖습니다. footer 유무와 상관없이 같은 여백을 유지하도록 footer나 소비처에서 따로 두지 않습니다.',
+            '안전마진의 소유 — 패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백을 더 둡니다. footer 유무와 상관없이 같은 여백을 유지하도록 footer나 소비처에서 따로 두지 않습니다.',
+            '화면 가운데에 띄우는 확인·알림은 mm-dialog를 사용합니다. sheet의 placement는 패널이 붙는 변만 고릅니다.',
           ]}
         ></mm-text-list>
       </mm-component-guide>
@@ -146,6 +160,8 @@ function sheetPageTemplate() {
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
 
+      <mm-component-changelog .items=${componentChangelog}></mm-component-changelog>
+
       <mm-component-pager></mm-component-pager>
     </mm-main>
   `
@@ -175,18 +191,18 @@ function sheetAnatomyTemplate() {
 function sheetExampleTemplate() {
   return html`
     <mm-button-group>
-      <mm-button aria-controls="center-sheet" aria-haspopup="dialog">Center</mm-button>
+      <mm-button aria-controls="top-sheet" aria-haspopup="dialog">Top</mm-button>
       <mm-button aria-controls="bottom-sheet" aria-haspopup="dialog">Bottom</mm-button>
       <mm-button aria-controls="left-sheet" aria-haspopup="dialog">Left</mm-button>
       <mm-button aria-controls="right-sheet" aria-haspopup="dialog">Right</mm-button>
     </mm-button-group>
 
-    <mm-sheet id="center-sheet" placement="center">
-      <mm-sheet-header heading="Center Sheet"></mm-sheet-header>
+    <mm-sheet id="top-sheet" placement="top">
+      <mm-sheet-header heading="Top Sheet"></mm-sheet-header>
       <mm-sheet-body>
         <mm-paragraph>
-          이것도 막무가내로 정의하지 말고 필요한 케이스를 정의. 대부분이 다이얼로그로 충분함.
-          페이지에 가까운 레이어만 정의해도 됨.
+          화면 위 변에서 내려옵니다. 상단 트리거에서 여는 검색·알림처럼 시작점이 위쪽인 흐름에
+          씁니다.
         </mm-paragraph>
       </mm-sheet-body>
     </mm-sheet>

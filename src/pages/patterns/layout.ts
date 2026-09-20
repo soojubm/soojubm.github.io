@@ -107,7 +107,7 @@ const main = html`
           </mm-surface>
           <mm-surface variant="filled" style="max-width: var(--layout-width-small)">
             <mm-flex direction="column" gap="1">
-              <mm-caption>시트 · placement와 무관하게 같은 폭, full이 제한을 푼다</mm-caption>
+              <mm-caption>시트 · placement와 무관하게 같은 폭, full-width가 제한을 푼다</mm-caption>
               <mm-code>--layout-width-small · 640px</mm-code>
               <mm-flex gap="3">
                 <mm-link href="sheet.html">Sheet</mm-link>
