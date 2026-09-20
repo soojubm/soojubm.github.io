@@ -25,7 +25,7 @@ export class ReadMoreButton extends LitElement {
         color: var(--foreground-color);
 
         &:focus-visible {
-          ${focusRingStyles}
+          ${focusRingStyles};
         }
       }
     `,

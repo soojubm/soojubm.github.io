@@ -33,7 +33,7 @@ export class PortfolioItem extends LitElement {
     }
 
     ${interactiveElement}:focus-visible {
-      ${focusRingStyles}
+      ${focusRingStyles};
     }
 
     .badge,

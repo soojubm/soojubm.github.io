@@ -14,7 +14,7 @@ export class ChatBody extends LitElement {
       overflow-x: hidden;
       overflow-y: auto;
 
-      ${scrollbarStyles}
+      ${scrollbarStyles};
     }
   `
 

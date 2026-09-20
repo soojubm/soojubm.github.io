@@ -91,13 +91,13 @@ export const interactiveRowStyles = css`
     color: inherit;
     box-sizing: border-box;
     cursor: pointer;
-    ${layerContainerStyles}
+    ${layerContainerStyles};
 
     /* background state */
     &::before {
       border-radius: var(--radius);
       background-color: var(--interactive-row-background-color);
-      ${backgroundLayerStyles}
+      ${backgroundLayerStyles};
     }
 
     &:hover {

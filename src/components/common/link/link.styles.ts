@@ -20,6 +20,6 @@ export const linkStyles = css`
   }
 
   .link:focus-visible {
-    ${focusRingStyles}
+    ${focusRingStyles};
   }
 `

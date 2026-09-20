@@ -9,7 +9,7 @@ export class ChatFooter extends LitElement {
   static styles = css`
     :host {
       box-sizing: border-box;
-      ${layerContainerStyles}
+      ${layerContainerStyles};
       z-index: var(--material-zindex-elevated);
     }
 
@@ -18,7 +18,7 @@ export class ChatFooter extends LitElement {
       background: var(--material-chrome-background-color);
       backdrop-filter: var(--material-chrome-backdrop-filter);
       -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
-      ${backgroundLayerStyles}
+      ${backgroundLayerStyles};
     }
 
     /* 화면 전체를 덮는 스크롤 위로 프롬프트 입력이 떠서

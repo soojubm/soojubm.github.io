@@ -43,8 +43,7 @@ export const overlaySurfaceStyles = css`
     box-sizing: border-box;
     overflow: hidden;
 
-    /* ::before 재질 레이어와 드래그 핸들의 기준 박스. popover는 absolute로 덮어쓴다. */
-    ${layerContainerStyles}
+    ${layerContainerStyles}; /* ::before 레이어와 드래그 핸들의 기준 박스. popover는 absolute로 덮어쓴다 */
   }
 
   .panel::before {
@@ -52,7 +51,7 @@ export const overlaySurfaceStyles = css`
     background: var(--material-overlay-background-color);
     backdrop-filter: var(--material-overlay-backdrop-filter);
     -webkit-backdrop-filter: var(--material-overlay-backdrop-filter);
-    ${backgroundLayerStyles}
+    ${backgroundLayerStyles};
   }
 `
 

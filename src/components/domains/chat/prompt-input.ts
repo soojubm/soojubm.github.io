@@ -20,7 +20,7 @@ export class PromptInput extends LitElement {
         border: var(--material-chrome-border);
         border-radius: var(--radius);
         box-shadow: var(--material-chrome-shadow);
-        ${layerContainerStyles}
+        ${layerContainerStyles};
       }
 
       /* 재질은 ::before 형제 레이어가 소유한다. 조상에 backdrop-filter가 걸리면 첨부 popover의 blur가 죽기 때문이다. */
@@ -29,7 +29,7 @@ export class PromptInput extends LitElement {
         background: var(--material-chrome-background-color);
         backdrop-filter: var(--material-chrome-backdrop-filter);
         -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
-        ${backgroundLayerStyles}
+        ${backgroundLayerStyles};
       }
 
       form {

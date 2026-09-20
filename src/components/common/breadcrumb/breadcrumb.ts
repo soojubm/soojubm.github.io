@@ -53,7 +53,7 @@ export class Breadcrumb extends LitElement {
         }
 
         &:focus-visible {
-          ${focusRingStyles}
+          ${focusRingStyles};
         }
       }
     `,

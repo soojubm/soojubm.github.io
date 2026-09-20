@@ -20,7 +20,7 @@ export const topBarStyles = css`
     gap: var(--top-bar-gap);
     box-sizing: border-box;
     background: inherit;
-    ${layerContainerStyles}
+    ${layerContainerStyles};
   }
 
   /* 재질은 ::before 형제 레이어가 소유한다. 조상에 backdrop-filter가 걸리면 action slot 안 popover의 blur가 죽기 때문이다. */
@@ -28,7 +28,7 @@ export const topBarStyles = css`
     background: inherit;
     backdrop-filter: var(--material-chrome-backdrop-filter);
     -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
-    ${backgroundLayerStyles}
+    ${backgroundLayerStyles};
   }
 
   .trailing-area {
