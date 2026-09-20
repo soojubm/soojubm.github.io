@@ -42,7 +42,7 @@ export class ComponentChangelog extends LitElement {
 
     return html`
       <mm-heading>${this.heading}</mm-heading>
-      <mm-surface variant="filled" radius="large">
+      <mm-surface variant="outlined" radius="large">
         <div class="changelog-items">${this.items.map(item => this.renderItem(item))}</div>
       </mm-surface>
     `
