@@ -3,8 +3,3 @@
   border: var(--border);
   border-radius: var(--radius);
 }
-
-/* hover 예시 면은 옆 설명 열보다 넓어지지 않게 상한을 둔다 */
-.hover-example-grid > mm-surface {
-  max-width: 560px;
-}

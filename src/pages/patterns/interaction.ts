@@ -296,7 +296,7 @@ const main = html`
           selector에서 속성을 다시 선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을
           재할당합니다.
         </mm-paragraph>
-        <mm-grid columns="2" gap="4" class="hover-example-grid">
+        <mm-grid columns="2" gap="4">
           <mm-surface variant="outlined" radius="large">
             <mm-menu-item-action icon="folder" label="배경 채움"></mm-menu-item-action>
           </mm-surface>
