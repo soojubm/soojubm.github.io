@@ -111,7 +111,7 @@ const expandedComponentRows = html`
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-accordion-item</mm-code></th>
+    <th scope="row"><mm-code>mm-faq-item</mm-code></th>
     <td>패널 본문</td>
     <td>사용</td>
   </tr>

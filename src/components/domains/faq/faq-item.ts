@@ -8,28 +8,28 @@ import { emit, uniqueId } from '@/utils'
 import '@/components/indicators/expand-indicator/expand-indicator'
 
 /**
- * 개별 아코디언 항목.
- * summary 속성(또는 slot="summary")이 트리거, 기본 슬롯이 접을 수 있는 패널입니다.
+ * 질문 하나와 접힌 답변. question이 트리거, 기본 슬롯이 펼쳐지는 답변입니다.
+ * 트리거는 h4로 감싸 스크린리더가 제목 단위로 질문을 건너뛰게 한다(APG accordion).
  */
-@customElement('mm-accordion-item')
-export class AccordionItem extends LitElement {
+@customElement('mm-faq-item')
+export class FaqItem extends LitElement {
   static styles = [
     resetStyles,
     css`
       :host {
-        --accordion-item-padding: var(--space-2) var(--space-4);
-        --accordion-item-border: var(--border-transparent);
-        --accordion-item-border-radius: var(--radius);
-        --accordion-item-background-color: var(--background-subtle-color);
+        --faq-item-padding: var(--space-2) var(--space-4);
+        --faq-item-border: var(--border-transparent);
+        --faq-item-border-radius: var(--radius);
+        --faq-item-background-color: var(--background-subtle-color);
 
         ${surfaceBaseStyles};
-        --surface-padding: var(--accordion-item-padding);
-        --surface-border: var(--accordion-item-border);
-        --surface-border-radius: var(--accordion-item-border-radius);
-        --surface-background-color: var(--accordion-item-background-color);
+        --surface-padding: var(--faq-item-padding);
+        --surface-border: var(--faq-item-border);
+        --surface-border-radius: var(--faq-item-border-radius);
+        --surface-background-color: var(--faq-item-background-color);
       }
 
-      .summary-btn {
+      .question {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -39,33 +39,33 @@ export class AccordionItem extends LitElement {
       }
 
       /* auto 높이를 애니메이션하려고 0fr → 1fr 트랙을 쓴다 */
-      .panel {
+      .answer {
         display: grid;
         grid-template-rows: 0fr;
         overflow: hidden;
         transition: grid-template-rows var(--transition-duration) var(--transition-easing);
       }
 
-      .panel > div {
+      .answer > div {
         min-height: 0;
         transition: padding var(--transition-duration) var(--transition-easing);
       }
 
       :host([open]) {
-        & .panel {
+        & .answer {
           grid-template-rows: 1fr;
         }
-        & .panel > div {
+        & .answer > div {
           padding-top: var(--space-2);
           padding-bottom: var(--space-2);
         }
       }
     `,
   ]
-  @property({ type: String }) summary = ''
+  @property({ type: String }) question = ''
   @property({ type: Boolean, reflect: true }) open = false
-  @query('button.summary-btn') private trigger?: HTMLElement
-  private readonly panelId = uniqueId('accordion-panel')
+  @query('button.question') private trigger?: HTMLElement
+  private readonly answerId = uniqueId('faq-answer')
   private disclosure = new DisclosureController(this, {
     isOpen: () => this.open,
     setOpen: open => {
@@ -77,12 +77,14 @@ export class AccordionItem extends LitElement {
 
   render() {
     return html`
-      <button class="summary-btn" aria-controls=${this.panelId}>
-        <slot name="summary">${this.summary}</slot>
-        <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
-      </button>
+      <h4>
+        <button class="question" aria-controls=${this.answerId}>
+          ${this.question}
+          <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
+        </button>
+      </h4>
 
-      <div id=${this.panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
+      <div id=${this.answerId} class="answer" ?inert=${!this.open}>
         <div><slot></slot></div>
       </div>
     `

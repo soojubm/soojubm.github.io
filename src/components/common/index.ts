@@ -1,7 +1,6 @@
 // icon을 가장 먼저 평가한다. domains/social-links처럼 common 밖 모듈을 import하는 컴포넌트가 이 배럴로
 // 되돌아오는 순환이 있고, 그 모듈이 top-level 상수에서 ICON_NAMES를 바로 읽기 때문이다.
 export * from '@/components/common/icon'
-export * from '@/components/common/accordion'
 export * from '@/components/common/avatar'
 export * from '@/components/common/breadcrumb'
 export * from '@/components/common/button'

@@ -54,15 +54,15 @@ const faqCategories: FaqCategory[] = [
 
 const renderFaqCategory = ({ heading, items }: FaqCategory) => html`
   <mm-content-section heading-level="3" heading=${heading}>
-    <mm-accordion>
+    <mm-faq-list>
       ${items.map(
         ({ question, answer }) => html`
-          <mm-accordion-item summary=${question}>
+          <mm-faq-item question=${question}>
             <mm-paragraph>${answer}</mm-paragraph>
-          </mm-accordion-item>
+          </mm-faq-item>
         `,
       )}
-    </mm-accordion>
+    </mm-faq-list>
   </mm-content-section>
 `
 

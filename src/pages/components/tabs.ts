@@ -11,7 +11,7 @@ import type {
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
-  { href: 'accordion.html', label: 'Accordion' },
+  { href: 'disclosure.html', label: 'Disclosure' },
   { href: 'top-bar.html', label: 'Top Bar' },
 ]
 

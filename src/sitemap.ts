@@ -46,6 +46,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'foundations', name: 'Overview' },
       { id: 'layout', name: 'Layout' },
       { id: 'interaction', name: 'Interaction' },
+      { id: 'disclosure', name: 'Disclosure' },
       { id: 'selection', name: 'Selection' },
       { id: 'search', name: 'Search' },
       { id: 'feedback', name: 'Feedback' },
@@ -111,7 +112,6 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'toggle-button', name: 'Toggle Button' },
       { id: 'menu-item', name: 'Menu Item' },
       { id: 'link', name: 'Link' },
-      { id: 'accordion', name: 'Accordion', badge: 'pattern' },
     ],
   },
   {
