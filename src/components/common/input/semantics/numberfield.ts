@@ -14,8 +14,8 @@ import '@/components/common/icon-button/icon-button'
 import '@/components/common/input/input'
 import { emit } from '@/utils'
 
-@customElement('mm-number-input')
-export class NumberInput extends withTextfieldState(LitElement) {
+@customElement('mm-numberfield')
+export class NumberField extends withTextfieldState(LitElement) {
   static styles = textfieldStyles
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number

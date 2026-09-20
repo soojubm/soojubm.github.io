@@ -49,7 +49,7 @@ const main = html`
 
             <form>
               <mm-flex direction="column" gap="2">
-                <mm-number-input value="1" min="1" max="99" label="수량"></mm-number-input>
+                <mm-numberfield value="1" min="1" max="99" label="수량"></mm-numberfield>
 
                 <mm-button-group>
                   <mm-button
@@ -260,13 +260,7 @@ const main = html`
           description="Hachimitsupai"
         ></mm-list-item>
 
-        <mm-number-input
-          id="cart-quantity"
-          value="1"
-          min="1"
-          max="99"
-          label="수량"
-        ></mm-number-input>
+        <mm-numberfield id="cart-quantity" value="1" min="1" max="99" label="수량"></mm-numberfield>
 
         <mm-separator></mm-separator>
 
@@ -298,7 +292,7 @@ type ValueElement = HTMLElement & {
 // 여는 동작은 aria-controls를 통해 mm-sheet가 소유한다. 여기서는 담을 수량만 시트로 옮긴다.
 function setupCartSheet() {
   const triggers = document.querySelectorAll<HTMLElement>('[aria-controls="cart-sheet"]')
-  const productQuantity = document.querySelector<ValueElement>('.product-info mm-number-input')
+  const productQuantity = document.querySelector<ValueElement>('.product-info mm-numberfield')
   const cartQuantity = document.querySelector<ValueElement>('#cart-quantity')
   const cartTotal = document.querySelector<ValueElement>('#cart-total')
 

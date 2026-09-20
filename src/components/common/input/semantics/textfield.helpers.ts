@@ -51,7 +51,7 @@ export interface TextfieldState {
 }
 
 /**
- * textfield·number-input이 공유하는 필드 상태, input 값 동기화, 포커스 위임.
+ * textfield·numberfield가 공유하는 필드 상태, input 값 동기화, 포커스 위임.
  * 컨트롤 영역(슬롯 구성, 증감 버튼 등)은 각 컴포넌트가 소유한다.
  */
 export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) => {

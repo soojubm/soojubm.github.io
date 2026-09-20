@@ -250,11 +250,11 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section
-      heading="NumberInput"
+      heading="NumberField"
       description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
     >
       <mm-flex direction="column" gap="3">
-        <mm-number-input
+        <mm-numberfield
           label="수량"
           name="quantity"
           value="2"
@@ -262,17 +262,17 @@ const main = html`
           max="20"
           step="1"
           description="1개 이상 20개 이하로 입력하세요."
-        ></mm-number-input>
+        ></mm-numberfield>
 
-        <mm-number-input
+        <mm-numberfield
           label="가격"
           name="price"
           value="30000"
           min="0"
           step="1000"
-        ></mm-number-input>
+        ></mm-numberfield>
 
-        <mm-number-input label="비활성" value="10" disabled></mm-number-input>
+        <mm-numberfield label="비활성" value="10" disabled></mm-numberfield>
       </mm-flex>
     </mm-component-section>
 
