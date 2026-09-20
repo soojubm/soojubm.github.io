@@ -4,8 +4,9 @@ import { html } from 'lit'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 import type { TemplateResult } from 'lit'
 
-import '@/components/domains/faq'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/read-more-paragraph'
+import '@/components/domains/faq'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -121,9 +122,10 @@ const main = html`
           유지합니다.
         </mm-paragraph>
         <mm-paragraph>
-          접힌 자리에 무엇을 남기는지로 두 형태를 고릅니다. 항목을 통째로 접으면 제목만 남아 훑어
-          고를 수 있고(${code('mm-faq-item')}), 이어지는 본문을 접으면 앞부분이 남아 읽던 문장을
-          이어갑니다(${code('mm-read-more-paragraph')}).
+          접힌 자리에 무엇을 남기는지로 형태를 고릅니다. 항목을 통째로 접으면 제목만 남아 훑어 고를
+          수 있고(${code('mm-faq-item')}), 이어지는 본문을 접으면 앞부분이 남아 읽던 문장을
+          이어가며(${code('mm-read-more-paragraph')}), 하위 목록을 접으면 부모 항목만 남아 목록의
+          깊이가 한 단계로 줄어듭니다(${code('mm-menu-item-disclosure')}).
         </mm-paragraph>
         <mm-faq-list>
           <mm-faq-item question="서비스를 탈퇴하고 싶어요." open>
@@ -142,6 +144,19 @@ const main = html`
           limit="80"
           content="접힌 자리에 앞부분이 남아 있어, 사용자는 이 문단을 계속 읽을지 여기서 멈출지 본문을 보고 정합니다. 훑어 고르는 목록과 달리 문장이 이어지므로 트리거는 문단 끝에 이어 붙습니다."
         ></mm-read-more-paragraph>
+        <mm-menu-item-group size="large">
+          <mm-menu-item-disclosure icon=${ICON_NAMES.PALETTE} label="Foundations" open>
+            <mm-menu-item-action emoji="#" label="Interaction"></mm-menu-item-action>
+            <mm-menu-item-action emoji="#" label="Disclosure"></mm-menu-item-action>
+          </mm-menu-item-disclosure>
+        </mm-menu-item-group>
+        <mm-notice>
+          <mm-text size="14">
+            ${code('mm-menu-item-disclosure')}는 지금 사이드바 내비게이션에서만 씁니다. 이름은 메뉴
+            계열 일반을 가리키지만 접는 단위와 깊이는 사이드바가 정하고 있어, 다른 내비게이션이 같은
+            규칙을 쓰기 전까지는 사이드바 도메인 요소로 다룹니다.
+          </mm-text>
+        </mm-notice>
         <mm-text-list
           variant="check"
           .texts=${[

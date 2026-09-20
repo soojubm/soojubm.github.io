@@ -70,7 +70,7 @@ export class MenuItemDisclosure extends withMenuItemPresentation(LitElement) {
         ${renderMenuItemContent(this, this.renderIndicator())}
       </button>
 
-      <div id=${this.panelId} class="panel" aria-hidden=${this.open ? 'false' : 'true'}>
+      <div id=${this.panelId} class="panel" ?inert=${!this.open}>
         <div role="menu">
           <slot></slot>
         </div>
