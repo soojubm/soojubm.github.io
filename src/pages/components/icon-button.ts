@@ -127,31 +127,28 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-button-group>
-              <mm-icon-button
-                variant="primary"
-                icon=${ICON_NAMES.FORWARD}
-                aria-label="다음"
-                tooltip-placement="center"
-                disabled
-              ></mm-icon-button>
-              <mm-icon-button
-                icon=${ICON_NAMES.LIKE}
-                aria-label="좋아요"
-                tooltip-placement="center"
-                disabled
-              ></mm-icon-button>
-              <mm-icon-button
-                variant="secondary"
-                icon=${ICON_NAMES.BACK}
-                aria-label="이전"
-                tooltip-placement="center"
-                disabled
-              ></mm-icon-button>
-            </mm-button-group>
-            <mm-paragraph>disabled는 누를 수 없는 상태를 흐리게 표시합니다.</mm-paragraph>
-          </mm-flex>
+          <mm-button-group>
+            <mm-icon-button
+              variant="primary"
+              icon=${ICON_NAMES.FORWARD}
+              aria-label="다음"
+              tooltip-placement="center"
+              disabled
+            ></mm-icon-button>
+            <mm-icon-button
+              icon=${ICON_NAMES.LIKE}
+              aria-label="좋아요"
+              tooltip-placement="center"
+              disabled
+            ></mm-icon-button>
+            <mm-icon-button
+              variant="secondary"
+              icon=${ICON_NAMES.BACK}
+              aria-label="이전"
+              tooltip-placement="center"
+              disabled
+            ></mm-icon-button>
+          </mm-button-group>
         </mm-component-example>
       </mm-tab-panel>
     </mm-flex>

@@ -185,10 +185,7 @@ const main = html`
               <mm-button variant="tertiary">focused</mm-button>
               <mm-button variant="tertiary" disabled>disabled</mm-button>
             </mm-button-group>
-            <mm-paragraph>
-              disabled는 누를 수 없는 상태를 흐리게 표시합니다. 권장: 비활성화 대신 제출 후 오류
-              메시지로 이유를 알립니다.
-            </mm-paragraph>
+            <mm-paragraph>권장: 비활성화 대신 제출 후 오류 메시지로 이유를 알립니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>

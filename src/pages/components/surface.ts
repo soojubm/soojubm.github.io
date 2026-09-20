@@ -153,25 +153,22 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="radius">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-grid columns="2">
-              <mm-surface radius="default">
-                <mm-text-block
-                  level="3"
-                  heading="default radius"
-                  description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."
-                ></mm-text-block>
-              </mm-surface>
-              <mm-surface radius="large">
-                <mm-text-block
-                  level="3"
-                  heading="large radius"
-                  description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
-                ></mm-text-block>
-              </mm-surface>
-            </mm-grid>
-            <mm-paragraph>경계를 표현하는 범위에 맞춰 모서리 크기를 고릅니다.</mm-paragraph>
-          </mm-flex>
+          <mm-grid columns="2">
+            <mm-surface radius="default">
+              <mm-text-block
+                level="3"
+                heading="default radius"
+                description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."
+              ></mm-text-block>
+            </mm-surface>
+            <mm-surface radius="large">
+              <mm-text-block
+                level="3"
+                heading="large radius"
+                description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
+              ></mm-text-block>
+            </mm-surface>
+          </mm-grid>
         </mm-component-example>
       </mm-tab-panel>
       <mm-tab-panel value="density">
