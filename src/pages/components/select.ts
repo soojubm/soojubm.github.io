@@ -37,7 +37,7 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Select"
-        description="여러 옵션 중 하나를 고르는 접힌 목록입니다. 평소에는 선택된 값만 보여 주다가 누르면 트리거 아래로 옵션 목록이 펼쳐지므로, 사용자는 좁은 공간에서도 전체 선택지를 훑어보고 하나를 고를 수 있습니다."
+        description="여러 옵션 중 하나를 고르는 접힌 목록입니다. 평소에는 선택된 값만 보여 주다가 누르면 옵션 목록이 펼쳐지므로, 사용자는 좁은 공간에서도 전체 선택지를 훑어보고 하나를 고를 수 있습니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
@@ -62,7 +62,8 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          '트리거·옵션 목록·선택 상태는 select가 소유하고, 목록 표면과 열림 상태는 popover에 맡긴다.',
+          '트리거·옵션 목록·선택 상태와 열림 상태는 select가 소유하고, 목록을 담는 표면만 popover와 sheet에 맡긴다.',
+          '좁은 화면에서는 목록을 트리거에 앵커하지 않고 bottom sheet로 올린다. 트리거 아래 남는 자리가 작고, 손이 닿는 화면 아래에서 고르는 편이 편하기 때문이다.',
           'value가 비어 있으면 네이티브 select처럼 첫 번째 활성 옵션으로 채운다.',
           '보이는 레이블이 없으면 aria-label로 컨트롤 이름을 준다. 트리거는 이름과 현재 값을 함께 읽고, 목록은 이름만 읽는다. form field 안에서는 필드 레이블이 이름을 맡는다.',
           '폭은 기본적으로 트리거 콘텐츠를 따르며, 폼 필드 안에서 늘려야 할 때 width="100%"를 준다.',
