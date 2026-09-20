@@ -368,8 +368,12 @@ export const tooltipStyles = css`
   }
 
   :host([open]) [role='tooltip'] {
+    display: block;
     opacity: 1;
-    visibility: visible;
+
+    @starting-style {
+      opacity: 0;
+    }
   }
 
   :host([placement='center']) [role='tooltip'] {
@@ -388,8 +392,10 @@ export const tooltipStyles = css`
   }
 
   [role='tooltip'] {
+    /* 트리거보다 넓은 말풍선이 스크롤 컨테이너 안에서 스크롤 영역을 넓히지 않도록
+       닫힐 때 레이아웃에서 빼고, display를 이산 전환해 fade-out은 남긴다. */
+    display: none;
     opacity: 0;
-    visibility: hidden;
     width: max-content;
     max-width: var(--tooltip-max-width);
     padding: var(--tooltip-padding);
@@ -403,7 +409,7 @@ export const tooltipStyles = css`
     z-index: var(--material-zindex-popover);
     pointer-events: none;
     transition: opacity var(--transition-duration) var(--transition-easing),
-      visibility var(--transition-duration) var(--transition-easing);
+      display var(--transition-duration) var(--transition-easing) allow-discrete;
 
     &::before {
       content: '';
