@@ -3,24 +3,30 @@
   --primary-color: var(--foreground-color);
 
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   margin: 0 auto;
+  /* 기울인 마감 스티커가 마지막 칸 밖으로 흘러도 가로 스크롤이 생기지 않게 한다. */
+  overflow-x: clip;
   color: var(--foreground-color);
 }
 
-.class-media {
-  width: 100%;
-  max-width: 50%;
-  border: var(--border);
-  border-right: 0;
-  background: var(--newneek-gray-color);
+/* 격자로 나뉘는 구획은 셀이 오른쪽·아래 경계만 그리고 컨테이너가 위·왼쪽을 맡는다.
+   열 수가 줄어 셀이 아래로 내려가도 경계가 두 번 그어지지 않는다. */
+.class-hero {
+  border-top: var(--border);
+  border-left: var(--border);
   box-sizing: border-box;
 }
+.class-media {
+  /* 옆 칸이 높이를 대신 잡아주지 못하는 한 줄 배치에서도 이미지 자리가 남아 있어야 한다. */
+  min-height: 320px;
+  border-right: var(--border);
+  border-bottom: var(--border);
+  background: var(--newneek-gray-color);
+}
 .class-order {
-  width: 100%;
-  max-width: 50%;
-  border: var(--border);
-  box-sizing: border-box;
+  border-right: var(--border);
+  border-bottom: var(--border);
   background-color: var(--newneek-color);
 }
 .class-order > * {
@@ -71,6 +77,8 @@
   align-items: center;
   justify-content: center;
   width: 50%;
+  min-width: 14rem;
+  max-width: 100%;
   height: var(--size-48);
   gap: var(--space-2);
   padding: 0 var(--space-4) 2px;
@@ -85,18 +93,18 @@
   background-color: var(--foreground-on-strong-color);
 }
 
-.class-order > .minicards {
-  display: flex;
+/* 카드가 줄바꿈될 때 행 사이 경계를 셀이 직접 그리므로 컨테이너 경계는 비운다. */
+.class-order > mm-grid {
   padding: 0;
+  border-top: 0;
 }
-.minicards .minicard {
-  width: 25%;
+.minicard {
   padding: 1.25rem var(--space-4) var(--space-4);
+  border-top: var(--border);
   border-right: var(--border);
-  box-sizing: border-box;
   text-align: center;
 }
-.minicards .minicard span {
+.minicard span {
   font-size: 1.5rem;
 }
 
@@ -111,7 +119,6 @@
 }
 
 mm-marquee {
-  width: 100%;
   border: var(--border);
   border-top: 0;
   box-sizing: border-box;
@@ -119,7 +126,6 @@ mm-marquee {
 }
 
 .class-intro {
-  width: 100%;
   padding: var(--space-section);
   border: var(--border);
   border-top: 0;
@@ -138,7 +144,6 @@ mm-marquee {
 }
 
 .class-why {
-  width: 100%;
   padding: var(--space-section);
   padding-bottom: 6rem;
   border: var(--border);
@@ -147,26 +152,22 @@ mm-marquee {
 }
 
 .class-feature {
-  display: flex;
-  width: 100%;
+  border-left: var(--border);
+  box-sizing: border-box;
 }
 .class-feature > div {
-  width: 50%;
-  margin-top: -1px;
   padding: var(--space-section);
-  border: var(--border);
-  box-sizing: border-box;
+  border-right: var(--border);
+  border-bottom: var(--border);
 }
 .class-feature > div:nth-of-type(1) {
   background: var(--background-strong-color);
 }
 
 .class-who {
-  width: 100%;
   padding: var(--space-section);
   border: var(--border);
   border-top: 0;
-  box-sizing: border-box;
 }
 .class-who-grid,
 .class-who-note {
@@ -175,7 +176,6 @@ mm-marquee {
 }
 
 .class-curriculum {
-  width: 100%;
   border: var(--border);
   border-top: 0;
   background: var(--newneek-gray-color);
@@ -187,18 +187,22 @@ mm-marquee {
 
 .class-curriculum > div {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 .class-curriculum > div mm-thumbnail {
   width: 240px;
-  margin: 0 1.25rem 0 0;
+  max-width: 100%;
+}
+.class-curriculum > div mm-flex {
+  flex: 1 1 18rem;
 }
 .class-curriculum > div mm-tag {
   margin: 0 0 var(--space-2) 0;
 }
 
 .class-faq {
-  width: 100%;
   border: var(--border);
   border-top: 0;
   background-color: var(--newneek-gray-color);
@@ -219,32 +223,25 @@ mm-marquee {
 }
 
 .class-refund {
-  width: 100%;
   border: var(--border);
   border-top: 0;
 }
 
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
   border-left: var(--border);
-}
-.products-item {
-  width: 25%;
-  border: var(--border);
-  border-width: 0 1px 1px 0;
   box-sizing: border-box;
 }
-.products-item-thumbnail {
-  height: 320px;
+.products-item {
+  border: var(--border);
+  border-width: 0 1px 1px 0;
+}
+.products-item mm-thumbnail {
   border-bottom: var(--border);
 }
 .products-item mm-text {
   display: block;
   margin: var(--space-4) var(--space-6);
 }
-.products-item-price {
-  display: block;
+.products-item mm-product-price {
   margin: 0 var(--space-6) var(--space-4);
 }

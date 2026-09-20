@@ -58,9 +58,9 @@ const renderProductItems = (items: ProductItem[]) =>
   items.map(
     ({ title, price }) => html`
       <div class="products-item">
-        <figure class="products-item-thumbnail"><img src="" alt="" /></figure>
+        <mm-thumbnail ratio="1:1"></mm-thumbnail>
         <mm-text size="18">${title}</mm-text>
-        <span class="products-item-price">${price}</span>
+        <mm-product-price price=${price}></mm-product-price>
       </div>
     `,
   )
@@ -92,75 +92,77 @@ const main = html`
        페이지 패딩이 없어야 하고, min-height·사이드바 shift·position 컨텍스트도 쓰지 않는다.
        벗겨낼 것만 있는 셸을 씌우지 않고 main 랜드마크를 그대로 둔다. -->
   <main class="class">
-    <figure class="class-media"><img src="" alt="" /></figure>
-    <header class="class-order">
-      <div>
-        <mm-tag>고슴이 생존기 - 경제 기본기편</mm-tag>
-      </div>
-      <div>
-        <mm-text size="32">
-          고슴이와 함께
-          <br />
-          경제 기본기 마스터하겠슴?
-        </mm-text>
-      </div>
-      <div>
-        <mm-paragraph size="large">
-          고슴이 에피소드 읽으면서 쉽고 재밌게
-          <br />
-          하루 5분으로 열흘 만에 경제 기본기를 마스터할 수 있어요.
-        </mm-paragraph>
-      </div>
-      <div class="minicards">
-        <figure class="minicard">
-          <span aria-hidden="true">⏰</span>
-          <mm-paragraph>하루 5분</mm-paragraph>
-        </figure>
-        <figure class="minicard">
-          <span aria-hidden="true">📖</span>
-          <mm-paragraph>에피소드 10개</mm-paragraph>
-        </figure>
-        <figure class="minicard">
-          <span aria-hidden="true">🗓️</span>
-          <mm-paragraph>이용기간 무제한</mm-paragraph>
-        </figure>
-        <figure class="minicard minicard--closed">
-          <span aria-hidden="true">🤼</span>
-          <mm-paragraph><del>얼리버드 500명</del></mm-paragraph>
-          <mm-paragraph>
-            <mm-tag>
-              <span aria-hidden="true">✨</span>
-              마감
-              <span aria-hidden="true">✨</span>
-            </mm-tag>
+    <mm-grid class="class-hero" columns="2" gap="0" column-min-width="400px">
+      <figure class="class-media"><img src="" alt="" /></figure>
+      <header class="class-order">
+        <div>
+          <mm-tag>고슴이 생존기 - 경제 기본기편</mm-tag>
+        </div>
+        <div>
+          <mm-text size="32">
+            고슴이와 함께
+            <br />
+            경제 기본기 마스터하겠슴?
+          </mm-text>
+        </div>
+        <div>
+          <mm-paragraph size="large">
+            고슴이 에피소드 읽으면서 쉽고 재밌게
+            <br />
+            하루 5분으로 열흘 만에 경제 기본기를 마스터할 수 있어요.
           </mm-paragraph>
-        </figure>
-      </div>
-      <div>
-        <mm-product-price
-          size="large"
-          original-price="₩ 30,000"
-          price="₩ 20,000"
-          discount="30%"
-        ></mm-product-price>
-      </div>
-      <footer>
-        <button class="class-order-btn">
-          기본기 구매하기
-          <div class="cta-arrow">
-            <div class="line"></div>
-          </div>
-        </button>
-      </footer>
-      <mm-paragraph>
-        더 궁금한 점이 있다면
-        <mm-link href="#">
-          <span aria-hidden="true">👉</span>
-          고객센터
-        </mm-link>
-        로 문의해 주세요. 고맙슴!
-      </mm-paragraph>
-    </header>
+        </div>
+        <mm-grid columns="4" gap="0" column-min-width="0px">
+          <figure class="minicard">
+            <span aria-hidden="true">⏰</span>
+            <mm-paragraph>하루 5분</mm-paragraph>
+          </figure>
+          <figure class="minicard">
+            <span aria-hidden="true">📖</span>
+            <mm-paragraph>에피소드 10개</mm-paragraph>
+          </figure>
+          <figure class="minicard">
+            <span aria-hidden="true">🗓️</span>
+            <mm-paragraph>이용기간 무제한</mm-paragraph>
+          </figure>
+          <figure class="minicard minicard--closed">
+            <span aria-hidden="true">🤼</span>
+            <mm-paragraph><del>얼리버드 500명</del></mm-paragraph>
+            <mm-paragraph>
+              <mm-tag>
+                <span aria-hidden="true">✨</span>
+                마감
+                <span aria-hidden="true">✨</span>
+              </mm-tag>
+            </mm-paragraph>
+          </figure>
+        </mm-grid>
+        <div>
+          <mm-product-price
+            size="large"
+            original-price="₩ 30,000"
+            price="₩ 20,000"
+            discount="30%"
+          ></mm-product-price>
+        </div>
+        <footer>
+          <button class="class-order-btn">
+            기본기 구매하기
+            <div class="cta-arrow">
+              <div class="line"></div>
+            </div>
+          </button>
+        </footer>
+        <mm-paragraph>
+          더 궁금한 점이 있다면
+          <mm-link href="#">
+            <span aria-hidden="true">👉</span>
+            고객센터
+          </mm-link>
+          로 문의해 주세요. 고맙슴!
+        </mm-paragraph>
+      </header>
+    </mm-grid>
 
     <mm-marquee height="80px" pause-on-hover>
       ${Array.from(
@@ -222,7 +224,7 @@ const main = html`
       </mm-flex>
     </section>
 
-    <section class="class-feature">
+    <mm-grid class="class-feature" columns="2" gap="0" column-min-width="400px">
       <div></div>
       <div>
         <mm-flex direction="column" gap="8">
@@ -249,7 +251,7 @@ const main = html`
           </mm-feature-group>
         </mm-flex>
       </div>
-    </section>
+    </mm-grid>
 
     <section class="class-who">
       <mm-paragraph-group>
@@ -297,7 +299,9 @@ const main = html`
       ${renderEpisodeItems(episodeItems)}
     </section>
 
-    <section class="products">${renderProductItems(productItems)}</section>
+    <mm-grid class="products" columns="4" gap="0" column-min-width="240px">
+      ${renderProductItems(productItems)}
+    </mm-grid>
 
     <section class="class-faq">
       <mm-flex direction="column">
