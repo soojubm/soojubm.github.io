@@ -1,7 +1,7 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { AriaBoolean, AriaIdRef } from '@/types'
+import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import {
@@ -20,6 +20,7 @@ export class MoreButton extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
+  @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: AriaHasPopup = 'menu'
   @property({ type: Boolean }) disabled = false
 
   render() {
@@ -28,7 +29,7 @@ export class MoreButton extends LitElement {
       ariaLabel: this.ariaLabel,
       tooltipPlacement: 'center',
       disabled: this.disabled,
-      ariaHasPopup: 'menu',
+      ariaHasPopup: this.ariaHasPopup,
       ariaExpanded: this.ariaExpanded,
       ariaControls: this.ariaControls,
     })
