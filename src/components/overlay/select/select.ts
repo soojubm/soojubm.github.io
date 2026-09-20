@@ -104,12 +104,11 @@ export class Select extends LitElement {
     return html`
       <mm-select-option
         .value=${option.value}
+        label=${option.label}
         icon=${ifDefined(option.icon)}
         ?disabled=${option.disabled}
         ?selected=${option.value === this.value}
-      >
-        ${option.label}
-      </mm-select-option>
+      ></mm-select-option>
     `
   }
 }
