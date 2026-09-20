@@ -21,6 +21,9 @@ const componentProps: ComponentPropItemData[] = [
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
+  { name: 'toast-min-width' },
+  { name: 'toast-min-height' },
+  { name: 'toast-gap' },
   { name: 'toast-background-color' },
   { name: 'toast-text-color' },
   { name: 'toast-border-radius' },

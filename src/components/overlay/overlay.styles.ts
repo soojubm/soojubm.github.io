@@ -308,6 +308,9 @@ export const sheetFooterStyles = css`
 
 export const toastStyles = css`
   :host {
+    --toast-min-width: 25vw;
+    --toast-min-height: var(--size-48);
+    --toast-gap: var(--space-2);
     --toast-background-color: var(--background-strong-color);
     --toast-text-color: var(--background-color);
     --toast-border-radius: var(--radius-large);
@@ -316,10 +319,10 @@ export const toastStyles = css`
     --toast-offset: var(--space-4);
 
     display: flex;
-    min-width: 25vw;
+    min-width: var(--toast-min-width);
     align-items: center;
-    min-height: var(--size-48);
-    gap: var(--space-2);
+    min-height: var(--toast-min-height);
+    gap: var(--toast-gap);
     padding: var(--toast-padding-block) var(--toast-padding-inline);
     border-radius: var(--toast-border-radius);
     background: var(--toast-background-color);
