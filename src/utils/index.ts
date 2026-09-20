@@ -29,7 +29,8 @@ export const uniqueId = (prefix: string): string =>
  */
 export const resolveSpaceToken = (value: string): string => {
   if (!value) return ''
-  if (value === '0') return '0'
+  /* calc()에 단위 없는 0이 들어가면 식 전체가 무효가 되므로 길이로 돌려준다. */
+  if (value === '0') return '0px'
   if (value === 'section') return 'var(--space-section)'
   return /^\d+$/.test(value) ? `var(--space-${value})` : value
 }
