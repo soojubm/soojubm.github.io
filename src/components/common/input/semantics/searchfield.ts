@@ -49,8 +49,10 @@ export class SearchField extends LitElement {
     `
   }
 
+  // mm-input의 input 이벤트를 여기서 멈추지 않으면, detail 없는 원본이 뒤따라 올라가 소비자의 값을 덮는다.
   private handleInput(event: Event) {
     const target = event.target as HTMLInputElement
+    event.stopPropagation()
     this.commitValue(target.value)
   }
 
