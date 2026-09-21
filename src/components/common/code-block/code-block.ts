@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { unsafeHTML } from 'lit/directives/unsafe-html.js'
 import * as Prism from 'prismjs'
@@ -6,6 +6,7 @@ import 'prismjs/components/prism-typescript'
 
 import { codeBlockStyles } from '@/components/common/code-block/code-block.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/icon-button/semantics/copy-button'
 
 export type CodeBlockVariant = 'default' | 'plain'
 
@@ -27,6 +28,15 @@ export class CodeBlock extends LitElement {
   render() {
     return html`
       <pre><code>${this.renderCode()}</code></pre>
+      ${this.renderCopyButton()}
+    `
+  }
+
+  private renderCopyButton() {
+    if (this.variant === 'plain') return nothing
+
+    return html`
+      <mm-copy-button value=${this.code}></mm-copy-button>
     `
   }
 

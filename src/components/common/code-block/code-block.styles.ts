@@ -5,14 +5,27 @@ import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 export const codeBlockStyles = css`
   :host {
     display: block;
+    position: relative;
+  }
+
+  /* 면을 가진 pre 뒤에 두어야 그 위에 그려진다. code의 padding-right가 글이 깔릴 자리를 비워둔다. */
+  mm-copy-button {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
   }
 
   /* 코드 면은 surface 면 선언을 조합한다. */
   pre {
     ${surfaceBaseStyles};
+    --surface-border-radius: var(--radius-large);
   }
 
-  /* 이미 면을 가진 프레임 안에 놓일 때는 면을 걷고 코드만 그린다. */
+  /* 이미 면을 가진 프레임 안에 놓일 때는 면도 복사 버튼도 걷고 코드만 그린다. */
+  :host([variant='plain']) code {
+    padding-right: 0;
+  }
+
   :host([variant='plain']) pre {
     --surface-padding: 0;
     --surface-border: none;
@@ -25,6 +38,7 @@ export const codeBlockStyles = css`
     font-family: var(--font-family);
     font-size: var(--font-size-14);
     line-height: var(--font-line-height-24);
+    padding-right: var(--space-12);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
   }
