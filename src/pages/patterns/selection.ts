@@ -185,6 +185,13 @@ const main = html`
               `,
             ),
             rule(
+              '배열로 받은 옵션의 선택 여부는 그룹이 렌더할 때 정한다',
+              html`
+                항목이 자기 상태를 갖지 않으므로, 그룹이 소유한 값과 옵션의 ${code('value')}를 맞춰
+                ${code('checked')}를 내려준다
+              `,
+            ),
+            rule(
               '자식 요소로 받은 항목의 선택도 그룹이 내려보낸다',
               html`
                 ${code('SelectionGroupController')}가 마크업의 초기 선택을 흡수하고, 그룹 상태를
