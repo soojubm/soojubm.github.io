@@ -10,6 +10,7 @@ export class ChatBody extends LitElement {
       display: block;
       flex: 1;
       min-height: 0;
+      padding-inline: var(--layout-padding-inline);
       box-sizing: border-box;
       overflow-x: hidden;
       overflow-y: auto;
