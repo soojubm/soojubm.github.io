@@ -1,33 +1,13 @@
-import { LitElement, css, html, svg } from 'lit'
+import { LitElement, html, svg } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
+import { listMarkerStyles } from '@/components/indicators/list-marker/list-marker.styles'
 
 type Variant = 'number' | 'check'
 
 @customElement('mm-list-marker')
 export class ListMarker extends LitElement {
-  static styles = css`
-    :host {
-      --list-marker-background-color: var(--background-strong-color);
-      --list-marker-text-color: var(--foreground-on-strong-color);
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: var(--list-marker-background-color);
-      color: var(--list-marker-text-color);
-      border-radius: 50%;
-      width: var(--size-16);
-      height: var(--size-16);
-      margin-top: var(--space-1);
-      font-size: 10px;
-    }
-
-    svg {
-      width: 0.5rem;
-      height: 0.5rem;
-    }
-  `
+  static styles = listMarkerStyles
   @property({ type: String }) variant: Variant = 'number'
   @property({ type: Number }) value = 1
 

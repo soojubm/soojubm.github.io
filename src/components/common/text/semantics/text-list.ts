@@ -27,6 +27,11 @@ export class TextList extends LitElement {
         gap: var(--space-2);
         list-style: none;
       }
+
+      /* 마커는 항목 첫 줄의 글자 가운데에 맞춘다. */
+      .list li mm-list-marker {
+        margin-top: var(--space-1);
+      }
     `,
   ]
   // 인라인 code처럼 마크업이 필요한 항목은 템플릿으로 넘긴다.

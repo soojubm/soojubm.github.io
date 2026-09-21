@@ -77,7 +77,6 @@ export class ComponentAnatomy extends LitElement {
       mm-list-marker {
         --component-anatomy-marker-gutter: calc((var(--size-16) + var(--space-3)) * -1);
 
-        margin-top: 0;
         position: absolute;
       }
 

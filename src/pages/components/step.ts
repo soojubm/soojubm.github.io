@@ -5,6 +5,7 @@ import type {
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { TemplateResult } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import './step.css'
@@ -15,14 +16,31 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'aria-current', type: "'step'" },
-  { name: 'data-align', type: "'vertical'" },
-  { name: 'is-active', type: 'class' },
-  { name: 'label', type: 'slot' },
-  { name: 'description', type: 'slot', optional: true },
+  { name: 'orientation', type: "'horizontal' | 'vertical' = 'horizontal'" },
+  { name: 'label', type: "string = ''" },
+  { name: 'active', type: 'boolean = false', optional: true },
+  { name: 'aria-current', type: "'step'", optional: true },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []
+
+// 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
+// prettier-ignore
+const code = (name: string) => html`<mm-code>${name}</mm-code>`
+
+// 목록 항목은 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다.
+const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
+  <span>
+    <mm-text weight="bold">${title}</mm-text>
+    ${description}
+  </span>
+`
+
+const stepCode = `<mm-step>
+  <mm-step-item active aria-current="step" label="장바구니"></mm-step-item>
+  <mm-step-item label="결제"></mm-step-item>
+  <mm-step-item label="주문완료"></mm-step-item>
+</mm-step>`
 
 const main = html`
   <mm-main>
@@ -36,234 +54,169 @@ const main = html`
 
     <mm-component-aka .items=${['Timeline', 'Stepper']}></mm-component-aka>
 
-    <mm-component-example full-width>
-      <mm-flex direction="column" gap="4">
-        <section class="step">
-          <div class="step-item is-active" aria-current="step">
-            <span class="step-item-icon">1</span>
-            <mm-text class="step-item-label">장바구니</mm-text>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">2</span>
-            <mm-text class="step-item-label">결제</mm-text>
-          </div>
-          <div class="step-item">
-            <span class="step-item-icon">3</span>
-            <mm-text class="step-item-label">주문완료</mm-text>
-          </div>
-          <div>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </section>
-        <mm-surface>
-          <header>
-            <mm-paragraph size="large">Tell us about yourself</mm-paragraph>
-            <mm-paragraph>
-              Now that you're all signed up, let's personalize your experience.
-            </mm-paragraph>
-          </header>
-
-          <section class="step" data-align="vertical" style="margin: 1rem 0">
-            <div class="step-item is-active">
-              <span class="step-item-icon" style="color: var(--background-color)">1</span>
-              <mm-text class="step-item-label">I'm an engineer</mm-text>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="horizontal" variant="pill">
+        <mm-tab value="horizontal">Horizontal</mm-tab>
+        <mm-tab value="vertical">Vertical</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="horizontal">
+        <mm-component-example full-width>
+          <mm-step>
+            <mm-step-item active aria-current="step" label="장바구니"></mm-step-item>
+            <mm-step-item label="결제"></mm-step-item>
+            <mm-step-item label="주문완료"></mm-step-item>
+          </mm-step>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="vertical">
+        <mm-component-example full-width>
+          <mm-step orientation="vertical">
+            <mm-step-item active label="I'm an engineer">
               <mm-paragraph>
                 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
                 조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
                 규제·조정할 수 있다.
               </mm-paragraph>
-            </div>
-            <div class="step-item is-active">
-              <span class="step-item-icon" style="color: var(--background-color)">2</span>
-              <mm-text class="step-item-label">I want to design from scratch</mm-text>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">3</span>
-              <mm-text class="step-item-label">
-                One last thing ㅡ how will you use your prototpe?
-              </mm-text>
+            </mm-step-item>
+            <mm-step-item
+              active
+              aria-current="step"
+              label="I want to design from scratch"
+            ></mm-step-item>
+            <mm-step-item label="One last thing ㅡ how will you use your prototpe?">
               <mm-flex direction="column" gap="3" align-items="flex-start">
                 <mm-caption>(You can pick more than one)</mm-caption>
-                <mm-button-group style="margin-left: 0.75rem">
+                <mm-button-group>
                   <mm-button>Share for feedback</mm-button>
                   <mm-button>Present live</mm-button>
                   <mm-button>Test with users</mm-button>
-                  <mm-button>Collaborate in real time</mm-button>
-                  <mm-button>Hand off to developers</mm-button>
                 </mm-button-group>
               </mm-flex>
-            </div>
-          </section>
-          <footer><mm-button variant="primary" size="large">Start creating</mm-button></footer>
-        </mm-surface>
-
-        <mm-separator></mm-separator>
-        <div>
-          <mm-flex align-items="center" gap="3" style="height: 32px">
-            <mm-paragraph size="large">01</mm-paragraph>
-            <mm-paragraph>Choose your platform</mm-paragraph>
-          </mm-flex>
-          <mm-flex align-items="center" gap="3" style="height: 32px">
-            <mm-paragraph size="large">02</mm-paragraph>
-            <mm-paragraph>Set color theme</mm-paragraph>
-          </mm-flex>
-        </div>
-        <mm-separator></mm-separator>
-        <mm-flex>
-          <mm-menu-item-group>
-            <mm-menu-item-action
-              size="medium"
-              description="Step 1"
-              label="UPLOAD 3D FILES"
-            ></mm-menu-item-action>
-            <mm-menu-item-action
-              size="medium"
-              description="Step 2"
-              label="UPLOAD 3D FILES"
-            ></mm-menu-item-action>
-          </mm-menu-item-group>
-        </mm-flex>
-      </mm-flex>
-    </mm-component-example>
+            </mm-step-item>
+          </mm-step>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide .features=${componentFeatures}>
+      <mm-text-list
+        variant="check"
+        .texts=${[
+          rule(
+            html`
+              지나온 단계는 ${code('active')}로, 지금 단계는 ${code('aria-current="step"')}로
+              표시한다
+            `,
+            html`
+              ${code('active')}는 채움과 글자 색으로 어디까지 왔는지 보이고,
+              ${code('aria-current')}는 그중 지금 밟고 있는 한 단계를 보조기술에 알립니다. 번호와
+              ${code('orientation')}은 순서에서 나오므로 ${code('mm-step')}이 채웁니다
+            `,
+          ),
+          rule(
+            '지나간 이력은 timeline으로 둔다',
+            'step은 앞으로 밟을 순서를 같은 무게로 늘어놓고 끝을 예고합니다. 시점마다 내용이 다르고 최근 것이 먼저 오는 기록은 순서가 아니라 역순 이력이라 timeline이 맡습니다',
+          ),
+        ]}
+      ></mm-text-list>
+    </mm-component-guide>
+
+    <mm-component-section
+      heading="Timeline"
+      description="같은 선 위에 항목을 세우지만 방향이 반대입니다. 시점을 태그로 앞세우고 그 아래 기록을 쌓으며, 항목마다 담기는 내용의 양이 다릅니다."
+    >
       <section class="timeline">
         <div class="timeline-item">
           <mm-tag>2022. 11. 4.</mm-tag>
-          <div class="timeline-item-panel">
-            <mm-avatar>
-              <span style="font-size: 0.75rem" aria-hidden="true">🐺</span>
-            </mm-avatar>
-            <div>
-              <span>폰트 디자인</span>
-              <span>이도타입 / 한동훈</span>
-            </div>
-          </div>
+          <mm-list-item
+            size="medium"
+            avatar-variant="secondary"
+            emoji="🐺"
+            label="폰트 디자인"
+            description="이도타입 / 한동훈"
+          ></mm-list-item>
         </div>
         <div class="timeline-item">
           <mm-tag>2020. 02. - 2021. 02</mm-tag>
-          <div class="timeline-item-panel">
-            <mm-avatar><span aria-hidden="true">🦔</span></mm-avatar>
-            <div>
-              <span>뉴닉, 프로덕트 디자이너</span>
-              <mm-text-list
-                .texts=${[
-                  'MVP / Feature 일정 산정 및 스펙 정의',
-                  '이슈 트래킹, 우선순위 관리를 위한 백로그 구축',
-                  '온라인 리서치, VOC 분석을 통한 문제 정의',
-                  '프로덕트 디자인 (Userflow / UI / GUI), 프론트엔드 개발',
-                  '데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)',
-                ]}
-              ></mm-text-list>
-            </div>
-          </div>
+          <mm-list-item
+            size="medium"
+            avatar-variant="secondary"
+            emoji="🦔"
+            label="뉴닉, 프로덕트 디자이너"
+          ></mm-list-item>
+          <mm-text-list
+            .texts=${[
+              'MVP / Feature 일정 산정 및 스펙 정의',
+              '이슈 트래킹, 우선순위 관리를 위한 백로그 구축',
+              '온라인 리서치, VOC 분석을 통한 문제 정의',
+              '프로덕트 디자인 (Userflow / UI / GUI), 프론트엔드 개발',
+              '데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)',
+            ]}
+          ></mm-text-list>
         </div>
         <div class="timeline-item">
           <mm-tag>2020</mm-tag>
-          <div class="timeline-item-panel">
-            <mm-avatar><span aria-hidden="true">🔢</span></mm-avatar>
-            <div>
-              <span>그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법</span>
-              <span>인프런 양승화</span>
-            </div>
-          </div>
+          <mm-list-item
+            size="medium"
+            avatar-variant="secondary"
+            emoji="🔢"
+            label="그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법"
+            description="인프런 양승화"
+          ></mm-list-item>
         </div>
         <div class="timeline-item">
           <mm-tag>2019</mm-tag>
-          <div class="timeline-item-panel">
-            <mm-avatar><span aria-hidden="true">🔢</span></mm-avatar>
-            <div>
-              <span>FE CONF2020 프론트엔드 컨퍼런스</span>
-              <span>롯데타워</span>
-            </div>
-          </div>
+          <mm-list-item
+            size="medium"
+            avatar-variant="secondary"
+            emoji="🔢"
+            label="FE CONF2020 프론트엔드 컨퍼런스"
+            description="롯데타워"
+          ></mm-list-item>
         </div>
         <div class="timeline-item">
           <mm-tag>2018.07 ~ 2018.09</mm-tag>
-          <div class="timeline-item-panel">
-            <mm-avatar><span aria-hidden="true">🐺</span></mm-avatar>
-            <span>자바스크립트 기본</span>
-            <span>양재동코드랩 / 서울창업허브 세미나실 3 김영보</span>
-          </div>
+          <mm-list-item
+            size="medium"
+            avatar-variant="secondary"
+            emoji="🐺"
+            label="자바스크립트 기본"
+            description="양재동코드랩 / 서울창업허브 세미나실 3 김영보"
+          ></mm-list-item>
         </div>
         <div class="timeline-item">
           <mm-tag>2017.07 ~ 2017.09</mm-tag>
-          <div class="timeline-item-panel">
-            <mm-avatar><span aria-hidden="true">🔢</span></mm-avatar>
-            <div>
-              <span>글자, 그리고 표현</span>
-              <span>한글타이포그래피학교 현승재</span>
-            </div>
-          </div>
-          <div class="timeline-item-panel">
-            <mm-avatar><span aria-hidden="true">🐺</span></mm-avatar>
-            <div>
-              <span>GUI 디자인</span>
-              <span>SK 상생협력센터 T아카데미</span>
-            </div>
-          </div>
-          <div class="timeline-item-panel">
-            <mm-avatar><span aria-hidden="true">🐺</span></mm-avatar>
-            <div>
-              <span>크로스브라우징 디지털 퍼블리싱 4기</span>
-              <span>경원직업전문학교</span>
-            </div>
-          </div>
+          <mm-list-item-group>
+            <mm-list-item
+              size="medium"
+              avatar-variant="secondary"
+              emoji="🔢"
+              label="글자, 그리고 표현"
+              description="한글타이포그래피학교 현승재"
+            ></mm-list-item>
+            <mm-list-item
+              size="medium"
+              avatar-variant="secondary"
+              emoji="🐺"
+              label="GUI 디자인"
+              description="SK 상생협력센터 T아카데미"
+            ></mm-list-item>
+            <mm-list-item
+              size="medium"
+              avatar-variant="secondary"
+              emoji="🐺"
+              label="크로스브라우징 디지털 퍼블리싱 4기"
+              description="경원직업전문학교"
+            ></mm-list-item>
+          </mm-list-item-group>
         </div>
       </section>
+    </mm-component-section>
 
-      <mm-text-list
-        .texts=${[
-          '2022. 12. 17.. line-height 기본값 역전. 단락을 제외하면 모든 케이스에서 line-height-small을 선언해야 하기 때문에 defalt / small을 defalt / large로 변경.',
-          'add stack component. chip-group과 tag-group 제거하고 stack으로 통합.',
-          'color gray600 삭제. 본문용으로 야외나 밝은 조명 아래서 가시성이 떨어짐.',
-          '타임라인과 구분. 타임라인은 히스토리 맥락으로 스텝의 역순. 확장, 링크, indentation',
-        ]}
-      ></mm-text-list>
+    <mm-component-anatomy .code=${stepCode}></mm-component-anatomy>
 
-      <mm-surface variant="outlined">
-        <mm-flex direction="column" gap="4">
-          <mm-flex justify-content="space-between">
-            <mm-flex>
-              <mm-tag style="width: var(--size-48)">포장</mm-tag>
-              <mm-text as="time">2022. 12. 05. 15:32</mm-text>
-            </mm-flex>
-            <mm-text weight="bold">배달완료</mm-text>
-          </mm-flex>
-          <mm-menu-item-action
-            size="medium"
-            label="쩜순이네닭강정 요기요st"
-            description="떡볶이 x 5 외 1건"
-          ></mm-menu-item-action>
-          <div class="step">
-            <div class="step-item is-active">
-              <span class="step-item-icon">1</span>
-              <mm-text class="step-item-label">주문확인</mm-text>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">2</span>
-              <mm-text class="step-item-label">조리중</mm-text>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">3</span>
-              <mm-text class="step-item-label">배달중</mm-text>
-            </div>
-            <div class="step-item">
-              <span class="step-item-icon">4</span>
-              <mm-text class="step-item-label">배달완료</mm-text>
-            </div>
-          </div>
-          <mm-button-group>
-            <mm-button>재주문</mm-button>
-            <mm-button>후기작성</mm-button>
-          </mm-button-group>
-        </mm-flex>
-      </mm-surface>
-    </mm-component-guide>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>
