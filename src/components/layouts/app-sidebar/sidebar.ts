@@ -6,6 +6,7 @@ import type { SitemapItem, SitemapNode } from '@/sitemap'
 
 import '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
+import '@/components/layouts/app-sidebar/sidebar-section'
 import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
@@ -55,15 +56,14 @@ export class Sidebar extends LitElement {
       ></mm-sidebar-page-link>
     `
   }
-  // 접었다 펴는 섹션은 아직 mm-menu-item-disclosure를 그대로 쓴다.
   private renderSection = (node: SidebarSection) => html`
-    <mm-menu-item-disclosure
+    <mm-sidebar-section
       label=${node.title}
       icon=${node.icon}
       ?open=${this.containsCurrentPage(node)}
     >
       ${repeat(node.children ?? [], item => item.id, this.renderItemLink)}
-    </mm-menu-item-disclosure>
+    </mm-sidebar-section>
   `
   private renderGroup = (node: SidebarGroup) => {
     const headingId = `sidebar-group-${node.id}`

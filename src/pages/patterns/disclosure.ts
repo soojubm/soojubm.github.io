@@ -7,6 +7,8 @@ import type { TemplateResult } from 'lit'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/read-more-paragraph'
 import '@/components/domains/faq'
+import '@/components/layouts/app-sidebar/sidebar-page-link'
+import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -47,8 +49,7 @@ const surfaceRows = html`
     <th scope="row">제자리</th>
     <td>뒤의 콘텐츠를 아래로 민다</td>
     <td>
-      ${code('mm-faq-item')} · ${code('mm-read-more-paragraph')} ·
-      ${code('mm-menu-item-disclosure')}
+      ${code('mm-faq-item')} · ${code('mm-read-more-paragraph')} · ${code('mm-sidebar-section')}
     </td>
     <td>이 문서</td>
   </tr>
@@ -125,7 +126,7 @@ const main = html`
           접힌 자리에 무엇을 남기는지로 형태를 고릅니다. 항목을 통째로 접으면 제목만 남아 훑어 고를
           수 있고(${code('mm-faq-item')}), 이어지는 본문을 접으면 앞부분이 남아 읽던 문장을
           이어가며(${code('mm-read-more-paragraph')}), 하위 목록을 접으면 부모 항목만 남아 목록의
-          깊이가 한 단계로 줄어듭니다(${code('mm-menu-item-disclosure')}).
+          깊이가 한 단계로 줄어듭니다(${code('mm-sidebar-section')}).
         </mm-paragraph>
         <mm-faq-list>
           <mm-faq-item question="서비스를 탈퇴하고 싶어요." open>
@@ -144,17 +145,17 @@ const main = html`
           limit="80"
           content="접힌 자리에 앞부분이 남아 있어, 사용자는 이 문단을 계속 읽을지 여기서 멈출지 본문을 보고 정합니다. 훑어 고르는 목록과 달리 문장이 이어지므로 트리거는 문단 끝에 이어 붙습니다."
         ></mm-read-more-paragraph>
-        <mm-menu-item-group size="large">
-          <mm-menu-item-disclosure icon=${ICON_NAMES.PALETTE} label="Foundations" open>
-            <mm-menu-item-action emoji="#" label="Interaction"></mm-menu-item-action>
-            <mm-menu-item-action emoji="#" label="Disclosure"></mm-menu-item-action>
-          </mm-menu-item-disclosure>
-        </mm-menu-item-group>
+        <div role="list">
+          <mm-sidebar-section icon=${ICON_NAMES.PALETTE} label="Foundations" open>
+            <mm-sidebar-page-link emoji="#" label="Interaction"></mm-sidebar-page-link>
+            <mm-sidebar-page-link emoji="#" label="Disclosure"></mm-sidebar-page-link>
+          </mm-sidebar-section>
+        </div>
         <mm-notice>
           <mm-text size="14">
-            ${code('mm-menu-item-disclosure')}는 지금 사이드바 내비게이션에서만 씁니다. 이름은 메뉴
-            계열 일반을 가리키지만 접는 단위와 깊이는 사이드바가 정하고 있어, 다른 내비게이션이 같은
-            규칙을 쓰기 전까지는 사이드바 도메인 요소로 다룹니다.
+            ${code('mm-sidebar-section')}은 사이드바 내비게이션에서만 씁니다. 탐색은 명령이 아니므로
+            트리거와 패널이 menu가 아니라 list로 읽히고, 접는 단위는 사이트맵의 상위 노드가
+            정합니다.
           </mm-text>
         </mm-notice>
         <mm-text-list

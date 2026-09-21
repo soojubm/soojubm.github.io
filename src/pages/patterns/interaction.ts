@@ -86,8 +86,8 @@ const expandedComponentRows = html`
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-menu-item-disclosure</mm-code></th>
-    <td>하위 메뉴</td>
+    <th scope="row"><mm-code>mm-sidebar-section</mm-code></th>
+    <td>하위 페이지 링크</td>
     <td>사용</td>
   </tr>
   <tr>

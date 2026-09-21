@@ -66,7 +66,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-menu-item-radio name', type: 'string', optional: true },
   { name: 'mm-menu-item-group role', type: "'menu' | 'listbox' = 'menu'", optional: true },
   { name: 'mm-menu-item-group size', type: "'large'", optional: true },
-  { name: 'mm-menu-item-disclosure open', type: 'boolean = false', optional: true },
   { name: 'mm-menu-list heading', type: 'string', optional: true },
   { name: 'mm-menu-list size', type: "'large'", optional: true },
   { name: 'mm-menu-item-radio-group name', type: 'string', optional: true },
@@ -324,18 +323,6 @@ const main = html`
           href="https://github.com"
           description="외부 링크"
         ></mm-menu-item-link>
-      </mm-menu-item-group>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="MenuItemDisclosure"
-      description="하위 항목을 접었다 펴는 부모 메뉴 항목입니다. 트리거는 role=menuitem, 펼쳐지는 패널은 role=menu이며 열림 상태를 스스로 소유합니다."
-    >
-      <mm-menu-item-group size="large">
-        <mm-menu-item-disclosure icon=${ICON_NAMES.PALETTE} label="Foundations" open>
-          <mm-menu-item-action emoji="#" label="Interaction"></mm-menu-item-action>
-          <mm-menu-item-action emoji="#" label="Layout"></mm-menu-item-action>
-        </mm-menu-item-disclosure>
       </mm-menu-item-group>
     </mm-component-section>
 
