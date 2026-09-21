@@ -16,6 +16,13 @@ export class ComponentSection extends LitElement {
         gap: var(--space-6);
         margin-top: var(--space-section);
       }
+
+      /* 코드와 전시는 같은 예시의 두 면이라 설명과 떨어진 간격보다 좁게 붙인다. */
+      .example {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
     `,
   ]
   @property({ type: String }) heading = ''
@@ -30,9 +37,11 @@ export class ComponentSection extends LitElement {
         heading=${this.heading}
         description=${this.description}
       ></mm-text-block>
-      ${this.renderCode()}
-      <div class="component-content-frame">
-        <slot></slot>
+      <div class="example">
+        ${this.renderCode()}
+        <div class="component-content-frame">
+          <slot></slot>
+        </div>
       </div>
     `
   }
