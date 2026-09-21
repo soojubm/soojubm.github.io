@@ -132,7 +132,6 @@ const main = html`
     <mm-sheet-header heading="뉴닉"></mm-sheet-header>
     <mm-sheet-body class="newneek-sheet-body">
       <mm-flex direction="column" gap="section">
-        <div class="zigzag-border">Zigzag border</div>
         <div class="home-mangrove">
           <div>
             <img class="mangrove1" src="/src/images/newneek/home-mangrove1.png" alt="" />
@@ -201,7 +200,7 @@ const main = html`
           </mm-participant-chat-message>
         </mm-chat-feed>
 
-        <mm-separator></mm-separator>
+        <div class="zigzag-border"></div>
 
         <mm-chat-feed>
           <mm-my-chat-message>
