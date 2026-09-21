@@ -43,7 +43,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'weight', type: "'medium' | 'bold' = 'medium'" },
   { name: 'color', type: "'inherit' | 'light' | 'danger' = 'inherit'" },
   { name: 'centered', type: 'boolean = false', optional: true },
-  { name: 'max-length', type: "'1' | '2' | '3'", optional: true },
+  { name: 'max-lines', type: "'1' | '2' | '3'", optional: true },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []
@@ -54,13 +54,12 @@ const headingCode = `<mm-heading level="1">페이지 레벨의 타이틀</mm-hea
 const captionCode = `<mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>`
 
 const paragraphCode = `<mm-paragraph-group>
-  <mm-paragraph>일반적인 UI 본문입니다.</mm-paragraph>
+  <mm-paragraph max-lines="3">일반적인 UI 본문입니다.</mm-paragraph>
   <mm-paragraph size="large">콘텐츠 뷰의 본문입니다.</mm-paragraph>
-  <mm-paragraph max-length="2">두 줄까지 노출되는 문단입니다.</mm-paragraph>
 </mm-paragraph-group>`
 
 const readMoreParagraphCode = `<mm-read-more-paragraph
-  limit="100"
+  max-length="100"
   content="긴 문단의 전체 내용"
 ></mm-read-more-paragraph>`
 
@@ -101,7 +100,7 @@ const main = html`
         <mm-tab value="size">Size</mm-tab>
         <mm-tab value="weight">Weight</mm-tab>
         <mm-tab value="color">Color</mm-tab>
-        <mm-tab value="max-length">Max Length</mm-tab>
+        <mm-tab value="max-lines">Max Lines</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="size">
         <mm-component-example>
@@ -131,18 +130,24 @@ const main = html`
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>
-      <mm-tab-panel value="max-length">
+      <mm-tab-panel value="max-lines">
         <mm-component-example>
           <mm-flex direction="column" gap="3">
-            <mm-text as="p" max-length="1">
+            <mm-text as="p" max-lines="1">
               한 줄에서 말줄임되는 텍스트입니다. 목록의 제목이나 카드의 이름처럼 한 줄 높이를
               유지해야 하는 자리에 사용하며, 영역을 넘치는 나머지 내용은 말줄임으로 생략됩니다.
             </mm-text>
-            <mm-text as="p" max-length="2">
+            <mm-text as="p" max-lines="2">
               두 줄까지 노출되는 텍스트입니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은
               상세 화면에서 확인할 수 있습니다. 반복되는 목록 안에서 설명 길이가 제각각일 때 높이를
               맞추는 데 유용합니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세
               화면에서 확인할 수 있습니다. 넘치는 내용은 말줄임으로 생략됩니다.
+            </mm-text>
+            <mm-text as="p" max-lines="3">
+              세 줄까지 노출되는 텍스트입니다. 너무 짧게 자르면 맥락이 사라지는 소개글이나 요약문에
+              적합합니다. 화면 안의 리듬은 유지하면서도 충분한 정보를 제공해야 할 때 사용합니다.
+              너무 짧게 자르면 맥락이 사라지는 소개글이나 요약문에 적합합니다. 화면 안의 리듬은
+              유지하면서도 충분한 정보를 제공해야 할 때 사용합니다.
             </mm-text>
           </mm-flex>
         </mm-component-example>
@@ -194,7 +199,7 @@ const main = html`
       .code=${paragraphCode}
     >
       <mm-paragraph-group>
-        <mm-paragraph>
+        <mm-paragraph max-lines="3">
           Paragraph medium은 font-size-14입니다. 일반적인 UI 본문에 사용됩니다. 레이아웃에서 여러
           문단이 이어질 때 ParagraphGroup으로 묶어 일관된 간격을 유지합니다. 문단 사이 간격은
           var(--space-4)로 고정되어 있어 사용처마다 따로 간격을 지정하지 않아도 됩니다. 긴 본문
@@ -203,21 +208,6 @@ const main = html`
         <mm-paragraph size="large">
           Paragraph large는 font-size-32와 페어링합니다. 포스트나 게시판 등의 콘텐츠 뷰에서
           본문용으로 사용합니다.
-        </mm-paragraph>
-        <mm-separator></mm-separator>
-        <mm-heading level="4">max-length=1 | 2 | 3</mm-heading>
-        <mm-paragraph max-length="1">한 줄에서 말줄임되는 문단입니다.</mm-paragraph>
-        <mm-paragraph max-length="2">
-          두 줄까지 노출되는 문단입니다. 사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세
-          화면에서 확인할 수 있습니다. 반복되는 목록 안에서 설명 길이가 제각각일 때 유용합니다.
-          사용자는 핵심 내용을 빠르게 훑을 수 있고, 세부 내용은 상세 화면에서 확인할 수 있습니다.
-          반복되는 목록 안에서 설명 길이가 제각각일 때 유용합니다.
-        </mm-paragraph>
-        <mm-paragraph max-length="3">
-          세 줄까지 노출되는 문단입니다. 너무 짧게 자르면 맥락이 사라지는 소개글이나 요약문에
-          적합합니다. 화면 안의 리듬은 유지하면서도 충분한 정보를 제공해야 할 때 사용합니다. 너무
-          짧게 자르면 맥락이 사라지는 소개글이나 요약문에 적합합니다. 화면 안의 리듬은 유지하면서도
-          충분한 정보를 제공해야 할 때 사용합니다.
         </mm-paragraph>
       </mm-paragraph-group>
     </mm-component-section>
@@ -228,7 +218,7 @@ const main = html`
       .code=${readMoreParagraphCode}
     >
       <mm-read-more-paragraph
-        limit="100"
+        max-length="100"
         content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다."
       ></mm-read-more-paragraph>
     </mm-component-section>

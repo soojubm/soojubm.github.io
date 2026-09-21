@@ -24,7 +24,7 @@ export class ReadMoreParagraph extends LitElement {
     }
   `
   @property({ type: String }) content = ''
-  @property({ type: Number }) limit = 100
+  @property({ type: Number, attribute: 'max-length' }) maxLength = 100
   @state() private expanded = false
   @query('mm-read-more-button') private trigger?: HTMLElement
   private readonly contentId = uniqueId('read-more-content')
@@ -37,10 +37,10 @@ export class ReadMoreParagraph extends LitElement {
   })
 
   render() {
-    const truncated = this.content.length > this.limit
+    const truncated = this.content.length > this.maxLength
     const displayText =
       truncated && !this.expanded
-        ? this.content.slice(0, this.limit).trimEnd() + '...'
+        ? this.content.slice(0, this.maxLength).trimEnd() + '...'
         : this.content
 
     return html`

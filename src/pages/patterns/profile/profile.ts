@@ -27,7 +27,7 @@ const main = html`
         <mm-button variant="tertiary">메시지</mm-button>
       </mm-button-group>
       <mm-read-more-paragraph
-        limit="100"
+        max-length="100"
         content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring. 유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼."
       ></mm-read-more-paragraph>
       <mm-keyword-tag-group

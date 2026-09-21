@@ -5,7 +5,7 @@ import { html, unsafeStatic } from 'lit/static-html.js'
 import {
   textStyles,
   type TextColor,
-  type TextMaxLength,
+  type TextMaxLines,
   type TextSize,
   type TextWeight,
 } from '@/components/common/text/text.styles'
@@ -19,7 +19,7 @@ export class Text extends LitElement {
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String, reflect: true }) color: TextColor = 'inherit'
   @property({ type: Boolean, reflect: true }) centered = false
-  @property({ type: String, attribute: 'max-length', reflect: true }) maxLength: TextMaxLength = ''
+  @property({ type: String, attribute: 'max-lines', reflect: true }) maxLines: TextMaxLines = ''
 
   render() {
     const tag = unsafeStatic(this.as)

@@ -142,7 +142,7 @@ const main = html`
           </mm-faq-item>
         </mm-faq-list>
         <mm-read-more-paragraph
-          limit="80"
+          max-length="80"
           content="접힌 자리에 앞부분이 남아 있어, 사용자는 이 문단을 계속 읽을지 여기서 멈출지 본문을 보고 정합니다. 훑어 고르는 목록과 달리 문장이 이어지므로 트리거는 문단 끝에 이어 붙습니다."
         ></mm-read-more-paragraph>
         <div role="list">

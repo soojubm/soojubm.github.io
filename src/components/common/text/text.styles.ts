@@ -5,7 +5,7 @@ import { buildAttributeRules } from '@/utils'
 export type TextSize = '32' | '24' | '18' | '14' | '12'
 export type TextWeight = 'medium' | 'bold'
 export type TextColor = 'inherit' | 'light' | 'danger'
-export type TextMaxLength = '' | '1' | '2' | '3'
+export type TextMaxLines = '' | '1' | '2' | '3'
 
 /** 본문 텍스트 크기 이름(paragraph 등)과 TextSize 토큰의 대응. 본문 사이즈 값은 여기서만 정의한다. */
 export type ParagraphSize = 'small' | 'medium' | 'large'
@@ -16,29 +16,29 @@ export const paragraphSizeToTextSize: Record<ParagraphSize, TextSize> = {
   large: '18',
 }
 
-export const textMaxLengthStyles = css`
-  /* max-length는 reflect라 값이 없을 때도 attribute가 남는다. 값이 있을 때만 자른다. */
-  :host([max-length]:not([max-length=''])) > * {
+export const textMaxLinesStyles = css`
+  /* max-lines는 reflect라 값이 없을 때도 attribute가 남는다. 값이 있을 때만 자른다. */
+  :host([max-lines]:not([max-lines=''])) > * {
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  :host([max-length='1']) > * {
+  :host([max-lines='1']) > * {
     display: block;
     white-space: nowrap;
   }
 
-  :host([max-length='2']) > *,
-  :host([max-length='3']) > * {
+  :host([max-lines='2']) > *,
+  :host([max-lines='3']) > * {
     display: -webkit-box;
     -webkit-box-orient: vertical;
   }
 
-  :host([max-length='2']) > * {
+  :host([max-lines='2']) > * {
     -webkit-line-clamp: 2;
   }
 
-  :host([max-length='3']) > * {
+  :host([max-lines='3']) > * {
     -webkit-line-clamp: 3;
   }
 `
@@ -75,5 +75,5 @@ export const textStyles = css`
     font-weight: var(--font-weight-bold);
   }
 
-  ${textMaxLengthStyles}
+  ${textMaxLinesStyles}
 `

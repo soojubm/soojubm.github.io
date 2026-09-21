@@ -57,7 +57,7 @@ const main = html`
           <mm-flex direction="column">
             <mm-text color="light">줄거리</mm-text>
             <mm-read-more-paragraph
-              limit="100"
+              max-length="100"
               content="루크 잭슨은 술이 취한 상태에서 물건을 부수는 바람에 흉악범이 아님에도 불구하고 중노동형을 선고 받는다.죄수들의 리더는 새로 들어온 신입죄수 루크의 요령피우는 태도가 눈에 거슬려 루크에게 싸움을 건다. 모두들 리더와 도라의 압도적인 승리로 끝나리라 예상한다."
             ></mm-read-more-paragraph>
           </mm-flex>

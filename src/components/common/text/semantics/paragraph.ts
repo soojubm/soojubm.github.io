@@ -3,10 +3,10 @@ import { customElement, property } from 'lit/decorators.js'
 
 import {
   paragraphSizeToTextSize,
-  textMaxLengthStyles,
+  textMaxLinesStyles,
   textSizeTokens,
   type ParagraphSize,
-  type TextMaxLength,
+  type TextMaxLines,
 } from '@/components/common/text/text.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
@@ -20,7 +20,7 @@ const paragraphSizeTokens = {
 export class Paragraph extends LitElement {
   static styles = [
     resetStyles,
-    textMaxLengthStyles,
+    textMaxLinesStyles,
     css`
       :host {
         display: block;
@@ -48,7 +48,7 @@ export class Paragraph extends LitElement {
   ]
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
   @property({ type: String, reflect: true }) color = 'inherit'
-  @property({ type: String, attribute: 'max-length', reflect: true }) maxLength: TextMaxLength = ''
+  @property({ type: String, attribute: 'max-lines', reflect: true }) maxLines: TextMaxLines = ''
   @property({ type: Boolean, reflect: true }) centered = false
 
   render() {
