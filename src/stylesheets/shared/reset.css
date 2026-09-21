@@ -63,11 +63,12 @@ video {
   width: 100%;
   display: block;
 }
+/* 네이티브 태그는 의미만 갖고 굵기는 문맥에서 물려받는다. 굵게 보여야 하면 mm-text weight로 준다. */
 strong,
 b,
 th,
 legend {
-  font-weight: var(--font-weight-bold);
+  font-weight: inherit;
 }
 cite,
 i,

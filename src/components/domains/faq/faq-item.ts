@@ -35,7 +35,6 @@ export class FaqItem extends LitElement {
         justify-content: space-between;
         gap: var(--space-2);
         width: 100%;
-        font-weight: var(--font-weight-bold);
       }
 
       /* auto 높이를 애니메이션하려고 0fr → 1fr 트랙을 쓴다 */

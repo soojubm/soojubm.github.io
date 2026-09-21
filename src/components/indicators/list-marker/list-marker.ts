@@ -21,7 +21,6 @@ export class ListMarker extends LitElement {
       height: var(--size-16);
       margin-top: var(--space-1);
       font-size: 10px;
-      font-weight: var(--font-weight-bold);
     }
 
     svg {

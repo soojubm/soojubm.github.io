@@ -8,8 +8,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 // 목록 항목은 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다.
 const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
   <span>
-    <b>${title}</b>
-    <br />
+    <mm-text weight="bold">${title}</mm-text>
     ${description}
   </span>
 `

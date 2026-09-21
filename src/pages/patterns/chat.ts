@@ -19,7 +19,9 @@ const main = html`
                 <span aria-hidden="true">👋</span>
                 무엇을 도와드릴까요?
               </mm-ai-chat-bubble>
-              <mm-ai-chat-bubble><b>소제목</b></mm-ai-chat-bubble>
+              <mm-ai-chat-bubble>
+                <mm-text weight="bold">소제목</mm-text>
+              </mm-ai-chat-bubble>
               <mm-ai-chat-bubble>
                 날짜는 버블 밖으로 나와야한다. 리얼타임. 버블의 전송 상태. reaction. iMessage에서
                 날짜는 터치 제스쳐. 1:1대화 / 1:n 대화.

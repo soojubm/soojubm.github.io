@@ -224,8 +224,9 @@ const main = html`
           .texts=${[
             html`
               <span>
-                <b>compact 표면 안의 text-block은 default보다 한 단계 낮은 level을 쓴다</b>
-                <br />
+                <mm-text weight="bold">
+                  compact 표면 안의 text-block은 default보다 한 단계 낮은 level을 쓴다
+                </mm-text>
                 <mm-code>density="compact"</mm-code>
                 는 안쪽 여백이 좁아서, default 표면과 같은 제목 크기를 두면 글자가 여백보다 커 보여
                 밀도가 맞지 않는다. default 표면에 level 3을 두었다면 compact 표면에는 level 4를

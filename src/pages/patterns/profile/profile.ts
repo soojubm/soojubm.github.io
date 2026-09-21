@@ -138,7 +138,7 @@ const main = html`
             <img class="mangrove2" src="/src/images/newneek/home-mangrove2.png" alt="" />
           </div>
           <div class="mangrove-foot">
-            <b>고슴이는 집을 찾을 수 있을까요?</b>
+            <mm-text weight="bold">고슴이는 집을 찾을 수 있을까요?</mm-text>
             <div class="cta-arrow">
               <div class="line"></div>
             </div>
@@ -223,15 +223,10 @@ const main = html`
         <section class="subscribe-gosum">
           <mm-flex direction="column" gap="2">
             <mm-paragraph-group>
-              <mm-paragraph>
-                지금 구독하면
-                <b>내일 아침</b>
-                에 읽을 수 있어요!
-              </mm-paragraph>
+              <mm-paragraph>지금 구독하면 내일 아침에 읽을 수 있어요!</mm-paragraph>
               <mm-paragraph>
                 <span aria-hidden="true">✨</span>
-                <b>305,408명</b>
-                이 뉴닉을 읽고 있어요.
+                305,408명이 뉴닉을 읽고 있어요.
               </mm-paragraph>
             </mm-paragraph-group>
             <mm-input placeholder="이메일 주소"></mm-input>

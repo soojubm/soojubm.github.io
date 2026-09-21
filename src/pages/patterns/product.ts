@@ -21,18 +21,7 @@ const main = html`
 
           <mm-flex direction="column" gap="section">
             <mm-flex direction="column" gap="3">
-              <mm-paragraph
-                style="
-            display: inline-flex;
-            width: fit-content;
-            background: var(--background-subtle-color);
-            padding: var(--space-1) var(--space-4);
-            border-radius: 50px;
-            font-weight: var(--font-weight-bold);
-          "
-              >
-                <a href="#">Hachimitsupai</a>
-              </mm-paragraph>
+              <mm-link href="#">Hachimitsupai</mm-link>
               <mm-heading level="1">センチメンタル通り</mm-heading>
               <mm-product-price
                 size="large"

@@ -52,12 +52,9 @@ const main = html`
 
       <mm-flex direction="column" align-items="center" gap="3">
         <mm-text centered>
-          1월 26일
-          <b>컴퓨터통신 분야</b>
-          에서는
+          1월 26일 컴퓨터통신 분야에서는
           <br />
-          <b>7백명의 지식iN</b>
-          들이 답변하셨습니다.
+          7백명의 지식iN들이 답변하셨습니다.
         </mm-text>
         <mm-flex direction="row" gap="2" justify-content="center">
           <div class="graph-item">

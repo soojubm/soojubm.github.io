@@ -179,7 +179,7 @@
   border-top: 0;
   background: var(--background-subtle-color);
   font-size: var(--font-size-18);
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
 .zigzag-border {
