@@ -16,7 +16,7 @@ const main = html`
     </mm-flex>
 
     <mm-content-section-list>
-      <mm-content-section>
+      <mm-content-section heading-level="3" heading="원칙">
         <mm-feature-group columns="3" column-max-width="400px">
           <mm-feature
             heading="너비로 읽기 밀도를 정한다"
@@ -31,6 +31,12 @@ const main = html`
             description="폼·카드·편집 영역처럼 독립적으로 다루는 묶음은 표면으로 올려 주변 콘텐츠와 분리합니다. 명도 대비가 먼저 층위를 만들고, 그림자는 그 위에서 떠 있는 정도를 더합니다."
           ></mm-feature>
         </mm-feature-group>
+        <mm-paragraph>
+          이 문서는 페이지 바깥 골격을 정합니다. 그 안에서 자식을 배치하고 묶는 컨테이너의 단계와
+          간격은
+          <mm-link href="./container.html">Container</mm-link>
+          가 다룹니다.
+        </mm-paragraph>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="층위">

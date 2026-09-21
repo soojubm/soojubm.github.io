@@ -45,6 +45,7 @@ export const SITEMAP: SitemapNode[] = [
     children: [
       { id: 'foundations', name: 'Overview' },
       { id: 'layout', name: 'Layout' },
+      { id: 'container', name: 'Container' },
       { id: 'interaction', name: 'Interaction' },
       { id: 'disclosure', name: 'Disclosure' },
       { id: 'selection', name: 'Selection' },

@@ -1,12 +1,12 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/heading'
 
 /**
  * <mm-content-section>
- * 제목과 슬롯 콘텐츠를 한 묶음으로 배치하는 페이지 콘텐츠 섹션입니다.
- * heading이 있으면 heading-level(기본 2) 제목으로 렌더하고, 없으면 본문만 묶습니다.
+ * 제목과 본문을 한 묶음으로 세우는 콘텐츠 섹션입니다.
+ * 제목이 그 묶음을 대표하므로 heading은 필수이고, heading-level(기본 2)로 문서 안의 깊이를 정합니다.
  */
 @customElement('mm-content-section')
 export class ContentSection extends LitElement {
@@ -27,17 +27,9 @@ export class ContentSection extends LitElement {
   render() {
     return html`
       <section>
-        ${this.renderHeading()}
+        <mm-heading level=${this.headingLevel}>${this.heading}</mm-heading>
         <slot></slot>
       </section>
-    `
-  }
-
-  private renderHeading() {
-    if (!this.heading) return nothing
-
-    return html`
-      <mm-heading level=${this.headingLevel}>${this.heading}</mm-heading>
     `
   }
 }

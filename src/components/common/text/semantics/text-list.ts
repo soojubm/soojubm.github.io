@@ -59,7 +59,7 @@ export class TextList extends LitElement {
     return html`
       <li>
         <mm-list-marker variant=${this.variant} value=${index + 1}></mm-list-marker>
-        ${text}
+        <span>${text}</span>
       </li>
     `
   }

@@ -22,6 +22,11 @@ const main = html`
           description="컨테이너 너비와 배경·표면 대비로 페이지의 성격과 작업 맥락을 담습니다."
         ></mm-foundation-item>
         <mm-foundation-item
+          href="./container.html"
+          heading="Container"
+          description="자식을 배치하고 묶는 컨테이너 컴포넌트를 모아 봅니다."
+        ></mm-foundation-item>
+        <mm-foundation-item
           href="./interaction.html"
           heading="Interaction"
           description="상호작용할 수 있는 요소와 그 반응 상태를 정의합니다."
@@ -128,13 +133,13 @@ const main = html`
             icon=${ICON_NAMES.GROUP}
             size="medium"
             label="Group"
-            description="묶음 안 항목 사이의 간격. 기본 --space-2, 조밀한 태그는 --space-1, 이어지는 묶음은 0."
+            description="같은 컴포넌트를 나열한 리스트. 항목 사이 간격은 기본 --space-2, 조밀한 태그는 --space-1, 이어지는 묶음은 0."
           ></mm-list-item>
           <mm-list-item
             icon=${ICON_NAMES.LIST_VIEW}
             size="medium"
             label="Section"
-            description="제목과 본문 사이 --space-3. 구획끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
+            description="제목과 본문 사이 --space-3. 섹션끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
           ></mm-list-item>
         </mm-list-item-group>
 
@@ -146,9 +151,11 @@ const main = html`
             'mm-toggle-button-group',
             'mm-radio-group',
             'mm-checkbox-group',
+            'mm-radio-card-group',
             'mm-avatar-group',
             'mm-tag-group',
             'mm-keyword-tag-group',
+            'mm-list-item-group',
             'mm-menu-item-group',
             'mm-menu-item-radio-group',
             'mm-menu-item-checkbox-group',
@@ -161,27 +168,23 @@ const main = html`
           heading="Section 컴포넌트"
           .keywords=${['mm-content-section', 'mm-page-header']}
         ></mm-keyword-tag-group>
-        <mm-keyword-tag-group
-          heading="Field 컴포넌트"
-          .keywords=${[
-            'mm-form-field',
-            'mm-textfield',
-            'mm-passwordfield',
-            'mm-searchfield',
-            'mm-textarea-field',
-          ]}
-        ></mm-keyword-tag-group>
 
         <mm-paragraph>
-          Section과 Field 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면입니다. Section은 제목
-          heading 요소와 본문 슬롯을, Field는 레이블·헬퍼·검증 텍스트와 컨트롤 슬롯을 묶습니다. 같은
-          제목·설명 묶음이라도 실제 heading 없이 텍스트 쌍만 표현하는 mm-text-block은 이 계층이
-          아니라 상위 컴포넌트의 내부 부품이며, 문서 구획으로 세울 때는 mm-content-section을 씁니다.
+          Section 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면으로, 제목 heading 요소와 본문
+          슬롯을 묶습니다. 같은 제목·설명 묶음이라도 실제 heading 없이 텍스트 쌍만 표현하는
+          <mm-code>mm-text-block</mm-code>
+          은 이 계층이 아니라 상위 컴포넌트의 내부 부품이며, 문서 섹션으로 세울 때는
+          <mm-code>mm-content-section</mm-code>
+          을 씁니다.
         </mm-paragraph>
 
         <mm-paragraph>
-          구획을 세로로 쌓는 페이지 조립 레이아웃(mm-flex)은 element·group·section 계층 밖의 별도
-          층입니다. 이 컨테이너의 gap은 컴포넌트가 아니라 페이지가 소유합니다.
+          섹션을 세로로 쌓는 페이지 조립 레이아웃(
+          <mm-code>mm-flex</mm-code>
+          ,
+          <mm-code>mm-grid</mm-code>
+          )은 element·group·section 계층 밖의 별도 층입니다. 이 컨테이너의 gap은 컴포넌트가 아니라
+          페이지가 소유합니다.
         </mm-paragraph>
       </mm-content-section>
     </mm-flex>
