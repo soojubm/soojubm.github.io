@@ -26,6 +26,9 @@ export class ComponentProps extends LitElement {
   @property({ type: Boolean, reflect: true }) open = false
   private readonly propsId = uniqueId('component-props')
 
+  /* eslint-disable lit-a11y/click-events-have-key-events -- 키보드로 펼치는 경로는 안쪽
+     mm-read-more-button이 갖고, 그 click이 올라와 이 핸들러에 닿는다. section의 click은
+     포인터 전용 단축이라 section 자체를 포커스 대상으로 만들지 않는다. */
   render() {
     return html`
       <section class="component-props component-content-frame" @click=${this.handleClick}>
@@ -54,6 +57,8 @@ export class ComponentProps extends LitElement {
       ></mm-component-prop-item>
     `
   }
+
+  /* eslint-enable lit-a11y/click-events-have-key-events */
 
   private handleClick() {
     this.open = true

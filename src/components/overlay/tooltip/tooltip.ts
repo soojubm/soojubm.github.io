@@ -21,6 +21,8 @@ export class Tooltip extends LitElement {
     this.open = false
   }
 
+  /* eslint-disable lit-a11y/accessible-name -- role=tooltip의 이름은 내용에서 온다.
+     content가 mm-text 안으로 바인딩돼 규칙이 정적으로 읽지 못할 뿐이다. */
   render() {
     return html`
       <slot name="trigger" @slotchange=${this.syncDescription}></slot>
@@ -29,6 +31,7 @@ export class Tooltip extends LitElement {
       </div>
     `
   }
+  /* eslint-enable lit-a11y/accessible-name */
 
   connectedCallback() {
     super.connectedCallback()

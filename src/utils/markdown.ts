@@ -63,8 +63,9 @@ export const serializeToMarkdown = (
       return
     }
     if (!(node instanceof Element)) return
-    if (SKIPPED_TAGS.has(node.tagName.toUpperCase()) || node.hasAttribute('hidden') || skip(node))
-      return
+    const skipped =
+      SKIPPED_TAGS.has(node.tagName.toUpperCase()) || node.hasAttribute('hidden') || skip(node)
+    if (skipped) return
 
     const style = getComputedStyle(node)
     if (style.display === 'none' || style.visibility === 'hidden') return

@@ -240,7 +240,7 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section
-      heading="Description & Validation Text"
+      heading="Description &amp; Validation Text"
       description="description은 입력을 돕는 설명을, validation-text는 오류의 이유를 입력 필드 아래에 전달합니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
     >
       <mm-flex direction="column" gap="2">
