@@ -61,12 +61,8 @@ export const listItemStyles = css`
     translate: 0 calc((var(--list-item-label-leading) - var(--list-item-description-leading)) / -4);
   }
 
+  /* 이모지는 avatar 안의 글리프이며, 크기는 행 사이즈가 정한다. */
   .emoji {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--list-item-size);
-    height: var(--list-item-size);
     font-size: var(--list-item-font-size);
     line-height: 1;
   }

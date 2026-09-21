@@ -117,11 +117,18 @@ const main = html`
             <mm-flex gap="2">
               <mm-avatar size="40" icon=${ICON_NAMES.PROFILE}></mm-avatar>
               <mm-avatar size="40">MM</mm-avatar>
+              <mm-avatar size="40">
+                <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
+              </mm-avatar>
               <mm-avatar size="40"></mm-avatar>
             </mm-flex>
             <mm-paragraph>
-              src가 없으면 icon, icon도 없으면 슬롯의 이니셜, 슬롯도 비어 있으면 기본 아이콘을
-              표시합니다.
+              src가 없으면 icon, icon도 없으면 슬롯의 이니셜·이모지, 슬롯도 비어 있으면 기본
+              아이콘을 표시합니다.
+            </mm-paragraph>
+            <mm-paragraph>
+              이모지는 슬롯 요소에 글자 크기를 직접 줍니다. 32·48·80은 아바타가 글자 크기를 정하지만
+              기본인 40은 정하지 않아 주변 본문 크기를 물려받습니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
@@ -146,6 +153,19 @@ const main = html`
             <mm-paragraph>
               아바타가 이름 옆에 놓이면 장식으로 두고, 아바타만으로 개체를 알려야 할 때 aria-label을
               줍니다. aria-label이 있으면 host가 role=img를 갖습니다.
+            </mm-paragraph>
+            <mm-flex gap="4" align-items="center">
+              <mm-list-item size="medium" emoji="🦔" label="고슴이"></mm-list-item>
+              <mm-avatar size="40" shape="circle" aria-label="고슴이">
+                <span aria-hidden="true">🦔</span>
+              </mm-avatar>
+            </mm-flex>
+            <mm-paragraph>
+              이모지는 스크린리더가 글리프 이름을 읽으므로
+              <mm-code>aria-hidden="true"</mm-code>
+              인 요소에 담습니다. 개체의 이름은 옆 텍스트가 전하고, 아바타만 놓이면
+              <mm-code>aria-label</mm-code>
+              이 전합니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>

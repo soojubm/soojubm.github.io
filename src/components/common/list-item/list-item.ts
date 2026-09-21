@@ -75,12 +75,6 @@ export class ListItem extends LitElement {
   }
 
   private renderLeadingContent() {
-    if (this.emoji) {
-      return html`
-        <span class="emoji" aria-hidden="true">${this.emoji}</span>
-      `
-    }
-
     return html`
       <mm-avatar
         size=${this.avatarSize}
@@ -88,7 +82,17 @@ export class ListItem extends LitElement {
         shape=${this.avatarShape}
         icon=${ifDefined(this.icon)}
         src=${ifDefined(this.avatarSrc || undefined)}
-      ></mm-avatar>
+      >
+        ${this.renderEmoji()}
+      </mm-avatar>
+    `
+  }
+
+  private renderEmoji() {
+    if (!this.emoji) return nothing
+
+    return html`
+      <span class="emoji" aria-hidden="true">${this.emoji}</span>
     `
   }
 
