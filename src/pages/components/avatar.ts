@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { AvatarItem } from '@/components/common'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -22,7 +23,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'src', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'aria-label', type: 'string', optional: true },
-  { name: 'mm-avatar-group avatars', type: 'string[] = []', optional: true },
+  { name: 'mm-avatar-group avatars', type: 'AvatarItem[] = []', optional: true },
   { name: 'mm-avatar-group label', type: 'string', optional: true },
 ]
 
@@ -42,7 +43,14 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const groupAvatars = ['', '', '', '']
+const groupAvatars: AvatarItem[] = [
+  { src: '/src/images/soojubm.png' },
+  { initials: 'MM' },
+  { icon: ICON_NAMES.PROFILE },
+  {},
+]
+
+const groupCode = '<mm-avatar-group .avatars=${avatars} label="수줍이 외 3명"></mm-avatar-group>'
 
 const main = html`
   <mm-main>
@@ -164,6 +172,7 @@ const main = html`
     <mm-component-section
       heading="AvatarGroup"
       description="최대 3개를 겹쳐 표시하고 초과 인원은 숫자로 대체합니다."
+      .code=${groupCode}
     >
       <mm-avatar-group .avatars=${groupAvatars} label="수줍이 외 3명"></mm-avatar-group>
     </mm-component-section>
