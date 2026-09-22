@@ -156,6 +156,10 @@ const main = html`
           <mm-caption>live</mm-caption>
         </mm-flex>
         <mm-flex gap="1" align-items="center">
+          <mm-dot variant="online"></mm-dot>
+          <mm-caption>online</mm-caption>
+        </mm-flex>
+        <mm-flex gap="1" align-items="center">
           <mm-dot variant="new"></mm-dot>
           <mm-caption>new</mm-caption>
         </mm-flex>

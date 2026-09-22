@@ -2,8 +2,6 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { AvatarVariant } from '@/components/common'
-
 import { userSnippetStyles } from '@/components/domains/user-snippet/user-snippet.styles'
 import '@/components/common'
 
@@ -15,17 +13,15 @@ export class UserSnippet extends LitElement {
   @property({ type: String }) email = ''
   @property({ type: String }) description = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
   @property({ type: String, attribute: 'tag-label' }) tagLabel = ''
 
   render() {
     return html`
-      <mm-avatar
+      <mm-user-avatar
         size="80"
-        shape="circle"
-        variant=${this.avatarVariant}
+        name=${this.name}
         src=${ifDefined(this.avatarSrc || undefined)}
-      ></mm-avatar>
+      ></mm-user-avatar>
       ${this.renderTag()}
       <div class="detail">
         <mm-text as="h2" size="24">${this.name}</mm-text>

@@ -23,6 +23,10 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'src', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'aria-label', type: 'string', optional: true },
+  { name: 'mm-user-avatar name', type: 'string', optional: true },
+  { name: 'mm-user-avatar src', type: 'string', optional: true },
+  { name: 'mm-user-avatar size', type: "'80' | '48' | '40' | '32' = '40'", optional: true },
+  { name: 'mm-user-avatar online', type: 'boolean = false', optional: true },
   { name: 'mm-avatar-group avatars', type: 'AvatarItem[] = []', optional: true },
   { name: 'mm-avatar-group label', type: 'string', optional: true },
 ]
@@ -44,11 +48,14 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const groupAvatars: AvatarItem[] = [
-  { src: '/src/images/soojubm.png' },
-  { initials: 'MM' },
-  { icon: ICON_NAMES.PROFILE },
+  { name: '수줍이', src: '/src/images/soojubm.png' },
+  { name: 'Min Ji' },
+  { name: '김하늘' },
   {},
 ]
+
+const userAvatarCode =
+  '<mm-user-avatar name="수줍이" src="/src/images/soojubm.png" online></mm-user-avatar>'
 
 const groupCode = '<mm-avatar-group .avatars=${avatars} label="수줍이 외 3명"></mm-avatar-group>'
 
@@ -188,6 +195,29 @@ const main = html`
     >
       <mm-avatar size="80" variant="secondary"></mm-avatar>
     </mm-component-anatomy>
+
+    <mm-component-section
+      heading="UserAvatar"
+      description="사람을 대표하는 아바타입니다. 원형을 고정하고 이름의 앞 글자로 폴백하며, 접속 중이면 우하단에 점을 띄워 지금 닿을 수 있는 상대인지 알립니다."
+      .code=${userAvatarCode}
+    >
+      <mm-flex gap="2" align-items="end">
+        <mm-user-avatar
+          size="80"
+          name="수줍이"
+          src="/src/images/soojubm.png"
+          online
+        ></mm-user-avatar>
+        <mm-user-avatar
+          size="48"
+          name="수줍이"
+          src="/src/images/soojubm.png"
+          online
+        ></mm-user-avatar>
+        <mm-user-avatar size="40" name="수줍이" online></mm-user-avatar>
+        <mm-user-avatar size="32" name="Min Ji"></mm-user-avatar>
+      </mm-flex>
+    </mm-component-section>
 
     <mm-component-section
       heading="AvatarGroup"

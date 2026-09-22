@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { AvatarItem } from '@/components/common'
 import type { PortfolioItem } from '@/components/domains/portfolio-item'
 import type { Sheet } from '@/components/overlay/sheet'
 
@@ -7,7 +8,12 @@ import { renderPage } from '@/components/layouts/base-layouts'
 
 import './profile.css'
 
-const followerAvatars = ['', '', '', '']
+const followerAvatars: AvatarItem[] = [
+  { name: '수줍이', src: '/src/images/soojubm.png' },
+  { name: 'Min Ji' },
+  { name: '김하늘' },
+  {},
+]
 
 const main = html`
   <mm-main class="profile">
@@ -18,7 +24,6 @@ const main = html`
         phone="010 3121 7045"
         description="UI Designer"
         avatar-src="/src/images/soojubm.png"
-        avatar-variant="secondary"
         tag-label="접속 중"
       ></mm-user-snippet>
 

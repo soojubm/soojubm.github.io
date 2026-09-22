@@ -1,16 +1,14 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/common/icon/icon-names'
-
 import '@/components/common/avatar/avatar'
+import '@/components/common/avatar/semantics/user-avatar'
 import '@/components/common/text/text'
 
-/** 겹쳐 보여줄 아바타 하나의 정보. mm-avatar의 폴백 순서(이미지 > 아이콘 > 이니셜)를 데이터로 옮긴 것이다. */
+/** 겹쳐 보여줄 사람 하나의 정보. 이미지가 없으면 이름의 앞 글자로 폴백한다. */
 export interface AvatarItem {
+  name?: string
   src?: string
-  icon?: IconName
-  initials?: string
 }
 
 @customElement('mm-avatar-group')
@@ -27,12 +25,12 @@ export class AvatarGroup extends LitElement {
       display: flex;
     }
 
-    .avatars mm-avatar {
+    .avatars > * {
       margin-left: -6px;
       outline: 4px solid var(--background-color);
     }
 
-    .avatars mm-avatar:first-child {
+    .avatars > *:first-child {
       margin-left: 0;
     }
 
@@ -64,16 +62,18 @@ export class AvatarGroup extends LitElement {
     return this.avatars.slice(0, this.maxVisible).map(avatar => this.renderAvatar(avatar))
   }
 
-  private renderAvatar({ src, icon, initials }: AvatarItem) {
+  private renderAvatar({ name, src }: AvatarItem) {
     return html`
-      <mm-avatar size="32" shape="circle" .src=${src} .icon=${icon}>${initials}</mm-avatar>
+      <mm-user-avatar size="32" .name=${name ?? ''} .src=${src}></mm-user-avatar>
     `
   }
 
   private renderOverflow(overflowCount: number) {
     if (overflowCount <= 0) return nothing
 
-    return this.renderAvatar({ initials: `+${overflowCount}` })
+    return html`
+      <mm-avatar size="32" shape="circle">+${overflowCount}</mm-avatar>
+    `
   }
 
   private renderLabel() {

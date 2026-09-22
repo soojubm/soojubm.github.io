@@ -38,12 +38,11 @@ export class ParticipantChatMessage extends LitElement {
 
   render() {
     return html`
-      <mm-avatar
+      <mm-user-avatar
         size="32"
-        shape="circle"
-        variant="tertiary"
+        name=${this.name}
         src=${ifDefined(this.avatarSrc || undefined)}
-      ></mm-avatar>
+      ></mm-user-avatar>
       <div class="body">
         ${this.renderMeta()}
         <div class="bubbles">
