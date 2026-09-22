@@ -19,6 +19,7 @@ import '@/components/domains/component/token-item'
 import '@/components/domains/component/token-section'
 import '@/components/domains/component/token-stage'
 import '@/components/domains/component/type-specimen'
+import '@/components/domains/component/component-usage'
 
 export { FEATURE_ICONS } from '@/components/domains/component/component-feature-list'
 export type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
