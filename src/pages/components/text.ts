@@ -63,13 +63,6 @@ const readMoreParagraphCode = `<mm-read-more-paragraph
   content="긴 문단의 전체 내용"
 ></mm-read-more-paragraph>`
 
-const textBlockCode = `<mm-text-block
-  level="1"
-  eyebrow="Eyebrow"
-  heading="Level 1 Title"
-  description="제목을 보충하는 설명"
-></mm-text-block>`
-
 const statusMessageCode = `<mm-status-message
   heading="주문이 완료되었습니다."
   message="주문 내역은 마이페이지에서 확인할 수 있습니다."
@@ -244,43 +237,6 @@ const main = html`
         max-length="100"
         content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다."
       ></mm-read-more-paragraph>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="Text Block"
-      description="KeyValue(LabelDescription/DescriptionList),Question-Answer Pair,  Translation Pair"
-      .code=${textBlockCode}
-    >
-      <mm-text-block
-        level="1"
-        eyebrow="Eyebrow"
-        heading="Level 1 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-text-block>
-      <mm-separator></mm-separator>
-      <mm-text-block
-        level="2"
-        heading="Level 2 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-text-block>
-      <mm-separator></mm-separator>
-      <mm-text-block
-        level="3"
-        heading="Level 3 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-text-block>
-      <mm-separator></mm-separator>
-      <mm-text-block
-        level="4"
-        heading="Level 4 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-text-block>
-      <mm-separator></mm-separator>
-      <mm-text-block
-        level="5"
-        heading="Level 5 Title"
-        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. "
-      ></mm-text-block>
     </mm-component-section>
 
     <mm-component-section

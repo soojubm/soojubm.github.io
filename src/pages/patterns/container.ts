@@ -13,6 +13,8 @@ const contentSectionCode = `<mm-content-section-list>
   </mm-content-section>
 </mm-content-section-list>`
 
+const textBlockCode = `<mm-text-block level="3" heading="제목" description="제목을 보충하는 설명"></mm-text-block>`
+
 const formFieldCode = `<mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
   <mm-checkbox-group name="topics" .options=\${topicOptions}></mm-checkbox-group>
 </mm-form-field>`
@@ -98,6 +100,37 @@ const main = html`
             </mm-content-section-list>
           </mm-surface>
           <mm-code-block .code=${contentSectionCode}></mm-code-block>
+        </mm-content-section>
+
+        <mm-content-section heading-level="3" heading="Text Block">
+          <mm-paragraph>
+            <mm-code>mm-text-block</mm-code>
+            은 제목과 설명 한 쌍을 세우고 그 사이 간격을 소유합니다. 제목이 그 쌍을 대표하므로
+            heading은 필수이고, level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다.
+            본문을 슬롯으로 받아 구획을 이루는 자리에는
+            <mm-code>mm-content-section</mm-code>
+            을 씁니다.
+          </mm-paragraph>
+          <mm-surface variant="filled">
+            <mm-text-block
+              level="1"
+              heading="Level 1 Title"
+              description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
+            ></mm-text-block>
+            <mm-separator></mm-separator>
+            <mm-text-block
+              level="3"
+              heading="Level 3 Title"
+              description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
+            ></mm-text-block>
+            <mm-separator></mm-separator>
+            <mm-text-block
+              level="5"
+              heading="Level 5 Title"
+              description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
+            ></mm-text-block>
+          </mm-surface>
+          <mm-code-block .code=${textBlockCode}></mm-code-block>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="Form Field">

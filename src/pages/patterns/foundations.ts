@@ -171,7 +171,7 @@ const main = html`
 
         <mm-paragraph>
           Section 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면으로, 제목 heading 요소와 본문
-          슬롯을 묶습니다. 같은 제목·설명 묶음이라도 실제 heading 없이 텍스트 쌍만 표현하는
+          슬롯을 묶습니다. 같은 제목·설명 묶음이라도 본문 슬롯 없이 텍스트 한 쌍의 간격만 소유하는
           <mm-code>mm-text-block</mm-code>
           은 이 계층이 아니라 상위 컴포넌트의 내부 부품이며, 문서 섹션으로 세울 때는
           <mm-code>mm-content-section</mm-code>

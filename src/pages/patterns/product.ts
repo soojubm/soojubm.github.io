@@ -76,13 +76,15 @@ const main = html`
 
       <!-- 마케팅 스토리: 중앙 정렬 + 특징 -->
       <mm-grid columns="1" gap="4">
-        <mm-text-block
-          centered
-          level="1"
-          eyebrow="Why prebiotics?"
-          heading="Prebiotics are fibers that feed good bacteria"
-          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-        ></mm-text-block>
+        <mm-flex direction="column" align-items="center" gap="3">
+          <mm-tag tone="purple">Why prebiotics?</mm-tag>
+          <mm-text-block
+            centered
+            level="1"
+            heading="Prebiotics are fibers that feed good bacteria"
+            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+          ></mm-text-block>
+        </mm-flex>
         <mm-feature-group columns="4">
           <mm-feature
             centered
@@ -113,25 +115,29 @@ const main = html`
 
       <!-- 마케팅 스토리: 이미지 + 텍스트 -->
       <mm-grid columns="2" gap="8">
-        <mm-text-block
-          level="1"
-          eyebrow="Why prebiotics?"
-          heading="Prebiotics are fibers that feed good bacteria"
-          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-        ></mm-text-block>
+        <mm-flex direction="column" gap="3">
+          <mm-tag tone="purple">Why prebiotics?</mm-tag>
+          <mm-text-block
+            level="1"
+            heading="Prebiotics are fibers that feed good bacteria"
+            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+          ></mm-text-block>
+        </mm-flex>
         <mm-thumbnail ratio="1:1"></mm-thumbnail>
       </mm-grid>
 
       <!-- 마케팅 스토리: bleed 배경 + 특징 -->
       <section class="product-story-bleed">
         <mm-grid columns="1" gap="4">
-          <mm-text-block
-            centered
-            level="1"
-            eyebrow="Why prebiotics?"
-            heading="Prebiotics are fibers that feed good bacteria"
-            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
+          <mm-flex direction="column" align-items="center" gap="3">
+            <mm-tag tone="purple">Why prebiotics?</mm-tag>
+            <mm-text-block
+              centered
+              level="1"
+              heading="Prebiotics are fibers that feed good bacteria"
+              description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+            ></mm-text-block>
+          </mm-flex>
           <mm-feature-group columns="4">
             <mm-feature
               centered
@@ -164,12 +170,14 @@ const main = html`
       <!-- 마케팅 스토리: 이미지 + 텍스트 -->
       <mm-grid columns="2" gap="8">
         <mm-thumbnail ratio="1:1"></mm-thumbnail>
-        <mm-text-block
-          level="1"
-          eyebrow="Why prebiotics?"
-          heading="Prebiotics are fibers that feed good bacteria"
-          description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-        ></mm-text-block>
+        <mm-flex direction="column" gap="3">
+          <mm-tag tone="purple">Why prebiotics?</mm-tag>
+          <mm-text-block
+            level="1"
+            heading="Prebiotics are fibers that feed good bacteria"
+            description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
+          ></mm-text-block>
+        </mm-flex>
       </mm-grid>
 
       <!-- 리뷰 -->

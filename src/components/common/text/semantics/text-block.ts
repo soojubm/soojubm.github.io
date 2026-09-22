@@ -1,17 +1,15 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/tag/tag'
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/paragraph'
 
-// TODO section 임 text-block은 단독으로 쓰이지 않는다 보통.
-
 /**
- * mm-text-block
- * 제목과 설명을 결합한 패턴 컴포넌트입니다.
- * Level 1의 경우, 더 높은 시멘틱 강도와 시각적 가중치를 위해 mm-paragraph를 사용합니다.
+ * <mm-text-block>
+ * 제목과 설명 한 쌍을 세우고 그 사이 간격을 소유합니다.
+ * 제목이 그 쌍을 대표하므로 heading은 필수이고, level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다.
+ * 본문을 슬롯으로 받아 구획을 이루는 자리에는 mm-content-section을 씁니다.
  */
 @customElement('mm-text-block')
 export class TextBlock extends LitElement {
@@ -39,33 +37,16 @@ export class TextBlock extends LitElement {
       max-width: 720px;
     }
   `
-  @property({ type: String }) eyebrow = ''
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: String }) caption = ''
   @property({ type: String, reflect: true }) level = '1'
   @property({ type: Boolean, reflect: true }) centered = false
 
   render() {
     return html`
-      ${this.renderEyebrow()} ${this.renderHeading()} ${this.renderDescription()}
-      <slot></slot>
-    `
-  }
-
-  private renderEyebrow() {
-    if (!this.eyebrow) return nothing
-
-    return html`
-      <mm-tag tone="purple">${this.eyebrow}</mm-tag>
-    `
-  }
-
-  private renderHeading() {
-    if (!this.heading) return nothing
-
-    return html`
       <mm-heading level=${Number(this.level)}>${this.heading}</mm-heading>
+      ${this.renderDescription()}
+      <slot></slot>
     `
   }
 
