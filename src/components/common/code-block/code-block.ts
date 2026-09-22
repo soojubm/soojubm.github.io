@@ -24,6 +24,7 @@ export class CodeBlock extends LitElement {
   @property({ type: String, reflect: true }) variant: CodeBlockVariant = 'default'
   @property({ type: String }) code = ''
   @property({ type: String }) language = 'markup'
+  @property({ type: Boolean }) copyable = true
 
   render() {
     return html`
@@ -33,7 +34,7 @@ export class CodeBlock extends LitElement {
   }
 
   private renderCopyButton() {
-    if (this.variant === 'plain') return nothing
+    if (!this.copyable) return nothing
 
     return html`
       <mm-copy-button value=${this.code}></mm-copy-button>

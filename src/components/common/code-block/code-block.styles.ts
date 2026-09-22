@@ -21,11 +21,14 @@ export const codeBlockStyles = css`
     --surface-border-radius: var(--radius-large);
   }
 
-  /* 이미 면을 가진 프레임 안에 놓일 때는 면도 복사 버튼도 걷고 코드만 그린다. */
-  :host([variant='plain']) code {
-    padding-right: 0;
+  /* 면을 걷으면 버튼이 기댈 여백도 없으므로 첫 줄 가운데와 프레임 안쪽 끝에 맞춘다. */
+  :host([variant='plain']) mm-copy-button {
+    top: calc(var(--font-line-height-24) / 2);
+    right: 0;
+    transform: translateY(-50%);
   }
 
+  /* 이미 면을 가진 프레임 안에 놓일 때는 면을 걷고 코드만 그린다. */
   :host([variant='plain']) pre {
     --surface-padding: 0;
     --surface-border: none;
@@ -38,9 +41,13 @@ export const codeBlockStyles = css`
     font-family: var(--font-family);
     font-size: var(--font-size-14);
     line-height: var(--font-line-height-24);
-    padding-right: var(--space-12);
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+  }
+
+  /* 복사 버튼이 있을 때만 글이 버튼 아래로 깔릴 자리를 비운다. */
+  pre:has(+ mm-copy-button) code {
+    padding-right: var(--space-12);
   }
 
   /* Prism이 붙이는 토큰 클래스. 테마마다 값이 정의된 색만 사용해 테마 전환을 그대로 따른다. */

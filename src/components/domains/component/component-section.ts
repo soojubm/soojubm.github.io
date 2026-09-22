@@ -50,7 +50,9 @@ export class ComponentSection extends LitElement {
     if (!this.code) return nothing
 
     return html`
-      <mm-code-block .code=${this.code}></mm-code-block>
+      <div class="component-content-frame">
+        <mm-code-block variant="plain" .code=${this.code}></mm-code-block>
+      </div>
     `
   }
 }
