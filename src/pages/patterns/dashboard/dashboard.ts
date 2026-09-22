@@ -19,7 +19,7 @@ const indexCards = [
 const renderIndexCard = ({ icon, label, value, tone, change }: typeof indexCards[number]) => html`
   <mm-surface variant="outlined" radius="large">
     <mm-flex direction="column" gap="3">
-      <mm-avatar variant="secondary" icon=${icon}></mm-avatar>
+      <mm-avatar variant="secondary" size="40" icon=${icon}></mm-avatar>
       <mm-flex direction="column" gap="1">
         <mm-flex direction="column" gap="0">
           <mm-text size="12">${label}</mm-text>
@@ -89,7 +89,7 @@ const main = html`
               heading="오늘 할 일"
               description="마감이 가까운 업무부터 확인하세요."
             ></mm-text-block>
-            <mm-menu-item-group>
+            <mm-menu-item-group size="large">
               <mm-menu-item-action
                 size="medium"
                 emoji="📦"
