@@ -5,13 +5,18 @@
 @import '/src/stylesheets/shared/keyframes.css';
 
 progress[value] {
+  width: 100%;
+  height: var(--space-2);
   border: 0;
-  background-color: var(--border-color);
+  border-radius: var(--radius);
+  background-color: var(--background-subtle-color);
+  overflow: hidden;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 progress[value]::-webkit-progress-bar {
-  background-color: var(--border-color);
+  background-color: var(--background-subtle-color);
 }
 
 progress[value]::-webkit-progress-value {
@@ -20,4 +25,45 @@ progress[value]::-webkit-progress-value {
 
 progress[value]::-moz-progress-bar {
   background: var(--primary-color);
+}
+
+meter {
+  width: 100%;
+  height: var(--space-2);
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--background-subtle-color);
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+meter::-webkit-meter-bar {
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--background-subtle-color);
+}
+
+meter::-webkit-meter-optimum-value {
+  background: var(--primary-color);
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: var(--warning-color);
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background: var(--danger-color);
+}
+
+meter:-moz-meter-optimum::-moz-meter-bar {
+  background: var(--primary-color);
+}
+
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: var(--warning-color);
+}
+
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: var(--danger-color);
 }
