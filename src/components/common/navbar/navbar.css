@@ -52,7 +52,6 @@
   backdrop-filter: var(--material-base-backdrop-filter);
   border: var(--material-base-border);
   border-radius: var(--control-border-radius);
-  padding: var(--control-padding);
   box-shadow: var(--material-base-shadow);
 }
 
