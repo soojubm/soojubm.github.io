@@ -71,6 +71,7 @@ export const SITEMAP: SitemapNode[] = [
     icon: ICON_NAMES.FLOWER,
     items: [
       { id: 'avatar', name: 'Avatar' },
+      { id: 'dot', name: 'Dot' },
       { id: 'text', name: 'Text' },
       { id: 'tag', name: 'Tag' },
       { id: 'thumbnail', name: 'Thumbnail' },

@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { AvatarSize } from '@/components/common/avatar/avatar'
 
 import '@/components/common/avatar/avatar'
-import '@/components/common/tag/semantics/dot'
+import '@/components/common/dot/semantics/status-dot'
 import { buildAttributeRules } from '@/utils'
 
 const userAvatarSizeTokens = {
@@ -27,7 +27,7 @@ export class UserAvatar extends LitElement {
     }
 
     /* 원의 45° 지점에 점의 중심을 얹는다. 모서리에서 반지름의 29.3%가 그 지점이다. */
-    mm-dot {
+    mm-status-dot {
       --dot-size: 8px;
 
       outline: calc(var(--border-width) * 2) solid var(--background-color);
@@ -36,7 +36,7 @@ export class UserAvatar extends LitElement {
       inset-block-end: calc(14.6% - var(--dot-size) / 2);
     }
 
-    ${unsafeCSS(buildAttributeRules('size', userAvatarSizeTokens, 'mm-dot'))}
+    ${unsafeCSS(buildAttributeRules('size', userAvatarSizeTokens, 'mm-status-dot'))}
   `
   @property({ type: String }) name = ''
   @property({ type: String }) src?: string
@@ -68,7 +68,7 @@ export class UserAvatar extends LitElement {
     if (!this.online) return nothing
 
     return html`
-      <mm-dot variant="online" role="img" aria-label="접속 중"></mm-dot>
+      <mm-status-dot variant="online"></mm-status-dot>
     `
   }
 

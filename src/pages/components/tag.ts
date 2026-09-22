@@ -146,30 +146,6 @@ const main = html`
         <mm-status-tag variant="info">info</mm-status-tag>
       </mm-tag-group>
     </mm-component-section>
-    <mm-component-section
-      heading="Dot"
-      description="텍스트 없이 색상만으로 상태를 표시하는 최소 단위의 인디케이터입니다. tag와 컬러 팔레트를 공유합니다."
-    >
-      <mm-flex gap="4" align-items="center">
-        <mm-flex gap="1" align-items="center">
-          <mm-dot variant="live"></mm-dot>
-          <mm-caption>live</mm-caption>
-        </mm-flex>
-        <mm-flex gap="1" align-items="center">
-          <mm-dot variant="online"></mm-dot>
-          <mm-caption>online</mm-caption>
-        </mm-flex>
-        <mm-flex gap="1" align-items="center">
-          <mm-dot variant="new"></mm-dot>
-          <mm-caption>new</mm-caption>
-        </mm-flex>
-        <mm-flex gap="1" align-items="center">
-          <mm-dot variant="unread"></mm-dot>
-          <mm-caption>unread</mm-caption>
-        </mm-flex>
-      </mm-flex>
-    </mm-component-section>
-
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>
