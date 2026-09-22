@@ -191,94 +191,96 @@ const main = html`
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
-      <mm-content-section heading-level="3" heading="menu-item과는 어떤 차이가 있나요?">
-        <mm-paragraph>
-          <mm-code>mm-list-item</mm-code>
-          은 행의 골격만 그리고,
-          <mm-code>mm-menu-item-action</mm-code>
-          같은 menu-item 계열은 이 골격을 렌더한 뒤 role·포커스·키보드 조작·이벤트를 더합니다.
-        </mm-paragraph>
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">행 전체가 하나의 클릭 영역이면 menu-item을 쓴다</mm-text>
-                눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에
-                붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop 하나가 되고,
-                항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다
-              </span>
-            `,
-            html`
-              <span>
-                <mm-text weight="bold">
-                  이동하거나, 조작을 행 안의 컨트롤이 받으면 list-item을 쓴다
-                </mm-text>
-                행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 링크는
-                list-item을 감싸는 도메인 컴포넌트가 소유하고, 버튼·스위치는 trailing에 두어 그
-                컨트롤마다 Tab으로 닿게 한다
-              </span>
-            `,
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
-      <mm-content-section heading-level="3" heading="접근성">
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">이동하는 목록은 list로 읽히게 둔다</mm-text>
-                <mm-code>role="menu"</mm-code>
-                는 보조기술에 명령 메뉴로 알려진다. 인물·게시물처럼 다른 곳으로 이동하는 목록에 쓰면
-                성격이 다르게 전달되고,
-                <mm-code>role="list"</mm-code>
-                는 그대로 목록으로 읽힌다.
-                <mm-code>mm-list-item-group</mm-code>
-                이 목록의 role과 각 행의
-                <mm-code>listitem</mm-code>
-                을 채운다
-              </span>
-            `,
-            html`
-              <span>
-                <mm-text weight="bold">한 그룹에는 같은 계열의 role을 갖는 행만 담는다</mm-text>
-                <mm-code>mm-menu-item-group</mm-code>
-                의 roving focus는 자식의 shadow에서 menuitem 계열 role을 찾아 tab stop을 옮긴다.
-                다른 행이 섞이면 그 행만 방향키에서 빠져 Tab으로만 닿게 되고, 한 목록 안에서 키보드
-                동선이 둘로 갈린다
-              </span>
-            `,
-            html`
-              <span>
-                <mm-text weight="bold">description에는 행의 이름에 보탤 말만 쓴다</mm-text>
-                label과 description이 role을 가진 요소 안에 함께 들어가 한 이름으로 읽힌다. 상태나
-                label을 되풀이하는 말은 이름만 길어지게 한다
-              </span>
-            `,
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
-      <mm-content-section heading-level="3" heading="시각보정">
-        <mm-paragraph>
-          content 박스는 leading과 가운데 정렬되지만, 줄마다 행간이 달라 글자 묶음은 위아래 여백이
-          다르게 남습니다.
-        </mm-paragraph>
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">위아래 행간 차이의 절반만큼 content를 위로 옮긴다</mm-text>
-                medium에 description이 있으면 label(14/24)의 위 행간이 description(12/16)의 아래
-                행간보다 넓어 글자가 아래로 치우쳐 보인다. 이동에는
-                <mm-code>translate</mm-code>
-                속성을 써서 레이아웃 박스와 정렬은 그대로 둔다
-              </span>
-            `,
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
+      <mm-content-section-list>
+        <mm-content-section heading-level="3" heading="menu-item과는 어떤 차이가 있나요?">
+          <mm-paragraph>
+            <mm-code>mm-list-item</mm-code>
+            은 행의 골격만 그리고,
+            <mm-code>mm-menu-item-action</mm-code>
+            같은 menu-item 계열은 이 골격을 렌더한 뒤 role·포커스·키보드 조작·이벤트를 더합니다.
+          </mm-paragraph>
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              html`
+                <span>
+                  <mm-text weight="bold">행 전체가 하나의 클릭 영역이면 menu-item을 쓴다</mm-text>
+                  눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에
+                  붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop 하나가 되고,
+                  항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다
+                </span>
+              `,
+              html`
+                <span>
+                  <mm-text weight="bold">
+                    이동하거나, 조작을 행 안의 컨트롤이 받으면 list-item을 쓴다
+                  </mm-text>
+                  행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 링크는
+                  list-item을 감싸는 도메인 컴포넌트가 소유하고, 버튼·스위치는 trailing에 두어 그
+                  컨트롤마다 Tab으로 닿게 한다
+                </span>
+              `,
+            ]}
+          ></mm-text-list>
+        </mm-content-section>
+        <mm-content-section heading-level="3" heading="접근성">
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              html`
+                <span>
+                  <mm-text weight="bold">이동하는 목록은 list로 읽히게 둔다</mm-text>
+                  <mm-code>role="menu"</mm-code>
+                  는 보조기술에 명령 메뉴로 알려진다. 인물·게시물처럼 다른 곳으로 이동하는 목록에
+                  쓰면 성격이 다르게 전달되고,
+                  <mm-code>role="list"</mm-code>
+                  는 그대로 목록으로 읽힌다.
+                  <mm-code>mm-list-item-group</mm-code>
+                  이 목록의 role과 각 행의
+                  <mm-code>listitem</mm-code>
+                  을 채운다
+                </span>
+              `,
+              html`
+                <span>
+                  <mm-text weight="bold">한 그룹에는 같은 계열의 role을 갖는 행만 담는다</mm-text>
+                  <mm-code>mm-menu-item-group</mm-code>
+                  의 roving focus는 자식의 shadow에서 menuitem 계열 role을 찾아 tab stop을 옮긴다.
+                  다른 행이 섞이면 그 행만 방향키에서 빠져 Tab으로만 닿게 되고, 한 목록 안에서
+                  키보드 동선이 둘로 갈린다
+                </span>
+              `,
+              html`
+                <span>
+                  <mm-text weight="bold">description에는 행의 이름에 보탤 말만 쓴다</mm-text>
+                  label과 description이 role을 가진 요소 안에 함께 들어가 한 이름으로 읽힌다. 상태나
+                  label을 되풀이하는 말은 이름만 길어지게 한다
+                </span>
+              `,
+            ]}
+          ></mm-text-list>
+        </mm-content-section>
+        <mm-content-section heading-level="3" heading="시각보정">
+          <mm-paragraph>
+            content 박스는 leading과 가운데 정렬되지만, 줄마다 행간이 달라 글자 묶음은 위아래 여백이
+            다르게 남습니다.
+          </mm-paragraph>
+          <mm-text-list
+            variant="check"
+            .texts=${[
+              html`
+                <span>
+                  <mm-text weight="bold">위아래 행간 차이의 절반만큼 content를 위로 옮긴다</mm-text>
+                  medium에 description이 있으면 label(14/24)의 위 행간이 description(12/16)의 아래
+                  행간보다 넓어 글자가 아래로 치우쳐 보인다. 이동에는
+                  <mm-code>translate</mm-code>
+                  속성을 써서 레이아웃 박스와 정렬은 그대로 둔다
+                </span>
+              `,
+            ]}
+          ></mm-text-list>
+        </mm-content-section>
+      </mm-content-section-list>
     </mm-component-guide>
 
     <mm-component-anatomy

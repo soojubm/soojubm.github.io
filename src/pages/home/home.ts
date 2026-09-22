@@ -250,62 +250,66 @@ const main = html`
         </mm-flex>
       </mm-surface>
 
-      <mm-content-section heading="디자인 시스템에 대한 생각">
-        <mm-paragraph>틀릴 수도 있지만 오랫동안 고민한 것들.</mm-paragraph>
+      <mm-content-section-list>
+        <mm-content-section heading="디자인 시스템에 대한 생각">
+          <mm-paragraph>틀릴 수도 있지만 오랫동안 고민한 것들.</mm-paragraph>
 
-        ${designSystemThoughts.map(
-          ({ heading, body }) => html`
-            <mm-content-section heading-level="3" heading=${heading}>
-              <mm-paragraph>${body}</mm-paragraph>
-            </mm-content-section>
-          `,
-        )}
-      </mm-content-section>
+          <mm-content-section-list>
+            ${designSystemThoughts.map(
+              ({ heading, body }) => html`
+                <mm-content-section heading-level="3" heading=${heading}>
+                  <mm-paragraph>${body}</mm-paragraph>
+                </mm-content-section>
+              `,
+            )}
+          </mm-content-section-list>
+        </mm-content-section>
 
-      <mm-content-section heading="Meta Guidelines">
-        <mm-paragraph>
-          모든 것을 문서화하지 않는다. 반복해서 참조되고 자주 수행하는 것만 문서로 남긴다.
-        </mm-paragraph>
+        <mm-content-section heading="Meta Guidelines">
+          <mm-paragraph>
+            모든 것을 문서화하지 않는다. 반복해서 참조되고 자주 수행하는 것만 문서로 남긴다.
+          </mm-paragraph>
 
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            '문서화할 가치가 있다고 판단하려면 특정 횟수(예: 3회)만큼 발생해야 합니까?',
-            '자주(예: 월 1회 이상) 프로세스를 수행해야 합니까?',
-          ]}
-        ></mm-text-list>
-
-        <mm-content-section heading-level="3" heading="페이지 설명">
           <mm-text-list
             variant="check"
             .texts=${[
-              '컴포넌트 페이지 설명은 무엇인지, 어떻게 동작하는지, 사용자에게 어떤 이득인지 순서로 쓴다.',
+              '문서화할 가치가 있다고 판단하려면 특정 횟수(예: 3회)만큼 발생해야 합니까?',
+              '자주(예: 월 1회 이상) 프로세스를 수행해야 합니까?',
+            ]}
+          ></mm-text-list>
+
+          <mm-content-section heading-level="3" heading="페이지 설명">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                '컴포넌트 페이지 설명은 무엇인지, 어떻게 동작하는지, 사용자에게 어떤 이득인지 순서로 쓴다.',
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+        </mm-content-section>
+
+        <mm-content-section heading="Code Conventions">
+          <mm-text-list
+            .texts=${[
+              '이벤트 핸들러 메서드는 handle 뒤에 대상과 이벤트 종류를 이어 붙인다. 예: handleFilesChange, handleRemoveClick',
+              'render() 안의 조건부 DOM 조각이 커지면 render*() helper로 분리하고, render()에는 각 helper를 직접 나열한다.',
+              'render*() 이름은 상태를 다시 중계하지 않고 실제 조각의 의미를 드러낸다. 예: renderContent()가 아니라 renderImage()',
             ]}
           ></mm-text-list>
         </mm-content-section>
-      </mm-content-section>
 
-      <mm-content-section heading="Code Conventions">
-        <mm-text-list
-          .texts=${[
-            '이벤트 핸들러 메서드는 handle 뒤에 대상과 이벤트 종류를 이어 붙인다. 예: handleFilesChange, handleRemoveClick',
-            'render() 안의 조건부 DOM 조각이 커지면 render*() helper로 분리하고, render()에는 각 helper를 직접 나열한다.',
-            'render*() 이름은 상태를 다시 중계하지 않고 실제 조각의 의미를 드러낸다. 예: renderContent()가 아니라 renderImage()',
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
-
-      <mm-content-section heading="Accessibility Notes">
-        <mm-text-list
-          .texts=${[
-            'role="menu" 안에는 menuitem, menuitemcheckbox, menuitemradio와 이를 묶는 group, separator만 둘 수 있다.',
-            'menuitemradio는 menu·menubar(또는 그 안의 group) 안에서만 유효하다. menu가 아닌 곳(disclosure 패널 등)의 선택지는 radiogroup > radio로 둔다.',
-            '항목의 role은 겉모습이 아니라 놓인 부모로 정한다. 같은 모양의 행도 menu 안이면 menuitemradio, 밖이면 radio다.',
-            'menu는 선택 즉시 닫혀야 하는 개념이 아니다. APG 기준 Enter는 실행 후 닫고, Space는 menuitemcheckbox·menuitemradio의 상태만 바꾸고 연 채로 둔다.',
-            'disclosure는 aria-expanded로 영역을 여닫는 패턴일 뿐 위치를 정하지 않는다. 트리거에 앵커되어 뜨면 popover, 화면을 덮으면 sheet로 표면을 따로 고른다.',
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
+        <mm-content-section heading="Accessibility Notes">
+          <mm-text-list
+            .texts=${[
+              'role="menu" 안에는 menuitem, menuitemcheckbox, menuitemradio와 이를 묶는 group, separator만 둘 수 있다.',
+              'menuitemradio는 menu·menubar(또는 그 안의 group) 안에서만 유효하다. menu가 아닌 곳(disclosure 패널 등)의 선택지는 radiogroup > radio로 둔다.',
+              '항목의 role은 겉모습이 아니라 놓인 부모로 정한다. 같은 모양의 행도 menu 안이면 menuitemradio, 밖이면 radio다.',
+              'menu는 선택 즉시 닫혀야 하는 개념이 아니다. APG 기준 Enter는 실행 후 닫고, Space는 menuitemcheckbox·menuitemradio의 상태만 바꾸고 연 채로 둔다.',
+              'disclosure는 aria-expanded로 영역을 여닫는 패턴일 뿐 위치를 정하지 않는다. 트리거에 앵커되어 뜨면 popover, 화면을 덮으면 sheet로 표면을 따로 고른다.',
+            ]}
+          ></mm-text-list>
+        </mm-content-section>
+      </mm-content-section-list>
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
       <mm-component-references

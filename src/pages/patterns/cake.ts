@@ -90,7 +90,7 @@ const main = html`
         </mm-button-group>
       </mm-flex>
 
-      <mm-flex direction="column" gap="section">
+      <mm-content-section-list>
         <mm-content-section heading="출연진">
           <mm-filter-button-group
             mode="single"
@@ -119,7 +119,7 @@ const main = html`
           </mm-paragraph>
           <mm-button variant="tertiary">Read More Reviews</mm-button>
         </mm-content-section>
-      </mm-flex>
+      </mm-content-section-list>
     </mm-flex>
   </mm-main>
 `
