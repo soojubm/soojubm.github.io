@@ -9,16 +9,22 @@ import {
 } from '@/components/common/tag/tag.styles'
 import { buildAttributeRules } from '@/utils'
 
+/**
+ * 점은 면이 작아 글자 뒤에 까는 배경 틴트로는 색이 드러나지 않는다.
+ * tone이 테두리로 쓰는 값을 채운다.
+ */
+const toneFill = (tone: TagTone) => tagToneStyles[tone].borderColor
+
 const toneTokens = Object.fromEntries(
   Object.entries(tagToneStyles)
     .filter(([tone]) => tone !== 'default')
-    .map(([tone, style]) => [tone, { '--dot-background-color': style.background }]),
+    .map(([tone]) => [tone, { '--dot-background-color': toneFill(tone as TagTone) }]),
 )
 
 const variantTokens = Object.fromEntries(
   Object.entries(dotVariantMap).map(([variant, tone]) => [
     variant,
-    { '--dot-background-color': tagToneStyles[tone as TagTone].background },
+    { '--dot-background-color': toneFill(tone as TagTone) },
   ]),
 )
 
