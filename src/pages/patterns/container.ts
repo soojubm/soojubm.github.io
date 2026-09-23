@@ -1,11 +1,24 @@
 import { html } from 'lit'
 
 import type { ComponentUsageItem } from '@/components/domains/component/component-usage'
+import type { TemplateResult } from 'lit'
 
 import '@/components/domains/component/component-usage'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
+
+// 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
+// prettier-ignore
+const code = (name: string) => html`<mm-code>${name}</mm-code>`
+
+// 목록 항목은 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다.
+const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
+  <span>
+    <mm-text weight="bold">${title}</mm-text>
+    ${description}
+  </span>
+`
 
 const toPages = (ids: string[]) => ids.map(id => ({ href: `./${id}.html`, label: id }))
 
@@ -142,14 +155,17 @@ const main = html`
             로 늘어놓습니다.
           </mm-paragraph>
           <mm-text-list
+            variant="check"
             .texts=${[
-              html`
-                <mm-code>columns</mm-code>
-                는 최대 열 수로 정합니다. 한 열이
-                <mm-code>column-min-width</mm-code>
-                아래로 좁아지면 열 수가 컨테이너 너비를 따라 줄어들므로, 좁은 화면을 위한 열 수를
-                따로 지정하지 않습니다.
-              `,
+              rule(
+                html`
+                  ${code('columns')}는 최대 열 수로 정한다
+                `,
+                html`
+                  한 열이 ${code('column-min-width')} 아래로 좁아지면 열 수가 컨테이너 너비를 따라
+                  줄어들므로, 좁은 화면을 위한 열 수는 따로 지정하지 않는다
+                `,
+              ),
             ]}
           ></mm-text-list>
           <mm-grid-preview></mm-grid-preview>
@@ -233,22 +249,26 @@ const main = html`
 
         <mm-content-section heading-level="3" heading="주의">
           <mm-text-list
+            variant="check"
             .texts=${[
-              html`
-                구획은 gap과
-                <mm-link href="./separator.html">separator</mm-link>
-                중 하나로만 나눕니다. separator가 구획을 맡는 컨테이너는 gap을 두지 않고 separator의
-                자체 간격에 맡깁니다.
-              `,
-              html`
-                컨테이너의 시각 규칙은 소비처에서 토큰이나 CSS 변수로 재정의하지 않고 컴포넌트 기본
-                규칙을 따릅니다.
-              `,
-              html`
-                <mm-code>display: contents</mm-code>
-                는 쓰지 않고 호스트에 역할에 맞는 박스를 명시합니다. 박스가 사라지면 gap과 접근성
-                역할이 함께 사라집니다.
-              `,
+              rule(
+                html`
+                  구획은 gap과
+                  <mm-link href="./separator.html">separator</mm-link>
+                  중 하나로만 나눈다
+                `,
+                'separator가 구획을 맡는 컨테이너는 gap을 두지 않고 separator의 자체 간격에 맡긴다. 둘을 겹치면 경계가 두 번 그어진다',
+              ),
+              rule(
+                '컨테이너의 시각 규칙은 컴포넌트 기본 규칙을 따른다',
+                '소비처에서 토큰이나 CSS 변수로 재정의하면 같은 컨테이너가 페이지마다 달라진다',
+              ),
+              rule(
+                '호스트에는 역할에 맞는 박스를 명시한다',
+                html`
+                  ${code('display: contents')}로 박스를 없애면 gap과 접근성 역할이 함께 사라진다
+                `,
+              ),
             ]}
           ></mm-text-list>
         </mm-content-section>

@@ -1,9 +1,23 @@
 import { html } from 'lit'
+
+import type { TemplateResult } from 'lit'
 import './layout.css'
 
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
+
+// 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
+// prettier-ignore
+const code = (name: string) => html`<mm-code>${name}</mm-code>`
+
+// 목록 항목은 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다.
+const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
+  <span>
+    <mm-text weight="bold">${title}</mm-text>
+    ${description}
+  </span>
+`
 
 const main = html`
   <mm-main>
@@ -129,11 +143,27 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="주의">
         <mm-text-list
+          variant="check"
           .texts=${[
-            '폭은 콘텐츠 성격으로 정하고 디바이스 크기로 고정하지 않습니다. 375px 같은 고정 폭이 아니라 최대 폭 토큰을 쓰고 나머지는 환경에 맡깁니다.',
-            '한 화면에서 대비는 한 단계만 씁니다. 배경·표면·그림자를 동시에 여러 단계로 겹치면 위계가 무너집니다.',
-            '정적인 층위와 hover 피드백을 섞어 쓰지 않습니다. hover에서 잠깐 떠오르는 --interaction-hover-lift는 상호작용 피드백이지 층위가 아닙니다.',
-            '레이블이 잘리면 말줄임표로 감추지 말고 문구를 다듬습니다. 엄격한 writing 가이드가 툴의 자동 축약보다 우선합니다.',
+            rule(
+              '폭은 콘텐츠 성격에 맞는 최대 폭 토큰으로 정한다',
+              '375px처럼 디바이스 크기로 고정하지 않고, 최대 폭 안의 나머지는 환경에 맡긴다',
+            ),
+            rule(
+              '한 화면에서 대비는 한 단계만 쓴다',
+              '배경·표면·그림자를 동시에 여러 단계로 겹치면 위계가 무너진다',
+            ),
+            rule(
+              '정적인 층위와 hover 피드백을 구분한다',
+              html`
+                hover에서 잠깐 떠오르는 ${code('--interaction-hover-lift')}는 상호작용 피드백이며
+                층위가 아니다
+              `,
+            ),
+            rule(
+              '레이블이 잘리면 문구를 다듬는다',
+              '말줄임표로 감추는 툴의 자동 축약보다 엄격한 writing 가이드가 우선한다',
+            ),
           ]}
         ></mm-text-list>
       </mm-content-section>

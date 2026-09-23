@@ -2,10 +2,23 @@ import '@/components/common'
 import { html } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component'
+import type { TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './interaction.css'
+
+// 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
+// prettier-ignore
+const code = (name: string) => html`<mm-code>${name}</mm-code>`
+
+// 목록 항목은 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다.
+const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
+  <span>
+    <mm-text weight="bold">${title}</mm-text>
+    ${description}
+  </span>
+`
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
@@ -303,10 +316,12 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              '가장 기본이 되는 hover 스타일이다.',
-              html`
-                <mm-code>--interaction-hover-background-color</mm-code>
-              `,
+              rule(
+                '기본 hover는 배경을 채운다',
+                html`
+                  ${code('--interaction-hover-background-color')} 값을 컴포넌트 토큰에 재할당한다
+                `,
+              ),
             ]}
           ></mm-text-list>
 
@@ -316,10 +331,13 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              '이미 배경색을 가져 배경 채움으로는 hover가 드러나지 않는 컨트롤이 쓴다.',
-              html`
-                <mm-code>--border</mm-code>
-              `,
+              rule(
+                '배경색을 가진 컨트롤은 테두리를 드러낸다',
+                html`
+                  ${code('--border')} 값을 재할당한다. 배경 채움으로는 hover가 드러나지 않기
+                  때문이다
+                `,
+              ),
             ]}
           ></mm-text-list>
 
@@ -329,10 +347,12 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              '채울 배경이 없는 떠 있는 표면이 쓴다.',
-              html`
-                <mm-code>--interaction-hover-lift</mm-code>
-              `,
+              rule(
+                '채울 배경이 없는 떠 있는 표면은 떠오른다',
+                html`
+                  ${code('--interaction-hover-lift')} 값을 컴포넌트 토큰에 재할당한다
+                `,
+              ),
             ]}
           ></mm-text-list>
         </mm-grid>
@@ -367,9 +387,20 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            '눌러 실행되는 항목이나 화면을 바꾸는 탭처럼 결과가 화면 변화로 드러나는 상호작용은 값을 남기지 않는다.',
-            '그룹의 상태 소유·옵션 모양·키보드 이동은 Selection 문서를 따른다.',
-            '스킨은 상태 attribute selector를 기준으로 두고, 강조에는 --interaction-selected-* 토큰을 함께 쓴다.',
+            rule(
+              '값은 on/off를 유지하는 컨트롤만 갖는다',
+              '눌러 실행되는 항목이나 화면을 바꾸는 탭은 결과가 화면 변화로 드러나므로 값을 남기지 않는다',
+            ),
+            rule(
+              '그룹의 선택은 Selection 문서를 따른다',
+              '상태 소유·옵션 모양·키보드 이동을 Selection 문서가 정한다',
+            ),
+            rule(
+              '스킨은 상태 attribute selector를 기준으로 둔다',
+              html`
+                강조에는 ${code('--interaction-selected-*')} 토큰을 함께 쓴다
+              `,
+            ),
           ]}
         ></mm-text-list>
         <mm-table

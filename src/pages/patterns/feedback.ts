@@ -10,10 +10,17 @@ const main = html`
     <mm-flex justify-content="between" align-items="start" gap="3">
       <mm-page-header
         heading="Feedback"
-        description="사용자 행동이나 시스템 상태의 결과를 알립니다. 사용자 귀책이 아닌 실패는 책임 소재를 문구에 드러냅니다."
+        description="사용자 행동이나 시스템 상태의 결과를 알립니다."
       ></mm-page-header>
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
+
+    <mm-notice>
+      <mm-text size="14">
+        시스템 오류로 실패했다면 무엇이 잘못됐는지 문구로 명확히 설명합니다. 사용자는 입력을 고칠지,
+        다시 시도하거나 기다리면 되는지 알 수 있습니다.
+      </mm-text>
+    </mm-notice>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Status states">
