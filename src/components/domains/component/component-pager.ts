@@ -22,6 +22,7 @@ export class ComponentPager extends LitElement {
         display: flex;
         justify-content: space-between;
         gap: var(--space-4);
+        padding-top: var(--space-section);
       }
 
       a {

@@ -168,9 +168,17 @@ const main = html`
         </mm-text-block>
       </mm-notice>
 
+      <blockquote>
+        <mm-text-list
+          .texts=${[
+            '개인정보와 프로필 정보를 구분한다. 프로필 수정은 프로필 페이지에서 진입할 수 있다.',
+          ]}
+        ></mm-text-list>
+      </blockquote>
+
       <mm-flex direction="column" gap="3">
         <mm-top-bar heading="닉네임 변경">
-          <mm-button slot="action" variant="ghost">저장</mm-button>
+          <mm-button slot="action" variant="ghost">완료</mm-button>
         </mm-top-bar>
         <form>
           <mm-flex direction="column" gap="3">
@@ -195,14 +203,6 @@ const main = html`
           </mm-flex>
         </form>
       </mm-flex>
-
-      <blockquote>
-        <mm-text-list
-          .texts=${[
-            '개인정보와 프로필 정보를 구분한다. 프로필 수정은 프로필 페이지에서 진입할 수 있다.',
-          ]}
-        ></mm-text-list>
-      </blockquote>
     </mm-flex>
   </mm-main>
 `
