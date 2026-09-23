@@ -15,6 +15,15 @@ const main = html`
       <mm-copy-page-button></mm-copy-page-button>
     </mm-flex>
 
+    <mm-notice>
+      <mm-text size="14">
+        이 문서는 페이지 바깥 골격을 정합니다. 그 안에서 자식을 배치하고 묶는 컨테이너의 단계와
+        간격은
+        <mm-link href="./container.html">Container</mm-link>
+        가 다룹니다.
+      </mm-text>
+    </mm-notice>
+
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="원칙">
         <mm-feature-group columns="3" column-max-width="400px">
@@ -31,12 +40,6 @@ const main = html`
             description="폼·카드·편집 영역처럼 독립적으로 다루는 묶음은 표면으로 올려 주변 콘텐츠와 분리합니다. 명도 대비가 먼저 층위를 만들고, 그림자는 그 위에서 떠 있는 정도를 더합니다."
           ></mm-feature>
         </mm-feature-group>
-        <mm-paragraph>
-          이 문서는 페이지 바깥 골격을 정합니다. 그 안에서 자식을 배치하고 묶는 컨테이너의 단계와
-          간격은
-          <mm-link href="./container.html">Container</mm-link>
-          가 다룹니다.
-        </mm-paragraph>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="층위">
@@ -129,7 +132,7 @@ const main = html`
           .texts=${[
             '폭은 콘텐츠 성격으로 정하고 디바이스 크기로 고정하지 않습니다. 375px 같은 고정 폭이 아니라 최대 폭 토큰을 쓰고 나머지는 환경에 맡깁니다.',
             '한 화면에서 대비는 한 단계만 씁니다. 배경·표면·그림자를 동시에 여러 단계로 겹치면 위계가 무너집니다.',
-            'hover에서 잠깐 떠오르는 --interaction-hover-lift는 상호작용 피드백이지 층위가 아닙니다. 정적인 층위와 섞어 쓰지 않습니다.',
+            '정적인 층위와 hover 피드백을 섞어 쓰지 않습니다. hover에서 잠깐 떠오르는 --interaction-hover-lift는 상호작용 피드백이지 층위가 아닙니다.',
             '레이블이 잘리면 말줄임표로 감추지 말고 문구를 다듬습니다. 엄격한 writing 가이드가 툴의 자동 축약보다 우선합니다.',
           ]}
         ></mm-text-list>

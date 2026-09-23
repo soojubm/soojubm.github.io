@@ -294,7 +294,10 @@ const main = html`
       </mm-menu-item-radio-group>
     </mm-component-section>
 
-    <mm-component-section heading="MenuItemRadioSwitch">
+    <mm-component-section
+      heading="MenuItemRadioSwitch"
+      description="role은 놓이는 부모를 따릅니다. mm-menu-item-group(role=menu) 안이면 menuitemcheckbox, 이 예시처럼 독립적으로 쓰이면 switch로 읽힙니다."
+    >
       <mm-menu-item-switch icon=${ICON_NAMES.WIFI} label="Wi-Fi" value="wifi"></mm-menu-item-switch>
     </mm-component-section>
 

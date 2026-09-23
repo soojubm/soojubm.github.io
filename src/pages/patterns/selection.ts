@@ -243,8 +243,9 @@ const main = html`
                 ${code('OptionItem')}에 담기지 않는 콘텐츠를 가진 선택지는 자식 요소로 받는다
               `,
               html`
-                선택지마다 상세한 정보를 제공해야 하면 ${code('mm-radio-card-group')}처럼 자식
-                요소를 받는 그룹을 쓴다
+                선택지마다 상세한 정보를 제공해야 하면 ${code('mm-radio-card-group')}처럼, 행이
+                description·emoji·avatar를 가지면 ${code('mm-menu-item-radio-group')} ·
+                ${code('mm-menu-item-checkbox-group')}처럼 자식 요소를 받는 그룹을 쓴다
               `,
             ),
           ]}

@@ -47,7 +47,14 @@ export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base
 }
 
 export interface MenuItemRowOptions {
-  role: 'menuitemcheckbox' | 'menuitemradio' | 'menuitem' | 'option' | 'checkbox' | 'radio'
+  role:
+    | 'menuitemcheckbox'
+    | 'menuitemradio'
+    | 'menuitem'
+    | 'option'
+    | 'checkbox'
+    | 'radio'
+    | 'switch'
   disabled: boolean
   ariaChecked?: AriaTriState
   ariaSelected?: 'true' | 'false'
@@ -127,7 +134,7 @@ export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base:
  */
 export function renderMenuItemToggleRow(
   props: MenuItemPresentation & MenuItemToggleState,
-  role: 'menuitemcheckbox' | 'checkbox',
+  role: 'menuitemcheckbox' | 'checkbox' | 'switch',
   trailing: unknown,
 ) {
   return renderMenuItemRow(
