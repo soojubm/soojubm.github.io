@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
@@ -6,7 +6,6 @@ import { repeat } from 'lit/directives/repeat.js'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 import '@/components/overlay/sheet'
-import '@/components/domains/search-suggestions'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {
@@ -65,7 +64,7 @@ export class NavbarSearch extends LitElement {
               .value=${this.query}
               @input=${this.handleSearchInput}
             ></mm-searchfield>
-            ${this.query ? this.renderResults() : this.renderDefault()}
+            ${this.renderResults()}
           </form>
         </mm-sheet-body>
       </mm-sheet>
@@ -165,25 +164,8 @@ export class NavbarSearch extends LitElement {
     return this.isOpen && searchId === this.searchRequestId && this.query.trim() === query
   }
 
-  private renderDefault() {
-    return html`
-      <mm-search-suggestions bleed="var(--space-4)" fade aria-label="추천 검색어">
-        <mm-search-suggestion>아파트열쇠를빌려드립니다</mm-search-suggestion>
-        <mm-search-suggestion>로얄테넌바움</mm-search-suggestion>
-        <mm-search-suggestion>소매치기</mm-search-suggestion>
-        <mm-search-suggestion>이탈리아여행</mm-search-suggestion>
-        <mm-search-suggestion>고슴도치</mm-search-suggestion>
-        <mm-search-suggestion>고슴도치</mm-search-suggestion>
-      </mm-search-suggestions>
-
-      <mm-menu-list heading="최근 검색">
-        <mm-menu-item-action label="고슴이" emoji="🦔"></mm-menu-item-action>
-        <mm-menu-item-action label="개구리" emoji="🐸"></mm-menu-item-action>
-      </mm-menu-list>
-    `
-  }
-
   private renderResults() {
+    if (!this.query) return nothing
     if (this.searching) {
       return html`
         <mm-paragraph color="light">검색 중...</mm-paragraph>
