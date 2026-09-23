@@ -1,7 +1,10 @@
 import { html } from 'lit'
 import { styleMap } from 'lit/directives/style-map.js'
 
+import type { ComponentUsageItem } from '@/components/domains/component/component-usage'
+
 import { ICON_NAMES } from '@/components/common'
+import '@/components/domains/component/component-usage'
 import './dashboard.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -111,6 +114,68 @@ const channels = [
   { label: '제휴', color: 'var(--category-3-text-color)', share: 10, value: '200,000원' },
 ]
 
+const toPages = (ids: string[]) => ids.map(id => ({ href: `./${id}.html`, label: id }))
+
+/**
+ * 저장소 안에서 각 컨테이너가 템플릿에 나타난 횟수와 쓰는 페이지 수. 이 페이지의 예시도 함께 세었다.
+ * 페이지가 열여섯을 넘으면 목록 대신 개수만 둔다.
+ */
+const containerUsages: ComponentUsageItem[] = [
+  { label: 'flex', count: 302, pageCount: 62 },
+  { label: 'content-section', count: 95, pageCount: 19 },
+  {
+    label: 'grid',
+    count: 34,
+    pageCount: 14,
+    pages: toPages([
+      'books',
+      'button',
+      'class',
+      'content',
+      'dashboard',
+      'films',
+      'foundations',
+      'interaction',
+      'product',
+      'profile',
+      'separator',
+      'surface',
+      'thumbnail',
+      'tokens',
+    ]),
+  },
+  {
+    label: 'content-section-list',
+    count: 21,
+    pageCount: 16,
+    pages: toPages([
+      'cake',
+      'checkout',
+      'collection',
+      'container',
+      'content',
+      'disclosure',
+      'feedback',
+      'foundations',
+      'home',
+      'interaction',
+      'layout',
+      'list-item',
+      'overlay',
+      'search',
+      'selection',
+      'tokens',
+    ]),
+  },
+  {
+    label: 'form-field',
+    count: 16,
+    pageCount: 6,
+    pages: toPages(['auth', 'checkout', 'container', 'input', 'setting', 'sheet']),
+  },
+  { label: 'text-block', count: 6, pageCount: 2, pages: toPages(['container', 'surface']) },
+]
+
 const main = html`
   <mm-main class="dashboard">
     <mm-flex direction="column" gap="section">
@@ -155,6 +220,17 @@ const main = html`
               description="기반 하나가 시멘틱으로 몇 갈래 분화했는지 봅니다. 전체 17개 계열 중 상위 여덟."
             ></mm-text-block>
             <mm-chart-column .items=${semanticsShares}></mm-chart-column>
+          </mm-flex>
+        </mm-surface>
+
+        <mm-surface variant="outlined" radius="large">
+          <mm-flex direction="column" gap="4">
+            <mm-text-block
+              level="3"
+              heading="컨테이너 사용 현황"
+              description="mm-flex 하나가 302회로 배치 대부분을 맡습니다. 막대를 누르면 어느 페이지에서 쓰는지 폅니다."
+            ></mm-text-block>
+            <mm-component-usage .items=${containerUsages}></mm-component-usage>
           </mm-flex>
         </mm-surface>
 

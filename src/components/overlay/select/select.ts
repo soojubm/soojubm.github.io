@@ -31,6 +31,14 @@ export class Select extends LitElement {
       width: var(--select-width);
     }
 
+    /* 옵션 5개까지 보이고 나머지는 스크롤한다. 옵션 행은 small list-item 높이이고, 패널의 padding·border를 더한다 */
+    mm-popover {
+      --overlay-panel-max-height: min(
+        400px,
+        calc(5 * var(--size-32) + 2 * (var(--overlay-panel-padding-block) + var(--border-width)))
+      );
+    }
+
     :host([width='100%']) mm-popover {
       display: block;
     }

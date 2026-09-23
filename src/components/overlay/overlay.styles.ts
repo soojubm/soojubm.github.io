@@ -180,7 +180,8 @@ export const popoverPositionStyles = css`
     --overlay-panel-min-width: 240px;
     --overlay-panel-max-width: none;
     --overlay-panel-height: auto;
-    --overlay-panel-max-height: none;
+    /* 길어진 목록은 패널을 키우지 않고 안의 mm-scroll이 스크롤한다 */
+    --overlay-panel-max-height: min(400px, 50vh);
     --overlay-panel-padding-block: var(--space-2);
     --overlay-panel-padding-inline: var(--space-2);
     --overlay-panel-border-radius: var(--radius);

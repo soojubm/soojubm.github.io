@@ -1,9 +1,7 @@
 import { html } from 'lit'
 
-import type { ComponentUsageItem } from '@/components/domains/component/component-usage'
 import type { TemplateResult } from 'lit'
 
-import '@/components/domains/component/component-usage'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -20,67 +18,50 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
   </span>
 `
 
-const toPages = (ids: string[]) => ids.map(id => ({ href: `./${id}.html`, label: id }))
-
-/**
- * 저장소 안에서 각 컨테이너가 템플릿에 나타난 횟수와 쓰는 페이지 수. 이 페이지의 예시도 함께 세었다.
- * 페이지가 열여섯을 넘으면 목록 대신 개수만 둔다.
- */
-const containerUsages: ComponentUsageItem[] = [
-  { label: 'flex', count: 302, pageCount: 62 },
-  { label: 'content-section', count: 95, pageCount: 19 },
-  {
-    label: 'grid',
-    count: 34,
-    pageCount: 14,
-    pages: toPages([
-      'books',
-      'button',
-      'class',
-      'content',
-      'dashboard',
-      'films',
-      'foundations',
-      'interaction',
-      'product',
-      'profile',
-      'separator',
-      'surface',
-      'thumbnail',
-      'tokens',
-    ]),
-  },
-  {
-    label: 'content-section-list',
-    count: 21,
-    pageCount: 16,
-    pages: toPages([
-      'cake',
-      'checkout',
-      'collection',
-      'container',
-      'content',
-      'disclosure',
-      'feedback',
-      'foundations',
-      'home',
-      'interaction',
-      'layout',
-      'list-item',
-      'overlay',
-      'search',
-      'selection',
-      'tokens',
-    ]),
-  },
-  {
-    label: 'form-field',
-    count: 16,
-    pageCount: 6,
-    pages: toPages(['auth', 'checkout', 'container', 'input', 'setting', 'sheet']),
-  },
-  { label: 'text-block', count: 6, pageCount: 2, pages: toPages(['container', 'surface']) },
-]
+const overviewRows = html`
+  <tr>
+    <th scope="row">${code('mm-flex')}</th>
+    <td>가로·세로 한 줄</td>
+    <td>소비처가 gap으로 정한다</td>
+    <td>페이지·콘텐츠 조립</td>
+    <td>302회 · 62쪽</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-grid')}</th>
+    <td>행·열</td>
+    <td>소비처가 gap으로 정한다</td>
+    <td>반복되는 항목</td>
+    <td>34회 · 14쪽</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-content-section')}</th>
+    <td>세로</td>
+    <td>제목–본문</td>
+    <td>제목이 있는 문서 구획</td>
+    <td>95회 · 19쪽</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-content-section-list')}</th>
+    <td>세로</td>
+    <td>섹션–섹션</td>
+    <td>섹션 여러 개를 쌓는 자리</td>
+    <td>21회 · 16쪽</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-text-block')}</th>
+    <td>세로</td>
+    <td>제목–설명</td>
+    <td>제목과 설명 한 쌍</td>
+    <td>6회 · 2쪽</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-form-field')}</th>
+    <td>세로</td>
+    <td>레이블–컨트롤–설명</td>
+    <td>textfield가 아닌 컨트롤</td>
+    <td>16회 · 6쪽</td>
+  </tr>
+`
 
 const contentSectionCode = `<mm-content-section-list>
   <mm-content-section heading-level="3" heading="첫 번째 섹션">
@@ -128,14 +109,18 @@ const main = html`
       </mm-notice>
 
       <mm-content-section-list>
-        <mm-content-section heading-level="3" heading="사용 현황">
-          <mm-paragraph>
-            <mm-code>mm-flex</mm-code>
-            하나가 302회로 배치 대부분을 맡습니다. 방향과 간격만 정하는 컨테이너라 어느 맥락에도
-            들어가기 때문이고, 나머지는 각자 맡는 자리가 좁을수록 적게 나타납니다. 막대를 누르면
-            어느 페이지에서 쓰는지 폅니다.
-          </mm-paragraph>
-          <mm-component-usage .items=${containerUsages}></mm-component-usage>
+        <mm-content-section heading-level="3" heading="Overview">
+          <mm-table
+            .rows=${overviewRows}
+            caption="컨테이너별 배치 방향·소유하는 간격·쓰는 자리·사용 횟수 비교"
+            .columns=${[
+              { label: 'UI' },
+              { label: '배치' },
+              { label: '간격' },
+              { label: '쓰는 자리' },
+              { label: '사용' },
+            ]}
+          ></mm-table>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="Flex">
