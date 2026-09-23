@@ -73,7 +73,7 @@ export const resetStyles = css`
  * 구조 규칙은 그대로 태그·class로 두고, 상태만 여기에 모은다.
  */
 export const interactiveElement = unsafeCSS(
-  ":is(button, a, [role='button'], [role^='menuitem'], [role='option'], [role='checkbox'], [role='radio'])",
+  ":is(button, a, [role='button'], [role^='menuitem'], [role='option'], [role='checkbox'], [role='radio'], [role='switch'])",
 )
 
 /** 공유 focus 링 선언. --interaction-focus-outline 토큰을 소비하는 선택자 안에 펼쳐 쓴다. */
