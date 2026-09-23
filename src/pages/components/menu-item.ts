@@ -64,7 +64,11 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-menu-item-radio checked', type: 'boolean = false', optional: true },
   { name: 'mm-menu-item-radio value', type: 'string', optional: true },
   { name: 'mm-menu-item-radio name', type: 'string', optional: true },
-  { name: 'mm-menu-item-group role', type: "'menu' | 'listbox' = 'menu'", optional: true },
+  {
+    name: 'mm-menu-item-group role',
+    type: "'menu' | 'radiogroup' | 'group' = 'menu'",
+    optional: true,
+  },
   { name: 'mm-menu-item-group size', type: "'large'", optional: true },
   { name: 'mm-menu-list heading', type: 'string', optional: true },
   { name: 'mm-menu-list size', type: "'large'", optional: true },
@@ -193,7 +197,7 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          'role=menu 는 명령 실행 목록. role=listbox 는 폼 내 선택 목록. 컨텍스트에 따라 구분합니다.',
+          'mm-menu-item-group은 기본이 명령 목록(role=menu)이고, 선택 그룹 안에서는 radiogroup·group이 됩니다. 값을 고르는 listbox는 mm-select가 따로 소유합니다.',
           'mm-menu-item-link는 메뉴에서 다른 곳으로 나가는 링크라 현재 위치를 표시하지 않습니다. 지금 보고 있는 페이지를 가리키는 내비게이션 링크 목록은 menu가 아닌 list로 읽히게 두고 aria-current="page"를 링크가 갖습니다.',
           'target="_blank"인 링크는 새 창에서 열린다는 사실을 이름에 덧붙여, 아이콘으로만 전달되지 않게 합니다.',
         ]}

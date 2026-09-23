@@ -9,6 +9,7 @@ import type { OptionItem } from '@/types'
 import '@/components/common'
 import '@/components/indicators/expand-indicator/expand-indicator'
 import '@/components/overlay/popover/popover'
+import '@/components/overlay/select/select-listbox'
 import '@/components/overlay/select/select-option'
 import '@/components/overlay/sheet'
 import { MEDIA_QUERY } from '@/constants'
@@ -116,17 +117,13 @@ export class Select extends LitElement {
 
   private renderOptionList() {
     return html`
-      <mm-menu-item-group
-        role="listbox"
-        aria-label=${this.ariaLabel || nothing}
-        @input=${this.handleOptionInput}
-      >
+      <mm-select-listbox aria-label=${this.ariaLabel || nothing} @input=${this.handleOptionInput}>
         ${repeat(
           this.options,
           option => option.value,
           option => this.renderOption(option),
         )}
-      </mm-menu-item-group>
+      </mm-select-listbox>
     `
   }
 

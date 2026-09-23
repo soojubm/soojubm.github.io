@@ -9,7 +9,7 @@ import { emit, getDeepActiveElement } from '@/utils'
 export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
 
 // 열리면 포커스를 받아 방향키로 탐색하는 목록. 방향키 탐색은 이 목록이 소유한다.
-const LIST_SELECTOR = 'mm-menu-item-group'
+const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
 
 /**
  * viewport 기준 modal 표면(mm-sheet, mm-dialog)와 달리 backdrop·portal·스크롤 잠금 없이 트리거에 앵커되어 떠 있는 패널 표면만 책임집니다.

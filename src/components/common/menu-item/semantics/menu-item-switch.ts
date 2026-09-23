@@ -5,6 +5,7 @@ import type { MenuItemGroup } from '@/components/common/menu-item/menu-item-grou
 
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
+  type MenuItemToggleRowRole,
   renderMenuItemToggleRow,
   withMenuItemPresentation,
   withMenuItemToggleState,
@@ -19,7 +20,7 @@ import '@/components/common/switch'
 @customElement('mm-menu-item-switch')
 export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresentation(LitElement)) {
   static styles = [menuItemStyles]
-  @state() private rowRole: 'menuitemcheckbox' | 'switch' = 'switch'
+  @state() private rowRole: MenuItemToggleRowRole = 'switch'
 
   connectedCallback() {
     super.connectedCallback()

@@ -1,17 +1,17 @@
-import { LitElement, nothing } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
   renderMenuItemContent,
-  renderMenuItemRow,
   withMenuItemPresentation,
 } from '@/components/common/menu-item/menu-item.utils'
 import { emit } from '@/utils'
 
 /**
- * listbox 항목. mm-menu-item-action(role=menuitem)과 달리 선택 상태를 유지하는 role=option을 소유한다.
- * menu-item 계열의 공유 스타일·행 조립을 재사용하되 semantics만 별도로 가진다.
+ * mm-select-listbox의 항목. 선택 상태를 유지하는 role=option을 소유한다.
+ * menu-item 계열과 행 스킨·콘텐츠만 나눠 쓰고, 포커스 순회는 listbox가 맡는다.
  */
 @customElement('mm-select-option')
 export class SelectOption extends withMenuItemPresentation(LitElement) {
@@ -21,15 +21,24 @@ export class SelectOption extends withMenuItemPresentation(LitElement) {
   @property({ type: String }) value = ''
 
   render() {
-    return renderMenuItemRow(
-      {
-        role: 'option',
-        disabled: this.disabled,
-        ariaSelected: this.selected ? 'true' : 'false',
-        onActivate: this.activate,
-      },
-      renderMenuItemContent(this, nothing),
-    )
+    return html`
+      <div
+        role="option"
+        aria-selected=${this.selected ? 'true' : 'false'}
+        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        @click=${this.activate}
+        @keydown=${this.handleRowKeydown}
+      >
+        ${renderMenuItemContent(this, nothing)}
+      </div>
+    `
+  }
+
+  private handleRowKeydown(event: KeyboardEvent) {
+    if (event.key !== 'Enter' && event.key !== ' ') return
+
+    event.preventDefault()
+    this.activate()
   }
 
   private activate = () => {

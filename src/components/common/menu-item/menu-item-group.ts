@@ -6,7 +6,7 @@ import { RovingFocusController } from '@/controllers/roving-focus-controller'
 export type MenuItemGroupSize = '' | 'large'
 
 // 각 항목이 shadow 안에 렌더하는 포커스 대상. 행 조립 규칙은 menu-item 계열이 소유한다.
-const ITEM_SELECTOR = '[role^="menuitem"], [role="option"], [role="radio"]'
+const ITEM_SELECTOR = '[role^="menuitem"], [role="radio"]'
 
 @customElement('mm-menu-item-group')
 export class MenuItemGroup extends LitElement {
@@ -28,11 +28,7 @@ export class MenuItemGroup extends LitElement {
     getItems: () => this.items,
     orientation: 'vertical',
     getActiveIndex: () =>
-      this.items.findIndex(
-        item =>
-          item.getAttribute('aria-selected') === 'true' ||
-          item.getAttribute('aria-checked') === 'true',
-      ),
+      this.items.findIndex(item => item.getAttribute('aria-checked') === 'true'),
     onFocusMove: index => this.selectFocusedRadio(index),
   })
 
