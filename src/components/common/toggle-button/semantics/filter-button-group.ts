@@ -36,7 +36,6 @@ export class FilterButtonGroup extends LitElement {
   @property({ type: String }) mode: FilterMode = 'single'
   @property({ attribute: false }) values: string[] = []
   @property({ attribute: false }) options: FilterOption[] = []
-  @property({ type: String, reflect: true }) role = 'group'
   @property({ type: String }) orientation: Orientation = 'horizontal'
   // single/multiple 모드가 런타임에 바뀔 수 있어 두 컨트롤러를 모두 들고 mode로 분기한다.
   private singleSelection = new SingleSelectionController(this, {
@@ -58,6 +57,11 @@ export class FilterButtonGroup extends LitElement {
     orientation: () => this.orientation,
     getActiveIndex: () => this.options.findIndex(option => this.isOptionSelected(option)),
   })
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'group')
+  }
 
   render() {
     return html`

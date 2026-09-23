@@ -49,7 +49,6 @@ export class Tab extends LitElement {
   `
   @property({ type: String }) value = ''
   @property({ type: Boolean, reflect: true }) active = false
-  @property({ type: String, reflect: true }) role = 'tab'
   @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected: AriaBoolean =
     'false'
 
@@ -64,6 +63,7 @@ export class Tab extends LitElement {
   // role·tabindex·focus를 host가 가지므로 클릭도 host에서 받는다.
   connectedCallback() {
     super.connectedCallback()
+    this.setAttribute('role', 'tab')
     this.addEventListener('click', this.handleClick)
   }
 

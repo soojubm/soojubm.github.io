@@ -30,8 +30,12 @@ export class CastList extends LitElement {
       }
     `,
   ]
-  @property({ type: String, reflect: true }) role = 'list'
   @property({ attribute: false }) casts: CastMember[] = []
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'list')
+  }
 
   render() {
     return this.casts.map(cast => this.renderCast(cast))

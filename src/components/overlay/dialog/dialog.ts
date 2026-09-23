@@ -23,7 +23,6 @@ export class Dialog extends LitElement {
       }
     `,
   ]
-  @property({ type: String, reflect: true }) role = 'alertdialog'
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) heading = ''
@@ -41,6 +40,11 @@ export class Dialog extends LitElement {
     dismissOn: ['escape'],
     onDismiss: () => this.handleDismiss(),
   })
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'alertdialog')
+  }
 
   render() {
     return html`

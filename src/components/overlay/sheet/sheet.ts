@@ -21,7 +21,6 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 @customElement('mm-sheet')
 export class Sheet extends LitElement {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
-  @property({ type: String, reflect: true }) role = 'dialog'
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'bottom'
   @property({ type: String }) height?: string
@@ -44,6 +43,11 @@ export class Sheet extends LitElement {
   constructor() {
     super()
     this.addEventListener('sheet-close', this.handleSheetClose)
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'dialog')
   }
 
   private handleSheetClose = () => {

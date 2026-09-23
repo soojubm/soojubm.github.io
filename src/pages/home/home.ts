@@ -240,9 +240,7 @@ const main = html`
           <mm-text-list
             .texts=${[
               'change 이벤트 2차 점검: 그룹/합성 컴포넌트가 자식 change를 번역할 때 stopPropagation 기준을 문서화한다.',
-              'ARIA 상태 소유자 2차 점검: host와 내부 native control 중 실제 접근성 의미를 갖는 요소에 상태를 모은다.',
-              'role override 정책 정리: role을 공개 API로 둘 때 허용 범위와 문서화 기준을 정한다.',
-              'menu-item-switch role 정정: 필터 시트·설정 목록처럼 menu 밖에서도 menuitemcheckbox를 고정으로 붙인다. 설정 목록의 mm-menu-item-group(role=menu)을 메뉴로 볼지부터 정하고, 밖이면 switch로 바꾼다.',
+              'menu-item-switch role 정정: radio·checkbox는 부모 컨텍스트에 따라 role을 이미 분기했지만, switch는 여전히 menuitemcheckbox로 고정이다. 설정 목록의 mm-menu-item-group(role=menu)을 메뉴로 볼지부터 정하고, 밖이면 switch로 바꾼다.',
               '모바일 anchored overlay 전환 검토: 좁은 화면에서 popover를 바텀 시트로 바꿀지 정한다. 터치 타겟과 화면 가장자리 잘림에는 유리하지만, 시트 안에서 열리는 popover가 시트 위 시트가 되어 "모달 표면은 얕게 유지한다"와 부딪친다. 트리거 규약도 popover는 slot="trigger", sheet는 aria-controls로 달라서 한 컴포넌트가 둘을 오가려면 규약부터 맞춰야 한다. 스크롤 컨테이너 잘림은 이 전환으로 해결되지 않으므로 별건으로 다룬다.',
               'menu-item 선택 그룹이 options 배열을 받지 않는 이유 정리: radio·checkbox·select는 .options로 옮겼지만 mm-menu-item-radio-group·checkbox-group은 자식 요소를 유지했고 그 근거가 남아 있지 않다. 행이 description·emoji·avatar처럼 OptionItem에 담기지 않는 콘텐츠를 가져서인지 확인하고, 그렇다면 radio-card-group과 같은 근거로 문서에 남기고 아니라면 교차 타입으로 확장한 options 배열로 옮긴다.',
             ]}
@@ -292,6 +290,7 @@ const main = html`
           <mm-text-list
             .texts=${[
               '이벤트 핸들러 메서드는 handle 뒤에 대상과 이벤트 종류를 이어 붙인다. 예: handleFilesChange, handleRemoveClick',
+              "host의 role이 항상 같은 값이면 connectedCallback에서 setAttribute('role', ...)로 고정하고, 소비자마다 달라질 수 있을 때만 reflect되는 role prop으로 공개한다.",
               'render() 안의 조건부 DOM 조각이 커지면 render*() helper로 분리하고, render()에는 각 helper를 직접 나열한다.',
               'render*() 이름은 상태를 다시 중계하지 않고 실제 조각의 의미를 드러낸다. 예: renderContent()가 아니라 renderImage()',
             ]}

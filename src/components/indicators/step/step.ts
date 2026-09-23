@@ -15,10 +15,14 @@ import '@/components/indicators/step/step-item'
 @customElement('mm-step')
 export class Step extends LitElement {
   static styles = stepStyles
-  @property({ type: String, reflect: true }) role = 'list'
   @property({ type: String, reflect: true }) orientation: StepOrientation = 'horizontal'
   @queryAssignedElements({ flatten: true, selector: 'mm-step-item' })
   private items!: StepItem[]
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'list')
+  }
 
   protected updated(changed: PropertyValues) {
     if (!changed.has('orientation')) return

@@ -47,7 +47,6 @@ export class SidebarSection extends LitElement {
       }
     `,
   ]
-  @property({ type: String, reflect: true }) role = 'listitem'
   @property({ type: String }) label = ''
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean, reflect: true }) open = false
@@ -61,6 +60,11 @@ export class SidebarSection extends LitElement {
     },
     getTrigger: () => this.trigger ?? undefined,
   })
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'listitem')
+  }
 
   render() {
     return html`

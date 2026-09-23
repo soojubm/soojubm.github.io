@@ -80,7 +80,11 @@ export class ChartColumn extends LitElement {
   @property({ type: Array }) items: ChartColumnItem[] = []
   @property({ type: Boolean, reflect: true }) selectable = false
   @property({ type: String }) selected = ''
-  @property({ type: String, reflect: true }) role = 'list'
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'list')
+  }
 
   render() {
     return html`

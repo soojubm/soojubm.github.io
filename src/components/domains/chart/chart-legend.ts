@@ -35,7 +35,11 @@ export class ChartLegend extends LitElement {
     }
   `
   @property({ type: Array }) items: ChartLegendItem[] = []
-  @property({ type: String, reflect: true }) role = 'list'
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'list')
+  }
 
   render() {
     return html`

@@ -40,7 +40,11 @@ export class SearchSuggestions extends LitElement {
   `
   @property({ type: String }) bleed?: string
   @property({ type: Boolean, reflect: true }) fade = false
-  @property({ type: String, reflect: true }) role = 'group'
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'group')
+  }
 
   render() {
     return html`

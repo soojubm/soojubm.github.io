@@ -25,11 +25,15 @@ export class SidebarPageLink extends LitElement {
       }
     `,
   ]
-  @property({ type: String, reflect: true }) role = 'listitem'
   @property({ type: String }) href = ''
   @property({ type: String }) label = ''
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'listitem')
+  }
 
   render() {
     return html`

@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { customElement, queryAssignedElements } from 'lit/decorators.js'
 
 import '@/components/domains/post/post-item'
 
@@ -15,8 +15,12 @@ export class PostList extends LitElement {
       gap: var(--space-2);
     }
   `
-  @property({ type: String, reflect: true }) role = 'list'
   @queryAssignedElements({ flatten: true }) private posts!: HTMLElement[]
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'list')
+  }
 
   render() {
     return html`

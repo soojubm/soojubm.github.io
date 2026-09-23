@@ -39,12 +39,16 @@ export class ChatReasoning extends LitElement {
   @property({ type: Boolean }) thinking = false
   @property({ type: String }) duration = ''
   @property({ type: Number }) interval = 2200
-  @property({ type: String, reflect: true }) role = 'status'
   @property({ type: String, attribute: 'aria-live', reflect: true }) ariaLive = 'polite'
   @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
   private assignedFlows!: ChatReasoningFlow[]
   private flowIndex = 0
   private intervalId = 0
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'status')
+  }
 
   render() {
     return html`

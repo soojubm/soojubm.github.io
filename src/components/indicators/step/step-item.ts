@@ -16,7 +16,6 @@ export type StepOrientation = 'horizontal' | 'vertical'
 @customElement('mm-step-item')
 export class StepItem extends LitElement {
   static styles = stepItemStyles
-  @property({ type: String, reflect: true }) role = 'listitem'
   @property({ type: String, reflect: true }) orientation: StepOrientation = 'horizontal'
   @property({ type: Number }) value = 1
   @property({ type: String }) label = ''
@@ -24,6 +23,11 @@ export class StepItem extends LitElement {
   @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
     null
   @state() private hasContent = false
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'listitem')
+  }
 
   render() {
     return html`

@@ -61,7 +61,11 @@ export class TaskStatus extends LitElement {
     'running'
   @property({ type: String }) label = ''
   @property({ type: Array }) meta: string[] = []
-  @property({ type: String, reflect: true }) role = 'status'
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'status')
+  }
 
   render() {
     return html`

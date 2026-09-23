@@ -29,7 +29,11 @@ export class FormField extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String, attribute: 'validation-text' }) validationText = ''
   @property({ type: Boolean }) optional = false
-  @property({ type: String, reflect: true }) role = 'group'
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'group')
+  }
 
   render() {
     return html`

@@ -66,7 +66,7 @@
 - 호스트가 직접 접근성 의미를 갖는 경우에만 호스트에 `role`·`aria-*`를 적용한다.
 - 접근성을 위한 네이티브 attribute와 ARIA attribute는 별칭 prop으로 우회하지 않고 그대로 공개 API로 사용하며, Lit 클래스 내부 프로퍼티명도 표준 DOM 프로퍼티 이름을 따른다.
 - 상태를 표현하는 표준 네이티브 attribute나 ARIA attribute가 있으면 `classMap`·`styleMap`보다 먼저 사용하고, 스타일도 해당 attribute selector를 기준으로 둔다.
-- host에 role을 두는 컴포넌트는 reflect된 role prop으로 일관되게 선언한다.
+- host의 role이 항상 같은 값이면 connectedCallback에서 `setAttribute('role', ...)`로 고정하고, 소비자마다 달라질 수 있을 때만 reflect되는 role prop으로 공개한다.
 - 접힌 영역은 `inert`로 포커스에서 뺀다. 높이만 0으로 줄이면 화면에 없는 내용이 탭 순서에 남고, `aria-hidden`은 포커스를 막지 않는다.
 - 훑어서 고르는 목록의 트리거는 heading으로 감싼다. 제목 단위 건너뛰기로 탐색되며, heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 둔다. 트리거가 shadow DOM 안에 있으면 감싸는 일도 컴포넌트가 한다.
 - 사이트 안을 이동하는 내비게이션은 list로 읽히게 한다. `menu`·`menuitem`은 눌러 실행하는 명령 목록이 갖고, 탐색 링크는 각자 자기 Tab 순서를 갖는 `listitem`으로 둔다.

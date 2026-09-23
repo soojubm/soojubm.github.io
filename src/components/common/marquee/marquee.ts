@@ -84,7 +84,6 @@ export class Marquee extends LitElement {
       }
     }
   `
-  @property({ type: String, reflect: true }) role = 'marquee'
   @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'
   @property({ type: String }) gap = '4'
   @property({ type: String }) height?: string
@@ -121,6 +120,7 @@ export class Marquee extends LitElement {
 
   connectedCallback() {
     super.connectedCallback()
+    this.setAttribute('role', 'marquee')
     this.resizeObserver = new ResizeObserver(() => this.queueMeasure())
     // 최초 연결은 firstUpdated에서 관찰을 시작하고, 이후 재연결(DOM 이동 등)은 여기서 바로 다시 관찰한다.
     if (this.hasUpdated) this.observeResizeTargets()

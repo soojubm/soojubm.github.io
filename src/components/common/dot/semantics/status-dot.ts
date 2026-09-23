@@ -42,9 +42,13 @@ export class StatusDot extends LitElement {
 
     ${unsafeCSS(buildAttributeRules('variant', variantTokens))}
   `
-  @property({ type: String, reflect: true }) role = 'img'
   @property({ type: String, reflect: true, useDefault: true }) variant: StatusDotVariant = 'online'
   @property({ type: String, attribute: 'aria-label', reflect: true }) ariaLabel = ''
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'img')
+  }
 
   willUpdate() {
     if (this.ariaLabel) return

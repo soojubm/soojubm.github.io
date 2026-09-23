@@ -55,11 +55,15 @@ export class Main extends LitElement {
       min-height: 0;
     }
   `
-  @property({ type: String, reflect: true }) role = 'main'
   @property({ type: String, reflect: true }) width: 'small' | '' = ''
   @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
   @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'main')
+  }
 
   render() {
     return html`
