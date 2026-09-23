@@ -34,7 +34,7 @@ export class ChatConfirmation extends LitElement {
 
     if (this.status === 'rejected') {
       return html`
-        <mm-notice variant="danger" description="거부했습니다"></mm-notice>
+        <mm-notice variant="error" description="거부했습니다"></mm-notice>
       `
     }
 

@@ -1,6 +1,6 @@
 import { html } from 'lit'
 
-import { ICON_NAMES } from '@/components/common'
+import { ICON_NAMES, STATUS_ICONS } from '@/components/common'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -25,43 +25,50 @@ const main = html`
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Status states">
         <mm-paragraph>
-          결과의 의미를 톤으로 구분합니다. 색상만으로 전달하지 않고 톤, 명시적인 메시지, 영향을 받는
-          필드나 영역, 그리고 접근 가능한 관계를 함께 제공해 사용자가 원인과 대상을 이해하게 합니다.
+          <mm-text weight="bold">결과의 의미를 톤으로 구분합니다.</mm-text>
+          색상만으로 전달하지 않고 톤, 명시적인 메시지, 영향을 받는 필드나 영역, 그리고 접근 가능한
+          관계를 함께 제공해 사용자가 원인과 대상을 이해하게 합니다.
         </mm-paragraph>
 
         <mm-list-item-group>
           <mm-list-item
-            icon=${ICON_NAMES.SUCCESS}
+            icon=${STATUS_ICONS.success}
             size="medium"
             label="Success"
             description="작업이 성공적으로 완료되었음을 나타냅니다."
           ></mm-list-item>
           <mm-list-item
-            icon=${ICON_NAMES.INFO}
+            icon=${STATUS_ICONS.info}
             size="medium"
             label="Info"
             description="사용자에게 참고 가능한 보조 정보를 제공합니다."
           ></mm-list-item>
           <mm-list-item
-            icon=${ICON_NAMES.WARNING}
+            icon=${STATUS_ICONS.warning}
             size="medium"
             label="Warning"
             description="진행 전에 사용자의 주의가 필요한 상태입니다."
           ></mm-list-item>
           <mm-list-item
-            icon=${ICON_NAMES.FAILURE}
+            icon=${STATUS_ICONS.error}
             size="medium"
             label="Error"
             description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
+          ></mm-list-item>
+          <mm-list-item
+            icon=${STATUS_ICONS.done}
+            size="medium"
+            label="Done"
+            description="작업이 끝나 더 이상 진행할 것이 없음을 나타냅니다."
           ></mm-list-item>
         </mm-list-item-group>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Data/async states">
         <mm-paragraph>
-          비동기 데이터 흐름이 지나는 단계입니다. 각 단계가 스켈레톤·스피너·에러 화면·빈 화면 중
-          무엇을 노출할지 정합니다. 흐름의 실패는 알림 톤인 Status의 Error와 구분해 Rejected로
-          부릅니다.
+          <mm-text weight="bold">비동기 데이터 흐름이 지나는 단계입니다.</mm-text>
+          각 단계가 스켈레톤·스피너·에러 화면·빈 화면 중 무엇을 노출할지 정합니다. 흐름의 실패는
+          알림 톤인 Status의 Error와 구분해 Rejected로 부릅니다.
         </mm-paragraph>
 
         <mm-list-item-group>

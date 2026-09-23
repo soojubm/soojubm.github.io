@@ -18,7 +18,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'role', type: "'alert' | 'note' | 'status' = 'note'", optional: true },
   { name: 'heading', type: 'string', optional: true },
   { name: 'description', type: 'string', optional: true },
-  { name: 'variant', type: "'success' | 'warning' | 'danger'", optional: true },
+  { name: 'variant', type: "'success' | 'warning' | 'error'", optional: true },
   { name: 'dismiss', type: 'CustomEvent', kind: 'event' },
 ]
 
@@ -66,7 +66,7 @@ const main = html`
           variant="warning"
           description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
         ></mm-notice>
-        <mm-notice variant="danger" description="인터넷에 연결되어 있지 않습니다."></mm-notice>
+        <mm-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></mm-notice>
       </mm-flex>
     </mm-component-example>
 

@@ -76,7 +76,7 @@ const main = html`
           .meta=${['12,480건']}
         ></mm-task-status>
         <mm-task-status
-          variant="danger"
+          variant="error"
           label="업로드 실패"
           .meta=${['재시도 10회 초과']}
         ></mm-task-status>

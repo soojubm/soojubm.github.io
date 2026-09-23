@@ -49,8 +49,8 @@ export const ICON_CATALOG = {
   indicators: {},
 
   status: {
-    DANGER: 'warning-circle',
-    DONE: 'check-circle-solid',
+    ERROR: 'xmark-circle',
+    DONE: 'check-circle',
     INFO: 'info-circle',
     SUCCESS: 'check-circle',
     WARNING: 'warning-triangle',
@@ -155,3 +155,14 @@ export const ICON_NAMES = {
 } as const
 
 export type IconName = typeof ICON_NAMES[keyof typeof ICON_NAMES]
+
+/** 상태 톤마다 쓰는 아이콘. 톤을 가진 컴포넌트와 Feedback 문서가 함께 참조한다. */
+export const STATUS_ICONS = {
+  success: ICON_NAMES.SUCCESS,
+  info: ICON_NAMES.INFO,
+  warning: ICON_NAMES.WARNING,
+  error: ICON_NAMES.ERROR,
+  done: ICON_NAMES.DONE,
+} as const
+
+export type StatusTone = keyof typeof STATUS_ICONS

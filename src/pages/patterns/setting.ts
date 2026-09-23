@@ -158,7 +158,7 @@ const main = html`
         </mm-surface>
       </mm-flex>
 
-      <mm-notice variant="danger">
+      <mm-notice variant="error">
         <mm-text-block
           level="4"
           heading="iPhone을 백업할 수 없음"

@@ -1,18 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { STATUS_ICONS } from '@/components/common/icon/icon-names'
 import '@/components/common/icon'
 import '@/components/common/spinner/spinner'
 import '@/components/common/text/text'
 
-type TaskStatusVariant = 'running' | 'success' | 'warning' | 'danger'
-
-const variantIcons: Record<Exclude<TaskStatusVariant, 'running'>, string> = {
-  success: ICON_NAMES.SUCCESS,
-  warning: ICON_NAMES.WARNING,
-  danger: ICON_NAMES.DANGER,
-}
+type TaskStatusVariant = 'running' | 'success' | 'warning' | 'error'
 
 /**
  * 진행률을 알 수 없는 작업의 현재 상태를 한 줄로 알린다.
@@ -39,7 +33,7 @@ export class TaskStatus extends LitElement {
       --task-status-icon-color: var(--foreground-warning-color);
     }
 
-    :host([variant='danger']) {
+    :host([variant='error']) {
       --task-status-icon-color: var(--foreground-danger-color);
     }
 
@@ -84,7 +78,7 @@ export class TaskStatus extends LitElement {
     }
 
     return html`
-      <mm-icon name=${variantIcons[this.variant]} aria-hidden="true"></mm-icon>
+      <mm-icon name=${STATUS_ICONS[this.variant]} aria-hidden="true"></mm-icon>
     `
   }
 

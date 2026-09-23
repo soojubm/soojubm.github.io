@@ -10,7 +10,7 @@ const noticeVariantTokens = {
   warning: {
     '--notice-text-color': 'var(--foreground-warning-color)',
   },
-  danger: {
+  error: {
     '--notice-text-color': 'var(--foreground-danger-color)',
   },
 }

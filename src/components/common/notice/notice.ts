@@ -1,19 +1,15 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import type { StatusTone } from '@/components/common/icon/icon-names'
+
+import { STATUS_ICONS } from '@/components/common/icon/icon-names'
 import { noticeStyles } from '@/components/common/notice/notice.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon'
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/icon-button/semantics/dismiss-button'
-
-const VARIANT_ICONS: Record<string, string> = {
-  success: ICON_NAMES.SUCCESS,
-  warning: ICON_NAMES.WARNING,
-  danger: ICON_NAMES.DANGER,
-}
 
 @customElement('mm-notice')
 export class Notice extends LitElement {
@@ -99,7 +95,7 @@ export class Notice extends LitElement {
   }
 
   private get icon() {
-    return VARIANT_ICONS[this.variant] ?? ICON_NAMES.INFO
+    return STATUS_ICONS[this.variant as StatusTone] ?? STATUS_ICONS.info
   }
 
   // 버튼의 dismiss는 여기서 멈추고, notice 자신의 dismiss로 바꿔 알린다.
