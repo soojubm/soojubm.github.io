@@ -1,7 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common'
+import '@/components/common/icon'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common/text/semantics/text-block'
 import { MEDIA } from '@/constants'

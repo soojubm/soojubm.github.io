@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/domains/shared/pager'
+import '@/components/common/link/semantics/pager'
 
 export interface PostPagerItem {
   href: string

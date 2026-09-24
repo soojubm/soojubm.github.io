@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import '@/components/domains/shared/pager'
+import '@/components/common/link/semantics/pager'
 import { findAdjacentDocs } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
 

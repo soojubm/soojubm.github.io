@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { PagerLink } from '@/components/common/link/semantics/pager'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -23,6 +24,8 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-link-prompt link-label', type: 'string', optional: true },
   { name: 'mm-link-prompt icon', type: 'IconName', optional: true },
   { name: 'mm-link-prompt href', type: 'string', optional: true },
+  { name: 'mm-pager previous', type: 'PagerLink', optional: true },
+  { name: 'mm-pager next', type: 'PagerLink', optional: true },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -37,6 +40,19 @@ const componentFeatures: ComponentFeatureItem[] = [
       '누르면 다른 위치로 이동합니다. 상호작용 가능함은 색상·밑줄 같은 일관된 기표로 드러냅니다.',
   },
 ]
+
+const previousLink: PagerLink = {
+  href: '#',
+  heading: 'Breadcrumb',
+  description: '이전 문서',
+}
+const nextLink: PagerLink = { href: '#', heading: 'Button', description: '다음 문서' }
+
+const pagerCode = `<mm-pager
+  aria-label="문서 이동"
+  .previous=\${{ href: 'breadcrumb.html', heading: 'Breadcrumb', description: '이전 문서' }}
+  .next=\${{ href: 'button.html', heading: 'Button', description: '다음 문서' }}
+></mm-pager>`
 
 const main = html`
   <mm-main>
@@ -102,6 +118,15 @@ const main = html`
     >
       <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
     </mm-component-anatomy>
+
+    <mm-component-section
+      heading="Pager"
+      description="콘텐츠 끝에서 앞뒤 콘텐츠로 이어 가는 이전·다음 링크 카드입니다. 목적지 제목을 카드에 드러내 어디로 가는지 예상한 채 이동하게 하며, 문서·글처럼 순서가 있는 콘텐츠는 이 외형을 공유하고 내비게이션 이름과 링크 문구만 각자 정합니다."
+      .code=${pagerCode}
+    >
+      <mm-pager aria-label="문서 이동" .previous=${previousLink} .next=${nextLink}></mm-pager>
+    </mm-component-section>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>
