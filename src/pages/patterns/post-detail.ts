@@ -1,14 +1,23 @@
 import { html } from 'lit'
 
+import type { PostPagerItem } from '@/components/domains/post/post-pager'
 import type { ActionConfig } from '@/types'
 
-import { ICON_NAMES } from '@/components/common'
 import './post-detail.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 import '@/components/domains/post'
 
 const membershipAction: ActionConfig = { label: '멤버십 가입하기' }
+
+const previousPost: PostPagerItem = {
+  href: 'post-detail.html',
+  title: '제로 설정 셋업으로 첫 페이지를 배포하기까지',
+}
+const nextPost: PostPagerItem = {
+  href: 'post-detail.html',
+  title: 'Avoid invisible text during font loading',
+}
 
 const morePosts = [
   {
@@ -206,24 +215,7 @@ const main = html`
     </mm-post-list>
   </mm-flex>
 
-  <nav class="post-pagination" style="margin-block: var(--space-8)">
-    <a class="post-pagination-previous" href="post.html">
-      <mm-icon name=${ICON_NAMES.BACK} aria-hidden="true"></mm-icon>
-      <mm-text-block
-        level="3"
-        heading="Return to all articles"
-        description="목록으로"
-      ></mm-text-block>
-    </a>
-    <a class="post-pagination-next" href="#">
-      <mm-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></mm-icon>
-      <mm-text-block
-        level="3"
-        heading="Avoid invisible text during font loading"
-        description="다음 콘텐츠"
-      ></mm-text-block>
-    </a>
-  </nav>
+  <mm-post-pager .previous=${previousPost} .next=${nextPost}></mm-post-pager>
 `
 
 renderPage(main, { closeSidebar: true })
