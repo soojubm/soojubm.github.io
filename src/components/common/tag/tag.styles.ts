@@ -72,6 +72,15 @@ export const statusToneMap = defineToneMap({
 
 export type StatusVariant = keyof typeof statusToneMap
 
+export const progressToneMap = defineToneMap({
+  todo: 'default' as const,
+  'in-progress': 'blue' as const,
+  done: 'green' as const,
+  blocked: 'red' as const,
+})
+
+export type ProgressVariant = keyof typeof progressToneMap
+
 export const categoryToneMap = defineToneMap({
   music: 'purple' as const,
   finance: 'green' as const,

@@ -48,6 +48,7 @@ const columns: TableColumn[] = [
   { label: 'Title', width: '280px' },
   { label: 'Link', width: '130px' },
   { label: 'Status', width: '80px' },
+  { label: 'Progress', width: '100px' },
   { label: 'Age', width: '80px', textAlign: 'right' },
   { label: '', width: '140px', textAlign: 'right' },
 ]
@@ -87,6 +88,7 @@ const rows = html`
     </td>
     <td><mm-link external>External link</mm-link></td>
     <td><mm-category-tag category="music">유저리서치</mm-category-tag></td>
+    <td><mm-progress-tag variant="in-progress">진행 중</mm-progress-tag></td>
     <td style="text-align: right">13</td>
     <td>
       <mm-flex justify-content="flex-end" gap="2">
@@ -113,6 +115,7 @@ const rows = html`
     </td>
     <td><mm-link external>External link</mm-link></td>
     <td><mm-category-tag category="finance">유저플로우</mm-category-tag></td>
+    <td><mm-progress-tag variant="done">완료</mm-progress-tag></td>
     <td style="text-align: right">8</td>
     <td>
       <mm-flex justify-content="flex-end" gap="2">

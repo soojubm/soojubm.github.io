@@ -146,6 +146,18 @@ const main = html`
         <mm-status-tag variant="info">info</mm-status-tag>
       </mm-tag-group>
     </mm-component-section>
+
+    <mm-component-section
+      heading="ProgressTag"
+      description="작업이 어느 단계에 있는지 점과 라벨로 보입니다. 점의 색이 단계를 가르고, 이름은 라벨이 맡습니다."
+    >
+      <mm-tag-group>
+        <mm-progress-tag variant="todo">시작 전</mm-progress-tag>
+        <mm-progress-tag variant="in-progress">진행 중</mm-progress-tag>
+        <mm-progress-tag variant="done">완료</mm-progress-tag>
+        <mm-progress-tag variant="blocked">보류</mm-progress-tag>
+      </mm-tag-group>
+    </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>
