@@ -4,6 +4,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import type { StatusTone } from '@/components/common/icon/icon-names'
 import type { ActionConfig } from '@/types'
 
+import { renderActionButtons } from '@/components/common/button/button.utils'
 import { STATUS_ICONS } from '@/components/common/icon/icon-names'
 import { noticeStyles } from '@/components/common/notice/notice.styles'
 import { emit } from '@/utils'
@@ -79,36 +80,11 @@ export class Notice extends LitElement {
 
     return html`
       <mm-button-group>
-        ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
+        ${renderActionButtons({
+          primaryAction: this.primaryAction,
+          secondaryAction: this.secondaryAction,
+        })}
       </mm-button-group>
-    `
-  }
-
-  private renderSecondaryAction() {
-    if (!this.secondaryAction) return nothing
-
-    return html`
-      <mm-button
-        variant="tertiary"
-        ?disabled=${this.secondaryAction.disabled}
-        @click=${this.handleSecondaryActionClick}
-      >
-        ${this.secondaryAction.label}
-      </mm-button>
-    `
-  }
-
-  private renderPrimaryAction() {
-    if (!this.primaryAction) return nothing
-
-    return html`
-      <mm-button
-        variant="primary"
-        ?disabled=${this.primaryAction.disabled}
-        @click=${this.handlePrimaryActionClick}
-      >
-        ${this.primaryAction.label}
-      </mm-button>
     `
   }
 
@@ -155,13 +131,5 @@ export class Notice extends LitElement {
 
     this.dismissed = true
     emit(this, 'dismiss')
-  }
-
-  private handlePrimaryActionClick() {
-    this.primaryAction?.onClick?.()
-  }
-
-  private handleSecondaryActionClick() {
-    this.secondaryAction?.onClick?.()
   }
 }

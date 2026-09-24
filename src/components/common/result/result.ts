@@ -4,12 +4,12 @@ import { customElement, property } from 'lit/decorators.js'
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { ActionConfig } from '@/types'
 
+import { renderActionButtons } from '@/components/common/button/button.utils'
+import { resultStyles } from '@/components/common/result/result.styles'
+import '@/components/common/avatar'
 import '@/components/common/button/button'
 import '@/components/common/button/button-group'
 import '@/components/common/text/semantics/status-message'
-
-import { resultStyles } from '@/components/common/result/result.styles'
-import '@/components/common/avatar'
 
 @customElement('mm-result')
 export class Result extends LitElement {
@@ -43,46 +43,12 @@ export class Result extends LitElement {
 
     return html`
       <mm-button-group justify-content="center">
-        ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
+        ${renderActionButtons({
+          primaryAction: this.primaryAction,
+          secondaryAction: this.secondaryAction,
+          size: 'large',
+        })}
       </mm-button-group>
     `
-  }
-
-  private renderSecondaryAction() {
-    if (!this.secondaryAction) return nothing
-
-    return html`
-      <mm-button
-        variant="tertiary"
-        size="large"
-        ?disabled=${this.secondaryAction.disabled}
-        @click=${this.handleSecondaryActionClick}
-      >
-        ${this.secondaryAction.label}
-      </mm-button>
-    `
-  }
-
-  private renderPrimaryAction() {
-    if (!this.primaryAction) return nothing
-
-    return html`
-      <mm-button
-        variant="primary"
-        size="large"
-        ?disabled=${this.primaryAction.disabled}
-        @click=${this.handlePrimaryActionClick}
-      >
-        ${this.primaryAction.label}
-      </mm-button>
-    `
-  }
-
-  private handlePrimaryActionClick() {
-    this.primaryAction?.onClick?.()
-  }
-
-  private handleSecondaryActionClick() {
-    this.secondaryAction?.onClick?.()
   }
 }
