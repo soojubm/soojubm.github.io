@@ -46,6 +46,11 @@
   display: block;
 }
 
+/* 더 읽어보기는 좁은 본문 폭을 벗어나 카드 격자를 넓게 펼친다. */
+.post-more {
+  padding: var(--space-8) var(--layout-padding-inline);
+}
+
 /* TODO grid */
 .post-pagination {
   display: flex;

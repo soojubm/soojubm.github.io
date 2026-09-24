@@ -6,7 +6,32 @@ import { ICON_NAMES } from '@/components/common'
 import './post-detail.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
+import '@/components/domains/post'
+
 const membershipAction: ActionConfig = { label: '멤버십 가입하기' }
+
+const morePosts = [
+  {
+    title: '새 레이아웃 엔진으로 더 빠르게 화면 조립하기',
+    category: '제품',
+    date: '2024년 3월 18일',
+  },
+  {
+    title: '디자인 토큰을 테마마다 일관되게 관리하는 방법',
+    category: '디자인',
+    date: '2024년 2월 27일',
+  },
+  {
+    title: 'Custom color palettes from a single brand color',
+    category: '엔지니어링',
+    date: '2024년 2월 9일',
+  },
+  {
+    title: '제로 설정 셋업으로 첫 페이지를 배포하기까지',
+    category: '가이드',
+    date: '2024년 1월 22일',
+  },
+]
 
 const main = html`
   <mm-main width="small">
@@ -17,13 +42,6 @@ const main = html`
           <mm-heading level="1">
             Runway enables next-generation content creation with AI and Vercel
           </mm-heading>
-          <mm-user-item
-            size="medium"
-            label="수줍이"
-            description="Youtube Subscriber"
-            avatar-variant="secondary"
-            avatar-src="/src/images/soojubm.png"
-          ></mm-user-item>
         </mm-flex>
       </header>
 
@@ -98,12 +116,23 @@ const main = html`
         </mm-paragraph-group>
       </section>
 
-      <mm-button-group>
-        <mm-hashtag-link>Webpack</mm-hashtag-link>
-        <mm-hashtag-link>HTML5</mm-hashtag-link>
-        <mm-hashtag-link>accessibility</mm-hashtag-link>
-        <mm-hashtag-link>typography</mm-hashtag-link>
-      </mm-button-group>
+      <mm-surface variant="filled" radius="large">
+        <mm-flex direction="column" gap="8">
+          <mm-button-group>
+            <mm-hashtag-link>Webpack</mm-hashtag-link>
+            <mm-hashtag-link>HTML5</mm-hashtag-link>
+            <mm-hashtag-link>accessibility</mm-hashtag-link>
+            <mm-hashtag-link>typography</mm-hashtag-link>
+          </mm-button-group>
+          <mm-user-item
+            size="medium"
+            label="수줍이"
+            description="Youtube Subscriber"
+            avatar-variant="secondary"
+            avatar-src="/src/images/soojubm.png"
+          ></mm-user-item>
+        </mm-flex>
+      </mm-surface>
     </mm-flex>
     <mm-separator></mm-separator>
     <mm-flex direction="column" gap="8">
@@ -157,6 +186,26 @@ const main = html`
       </aside>
     </mm-flex>
   </mm-main>
+
+  <mm-flex as="section" class="post-more" direction="column" gap="8">
+    <mm-flex justify-content="between" align-items="center" gap="3">
+      <mm-heading level="3">더 읽어보기</mm-heading>
+      <mm-link href="post.html">모두 보기</mm-link>
+    </mm-flex>
+    <mm-post-list>
+      ${morePosts.map(
+        post => html`
+          <mm-post-item
+            href="post-detail.html"
+            thumbnail="/src/images/soojubm.png"
+            title=${post.title}
+            category=${post.category}
+            date=${post.date}
+          ></mm-post-item>
+        `,
+      )}
+    </mm-post-list>
+  </mm-flex>
 
   <nav class="post-pagination" style="margin-block: var(--space-8)">
     <a class="post-pagination-previous" href="post.html">
