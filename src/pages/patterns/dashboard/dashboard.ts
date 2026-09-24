@@ -6,7 +6,6 @@ import type { ComponentUsageItem } from '@/components/domains/component/componen
 import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-usage'
 import './dashboard.css'
-import { tagToneStyles } from '@/components/common/tag/tag.styles'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES, type CategoryKey } from '@/pages/mocks'
 
@@ -154,7 +153,7 @@ const categoryAdSpends: { category: CategoryKey; share: number; value: string }[
 
 const adSpendItems = categoryAdSpends.map(({ category, share, value }) => ({
   label: CATEGORIES[category].label,
-  color: tagToneStyles[CATEGORIES[category].tone].textColor,
+  tone: CATEGORIES[category].tone,
   share,
   value,
 }))

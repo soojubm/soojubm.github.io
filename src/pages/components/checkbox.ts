@@ -31,6 +31,13 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-checkbox-group values', type: 'string[] = []', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
   { name: 'mm-checkbox-group change', type: 'CustomEvent detail: values', kind: 'event' },
+  {
+    name: 'mm-terms-agreement options',
+    type: '{ value: string; label: string; disabled?: boolean }[] = []',
+  },
+  { name: 'mm-terms-agreement name', type: 'string', optional: true },
+  { name: 'mm-terms-agreement values', type: 'string[] = []', optional: true },
+  { name: 'mm-terms-agreement change', type: 'CustomEvent detail: values', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [
@@ -132,7 +139,13 @@ const main = html`
 
     <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}>
+      <mm-notice
+        variant="warning"
+        heading="TODO 범용 전체 선택"
+        description="지금은 약관 동의만 전체 선택을 써서 TermsAgreement 안에서 전체 동의 체크박스와 목록을 잇습니다. 표 헤더처럼 약관 밖에서도 전체 선택이 필요해지면, 체크박스가 aria-controls로 그룹을 가리켜 전체 선택을 맡는 범용 방식을 추가합니다."
+      ></mm-notice>
+    </mm-component-guide>
 
     <mm-component-anatomy
       .parts=${[
@@ -151,23 +164,19 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-section
-      heading="MasterCheckbox"
-      description="TermsAllCheckbox, TermsCheckboxGroup"
+      heading="TermsAgreement"
+      description="약관 목록이 일부만 선택되면 전체 동의 체크박스는 indeterminate로 표시합니다."
     >
-      <mm-master-checkbox aria-controls="main-terms-group">
-        <mm-paragraph>모두 동의합니다 (선택동의 포함)</mm-paragraph>
-      </mm-master-checkbox>
-
-      <mm-checkbox-group
-        id="main-terms-group"
+      <mm-terms-agreement
         name="terms"
-        size="large"
         .options=${[
           { value: 'terms5', label: '이용약관 동의 (필수)' },
           { value: 'terms6', label: '개인정보 수집/이용 동의' },
           { value: 'terms7', label: '개인정보 제3자 제공 동의' },
         ]}
-      ></mm-checkbox-group>
+      >
+        모두 동의합니다 (선택동의 포함)
+      </mm-terms-agreement>
 
       <mm-surface variant="outlined">
         <mm-checkbox-group

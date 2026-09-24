@@ -91,7 +91,7 @@ const rows = html`
     <td>
       <mm-category-tag tone=${CATEGORIES.product.tone}>${CATEGORIES.product.label}</mm-category-tag>
     </td>
-    <td><mm-progress-tag variant="in-progress">진행 중</mm-progress-tag></td>
+    <td><mm-progress-dot variant="in-progress">진행 중</mm-progress-dot></td>
     <td style="text-align: right">13</td>
     <td>
       <mm-flex justify-content="flex-end" gap="2">
@@ -120,7 +120,7 @@ const rows = html`
     <td>
       <mm-category-tag tone=${CATEGORIES.design.tone}>${CATEGORIES.design.label}</mm-category-tag>
     </td>
-    <td><mm-progress-tag variant="done">완료</mm-progress-tag></td>
+    <td><mm-progress-dot variant="done">완료</mm-progress-dot></td>
     <td style="text-align: right">8</td>
     <td>
       <mm-flex justify-content="flex-end" gap="2">

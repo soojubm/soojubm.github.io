@@ -72,15 +72,6 @@ export const statusToneMap = defineToneMap({
 
 export type StatusVariant = keyof typeof statusToneMap
 
-export const progressToneMap = defineToneMap({
-  todo: 'default' as const,
-  'in-progress': 'blue' as const,
-  done: 'green' as const,
-  blocked: 'red' as const,
-})
-
-export type ProgressVariant = keyof typeof progressToneMap
-
 /** 상태 톤(green·yellow·red·blue)은 의미를 전하는 색이라 category 색으로 쓰지 않는다. */
 export type CategoryTone = 'pink' | 'orange' | 'cyan' | 'purple'
 

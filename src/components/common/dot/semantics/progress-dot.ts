@@ -1,22 +1,33 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
-import '@/components/common/dot/dot'
 import '@/components/common/text/text'
-import {
-  progressToneMap,
-  tagToneStyles,
-  type ProgressVariant,
-} from '@/components/common/tag/tag.styles'
+import { dotStyles, dotToneTokens } from '@/components/common/dot/dot.styles'
+import { type TagTone } from '@/components/common/tag/tag.styles'
+import { buildAttributeRules } from '@/utils'
+
+export const progressDotToneMap = {
+  todo: 'default',
+  'in-progress': 'blue',
+  done: 'green',
+  blocked: 'red',
+} as const satisfies Record<string, TagTone>
+
+export type ProgressDotVariant = keyof typeof progressDotToneMap
+
+const variantTokens = Object.fromEntries(
+  Object.entries(progressDotToneMap).map(([variant, tone]) => [
+    variant,
+    dotToneTokens(tone),
+  ]),
+)
 
 /**
- * 작업이 어느 단계에 있는지 점과 라벨로 보이는 태그.
- * 면 없이 점의 색만으로 단계를 가르므로 mm-tag의 테두리·배경을 쓰지 않는다.
- * 이름은 라벨이 맡으므로 점은 장식인 mm-dot을 쓴다.
+ * 작업이 어느 단계에 있는지 점과 라벨로 보이는 표시.
+ * 점의 색이 단계를 가르고 이름은 라벨이 맡으므로, 점은 보조 기술에 드러내지 않는다.
  */
-@customElement('mm-progress-tag')
-export class ProgressTag extends LitElement {
+@customElement('mm-progress-dot')
+export class ProgressDot extends LitElement {
   static styles = css`
     :host {
       display: inline-flex;
@@ -24,16 +35,18 @@ export class ProgressTag extends LitElement {
       gap: var(--space-1);
       white-space: nowrap;
     }
+
+    .dot {
+      ${dotStyles}
+    }
+
+    ${unsafeCSS(buildAttributeRules('variant', variantTokens, '.dot'))}
   `
-  @property({ type: String }) variant: ProgressVariant = 'todo'
+  @property({ type: String, reflect: true, useDefault: true }) variant: ProgressDotVariant = 'todo'
 
   render() {
-    const tone = progressToneMap[this.variant] ?? 'default'
-    /* 점은 면이 작아 배경 틴트로는 색이 드러나지 않는다. tone이 테두리로 쓰는 값을 채운다. */
-    const dotStyle = { '--dot-background-color': tagToneStyles[tone].borderColor }
-
     return html`
-      <mm-dot style=${styleMap(dotStyle)}></mm-dot>
+      <span class="dot" aria-hidden="true"></span>
       <mm-text size="12">
         <slot>${this.variant}</slot>
       </mm-text>

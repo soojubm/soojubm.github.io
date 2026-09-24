@@ -2,15 +2,18 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
+import { dotToneColor } from '@/components/common/dot/dot.styles'
+import { type TagTone } from '@/components/common/tag/tag.styles'
+
 export type ChartStackedBarItem = {
   label: string
-  color: string
+  tone: TagTone
   share: number
 }
 
 /**
  * 전체를 시리즈별 몫으로 나눠 채우는 가로 막대.
- * 색은 차트의 시리즈 팔레트에서 오므로 tone 어휘가 아니라 값으로 받는다.
+ * 범례의 점과 같은 색이어야 하므로 세그먼트도 mm-dot의 tone 색 규칙을 따른다.
  */
 @customElement('mm-chart-stacked-bar')
 export class ChartStackedBar extends LitElement {
@@ -44,9 +47,12 @@ export class ChartStackedBar extends LitElement {
     `
   }
 
-  private renderSegment({ color, share }: ChartStackedBarItem) {
+  private renderSegment({ tone, share }: ChartStackedBarItem) {
     return html`
-      <div class="segment" style=${styleMap({ backgroundColor: color, width: `${share}%` })}></div>
+      <div
+        class="segment"
+        style=${styleMap({ backgroundColor: dotToneColor(tone), width: `${share}%` })}
+      ></div>
     `
   }
 }

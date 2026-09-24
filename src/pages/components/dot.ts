@@ -8,7 +8,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { progressToneMap, tagToneStyles } from '@/components/common/tag/tag.styles'
+import { tagToneStyles, type TagTone } from '@/components/common/tag/tag.styles'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -18,20 +18,19 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'variant', type: "'live' | 'online' | 'new' | 'unread' = 'online'" },
-  { name: 'aria-label', type: 'string', optional: true },
+  {
+    name: 'tone',
+    type: "'default' | 'gold' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'",
+  },
 ]
 
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'dot-size' },
-  { name: 'dot-background-color' },
-]
+const componentTokens: ComponentTokenItemData[] = [{ name: 'dot-size' }]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: '색이 오는 곳으로 나뉩니다',
     description:
-      '시리즈 팔레트처럼 바깥에서 색이 오면 mm-dot에 --dot-background-color로 넘기고, 색 자체가 상태를 뜻하면 mm-status-dot의 variant를 씁니다. 같은 원을 그리지만 읽히는 방식이 반대입니다.',
+      '범례처럼 옆 라벨이 이름을 맡으면 mm-dot의 tone으로 색을 고르고, 색 자체가 상태를 뜻하면 mm-status-dot의 variant를 씁니다. 어느 쪽이든 색은 정해진 tone 안에서만 오고, 소비처가 값을 직접 넘기지 않습니다.',
   },
   {
     heading: '이름은 의미를 갖는 쪽만 말합니다',
@@ -40,13 +39,13 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const progressVariants = ['todo', 'in-progress', 'done', 'blocked'] as const
+const tones = Object.keys(tagToneStyles) as TagTone[]
 
 const statusVariants = ['live', 'online', 'new', 'unread'] as const
 
 const legendItems: ChartLegendItem[] = Object.values(CATEGORIES).map(({ label, tone }) => ({
   label,
-  color: tagToneStyles[tone].textColor,
+  tone,
 }))
 
 const main = html`
@@ -62,11 +61,9 @@ const main = html`
 
     <mm-component-example>
       <mm-flex gap="2" align-items="center">
-        ${progressVariants.map(
-          variant => html`
-            <mm-dot
-              style="--dot-background-color: ${tagToneStyles[progressToneMap[variant]].borderColor}"
-            ></mm-dot>
+        ${tones.map(
+          tone => html`
+            <mm-dot tone=${tone}></mm-dot>
           `,
         )}
       </mm-flex>
@@ -91,6 +88,18 @@ const main = html`
             </mm-flex>
           `,
         )}
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="ProgressDot"
+      description="작업이 어느 단계에 있는지 점과 라벨로 보입니다. 점의 색이 단계를 가르고, 이름은 라벨이 맡습니다."
+    >
+      <mm-flex gap="4" align-items="center">
+        <mm-progress-dot variant="todo">시작 전</mm-progress-dot>
+        <mm-progress-dot variant="in-progress">진행 중</mm-progress-dot>
+        <mm-progress-dot variant="done">완료</mm-progress-dot>
+        <mm-progress-dot variant="blocked">보류</mm-progress-dot>
       </mm-flex>
     </mm-component-section>
 

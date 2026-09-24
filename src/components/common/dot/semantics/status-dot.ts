@@ -1,8 +1,8 @@
 import { LitElement, css, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { dotStyles } from '@/components/common/dot/dot.styles'
-import { tagToneStyles, type TagTone } from '@/components/common/tag/tag.styles'
+import { dotStyles, dotToneTokens } from '@/components/common/dot/dot.styles'
+import { type TagTone } from '@/components/common/tag/tag.styles'
 import { buildAttributeRules } from '@/utils'
 
 const statusDotToneMap = {
@@ -25,8 +25,7 @@ const statusDotLabels: Record<StatusDotVariant, string> = {
 const variantTokens = Object.fromEntries(
   Object.entries(statusDotToneMap).map(([variant, tone]) => [
     variant,
-    /* 점은 면이 작아 배경 틴트로는 색이 드러나지 않는다. tone이 테두리로 쓰는 값을 채운다. */
-    { '--dot-background-color': tagToneStyles[tone].borderColor },
+    dotToneTokens(tone),
   ]),
 )
 

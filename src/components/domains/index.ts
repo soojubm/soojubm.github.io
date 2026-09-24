@@ -11,4 +11,5 @@ import '@/components/domains/search'
 import '@/components/domains/commerce'
 import '@/components/domains/pricing'
 import '@/components/domains/banner'
+import '@/components/domains/terms'
 export {}
