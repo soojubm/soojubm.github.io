@@ -66,10 +66,10 @@ const main = html`
 
     <section class="profile-body">
       <mm-flex direction="column" gap="3">
-        <mm-tab-list value="daily" variant="pill">
-          <mm-tab value="daily">프로젝트</mm-tab>
-          <mm-tab value="weekly">두번째 탭</mm-tab>
-          <mm-tab value="monthly">빈 상태</mm-tab>
+        <mm-tab-list value="projects" variant="pill" search-param="tab">
+          <mm-tab value="projects">프로젝트</mm-tab>
+          <mm-tab value="second">두번째 탭</mm-tab>
+          <mm-tab value="empty">빈 상태</mm-tab>
         </mm-tab-list>
 
         <menu role="menubar">
@@ -79,7 +79,7 @@ const main = html`
           </mm-flex>
         </menu>
 
-        <mm-tab-panel value="daily">
+        <mm-tab-panel value="projects">
           <mm-grid columns="3">
             <mm-portfolio-item
               modal="newneek"
@@ -111,7 +111,7 @@ const main = html`
           </mm-grid>
         </mm-tab-panel>
 
-        <mm-tab-panel value="weekly">
+        <mm-tab-panel value="second">
           <mm-grid columns="3">
             <mm-portfolio-item
               modal="flat_sitemap"
@@ -121,7 +121,7 @@ const main = html`
           </mm-grid>
         </mm-tab-panel>
 
-        <mm-tab-panel value="monthly">
+        <mm-tab-panel value="empty">
           <mm-result
             heading="아직 새 글이 없어요."
             description="포트폴리오를 업로드하여 수줍이님을 알려보세요."

@@ -255,7 +255,7 @@ const main = html`
 
         <mm-separator variant="section"></mm-separator>
 
-        <mm-tab-list value="daily" variant="pill">
+        <mm-tab-list value="daily" variant="pill" search-param="period">
           <mm-tab value="daily">일간</mm-tab>
           <mm-tab value="weekly">주간</mm-tab>
           <mm-tab value="monthly">월간</mm-tab>

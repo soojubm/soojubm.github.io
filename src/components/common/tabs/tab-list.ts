@@ -6,6 +6,7 @@ import { TabPanel } from '@/components/common/tabs/tab-panel'
 import { tabsStyles } from '@/components/common/tabs/tabs.styles'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { emit, uniqueId } from '@/utils'
+import { getSearchParam, replaceSearchParam } from '@/utils/search-param'
 import '@/components/common/scroll/semantics/scroll-hint'
 
 @customElement('mm-tab-list')
@@ -14,6 +15,8 @@ export class TabList extends LitElement {
   private readonly tabsId = uniqueId('tabs')
   @property({ type: String }) value = ''
   @property({ type: String, reflect: true }) variant = 'line'
+  /** 지정하면 선택한 탭을 이 키의 search parameter로 URL에 남기고, 진입 시 그 값으로 탭을 연다. */
+  @property({ type: String, attribute: 'search-param' }) searchParam?: string
   @queryAssignedElements({ flatten: true }) private assignedElements!: HTMLElement[]
   @query('.indicator') private indicator?: HTMLElement
   private indicatorPosition = new SelectionIndicatorController(this, {
@@ -50,6 +53,9 @@ export class TabList extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.setAttribute('role', 'tablist')
+    if (this.searchParam) {
+      this.value = getSearchParam(this.searchParam) ?? this.value
+    }
     this.addEventListener('tab-select', this.handleTabSelect)
     this.addEventListener('keydown', this.handleKeydown)
   }
@@ -79,6 +85,7 @@ export class TabList extends LitElement {
     if (customEvent.detail.value === this.value) return
 
     this.value = customEvent.detail.value
+    if (this.searchParam) replaceSearchParam(this.searchParam, this.value)
     emit(this, 'change', { value: this.value })
   }
   private handleKeydown = (event: KeyboardEvent) => {
