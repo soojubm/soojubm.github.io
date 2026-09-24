@@ -35,12 +35,17 @@ export class Main extends LitElement {
       padding-right: 0;
     }
 
-    :host([width='small']) {
+    :host([width='small']),
+    :host([width='narrow']) {
       --main-padding-left: var(--layout-padding-inline);
 
       max-width: var(--layout-width-small);
       margin: 0 auto;
       box-sizing: content-box;
+    }
+
+    :host([width='narrow']) {
+      max-width: var(--layout-width-narrow);
     }
 
     :host([layout='chat']) {
@@ -56,7 +61,7 @@ export class Main extends LitElement {
       min-height: 0;
     }
   `
-  @property({ type: String, reflect: true }) width: 'small' | '' = ''
+  @property({ type: String, reflect: true }) width: 'small' | 'narrow' | '' = ''
   @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
   @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
