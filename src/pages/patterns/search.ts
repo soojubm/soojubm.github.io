@@ -39,6 +39,25 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
 
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
+const suggestionKeywords = [
+  '버튼',
+  '버튼 그룹',
+  '아이콘 버튼',
+  '토글 버튼',
+  '필터 버튼',
+  '태그',
+  '팝오버',
+  '시트',
+  '토스트',
+]
+
+const handleSuggestionSelect = (event: CustomEvent<{ value: string }>) => {
+  const searchField = document.querySelector<SearchField>('#suggestion-search-field')
+  if (!searchField) return
+
+  searchField.value = event.detail.value
+}
+
 const handleRecentSearchSelect = (event: CustomEvent<{ value: string }>) => {
   const searchField = document.querySelector<SearchField>('#recent-search-field')
   if (!searchField) return
@@ -262,6 +281,40 @@ const main = html`
               .keywords=${recentSearchKeywords}
               @recent-search-select=${handleRecentSearchSelect}
             ></mm-recent-search-list>
+          </mm-flex>
+        </mm-component-example>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="추천 검색어">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            rule(
+              '추천 검색어를 누르면 그 검색어로 바로 검색한다',
+              '검색 필드에 다시 입력하지 않고 제안된 키워드로 이어간다',
+            ),
+            rule(
+              '추천 검색어는 한 줄에 두고 넘치면 가로로 스크롤한다',
+              '줄바꿈으로 결과 영역을 밀어내지 않고, 가려진 추천어가 남은 쪽 끝을 흐려 더 있음을 알린다',
+            ),
+          ]}
+        ></mm-text-list>
+        <mm-component-example>
+          <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+            <mm-searchfield
+              id="suggestion-search-field"
+              placeholder="컴포넌트, 패턴을 검색하세요"
+            ></mm-searchfield>
+            <mm-search-suggestion-group
+              aria-label="추천 검색어"
+              @search-suggestion-select=${handleSuggestionSelect}
+            >
+              ${suggestionKeywords.map(
+                keyword => html`
+                  <mm-search-suggestion>${keyword}</mm-search-suggestion>
+                `,
+              )}
+            </mm-search-suggestion-group>
           </mm-flex>
         </mm-component-example>
       </mm-content-section>
