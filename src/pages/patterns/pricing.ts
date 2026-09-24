@@ -79,7 +79,7 @@ const renderPricingCard = ({
 `
 
 const main = html`
-  <mm-main>
+  <mm-main width="small">
     <mm-flex direction="column" align-items="center" gap="8">
       <mm-page-header
         centered
