@@ -45,7 +45,13 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}>
+      <mm-text-list
+        .texts=${[
+          'TODO: 좁은 화면에서 전역 내비게이션을 바텀바 한 곳에 모을지 검토. 바텀바에는 자주 가는 최상위 목적지를, 마지막 칸에는 전체메뉴(사이드바)를 두고 상단 햄버거를 숨기는 안. 지금은 햄버거가 전체메뉴를 연다.',
+        ]}
+      ></mm-text-list>
+    </mm-component-guide>
 
     <mm-component-anatomy
       .code=${`<mm-bottom-bar

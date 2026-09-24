@@ -57,6 +57,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'mm-tab-list value', type: 'string' },
   { name: 'mm-tab-list variant', type: "'line' | 'pill' = 'line'" },
+  { name: 'mm-tab-list search-param', type: 'string', optional: true },
   { name: 'mm-tab value', type: 'string' },
   { name: 'mm-tab-panel value', type: 'string' },
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
@@ -88,22 +89,16 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const categoryTabs = [
-  '전체',
-  '인기',
-  '신상품',
-  '의류',
-  '신발',
-  '가방',
-  '액세서리',
-  '뷰티',
-  '리빙',
-  '디지털',
-  '스포츠',
-  '도서',
+const productTabs = [
+  '상품 정보',
+  '상세 설명',
+  '구매 후기',
+  '상품 문의',
+  '배송·교환·반품 안내',
+  '판매자 정보',
 ]
 
-const monthTabs = Array.from({ length: 12 }, (_, index) => index + 1)
+const settingsTabs = ['프로필', '계정 보안', '알림 설정', '개인정보 보호', '결제 수단', '연결된 앱']
 
 const main = html`
   <mm-main>
@@ -168,35 +163,33 @@ const main = html`
         <mm-component-example>
           <mm-flex direction="column" gap="4">
             <mm-flex direction="column" gap="3">
-              <mm-tab-list value="category-0" variant="line">
-                ${categoryTabs.map(
+              <mm-tab-list value="product-0" variant="line">
+                ${productTabs.map(
                   (label, index) => html`
-                    <mm-tab value="category-${index}">${label}</mm-tab>
+                    <mm-tab value="product-${index}">${label}</mm-tab>
                   `,
                 )}
               </mm-tab-list>
 
-              ${categoryTabs.map(
+              ${productTabs.map(
                 (label, index) => html`
-                  <mm-tab-panel value="category-${index}">
-                    ${label} 카테고리 상품 목록...
-                  </mm-tab-panel>
+                  <mm-tab-panel value="product-${index}">${label} 영역입니다.</mm-tab-panel>
                 `,
               )}
             </mm-flex>
 
             <mm-flex direction="column" gap="3">
-              <mm-tab-list value="month-1" variant="pill">
-                ${monthTabs.map(
-                  month => html`
-                    <mm-tab value="month-${month}">${month}월</mm-tab>
+              <mm-tab-list value="settings-0" variant="pill">
+                ${settingsTabs.map(
+                  (label, index) => html`
+                    <mm-tab value="settings-${index}">${label}</mm-tab>
                   `,
                 )}
               </mm-tab-list>
 
-              ${monthTabs.map(
-                month => html`
-                  <mm-tab-panel value="month-${month}">${month}월 정산 데이터...</mm-tab-panel>
+              ${settingsTabs.map(
+                (label, index) => html`
+                  <mm-tab-panel value="settings-${index}">${label} 설정 영역입니다.</mm-tab-panel>
                 `,
               )}
             </mm-flex>
@@ -218,13 +211,28 @@ const main = html`
         control to offer actions, such as adding, removing, or editing content.
       </mm-paragraph>
 
-      <mm-text-list
-        .texts=${[
-          'SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ',
-          '글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?',
-          '탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.',
-        ]}
-      ></mm-text-list>
+      <mm-content-section heading-level="3" heading="Count">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <mm-text weight="bold">탭은 6개 이내로 구성한다</mm-text>
+                개수를 강제로 제한하지는 않는다. 탭이 화면 폭을 넘치면 가로로 스크롤되고 양 끝에
+                넘김 버튼이 나타나지만, 가려진 탭은 눈에 잘 띄지 않는다
+              </span>
+            `,
+            html`
+              <span>
+                <mm-text weight="bold">카테고리처럼 항목이 늘어나는 분류는 필터로 둔다</mm-text>
+                카테고리 탭은 뷰를 바꾸는 것이 아니라 한 목록을 좁히는 필터의 역할이므로
+                <mm-code>mm-filter-button-group</mm-code>
+                을 쓴다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Nesting">
         <mm-text-list
@@ -253,6 +261,33 @@ const main = html`
                 으로, 순서대로 거치는 단계는
                 <mm-code>mm-step</mm-code>
                 으로 둔다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="URL">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <mm-text weight="bold">
+                  페이지를 대표하는 탭 리스트에 search-param으로 키를 준다
+                </mm-text>
+                <mm-code>search-param</mm-code>
+                을 준 탭 리스트는 진입 시 그 키의 값으로 탭을 열고, 탭을 바꾸면 URL을 replaceState로
+                바꾼다. 새로고침하거나 링크를 공유해도 같은 탭이 열리고, 탭 전환은 히스토리에 쌓이지
+                않아 뒤로 가기는 이전 페이지로 나간다. 문서 예제나 시트 안의 탭은 URL 없이 둔다
+              </span>
+            `,
+            html`
+              <span>
+                <mm-text weight="bold">
+                  한 페이지에 여럿이면 탭 리스트마다 키를 다르게 정한다
+                </mm-text>
+                같은 키를 쓰면 한쪽의 선택이 다른 쪽 URL 값을 덮는다
               </span>
             `,
           ]}
