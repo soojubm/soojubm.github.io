@@ -18,6 +18,13 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
   </span>
 `
 
+// 박스형 inline 컴포넌트가 줄에 놓이는 방식을 보여준다.
+const inlineBoxCode = `:host {
+  display: inline-flex;
+  align-items: center; /* 아이콘·텍스트를 서로 가운데로 */
+  vertical-align: middle; /* 자기 중앙으로 줄에 놓인다 */
+}`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -169,6 +176,7 @@ const main = html`
             ),
           ]}
         ></mm-text-list>
+        <mm-code-block language="css" .code=${inlineBoxCode}></mm-code-block>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="주의">
