@@ -13,7 +13,7 @@ export class SearchField extends LitElement {
   static styles = [inputStyles]
   @property({ type: String }) value = ''
   @property({ type: String }) placeholder = ''
-  @property({ type: Boolean }) disabled = false
+  @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, reflect: true }) size: 'small' | '' = ''
   @query('mm-input') private input?: HTMLElement
   private inputId = uniqueId('input')

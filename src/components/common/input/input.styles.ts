@@ -15,6 +15,7 @@ export const visuallyHiddenInputStyles = css`
 
 export const inputStyles = css`
   :host {
+    display: block;
     position: relative;
     --input-height: var(--size-48);
     --input-padding-block: var(--space-3);
@@ -25,7 +26,7 @@ export const inputStyles = css`
     --input-focus-outline: var(--interaction-focus-outline);
   }
 
-  :host(:hover) {
+  :host(:hover:not([disabled])) {
     --input-border: var(--border);
   }
 

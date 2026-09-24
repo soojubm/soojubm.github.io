@@ -20,7 +20,7 @@ export class Textarea extends LitElement {
   @property({ type: String }) placeholder = ''
   @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: AriaIdRef = null
   @property({ type: Number }) rows = 3
-  @property({ type: Boolean }) disabled = false
+  @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
   @query('textarea') protected textarea!: HTMLTextAreaElement
   @state() protected defaultTextareaId = `mm-textarea-${uniqueIdCounter++}`

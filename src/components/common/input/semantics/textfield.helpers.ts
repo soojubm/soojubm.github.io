@@ -65,7 +65,7 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: String, reflect: true }) size = ''
     @property({ type: Boolean }) optional = false
     @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
-    @property({ type: Boolean }) disabled = false
+    @property({ type: Boolean, reflect: true }) disabled = false
     @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
     @query('mm-input') private input?: HTMLElement
     readonly inputId = uniqueId('input')
