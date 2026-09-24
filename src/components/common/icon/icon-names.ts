@@ -46,7 +46,10 @@ export const ICON_CATALOG = {
     SCROLL_TOP: 'arrow-up',
   },
 
-  indicators: {},
+  indicators: {
+    TREND_UP: 'graph-up',
+    TREND_DOWN: 'graph-down',
+  },
 
   status: {
     ERROR: 'xmark-circle',

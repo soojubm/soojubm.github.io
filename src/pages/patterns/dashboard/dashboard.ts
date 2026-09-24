@@ -39,11 +39,46 @@ const renderIndexCard = ({ icon, label, value, tone, change }: typeof indexCards
   </mm-surface>
 `
 
+/** 변화율은 지난 분기 대비. 방향이 좋고 나쁨은 지표마다 달라 톤을 입히지 않는다. */
 const systemStats = [
-  { label: '컴포넌트', value: '212', caption: '커스텀 엘리먼트' },
-  { label: '문서 페이지', value: '34', caption: '패턴 25개 별도' },
-  { label: '디자인 토큰', value: '148', caption: '테마 3벌' },
-]
+  {
+    label: '컴포넌트',
+    value: '212',
+    change: '+6.0%',
+    trend: 'up',
+    summary: '이번 분기 12개 추가',
+    caption: '커스텀 엘리먼트 기준',
+  },
+  {
+    label: '문서 페이지',
+    value: '34',
+    change: '+9.7%',
+    trend: 'up',
+    summary: 'Foundations 축 문서 확장',
+    caption: '패턴 25개 별도',
+  },
+  {
+    label: '디자인 토큰',
+    value: '148',
+    change: '-5.1%',
+    trend: 'down',
+    summary: '중복 토큰 8개 정리',
+    caption: '테마 3벌에 공통 적용',
+  },
+  {
+    label: '접근성 경고',
+    value: '7',
+    change: '-30%',
+    trend: 'down',
+    summary: '지난 분기보다 3건 감소',
+    caption: '자동 검사 기준',
+  },
+] as const
+
+const trendIcons = {
+  up: ICON_NAMES.TREND_UP,
+  down: ICON_NAMES.TREND_DOWN,
+} as const
 
 const componentGroups = [
   { label: 'common', color: 'var(--category-1-text-color)', share: 54, value: '115개' },
@@ -51,14 +86,6 @@ const componentGroups = [
   { label: 'overlay', color: 'var(--category-7-text-color)', share: 6, value: '13개' },
   { label: 'layouts', color: 'var(--category-3-text-color)', share: 4, value: '9개' },
   { label: 'indicators', color: 'var(--category-8-text-color)', share: 2, value: '4개' },
-]
-
-/** 막대 높이는 가장 큰 값을 100으로 잡아 트랙을 채운다. */
-const pageCounts = [
-  { label: '컴포넌트', count: 34 },
-  { label: '패턴', count: 25 },
-  { label: '마이', count: 3 },
-  { label: '홈', count: 1 },
 ]
 
 /** 파생이 많은 상위 계열. 전체 17개 계열 중 여덟을 추린다. */
@@ -83,15 +110,32 @@ const toShares = (counts: { label: string; count: number }[]) => {
   }))
 }
 
-const pageShares = toShares(pageCounts)
 const semanticsShares = toShares(semanticsCounts)
 
-const renderSystemStat = ({ label, value, caption }: typeof systemStats[number]) => html`
+const renderSystemStat = ({
+  label,
+  value,
+  change,
+  trend,
+  summary,
+  caption,
+}: typeof systemStats[number]) => html`
   <mm-surface variant="outlined" radius="large">
-    <mm-flex direction="column" gap="1">
-      <mm-text size="12" color="light">${label}</mm-text>
-      <mm-heading>${value}</mm-heading>
-      <mm-text size="12" color="light">${caption}</mm-text>
+    <mm-flex direction="column" gap="5">
+      <mm-flex direction="column" gap="1">
+        <mm-flex justify-content="space-between" align-items="center" gap="2">
+          <mm-text color="light">${label}</mm-text>
+          <mm-tag icon=${trendIcons[trend]}>${change}</mm-tag>
+        </mm-flex>
+        <mm-text size="32" weight="bold">${value}</mm-text>
+      </mm-flex>
+      <mm-flex direction="column" gap="1">
+        <mm-flex align-items="center" gap="2">
+          <mm-text weight="bold">${summary}</mm-text>
+          <mm-icon name=${trendIcons[trend]} aria-hidden="true"></mm-icon>
+        </mm-flex>
+        <mm-text color="light">${caption}</mm-text>
+      </mm-flex>
     </mm-flex>
   </mm-surface>
 `
@@ -185,32 +229,7 @@ const main = html`
           description="디자인 시스템 현황과 지표를 한 화면에서 훑습니다."
         ></mm-page-header>
 
-        <mm-grid columns="3" gap="4">${systemStats.map(renderSystemStat)}</mm-grid>
-
-        <mm-grid columns="2" gap="4">
-          <mm-surface variant="outlined" radius="large">
-            <mm-flex direction="column" gap="4">
-              <mm-text-block
-                level="3"
-                heading="폴더별 컴포넌트"
-                description="common이 절반을 넘고, domains가 도메인 어휘를 맡습니다."
-              ></mm-text-block>
-              <mm-chart-stacked-bar .items=${componentGroups}></mm-chart-stacked-bar>
-              <mm-chart-legend .items=${componentGroups}></mm-chart-legend>
-            </mm-flex>
-          </mm-surface>
-
-          <mm-surface variant="outlined" radius="large">
-            <mm-flex direction="column" gap="4">
-              <mm-text-block
-                level="3"
-                heading="문서 페이지"
-                description="컴포넌트 문서가 패턴보다 많습니다. 전체 63쪽."
-              ></mm-text-block>
-              <mm-chart-column .items=${pageShares}></mm-chart-column>
-            </mm-flex>
-          </mm-surface>
-        </mm-grid>
+        <mm-grid columns="4" gap="4">${systemStats.map(renderSystemStat)}</mm-grid>
 
         <mm-surface variant="outlined" radius="large">
           <mm-flex direction="column" gap="4">
