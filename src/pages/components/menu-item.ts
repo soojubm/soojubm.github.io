@@ -70,8 +70,7 @@ const componentProps: ComponentPropItemData[] = [
     optional: true,
   },
   { name: 'mm-menu-item-group size', type: "'large'", optional: true },
-  { name: 'mm-menu-list heading', type: 'string', optional: true },
-  { name: 'mm-menu-list size', type: "'large'", optional: true },
+  { name: 'mm-menu-item-group heading', type: 'string', optional: true },
   { name: 'mm-menu-item-radio-group name', type: 'string', optional: true },
   { name: 'mm-menu-item-radio-group value', type: 'string', optional: true },
   { name: 'mm-menu-item-radio-group size', type: "'large'", optional: true },
@@ -221,13 +220,16 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-section
-      heading="MenuList"
-      description="소제목과 메뉴 항목 목록을 한 묶음으로 전시합니다. heading을 제목 요소로 렌더해 목록에 aria-labelledby로 연결합니다."
+      heading="MenuItemGroup"
+      description="heading을 주면 목록 위에 소제목을 보여주고, 같은 문구를 목록의 aria-label로 씁니다."
     >
-      <mm-menu-list heading="최근 검색">
-        <mm-menu-item-action label="고슴이" emoji="🦔"></mm-menu-item-action>
-        <mm-menu-item-action label="개구리" emoji="🐸"></mm-menu-item-action>
-      </mm-menu-list>
+      <mm-menu-item-group heading="공유">
+        <mm-menu-item-action icon=${ICON_NAMES.LINK} label="링크 복사"></mm-menu-item-action>
+        <mm-menu-item-action
+          icon=${ICON_NAMES.SHARE}
+          label="다른 앱으로 공유"
+        ></mm-menu-item-action>
+      </mm-menu-item-group>
     </mm-component-section>
 
     <mm-component-section heading="MenuItemCheckboxGroup">
