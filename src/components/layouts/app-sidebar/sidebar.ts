@@ -1,12 +1,14 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
+import type { Scroll } from '@/components/common/scroll/scroll'
 import type { SitemapItem, SitemapNode } from '@/sitemap'
 
 import '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
+import '@/components/layouts/app-sidebar/sidebar-user-menu'
 import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
@@ -25,6 +27,7 @@ const hasChildren = (node: SidebarSection) => !!node.children?.length
 export class Sidebar extends LitElement {
   static styles = [sidebarStyles]
   @property({ type: Boolean, reflect: true }) open = false
+  @query('mm-scroll') private scrollEl?: Scroll
   private currentPageId = getCurrentPageId()
   private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
   private disclosure = new DisclosureController(this, {
@@ -38,10 +41,17 @@ export class Sidebar extends LitElement {
   render() {
     return html`
       <nav>
-        <div class="list" role="list">
-          ${repeat(standaloneNodes, node => node.id, this.renderStandalone)}
-        </div>
-        ${repeat(groupNodes, node => node.id, this.renderGroup)}
+        <mm-scroll direction="column" gap="4">
+          <div class="list" role="list">
+            ${repeat(standaloneNodes, node => node.id, this.renderStandalone)}
+          </div>
+          ${repeat(groupNodes, node => node.id, this.renderGroup)}
+        </mm-scroll>
+        <mm-sidebar-user-menu
+          name="soojubm"
+          description="soojubm.github.io"
+          avatar-src="/src/images/soojubm.png"
+        ></mm-sidebar-user-menu>
       </nav>
     `
   }
@@ -119,7 +129,7 @@ export class Sidebar extends LitElement {
 
   private restoreScrollPosition() {
     const saved = localStorage.getItem('sidebarScroll')
-    if (saved) this.scrollTop = Number(saved)
+    if (saved && this.scrollEl) this.scrollEl.scrollTop = Number(saved)
   }
 
   private handlePageLinkClick() {
@@ -127,7 +137,7 @@ export class Sidebar extends LitElement {
   }
 
   private saveScrollPosition() {
-    localStorage.setItem('sidebarScroll', String(this.scrollTop))
+    localStorage.setItem('sidebarScroll', String(this.scrollEl?.scrollTop ?? 0))
   }
 
   private containsCurrentPage(node: SidebarSection) {
