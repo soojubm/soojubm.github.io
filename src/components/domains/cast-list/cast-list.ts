@@ -24,26 +24,21 @@ export class CastList extends LitElement {
     interactiveRowStyles,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-3);
+        display: block;
       }
     `,
   ]
   @property({ attribute: false }) casts: CastMember[] = []
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.setAttribute('role', 'list')
-  }
-
   render() {
-    return this.casts.map(cast => this.renderCast(cast))
+    return html`
+      <mm-list-item-group>${this.casts.map(cast => this.renderCast(cast))}</mm-list-item-group>
+    `
   }
 
   private renderCast(cast: CastMember) {
     return html`
-      <div role="listitem">
+      <div>
         <a href=${cast.href}>
           <mm-list-item
             size="large"
