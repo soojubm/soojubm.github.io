@@ -93,7 +93,7 @@ const rows = html`
     <td>
       <mm-flex justify-content="flex-end" gap="2">
         <mm-button>액션</mm-button>
-        <mm-more-button></mm-more-button>
+        <mm-more-button tooltip-placement="right"></mm-more-button>
       </mm-flex>
     </td>
   </tr>
@@ -120,7 +120,7 @@ const rows = html`
     <td>
       <mm-flex justify-content="flex-end" gap="2">
         <mm-button>액션</mm-button>
-        <mm-more-button></mm-more-button>
+        <mm-more-button tooltip-placement="right"></mm-more-button>
       </mm-flex>
     </td>
   </tr>
