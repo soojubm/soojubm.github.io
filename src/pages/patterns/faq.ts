@@ -1,7 +1,7 @@
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
-import { CATEGORIES } from '@/pages/mocks'
+import { CATEGORIES, type CategoryKey } from '@/pages/mocks'
 
 interface FaqItem {
   question: string
@@ -9,13 +9,13 @@ interface FaqItem {
 }
 
 interface FaqCategory {
-  heading: string
+  category: CategoryKey
   items: FaqItem[]
 }
 
 const faqCategories: FaqCategory[] = [
   {
-    heading: CATEGORIES[5],
+    category: 'product',
     items: [
       {
         question: '이메일 주소를 변경하고 싶어요.',
@@ -24,7 +24,7 @@ const faqCategories: FaqCategory[] = [
     ],
   },
   {
-    heading: CATEGORIES[6],
+    category: 'design',
     items: [
       {
         question: '주문을 취소하고 싶어요.',
@@ -38,7 +38,7 @@ const faqCategories: FaqCategory[] = [
     ],
   },
   {
-    heading: CATEGORIES[7],
+    category: 'engineering',
     items: [
       {
         question: '배송은 얼마나 걸리나요?',
@@ -53,8 +53,8 @@ const faqCategories: FaqCategory[] = [
   },
 ]
 
-const renderFaqCategory = ({ heading, items }: FaqCategory) => html`
-  <mm-content-section heading-level="3" heading=${heading}>
+const renderFaqCategory = ({ category, items }: FaqCategory) => html`
+  <mm-content-section heading-level="3" heading=${CATEGORIES[category].label}>
     <mm-faq-list>
       ${items.map(
         ({ question, answer }) => html`

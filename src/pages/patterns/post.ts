@@ -1,7 +1,7 @@
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
-import { POSTS } from '@/pages/mocks'
+import { CATEGORIES, POSTS, TOPICS } from '@/pages/mocks'
 
 import '@/components/domains/post'
 
@@ -28,10 +28,8 @@ const postCategories = [...new Set(POSTS.map(post => post.category))]
 
 const categoryFilterOptions = [
   { value: 'all', label: '전체' },
-  ...postCategories.map(category => ({ value: category, label: category })),
+  ...postCategories.map(category => ({ value: category, label: CATEGORIES[category].label })),
 ]
-
-const popularTopics = ['디자인 시스템', '접근성', '웹 컴포넌트', '타이포그래피', '성능', 'AI']
 
 const main = html`
   <mm-main>
@@ -55,7 +53,7 @@ const main = html`
                 href=${DETAIL_HREF}
                 thumbnail="/src/images/soojubm.png"
                 title=${post.title}
-                category=${post.category}
+                category=${CATEGORIES[post.category].label}
                 date=${post.date}
               ></mm-post-item>
             `,
@@ -67,7 +65,7 @@ const main = html`
 
       <mm-content-section heading="인기 주제" heading-level="3">
         <mm-button-group>
-          ${popularTopics.map(
+          ${TOPICS.map(
             topic => html`
               <mm-hashtag-link>${topic}</mm-hashtag-link>
             `,

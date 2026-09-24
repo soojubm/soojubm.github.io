@@ -5,7 +5,7 @@ import type { ActionConfig } from '@/types'
 
 import './post-detail.css'
 import { renderPage } from '@/components/layouts/base-layouts'
-import { CATEGORIES, POSTS } from '@/pages/mocks'
+import { CATEGORIES, POSTS, TOPICS } from '@/pages/mocks'
 
 import '@/components/domains/post'
 
@@ -25,7 +25,7 @@ const main = html`
     <mm-flex direction="column" gap="8">
       <header class="post-head">
         <mm-flex direction="column" gap="3">
-          <mm-link href="post.html">${CATEGORIES[0]}</mm-link>
+          <mm-link href="post.html">${CATEGORIES.product.label}</mm-link>
           <mm-heading level="1">
             Runway enables next-generation content creation with AI and Vercel
           </mm-heading>
@@ -125,10 +125,11 @@ const main = html`
       <mm-surface variant="elevated" radius="large">
         <mm-flex direction="column" gap="8">
           <mm-button-group>
-            <mm-hashtag-link>Webpack</mm-hashtag-link>
-            <mm-hashtag-link>HTML5</mm-hashtag-link>
-            <mm-hashtag-link>accessibility</mm-hashtag-link>
-            <mm-hashtag-link>typography</mm-hashtag-link>
+            ${TOPICS.map(
+              topic => html`
+                <mm-hashtag-link>${topic}</mm-hashtag-link>
+              `,
+            )}
           </mm-button-group>
           <mm-user-item
             size="medium"
@@ -185,7 +186,7 @@ const main = html`
             href="post-detail.html"
             thumbnail="/src/images/soojubm.png"
             title=${post.title}
-            category=${post.category}
+            category=${CATEGORIES[post.category].label}
             date=${post.date}
           ></mm-post-item>
         `,

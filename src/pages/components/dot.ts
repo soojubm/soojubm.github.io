@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { ChartLegendItem } from '@/components/domains/chart/chart-legend'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -7,7 +8,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
-import { categoryToneOf, tagToneStyles } from '@/components/common/tag/tag.styles'
+import { progressToneMap, tagToneStyles } from '@/components/common/tag/tag.styles'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -39,7 +40,14 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const progressVariants = ['todo', 'in-progress', 'done', 'blocked'] as const
+
 const statusVariants = ['live', 'online', 'new', 'unread'] as const
+
+const legendItems: ChartLegendItem[] = Object.values(CATEGORIES).map(({ label, tone }) => ({
+  label,
+  color: tagToneStyles[tone].textColor,
+}))
 
 const main = html`
   <mm-main>
@@ -53,16 +61,12 @@ const main = html`
     ></mm-component-aka>
 
     <mm-component-example>
-      <mm-flex direction="column" gap="2">
-        ${CATEGORIES.map(
-          (label, index) => html`
-            <mm-flex gap="2" align-items="center">
-              <mm-dot
-                style="--dot-background-color: ${tagToneStyles[categoryToneOf(index + 1)]
-                  .textColor}"
-              ></mm-dot>
-              <mm-text>${label}</mm-text>
-            </mm-flex>
+      <mm-flex gap="2" align-items="center">
+        ${progressVariants.map(
+          variant => html`
+            <mm-dot
+              style="--dot-background-color: ${tagToneStyles[progressToneMap[variant]].borderColor}"
+            ></mm-dot>
           `,
         )}
       </mm-flex>
@@ -88,6 +92,13 @@ const main = html`
           `,
         )}
       </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="ChartLegend"
+      description="차트가 그린 시리즈와 이름을 잇는 범례입니다. 점은 시리즈 색만 옮기고 이름은 옆의 라벨이 맡습니다."
+    >
+      <mm-chart-legend .items=${legendItems}></mm-chart-legend>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

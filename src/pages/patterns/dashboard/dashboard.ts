@@ -6,7 +6,9 @@ import type { ComponentUsageItem } from '@/components/domains/component/componen
 import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-usage'
 import './dashboard.css'
+import { tagToneStyles } from '@/components/common/tag/tag.styles'
 import { renderPage } from '@/components/layouts/base-layouts'
+import { CATEGORIES, type CategoryKey } from '@/pages/mocks'
 
 const indexCards = [
   { icon: 'graph-down', label: '코스피', value: '2999.55p', tone: 'blue', change: '4.33% 하락' },
@@ -80,14 +82,6 @@ const trendIcons = {
   down: ICON_NAMES.TREND_DOWN,
 } as const
 
-const componentGroups = [
-  { label: 'common', color: 'var(--category-1-text-color)', share: 54, value: '115개' },
-  { label: 'domains', color: 'var(--category-5-text-color)', share: 34, value: '71개' },
-  { label: 'overlay', color: 'var(--category-7-text-color)', share: 6, value: '13개' },
-  { label: 'layouts', color: 'var(--category-3-text-color)', share: 4, value: '9개' },
-  { label: 'indicators', color: 'var(--category-8-text-color)', share: 2, value: '4개' },
-]
-
 /** 파생이 많은 상위 계열. 전체 17개 계열 중 여덟을 추린다. */
 const semanticsCounts = [
   { label: 'icon-button', count: 13 },
@@ -151,12 +145,19 @@ const answerShares = [
   { label: '40대', share: 10, value: '10%' },
 ]
 
-const channels = [
-  { label: '검색 광고', color: 'var(--category-1-text-color)', share: 45, value: '900,000원' },
-  { label: '디스플레이', color: 'var(--category-5-text-color)', share: 30, value: '600,000원' },
-  { label: '동영상', color: 'var(--category-7-text-color)', share: 15, value: '300,000원' },
-  { label: '제휴', color: 'var(--category-3-text-color)', share: 10, value: '200,000원' },
+const categoryAdSpends: { category: CategoryKey; share: number; value: string }[] = [
+  { category: 'product', share: 45, value: '900,000원' },
+  { category: 'design', share: 30, value: '600,000원' },
+  { category: 'engineering', share: 15, value: '300,000원' },
+  { category: 'guide', share: 10, value: '200,000원' },
 ]
+
+const adSpendItems = categoryAdSpends.map(({ category, share, value }) => ({
+  label: CATEGORIES[category].label,
+  color: tagToneStyles[CATEGORIES[category].tone].textColor,
+  share,
+  value,
+}))
 
 const toPages = (ids: string[]) => ids.map(id => ({ href: `./${id}.html`, label: id }))
 
@@ -370,11 +371,11 @@ const main = html`
         <mm-flex direction="column" gap="4">
           <mm-text-block
             level="3"
-            heading="채널별 광고비"
+            heading="카테고리별 광고비"
             description="이번 달 집행액 2,000,000원"
           ></mm-text-block>
-          <mm-chart-stacked-bar .items=${channels}></mm-chart-stacked-bar>
-          <mm-chart-legend .items=${channels}></mm-chart-legend>
+          <mm-chart-stacked-bar .items=${adSpendItems}></mm-chart-stacked-bar>
+          <mm-chart-legend .items=${adSpendItems}></mm-chart-legend>
         </mm-flex>
       </mm-surface>
     </mm-flex>

@@ -5,6 +5,7 @@ import type { PortfolioItem } from '@/components/domains/portfolio-item'
 import type { Sheet } from '@/components/overlay/sheet'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import { TOPICS } from '@/pages/mocks'
 
 import './profile.css'
 
@@ -35,17 +36,7 @@ const main = html`
         max-length="100"
         content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring. 유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼."
       ></mm-read-more-paragraph>
-      <mm-keyword-tag-group
-        .keywords=${[
-          'HTML5',
-          'VanillaJS',
-          'ReactJS',
-          'WebComponents',
-          'Typescript',
-          'GoogleAnalytics',
-          'Figma',
-        ]}
-      ></mm-keyword-tag-group>
+      <mm-keyword-tag-group .keywords=${TOPICS}></mm-keyword-tag-group>
       <mm-flex direction="column" gap="1">
         <mm-meta-item-group gap="2">
           <mm-meta-item layout="inline" label="팔로워" value="621.1K"></mm-meta-item>

@@ -88,7 +88,9 @@ const rows = html`
       </mm-flex>
     </td>
     <td><mm-link external>External link</mm-link></td>
-    <td><mm-category-tag category="5">${CATEGORIES[4]}</mm-category-tag></td>
+    <td>
+      <mm-category-tag tone=${CATEGORIES.product.tone}>${CATEGORIES.product.label}</mm-category-tag>
+    </td>
     <td><mm-progress-tag variant="in-progress">진행 중</mm-progress-tag></td>
     <td style="text-align: right">13</td>
     <td>
@@ -115,7 +117,9 @@ const rows = html`
       </mm-flex>
     </td>
     <td><mm-link external>External link</mm-link></td>
-    <td><mm-category-tag category="2">${CATEGORIES[1]}</mm-category-tag></td>
+    <td>
+      <mm-category-tag tone=${CATEGORIES.design.tone}>${CATEGORIES.design.label}</mm-category-tag>
+    </td>
     <td><mm-progress-tag variant="done">완료</mm-progress-tag></td>
     <td style="text-align: right">8</td>
     <td>

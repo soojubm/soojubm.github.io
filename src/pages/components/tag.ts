@@ -124,9 +124,9 @@ const main = html`
 
     <mm-component-section heading="CategoryTag" description="">
       <mm-tag-group>
-        ${CATEGORIES.map(
-          (label, index) => html`
-            <mm-category-tag category=${index + 1}>${label}</mm-category-tag>
+        ${Object.values(CATEGORIES).map(
+          ({ label, tone }) => html`
+            <mm-category-tag tone=${tone}>${label}</mm-category-tag>
           `,
         )}
       </mm-tag-group>
