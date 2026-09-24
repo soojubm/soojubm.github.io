@@ -6,8 +6,8 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common'
 
 /**
- * 블로그 글 목록의 한 행. 썸네일을 leading으로 두고 제목·설명·날짜를 세로로 쌓는다.
- * href가 있으면 행 전체가 링크가 되고 hover 배경을 표시한다.
+ * 블로그 글 목록의 카드 한 장. 정사각 썸네일 아래에 제목을 두고, 분류와 날짜를 메타 한 줄로 붙인다.
+ * href가 있으면 카드 전체가 링크가 되고 hover 배경을 표시한다.
  */
 @customElement('mm-post-item')
 export class PostItem extends LitElement {
@@ -20,33 +20,25 @@ export class PostItem extends LitElement {
       }
 
       .link {
-        gap: var(--space-3);
-
-        --post-link-inset: var(--space-3);
-      }
-
-      mm-thumbnail {
-        flex: 0 0 auto;
-        width: var(--size-80);
-      }
-
-      mm-text-block {
-        min-width: 0;
+        flex-direction: column;
+        gap: var(--space-4);
       }
     `,
   ]
   @property({ type: String }) href = ''
   @property({ type: String }) thumbnail = ''
   @property({ type: String }) title = ''
-  @property({ type: String }) description = ''
+  @property({ type: String }) category = ''
   @property({ type: String }) date = ''
 
   render() {
     const body = html`
       <mm-thumbnail src=${this.thumbnail} ratio="1:1"></mm-thumbnail>
-      <mm-text-block level="3" heading=${this.title} description=${this.description}>
-        <mm-text as="time" size="12" color="light">${this.date}</mm-text>
-      </mm-text-block>
+      <mm-heading level="3">${this.title}</mm-heading>
+      <mm-meta-item-group gap="3">
+        <mm-text>${this.category}</mm-text>
+        <mm-text as="time" color="light">${this.date}</mm-text>
+      </mm-meta-item-group>
     `
 
     if (!this.href) {
