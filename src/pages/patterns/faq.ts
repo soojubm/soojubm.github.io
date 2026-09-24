@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import { CATEGORIES } from '@/pages/mocks'
 
 interface FaqItem {
   question: string
@@ -14,7 +15,7 @@ interface FaqCategory {
 
 const faqCategories: FaqCategory[] = [
   {
-    heading: '계정',
+    heading: CATEGORIES[5],
     items: [
       {
         question: '이메일 주소를 변경하고 싶어요.',
@@ -23,7 +24,7 @@ const faqCategories: FaqCategory[] = [
     ],
   },
   {
-    heading: '주문 / 결제',
+    heading: CATEGORIES[6],
     items: [
       {
         question: '주문을 취소하고 싶어요.',
@@ -37,7 +38,7 @@ const faqCategories: FaqCategory[] = [
     ],
   },
   {
-    heading: '배송',
+    heading: CATEGORIES[7],
     items: [
       {
         question: '배송은 얼마나 걸리나요?',

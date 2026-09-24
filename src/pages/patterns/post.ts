@@ -1,16 +1,11 @@
 import { html } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import { POSTS } from '@/pages/mocks'
 
 import '@/components/domains/post'
 
 const DETAIL_HREF = 'post-detail.html'
-
-interface PostSummary {
-  title: string
-  category: string
-  date: string
-}
 
 /* featured는 필터 도입 동안 잠시 뺀다. 되살릴 때 아래 마크업을 page-header 다음에 둔다.
 const featured = {
@@ -29,35 +24,11 @@ const featured = {
 ></mm-post-feature>
 */
 
-const categoryOptions = [
-  { value: 'all', label: '전체' },
-  { value: 'product', label: '제품' },
-  { value: 'design', label: '디자인' },
-  { value: 'engineering', label: '엔지니어링' },
-  { value: 'guide', label: '가이드' },
-]
+const postCategories = [...new Set(POSTS.map(post => post.category))]
 
-const posts: PostSummary[] = [
-  {
-    title: '새 레이아웃 엔진으로 더 빠르게 화면 조립하기',
-    category: '제품',
-    date: '2024년 3월 18일',
-  },
-  {
-    title: '디자인 토큰을 테마마다 일관되게 관리하는 방법',
-    category: '디자인',
-    date: '2024년 2월 27일',
-  },
-  {
-    title: 'Custom color palettes from a single brand color',
-    category: '엔지니어링',
-    date: '2024년 2월 9일',
-  },
-  {
-    title: '제로 설정 셋업으로 첫 페이지를 배포하기까지',
-    category: '가이드',
-    date: '2024년 1월 22일',
-  },
+const categoryFilterOptions = [
+  { value: 'all', label: '전체' },
+  ...postCategories.map(category => ({ value: category, label: category })),
 ]
 
 const popularTopics = ['디자인 시스템', '접근성', '웹 컴포넌트', '타이포그래피', '성능', 'AI']
@@ -73,12 +44,12 @@ const main = html`
       <mm-flex direction="column" gap="6">
         <mm-filter-button-group
           aria-label="카테고리"
-          .options=${categoryOptions}
+          .options=${categoryFilterOptions}
           .values=${['all']}
         ></mm-filter-button-group>
 
         <mm-post-list>
-          ${posts.map(
+          ${POSTS.map(
             post => html`
               <mm-post-item
                 href=${DETAIL_HREF}

@@ -7,7 +7,9 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
+import { categoryToneOf, tagToneStyles } from '@/components/common/tag/tag.styles'
 import { renderPage } from '@/components/layouts/base-layouts'
+import { CATEGORIES } from '@/pages/mocks'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'tag.html', label: 'Tag' },
@@ -37,12 +39,6 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const legendSeries = [
-  { label: '검색 광고', color: 'var(--category-1-text-color)' },
-  { label: '디스플레이', color: 'var(--category-5-text-color)' },
-  { label: '동영상', color: 'var(--category-7-text-color)' },
-]
-
 const statusVariants = ['live', 'online', 'new', 'unread'] as const
 
 const main = html`
@@ -58,10 +54,13 @@ const main = html`
 
     <mm-component-example>
       <mm-flex direction="column" gap="2">
-        ${legendSeries.map(
-          ({ label, color }) => html`
+        ${CATEGORIES.map(
+          (label, index) => html`
             <mm-flex gap="2" align-items="center">
-              <mm-dot style="--dot-background-color: ${color}"></mm-dot>
+              <mm-dot
+                style="--dot-background-color: ${tagToneStyles[categoryToneOf(index + 1)]
+                  .textColor}"
+              ></mm-dot>
               <mm-text>${label}</mm-text>
             </mm-flex>
           `,

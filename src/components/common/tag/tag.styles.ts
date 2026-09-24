@@ -81,18 +81,14 @@ export const progressToneMap = defineToneMap({
 
 export type ProgressVariant = keyof typeof progressToneMap
 
-export const categoryToneMap = defineToneMap({
-  music: 'purple' as const,
-  finance: 'green' as const,
-  design: 'pink' as const,
-  engineering: 'blue' as const,
-  marketing: 'orange' as const,
-  news: 'cyan' as const,
-  lifestyle: 'yellow' as const,
-  sports: 'red' as const,
-})
+/**
+ * category 순번 n은 이 목록의 n번째 톤을 쓰고, 목록 수를 넘으면 처음부터 다시 돈다.
+ * 상태 톤(green·yellow·red·blue)은 의미를 전하는 색이라 category 색으로 쓰지 않는다.
+ */
+const categoryTones = ['pink', 'orange', 'cyan', 'purple'] as const
 
-export type Category = keyof typeof categoryToneMap
+export const categoryToneOf = (category: number): TagTone =>
+  categoryTones[(category - 1) % categoryTones.length] ?? 'default'
 
 /**
  * --------------------------------------------------

@@ -11,6 +11,7 @@ import type {
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
+import { CATEGORIES } from '@/pages/mocks'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'list-item.html', label: 'List Item' },
@@ -87,7 +88,7 @@ const rows = html`
       </mm-flex>
     </td>
     <td><mm-link external>External link</mm-link></td>
-    <td><mm-category-tag category="music">유저리서치</mm-category-tag></td>
+    <td><mm-category-tag category="5">${CATEGORIES[4]}</mm-category-tag></td>
     <td><mm-progress-tag variant="in-progress">진행 중</mm-progress-tag></td>
     <td style="text-align: right">13</td>
     <td>
@@ -114,7 +115,7 @@ const rows = html`
       </mm-flex>
     </td>
     <td><mm-link external>External link</mm-link></td>
-    <td><mm-category-tag category="finance">유저플로우</mm-category-tag></td>
+    <td><mm-category-tag category="2">${CATEGORIES[1]}</mm-category-tag></td>
     <td><mm-progress-tag variant="done">완료</mm-progress-tag></td>
     <td style="text-align: right">8</td>
     <td>

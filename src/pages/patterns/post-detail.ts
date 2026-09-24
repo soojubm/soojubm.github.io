@@ -5,6 +5,7 @@ import type { ActionConfig } from '@/types'
 
 import './post-detail.css'
 import { renderPage } from '@/components/layouts/base-layouts'
+import { CATEGORIES, POSTS } from '@/pages/mocks'
 
 import '@/components/domains/post'
 
@@ -19,35 +20,12 @@ const nextPost: PostPagerItem = {
   title: 'Avoid invisible text during font loading',
 }
 
-const morePosts = [
-  {
-    title: '새 레이아웃 엔진으로 더 빠르게 화면 조립하기',
-    category: '제품',
-    date: '2024년 3월 18일',
-  },
-  {
-    title: '디자인 토큰을 테마마다 일관되게 관리하는 방법',
-    category: '디자인',
-    date: '2024년 2월 27일',
-  },
-  {
-    title: 'Custom color palettes from a single brand color',
-    category: '엔지니어링',
-    date: '2024년 2월 9일',
-  },
-  {
-    title: '제로 설정 셋업으로 첫 페이지를 배포하기까지',
-    category: '가이드',
-    date: '2024년 1월 22일',
-  },
-]
-
 const main = html`
   <mm-main width="small">
     <mm-flex direction="column" gap="8">
       <header class="post-head">
         <mm-flex direction="column" gap="3">
-          <mm-link href="post.html">제품</mm-link>
+          <mm-link href="post.html">${CATEGORIES[0]}</mm-link>
           <mm-heading level="1">
             Runway enables next-generation content creation with AI and Vercel
           </mm-heading>
@@ -201,7 +179,7 @@ const main = html`
       <mm-link href="post.html">모두 보기</mm-link>
     </mm-flex>
     <mm-post-list>
-      ${morePosts.map(
+      ${POSTS.map(
         post => html`
           <mm-post-item
             href="post-detail.html"

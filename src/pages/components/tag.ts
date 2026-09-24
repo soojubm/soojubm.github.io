@@ -9,6 +9,7 @@ import type {
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
+import { CATEGORIES } from '@/pages/mocks'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'text.html', label: 'Text' },
@@ -123,14 +124,11 @@ const main = html`
 
     <mm-component-section heading="CategoryTag" description="">
       <mm-tag-group>
-        <mm-category-tag category="music">Jazz</mm-category-tag>
-        <mm-category-tag category="finance">Stocks</mm-category-tag>
-        <mm-category-tag category="design">UI Design</mm-category-tag>
-        <mm-category-tag category="engineering">Frontend</mm-category-tag>
-        <mm-category-tag category="marketing">Branding</mm-category-tag>
-        <mm-category-tag category="news">Breaking</mm-category-tag>
-        <mm-category-tag category="lifestyle">Wellness</mm-category-tag>
-        <mm-category-tag category="sports" icon=${ICON_NAMES.GRAPH}>Football</mm-category-tag>
+        ${CATEGORIES.map(
+          (label, index) => html`
+            <mm-category-tag category=${index + 1}>${label}</mm-category-tag>
+          `,
+        )}
       </mm-tag-group>
     </mm-component-section>
 
