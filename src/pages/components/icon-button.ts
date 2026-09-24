@@ -275,6 +275,13 @@ const main = html`
       <mm-expand-indicator></mm-expand-indicator>
       <mm-expand-indicator expanded></mm-expand-indicator>
     </mm-component-section>
+    <mm-component-section
+      heading="Selected Indicator"
+      description="행이 선택 상태를 소유하는 곳에서 선택 여부만 체크로 반영하는 장식 요소. 선택되지 않아도 자리를 유지합니다."
+    >
+      <mm-selected-indicator></mm-selected-indicator>
+      <mm-selected-indicator selected></mm-selected-indicator>
+    </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

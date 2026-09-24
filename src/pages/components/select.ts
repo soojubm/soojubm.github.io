@@ -25,7 +25,6 @@ const componentProps: ComponentPropItemData[] = [
     name: 'placement',
     type: "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'",
   },
-  { name: 'width', type: "string = 'auto'" },
   { name: 'aria-label', type: 'string', optional: true },
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
@@ -50,7 +49,6 @@ const main = html`
     <mm-component-example>
       <mm-select
         aria-label="릴리스 채널"
-        width="200px"
         value="stable"
         .options=${[
           { value: 'stable', label: 'Stable' },
@@ -63,13 +61,60 @@ const main = html`
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide .features=${componentFeatures}>
+      <mm-paragraph-group>
+        <mm-heading level="3">언제 사용하나요</mm-heading>
+        <mm-paragraph>
+          주로 목록의 정렬 기준을 고를 때 사용합니다. select는 선택지를 접어 두고 현재 값 하나만
+          보여 주므로, 선택에 따라 보이는 데이터가 달라지는 필터는 옵션을 펼쳐 나열하는 것이
+          정론입니다. 이때는
+          <mm-code>mm-filter-button-group</mm-code>
+          을 사용하세요.
+        </mm-paragraph>
+      </mm-paragraph-group>
+
+      <mm-content-section heading-level="3" heading="초기값">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <mm-text weight="bold">value가 비어 있으면 첫 번째 활성 옵션으로 채운다</mm-text>
+                네이티브 select와 같은 동작으로, 트리거가 빈 값으로 보이지 않게 한다. 비활성 옵션은
+                고를 수 없는 값이라 건너뛴다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="시각보정">
+        <mm-paragraph>
+          트리거 끝의
+          <mm-code>mm-expand-indicator</mm-code>
+          는 아이콘보다 큰 박스를 가져, 박스 안 여백이 버튼 padding에 더해지면 오른쪽 여백이
+          왼쪽보다 넓어 보입니다.
+        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <mm-text weight="bold">
+                  indicator 박스 안 여백만큼 음수 margin으로 바깥에 흘린다
+                </mm-text>
+                아이콘 끝이 버튼 padding 경계에 닿아 좌우 여백이 같아 보인다. 버튼 padding은 버튼이
+                소유하므로 줄이지 않고, 트리거를 조립하는 select가 indicator 쪽에서 보정한다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+
       <mm-text-list
         .texts=${[
           '트리거·옵션 목록·선택 상태와 열림 상태는 select가 소유하고, 목록을 담는 표면만 popover와 sheet에 맡긴다.',
           '좁은 화면에서는 목록을 트리거에 앵커하지 않고 bottom sheet로 올린다. 트리거 아래 남는 자리가 작고, 손이 닿는 화면 아래에서 고르는 편이 편하기 때문이다.',
-          'value가 비어 있으면 네이티브 select처럼 첫 번째 활성 옵션으로 채운다.',
-          '보이는 레이블이 없으면 aria-label로 컨트롤 이름을 준다. 트리거는 이름과 현재 값을 함께 읽고, 목록은 이름만 읽는다. form field 안에서는 필드 레이블이 이름을 맡는다.',
-          '폭은 기본적으로 트리거 콘텐츠를 따르며, 폼 필드 안에서 늘려야 할 때 width="100%"를 준다.',
+          '보이는 레이블 없이 쓰므로 aria-label로 컨트롤 이름을 준다. 트리거는 이름과 현재 값을 함께 읽고, 목록은 이름만 읽는다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>

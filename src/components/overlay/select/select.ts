@@ -26,9 +26,7 @@ import { emit } from '@/utils'
 export class Select extends LitElement {
   static styles = css`
     :host {
-      --select-width: auto;
       display: block;
-      width: var(--select-width);
     }
 
     /* 옵션 5개까지 보이고 나머지는 스크롤한다. 옵션 행은 small list-item 높이이고, 패널의 padding·border를 더한다 */
@@ -39,16 +37,15 @@ export class Select extends LitElement {
       );
     }
 
-    :host([width='100%']) mm-popover {
-      display: block;
+    /* 시각보정: indicator는 아이콘보다 큰 박스라 트리거 끝 여백이 padding보다 넓어 보인다. 그 차이만큼 바깥으로 당긴다 */
+    mm-expand-indicator {
+      margin-inline-end: calc(-1 * var(--space-1));
     }
   `
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  /** 호스트 폭. 기본은 트리거 콘텐츠 폭(auto)이며, `240px`·`100%` 등 임의 CSS 폭 값을 받는다. */
-  @property({ type: String, reflect: true }) width = 'auto'
   @state() private open = false
   private compact = new MediaQueryController(this, MEDIA_QUERY.compact)
   private wasCompact = this.compact.matches
@@ -177,10 +174,6 @@ export class Select extends LitElement {
     if (this.value) return
 
     this.value = this.options.find(option => !option.disabled)?.value ?? ''
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('width')) this.style.setProperty('--select-width', this.width)
   }
 
   private handleTriggerClick() {

@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -7,6 +7,7 @@ import {
   renderMenuItemContent,
   withMenuItemPresentation,
 } from '@/components/common/menu-item/menu-item.utils'
+import '@/components/indicators/selected-indicator/selected-indicator'
 import { emit } from '@/utils'
 
 /**
@@ -15,7 +16,14 @@ import { emit } from '@/utils'
  */
 @customElement('mm-select-option')
 export class SelectOption extends withMenuItemPresentation(LitElement) {
-  static styles = [menuItemStyles]
+  static styles = [
+    menuItemStyles,
+    css`
+      :host {
+        --interactive-row-padding-inline: var(--space-2);
+      }
+    `,
+  ]
   @property({ type: Boolean }) disabled = false
   @property({ type: Boolean }) selected = false
   @property({ type: String }) value = ''
@@ -29,8 +37,15 @@ export class SelectOption extends withMenuItemPresentation(LitElement) {
         @click=${this.activate}
         @keydown=${this.handleRowKeydown}
       >
-        ${renderMenuItemContent(this, nothing)}
+        ${renderMenuItemContent(this, this.renderSelectedIndicator())}
       </div>
+    `
+  }
+
+  // 선택은 aria-selected가 전달하므로 체크 표시는 장식으로만 둔다.
+  private renderSelectedIndicator() {
+    return html`
+      <mm-selected-indicator slot="trailing" ?selected=${this.selected}></mm-selected-indicator>
     `
   }
 

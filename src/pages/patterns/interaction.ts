@@ -420,6 +420,27 @@ const main = html`
           <mm-code>aria-selected</mm-code>
           로 활성 탭을 나타내지만, 폼 값이 아니라 지금 보이는 패널을 가리킵니다.
         </mm-paragraph>
+        <mm-paragraph>
+          체크 표시는
+          <mm-code>mm-selected-indicator</mm-code>
+          가
+          <mm-code>selected</mm-code>
+          를 받아 체크 노출로 반영하는 표시만 맡고, 선택 상호작용과
+          <mm-code>aria-selected</mm-code>
+          는 옵션이 소유합니다. 고르지 않은 행에도 자리를 남겨 행마다 트레일링 폭이 같습니다.
+        </mm-paragraph>
+        <mm-surface variant="outlined" radius="large">
+          <mm-flex gap="6">
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-selected-indicator></mm-selected-indicator>
+              <mm-caption>선택 안 됨</mm-caption>
+            </mm-flex>
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-selected-indicator selected></mm-selected-indicator>
+              <mm-caption>선택됨</mm-caption>
+            </mm-flex>
+          </mm-flex>
+        </mm-surface>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Current">
