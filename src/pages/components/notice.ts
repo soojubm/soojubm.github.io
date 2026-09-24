@@ -22,7 +22,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'variant', type: "'info' | 'success' | 'warning' | 'error' = 'info'", optional: true },
   { name: 'primaryAction', type: 'ActionConfig', optional: true },
   { name: 'secondaryAction', type: 'ActionConfig', optional: true },
-  { name: 'onDismiss', type: '() => void', optional: true },
   { name: 'dismiss', type: 'CustomEvent', kind: 'event' },
 ]
 
@@ -105,17 +104,17 @@ const main = html`
                 description="결제 수단을 확인해 주세요."
                 .primaryAction=${primaryAction}
                 .secondaryAction=${secondaryAction}
-                .onDismiss=${() => {}}
+                @dismiss=${() => {}}
               ></mm-notice>
               <mm-notice
                 variant="info"
                 description="새 기능이 추가되었습니다."
-                .onDismiss=${() => {}}
+                @dismiss=${() => {}}
               ></mm-notice>
             </mm-flex>
             <mm-paragraph>
-              액션 버튼과 닫기 버튼은 우측에 놓이며, primaryAction·secondaryAction·onDismiss를 넘긴
-              것만 나타납니다.
+              액션 버튼과 닫기 버튼은 우측에 놓이며, primaryAction·secondaryAction을 넘기거나
+              dismiss 이벤트를 구독한 것만 나타납니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
@@ -142,7 +141,7 @@ const main = html`
     description="결제 수단을 확인해 주세요."
     .primaryAction=\${{ label: '갱신하기', onClick: handleRenew }}
     .secondaryAction=\${{ label: '나중에', onClick: handleLater }}
-    .onDismiss=\${handleDismiss}
+    @dismiss=\${handleDismiss}
 ></mm-notice>`}
     ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>

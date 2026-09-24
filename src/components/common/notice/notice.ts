@@ -25,8 +25,9 @@ export class Notice extends LitElement {
   @property({ type: String, reflect: true, useDefault: true }) variant: NoticeVariant = 'info'
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
-  @property({ attribute: false }) onDismiss?: () => void
   @state() private dismissed = false
+  @state() private dismissible = false
+  private dismissListenerCount = 0
 
   render() {
     if (this.dismissed) return html``
@@ -66,7 +67,7 @@ export class Notice extends LitElement {
   }
 
   private renderActions() {
-    if (!this.primaryAction && !this.secondaryAction && !this.onDismiss) return nothing
+    if (!this.primaryAction && !this.secondaryAction && !this.dismissible) return nothing
 
     return html`
       <div class="notice-actions">${this.renderButtonGroup()} ${this.renderDismissButton()}</div>
@@ -112,11 +113,36 @@ export class Notice extends LitElement {
   }
 
   private renderDismissButton() {
-    if (!this.onDismiss) return nothing
+    if (!this.dismissible) return nothing
 
     return html`
       <mm-dismiss-button @dismiss=${this.handleDismiss}></mm-dismiss-button>
     `
+  }
+
+  // 소비자가 dismiss를 구독할 때만 닫기 버튼을 노출한다.
+  override addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions,
+  ): void {
+    super.addEventListener(type, listener, options)
+
+    if (type !== 'dismiss') return
+    this.dismissListenerCount += 1
+    this.dismissible = true
+  }
+
+  override removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions,
+  ): void {
+    super.removeEventListener(type, listener, options)
+
+    if (type !== 'dismiss') return
+    this.dismissListenerCount = Math.max(0, this.dismissListenerCount - 1)
+    this.dismissible = this.dismissListenerCount > 0
   }
 
   private get icon() {
@@ -128,7 +154,6 @@ export class Notice extends LitElement {
     event.stopPropagation()
 
     this.dismissed = true
-    this.onDismiss?.()
     emit(this, 'dismiss')
   }
 
