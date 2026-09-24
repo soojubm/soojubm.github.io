@@ -290,36 +290,11 @@ function filterSheetTemplate() {
               ></mm-menu-item-checkbox>
             </mm-menu-item-checkbox-group>
           </mm-form-field>
-          <mm-separator></mm-separator>
-          <mm-form-field label="릴리스 채널">
-            <mm-select
-              .options=${[
-                { value: 'stable', label: 'Stable' },
-                { value: 'beta', label: 'Beta' },
-                { value: 'canary', label: 'Canary' },
-              ]}
-            ></mm-select>
-          </mm-form-field>
-          <mm-separator></mm-separator>
-          <mm-form-field label="데스크톱에서 활성 상태가 아닌 경우...">
-            <mm-menu-item-switch
-              value="email-notify"
-              label="멘션 및 다이렉트 메시지에 대한 이메일 알림 받기"
-            ></mm-menu-item-switch>
-            <mm-menu-item-radio-group
-              name="email-interval"
-              aria-label="이메일 알림 주기"
-              value="15min"
-            >
-              <mm-menu-item-radio value="15min" label="15분 마다 한 번"></mm-menu-item-radio>
-              <mm-menu-item-radio value="1hour" label="한 시간에 한 번"></mm-menu-item-radio>
-            </mm-menu-item-radio-group>
-          </mm-form-field>
         </form>
       </mm-sheet-body>
       <mm-sheet-footer
         .primaryAction=${{ label: '숙소 25개 표시', onClick: () => {} }}
-        .secondaryAction=${{ label: '전체 해제', onClick: () => {} }}
+        .secondaryAction=${{ label: '초기화', onClick: () => {} }}
       ></mm-sheet-footer>
     </mm-sheet>
   `
