@@ -41,13 +41,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Notice"
-        description="콘텐츠 흐름 안에 자리 잡고 상태를 알리는 인라인 메시지입니다. 관련 내용 곁에 머무르며 성공·경고·오류 같은 의미를 색상·아이콘·문구로 함께 전달하므로, 사용자는 하던 일을 멈추지 않고 주의할 점을 확인한 뒤 작업을 이어갈 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Notice"
+      description="콘텐츠 흐름 안에 자리 잡고 상태를 알리는 인라인 메시지입니다. 관련 내용 곁에 머무르며 성공·경고·오류 같은 의미를 색상·아이콘·문구로 함께 전달하므로, 사용자는 하던 일을 멈추지 않고 주의할 점을 확인한 뒤 작업을 이어갈 수 있습니다."
+    ></mm-page-header>
 
     <mm-component-aka
       .items=${['Alert', 'Callout', 'Banner', 'Inline message', 'Feedback']}

@@ -133,13 +133,10 @@ const flowTableColumns = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Search"
-        description="키워드로 콘텐츠를 찾는 흐름에서 단계마다 보여줄 것과 결과를 다루는 방식입니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Search"
+      description="키워드로 콘텐츠를 찾는 흐름에서 단계마다 보여줄 것과 결과를 다루는 방식입니다."
+    ></mm-page-header>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Overview">

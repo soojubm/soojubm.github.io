@@ -40,13 +40,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Link"
-        description="다른 페이지나 위치로 이동시키는 목적지입니다. 색상과 밑줄로 누를 수 있음을 드러내고 주소를 가진 이동으로 동작하므로, 사용자는 어디로 가는지 예상한 채 이동하고 그 위치를 북마크하거나 공유할 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Link"
+      description="다른 페이지나 위치로 이동시키는 목적지입니다. 색상과 밑줄로 누를 수 있음을 드러내고 주소를 가진 이동으로 동작하므로, 사용자는 어디로 가는지 예상한 채 이동하고 그 위치를 북마크하거나 공유할 수 있습니다."
+    ></mm-page-header>
 
     <mm-component-aka .items=${['Anchor']}></mm-component-aka>
 

@@ -83,13 +83,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Surface"
-        description="콘텐츠가 놓이는 기본 바탕이자, 정보의 논리적 구조를 시각적 깊이로 표현하는 기반입니다. 배경과 대비되는 명도나 그림자(Elevation)를 활용해 요소 간의 층위(Layer)를 형성하며, 사용자는 화면의 입체적인 구조를 직관적으로 이해하고 현재 상호작용 중인 정보의 중요도를 인지하게 됩니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Surface"
+      description="콘텐츠가 놓이는 기본 바탕이자, 정보의 논리적 구조를 시각적 깊이로 표현하는 기반입니다. 배경과 대비되는 명도나 그림자(Elevation)를 활용해 요소 간의 층위(Layer)를 형성하며, 사용자는 화면의 입체적인 구조를 직관적으로 이해하고 현재 상호작용 중인 정보의 중요도를 인지하게 됩니다."
+    ></mm-page-header>
 
     <mm-component-aka
       .items=${[

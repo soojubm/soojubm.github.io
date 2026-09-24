@@ -47,13 +47,10 @@ const statusVariants = ['live', 'online', 'new', 'unread'] as const
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Dot"
-        description="색 하나로 정보를 전하는 가장 작은 표시입니다. 글자를 쓰지 않아 행이나 아바타처럼 좁은 자리에 얹을 수 있고, 읽는 사람은 문장을 읽기 전에 색만으로 상태나 갈래를 알아챕니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Dot"
+      description="색 하나로 정보를 전하는 가장 작은 표시입니다. 글자를 쓰지 않아 행이나 아바타처럼 좁은 자리에 얹을 수 있고, 읽는 사람은 문장을 읽기 전에 색만으로 상태나 갈래를 알아챕니다."
+    ></mm-page-header>
 
     <mm-component-aka
       .items=${['Indicator', 'Badge', 'Swatch', 'Legend marker', 'Presence']}

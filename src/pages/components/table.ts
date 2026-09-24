@@ -128,13 +128,7 @@ const rows = html`
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Table"
-        description="표와 관련된 컴포넌트 및 패턴들."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header heading="Table" description="표와 관련된 컴포넌트 및 패턴들."></mm-page-header>
     <mm-component-example full-width>
       <header
         style="

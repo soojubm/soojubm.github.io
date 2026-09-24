@@ -4,7 +4,6 @@ import type { TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-pager'
-import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 // 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
@@ -44,13 +43,10 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Foundations"
-        description="제품 전체가 공유하는 시각 언어의 기본 축입니다. 각 문서가 하나의 축을 정의합니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Foundations"
+      description="제품 전체가 공유하는 시각 언어의 기본 축입니다. 각 문서가 하나의 축을 정의합니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="16">
       <mm-grid columns="3" gap="4">

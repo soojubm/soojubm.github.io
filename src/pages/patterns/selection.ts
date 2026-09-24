@@ -118,13 +118,10 @@ const selectionTableColumns = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Selection"
-        description="선택지 가운데 값을 고르는 컴포넌트가 공유하는 계약입니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Selection"
+      description="선택지 가운데 값을 고르는 컴포넌트가 공유하는 계약입니다."
+    ></mm-page-header>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Overview">

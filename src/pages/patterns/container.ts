@@ -3,7 +3,6 @@ import { html } from 'lit'
 import type { TemplateResult } from 'lit'
 
 import '@/components/domains/component/component-pager'
-import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 // 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
@@ -80,13 +79,10 @@ const formFieldCode = `<mm-form-field label="관심 주제" optional description
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Container"
-        description="자식을 어떤 방향과 간격으로 놓을지 정하는 컴포넌트입니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Container"
+      description="자식을 어떤 방향과 간격으로 놓을지 정하는 컴포넌트입니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="8">
       <mm-paragraph-group>

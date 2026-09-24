@@ -44,13 +44,10 @@ const stepCode = `<mm-step>
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Step"
-        description="여러 단계로 이루어진 작업의 진행 순서를 보여 주는 표시입니다. 단계를 순서대로 늘어놓고 현재 단계를 강조하므로, 사용자는 지금 몇 번째 단계에 있고 앞으로 얼마나 남았는지 알고 작업을 이어갈 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Step"
+      description="여러 단계로 이루어진 작업의 진행 순서를 보여 주는 표시입니다. 단계를 순서대로 늘어놓고 현재 단계를 강조하므로, 사용자는 지금 몇 번째 단계에 있고 앞으로 얼마나 남았는지 알고 작업을 이어갈 수 있습니다."
+    ></mm-page-header>
 
     <mm-component-aka .items=${['Timeline', 'Stepper']}></mm-component-aka>
 

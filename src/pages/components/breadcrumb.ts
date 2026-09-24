@@ -38,13 +38,10 @@ const breadcrumbItems: BreadcrumbItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Breadcrumb"
-        description="현재 페이지에 이르는 상위 경로를 나열하는 내비게이션입니다. 최상위부터 현재 위치까지 계층 순서대로 링크를 이어 보여 주므로, 사용자는 자신이 구조의 어디에 있는지 알고 한 번에 상위 단계로 돌아갈 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Breadcrumb"
+      description="현재 페이지에 이르는 상위 경로를 나열하는 내비게이션입니다. 최상위부터 현재 위치까지 계층 순서대로 링크를 이어 보여 주므로, 사용자는 자신이 구조의 어디에 있는지 알고 한 번에 상위 단계로 돌아갈 수 있습니다."
+    ></mm-page-header>
 
     <mm-component-example>
       <mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>

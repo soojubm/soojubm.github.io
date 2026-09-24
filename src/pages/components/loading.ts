@@ -28,13 +28,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Loading"
-        description="작업이 끝나기를 기다리는 동안 보여 주는 진행 표시입니다. 요소 안에서는 아이콘 크기로, 영역 안에서는 레이블과 함께 회전하며 시스템이 응답하고 있음을 알리므로, 사용자는 결과를 기다리는 동안 불확실성 없이 머무를 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Loading"
+      description="작업이 끝나기를 기다리는 동안 보여 주는 진행 표시입니다. 요소 안에서는 아이콘 크기로, 영역 안에서는 레이블과 함께 회전하며 시스템이 응답하고 있음을 알리므로, 사용자는 결과를 기다리는 동안 불확실성 없이 머무를 수 있습니다."
+    ></mm-page-header>
 
     <mm-component-example>
       <mm-button-group>

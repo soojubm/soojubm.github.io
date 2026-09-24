@@ -84,13 +84,10 @@ const membershipOptions: OptionItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="RadioGroup"
-        description="옵션 목록에서 하나만 고르는 선택 컨트롤입니다. 한 옵션을 고르면 그룹 안의 다른 선택이 해제되므로, 사용자는 모든 선택지를 한눈에 비교한 뒤 서로 배타적인 옵션 중 하나를 확실하게 고를 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="RadioGroup"
+      description="옵션 목록에서 하나만 고르는 선택 컨트롤입니다. 한 옵션을 고르면 그룹 안의 다른 선택이 해제되므로, 사용자는 모든 선택지를 한눈에 비교한 뒤 서로 배타적인 옵션 중 하나를 확실하게 고를 수 있습니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="size" variant="pill">

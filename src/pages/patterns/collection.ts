@@ -20,13 +20,10 @@ const visibilityOptions: OptionItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Collection"
-        description="사용자가 만든 묶음에 항목을 담고, 묶음을 만들고 함께 관리하는 흐름입니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Collection"
+      description="사용자가 만든 묶음에 항목을 담고, 묶음을 만들고 함께 관리하는 흐름입니다."
+    ></mm-page-header>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="컬렉션에 추가">

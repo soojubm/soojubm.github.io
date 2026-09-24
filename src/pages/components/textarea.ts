@@ -49,13 +49,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Textarea"
-        description="여러 줄의 긴 텍스트를 받는 입력 필드입니다. 기본 여러 줄 높이로 한 줄 입력과 구분되고 글자 수 같은 규칙을 미리 알려 주므로, 사용자는 긴 내용을 한눈에 보며 작성하고 제한을 넘기기 전에 조절할 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Textarea"
+      description="여러 줄의 긴 텍스트를 받는 입력 필드입니다. 기본 여러 줄 높이로 한 줄 입력과 구분되고 글자 수 같은 규칙을 미리 알려 주므로, 사용자는 긴 내용을 한눈에 보며 작성하고 제한을 넘기기 전에 조절할 수 있습니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="default" variant="pill">

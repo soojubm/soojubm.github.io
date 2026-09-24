@@ -61,13 +61,10 @@ const groupCode = '<mm-avatar-group .avatars=${avatars} label="수줍이 외 3�
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Avatar"
-        description="사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Avatar"
+      description="사용자나 회사 등 개체를 대표하는 시각 정보입니다. 정보 더미의 주체로서 인접한 정보 더미 중 최상위 위계를 갖습니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="variant" variant="pill">

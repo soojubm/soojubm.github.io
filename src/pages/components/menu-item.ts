@@ -100,13 +100,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="MenuItem"
-        description="메뉴 안에서 실행하거나 선택할 수 있는 행동 하나입니다. hover·포커스·키보드 탐색을 항목이 직접 처리하고 체크 상태로 선택 여부를 표시하므로, 사용자는 목록을 훑으며 원하는 명령을 빠르게 찾아 실행할 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="MenuItem"
+      description="메뉴 안에서 실행하거나 선택할 수 있는 행동 하나입니다. hover·포커스·키보드 탐색을 항목이 직접 처리하고 체크 상태로 선택 여부를 표시하므로, 사용자는 목록을 훑으며 원하는 명령을 빠르게 찾아 실행할 수 있습니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="size" variant="pill">

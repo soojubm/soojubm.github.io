@@ -10,7 +10,6 @@ import '@/components/domains/faq'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-pager'
-import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 // 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
@@ -68,13 +67,10 @@ const surfaceRows = html`
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Disclosure"
-        description="부차적인 정보를 접어 두었다가 트리거를 눌렀을 때만 펼칩니다. 첫 화면이 제목만으로 짧게 유지되므로, 사용자는 긴 정보 더미를 훑고 관심 있는 것만 골라 읽습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Disclosure"
+      description="부차적인 정보를 접어 두었다가 트리거를 눌렀을 때만 펼칩니다. 첫 화면이 제목만으로 짧게 유지되므로, 사용자는 긴 정보 더미를 훑고 관심 있는 것만 골라 읽습니다."
+    ></mm-page-header>
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Overview">

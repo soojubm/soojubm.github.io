@@ -65,13 +65,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Tooltip"
-        description="트리거 요소에 붙는 짧은 보조 설명입니다. 마우스를 올리거나 포커스가 닿을 때만 트리거 곁에 나타나고 벗어나면 사라지므로, 사용자는 화면을 어지럽히지 않은 채 필요한 순간에 용어의 뜻이나 정보의 근거를 확인할 수 있습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Tooltip"
+      description="트리거 요소에 붙는 짧은 보조 설명입니다. 마우스를 올리거나 포커스가 닿을 때만 트리거 곁에 나타나고 벗어나면 사라지므로, 사용자는 화면을 어지럽히지 않은 채 필요한 순간에 용어의 뜻이나 정보의 근거를 확인할 수 있습니다."
+    ></mm-page-header>
 
     <mm-component-aka .items=${['Coachmark']}></mm-component-aka>
 

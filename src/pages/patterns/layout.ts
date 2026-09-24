@@ -4,7 +4,6 @@ import type { TemplateResult } from 'lit'
 import './layout.css'
 
 import '@/components/domains/component/component-pager'
-import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 // 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
@@ -21,13 +20,10 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Layout"
-        description="컨테이너 너비, 배경 대비, 표면 대비는 장식이 아니라 페이지의 성격과 작업 맥락을 담는 신호입니다. 사용자가 의식적으로 알아차리지는 못하지만, 일관되게 쓰면 맥락이 달라졌다는 미묘한 감각을 전달합니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Layout"
+      description="컨테이너 너비, 배경 대비, 표면 대비는 장식이 아니라 페이지의 성격과 작업 맥락을 담는 신호입니다. 사용자가 의식적으로 알아차리지는 못하지만, 일관되게 쓰면 맥락이 달라졌다는 미묘한 감각을 전달합니다."
+    ></mm-page-header>
 
     <mm-notice>
       <mm-text size="14">

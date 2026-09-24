@@ -80,13 +80,10 @@ const textListCode = `<mm-text-list
 
 const main = html`
   <mm-main>
-    <mm-flex justify-content="between" align-items="start" gap="3">
-      <mm-page-header
-        heading="Text"
-        description="정보의 위계를 세우고 핵심 내용을 전달합니다. 크기, 굵기, 행간의 조화를 통해 설계된 타이포그래피는 사용자가 방대한 콘텐츠 속에서도 길을 잃지 않고, 서비스가 의도한 우선순위에 따라 정보를 자연스럽게 습득하도록 돕습니다."
-      ></mm-page-header>
-      <mm-copy-page-button></mm-copy-page-button>
-    </mm-flex>
+    <mm-page-header
+      heading="Text"
+      description="정보의 위계를 세우고 핵심 내용을 전달합니다. 크기, 굵기, 행간의 조화를 통해 설계된 타이포그래피는 사용자가 방대한 콘텐츠 속에서도 길을 잃지 않고, 서비스가 의도한 우선순위에 따라 정보를 자연스럽게 습득하도록 돕습니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="size" variant="pill">
