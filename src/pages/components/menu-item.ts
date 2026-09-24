@@ -232,6 +232,17 @@ const main = html`
       </mm-menu-item-group>
     </mm-component-section>
 
+    <mm-component-section
+      heading="More"
+      description="항목이 많으면 자주 쓰는 명령만 먼저 보여주고, 나머지는 목록 끝의 더보기 항목으로 펼칩니다."
+    >
+      <mm-menu-item-group aria-label="더보기 메뉴">
+        <mm-menu-item-action icon=${ICON_NAMES.LINK} label="링크 복사"></mm-menu-item-action>
+        <mm-menu-item-action icon=${ICON_NAMES.SHARE} label="공유"></mm-menu-item-action>
+        <mm-menu-item-action icon=${ICON_NAMES.SHOW_MORE} label="더보기"></mm-menu-item-action>
+      </mm-menu-item-group>
+    </mm-component-section>
+
     <mm-component-section heading="MenuItemCheckboxGroup">
       <mm-menu-item-checkbox-group aria-label="알림 설정">
         <mm-menu-item-checkbox

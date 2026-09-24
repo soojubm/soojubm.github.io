@@ -18,6 +18,7 @@ export const ICON_CATALOG = {
     IMPORT: 'import',
     LOG_OUT: 'log-out',
     MORE_ACTIONS: 'more-vert',
+    SHOW_MORE: 'more-horiz',
     DECREASE: 'minus',
     REFRESH: 'refresh',
     RETRY: 'refresh-double',
