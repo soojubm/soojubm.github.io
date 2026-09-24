@@ -39,7 +39,10 @@ export class RecentSearchList extends LitElement {
   render() {
     return html`
       ${this.renderHeading()}
-      <mm-list-item-group aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}>
+      <mm-list-item-group
+        size="small"
+        aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}
+      >
         ${this.keywords.map(keyword => this.renderKeyword(keyword))}
       </mm-list-item-group>
     `

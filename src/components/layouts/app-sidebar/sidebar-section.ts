@@ -5,6 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { IconName } from '@/components/common/icon/icon-names'
 
 import '@/components/common/list-item/list-item'
+import '@/components/common/list-item/list-item-group'
 import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -31,9 +32,7 @@ export class SidebarSection extends LitElement {
         grid-template-rows: 0fr;
       }
 
-      .list {
-        display: flex;
-        flex-direction: column;
+      mm-list-item-group {
         overflow: hidden;
       }
 
@@ -42,7 +41,7 @@ export class SidebarSection extends LitElement {
       }
 
       /* 트리거와 하위 링크 간격. 닫힐 때 패널이 완전히 접히도록 열림 상태에서만 준다 */
-      :host([open]) .list {
+      :host([open]) mm-list-item-group {
         padding-top: var(--space-1);
       }
     `,
@@ -61,11 +60,6 @@ export class SidebarSection extends LitElement {
     getTrigger: () => this.trigger ?? undefined,
   })
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.setAttribute('role', 'listitem')
-  }
-
   render() {
     return html`
       <button type="button" aria-controls=${this.panelId}>
@@ -75,7 +69,7 @@ export class SidebarSection extends LitElement {
       </button>
 
       <div id=${this.panelId} class="panel" ?inert=${!this.open}>
-        <div class="list" role="list"><slot></slot></div>
+        <mm-list-item-group size="small"><slot></slot></mm-list-item-group>
       </div>
     `
   }

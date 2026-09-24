@@ -30,11 +30,6 @@ export class SidebarPageLink extends LitElement {
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.setAttribute('role', 'listitem')
-  }
-
   render() {
     return html`
       <a href=${this.href} aria-current=${ifDefined(isCurrentPage(this.href) ? 'page' : undefined)}>

@@ -47,11 +47,6 @@ export const sidebarStyles = css`
     overscroll-behavior: contain;
   }
 
-  .list {
-    display: flex;
-    flex-direction: column;
-  }
-
   .group {
     display: flex;
     flex-direction: column;

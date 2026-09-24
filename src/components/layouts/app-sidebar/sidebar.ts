@@ -42,9 +42,9 @@ export class Sidebar extends LitElement {
     return html`
       <nav>
         <mm-scroll direction="column" gap="4">
-          <div class="list" role="list">
+          <mm-list-item-group size="small">
             ${repeat(standaloneNodes, node => node.id, this.renderStandalone)}
-          </div>
+          </mm-list-item-group>
           ${repeat(groupNodes, node => node.id, this.renderGroup)}
         </mm-scroll>
         <mm-sidebar-user-menu
@@ -83,9 +83,9 @@ export class Sidebar extends LitElement {
     return html`
       <div class="group">
         <mm-heading level="5" id=${headingId}>${node.title}</mm-heading>
-        <div class="list" role="list" aria-labelledby=${headingId}>
+        <mm-list-item-group size="small" aria-labelledby=${headingId}>
           ${repeat(node.items, item => item.id, this.renderItemLink)}
-        </div>
+        </mm-list-item-group>
       </div>
     `
   }

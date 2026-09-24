@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
+export type ListItemGroupSize = '' | 'small'
+
 /**
  * 같은 성격의 행을 세로로 묶어 하나의 목록으로 읽히게 하는 그룹.
  * 행 사이 간격과 list 의미를 그룹이 소유하고, 각 행은 자기 골격만 그린다.
@@ -13,8 +15,13 @@ export class ListItemGroup extends LitElement {
       flex-direction: column;
       gap: var(--space-3);
     }
+
+    :host([size='small']) {
+      gap: 0;
+    }
   `
   @property({ type: String, reflect: true }) role = 'list'
+  @property({ type: String, reflect: true }) size: ListItemGroupSize = ''
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]
 
   render() {
