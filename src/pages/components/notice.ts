@@ -18,7 +18,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'role', type: "'alert' | 'note' | 'status' = 'note'", optional: true },
   { name: 'heading', type: 'string', optional: true },
   { name: 'description', type: 'string', optional: true },
-  { name: 'variant', type: "'success' | 'warning' | 'error'", optional: true },
+  { name: 'variant', type: "'info' | 'success' | 'warning' | 'error' = 'info'", optional: true },
   { name: 'dismiss', type: 'CustomEvent', kind: 'event' },
 ]
 
@@ -56,6 +56,7 @@ const main = html`
     <mm-component-example>
       <mm-flex direction="column" gap="2">
         <mm-notice
+          variant="info"
           heading="헤딩"
           description="배너. 히어로와 콜아웃의 차이."
           @dismiss=${() => {}}

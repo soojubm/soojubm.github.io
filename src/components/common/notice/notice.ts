@@ -11,13 +11,15 @@ import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/icon-button/semantics/dismiss-button'
 
+export type NoticeVariant = Extract<StatusTone, 'info' | 'success' | 'warning' | 'error'>
+
 @customElement('mm-notice')
 export class Notice extends LitElement {
   static styles = [noticeStyles]
   @property({ type: String, reflect: true }) role = 'note'
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: String, reflect: true }) variant = ''
+  @property({ type: String, reflect: true, useDefault: true }) variant: NoticeVariant = 'info'
   @state() private dismissed = false
   @state() private dismissible = false
   private dismissListenerCount = 0
@@ -95,7 +97,7 @@ export class Notice extends LitElement {
   }
 
   private get icon() {
-    return STATUS_ICONS[this.variant as StatusTone] ?? STATUS_ICONS.info
+    return STATUS_ICONS[this.variant]
   }
 
   // 버튼의 dismiss는 여기서 멈추고, notice 자신의 dismiss로 바꿔 알린다.

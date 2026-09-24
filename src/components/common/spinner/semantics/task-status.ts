@@ -1,12 +1,14 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { StatusTone } from '@/components/common/icon/icon-names'
+
 import { STATUS_ICONS } from '@/components/common/icon/icon-names'
 import '@/components/common/icon'
 import '@/components/common/spinner/spinner'
 import '@/components/common/text/text'
 
-type TaskStatusVariant = 'running' | 'success' | 'warning' | 'error'
+type TaskStatusVariant = 'running' | Extract<StatusTone, 'success' | 'warning' | 'error'>
 
 /**
  * 진행률을 알 수 없는 작업의 현재 상태를 한 줄로 알린다.
