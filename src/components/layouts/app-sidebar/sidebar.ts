@@ -38,7 +38,9 @@ export class Sidebar extends LitElement {
   render() {
     return html`
       <nav>
-        <div role="list">${repeat(standaloneNodes, node => node.id, this.renderStandalone)}</div>
+        <div class="list" role="list">
+          ${repeat(standaloneNodes, node => node.id, this.renderStandalone)}
+        </div>
         ${repeat(groupNodes, node => node.id, this.renderGroup)}
       </nav>
     `
@@ -71,7 +73,7 @@ export class Sidebar extends LitElement {
     return html`
       <div class="group">
         <mm-heading level="4" id=${headingId}>${node.title}</mm-heading>
-        <div role="list" aria-labelledby=${headingId}>
+        <div class="list" role="list" aria-labelledby=${headingId}>
           ${repeat(node.items, item => item.id, this.renderItemLink)}
         </div>
       </div>

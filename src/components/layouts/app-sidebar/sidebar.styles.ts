@@ -36,7 +36,7 @@ export const sidebarStyles = css`
     overscroll-behavior: contain;
   }
 
-  [role='list'] {
+  .list {
     display: flex;
     flex-direction: column;
   }

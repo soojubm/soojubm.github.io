@@ -31,7 +31,7 @@ export class SidebarSection extends LitElement {
         grid-template-rows: 0fr;
       }
 
-      [role='list'] {
+      .list {
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -42,7 +42,7 @@ export class SidebarSection extends LitElement {
       }
 
       /* 트리거와 하위 링크 간격. 닫힐 때 패널이 완전히 접히도록 열림 상태에서만 준다 */
-      :host([open]) [role='list'] {
+      :host([open]) .list {
         padding-top: var(--space-1);
       }
     `,
@@ -75,7 +75,7 @@ export class SidebarSection extends LitElement {
       </button>
 
       <div id=${this.panelId} class="panel" ?inert=${!this.open}>
-        <div role="list"><slot></slot></div>
+        <div class="list" role="list"><slot></slot></div>
       </div>
     `
   }
