@@ -88,6 +88,23 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const categoryTabs = [
+  '전체',
+  '인기',
+  '신상품',
+  '의류',
+  '신발',
+  '가방',
+  '액세서리',
+  '뷰티',
+  '리빙',
+  '디지털',
+  '스포츠',
+  '도서',
+]
+
+const monthTabs = Array.from({ length: 12 }, (_, index) => index + 1)
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -95,51 +112,98 @@ const main = html`
       description="한 페이지 안에서 같은 맥락의 콘텐츠 뷰를 전환하는 내비게이션입니다. 탭을 누르면 해당 뷰 하나만 보이고 선택된 탭이 표시되므로, 사용자는 페이지를 떠나지 않고 관련 정보 사이를 오가며 지금 어느 뷰를 보고 있는지 알 수 있습니다."
     ></mm-page-header>
 
-    <mm-component-example>
-      <mm-flex direction="column" gap="4">
-        <mm-flex direction="column" gap="3">
-          <mm-tab-list value="menu1" variant="line">
-            <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
-            <mm-tab value="menu2">두 번째 메뉴</mm-tab>
-            <mm-tab value="menu3">세 번째 메뉴</mm-tab>
-          </mm-tab-list>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="variant" variant="pill">
+        <mm-tab value="variant">Variant</mm-tab>
+        <mm-tab value="overflow">Overflow</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="variant">
+        <mm-component-example>
+          <mm-flex direction="column" gap="4">
+            <mm-flex direction="column" gap="3">
+              <mm-tab-list value="menu1" variant="line">
+                <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
+                <mm-tab value="menu2">두 번째 메뉴</mm-tab>
+                <mm-tab value="menu3">세 번째 메뉴</mm-tab>
+              </mm-tab-list>
 
-          <mm-tab-panel value="menu1">
-            <span aria-hidden="true">🍎</span>
-            1번 콘텐츠 영역입니다.
-          </mm-tab-panel>
-          <mm-tab-panel value="menu2">
-            <span aria-hidden="true">🍌</span>
-            2번 콘텐츠 영역입니다.
-          </mm-tab-panel>
-          <mm-tab-panel value="menu3">
-            <span aria-hidden="true">🍇</span>
-            3번 콘텐츠 영역입니다.
-          </mm-tab-panel>
-        </mm-flex>
+              <mm-tab-panel value="menu1">
+                <span aria-hidden="true">🍎</span>
+                1번 콘텐츠 영역입니다.
+              </mm-tab-panel>
+              <mm-tab-panel value="menu2">
+                <span aria-hidden="true">🍌</span>
+                2번 콘텐츠 영역입니다.
+              </mm-tab-panel>
+              <mm-tab-panel value="menu3">
+                <span aria-hidden="true">🍇</span>
+                3번 콘텐츠 영역입니다.
+              </mm-tab-panel>
+            </mm-flex>
 
-        <mm-flex direction="column" gap="3">
-          <mm-tab-list value="daily" variant="pill">
-            <mm-tab value="daily">일간</mm-tab>
-            <mm-tab value="weekly">주간</mm-tab>
-            <mm-tab value="monthly">월간</mm-tab>
-          </mm-tab-list>
+            <mm-flex direction="column" gap="3">
+              <mm-tab-list value="daily" variant="pill">
+                <mm-tab value="daily">일간</mm-tab>
+                <mm-tab value="weekly">주간</mm-tab>
+                <mm-tab value="monthly">월간</mm-tab>
+              </mm-tab-list>
 
-          <mm-tab-panel value="daily">
-            <span aria-hidden="true">📅</span>
-            오늘 생성된 데이터...
-          </mm-tab-panel>
-          <mm-tab-panel value="weekly">
-            <span aria-hidden="true">🗓️</span>
-            이번 주 누적 데이터...
-          </mm-tab-panel>
-          <mm-tab-panel value="monthly">
-            <span aria-hidden="true">📊</span>
-            이번 달 정산 데이터...
-          </mm-tab-panel>
-        </mm-flex>
-      </mm-flex>
-    </mm-component-example>
+              <mm-tab-panel value="daily">
+                <span aria-hidden="true">📅</span>
+                오늘 생성된 데이터...
+              </mm-tab-panel>
+              <mm-tab-panel value="weekly">
+                <span aria-hidden="true">🗓️</span>
+                이번 주 누적 데이터...
+              </mm-tab-panel>
+              <mm-tab-panel value="monthly">
+                <span aria-hidden="true">📊</span>
+                이번 달 정산 데이터...
+              </mm-tab-panel>
+            </mm-flex>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="overflow">
+        <mm-component-example>
+          <mm-flex direction="column" gap="4">
+            <mm-flex direction="column" gap="3">
+              <mm-tab-list value="category-0" variant="line">
+                ${categoryTabs.map(
+                  (label, index) => html`
+                    <mm-tab value="category-${index}">${label}</mm-tab>
+                  `,
+                )}
+              </mm-tab-list>
+
+              ${categoryTabs.map(
+                (label, index) => html`
+                  <mm-tab-panel value="category-${index}">
+                    ${label} 카테고리 상품 목록...
+                  </mm-tab-panel>
+                `,
+              )}
+            </mm-flex>
+
+            <mm-flex direction="column" gap="3">
+              <mm-tab-list value="month-1" variant="pill">
+                ${monthTabs.map(
+                  month => html`
+                    <mm-tab value="month-${month}">${month}월</mm-tab>
+                  `,
+                )}
+              </mm-tab-list>
+
+              ${monthTabs.map(
+                month => html`
+                  <mm-tab-panel value="month-${month}">${month}월 정산 데이터...</mm-tab-panel>
+                `,
+              )}
+            </mm-flex>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -159,10 +223,65 @@ const main = html`
           'SearchParams과 브라우저 히스토리를 활용할 것인가? (?tab=projects) / url변경 ',
           '글로벌 네비게이션 패턴인 햄버거 메뉴와 탭(바텀네비게이션, 탭바)을 함께 사용할 수 있는가?',
           '탭의 가로 스크롤(+ MDI). 탭의 최대 갯수 제한.',
-          '탭의 중첩. 페이지에서 수행하는 과업 중심 플로우 설계. 중첩을 허용한다면 탭의 중첩 패턴을 정의해야 함. Material 3의 primary tabs / secondary tabs 분류 등 참고. 또는 네이버 쇼핑의 4단계 5단계 탭.',
-          'flutter. Scaffold - AppBar - bottom: TabBar - tabs - Tab / Scaffold - body - TabBarView',
         ]}
       ></mm-text-list>
+
+      <mm-content-section heading-level="3" heading="Nesting">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              <span>
+                <mm-text weight="bold">탭은 페이지에 한 단계로만 둔다</mm-text>
+                탭 줄이 두 겹 쌓이면 어느 줄이 상위인지, 지금 보는 뷰가 어디에 속하는지 탭만으로
+                되짚기 어렵다. Material 3의 primary·secondary tabs나 네이버 쇼핑의 다단계 탭 같은
+                중첩 구조는 쓰지 않는다
+              </span>
+            `,
+            html`
+              <span>
+                <mm-text weight="bold">탭 하나에는 과업 하나의 뷰를 담는다</mm-text>
+                탭은 페이지에서 하는 과업 하나를 같은 대상의 여러 뷰로 나눈다. 패널 안을 다시 탭으로
+                나눠야 할 만큼 콘텐츠가 크다면 그 패널이 별도 과업이라는 신호이므로 페이지를 나눈다
+              </span>
+            `,
+            html`
+              <span>
+                <mm-text weight="bold">패널 안의 하위 구분은 성격에 맞는 컴포넌트로 나눈다</mm-text>
+                한 목록을 좁히는 분류는
+                <mm-code>mm-filter-button-group</mm-code>
+                으로, 순서대로 거치는 단계는
+                <mm-code>mm-step</mm-code>
+                으로 둔다
+              </span>
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Flutter">
+        <mm-flex direction="column" gap="3">
+          <mm-paragraph>
+            탭 줄(TabBar)은 AppBar 아래에, 뷰(TabBarView)는 body에 떨어져 있고
+            DefaultTabController가 둘의 선택 상태를 잇는다.
+            <mm-code>mm-tab-list</mm-code>
+            가 형제
+            <mm-code>mm-tab-panel</mm-code>
+            을 찾아 연결하는 것과 같은 구조다.
+          </mm-paragraph>
+          <mm-code-block
+            language="text"
+            .copyable=${false}
+            .code=${`DefaultTabController
+└─ Scaffold
+   ├─ appBar: AppBar
+   │  └─ bottom: TabBar (mm-tab-list)
+   │     └─ tabs: [Tab, …] (mm-tab)
+   └─ body: TabBarView
+      └─ children: [Widget, …] (mm-tab-panel)`}
+          ></mm-code-block>
+        </mm-flex>
+      </mm-content-section>
     </mm-component-guide>
 
     <mm-component-anatomy
