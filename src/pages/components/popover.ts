@@ -8,6 +8,9 @@ import type {
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import type { PopoverPlacement } from '@/components/overlay/popover/popover'
+
+const placements: PopoverPlacement[] = ['bottom-left', 'bottom-right', 'top-left', 'top-right']
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'select.html', label: 'Select' },
@@ -49,11 +52,20 @@ const main = html`
     <mm-component-aka .items=${['Flyout', 'Dropdown Panel', 'Menu Surface']}></mm-component-aka>
 
     <mm-component-example>
-      <mm-popover>
-        <mm-button slot="trigger">팝오버 열기</mm-button>
-        <mm-paragraph>트리거에 앵커되는 non-modal 레이어 표면입니다.</mm-paragraph>
-      </mm-popover>
+      <mm-flex gap="2" wrap="wrap">
+        ${placements.map(
+          placement => html`
+            <mm-popover placement=${placement}>
+              <mm-button slot="trigger">${placement}</mm-button>
+              <mm-paragraph>${placement}에 붙는 패널입니다.</mm-paragraph>
+            </mm-popover>
+          `,
+        )}
+      </mm-flex>
     </mm-component-example>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
