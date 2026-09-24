@@ -288,7 +288,7 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="AddButton" description="새 항목을 추가합니다.">
-      <mm-add-button>항목 추가</mm-add-button>
+      <mm-add-button label="항목 추가"></mm-add-button>
     </mm-component-section>
 
     <mm-component-section

@@ -28,7 +28,7 @@ export class AttachmentButton extends LitElement {
 
   render() {
     return html`
-      <mm-add-button @click=${this.handleAddButtonClick}>${this.label}</mm-add-button>
+      <mm-add-button @click=${this.handleAddButtonClick} label=${this.label}></mm-add-button>
       <input
         type="file"
         accept=${ifDefined(this.accept || undefined)}

@@ -57,7 +57,7 @@ const main = html`
                 <mm-paragraph color="light">010-9876-5432</mm-paragraph>
               </mm-radio-card>
             </mm-radio-card-group>
-            <mm-add-button>배송지 변경/추가</mm-add-button>
+            <mm-add-button label="배송지 변경/추가"></mm-add-button>
           </mm-content-section>
 
           <mm-content-section heading="결제수단" heading-level="3">
@@ -96,7 +96,7 @@ const main = html`
             >
               <mm-link slot="trailing" href="#">수정</mm-link>
             </mm-list-item>
-            <mm-add-button>결제수단 추가</mm-add-button>
+            <mm-add-button label="결제수단 추가"></mm-add-button>
 
             <mm-notice
               heading="결제 및 환불 안내"

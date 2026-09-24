@@ -64,7 +64,7 @@ const main = html`
               emoji="☕"
             ></mm-menu-item-checkbox>
           </mm-menu-item-checkbox-group>
-          <mm-add-button>새 컬렉션 만들기</mm-add-button>
+          <mm-add-button label="새 컬렉션 만들기"></mm-add-button>
         </mm-flex>
       </mm-content-section>
 
@@ -78,7 +78,7 @@ const main = html`
             .options=${visibilityOptions}
             value="public"
           ></mm-toggle-button-group>
-          <mm-add-button>이 컬렉션에 멤버 추가</mm-add-button>
+          <mm-add-button label="이 컬렉션에 멤버 추가"></mm-add-button>
         </mm-flex>
       </mm-content-section>
 
