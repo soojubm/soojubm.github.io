@@ -18,12 +18,13 @@ export class Main extends LitElement {
       padding: var(--layout-main-space-top) var(--layout-padding-inline) calc(var(--space-4) * 6);
       padding-left: var(--main-padding-left);
       box-sizing: border-box;
+      background-color: var(--background-color);
       position: relative;
       transition: padding-left var(--transition-duration) var(--transition-easing);
     }
 
     :host([background='subtle']) {
-      background-color: var(--gray100);
+      background-color: var(--background-subtle-color);
       box-shadow: 0 0 0 100vmax var(--background-subtle-color);
       clip-path: inset(0 -100vmax);
     }
