@@ -19,7 +19,7 @@ const main = html`
             ></mm-thumbnail>
           </section>
 
-          <mm-flex direction="column" gap="section">
+          <mm-flex direction="column" gap="6">
             <mm-flex direction="column" gap="3">
               <mm-link href="#">Hachimitsupai</mm-link>
               <mm-heading level="1">センチメンタル通り</mm-heading>
@@ -36,40 +36,36 @@ const main = html`
               <mm-review-summary rating="4.8" review-count="116"></mm-review-summary>
             </mm-flex>
 
-            <form>
-              <mm-flex direction="column" gap="2">
-                <mm-numberfield value="1" min="1" max="99" label="수량"></mm-numberfield>
+            <mm-flex direction="column" gap="2">
+              <mm-button-group>
+                <mm-button
+                  aria-controls="cart-sheet"
+                  aria-haspopup="dialog"
+                  variant="primary"
+                  size="large"
+                  full-width
+                >
+                  장바구니 추가
+                </mm-button>
+                <mm-icon-button
+                  variant="ghost"
+                  icon=${ICON_NAMES.FAVORITE}
+                  aria-label="찜하기"
+                ></mm-icon-button>
+              </mm-button-group>
 
-                <mm-button-group>
-                  <mm-button
-                    aria-controls="cart-sheet"
-                    aria-haspopup="dialog"
-                    variant="primary"
-                    size="large"
-                    full-width
-                  >
-                    장바구니 추가
-                  </mm-button>
-                  <mm-icon-button
-                    variant="ghost"
-                    icon=${ICON_NAMES.FAVORITE}
-                    aria-label="찜하기"
-                  ></mm-icon-button>
-                </mm-button-group>
-
-                <!-- TODO text-list -->
-                <div>
-                  <mm-flex align-items="center" gap="1">
-                    <mm-icon name=${ICON_NAMES.DELIVERY}></mm-icon>
-                    <mm-paragraph>Free shipping on all U.S. orders of $40+</mm-paragraph>
-                  </mm-flex>
-                  <mm-flex align-items="center" gap="1">
-                    <mm-icon name=${ICON_NAMES.BOX}></mm-icon>
-                    <mm-paragraph>Free returns and exchanges</mm-paragraph>
-                  </mm-flex>
-                </div>
-              </mm-flex>
-            </form>
+              <!-- TODO text-list -->
+              <div>
+                <mm-flex align-items="center" gap="1">
+                  <mm-icon name=${ICON_NAMES.DELIVERY}></mm-icon>
+                  <mm-paragraph>Free shipping on all U.S. orders of $40+</mm-paragraph>
+                </mm-flex>
+                <mm-flex align-items="center" gap="1">
+                  <mm-icon name=${ICON_NAMES.BOX}></mm-icon>
+                  <mm-paragraph>Free returns and exchanges</mm-paragraph>
+                </mm-flex>
+              </div>
+            </mm-flex>
           </mm-flex>
         </mm-grid>
       </mm-flex>
@@ -286,26 +282,15 @@ type ValueElement = HTMLElement & {
   value: string
 }
 
-// 여는 동작은 aria-controls를 통해 mm-sheet가 소유한다. 여기서는 담을 수량만 시트로 옮긴다.
+// 여는 동작은 aria-controls를 통해 mm-sheet가 소유한다. 여기서는 시트의 수량에 맞춰 총액만 갱신한다.
 function setupCartSheet() {
-  const triggers = document.querySelectorAll<HTMLElement>('[aria-controls="cart-sheet"]')
-  const productQuantity = document.querySelector<ValueElement>('.product-info mm-numberfield')
   const cartQuantity = document.querySelector<ValueElement>('#cart-quantity')
   const cartTotal = document.querySelector<ValueElement>('#cart-total')
 
-  if (!triggers.length || !cartQuantity || !cartTotal) return
+  if (!cartQuantity || !cartTotal) return
 
-  const updateTotal = () => {
+  cartQuantity.addEventListener('input', () => {
     const quantity = Math.max(1, Number(cartQuantity.value) || 1)
     cartTotal.value = `₩ ${(quantity * 16000).toLocaleString('ko-KR')}`
-  }
-
-  triggers.forEach(trigger => {
-    trigger.addEventListener('click', () => {
-      cartQuantity.value = productQuantity?.value || '1'
-      updateTotal()
-    })
   })
-
-  cartQuantity.addEventListener('input', updateTotal)
 }
