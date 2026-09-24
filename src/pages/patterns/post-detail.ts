@@ -38,10 +38,11 @@ const main = html`
     <mm-flex direction="column" gap="8">
       <header class="post-head">
         <mm-flex direction="column" gap="3">
-          <mm-link href="#post">Murmur</mm-link>
+          <mm-link href="post.html">제품</mm-link>
           <mm-heading level="1">
             Runway enables next-generation content creation with AI and Vercel
           </mm-heading>
+          <mm-text as="time" color="light">2024년 3월 23일</mm-text>
         </mm-flex>
       </header>
 
@@ -116,7 +117,25 @@ const main = html`
         </mm-paragraph-group>
       </section>
 
-      <mm-surface variant="filled" radius="large">
+      <aside class="post-attract">
+        <mm-result
+          heading="다음 내용이 궁금하신가요?"
+          description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
+          .primaryAction=${membershipAction}
+        >
+          <mm-text-list
+            .texts=${[
+              'Medium의 모든 회원 전용 스토리에 액세스하세요.',
+              '자신에게 중요한 주제에 대해 더 자세히 알아보세요.',
+              '수천 가지 질문에 답하는 심층 기사를 받아보세요.',
+              '개인적, 직업적 목표를 달성하세요',
+            ]}
+          ></mm-text-list>
+        </mm-result>
+        <div class="post-attract-blur"></div>
+      </aside>
+
+      <mm-surface variant="elevated" radius="large">
         <mm-flex direction="column" gap="8">
           <mm-button-group>
             <mm-hashtag-link>Webpack</mm-hashtag-link>
@@ -134,60 +153,40 @@ const main = html`
         </mm-flex>
       </mm-surface>
     </mm-flex>
-    <mm-separator></mm-separator>
-    <mm-flex direction="column" gap="8">
-      <section>
-        <mm-menu-item-action label="192" icon=${ICON_NAMES.COMMENT}></mm-menu-item-action>
-      </section>
-      <mm-comment-input
-        class="comment"
-        placeholder="댓글을 입력해 주세요."
-        submit-label="댓글 게시"
-      ></mm-comment-input>
+    <mm-separator variant="section"></mm-separator>
+    <mm-content-section heading="댓글 192" heading-level="3">
+      <mm-flex direction="column" gap="8">
+        <mm-comment-input
+          placeholder="댓글을 입력해 주세요."
+          submit-label="댓글 게시"
+        ></mm-comment-input>
 
-      <mm-comment-list>
-        <mm-comment-item
-          author="수줍이"
-          datetime="1 day ago"
-          avatar-src="/src/images/soojubm.png"
-          reply-label="답글 10개"
-          editable
-        >
-          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-        </mm-comment-item>
-        <mm-comment-item
-          author="수줍이"
-          datetime="1 day ago"
-          avatar-src="/src/images/soojubm.png"
-          reply-label="답글"
-        >
-          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-          우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-        </mm-comment-item>
-      </mm-comment-list>
-
-      <aside>
-        <mm-result
-          heading="다음 내용이 궁금하신가요?"
-          description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
-          .primaryAction=${membershipAction}
-        >
-          <mm-text-list
-            .texts=${[
-              'Medium의 모든 회원 전용 스토리에 액세스하세요.',
-              '자신에게 중요한 주제에 대해 더 자세히 알아보세요.',
-              '수천 가지 질문에 답하는 심층 기사를 받아보세요.',
-              '개인적, 직업적 목표를 달성하세요',
-            ]}
-          ></mm-text-list>
-        </mm-result>
-        <div class="post-attract-blur"></div>
-      </aside>
-    </mm-flex>
+        <mm-comment-list>
+          <mm-comment-item
+            author="수줍이"
+            datetime="1 day ago"
+            avatar-src="/src/images/soojubm.png"
+            reply-label="답글 10개"
+            editable
+          >
+            우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
+            우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
+          </mm-comment-item>
+          <mm-comment-item
+            author="수줍이"
+            datetime="1 day ago"
+            avatar-src="/src/images/soojubm.png"
+            reply-label="답글"
+          >
+            우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
+            우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
+          </mm-comment-item>
+        </mm-comment-list>
+      </mm-flex>
+    </mm-content-section>
   </mm-main>
 
-  <mm-flex as="section" class="post-more" direction="column" gap="8">
+  <mm-flex as="section" class="post-more" direction="column" gap="4">
     <mm-flex justify-content="between" align-items="center" gap="3">
       <mm-heading level="3">더 읽어보기</mm-heading>
       <mm-link href="post.html">모두 보기</mm-link>

@@ -117,6 +117,11 @@
   }
 }
 
+/* 본문 끝을 흐리는 그라데이션이 안내 박스 위로 겹치도록 기준을 잡는다. */
+.post-attract {
+  position: relative;
+}
+
 .post-attract-blur {
   height: 20rem;
   background: linear-gradient(
