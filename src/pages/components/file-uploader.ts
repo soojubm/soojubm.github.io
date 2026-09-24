@@ -105,7 +105,7 @@ const main = html`
 
     <mm-component-section
       heading="AttachmentItem"
-      description="첨부한 파일 하나를 미리보기·이름·크기로 보여주고, 삭제 버튼으로 remove를 알립니다. 이미지가 아니면 유형에 맞는 대체 아이콘을 씁니다."
+      description="첨부한 파일 하나를 미리보기·이름·크기로 보여주고, 삭제 버튼으로 remove를 알립니다. 이미지가 아니면 유형에 맞는 대체 아이콘을 씁니다. progress(0–100)가 있는 동안은 업로드 중으로 보고, 크기 대신 진행률을 보여주며 삭제 버튼이 업로드 취소를 맡습니다. error가 있으면 실패 사유를 알리고, 썸네일 위의 재업로드 버튼으로 retry를 알립니다."
     >
       <mm-flex gap="2">
         <mm-attachment-item
@@ -117,6 +117,18 @@ const main = html`
           file-name="sample-document.pdf"
           file-size="46.9 KB"
           type="application/pdf"
+        ></mm-attachment-item>
+        <mm-attachment-item
+          file-name="sample-video.mp4"
+          file-size="1.1 MB"
+          type="video/mp4"
+          progress="45"
+        ></mm-attachment-item>
+        <mm-attachment-item
+          file-name="sample-report.pdf"
+          file-size="2.4 MB"
+          type="application/pdf"
+          error="업로드 실패"
         ></mm-attachment-item>
       </mm-flex>
     </mm-component-section>
