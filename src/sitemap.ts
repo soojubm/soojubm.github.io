@@ -171,6 +171,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'post', name: 'Post' },
       { id: 'post-detail', name: 'Post Detail' },
       { id: 'checkout', name: 'Checkout', hideNavbar: true },
+      { id: 'pricing', name: 'Pricing' },
       { id: 'faq', name: 'FAQ' },
       { id: 'contact', name: 'Contact' },
     ],

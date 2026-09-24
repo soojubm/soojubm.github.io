@@ -244,25 +244,20 @@ const main = html`
 </mm-surface>`}
     ></mm-component-anatomy>
 
-    <mm-component-section heading="PricingSurface" description="">
-      <mm-flex direction="column" gap="4">
-        <mm-tag>
+    <mm-component-section heading="PricingCard" description="">
+      <mm-pricing-card
+        plan="Standard"
+        description="리서치, 정리, 낮은 한도"
+        price="₩ 6,800"
+        period="매월 청구"
+        .features=${['스토리지 2TB', 'Google 전문가와의 상담', '회원을 위한 추가 혜택']}
+      >
+        <mm-tag slot="badge">
           <span aria-hidden="true">🔥</span>
           Most Popular
         </mm-tag>
-        <div>
-          <mm-paragraph size="large">Standard</mm-paragraph>
-          <mm-text>리서치, 정리, 낮은 한도</mm-text>
-        </div>
-        <div>
-          <mm-text size="32" weight="bold">₩ 6,800</mm-text>
-          <mm-text color="light">한 달에 한 번</mm-text>
-        </div>
-        <mm-button variant="primary" size="large" full-width>업그레이드</mm-button>
-        <mm-text-list
-          .texts=${['스토리지 2TB', 'Google 전문가와의 상담', '회원을 위한 추가 혜택']}
-        ></mm-text-list>
-      </mm-flex>
+        <mm-button slot="action" variant="primary" size="large" full-width>업그레이드</mm-button>
+      </mm-pricing-card>
     </mm-component-section>
 
     <mm-component-section heading="FeedSurface" description="">

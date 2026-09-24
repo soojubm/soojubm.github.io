@@ -9,4 +9,6 @@ import '@/components/domains/faq'
 import '@/components/domains/post'
 import '@/components/domains/search'
 import '@/components/domains/commerce'
+import '@/components/domains/pricing'
+import '@/components/domains/banner'
 export {}
