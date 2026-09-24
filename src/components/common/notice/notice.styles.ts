@@ -27,7 +27,6 @@ export const noticeStyles = css`
     border-radius: var(--notice-border-radius);
     background: var(--notice-background-color);
     color: var(--notice-text-color);
-    position: relative;
 
     --notice-padding: var(--space-3);
     --notice-border-radius: var(--radius);
@@ -58,9 +57,10 @@ export const noticeStyles = css`
     margin-inline-end: var(--space-2);
   }
 
-  .notice-dismiss {
-    position: absolute;
-    right: var(--notice-padding);
-    top: var(--notice-padding);
+  .notice-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: var(--space-2);
   }
 `

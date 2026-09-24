@@ -2,10 +2,13 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import type { StatusTone } from '@/components/common/icon/icon-names'
+import type { ActionConfig } from '@/types'
 
 import { STATUS_ICONS } from '@/components/common/icon/icon-names'
 import { noticeStyles } from '@/components/common/notice/notice.styles'
 import { emit } from '@/utils'
+import '@/components/common/button/button'
+import '@/components/common/button/button-group'
 import '@/components/common/icon'
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
@@ -20,9 +23,10 @@ export class Notice extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true, useDefault: true }) variant: NoticeVariant = 'info'
+  @property({ attribute: false }) primaryAction?: ActionConfig
+  @property({ attribute: false }) secondaryAction?: ActionConfig
+  @property({ attribute: false }) onDismiss?: () => void
   @state() private dismissed = false
-  @state() private dismissible = false
-  private dismissListenerCount = 0
 
   render() {
     if (this.dismissed) return html``
@@ -33,7 +37,7 @@ export class Notice extends LitElement {
         ${this.renderText()}
         <slot></slot>
       </div>
-      ${this.renderDismissButton()}
+      ${this.renderActions()}
     `
   }
 
@@ -61,39 +65,58 @@ export class Notice extends LitElement {
     `
   }
 
-  private renderDismissButton() {
-    if (!this.dismissible) return nothing
+  private renderActions() {
+    if (!this.primaryAction && !this.secondaryAction && !this.onDismiss) return nothing
 
     return html`
-      <div class="notice-dismiss">
-        <mm-dismiss-button @dismiss=${this.handleDismiss}></mm-dismiss-button>
-      </div>
+      <div class="notice-actions">${this.renderButtonGroup()} ${this.renderDismissButton()}</div>
     `
   }
 
-  // 소비자가 dismiss를 구독할 때만 닫기 버튼을 노출한다.
-  override addEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | AddEventListenerOptions,
-  ): void {
-    super.addEventListener(type, listener, options)
+  private renderButtonGroup() {
+    if (!this.primaryAction && !this.secondaryAction) return nothing
 
-    if (type !== 'dismiss') return
-    this.dismissListenerCount += 1
-    this.dismissible = true
+    return html`
+      <mm-button-group>
+        ${this.renderSecondaryAction()} ${this.renderPrimaryAction()}
+      </mm-button-group>
+    `
   }
 
-  override removeEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | EventListenerOptions,
-  ): void {
-    super.removeEventListener(type, listener, options)
+  private renderSecondaryAction() {
+    if (!this.secondaryAction) return nothing
 
-    if (type !== 'dismiss') return
-    this.dismissListenerCount = Math.max(0, this.dismissListenerCount - 1)
-    this.dismissible = this.dismissListenerCount > 0
+    return html`
+      <mm-button
+        variant="tertiary"
+        ?disabled=${this.secondaryAction.disabled}
+        @click=${this.handleSecondaryActionClick}
+      >
+        ${this.secondaryAction.label}
+      </mm-button>
+    `
+  }
+
+  private renderPrimaryAction() {
+    if (!this.primaryAction) return nothing
+
+    return html`
+      <mm-button
+        variant="primary"
+        ?disabled=${this.primaryAction.disabled}
+        @click=${this.handlePrimaryActionClick}
+      >
+        ${this.primaryAction.label}
+      </mm-button>
+    `
+  }
+
+  private renderDismissButton() {
+    if (!this.onDismiss) return nothing
+
+    return html`
+      <mm-dismiss-button @dismiss=${this.handleDismiss}></mm-dismiss-button>
+    `
   }
 
   private get icon() {
@@ -105,6 +128,15 @@ export class Notice extends LitElement {
     event.stopPropagation()
 
     this.dismissed = true
+    this.onDismiss?.()
     emit(this, 'dismiss')
+  }
+
+  private handlePrimaryActionClick() {
+    this.primaryAction?.onClick?.()
+  }
+
+  private handleSecondaryActionClick() {
+    this.secondaryAction?.onClick?.()
   }
 }
