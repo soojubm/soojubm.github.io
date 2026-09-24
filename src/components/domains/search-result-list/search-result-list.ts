@@ -32,10 +32,6 @@ export class SearchResultList extends LitElement {
         gap: var(--space-1);
       }
 
-      mm-heading {
-        color: var(--foreground-subtle-color);
-      }
-
       .list {
         display: flex;
         flex-direction: column;
@@ -67,7 +63,7 @@ export class SearchResultList extends LitElement {
     if (!this.heading) return nothing
 
     return html`
-      <mm-heading level="4" id=${this.headingId}>${this.heading}</mm-heading>
+      <mm-heading level="5" id=${this.headingId}>${this.heading}</mm-heading>
     `
   }
 

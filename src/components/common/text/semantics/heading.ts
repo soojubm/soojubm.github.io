@@ -19,12 +19,18 @@ const LEVEL_SIZE: Record<HeadingLevel, TextSize> = {
  * <mm-heading>
  * 화면 안에서 주요 콘텐츠 묶음을 구분하는 제목입니다.
  * level(1–5)로 의미 단계(h1–h5)와 크기를 함께 지정하며, 기본값은 2입니다.
+ * level 5는 그룹 라벨용으로 보조 색을 갖습니다.
  */
 @customElement('mm-heading')
 export class Heading extends LitElement {
   static styles = css`
     :host {
       display: block;
+    }
+
+    /* 가장 낮은 단계는 그룹 라벨로 쓰여 본문보다 한 단계 물러난다. */
+    :host([level='5']) {
+      color: var(--foreground-subtle-color);
     }
   `
   @property({ type: Number, reflect: true }) level: HeadingLevel = 2

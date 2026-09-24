@@ -72,7 +72,7 @@ export class Sidebar extends LitElement {
 
     return html`
       <div class="group">
-        <mm-heading level="4" id=${headingId}>${node.title}</mm-heading>
+        <mm-heading level="5" id=${headingId}>${node.title}</mm-heading>
         <div class="list" role="list" aria-labelledby=${headingId}>
           ${repeat(node.items, item => item.id, this.renderItemLink)}
         </div>

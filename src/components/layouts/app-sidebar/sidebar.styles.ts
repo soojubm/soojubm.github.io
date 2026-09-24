@@ -46,8 +46,4 @@ export const sidebarStyles = css`
     flex-direction: column;
     gap: var(--space-1);
   }
-
-  mm-heading {
-    color: var(--foreground-subtle-color);
-  }
 `

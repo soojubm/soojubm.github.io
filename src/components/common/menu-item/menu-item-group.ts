@@ -23,10 +23,6 @@ export class MenuItemGroup extends LitElement {
       gap: var(--space-1);
     }
 
-    mm-heading {
-      color: var(--foreground-subtle-color);
-    }
-
     .items {
       display: flex;
       flex-direction: column;
@@ -75,7 +71,7 @@ export class MenuItemGroup extends LitElement {
     if (!this.heading) return nothing
 
     return html`
-      <mm-heading level="4" aria-hidden="true">${this.heading}</mm-heading>
+      <mm-heading level="5" aria-hidden="true">${this.heading}</mm-heading>
     `
   }
 

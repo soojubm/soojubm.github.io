@@ -189,7 +189,7 @@ const main = html`
 
     <mm-component-section
       heading="Headings"
-      description="level(1–5)로 의미 단계(h1–h5)와 크기를 함께 지정하며, 기본값은 2입니다."
+      description="level(1–5)로 의미 단계(h1–h5)와 크기를 함께 지정하며, 기본값은 2입니다. level 5는 그룹 라벨용으로 보조 색을 갖습니다."
       .code=${headingCode}
     >
       <mm-flex direction="column" gap="3">
