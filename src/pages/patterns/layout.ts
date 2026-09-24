@@ -31,8 +31,8 @@ const main = html`
 
     <mm-notice>
       <mm-text size="14">
-        이 문서는 페이지 바깥 골격을 정합니다. 그 안에서 자식을 배치하고 묶는 컨테이너의 단계와
-        간격은
+        이 문서는 페이지 바깥 골격과 텍스트 줄 위에 놓이는 inline 요소의 정렬을 정합니다. 그 안에서
+        자식을 배치하고 묶는 컨테이너의 단계와 간격은
         <mm-link href="./container.html">Container</mm-link>
         가 다룹니다.
       </mm-text>
@@ -139,6 +139,40 @@ const main = html`
             </mm-flex>
           </mm-surface>
         </mm-flex>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="줄 안 정렬">
+        <mm-paragraph>
+          일반 블록이나 본문 안의 inline 요소는 텍스트 줄의 baseline에 맞춰 놓이고, inline-flex
+          요소의 baseline은 첫 자식에서 정해집니다. 첫 자식이 글자 없는 아이콘이면 baseline이 박스
+          바닥으로 내려가, 같은 높이의 요소라도 줄 안에서 떠오르고 줄 높이가 늘어납니다.
+        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            rule(
+              html`
+                배경·테두리로 박스를 이루는 inline 컴포넌트는 ${code('vertical-align: middle')}을
+                둔다
+              `,
+              '태그·아바타처럼 본문 줄에 들어갈 수 있는 박스는 내부 구성과 무관하게 자기 중앙으로 줄에 놓인다',
+            ),
+            rule(
+              '본문 글자처럼 읽히는 inline 요소는 baseline을 유지한다',
+              '링크처럼 주변 글자와 같은 선에 서야 하는 요소는 아이콘 크기를 1em에 맞추는 식으로 아이콘 쪽에서 맞춘다',
+            ),
+            rule(
+              html`
+                flex·grid 항목의 정렬은 부모의 ${code('align-items')}가 맡는다
+              `,
+              html`
+                ${code('vertical-align')}은 inline 요소에만 적용되고 ${code('align-items')}는 자식만
+                정렬한다. 높이가 고정된 컨테이너는 부모를 flex로 두고 가운데 정렬하며, 컴포넌트는
+                부모 레이아웃을 바꿀 수 없으므로 자기 위치는 ${code('vertical-align')}으로 정한다
+              `,
+            ),
+          ]}
+        ></mm-text-list>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="주의">

@@ -124,6 +124,8 @@ export const tagStyles = css`
 
     display: inline-flex;
     align-items: center;
+    /* baseline 정렬이면 첫 자식(글자 없는 아이콘 등)에 따라 줄 위치가 달라지므로 자기 중앙으로 맞춘다. */
+    vertical-align: middle;
     width: fit-content;
     min-height: var(--tag-height);
     gap: var(--tag-gap);
