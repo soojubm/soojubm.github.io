@@ -7,6 +7,8 @@ import { ICON_NAMES, type IconName } from '@/components/common'
 export interface ComponentFeatureItem {
   heading: string
   description: string
+  // 설명(무엇인지) 아래에 해야 할 일을 체크리스트로 덧붙인다.
+  rules?: string[]
   icon?: IconName
 }
 
@@ -49,10 +51,20 @@ export class ComponentFeatureList extends LitElement {
               heading=${feature.heading}
               description=${feature.description}
               icon=${feature.icon ?? FEATURE_ICONS[feature.heading] ?? nothing}
-            ></mm-feature>
+            >
+              ${this.renderRules(feature.rules)}
+            </mm-feature>
           `,
         )}
       </mm-feature-group>
+    `
+  }
+
+  private renderRules(rules?: string[]) {
+    if (!rules?.length) return nothing
+
+    return html`
+      <mm-text-list .texts=${rules}></mm-text-list>
     `
   }
 }
