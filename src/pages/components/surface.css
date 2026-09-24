@@ -24,17 +24,6 @@
   flex: 0 0 auto;
 }
 
-.carousel {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  position: relative;
-}
-
-.carousel mm-scroll {
-  scroll-behavior: smooth;
-}
-
-.carousel-slide {
+.scroll-thumbnail {
   flex: 0 0 220px;
 }

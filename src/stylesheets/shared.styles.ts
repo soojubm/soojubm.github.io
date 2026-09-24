@@ -146,17 +146,3 @@ export const scrollbarStyles = css`
     background: var(--background-strong-color);
   }
 `
-
-/**
- * 스크롤바 없이 가로로 넘어가는 행 선언. 행을 맡을 선택자는 사용부가 정하며,
- * WebKit 스크롤바는 그 선택자의 ::-webkit-scrollbar에서 함께 감춘다.
- */
-export const horizontalScrollRowStyles = css`
-  display: flex;
-  gap: var(--space-2);
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-`

@@ -1,15 +1,15 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { horizontalScrollRowStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/scroll/scroll'
 
 /**
  * 검색 추천 키워드 그룹. 가로 스크롤 가능한 추천어 영역.
+ * 스크롤과 양 끝의 흐림·넘김 버튼은 mm-scroll(row)이 소유한다.
  *
  * bleed: 부모 패딩만큼 좌우로 블리드해서 스크롤 끝까지 도달 가능하게 함
- * fade: 우측에 fade mask를 적용해 추가 콘텐츠 존재를 암시
  *
- * <mm-search-suggestion-group bleed="var(--space-4)" fade aria-label="추천 검색어">
+ * <mm-search-suggestion-group bleed="var(--space-4)" aria-label="추천 검색어">
  *   <mm-search-suggestion>로얄테넌바움</mm-search-suggestion>
  *   <mm-search-suggestion>소매치기</mm-search-suggestion>
  * </mm-search-suggestion-group>
@@ -18,20 +18,14 @@ import { horizontalScrollRowStyles } from '@/stylesheets/shared.styles'
 export class SearchSuggestionGroup extends LitElement {
   static styles = css`
     :host {
-      ${horizontalScrollRowStyles};
       --_bleed: 0px;
 
+      display: block;
       margin-inline: calc(-1 * var(--_bleed));
+    }
+
+    mm-scroll {
       padding-inline: var(--_bleed);
-    }
-
-    :host::-webkit-scrollbar {
-      display: none;
-    }
-
-    :host([fade]) {
-      -webkit-mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
-      mask-image: linear-gradient(to right, black calc(100% - 3rem), transparent 100%);
     }
 
     ::slotted(mm-search-suggestion) {
@@ -39,7 +33,6 @@ export class SearchSuggestionGroup extends LitElement {
     }
   `
   @property({ type: String }) bleed?: string
-  @property({ type: Boolean, reflect: true }) fade = false
 
   connectedCallback() {
     super.connectedCallback()
@@ -48,7 +41,9 @@ export class SearchSuggestionGroup extends LitElement {
 
   render() {
     return html`
-      <slot></slot>
+      <mm-scroll gap="2" hide-scrollbar>
+        <slot></slot>
+      </mm-scroll>
     `
   }
 

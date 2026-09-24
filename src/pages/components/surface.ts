@@ -329,25 +329,84 @@ const main = html`
 
     <mm-component-section
       heading="Scroll Area"
-      description="custom scrollbar styles를 가진 스크롤 컨테이너에 surface를 배치합니다."
+      description="내용이 프레임을 넘칠 때 그 안에서 스크롤되는 영역입니다."
     >
-      <mm-scroll direction="column" gap="3" class="scroll-surface-container">
-        <mm-surface class="scroll-surface">
-          <mm-text weight="bold">Surface 1</mm-text>
-        </mm-surface>
-        <mm-surface class="scroll-surface">
-          <mm-text weight="bold">Surface 2</mm-text>
-        </mm-surface>
-        <mm-surface class="scroll-surface">
-          <mm-text weight="bold">Surface 3</mm-text>
-        </mm-surface>
-        <mm-surface class="scroll-surface">
-          <mm-text weight="bold">Surface 4</mm-text>
-        </mm-surface>
-        <mm-surface class="scroll-surface">
-          <mm-text weight="bold">Surface 5</mm-text>
-        </mm-surface>
-      </mm-scroll>
+      <mm-flex direction="column" gap="4">
+        <mm-tab-list value="row" variant="pill">
+          <mm-tab value="row">Row</mm-tab>
+          <mm-tab value="column">Column</mm-tab>
+        </mm-tab-list>
+        <mm-tab-panel value="row">
+          <mm-flex direction="column" gap="6">
+            <mm-scroll gap="3" hide-scrollbar>
+              <mm-thumbnail
+                class="scroll-thumbnail"
+                ratio="1:1"
+                src="/src/images/temp.png"
+                alt="풍경 샘플"
+              ></mm-thumbnail>
+              <mm-thumbnail
+                class="scroll-thumbnail"
+                ratio="1:1"
+                src="/src/images/soojubm.png"
+                alt="프로필 샘플"
+              ></mm-thumbnail>
+              <mm-thumbnail
+                class="scroll-thumbnail"
+                ratio="1:1"
+                src="/src/images/work-studium.jpg"
+                alt="작업 샘플"
+              ></mm-thumbnail>
+              <mm-thumbnail
+                class="scroll-thumbnail"
+                ratio="1:1"
+                src="/src/images/cake_gosum.jpg"
+                alt="고슴이 샘플"
+              ></mm-thumbnail>
+              <mm-thumbnail
+                class="scroll-thumbnail"
+                ratio="1:1"
+                src="/src/images/work-famus.jpg"
+                alt="작업 샘플"
+              ></mm-thumbnail>
+              <mm-thumbnail
+                class="scroll-thumbnail"
+                ratio="1:1"
+                src="/src/images/prometheus.jpg"
+                alt="영화 샘플"
+              ></mm-thumbnail>
+            </mm-scroll>
+            <mm-paragraph>
+              가로로 넘기는 목록에 씁니다. 가려진 콘텐츠가 남은 쪽 끝을 흐리고 그 방향으로 넘기는
+              버튼을 두어, 트랙패드나 가로 휠 없이도 넘길 수 있게 합니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-tab-panel>
+        <mm-tab-panel value="column">
+          <mm-flex direction="column" gap="6">
+            <mm-scroll direction="column" gap="3" class="scroll-surface-container">
+              <mm-surface class="scroll-surface">
+                <mm-text weight="bold">Surface 1</mm-text>
+              </mm-surface>
+              <mm-surface class="scroll-surface">
+                <mm-text weight="bold">Surface 2</mm-text>
+              </mm-surface>
+              <mm-surface class="scroll-surface">
+                <mm-text weight="bold">Surface 3</mm-text>
+              </mm-surface>
+              <mm-surface class="scroll-surface">
+                <mm-text weight="bold">Surface 4</mm-text>
+              </mm-surface>
+              <mm-surface class="scroll-surface">
+                <mm-text weight="bold">Surface 5</mm-text>
+              </mm-surface>
+            </mm-scroll>
+            <mm-paragraph>
+              고정 높이 안에서 세로로 쌓이는 목록에 씁니다. 스크롤바로 남은 분량을 드러냅니다.
+            </mm-paragraph>
+          </mm-flex>
+        </mm-tab-panel>
+      </mm-flex>
     </mm-component-section>
 
     <mm-component-section heading="Marquee" description="TODO">
@@ -389,69 +448,6 @@ const main = html`
       </mm-flex>
     </mm-component-section>
 
-    <mm-component-section
-      heading="Scroll Hint"
-      description="bleed 없이 프레임 안에서 가로 스크롤을 보여줄 때, 오른쪽 끝의 흐림 레이어로 숨은 콘텐츠가 더
-        있음을 암시합니다."
-    >
-      <section class="carousel" data-carousel>
-        <mm-button-group>
-          <mm-icon-button
-            variant="secondary"
-            icon=${ICON_NAMES.BACK}
-            data-carousel-prev
-            aria-label="이전"
-          ></mm-icon-button>
-          <mm-icon-button
-            variant="secondary"
-            icon=${ICON_NAMES.NEXT}
-            data-carousel-next
-            aria-label="다음"
-          ></mm-icon-button>
-        </mm-button-group>
-        <mm-scroll data-carousel-viewer gap="3" hide-scrollbar>
-          <mm-scroll-hint placement="start"></mm-scroll-hint>
-          <mm-scroll-hint placement="end"></mm-scroll-hint>
-          <mm-thumbnail
-            class="carousel-slide"
-            ratio="1:1"
-            src="/src/images/temp.png"
-            alt="풍경 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            class="carousel-slide"
-            ratio="1:1"
-            src="/src/images/soojubm.png"
-            alt="프로필 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            class="carousel-slide"
-            ratio="1:1"
-            src="/src/images/work-studium.jpg"
-            alt="작업 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            class="carousel-slide"
-            ratio="1:1"
-            src="/src/images/cake_gosum.jpg"
-            alt="고슴이 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            class="carousel-slide"
-            ratio="1:1"
-            src="/src/images/work-famus.jpg"
-            alt="작업 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            class="carousel-slide"
-            ratio="1:1"
-            src="/src/images/prometheus.jpg"
-            alt="영화 샘플"
-          ></mm-thumbnail>
-        </mm-scroll>
-      </section>
-    </mm-component-section>
-
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>
@@ -460,44 +456,4 @@ const main = html`
   </mm-main>
 `
 
-renderPage(main, { initialize: setupCarousel })
-
-function setupCarousel() {
-  const container = document.querySelector<HTMLElement>('[data-carousel]')
-  if (!container) return
-
-  const viewer = container.querySelector<HTMLElement>('[data-carousel-viewer]')
-  const listItems = container.querySelectorAll<HTMLElement>('.carousel-slide')
-  const prevButton = container.querySelector<HTMLElement>('[data-carousel-prev]')
-  const nextButton = container.querySelector<HTMLElement>('[data-carousel-next]')
-
-  if (!viewer || !listItems.length || !prevButton || !nextButton) return
-
-  // 슬라이드 한 칸 = 슬라이드 폭 + 사이 간격. 항목이 하나면 폭만 사용한다.
-  const step = () =>
-    listItems.length > 1
-      ? listItems[1].offsetLeft - listItems[0].offsetLeft
-      : listItems[0].offsetWidth
-
-  const maxScrollLeft = () => viewer.scrollWidth - viewer.clientWidth
-
-  const syncArrows = (left = viewer.scrollLeft) => {
-    prevButton.style.visibility = left <= 0 ? 'hidden' : 'visible'
-    nextButton.style.visibility = left >= maxScrollLeft() ? 'hidden' : 'visible'
-  }
-
-  const scrollToOffset = (offset: number) => {
-    const target = Math.max(0, Math.min(offset, maxScrollLeft()))
-    viewer.scrollLeft = target
-    syncArrows(target)
-  }
-
-  prevButton.addEventListener('click', () => scrollToOffset(viewer.scrollLeft - step()))
-  nextButton.addEventListener('click', () => scrollToOffset(viewer.scrollLeft + step()))
-  viewer.addEventListener('scroll', () => syncArrows())
-
-  syncArrows()
-  // 슬라이드 레이아웃이 확정된 직후, 이후 크기 변경 시마다 화살표 노출을 다시 계산한다.
-  setTimeout(() => syncArrows())
-  new ResizeObserver(() => syncArrows()).observe(listItems[0])
-}
+renderPage(main)
