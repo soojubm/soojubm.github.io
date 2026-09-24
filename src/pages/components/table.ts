@@ -151,7 +151,7 @@ const main = html`
         </mm-button-group>
       </header>
 
-      <mm-flex gap="2" wrap="wrap">
+      <mm-button-group>
         <mm-toggle-button-group
           .options=${statusFilterOptions}
           value="all"
@@ -160,7 +160,7 @@ const main = html`
           .options=${publishFilterOptions}
           value="all"
         ></mm-toggle-button-group>
-      </mm-flex>
+      </mm-button-group>
 
       <menu role="menubar" style="margin: var(--space-3) 0">
         <mm-flex align-items="center" gap="4">

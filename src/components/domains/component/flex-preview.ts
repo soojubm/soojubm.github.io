@@ -5,7 +5,7 @@ import type { OptionItem } from '@/types'
 
 import '@/components/common/code-block/code-block'
 import '@/components/common/flex/flex'
-import '@/components/common/input/semantics/form-field'
+import '@/components/common/button/button-group'
 import '@/components/common/toggle-button/toggle-button-group'
 import '@/components/domains/ui-placeholder/ui-placeholder'
 
@@ -17,9 +17,9 @@ const DIRECTION_OPTIONS: OptionItem[] = [
 ]
 
 const GAP_OPTIONS: OptionItem[] = [
-  { value: '1', label: '1' },
-  { value: '2', label: '2' },
-  { value: '4', label: '4' },
+  { value: '1', label: 'gap 1' },
+  { value: '2', label: 'gap 2' },
+  { value: '4', label: 'gap 4' },
 ]
 
 const ITEM_COUNT = 3
@@ -39,21 +39,20 @@ export class FlexPreview extends LitElement {
 
   render() {
     return html`
-      <mm-form-field label="direction">
+      <mm-button-group>
         <mm-toggle-button-group
+          aria-label="direction"
           .options=${DIRECTION_OPTIONS}
           .value=${this.direction}
           @change=${this.handleDirectionChange}
         ></mm-toggle-button-group>
-      </mm-form-field>
-
-      <mm-form-field label="gap">
         <mm-toggle-button-group
+          aria-label="gap"
           .options=${GAP_OPTIONS}
           .value=${this.gap}
           @change=${this.handleGapChange}
         ></mm-toggle-button-group>
-      </mm-form-field>
+      </mm-button-group>
 
       <mm-flex direction=${this.direction} gap=${this.gap} stretch>
         ${Array.from(
