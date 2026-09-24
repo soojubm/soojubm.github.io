@@ -31,11 +31,6 @@ export class SearchResultList extends LitElement {
         flex-direction: column;
         gap: var(--space-1);
       }
-
-      .list {
-        display: flex;
-        flex-direction: column;
-      }
     `,
   ]
   @property({ type: String }) heading?: string
@@ -45,17 +40,13 @@ export class SearchResultList extends LitElement {
   render() {
     return html`
       ${this.renderHeading()}
-      <div
-        class="list"
-        role="list"
-        aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}
-      >
+      <mm-list-item-group aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}>
         ${repeat(
           this.results,
           result => result.href,
           result => this.renderResult(result),
         )}
-      </div>
+      </mm-list-item-group>
     `
   }
 
@@ -69,7 +60,7 @@ export class SearchResultList extends LitElement {
 
   private renderResult(result: SearchResult) {
     return html`
-      <div role="listitem">
+      <div>
         <a href=${result.href}>
           <mm-list-item
             size="medium"

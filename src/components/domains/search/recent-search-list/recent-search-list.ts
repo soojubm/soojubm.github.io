@@ -25,11 +25,6 @@ export class RecentSearchList extends LitElement {
         gap: var(--space-1);
       }
 
-      .list {
-        display: flex;
-        flex-direction: column;
-      }
-
       .item {
         display: flex;
         align-items: center;
@@ -44,13 +39,9 @@ export class RecentSearchList extends LitElement {
   render() {
     return html`
       ${this.renderHeading()}
-      <div
-        class="list"
-        role="list"
-        aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}
-      >
+      <mm-list-item-group aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}>
         ${this.keywords.map(keyword => this.renderKeyword(keyword))}
-      </div>
+      </mm-list-item-group>
     `
   }
 
@@ -64,7 +55,7 @@ export class RecentSearchList extends LitElement {
 
   private renderKeyword(keyword: string) {
     return html`
-      <div class="item" role="listitem">
+      <div class="item">
         <button type="button" @click=${() => this.handleKeywordClick(keyword)}>
           <mm-list-item label=${keyword}></mm-list-item>
         </button>
