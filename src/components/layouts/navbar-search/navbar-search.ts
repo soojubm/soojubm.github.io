@@ -1,11 +1,11 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 
-import type { SearchResult } from '@/components/domains/search-result-list'
+import type { SearchResult } from '@/components/domains/search/search-result-list'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
-import '@/components/domains/search-result-list'
+import '@/components/domains/search/search-result-list'
 import '@/components/overlay/sheet'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }

@@ -7,3 +7,5 @@ import '@/components/common/button/semantics/read-more-button'
 import '@/components/common/button/semantics/show-more-button'
 import '@/components/common/button/semantics/social-auth-button'
 import '@/components/common/button/semantics/hashtag-link'
+
+import '@/components/common/button/domain/social-links'

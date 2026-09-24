@@ -6,7 +6,7 @@ import type { Popover } from '@/components/overlay/popover/popover'
 import '@/components/common'
 import '@/components/overlay/popover/popover'
 import { emit } from '@/utils'
-import '@/components/domains/user-item/index'
+import '@/components/common/list-item/domain/user-item'
 
 /**
  * 댓글 목록의 개별 항목.

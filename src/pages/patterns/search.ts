@@ -2,7 +2,7 @@ import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
-import type { SearchResult } from '@/components/domains/search-result-list'
+import type { SearchResult } from '@/components/domains/search/search-result-list'
 import type { TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'

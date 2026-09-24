@@ -2,8 +2,11 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { userSnippetStyles } from '@/components/domains/user-snippet/user-snippet.styles'
-import '@/components/common'
+import { userSnippetStyles } from '@/components/common/avatar/domain/user-snippet.styles'
+import '@/components/common/avatar/semantics/user-avatar'
+import '@/components/common/tag/semantics/accent-tag'
+import '@/components/common/text/semantics/paragraph'
+import '@/components/common/text/text'
 
 @customElement('mm-user-snippet')
 export class UserSnippet extends LitElement {

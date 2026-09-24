@@ -4,8 +4,8 @@ import { customElement } from 'lit/decorators.js'
 import { footerStyles } from '@/components/layouts/footer/footer.styles'
 import '@/components/common'
 import soojubmImage from '@/images/soojubm.png'
-import '@/components/domains/user-snippet/index'
-import '@/components/domains/social-links/index'
+import '@/components/common/avatar/domain/user-snippet'
+import '@/components/common/button/domain/social-links'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-footer')

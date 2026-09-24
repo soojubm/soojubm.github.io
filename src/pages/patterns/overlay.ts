@@ -3,7 +3,7 @@ import { html } from 'lit'
 
 import type { TemplateResult } from 'lit'
 
-import '@/components/domains/comment-item'
+import '@/components/domains/comment/comment-item'
 import '@/components/overlay/sheet'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'

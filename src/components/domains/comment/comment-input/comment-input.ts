@@ -5,7 +5,7 @@ import type { Textarea } from '@/components/common'
 
 import '@/components/common'
 import { inputStyles } from '@/components/common/input/input.styles'
-import '@/components/domains/textfield-action-bar'
+import '@/components/domains/comment/textfield-action-bar'
 import { emit } from '@/utils'
 
 @customElement('mm-comment-input')

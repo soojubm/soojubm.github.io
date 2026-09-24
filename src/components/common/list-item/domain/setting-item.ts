@@ -1,8 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/common'
-import '@/components/common'
+import type { IconName } from '@/components/common/icon/icon-names'
+import '@/components/common/list-item/list-item'
 
 type DisableableElement = HTMLElement & { disabled?: boolean }
 
