@@ -127,8 +127,7 @@ const main = html`
           <mm-paragraph>
             수평·수직 배치는
             <mm-code>mm-flex</mm-code>
-            로 하고, gap은 소비처가 정합니다. 컴포넌트 shadow DOM 안에서는 중첩하지 않고 host를 직접
-            flex 컨테이너로 만들어 shadow 깊이를 줄입니다.
+            로 하고, gap은 소비처가 정합니다.
           </mm-paragraph>
           <mm-flex-preview></mm-flex-preview>
         </mm-content-section>
@@ -147,8 +146,20 @@ const main = html`
                   ${code('columns')}는 최대 열 수로 정한다
                 `,
                 html`
-                  한 열이 ${code('column-min-width')} 아래로 좁아지면 열 수가 컨테이너 너비를 따라
-                  줄어들므로, 좁은 화면을 위한 열 수는 따로 지정하지 않는다
+                  한 열이 ${code('column-min-width')}(기본 12rem) 아래로 좁아지면 열 수가 줄어든다.
+                  기준은 뷰포트가 아니라 그리드가 놓인 컨테이너의 너비라서, 사이드바 옆이나 카드
+                  안처럼 좁은 자리에서도 같은 규칙으로 줄어든다. 좁은 화면을 위한 열 수는 따로
+                  지정하지 않는다
+                `,
+              ),
+              rule(
+                html`
+                  열 너비에 상한이 필요하면 ${code('column-max-width')}를 준다
+                `,
+                html`
+                  열 수를 ${code('columns')}로 고정하고 뷰포트 너비에 따라 단계적으로 줄인다. 1560px
+                  이하에서 6열은 4열로, 800px 이하에서 3열 이상은 2열로, 480px 이하에서는 모두 1열이
+                  된다
                 `,
               ),
             ]}
@@ -159,9 +170,8 @@ const main = html`
         <mm-content-section heading-level="3" heading="Content Section">
           <mm-paragraph>
             <mm-code>mm-content-section</mm-code>
-            은 제목과 본문을 한 묶음으로 세우고 그 사이 간격을 소유합니다. 제목이 그 묶음을
-            대표하므로 heading은 필수이고, heading-level로 문서 안의 깊이를 정합니다. 섹션끼리의
-            바깥 간격은
+            은 제목과 본문을 한 묶음으로 세우고 그 사이 간격을 소유합니다. heading-level로 문서 안의
+            깊이를 정합니다. 섹션끼리의 바깥 간격은
             <mm-code>mm-content-section-list</mm-code>
             가 정하므로, 페이지는 섹션 사이에 여백을 따로 주지 않습니다.
           </mm-paragraph>
@@ -181,9 +191,8 @@ const main = html`
         <mm-content-section heading-level="3" heading="Text Block">
           <mm-paragraph>
             <mm-code>mm-text-block</mm-code>
-            은 제목과 설명 한 쌍을 세우고 그 사이 간격을 소유합니다. 제목이 그 쌍을 대표하므로
-            heading은 필수이고, level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다.
-            본문을 슬롯으로 받아 구획을 이루는 자리에는
+            은 제목과 설명 한 쌍을 세우고 그 사이 간격을 소유합니다. level로 문서 안의 깊이와 두
+            텍스트의 크기 단계를 함께 정합니다. 본문을 슬롯으로 받아 구획을 이루는 자리에는
             <mm-code>mm-content-section</mm-code>
             을 씁니다.
           </mm-paragraph>
@@ -247,12 +256,6 @@ const main = html`
               rule(
                 '컨테이너의 시각 규칙은 컴포넌트 기본 규칙을 따른다',
                 '소비처에서 토큰이나 CSS 변수로 재정의하면 같은 컨테이너가 페이지마다 달라진다',
-              ),
-              rule(
-                '호스트에는 역할에 맞는 박스를 명시한다',
-                html`
-                  ${code('display: contents')}로 박스를 없애면 gap과 접근성 역할이 함께 사라진다
-                `,
               ),
             ]}
           ></mm-text-list>
