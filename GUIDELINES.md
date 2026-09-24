@@ -141,6 +141,7 @@
 - boolean 상태는 실제 상태명과 같은 key로 전달한다.
 - 그룹/합성 컴포넌트는 자식의 change를 그대로 흘려보내지 않고 `stopPropagation`으로 끊은 뒤 자기 단위의 change로 다시 발행한다.
 - 이벤트 핸들러 메서드는 `handle` 뒤에 대상과 이벤트 종류를 이어 붙여 이름 짓는다(예: `handleFilesChange`, `handleRemoveClick`).
+- 변환을 이어 붙인 식은 중간 결과를 이름 있는 변수로 먼저 뽑아, 한 식에 변환 하나만 둔다(예: 중복 제거한 목록을 변수로 둔 뒤 `map`).
 - 작업 후 Prettier를 실행한다.
 
 ### Lit 컨벤션
