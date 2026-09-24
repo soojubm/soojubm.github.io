@@ -37,6 +37,7 @@ export class ComponentSection extends LitElement {
         heading=${this.heading}
         description=${this.description}
       ></mm-text-block>
+      <slot name="notice"></slot>
       <div class="example">
         ${this.renderCode()}
         <div class="component-content-frame">

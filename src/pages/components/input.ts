@@ -177,6 +177,7 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-anatomy
+      style="--component-anatomy-stage-width: var(--layout-width-narrow)"
       .parts=${[
         '레이블 — 입력 항목의 이름을 나타냅니다(label).',
         '입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.',
@@ -206,7 +207,6 @@ const main = html`
         description="가입 후에는 변경할 수 없어요."
         validation-text="올바른 이메일 형식으로 입력하세요."
         aria-invalid="true"
-        style="width: 280px"
       >
         <mm-icon slot="leading" name="mail"></mm-icon>
       </mm-textfield>
@@ -223,16 +223,17 @@ const main = html`
 
     <mm-component-section
       heading="DateRangePicker"
-      description="기간처럼 짝을 이루는 날짜 필드는 나란히 두고 각각 레이블을 답니다."
+      description="기간은 시작일과 종료일을 한 필드에 이어 받아 하나의 값으로 읽히게 합니다."
     >
-      <mm-flex>
-        <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
-          <mm-icon slot="trailing" name="calendar"></mm-icon>
-        </mm-textfield>
-        <mm-textfield type="date" name="date-end" label="체크아웃" placeholder="YYYY. MM. DD.">
-          <mm-icon slot="trailing" name="calendar"></mm-icon>
-        </mm-textfield>
-      </mm-flex>
+      <mm-notice
+        slot="notice"
+        variant="warning"
+        heading="TODO 달력 선택"
+        description="지금은 텍스트 입력만 받습니다. 네이티브 type='date'는 날짜 하나만 고르므로, 시작일과 종료일을 달력에서 이어 고르는 선택 UI를 따로 만들어야 합니다."
+      ></mm-notice>
+      <mm-textfield name="date-range" label="숙박 기간" placeholder="YYYY. MM. DD. – YYYY. MM. DD.">
+        <mm-icon slot="trailing" name="calendar"></mm-icon>
+      </mm-textfield>
     </mm-component-section>
 
     <mm-component-section
@@ -287,18 +288,17 @@ const main = html`
 
     <mm-component-section
       heading="PasswordField"
-      description="searchfield처럼 textfield를 확장하며, trailing에 reveal-button을 두어 입력값 노출을 토글합니다. 회원가입 프로세스에서 비밀번호 확인 필드가 존재하는 경우에는
-          제공할 필요가 없다. 비밀번호 확인 필드를 제공하지 않는 것은 국내 서비스에는 익숙하지 않은
-          경험. 비밀번호 입력 필드가 1개만 존재하는 경우 리빌 버튼을 제공할 수 있다"
+      description="searchfield처럼 textfield를 확장하며, trailing에 reveal-button을 두어 입력값 노출을 토글합니다."
     >
-      <mm-flex direction="column" gap="3">
-        <mm-passwordfield
-          label="비밀번호"
-          placeholder="비밀번호를 입력하세요"
-          description="8자 이상, 영문·숫자·특수문자를 포함하세요."
-        ></mm-passwordfield>
-        <mm-passwordfield label="비밀번호 확인" placeholder="6자리 이상"></mm-passwordfield>
-      </mm-flex>
+      <mm-notice
+        slot="notice"
+        description="리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다. 확인 필드가 있으면 두 번 입력해 오타를 걸러내므로, 두 필드 모두 type='password'인 textfield를 씁니다."
+      ></mm-notice>
+      <mm-passwordfield
+        label="비밀번호"
+        placeholder="비밀번호를 입력하세요"
+        description="8자 이상, 영문·숫자·특수문자를 포함하세요."
+      ></mm-passwordfield>
     </mm-component-section>
 
     <mm-component-section
