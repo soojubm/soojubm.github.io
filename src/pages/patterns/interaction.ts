@@ -452,7 +452,8 @@ const main = html`
           <mm-code>mm-expand-indicator</mm-code>
           가
           <mm-code>expanded</mm-code>
-          를 받아 아이콘 회전으로 반영하고, 열고 닫는 상호작용은 트리거가 소유합니다.
+          를 받아 아이콘 회전으로 반영하는 표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가
+          소유합니다.
         </mm-paragraph>
         <mm-surface variant="outlined" radius="large">
           <mm-flex gap="6">

@@ -33,7 +33,7 @@ const main = html`
               <mm-ai-chat-bubble>
                 디자인 시스템 토큰은 세 계층으로 구성됩니다. 아래 출처를 참고하세요.
               </mm-ai-chat-bubble>
-              <mm-chat-source-group>
+              <mm-button-group>
                 <mm-chat-source
                   href="https://www.figma.com/blog/how-figmas-design-system-scales/"
                   heading="How Figma's Design System Scales"
@@ -53,7 +53,7 @@ const main = html`
                   label="GitHub"
                   icon=${ICON_NAMES.GITHUB}
                 ></mm-chat-source>
-              </mm-chat-source-group>
+              </mm-button-group>
             </mm-ai-chat-message>
 
             <mm-ai-chat-message hidden-reactions>
