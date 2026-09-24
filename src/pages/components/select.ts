@@ -30,7 +30,13 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 
-const componentFeatures: ComponentFeatureItem[] = []
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Interactive - selection',
+    description:
+      '여러 옵션 중 하나만 선택할 수 있으며, 선택된 값은 트리거에, 선택 여부는 목록 안 옵션의 aria-selected 상태로 드러납니다. 옵션을 고르면 목록이 닫히고 값이 바로 반영됩니다.',
+  },
+]
 
 const main = html`
   <mm-main>

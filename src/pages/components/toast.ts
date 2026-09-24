@@ -7,6 +7,7 @@ import type {
   ComponentTokenItemData,
 } from '@/components/domains/component'
 
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -35,6 +36,7 @@ const componentTokens: ComponentTokenItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Transient',
+    icon: ICON_NAMES.TIMER,
     description:
       '배경 상호작용을 막지 않고 화면 하단 중앙에 잠깐 떠올랐다 표시 시간이 지나면 스스로 닫힙니다. 열려 있을 때 다시 부르면 남은 시간이 초기화됩니다.',
   },

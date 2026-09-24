@@ -140,6 +140,7 @@ export const ICON_CATALOG = {
     LIST_VIEW: 'table-rows',
     SORT: 'arrow-separate-vertical',
     DATE: 'calendar',
+    TIMER: 'timer',
     FIELD: 'input-field',
     LOCK: 'lock',
     SEARCH: 'search',

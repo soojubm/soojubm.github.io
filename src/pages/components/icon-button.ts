@@ -41,7 +41,11 @@ const componentTokens: ComponentTokenItemData[] = [
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
-  { heading: 'Interactive - action', description: '' },
+  {
+    heading: 'Interactive - action',
+    description:
+      '누르면 바로 실행되는 보조 액션입니다. 좁은 공간에 반복되는 행동을 담고, 화면의 핵심 행동은 레이블이 보이는 버튼에 맡깁니다.',
+  },
   {
     heading: 'Glanceable',
     description:
