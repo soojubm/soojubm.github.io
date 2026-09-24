@@ -2,6 +2,7 @@ import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
+import type { SearchResult } from '@/components/domains/search-result-list'
 import type { TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
@@ -36,6 +37,15 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
     ${description}
   </span>
 `
+
+const instantSearchResults: SearchResult[] = [
+  { href: 'button.html', label: 'Button', description: '누르면 동작을 실행하는 버튼' },
+  {
+    href: 'icon-button.html',
+    label: 'Icon Button',
+    description: '아이콘만으로 동작을 알리는 버튼',
+  },
+]
 
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
@@ -180,13 +190,10 @@ const main = html`
         <mm-component-example>
           <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
             <mm-searchfield value="버튼" placeholder="컴포넌트, 패턴을 검색하세요"></mm-searchfield>
-            <mm-menu-item-group aria-label="검색어 자동완성">
-              <mm-menu-item-action icon=${ICON_NAMES.SEARCH} label="자동완성"></mm-menu-item-action>
-              <mm-menu-item-action
-                icon=${ICON_NAMES.SEARCH}
-                label="자동완성유아이"
-              ></mm-menu-item-action>
-            </mm-menu-item-group>
+            <mm-search-result-list
+              heading="검색 결과"
+              .results=${instantSearchResults}
+            ></mm-search-result-list>
           </mm-flex>
         </mm-component-example>
       </mm-content-section>

@@ -1,15 +1,25 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
-import { repeat } from 'lit/directives/repeat.js'
+
+import type { SearchResult } from '@/components/domains/search-result-list'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
+import '@/components/domains/search-result-list'
 import '@/components/overlay/sheet'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {
   search: (q: string) => Promise<{ results: { data: () => Promise<PagefindResult> }[] }>
+}
+
+// Pagefind excerpt는 일치 구간을 <mark>로 감싼 HTML이라 태그를 걷어 설명 문구로 쓴다.
+function toSearchResult(result: PagefindResult): SearchResult {
+  return {
+    href: result.url,
+    label: result.meta.title || result.url,
+    description: result.excerpt.replace(/<[^>]*>/g, ''),
+  }
 }
 
 function hasValue(target: EventTarget | null): target is HTMLInputElement | HTMLTextAreaElement {
@@ -29,7 +39,7 @@ export class NavbarSearch extends LitElement {
   `
   @state() private isOpen = false
   @state() private query = ''
-  @state() private results: PagefindResult[] = []
+  @state() private results: SearchResult[] = []
   @state() private searching = false
   private pagefind: Pagefind | null = null
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
@@ -154,7 +164,7 @@ export class NavbarSearch extends LitElement {
       const data = await Promise.all(results.slice(0, 8).map(r => r.data()))
       if (!this.isCurrentSearch(searchId, searchQuery)) return
 
-      this.results = data
+      this.results = data.map(toSearchResult)
     } finally {
       if (this.isCurrentSearch(searchId, searchQuery)) this.searching = false
     }
@@ -177,27 +187,7 @@ export class NavbarSearch extends LitElement {
       `
     }
     return html`
-      <mm-menu-list heading="검색 결과">
-        ${repeat(
-          this.results,
-          result => result.url,
-          result => html`
-            <mm-menu-item-action
-              size="medium"
-              icon=${ICON_NAMES.SEARCH}
-              label=${result.meta.title || result.url}
-              description=${ifDefined(
-                result.excerpt ? result.excerpt.replace(/<[^>]*>/g, '') : undefined,
-              )}
-              @click=${() => this.handleResultClick(result.url)}
-            ></mm-menu-item-action>
-          `,
-        )}
-      </mm-menu-list>
+      <mm-search-result-list heading="검색 결과" .results=${this.results}></mm-search-result-list>
     `
-  }
-
-  private handleResultClick(url: string) {
-    window.location.href = url
   }
 }
