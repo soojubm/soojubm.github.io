@@ -90,7 +90,7 @@ const main = html`
 
         <mm-button-group>
           <mm-button variant="primary" size="large">에피소드 1 보기</mm-button>
-          <mm-button variant="tertiary" size="large">관심이</mm-button>
+          <mm-bookmark-button shape="bookmark"></mm-bookmark-button>
         </mm-button-group>
       </mm-flex>
 
