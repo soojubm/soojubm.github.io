@@ -213,8 +213,17 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-section
-      heading="Date"
-      description="type='date'는 네이티브 날짜 피커를 씁니다. 기간처럼 짝을 이루는 필드는 나란히 두고 각각 레이블을 답니다."
+      heading="DatePicker"
+      description="type='date'는 네이티브 날짜 피커를 씁니다."
+    >
+      <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
+        <mm-icon slot="trailing" name="calendar"></mm-icon>
+      </mm-textfield>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="DateRangePicker"
+      description="기간처럼 짝을 이루는 날짜 필드는 나란히 두고 각각 레이블을 답니다."
     >
       <mm-flex>
         <mm-textfield type="date" name="date-start" label="체크인" placeholder="YYYY. MM. DD.">
