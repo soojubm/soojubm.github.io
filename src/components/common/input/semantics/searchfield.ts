@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
@@ -10,7 +10,16 @@ import '@/components/common/icon-button/semantics/clear-button'
 
 @customElement('mm-searchfield')
 export class SearchField extends LitElement {
-  static styles = [inputStyles]
+  static styles = [
+    inputStyles,
+    css`
+      /* 값이 없어도 자리를 남겨, 내용 폭을 따르는 배치에서 지울 때 필드 폭이 줄지 않게 한다. */
+      mm-clear-button[hidden] {
+        display: inline-flex;
+        visibility: hidden;
+      }
+    `,
+  ]
   @property({ type: String }) value = ''
   @property({ type: String }) placeholder = ''
   @property({ type: Boolean, reflect: true }) disabled = false
@@ -42,10 +51,12 @@ export class SearchField extends LitElement {
   }
 
   private renderClearButton() {
-    if (!this.value || this.disabled) return nothing
-
     return html`
-      <mm-clear-button aria-label="검색어 지우기" @click=${this.handleClearClick}></mm-clear-button>
+      <mm-clear-button
+        aria-label="검색어 지우기"
+        ?hidden=${!this.value || this.disabled}
+        @click=${this.handleClearClick}
+      ></mm-clear-button>
     `
   }
 
