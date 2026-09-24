@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { ActionConfig } from '@/types'
@@ -14,15 +14,10 @@ export class SheetFooter extends LitElement {
   @property({ attribute: false }) secondaryAction?: ActionConfig
 
   render() {
-    return html`
-      <mm-button-group justify-content="end" stretch>
-        ${renderActionButtons({
-          primaryAction: this.primaryAction,
-          secondaryAction: this.secondaryAction,
-          size: 'large',
-          fullWidth: true,
-        })}
-      </mm-button-group>
-    `
+    return renderActionButtons({
+      primaryAction: this.primaryAction,
+      secondaryAction: this.secondaryAction,
+      size: 'large',
+    })
   }
 }

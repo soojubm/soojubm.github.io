@@ -71,20 +71,13 @@ export class Notice extends LitElement {
     if (!this.primaryAction && !this.secondaryAction && !this.dismissible) return nothing
 
     return html`
-      <div class="notice-actions">${this.renderButtonGroup()} ${this.renderDismissButton()}</div>
-    `
-  }
-
-  private renderButtonGroup() {
-    if (!this.primaryAction && !this.secondaryAction) return nothing
-
-    return html`
-      <mm-button-group>
+      <div class="notice-actions">
         ${renderActionButtons({
           primaryAction: this.primaryAction,
           secondaryAction: this.secondaryAction,
         })}
-      </mm-button-group>
+        ${this.renderDismissButton()}
+      </div>
     `
   }
 

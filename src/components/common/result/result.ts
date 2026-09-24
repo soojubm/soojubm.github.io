@@ -26,7 +26,11 @@ export class Result extends LitElement {
       ${this.renderAvatar()}
       <mm-status-message heading=${this.heading} message=${this.description}></mm-status-message>
       <slot></slot>
-      ${this.renderActions()}
+      ${renderActionButtons({
+        primaryAction: this.primaryAction,
+        secondaryAction: this.secondaryAction,
+        size: 'large',
+      })}
     `
   }
 
@@ -35,20 +39,6 @@ export class Result extends LitElement {
 
     return html`
       <mm-avatar size="80" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
-    `
-  }
-
-  private renderActions() {
-    if (!this.primaryAction && !this.secondaryAction) return nothing
-
-    return html`
-      <mm-button-group justify-content="center">
-        ${renderActionButtons({
-          primaryAction: this.primaryAction,
-          secondaryAction: this.secondaryAction,
-          size: 'large',
-        })}
-      </mm-button-group>
     `
   }
 }
