@@ -3,6 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
+import type { ButtonVariant } from '@/components/common/button/button'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { OptionItem } from '@/types'
 
@@ -16,6 +17,8 @@ import { MEDIA_QUERY } from '@/constants'
 import { MediaQueryController } from '@/controllers/media-query-controller'
 import { emit } from '@/utils'
 
+export type SelectVariant = Extract<ButtonVariant, 'tertiary' | 'ghost'>
+
 /**
  * popover를 프리미티브로 하는 선택 입력.
  * 좁은 화면에서는 목록을 트리거에 앵커하지 않고 sheet로 올린다. 두 표면은 backdrop·portal·
@@ -25,8 +28,9 @@ import { emit } from '@/utils'
 @customElement('mm-select')
 export class Select extends LitElement {
   static styles = css`
+    /* 트리거 콘텐츠 폭을 따른다. 패널은 호스트 폭에 맞춰 늘어나므로, 호스트가 부모를 채우면 놓인 자리마다 목록 폭이 달라진다 */
     :host {
-      display: block;
+      display: inline-flex;
     }
 
     /* 옵션 5개까지 보이고 나머지는 스크롤한다. 옵션 행은 small list-item 높이이고, 패널의 padding·border를 더한다 */
@@ -44,6 +48,8 @@ export class Select extends LitElement {
   `
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
+  /** 트리거 버튼의 variant. 배경 없이 본문에 얹을 때 ghost를 쓴다. */
+  @property({ type: String }) variant: SelectVariant = 'tertiary'
   @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @state() private open = false
@@ -96,6 +102,7 @@ export class Select extends LitElement {
     if (this.compact.matches) {
       return html`
         <mm-button
+          variant=${this.variant}
           aria-haspopup="dialog"
           aria-expanded=${this.open ? 'true' : 'false'}
           aria-label=${this.triggerLabel || nothing}
@@ -107,7 +114,12 @@ export class Select extends LitElement {
     }
 
     return html`
-      <mm-button slot="trigger" aria-haspopup="listbox" aria-label=${this.triggerLabel || nothing}>
+      <mm-button
+        slot="trigger"
+        variant=${this.variant}
+        aria-haspopup="listbox"
+        aria-label=${this.triggerLabel || nothing}
+      >
         ${this.renderTriggerContent()}
       </mm-button>
     `

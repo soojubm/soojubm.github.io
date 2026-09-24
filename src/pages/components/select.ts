@@ -5,6 +5,8 @@ import type {
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { PopoverPlacement } from '@/components/overlay/popover/popover'
+import type { SelectVariant } from '@/components/overlay/select/select'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -15,12 +17,24 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'menu-item.html', label: 'Menu Item' },
 ]
 
+const variants: SelectVariant[] = ['tertiary', 'ghost']
+const placements: PopoverPlacement[] = ['bottom-left', 'bottom-right', 'top-left', 'top-right']
+// 트리거에 현재 위치 이름이 보이도록 위치를 옵션 값으로 둔다.
+const placementOptions = placements.map(placement => ({ value: placement, label: placement }))
+
+const releaseChannelOptions = [
+  { value: 'stable', label: 'Stable' },
+  { value: 'beta', label: 'Beta' },
+  { value: 'canary', label: 'Canary' },
+]
+
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'options',
     type: '{ value: string; label: string; icon?: IconName; disabled?: boolean }[] = []',
   },
   { name: 'value', type: 'string', optional: true },
+  { name: 'variant', type: "'tertiary' | 'ghost' = 'tertiary'" },
   {
     name: 'placement',
     type: "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'",
@@ -46,17 +60,44 @@ const main = html`
 
     <mm-component-aka .items=${['Dropdown', 'Picker']}></mm-component-aka>
 
-    <mm-component-example>
-      <mm-select
-        aria-label="릴리스 채널"
-        value="stable"
-        .options=${[
-          { value: 'stable', label: 'Stable' },
-          { value: 'beta', label: 'Beta' },
-          { value: 'canary', label: 'Canary' },
-        ]}
-      ></mm-select>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="variant" variant="pill">
+        <mm-tab value="variant">Variant</mm-tab>
+        <mm-tab value="placement">Placement</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="variant">
+        <mm-component-example>
+          <mm-flex gap="4">
+            ${variants.map(
+              variant => html`
+                <mm-select
+                  aria-label="릴리스 채널"
+                  variant=${variant}
+                  value="stable"
+                  .options=${releaseChannelOptions}
+                ></mm-select>
+              `,
+            )}
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="placement">
+        <mm-component-example>
+          <mm-flex gap="4" wrap="wrap">
+            ${placements.map(
+              placement => html`
+                <mm-select
+                  aria-label="패널 위치"
+                  placement=${placement}
+                  value=${placement}
+                  .options=${placementOptions}
+                ></mm-select>
+              `,
+            )}
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
