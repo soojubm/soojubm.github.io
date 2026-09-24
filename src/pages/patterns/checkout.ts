@@ -31,7 +31,6 @@ const main = html`
         <mm-content-section-list>
           <mm-content-section heading="주문상품" heading-level="3">
             ${orderedProduct}
-            <mm-button>수량/옵션 변경</mm-button>
             <mm-list-item
               size="medium"
               label="AppleCare+ for Macbook/MacBook Air"
@@ -39,6 +38,7 @@ const main = html`
             >
               <mm-text slot="trailing">₩ 20,000</mm-text>
             </mm-list-item>
+            <mm-button>수량/옵션 변경</mm-button>
           </mm-content-section>
 
           <mm-content-section heading="배송지" heading-level="3">
