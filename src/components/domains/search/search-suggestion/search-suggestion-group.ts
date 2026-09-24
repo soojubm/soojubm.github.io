@@ -9,13 +9,13 @@ import { horizontalScrollRowStyles } from '@/stylesheets/shared.styles'
  * bleed: 부모 패딩만큼 좌우로 블리드해서 스크롤 끝까지 도달 가능하게 함
  * fade: 우측에 fade mask를 적용해 추가 콘텐츠 존재를 암시
  *
- * <mm-search-suggestions bleed="var(--space-4)" fade aria-label="추천 검색어">
+ * <mm-search-suggestion-group bleed="var(--space-4)" fade aria-label="추천 검색어">
  *   <mm-search-suggestion>로얄테넌바움</mm-search-suggestion>
  *   <mm-search-suggestion>소매치기</mm-search-suggestion>
- * </mm-search-suggestions>
+ * </mm-search-suggestion-group>
  */
-@customElement('mm-search-suggestions')
-export class SearchSuggestions extends LitElement {
+@customElement('mm-search-suggestion-group')
+export class SearchSuggestionGroup extends LitElement {
   static styles = css`
     :host {
       ${horizontalScrollRowStyles};
