@@ -1,10 +1,14 @@
+/* 포스터 열을 정보 열보다 좁게 두는 비대칭 2열이라 균등 분할하는 mm-grid 대신 직접 grid를 둔다. */
 .cake {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: var(--space-8);
   padding: 0 var(--layout-padding-inline) var(--space-section);
 }
 
-mm-thumbnail {
-  width: 50%;
-  position: absolute;
-  right: 0;
-  top: 0;
+@media (max-width: 800px) {
+  .cake {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

@@ -24,7 +24,11 @@ const castFilterOptions: FilterOption[] = [
 
 const main = html`
   <mm-main class="cake">
-    <mm-thumbnail ratio="" src="/src/images/coolhandluke.jpg" alt="Cool Hand Luke"></mm-thumbnail>
+    <mm-thumbnail
+      ratio="full"
+      src="/src/images/coolhandluke.jpg"
+      alt="Cool Hand Luke"
+    ></mm-thumbnail>
 
     <mm-flex direction="column" gap="section">
       <mm-flex direction="column" gap="4">
@@ -91,7 +95,7 @@ const main = html`
       </mm-flex>
 
       <mm-content-section-list>
-        <mm-content-section heading="출연진">
+        <mm-content-section heading-level="3" heading="출연진">
           <mm-filter-button-group
             mode="single"
             .values=${castFilterValues}
@@ -100,7 +104,7 @@ const main = html`
           <mm-cast-list .casts=${casts}></mm-cast-list>
         </mm-content-section>
 
-        <mm-content-section heading="수상내역">
+        <mm-content-section heading-level="3" heading="수상내역">
           <mm-text-list
             .texts=${[
               'Best Actor',
@@ -111,7 +115,7 @@ const main = html`
           ></mm-text-list>
         </mm-content-section>
 
-        <mm-content-section heading="리뷰">
+        <mm-content-section heading-level="3" heading="리뷰">
           <mm-paragraph>
             이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용
             장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의
