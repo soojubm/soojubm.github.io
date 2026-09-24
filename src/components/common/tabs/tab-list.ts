@@ -6,6 +6,7 @@ import { TabPanel } from '@/components/common/tabs/tab-panel'
 import { tabsStyles } from '@/components/common/tabs/tabs.styles'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { emit, uniqueId } from '@/utils'
+import '@/components/common/scroll/semantics/scroll-hint'
 
 @customElement('mm-tab-list')
 export class TabList extends LitElement {
@@ -23,8 +24,10 @@ export class TabList extends LitElement {
 
   render() {
     return html`
-      <slot @slotchange=${this.handleSlotChange}></slot>
+      <mm-scroll-hint placement="start" size="small"></mm-scroll-hint>
       <div class="indicator"></div>
+      <slot @slotchange=${this.handleSlotChange}></slot>
+      <mm-scroll-hint placement="end" size="small"></mm-scroll-hint>
     `
   }
 

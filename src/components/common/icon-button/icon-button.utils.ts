@@ -3,6 +3,7 @@ import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
+import type { IconButtonSize } from '@/components/common/icon-button/icon-button'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 import type { CSSResultGroup, TemplateResult } from 'lit'
 
@@ -16,6 +17,7 @@ import '@/components/overlay/tooltip'
 import '@/components/common/icon'
 
 export interface IconAction {
+  size: IconButtonSize
   tooltipPlacement: string
   disabled: boolean
   handleActionClick(): void
@@ -23,11 +25,12 @@ export interface IconAction {
 
 /**
  * close·delete·dismiss·next·prev-button처럼 아이콘 하나로 단일 행동을 알리는
- * 시맨틱 버튼이 공유하는 tooltip 위치·disabled 상태와 클릭 배선.
+ * 시맨틱 버튼이 공유하는 크기·tooltip 위치·disabled 상태와 클릭 배선.
  * 행동의 의미는 이벤트 이름과 레이블로 구분되므로 컴포넌트 자체는 합치지 않는다.
  */
 export const withIconAction = <T extends Constructor<LitElement>>(Base: T, eventName: string) => {
   class IconActionElement extends Base {
+    @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
     @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
     @property({ type: Boolean }) disabled = false
 

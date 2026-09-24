@@ -51,7 +51,9 @@ export class SelectionIndicatorController implements ReactiveController {
     const targetRect = target.getBoundingClientRect()
 
     if (this.options.axis === 'x') {
-      indicator.style.transform = `translateX(${targetRect.left - containerRect.left}px)`
+      // 컨테이너가 가로 스크롤되면 인디케이터도 스크롤 콘텐츠 기준으로 놓이므로 scrollLeft만큼 되돌린다.
+      const x = targetRect.left - containerRect.left + container.scrollLeft
+      indicator.style.transform = `translateX(${x}px)`
       indicator.style.width = `${targetRect.width}px`
       return
     }

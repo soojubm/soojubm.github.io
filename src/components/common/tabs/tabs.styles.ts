@@ -6,6 +6,10 @@ export const tabsStyles = css`
     display: flex;
     align-items: center;
     width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
 
     --tabs-indicator-background-color: var(--interaction-selected-foreground-color);
     --tabs-line-color: var(--border-color);
@@ -15,6 +19,11 @@ export const tabsStyles = css`
     --tabs-pill-indicator-border: var(--border-transparent);
   }
 
+  :host::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 인디케이터는 z-index 없이 탭보다 먼저 렌더해 탭 뒤에 깔고, 스크롤 힌트(elevated)만 탭 위로 올린다. */
   .indicator {
     position: absolute;
     left: 0;
@@ -28,11 +37,12 @@ export const tabsStyles = css`
      1) Line 형태 (하단 선 스타일)
      ========================================================== */
   :host([variant='line']) {
-    border-bottom: var(--tabs-line-width) solid var(--tabs-line-color);
+    /* 스크롤 컨테이너는 border 영역의 자식을 잘라내므로, 기준선을 안쪽 그림자로 그려 인디케이터와 같은 줄에 둔다. */
     width: 100%;
+    box-shadow: inset 0 calc(var(--tabs-line-width) * -1) 0 var(--tabs-line-color);
 
     & .indicator {
-      bottom: calc(var(--tabs-line-width) * -1); /* 부모 보더선과 정밀하게 겹치도록 설정 */
+      bottom: 0;
       height: var(--tabs-line-width);
       background-color: var(--tabs-indicator-background-color);
     }
@@ -53,7 +63,6 @@ export const tabsStyles = css`
       background-color: var(--tabs-pill-indicator-background-color);
       border: var(--tabs-pill-indicator-border);
       border-radius: var(--radius);
-      z-index: var(--material-zindex-base); /* 탭 텍스트 뒤로 배치 */
     }
   }
 `

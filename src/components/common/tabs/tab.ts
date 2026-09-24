@@ -12,9 +12,7 @@ export class Tab extends LitElement {
     :host {
       position: relative;
       display: inline-flex;
-      z-index: var(
-        --material-zindex-elevated
-      ); /* pill indicator 위에 텍스트가 렌더링되도록 stacking context 생성 */
+      flex-shrink: 0;
 
       --tab-height: var(--size-32);
       --tab-padding-inline: var(--space-3);
@@ -28,6 +26,7 @@ export class Tab extends LitElement {
       justify-content: center;
       height: var(--tab-height);
       padding: 0 var(--tab-padding-inline);
+      white-space: nowrap;
       font-size: var(--tab-text-size);
       color: var(--tab-text-color);
       cursor: pointer;
