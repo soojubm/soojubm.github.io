@@ -165,9 +165,8 @@ const main = html`
 
             <mm-content-section heading-level="4" heading="Presentation">
               <mm-paragraph>
-                조작이 주 목적이 아니라, 대상·상태·구조를 보여주거나 화면에 자리 잡고 물러나는
-                규칙을 가집니다. 훑는 것만으로 뜻이 파악되게 하고, 레이블은 짧게 쓰되 줄여 표시하지
-                않습니다.
+                대상·상태·구조를 보여주거나 화면에 자리 잡고 물러나는 규칙을 가집니다. 훑는 것만으로
+                뜻이 파악되게 하고, 레이블은 짧게 쓰되 줄여 표시하지 않습니다.
               </mm-paragraph>
               <mm-text-list
                 .texts=${[

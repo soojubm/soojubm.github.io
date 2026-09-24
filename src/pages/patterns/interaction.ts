@@ -305,8 +305,7 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="Hover">
         <mm-paragraph>
-          hover는 배경 채움이 기본이고, 그것이 드러나지 않는 요소만 다른 처리를 씁니다. 상태
-          selector에서 속성을 다시 선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을
+          상태 selector에서 속성을 다시 선언하지 않고, 평소 값을 담고 있는 컴포넌트 토큰에 아래 값을
           재할당합니다.
         </mm-paragraph>
         <mm-grid columns="2" gap="4">
@@ -342,7 +341,7 @@ const main = html`
           ></mm-text-list>
 
           <mm-surface variant="outlined" radius="large">
-            <mm-foundation-item href="#" heading="" description="떠오름"></mm-foundation-item>
+            <mm-foundation-item href="#" heading="떠오름"></mm-foundation-item>
           </mm-surface>
           <mm-text-list
             variant="check"

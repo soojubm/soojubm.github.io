@@ -2,7 +2,6 @@ import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
-import type { SearchResult } from '@/components/domains/search/search-result-list'
 import type { TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
@@ -37,15 +36,6 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
     ${description}
   </span>
 `
-
-const instantSearchResults: SearchResult[] = [
-  { href: 'button.html', label: 'Button', description: '누르면 동작을 실행하는 버튼' },
-  {
-    href: 'icon-button.html',
-    label: 'Icon Button',
-    description: '아이콘만으로 동작을 알리는 버튼',
-  },
-]
 
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
@@ -141,7 +131,7 @@ const main = html`
         ></mm-table>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="검색 범위">
+      <mm-content-section heading-level="3" heading="전역 검색 × 지역 검색">
         <mm-text-list
           variant="check"
           .texts=${[
@@ -158,14 +148,16 @@ const main = html`
           ]}
         ></mm-text-list>
         <mm-component-example>
-          <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
-            <mm-searchfield size="small" value="버튼" placeholder="컴포넌트 찾기"></mm-searchfield>
-            <mm-search-suggestions aria-label="추천 검색어">
-              <mm-search-suggestion>버튼</mm-search-suggestion>
-              <mm-search-suggestion>버튼 그룹</mm-search-suggestion>
-              <mm-search-suggestion>아이콘 버튼</mm-search-suggestion>
-            </mm-search-suggestions>
-          </mm-flex>
+          <mm-grid columns="2" gap="4">
+            <mm-flex direction="column" gap="2">
+              <mm-caption>전역 검색</mm-caption>
+              <mm-searchfield placeholder="컴포넌트, 패턴을 검색하세요"></mm-searchfield>
+            </mm-flex>
+            <mm-flex direction="column" gap="2">
+              <mm-caption>지역 검색</mm-caption>
+              <mm-searchfield size="small" placeholder="컴포넌트 찾기"></mm-searchfield>
+            </mm-flex>
+          </mm-grid>
         </mm-component-example>
       </mm-content-section>
 
@@ -188,13 +180,11 @@ const main = html`
           ]}
         ></mm-text-list>
         <mm-component-example>
-          <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
-            <mm-searchfield value="버튼" placeholder="컴포넌트, 패턴을 검색하세요"></mm-searchfield>
-            <mm-search-result-list
-              heading="검색 결과"
-              .results=${instantSearchResults}
-            ></mm-search-result-list>
-          </mm-flex>
+          <mm-searchfield
+            value="버튼"
+            placeholder="컴포넌트, 패턴을 검색하세요"
+            style="max-width: var(--layout-width-narrow)"
+          ></mm-searchfield>
         </mm-component-example>
       </mm-content-section>
 
@@ -234,11 +224,11 @@ const main = html`
         ></mm-text-list>
         <mm-component-example>
           <mm-result heading="'[키워드]'와(과) 일치하는 내용이 없습니다.">
-            <mm-search-suggestions aria-label="추천 검색어">
+            <mm-search-suggestion-group aria-label="추천 검색어">
               <mm-search-suggestion>버튼</mm-search-suggestion>
               <mm-search-suggestion>버튼 그룹</mm-search-suggestion>
               <mm-search-suggestion>아이콘 버튼</mm-search-suggestion>
-            </mm-search-suggestions>
+            </mm-search-suggestion-group>
           </mm-result>
         </mm-component-example>
       </mm-content-section>
