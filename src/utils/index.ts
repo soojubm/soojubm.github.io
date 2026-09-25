@@ -45,6 +45,12 @@ export const getDeepActiveElement = (): Element | null => {
   return active
 }
 
+/** 토큰 묶음을 CSS 선언 문자열로 펼친다. */
+export const buildDeclarations = (tokens: Record<string, string>) =>
+  Object.entries(tokens)
+    .map(([token, tokenValue]) => `${token}: ${tokenValue};`)
+    .join(' ')
+
 export const buildAttributeRules = (
   attribute: string,
   values: Record<string, Record<string, string>>,
@@ -52,9 +58,7 @@ export const buildAttributeRules = (
 ) =>
   Object.entries(values)
     .map(([value, tokens]) => {
-      const declarations = Object.entries(tokens)
-        .map(([token, tokenValue]) => `${token}: ${tokenValue};`)
-        .join(' ')
+      const declarations = buildDeclarations(tokens)
       const selector = descendant
         ? `:host([${attribute}='${value}']) ${descendant}`
         : `:host([${attribute}='${value}'])`

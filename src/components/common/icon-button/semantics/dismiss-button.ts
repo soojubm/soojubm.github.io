@@ -2,7 +2,10 @@ import { css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import {
+  iconButtonSizeSkin,
+  iconButtonStyles,
+} from '@/components/common/icon-button/icon-button.styles'
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -20,7 +23,7 @@ export class DismissButton extends iconActionElement({
     iconButtonStyles,
     css`
       :host {
-        --icon-button-size: var(--size-24);
+        ${iconButtonSizeSkin('small')}
       }
     `,
   ]

@@ -1,7 +1,15 @@
 import { css, unsafeCSS } from 'lit'
 
 import { interactiveControlStyles } from '@/components/common/button/button.styles'
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, buildDeclarations } from '@/utils'
+
+const iconButtonSizeTokens = {
+  small: { '--icon-button-size': 'var(--size-24)' },
+}
+
+/** 자체 button을 렌더하는 시맨틱 컴포넌트가 크기 단계 하나를 골라 얹는 선언. 얹을 선택자 안에 펼쳐 쓴다. */
+export const iconButtonSizeSkin = (size: keyof typeof iconButtonSizeTokens) =>
+  unsafeCSS(buildDeclarations(iconButtonSizeTokens[size]))
 
 const iconButtonVariantTokens = {
   primary: {
@@ -90,8 +98,6 @@ export const iconButtonStyles = [
 
     ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
 
-    :host([size='small']) {
-      --icon-button-size: var(--size-24);
-    }
+    ${unsafeCSS(buildAttributeRules('size', iconButtonSizeTokens))}
   `,
 ]

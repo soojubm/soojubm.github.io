@@ -1,7 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import { focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, buildDeclarations } from '@/utils'
 
 /** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓰도록 공용 상호작용 선택자로 잡는다. */
 export const interactiveControlStyles = css`
@@ -107,11 +107,7 @@ export const buttonVariantStyles = css`
 
 /** 자체 button을 렌더하는 시맨틱 컴포넌트가 variant 하나를 골라 스킨으로 얹는 선언. 얹을 선택자 안에 펼쳐 쓴다. */
 export const buttonVariantSkin = (variant: keyof typeof buttonVariantTokens) =>
-  unsafeCSS(
-    Object.entries(buttonVariantTokens[variant])
-      .map(([token, value]) => `${token}: ${value};`)
-      .join(' '),
-  )
+  unsafeCSS(buildDeclarations(buttonVariantTokens[variant]))
 
 /** 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다. */
 export const buttonSelectedStyles = css`
@@ -143,6 +139,6 @@ export const followButtonStyles = css`
   }
 
   button {
-    ${buttonVariantSkin('primary')}
+    ${buttonVariantSkin('primary')};
   }
 `
