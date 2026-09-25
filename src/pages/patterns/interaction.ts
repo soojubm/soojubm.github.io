@@ -5,6 +5,7 @@ import type { ComponentReferenceItemData } from '@/components/domains/component'
 import type { TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
+import '@/components/layouts/app-sidebar/sidebar-page-link'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './interaction.css'
 
@@ -80,6 +81,10 @@ const currentComponentRows = html`
   <tr>
     <th scope="row"><mm-code>mm-sidebar-page-link</mm-code></th>
     <td><mm-code>page</mm-code></td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>mm-step-item</mm-code></th>
+    <td><mm-code>step</mm-code></td>
   </tr>
 `
 const expandedComponentRows = html`
@@ -451,6 +456,34 @@ const main = html`
           <mm-code>page</mm-code>
           를 씁니다.
         </mm-paragraph>
+        <mm-paragraph>
+          점 표시는
+          <mm-code>mm-current-indicator</mm-code>
+          가 맡습니다. 현재라는 뜻은 항목의
+          <mm-code>aria-current</mm-code>
+          가 전하므로 점은 현재 항목에만 놓이고 보조 기술에 드러나지 않습니다. 가로로 늘어선 항목은
+          아래 가운데에, 세로 목록은 행 끝에 둡니다.
+        </mm-paragraph>
+        <mm-surface variant="outlined" radius="large">
+          <mm-flex gap="6" align-items="center">
+            <mm-flex direction="column" gap="4" align-items="center">
+              <mm-flex gap="1">
+                <mm-page-button page="1"></mm-page-button>
+                <mm-page-button page="2" aria-current="page"></mm-page-button>
+                <mm-page-button page="3"></mm-page-button>
+              </mm-flex>
+              <mm-caption>가로 항목</mm-caption>
+            </mm-flex>
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-sidebar-page-link
+                href="interaction.html"
+                emoji="#"
+                label="Interaction"
+              ></mm-sidebar-page-link>
+              <mm-caption>세로 목록</mm-caption>
+            </mm-flex>
+          </mm-flex>
+        </mm-surface>
         <mm-table
           .rows=${currentComponentRows}
           caption="Current 컴포넌트와 값"

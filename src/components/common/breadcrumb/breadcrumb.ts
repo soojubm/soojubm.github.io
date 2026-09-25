@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
+import '@/components/common/dot/semantics/current-indicator'
 import '@/components/common/text/text'
 
 export interface BreadcrumbItem {
@@ -75,7 +76,11 @@ export class Breadcrumb extends LitElement {
   private renderListItem(item: BreadcrumbItem, index: number) {
     const isLast = index === this.items.length - 1
 
-    return [this.renderItem(item, isLast), this.renderDivider(isLast)]
+    return [
+      this.renderItem(item, isLast),
+      this.renderCurrentIndicator(isLast),
+      this.renderDivider(isLast),
+    ]
   }
 
   private renderItem(item: BreadcrumbItem, isLast: boolean) {
@@ -89,6 +94,14 @@ export class Breadcrumb extends LitElement {
       <mm-text class="breadcrumb-item" aria-current=${ifDefined(isLast ? 'page' : undefined)}>
         ${item.label}
       </mm-text>
+    `
+  }
+
+  private renderCurrentIndicator(isLast: boolean) {
+    if (!isLast) return nothing
+
+    return html`
+      <mm-current-indicator></mm-current-indicator>
     `
   }
 

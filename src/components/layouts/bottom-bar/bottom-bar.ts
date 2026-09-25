@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -72,6 +72,14 @@ export class BottomBar extends LitElement {
         --foreground-subtle-color: var(--interaction-selected-foreground-color);
       }
 
+      /* 막대 안에는 캡션 아래 자리가 없어, 가운데 놓인 아바타의 오른쪽 위 모서리에 얹는다. */
+      mm-current-indicator {
+        position: absolute;
+        top: var(--space-1);
+        left: calc(50% + var(--size-32) / 2);
+        translate: -50% -50%;
+      }
+
       .indicator {
         width: 0;
         border-radius: var(--radius-large);
@@ -140,7 +148,16 @@ export class BottomBar extends LitElement {
       >
         <mm-avatar variant="tertiary" size="32" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
         <mm-caption>${item.label}</mm-caption>
+        ${this.renderCurrentIndicator(activeIndex === index)}
       </a>
+    `
+  }
+
+  private renderCurrentIndicator(isCurrent: boolean) {
+    if (!isCurrent) return nothing
+
+    return html`
+      <mm-current-indicator></mm-current-indicator>
     `
   }
 

@@ -1,9 +1,10 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import type { AriaCurrent } from '@/types'
 
 import { stepItemStyles } from '@/components/indicators/step/step.styles'
+import '@/components/common/dot/semantics/current-indicator'
 import '@/components/common/text/text'
 
 export type StepOrientation = 'horizontal' | 'vertical'
@@ -31,7 +32,8 @@ export class StepItem extends LitElement {
 
   render() {
     return html`
-      ${this.renderMarker()} ${this.renderLabel()} ${this.renderContent()}
+      ${this.renderMarker()} ${this.renderLabel()} ${this.renderCurrentIndicator()}
+      ${this.renderContent()}
     `
   }
 
@@ -45,6 +47,14 @@ export class StepItem extends LitElement {
   private renderLabel() {
     return html`
       <mm-text class="label">${this.label}</mm-text>
+    `
+  }
+
+  private renderCurrentIndicator() {
+    if (!this.ariaCurrent || this.ariaCurrent === 'false') return nothing
+
+    return html`
+      <mm-current-indicator></mm-current-indicator>
     `
   }
 

@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -10,6 +10,8 @@ import {
   buttonSizeStyles,
   buttonVariantStyles,
 } from '@/components/common/button/button.styles'
+import '@/components/common/dot/semantics/current-indicator'
+import { dotBelowStyles } from '@/components/common/dot/dot.styles'
 import '@/components/common/icon'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -20,7 +22,21 @@ export type ButtonType = 'button' | 'submit' | 'reset'
 
 @customElement('mm-button')
 export class Button extends LitElement {
-  static styles = [resetStyles, buttonBaseStyles, buttonSizeStyles, buttonVariantStyles]
+  static styles = [
+    resetStyles,
+    buttonBaseStyles,
+    buttonSizeStyles,
+    buttonVariantStyles,
+    css`
+      button[aria-current] {
+        position: relative;
+      }
+
+      mm-current-indicator {
+        ${dotBelowStyles};
+      }
+    `,
+  ]
   @property({ type: String, reflect: true }) variant: ButtonVariant = 'tertiary'
   @property({ type: String, reflect: true }) size: ButtonSize = 'medium'
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
@@ -50,7 +66,7 @@ export class Button extends LitElement {
       >
         ${this.renderIcon('leading')}
         <slot></slot>
-        ${this.renderIcon('trailing')}
+        ${this.renderIcon('trailing')} ${this.renderCurrentIndicator()}
       </button>
     `
   }
@@ -60,6 +76,14 @@ export class Button extends LitElement {
       event.preventDefault()
       event.stopPropagation()
     }
+  }
+
+  private renderCurrentIndicator() {
+    if (!this.ariaCurrent || this.ariaCurrent === 'false') return nothing
+
+    return html`
+      <mm-current-indicator></mm-current-indicator>
+    `
   }
 
   private renderIcon(position: ButtonIconPosition) {

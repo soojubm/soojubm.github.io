@@ -1,9 +1,11 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaCurrent } from '@/types'
 
+import '@/components/common/dot/semantics/current-indicator'
+import { dotBelowStyles } from '@/components/common/dot/dot.styles'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -24,6 +26,11 @@ export class PageButton extends LitElement {
       button[aria-current='page'] {
         border-color: var(--interaction-selected-border-color);
         color: var(--interaction-selected-foreground-color);
+        position: relative;
+      }
+
+      mm-current-indicator {
+        ${dotBelowStyles};
       }
     `,
   ]
@@ -41,8 +48,16 @@ export class PageButton extends LitElement {
         aria-current=${ifDefined(this.ariaCurrent ?? undefined)}
         ?disabled=${this.disabled}
       >
-        ${this.page}
+        ${this.page} ${this.renderCurrentIndicator()}
       </button>
+    `
+  }
+
+  private renderCurrentIndicator() {
+    if (this.ariaCurrent !== 'page') return nothing
+
+    return html`
+      <mm-current-indicator></mm-current-indicator>
     `
   }
 }

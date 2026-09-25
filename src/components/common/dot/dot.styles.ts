@@ -18,6 +18,17 @@ export const dotStyles = css`
   background-color: var(--dot-background-color);
 `
 
+/**
+ * 가로로 늘어선 항목에서 현재 위치를 가리키는 점을 항목 아래 가운데에 띄운다. 점 선택자 안에 펼쳐 쓴다.
+ * 흐름 밖에 두어 현재 항목만 높이가 달라지지 않게 하며, 항목이 position 기준이 된다.
+ */
+export const dotBelowStyles = css`
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% 0;
+`
+
 /** 점은 면이 작아 배경 틴트로는 색이 드러나지 않는다. tone이 테두리로 쓰는 값을 채운다. */
 export const dotToneColor = (tone: TagTone) => tagToneStyles[tone].borderColor
 

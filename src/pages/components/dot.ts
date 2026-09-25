@@ -101,6 +101,13 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section
+      heading="CurrentIndicator"
+      description="여러 항목 가운데 지금 위치한 곳을 가리키는 점입니다. 현재라는 뜻은 항목의 aria-current가 전하므로 점은 현재 항목에만 놓여 화면에서 자리를 짚는 일만 맡습니다. 가로로 늘어선 항목은 아래 가운데에, 세로 목록은 행 끝에 둡니다."
+    >
+      <mm-pagination current-page="2" page-count="5"></mm-pagination>
+    </mm-component-section>
+
+    <mm-component-section
       heading="ChartLegend"
       description="차트가 그린 시리즈와 이름을 잇는 범례입니다. 점은 시리즈 색만 옮기고 이름은 옆의 라벨이 맡습니다."
     >
