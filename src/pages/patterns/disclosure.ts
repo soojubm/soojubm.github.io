@@ -24,6 +24,13 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
   </span>
 `
 
+// 규칙에서 벗어나는 사례는 규칙 목록과 섞지 않고 warning notice로 따로 둔다.
+const exception = (heading: string, description: string | TemplateResult) => html`
+  <mm-notice variant="warning" heading=${heading}>
+    <mm-text size="14">${description}</mm-text>
+  </mm-notice>
+`
+
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://www.w3.org/WAI/ARIA/apg/patterns/accordion/',
@@ -42,29 +49,6 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
-const surfaceRows = html`
-  <tr>
-    <th scope="row">제자리</th>
-    <td>뒤의 콘텐츠를 아래로 민다</td>
-    <td>
-      ${code('mm-faq-item')} · ${code('mm-read-more-paragraph')} · ${code('mm-sidebar-section')}
-    </td>
-    <td>이 문서</td>
-  </tr>
-  <tr>
-    <th scope="row">앵커</th>
-    <td>트리거 옆에 떠서 덮는다</td>
-    <td>${code('mm-popover')} · ${code('mm-select')} · ${code('mm-tooltip')}</td>
-    <td><mm-link href="./overlay.html">Overlay</mm-link></td>
-  </tr>
-  <tr>
-    <th scope="row">레이어</th>
-    <td>viewport를 기준으로 화면을 덮는다</td>
-    <td>${code('mm-sheet')} · ${code('mm-dialog')}</td>
-    <td><mm-link href="./overlay.html">Overlay</mm-link></td>
-  </tr>
-`
-
 const main = html`
   <mm-main>
     <mm-page-header
@@ -75,20 +59,12 @@ const main = html`
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Overview">
         <mm-paragraph>
-          펼친 내용이 어디에 놓이는지로 구분합니다. 뜨는 표면의 modality·dismiss·겹침 순서는 Overlay
-          문서가 정하고, 이 문서는 흐름 안에서 펼쳐지는 제자리 disclosure와 세 방식이 공유하는
-          상태·접근성 규칙을 정합니다.
+          트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
+          트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
+          유지합니다. 트리거 옆이나 화면 위로 떠서 덮는 표면은
+          <mm-link href="./overlay.html">Overlay</mm-link>
+          문서가 다룹니다.
         </mm-paragraph>
-        <mm-table
-          .rows=${surfaceRows}
-          caption="펼친 내용이 놓이는 자리에 따른 disclosure 분류"
-          .columns=${[
-            { label: '자리', width: '80px' },
-            { label: '동작', width: '200px' },
-            { label: '컴포넌트' },
-            { label: '문서', width: '100px' },
-          ]}
-        ></mm-table>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="언제 접나요">
@@ -100,8 +76,8 @@ const main = html`
               '자주 묻는 질문, 커리큘럼, 필터처럼 항목이 많고 사용자가 그중 일부만 읽는 콘텐츠가 여기에 해당한다',
             ),
             rule(
-              '반드시 읽어야 하는 정보는 펼친 채로 둔다',
-              '약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보는 접지 않는다',
+              '반드시 읽어야 하는 정보는 disclosure를 쓰지 않는다',
+              '약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보가 여기에 해당한다',
             ),
             rule(
               '모든 항목을 읽어야 하면 접지 않는다',
@@ -111,48 +87,42 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="제자리 disclosure">
-        <mm-paragraph>
-          트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
-          트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
-          유지합니다.
-        </mm-paragraph>
+      <mm-content-section heading-level="3" heading="형태">
         <mm-paragraph>
           접힌 자리에 무엇을 남기는지로 형태를 고릅니다. 항목을 통째로 접으면 제목만 남아 훑어 고를
           수 있고(${code('mm-faq-item')}), 이어지는 본문을 접으면 앞부분이 남아 읽던 문장을
           이어가며(${code('mm-read-more-paragraph')}), 하위 목록을 접으면 부모 항목만 남아 목록의
           깊이가 한 단계로 줄어듭니다(${code('mm-sidebar-section')}).
         </mm-paragraph>
-        <mm-faq-list>
-          <mm-faq-item question="서비스를 탈퇴하고 싶어요." open>
-            <mm-paragraph>
-              마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다. 탈퇴 후 30일간 데이터가
-              보관되며 이후 완전히 삭제됩니다.
-            </mm-paragraph>
-          </mm-faq-item>
-          <mm-faq-item question="결제 영수증은 어디서 확인하나요?">
-            <mm-paragraph>
-              마이페이지 → 결제 내역에서 영수증을 확인하고 다운로드할 수 있습니다.
-            </mm-paragraph>
-          </mm-faq-item>
-        </mm-faq-list>
-        <mm-read-more-paragraph
-          max-length="80"
-          content="접힌 자리에 앞부분이 남아 있어, 사용자는 이 문단을 계속 읽을지 여기서 멈출지 본문을 보고 정합니다. 훑어 고르는 목록과 달리 문장이 이어지므로 트리거는 문단 끝에 이어 붙습니다."
-        ></mm-read-more-paragraph>
-        <div role="list">
-          <mm-sidebar-section icon=${ICON_NAMES.PALETTE} label="Foundations" open>
-            <mm-sidebar-page-link emoji="#" label="Interaction"></mm-sidebar-page-link>
-            <mm-sidebar-page-link emoji="#" label="Disclosure"></mm-sidebar-page-link>
-          </mm-sidebar-section>
-        </div>
-        <mm-notice>
-          <mm-text size="14">
-            ${code('mm-sidebar-section')}은 사이드바 내비게이션에서만 씁니다. 탐색은 명령이 아니므로
-            트리거와 패널이 menu가 아니라 list로 읽히고, 접는 단위는 사이트맵의 상위 노드가
-            정합니다.
-          </mm-text>
-        </mm-notice>
+        <mm-component-example>
+          <mm-faq-list>
+            <mm-faq-item question="서비스를 탈퇴하고 싶어요." open>
+              <mm-paragraph>
+                마이페이지 → 계정 설정 → 회원 탈퇴 순서로 진행하시면 됩니다. 탈퇴 후 30일간 데이터가
+                보관되며 이후 완전히 삭제됩니다.
+              </mm-paragraph>
+            </mm-faq-item>
+            <mm-faq-item question="결제 영수증은 어디서 확인하나요?">
+              <mm-paragraph>
+                마이페이지 → 결제 내역에서 영수증을 확인하고 다운로드할 수 있습니다.
+              </mm-paragraph>
+            </mm-faq-item>
+          </mm-faq-list>
+        </mm-component-example>
+        <mm-component-example>
+          <mm-read-more-paragraph
+            max-length="80"
+            content="접힌 자리에 앞부분이 남아 있어, 사용자는 이 문단을 계속 읽을지 여기서 멈출지 본문을 보고 정합니다. 훑어 고르는 목록과 달리 문장이 이어지므로 트리거는 문단 끝에 이어 붙습니다."
+          ></mm-read-more-paragraph>
+        </mm-component-example>
+        <mm-component-example>
+          <div role="list">
+            <mm-sidebar-section icon=${ICON_NAMES.PALETTE} label="Foundations" open>
+              <mm-sidebar-page-link emoji="#" label="Interaction"></mm-sidebar-page-link>
+              <mm-sidebar-page-link emoji="#" label="Disclosure"></mm-sidebar-page-link>
+            </mm-sidebar-section>
+          </div>
+        </mm-component-example>
         <mm-text-list
           variant="check"
           .texts=${[
@@ -168,7 +138,7 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="상태와 접근성">
+      <mm-content-section heading-level="3" heading="상태">
         <mm-text-list
           variant="check"
           .texts=${[
@@ -178,10 +148,34 @@ const main = html`
               `,
               html`
                 트리거 클릭 토글과 ${code('aria-expanded')} 동기화를 컨트롤러가 맡고, 소비자는
-                트리거를 표준 attribute로 대상에 연결하기만 한다. 외부 클릭·ESC로 스스로 닫혀야 하는
-                표면만 ${code('dismissOn')}을 켠다
+                트리거를 표준 attribute로 대상에 연결하기만 한다
               `,
             ),
+            rule(
+              html`
+                펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
+              `,
+              html`
+                ${code('expanded')}를 받아 아이콘 회전으로 반영한다. 컴포넌트마다 다른 아이콘을 직접
+                그리지 않는다
+              `,
+            ),
+          ]}
+        ></mm-text-list>
+        ${exception(
+          '다시 접지 않는 펼침은 호스트가 직접 연다',
+          html`
+            ${code('mm-component-props')}처럼 한 번 펼치면 끝나는 목록은 토글이 없으므로 컨트롤러
+            없이 호스트가 ${code('open')}만 켜고, 트리거에 ${code('aria-expanded')}를 반영한 뒤
+            트리거를 감춘다
+          `,
+        )}
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="접근성">
+        <mm-text-list
+          variant="check"
+          .texts=${[
             rule(
               '훑어서 고르는 목록의 트리거는 heading으로 감싼다',
               '스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
@@ -193,15 +187,6 @@ const main = html`
               html`
                 높이만 0으로 줄이면 내용이 화면에 없는데도 탭 순서에 남는다.
                 ${code('aria-hidden')}은 포커스를 막지 않으므로 ${code('inert')}를 쓴다
-              `,
-            ),
-            rule(
-              html`
-                펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
-              `,
-              html`
-                ${code('expanded')}를 받아 아이콘 회전으로 반영한다. 컴포넌트마다 다른 아이콘을 직접
-                그리지 않는다
               `,
             ),
           ]}
