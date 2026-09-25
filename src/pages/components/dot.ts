@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { AvatarSize } from '@/components/common/avatar/avatar'
 import type { ChartLegendItem } from '@/components/domains/chart/chart-legend'
 import type {
   ComponentFeatureItem,
@@ -40,6 +41,8 @@ const tones = Object.keys(tagToneStyles) as TagTone[]
 
 const statusVariants = ['live', 'online', 'new', 'unread'] as const
 
+const userAvatarSizes: AvatarSize[] = ['80', '48', '40', '32']
+
 const legendItems: ChartLegendItem[] = Object.values(CATEGORIES).map(({ label, tone }) => ({
   label,
   tone,
@@ -74,17 +77,34 @@ const main = html`
 
     <mm-component-section
       heading="StatusDot"
-      description="색 자체가 상태를 뜻하는 점입니다. variant가 색과 읽히는 이름을 함께 정하므로 소비처가 aria-label을 따로 붙이지 않습니다."
+      description="색 자체가 상태를 뜻하는 점입니다. variant가 색과 읽히는 이름을 함께 정하므로 소비처가 aria-label을 따로 붙이지 않습니다. 사용자 아바타에 얹을 때는 아바타 크기에 맞춰 점 크기가 정해집니다."
     >
-      <mm-flex gap="4" align-items="center">
-        ${statusVariants.map(
-          variant => html`
-            <mm-flex gap="1" align-items="center">
-              <mm-status-dot variant=${variant}></mm-status-dot>
-              <mm-caption>${variant}</mm-caption>
-            </mm-flex>
-          `,
-        )}
+      <mm-flex direction="column" gap="6">
+        <mm-flex gap="4" align-items="center">
+          ${statusVariants.map(
+            variant => html`
+              <mm-flex gap="1" align-items="center">
+                <mm-status-dot variant=${variant}></mm-status-dot>
+                <mm-caption>${variant}</mm-caption>
+              </mm-flex>
+            `,
+          )}
+        </mm-flex>
+        <mm-flex gap="4" align-items="end">
+          ${userAvatarSizes.map(
+            size => html`
+              <mm-flex direction="column" gap="2" align-items="center">
+                <mm-user-avatar
+                  size=${size}
+                  name="수줍이"
+                  src="/src/images/soojubm.png"
+                  online
+                ></mm-user-avatar>
+                <mm-caption>${size}</mm-caption>
+              </mm-flex>
+            `,
+          )}
+        </mm-flex>
       </mm-flex>
     </mm-component-section>
 

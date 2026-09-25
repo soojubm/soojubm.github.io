@@ -13,6 +13,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'list-item.html', label: 'List Item' },
   { href: 'thumbnail.html', label: 'Thumbnail' },
+  { href: 'dot.html', label: 'Dot' },
 ]
 
 const componentProps: ComponentPropItemData[] = [
