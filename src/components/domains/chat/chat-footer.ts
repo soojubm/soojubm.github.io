@@ -13,7 +13,7 @@ export class ChatFooter extends LitElement {
       z-index: var(--material-zindex-elevated);
     }
 
-    /* 재질은 ::before 형제 레이어가 소유한다. 조상에 backdrop-filter가 걸리면 슬롯된 prompt-input의 blur가 죽기 때문이다. */
+    /* 재질은 ::before 형제 레이어가 소유한다. 조상에 backdrop-filter가 걸리면 prompt-input 안 첨부 popover의 blur가 죽기 때문이다. */
     :host::before {
       background: var(--material-chrome-background-color);
       backdrop-filter: var(--material-chrome-backdrop-filter);

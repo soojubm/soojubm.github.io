@@ -19,7 +19,7 @@ export const inputStyles = css`
     position: relative;
     --input-height: var(--size-48);
     --input-padding-block: var(--space-3);
-    --input-padding-inline: var(--space-4);
+    --input-padding-inline: var(--space-3);
     --input-background-color: var(--background-subtle-color);
     --input-border-radius: var(--radius);
     --input-border: var(--border-transparent);
@@ -33,14 +33,12 @@ export const inputStyles = css`
   :host([size='small']) {
     --input-height: var(--size-32);
     --input-padding-block: 0;
-    --input-padding-inline: var(--space-2);
   }
 
   .textfield-control,
   .textarea-control {
     display: flex;
     align-items: center;
-    overflow: hidden;
     width: 100%;
     min-height: var(--input-height);
     gap: var(--space-2);
@@ -58,6 +56,10 @@ export const inputStyles = css`
     &[aria-invalid='true'] {
       --input-border: var(--border-danger);
     }
+  }
+
+  .textfield-control {
+    overflow: hidden;
   }
 
   textarea {

@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -13,13 +13,43 @@ let uniqueIdCounter = 0
 
 @customElement('mm-textarea')
 export class Textarea extends LitElement {
-  static styles = [resetStyles, inputStyles]
+  static styles = [
+    resetStyles,
+    inputStyles,
+    css`
+      .textarea-control {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      slot[name='leading'],
+      slot[name='trailing'] {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: var(--space-2);
+      }
+
+      slot[name='leading'] {
+        padding-block-start: var(--input-padding-block);
+      }
+
+      slot[name='trailing'] {
+        padding-block-end: var(--input-padding-block);
+      }
+
+      slot[hidden] {
+        display: none;
+      }
+    `,
+  ]
   @property({ type: String, attribute: 'input-id' }) inputId = ''
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = ''
   @property({ type: String, attribute: 'aria-describedby' }) ariaDescribedBy: AriaIdRef = null
-  @property({ type: Number }) rows = 3
+  @property({ type: Number }) rows = 2
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
   @query('textarea') protected textarea!: HTMLTextAreaElement
@@ -70,6 +100,14 @@ export class Textarea extends LitElement {
 
   protected handleTextareaKeydown(_event: KeyboardEvent) {}
 
+  // 비어 있는 슬롯이 여백을 차지하지 않도록 내용이 있을 때만 드러낸다.
+  // textarea-field처럼 슬롯을 전달받으면 전달용 slot의 slotchange도 올라오므로 currentTarget을 보고,
+  // flatten으로 전달용 slot이 아닌 실제 내용을 센다.
+  private handleSlotChange(event: Event) {
+    const slot = event.currentTarget as HTMLSlotElement
+    slot.hidden = slot.assignedElements({ flatten: true }).length === 0
+  }
+
   private dispatchInputEvent(value: string) {
     emit(this, 'input', { value })
   }
@@ -77,6 +115,7 @@ export class Textarea extends LitElement {
   protected renderTextarea() {
     return html`
       <div class="textarea-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
+        <slot name="leading" hidden @slotchange=${this.handleSlotChange}></slot>
         <textarea
           id=${this.textareaId}
           rows=${this.rows}
@@ -89,6 +128,7 @@ export class Textarea extends LitElement {
           @input=${this.handleTextareaInput}
           @keydown=${this.handleTextareaKeydown}
         ></textarea>
+        <slot name="trailing" hidden @slotchange=${this.handleSlotChange}></slot>
       </div>
     `
   }

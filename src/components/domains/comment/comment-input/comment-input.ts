@@ -4,26 +4,15 @@ import { customElement, property, query } from 'lit/decorators.js'
 import type { Textarea } from '@/components/common'
 
 import '@/components/common'
-import { inputStyles } from '@/components/common/input/input.styles'
-import '@/components/domains/comment/textfield-action-bar'
 import { emit } from '@/utils'
 
 @customElement('mm-comment-input')
 export class CommentInput extends LitElement {
-  static styles = [
-    inputStyles,
-    css`
-      :host {
-        display: block;
-      }
-
-      .textarea-control {
-        flex-direction: column;
-        align-items: stretch;
-        padding-block: var(--input-padding-block);
-      }
-    `,
-  ]
+  static styles = css`
+    :host {
+      display: block;
+    }
+  `
   @property({ type: String }) name = 'comment'
   @property({ type: String }) placeholder = ''
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '댓글 게시'
@@ -36,12 +25,11 @@ export class CommentInput extends LitElement {
           name=${this.name}
           placeholder=${this.placeholder}
           @keydown=${this.handleTextareaKeydown}
-        ></mm-textarea>
-        <mm-textfield-action-bar>
-          <mm-button variant="primary" @click=${this.handleCommentSubmit}>
+        >
+          <mm-button slot="trailing" variant="primary" @click=${this.handleCommentSubmit}>
             ${this.submitLabel}
           </mm-button>
-        </mm-textfield-action-bar>
+        </mm-textarea>
       </form>
     `
   }
@@ -55,6 +43,8 @@ export class CommentInput extends LitElement {
   }
 
   private handleTextareaKeydown(event: KeyboardEvent) {
+    // 슬롯에 둔 버튼의 키 입력도 mm-textarea를 거쳐 올라오므로 입력 영역에서 온 것만 받는다.
+    if (event.target !== event.currentTarget) return
     if (event.isComposing) return
     if (event.key !== 'Enter' || event.shiftKey) return
 

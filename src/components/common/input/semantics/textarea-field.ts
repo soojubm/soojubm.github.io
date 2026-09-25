@@ -20,7 +20,7 @@ export class TextareaField extends LitElement {
   @property({ type: String }) placeholder = ''
   @property({ type: String }) label?: string
   @property({ type: String }) description?: string
-  @property({ type: Number }) rows = 3
+  @property({ type: Number }) rows = 2
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
@@ -40,7 +40,10 @@ export class TextareaField extends LitElement {
         aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
         aria-describedby=${this.description ? this.descriptionId : nothing}
         @input=${this.handleTextareaInput}
-      ></mm-textarea>
+      >
+        <slot name="leading" slot="leading"></slot>
+        <slot name="trailing" slot="trailing"></slot>
+      </mm-textarea>
       ${renderFieldDescription(this.description, this.descriptionId)}
     `
   }

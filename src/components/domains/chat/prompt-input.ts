@@ -3,83 +3,40 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
-import { inputStyles } from '@/components/common/input/input.styles'
 import '@/components/overlay/popover/popover'
-import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/domains/chat/model-selector'
 
 @customElement('mm-prompt-input')
 export class PromptInput extends LitElement {
-  static styles = [
-    inputStyles,
-    css`
-      :host {
-        display: block;
-        padding-inline: var(--space-2);
-        border: var(--material-chrome-border);
-        border-radius: var(--radius);
-        box-shadow: var(--material-chrome-shadow);
-        ${layerContainerStyles};
-      }
+  static styles = css`
+    :host {
+      display: block;
+    }
 
-      /* 재질은 ::before 형제 레이어가 소유한다. 조상에 backdrop-filter가 걸리면 첨부 popover의 blur가 죽기 때문이다. */
-      :host::before {
-        border-radius: inherit;
-        background: var(--material-chrome-background-color);
-        backdrop-filter: var(--material-chrome-backdrop-filter);
-        -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
-        ${backgroundLayerStyles};
-      }
+    .toolbar {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-      form {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      :host([single-line]) form {
-        justify-content: flex-start;
-        min-height: var(--input-height);
-      }
-
-      .actions {
-        display: flex;
-        align-items: center;
-        gap: var(--space-1);
-      }
-
-      mm-textarea {
-        /* 배경은 호스트가 칠한다. 반투명 테마에서 이중 레이어 방지 */
-        --input-background-color: transparent;
-        --input-border: var(--border-transparent);
-        --input-focus-outline: none;
-      }
-
-      :host([single-line]) mm-textarea {
-        flex: 1;
-        min-width: 0;
-      }
-
-      :host(:not([single-line])) mm-textarea {
-        order: -1;
-        flex-basis: 100%;
-      }
-    `,
-  ]
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+  `
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: String }) placeholder = 'Ask me anything...'
   @property({ type: String }) model = 'claude-sonnet'
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
   @property({ type: Boolean }) loading = false
-  @property({ type: Boolean, reflect: true, attribute: 'single-line' })
-  private singleLine = true
 
   render() {
     return html`
       <form>
-        ${this.renderStartActions()}
         <mm-textarea
           .value=${this.value}
           .name=${this.name}
@@ -88,9 +45,11 @@ export class PromptInput extends LitElement {
           ?disabled=${this.loading}
           @input=${this.handleTextareaInput}
           @keydown=${this.handleTextareaKeydown}
-          @single-line-change=${this.handleSingleLineChange}
-        ></mm-textarea>
-        ${this.renderEndActions()}
+        >
+          <div slot="trailing" class="toolbar">
+            ${this.renderStartActions()} ${this.renderEndActions()}
+          </div>
+        </mm-textarea>
       </form>
     `
   }
@@ -100,10 +59,9 @@ export class PromptInput extends LitElement {
     this.value = e.detail.value
     emit(this, 'input', { value: this.value })
   }
-  private handleSingleLineChange = (e: CustomEvent<{ isSingleLine: boolean }>) => {
-    this.singleLine = e.detail.isSingleLine
-  }
   private handleTextareaKeydown = (e: KeyboardEvent) => {
+    // 슬롯에 둔 툴바 버튼의 키 입력도 mm-textarea를 거쳐 올라오므로 입력 영역에서 온 것만 받는다.
+    if (e.target !== e.currentTarget) return
     if (e.isComposing) return
     if (e.key !== 'Enter' || e.shiftKey) return
 
