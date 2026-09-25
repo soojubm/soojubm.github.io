@@ -243,7 +243,15 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="Clear Button" description="search field에서 사용.">
-      <mm-clear-button aria-label="입력 지우기" tooltip-placement="center"></mm-clear-button>
+      <mm-flex direction="column" gap="4">
+        <mm-clear-button aria-label="입력 지우기" tooltip-placement="center"></mm-clear-button>
+        <mm-exception-case heading="크기 단계에 없는 16을 쓴다">
+          아이콘 버튼의 크기 단계는 32·24지만,
+          <mm-code>mm-clear-button</mm-code>
+          은 입력 필드 높이 안에 놓여야 해서 16을 쓴다. 쓰는 곳이 이 컴포넌트 하나뿐이라 단계로
+          올리지 않는다
+        </mm-exception-case>
+      </mm-flex>
     </mm-component-section>
     <mm-component-section
       heading="Expand Button"
