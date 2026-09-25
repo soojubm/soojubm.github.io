@@ -286,9 +286,9 @@ const main = html`
               '닫기',
               html`
                 바깥 클릭·ESC 같은 닫기는 viewport 표면은 ${code('SheetController')}가, anchored
-                표면은 ${code('DisclosureController')}가 처리한다. 저장 완료·항목 선택처럼 작업
-                결과로 닫히는 경우는 내용이 ${code('close()')}를 호출한다. 댓글 시트는 바깥을 누르면
-                스스로 닫히고, 시트 안에서 저장이 끝나면 폼 쪽이 ${code('sheet.close()')}를 호출한다
+                표면은 ${code('mm-popover')}가 직접 처리한다. 저장 완료·항목 선택처럼 작업 결과로
+                닫히는 경우는 내용이 ${code('close()')}를 호출한다. 댓글 시트는 바깥을 누르면 스스로
+                닫히고, 시트 안에서 저장이 끝나면 폼 쪽이 ${code('sheet.close()')}를 호출한다
               `,
             ),
             rule(

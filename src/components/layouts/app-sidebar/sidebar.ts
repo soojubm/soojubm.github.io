@@ -35,7 +35,6 @@ export class Sidebar extends LitElement {
     setOpen: open => {
       this.open = open
     },
-    dismissOn: ['escape'],
   })
 
   render() {
@@ -107,10 +106,12 @@ export class Sidebar extends LitElement {
 
     if (this.mobileQuery.matches) this.open = false
     this.mobileQuery.addEventListener('change', this.handleMobileChange)
+    document.addEventListener('keydown', this.handleDocumentKeydown)
   }
 
   disconnectedCallback() {
     this.mobileQuery.removeEventListener('change', this.handleMobileChange)
+    document.removeEventListener('keydown', this.handleDocumentKeydown)
     super.disconnectedCallback()
   }
 
@@ -123,6 +124,10 @@ export class Sidebar extends LitElement {
     this.open = false
   }
 
+  private handleDocumentKeydown = (e: KeyboardEvent) => {
+    if (e.key !== 'Escape' || !this.open) return
+    this.close()
+  }
   private handleMobileChange = (e: MediaQueryListEvent) => {
     if (e.matches) this.close()
   }

@@ -25,7 +25,7 @@ interface SheetControllerOptions {
  * 닫기 판정은 호스트 자신을 target으로 보는 것으로 충분하다.
  * 여는 쪽은 popover와 같은 규약을 쓴다. aria-controls로 호스트를 가리키는 요소가 트리거가 되고,
  * 클릭 토글과 aria-expanded 반영은 DisclosureController가 맡고, aria-haspopup="dialog"는 트리거가
- * 직접 선언한다. 닫기는 이 컨트롤러가 이미 소유하므로 dismissOn은 넘기지 않는다.
+ * 직접 선언한다.
  * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 이 컨트롤러는
  * isOpen/setOpen/onDismiss로 읽기·쓰기·알림만 위임받는다.
  * 포커스는 열린 동안 portal 컨테이너 바깥의 body 자식을 inert로 만들어 표면 안에 가두고,

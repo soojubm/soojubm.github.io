@@ -4,6 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import { overlaySurfaceStyles, popoverPositionStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common'
 import { DisclosureController } from '@/controllers/disclosure-controller'
+import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { emit, getDeepActiveElement } from '@/utils'
 
 export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
@@ -14,7 +15,7 @@ const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
 /**
  * viewport 기준 modal 표면(mm-sheet, mm-dialog)와 달리 backdrop·portal·스크롤 잠금 없이 트리거에 앵커되어 떠 있는 패널 표면만 책임집니다.
  * 트리거는 slot="trigger"로 넣으며, popover가 스스로 positioned 앵커가 되어 별도 래퍼가 필요 없습니다.
- * 트리거·외부 클릭·ESC 닫기·aria-expanded 배관은 DisclosureController가 소유합니다.
+ * 트리거 토글·aria-expanded 배관은 DisclosureController가, 외부 클릭·ESC 닫기는 popover가 소유합니다.
  * 여는 표면의 종류(aria-haspopup)는 트리거에, role은 안에 넣는 목록 컴포넌트에 둡니다.
  * 좌표는 placement prop으로, 폭·여백은 `--overlay-panel-*` 토큰으로 정합니다.
  */
@@ -34,7 +35,9 @@ export class Popover extends LitElement {
       this.open = open
     },
     getTrigger: () => this.triggerElements[0],
-    dismissOn: ['outside', 'escape'],
+  })
+  private outsideClick = new OutsideClickController(this, () => this.close(), {
+    isActive: () => this.open,
   })
 
   render() {
@@ -46,6 +49,16 @@ export class Popover extends LitElement {
         </mm-scroll>
       </div>
     `
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    document.addEventListener('keydown', this.handleDocumentKeydown)
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('keydown', this.handleDocumentKeydown)
+    super.disconnectedCallback()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
@@ -64,6 +77,11 @@ export class Popover extends LitElement {
 
   close() {
     this.open = false
+  }
+
+  private handleDocumentKeydown = (e: KeyboardEvent) => {
+    if (e.key !== 'Escape' || !this.open) return
+    this.close()
   }
 
   // 메뉴·목록이 열리면 포커스를 그 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.
