@@ -14,7 +14,7 @@ export class PricingCardGroup extends LitElement {
       display: grid;
       width: 100%;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-      gap: var(--space-6);
+      gap: var(--space-8);
     }
   `
   @queryAssignedElements({ flatten: true }) private items!: HTMLElement[]

@@ -12,18 +12,16 @@ export class PricingCard extends LitElement {
   static styles = css`
     :host {
       display: flex;
-      position: relative;
-    }
-
-    mm-surface {
+      flex-direction: column;
       gap: var(--space-4);
+      position: relative;
     }
 
     /* 배지는 흐름에서 빼 카드 우측 상단에 둔다. 배지 유무와 관계없이 카드끼리 제목 줄이 맞는다. */
     ::slotted([slot='badge']) {
       position: absolute;
-      top: var(--space-4);
-      right: var(--space-4);
+      top: 0;
+      right: 0;
     }
 
     .price {
@@ -41,20 +39,13 @@ export class PricingCard extends LitElement {
 
   render() {
     return html`
-      <mm-surface variant="elevated" radius="large">
-        <mm-text-block
-          level="3"
-          heading=${this.plan}
-          description=${this.description}
-        ></mm-text-block>
-        <div class="price">
-          <mm-text size="32" weight="bold">${this.price}</mm-text>
-          <mm-text color="light">${this.period}</mm-text>
-        </div>
-        <slot name="action"></slot>
-        ${this.renderFeatures()}
-      </mm-surface>
-      <!-- 표면보다 뒤에 두어야 배지가 표면 위에 그려진다 -->
+      <mm-text-block level="3" heading=${this.plan} description=${this.description}></mm-text-block>
+      <div class="price">
+        <mm-text size="32" weight="bold">${this.price}</mm-text>
+        <mm-text color="light">${this.period}</mm-text>
+      </div>
+      <slot name="action"></slot>
+      ${this.renderFeatures()}
       <slot name="badge"></slot>
     `
   }
