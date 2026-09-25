@@ -105,6 +105,14 @@ export const buttonVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', buttonVariantTokens))}
 `
 
+/** 자체 button을 렌더하는 시맨틱 컴포넌트가 variant 하나를 골라 스킨으로 얹는 선언. 얹을 선택자 안에 펼쳐 쓴다. */
+export const buttonVariantSkin = (variant: keyof typeof buttonVariantTokens) =>
+  unsafeCSS(
+    Object.entries(buttonVariantTokens[variant])
+      .map(([token, value]) => `${token}: ${value};`)
+      .join(' '),
+  )
+
 /** 누름 상태는 표준 aria-pressed로 표현하므로, 스킨도 해당 attribute selector를 단일 기준으로 둔다. */
 export const buttonSelectedStyles = css`
   button[aria-pressed='true'] {
@@ -135,7 +143,6 @@ export const followButtonStyles = css`
   }
 
   button {
-    --button-background-color: var(--primary-color);
-    --button-text-color: var(--foreground-on-strong-color);
+    ${buttonVariantSkin('primary')}
   }
 `
