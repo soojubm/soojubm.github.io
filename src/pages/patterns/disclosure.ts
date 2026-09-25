@@ -10,6 +10,7 @@ import '@/components/domains/faq'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-pager'
+import '@/components/domains/component/exception-case'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 // 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
@@ -22,13 +23,6 @@ const rule = (title: string | TemplateResult, description: string | TemplateResu
     <mm-text weight="bold">${title}</mm-text>
     ${description}
   </span>
-`
-
-// 규칙에서 벗어나는 사례는 규칙 목록과 섞지 않고 warning notice로 따로 둔다.
-const exception = (heading: string, description: string | TemplateResult) => html`
-  <mm-notice variant="warning" heading=${heading}>
-    <mm-text size="14">${description}</mm-text>
-  </mm-notice>
 `
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -162,14 +156,11 @@ const main = html`
             ),
           ]}
         ></mm-text-list>
-        ${exception(
-          '다시 접지 않는 펼침은 호스트가 직접 연다',
-          html`
-            ${code('mm-component-props')}처럼 한 번 펼치면 끝나는 목록은 토글이 없으므로 컨트롤러
-            없이 호스트가 ${code('open')}만 켜고, 트리거에 ${code('aria-expanded')}를 반영한 뒤
-            트리거를 감춘다
-          `,
-        )}
+        <mm-exception-case heading="다시 접지 않는 펼침은 호스트가 직접 연다">
+          ${code('mm-component-props')}처럼 한 번 펼치면 끝나는 목록은 토글이 없으므로 컨트롤러 없이
+          호스트가 ${code('open')}만 켜고, 트리거에 ${code('aria-expanded')}를 반영한 뒤 트리거를
+          감춘다
+        </mm-exception-case>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="접근성">

@@ -6,6 +6,7 @@ import type { TemplateResult } from 'lit'
 import '@/components/domains/comment/comment-item'
 import '@/components/overlay/sheet'
 import '@/components/domains/component/component-pager'
+import '@/components/domains/component/exception-case'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const yes = html`
@@ -301,6 +302,13 @@ const main = html`
             ),
           ]}
         ></mm-text-list>
+        <mm-exception-case
+          heading="트리거와 시트를 함께 소유하는 컴포넌트는 열림 상태를 직접 갖는다"
+        >
+          ${code('mm-navbar-search')}의 시트는 ${code('#portal-root')}로 옮겨져, 컴포넌트 shadow
+          안의 트리거를 ${code('aria-controls')}로 찾을 수 없다. 그래서 컴포넌트가 시트의
+          ${code('open')}과 트리거의 ${code('aria-expanded')}를 직접 바인딩한다
+        </mm-exception-case>
         <mm-table
           .rows=${dismissRows}
           caption="viewport 표면의 닫기 수단 비교"

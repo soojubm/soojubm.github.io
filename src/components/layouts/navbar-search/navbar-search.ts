@@ -29,8 +29,6 @@ function hasValue(target: EventTarget | null): target is HTMLInputElement | HTML
 /**
  * navbar 검색 트리거와 검색 시트를 함께 소유하는 컴포넌트.
  * 트리거가 내부에 있어 열기/닫기·query·검색 결과 상태를 모두 스스로 관리한다.
- * sheet는 #portal-root로 옮겨져 shadow 안의 트리거를 aria-controls로 찾을 수 없으므로,
- * DisclosureController 대신 이 컴포넌트가 열림 상태와 aria-expanded를 직접 소유하는 예외다.
  */
 @customElement('mm-navbar-search')
 export class NavbarSearch extends LitElement {

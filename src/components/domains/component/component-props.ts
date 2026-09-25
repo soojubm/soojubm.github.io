@@ -22,7 +22,6 @@ const COLLAPSIBLE_PROP_COUNT = 3
  * 각 prop은 mm-component-prop-item으로 렌더합니다.
  * 접힌 상태에서 아무 곳이나 누르면 펼쳐지며, 펼침 여부는 open으로 드러납니다.
  * prop이 3개 미만이면 처음부터 펼쳐져 더보기 버튼을 노출하지 않습니다.
- * 펼치면 다시 접지 않는 일방향 disclosure라 토글을 맡는 DisclosureController를 쓰지 않습니다.
  */
 @customElement('mm-component-props')
 export class ComponentProps extends LitElement {
