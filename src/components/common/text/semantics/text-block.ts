@@ -5,6 +5,8 @@ import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/paragraph'
 
+export type TextBlockLevel = '1' | '2' | '3' | '4' | '5'
+
 /**
  * <mm-text-block>
  * 제목과 설명 한 쌍을 세우고 그 사이 간격을 소유합니다.
@@ -23,8 +25,11 @@ export class TextBlock extends LitElement {
     :host([level='1']) {
       gap: var(--space-3);
     }
-    :host([level='5']) {
+    :host([level='4']) {
       gap: var(--space-1);
+    }
+    :host([level='5']) {
+      gap: 0;
     }
     :host([centered]) {
       align-items: center;
@@ -39,7 +44,7 @@ export class TextBlock extends LitElement {
   `
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: String, reflect: true }) level = '1'
+  @property({ type: String, reflect: true }) level: TextBlockLevel = '1'
   @property({ type: Boolean, reflect: true }) centered = false
 
   render() {
