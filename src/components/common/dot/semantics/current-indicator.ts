@@ -1,7 +1,7 @@
-import { LitElement, css, html, unsafeCSS } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { dotSizes, dotStyles, dotToneColor } from '@/components/common/dot/dot.styles'
+import '@/components/common/dot/dot'
 import '@/components/overlay/tooltip'
 
 /**
@@ -18,20 +18,13 @@ export class CurrentIndicator extends LitElement {
       flex-shrink: 0;
     }
 
-    /* 툴팁은 트리거 위에서 열리므로, 점이 아니라 24 영역 전체를 트리거로 잡고 점은 가운데 그린다. */
+    /* 툴팁은 트리거 위에서 열리므로, 점이 아니라 24 영역 전체를 트리거로 잡고 점은 가운데 둔다. */
     [slot='trigger'] {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: var(--size-24);
       height: var(--size-24);
-
-      &::before {
-        content: '';
-        ${dotStyles}
-        --dot-size: ${unsafeCSS(dotSizes['6'])};
-        --dot-background-color: ${unsafeCSS(dotToneColor('gray'))};
-      }
     }
   `
 
@@ -43,7 +36,9 @@ export class CurrentIndicator extends LitElement {
   render() {
     return html`
       <mm-tooltip content="현재 위치" placement="center">
-        <span slot="trigger"></span>
+        <span slot="trigger">
+          <mm-dot tone="gray" size="6"></mm-dot>
+        </span>
       </mm-tooltip>
     `
   }
