@@ -279,9 +279,9 @@ const main = html`
       description="외부 계정으로 로그인·가입을 시작합니다. 레이블과 아이콘은 provider가 정합니다."
     >
       <mm-flex direction="column" gap="2">
-        <mm-social-auth-button provider="facebook" size="large"></mm-social-auth-button>
-        <mm-social-auth-button provider="google" size="large"></mm-social-auth-button>
-        <mm-social-auth-button provider="apple" size="large"></mm-social-auth-button>
+        <mm-social-auth-button provider="facebook"></mm-social-auth-button>
+        <mm-social-auth-button provider="google"></mm-social-auth-button>
+        <mm-social-auth-button provider="apple"></mm-social-auth-button>
       </mm-flex>
     </mm-component-section>
 

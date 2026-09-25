@@ -19,11 +19,7 @@ const main = html`
 
         <!-- 구분선이 자기 여백으로 소셜 로그인과 form을 나누므로 gap을 두지 않는다. -->
         <mm-flex direction="column">
-          <mm-social-auth-button
-            provider="facebook"
-            size="large"
-            full-width
-          ></mm-social-auth-button>
+          <mm-social-auth-button provider="facebook"></mm-social-auth-button>
           <mm-separator variant="section">또는</mm-separator>
 
           <form name="login" aria-label="로그인" novalidate>
@@ -65,11 +61,7 @@ const main = html`
 
         <!-- 구분선이 자기 여백으로 소셜 로그인과 form을 나누므로 gap을 두지 않는다. -->
         <mm-flex direction="column">
-          <mm-social-auth-button
-            provider="facebook"
-            size="large"
-            full-width
-          ></mm-social-auth-button>
+          <mm-social-auth-button provider="facebook"></mm-social-auth-button>
           <mm-separator variant="section">또는</mm-separator>
 
           <form name="signup" aria-label="회원가입">
