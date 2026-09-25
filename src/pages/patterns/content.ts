@@ -125,6 +125,10 @@ const main = html`
             슬롯의 화자가 사용자인지 시스템인지에 따라 이름과 어조를 맞춥니다. 실행 레이블은 사용자
             시점의 동사로 쓰고 줄여 표시하지 않습니다.
           </mm-paragraph>
+          <mm-paragraph>
+            레이블이 잘리면 말줄임표로 감추지 않고 문구를 다듬습니다. 툴의 자동 축약보다 writing
+            가이드가 우선합니다.
+          </mm-paragraph>
         </mm-content-section>
 
         <mm-content-section heading-level="4" heading="주목이 필요한 콘텐츠">
