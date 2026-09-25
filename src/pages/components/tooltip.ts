@@ -117,17 +117,18 @@ const main = html`
         ]}
       ></mm-text-list>
 
-      <mm-heading level="3">접근성</mm-heading>
-      <mm-text-block
-        level="4"
-        heading="액션 보완형"
-        description="아이콘 버튼의 이름을 보여주는 툴팁이므로 따로 감싸지 않고, 버튼의 aria-label을 그대로 툴팁으로 씁니다. 이름과 같은 내용은 설명으로 다시 연결하지 않습니다."
-      ></mm-text-block>
-      <mm-text-block
-        level="4"
-        heading="정보 설명형"
-        description="이미 존재하는 이름의 부가 설명이므로, 대상 요소의 설명(aria-description)으로 연결합니다."
-      ></mm-text-block>
+      <mm-content-section heading-level="3" heading="접근성">
+        <mm-text-block
+          level="4"
+          heading="액션 보완형"
+          description="아이콘 버튼의 이름을 보여주는 툴팁이므로 따로 감싸지 않고, 버튼의 aria-label을 그대로 툴팁으로 씁니다. 이름과 같은 내용은 설명으로 다시 연결하지 않습니다."
+        ></mm-text-block>
+        <mm-text-block
+          level="4"
+          heading="정보 설명형"
+          description="이미 존재하는 이름의 부가 설명이므로, 대상 요소의 설명(aria-description)으로 연결합니다."
+        ></mm-text-block>
+      </mm-content-section>
     </mm-component-guide>
 
     <mm-component-anatomy
