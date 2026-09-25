@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { ComponentReferenceItemData } from '@/components/domains/component'
 import type { TemplateResult } from 'lit'
 
 import '@/components/domains/component/component-pager'
@@ -76,6 +77,14 @@ const textBlockCode = `<mm-text-block level="3" heading="제목" description="�
 const formFieldCode = `<mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
   <mm-checkbox-group name="topics" .options=\${topicOptions}></mm-checkbox-group>
 </mm-form-field>`
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://ix.siemens.io/docs/components/card-list/guide',
+    label: 'Siemens iX - Card list',
+    external: true,
+  },
+]
 
 const main = html`
   <mm-main>
@@ -256,6 +265,8 @@ const main = html`
             ]}
           ></mm-text-list>
         </mm-content-section>
+
+        <mm-component-references .items=${componentReferences}></mm-component-references>
       </mm-content-section-list>
     </mm-flex>
 

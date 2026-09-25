@@ -41,6 +41,7 @@ const componentReferences: ComponentReferenceItemData[] = [
     external: true,
   },
   { href: 'https://ant.design/components/card', label: 'Ant Design - Card', external: true },
+  { href: 'https://fluxui.dev/components/card', label: 'Flux UI - Card', external: true },
   {
     href: 'https://ui.shadcn.com/docs/components/base/item',
     label: 'shadcn/ui - Item',
