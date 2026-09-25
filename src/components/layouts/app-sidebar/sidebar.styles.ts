@@ -37,6 +37,8 @@ export const sidebarStyles = css`
   mm-scroll {
     flex: 1;
     min-height: 0;
+    /* 메뉴 hover 면이 스크롤바에 붙지 않게 띄운다 */
+    padding-inline-end: var(--space-2);
   }
 
   :host([open]) nav {
