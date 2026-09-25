@@ -27,7 +27,6 @@
 
   --layout-main-space-top: var(--space-6);
   --layout-sidebar-space-top: var(--space-2);
-  /* --content-space-block-start */
 
   --gray0: #fff;
   --gray100: #f5f6f5;
@@ -37,11 +36,9 @@
 
   --green100: rgba(10, 160, 80, 0.075);
   --green800: #1b995c;
-  --red100: rgba(243, 68, 97, 0.06);
   --red800: #f02849;
   --yellow800: gold;
   --orange800: #fb7800;
-  --blue800: #1d4ed8;
 
   /*
    * 카테고리컬 컬러. 순서나 크기 없이 서로 다른 항목(분류 태그, 차트 계열 등)을 구분하는 색이다.
@@ -77,7 +74,6 @@
   --primary-color: var(--green800);
   --primary-subtle-color: var(--green100);
   --accent-color: var(--yellow800);
-  --success-color: var(--blue800);
   --foreground-success-color: #1e40af;
   --warning-color: var(--orange800);
   --foreground-warning-color: #9a4600;
@@ -103,15 +99,12 @@
   --background-color: var(--gray0);
   --background-subtle-color: var(--gray100);
   --background-strong-color: var(--gray800);
-  --background-primary-color: var(--primary-color);
-  --background-warning-color: var(--warning-color);
 
   --border-color: var(--gray200);
 
   --foreground-color: var(--gray800);
   --foreground-subtle-color: var(--gray400);
   --foreground-on-strong-color: var(--gray0);
-  --foreground-on-warning-color: var(--red800);
   --foreground-on-primary-color: var(--gray0);
 
   --size-16: 16px;
@@ -143,7 +136,6 @@
   --radius-full: 50%;
 
   /* navbar-user 같은 control pill의 모양 토큰(테마 무관 고정값이라 :root 선언이 안전하다) */
-  --control-padding: var(--space-1) var(--space-2);
   --control-border-radius: var(--radius-large);
 
   /* 재질 원시값. 값의 종류와 크기로 이름 짓고 테마가 건드리지 않는다.
@@ -192,8 +184,9 @@
   --material-zindex-chrome: 100; /* 내비게이션, 툴바 (Apple의 "기능 레이어"에 해당) */
   --material-zindex-chrome-top: 101; /* 그중 화면 전체를 덮는 전역 내비게이션: navbar, 사이드바 */
   --material-zindex-backdrop: 150; /* modal 표면 뒤를 덮는 dim·blur 레이어: backdrop */
-  --material-zindex-popover: 200; /* 트리거 기준 표면: popover, select, tooltip */
+  --material-zindex-popover: 200; /* 트리거 기준 표면: popover, select */
   --material-zindex-sheet: 300; /* viewport 기준 표면: sheet, dialog */
+  --material-zindex-tooltip: 900; /* 포인터·포커스를 따라 잠깐 뜨는 설명: 모든 표면 위 */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
   /* 기본 모션은 이 duration 하나를 쓰고, 등장 강조 모션만 더 길게 간다.
@@ -217,7 +210,6 @@
 .color-black {
   --primary-color: #1a1a1a;
   --green100: rgba(0, 0, 0, 0.08);
-  --success-color: #1a1a1a;
 }
 
 :root [data-theme='dark'] {
@@ -330,5 +322,3 @@
     color-mix(in srgb, var(--gray0) var(--opacity-60), transparent);
   --material-overlay-backdrop-filter: saturate(180%) blur(var(--blur-28));
 }
-
-/* navbar 2px */

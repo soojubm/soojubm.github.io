@@ -407,7 +407,7 @@ export const tooltipStyles = css`
     position: absolute;
     left: 0;
     top: calc(100% + var(--space-1));
-    z-index: var(--material-zindex-popover);
+    z-index: var(--material-zindex-tooltip);
     pointer-events: none;
     transition: opacity var(--transition-duration) var(--transition-easing),
       display var(--transition-duration) var(--transition-easing) allow-discrete;

@@ -190,14 +190,10 @@ const renderSpaceStage = (tokens: string[]) =>
 const backgroundPairs: Record<string, string[][]> = {
   'background-color': [
     ['foreground-color', 'foreground-subtle-color'],
-    ['foreground-success-color'],
-    ['foreground-warning-color'],
-    ['foreground-danger-color'],
+    ['foreground-success-color', 'foreground-warning-color', 'foreground-danger-color'],
   ],
   'background-subtle-color': [['foreground-color']],
   'background-strong-color': [['foreground-on-strong-color']],
-  'background-primary-color': [['foreground-on-primary-color']],
-  'background-warning-color': [['foreground-on-warning-color']],
 }
 
 const renderBackgroundTokens = (names: string[]) =>
@@ -327,8 +323,8 @@ const main = html`
             variant="number"
             .texts=${[
               'Primitive — 색·크기·간격의 원시 값. 색은 gray800·green100처럼 색상과 단계로, 크기·간격은 size-, space-처럼 값의 종류로 이름 짓는다.',
-              'System — primitive를 인터페이스의 역할에 매핑한다. background-color, border-color, body-font-size처럼 역할과 용도로 이름 짓는다.',
-              'Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-border-color, sheet-height처럼 컴포넌트명과 소비하는 속성으로 이름 짓는다.',
+              'System — primitive를 인터페이스의 역할에 매핑한다. background-color, border-color, foreground-subtle-color처럼 역할과 용도로 이름 짓는다.',
+              'Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-background-color, notice-text-color처럼 컴포넌트명과 소비하는 속성으로 이름 짓는다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
@@ -482,8 +478,10 @@ const main = html`
             'elevated — 목록·그룹 안에서 형제보다 살짝 뜨는 요소. 예: mm-scroll-hint, mm-portfolio-item의 오버레이',
             'chrome — 화면에 고정된 내비게이션·툴바. 예: mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)',
             'chrome-top — 그중 화면 전체를 덮는 전역 내비게이션. 페이지 고정 바 위에 남아야 한다. 예: mm-navbar, 사이드 메뉴',
-            'popover — 트리거에 앵커되어 뜨는 표면. 예: mm-tooltip, mm-popover(mm-select 등 드롭다운의 기반)',
-            'sheet — viewport를 기준으로 화면을 덮는 표면. 예: mm-backdrop, mm-sheet, mm-dialog',
+            'backdrop — modal 표면 뒤를 덮는 dim·blur 레이어. 예: mm-backdrop',
+            'popover — 트리거에 앵커되어 뜨는 표면. 예: mm-popover(mm-select 등 드롭다운의 기반)',
+            'sheet — viewport를 기준으로 화면을 덮는 표면. 예: mm-sheet, mm-dialog',
+            'tooltip — 포인터나 포커스를 따라 잠깐 뜨는 설명. 가리키는 대상이 어느 표면에 있든 그 위에 보여야 한다. 예: mm-tooltip',
             'toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크, 오프라인 배너',
           ]}
         ></mm-text-list>
