@@ -89,6 +89,7 @@ const main = html`
         <mm-tab value="size">Size</mm-tab>
         <mm-tab value="leading">Leading</mm-tab>
         <mm-tab value="trailing">Trailing</mm-tab>
+        <mm-tab value="multiline">Multiline</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="size">
         <mm-component-example>
@@ -180,6 +181,40 @@ const main = html`
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>
+      <mm-tab-panel value="multiline">
+        <mm-component-example>
+          <mm-flex direction="column" gap="6">
+            <mm-list-item-group style="max-width: 360px">
+              <mm-list-item
+                icon=${ICON_NAMES.NOTIFICATION}
+                label="small 행의 라벨이 영역보다 길어져서 두 줄 이상으로 넘어가는 경우"
+              >
+                <mm-tag slot="trailing">신규</mm-tag>
+              </mm-list-item>
+              <mm-list-item
+                size="medium"
+                label="medium 행의 라벨이 영역보다 길어져서 두 줄로 넘어가는 경우"
+                description="설명도 영역을 넘치면 줄바꿈되어 행의 높이가 내용만큼 늘어납니다."
+                avatar-shape="circle"
+                avatar-src="/src/images/soojubm.png"
+              >
+                <mm-button slot="trailing">변경</mm-button>
+              </mm-list-item>
+              <mm-list-item
+                size="large"
+                label="large 행의 긴 라벨이 두 줄로 넘어가는 경우"
+                description="설명이 길어 여러 줄이 되면 leading과 trailing은 content 높이의 가운데에 정렬됩니다."
+                avatar-shape="circle"
+                avatar-src="/src/images/soojubm.png"
+              ></mm-list-item>
+            </mm-list-item-group>
+            <mm-notice
+              heading="TODO: 여러 줄일 때의 line-height와 정렬"
+              description="line-height는 한 줄 행 높이에 맞춘 값이라 여러 줄에서 줄 간격을 다시 정해야 합니다. 정렬은 leading·trailing이 content 가운데에 서는 지금 방식과 첫 줄에 맞추는 방식 중 기준을 정해야 합니다. 줄바꿈 대신 말줄임표로 자르고 전체 문구를 툴팁으로 보여 주는 방식도 후보입니다."
+            ></mm-notice>
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
     </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -244,13 +279,6 @@ const main = html`
                   의 roving focus는 자식의 shadow에서 menuitem 계열 role을 찾아 tab stop을 옮긴다.
                   다른 행이 섞이면 그 행만 방향키에서 빠져 Tab으로만 닿게 되고, 한 목록 안에서
                   키보드 동선이 둘로 갈린다
-                </span>
-              `,
-              html`
-                <span>
-                  <mm-text weight="bold">description에는 행의 이름에 보탤 말만 쓴다</mm-text>
-                  label과 description이 role을 가진 요소 안에 함께 들어가 한 이름으로 읽힌다. 상태나
-                  label을 되풀이하는 말은 이름만 길어지게 한다
                 </span>
               `,
             ]}
