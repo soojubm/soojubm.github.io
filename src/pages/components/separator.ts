@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -17,12 +16,6 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'variant', type: "'element' | 'section' = 'element'" },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'separator-spacing' },
-  { name: 'separator-border' },
-  { name: 'separator-text-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -58,7 +51,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-separator']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

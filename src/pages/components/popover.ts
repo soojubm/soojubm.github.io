@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -27,17 +26,6 @@ const componentProps: ComponentPropItemData[] = [
   },
   { name: 'slot: trigger', type: 'HTMLElement' },
   { name: 'popover-toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'overlay-panel-min-width' },
-  { name: 'overlay-panel-max-width' },
-  { name: 'overlay-panel-height' },
-  { name: 'overlay-panel-max-height' },
-  { name: 'overlay-panel-padding-block' },
-  { name: 'overlay-panel-padding-inline' },
-  { name: 'overlay-panel-border-radius' },
-  { name: 'popover-offset' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []
@@ -69,7 +57,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-popover']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

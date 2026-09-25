@@ -5,7 +5,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -19,13 +18,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'items', type: '{ label: string; href?: string }[] = []' },
   { name: 'divider', type: "string = '/'", optional: true },
   { name: 'aria-label', type: "string = 'breadcrumb'", optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'breadcrumb-item-text-color' },
-  { name: 'breadcrumb-item-text-color-current' },
-  { name: 'breadcrumb-divider-text-color' },
-  { name: 'breadcrumb-divider-space' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []
@@ -49,7 +41,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-breadcrumb']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

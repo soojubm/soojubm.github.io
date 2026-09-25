@@ -6,7 +6,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
@@ -28,14 +27,6 @@ const componentProps: ComponentPropItemData[] = [
   },
 ]
 
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'table-row-border' },
-  { name: 'table-cell-padding' },
-  { name: 'table-cell-padding-inline' },
-  { name: 'table-cell-background-color' },
-  { name: 'col-checkbox' },
-]
-
 const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Structural',
@@ -44,7 +35,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const columns: TableColumn[] = [
-  { label: '', width: 'var(--col-checkbox)' },
+  { label: '', width: 'var(--table-checkbox-column-width)' },
   { label: 'Name', width: '80px', sortable: true },
   { label: 'Title', width: '280px' },
   { label: 'Link', width: '130px' },
@@ -184,7 +175,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-table']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list .texts=${guideTexts}></mm-text-list>

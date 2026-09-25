@@ -6,7 +6,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
@@ -69,19 +68,6 @@ const componentProps: ComponentPropItemData[] = [
   },
   { name: 'mm-button-group stretch', type: 'boolean = false', optional: true },
   { name: 'click', type: '(e: MouseEvent) => void', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'button-width' },
-  { name: 'button-height' },
-  { name: 'button-min-width' },
-  { name: 'button-padding-inline' },
-  { name: 'button-text-color' },
-  { name: 'button-text-size' },
-  { name: 'button-text-weight' },
-  { name: 'button-background-color' },
-  { name: 'button-border' },
-  { name: 'button-border-radius' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -190,7 +176,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-button']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph-group>

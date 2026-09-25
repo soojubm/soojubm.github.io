@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
@@ -19,18 +18,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean = false' },
   { name: 'show()', type: 'method' },
   { name: 'close()', type: 'method' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'toast-min-width' },
-  { name: 'toast-min-height' },
-  { name: 'toast-gap' },
-  { name: 'toast-background-color' },
-  { name: 'toast-text-color' },
-  { name: 'toast-border-radius' },
-  { name: 'toast-padding-block' },
-  { name: 'toast-padding-inline' },
-  { name: 'toast-offset' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -70,7 +57,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-toast']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph-group>

@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -19,13 +18,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'switch-width' },
-  { name: 'switch-height' },
-  { name: 'switch-border-radius' },
-  { name: 'switch-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -54,7 +46,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-switch']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 

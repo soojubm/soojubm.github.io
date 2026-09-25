@@ -5,7 +5,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -61,19 +60,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-tab value', type: 'string' },
   { name: 'mm-tab-panel value', type: 'string' },
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'tab-height' },
-  { name: 'tab-padding-inline' },
-  { name: 'tab-text-size' },
-  { name: 'tab-text-color' },
-  { name: 'tabs-indicator-background-color' },
-  { name: 'tabs-line-color' },
-  { name: 'tabs-line-width' },
-  { name: 'tabs-pill-border' },
-  { name: 'tabs-pill-indicator-background-color' },
-  { name: 'tabs-pill-indicator-border' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -200,7 +186,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-tab-list', 'mm-tab']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph>

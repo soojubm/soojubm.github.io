@@ -6,7 +6,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES, INPUT_TYPE_UNION } from '@/components/common'
@@ -48,16 +47,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'aria-invalid', type: "'true' | 'false'", optional: true },
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'input-height' },
-  { name: 'input-padding-block' },
-  { name: 'input-padding-inline' },
-  { name: 'input-background-color' },
-  { name: 'input-border' },
-  { name: 'input-border-radius' },
-  { name: 'input-focus-outline' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -170,7 +159,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-textfield']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 

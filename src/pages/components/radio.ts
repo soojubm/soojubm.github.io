@@ -5,7 +5,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 import type { OptionItem } from '@/types'
 
@@ -54,13 +53,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-radio-card-group value', type: 'string', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
   { name: 'mm-radio-group change', type: 'CustomEvent detail: value, name', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'radio-size' },
-  { name: 'radio-border-radius' },
-  { name: 'radio-border-color' },
-  { name: 'radio-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -142,7 +134,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-radio']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 

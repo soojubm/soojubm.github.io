@@ -20,6 +20,21 @@ export class Table extends LitElement {
   static styles = [
     resetStyles,
     css`
+      :host {
+        --table-width: 100%;
+        --table-row-border: var(--border);
+        --table-cell-padding: var(--space-2) 0;
+        --table-cell-padding-inline: var(--space-2);
+        --table-cell-background-color: var(--background-color);
+        --table-checkbox-column-width: 32px;
+
+        display: block;
+        width: var(--table-width);
+        height: var(--table-height);
+        background-color: var(--background-subtle-color);
+        overflow-x: auto;
+      }
+
       .header-label {
         display: flex;
         align-items: center;
@@ -27,11 +42,6 @@ export class Table extends LitElement {
       }
 
       table {
-        --table-row-border: var(--border);
-        --table-cell-padding: var(--space-2) 0;
-        --table-cell-padding-inline: var(--space-2);
-        --table-cell-background-color: var(--background-color);
-
         border-collapse: collapse;
         border-spacing: 0;
         border-left-style: hidden;
@@ -43,8 +53,6 @@ export class Table extends LitElement {
         table-layout: fixed;
 
         background: var(--table-cell-background-color);
-
-        --col-checkbox: 32px;
       }
       table caption {
         padding: 0.5rem 0;
@@ -91,16 +99,6 @@ export class Table extends LitElement {
       }
       table tbody[role='rowgroup'] tr th + th {
         width: auto;
-      }
-
-      :host {
-        --table-width: 100%;
-
-        display: block;
-        width: var(--table-width);
-        height: var(--table-height);
-        background-color: var(--background-subtle-color);
-        overflow-x: auto;
       }
 
       th.align-center {

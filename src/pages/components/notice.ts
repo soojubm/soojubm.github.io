@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 import type { ActionConfig } from '@/types'
 
@@ -27,15 +26,6 @@ const componentProps: ComponentPropItemData[] = [
 
 const primaryAction: ActionConfig = { label: '갱신하기', onClick: () => {} }
 const secondaryAction: ActionConfig = { label: '나중에', onClick: () => {} }
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'notice-padding' },
-  { name: 'notice-border-radius' },
-  { name: 'notice-border-width' },
-  { name: 'notice-text-color' },
-  { name: 'notice-background-color' },
-  { name: 'notice-border-color' },
-]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -123,7 +113,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-notice']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

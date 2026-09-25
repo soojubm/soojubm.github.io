@@ -6,7 +6,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import {
@@ -66,12 +65,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
   { name: 'mm-list-item-group role', type: "'list' | 'group' = 'list'", optional: true },
   { name: 'mm-list-item-group size', type: "'small'", optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'list-item-size' },
-  { name: 'list-item-gap' },
-  { name: 'list-item-font-size' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -191,7 +184,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-list-item']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-content-section-list>

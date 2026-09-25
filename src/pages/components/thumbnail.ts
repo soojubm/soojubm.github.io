@@ -5,7 +5,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -46,12 +45,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'href', type: 'string', optional: true },
   { name: 'loading', type: "'eager' | 'lazy' = 'lazy'", optional: true },
   { name: 'fetchpriority', type: "'high' | 'low' | 'auto' = 'auto'", optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'thumbnail-border' },
-  { name: 'thumbnail-border-radius' },
-  { name: 'thumbnail-background-color-empty' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -97,7 +90,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-thumbnail']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph>TODO 고해상도 디바이스를 위한 이미지 가이드.</mm-paragraph>

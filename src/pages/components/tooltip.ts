@@ -5,7 +5,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
@@ -44,15 +43,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'placement', type: "'left' | 'center' | 'right'", optional: true },
   { name: 'open', type: 'boolean = false', optional: true },
   { name: 'slot: trigger', type: 'HTMLElement' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'tooltip-max-width' },
-  { name: 'tooltip-padding' },
-  { name: 'tooltip-border-radius' },
-  { name: 'tooltip-background-color' },
-  { name: 'tooltip-text-color' },
-  { name: 'tooltip-shadow' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -116,7 +106,7 @@ const main = html`
     </mm-flex>
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-tooltip']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

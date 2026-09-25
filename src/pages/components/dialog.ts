@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 import type { ActionConfig } from '@/types'
 
@@ -24,18 +23,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'secondaryAction', type: 'ActionConfig', optional: true },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
   { name: 'dialog-close', type: 'CustomEvent', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'overlay-panel-min-width' },
-  { name: 'overlay-panel-max-width' },
-  { name: 'overlay-panel-height' },
-  { name: 'overlay-panel-max-height' },
-  { name: 'overlay-panel-padding-block' },
-  { name: 'overlay-panel-padding-inline' },
-  { name: 'overlay-panel-border-radius' },
-  { name: 'backdrop-background-color' },
-  { name: 'backdrop-blur' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -81,7 +68,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-dialog']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -20,11 +19,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'nav', type: "'back' | 'close' = 'back'", optional: true },
   { name: "slot='action'", type: 'HTMLElement', optional: true },
   { name: 'nav-click', type: 'CustomEvent', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'top-bar-min-height' },
-  { name: 'top-bar-gap' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []
@@ -61,7 +55,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-top-bar']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

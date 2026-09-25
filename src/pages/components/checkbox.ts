@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -38,13 +37,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-terms-agreement name', type: 'string', optional: true },
   { name: 'mm-terms-agreement values', type: 'string[] = []', optional: true },
   { name: 'mm-terms-agreement change', type: 'CustomEvent detail: values', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'checkbox-size' },
-  { name: 'checkbox-border-radius' },
-  { name: 'checkbox-border-color' },
-  { name: 'checkbox-background-color' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -137,7 +129,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-checkbox']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-notice

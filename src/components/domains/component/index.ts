@@ -26,4 +26,3 @@ export type { ComponentChangelogItemData } from '@/components/domains/component/
 export type { ComponentPropItemData } from '@/components/domains/component/component-props'
 export type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 export type { ComponentRelatedItemData } from '@/components/domains/component/component-related'
-export type { ComponentTokenItemData } from '@/components/domains/component/component-tokens'

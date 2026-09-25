@@ -5,7 +5,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import {
@@ -78,11 +77,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-menu-item-checkbox-group size', type: "'large'", optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
   { name: 'toggle', type: 'CustomEvent detail: open', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'interactive-row-background-color' },
-  { name: 'interactive-row-padding-inline' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -188,7 +182,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-menu-item-action']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

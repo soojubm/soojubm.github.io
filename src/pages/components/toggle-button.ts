@@ -6,7 +6,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 import type { OptionItem } from '@/types'
 
@@ -54,8 +53,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'change', type: 'CustomEvent detail: pressed, value', kind: 'event' },
   { name: 'mm-toggle-button-group change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
-
-const componentTokens: ComponentTokenItemData[] = [{ name: 'toggle-button-border-radius' }]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -127,7 +124,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-toggle-button']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-content-section heading="접근성" heading-level="3">

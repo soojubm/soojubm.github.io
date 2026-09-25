@@ -5,7 +5,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { tagToneStyles, type TagTone } from '@/components/common/tag/tag.styles'
@@ -23,8 +22,6 @@ const componentProps: ComponentPropItemData[] = [
     type: "'default' | 'gold' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'",
   },
 ]
-
-const componentTokens: ComponentTokenItemData[] = [{ name: 'dot-size' }]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -71,7 +68,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-dot']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 

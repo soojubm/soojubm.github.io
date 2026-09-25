@@ -5,7 +5,6 @@ import type {
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -43,16 +42,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'slot="leading"', type: '입력 영역 위쪽 액션', optional: true },
   { name: 'slot="trailing"', type: '입력 영역 아래쪽 액션', optional: true },
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'input-height' },
-  { name: 'input-padding-block' },
-  { name: 'input-padding-inline' },
-  { name: 'input-background-color' },
-  { name: 'input-border' },
-  { name: 'input-border-radius' },
-  { name: 'input-focus-outline' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -136,7 +125,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-textarea']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 

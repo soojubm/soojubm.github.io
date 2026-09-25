@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
@@ -22,17 +21,6 @@ const componentProps: ComponentPropItemData[] = [
     type: "'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'",
   },
   { name: 'icon', type: 'IconName', optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'tag-height' },
-  { name: 'tag-padding-inline' },
-  { name: 'tag-gap' },
-  { name: 'tag-text-size' },
-  { name: 'tag-text-color' },
-  { name: 'tag-background-color' },
-  { name: 'tag-border' },
-  { name: 'tag-border-radius' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -82,7 +70,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-tag']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 

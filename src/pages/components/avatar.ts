@@ -5,7 +5,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { AVATAR_VARIANT_TYPE_UNION, ICON_NAMES } from '@/components/common'
@@ -29,14 +28,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-user-avatar online', type: 'boolean = false', optional: true },
   { name: 'mm-avatar-group avatars', type: 'AvatarItem[] = []', optional: true },
   { name: 'mm-avatar-group label', type: 'string', optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'avatar-size' },
-  { name: 'avatar-background-color' },
-  { name: 'avatar-icon-color' },
-  { name: 'avatar-border' },
-  { name: 'avatar-border-radius' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -176,7 +167,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-avatar']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 

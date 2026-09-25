@@ -4,7 +4,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
@@ -28,16 +27,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
   { name: 'aria-haspopup', type: 'string', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'icon-button-size' },
-  { name: 'icon-button-text-color' },
-  { name: 'icon-button-background-color' },
-  { name: 'icon-button-border' },
-  { name: 'icon-button-border-radius' },
-  { name: 'icon-button-shadow' },
-  { name: 'icon-button-backdrop-filter' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -156,7 +145,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-icon-button']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph>

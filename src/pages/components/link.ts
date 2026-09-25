@@ -5,7 +5,6 @@ import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
-  ComponentTokenItemData,
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
@@ -26,11 +25,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-link-prompt href', type: 'string', optional: true },
   { name: 'mm-pager previous', type: 'PagerLink', optional: true },
   { name: 'mm-pager next', type: 'PagerLink', optional: true },
-]
-
-const componentTokens: ComponentTokenItemData[] = [
-  { name: 'link-text-color' },
-  { name: 'link-gap' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -96,7 +90,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .tokens=${componentTokens}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-link']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
