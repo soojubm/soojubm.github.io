@@ -1,7 +1,7 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { dotStyles } from '@/components/common/dot/dot.styles'
+import { dotSizes, dotStyles, dotToneColor } from '@/components/common/dot/dot.styles'
 import '@/components/overlay/tooltip'
 
 /**
@@ -29,8 +29,8 @@ export class CurrentIndicator extends LitElement {
       &::before {
         content: '';
         ${dotStyles}
-        --dot-size: 6px;
-        --dot-background-color: var(--background-strong-color);
+        --dot-size: ${unsafeCSS(dotSizes['6'])};
+        --dot-background-color: ${unsafeCSS(dotToneColor('gray'))};
       }
     }
   `

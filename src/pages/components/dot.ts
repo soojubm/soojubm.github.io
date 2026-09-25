@@ -8,7 +8,12 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { tagToneStyles, type TagTone } from '@/components/common/tag/tag.styles'
+import {
+  dotSizes,
+  dotToneColors,
+  type DotSize,
+  type DotTone,
+} from '@/components/common/dot/dot.styles'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -20,8 +25,9 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'tone',
-    type: "'default' | 'gold' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'",
+    type: "'default' | 'gold' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' | 'gray' = 'default'",
   },
+  { name: 'size', type: "'16' | '12' | '8' | '6' = '8'" },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -37,7 +43,9 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const tones = Object.keys(tagToneStyles) as TagTone[]
+const tones = Object.keys(dotToneColors) as DotTone[]
+
+const dotSizeList = Object.keys(dotSizes) as DotSize[]
 
 const statusVariants = ['live', 'online', 'new', 'unread'] as const
 
@@ -59,15 +67,37 @@ const main = html`
       .items=${['Indicator', 'Badge', 'Swatch', 'Legend marker', 'Presence']}
     ></mm-component-aka>
 
-    <mm-component-example>
-      <mm-flex gap="2" align-items="center">
-        ${tones.map(
-          tone => html`
-            <mm-dot tone=${tone}></mm-dot>
-          `,
-        )}
-      </mm-flex>
-    </mm-component-example>
+    <mm-flex direction="column" gap="4">
+      <mm-tab-list value="tone" variant="pill">
+        <mm-tab value="tone">Tone</mm-tab>
+        <mm-tab value="size">Size</mm-tab>
+      </mm-tab-list>
+      <mm-tab-panel value="tone">
+        <mm-component-example>
+          <mm-flex gap="2" align-items="center">
+            ${tones.map(
+              tone => html`
+                <mm-dot tone=${tone}></mm-dot>
+              `,
+            )}
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+      <mm-tab-panel value="size">
+        <mm-component-example>
+          <mm-flex gap="4" align-items="end">
+            ${dotSizeList.map(
+              size => html`
+                <mm-flex direction="column" gap="2" align-items="center">
+                  <mm-dot tone="blue" size=${size}></mm-dot>
+                  <mm-caption>${size}</mm-caption>
+                </mm-flex>
+              `,
+            )}
+          </mm-flex>
+        </mm-component-example>
+      </mm-tab-panel>
+    </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 

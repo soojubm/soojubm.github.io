@@ -5,13 +5,24 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { AvatarSize } from '@/components/common/avatar/avatar'
 
 import '@/components/common/avatar/avatar'
+import { dotSizes, type DotSize } from '@/components/common/dot/dot.styles'
 import '@/components/common/dot/semantics/status-dot'
 import { buildAttributeRules } from '@/utils'
 
-const userAvatarSizeTokens = {
-  '80': { '--dot-size': 'var(--size-16)' },
-  '48': { '--dot-size': '12px' },
-}
+/** 접속 점은 아바타가 클수록 커지며, 점이 정한 크기 단계 안에서 고른다. */
+const presenceDotSizes = {
+  '80': '16',
+  '48': '12',
+  '40': '8',
+  '32': '8',
+} as const satisfies Record<AvatarSize, DotSize>
+
+const presenceDotSizeTokens = Object.fromEntries(
+  Object.entries(presenceDotSizes).map(([avatarSize, dotSize]) => [
+    avatarSize,
+    { '--dot-size': dotSizes[dotSize] },
+  ]),
+)
 
 @customElement('mm-user-avatar')
 export class UserAvatar extends LitElement {
@@ -28,15 +39,13 @@ export class UserAvatar extends LitElement {
 
     /* 원의 45° 지점에 점의 중심을 얹는다. 모서리에서 반지름의 29.3%가 그 지점이다. */
     mm-status-dot {
-      --dot-size: 8px;
-
       outline: calc(var(--border-width) * 2) solid var(--background-color);
       position: absolute;
       inset-inline-end: calc(14.6% - var(--dot-size) / 2);
       inset-block-end: calc(14.6% - var(--dot-size) / 2);
     }
 
-    ${unsafeCSS(buildAttributeRules('size', userAvatarSizeTokens, 'mm-status-dot'))}
+    ${unsafeCSS(buildAttributeRules('size', presenceDotSizeTokens, 'mm-status-dot'))}
   `
   @property({ type: String }) name = ''
   @property({ type: String }) src?: string
