@@ -6,6 +6,7 @@ import {
   textMaxLinesStyles,
   textSizeTokens,
   type ParagraphSize,
+  type TextColor,
   type TextMaxLines,
 } from '@/components/common/text/text.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -47,7 +48,7 @@ export class Paragraph extends LitElement {
     `,
   ]
   @property({ type: String, reflect: true }) size: ParagraphSize = 'medium'
-  @property({ type: String, reflect: true }) color = 'inherit'
+  @property({ type: String, reflect: true }) color: TextColor = 'inherit'
   @property({ type: String, attribute: 'max-lines', reflect: true }) maxLines: TextMaxLines = ''
   @property({ type: Boolean, reflect: true }) centered = false
 
@@ -55,17 +56,5 @@ export class Paragraph extends LitElement {
     return html`
       <p><slot></slot></p>
     `
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('color')) return
-
-    const isKeyword = this.color === 'inherit' || this.color === 'light' || this.color === 'danger'
-    if (isKeyword) {
-      this.style.removeProperty('--paragraph-color')
-      return
-    }
-
-    this.style.setProperty('--paragraph-color', this.color)
   }
 }
