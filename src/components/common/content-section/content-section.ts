@@ -6,7 +6,8 @@ import '@/components/common/text/semantics/heading'
 /**
  * <mm-content-section>
  * 제목과 본문을 한 묶음으로 세우는 콘텐츠 섹션입니다.
- * 제목이 그 묶음을 대표하므로 heading은 필수이고, heading-level(기본 2)로 문서 안의 깊이를 정합니다.
+ * 제목이 그 묶음을 대표하므로 heading은 필수입니다. heading-level(기본 2)은 제목의 단계와 크기를 정하며,
+ * 섹션이 문서 구조에서 놓인 자리에 맞춰 지정합니다.
  */
 @customElement('mm-content-section')
 export class ContentSection extends LitElement {

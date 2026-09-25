@@ -175,10 +175,12 @@ const main = html`
         <mm-content-section heading-level="3" heading="Content Section">
           <mm-paragraph>
             <mm-code>mm-content-section</mm-code>
-            은 제목과 본문을 한 묶음으로 세우고 그 사이 간격을 소유합니다. heading-level로 문서 안의
-            깊이를 정합니다. 섹션끼리의 바깥 간격은
+            은 제목과 본문을 한 묶음으로 세우고 그 사이 간격을 소유합니다.
+            <mm-code>heading-level</mm-code>
+            은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이 문서 구조에서 놓인 자리에 맞춰 지정합니다.
+            섹션끼리의 바깥 간격은
             <mm-code>mm-content-section-list</mm-code>
-            가 정하므로, 페이지는 섹션 사이에 여백을 따로 주지 않습니다.
+            가 정하므로, 페이지는 섹션 사이에 간격을 따로 주지 않습니다.
           </mm-paragraph>
           <mm-surface variant="filled">
             <mm-content-section-list>
