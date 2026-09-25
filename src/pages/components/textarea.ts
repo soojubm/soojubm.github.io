@@ -43,7 +43,6 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'slot="leading"', type: '입력 영역 위쪽 액션', optional: true },
   { name: 'slot="trailing"', type: '입력 영역 아래쪽 액션', optional: true },
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
-  { name: 'single-line-change', type: 'CustomEvent detail: isSingleLine', kind: 'event' },
 ]
 
 const componentTokens: ComponentTokenItemData[] = [

@@ -6,12 +6,10 @@ interface TextareaAutoHeightControllerOptions {
   getTextarea: () => HTMLTextAreaElement | undefined
   getMinVisibleRows: () => number
   getMaxVisibleRows: () => number
-  onSingleLineChange?: (isSingleLine: boolean) => void
 }
 
 export class TextareaAutoHeightController implements ReactiveController {
   private resizeFrame = 0
-  isSingleLine = true
 
   constructor(private host: Host, private options: TextareaAutoHeightControllerOptions) {
     host.addController(this)
@@ -48,15 +46,6 @@ export class TextareaAutoHeightController implements ReactiveController {
 
     textarea.style.height = `${nextHeight}px`
     textarea.style.overflowY = textarea.scrollHeight > maxHeight ? 'auto' : 'hidden'
-
-    this.updateSingleLine(contentHeight < metrics.lineHeight * 2 + metrics.paddingBlock)
-  }
-
-  private updateSingleLine(isSingleLine: boolean) {
-    if (isSingleLine === this.isSingleLine) return
-
-    this.isSingleLine = isSingleLine
-    this.options.onSingleLineChange?.(isSingleLine)
   }
 
   private measureTextArea(textarea: HTMLTextAreaElement) {

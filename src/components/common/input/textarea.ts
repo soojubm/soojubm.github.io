@@ -58,7 +58,6 @@ export class Textarea extends LitElement {
     getTextarea: () => this.textarea,
     getMinVisibleRows: () => this.rows,
     getMaxVisibleRows: () => this.maxVisibleRows,
-    onSingleLineChange: isSingleLine => emit(this, 'single-line-change', { isSingleLine }),
   })
 
   render() {
@@ -80,10 +79,6 @@ export class Textarea extends LitElement {
 
   protected get maxVisibleRows() {
     return 5
-  }
-
-  public get isSingleLine() {
-    return this.autoHeight.isSingleLine
   }
 
   public resizeToContent() {
