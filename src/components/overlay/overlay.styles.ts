@@ -64,7 +64,6 @@ export const overlaySurfaceStyles = css`
  */
 export const sheetPositionStyles = css`
   :host {
-    --overlay-panel-z-index: var(--material-zindex-sheet);
     --overlay-panel-min-width: auto;
     --overlay-panel-max-width: var(--layout-width-small);
     --overlay-panel-height: auto;
@@ -82,7 +81,7 @@ export const sheetPositionStyles = css`
 
     position: fixed;
     inset: 0;
-    z-index: var(--overlay-panel-z-index);
+    z-index: var(--material-zindex-sheet);
 
     /* backdrop과 패널을 한 번에 띄우고 내린다. 닫힐 때만 visibility를 지연시켜
        fade-out이 끝난 뒤에 접근성 트리와 히트 테스트에서 빠지게 한다. */

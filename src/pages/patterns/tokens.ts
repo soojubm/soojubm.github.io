@@ -339,6 +339,21 @@ const main = html`
             ]}
           ></mm-text-list>
         </mm-content-section>
+
+        <mm-content-section heading-level="3" heading="Component 토큰을 두는 기준">
+          <mm-paragraph>
+            Component 토큰은 값이 바뀌는 경로가 있을 때 둡니다. 컴포넌트의
+            <mm-code>:host</mm-code>
+            에 선언하며, 컴포넌트 문서의 토큰 목록은 이 선언에서 그대로 읽어 옵니다. 값이 한 가지로
+            고정되면 System 토큰을 직접 참조합니다.
+          </mm-paragraph>
+          <mm-text-list
+            .texts=${[
+              '상태에 따라 재할당된다 — variant·size·hover 같은 상태 selector가 이 토큰 하나에 값을 다시 넣는다.',
+              '소비처마다 다를 수 있어 소비자에게 연다 — tooltip-max-width, table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System 토큰을 직접 참조한다.',
+            ]}
+          ></mm-text-list>
+        </mm-content-section>
       </mm-content-section-list>
 
       <mm-token-section
