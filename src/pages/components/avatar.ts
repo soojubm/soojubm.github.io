@@ -68,16 +68,10 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex gap="2">
-              <mm-avatar variant="primary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-              <mm-avatar variant="secondary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-              <mm-avatar variant="tertiary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-            </mm-flex>
-            <mm-paragraph>
-              배경과 테두리로 주변 표면과의 대비를 정합니다. 이미지가 영역을 덮으면 차이가 드러나지
-              않으므로 아이콘·이니셜 아바타에서 고릅니다.
-            </mm-paragraph>
+          <mm-flex gap="2">
+            <mm-avatar variant="primary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+            <mm-avatar variant="secondary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+            <mm-avatar variant="tertiary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>
