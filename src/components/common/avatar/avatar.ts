@@ -57,7 +57,7 @@ export class Avatar extends LitElement {
 
     return html`
       <slot>
-        <mm-icon name=${ICON_NAMES.PEOPLE_TAG} size=${this.iconSize} aria-hidden="true"></mm-icon>
+        <mm-icon name=${ICON_NAMES.PROFILE} size=${this.iconSize} aria-hidden="true"></mm-icon>
       </slot>
     `
   }

@@ -43,7 +43,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Representative',
     description:
-      '사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다. 이미지가 없거나 로드에 실패해도 이니셜 → 아이콘 → 기본 아이콘 순으로 대체해 형태와 정체성을 유지하고, alt 텍스트 또는 aria-label을 반드시 제공합니다.',
+      '사용자·브랜드·객체를 시각적으로 대변합니다. 이미지 프로필을 최우선으로 보여주며, 식별 정보에 상태 메타 데이터를 결합하면 하나의 독립된 정보 노출 단위로도 기능합니다. 이미지가 없거나 로드에 실패해도 이니셜 → 기본 아이콘 순으로 대체해 형태와 정체성을 유지하고, alt 텍스트 또는 aria-label을 반드시 제공합니다.',
   },
 ]
 
@@ -119,7 +119,6 @@ const main = html`
         <mm-component-example>
           <mm-flex direction="column" gap="6">
             <mm-flex gap="2">
-              <mm-avatar size="40" icon=${ICON_NAMES.PROFILE}></mm-avatar>
               <mm-avatar size="40">MM</mm-avatar>
               <mm-avatar size="40">
                 <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
@@ -127,8 +126,7 @@ const main = html`
               <mm-avatar size="40"></mm-avatar>
             </mm-flex>
             <mm-paragraph>
-              src가 없으면 icon, icon도 없으면 슬롯의 이니셜·이모지, 슬롯도 비어 있으면 기본
-              아이콘을 표시합니다.
+              src가 없으면 슬롯의 이니셜·이모지를, 슬롯도 비어 있으면 기본 아이콘을 표시합니다.
             </mm-paragraph>
             <mm-paragraph>
               이모지는 슬롯 요소에 글자 크기를 직접 줍니다. 32·48·80은 아바타가 글자 크기를 정하지만
@@ -185,7 +183,7 @@ const main = html`
     <mm-component-anatomy
       .parts=${[
         '컨테이너 — variant·size로 형태와 크기·배경을 정의합니다.',
-        '콘텐츠 — 이미지 &gt; 아이콘 &gt; 이니셜 &gt; 기본 아이콘 순서로 폴백합니다.',
+        '콘텐츠 — 이미지 &gt; 이니셜 &gt; 기본 아이콘 순서로 폴백합니다.',
       ]}
       .code=${'<mm-avatar variant="secondary" size="80"></mm-avatar>'}
       .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', inset: true }]}
