@@ -9,19 +9,16 @@ import './dashboard.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES, type CategoryKey } from '@/pages/mocks'
 
-const indexCards = [
-  { icon: 'graph-down', label: '코스피', value: '2999.55p', tone: 'blue', change: '4.33% 하락' },
-  { icon: 'graph-up', label: '코스닥', value: '2999.55p', tone: 'red', change: '4.33% 상승' },
-  {
-    icon: 'graph-up',
-    label: '상해종합주가지수',
-    value: '2999.55p',
-    tone: 'red',
-    change: '4.33% 상승',
-  },
-]
+type StatCard = {
+  icon: string
+  label: string
+  value: string
+  tone: string
+  change: string
+  notes: readonly string[]
+}
 
-const renderIndexCard = ({ icon, label, value, tone, change }: typeof indexCards[number]) => html`
+const renderStatCard = ({ icon, label, value, tone, change, notes }: StatCard) => html`
   <mm-surface variant="outlined" radius="large">
     <mm-flex direction="column" gap="3">
       <mm-avatar variant="secondary" size="40" icon=${icon}></mm-avatar>
@@ -33,14 +30,18 @@ const renderIndexCard = ({ icon, label, value, tone, change }: typeof indexCards
         <mm-tag icon=${icon} tone=${tone}>${change}</mm-tag>
       </mm-flex>
       <mm-flex direction="column" gap="0">
-        <mm-text size="12" color="light">10분 지연. live</mm-text>
-        <mm-text size="12" color="light">현지 시간 기준 10.27. 01:27</mm-text>
+        ${notes.map(
+          note =>
+            html`
+              <mm-text size="12" color="light">${note}</mm-text>
+            `,
+        )}
       </mm-flex>
     </mm-flex>
   </mm-surface>
 `
 
-/** 변화율은 지난 분기 대비. 방향이 좋고 나쁨은 지표마다 달라 톤을 입히지 않는다. */
+/** 변화율은 지난 분기 대비. */
 const systemStats = [
   {
     label: '컴포넌트',
@@ -81,6 +82,11 @@ const trendIcons = {
   down: ICON_NAMES.TREND_DOWN,
 } as const
 
+const trendTones = {
+  up: 'red',
+  down: 'blue',
+} as const
+
 /** 파생이 많은 상위 계열. 전체 17개 계열 중 여덟을 추린다. */
 const semanticsCounts = [
   { label: 'icon-button', count: 13 },
@@ -105,33 +111,16 @@ const toShares = (counts: { label: string; count: number }[]) => {
 
 const semanticsShares = toShares(semanticsCounts)
 
-const renderSystemStat = ({
-  label,
-  value,
-  change,
-  trend,
-  summary,
-  caption,
-}: typeof systemStats[number]) => html`
-  <mm-surface variant="outlined" radius="large">
-    <mm-flex direction="column" gap="5">
-      <mm-flex direction="column" gap="1">
-        <mm-flex justify-content="space-between" align-items="center" gap="2">
-          <mm-text color="light">${label}</mm-text>
-          <mm-tag icon=${trendIcons[trend]}>${change}</mm-tag>
-        </mm-flex>
-        <mm-text size="32" weight="bold">${value}</mm-text>
-      </mm-flex>
-      <mm-flex direction="column" gap="1">
-        <mm-flex align-items="center" gap="2">
-          <mm-text weight="bold">${summary}</mm-text>
-          <mm-icon name=${trendIcons[trend]} aria-hidden="true"></mm-icon>
-        </mm-flex>
-        <mm-text color="light">${caption}</mm-text>
-      </mm-flex>
-    </mm-flex>
-  </mm-surface>
-`
+const systemStatCards: StatCard[] = systemStats.map(
+  ({ label, value, change, trend, summary, caption }) => ({
+    icon: trendIcons[trend],
+    tone: trendTones[trend],
+    label,
+    value,
+    change,
+    notes: [summary, caption],
+  }),
+)
 
 const syncTotal = 12480
 const syncDone = 8486
@@ -224,36 +213,13 @@ const main = html`
   <mm-main class="dashboard">
     <mm-flex direction="column" gap="section">
       <mm-flex direction="column" gap="4">
-        <mm-page-header
-          heading="Dashboard"
-          description="디자인 시스템 현황과 지표를 한 화면에서 훑습니다."
-        ></mm-page-header>
-
-        <mm-grid columns="4" gap="4">${systemStats.map(renderSystemStat)}</mm-grid>
-
-        <mm-surface variant="outlined" radius="large">
-          <mm-flex direction="column" gap="4">
-            <mm-text-block
-              level="3"
-              heading="계열별 파생 컴포넌트"
-              description="기반 하나가 시멘틱으로 몇 갈래 분화했는지 봅니다. 전체 17개 계열 중 상위 여덟."
-            ></mm-text-block>
-            <mm-chart-column .items=${semanticsShares}></mm-chart-column>
-          </mm-flex>
-        </mm-surface>
-
-        <mm-surface variant="outlined" radius="large">
-          <mm-flex direction="column" gap="4">
-            <mm-text-block
-              level="3"
-              heading="컨테이너 사용 현황"
-              description="mm-flex 하나가 302회로 배치 대부분을 맡습니다. 막대를 누르면 어느 페이지에서 쓰는지 폅니다."
-            ></mm-text-block>
-            <mm-component-usage .items=${containerUsages}></mm-component-usage>
-          </mm-flex>
-        </mm-surface>
-
-        <mm-separator variant="section"></mm-separator>
+        <mm-flex justify-content="space-between" align-items="center" gap="4">
+          <mm-heading level="2">🌙 Tender is the night.</mm-heading>
+          <mm-button-group>
+            <mm-button icon=${ICON_NAMES.IMPORT}>가져오기</mm-button>
+            <mm-button variant="primary">추가하기</mm-button>
+          </mm-button-group>
+        </mm-flex>
 
         <mm-tab-list value="daily" variant="pill" search-param="period">
           <mm-tab value="daily">일간</mm-tab>
@@ -261,7 +227,56 @@ const main = html`
           <mm-tab value="monthly">월간</mm-tab>
         </mm-tab-list>
 
-        <mm-grid columns="3" gap="4">${indexCards.map(renderIndexCard)}</mm-grid>
+        <mm-grid columns="4" gap="4">${systemStatCards.map(renderStatCard)}</mm-grid>
+
+        <mm-notice
+          heading="태그 색은 방향만 알립니다"
+          description="오르면 red, 내리면 blue입니다. 디자인 토큰이나 접근성 경고처럼 줄어드는 게 좋은 지표도 파랑이 되므로, 좋고 나쁨까지 색에 담으려면 지표마다 기준을 따로 정해야 합니다."
+        ></mm-notice>
+
+        <mm-grid columns="2" gap="4">
+          <mm-surface variant="outlined" radius="large">
+            <mm-flex direction="column" gap="4">
+              <mm-text-block
+                level="3"
+                heading="계열별 파생 컴포넌트"
+                description="기반 하나가 시멘틱으로 몇 갈래 분화했는지 봅니다. 전체 17개 계열 중 상위 여덟."
+              ></mm-text-block>
+              <mm-chart-column .items=${semanticsShares}></mm-chart-column>
+            </mm-flex>
+          </mm-surface>
+          <mm-banner
+            variant="primary"
+            heading="새 계열을 제안해 주세요"
+            description="기존 기반으로 담기지 않는 패턴을 발견했다면 알려 주세요."
+          >
+            <mm-button slot="action" variant="primary">제안하기</mm-button>
+          </mm-banner>
+        </mm-grid>
+
+        <mm-grid columns="2" gap="4">
+          <mm-surface variant="outlined" radius="large">
+            <mm-flex direction="column" gap="4">
+              <mm-text-block
+                level="3"
+                heading="컨테이너 사용 현황"
+                description="mm-flex 하나가 302회로 배치 대부분을 맡습니다. 막대를 누르면 어느 페이지에서 쓰는지 폅니다."
+              ></mm-text-block>
+              <mm-component-usage .items=${containerUsages}></mm-component-usage>
+            </mm-flex>
+          </mm-surface>
+          <mm-surface variant="outlined" radius="large">
+            <mm-flex direction="column" gap="4">
+              <mm-text-block
+                level="3"
+                heading="카테고리별 광고비"
+                description="이번 달 집행액 2,000,000원"
+              ></mm-text-block>
+              <mm-chart-stacked-bar .items=${adSpendItems}></mm-chart-stacked-bar>
+              <mm-chart-legend .items=${adSpendItems}></mm-chart-legend>
+            </mm-flex>
+          </mm-surface>
+        </mm-grid>
       </mm-flex>
 
       <mm-flex direction="column" align-items="center" gap="3">
@@ -365,18 +380,6 @@ const main = html`
           </mm-flex>
         </mm-surface>
       </mm-grid>
-
-      <mm-surface variant="outlined" radius="large">
-        <mm-flex direction="column" gap="4">
-          <mm-text-block
-            level="3"
-            heading="카테고리별 광고비"
-            description="이번 달 집행액 2,000,000원"
-          ></mm-text-block>
-          <mm-chart-stacked-bar .items=${adSpendItems}></mm-chart-stacked-bar>
-          <mm-chart-legend .items=${adSpendItems}></mm-chart-legend>
-        </mm-flex>
-      </mm-surface>
     </mm-flex>
   </mm-main>
 `

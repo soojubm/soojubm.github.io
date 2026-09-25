@@ -24,7 +24,7 @@ export class ChartColumn extends LitElement {
     css`
       :host {
         --chart-column-height: var(--size-80);
-        --chart-column-color: var(--primary-color);
+        --chart-column-color: var(--background-strong-color);
 
         display: flex;
         gap: var(--space-2);
