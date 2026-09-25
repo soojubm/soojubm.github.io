@@ -291,6 +291,7 @@ const main = html`
               '그룹/합성 컴포넌트는 자식의 change를 그대로 흘려보내지 않고 stopPropagation으로 끊은 뒤 자기 단위의 change로 다시 발행한다.',
               'render() 안의 조건부 DOM 조각이 커지면 render*() helper로 분리하고, render()에는 각 helper를 직접 나열한다.',
               'render*() 이름은 상태를 다시 중계하지 않고 실제 조각의 의미를 드러낸다. 예: renderContent()가 아니라 renderImage()',
+              '파생 컴포넌트는 기반의 성격에 따라 조합 방식을 고른다. 상호작용·접근성 의미가 없는 기반은 그대로 렌더해 prop으로 단계를 고르고, 상호작용과 접근성 이름을 가진 기반은 공유 스타일·템플릿 조각을 조합한다. 후자를 렌더하면 shadow가 한 단계 깊어지고 이름·상태·이벤트를 안쪽으로 중계해야 하기 때문이다. 예: mm-current-indicator는 mm-dot을 렌더하고, mm-dismiss-button은 iconButtonStyles와 renderIconAction을 조합한다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
