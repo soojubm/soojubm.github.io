@@ -1,6 +1,5 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 import '@/components/common/grid/grid'
 
 type Columns = 1 | 2 | 3 | 4
@@ -17,16 +16,10 @@ export class FeatureGroup extends LitElement {
     }
   `
   @property({ type: Number }) columns: Columns = 2
-  @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
 
   render() {
     return html`
-      <mm-grid
-        columns=${this.columns}
-        column-max-width=${ifDefined(this.columnMaxWidth)}
-        gap="8"
-        role="group"
-      >
+      <mm-grid columns=${this.columns} gap="8" role="group">
         <slot></slot>
       </mm-grid>
     `

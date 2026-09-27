@@ -27,7 +27,7 @@ const main = html`
 
     <mm-content-section-list>
       <mm-content-section heading-level="3" heading="Overview">
-        <mm-feature-group columns="2" column-max-width="400px">
+        <mm-feature-group columns="2">
           <mm-feature
             heading="너비로 읽기 밀도를 정한다"
             description="좁은 폭은 폼·인증처럼 한 가지 작업에 집중시키고, 넓은 폭은 목록·대시보드처럼 훑어보는 화면에 씁니다."

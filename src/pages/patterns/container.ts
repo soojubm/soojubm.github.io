@@ -161,16 +161,6 @@ const main = html`
                   지정하지 않는다
                 `,
               ),
-              rule(
-                html`
-                  열 너비에 상한이 필요하면 ${code('column-max-width')}를 준다
-                `,
-                html`
-                  열 수를 ${code('columns')}로 고정하고 뷰포트 너비에 따라 단계적으로 줄인다. 1560px
-                  이하에서 6열은 4열로, 800px 이하에서 3열 이상은 2열로, 480px 이하에서는 모두 1열이
-                  된다
-                `,
-              ),
             ]}
           ></mm-text-list>
           <mm-grid-preview></mm-grid-preview>
