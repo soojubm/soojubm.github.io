@@ -53,6 +53,7 @@ const headingCode = `<mm-heading level="1">페이지 레벨의 타이틀</mm-hea
 const captionCode = `<mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>`
 
 const paragraphCode = `<mm-paragraph-group>
+  <mm-paragraph size="small">보조 정보를 담는 본문입니다.</mm-paragraph>
   <mm-paragraph max-lines="3">일반적인 UI 본문입니다.</mm-paragraph>
   <mm-paragraph size="large">콘텐츠 뷰의 본문입니다.</mm-paragraph>
 </mm-paragraph-group>`
@@ -208,6 +209,10 @@ const main = html`
       .code=${paragraphCode}
     >
       <mm-paragraph-group>
+        <mm-paragraph size="small">
+          Paragraph small은 font-size-12입니다. 카드의 부제나 출처 설명처럼 본문보다 한 단계 낮은
+          보조 정보에 사용합니다.
+        </mm-paragraph>
         <mm-paragraph max-lines="3">
           Paragraph medium은 font-size-14입니다. 일반적인 UI 본문에 사용됩니다. 레이아웃에서 여러
           문단이 이어질 때 ParagraphGroup으로 묶어 일관된 간격을 유지합니다. 문단 사이 간격은

@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type TextSize = '32' | '24' | '18' | '14' | '12'
 export type TextWeight = 'medium' | 'bold'
@@ -21,7 +21,7 @@ const textMaxLinesTokens = {
   3: { '-webkit-line-clamp': '3' },
 }
 
-export const textMaxLinesStyles = css`
+const textMaxLinesStyles = css`
   /* max-lines는 reflect라 값이 없을 때도 attribute가 남는다. 값이 있을 때만 자른다. */
   :host([max-lines]:not([max-lines=''])) > * {
     overflow: hidden;
@@ -42,12 +42,12 @@ export const textMaxLinesStyles = css`
   ${unsafeCSS(buildAttributeRules('max-lines', textMaxLinesTokens, '> *'))}
 `
 
-const textColorTokens = {
+const textColorTokens: AttributeTokens<Exclude<TextColor, 'inherit'>> = {
   light: { color: 'var(--foreground-subtle-color)' },
   danger: { color: 'var(--danger-color)' },
 }
 
-export const textSizeTokens: Record<TextSize, Record<string, string>> = {
+const textSizeTokens: AttributeTokens<TextSize> = {
   '12': { 'font-size': 'var(--font-size-12)', 'line-height': 'var(--font-line-height-16)' },
   '14': { 'font-size': 'var(--font-size-14)', 'line-height': 'var(--font-line-height-24)' },
   '18': { 'font-size': 'var(--font-size-18)', 'line-height': 'var(--font-line-height-28)' },
