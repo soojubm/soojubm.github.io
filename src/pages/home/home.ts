@@ -182,6 +182,60 @@ const designSystemThoughts: Thought[] = [
   },
 ]
 
+const sharedStyleRows = html`
+  <tr>
+    <th scope="row"><mm-code>list-item.styles</mm-code></th>
+    <td>8</td>
+    <td>
+      <mm-code>interactiveRowStyles</mm-code>
+      : 눌리는 행의 hover·포커스·선택·비활성 스킨. menu-item 계열과 사이드바·검색 목록이 이 위에
+      선다
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>dot.styles</mm-code></th>
+    <td>6</td>
+    <td>
+      <mm-code>dotStyles</mm-code>
+      와 크기·tone 단계: 점 모양과 조합 컴포넌트가 고르는 단계
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>surface.styles</mm-code></th>
+    <td>5</td>
+    <td>
+      <mm-code>surfaceBaseStyles</mm-code>
+      : 면 선언. faq·banner·radio card·code-block·pager가 자기 요소에 얹는다
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>input.styles</mm-code></th>
+    <td>5</td>
+    <td>
+      <mm-code>visuallyHiddenInputStyles</mm-code>
+      : radio·checkbox가 네이티브 input을 숨기는 조각. 입력 필드 스타일은 input 계열 안에서만 쓴다
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>tag.styles</mm-code></th>
+    <td>5</td>
+    <td>
+      <mm-code>TagTone</mm-code>
+      : tone 이름과 색. dot·chart가 tag와 같은 색을 맞출 때 쓴다
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-code>button.styles</mm-code></th>
+    <td>4</td>
+    <td>
+      <mm-code>buttonBaseStyles</mm-code>
+      ·
+      <mm-code>buttonSelectedStyles</mm-code>
+      : 버튼 골격과 눌림 스킨. icon-button 스타일이 이 위에 서서 아이콘 버튼 계열까지 퍼진다
+    </td>
+  </tr>
+`
+
 // 임시 전시: MoreMenu·CommentItem 패턴을 React 컴포넌트로 옮긴 모습
 const reactMoreMenuCode = `const MENU_ACTIONS: MoreMenuAction[] = [
   { value: 'edit', label: '수정' },
@@ -312,6 +366,15 @@ const main = html`
               '파생 컴포넌트는 기반의 성격에 따라 조합 방식을 고른다. 상호작용·접근성 의미가 없는 기반은 그대로 렌더해 prop으로 단계를 고르고, 상호작용과 접근성 이름을 가진 기반은 공유 스타일·템플릿 조각을 조합한다. 후자를 렌더하면 shadow가 한 단계 깊어지고 이름·상태·이벤트를 안쪽으로 중계해야 하기 때문이다. 예: mm-current-indicator는 mm-dot을 렌더하고, mm-dismiss-button은 iconButtonStyles와 renderIconAction을 조합한다.',
             ]}
           ></mm-text-list>
+          <mm-table
+            .rows=${sharedStyleRows}
+            caption="계열 밖에서 재사용되는 스타일 모듈"
+            .columns=${[
+              { label: '모듈', width: '160px' },
+              { label: '밖에서 쓰는 곳', width: '120px' },
+              { label: '재사용하는 것', width: '560px' },
+            ]}
+          ></mm-table>
         </mm-content-section>
 
         <mm-content-section heading="Accessibility Notes">
