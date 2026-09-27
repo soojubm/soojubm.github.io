@@ -174,24 +174,26 @@ const main = html`
     </mm-content-section>
   </mm-main>
 
-  <mm-content-section class="post-more" heading="더 읽어보기" heading-level="3">
-    <mm-link slot="action" href="post.html">모두 보기</mm-link>
-    <mm-post-list>
-      ${POSTS.map(
-        post => html`
-          <mm-post-item
-            href="post-detail.html"
-            thumbnail="/src/images/soojubm.png"
-            title=${post.title}
-            category=${CATEGORIES[post.category].label}
-            date=${post.date}
-          ></mm-post-item>
-        `,
-      )}
-    </mm-post-list>
-  </mm-content-section>
+  <mm-flex class="post-more" direction="column" gap="8">
+    <mm-content-section heading="더 읽어보기" heading-level="3">
+      <mm-link slot="action" href="post.html">모두 보기</mm-link>
+      <mm-post-list>
+        ${POSTS.map(
+          post => html`
+            <mm-post-item
+              href="post-detail.html"
+              thumbnail="/src/images/soojubm.png"
+              title=${post.title}
+              category=${CATEGORIES[post.category].label}
+              date=${post.date}
+            ></mm-post-item>
+          `,
+        )}
+      </mm-post-list>
+    </mm-content-section>
 
-  <mm-post-pager .previous=${previousPost} .next=${nextPost}></mm-post-pager>
+    <mm-post-pager .previous=${previousPost} .next=${nextPost}></mm-post-pager>
+  </mm-flex>
 `
 
 renderPage(main, { closeSidebar: true })

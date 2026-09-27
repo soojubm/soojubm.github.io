@@ -7,7 +7,45 @@ import type { TemplateResult } from 'lit'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import { renderPage } from '@/components/layouts/base-layouts'
-import './interaction.css'
+
+/**
+ * 상태 토큰을 아래 목록과 같은 순서로 칠한 스와치. 스와치는 공통 박스를 쓰고,
+ * 토큰마다 달라지는 선언만 얹는다. 색만 담은 토큰은 두께·스타일과 함께 조립한다.
+ */
+const interactionTokens = [
+  'interaction-focus-outline',
+  'interaction-hover-background-color',
+  'interaction-hover-lift',
+  'interaction-active-background-color',
+  'interaction-active-shadow',
+  'interaction-selected-background-color',
+  'interaction-selected-foreground-color',
+  'interaction-selected-border-color',
+]
+
+const interactionSwatches = [
+  'outline: var(--interaction-focus-outline); outline-offset: -4px',
+  'background: var(--interaction-hover-background-color)',
+  'border: var(--border); transform: var(--interaction-hover-lift)',
+  'background: var(--interaction-active-background-color)',
+  'box-shadow: var(--interaction-active-shadow)',
+  'background: var(--interaction-selected-background-color)',
+  'background: var(--interaction-selected-foreground-color)',
+  'border: var(--border-width) solid var(--interaction-selected-border-color)',
+]
+
+const swatchStyle =
+  'width: var(--size-48); height: var(--size-48); box-sizing: border-box; border-radius: var(--radius); background: var(--background-color)'
+
+const renderStage = (swatches: string[]) =>
+  swatches.map(
+    (swatch, index) => html`
+      <mm-flex direction="column" align-items="center" gap="2">
+        <div style="${swatchStyle}; ${swatch}"></div>
+        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
+      </mm-flex>
+    `,
+  )
 
 // 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
 // prettier-ignore
@@ -171,58 +209,16 @@ const main = html`
           상호작용 상태가 공유하는 토큰입니다. 상태 selector에서 속성을 다시 선언하지 않고 이 토큰을
           재할당합니다.
         </mm-paragraph>
-        <mm-grid columns="3" gap="3">
-          <mm-flex direction="column" gap="2">
-            <div
-              class="swatch-chip"
-              style="outline: var(--interaction-focus-outline); outline-offset: -4px"
-            ></div>
-            <mm-caption>--interaction-focus-outline</mm-caption>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div
-              class="swatch-chip"
-              style="background: var(--interaction-hover-background-color)"
-            ></div>
-            <mm-caption>--interaction-hover-background-color</mm-caption>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="swatch-chip"></div>
-            <mm-caption>--interaction-hover-lift</mm-caption>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div
-              class="swatch-chip"
-              style="background: var(--interaction-active-background-color)"
-            ></div>
-            <mm-caption>--interaction-active-background-color</mm-caption>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div class="swatch-chip" style="box-shadow: var(--interaction-active-shadow)"></div>
-            <mm-caption>--interaction-active-shadow</mm-caption>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div
-              class="swatch-chip"
-              style="background: var(--interaction-selected-background-color)"
-            ></div>
-            <mm-caption>--interaction-selected-background-color</mm-caption>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div
-              class="swatch-chip"
-              style="background: var(--interaction-selected-foreground-color)"
-            ></div>
-            <mm-caption>--interaction-selected-foreground-color</mm-caption>
-          </mm-flex>
-          <mm-flex direction="column" gap="2">
-            <div
-              class="swatch-chip"
-              style="background: var(--interaction-selected-border-color)"
-            ></div>
-            <mm-caption>--interaction-selected-border-color</mm-caption>
-          </mm-flex>
-        </mm-grid>
+        <mm-token-stage>
+          <mm-flex align-items="flex-end" gap="4">${renderStage(interactionSwatches)}</mm-flex>
+        </mm-token-stage>
+        <mm-token-group aria-label="interaction tokens">
+          ${interactionTokens.map(
+            key => html`
+              <mm-token-item key=${key}></mm-token-item>
+            `,
+          )}
+        </mm-token-group>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="States">
