@@ -23,7 +23,7 @@ export class DeleteButton extends iconActionElement({
     iconButtonStyles,
     css`
       :host {
-        ${iconButtonVariantSkin('destructive')}
+        ${iconButtonVariantSkin('danger')}
       }
     `,
   ]

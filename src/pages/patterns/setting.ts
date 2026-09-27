@@ -98,7 +98,7 @@ const main = html`
                 label="계정 비활성화"
                 description="비활성화 페이지에서 할 수 있습니다."
               >
-                <mm-button slot="action" variant="destructive">영구 비활성화</mm-button>
+                <mm-button slot="action" variant="danger">영구 비활성화</mm-button>
               </mm-setting-item>
             </mm-list-item-group>
           </mm-flex>

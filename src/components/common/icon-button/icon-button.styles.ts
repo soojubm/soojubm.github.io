@@ -28,7 +28,7 @@ const iconButtonVariantTokens: AttributeTokens<Exclude<IconButtonVariant, 'terti
   ghost: {
     '--icon-button-background-color': 'transparent',
   },
-  destructive: {
+  danger: {
     '--icon-button-background-color': 'var(--danger-color)',
     '--icon-button-text-color': 'var(--foreground-on-primary-color)',
   },

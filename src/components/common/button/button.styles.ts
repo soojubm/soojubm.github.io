@@ -96,7 +96,7 @@ const buttonVariantTokens: AttributeTokens<ButtonVariant> = {
     '--button-background-color': 'transparent',
     '--button-text-color': 'var(--primary-color)',
   },
-  destructive: {
+  danger: {
     '--button-background-color': 'var(--danger-color)',
     '--button-text-color': 'var(--foreground-on-primary-color)',
   },

@@ -15,7 +15,7 @@ import { dotBelowStyles } from '@/components/common/dot/dot.styles'
 import '@/components/common/icon'
 import { resetStyles, type ComponentSize } from '@/stylesheets/shared.styles'
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger'
 export type ButtonSize = Extract<ComponentSize, 'medium' | 'large'>
 export type ButtonIconPosition = 'leading' | 'trailing'
 export type ButtonType = 'button' | 'submit' | 'reset'

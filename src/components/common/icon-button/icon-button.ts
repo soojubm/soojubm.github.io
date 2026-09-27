@@ -9,7 +9,7 @@ import { iconButtonStyles } from '@/components/common/icon-button/icon-button.st
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles, type ComponentSize } from '@/stylesheets/shared.styles'
 
-export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive'
+export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger'
 export type IconButtonSize = Extract<ComponentSize, 'small' | 'medium'>
 
 @customElement('mm-icon-button')

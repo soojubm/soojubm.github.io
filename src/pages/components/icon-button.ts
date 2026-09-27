@@ -18,7 +18,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'icon', type: 'IconName' },
   {
     name: 'variant',
-    type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'",
+    type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' = 'tertiary'",
   },
   { name: 'size', type: "'small' | 'medium' = 'medium'" },
   { name: 'aria-label', type: 'string' },
@@ -88,14 +88,14 @@ const main = html`
                 tooltip-placement="bottom"
               ></mm-icon-button>
               <mm-icon-button
-                variant="destructive"
+                variant="danger"
                 icon=${ICON_NAMES.DELETE}
-                aria-label="Destructive"
+                aria-label="Danger"
                 tooltip-placement="bottom"
               ></mm-icon-button>
             </mm-button-group>
             <mm-paragraph>
-              버튼과 같은 위계 체계를 따릅니다. destructive는 되돌리기 어려운 액션에 씁니다.
+              버튼과 같은 위계 체계를 따릅니다. danger는 되돌리기 어려운 액션에 씁니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>

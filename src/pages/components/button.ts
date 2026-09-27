@@ -48,7 +48,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'variant',
-    type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'destructive' = 'tertiary'",
+    type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' = 'tertiary'",
   },
   { name: 'size', type: "'large' | 'medium' = 'medium'" },
   { name: 'type', type: "'button' | 'submit' | 'reset' = 'button'", optional: true },
@@ -137,7 +137,7 @@ const main = html`
             <mm-button variant="primary" size="large">primary</mm-button>
             <mm-button variant="secondary" size="large">secondary</mm-button>
             <mm-button variant="tertiary" size="large">tertiary</mm-button>
-            <mm-button variant="destructive" size="large">destructive</mm-button>
+            <mm-button variant="danger" size="large">danger</mm-button>
             <mm-button variant="ghost" size="large">ghost</mm-button>
           </mm-button-group>
         </mm-component-example>

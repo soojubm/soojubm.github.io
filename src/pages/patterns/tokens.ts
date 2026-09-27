@@ -379,7 +379,7 @@ const main = html`
         <mm-token-group>${renderTokenItems(sectionTokens('category'))}</mm-token-group>
 
         <mm-component-notice heading="위험 배경 위 글자색">
-          destructive 버튼은 위험 배경 위 글자색으로 --foreground-on-primary-color를 빌려 씁니다. 두 테마
+          danger 버튼은 위험 배경 위 글자색으로 --foreground-on-primary-color를 빌려 씁니다. 두 테마
           모두 흰색이라 값은 맞지만 이름이 primary 배경을 가리킵니다. --foreground-on-strong-color는
           다크 테마에서 어두운 회색으로 바뀌어 빨강 배경 위에서 묻히므로 쓸 수 없습니다. 짙은 채움
           배경 위 글자색을 한 토큰으로 묶을지, 위험 배경 전용 토큰을 둘지 정합니다.
