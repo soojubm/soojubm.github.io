@@ -23,7 +23,7 @@ const castFilterOptions: FilterOption[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex wrap="wrap" align-items="start" gap="8">
+    <mm-flex wrap="wrap" align-items="flex-start" gap="8">
       <mm-thumbnail
         ratio="full"
         src="/src/images/coolhandluke.jpg"

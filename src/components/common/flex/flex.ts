@@ -2,32 +2,23 @@ import { LitElement, css, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js'
 
-import { resetStyles, spaceTokens, type Space } from '@/stylesheets/shared.styles'
+import {
+  justifyContentTokens,
+  resetStyles,
+  spaceTokens,
+  type JustifyContent,
+  type Space,
+  type FlexDirection,
+  type FlexWrap,
+} from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
-type Direction = 'row' | 'column'
-type JustifyAlias = 'start' | 'center' | 'end' | 'between' | 'around'
-type AlignAlias = 'start' | 'center' | 'end' | 'stretch' | 'baseline'
-type JustifyContent = JustifyAlias | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
-type AlignItems = AlignAlias | 'flex-start' | 'flex-end'
+type AlignItems = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
 type FlexAs = 'div' | 'header' | 'section' | 'footer' | 'nav'
-type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
-
-const flexJustifyContentTokens = {
-  center: { 'justify-content': 'center' },
-  end: { 'justify-content': 'flex-end' },
-  'flex-end': { 'justify-content': 'flex-end' },
-  between: { 'justify-content': 'space-between' },
-  'space-between': { 'justify-content': 'space-between' },
-  around: { 'justify-content': 'space-around' },
-  'space-around': { 'justify-content': 'space-around' },
-}
 
 const flexAlignItemsTokens = {
   center: { 'align-items': 'center' },
-  start: { 'align-items': 'flex-start' },
   'flex-start': { 'align-items': 'flex-start' },
-  end: { 'align-items': 'flex-end' },
   'flex-end': { 'align-items': 'flex-end' },
   baseline: { 'align-items': 'baseline' },
 }
@@ -75,7 +66,7 @@ export class Flex extends LitElement {
         flex-wrap: wrap-reverse;
       }
 
-      ${unsafeCSS(buildAttributeRules('justify-content', flexJustifyContentTokens))}
+      ${unsafeCSS(buildAttributeRules('justify-content', justifyContentTokens))}
 
       ${unsafeCSS(buildAttributeRules('align-items', flexAlignItemsTokens))}
 
@@ -96,7 +87,7 @@ export class Flex extends LitElement {
       }
     `,
   ]
-  @property({ type: String, reflect: true }) direction: Direction = 'row'
+  @property({ type: String, reflect: true }) direction: FlexDirection = 'row'
   @property({ type: String, attribute: 'justify-content', reflect: true })
   justifyContent: JustifyContent = 'flex-start'
   @property({ type: String, attribute: 'align-items', reflect: true }) alignItems: AlignItems =

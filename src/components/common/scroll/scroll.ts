@@ -2,10 +2,8 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { scrollStyles } from '@/components/common/scroll/scroll.styles'
-import type { Space } from '@/stylesheets/shared.styles'
+import type { Space, FlexDirection } from '@/stylesheets/shared.styles'
 import '@/components/common/scroll/semantics/scroll-hint'
-
-type Direction = 'row' | 'column'
 
 /**
  * 내용이 넘칠 때 스크롤되는 컨테이너.
@@ -16,7 +14,7 @@ type Direction = 'row' | 'column'
 @customElement('mm-scroll')
 export class Scroll extends LitElement {
   static styles = scrollStyles
-  @property({ type: String, reflect: true }) direction: Direction = 'row'
+  @property({ type: String, reflect: true }) direction: FlexDirection = 'row'
   @property({ type: String, reflect: true }) gap?: Space
   @property({ type: Boolean, reflect: true, attribute: 'hide-scrollbar' }) hideScrollbar = false
 

@@ -63,7 +63,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-button-group direction', type: "'row' | 'column' = 'row'", optional: true },
   {
     name: 'mm-button-group justify-content',
-    type: "'start' | 'center' | 'end' | 'between' | 'around' = 'start'",
+    type: "'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' = 'flex-start'",
     optional: true,
   },
   { name: 'mm-button-group stretch', type: 'boolean = false', optional: true },

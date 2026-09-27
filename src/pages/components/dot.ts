@@ -85,7 +85,7 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="size">
         <mm-component-example>
-          <mm-flex gap="4" align-items="end">
+          <mm-flex gap="4" align-items="flex-end">
             ${dotSizeList.map(
               size => html`
                 <mm-flex direction="column" gap="2" align-items="center">
@@ -120,7 +120,7 @@ const main = html`
             `,
           )}
         </mm-flex>
-        <mm-flex gap="4" align-items="end">
+        <mm-flex gap="4" align-items="flex-end">
           ${userAvatarSizes.map(
             size => html`
               <mm-flex direction="column" gap="2" align-items="center">

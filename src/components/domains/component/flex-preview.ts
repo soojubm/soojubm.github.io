@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 
+import type { FlexDirection } from '@/stylesheets/shared.styles'
 import type { OptionItem } from '@/types'
 
 import '@/components/common/code-block/code-block'
@@ -8,8 +9,6 @@ import '@/components/common/flex/flex'
 import '@/components/common/button/button-group'
 import '@/components/common/toggle-button/toggle-button-group'
 import '@/components/domains/ui-placeholder/ui-placeholder'
-
-type Direction = 'row' | 'column'
 
 const DIRECTION_OPTIONS: OptionItem[] = [
   { value: 'row', label: 'row' },
@@ -34,7 +33,7 @@ export class FlexPreview extends LitElement {
       gap: var(--space-3);
     }
   `
-  @state() private direction: Direction = 'row'
+  @state() private direction: FlexDirection = 'row'
   @state() private gap = '2'
 
   render() {
@@ -68,7 +67,7 @@ export class FlexPreview extends LitElement {
   }
 
   private handleDirectionChange(event: CustomEvent) {
-    this.direction = event.detail.value as Direction
+    this.direction = event.detail.value as FlexDirection
   }
 
   private handleGapChange(event: CustomEvent) {

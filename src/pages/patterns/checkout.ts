@@ -197,7 +197,7 @@ const main = html`
 
         <mm-surface>
           <mm-flex direction="column">
-            <mm-flex as="header" align-items="center" justify-content="between" gap="2">
+            <mm-flex as="header" align-items="center" justify-content="space-between" gap="2">
               <mm-paragraph color="light">주문번호</mm-paragraph>
               <mm-link href="#">2024040436292081</mm-link>
             </mm-flex>
