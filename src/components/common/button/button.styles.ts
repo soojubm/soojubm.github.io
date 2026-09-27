@@ -96,7 +96,7 @@ const buttonVariantTokens = {
   },
   destructive: {
     '--button-background-color': 'var(--danger-color)',
-    '--button-text-color': 'var(--foreground-on-strong-color)',
+    '--button-text-color': 'var(--foreground-on-primary-color)',
   },
 }
 

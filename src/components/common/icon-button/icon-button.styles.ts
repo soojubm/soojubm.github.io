@@ -14,7 +14,7 @@ export const iconButtonSizeSkin = (size: keyof typeof iconButtonSizeTokens) =>
 const iconButtonVariantTokens = {
   primary: {
     '--icon-button-background-color': 'var(--primary-color)',
-    '--icon-button-text-color': 'var(--foreground-on-strong-color)',
+    '--icon-button-text-color': 'var(--foreground-on-primary-color)',
   },
   secondary: {
     '--icon-button-border-radius': 'var(--radius-full)',
@@ -28,7 +28,7 @@ const iconButtonVariantTokens = {
   },
   destructive: {
     '--icon-button-background-color': 'var(--danger-color)',
-    '--icon-button-text-color': 'var(--foreground-on-strong-color)',
+    '--icon-button-text-color': 'var(--foreground-on-primary-color)',
   },
 }
 
