@@ -1,11 +1,26 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
 
 import { MEDIA } from '@/constants'
+import { buildAttributeRules } from '@/utils'
+
+const gridColumnsTokens = {
+  1: { '--_col-count': '1' },
+  3: { '--_col-count': '3' },
+  /* 4열이 최소 너비로 들어가지 않으면 3열을 건너뛰고 컨테이너를 반으로 나눈다.
+     기준 너비를 넘으면 clamp가 0px로 떨어져 N등분 계산이 그대로 이긴다. */
+  4: {
+    '--_col-count': '4',
+    '--_col-pair':
+      'clamp(0px, (4 * var(--_col-min, 12rem) + 3 * var(--_grid-gap, var(--space-4)) - 100%) * 9999, (100% - var(--_grid-gap, var(--space-4))) / 2)',
+  },
+  6: { '--_col-count': '6' },
+}
 
 export const gridStyles = [
   css`
     :host {
       --_col-count: 2;
+      --_col-pair: 0px;
 
       display: grid;
       width: 100%;
@@ -23,7 +38,8 @@ export const gridStyles = [
               calc(
                 (100% - (var(--_col-count) - 1) * var(--_grid-gap, var(--space-4))) /
                   var(--_col-count)
-              )
+              ),
+              var(--_col-pair)
             )
           ),
           1fr
@@ -35,21 +51,7 @@ export const gridStyles = [
       min-width: 0;
     }
 
-    :host([columns='1']) {
-      --_col-count: 1;
-    }
-
-    :host([columns='3']) {
-      --_col-count: 3;
-    }
-
-    :host([columns='4']) {
-      --_col-count: 4;
-    }
-
-    :host([columns='6']) {
-      --_col-count: 6;
-    }
+    ${unsafeCSS(buildAttributeRules('columns', gridColumnsTokens))}
 
     /* column-max-width 그리드는 auto-fill로 열 수를 파생하면 상한(columns)을 넘을 수
        있어 고정 열 수를 유지하고, 뷰포트 미디어 쿼리로만 줄인다. */
