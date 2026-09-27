@@ -11,12 +11,12 @@ import {
   type FlexDirection,
   type FlexWrap,
 } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 type AlignItems = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
 type FlexAs = 'div' | 'header' | 'section' | 'footer' | 'nav'
 
-const flexAlignItemsTokens = {
+const flexAlignItemsTokens: AttributeTokens<Exclude<AlignItems, 'stretch'>> = {
   center: { 'align-items': 'center' },
   'flex-start': { 'align-items': 'flex-start' },
   'flex-end': { 'align-items': 'flex-end' },

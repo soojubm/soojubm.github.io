@@ -1,9 +1,10 @@
 import { css, unsafeCSS } from 'lit'
 
 import { interactiveControlStyles } from '@/components/common/button/button.styles'
-import { buildAttributeRules, buildDeclarations } from '@/utils'
+import type { IconButtonSize, IconButtonVariant } from '@/components/common/icon-button/icon-button'
+import { buildAttributeRules, buildDeclarations, type AttributeTokens } from '@/utils'
 
-const iconButtonSizeTokens = {
+const iconButtonSizeTokens: AttributeTokens<Exclude<IconButtonSize, 'medium'>> = {
   small: { '--icon-button-size': 'var(--size-24)' },
 }
 
@@ -11,7 +12,7 @@ const iconButtonSizeTokens = {
 export const iconButtonSizeSkin = (size: keyof typeof iconButtonSizeTokens) =>
   unsafeCSS(buildDeclarations(iconButtonSizeTokens[size]))
 
-const iconButtonVariantTokens = {
+const iconButtonVariantTokens: AttributeTokens<Exclude<IconButtonVariant, 'tertiary'>> = {
   primary: {
     '--icon-button-background-color': 'var(--primary-color)',
     '--icon-button-text-color': 'var(--foreground-on-primary-color)',

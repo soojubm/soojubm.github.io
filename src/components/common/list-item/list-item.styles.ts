@@ -5,9 +5,10 @@ import {
   interactiveElement,
   layerContainerStyles,
 } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import type { ListItemSize } from '@/components/common/list-item/list-item'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-const listItemSizeTokens = {
+const listItemSizeTokens: AttributeTokens<Exclude<ListItemSize, 'small'>> = {
   medium: {
     '--list-item-size': 'var(--size-40)',
     '--list-item-gap': 'var(--space-2)',

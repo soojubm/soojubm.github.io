@@ -1,7 +1,7 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { iconStyles } from '@/components/common/icon/icon.styles'
+import { iconStyles, type IconSize } from '@/components/common/icon/icon.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 const ICONOIR_STYLESHEET_URL =
@@ -36,7 +36,7 @@ const loadIconoirStylesheet = () => {
 export class Icon extends LitElement {
   static styles = [resetStyles, iconStyles]
   @property({ type: String }) name = ''
-  @property({ type: String, reflect: true }) size = ''
+  @property({ type: String, reflect: true }) size: IconSize = ''
   @property({ type: String }) color = ''
   @state() private useStylesheetLink = false
 

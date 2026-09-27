@@ -38,11 +38,13 @@ export const buildDeclarations = (tokens: Record<string, string>) =>
     .map(([token, tokenValue]) => `${token}: ${tokenValue};`)
     .join(' ')
 
-export const buildAttributeRules = (
-  attribute: string,
-  values: Record<string, Record<string, string>>,
-  descendant = '',
-) =>
+/** prop 값마다 펼칠 선언 묶음. 키를 prop의 값 타입으로 좁혀 두면 값이 빠지거나 남을 때 컴파일러가 잡는다. */
+export type AttributeTokens<Value extends string | number = string> = Record<
+  Value,
+  Record<string, string>
+>
+
+export const buildAttributeRules = (attribute: string, values: AttributeTokens, descendant = '') =>
   Object.entries(values)
     .map(([value, tokens]) => {
       const declarations = buildDeclarations(tokens)

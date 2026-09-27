@@ -1,10 +1,10 @@
 import { css, unsafeCSS } from 'lit'
 
-import { scrollbarStyles, spaceTokens } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import { scrollbarStyles, spaceTokens, type FlexDirection } from '@/stylesheets/shared.styles'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 // 이게 왜 필요..
-const scrollDirectionTokens = {
+const scrollDirectionTokens: AttributeTokens<FlexDirection> = {
   row: { 'flex-direction': 'row', 'overflow-x': 'auto', 'overflow-y': 'hidden' },
   column: {
     'flex-direction': 'column',

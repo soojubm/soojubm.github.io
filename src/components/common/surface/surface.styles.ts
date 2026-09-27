@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
 export type SurfaceRadius = 'default' | 'large'
@@ -60,7 +60,7 @@ export const surfaceBaseStyles = css`
   transition: box-shadow var(--transition-duration) var(--transition-easing);
 `
 
-const surfaceRadiusTokens = {
+const surfaceRadiusTokens: AttributeTokens<SurfaceRadius> = {
   default: { '--surface-border-radius': 'var(--radius)' },
   large: { '--surface-border-radius': 'var(--radius-large)' },
 }
@@ -69,7 +69,7 @@ const surfaceRadiusStyles = css`
   ${unsafeCSS(buildAttributeRules('radius', surfaceRadiusTokens))}
 `
 
-const surfaceDensityTokens = {
+const surfaceDensityTokens: AttributeTokens<SurfaceDensity> = {
   default: { '--surface-padding': 'var(--space-4)' },
   compact: { '--surface-padding': 'var(--space-2)' },
 }

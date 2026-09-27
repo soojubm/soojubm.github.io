@@ -4,6 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/icon/icon'
 import { avatarStyles } from '@/components/common/avatar/avatar.styles'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
+import type { IconSize } from '@/components/common/icon/icon.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type AvatarVariant = 'primary' | 'secondary' | 'tertiary'
@@ -11,8 +12,6 @@ export const AVATAR_VARIANT_TYPE_UNION = "'primary' | 'secondary' | 'tertiary'"
 export type AvatarSize = '80' | '48' | '40' | '32'
 export type AvatarShape = 'circle' | 'square'
 export const AVATAR_SHAPE_TYPE_LABEL = "'circle' | 'square' = 'square'"
-export type AvatarIconSize = 'large' | 'medium'
-
 @customElement('mm-avatar')
 export class Avatar extends LitElement {
   static styles = [resetStyles, avatarStyles]
@@ -62,7 +61,7 @@ export class Avatar extends LitElement {
     `
   }
 
-  private get iconSize(): AvatarIconSize {
-    return this.size === '48' || this.size === '80' ? 'large' : 'medium'
+  private get iconSize(): IconSize {
+    return this.size === '48' || this.size === '80' ? 'large' : ''
   }
 }

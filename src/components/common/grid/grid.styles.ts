@@ -1,9 +1,10 @@
 import { css, unsafeCSS } from 'lit'
 
 import { spaceTokens } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import type { GridColumns } from '@/components/common/grid/grid'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-const gridColumnsTokens = {
+const gridColumnsTokens: AttributeTokens<Exclude<GridColumns, 2>> = {
   1: { '--_col-count': '1' },
   3: { '--_col-count': '3' },
   /* 4열이 최소 너비로 들어가지 않으면 3열을 건너뛰고 컨테이너를 반으로 나눈다.

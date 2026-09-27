@@ -7,11 +7,11 @@ import { STATUS_ICONS } from '@/components/common/icon/icon-names'
 import '@/components/common/icon'
 import '@/components/common/spinner/spinner'
 import '@/components/common/text/text'
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 type TaskStatusVariant = 'running' | Extract<StatusTone, 'success' | 'warning' | 'error'>
 
-const taskStatusVariantTokens = {
+const taskStatusVariantTokens: AttributeTokens<Exclude<TaskStatusVariant, 'running'>> = {
   success: { '--task-status-icon-color': 'var(--foreground-success-color)' },
   warning: { '--task-status-icon-color': 'var(--foreground-warning-color)' },
   error: { '--task-status-icon-color': 'var(--foreground-danger-color)' },

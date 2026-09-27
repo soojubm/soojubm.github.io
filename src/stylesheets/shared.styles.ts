@@ -1,6 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import resetCss from '@/stylesheets/shared/reset.css?raw'
+import type { AttributeTokens } from '@/utils'
 
 export const resetStyles = css`
   ${unsafeCSS(resetCss)}
@@ -184,7 +185,7 @@ export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
 /** flex 컨테이너 컴포넌트(mm-flex·mm-button-group)의 justify-content prop 값. 기본값 flex-start는 각 :host가 선언한다. */
 export type JustifyContent = 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around'
 
-export const justifyContentTokens = {
+export const justifyContentTokens: AttributeTokens<Exclude<JustifyContent, 'flex-start'>> = {
   center: { 'justify-content': 'center' },
   'flex-end': { 'justify-content': 'flex-end' },
   'space-between': { 'justify-content': 'space-between' },

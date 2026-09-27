@@ -1,8 +1,9 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils'
+import type { NoticeVariant } from '@/components/common/notice/notice'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-const noticeVariantTokens = {
+const noticeVariantTokens: AttributeTokens<Exclude<NoticeVariant, 'info'>> = {
   success: {
     // TODO on-
     '--notice-text-color': 'var(--foreground-success-color)',

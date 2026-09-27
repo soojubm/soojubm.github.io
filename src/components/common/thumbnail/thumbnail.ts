@@ -3,9 +3,11 @@ import { customElement, property, state } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/caption'
 import { focusRingStyles, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-const thumbnailRatioTokens = {
+type ThumbnailRatio = '1:1' | '16:9' | '4:3' | 'full'
+
+const thumbnailRatioTokens: AttributeTokens<Exclude<ThumbnailRatio, '16:9'>> = {
   '1:1': { 'aspect-ratio': '1 / 1' },
   '4:3': { 'aspect-ratio': '4 / 3' },
   full: { 'aspect-ratio': 'auto' },
@@ -67,7 +69,7 @@ export class Thumbnail extends LitElement {
   ]
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''
-  @property({ type: String, reflect: true }) ratio: '1:1' | '16:9' | '4:3' | 'full' = '16:9'
+  @property({ type: String, reflect: true }) ratio: ThumbnailRatio = '16:9'
   @property({ type: String }) loading: 'eager' | 'lazy' = 'lazy'
   @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: 'high' | 'low' | 'auto' =
     'auto'

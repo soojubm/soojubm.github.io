@@ -1,14 +1,15 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils'
+import type { AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-const avatarSizeTokens = {
+const avatarSizeTokens: AttributeTokens<Exclude<AvatarSize, '40'>> = {
   '80': { '--avatar-size': 'var(--size-80)', 'font-size': 'var(--font-size-32)' },
   '48': { '--avatar-size': 'var(--size-48)', 'font-size': 'var(--font-size-24)' },
   '32': { '--avatar-size': 'var(--size-32)', 'font-size': 'var(--font-size-12)' },
 }
 
-const avatarVariantTokens = {
+const avatarVariantTokens: AttributeTokens<AvatarVariant> = {
   primary: { border: 'var(--avatar-border)' },
   secondary: {
     '--avatar-background-color': 'var(--background-color)',

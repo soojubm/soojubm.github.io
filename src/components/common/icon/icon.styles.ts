@@ -8,6 +8,9 @@ const iconSizeTokens = {
   large: { 'font-size': '1.5rem' },
 }
 
+/** 빈 값은 기본 크기(1rem)다. */
+export type IconSize = keyof typeof iconSizeTokens | ''
+
 export const iconStyles = css`
   :host {
     display: inline-flex;
