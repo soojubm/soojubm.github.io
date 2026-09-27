@@ -204,6 +204,12 @@ const main = html`
             </mm-content-section-list>
           </mm-surface>
           <mm-code-block .code=${contentSectionCode}></mm-code-block>
+          <mm-component-notice heading="모두 보기 링크를 받는 섹션">
+            ${code('view-all-href')}를 받으면 ${code('action')} 슬롯에 "모두 보기" 링크를 스스로
+            채우는 파생 컴포넌트를 둔다. 받지 않으면 기본형과 같다. 이동이라 버튼이 아닌 링크로
+            렌더하고, 무엇을 모두 보는지 섹션 제목과 잇는다. 본문이 그리드든 좌우 스크롤이든 섹션은
+            관여하지 않는다
+          </mm-component-notice>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="Text Block">

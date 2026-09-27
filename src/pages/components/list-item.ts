@@ -208,10 +208,12 @@ const main = html`
                 avatar-src="/src/images/soojubm.png"
               ></mm-list-item>
             </mm-list-item-group>
-            <mm-notice
-              heading="TODO: 여러 줄일 때의 line-height와 정렬"
-              description="line-height는 한 줄 행 높이에 맞춘 값이라 여러 줄에서 줄 간격을 다시 정해야 합니다. 정렬은 leading·trailing이 content 가운데에 서는 지금 방식과 첫 줄에 맞추는 방식 중 기준을 정해야 합니다. 줄바꿈 대신 말줄임표로 자르고 전체 문구를 툴팁으로 보여 주는 방식도 후보입니다."
-            ></mm-notice>
+            <mm-component-notice heading="여러 줄일 때의 line-height와 정렬">
+              line-height는 한 줄 행 높이에 맞춘 값이라 여러 줄에서 줄 간격을 다시 정해야 합니다.
+              정렬은 leading·trailing이 content 가운데에 서는 지금 방식과 첫 줄에 맞추는 방식 중
+              기준을 정해야 합니다. 줄바꿈 대신 말줄임표로 자르고 전체 문구를 툴팁으로 보여 주는
+              방식도 후보입니다.
+            </mm-component-notice>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>

@@ -212,12 +212,10 @@ const main = html`
       heading="DateRangePicker"
       description="기간은 시작일과 종료일을 한 필드에 이어 받아 하나의 값으로 읽히게 합니다."
     >
-      <mm-notice
-        slot="notice"
-        variant="warning"
-        heading="TODO 달력 선택"
-        description="지금은 텍스트 입력만 받습니다. 네이티브 type='date'는 날짜 하나만 고르므로, 시작일과 종료일을 달력에서 이어 고르는 선택 UI를 따로 만들어야 합니다."
-      ></mm-notice>
+      <mm-component-notice slot="notice" heading="달력 선택">
+        지금은 텍스트 입력만 받습니다. 네이티브 type='date'는 날짜 하나만 고르므로, 시작일과
+        종료일을 달력에서 이어 고르는 선택 UI를 따로 만들어야 합니다.
+      </mm-component-notice>
       <mm-textfield name="date-range" label="숙박 기간" placeholder="YYYY. MM. DD. – YYYY. MM. DD.">
         <mm-icon slot="trailing" name="calendar"></mm-icon>
       </mm-textfield>

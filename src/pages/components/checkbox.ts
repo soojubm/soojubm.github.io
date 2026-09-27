@@ -132,11 +132,11 @@ const main = html`
     <mm-component-tokens .elements=${['mm-checkbox']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
-      <mm-notice
-        variant="warning"
-        heading="TODO 범용 전체 선택"
-        description="지금은 약관 동의만 전체 선택을 써서 TermsAgreement 안에서 전체 동의 체크박스와 목록을 잇습니다. 표 헤더처럼 약관 밖에서도 전체 선택이 필요해지면, 체크박스가 aria-controls로 그룹을 가리켜 전체 선택을 맡는 범용 방식을 추가합니다."
-      ></mm-notice>
+      <mm-component-notice heading="범용 전체 선택">
+        지금은 약관 동의만 전체 선택을 써서 TermsAgreement 안에서 전체 동의 체크박스와 목록을
+        잇습니다. 표 헤더처럼 약관 밖에서도 전체 선택이 필요해지면, 체크박스가 aria-controls로
+        그룹을 가리켜 전체 선택을 맡는 범용 방식을 추가합니다.
+      </mm-component-notice>
     </mm-component-guide>
 
     <mm-component-anatomy

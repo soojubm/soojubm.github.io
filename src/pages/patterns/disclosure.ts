@@ -10,7 +10,7 @@ import '@/components/domains/faq'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-pager'
-import '@/components/domains/component/exception-case'
+import '@/components/domains/component/component-notice'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 // 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
@@ -156,11 +156,11 @@ const main = html`
             ),
           ]}
         ></mm-text-list>
-        <mm-exception-case heading="다시 접지 않는 펼침은 호스트가 직접 연다">
+        <mm-component-notice variant="exception" heading="다시 접지 않는 펼침은 호스트가 직접 연다">
           ${code('mm-component-props')}처럼 한 번 펼치면 끝나는 목록은 토글이 없으므로 컨트롤러 없이
           호스트가 ${code('open')}만 켜고, 트리거에 ${code('aria-expanded')}를 반영한 뒤 트리거를
           감춘다
-        </mm-exception-case>
+        </mm-component-notice>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="접근성">
