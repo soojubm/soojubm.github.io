@@ -29,6 +29,11 @@ export const scrollStyles = [
 
     ${unsafeCSS(buildAttributeRules('direction', scrollDirectionTokens))}
 
+    /* 항목은 줄어들어 프레임에 맞추지 않고 제 크기로 넘쳐 스크롤된다. */
+    ::slotted(*) {
+      flex-shrink: 0;
+    }
+
     :host([hide-scrollbar]) {
       scrollbar-width: none;
     }

@@ -9,7 +9,15 @@ import type {
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
-import './surface.css'
+
+const scrollThumbnails = [
+  { src: '/src/images/temp.png', alt: '풍경 샘플' },
+  { src: '/src/images/soojubm.png', alt: '프로필 샘플' },
+  { src: '/src/images/work-studium.jpg', alt: '작업 샘플' },
+  { src: '/src/images/cake_gosum.jpg', alt: '고슴이 샘플' },
+  { src: '/src/images/work-famus.jpg', alt: '작업 샘플' },
+  { src: '/src/images/prometheus.jpg', alt: '영화 샘플' },
+]
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'sheet.html', label: 'Sheet' },
@@ -252,62 +260,66 @@ const main = html`
 
     <mm-component-section heading="FeedSurface" description="">
       <section role="feed" aria-busy="false">
-        <article class="feed" aria-setsize="3" aria-posinset="1">
-          <header class="feed-header">
-            <mm-tag>
-              <span aria-hidden="true">🔥</span>
-              Most Popular
-            </mm-tag>
-            <mm-user-item
-              size="medium"
-              icon=${ICON_NAMES.USER}
-              label="수줍이"
-              description="2 hour ago"
-            ></mm-user-item>
-          </header>
-          <div class="feed-body">
-            <mm-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></mm-thumbnail>
-            <mm-paragraph>
-              Monotonectally productivate progressive human capital without user friendly portals.
-              Globally benchmark top-line ideas with distributed catalysts for change.
-              Authoritatively restore ubiquitous partnerships vis-a-vis
-              <mm-link href="#feed">synergistic models</mm-link>
-              .
-            </mm-paragraph>
-            <mm-text-list
-              .texts=${[
-                '원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.',
-                '글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.',
-                '리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다.',
-                '리액션한 사용자 목록을 어떻게 보여줄 것인가.',
-                '중복 리액션과 횟수 등 기능 정의.',
-                '리액션 =&gt; 알림.',
-              ]}
-            ></mm-text-list>
-            <mm-keyword-tag-group .keywords=${['Google', 'Meta', 'Nvidia']}></mm-keyword-tag-group>
-            <mm-surface variant="elevated">
-              <mm-flex direction="column" gap="2">
-                <mm-tag>3월 14일 수정됨</mm-tag>
-                <mm-menu-item-group size="large">
-                  <mm-menu-item-action
-                    size="medium"
-                    label="Kakao"
-                    description="https://www.kakaocorp.com"
-                    avatar-src="/src/images/soojubm.png"
-                  ></mm-menu-item-action>
-                  <mm-menu-item-action
-                    size="medium"
-                    label="Naver"
-                    description="https://www.naver.com"
-                    avatar-src="/src/images/soojubm.png"
-                  ></mm-menu-item-action>
-                </mm-menu-item-group>
-              </mm-flex>
-            </mm-surface>
-          </div>
-          <div>
-            <mm-menu-item-action icon=${ICON_NAMES.LIKE} label="192"></mm-menu-item-action>
-          </div>
+        <article aria-setsize="3" aria-posinset="1" style="max-width: 400px">
+          <mm-flex direction="column" gap="3">
+            <mm-flex as="header" direction="column" gap="3">
+              <mm-tag>
+                <span aria-hidden="true">🔥</span>
+                Most Popular
+              </mm-tag>
+              <mm-user-item
+                size="medium"
+                icon=${ICON_NAMES.USER}
+                label="수줍이"
+                description="2 hour ago"
+              ></mm-user-item>
+            </mm-flex>
+            <mm-flex direction="column" gap="3">
+              <mm-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></mm-thumbnail>
+              <mm-paragraph>
+                Monotonectally productivate progressive human capital without user friendly portals.
+                Globally benchmark top-line ideas with distributed catalysts for change.
+                Authoritatively restore ubiquitous partnerships vis-a-vis
+                <mm-link href="#feed">synergistic models</mm-link>
+                .
+              </mm-paragraph>
+              <mm-text-list
+                .texts=${[
+                  '원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.',
+                  '글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.',
+                  '리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다.',
+                  '리액션한 사용자 목록을 어떻게 보여줄 것인가.',
+                  '중복 리액션과 횟수 등 기능 정의.',
+                  '리액션 =&gt; 알림.',
+                ]}
+              ></mm-text-list>
+              <mm-keyword-tag-group
+                .keywords=${['Google', 'Meta', 'Nvidia']}
+              ></mm-keyword-tag-group>
+              <mm-surface variant="elevated">
+                <mm-flex direction="column" gap="2">
+                  <mm-tag>3월 14일 수정됨</mm-tag>
+                  <mm-menu-item-group size="large">
+                    <mm-menu-item-action
+                      size="medium"
+                      label="Kakao"
+                      description="https://www.kakaocorp.com"
+                      avatar-src="/src/images/soojubm.png"
+                    ></mm-menu-item-action>
+                    <mm-menu-item-action
+                      size="medium"
+                      label="Naver"
+                      description="https://www.naver.com"
+                      avatar-src="/src/images/soojubm.png"
+                    ></mm-menu-item-action>
+                  </mm-menu-item-group>
+                </mm-flex>
+              </mm-surface>
+            </mm-flex>
+            <div>
+              <mm-menu-item-action icon=${ICON_NAMES.LIKE} label="192"></mm-menu-item-action>
+            </div>
+          </mm-flex>
         </article>
       </section>
     </mm-component-section>
@@ -324,42 +336,16 @@ const main = html`
         <mm-tab-panel value="row">
           <mm-flex direction="column" gap="6">
             <mm-scroll gap="3" hide-scrollbar>
-              <mm-thumbnail
-                class="scroll-thumbnail"
-                ratio="1:1"
-                src="/src/images/temp.png"
-                alt="풍경 샘플"
-              ></mm-thumbnail>
-              <mm-thumbnail
-                class="scroll-thumbnail"
-                ratio="1:1"
-                src="/src/images/soojubm.png"
-                alt="프로필 샘플"
-              ></mm-thumbnail>
-              <mm-thumbnail
-                class="scroll-thumbnail"
-                ratio="1:1"
-                src="/src/images/work-studium.jpg"
-                alt="작업 샘플"
-              ></mm-thumbnail>
-              <mm-thumbnail
-                class="scroll-thumbnail"
-                ratio="1:1"
-                src="/src/images/cake_gosum.jpg"
-                alt="고슴이 샘플"
-              ></mm-thumbnail>
-              <mm-thumbnail
-                class="scroll-thumbnail"
-                ratio="1:1"
-                src="/src/images/work-famus.jpg"
-                alt="작업 샘플"
-              ></mm-thumbnail>
-              <mm-thumbnail
-                class="scroll-thumbnail"
-                ratio="1:1"
-                src="/src/images/prometheus.jpg"
-                alt="영화 샘플"
-              ></mm-thumbnail>
+              ${scrollThumbnails.map(
+                ({ src, alt }) => html`
+                  <mm-thumbnail
+                    ratio="1:1"
+                    src=${src}
+                    alt=${alt}
+                    style="width: 220px"
+                  ></mm-thumbnail>
+                `,
+              )}
             </mm-scroll>
             <mm-paragraph>
               가로로 넘기는 목록에 씁니다. 가려진 콘텐츠가 남은 쪽 끝을 흐리고 그 방향으로 넘기는
@@ -369,20 +355,20 @@ const main = html`
         </mm-tab-panel>
         <mm-tab-panel value="column">
           <mm-flex direction="column" gap="6">
-            <mm-scroll direction="column" gap="3" class="scroll-surface-container">
-              <mm-surface class="scroll-surface">
+            <mm-scroll direction="column" gap="3" style="max-height: calc(var(--size-80) * 3)">
+              <mm-surface>
                 <mm-text weight="bold">Surface 1</mm-text>
               </mm-surface>
-              <mm-surface class="scroll-surface">
+              <mm-surface>
                 <mm-text weight="bold">Surface 2</mm-text>
               </mm-surface>
-              <mm-surface class="scroll-surface">
+              <mm-surface>
                 <mm-text weight="bold">Surface 3</mm-text>
               </mm-surface>
-              <mm-surface class="scroll-surface">
+              <mm-surface>
                 <mm-text weight="bold">Surface 4</mm-text>
               </mm-surface>
-              <mm-surface class="scroll-surface">
+              <mm-surface>
                 <mm-text weight="bold">Surface 5</mm-text>
               </mm-surface>
             </mm-scroll>

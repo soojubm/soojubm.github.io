@@ -8,7 +8,6 @@ import type {
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
-import './text.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
@@ -173,9 +172,6 @@ const main = html`
             </span>
           `,
           '피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)',
-          '태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자 또는 단어의 수를 제한하고 개행 조건을 정의하세요.',
-          '제목을 자르는 것을 허용할 수 있나. 점점 더 작아지는 스크린. 폴더블, 와치',
-          '단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)',
         ]}
       ></mm-text-list>
     </mm-component-guide>
@@ -295,7 +291,7 @@ const main = html`
       heading="Hero Section"
       description="A hero section is a large, prominent section at the top of a webpage that typically includes a headline, subheadline, and a call-to-action button."
     >
-      <section class="hero">
+      <section>
         <mm-flex direction="column" gap="8">
           <mm-text-block
             level="1"
