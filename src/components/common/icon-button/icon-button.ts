@@ -7,9 +7,9 @@ import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
-import { resetStyles, type ComponentSize } from '@/stylesheets/shared.styles'
+import { resetStyles, type ComponentSize, type ComponentVariant } from '@/stylesheets/shared.styles'
 
-export type IconButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger'
+export type IconButtonVariant = ComponentVariant
 export type IconButtonSize = Extract<ComponentSize, 'small' | 'medium'>
 
 @customElement('mm-icon-button')

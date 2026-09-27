@@ -6,9 +6,9 @@ import type { IconSize } from '@/components/common/icon/icon.styles'
 
 import { avatarStyles } from '@/components/common/avatar/avatar.styles'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
+import { resetStyles, type ComponentVariant } from '@/stylesheets/shared.styles'
 
-export type AvatarVariant = 'primary' | 'secondary' | 'tertiary'
+export type AvatarVariant = Extract<ComponentVariant, 'primary' | 'secondary' | 'tertiary'>
 export const AVATAR_VARIANT_TYPE_UNION = "'primary' | 'secondary' | 'tertiary'"
 export type AvatarSize = '80' | '48' | '40' | '32'
 export type AvatarShape = 'circle' | 'square'

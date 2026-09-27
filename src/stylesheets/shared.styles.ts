@@ -183,6 +183,12 @@ export const spaceTokens = (customProperty: string) => {
  */
 export type ComponentSize = 'small' | 'medium' | 'large'
 
+/**
+ * 이름으로 고르는 컴포넌트 위계 단계. 각 컴포넌트는 지원하는 단계만 Extract로 고르고, 단계별 스킨은 자기 Tokens로 둔다.
+ * 재질을 고르는 surface의 variant는 이 위계가 아니라 따로 둔다.
+ */
+export type ComponentVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger'
+
 /** flex 컨테이너 컴포넌트의 direction prop 값. */
 export type FlexDirection = 'row' | 'column'
 
