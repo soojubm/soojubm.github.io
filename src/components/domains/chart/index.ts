@@ -1,5 +1,6 @@
 import '@/components/domains/chart/chart-column'
 import '@/components/domains/chart/chart-legend'
+import '@/components/domains/chart/chart-progress-ring'
 import '@/components/domains/chart/chart-stacked-bar'
 
 export { type ChartColumnItem } from '@/components/domains/chart/chart-column'

@@ -1,11 +1,9 @@
 import { html } from 'lit'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import type { ComponentUsageItem } from '@/components/domains/component/component-usage'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-usage'
-import './dashboard.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES, type CategoryKey } from '@/pages/mocks'
 
@@ -210,7 +208,7 @@ const containerUsages: ComponentUsageItem[] = [
 ]
 
 const main = html`
-  <mm-main class="dashboard">
+  <mm-main>
     <mm-flex direction="column" gap="section">
       <mm-flex direction="column" gap="4">
         <mm-flex justify-content="space-between" align-items="center" gap="4">
@@ -356,17 +354,7 @@ const main = html`
               description=${`${syncTotal.toLocaleString()}건 중 ${syncDone.toLocaleString()}건 처리됨`}
             ></mm-text-block>
             <mm-flex align-items="center" gap="4">
-              <div
-                class="progress-ring"
-                aria-hidden="true"
-                style=${styleMap({ '--progress': syncShare })}
-              >
-                <svg viewBox="0 0 36 36">
-                  <circle class="progress-ring-track" cx="18" cy="18" r="15.9155"></circle>
-                  <circle class="progress-ring-value" cx="18" cy="18" r="15.9155"></circle>
-                </svg>
-                <mm-text>${syncShare}%</mm-text>
-              </div>
+              <mm-chart-progress-ring value=${syncShare}></mm-chart-progress-ring>
               <progress
                 value=${syncDone}
                 max=${syncTotal}
