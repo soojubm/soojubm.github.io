@@ -2,6 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
+import type { RadioSize } from '@/components/common/radio/radio'
 import type { OptionItem } from '@/types'
 
 import {
@@ -22,7 +23,7 @@ export class RadioGroup extends LitElement {
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
-  @property({ type: String, reflect: true }) size?: string
+  @property({ type: String, reflect: true }) size: RadioSize = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) legend = ''
   // name을 주지 않아도 네이티브 radio가 한 그룹으로 묶이도록 내부 이름을 둔다.

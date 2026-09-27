@@ -9,6 +9,8 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
+export type CheckboxSize = '' | 'large'
+
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {
   static styles = [resetStyles, visuallyHiddenInputStyles, checkboxStyles]
@@ -17,7 +19,7 @@ export class Checkbox extends LitElement {
   @property({ type: String })
   value?: string
   @property({ type: String, reflect: true })
-  size?: string
+  size: CheckboxSize = ''
   @property({ type: Boolean, reflect: true })
   checked = false
   @property({ type: Boolean, reflect: true })

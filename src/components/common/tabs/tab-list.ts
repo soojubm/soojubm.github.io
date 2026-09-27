@@ -9,12 +9,14 @@ import { emit, uniqueId } from '@/utils'
 import { getSearchParam, replaceSearchParam } from '@/utils/search-param'
 import '@/components/common/scroll/semantics/scroll-hint'
 
+export type TabListVariant = 'line' | 'pill'
+
 @customElement('mm-tab-list')
 export class TabList extends LitElement {
   static styles = [tabsStyles]
   private readonly tabsId = uniqueId('tabs')
   @property({ type: String }) value = ''
-  @property({ type: String, reflect: true }) variant = 'line'
+  @property({ type: String, reflect: true }) variant: TabListVariant = 'line'
   /** 지정하면 선택한 탭을 이 키의 search parameter로 URL에 남기고, 진입 시 그 값으로 탭을 연다. */
   @property({ type: String, attribute: 'search-param' }) searchParam?: string
   @queryAssignedElements({ flatten: true }) private assignedElements!: HTMLElement[]
@@ -53,9 +55,8 @@ export class TabList extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.setAttribute('role', 'tablist')
-    if (this.searchParam) {
-      this.value = getSearchParam(this.searchParam) ?? this.value
-    }
+    if (this.searchParam) this.value = getSearchParam(this.searchParam) ?? this.value
+
     this.addEventListener('tab-select', this.handleTabSelect)
     this.addEventListener('keydown', this.handleKeydown)
   }

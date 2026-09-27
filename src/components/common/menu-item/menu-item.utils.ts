@@ -18,12 +18,15 @@ import { type Constructor, emit } from '@/utils'
  */
 /** 메뉴 항목은 명령을 고르는 행이라, 아바타로 개체를 대표하는 large는 갖지 않는다. */
 export type MenuItemSize = Exclude<ListItemSize, 'large'>
+/** tone은 행 색만 바꾸는 host 스타일 상태다. 빈 값이 기본 색이다. */
+export type MenuItemTone = '' | 'danger'
+
 export const MENU_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' = 'small'"
 
 export type MenuItemPresentation = Pick<
   ListItem,
   'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarVariant' | 'avatarShape'
-> & { size: MenuItemSize; tone: string }
+> & { size: MenuItemSize; tone: MenuItemTone }
 
 /**
  * 표시 prop을 한 곳에서 선언하는 mixin. role·상태·이벤트 같은 시멘틱은 각 컴포넌트가 소유하고,
@@ -32,7 +35,7 @@ export type MenuItemPresentation = Pick<
 export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base: T) => {
   class MenuItemPresentationElement extends Base {
     @property({ type: String, reflect: true }) size: MenuItemSize = 'small'
-    @property({ type: String, reflect: true }) tone = ''
+    @property({ type: String, reflect: true }) tone: MenuItemTone = ''
     @property({ type: String }) label = ''
     @property({ type: String }) description = ''
     @property({ type: String }) icon?: IconName
