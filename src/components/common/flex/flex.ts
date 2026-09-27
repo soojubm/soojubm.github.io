@@ -1,9 +1,9 @@
-import { LitElement, css } from 'lit'
+import { LitElement, css, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { resolveSpaceToken } from '@/utils'
+import { buildAttributeRules, resolveSpaceToken } from '@/utils'
 
 type Direction = 'row' | 'column'
 type JustifyAlias = 'start' | 'center' | 'end' | 'between' | 'around'
@@ -12,6 +12,25 @@ type JustifyContent = JustifyAlias | 'flex-start' | 'flex-end' | 'space-between'
 type AlignItems = AlignAlias | 'flex-start' | 'flex-end'
 type FlexAs = 'div' | 'header' | 'section' | 'footer' | 'nav'
 type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
+
+const flexJustifyContentTokens = {
+  center: { 'justify-content': 'center' },
+  end: { 'justify-content': 'flex-end' },
+  'flex-end': { 'justify-content': 'flex-end' },
+  between: { 'justify-content': 'space-between' },
+  'space-between': { 'justify-content': 'space-between' },
+  around: { 'justify-content': 'space-around' },
+  'space-around': { 'justify-content': 'space-around' },
+}
+
+const flexAlignItemsTokens = {
+  center: { 'align-items': 'center' },
+  start: { 'align-items': 'flex-start' },
+  'flex-start': { 'align-items': 'flex-start' },
+  end: { 'align-items': 'flex-end' },
+  'flex-end': { 'align-items': 'flex-end' },
+  baseline: { 'align-items': 'baseline' },
+}
 
 /**
  * 범용 flexbox 레이아웃 프리미티브.
@@ -57,36 +76,9 @@ export class Flex extends LitElement {
         flex-wrap: wrap-reverse;
       }
 
-      :host([justify-content='center']) {
-        justify-content: center;
-      }
-      :host([justify-content='end']),
-      :host([justify-content='flex-end']) {
-        justify-content: flex-end;
-      }
-      :host([justify-content='between']),
-      :host([justify-content='space-between']) {
-        justify-content: space-between;
-      }
-      :host([justify-content='around']),
-      :host([justify-content='space-around']) {
-        justify-content: space-around;
-      }
+      ${unsafeCSS(buildAttributeRules('justify-content', flexJustifyContentTokens))}
 
-      :host([align-items='center']) {
-        align-items: center;
-      }
-      :host([align-items='start']),
-      :host([align-items='flex-start']) {
-        align-items: flex-start;
-      }
-      :host([align-items='end']),
-      :host([align-items='flex-end']) {
-        align-items: flex-end;
-      }
-      :host([align-items='baseline']) {
-        align-items: baseline;
-      }
+      ${unsafeCSS(buildAttributeRules('align-items', flexAlignItemsTokens))}
 
       :host([stretch]) ::slotted(*) {
         flex: 1;

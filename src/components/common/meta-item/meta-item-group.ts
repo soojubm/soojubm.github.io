@@ -1,8 +1,16 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
+import { buildAttributeRules } from '@/utils'
 
 type Direction = 'row' | 'column'
 type Wrap = 'nowrap' | 'wrap' | 'wrap-reverse'
+
+const metaItemGroupGapTokens = {
+  2: { gap: 'var(--space-2)' },
+  3: { gap: 'var(--space-3)' },
+  8: { gap: 'var(--space-8)' },
+}
 
 @customElement('mm-meta-item-group')
 export class MetaItemGroup extends LitElement {
@@ -25,15 +33,7 @@ export class MetaItemGroup extends LitElement {
       flex-wrap: wrap-reverse;
     }
 
-    :host([gap='2']) {
-      gap: var(--space-2);
-    }
-    :host([gap='3']) {
-      gap: var(--space-3);
-    }
-    :host([gap='8']) {
-      gap: var(--space-8);
-    }
+    ${unsafeCSS(buildAttributeRules('gap', metaItemGroupGapTokens))}
   `
   @property({ type: String, reflect: true }) direction: Direction = 'row'
   @property({ type: String, reflect: true }) gap = '4'

@@ -121,6 +121,7 @@
 - 스타일 선언은 레이아웃, 크기, 간격, 경계, 배경, 위치 순서로 정리한다.
 - 콘텐츠·레이아웃 구획에 CSS `border`를 직접 쓰지 않고 surface 또는 separator를 사용하며, separator는 같은 맥락 안이 아니라 서로 다른 맥락 사이에만 둔다.
 - Shadow DOM 내부 구조는 외부 스타일 API로 노출하지 않고, 스타일 변형은 prop, token, CSS custom property로만 제공한다.
+- prop 값별 스타일은 스타일 모듈에 `*Tokens` 객체로 선언하고 `buildAttributeRules`로 `:host([attr='value'])` 규칙을 펼친다. 값 목록이 한곳에 모이고, `willUpdate`에서 `style.setProperty`로 주입할 때와 달리 스타일이 클래스 로직에 묶이지 않아 React로 옮길 때도 그대로 남는다. 값마다 규칙 모양이 다르면(속성 조합·대상 요소가 제각각) selector로 둔다.
 - 시각 효과의 on/off·강도처럼 스타일 목적만 갖는 prop은 선언하지 않는다. 그 값을 담는 CSS custom property를 그대로 공개해 소비자가 직접 설정하게 한다.
 - 네이티브 요소의 기본값 리셋(`background: none`, `border: none`, `font: inherit` 등)은 `resetStyles`가 소유한다. 의미 class·컴포넌트 selector에는 리셋을 다시 적지 않고 그 요소의 고유 규칙만 둔다.
 - `resetStyles`는 shadow root 안에 네이티브 요소를 렌더하는 컴포넌트만 `static styles` 맨 앞에 두고, 공유 스타일 모듈은 품지 않는다. Lit은 중복된 스타일을 마지막 위치에 남기므로, 모듈 안의 리셋이 앞선 규칙을 덮기 때문이다.

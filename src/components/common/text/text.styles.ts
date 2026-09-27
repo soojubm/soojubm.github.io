@@ -16,6 +16,11 @@ export const paragraphSizeToTextSize: Record<ParagraphSize, TextSize> = {
   large: '18',
 }
 
+const textMaxLinesTokens = {
+  2: { '-webkit-line-clamp': '2' },
+  3: { '-webkit-line-clamp': '3' },
+}
+
 export const textMaxLinesStyles = css`
   /* max-lines는 reflect라 값이 없을 때도 attribute가 남는다. 값이 있을 때만 자른다. */
   :host([max-lines]:not([max-lines=''])) > * {
@@ -34,13 +39,7 @@ export const textMaxLinesStyles = css`
     -webkit-box-orient: vertical;
   }
 
-  :host([max-lines='2']) > * {
-    -webkit-line-clamp: 2;
-  }
-
-  :host([max-lines='3']) > * {
-    -webkit-line-clamp: 3;
-  }
+  ${unsafeCSS(buildAttributeRules('max-lines', textMaxLinesTokens, '> *'))}
 `
 
 const textColorTokens = {

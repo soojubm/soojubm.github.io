@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html, nothing, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { StatusTone } from '@/components/common/icon/icon-names'
@@ -7,8 +7,15 @@ import { STATUS_ICONS } from '@/components/common/icon/icon-names'
 import '@/components/common/icon'
 import '@/components/common/spinner/spinner'
 import '@/components/common/text/text'
+import { buildAttributeRules } from '@/utils'
 
 type TaskStatusVariant = 'running' | Extract<StatusTone, 'success' | 'warning' | 'error'>
+
+const taskStatusVariantTokens = {
+  success: { '--task-status-icon-color': 'var(--foreground-success-color)' },
+  warning: { '--task-status-icon-color': 'var(--foreground-warning-color)' },
+  error: { '--task-status-icon-color': 'var(--foreground-danger-color)' },
+}
 
 /**
  * 진행률을 알 수 없는 작업의 현재 상태를 한 줄로 알린다.
@@ -27,17 +34,7 @@ export class TaskStatus extends LitElement {
       color: var(--foreground-subtle-color);
     }
 
-    :host([variant='success']) {
-      --task-status-icon-color: var(--foreground-success-color);
-    }
-
-    :host([variant='warning']) {
-      --task-status-icon-color: var(--foreground-warning-color);
-    }
-
-    :host([variant='error']) {
-      --task-status-icon-color: var(--foreground-danger-color);
-    }
+    ${unsafeCSS(buildAttributeRules('variant', taskStatusVariantTokens))}
 
     mm-icon {
       color: var(--task-status-icon-color);

@@ -1,8 +1,15 @@
-import { LitElement, html, css, nothing } from 'lit'
+import { LitElement, html, css, nothing, unsafeCSS } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/caption'
 import { focusRingStyles, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
+import { buildAttributeRules } from '@/utils'
+
+const thumbnailRatioTokens = {
+  '1:1': { 'aspect-ratio': '1 / 1' },
+  '4:3': { 'aspect-ratio': '4 / 3' },
+  full: { 'aspect-ratio': 'auto' },
+}
 
 @customElement('mm-thumbnail')
 export class Thumbnail extends LitElement {
@@ -45,17 +52,8 @@ export class Thumbnail extends LitElement {
         overflow: hidden;
       }
 
-      :host([ratio='1:1']) .image-wrapper {
-        aspect-ratio: 1 / 1;
-      }
+      ${unsafeCSS(buildAttributeRules('ratio', thumbnailRatioTokens, '.image-wrapper'))}
 
-      :host([ratio='4:3']) .image-wrapper {
-        aspect-ratio: 4 / 3;
-      }
-
-      :host([ratio='full']) .image-wrapper {
-        aspect-ratio: auto;
-      }
       :host([ratio='full']) img {
         height: auto;
       }

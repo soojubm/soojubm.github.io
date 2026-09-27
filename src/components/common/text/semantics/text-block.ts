@@ -1,11 +1,18 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html, nothing, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/paragraph'
+import { buildAttributeRules } from '@/utils'
 
 export type TextBlockLevel = '1' | '2' | '3' | '4' | '5'
+
+const textBlockLevelTokens = {
+  1: { gap: 'var(--space-3)' },
+  4: { gap: 'var(--space-1)' },
+  5: { gap: '0' },
+}
 
 /**
  * <mm-text-block>
@@ -22,15 +29,7 @@ export class TextBlock extends LitElement {
       align-items: flex-start;
       gap: var(--space-2);
     }
-    :host([level='1']) {
-      gap: var(--space-3);
-    }
-    :host([level='4']) {
-      gap: var(--space-1);
-    }
-    :host([level='5']) {
-      gap: 0;
-    }
+    ${unsafeCSS(buildAttributeRules('level', textBlockLevelTokens))}
     :host([centered]) {
       align-items: center;
     }
