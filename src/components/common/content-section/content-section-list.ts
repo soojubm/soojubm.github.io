@@ -1,7 +1,8 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { resolveSpaceToken } from '@/utils'
+import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
+import { buildAttributeRules } from '@/utils'
 
 /**
  * <mm-content-section-list>
@@ -19,16 +20,14 @@ export class ContentSectionList extends LitElement {
       flex-direction: column;
       gap: var(--content-section-list-gap);
     }
+
+    ${unsafeCSS(buildAttributeRules('gap', spaceTokens('--content-section-list-gap')))}
   `
-  @property({ type: String }) gap = '8'
+  @property({ type: String, reflect: true }) gap: Space = '8'
 
   render() {
     return html`
       <slot></slot>
     `
-  }
-
-  protected willUpdate() {
-    this.style.setProperty('--content-section-list-gap', resolveSpaceToken(this.gap))
   }
 }

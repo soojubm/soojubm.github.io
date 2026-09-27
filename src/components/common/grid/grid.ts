@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { gridStyles } from '@/components/common/grid/grid.styles'
-import { resolveSpaceToken } from '@/utils'
+import type { Space } from '@/stylesheets/shared.styles'
 
 type Columns = 1 | 2 | 3 | 4 | 6
 
@@ -12,7 +12,7 @@ export class Grid extends LitElement {
   @property({ type: Number, reflect: true }) columns: Columns = 2
   @property({ attribute: 'column-max-width' }) columnMaxWidth?: string
   @property({ attribute: 'column-min-width' }) columnMinWidth?: string
-  @property({ type: String }) gap = '4'
+  @property({ type: String, reflect: true }) gap: Space = '4'
 
   render() {
     return html`
@@ -21,11 +21,6 @@ export class Grid extends LitElement {
   }
 
   protected willUpdate() {
-    const gap = resolveSpaceToken(this.gap)
-
-    if (gap) this.style.setProperty('--_grid-gap', gap)
-    else this.style.removeProperty('--_grid-gap')
-
     if (this.columnMinWidth) this.style.setProperty('--_col-min', this.columnMinWidth)
     else this.style.removeProperty('--_col-min')
 

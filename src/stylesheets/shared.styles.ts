@@ -146,3 +146,31 @@ export const scrollbarStyles = css`
     background: var(--background-strong-color);
   }
 `
+
+/**
+ * 레이아웃 컴포넌트의 gap prop이 고르는 space 단계.
+ * 0은 calc() 안에서도 식이 무효가 되지 않도록 길이로 둔다.
+ */
+export const spaces = {
+  '0': '0px',
+  '1': 'var(--space-1)',
+  '2': 'var(--space-2)',
+  '3': 'var(--space-3)',
+  '4': 'var(--space-4)',
+  '6': 'var(--space-6)',
+  '8': 'var(--space-8)',
+  '12': 'var(--space-12)',
+  '16': 'var(--space-16)',
+  section: 'var(--space-section)',
+} as const
+
+export type Space = keyof typeof spaces
+
+/** 단계마다 컴포넌트가 소비하는 gap 토큰 하나에 값을 할당한다. `buildAttributeRules('gap', ...)`로 펼친다. */
+export const spaceTokens = (customProperty: string) => {
+  const entries = Object.entries(spaces).map(([space, value]) => [
+    space,
+    { [customProperty]: value },
+  ])
+  return Object.fromEntries(entries)
+}

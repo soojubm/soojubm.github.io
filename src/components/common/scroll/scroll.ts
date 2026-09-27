@@ -1,10 +1,8 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { PropertyValues } from 'lit'
-
 import { scrollStyles } from '@/components/common/scroll/scroll.styles'
-import { resolveSpaceToken } from '@/utils'
+import type { Space } from '@/stylesheets/shared.styles'
 import '@/components/common/scroll/semantics/scroll-hint'
 
 type Direction = 'row' | 'column'
@@ -19,7 +17,7 @@ type Direction = 'row' | 'column'
 export class Scroll extends LitElement {
   static styles = scrollStyles
   @property({ type: String, reflect: true }) direction: Direction = 'row'
-  @property({ type: String }) gap = ''
+  @property({ type: String, reflect: true }) gap?: Space
   @property({ type: Boolean, reflect: true, attribute: 'hide-scrollbar' }) hideScrollbar = false
 
   render() {
@@ -34,14 +32,5 @@ export class Scroll extends LitElement {
       <slot></slot>
       <mm-scroll-hint placement="end"></mm-scroll-hint>
     `
-  }
-
-  updated(changed: PropertyValues) {
-    if (!changed.has('gap')) return
-
-    const gap = resolveSpaceToken(this.gap)
-
-    if (gap) this.style.setProperty('--scroll-gap', gap)
-    else this.style.removeProperty('--scroll-gap')
   }
 }

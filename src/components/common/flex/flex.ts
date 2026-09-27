@@ -2,8 +2,8 @@ import { LitElement, css, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
-import { buildAttributeRules, resolveSpaceToken } from '@/utils'
+import { resetStyles, spaceTokens, type Space } from '@/stylesheets/shared.styles'
+import { buildAttributeRules } from '@/utils'
 
 type Direction = 'row' | 'column'
 type JustifyAlias = 'start' | 'center' | 'end' | 'between' | 'around'
@@ -38,7 +38,6 @@ const flexAlignItemsTokens = {
  * mm-flex 는 순수 레이아웃만 책임진다.
  *
  * 레이아웃은 reflect된 attribute를 받는 :host 셀렉터로만 적용한다(인라인 스타일 없음).
- * gap만 임의 값이라 willUpdate에서 `--flex-gap` custom property로 넘긴다.
  * 기본(as="div")은 host 자체가 flex 컨테이너다. 시멘틱 랜드마크가 필요한 경우(as="section" 등)에만
  * 내부 요소를 컨테이너로 쓰며, 레이아웃 값은 host 계산값에 남아 있어 `inherit`으로 그대로 내려간다.
  */
@@ -80,6 +79,8 @@ export class Flex extends LitElement {
 
       ${unsafeCSS(buildAttributeRules('align-items', flexAlignItemsTokens))}
 
+      ${unsafeCSS(buildAttributeRules('gap', spaceTokens('--flex-gap')))}
+
       :host([stretch]) ::slotted(*) {
         flex: 1;
       }
@@ -100,7 +101,7 @@ export class Flex extends LitElement {
   justifyContent: JustifyContent = 'flex-start'
   @property({ type: String, attribute: 'align-items', reflect: true }) alignItems: AlignItems =
     'stretch'
-  @property({ type: String, reflect: true }) gap = '0'
+  @property({ type: String, reflect: true }) gap: Space = '0'
   @property({ type: String, reflect: true }) as: FlexAs = 'div'
   @property({ type: String, reflect: true }) wrap: FlexWrap = 'nowrap'
   @property({ type: Boolean, reflect: true }) stretch = false
@@ -117,10 +118,8 @@ export class Flex extends LitElement {
     return html`<${tag} class="flex"><slot></slot></${tag}>`
   }
 
-  /** gap은 host의 `--flex-gap`으로, 기본 as="div"의 group role은 host attribute로 반영한다. */
+  /** 기본 as="div"의 group role은 host attribute로 반영한다. */
   protected willUpdate() {
-    this.style.setProperty('--flex-gap', resolveSpaceToken(this.gap))
-
     if (this.as === 'div') {
       this.setAttribute('role', 'group')
       return

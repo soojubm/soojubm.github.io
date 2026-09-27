@@ -1,10 +1,11 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { PropertyValues } from 'lit'
 
-import { resolveSpaceToken } from '@/utils'
+import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
+import { buildAttributeRules } from '@/utils'
 
 type MarqueeDirection = 'left' | 'right'
 
@@ -24,6 +25,8 @@ export class Marquee extends LitElement {
       --marquee-distance: 0px;
       --marquee-duration: 1s;
     }
+
+    ${unsafeCSS(buildAttributeRules('gap', spaceTokens('--marquee-gap')))}
 
     .viewport {
       width: 100%;
@@ -85,7 +88,7 @@ export class Marquee extends LitElement {
     }
   `
   @property({ type: String, reflect: true }) direction: MarqueeDirection = 'left'
-  @property({ type: String }) gap = '4'
+  @property({ type: String, reflect: true }) gap: Space = '4'
   @property({ type: String }) height?: string
   @property({ type: Number }) speed = 80
   @property({ type: Boolean, reflect: true, attribute: 'pause-on-hover' }) pauseOnHover = false
@@ -137,10 +140,7 @@ export class Marquee extends LitElement {
   }
 
   updated(changed: PropertyValues) {
-    if (changed.has('gap')) {
-      this.style.setProperty('--marquee-gap', resolveSpaceToken(this.gap) || '0px')
-      this.queueMeasure()
-    }
+    if (changed.has('gap')) this.queueMeasure()
 
     if (changed.has('height')) this.updateHeight()
 

@@ -1,6 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import { MEDIA } from '@/constants'
+import { spaceTokens } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
 const gridColumnsTokens = {
@@ -11,7 +12,7 @@ const gridColumnsTokens = {
   4: {
     '--_col-count': '4',
     '--_col-pair':
-      'clamp(0px, (4 * var(--_col-min, 12rem) + 3 * var(--_grid-gap, var(--space-4)) - 100%) * 9999, (100% - var(--_grid-gap, var(--space-4))) / 2)',
+      'clamp(0px, (4 * var(--_col-min, 12rem) + 3 * var(--_grid-gap) - 100%) * 9999, (100% - var(--_grid-gap)) / 2)',
   },
   6: { '--_col-count': '6' },
 }
@@ -21,10 +22,11 @@ export const gridStyles = [
     :host {
       --_col-count: 2;
       --_col-pair: 0px;
+      --_grid-gap: var(--space-4);
 
       display: grid;
       width: 100%;
-      gap: var(--_grid-gap, var(--space-4));
+      gap: var(--_grid-gap);
       justify-content: var(--_grid-justify-content, normal);
       /* columns는 상한: 넓을 때는 컨테이너를 N등분해 정확히 N열이 되고,
          한 열이 최소 너비 아래로 좁아지면 열 수가 컨테이너 너비 기준으로 줄어든다. */
@@ -35,10 +37,7 @@ export const gridStyles = [
             100%,
             max(
               var(--_col-min, 12rem),
-              calc(
-                (100% - (var(--_col-count) - 1) * var(--_grid-gap, var(--space-4))) /
-                  var(--_col-count)
-              ),
+              calc((100% - (var(--_col-count) - 1) * var(--_grid-gap)) / var(--_col-count)),
               var(--_col-pair)
             )
           ),
@@ -52,6 +51,8 @@ export const gridStyles = [
     }
 
     ${unsafeCSS(buildAttributeRules('columns', gridColumnsTokens))}
+
+    ${unsafeCSS(buildAttributeRules('gap', spaceTokens('--_grid-gap')))}
 
     /* column-max-width 그리드는 auto-fill로 열 수를 파생하면 상한(columns)을 넘을 수
        있어 고정 열 수를 유지하고, 뷰포트 미디어 쿼리로만 줄인다. */
