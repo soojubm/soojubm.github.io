@@ -18,7 +18,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const variants: SelectVariant[] = ['tertiary', 'ghost']
-const placements: PopoverPlacement[] = ['bottom-left', 'bottom-right', 'top-left', 'top-right']
+const placements: PopoverPlacement[] = ['bottom-start', 'bottom-end', 'top-start', 'top-end']
 // 트리거에 현재 위치 이름이 보이도록 위치를 옵션 값으로 둔다.
 const placementOptions = placements.map(placement => ({ value: placement, label: placement }))
 
@@ -37,7 +37,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'variant', type: "'tertiary' | 'ghost' = 'tertiary'" },
   {
     name: 'placement',
-    type: "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'",
+    type: "'bottom-start' | 'bottom-end' | 'top-start' | 'top-end' = 'bottom-start'",
   },
   { name: 'aria-label', type: 'string', optional: true },
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },

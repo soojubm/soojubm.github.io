@@ -76,7 +76,7 @@ export class PromptInput extends LitElement {
   private renderStartActions() {
     return html`
       <div class="actions">
-        <mm-popover placement="top-left">
+        <mm-popover placement="top-start">
           <mm-icon-button
             slot="trigger"
             icon=${ICON_NAMES.ADD_CIRCLE}

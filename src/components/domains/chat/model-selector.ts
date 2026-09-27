@@ -26,7 +26,7 @@ export class ModelSelector extends LitElement {
         aria-label="모델"
         .value=${this.value}
         .options=${MODEL_OPTIONS}
-        placement="top-left"
+        placement="top-start"
         @change=${this.handleSelectChange}
       ></mm-select>
     `

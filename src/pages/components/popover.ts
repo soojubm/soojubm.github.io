@@ -5,12 +5,12 @@ import type {
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
-
-import { renderPage } from '@/components/layouts/base-layouts'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
-const placements: PopoverPlacement[] = ['bottom-left', 'bottom-right', 'top-left', 'top-right']
+import { renderPage } from '@/components/layouts/base-layouts'
+
+const placements: PopoverPlacement[] = ['bottom-start', 'bottom-end', 'top-start', 'top-end']
 
 const moreMenuActions: MoreMenuAction[] = [
   { value: 'share', label: '공유', onClick: () => alert('clicked') },
@@ -29,7 +29,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean' },
   {
     name: 'placement',
-    type: "'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-left'",
+    type: "'bottom-start' | 'bottom-end' | 'top-start' | 'top-end' = 'bottom-start'",
   },
   { name: 'slot: trigger', type: 'HTMLElement' },
   { name: 'popover-toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },

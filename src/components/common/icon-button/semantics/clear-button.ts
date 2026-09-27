@@ -1,6 +1,8 @@
 import { LitElement, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
+
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
@@ -22,7 +24,8 @@ export class ClearButton extends LitElement {
     `,
   ]
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
+  @property({ type: String, attribute: 'tooltip-placement' })
+  tooltipPlacement: TooltipPlacement = 'bottom-start'
   @property({ type: Boolean }) disabled = false
 
   render() {

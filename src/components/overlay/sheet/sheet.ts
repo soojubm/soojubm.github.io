@@ -5,11 +5,12 @@ import {
   sheetPositionStyles,
   overlaySurfaceStyles,
   sheetDragHandleStyles,
+  type OverlayPlacement,
 } from '@/components/overlay/overlay.styles'
 import '@/components/overlay/backdrop/backdrop'
 import { SheetController } from '@/controllers/sheet-controller'
 import { emit } from '@/utils'
-export type SheetPlacement = 'top' | 'bottom' | 'left' | 'right'
+export type SheetPlacement = Extract<OverlayPlacement, 'top' | 'bottom' | 'left' | 'right'>
 
 // 드래그로 내린 거리가 패널 높이의 이 비율을 넘으면 닫힘으로 판정한다.
 const DRAG_CLOSE_THRESHOLD_RATIO = 0.25

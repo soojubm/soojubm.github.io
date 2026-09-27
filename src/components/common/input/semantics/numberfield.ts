@@ -45,7 +45,7 @@ export class NumberField extends withTextfieldState(LitElement) {
           size="small"
           icon=${ICON_NAMES.SUBTRACT}
           aria-label="감소"
-          tooltip-placement="center"
+          tooltip-placement="bottom"
           ?disabled=${this.disabled}
           @click=${this.handleDecrementClick}
         ></mm-icon-button>
@@ -54,7 +54,7 @@ export class NumberField extends withTextfieldState(LitElement) {
           size="small"
           icon=${ICON_NAMES.ADD}
           aria-label="증가"
-          tooltip-placement="center"
+          tooltip-placement="bottom"
           ?disabled=${this.disabled}
           @click=${this.handleIncrementClick}
         ></mm-icon-button>

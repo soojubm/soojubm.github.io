@@ -21,7 +21,7 @@ export class ThemeSelector extends LitElement {
 
   render() {
     return html`
-      <mm-popover placement="bottom-right">
+      <mm-popover placement="bottom-end">
         <mm-icon-button
           slot="trigger"
           variant="ghost"

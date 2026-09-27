@@ -22,7 +22,11 @@ const componentProps: ComponentPropItemData[] = [
   },
   { name: 'size', type: "'small' | 'medium' = 'medium'" },
   { name: 'aria-label', type: 'string' },
-  { name: 'tooltip-placement', type: "'left' | 'center' | 'right'", optional: true },
+  {
+    name: 'tooltip-placement',
+    type: "'bottom' | 'bottom-start' | 'bottom-end' = 'bottom-start'",
+    optional: true,
+  },
   { name: 'aria-controls', type: 'string', optional: true },
   { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
   { name: 'aria-haspopup', type: 'string', optional: true },
@@ -63,31 +67,31 @@ const main = html`
                 variant="primary"
                 icon=${ICON_NAMES.FORWARD}
                 aria-label="Primary"
-                tooltip-placement="center"
+                tooltip-placement="bottom"
               ></mm-icon-button>
               <mm-icon-button
                 variant="secondary"
                 icon=${ICON_NAMES.FORWARD}
                 aria-label="Secondary"
-                tooltip-placement="center"
+                tooltip-placement="bottom"
               ></mm-icon-button>
               <mm-icon-button
                 variant="tertiary"
                 icon=${ICON_NAMES.FORWARD}
                 aria-label="Tertiary"
-                tooltip-placement="center"
+                tooltip-placement="bottom"
               ></mm-icon-button>
               <mm-icon-button
                 variant="ghost"
                 icon=${ICON_NAMES.FORWARD}
                 aria-label="Ghost"
-                tooltip-placement="center"
+                tooltip-placement="bottom"
               ></mm-icon-button>
               <mm-icon-button
                 variant="destructive"
                 icon=${ICON_NAMES.DELETE}
                 aria-label="Destructive"
-                tooltip-placement="center"
+                tooltip-placement="bottom"
               ></mm-icon-button>
             </mm-button-group>
             <mm-paragraph>
@@ -122,20 +126,20 @@ const main = html`
               variant="primary"
               icon=${ICON_NAMES.FORWARD}
               aria-label="다음"
-              tooltip-placement="center"
+              tooltip-placement="bottom"
               disabled
             ></mm-icon-button>
             <mm-icon-button
               icon=${ICON_NAMES.LIKE}
               aria-label="좋아요"
-              tooltip-placement="center"
+              tooltip-placement="bottom"
               disabled
             ></mm-icon-button>
             <mm-icon-button
               variant="secondary"
               icon=${ICON_NAMES.BACK}
               aria-label="이전"
-              tooltip-placement="center"
+              tooltip-placement="bottom"
               disabled
             ></mm-icon-button>
           </mm-button-group>
@@ -172,7 +176,7 @@ const main = html`
         { placement: 'block-end', inset: true },
       ]}
     >
-      <mm-tooltip content="좋아요" placement="center" open>
+      <mm-tooltip content="좋아요" placement="bottom" open>
         <mm-icon-button
           slot="trigger"
           variant="primary"
@@ -199,8 +203,8 @@ const main = html`
       description="페이지·캐러셀·단계형 흐름에서 이전/다음 항목으로 이동합니다."
     >
       <mm-button-group>
-        <mm-prev-button tooltip-placement="center"></mm-prev-button>
-        <mm-next-button tooltip-placement="center"></mm-next-button>
+        <mm-prev-button tooltip-placement="bottom"></mm-prev-button>
+        <mm-next-button tooltip-placement="bottom"></mm-next-button>
       </mm-button-group>
     </mm-component-section>
 
@@ -208,33 +212,33 @@ const main = html`
       heading="Close Button"
       description="모달, 패널, 시트 등 레이어를 닫는 보조 액션 버튼입니다."
     >
-      <mm-close-button tooltip-placement="center"></mm-close-button>
+      <mm-close-button tooltip-placement="bottom"></mm-close-button>
     </mm-component-section>
 
     <mm-component-section
       heading="Dismiss Button"
       description="배너, 알림, 토스트 등에서 콘텐츠를 비파괴적으로 해제하는 보조 액션 버튼입니다."
     >
-      <mm-dismiss-button tooltip-placement="center"></mm-dismiss-button>
+      <mm-dismiss-button tooltip-placement="bottom"></mm-dismiss-button>
     </mm-component-section>
 
     <mm-component-section
       heading="Delete Button / Remove Button"
       description="아이템·데이터를 영구 삭제하는 파괴적 액션 버튼. 다이얼로그로 확인하기 때문에 시각적 노이즈 최소화."
     >
-      <mm-delete-button tooltip-placement="center"></mm-delete-button>
+      <mm-delete-button tooltip-placement="bottom"></mm-delete-button>
     </mm-component-section>
 
     <mm-component-section
       heading="Copy Button"
       description="텍스트를 클립보드에 복사하는 버튼. 복사 성공 시 일시적으로 체크 아이콘으로 전환됩니다."
     >
-      <mm-copy-button tooltip-placement="center" value="copied text"></mm-copy-button>
+      <mm-copy-button tooltip-placement="bottom" value="copied text"></mm-copy-button>
     </mm-component-section>
 
     <mm-component-section heading="Clear Button" description="search field에서 사용.">
       <mm-flex direction="column" gap="4">
-        <mm-clear-button aria-label="입력 지우기" tooltip-placement="center"></mm-clear-button>
+        <mm-clear-button aria-label="입력 지우기" tooltip-placement="bottom"></mm-clear-button>
         <mm-component-notice variant="exception" heading="크기 단계에 없는 16을 쓴다">
           아이콘 버튼의 크기 단계는 32·24지만,
           <mm-code>mm-clear-button</mm-code>
@@ -252,7 +256,7 @@ const main = html`
         size="small"
         icon=${ICON_NAMES.EXPAND}
         aria-label="펼치기"
-        tooltip-placement="center"
+        tooltip-placement="bottom"
       ></mm-icon-button>
     </mm-component-section>
     <mm-component-section

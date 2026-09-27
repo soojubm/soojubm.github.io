@@ -50,7 +50,7 @@ export class Select extends LitElement {
   @property({ type: String }) value = ''
   /** 트리거 버튼의 variant. 배경 없이 본문에 얹을 때 ghost를 쓴다. */
   @property({ type: String }) variant: SelectVariant = 'tertiary'
-  @property({ type: String }) placement: PopoverPlacement = 'bottom-left'
+  @property({ type: String }) placement: PopoverPlacement = 'bottom-start'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @state() private open = false
   private compact = new MediaQueryController(this, MEDIA_QUERY.compact)

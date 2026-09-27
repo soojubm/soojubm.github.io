@@ -3,6 +3,7 @@ import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
+import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 import type { CSSResultGroup, TemplateResult } from 'lit'
 
@@ -16,7 +17,7 @@ import '@/components/overlay/tooltip'
 import '@/components/common/icon'
 
 export interface IconAction {
-  tooltipPlacement: string
+  tooltipPlacement: TooltipPlacement
   disabled: boolean
   handleActionClick(): void
 }
@@ -28,7 +29,8 @@ export interface IconAction {
  */
 export const withIconAction = <T extends Constructor<LitElement>>(Base: T, eventName: string) => {
   class IconActionElement extends Base {
-    @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
+    @property({ type: String, attribute: 'tooltip-placement' })
+    tooltipPlacement: TooltipPlacement = 'bottom-start'
     @property({ type: Boolean }) disabled = false
 
     handleActionClick() {
@@ -44,7 +46,7 @@ export const withIconAction = <T extends Constructor<LitElement>>(Base: T, event
 export interface IconActionRenderOptions {
   icon?: IconName
   ariaLabel: string
-  tooltipPlacement?: string
+  tooltipPlacement?: TooltipPlacement
   disabled?: boolean
   onClick?: (event: Event) => void
   ariaHasPopup?: AriaHasPopup
@@ -59,7 +61,7 @@ export interface IconActionRenderOptions {
 export const renderIconAction = ({
   icon,
   ariaLabel,
-  tooltipPlacement = '',
+  tooltipPlacement = 'bottom-start',
   disabled = false,
   onClick = () => {},
   ariaHasPopup,

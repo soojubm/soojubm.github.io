@@ -1,14 +1,17 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { tooltipStyles } from '@/components/overlay/overlay.styles'
+import { tooltipStyles, type OverlayPlacement } from '@/components/overlay/overlay.styles'
 import '@/components/common'
+
+/** 말풍선은 트리거 아래에 뜨고, 정렬만 고른다. */
+export type TooltipPlacement = Extract<OverlayPlacement, 'bottom' | 'bottom-start' | 'bottom-end'>
 
 @customElement('mm-tooltip')
 export class Tooltip extends LitElement {
   static styles = [tooltipStyles]
   @property({ type: String }) content = ''
-  @property({ type: String, reflect: true }) placement = ''
+  @property({ type: String, reflect: true }) placement: TooltipPlacement = 'bottom-start'
   @property({ type: Boolean, reflect: true }) open = false
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: Element[]

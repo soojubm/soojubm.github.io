@@ -35,7 +35,7 @@ export class CurrentIndicator extends LitElement {
 
   render() {
     return html`
-      <mm-tooltip content="현재 위치" placement="center">
+      <mm-tooltip content="현재 위치" placement="bottom">
         <span slot="trigger">
           <mm-dot tone="gray" size="6"></mm-dot>
         </span>

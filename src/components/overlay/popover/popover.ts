@@ -1,13 +1,20 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { overlaySurfaceStyles, popoverPositionStyles } from '@/components/overlay/overlay.styles'
+import {
+  overlaySurfaceStyles,
+  popoverPositionStyles,
+  type OverlayPlacement,
+} from '@/components/overlay/overlay.styles'
 import '@/components/common'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { emit, getDeepActiveElement } from '@/utils'
 
-export type PopoverPlacement = 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right'
+export type PopoverPlacement = Extract<
+  OverlayPlacement,
+  'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'
+>
 
 // 열리면 포커스를 받아 방향키로 탐색하는 목록. 방향키 탐색은 이 목록이 소유한다.
 const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
@@ -23,7 +30,7 @@ const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
 export class Popover extends LitElement {
   static styles = [overlaySurfaceStyles, popoverPositionStyles]
   @property({ type: Boolean, reflect: true }) open = false
-  @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-left'
+  @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-start'
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: HTMLElement[]
   @queryAssignedElements({ flatten: true })

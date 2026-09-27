@@ -1,6 +1,7 @@
 import { LitElement } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
@@ -21,7 +22,8 @@ export class MoreButton extends LitElement {
   @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = 'false'
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: AriaHasPopup = 'menu'
-  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = 'center'
+  @property({ type: String, attribute: 'tooltip-placement' })
+  tooltipPlacement: TooltipPlacement = 'bottom'
   @property({ type: Boolean }) disabled = false
 
   render() {

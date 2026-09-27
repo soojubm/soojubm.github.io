@@ -1,6 +1,8 @@
 import { LitElement, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
+import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
+
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import {
   iconButtonStyles,
@@ -28,7 +30,8 @@ export class CopyButton extends LitElement {
     `,
   ]
   @property({ type: String }) value = ''
-  @property({ type: String, attribute: 'tooltip-placement' }) tooltipPlacement = ''
+  @property({ type: String, attribute: 'tooltip-placement' })
+  tooltipPlacement: TooltipPlacement = 'bottom-start'
   @state() private copied = false
   private copiedFlag = new TransientFlagController(this, {
     duration: 1500,

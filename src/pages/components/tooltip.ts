@@ -40,7 +40,11 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'content', type: 'string' },
-  { name: 'placement', type: "'left' | 'center' | 'right'", optional: true },
+  {
+    name: 'placement',
+    type: "'bottom' | 'bottom-start' | 'bottom-end' = 'bottom-start'",
+    optional: true,
+  },
   { name: 'open', type: 'boolean = false', optional: true },
   { name: 'slot: trigger', type: 'HTMLElement' },
 ]
@@ -88,17 +92,17 @@ const main = html`
             <mm-icon-button
               icon=${ICON_NAMES.USER}
               aria-label="좌측 정렬"
-              tooltip-placement="left"
+              tooltip-placement="bottom-start"
             ></mm-icon-button>
             <mm-icon-button
               icon=${ICON_NAMES.USER}
               aria-label="가운데 정렬"
-              tooltip-placement="center"
+              tooltip-placement="bottom"
             ></mm-icon-button>
             <mm-icon-button
               icon=${ICON_NAMES.USER}
               aria-label="우측 정렬"
-              tooltip-placement="right"
+              tooltip-placement="bottom-end"
             ></mm-icon-button>
           </mm-button-group>
         </mm-component-example>

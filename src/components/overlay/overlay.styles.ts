@@ -1,6 +1,27 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 
 import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
+
+/**
+ * 오버레이가 기준(트리거나 화면)의 어느 변에 어느 정렬로 놓일지를 나타내는 표준 12개 값.
+ * 방향만 쓰면 가운데에 맞춘다. 각 오버레이는 이 중 자기가 지원하는 값만 Extract로 골라 쓴다.
+ */
+export type OverlayPlacement =
+  | 'top-start'
+  | 'top'
+  | 'top-end'
+  | 'right-start'
+  | 'right'
+  | 'right-end'
+  | 'bottom-start'
+  | 'bottom'
+  | 'bottom-end'
+  | 'left-start'
+  | 'left'
+  | 'left-end'
 
 /**
  * modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다.
@@ -227,16 +248,16 @@ export const popoverPositionStyles = css`
       transform var(--transition-duration) var(--transition-easing-emphasis), visibility 0s;
   }
 
-  :host([placement='bottom-right']) .panel,
-  :host([placement='top-right']) .panel {
+  :host([placement='bottom-end']) .panel,
+  :host([placement='top-end']) .panel {
     --popover-origin-inline: right;
 
     left: auto;
     right: 0;
   }
 
-  :host([placement='top-left']) .panel,
-  :host([placement='top-right']) .panel {
+  :host([placement='top-start']) .panel,
+  :host([placement='top-end']) .panel {
     --popover-origin-block: bottom;
 
     top: auto;
@@ -354,6 +375,11 @@ export const toastStyles = css`
   }
 `
 
+const tooltipPlacementTokens: AttributeTokens<Exclude<TooltipPlacement, 'bottom-start'>> = {
+  bottom: { left: '50%', transform: 'translateX(-50%)' },
+  'bottom-end': { left: 'auto', right: '0' },
+}
+
 export const tooltipStyles = css`
   :host {
     display: inline-flex;
@@ -376,15 +402,7 @@ export const tooltipStyles = css`
     }
   }
 
-  :host([placement='center']) [role='tooltip'] {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  :host([placement='right']) [role='tooltip'] {
-    left: auto;
-    right: 0;
-  }
+  ${unsafeCSS(buildAttributeRules('placement', tooltipPlacementTokens, "[role='tooltip']"))}
 
   slot[name='trigger'] {
     display: inline-flex;

@@ -29,7 +29,7 @@ export class MoreMenu extends LitElement {
     }
   `
   @property({ attribute: false }) actions: MoreMenuAction[] = []
-  @property({ type: String }) placement: PopoverPlacement = 'bottom-right'
+  @property({ type: String }) placement: PopoverPlacement = 'bottom-end'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
   @state() private open = false
   private compact = new MediaQueryController(this, MEDIA_QUERY.compact)

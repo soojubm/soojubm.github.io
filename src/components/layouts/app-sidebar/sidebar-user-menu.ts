@@ -38,7 +38,7 @@ export class SidebarUserMenu extends LitElement {
 
   render() {
     return html`
-      <mm-popover placement="top-left">
+      <mm-popover placement="top-start">
         <button slot="trigger" type="button" aria-haspopup="menu">
           <mm-user-item
             size="medium"
