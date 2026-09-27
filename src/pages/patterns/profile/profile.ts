@@ -127,7 +127,7 @@ const main = html`
   <mm-sheet id="sheet-newneek" placement="bottom" height="90vh">
     <mm-sheet-header heading="뉴닉"></mm-sheet-header>
     <mm-sheet-body class="newneek-sheet-body">
-      <mm-flex direction="column" gap="section">
+      <mm-content-section-list gap="section">
         <div class="home-mangrove">
           <div>
             <img class="mangrove1" src="/src/images/newneek/home-mangrove1.png" alt="" />
@@ -232,7 +232,7 @@ const main = html`
         </section>
 
         <img src="/src/images/newneek-book.png" alt="" />
-      </mm-flex>
+      </mm-content-section-list>
     </mm-sheet-body>
   </mm-sheet>
 

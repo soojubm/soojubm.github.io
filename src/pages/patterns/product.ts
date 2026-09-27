@@ -5,7 +5,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
   <mm-main>
-    <mm-flex direction="column" gap="section">
+    <mm-content-section-list gap="section">
       <mm-flex direction="column" gap="4">
         <mm-button>Back to Home</mm-button>
 
@@ -221,7 +221,7 @@ const main = html`
           <mm-meta-item layout="inline" label="문의전화" value="02-000-2000"></mm-meta-item>
         </mm-meta-item-group>
       </section>
-    </mm-flex>
+    </mm-content-section-list>
 
     <mm-fixed-bottom>
       <mm-product-purchase-bar

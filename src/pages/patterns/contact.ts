@@ -9,11 +9,7 @@ const main = html`
         <mm-thumbnail src=""></mm-thumbnail>
       </div>
 
-      <mm-flex
-        direction="column"
-        gap="section"
-        style="width:50%;padding:2rem;box-sizing:border-box;"
-      >
+      <mm-content-section-list gap="section" style="width:50%;padding:2rem;box-sizing:border-box;">
         <mm-text size="32">
           Contact To buy our products or to learn more about Sandy Shore, don’t hesitate to reach
           out. We’ll be happy to respond.
@@ -26,7 +22,7 @@ const main = html`
             value="731 Lakeshore Road,Norfolk, ON, N0J 1T0"
           ></mm-meta-item>
         </mm-meta-item-group>
-      </mm-flex>
+      </mm-content-section-list>
     </mm-flex>
   </mm-main>
 `

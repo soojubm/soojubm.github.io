@@ -25,7 +25,7 @@ const main = html`
     ></mm-top-bar>
   </mm-fixed-top>
   <mm-main width="small">
-    <mm-flex direction="column" gap="section">
+    <mm-content-section-list gap="section">
       <!-- 주문/결제 -->
       <mm-flex as="section" direction="column" gap="6">
         <mm-content-section-list>
@@ -244,7 +244,7 @@ const main = html`
           </mm-flex>
         </mm-surface>
       </mm-flex>
-    </mm-flex>
+    </mm-content-section-list>
   </mm-main>
 `
 

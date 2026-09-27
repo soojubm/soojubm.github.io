@@ -44,8 +44,8 @@ const overviewRows = html`
     <th scope="row">${code('mm-content-section-list')}</th>
     <td>세로</td>
     <td>섹션–섹션</td>
-    <td>섹션 여러 개를 쌓는 자리</td>
-    <td>21회 · 16쪽</td>
+    <td>페이지 구획을 쌓는 자리</td>
+    <td>28회 · 21쪽</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-text-block')}</th>

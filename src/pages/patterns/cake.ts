@@ -31,7 +31,7 @@ const main = html`
         style="flex: 1 1 240px"
       ></mm-thumbnail>
 
-      <mm-flex direction="column" gap="section" style="flex: 2 1 480px; min-width: 0">
+      <mm-content-section-list gap="section" style="flex: 2 1 480px; min-width: 0">
         <mm-flex direction="column" gap="4">
           <mm-keyword-tag-group
             heading="개봉예정 D-12"
@@ -125,7 +125,7 @@ const main = html`
             <mm-button variant="tertiary">Read More Reviews</mm-button>
           </mm-content-section>
         </mm-content-section-list>
-      </mm-flex>
+      </mm-content-section-list>
     </mm-flex>
   </mm-main>
 `

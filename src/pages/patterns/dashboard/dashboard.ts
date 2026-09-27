@@ -209,7 +209,7 @@ const containerUsages: ComponentUsageItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-flex direction="column" gap="section">
+    <mm-content-section-list gap="section">
       <mm-flex direction="column" gap="4">
         <mm-flex justify-content="space-between" align-items="center" gap="4">
           <mm-heading level="2">🌙 Tender is the night.</mm-heading>
@@ -368,7 +368,7 @@ const main = html`
           </mm-flex>
         </mm-surface>
       </mm-grid>
-    </mm-flex>
+    </mm-content-section-list>
   </mm-main>
 `
 
