@@ -1,12 +1,17 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, query } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
-import type { Popover } from '@/components/overlay/popover/popover'
+import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
 import '@/components/common'
-import '@/components/overlay/popover/popover'
+import '@/components/overlay/popover/semantics/more-menu'
 import { emit } from '@/utils'
 import '@/components/common/list-item/domain/user-item'
+
+const MENU_ACTIONS: MoreMenuAction[] = [
+  { value: 'edit', label: '수정' },
+  { value: 'delete', label: '삭제', tone: 'danger' },
+]
 
 /**
  * 댓글 목록의 개별 항목.
@@ -39,17 +44,12 @@ export class CommentItem extends LitElement {
       box-shadow: inset 2px 0 0 var(--border-color);
       position: relative;
     }
-
-    mm-menu-item-action {
-      width: 100%;
-    }
   `
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
   @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
   @property({ type: Boolean }) editable = false
-  @query('mm-popover') private menu?: Popover
 
   render() {
     return html`
@@ -86,20 +86,12 @@ export class CommentItem extends LitElement {
     if (!this.editable) return nothing
 
     return html`
-      <mm-popover slot="trailing" placement="bottom-right">
-        <mm-more-button slot="trigger" aria-label="댓글 메뉴"></mm-more-button>
-        <mm-menu-item-group aria-label="댓글 메뉴">
-          <mm-menu-item-action
-            label="수정"
-            @click=${() => this.onMenuAction('edit')}
-          ></mm-menu-item-action>
-          <mm-menu-item-action
-            label="삭제"
-            tone="danger"
-            @click=${() => this.onMenuAction('delete')}
-          ></mm-menu-item-action>
-        </mm-menu-item-group>
-      </mm-popover>
+      <mm-more-menu
+        slot="trailing"
+        aria-label="댓글 메뉴"
+        .actions=${MENU_ACTIONS}
+        @action=${this.handleMenuAction}
+      ></mm-more-menu>
     `
   }
 
@@ -107,8 +99,9 @@ export class CommentItem extends LitElement {
     emit(this, type)
   }
 
-  private onMenuAction(type: 'edit' | 'delete') {
-    this.menu?.close()
-    this.emitAction(type)
+  // 메뉴의 action은 여기서 끊고, 댓글 단위의 edit·delete로 다시 알린다.
+  private handleMenuAction(event: CustomEvent<{ value: string }>) {
+    event.stopPropagation()
+    this.emitAction(event.detail.value)
   }
 }

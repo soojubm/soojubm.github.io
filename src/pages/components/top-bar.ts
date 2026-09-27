@@ -7,6 +7,7 @@ import type {
 } from '@/components/domains/component'
 
 import { renderPage } from '@/components/layouts/base-layouts'
+import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'bottom-bar.html', label: 'Bottom Bar' },
@@ -19,6 +20,12 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'nav', type: "'back' | 'close' = 'back'", optional: true },
   { name: "slot='action'", type: 'HTMLElement', optional: true },
   { name: 'nav-click', type: 'CustomEvent', kind: 'event' },
+]
+
+const moreMenuActions: MoreMenuAction[] = [
+  { value: 'share', label: '공유', onClick: () => alert('clicked') },
+  { value: 'edit', label: '프로필 수정', onClick: () => alert('clicked') },
+  { value: 'block', label: '차단', tone: 'danger', onClick: () => alert('clicked') },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []
@@ -44,7 +51,7 @@ const main = html`
       <mm-top-bar heading="수줍이님">
         <mm-button-group slot="action">
           <mm-button>저장</mm-button>
-          <mm-more-button></mm-more-button>
+          <mm-more-menu .actions=${moreMenuActions}></mm-more-menu>
         </mm-button-group>
       </mm-top-bar>
       <mm-text>

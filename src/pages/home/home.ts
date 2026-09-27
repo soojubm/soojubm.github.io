@@ -182,6 +182,24 @@ const designSystemThoughts: Thought[] = [
   },
 ]
 
+// 임시 전시: MoreMenu·CommentItem 패턴을 React 컴포넌트로 옮긴 모습
+const reactMoreMenuCode = `const MENU_ACTIONS: MoreMenuAction[] = [
+  { value: 'edit', label: '수정' },
+  { value: 'delete', label: '삭제', tone: 'danger' },
+]
+
+function CommentItem({ onEdit, onDelete, ...props }: CommentItemProps) {
+  const handleMenuAction = (value: string) => {
+    if (value === 'edit') onEdit?.()
+    if (value === 'delete') onDelete?.()
+  }
+
+  return <MoreMenu aria-label="댓글 메뉴" actions={MENU_ACTIONS} onAction={handleMenuAction} />
+}
+
+// 페이지
+<CommentItem onEdit={() => alert('수정 clicked')} onDelete={() => alert('삭제 clicked')} />`
+
 const main = html`
   <mm-main>
     <mm-flex direction="column" gap="section">
@@ -314,6 +332,10 @@ const main = html`
         heading="보완 영역"
         .items=${supplementaryReferences}
       ></mm-component-references>
+
+      <mm-content-section heading="React로 옮긴 MoreMenu 패턴">
+        <mm-code-block language="typescript" .code=${reactMoreMenuCode}></mm-code-block>
+      </mm-content-section>
     </mm-flex>
   </mm-main>
 `

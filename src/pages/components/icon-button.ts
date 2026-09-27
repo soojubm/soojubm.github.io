@@ -191,17 +191,7 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="MoreButton" description="추가 액션 메뉴를 여는 버튼.">
-      <mm-more-button aria-controls="more-menu-example" aria-haspopup="dialog"></mm-more-button>
-      <mm-sheet id="more-menu-example">
-        <mm-sheet-header heading="추가 액션"></mm-sheet-header>
-        <mm-sheet-body>
-          <mm-menu-item-group aria-label="추가 액션">
-            <mm-menu-item-action label="공유"></mm-menu-item-action>
-            <mm-menu-item-action label="수정"></mm-menu-item-action>
-            <mm-menu-item-action label="삭제" tone="danger"></mm-menu-item-action>
-          </mm-menu-item-group>
-        </mm-sheet-body>
-      </mm-sheet>
+      <mm-more-button></mm-more-button>
     </mm-component-section>
 
     <mm-component-section

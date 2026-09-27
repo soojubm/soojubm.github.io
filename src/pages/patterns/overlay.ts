@@ -176,6 +176,8 @@ const main = html`
                   datetime="1 day ago"
                   avatar-src="/src/images/soojubm.png"
                   editable
+                  @edit=${() => alert('수정 clicked')}
+                  @delete=${() => alert('삭제 clicked')}
                 >
                   시트 안에서 연 popover가 시트 패널과 backdrop 위로 뜨는지 확인합니다.
                 </mm-comment-item>

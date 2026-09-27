@@ -8,8 +8,15 @@ import type {
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
+import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
 const placements: PopoverPlacement[] = ['bottom-left', 'bottom-right', 'top-left', 'top-right']
+
+const moreMenuActions: MoreMenuAction[] = [
+  { value: 'share', label: '공유', onClick: () => alert('clicked') },
+  { value: 'edit', label: '수정', onClick: () => alert('clicked') },
+  { value: 'delete', label: '삭제', tone: 'danger', onClick: () => alert('clicked') },
+]
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'select.html', label: 'Select' },
@@ -78,6 +85,13 @@ const main = html`
     <mm-paragraph>트리거에 앵커되는 non-modal 레이어 표면입니다.</mm-paragraph>
 </mm-popover>`}
     ></mm-component-anatomy>
+
+    <mm-component-section
+      heading="MoreMenu"
+      description="더보기 버튼으로 여는 명령 목록입니다. 좁은 화면에서는 목록을 sheet로 올립니다."
+    >
+      <mm-more-menu aria-label="추가 액션" .actions=${moreMenuActions}></mm-more-menu>
+    </mm-component-section>
 
     <mm-component-section
       heading="ThemeSelector"
