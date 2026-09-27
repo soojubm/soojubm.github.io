@@ -21,8 +21,6 @@ export type MenuItemSize = Exclude<ListItemSize, 'large'>
 /** tone은 행 색만 바꾸는 host 스타일 상태다. 빈 값이 기본 색이다. */
 export type MenuItemTone = '' | 'danger'
 
-export const MENU_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' = 'small'"
-
 export type MenuItemPresentation = Pick<
   ListItem,
   'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarVariant' | 'avatarShape'

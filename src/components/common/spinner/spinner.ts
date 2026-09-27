@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/text/text'
 
-type SpinnerVariant = 'element' | 'section'
+export type SpinnerVariant = 'element' | 'section'
 
 @customElement('mm-spinner')
 export class Spinner extends LitElement {

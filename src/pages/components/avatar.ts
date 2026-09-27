@@ -1,13 +1,15 @@
 import { html } from 'lit'
 
 import type { AvatarItem } from '@/components/common'
+import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { AVATAR_VARIANT_TYPE_UNION, ICON_NAMES } from '@/components/common'
+import { ICON_NAMES } from '@/components/common'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -17,15 +19,28 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'variant', type: `${AVATAR_VARIANT_TYPE_UNION} = 'primary'` },
-  { name: 'size', type: "'80' | '48' | '40' | '32' = '40'" },
-  { name: 'shape', type: "'circle' | 'square' = 'square'" },
+  {
+    name: 'variant',
+    type: unionTypeLabel<AvatarVariant>(
+      { primary: true, secondary: true, tertiary: true },
+      'primary',
+    ),
+  },
+  {
+    name: 'size',
+    type: unionTypeLabel<AvatarSize>({ '80': true, '48': true, '40': true, '32': true }, '40'),
+  },
+  { name: 'shape', type: unionTypeLabel<AvatarShape>({ circle: true, square: true }, 'square') },
   { name: 'src', type: 'string', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
   { name: 'aria-label', type: 'string', optional: true },
   { name: 'mm-user-avatar name', type: 'string', optional: true },
   { name: 'mm-user-avatar src', type: 'string', optional: true },
-  { name: 'mm-user-avatar size', type: "'80' | '48' | '40' | '32' = '40'", optional: true },
+  {
+    name: 'mm-user-avatar size',
+    type: unionTypeLabel<AvatarSize>({ '80': true, '48': true, '40': true, '32': true }, '40'),
+    optional: true,
+  },
   { name: 'mm-user-avatar online', type: 'boolean = false', optional: true },
   { name: 'mm-avatar-group avatars', type: 'AvatarItem[] = []', optional: true },
   { name: 'mm-avatar-group label', type: 'string', optional: true },

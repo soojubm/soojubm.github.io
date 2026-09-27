@@ -5,7 +5,7 @@ import { separatorStyles } from '@/components/common/separator/separator.styles'
 import '@/components/common/text/semantics/caption'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-type SeparatorVariant = 'element' | 'section'
+export type SeparatorVariant = 'element' | 'section'
 
 @customElement('mm-separator')
 export class Separator extends LitElement {

@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { ResultRole } from '@/components/common/result/result'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -8,6 +9,7 @@ import type {
 import type { ActionConfig } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -16,7 +18,11 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'role', type: "'alert' | 'status' = 'status'", optional: true },
+  {
+    name: 'role',
+    type: unionTypeLabel<ResultRole>({ alert: true, status: true }, 'status'),
+    optional: true,
+  },
   { name: 'avatar-icon', type: 'IconName', optional: true },
   { name: 'heading', type: 'string' },
   { name: 'description', type: 'string', optional: true },

@@ -8,6 +8,7 @@ import type {
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { SelectVariant } from '@/components/overlay/select/select'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -34,10 +35,16 @@ const componentProps: ComponentPropItemData[] = [
     type: '{ value: string; label: string; icon?: IconName; disabled?: boolean }[] = []',
   },
   { name: 'value', type: 'string', optional: true },
-  { name: 'variant', type: "'tertiary' | 'ghost' = 'tertiary'" },
+  {
+    name: 'variant',
+    type: unionTypeLabel<SelectVariant>({ tertiary: true, ghost: true }, 'tertiary'),
+  },
   {
     name: 'placement',
-    type: "'bottom-start' | 'bottom-end' | 'top-start' | 'top-end' = 'bottom-start'",
+    type: unionTypeLabel<PopoverPlacement>(
+      { 'bottom-start': true, 'bottom-end': true, 'top-start': true, 'top-end': true },
+      'bottom-start',
+    ),
   },
   { name: 'aria-label', type: 'string', optional: true },
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },

@@ -5,8 +5,10 @@ import type {
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { TopBarNav } from '@/components/layouts/top-bar/top-bar'
 import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -17,7 +19,11 @@ const relatedComponents: ComponentRelatedItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'heading', type: 'string' },
-  { name: 'nav', type: "'back' | 'close' = 'back'", optional: true },
+  {
+    name: 'nav',
+    type: unionTypeLabel<TopBarNav>({ back: true, close: true }, 'back'),
+    optional: true,
+  },
   { name: "slot='action'", type: 'HTMLElement', optional: true },
   { name: 'nav-click', type: 'CustomEvent', kind: 'event' },
 ]

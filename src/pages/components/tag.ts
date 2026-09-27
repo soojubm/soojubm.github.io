@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { TagTone } from '@/components/common/tag/tag.styles'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -7,6 +8,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -18,7 +20,21 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'tone',
-    type: "'default' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' = 'default'",
+    type: unionTypeLabel<TagTone>(
+      {
+        default: true,
+        gold: true,
+        green: true,
+        yellow: true,
+        red: true,
+        blue: true,
+        purple: true,
+        pink: true,
+        orange: true,
+        cyan: true,
+      },
+      'default',
+    ),
   },
   { name: 'icon', type: 'IconName', optional: true },
 ]

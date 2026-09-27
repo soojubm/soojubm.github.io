@@ -3,6 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
+import type { MenuItemTone } from '@/components/common/menu-item/menu-item.utils'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { OptionItem } from '@/types'
 
@@ -14,7 +15,7 @@ import { MediaQueryController } from '@/controllers/media-query-controller'
 import { emit } from '@/utils'
 
 // onClick은 항목마다 할 일이 정해진 경우에 쓰고, action 이벤트는 onClick 유무와 상관없이 늘 알린다.
-export type MoreMenuAction = OptionItem & { tone?: 'danger'; onClick?: () => void }
+export type MoreMenuAction = OptionItem & { tone?: MenuItemTone; onClick?: () => void }
 
 /**
  * 더보기 버튼으로 여는 명령 목록. 값을 고르는 mm-select와 달리 선택 상태를 남기지 않고, 누른 명령만 알린다.

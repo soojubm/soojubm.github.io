@@ -5,8 +5,11 @@ import type {
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { StepOrientation } from '@/components/indicators/step/step-item'
+import type { AriaCurrent } from '@/types'
 import type { TemplateResult } from 'lit'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -15,10 +18,17 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'orientation', type: "'horizontal' | 'vertical' = 'horizontal'" },
+  {
+    name: 'orientation',
+    type: unionTypeLabel<StepOrientation>({ horizontal: true, vertical: true }, 'horizontal'),
+  },
   { name: 'label', type: "string = ''" },
   { name: 'active', type: 'boolean = false', optional: true },
-  { name: 'aria-current', type: "'step'", optional: true },
+  {
+    name: 'aria-current',
+    type: unionTypeLabel<Extract<AriaCurrent, 'step'>>({ step: true }),
+    optional: true,
+  },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

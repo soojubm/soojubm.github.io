@@ -1,11 +1,13 @@
 import { html } from 'lit'
 
+import type { SeparatorVariant } from '@/components/common/separator/separator'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -14,7 +16,10 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'variant', type: "'element' | 'section' = 'element'" },
+  {
+    name: 'variant',
+    type: unionTypeLabel<SeparatorVariant>({ element: true, section: true }, 'element'),
+  },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
 ]
 

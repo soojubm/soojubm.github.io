@@ -25,5 +25,6 @@ export { FEATURE_ICONS } from '@/components/domains/component/component-feature-
 export type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 export type { ComponentChangelogItemData } from '@/components/domains/component/component-changelog'
 export type { ComponentPropItemData } from '@/components/domains/component/component-props'
+export { unionTypeLabel } from '@/components/domains/component/component-props'
 export type { ComponentReferenceItemData } from '@/components/domains/component/component-references'
 export type { ComponentRelatedItemData } from '@/components/domains/component/component-related'

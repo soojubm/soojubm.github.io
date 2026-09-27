@@ -14,6 +14,21 @@ export interface ComponentPropItemData {
   optional?: boolean
 }
 
+/**
+ * 문자열 union prop의 문서 표기('a' | 'b' = 'a')를 만든다.
+ * 값을 prop 타입의 Record 키로 받아, 타입과 어긋나면(값이 빠지거나 남으면) 컴파일 에러가 난다.
+ * 정수처럼 보이는 키('80' 등)는 객체 규칙에 따라 오름차순으로 나열된다.
+ */
+export const unionTypeLabel = <Value extends string>(
+  values: Record<Value, true>,
+  defaultValue?: Value,
+) => {
+  const quoted = Object.keys(values).map(value => `'${value}'`)
+  const union = quoted.join(' | ')
+  if (defaultValue === undefined) return union
+  return `${union} = '${defaultValue}'`
+}
+
 // 이보다 적은 prop은 접어도 가릴 내용이 없어 처음부터 펼쳐 둔다.
 const COLLAPSIBLE_PROP_COUNT = 3
 

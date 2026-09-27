@@ -1,5 +1,12 @@
 import { html } from 'lit'
 
+import type { TextAs } from '@/components/common/text/text'
+import type {
+  TextColor,
+  TextMaxLines,
+  TextSize,
+  TextWeight,
+} from '@/components/common/text/text.styles'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -7,6 +14,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -37,12 +45,42 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'as', type: "'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'span'" },
-  { name: 'size', type: "'32' | '24' | '18' | '14' | '12' = '14'" },
-  { name: 'weight', type: "'medium' | 'bold' = 'medium'" },
-  { name: 'color', type: "'inherit' | 'light' | 'danger' = 'inherit'" },
+  {
+    name: 'as',
+    type: unionTypeLabel<TextAs>(
+      {
+        span: true,
+        p: true,
+        strong: true,
+        time: true,
+        h1: true,
+        h2: true,
+        h3: true,
+        h4: true,
+        h5: true,
+        h6: true,
+      },
+      'span',
+    ),
+  },
+  {
+    name: 'size',
+    type: unionTypeLabel<TextSize>(
+      { '32': true, '24': true, '18': true, '14': true, '12': true },
+      '14',
+    ),
+  },
+  { name: 'weight', type: unionTypeLabel<TextWeight>({ medium: true, bold: true }, 'medium') },
+  {
+    name: 'color',
+    type: unionTypeLabel<TextColor>({ inherit: true, light: true, danger: true }, 'inherit'),
+  },
   { name: 'centered', type: 'boolean = false', optional: true },
-  { name: 'max-lines', type: "'1' | '2' | '3'", optional: true },
+  {
+    name: 'max-lines',
+    type: unionTypeLabel<Exclude<TextMaxLines, ''>>({ '1': true, '2': true, '3': true }),
+    optional: true,
+  },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

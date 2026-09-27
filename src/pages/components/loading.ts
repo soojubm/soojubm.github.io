@@ -1,11 +1,13 @@
 import { html } from 'lit'
 
+import type { SpinnerVariant } from '@/components/common/spinner/spinner'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -14,7 +16,10 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'variant', type: "'element' | 'section' = 'element'" },
+  {
+    name: 'variant',
+    type: unionTypeLabel<SpinnerVariant>({ element: true, section: true }, 'element'),
+  },
   { name: 'label', type: "string = '로딩 중'" },
 ]
 

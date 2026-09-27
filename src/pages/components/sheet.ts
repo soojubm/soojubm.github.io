@@ -7,8 +7,10 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { SheetPlacement } from '@/components/overlay/sheet/sheet'
 
 import { ICON_NAMES } from '@/components/common'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -64,7 +66,13 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean' },
-  { name: 'placement', type: "'top' | 'bottom' | 'left' | 'right' = 'bottom'" },
+  {
+    name: 'placement',
+    type: unionTypeLabel<SheetPlacement>(
+      { top: true, bottom: true, left: true, right: true },
+      'bottom',
+    ),
+  },
   { name: 'height', type: 'string', optional: true },
   { name: 'full-width', type: 'boolean = false', optional: true },
   { name: 'mm-sheet-header heading', type: 'string', optional: true },

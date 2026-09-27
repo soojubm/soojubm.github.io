@@ -11,10 +11,12 @@ import {
 } from '@/components/common/text/text.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
+export type TextAs = 'span' | 'p' | 'strong' | 'time' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
 @customElement('mm-text')
 export class Text extends LitElement {
   static styles = [resetStyles, textStyles]
-  @property({ type: String }) as = 'span'
+  @property({ type: String }) as: TextAs = 'span'
   @property({ type: String, reflect: true }) size: TextSize = '14'
   @property({ type: String, reflect: true }) weight: TextWeight = 'medium'
   @property({ type: String, reflect: true }) color: TextColor = 'inherit'

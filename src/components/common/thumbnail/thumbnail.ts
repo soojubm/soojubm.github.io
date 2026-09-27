@@ -5,7 +5,9 @@ import '@/components/common/text/semantics/caption'
 import { focusRingStyles, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-type ThumbnailRatio = '1:1' | '16:9' | '4:3' | 'full'
+export type ThumbnailRatio = '1:1' | '16:9' | '4:3' | 'full'
+export type ThumbnailLoading = 'eager' | 'lazy'
+export type ThumbnailFetchPriority = 'high' | 'low' | 'auto'
 
 const thumbnailRatioTokens: AttributeTokens<Exclude<ThumbnailRatio, '16:9'>> = {
   '1:1': { 'aspect-ratio': '1 / 1' },
@@ -70,8 +72,8 @@ export class Thumbnail extends LitElement {
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''
   @property({ type: String, reflect: true }) ratio: ThumbnailRatio = '16:9'
-  @property({ type: String }) loading: 'eager' | 'lazy' = 'lazy'
-  @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: 'high' | 'low' | 'auto' =
+  @property({ type: String }) loading: ThumbnailLoading = 'lazy'
+  @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: ThumbnailFetchPriority =
     'auto'
   @property({ type: String }) href = ''
   @property({ type: String }) caption = ''

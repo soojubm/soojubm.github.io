@@ -7,9 +7,11 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { Orientation } from '@/controllers/roving-focus-controller'
 import type { OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -47,7 +49,10 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-toggle-button-group stretch', type: 'boolean = false', optional: true },
   {
     name: 'mm-toggle-button-group orientation',
-    type: "'horizontal' | 'vertical' = 'horizontal'",
+    type: unionTypeLabel<Exclude<Orientation, 'both'>>(
+      { horizontal: true, vertical: true },
+      'horizontal',
+    ),
     optional: true,
   },
   { name: 'change', type: 'CustomEvent detail: pressed, value', kind: 'event' },

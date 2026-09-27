@@ -8,6 +8,7 @@ import type {
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const placements: PopoverPlacement[] = ['bottom-start', 'bottom-end', 'top-start', 'top-end']
@@ -29,7 +30,10 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'open', type: 'boolean' },
   {
     name: 'placement',
-    type: "'bottom-start' | 'bottom-end' | 'top-start' | 'top-end' = 'bottom-start'",
+    type: unionTypeLabel<PopoverPlacement>(
+      { 'bottom-start': true, 'bottom-end': true, 'top-start': true, 'top-end': true },
+      'bottom-start',
+    ),
   },
   { name: 'slot: trigger', type: 'HTMLElement' },
   { name: 'popover-toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },

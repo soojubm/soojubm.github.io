@@ -14,6 +14,7 @@ import {
   type DotSize,
   type DotTone,
 } from '@/components/common/dot/dot.styles'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -25,9 +26,27 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'tone',
-    type: "'default' | 'gold' | 'green' | 'yellow' | 'red' | 'blue' | 'purple' | 'pink' | 'orange' | 'cyan' | 'gray' = 'default'",
+    type: unionTypeLabel<DotTone>(
+      {
+        default: true,
+        gold: true,
+        green: true,
+        yellow: true,
+        red: true,
+        blue: true,
+        purple: true,
+        pink: true,
+        orange: true,
+        cyan: true,
+        gray: true,
+      },
+      'default',
+    ),
   },
-  { name: 'size', type: "'16' | '12' | '8' | '6' = '8'" },
+  {
+    name: 'size',
+    type: unionTypeLabel<DotSize>({ '16': true, '12': true, '8': true, '6': true }, '8'),
+  },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

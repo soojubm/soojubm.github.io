@@ -6,7 +6,9 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { AriaInvalid } from '@/types'
 
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -37,7 +39,11 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'rows', type: 'number = 2', optional: true },
   { name: 'optional', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
-  { name: 'aria-invalid', type: "'true' | 'false'", optional: true },
+  {
+    name: 'aria-invalid',
+    type: unionTypeLabel<Extract<AriaInvalid, 'true' | 'false'>>({ true: true, false: true }),
+    optional: true,
+  },
   { name: 'aria-describedby', type: 'string', optional: true },
   { name: 'slot="leading"', type: '입력 영역 위쪽 액션', optional: true },
   { name: 'slot="trailing"', type: '입력 영역 아래쪽 액션', optional: true },

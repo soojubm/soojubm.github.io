@@ -6,8 +6,10 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 
 import { ICON_NAMES } from '@/components/common'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -42,7 +44,10 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'content', type: 'string' },
   {
     name: 'placement',
-    type: "'bottom' | 'bottom-start' | 'bottom-end' = 'bottom-start'",
+    type: unionTypeLabel<TooltipPlacement>(
+      { bottom: true, 'bottom-start': true, 'bottom-end': true },
+      'bottom-start',
+    ),
     optional: true,
   },
   { name: 'open', type: 'boolean = false', optional: true },

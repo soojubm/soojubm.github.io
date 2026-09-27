@@ -15,7 +15,6 @@ import '@/components/common/text'
 export type ListItemSize = ComponentSize
 /** description을 그리는 사이즈. small은 한 줄이라 설명 자리를 갖지 않는다. */
 type DescribableSize = Exclude<ListItemSize, 'small'>
-export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' | 'large' = 'small'"
 
 /* 행 높이 안에서 라벨과 설명 두 줄이 차지하는 크기. 두 줄의 line-height 합이 행 높이를 넘지 않는다. */
 const LABEL_TEXT_SIZE: Record<ListItemSize, string> = { small: '14', medium: '14', large: '18' }

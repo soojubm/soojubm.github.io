@@ -2,13 +2,22 @@ import '@/components/common'
 import { html } from 'lit'
 
 import type {
+  ButtonIconPosition,
+  ButtonSize,
+  ButtonType,
+  ButtonVariant,
+} from '@/components/common/button/button'
+import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { FlexDirection, JustifyContent } from '@/stylesheets/shared.styles'
+import type { AriaBoolean, AriaCurrent } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
+import { unionTypeLabel } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -48,22 +57,59 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   {
     name: 'variant',
-    type: "'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' = 'tertiary'",
+    type: unionTypeLabel<ButtonVariant>(
+      { primary: true, secondary: true, tertiary: true, ghost: true, danger: true },
+      'tertiary',
+    ),
   },
-  { name: 'size', type: "'large' | 'medium' = 'medium'" },
-  { name: 'type', type: "'button' | 'submit' | 'reset' = 'button'", optional: true },
+  { name: 'size', type: unionTypeLabel<ButtonSize>({ large: true, medium: true }, 'medium') },
+  {
+    name: 'type',
+    type: unionTypeLabel<ButtonType>({ button: true, submit: true, reset: true }, 'button'),
+    optional: true,
+  },
   { name: 'full-width', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'icon', type: 'IconName', optional: true },
-  { name: 'icon-position', type: "'leading' | 'trailing' = 'leading'", optional: true },
+  {
+    name: 'icon-position',
+    type: unionTypeLabel<ButtonIconPosition>({ leading: true, trailing: true }, 'leading'),
+    optional: true,
+  },
   { name: 'aria-label', type: 'string', optional: true },
-  { name: 'aria-expanded', type: "'true' | 'false'", optional: true },
+  {
+    name: 'aria-expanded',
+    type: unionTypeLabel<Extract<AriaBoolean, 'true' | 'false'>>({ true: true, false: true }),
+    optional: true,
+  },
   { name: 'aria-haspopup', type: 'string', optional: true },
-  { name: 'aria-current', type: "'true' | 'page' | 'step' | 'location'", optional: true },
-  { name: 'mm-button-group direction', type: "'row' | 'column' = 'row'", optional: true },
+  {
+    name: 'aria-current',
+    type: unionTypeLabel<Extract<AriaCurrent, 'true' | 'page' | 'step' | 'location'>>({
+      true: true,
+      page: true,
+      step: true,
+      location: true,
+    }),
+    optional: true,
+  },
+  {
+    name: 'mm-button-group direction',
+    type: unionTypeLabel<FlexDirection>({ row: true, column: true }, 'row'),
+    optional: true,
+  },
   {
     name: 'mm-button-group justify-content',
-    type: "'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' = 'flex-start'",
+    type: unionTypeLabel<JustifyContent>(
+      {
+        'flex-start': true,
+        center: true,
+        'flex-end': true,
+        'space-between': true,
+        'space-around': true,
+      },
+      'flex-start',
+    ),
     optional: true,
   },
   { name: 'mm-button-group stretch', type: 'boolean = false', optional: true },

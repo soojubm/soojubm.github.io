@@ -11,11 +11,13 @@ import '@/components/common'
  * heading 레벨은 상단 바 크기에 맞춰 고정한다. mm-heading이 의미 단계와 타입 스케일을 함께 정해
  * 레벨을 올리면 글자도 커지므로, 페이지 최상위 제목은 본문의 page-header가 맡는다.
  */
+export type TopBarNav = 'back' | 'close'
+
 @customElement('mm-top-bar')
 export class TopBar extends LitElement {
   static styles = [topBarStyles]
   @property({ type: String }) heading = ''
-  @property({ type: String }) nav: 'back' | 'close' = 'back'
+  @property({ type: String }) nav: TopBarNav = 'back'
 
   render() {
     return html`
