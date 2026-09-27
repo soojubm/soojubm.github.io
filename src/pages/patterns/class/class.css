@@ -226,22 +226,3 @@ mm-marquee {
   border: var(--border);
   border-top: 0;
 }
-
-.products {
-  border-left: var(--border);
-  box-sizing: border-box;
-}
-.products-item {
-  border: var(--border);
-  border-width: 0 1px 1px 0;
-}
-.products-item mm-thumbnail {
-  border-bottom: var(--border);
-}
-.products-item mm-text {
-  display: block;
-  margin: var(--space-4) var(--space-6);
-}
-.products-item mm-product-price {
-  margin: 0 var(--space-6) var(--space-4);
-}

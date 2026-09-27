@@ -57,11 +57,13 @@ const productItems: ProductItem[] = [
 const renderProductItems = (items: ProductItem[]) =>
   items.map(
     ({ title, price }) => html`
-      <div class="products-item">
-        <mm-thumbnail ratio="1:1"></mm-thumbnail>
-        <mm-text size="18">${title}</mm-text>
-        <mm-product-price price=${price}></mm-product-price>
-      </div>
+      <mm-flex direction="column" style="border: var(--border); border-width: 0 1px 1px 0">
+        <mm-thumbnail ratio="1:1" style="border-bottom: var(--border)"></mm-thumbnail>
+        <mm-flex direction="column" gap="4" style="padding: var(--space-4) var(--space-6)">
+          <mm-text size="18">${title}</mm-text>
+          <mm-product-price price=${price}></mm-product-price>
+        </mm-flex>
+      </mm-flex>
     `,
   )
 
@@ -299,7 +301,12 @@ const main = html`
       ${renderEpisodeItems(episodeItems)}
     </section>
 
-    <mm-grid class="products" columns="4" gap="0" column-min-width="240px">
+    <mm-grid
+      columns="4"
+      gap="0"
+      column-min-width="240px"
+      style="border-left: var(--border); box-sizing: border-box"
+    >
       ${renderProductItems(productItems)}
     </mm-grid>
 
