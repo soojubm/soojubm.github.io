@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import type { ChatReasoningFlow } from '@/components/domains/chat/chat-reasoning-flow'
+import type { AriaLive } from '@/types'
 
 import '@/components/domains/chat/chat-reasoning-flow'
 import '@/components/common'
@@ -39,7 +40,7 @@ export class ChatReasoning extends LitElement {
   @property({ type: Boolean }) thinking = false
   @property({ type: String }) duration = ''
   @property({ type: Number }) interval = 2200
-  @property({ type: String, attribute: 'aria-live', reflect: true }) ariaLive = 'polite'
+  @property({ type: String, attribute: 'aria-live', reflect: true }) ariaLive: AriaLive = 'polite'
   @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
   private assignedFlows!: ChatReasoningFlow[]
   private flowIndex = 0

@@ -15,12 +15,13 @@ import '@/components/common/text/text'
 import '@/components/common/text/semantics/heading'
 import '@/components/common/icon-button/semantics/dismiss-button'
 
+export type NoticeRole = 'alert' | 'note' | 'status'
 export type NoticeVariant = Extract<StatusTone, 'info' | 'success' | 'warning' | 'error'>
 
 @customElement('mm-notice')
 export class Notice extends LitElement {
   static styles = [noticeStyles]
-  @property({ type: String, reflect: true }) role = 'note'
+  @property({ type: String, reflect: true }) role: NoticeRole = 'note'
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true, useDefault: true }) variant: NoticeVariant = 'info'

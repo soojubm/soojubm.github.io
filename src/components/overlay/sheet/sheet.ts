@@ -1,6 +1,8 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
+import type { AriaBoolean } from '@/types'
+
 import {
   sheetPositionStyles,
   overlaySurfaceStyles,
@@ -10,6 +12,7 @@ import {
 import '@/components/overlay/backdrop/backdrop'
 import { SheetController } from '@/controllers/sheet-controller'
 import { emit } from '@/utils'
+
 export type SheetPlacement = Extract<OverlayPlacement, 'top' | 'bottom' | 'left' | 'right'>
 
 // 드래그로 내린 거리가 패널 높이의 이 비율을 넘으면 닫힘으로 판정한다.
@@ -22,7 +25,8 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 @customElement('mm-sheet')
 export class Sheet extends LitElement {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
-  @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
+  @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal: AriaBoolean =
+    'true'
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'bottom'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'full-width' }) fullWidth = false

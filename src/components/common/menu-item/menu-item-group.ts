@@ -5,6 +5,7 @@ import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import '@/components/common/text/semantics/heading'
 
 export type MenuItemGroupSize = '' | 'large'
+export type MenuItemGroupRole = 'menu' | 'radiogroup' | 'group'
 
 // 각 항목이 shadow 안에 렌더하는 포커스 대상. 행 조립 규칙은 menu-item 계열이 소유한다.
 const ITEM_SELECTOR = '[role^="menuitem"], [role="radio"]'
@@ -32,7 +33,7 @@ export class MenuItemGroup extends LitElement {
       gap: var(--space-2);
     }
   `
-  @property({ type: String, reflect: true }) role = 'menu'
+  @property({ type: String, reflect: true }) role: MenuItemGroupRole = 'menu'
   @property({ type: String, reflect: true }) size: MenuItemGroupSize = ''
   @property({ type: String }) heading?: string
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]

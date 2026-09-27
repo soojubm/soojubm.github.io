@@ -11,13 +11,15 @@ import '@/components/common/button/button'
 import '@/components/common/button/button-group'
 import '@/components/common/text/semantics/status-message'
 
+export type ResultRole = 'alert' | 'status'
+
 @customElement('mm-result')
 export class Result extends LitElement {
   static styles = [resultStyles]
   @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: String, reflect: true }) role = 'status'
+  @property({ type: String, reflect: true }) role: ResultRole = 'status'
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
 

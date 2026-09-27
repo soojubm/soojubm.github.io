@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 export type ListItemGroupSize = '' | 'small'
+export type ListItemGroupRole = 'list' | 'group'
 
 /**
  * 같은 성격의 행을 세로로 묶어 하나의 목록으로 읽히게 하는 그룹.
@@ -20,7 +21,7 @@ export class ListItemGroup extends LitElement {
       gap: 0;
     }
   `
-  @property({ type: String, reflect: true }) role = 'list'
+  @property({ type: String, reflect: true }) role: ListItemGroupRole = 'list'
   @property({ type: String, reflect: true }) size: ListItemGroupSize = ''
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]
 

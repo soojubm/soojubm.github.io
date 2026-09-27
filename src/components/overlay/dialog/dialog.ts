@@ -5,7 +5,7 @@ import '@/components/overlay/backdrop/backdrop'
 import '@/components/overlay/sheet/sheet-body'
 import '@/components/overlay/sheet/sheet-footer'
 import '@/components/common'
-import type { ActionConfig } from '@/types'
+import type { ActionConfig, AriaBoolean } from '@/types'
 
 import { sheetPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'
 import { SheetController } from '@/controllers/sheet-controller'
@@ -23,7 +23,8 @@ export class Dialog extends LitElement {
       }
     `,
   ]
-  @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal = 'true'
+  @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal: AriaBoolean =
+    'true'
   @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
