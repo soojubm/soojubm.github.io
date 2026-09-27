@@ -8,7 +8,6 @@ import type {
 import type { TemplateResult } from 'lit'
 
 import { renderPage } from '@/components/layouts/base-layouts'
-import './step.css'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'breadcrumb.html', label: 'Breadcrumb' },
@@ -124,9 +123,8 @@ const main = html`
       heading="Timeline"
       description="같은 선 위에 항목을 세우지만 방향이 반대입니다. 시점을 태그로 앞세우고 그 아래 기록을 쌓으며, 항목마다 담기는 내용의 양이 다릅니다."
     >
-      <section class="timeline">
-        <div class="timeline-item">
-          <mm-tag>2022. 11. 4.</mm-tag>
+      <mm-timeline>
+        <mm-timeline-item label="2022. 11. 4.">
           <mm-list-item
             size="medium"
             avatar-variant="secondary"
@@ -134,9 +132,8 @@ const main = html`
             label="폰트 디자인"
             description="이도타입 / 한동훈"
           ></mm-list-item>
-        </div>
-        <div class="timeline-item">
-          <mm-tag>2020. 02. - 2021. 02</mm-tag>
+        </mm-timeline-item>
+        <mm-timeline-item label="2020. 02. - 2021. 02">
           <mm-list-item
             size="medium"
             avatar-variant="secondary"
@@ -152,9 +149,8 @@ const main = html`
               '데이터 트래킹 및 분석 (hotjar, google analytics, google optimize)',
             ]}
           ></mm-text-list>
-        </div>
-        <div class="timeline-item">
-          <mm-tag>2020</mm-tag>
+        </mm-timeline-item>
+        <mm-timeline-item label="2020">
           <mm-list-item
             size="medium"
             avatar-variant="secondary"
@@ -162,9 +158,8 @@ const main = html`
             label="그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법"
             description="인프런 양승화"
           ></mm-list-item>
-        </div>
-        <div class="timeline-item">
-          <mm-tag>2019</mm-tag>
+        </mm-timeline-item>
+        <mm-timeline-item label="2019">
           <mm-list-item
             size="medium"
             avatar-variant="secondary"
@@ -172,9 +167,8 @@ const main = html`
             label="FE CONF2020 프론트엔드 컨퍼런스"
             description="롯데타워"
           ></mm-list-item>
-        </div>
-        <div class="timeline-item">
-          <mm-tag>2018.07 ~ 2018.09</mm-tag>
+        </mm-timeline-item>
+        <mm-timeline-item label="2018.07 ~ 2018.09">
           <mm-list-item
             size="medium"
             avatar-variant="secondary"
@@ -182,9 +176,8 @@ const main = html`
             label="자바스크립트 기본"
             description="양재동코드랩 / 서울창업허브 세미나실 3 김영보"
           ></mm-list-item>
-        </div>
-        <div class="timeline-item">
-          <mm-tag>2017.07 ~ 2017.09</mm-tag>
+        </mm-timeline-item>
+        <mm-timeline-item label="2017.07 ~ 2017.09">
           <mm-list-item-group>
             <mm-list-item
               size="medium"
@@ -208,8 +201,8 @@ const main = html`
               description="경원직업전문학교"
             ></mm-list-item>
           </mm-list-item-group>
-        </div>
-      </section>
+        </mm-timeline-item>
+      </mm-timeline>
     </mm-component-section>
 
     <mm-component-anatomy .code=${stepCode}></mm-component-anatomy>
