@@ -231,7 +231,10 @@ const main = html`
 </mm-surface>`}
     ></mm-component-anatomy>
 
-    <mm-component-section heading="PricingCard" description="">
+    <mm-component-section
+      heading="PricingCard"
+      description="표면 없이 카드 사이 간격으로 요금제를 나눕니다. 카드 안의 전체 너비 버튼이 커서, 표면을 두르면 표면과 버튼이 서로 다른 면으로 겹쳐 보여 시각 정보가 충돌하기 때문입니다."
+    >
       <mm-pricing-card
         plan="Standard"
         description="리서치, 정리, 낮은 한도"
