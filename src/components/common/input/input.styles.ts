@@ -1,6 +1,7 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
 
 import { visuallyHiddenStyles } from '@/stylesheets/shared.styles'
+import { buildAttributeRules } from '@/utils'
 
 /** radio·checkbox처럼 네이티브 input을 시각적으로 숨기고 label의 인디케이터로 대체하는 컨트롤이 공유하는 규칙. */
 export const visuallyHiddenInputStyles = css`
@@ -12,6 +13,16 @@ export const visuallyHiddenInputStyles = css`
     appearance: none;
   }
 `
+
+const inputSizeTokens = {
+  small: {
+    '--input-height': 'var(--size-32)',
+    '--input-padding-block': '0',
+  },
+}
+
+/** 입력 필드 크기 단계. 빈 값이 기본(48) 크기다. */
+export type InputSize = keyof typeof inputSizeTokens | ''
 
 export const inputStyles = css`
   :host {
@@ -30,10 +41,7 @@ export const inputStyles = css`
     --input-border: var(--border);
   }
 
-  :host([size='small']) {
-    --input-height: var(--size-32);
-    --input-padding-block: 0;
-  }
+  ${unsafeCSS(buildAttributeRules('size', inputSizeTokens))}
 
   .textfield-control,
   .textarea-control {

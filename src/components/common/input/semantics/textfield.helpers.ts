@@ -2,6 +2,7 @@ import { LitElement, html, nothing } from 'lit'
 import { property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
+import type { InputSize } from '@/components/common/input/input.styles'
 import type { AriaInvalid } from '@/types'
 
 import '@/components/common/input/semantics/textfield-label'
@@ -62,7 +63,7 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: String }) label?: string
     @property({ type: String }) description?: string
     @property({ type: String, attribute: 'validation-text' }) validationText?: string
-    @property({ type: String, reflect: true }) size = ''
+    @property({ type: String, reflect: true }) size: InputSize = ''
     @property({ type: Boolean }) optional = false
     @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
     @property({ type: Boolean, reflect: true }) disabled = false

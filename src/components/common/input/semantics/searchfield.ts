@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { inputStyles } from '@/components/common/input/input.styles'
+import { inputStyles, type InputSize } from '@/components/common/input/input.styles'
 import '@/components/common/input/input'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/icon'
@@ -23,7 +23,7 @@ export class SearchField extends LitElement {
   @property({ type: String }) value = ''
   @property({ type: String }) placeholder = ''
   @property({ type: Boolean, reflect: true }) disabled = false
-  @property({ type: String, reflect: true }) size: 'small' | '' = ''
+  @property({ type: String, reflect: true }) size: InputSize = ''
   @query('mm-input') private input?: HTMLElement
   private inputId = uniqueId('input')
 

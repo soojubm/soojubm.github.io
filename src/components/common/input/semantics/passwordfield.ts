@@ -2,7 +2,9 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
+import type { InputSize } from '@/components/common/input/input.styles'
 import type { AriaInvalid } from '@/types'
+
 import '@/components/common/input/semantics/textfield'
 import '@/components/common/icon-button/semantics/reveal-button'
 
@@ -19,7 +21,7 @@ export class PasswordField extends LitElement {
   @property({ type: String }) label?: string
   @property({ type: String }) description?: string
   @property({ type: String, attribute: 'validation-text' }) validationText?: string
-  @property({ type: String, reflect: true }) size = ''
+  @property({ type: String, reflect: true }) size: InputSize = ''
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean, attribute: 'hidden-label', reflect: true }) hiddenLabel = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
