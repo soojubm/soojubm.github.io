@@ -1,7 +1,8 @@
 import { css, unsafeCSS } from 'lit'
 
-import resetCss from '@/stylesheets/shared/reset.css?raw'
 import type { AttributeTokens } from '@/utils'
+
+import resetCss from '@/stylesheets/shared/reset.css?raw'
 
 export const resetStyles = css`
   ${unsafeCSS(resetCss)}
@@ -175,6 +176,12 @@ export const spaceTokens = (customProperty: string) => {
   ])
   return Object.fromEntries(entries)
 }
+
+/**
+ * 이름으로 고르는 컴포넌트 크기 단계. 각 컴포넌트는 지원하는 단계만 Extract로 고르고, 기본 단계도 빈 값이 아니라 이름으로 둔다.
+ * 픽셀 값으로 고르는 단계(avatar·text·dot)는 따로 둔다.
+ */
+export type ComponentSize = 'small' | 'medium' | 'large'
 
 /** flex 컨테이너 컴포넌트의 direction prop 값. */
 export type FlexDirection = 'row' | 'column'

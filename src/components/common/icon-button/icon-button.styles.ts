@@ -1,7 +1,8 @@
 import { css, unsafeCSS } from 'lit'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import type { IconButtonSize, IconButtonVariant } from '@/components/common/icon-button/icon-button'
+
+import { interactiveControlStyles } from '@/components/common/button/button.styles'
 import { buildAttributeRules, buildDeclarations, type AttributeTokens } from '@/utils'
 
 const iconButtonSizeTokens: AttributeTokens<Exclude<IconButtonSize, 'medium'>> = {

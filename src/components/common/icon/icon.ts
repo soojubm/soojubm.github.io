@@ -36,7 +36,7 @@ const loadIconoirStylesheet = () => {
 export class Icon extends LitElement {
   static styles = [resetStyles, iconStyles]
   @property({ type: String }) name = ''
-  @property({ type: String, reflect: true }) size: IconSize = ''
+  @property({ type: String, reflect: true }) size: IconSize = 'medium'
   @property({ type: String }) color = ''
   @state() private useStylesheetLink = false
 

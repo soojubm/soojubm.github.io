@@ -4,6 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
+import type { ComponentSize } from '@/stylesheets/shared.styles'
 import type { PropertyValues } from 'lit'
 
 import { listItemStyles } from '@/components/common/list-item/list-item.styles'
@@ -11,7 +12,7 @@ import '@/components/common/avatar/avatar'
 import '@/components/common/flex/flex'
 import '@/components/common/text'
 
-export type ListItemSize = 'small' | 'medium' | 'large'
+export type ListItemSize = ComponentSize
 /** description을 그리는 사이즈. small은 한 줄이라 설명 자리를 갖지 않는다. */
 type DescribableSize = Exclude<ListItemSize, 'small'>
 export const LIST_ITEM_SIZE_TYPE_LABEL = "'small' | 'medium' | 'large' = 'small'"

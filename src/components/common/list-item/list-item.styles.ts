@@ -1,11 +1,12 @@
 import { css, unsafeCSS } from 'lit'
 
+import type { ListItemSize } from '@/components/common/list-item/list-item'
+
 import {
   backgroundLayerStyles,
   interactiveElement,
   layerContainerStyles,
 } from '@/stylesheets/shared.styles'
-import type { ListItemSize } from '@/components/common/list-item/list-item'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const listItemSizeTokens: AttributeTokens<Exclude<ListItemSize, 'small'>> = {

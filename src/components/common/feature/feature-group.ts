@@ -1,5 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
 import type { GridColumns } from '@/components/common/grid/grid'
 
 import '@/components/common/grid/grid'

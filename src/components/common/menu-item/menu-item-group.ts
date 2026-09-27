@@ -1,10 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
+import type { ComponentSize } from '@/stylesheets/shared.styles'
+
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import '@/components/common/text/semantics/heading'
 
-export type MenuItemGroupSize = '' | 'large'
+export type MenuItemGroupSize = Extract<ComponentSize, 'medium' | 'large'>
 export type MenuItemGroupRole = 'menu' | 'radiogroup' | 'group'
 
 // 각 항목이 shadow 안에 렌더하는 포커스 대상. 행 조립 규칙은 menu-item 계열이 소유한다.
@@ -34,7 +36,7 @@ export class MenuItemGroup extends LitElement {
     }
   `
   @property({ type: String, reflect: true }) role: MenuItemGroupRole = 'menu'
-  @property({ type: String, reflect: true }) size: MenuItemGroupSize = ''
+  @property({ type: String, reflect: true }) size: MenuItemGroupSize = 'medium'
   @property({ type: String }) heading?: string
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]
   private rovingFocus = new RovingFocusController(this, {

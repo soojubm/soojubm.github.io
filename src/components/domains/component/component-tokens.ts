@@ -1,7 +1,7 @@
-import type { CSSResultOrNative } from 'lit'
-
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+
+import type { CSSResultOrNative } from 'lit'
 
 import { componentTokensStyles } from '@/components/domains/component/component.styles'
 import '@/components/domains/component/token'

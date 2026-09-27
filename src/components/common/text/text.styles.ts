@@ -1,5 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
+import type { ComponentSize } from '@/stylesheets/shared.styles'
+
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type TextSize = '32' | '24' | '18' | '14' | '12'
@@ -8,7 +10,7 @@ export type TextColor = 'inherit' | 'light' | 'danger'
 export type TextMaxLines = '' | '1' | '2' | '3'
 
 /** 본문 텍스트 크기 이름(paragraph 등)과 TextSize 토큰의 대응. 본문 사이즈 값은 여기서만 정의한다. */
-export type ParagraphSize = 'small' | 'medium' | 'large'
+export type ParagraphSize = ComponentSize
 
 export const paragraphSizeToTextSize: Record<ParagraphSize, TextSize> = {
   small: '12',

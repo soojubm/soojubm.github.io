@@ -16,7 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
   { name: 'value', type: 'string', optional: true },
-  { name: 'size', type: "'large'", optional: true },
+  { name: 'size', type: "'medium' | 'large' = 'medium'", optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   { name: 'indeterminate', type: 'boolean', optional: true },
@@ -25,7 +25,7 @@ const componentProps: ComponentPropItemData[] = [
     type: '{ value: string; label: string; disabled?: boolean }[] = []',
   },
   { name: 'mm-checkbox-group name', type: 'string', optional: true },
-  { name: 'mm-checkbox-group size', type: "'large'", optional: true },
+  { name: 'mm-checkbox-group size', type: "'medium' | 'large' = 'medium'", optional: true },
   { name: 'mm-checkbox-group legend', type: 'string', optional: true },
   { name: 'mm-checkbox-group values', type: 'string[] = []', optional: true },
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },

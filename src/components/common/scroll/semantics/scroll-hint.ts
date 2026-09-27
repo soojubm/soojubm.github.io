@@ -114,7 +114,6 @@ export class ScrollHint extends LitElement {
   }
 
   private handlePrevClick = () => this.scrollByPage(-1)
-
   private handleNextClick = () => this.scrollByPage(1)
 
   // 한 번에 보이는 폭의 80%씩 넘겨, 직전 화면의 끝 항목이 다음 화면에서도 보이게 한다.
@@ -134,7 +133,6 @@ export class ScrollHint extends LitElement {
     this.style.setProperty('--scroll-hint-gap', gap === 'normal' ? '0px' : gap)
     this.handleScrollRootScroll()
   }
-
   private handleScrollRootScroll = () => {
     const root = this.scrollRoot
     if (!root) return

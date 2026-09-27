@@ -1,7 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
-import { visuallyHiddenStyles } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import { visuallyHiddenStyles, type ComponentSize } from '@/stylesheets/shared.styles'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 /** radio·checkbox처럼 네이티브 input을 시각적으로 숨기고 label의 인디케이터로 대체하는 컨트롤이 공유하는 규칙. */
 export const visuallyHiddenInputStyles = css`
@@ -33,15 +33,15 @@ export const inputSelectionGroupStyles = css`
   }
 `
 
-const inputSizeTokens = {
+/** 입력 필드 크기 단계. medium이 기본(48) 크기다. */
+export type InputSize = Extract<ComponentSize, 'small' | 'medium'>
+
+const inputSizeTokens: AttributeTokens<Exclude<InputSize, 'medium'>> = {
   small: {
     '--input-height': 'var(--size-32)',
     '--input-padding-block': '0',
   },
 }
-
-/** 입력 필드 크기 단계. 빈 값이 기본(48) 크기다. */
-export type InputSize = keyof typeof inputSizeTokens | ''
 
 export const inputStyles = css`
   :host {

@@ -1,15 +1,17 @@
 import { css, unsafeCSS } from 'lit'
 
-import { buildAttributeRules } from '@/utils'
+import type { ComponentSize } from '@/stylesheets/shared.styles'
 
-const iconSizeTokens = {
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
+
+/** 표준 세 단계에 표 정렬 아이콘처럼 글자보다 작은 자리를 위한 tiny를 아이콘에만 더한다. medium이 기본(1rem)이다. */
+export type IconSize = ComponentSize | 'tiny'
+
+const iconSizeTokens: AttributeTokens<Exclude<IconSize, 'medium'>> = {
   tiny: { 'font-size': '0.75rem' },
   small: { 'font-size': '0.875rem' },
   large: { 'font-size': '1.5rem' },
 }
-
-/** 빈 값은 기본 크기(1rem)다. */
-export type IconSize = keyof typeof iconSizeTokens | ''
 
 export const iconStyles = css`
   :host {

@@ -37,7 +37,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   { name: 'name', type: 'string', optional: true },
   { name: 'value', type: 'string', optional: true },
-  { name: 'size', type: "'large'", optional: true },
+  { name: 'size', type: "'medium' | 'large' = 'medium'", optional: true },
   { name: 'checked', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },
   {
@@ -46,7 +46,7 @@ const componentProps: ComponentPropItemData[] = [
   },
   { name: 'mm-radio-group name', type: 'string', optional: true },
   { name: 'mm-radio-group value', type: 'string', optional: true },
-  { name: 'mm-radio-group size', type: "'large'", optional: true },
+  { name: 'mm-radio-group size', type: "'medium' | 'large' = 'medium'", optional: true },
   { name: 'mm-radio-group legend', type: 'string', optional: true },
   { name: 'mm-radio-group disabled', type: 'boolean', optional: true },
   { name: 'mm-radio-card-group name', type: 'string', optional: true },

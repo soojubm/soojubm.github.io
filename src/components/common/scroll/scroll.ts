@@ -1,8 +1,9 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { scrollStyles } from '@/components/common/scroll/scroll.styles'
 import type { Space, FlexDirection } from '@/stylesheets/shared.styles'
+
+import { scrollStyles } from '@/components/common/scroll/scroll.styles'
 import '@/components/common/scroll/semantics/scroll-hint'
 
 /**

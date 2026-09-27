@@ -2,9 +2,10 @@ import { LitElement, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/icon/icon'
+import type { IconSize } from '@/components/common/icon/icon.styles'
+
 import { avatarStyles } from '@/components/common/avatar/avatar.styles'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
-import type { IconSize } from '@/components/common/icon/icon.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type AvatarVariant = 'primary' | 'secondary' | 'tertiary'
@@ -62,6 +63,6 @@ export class Avatar extends LitElement {
   }
 
   private get iconSize(): IconSize {
-    return this.size === '48' || this.size === '80' ? 'large' : ''
+    return this.size === '48' || this.size === '80' ? 'large' : 'medium'
   }
 }

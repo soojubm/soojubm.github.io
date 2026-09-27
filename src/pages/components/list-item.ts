@@ -64,7 +64,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'avatar-shape', type: "'circle' | 'square' = 'square'", optional: true },
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
   { name: 'mm-list-item-group role', type: "'list' | 'group' = 'list'", optional: true },
-  { name: 'mm-list-item-group size', type: "'small'", optional: true },
+  { name: 'mm-list-item-group size', type: "'small' | 'medium' = 'medium'", optional: true },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

@@ -1,7 +1,8 @@
 import { css, unsafeCSS } from 'lit'
 
-import { spaceTokens } from '@/stylesheets/shared.styles'
 import type { GridColumns } from '@/components/common/grid/grid'
+
+import { spaceTokens } from '@/stylesheets/shared.styles'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const gridColumnsTokens: AttributeTokens<Exclude<GridColumns, 2>> = {

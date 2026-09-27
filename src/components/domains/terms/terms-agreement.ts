@@ -59,7 +59,6 @@ export class TermsAgreement extends LitElement {
     event.stopPropagation()
     this.group?.toggleAll()
   }
-
   private handleGroupChange = (event: CustomEvent<{ values: string[] }>) => {
     event.stopPropagation()
     this.values = event.detail.values

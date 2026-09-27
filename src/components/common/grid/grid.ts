@@ -1,8 +1,9 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { gridStyles } from '@/components/common/grid/grid.styles'
 import type { Space } from '@/stylesheets/shared.styles'
+
+import { gridStyles } from '@/components/common/grid/grid.styles'
 
 export type GridColumns = 1 | 2 | 3 | 4 | 6
 

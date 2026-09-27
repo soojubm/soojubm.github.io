@@ -1,6 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import type { AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
+
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const avatarSizeTokens: AttributeTokens<Exclude<AvatarSize, '40'>> = {

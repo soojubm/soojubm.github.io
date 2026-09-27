@@ -41,7 +41,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'label', type: 'string', optional: true },
   { name: 'description', type: 'string', optional: true },
   { name: 'validation-text', type: 'string', optional: true },
-  { name: 'size', type: "'small'", optional: true },
+  { name: 'size', type: "'small' | 'medium' = 'medium'", optional: true },
   { name: 'optional', type: 'boolean', optional: true },
   { name: 'hidden-label', type: 'boolean', optional: true },
   { name: 'disabled', type: 'boolean', optional: true },

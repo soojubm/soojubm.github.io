@@ -1,7 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-export type ListItemGroupSize = '' | 'small'
+import type { ComponentSize } from '@/stylesheets/shared.styles'
+
+export type ListItemGroupSize = Extract<ComponentSize, 'small' | 'medium'>
 export type ListItemGroupRole = 'list' | 'group'
 
 /**
@@ -22,7 +24,7 @@ export class ListItemGroup extends LitElement {
     }
   `
   @property({ type: String, reflect: true }) role: ListItemGroupRole = 'list'
-  @property({ type: String, reflect: true }) size: ListItemGroupSize = ''
+  @property({ type: String, reflect: true }) size: ListItemGroupSize = 'medium'
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]
 
   render() {

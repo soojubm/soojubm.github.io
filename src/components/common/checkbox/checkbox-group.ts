@@ -29,7 +29,7 @@ export class CheckboxGroup extends LitElement {
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ attribute: false }) values: string[] = []
   @property({ type: String }) name?: string
-  @property({ type: String, reflect: true }) size: CheckboxSize = ''
+  @property({ type: String, reflect: true }) size: CheckboxSize = 'medium'
   @property({ type: String }) legend?: string
   // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
   private idPrefix = uniqueId('checkbox-group')

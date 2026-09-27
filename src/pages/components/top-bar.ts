@@ -5,9 +5,9 @@ import type {
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
 import { renderPage } from '@/components/layouts/base-layouts'
-import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'bottom-bar.html', label: 'Bottom Bar' },

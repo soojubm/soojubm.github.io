@@ -1,6 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
 import type { MenuItemCheckbox } from '@/components/common/menu-item/semantics/menu-item-checkbox'
@@ -26,7 +25,7 @@ export class MenuItemCheckboxGroup extends LitElement {
       display: block;
     }
   `
-  @property({ type: String }) size: MenuItemGroupSize = ''
+  @property({ type: String }) size: MenuItemGroupSize = 'medium'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ attribute: false }) values: string[] = []
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox' })
@@ -51,7 +50,7 @@ export class MenuItemCheckboxGroup extends LitElement {
     return html`
       <mm-menu-item-group
         role="group"
-        size=${ifDefined(this.size || undefined)}
+        size=${this.size}
         aria-label=${this.ariaLabel || nothing}
         @change=${this.group.handleItemChange}
       >

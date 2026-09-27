@@ -116,6 +116,15 @@ const main = html`
               ></mm-icon-button>
             </mm-button-group>
             <mm-paragraph>small은 콘텐츠 사이에 촘촘히 놓이는 보조 액션에 씁니다.</mm-paragraph>
+            <mm-component-notice
+              variant="exception"
+              heading="아이콘은 크기 단계에 없는 tiny를 쓴다"
+            >
+              컴포넌트 크기 단계는 small·medium·large지만,
+              <mm-code>mm-icon</mm-code>
+              은 표 머리의 정렬 표시처럼 글자보다 작게 놓이는 자리를 위해 tiny(12)를 더 갖는다. 쓰는
+              곳이 표 정렬 아이콘 하나뿐이라 단계로 올리지 않는다
+            </mm-component-notice>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>

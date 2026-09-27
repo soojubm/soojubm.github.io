@@ -1,9 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { TemplateResult } from 'lit'
-
 import type { ListMarkerVariant } from '@/components/indicators/list-marker/list-marker'
+import type { TemplateResult } from 'lit'
 
 import { textStyles } from '@/components/common/text/text.styles'
 import '@/components/indicators/list-marker/list-marker'

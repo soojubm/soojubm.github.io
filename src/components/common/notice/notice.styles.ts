@@ -1,6 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import type { NoticeVariant } from '@/components/common/notice/notice'
+
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const noticeVariantTokens: AttributeTokens<Exclude<NoticeVariant, 'info'>> = {
