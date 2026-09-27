@@ -3,12 +3,12 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { listMarkerStyles } from '@/components/indicators/list-marker/list-marker.styles'
 
-type Variant = 'number' | 'check'
+export type ListMarkerVariant = 'number' | 'check'
 
 @customElement('mm-list-marker')
 export class ListMarker extends LitElement {
   static styles = listMarkerStyles
-  @property({ type: String }) variant: Variant = 'number'
+  @property({ type: String }) variant: ListMarkerVariant = 'number'
   @property({ type: Number }) value = 1
 
   render() {

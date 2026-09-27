@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 
+import type { GridColumns } from '@/components/common/grid/grid'
 import type { OptionItem } from '@/types'
 
 import '@/components/common/code-block/code-block'
@@ -8,8 +9,6 @@ import '@/components/common/grid/grid'
 import '@/components/common/button/button-group'
 import '@/components/common/toggle-button/toggle-button-group'
 import '@/components/domains/ui-placeholder/ui-placeholder'
-
-type Columns = 1 | 2 | 3 | 4 | 6
 
 const COLUMNS_OPTIONS: OptionItem[] = [
   { value: '2', label: 'columns 2' },
@@ -36,7 +35,7 @@ export class GridPreview extends LitElement {
       gap: var(--space-3);
     }
   `
-  @state() private columns: Columns = 3
+  @state() private columns: GridColumns = 3
   @state() private gap = '2'
 
   render() {
@@ -70,7 +69,7 @@ export class GridPreview extends LitElement {
   }
 
   private handleColumnsChange(event: CustomEvent) {
-    this.columns = Number(event.detail.value) as Columns
+    this.columns = Number(event.detail.value) as GridColumns
   }
 
   private handleGapChange(event: CustomEvent) {

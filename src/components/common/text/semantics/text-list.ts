@@ -3,11 +3,11 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { TemplateResult } from 'lit'
 
+import type { ListMarkerVariant } from '@/components/indicators/list-marker/list-marker'
+
 import { textStyles } from '@/components/common/text/text.styles'
 import '@/components/indicators/list-marker/list-marker'
 import { resetStyles } from '@/stylesheets/shared.styles'
-
-type Variant = 'check' | 'number'
 
 @customElement('mm-text-list')
 export class TextList extends LitElement {
@@ -36,7 +36,7 @@ export class TextList extends LitElement {
   ]
   // 인라인 code처럼 마크업이 필요한 항목은 템플릿으로 넘긴다.
   @property({ attribute: false }) texts: Array<string | TemplateResult> = []
-  @property({ type: String }) variant: Variant = 'check'
+  @property({ type: String }) variant: ListMarkerVariant = 'check'
 
   render() {
     const items = this.renderItems()

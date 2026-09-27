@@ -4,12 +4,12 @@ import { customElement, property } from 'lit/decorators.js'
 import { gridStyles } from '@/components/common/grid/grid.styles'
 import type { Space } from '@/stylesheets/shared.styles'
 
-type Columns = 1 | 2 | 3 | 4 | 6
+export type GridColumns = 1 | 2 | 3 | 4 | 6
 
 @customElement('mm-grid')
 export class Grid extends LitElement {
   static styles = gridStyles
-  @property({ type: Number, reflect: true }) columns: Columns = 2
+  @property({ type: Number, reflect: true }) columns: GridColumns = 2
   @property({ attribute: 'column-min-width' }) columnMinWidth?: string
   @property({ type: String, reflect: true }) gap: Space = '4'
 

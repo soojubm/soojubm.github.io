@@ -1,8 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import '@/components/common/grid/grid'
+import type { GridColumns } from '@/components/common/grid/grid'
 
-type Columns = 1 | 2 | 3 | 4
+import '@/components/common/grid/grid'
 
 /**
  * mm-feature 들을 열 단위로 묶는 그룹.
@@ -15,7 +15,7 @@ export class FeatureGroup extends LitElement {
       display: block;
     }
   `
-  @property({ type: Number }) columns: Columns = 2
+  @property({ type: Number }) columns: Exclude<GridColumns, 6> = 2
 
   render() {
     return html`
