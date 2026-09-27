@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { customElement, property, query, queryAll, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaIdRef, AriaInvalid } from '@/types'
@@ -53,10 +53,12 @@ export class Textarea extends LitElement {
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
   @query('textarea') protected textarea!: HTMLTextAreaElement
+  @queryAll('slot') private actionSlots!: NodeListOf<HTMLSlotElement>
   @state() protected defaultTextareaId = `mm-textarea-${uniqueIdCounter++}`
+  @state() private hasActions = false
   private autoHeight = new TextareaAutoHeightController(this, {
     getTextarea: () => this.textarea,
-    getMinVisibleRows: () => this.rows,
+    getMinVisibleRows: () => this.visibleRows,
     getMaxVisibleRows: () => this.maxVisibleRows,
   })
 
@@ -75,6 +77,12 @@ export class Textarea extends LitElement {
 
   protected get textareaDescribedBy() {
     return this.ariaDescribedBy
+  }
+
+  // 액션 슬롯이 채워지면 액션 줄이 높이를 보태므로 입력 영역은 1줄에서 시작한다.
+  protected get visibleRows() {
+    if (this.hasActions) return 1
+    return this.rows
   }
 
   protected get maxVisibleRows() {
@@ -101,6 +109,7 @@ export class Textarea extends LitElement {
   private handleSlotChange(event: Event) {
     const slot = event.currentTarget as HTMLSlotElement
     slot.hidden = slot.assignedElements({ flatten: true }).length === 0
+    this.hasActions = Array.from(this.actionSlots).some(actionSlot => !actionSlot.hidden)
   }
 
   private dispatchInputEvent(value: string) {
@@ -113,7 +122,7 @@ export class Textarea extends LitElement {
         <slot name="leading" hidden @slotchange=${this.handleSlotChange}></slot>
         <textarea
           id=${this.textareaId}
-          rows=${this.rows}
+          rows=${this.visibleRows}
           .value=${this.value}
           name=${ifDefined(this.name || undefined)}
           placeholder=${ifDefined(this.placeholder || undefined)}

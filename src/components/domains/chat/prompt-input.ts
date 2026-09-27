@@ -41,7 +41,6 @@ export class PromptInput extends LitElement {
           .value=${this.value}
           .name=${this.name}
           .placeholder=${this.placeholder}
-          .rows=${1}
           ?disabled=${this.loading}
           @input=${this.handleTextareaInput}
           @keydown=${this.handleTextareaKeydown}
