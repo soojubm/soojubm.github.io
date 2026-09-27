@@ -70,6 +70,10 @@ const contentSectionCode = `<mm-content-section-list>
   <mm-content-section heading-level="3" heading="두 번째 섹션">
     <mm-paragraph>섹션 사이 간격은 섹션 목록이 소유합니다.</mm-paragraph>
   </mm-content-section>
+  <mm-content-section heading-level="3" heading="액션이 있는 섹션">
+    <mm-link slot="action" href="post.html">모두 보기</mm-link>
+    <mm-paragraph>제목 줄 오른쪽에 섹션 전체에 걸리는 동작을 둡니다.</mm-paragraph>
+  </mm-content-section>
 </mm-content-section-list>`
 
 const textBlockCode = `<mm-text-block level="3" heading="제목" description="제목을 보충하는 설명"></mm-text-block>`
@@ -180,7 +184,10 @@ const main = html`
             은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이 문서 구조에서 놓인 자리에 맞춰 지정합니다.
             섹션끼리의 바깥 간격은
             <mm-code>mm-content-section-list</mm-code>
-            가 정하므로, 페이지는 섹션 사이에 간격을 따로 주지 않습니다.
+            가 정하므로, 페이지는 섹션 사이에 간격을 따로 주지 않습니다. "모두 보기" 링크처럼 섹션
+            전체에 걸리는 동작은
+            <mm-code>action</mm-code>
+            슬롯으로 받아 제목 줄 오른쪽에 둡니다.
           </mm-paragraph>
           <mm-surface variant="filled">
             <mm-content-section-list>
@@ -189,6 +196,10 @@ const main = html`
               </mm-content-section>
               <mm-content-section heading-level="4" heading="두 번째 섹션">
                 <mm-paragraph>섹션 사이 간격은 섹션 목록이 소유합니다.</mm-paragraph>
+              </mm-content-section>
+              <mm-content-section heading-level="4" heading="액션이 있는 섹션">
+                <mm-link slot="action" href="./post.html">모두 보기</mm-link>
+                <mm-paragraph>제목 줄 오른쪽에 섹션 전체에 걸리는 동작을 둡니다.</mm-paragraph>
               </mm-content-section>
             </mm-content-section-list>
           </mm-surface>

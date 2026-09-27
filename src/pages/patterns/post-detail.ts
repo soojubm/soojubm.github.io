@@ -174,11 +174,8 @@ const main = html`
     </mm-content-section>
   </mm-main>
 
-  <mm-flex as="section" class="post-more" direction="column" gap="4">
-    <mm-flex justify-content="between" align-items="center" gap="3">
-      <mm-heading level="3">더 읽어보기</mm-heading>
-      <mm-link href="post.html">모두 보기</mm-link>
-    </mm-flex>
+  <mm-content-section class="post-more" heading="더 읽어보기" heading-level="3">
+    <mm-link slot="action" href="post.html">모두 보기</mm-link>
     <mm-post-list>
       ${POSTS.map(
         post => html`
@@ -192,7 +189,7 @@ const main = html`
         `,
       )}
     </mm-post-list>
-  </mm-flex>
+  </mm-content-section>
 
   <mm-post-pager .previous=${previousPost} .next=${nextPost}></mm-post-pager>
 `
