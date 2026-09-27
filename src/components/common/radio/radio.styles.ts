@@ -1,29 +1,7 @@
 import { css } from 'lit'
 
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
-import { focusRingStyles, visuallyHiddenStyles } from '@/stylesheets/shared.styles'
-
-export const radioGroupStyles = css`
-  :host {
-    display: block;
-  }
-
-  /* fieldset 기본값(min-width: min-content) 때문에 flex 부모 안에서 줄어들지 못하고 넘치는 것을 막는다. */
-  fieldset {
-    min-width: 0;
-  }
-
-  .radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  /* 그룹 이름은 스크린리더에만 전달한다. */
-  legend {
-    ${visuallyHiddenStyles};
-  }
-`
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const radioStyles = css`
   :host {

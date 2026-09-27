@@ -2,20 +2,6 @@ import { css } from 'lit'
 
 import { focusRingStyles } from '@/stylesheets/shared.styles'
 
-export const checkboxGroupStyles = css`
-  /* fieldset 기본값(min-width: min-content) 때문에 flex 부모 안에서 줄어들지 못하고 넘치는 것을 막는다. */
-  fieldset {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-    min-width: 0;
-  }
-
-  legend {
-    display: none;
-  }
-`
-
 export const checkboxStyles = css`
   :host {
     --checkbox-size: var(--size-16);

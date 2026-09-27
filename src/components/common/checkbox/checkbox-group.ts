@@ -5,8 +5,11 @@ import { repeat } from 'lit/directives/repeat.js'
 
 import type { OptionItem } from '@/types'
 
-import { checkboxGroupStyles, checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
-import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
+import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
+import {
+  inputSelectionGroupStyles,
+  visuallyHiddenInputStyles,
+} from '@/components/common/input/input.styles'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
@@ -16,7 +19,12 @@ import '@/components/common/text'
 // 그래야 선택 상태를 shadow 경계 없이 그룹이 온전히 소유한다.
 @customElement('mm-checkbox-group')
 export class CheckboxGroup extends LitElement {
-  static styles = [resetStyles, visuallyHiddenInputStyles, checkboxGroupStyles, checkboxStyles]
+  static styles = [
+    resetStyles,
+    visuallyHiddenInputStyles,
+    inputSelectionGroupStyles,
+    checkboxStyles,
+  ]
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ attribute: false }) values: string[] = []
   @property({ type: String }) name?: string
@@ -49,9 +57,7 @@ export class CheckboxGroup extends LitElement {
     if (!this.legend) return nothing
 
     return html`
-      <legend>
-        <mm-text size="12" color="light">${this.legend}</mm-text>
-      </legend>
+      <legend>${this.legend}</legend>
     `
   }
 

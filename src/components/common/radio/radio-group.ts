@@ -4,8 +4,11 @@ import { repeat } from 'lit/directives/repeat.js'
 
 import type { OptionItem } from '@/types'
 
-import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
-import { radioGroupStyles, radioStyles } from '@/components/common/radio/radio.styles'
+import {
+  inputSelectionGroupStyles,
+  visuallyHiddenInputStyles,
+} from '@/components/common/input/input.styles'
+import { radioStyles } from '@/components/common/radio/radio.styles'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
@@ -15,7 +18,7 @@ import '@/components/common/text/semantics/paragraph'
 // 그래서 mm-radio를 감싸지 않고, 공유 스타일 모듈(radioStyles)을 조합해 input을 직접 렌더한다.
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
-  static styles = [resetStyles, visuallyHiddenInputStyles, radioGroupStyles, radioStyles]
+  static styles = [resetStyles, visuallyHiddenInputStyles, inputSelectionGroupStyles, radioStyles]
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
@@ -33,7 +36,7 @@ export class RadioGroup extends LitElement {
 
   render() {
     return html`
-      <fieldset class="radio-group" ?disabled=${this.disabled}>
+      <fieldset ?disabled=${this.disabled}>
         <legend>${this.legend}</legend>
         ${repeat(
           this.options,

@@ -3,7 +3,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 
 import type { RadioCard } from '@/components/common/radio/semantics/radio-card'
 
-import { radioGroupStyles } from '@/components/common/radio/radio.styles'
+import { inputSelectionGroupStyles } from '@/components/common/input/input.styles'
 import { SelectionGroupController } from '@/controllers/selection-group-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -15,7 +15,7 @@ import { emit } from '@/utils'
  */
 @customElement('mm-radio-card-group')
 export class RadioCardGroup extends LitElement {
-  static styles = [resetStyles, radioGroupStyles]
+  static styles = [resetStyles, inputSelectionGroupStyles]
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: Boolean }) disabled = false
@@ -45,11 +45,7 @@ export class RadioCardGroup extends LitElement {
 
   render() {
     return html`
-      <fieldset
-        class="radio-group"
-        ?disabled=${this.disabled}
-        @change=${this.group.handleItemChange}
-      >
+      <fieldset ?disabled=${this.disabled} @change=${this.group.handleItemChange}>
         <legend>${this.legend}</legend>
         <slot @slotchange=${this.group.handleSlotChange}></slot>
       </fieldset>

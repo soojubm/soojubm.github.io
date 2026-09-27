@@ -14,6 +14,25 @@ export const visuallyHiddenInputStyles = css`
   }
 `
 
+/** 선택 컨트롤을 fieldset으로 묶는 그룹. 그룹 이름(legend)은 스크린리더에만 전달한다. */
+export const inputSelectionGroupStyles = css`
+  :host {
+    display: block;
+  }
+
+  /* fieldset 기본값(min-width: min-content) 때문에 flex 부모 안에서 줄어들지 못하고 넘치는 것을 막는다. */
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+  }
+
+  legend {
+    ${visuallyHiddenStyles};
+  }
+`
+
 const inputSizeTokens = {
   small: {
     '--input-height': 'var(--size-32)',
