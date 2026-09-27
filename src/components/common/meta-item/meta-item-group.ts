@@ -1,13 +1,16 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { FlexDirection, FlexWrap } from '@/stylesheets/shared.styles'
-import { buildAttributeRules } from '@/utils'
+import { spaces, type FlexDirection, type FlexWrap, type Space } from '@/stylesheets/shared.styles'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-const metaItemGroupGapTokens = {
-  2: { gap: 'var(--space-2)' },
-  3: { gap: 'var(--space-3)' },
-  8: { gap: 'var(--space-8)' },
+/** 메타 정보 사이 간격은 space 단계 중 이 넷만 쓴다. 기본 4는 :host가 선언한다. */
+type MetaItemGroupGap = Extract<Space, '2' | '3' | '4' | '8'>
+
+const metaItemGroupGapTokens: AttributeTokens<Exclude<MetaItemGroupGap, '4'>> = {
+  '2': { gap: spaces['2'] },
+  '3': { gap: spaces['3'] },
+  '8': { gap: spaces['8'] },
 }
 
 @customElement('mm-meta-item-group')
@@ -17,7 +20,7 @@ export class MetaItemGroup extends LitElement {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
-      gap: var(--space-4);
+      gap: ${unsafeCSS(spaces['4'])};
     }
 
     :host([direction='column']) {
@@ -34,7 +37,7 @@ export class MetaItemGroup extends LitElement {
     ${unsafeCSS(buildAttributeRules('gap', metaItemGroupGapTokens))}
   `
   @property({ type: String, reflect: true }) direction: FlexDirection = 'row'
-  @property({ type: String, reflect: true }) gap = '4'
+  @property({ type: String, reflect: true }) gap: MetaItemGroupGap = '4'
   @property({ type: String, reflect: true }) wrap: FlexWrap = 'nowrap'
 
   connectedCallback() {
