@@ -32,17 +32,17 @@ const iconButtonVariantTokens = {
   },
 }
 
+/** 자체 button을 렌더하는 시맨틱 컴포넌트가 variant 하나를 골라 얹는 선언. 얹을 선택자 안에 펼쳐 쓴다. */
+export const iconButtonVariantSkin = (variant: keyof typeof iconButtonVariantTokens) =>
+  unsafeCSS(buildDeclarations(iconButtonVariantTokens[variant]))
+
 /**
- * close/more/next/prev/to-top-button처럼 secondary 스킨을 그대로 쓰는 계열이 공유하는 토큰 오버라이드.
+ * close/more/next/prev/to-top-button처럼 secondary 스킨을 그대로 쓰는 계열이 공유하는 스킨.
  * iconButtonStyles의 기본(tertiary)값 위에 얹어 쓴다.
  */
 export const iconButtonSecondarySkinStyles = css`
   :host {
-    --icon-button-border-radius: var(--radius-full);
-    --icon-button-border: var(--border);
-    --icon-button-background-color: var(--material-base-background-color);
-    --icon-button-backdrop-filter: var(--material-base-backdrop-filter);
-    --icon-button-shadow: var(--material-elevated-shadow);
+    ${iconButtonVariantSkin('secondary')}
   }
 `
 

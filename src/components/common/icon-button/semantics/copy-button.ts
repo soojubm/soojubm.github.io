@@ -2,7 +2,10 @@ import { LitElement, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import {
+  iconButtonStyles,
+  iconButtonVariantSkin,
+} from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { TransientFlagController } from '@/controllers/transient-flag-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -20,7 +23,7 @@ export class CopyButton extends LitElement {
     iconButtonStyles,
     css`
       :host {
-        --icon-button-background-color: transparent;
+        ${iconButtonVariantSkin('ghost')}
       }
     `,
   ]

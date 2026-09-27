@@ -2,7 +2,10 @@ import { css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import {
+  iconButtonStyles,
+  iconButtonVariantSkin,
+} from '@/components/common/icon-button/icon-button.styles'
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -20,8 +23,7 @@ export class DeleteButton extends iconActionElement({
     iconButtonStyles,
     css`
       :host {
-        --icon-button-background-color: var(--danger-color);
-        --icon-button-text-color: var(--foreground-on-strong-color);
+        ${iconButtonVariantSkin('destructive')}
       }
     `,
   ]

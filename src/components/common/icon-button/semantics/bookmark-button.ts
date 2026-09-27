@@ -6,6 +6,7 @@ import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import {
   iconButtonSelectedStyles,
   iconButtonStyles,
+  iconButtonVariantSkin,
 } from '@/components/common/icon-button/icon-button.styles'
 import '@/components/common/icon'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -22,7 +23,7 @@ export class BookmarkButton extends withTogglePressed(LitElement) {
     iconButtonSelectedStyles,
     css`
       :host {
-        --icon-button-background-color: transparent;
+        ${iconButtonVariantSkin('ghost')}
         --icon-button-text-color: var(--foreground-subtle-color);
       }
     `,

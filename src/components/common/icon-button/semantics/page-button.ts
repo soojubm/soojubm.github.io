@@ -6,7 +6,10 @@ import type { AriaCurrent } from '@/types'
 
 import '@/components/common/dot/semantics/current-indicator'
 import { dotBelowStyles } from '@/components/common/dot/dot.styles'
-import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import {
+  iconButtonStyles,
+  iconButtonVariantSkin,
+} from '@/components/common/icon-button/icon-button.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
@@ -20,7 +23,7 @@ export class PageButton extends LitElement {
     iconButtonStyles,
     css`
       :host {
-        --icon-button-background-color: transparent;
+        ${iconButtonVariantSkin('ghost')}
       }
 
       button[aria-current='page'] {

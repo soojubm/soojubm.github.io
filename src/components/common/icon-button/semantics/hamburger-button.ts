@@ -4,7 +4,10 @@ import { customElement, property } from 'lit/decorators.js'
 import type { AriaBoolean, AriaIdRef } from '@/types'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
+import {
+  iconButtonStyles,
+  iconButtonVariantSkin,
+} from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -18,7 +21,7 @@ export class HamburgerButton extends LitElement {
     iconButtonStyles,
     css`
       :host {
-        --icon-button-background-color: transparent;
+        ${iconButtonVariantSkin('ghost')}
       }
     `,
   ]
