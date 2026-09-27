@@ -3,7 +3,6 @@ import { html } from 'lit'
 import type { PostPagerItem } from '@/components/domains/post/post-pager'
 import type { ActionConfig } from '@/types'
 
-import './post-detail.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES, POSTS, TOPICS } from '@/pages/mocks'
 
@@ -23,7 +22,7 @@ const nextPost: PostPagerItem = {
 const main = html`
   <mm-main width="small">
     <mm-flex direction="column" gap="8">
-      <header class="post-head">
+      <header>
         <mm-flex direction="column" gap="3">
           <mm-link href="post.html">${CATEGORIES.product.label}</mm-link>
           <mm-heading level="1">
@@ -35,7 +34,7 @@ const main = html`
 
       <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
 
-      <section class="post-body">
+      <section>
         <mm-paragraph-group>
           <mm-text-list
             .texts=${[
@@ -104,7 +103,7 @@ const main = html`
         </mm-paragraph-group>
       </section>
 
-      <aside class="post-attract">
+      <mm-post-paywall>
         <mm-result
           heading="다음 내용이 궁금하신가요?"
           description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
@@ -119,8 +118,7 @@ const main = html`
             ]}
           ></mm-text-list>
         </mm-result>
-        <div class="post-attract-blur"></div>
-      </aside>
+      </mm-post-paywall>
 
       <mm-surface variant="elevated" radius="large">
         <mm-flex direction="column" gap="8">
@@ -176,7 +174,7 @@ const main = html`
     </mm-content-section>
   </mm-main>
 
-  <mm-flex class="post-more" direction="column" gap="8">
+  <mm-flex direction="column" gap="8" style="padding: var(--space-8) var(--layout-padding-inline)">
     <mm-content-section heading="더 읽어보기" heading-level="3">
       <mm-link slot="action" href="post.html">모두 보기</mm-link>
       <mm-post-list>
