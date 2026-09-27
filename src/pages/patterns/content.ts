@@ -131,6 +131,16 @@ const main = html`
           </mm-paragraph>
         </mm-content-section>
 
+        <mm-content-section heading-level="4" heading="작은 화면의 행갈이">
+          <mm-paragraph>
+            태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자
+            또는 단어의 수를 제한하고 개행 조건을 정의하세요.
+          </mm-paragraph>
+          <mm-component-notice heading="제목 자르기">
+            제목을 자르는 것을 허용할 수 있나. 점점 더 작아지는 스크린. 폴더블, 와치
+          </mm-component-notice>
+        </mm-content-section>
+
         <mm-content-section heading-level="4" heading="주목이 필요한 콘텐츠">
           <mm-paragraph>
             상태 변화, 결과, 맥락 전환을 전달할 때는 콘텐츠 모듈을 가운데 정렬해 사용자의 주의를
@@ -143,6 +153,10 @@ const main = html`
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="용어">
+        <mm-content-section heading-level="4" heading="텍스트 단위">
+          <mm-paragraph>단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)</mm-paragraph>
+        </mm-content-section>
+
         <mm-content-section heading-level="4" heading="Message">
           <mm-paragraph>
             사용자의 관점에서 다음에 할 일을 알려주는 문구입니다. 예: "확인 후 진행해주세요".
