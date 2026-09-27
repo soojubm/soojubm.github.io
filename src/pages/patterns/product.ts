@@ -2,22 +2,23 @@ import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
-import './product.css'
 
 const main = html`
-  <mm-main class="product">
+  <mm-main>
     <mm-flex direction="column" gap="section">
       <mm-flex direction="column" gap="4">
         <mm-button>Back to Home</mm-button>
 
-        <mm-grid columns="2" gap="8" class="product-head">
-          <section class="product-image" role="img" aria-labelledby="제품 이미지">
+        <mm-grid columns="2" gap="8">
+          <div
+            style="padding: 10%; box-sizing: border-box; border-radius: var(--radius); background: var(--background-subtle-color)"
+          >
             <mm-thumbnail
               src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
               alt="제품 이미지"
               ratio="1:1"
             ></mm-thumbnail>
-          </section>
+          </div>
 
           <mm-flex direction="column" gap="6">
             <mm-flex direction="column" gap="3">
@@ -123,7 +124,9 @@ const main = html`
       </mm-grid>
 
       <!-- 마케팅 스토리: bleed 배경 + 특징 -->
-      <section class="product-story-bleed">
+      <section
+        style="width: 100vw; margin-left: 50%; padding-block: var(--space-section); background: var(--background-subtle-color); transform: translateX(-50%)"
+      >
         <mm-grid columns="1" gap="4">
           <mm-flex direction="column" align-items="center" gap="3">
             <mm-tag tone="purple">Why prebiotics?</mm-tag>
@@ -201,7 +204,7 @@ const main = html`
       </mm-flex>
 
       <!-- 상품 상세정보 고지 -->
-      <section class="product-detail-summary">
+      <section>
         <mm-heading level="2">상품상세정보 고지</mm-heading>
         <mm-meta-item-group style="margin: var(--space-3) 0">
           <mm-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></mm-meta-item>
@@ -221,24 +224,24 @@ const main = html`
     </mm-flex>
 
     <mm-fixed-bottom>
-      <mm-flex>
-        <mm-flex>
-          <mm-order-product-item
-            image-src="/src/images/cake_gosum.jpg"
-            name="뉴닉이 풀어 쓴 경제상식사전"
-            option="평생 소장"
-          ></mm-order-product-item>
-          <mm-product-price
-            size="large"
-            original-price="₩ 25,000"
-            price="₩ 16,000"
-            discount="36% 할인"
-          ></mm-product-price>
-        </mm-flex>
-        <mm-button aria-controls="cart-sheet" aria-haspopup="dialog" variant="primary" size="large">
+      <mm-product-purchase-bar
+        image-src="/src/images/cake_gosum.jpg"
+        name="뉴닉이 풀어 쓴 경제상식사전"
+        option="평생 소장"
+        price="₩ 16,000"
+        original-price="₩ 25,000"
+        discount="36% 할인"
+      >
+        <mm-button
+          slot="action"
+          aria-controls="cart-sheet"
+          aria-haspopup="dialog"
+          variant="primary"
+          size="large"
+        >
           장바구니 추가
         </mm-button>
-      </mm-flex>
+      </mm-product-purchase-bar>
     </mm-fixed-bottom>
   </mm-main>
 
