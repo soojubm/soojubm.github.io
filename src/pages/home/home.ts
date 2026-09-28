@@ -399,6 +399,19 @@ const main = html`
       <mm-content-section heading="React로 옮긴 MoreMenu 패턴">
         <mm-code-block language="typescript" .code=${reactMoreMenuCode}></mm-code-block>
       </mm-content-section>
+
+      <mm-content-section heading="Event Notes">
+        <mm-text-list
+          .texts=${[
+            '버블링은 이벤트가 낸 요소에서 끝나지 않고 부모, 그 부모, document까지 차례로 올라가는 것이다. 그래서 조상 어디에 리스너를 달아도 받을 수 있다.',
+            'toggle은 "이 요소가 열렸다/닫혔다"는 자기 상태 알림이라 버블링하지 않는다. 네이티브 details·popover의 toggle도 버블링하지 않는다.',
+            '같은 이름의 이벤트가 버블링하면 섞인다. 시트 안에 select를 두고 시트에 toggle 리스너를 달면, select 목록이 닫힐 때의 toggle이 시트까지 올라와 시트가 닫힌 것처럼 처리된다.',
+            'change·input은 네이티브처럼 버블링한다. 폼이나 그룹이 자식의 값 변경을 위에서 받아야 하기 때문이다. 기준은 같은 이름의 네이티브 이벤트와 같은 전파 방식이다.',
+            '받는 쪽에서 e.target === e.currentTarget로 거르는 건 보조책이다. 모든 소비처가 챙겨야 하고, shadow DOM 경계를 넘으면 target이 호스트로 바뀌어(retarget) 걸러지지 않는 경우가 있다. 전파 범위는 이벤트를 내는 컴포넌트가 정한다.',
+            '"닫아 달라"는 요청과 "닫혔다"는 알림을 이벤트 하나로 겸하지 않는다. 시트 헤더의 닫기 버튼은 시트의 close()를 직접 부르고, 시트는 닫힌 뒤 toggle로 알린다.',
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
     </mm-flex>
   </mm-main>
 `
