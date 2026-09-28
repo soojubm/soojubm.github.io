@@ -1,5 +1,5 @@
 import { css } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import {
@@ -27,12 +27,9 @@ export class DeleteButton extends iconActionElement({
       }
     `,
   ]
-  @property({ type: String, attribute: 'confirm-message' })
-  confirmMessage = '정말 삭제하시겠어요?'
-
   // 파괴적 행동이라 확인을 거친 뒤에만 알린다.
   override handleActionClick() {
-    if (!window.confirm(this.confirmMessage)) return
+    if (!window.confirm('정말 삭제하시겠어요?')) return
 
     super.handleActionClick()
   }

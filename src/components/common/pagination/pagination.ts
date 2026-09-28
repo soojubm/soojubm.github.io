@@ -11,12 +11,14 @@ import { emit } from '@/utils'
 
 type PaginationItem = number | 'ellipsis'
 
+// 현재 페이지 양옆에 번호로 남기는 페이지 수. 나머지는 말줄임으로 접는다.
+const SIBLING_COUNT = 1
+
 @customElement('mm-pagination')
 export class Pagination extends LitElement {
   static styles = paginationStyles
   @property({ type: Number, attribute: 'current-page' }) currentPage = 1
   @property({ type: Number, attribute: 'page-count' }) pageCount = 1
-  @property({ type: Number, attribute: 'sibling-count' }) siblingCount = 1
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = 'pagination'
 
   render() {
@@ -54,13 +56,12 @@ export class Pagination extends LitElement {
   private get pages(): PaginationItem[] {
     const pageCount = this.safePageCount
     const currentPage = this.safeCurrentPage
-    const siblingCount = Math.max(0, Math.floor(this.siblingCount))
-    const totalNumbers = siblingCount * 2 + 5
+    const totalNumbers = SIBLING_COUNT * 2 + 5
 
     if (pageCount <= totalNumbers) return Array.from({ length: pageCount }, (_, index) => index + 1)
 
-    const leftSibling = Math.max(currentPage - siblingCount, 1)
-    const rightSibling = Math.min(currentPage + siblingCount, pageCount)
+    const leftSibling = Math.max(currentPage - SIBLING_COUNT, 1)
+    const rightSibling = Math.min(currentPage + SIBLING_COUNT, pageCount)
     const showLeftEllipsis = leftSibling > 2
     const showRightEllipsis = rightSibling < pageCount - 1
 

@@ -5,7 +5,7 @@ import { footerStyles } from '@/components/layouts/footer/footer.styles'
 import '@/components/common'
 import soojubmImage from '@/images/soojubm.png'
 import '@/components/common/avatar/domain/user-snippet'
-import '@/components/common/button/domain/social-links'
+import '@/components/common/button/semantics/social-links'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-footer')
