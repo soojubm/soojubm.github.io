@@ -55,7 +55,7 @@ export class SidebarSection extends LitElement {
     isOpen: () => this.open,
     setOpen: open => {
       this.open = open
-      emit(this, 'toggle', { open })
+      emit(this, 'toggle', { open }, { bubbles: false, composed: false })
     },
     getTrigger: () => this.trigger ?? undefined,
   })
