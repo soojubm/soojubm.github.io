@@ -2,6 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, queryAll, state } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
+import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import {
   computedTokenValue,
   primitiveTokenName,
@@ -33,10 +34,9 @@ export class ColorToken extends LitElement {
       /* 그리드 한 줄에서 카드 높이가 맞춰지면 스와치가 남는 높이를 가져간다.
          태그가 여러 줄로 늘어난 카드 옆에 빈 여백이 남지 않게 한다. */
       :host {
-        display: flex;
-        flex-direction: column;
-        border: var(--border);
-        border-radius: var(--radius);
+        ${surfaceBaseStyles};
+        --surface-padding: 0;
+
         overflow: hidden;
       }
 

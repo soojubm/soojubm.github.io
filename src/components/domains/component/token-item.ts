@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import { computedTokenValue } from '@/components/domains/component/token-values'
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
 import '@/components/common'
@@ -13,12 +14,12 @@ import '@/components/common'
 @customElement('mm-token-item')
 export class TokenItem extends LitElement {
   static styles = css`
+    /* 토큰 묶음 안에서 줄바꿈으로 흐르므로 표면 기본 폭(100%) 대신 내용 폭을 갖는다. */
     :host {
-      display: inline-flex;
-      flex-direction: column;
-      padding: var(--space-3) var(--space-4);
-      border: var(--border);
-      border-radius: var(--radius);
+      ${surfaceBaseStyles};
+      --surface-padding: var(--space-3) var(--space-4);
+
+      width: auto;
     }
   `
   private themeChange = new ThemeChangeController(this)
