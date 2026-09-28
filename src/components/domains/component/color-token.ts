@@ -14,9 +14,9 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { contrastRatio } from '@/utils/color'
 import '@/components/common'
 
-// 원시 색 스와치에 태그로 붙이는 역할. 상태를 표현하는 색만 붙이고,
-// 표면·전경·테두리처럼 원시 색을 물려받는 나머지 역할은 각자의 목록에서 소개한다.
-const STATUS_ROLES = ['primary', 'accent', 'danger', 'warning', 'success']
+// 원시 색 스와치에 태그로 붙이는 역할. 상태 역할끼리는 색이 달라 한 원시 색에 하나만 붙는다.
+// 상태를 표현하는 색만 붙이고, 표면·전경·테두리처럼 원시 색을 물려받는 나머지 역할은 각자의 목록에서 소개한다.
+const STATUS_ROLES = ['primary', 'accent', 'danger', 'warning']
 
 /**
  * 색상 토큰 카드.
@@ -32,7 +32,7 @@ export class ColorToken extends LitElement {
     resetStyles,
     css`
       /* 그리드 한 줄에서 카드 높이가 맞춰지면 스와치가 남는 높이를 가져간다.
-         태그가 여러 줄로 늘어난 카드 옆에 빈 여백이 남지 않게 한다. */
+         대비쌍이 더 많은 카드 옆에 빈 여백이 남지 않게 한다. */
       :host {
         ${surfaceBaseStyles};
         --surface-padding: 0;
@@ -51,9 +51,8 @@ export class ColorToken extends LitElement {
         box-sizing: border-box;
       }
 
-      /* 이 색을 물려받는 상위 토큰 태그: 칩 위쪽에 두고 대비쌍을 아래로 민다.
-         한 원시 색이 여러 역할로 쓰이면 줄바꿈으로 늘어나므로 스와치가 함께 자라야 한다. */
-      .tags {
+      /* 이 색을 물려받는 상태 역할 태그: 칩 위쪽에 두고 대비쌍을 아래로 민다. */
+      mm-tag {
         margin-bottom: auto;
       }
 
@@ -92,7 +91,7 @@ export class ColorToken extends LitElement {
         class="swatch"
         style=${styleMap({ '--color-token-background-color': `var(--${this.name})` })}
       >
-        ${this.renderTags()} ${this.renderPairs()}
+        ${this.renderRoleTag()} ${this.renderPairs()}
       </figure>
       ${this.renderCaption()}
     `
@@ -102,27 +101,14 @@ export class ColorToken extends LitElement {
     this.measureContrasts()
   }
 
-  private renderTags() {
-    const aliases = tokenAliases(this.name)
+  private renderRoleTag() {
+    const role = tokenAliases(this.name)
       .map(tokenDisplayName)
-      .filter(alias => STATUS_ROLES.includes(alias))
-    if (!aliases.length) return nothing
-
-    if (aliases.length === 1) {
-      return html`
-        <mm-tag class="tags">${aliases[0]}</mm-tag>
-      `
-    }
+      .find(alias => STATUS_ROLES.includes(alias))
+    if (!role) return nothing
 
     return html`
-      <mm-tag-group class="tags">
-        ${aliases.map(
-          alias =>
-            html`
-              <mm-tag>${alias}</mm-tag>
-            `,
-        )}
-      </mm-tag-group>
+      <mm-tag>${role}</mm-tag>
     `
   }
 
