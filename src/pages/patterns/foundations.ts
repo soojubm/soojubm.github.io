@@ -1,14 +1,9 @@
 import { html } from 'lit'
 
-import type { TemplateResult } from 'lit'
-
 import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-pager'
+import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
-
-// 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
-// prettier-ignore
-const code = (name: string) => html`<mm-code>${name}</mm-code>`
 
 // prettier-ignore
 const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
@@ -32,14 +27,6 @@ const GROUP_COMPONENTS = [
   'mm-paragraph-group',
 ]
 const SECTION_COMPONENTS = ['mm-content-section', 'mm-page-header']
-
-// 목록 항목은 핵심을 굵은 한 줄로 먼저 두고 설명을 잇는다.
-const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
-  <span>
-    <mm-text weight="bold">${title}</mm-text>
-    ${description}
-  </span>
-`
 
 const main = html`
   <mm-main>

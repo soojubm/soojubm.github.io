@@ -2,7 +2,6 @@ import '@/components/common'
 import { html } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component'
-import type { TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/read-more-paragraph'
@@ -11,19 +10,8 @@ import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/component-notice'
+import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
-
-// 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
-// prettier-ignore
-const code = (name: string) => html`<mm-code>${name}</mm-code>`
-
-// 목록 항목은 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다.
-const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
-  <span>
-    <mm-text weight="bold">${title}</mm-text>
-    ${description}
-  </span>
-`
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
