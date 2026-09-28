@@ -1,12 +1,12 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { radioStyles } from '@/components/common/radio/radio.styles'
+import { renderRadioInput } from '@/components/common/radio/radio.utils'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles, type ComponentSize } from '@/stylesheets/shared.styles'
-import { emit, uniqueId } from '@/utils'
+import { uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 export type RadioSize = Extract<ComponentSize, 'medium' | 'large'>
@@ -26,31 +26,15 @@ export class Radio extends LitElement {
   render() {
     return html`
       <div>
-        <input
-          type="radio"
-          id=${this.inputId}
-          name=${ifDefined(this.name || undefined)}
-          .value=${this.value || ''}
-          .checked=${this.checked}
-          ?disabled=${this.disabled}
-          @change=${this.handleInputChange}
-        />
-        <label for=${this.inputId}>
-          <span class="indicator"></span>
-          <mm-paragraph>
-            <slot></slot>
-          </mm-paragraph>
-        </label>
+        ${renderRadioInput(
+          this,
+          this.inputId,
+          this.toggle,
+          html`
+            <mm-paragraph><slot></slot></mm-paragraph>
+          `,
+        )}
       </div>
     `
-  }
-
-  private handleInputChange(event: Event) {
-    event.stopPropagation() // 네이티브 이벤트 전파 차단
-
-    const target = event.target as HTMLInputElement
-    if (!this.toggle.set(target.checked)) return
-
-    emit(this, 'change', { checked: this.checked, value: this.value })
   }
 }

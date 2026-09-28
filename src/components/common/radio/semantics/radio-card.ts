@@ -1,12 +1,12 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { radioCardStyles, radioStyles } from '@/components/common/radio/radio.styles'
+import { renderRadioInput } from '@/components/common/radio/radio.utils'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit, uniqueId } from '@/utils'
+import { uniqueId } from '@/utils'
 
 /**
  * 레이블만으로 부족해 가격·배지·설명을 담아야 할 때 쓰는 라디오. 면 전체가 선택 영역이자
@@ -26,28 +26,14 @@ export class RadioCard extends LitElement {
 
   render() {
     return html`
-      <input
-        type="radio"
-        id=${this.inputId}
-        name=${ifDefined(this.name || undefined)}
-        .value=${this.value || ''}
-        .checked=${this.checked}
-        ?disabled=${this.disabled}
-        @change=${this.handleInputChange}
-      />
-      <label for=${this.inputId}>
-        <span class="indicator"></span>
-        <slot></slot>
-      </label>
+      ${renderRadioInput(
+        this,
+        this.inputId,
+        this.toggle,
+        html`
+          <slot></slot>
+        `,
+      )}
     `
-  }
-
-  private handleInputChange(event: Event) {
-    event.stopPropagation() // 네이티브 이벤트 전파 차단
-
-    const target = event.target as HTMLInputElement
-    if (!this.toggle.set(target.checked)) return
-
-    emit(this, 'change', { checked: this.checked, value: this.value })
   }
 }
