@@ -8,6 +8,7 @@ import {
 } from '@/components/overlay/overlay.styles'
 import '@/components/common'
 import { DisclosureController } from '@/controllers/disclosure-controller'
+import { EscapeKeyController } from '@/controllers/escape-key-controller'
 import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { getDeepActiveElement } from '@/utils'
 
@@ -44,7 +45,10 @@ export class Popover extends LitElement {
     getTrigger: () => this.triggerElements[0],
   })
   private outsideClick = new OutsideClickController(this, () => this.close(), {
-    isActive: () => this.open,
+    isOpen: () => this.open,
+  })
+  private escapeKey = new EscapeKeyController(this, () => this.close(), {
+    isOpen: () => this.open,
   })
 
   render() {
@@ -56,16 +60,6 @@ export class Popover extends LitElement {
         </mm-scroll>
       </div>
     `
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
-    document.addEventListener('keydown', this.handleDocumentKeydown)
-  }
-
-  disconnectedCallback() {
-    document.removeEventListener('keydown', this.handleDocumentKeydown)
-    super.disconnectedCallback()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
@@ -81,11 +75,6 @@ export class Popover extends LitElement {
 
   close() {
     this.open = false
-  }
-
-  private handleDocumentKeydown = (e: KeyboardEvent) => {
-    if (e.key !== 'Escape' || !this.open) return
-    this.close()
   }
 
   // 메뉴·목록이 열리면 포커스를 그 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.

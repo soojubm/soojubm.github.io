@@ -1,6 +1,7 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 import { DisclosureController } from '@/controllers/disclosure-controller'
+import { EscapeKeyController } from '@/controllers/escape-key-controller'
 import { PortalController } from '@/controllers/portal-controller'
 import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 import { getDeepActiveElement } from '@/utils'
@@ -42,6 +43,7 @@ export class SheetController implements ReactiveController {
       isOpen: options.isOpen,
       setOpen: options.setOpen,
     })
+    new EscapeKeyController(host, this.handleEscapeKeydown, { isOpen: options.isOpen })
 
     host.addController(this)
     // 리스너 대상이 host 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
@@ -51,11 +53,9 @@ export class SheetController implements ReactiveController {
   hostConnected() {
     // 열릴 때 표면 자체가 포커스를 받을 수 있게 하되, Tab 순서에는 넣지 않는다.
     if (!this.host.hasAttribute('tabindex')) this.host.tabIndex = -1
-    document.addEventListener('keydown', this.handleKeydown)
   }
 
   hostDisconnected() {
-    document.removeEventListener('keydown', this.handleKeydown)
     if (this.wasOpen) this.releaseFocus()
   }
 
@@ -105,9 +105,8 @@ export class SheetController implements ReactiveController {
     if (!this.options.dismissOn.includes('backdrop') || !this.options.isOpen()) return
     if (e.target === this.host) this.options.setOpen(false)
   }
-  private handleKeydown = (e: KeyboardEvent) => {
-    if (e.key !== 'Escape' || !this.options.dismissOn.includes('escape')) return
-    if (!this.options.isOpen()) return
+  private handleEscapeKeydown = () => {
+    if (!this.options.dismissOn.includes('escape')) return
 
     this.options.setOpen(false)
   }
