@@ -16,7 +16,6 @@ const iconSizeTokens: AttributeTokens<Exclude<IconSize, 'medium'>> = {
 export const iconStyles = css`
   :host {
     display: inline-flex;
-    --icon-color: currentColor;
   }
 
   .icon {
@@ -24,7 +23,6 @@ export const iconStyles = css`
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: var(--icon-color);
   }
 
   ${unsafeCSS(buildAttributeRules('size', iconSizeTokens, '.icon'))}

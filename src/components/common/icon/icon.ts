@@ -37,7 +37,6 @@ export class Icon extends LitElement {
   static styles = [resetStyles, iconStyles]
   @property({ type: String }) name = ''
   @property({ type: String, reflect: true }) size: IconSize = 'medium'
-  @property({ type: String }) color = ''
   @state() private useStylesheetLink = false
 
   render() {
@@ -63,17 +62,6 @@ export class Icon extends LitElement {
 
   protected firstUpdated() {
     void this.adoptIconoirStylesheet()
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('color')) return
-
-    if (!this.color) {
-      this.style.removeProperty('--icon-color')
-      return
-    }
-
-    this.style.setProperty('--icon-color', this.color)
   }
 
   private async adoptIconoirStylesheet() {
