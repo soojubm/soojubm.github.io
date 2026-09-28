@@ -2,10 +2,12 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import type { ChatReasoningFlow } from '@/components/domains/chat/chat-reasoning-flow'
-import type { AriaLive } from '@/types'
 
 import '@/components/domains/chat/chat-reasoning-flow'
 import '@/components/common'
+
+// 생각 중일 때 flow를 하나씩 넘겨 보여주는 간격.
+const FLOW_INTERVAL_MS = 2200
 
 /**
  * AI의 현재 상황만 보여주는 reasoning 컨테이너.
@@ -39,13 +41,12 @@ export class ChatReasoning extends LitElement {
   `
   @property({ type: Boolean }) thinking = false
   @property({ type: String }) duration = ''
-  @property({ type: Number }) interval = 2200
-  @property({ type: String, attribute: 'aria-live', reflect: true }) ariaLive: AriaLive = 'polite'
   @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
   private assignedFlows!: ChatReasoningFlow[]
   private flowIndex = 0
   private intervalId = 0
 
+  // role="status"는 암묵적으로 aria-live="polite"라 따로 두지 않는다.
   connectedCallback() {
     super.connectedCallback()
     this.setAttribute('role', 'status')
@@ -73,7 +74,7 @@ export class ChatReasoning extends LitElement {
   }
 
   updated(changed: Map<string, unknown>) {
-    if (changed.has('thinking') || changed.has('interval')) this.handleFlowSlotChange()
+    if (changed.has('thinking')) this.handleFlowSlotChange()
   }
 
   disconnectedCallback() {
@@ -105,7 +106,7 @@ export class ChatReasoning extends LitElement {
 
       this.flowIndex = (this.flowIndex + 1) % currentFlows.length
       this.activateFlow(currentFlows)
-    }, this.interval)
+    }, FLOW_INTERVAL_MS)
   }
 
   private activateFlow(flows: ChatReasoningFlow[]) {

@@ -12,8 +12,6 @@ const PLATFORMS = [
   { key: 'github', label: 'Github', icon: ICON_NAMES.GITHUB },
   { key: 'pinterest', label: 'Pinterest', icon: ICON_NAMES.PINTEREST },
   { key: 'facebook', label: 'Facebook', icon: ICON_NAMES.FACEBOOK },
-  { key: 'twitter', label: 'Twitter', icon: ICON_NAMES.TWITTER },
-  { key: 'instagram', label: 'Instagram', icon: ICON_NAMES.INSTAGRAM },
   { key: 'notion', label: 'Notion', icon: ICON_NAMES.PEOPLE_TAG },
 ] as const
 
@@ -45,8 +43,6 @@ export class SocialLinks extends LitElement {
   @property({ type: String }) github = ''
   @property({ type: String }) pinterest = ''
   @property({ type: String }) facebook = ''
-  @property({ type: String }) twitter = ''
-  @property({ type: String }) instagram = ''
   @property({ type: String }) notion = ''
   @property({ type: Boolean }) compact = false
 

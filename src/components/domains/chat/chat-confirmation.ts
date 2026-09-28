@@ -22,8 +22,6 @@ export class ChatConfirmation extends LitElement {
   `
   @property({ type: String }) status: ConfirmationStatus = 'pending'
   @property({ type: String }) message = ''
-  @property({ type: String, attribute: 'approve-label' }) approveLabel = '승인'
-  @property({ type: String, attribute: 'reject-label' }) rejectLabel = '거부'
 
   render() {
     if (this.status === 'accepted') {
@@ -43,10 +41,10 @@ export class ChatConfirmation extends LitElement {
         <slot></slot>
         <mm-button-group>
           <mm-button variant="tertiary" size="medium" @click=${this.handleRejectClick}>
-            ${this.rejectLabel}
+            거부
           </mm-button>
           <mm-button variant="tertiary" size="medium" @click=${this.handleApproveClick}>
-            ${this.approveLabel}
+            승인
           </mm-button>
         </mm-button-group>
       </mm-notice>
