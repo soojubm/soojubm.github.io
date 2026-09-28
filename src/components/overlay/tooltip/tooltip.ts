@@ -23,12 +23,15 @@ export class Tooltip extends LitElement {
   private handleTriggerHide = () => {
     this.open = false
   }
+  private handleTriggerSlotChange = () => {
+    this.syncDescription()
+  }
 
   /* eslint-disable lit-a11y/accessible-name -- role=tooltip의 이름은 내용에서 온다.
      content가 mm-text 안으로 바인딩돼 규칙이 정적으로 읽지 못할 뿐이다. */
   render() {
     return html`
-      <slot name="trigger" @slotchange=${this.syncDescription}></slot>
+      <slot name="trigger" @slotchange=${this.handleTriggerSlotChange}></slot>
       <div role="tooltip">
         <mm-text size="12">${this.content}</mm-text>
       </div>

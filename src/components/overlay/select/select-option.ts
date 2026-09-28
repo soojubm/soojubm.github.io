@@ -34,7 +34,7 @@ export class SelectOption extends withMenuItemPresentation(LitElement) {
         role="option"
         aria-selected=${this.selected ? 'true' : 'false'}
         aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
-        @click=${this.activate}
+        @click=${this.handleRowClick}
         @keydown=${this.handleRowKeydown}
       >
         ${renderMenuItemContent(this, this.renderSelectedIndicator())}
@@ -47,6 +47,10 @@ export class SelectOption extends withMenuItemPresentation(LitElement) {
     return html`
       <mm-selected-indicator slot="trailing" ?selected=${this.selected}></mm-selected-indicator>
     `
+  }
+
+  private handleRowClick() {
+    this.activate()
   }
 
   private handleRowKeydown(event: KeyboardEvent) {

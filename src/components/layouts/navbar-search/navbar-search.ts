@@ -56,7 +56,7 @@ export class NavbarSearch extends LitElement {
         icon=${ICON_NAMES.SEARCH}
         aria-label="검색"
         aria-expanded=${this.isOpen ? 'true' : 'false'}
-        @click=${this.toggleSearch}
+        @click=${this.handleSearchButtonClick}
       ></mm-icon-button>
 
       <mm-sheet
@@ -100,7 +100,7 @@ export class NavbarSearch extends LitElement {
     }
   }
 
-  private toggleSearch = () => {
+  private handleSearchButtonClick = () => {
     if (this.isOpen) {
       this.closeSearch()
       return

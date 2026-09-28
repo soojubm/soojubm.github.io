@@ -32,8 +32,12 @@ export class Step extends LitElement {
 
   render() {
     return html`
-      <slot @slotchange=${this.syncItems}></slot>
+      <slot @slotchange=${this.handleSlotChange}></slot>
     `
+  }
+
+  private handleSlotChange() {
+    this.syncItems()
   }
 
   private syncItems() {
