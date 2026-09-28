@@ -202,10 +202,10 @@ const sharedStyleRows = html`
   </tr>
   <tr>
     <th scope="row"><mm-code>surface.styles</mm-code></th>
-    <td>5</td>
+    <td>7</td>
     <td>
       <mm-code>surfaceBaseStyles</mm-code>
-      : 면 선언. faq·banner·radio card·code-block·pager가 자기 요소에 얹는다
+      : 면 선언. faq·banner·radio card·code-block·pager·token-item·color-token이 자기 요소에 얹는다
     </td>
   </tr>
   <tr>
