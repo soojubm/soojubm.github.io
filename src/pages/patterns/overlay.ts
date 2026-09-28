@@ -273,6 +273,8 @@ const main = html`
           <mm-code>DisclosureController</mm-code>
           ·
           <mm-code>SheetController</mm-code>
+          ·
+          <mm-code>AdaptiveOverlayController</mm-code>
         </mm-paragraph>
         <mm-text-list
           variant="check"
@@ -291,7 +293,9 @@ const main = html`
                 바깥 클릭·ESC 같은 닫기는 viewport 표면은 ${code('SheetController')}가, anchored
                 표면은 ${code('mm-popover')}가 직접 처리한다. 저장 완료·항목 선택처럼 작업 결과로
                 닫히는 경우는 내용이 ${code('close()')}를 호출한다. 댓글 시트는 바깥을 누르면 스스로
-                닫히고, 시트 안에서 저장이 끝나면 폼 쪽이 ${code('sheet.close()')}를 호출한다
+                닫히고, 시트 안에서 저장이 끝나면 폼 쪽이 ${code('sheet.close()')}를 호출한다.
+                ${code('mm-sheet-header')}의 닫기 버튼도 이벤트를 거치지 않고 자신을 담은 시트의
+                ${code('close()')}를 직접 호출한다
               `,
             ),
             rule(
@@ -299,7 +303,18 @@ const main = html`
               html`
                 열렸는지는 표면의 ${code('open')} 속성 하나로 나타낸다.
                 ${code('<mm-sheet open>')}으로 열어 두거나 ${code('sheet.open = true')}로 바꿀 수
-                있고, 컨트롤러는 이 값을 따로 갖지 않고 읽고 쓰고 알리기만 한다
+                있고, 컨트롤러는 이 값을 따로 갖지 않고 읽고 쓰기만 한다
+              `,
+            ),
+            rule(
+              '열림 알림',
+              html`
+                표면은 열리거나 닫힐 때마다 자기 요소에서 ${code('toggle')} 이벤트를 디스패치하고,
+                ${code('detail.open')}에 바뀐 값을 싣는다. 바깥 클릭·ESC·닫기 버튼·${code('open')}
+                변경 중 어느 경로로 바뀌었든 한 번씩 나가므로, 표면을 쓰는 쪽은 이 이벤트로 트리거의
+                펼침 표시 같은 자기 상태를 맞춘다. 네이티브 ${code('toggle')}처럼 버블링하지 않아
+                표면에 직접 단 리스너만 받는다. 안에 둔 다른 표면의 ${code('toggle')}이 섞이지 않게
+                하기 위해서다
               `,
             ),
           ]}
@@ -308,9 +323,13 @@ const main = html`
           variant="exception"
           heading="트리거와 시트를 함께 소유하는 컴포넌트는 열림 상태를 직접 갖는다"
         >
-          ${code('mm-navbar-search')}의 시트는 ${code('#portal-root')}로 옮겨져, 컴포넌트 shadow
-          안의 트리거를 ${code('aria-controls')}로 찾을 수 없다. 그래서 컴포넌트가 시트의
-          ${code('open')}과 트리거의 ${code('aria-expanded')}를 직접 바인딩한다
+          ${code('mm-navbar-search')}·${code('mm-select')}·${code('mm-more-menu')}의 시트는
+          ${code('#portal-root')}로 옮겨져, 컴포넌트 shadow 안의 트리거를 ${code('aria-controls')}로
+          찾을 수 없다. 그래서 컴포넌트가 열림 상태를 갖고 시트의 ${code('open')}과 트리거의
+          ${code('aria-expanded')}에 직접 바인딩하며, 시트가 스스로 닫히면 ${code('toggle')}
+          이벤트로 상태를 맞춘다. ${code('mm-select')}·${code('mm-more-menu')}는 넓은 화면의
+          popover와 좁은 화면의 sheet가 이 상태 하나를 나눠 쓰므로
+          ${code('AdaptiveOverlayController')}가 소유한다
         </mm-component-notice>
         <mm-table
           .rows=${dismissRows}
