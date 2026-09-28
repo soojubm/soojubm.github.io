@@ -6,10 +6,9 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
-import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -41,16 +40,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'content', type: 'string' },
-  {
-    name: 'placement',
-    type: unionTypeLabel<TooltipPlacement>(
-      { bottom: true, 'bottom-start': true, 'bottom-end': true },
-      'bottom-start',
-    ),
-    optional: true,
-  },
-  { name: 'open', type: 'boolean = false', optional: true },
+  ...componentPropsOf('mm-tooltip'),
   { name: 'slot: trigger', type: 'HTMLElement' },
 ]
 

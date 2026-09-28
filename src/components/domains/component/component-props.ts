@@ -5,6 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import '@/components/common'
 import '@/components/domains/component/component-prop-item'
 import { componentPropsStyles } from '@/components/domains/component/component.styles'
+import { componentManifest, type ComponentTag } from '@/generated/component-manifest'
 import { uniqueId } from '@/utils'
 
 export interface ComponentPropItemData {
@@ -28,6 +29,16 @@ export const unionTypeLabel = <Value extends string>(
   if (defaultValue === undefined) return union
   return `${union} = '${defaultValue}'`
 }
+
+/**
+ * 컴포넌트 선언(@property)에서 만든 prop 목록. 이름·타입·기본값을 문서에 손으로 옮겨 적지 않는다.
+ * 선언이 바뀌면 npm run manifest로 다시 만든다. 이벤트·slot은 선언에서 읽을 수 없어 페이지가 덧붙인다.
+ */
+export const componentPropsOf = (tag: ComponentTag) => componentManifest[tag]
+
+/** 부모 페이지에 함께 전시하는 sub-component의 prop. 이름 앞에 태그를 붙여 어느 요소의 prop인지 가른다. */
+export const subComponentPropsOf = (tag: ComponentTag) =>
+  componentManifest[tag].map(prop => ({ ...prop, name: `${tag} ${prop.name}` }))
 
 // 이보다 적은 prop은 접어도 가릴 내용이 없어 처음부터 펼쳐 둔다.
 const COLLAPSIBLE_PROP_COUNT = 3

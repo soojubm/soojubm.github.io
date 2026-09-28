@@ -3,7 +3,7 @@
  *
  * 문서는 손으로 쓰는 배열이라 구현이 바뀌어도 조용히 남는다. 존재하지 않는 토큰을
  * 문서가 소개하면 소비자가 먹히지 않는 이름을 쓰게 되므로, 이름 존재 여부만 기계로 막는다.
- * prop 드리프트는 sub-component를 함께 전시하는 페이지가 많아 자동 판정이 어려워 다루지 않는다.
+ * prop은 문서가 컴포넌트 선언에서 만든 manifest(install·dev·build 때마다 생성)를 쓰므로 여기서 다루지 않는다.
  */
 import fs from 'fs'
 import path from 'path'
