@@ -9,6 +9,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -17,15 +18,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'surface.html', label: 'Surface' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  { name: 'caption', type: 'string' },
-  { name: 'rows', type: 'TemplateResult', optional: true },
-  { name: 'height', type: 'string', optional: true },
-  {
-    name: 'columns',
-    type: "{ label: string; width?: string; sortable?: boolean; textAlign?: 'left' | 'center' | 'right' }[] = []",
-  },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-table')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {

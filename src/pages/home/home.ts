@@ -353,6 +353,18 @@ const main = html`
               ]}
             ></mm-text-list>
           </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="Prop 표">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                '컴포넌트 페이지의 prop 표는 손으로 적지 않는다. 스크립트가 컴포넌트 코드의 @property 선언을 읽어 표를 만든다(npm run manifest). 이름·타입·기본값이 코드 한 곳에서 나오므로 문서가 구현과 어긋나지 않는다.',
+                '이벤트·slot·메서드는 선언에서 읽을 수 없어 페이지에 손으로 덧붙인다.',
+                '부모가 대신 채우는 prop은 선언에 @internal을 달아 표에서 뺀다. 예: mm-step이 번호를 매기는 mm-step-item의 value',
+                '만든 결과(src/generated)는 커밋하지 않는다. 설치·개발 서버·빌드 때마다 새로 만든다.',
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
         </mm-content-section>
 
         <mm-content-section heading="Code Conventions">

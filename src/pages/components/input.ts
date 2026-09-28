@@ -1,7 +1,5 @@
 import { html } from 'lit'
 
-import type { InputType } from '@/components/common/input/input'
-import type { InputSize } from '@/components/common/input/input.styles'
 import type {
   ComponentChangelogItemData,
   ComponentFeatureItem,
@@ -9,10 +7,9 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
-import type { AriaInvalid } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -38,47 +35,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'type',
-    type: unionTypeLabel<InputType>(
-      {
-        text: true,
-        search: true,
-        tel: true,
-        url: true,
-        email: true,
-        password: true,
-        number: true,
-        date: true,
-        time: true,
-        'datetime-local': true,
-        month: true,
-        week: true,
-        color: true,
-        hidden: true,
-      },
-      'text',
-    ),
-  },
-  { name: 'value', type: 'string', optional: true },
-  { name: 'name', type: 'string', optional: true },
-  { name: 'placeholder', type: 'string', optional: true },
-  { name: 'label', type: 'string', optional: true },
-  { name: 'description', type: 'string', optional: true },
-  { name: 'validation-text', type: 'string', optional: true },
-  {
-    name: 'size',
-    type: unionTypeLabel<InputSize>({ small: true, medium: true }, 'medium'),
-    optional: true,
-  },
-  { name: 'optional', type: 'boolean', optional: true },
-  { name: 'hidden-label', type: 'boolean', optional: true },
-  { name: 'disabled', type: 'boolean', optional: true },
-  {
-    name: 'aria-invalid',
-    type: unionTypeLabel<Extract<AriaInvalid, 'true' | 'false'>>({ true: true, false: true }),
-    optional: true,
-  },
+  ...componentPropsOf('mm-textfield'),
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 

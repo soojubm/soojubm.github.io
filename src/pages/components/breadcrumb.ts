@@ -7,6 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -14,11 +15,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'top-bar.html', label: 'Top Bar' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  { name: 'items', type: '{ label: string; href?: string }[] = []' },
-  { name: 'divider', type: "string = '/'", optional: true },
-  { name: 'aria-label', type: "string = 'breadcrumb'", optional: true },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-breadcrumb')]
 
 const componentFeatures: ComponentFeatureItem[] = []
 

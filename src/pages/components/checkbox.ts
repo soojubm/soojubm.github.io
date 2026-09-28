@@ -1,13 +1,12 @@
 import { html } from 'lit'
 
-import type { CheckboxSize } from '@/components/common/checkbox/checkbox'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -16,36 +15,11 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'name', type: 'string', optional: true },
-  { name: 'value', type: 'string', optional: true },
-  {
-    name: 'size',
-    type: unionTypeLabel<CheckboxSize>({ medium: true, large: true }, 'medium'),
-    optional: true,
-  },
-  { name: 'checked', type: 'boolean', optional: true },
-  { name: 'disabled', type: 'boolean', optional: true },
-  { name: 'indeterminate', type: 'boolean', optional: true },
-  {
-    name: 'mm-checkbox-group options',
-    type: '{ value: string; label: string; disabled?: boolean }[] = []',
-  },
-  { name: 'mm-checkbox-group name', type: 'string', optional: true },
-  {
-    name: 'mm-checkbox-group size',
-    type: unionTypeLabel<CheckboxSize>({ medium: true, large: true }, 'medium'),
-    optional: true,
-  },
-  { name: 'mm-checkbox-group legend', type: 'string', optional: true },
-  { name: 'mm-checkbox-group values', type: 'string[] = []', optional: true },
+  ...componentPropsOf('mm-checkbox'),
+  ...subComponentPropsOf('mm-checkbox-group'),
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
   { name: 'mm-checkbox-group change', type: 'CustomEvent detail: values', kind: 'event' },
-  {
-    name: 'mm-terms-agreement options',
-    type: '{ value: string; label: string; disabled?: boolean }[] = []',
-  },
-  { name: 'mm-terms-agreement name', type: 'string', optional: true },
-  { name: 'mm-terms-agreement values', type: 'string[] = []', optional: true },
+  ...subComponentPropsOf('mm-terms-agreement'),
   { name: 'mm-terms-agreement change', type: 'CustomEvent detail: values', kind: 'event' },
 ]
 

@@ -1,11 +1,5 @@
 import { html } from 'lit'
 
-import type { AvatarShape, AvatarVariant } from '@/components/common/avatar/avatar'
-import type { ListItemSize } from '@/components/common/list-item/list-item'
-import type {
-  ListItemGroupRole,
-  ListItemGroupSize,
-} from '@/components/common/list-item/list-item-group'
 import type { CastMember } from '@/components/domains/cast-list/cast-list'
 import type {
   ComponentFeatureItem,
@@ -15,7 +9,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -57,39 +51,9 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'size',
-    type: unionTypeLabel<ListItemSize>({ small: true, medium: true, large: true }, 'small'),
-  },
-  { name: 'label', type: 'string', optional: true },
-  { name: 'description', type: 'string', optional: true },
-  { name: 'icon', type: 'IconName', optional: true },
-  { name: 'emoji', type: 'string', optional: true },
-  { name: 'avatar-src', type: 'string', optional: true },
-  {
-    name: 'avatar-variant',
-    type: unionTypeLabel<AvatarVariant>(
-      { primary: true, secondary: true, tertiary: true },
-      'primary',
-    ),
-    optional: true,
-  },
-  {
-    name: 'avatar-shape',
-    type: unionTypeLabel<AvatarShape>({ circle: true, square: true }, 'square'),
-    optional: true,
-  },
+  ...componentPropsOf('mm-list-item'),
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
-  {
-    name: 'mm-list-item-group role',
-    type: unionTypeLabel<ListItemGroupRole>({ list: true, group: true }, 'list'),
-    optional: true,
-  },
-  {
-    name: 'mm-list-item-group size',
-    type: unionTypeLabel<ListItemGroupSize>({ small: true, medium: true }, 'medium'),
-    optional: true,
-  },
+  ...subComponentPropsOf('mm-list-item-group'),
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

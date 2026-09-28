@@ -7,6 +7,7 @@ import type {
 } from '@/components/domains/component'
 import type { BottomBarItem } from '@/components/layouts/bottom-bar'
 
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -15,12 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'items',
-    type: '{ label: string; href?: string; icon?: IconName; active?: boolean }[]',
-    optional: true,
-  },
-  { name: 'aria-label', type: "string = '하단 내비게이션'", optional: true },
+  ...componentPropsOf('mm-bottom-bar'),
   { name: 'change', type: 'CustomEvent detail: index', kind: 'event' },
 ]
 

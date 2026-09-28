@@ -7,6 +7,7 @@ import type {
 } from '@/components/domains/component'
 import type { ActionConfig } from '@/types'
 
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -16,11 +17,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'open', type: 'boolean' },
-  { name: 'heading', type: 'string' },
-  { name: 'description', type: 'string' },
-  { name: 'primaryAction', type: 'ActionConfig', optional: true },
-  { name: 'secondaryAction', type: 'ActionConfig', optional: true },
+  ...componentPropsOf('mm-dialog'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
   { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]

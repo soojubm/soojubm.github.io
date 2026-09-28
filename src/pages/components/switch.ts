@@ -6,6 +6,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -14,9 +15,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'name', type: 'string', optional: true },
-  { name: 'checked', type: 'boolean', optional: true },
-  { name: 'disabled', type: 'boolean', optional: true },
+  ...componentPropsOf('mm-switch'),
   { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
 ]
 

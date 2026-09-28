@@ -14,7 +14,7 @@ import {
   type DotSize,
   type DotTone,
 } from '@/components/common/dot/dot.styles'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -23,31 +23,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'avatar.html', label: 'Avatar' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'tone',
-    type: unionTypeLabel<DotTone>(
-      {
-        default: true,
-        gold: true,
-        green: true,
-        yellow: true,
-        red: true,
-        blue: true,
-        purple: true,
-        pink: true,
-        orange: true,
-        cyan: true,
-        gray: true,
-      },
-      'default',
-    ),
-  },
-  {
-    name: 'size',
-    type: unionTypeLabel<DotSize>({ '16': true, '12': true, '8': true, '6': true }, '8'),
-  },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-dot')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {

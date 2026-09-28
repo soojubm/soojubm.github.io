@@ -1,11 +1,5 @@
 import { html } from 'lit'
 
-import type { AvatarShape, AvatarVariant } from '@/components/common/avatar/avatar'
-import type {
-  MenuItemGroupRole,
-  MenuItemGroupSize,
-} from '@/components/common/menu-item/menu-item-group'
-import type { MenuItemSize, MenuItemTone } from '@/components/common/menu-item/menu-item.utils'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -14,7 +8,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { sharedPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -45,70 +39,23 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
+// 행 변형은 표시 prop을 함께 물려받으므로 공통 prop은 한 번만 적고, 변형마다 더하는 prop만 따로 적는다.
+const menuItemTags = [
+  'mm-menu-item-action',
+  'mm-menu-item-link',
+  'mm-menu-item-checkbox',
+  'mm-menu-item-switch',
+  'mm-menu-item-radio',
+] as const
+const sharedMenuItemProps = sharedPropsOf(...menuItemTags)
+
 const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'size',
-    type: unionTypeLabel<MenuItemSize>({ small: true, medium: true }, 'small'),
-    optional: true,
-  },
-  { name: 'label', type: 'string' },
-  { name: 'description', type: 'string', optional: true },
-  { name: 'icon', type: 'IconName', optional: true },
-  { name: 'emoji', type: 'string', optional: true },
-  { name: 'avatar-src', type: 'string', optional: true },
-  {
-    name: 'avatar-variant',
-    type: unionTypeLabel<AvatarVariant>(
-      { primary: true, secondary: true, tertiary: true },
-      'tertiary',
-    ),
-    optional: true,
-  },
-  {
-    name: 'avatar-shape',
-    type: unionTypeLabel<AvatarShape>({ circle: true, square: true }, 'square'),
-    optional: true,
-  },
-  {
-    name: 'tone',
-    type: unionTypeLabel<Exclude<MenuItemTone, ''>>({ danger: true }),
-    optional: true,
-  },
-  { name: 'disabled', type: 'boolean', optional: true },
+  ...sharedMenuItemProps,
   { name: "slot='trailing'", type: 'HTMLElement', optional: true },
-  { name: 'mm-menu-item-action trailing-icon', type: 'IconName', optional: true },
-  { name: 'mm-menu-item-link href', type: 'string', optional: true },
-  { name: 'mm-menu-item-link target', type: "string = '_blank'", optional: true },
-  { name: 'mm-menu-item-checkbox checked', type: 'boolean = false', optional: true },
-  { name: 'mm-menu-item-checkbox value', type: 'string', optional: true },
-  { name: 'mm-menu-item-switch checked', type: 'boolean = false', optional: true },
-  { name: 'mm-menu-item-radio checked', type: 'boolean = false', optional: true },
-  { name: 'mm-menu-item-radio value', type: 'string', optional: true },
-  { name: 'mm-menu-item-radio name', type: 'string', optional: true },
-  {
-    name: 'mm-menu-item-group role',
-    type: unionTypeLabel<MenuItemGroupRole>({ menu: true, radiogroup: true, group: true }, 'menu'),
-    optional: true,
-  },
-  {
-    name: 'mm-menu-item-group size',
-    type: unionTypeLabel<MenuItemGroupSize>({ medium: true, large: true }, 'medium'),
-    optional: true,
-  },
-  { name: 'mm-menu-item-group heading', type: 'string', optional: true },
-  { name: 'mm-menu-item-radio-group name', type: 'string', optional: true },
-  { name: 'mm-menu-item-radio-group value', type: 'string', optional: true },
-  {
-    name: 'mm-menu-item-radio-group size',
-    type: unionTypeLabel<MenuItemGroupSize>({ medium: true, large: true }, 'medium'),
-    optional: true,
-  },
-  { name: 'mm-menu-item-checkbox-group values', type: 'string[] = []', optional: true },
-  {
-    name: 'mm-menu-item-checkbox-group size',
-    type: unionTypeLabel<MenuItemGroupSize>({ medium: true, large: true }, 'medium'),
-    optional: true,
-  },
+  ...menuItemTags.flatMap(tag => subComponentPropsOf(tag, sharedMenuItemProps)),
+  ...subComponentPropsOf('mm-menu-item-group'),
+  ...subComponentPropsOf('mm-menu-item-radio-group'),
+  ...subComponentPropsOf('mm-menu-item-checkbox-group'),
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
   { name: 'toggle', type: 'CustomEvent detail: open', kind: 'event' },
 ]

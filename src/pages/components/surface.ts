@@ -1,11 +1,6 @@
 import { html } from 'lit'
 
 import type {
-  SurfaceDensity,
-  SurfaceRadius,
-  SurfaceVariant,
-} from '@/components/common/surface/surface.styles'
-import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentReferenceItemData,
@@ -13,7 +8,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const scrollThumbnails = [
@@ -67,29 +62,7 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'variant',
-    type: unionTypeLabel<SurfaceVariant>({
-      ghost: true,
-      paper: true,
-      outlined: true,
-      filled: true,
-      elevated: true,
-    }),
-    optional: true,
-  },
-  {
-    name: 'radius',
-    type: unionTypeLabel<SurfaceRadius>({ default: true, large: true }),
-    optional: true,
-  },
-  {
-    name: 'density',
-    type: unionTypeLabel<SurfaceDensity>({ default: true, compact: true }),
-    optional: true,
-  },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-surface')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {

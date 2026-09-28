@@ -16,29 +16,25 @@ export interface ComponentPropItemData {
 }
 
 /**
- * 문자열 union prop의 문서 표기('a' | 'b' = 'a')를 만든다.
- * 값을 prop 타입의 Record 키로 받아, 타입과 어긋나면(값이 빠지거나 남으면) 컴파일 에러가 난다.
- * 정수처럼 보이는 키('80' 등)는 객체 규칙에 따라 오름차순으로 나열된다.
- */
-export const unionTypeLabel = <Value extends string>(
-  values: Record<Value, true>,
-  defaultValue?: Value,
-) => {
-  const quoted = Object.keys(values).map(value => `'${value}'`)
-  const union = quoted.join(' | ')
-  if (defaultValue === undefined) return union
-  return `${union} = '${defaultValue}'`
-}
-
-/**
  * 컴포넌트 선언(@property)에서 만든 prop 목록. 이름·타입·기본값을 문서에 손으로 옮겨 적지 않는다.
  * 선언이 바뀌면 npm run manifest로 다시 만든다. 이벤트·slot은 선언에서 읽을 수 없어 페이지가 덧붙인다.
  */
 export const componentPropsOf = (tag: ComponentTag) => componentManifest[tag]
 
-/** 부모 페이지에 함께 전시하는 sub-component의 prop. 이름 앞에 태그를 붙여 어느 요소의 prop인지 가른다. */
-export const subComponentPropsOf = (tag: ComponentTag) =>
-  componentManifest[tag].map(prop => ({ ...prop, name: `${tag} ${prop.name}` }))
+/** 계열이 함께 물려받는 prop(모든 태그에 같은 이름으로 있는 prop). 공통 prop을 한 번만 적을 때 쓴다. */
+export const sharedPropsOf = (...tags: ComponentTag[]) =>
+  componentManifest[tags[0]].filter(prop =>
+    tags.every(tag => componentManifest[tag].some(({ name }) => name === prop.name)),
+  )
+
+/**
+ * 부모 페이지에 함께 전시하는 sub-component의 prop. 이름 앞에 태그를 붙여 어느 요소의 prop인지 가른다.
+ * written에 이미 적은 prop(sharedPropsOf 결과 등)을 주면 같은 이름은 빼고 그 태그가 더하는 것만 남긴다.
+ */
+export const subComponentPropsOf = (tag: ComponentTag, written: ComponentPropItemData[] = []) =>
+  componentManifest[tag]
+    .filter(prop => !written.some(({ name }) => name === prop.name))
+    .map(prop => ({ ...prop, name: `${tag} ${prop.name}` }))
 
 // 이보다 적은 prop은 접어도 가릴 내용이 없어 처음부터 펼쳐 둔다.
 const COLLAPSIBLE_PROP_COUNT = 3

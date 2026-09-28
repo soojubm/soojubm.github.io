@@ -7,6 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -34,11 +35,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'label', type: "string = '파일 업로드'" },
-  { name: 'description', type: 'string', optional: true },
-  { name: 'accept', type: 'string', optional: true },
-  { name: 'multiple', type: 'boolean = false', optional: true },
-  { name: 'capture', type: 'boolean = false', optional: true },
+  ...componentPropsOf('mm-file-uploader'),
   { name: 'change', type: 'CustomEvent detail: files', kind: 'event' },
 ]
 

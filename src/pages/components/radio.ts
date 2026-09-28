@@ -1,6 +1,5 @@
 import { html } from 'lit'
 
-import type { RadioSize } from '@/components/common/radio/radio'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -9,7 +8,7 @@ import type {
 } from '@/components/domains/component'
 import type { OptionItem } from '@/types'
 
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -37,30 +36,9 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'name', type: 'string', optional: true },
-  { name: 'value', type: 'string', optional: true },
-  {
-    name: 'size',
-    type: unionTypeLabel<RadioSize>({ medium: true, large: true }, 'medium'),
-    optional: true,
-  },
-  { name: 'checked', type: 'boolean', optional: true },
-  { name: 'disabled', type: 'boolean', optional: true },
-  {
-    name: 'mm-radio-group options',
-    type: '{ value: string; label: string; disabled?: boolean }[] = []',
-  },
-  { name: 'mm-radio-group name', type: 'string', optional: true },
-  { name: 'mm-radio-group value', type: 'string', optional: true },
-  {
-    name: 'mm-radio-group size',
-    type: unionTypeLabel<RadioSize>({ medium: true, large: true }, 'medium'),
-    optional: true,
-  },
-  { name: 'mm-radio-group legend', type: 'string', optional: true },
-  { name: 'mm-radio-group disabled', type: 'boolean', optional: true },
-  { name: 'mm-radio-card-group name', type: 'string', optional: true },
-  { name: 'mm-radio-card-group value', type: 'string', optional: true },
+  ...componentPropsOf('mm-radio'),
+  ...subComponentPropsOf('mm-radio-group'),
+  ...subComponentPropsOf('mm-radio-card-group'),
   { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
   { name: 'mm-radio-group change', type: 'CustomEvent detail: value, name', kind: 'event' },
 ]

@@ -1,13 +1,12 @@
 import { html } from 'lit'
 
-import type { SpinnerVariant } from '@/components/common/spinner/spinner'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -15,13 +14,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'step.html', label: 'Step' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'variant',
-    type: unionTypeLabel<SpinnerVariant>({ element: true, section: true }, 'element'),
-  },
-  { name: 'label', type: "string = '로딩 중'" },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-spinner')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {

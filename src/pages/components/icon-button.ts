@@ -1,16 +1,13 @@
 import { html } from 'lit'
 
-import type { IconButtonSize, IconButtonVariant } from '@/components/common/icon-button/icon-button'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
-import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
-import type { AriaBoolean } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -18,34 +15,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'toggle-button.html', label: 'Toggle Button' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  { name: 'icon', type: 'IconName' },
-  {
-    name: 'variant',
-    type: unionTypeLabel<IconButtonVariant>(
-      { primary: true, secondary: true, tertiary: true, ghost: true, danger: true },
-      'tertiary',
-    ),
-  },
-  { name: 'size', type: unionTypeLabel<IconButtonSize>({ small: true, medium: true }, 'medium') },
-  { name: 'aria-label', type: 'string' },
-  {
-    name: 'tooltip-placement',
-    type: unionTypeLabel<TooltipPlacement>(
-      { bottom: true, 'bottom-start': true, 'bottom-end': true },
-      'bottom-start',
-    ),
-    optional: true,
-  },
-  { name: 'aria-controls', type: 'string', optional: true },
-  {
-    name: 'aria-expanded',
-    type: unionTypeLabel<Extract<AriaBoolean, 'true' | 'false'>>({ true: true, false: true }),
-    optional: true,
-  },
-  { name: 'aria-haspopup', type: 'string', optional: true },
-  { name: 'disabled', type: 'boolean', optional: true },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-icon-button')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {

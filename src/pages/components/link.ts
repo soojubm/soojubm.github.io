@@ -8,6 +8,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
+import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -16,15 +17,9 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'href', type: 'string' },
-  { name: 'target', type: 'string', optional: true },
-  { name: 'external', type: 'boolean', optional: true },
-  { name: 'mm-link-prompt message', type: 'string', optional: true },
-  { name: 'mm-link-prompt link-label', type: 'string', optional: true },
-  { name: 'mm-link-prompt icon', type: 'IconName', optional: true },
-  { name: 'mm-link-prompt href', type: 'string', optional: true },
-  { name: 'mm-pager previous', type: 'PagerLink', optional: true },
-  { name: 'mm-pager next', type: 'PagerLink', optional: true },
+  ...componentPropsOf('mm-link'),
+  ...subComponentPropsOf('mm-link-prompt'),
+  ...subComponentPropsOf('mm-pager'),
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

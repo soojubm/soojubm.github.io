@@ -3,7 +3,7 @@
  *
  * 문서 prop 표를 손으로 적으면 구현이 바뀌어도 조용히 남는다. prop 이름·타입·기본값의 원천을
  * 컴포넌트 선언 하나로 두고, 문서는 이 manifest에서 표를 가져온다. 이벤트·slot은 선언에서
- * 읽을 수 없어 문서 페이지가 계속 손으로 덧붙인다.
+ * 읽을 수 없어 문서 페이지가 계속 손으로 덧붙인다. 부모가 채우는 prop은 선언에 @internal을 달아 뺀다.
  *
  * 결과(src/generated/component-manifest.ts)는 커밋하지 않고 install·dev·start·build 전에 npm run manifest로 만든다.
  */
@@ -120,9 +120,12 @@ const isEmptyDefault = initializer =>
   (ts.isStringLiteral(initializer) && !initializer.text) ||
   initializer.kind === ts.SyntaxKind.NullKeyword
 
+// 부모가 채우는 값처럼 소비자가 넘기지 않는 prop은 선언에 @internal을 달아 문서에서 뺀다.
+const isInternal = declaration => ts.getJSDocTags(declaration).some(tag => tag.tagName.text === 'internal')
+
 const propOf = (checker, declaration) => {
   const options = decoratorArgument(declaration, 'property')
-  if (options === undefined) return null
+  if (options === undefined || isInternal(declaration)) return null
 
   const symbol = checker.getSymbolAtLocation(declaration.name)
   const type = checker.getTypeOfSymbolAtLocation(symbol, declaration)

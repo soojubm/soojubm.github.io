@@ -7,11 +7,10 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
-import type { Orientation } from '@/controllers/roving-focus-controller'
 import type { OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -33,28 +32,8 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'pressed', type: 'boolean = false' },
-  { name: 'pressed-label', type: 'string', optional: true },
-  { name: 'value', type: 'string' },
-  { name: 'icon', type: 'IconName', optional: true },
-  { name: 'disabled', type: 'boolean = false' },
-  { name: 'aria-label', type: 'string', optional: true },
-  {
-    name: 'mm-toggle-button-group options',
-    type: '{ value: string; label: string; icon?: IconName; disabled?: boolean }[] = []',
-    optional: true,
-  },
-  { name: 'mm-toggle-button-group value', type: 'string', optional: true },
-  { name: 'mm-toggle-button-group hidden-label', type: 'boolean = false', optional: true },
-  { name: 'mm-toggle-button-group stretch', type: 'boolean = false', optional: true },
-  {
-    name: 'mm-toggle-button-group orientation',
-    type: unionTypeLabel<Exclude<Orientation, 'both'>>(
-      { horizontal: true, vertical: true },
-      'horizontal',
-    ),
-    optional: true,
-  },
+  ...componentPropsOf('mm-toggle-button'),
+  ...subComponentPropsOf('mm-toggle-button-group'),
   { name: 'change', type: 'CustomEvent detail: pressed, value', kind: 'event' },
   { name: 'mm-toggle-button-group change', type: 'CustomEvent detail: value', kind: 'event' },
 ]

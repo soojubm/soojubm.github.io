@@ -47,7 +47,9 @@ export class Tab extends LitElement {
     /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--interaction-selected-foreground-color); } */
   `
   @property({ type: String }) value = ''
+  /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
   @property({ type: Boolean, reflect: true }) active = false
+  /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
   @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected: AriaBoolean =
     'false'
 

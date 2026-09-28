@@ -1,6 +1,5 @@
 import { html } from 'lit'
 
-import type { TabListVariant } from '@/components/common/tabs/tab-list'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -8,7 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { unionTypeLabel } from '@/components/domains/component'
+import { subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -56,14 +55,9 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  { name: 'mm-tab-list value', type: 'string' },
-  {
-    name: 'mm-tab-list variant',
-    type: unionTypeLabel<TabListVariant>({ line: true, pill: true }, 'line'),
-  },
-  { name: 'mm-tab-list search-param', type: 'string', optional: true },
-  { name: 'mm-tab value', type: 'string' },
-  { name: 'mm-tab-panel value', type: 'string' },
+  ...subComponentPropsOf('mm-tab-list'),
+  ...subComponentPropsOf('mm-tab'),
+  ...subComponentPropsOf('mm-tab-panel'),
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 

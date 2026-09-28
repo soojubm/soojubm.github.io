@@ -1,6 +1,5 @@
 import { html } from 'lit'
 
-import type { NoticeRole, NoticeVariant } from '@/components/common/notice/notice'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -8,7 +7,7 @@ import type {
 } from '@/components/domains/component'
 import type { ActionConfig } from '@/types'
 
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -17,23 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'role',
-    type: unionTypeLabel<NoticeRole>({ alert: true, note: true, status: true }, 'note'),
-    optional: true,
-  },
-  { name: 'heading', type: 'string', optional: true },
-  { name: 'description', type: 'string', optional: true },
-  {
-    name: 'variant',
-    type: unionTypeLabel<NoticeVariant>(
-      { info: true, success: true, warning: true, error: true },
-      'info',
-    ),
-    optional: true,
-  },
-  { name: 'primaryAction', type: 'ActionConfig', optional: true },
-  { name: 'secondaryAction', type: 'ActionConfig', optional: true },
+  ...componentPropsOf('mm-notice'),
   { name: 'dismiss', type: 'CustomEvent', kind: 'event' },
 ]
 

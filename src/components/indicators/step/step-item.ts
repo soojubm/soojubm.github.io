@@ -17,7 +17,9 @@ export type StepOrientation = 'horizontal' | 'vertical'
 @customElement('mm-step-item')
 export class StepItem extends LitElement {
   static styles = stepItemStyles
+  /** @internal 순서를 소유한 mm-step이 채운다. */
   @property({ type: String, reflect: true }) orientation: StepOrientation = 'horizontal'
+  /** @internal 순서를 소유한 mm-step이 채운다. */
   @property({ type: Number }) value = 1
   @property({ type: String }) label = ''
   @property({ type: Boolean, reflect: true }) active = false

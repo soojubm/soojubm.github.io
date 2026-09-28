@@ -1,6 +1,5 @@
 import { html } from 'lit'
 
-import type { TagTone } from '@/components/common/tag/tag.styles'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -8,7 +7,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
 
@@ -17,27 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'button.html', label: 'Button' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'tone',
-    type: unionTypeLabel<TagTone>(
-      {
-        default: true,
-        gold: true,
-        green: true,
-        yellow: true,
-        red: true,
-        blue: true,
-        purple: true,
-        pink: true,
-        orange: true,
-        cyan: true,
-      },
-      'default',
-    ),
-  },
-  { name: 'icon', type: 'IconName', optional: true },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-tag')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {

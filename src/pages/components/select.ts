@@ -8,7 +8,7 @@ import type {
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { SelectVariant } from '@/components/overlay/select/select'
 
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -30,23 +30,7 @@ const releaseChannelOptions = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  {
-    name: 'options',
-    type: '{ value: string; label: string; icon?: IconName; disabled?: boolean }[] = []',
-  },
-  { name: 'value', type: 'string', optional: true },
-  {
-    name: 'variant',
-    type: unionTypeLabel<SelectVariant>({ tertiary: true, ghost: true }, 'tertiary'),
-  },
-  {
-    name: 'placement',
-    type: unionTypeLabel<PopoverPlacement>(
-      { 'bottom-start': true, 'bottom-end': true, 'top-start': true, 'top-end': true },
-      'bottom-start',
-    ),
-  },
-  { name: 'aria-label', type: 'string', optional: true },
+  ...componentPropsOf('mm-select'),
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 

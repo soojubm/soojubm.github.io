@@ -15,6 +15,7 @@ export class TabPanel extends LitElement {
     }
   `
   @property({ type: String }) value = ''
+  /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
   @property({ type: Boolean, reflect: true }) active = false
 
   connectedCallback() {

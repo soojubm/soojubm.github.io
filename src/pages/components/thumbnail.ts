@@ -1,18 +1,13 @@
 import { html } from 'lit'
 
 import type {
-  ThumbnailFetchPriority,
-  ThumbnailLoading,
-  ThumbnailRatio,
-} from '@/components/common/thumbnail/thumbnail'
-import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { unionTypeLabel } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -43,30 +38,7 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  { name: 'src', type: 'string' },
-  { name: 'alt', type: 'string' },
-  {
-    name: 'ratio',
-    type: unionTypeLabel<ThumbnailRatio>(
-      { '1:1': true, '16:9': true, '4:3': true, full: true },
-      '16:9',
-    ),
-    optional: true,
-  },
-  { name: 'caption', type: 'string', optional: true },
-  { name: 'href', type: 'string', optional: true },
-  {
-    name: 'loading',
-    type: unionTypeLabel<ThumbnailLoading>({ eager: true, lazy: true }, 'lazy'),
-    optional: true,
-  },
-  {
-    name: 'fetchpriority',
-    type: unionTypeLabel<ThumbnailFetchPriority>({ high: true, low: true, auto: true }, 'auto'),
-    optional: true,
-  },
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-thumbnail')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
