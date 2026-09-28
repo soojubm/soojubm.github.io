@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
@@ -10,8 +10,7 @@ import type { OptionItem } from '@/types'
 import '@/components/common'
 import '@/components/overlay/popover/popover'
 import '@/components/overlay/sheet'
-import { MEDIA_QUERY } from '@/constants'
-import { MediaQueryController } from '@/controllers/media-query-controller'
+import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-controller'
 import { emit } from '@/utils'
 
 // onClick은 항목마다 할 일이 정해진 경우에 쓰고, action 이벤트는 onClick 유무와 상관없이 늘 알린다.
@@ -32,9 +31,7 @@ export class MoreMenu extends LitElement {
   @property({ attribute: false }) actions: MoreMenuAction[] = []
   @property({ type: String }) placement: PopoverPlacement = 'bottom-end'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
-  @state() private open = false
-  private compact = new MediaQueryController(this, MEDIA_QUERY.compact)
-  private wasCompact = this.compact.matches
+  private overlay = new AdaptiveOverlayController(this)
 
   render() {
     return html`
@@ -44,13 +41,13 @@ export class MoreMenu extends LitElement {
 
   // 좁은 화면에서는 sheet가 목록을 맡으므로 popover 없이 트리거만 남긴다.
   private renderPopover() {
-    if (this.compact.matches) return this.renderTrigger()
+    if (this.overlay.compact) return this.renderTrigger()
 
     return html`
       <mm-popover
         placement=${this.placement}
-        ?open=${this.open}
-        @toggle=${this.handleOverlayToggle}
+        ?open=${this.overlay.open}
+        @toggle=${this.overlay.handleOverlayToggle}
       >
         ${this.renderTrigger()} ${this.renderActionList()}
       </mm-popover>
@@ -62,24 +59,24 @@ export class MoreMenu extends LitElement {
     return html`
       <mm-sheet
         aria-label=${this.ariaLabel}
-        ?open=${this.compact.matches && this.open}
-        @toggle=${this.handleOverlayToggle}
+        ?open=${this.overlay.compact && this.overlay.open}
+        @toggle=${this.overlay.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
-        <mm-sheet-body>${this.compact.matches ? this.renderActionList() : nothing}</mm-sheet-body>
+        <mm-sheet-body>${this.overlay.compact ? this.renderActionList() : nothing}</mm-sheet-body>
       </mm-sheet>
     `
   }
 
   // popover는 slot=trigger의 클릭과 aria-expanded를 스스로 배선하지만, portal로 옮겨진 sheet는 직접 배선한다.
   private renderTrigger() {
-    if (this.compact.matches) {
+    if (this.overlay.compact) {
       return html`
         <mm-more-button
           aria-label=${this.ariaLabel}
           aria-haspopup="dialog"
-          aria-expanded=${this.open ? 'true' : 'false'}
-          @click=${this.handleTriggerClick}
+          aria-expanded=${this.overlay.open ? 'true' : 'false'}
+          @click=${this.overlay.handleTriggerClick}
         ></mm-more-button>
       `
     }
@@ -113,32 +110,11 @@ export class MoreMenu extends LitElement {
     `
   }
 
-  protected willUpdate() {
-    this.closeOnSurfaceChange()
-  }
-
-  // 표면이 갈리면 트리거 배선도 새 표면으로 옮겨가므로, 열린 채로 넘어가지 않게 닫는다.
-  private closeOnSurfaceChange() {
-    if (this.compact.matches === this.wasCompact) return
-
-    this.wasCompact = this.compact.matches
-    this.open = false
-  }
-
-  private handleTriggerClick() {
-    this.open = !this.open
-  }
-
-  // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 디스패치하는 toggle 이벤트의 open 값으로 자기 상태를 맞춘다.
-  private handleOverlayToggle(event: CustomEvent<{ open: boolean }>) {
-    this.open = event.detail.open
-  }
-
   // 명령을 누르면 목록을 닫고 항목의 onClick을 실행한 뒤 어떤 명령인지 알린다.
   private handleActionClick(action: MoreMenuAction) {
     if (action.disabled) return
 
-    this.open = false
+    this.overlay.close()
     action.onClick?.()
     emit(this, 'action', { value: action.value })
   }

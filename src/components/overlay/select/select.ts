@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
@@ -13,8 +13,7 @@ import '@/components/overlay/popover/popover'
 import '@/components/overlay/select/select-listbox'
 import '@/components/overlay/select/select-option'
 import '@/components/overlay/sheet'
-import { MEDIA_QUERY } from '@/constants'
-import { MediaQueryController } from '@/controllers/media-query-controller'
+import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-controller'
 import { emit } from '@/utils'
 
 export type SelectVariant = Extract<ButtonVariant, 'tertiary' | 'ghost'>
@@ -23,7 +22,7 @@ export type SelectVariant = Extract<ButtonVariant, 'tertiary' | 'ghost'>
  * popover를 프리미티브로 하는 선택 입력.
  * 좁은 화면에서는 목록을 트리거에 앵커하지 않고 sheet로 올린다. 두 표면은 backdrop·portal·
  * 스크롤 잠금을 쥐는 방식이 달라 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
- * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 select가 소유한다.
+ * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 AdaptiveOverlayController가 소유한다.
  */
 @customElement('mm-select')
 export class Select extends LitElement {
@@ -52,9 +51,7 @@ export class Select extends LitElement {
   @property({ type: String }) variant: SelectVariant = 'tertiary'
   @property({ type: String }) placement: PopoverPlacement = 'bottom-start'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @state() private open = false
-  private compact = new MediaQueryController(this, MEDIA_QUERY.compact)
-  private wasCompact = this.compact.matches
+  private overlay = new AdaptiveOverlayController(this)
 
   render() {
     return html`
@@ -64,13 +61,13 @@ export class Select extends LitElement {
 
   // 좁은 화면에서는 sheet가 목록을 맡으므로 popover 없이 트리거만 남긴다.
   private renderPopover() {
-    if (this.compact.matches) return this.renderTrigger()
+    if (this.overlay.compact) return this.renderTrigger()
 
     return html`
       <mm-popover
         placement=${this.placement}
-        ?open=${this.open}
-        @toggle=${this.handleOverlayToggle}
+        ?open=${this.overlay.open}
+        @toggle=${this.overlay.handleOverlayToggle}
       >
         ${this.renderTrigger()} ${this.renderOptionList()}
       </mm-popover>
@@ -85,11 +82,11 @@ export class Select extends LitElement {
     return html`
       <mm-sheet
         aria-label=${this.ariaLabel || nothing}
-        ?open=${this.compact.matches && this.open}
-        @toggle=${this.handleOverlayToggle}
+        ?open=${this.overlay.compact && this.overlay.open}
+        @toggle=${this.overlay.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
-        <mm-sheet-body>${this.compact.matches ? this.renderOptionList() : nothing}</mm-sheet-body>
+        <mm-sheet-body>${this.overlay.compact ? this.renderOptionList() : nothing}</mm-sheet-body>
       </mm-sheet>
     `
   }
@@ -99,16 +96,21 @@ export class Select extends LitElement {
    * portal로 옮겨진 sheet는 다른 트리 아래의 트리거를 찾을 수 없어 select가 직접 배선한다.
    */
   private renderTrigger() {
-    if (this.compact.matches) {
+    const content = html`
+      ${this.currentLabel}
+      <mm-expand-indicator ?expanded=${this.overlay.open}></mm-expand-indicator>
+    `
+
+    if (this.overlay.compact) {
       return html`
         <mm-button
           variant=${this.variant}
           aria-haspopup="dialog"
-          aria-expanded=${this.open ? 'true' : 'false'}
+          aria-expanded=${this.overlay.open ? 'true' : 'false'}
           aria-label=${this.triggerLabel || nothing}
-          @click=${this.handleTriggerClick}
+          @click=${this.overlay.handleTriggerClick}
         >
-          ${this.renderTriggerContent()}
+          ${content}
         </mm-button>
       `
     }
@@ -120,15 +122,8 @@ export class Select extends LitElement {
         aria-haspopup="listbox"
         aria-label=${this.triggerLabel || nothing}
       >
-        ${this.renderTriggerContent()}
+        ${content}
       </mm-button>
-    `
-  }
-
-  private renderTriggerContent() {
-    return html`
-      ${this.currentLabel}
-      <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
     `
   }
 
@@ -169,16 +164,7 @@ export class Select extends LitElement {
   }
 
   protected willUpdate() {
-    this.closeOnSurfaceChange()
     this.fillEmptyValue()
-  }
-
-  // 표면이 갈리면 트리거 배선도 새 표면으로 옮겨가므로, 열린 채로 넘어가지 않게 닫는다.
-  private closeOnSurfaceChange() {
-    if (this.compact.matches === this.wasCompact) return
-
-    this.wasCompact = this.compact.matches
-    this.open = false
   }
 
   // 네이티브 select처럼 value가 비어 있으면 첫 번째 활성 옵션으로 채운다.
@@ -188,18 +174,9 @@ export class Select extends LitElement {
     this.value = this.options.find(option => !option.disabled)?.value ?? ''
   }
 
-  private handleTriggerClick() {
-    this.open = !this.open
-  }
-
-  // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 디스패치하는 toggle 이벤트의 open 값으로 자기 상태를 맞춘다.
-  private handleOverlayToggle(event: CustomEvent<{ open: boolean }>) {
-    this.open = event.detail.open
-  }
-
   // 옵션 활성화 시: 값 반영 후 목록 닫기
   private handleOptionInput(event: CustomEvent<{ value: string }>) {
-    this.open = false
+    this.overlay.close()
     if (event.detail.value === this.value) return
 
     this.value = event.detail.value
