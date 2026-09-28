@@ -192,7 +192,7 @@ export class Select extends LitElement {
     this.open = !this.open
   }
 
-  // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 알려 오는 상태를 받아 적는다.
+  // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 디스패치하는 toggle 이벤트의 open 값으로 자기 상태를 맞춘다.
   private handleOverlayToggle(event: CustomEvent<{ open: boolean }>) {
     this.open = event.detail.open
   }

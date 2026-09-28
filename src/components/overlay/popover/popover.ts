@@ -9,7 +9,7 @@ import {
 import '@/components/common'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { OutsideClickController } from '@/controllers/outside-click-controller'
-import { emit, getDeepActiveElement } from '@/utils'
+import { getDeepActiveElement } from '@/utils'
 
 export type PopoverPlacement = Extract<
   OverlayPlacement,
@@ -70,10 +70,6 @@ export class Popover extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.get('open') === undefined) return
-
-    // 트리거가 자기 펼침 표시를 맞출 수 있게, 열고 닫힐 때마다 알린다.
-    // 네이티브 toggle처럼 버블링하지 않는다. 안에 둔 다른 표면의 열림이 바깥 리스너에 섞이지 않게 하기 위해서다.
-    emit(this, 'toggle', { open: this.open }, { bubbles: false, composed: false })
 
     if (this.open) {
       this.focusList()

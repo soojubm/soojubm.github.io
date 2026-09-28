@@ -9,7 +9,6 @@ import type { ActionConfig, AriaBoolean } from '@/types'
 
 import { sheetPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'
 import { SheetController } from '@/controllers/sheet-controller'
-import { emit } from '@/utils'
 
 @customElement('mm-dialog')
 export class Dialog extends LitElement {
@@ -39,7 +38,6 @@ export class Dialog extends LitElement {
     // ESC는 키보드 사용자의 탈출 수단으로 남기되, 어느 액션도 실행하지 않고 닫기만 한다.
     // 보조 액션이 파괴적인 쪽(예: 나가기)일 수 있어 취소로 간주하지 않기 때문이다.
     dismissOn: ['escape'],
-    onDismiss: () => this.close(),
   })
 
   connectedCallback() {
@@ -64,13 +62,6 @@ export class Dialog extends LitElement {
         ></mm-sheet-footer>
       </div>
     `
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.get('open') === undefined) return
-
-    // 액션·ESC·소비자 중 어느 경로로 바뀌었든 알린다. popover와 같이 버블링하지 않는다.
-    emit(this, 'toggle', { open: this.open }, { bubbles: false, composed: false })
   }
 
   show() {

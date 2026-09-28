@@ -11,7 +11,6 @@ import {
 } from '@/components/overlay/overlay.styles'
 import '@/components/overlay/backdrop/backdrop'
 import { SheetController } from '@/controllers/sheet-controller'
-import { emit } from '@/utils'
 
 export type SheetPlacement = Extract<OverlayPlacement, 'top' | 'bottom' | 'left' | 'right'>
 
@@ -41,7 +40,6 @@ export class Sheet extends LitElement {
     },
     // 시트는 닫아도 잃는 것이 없는 내용을 담으므로 배경 클릭과 ESC로 모두 닫힌다.
     dismissOn: ['backdrop', 'escape'],
-    onDismiss: () => this.close(),
   })
 
   connectedCallback() {
@@ -99,10 +97,6 @@ export class Sheet extends LitElement {
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('height')) this.syncHeight()
-    if (changedProperties.get('open') === undefined) return
-
-    // 배경·ESC·드래그·닫기 버튼·소비자 중 어느 경로로 바뀌었든 알린다. popover와 같이 버블링하지 않는다.
-    emit(this, 'toggle', { open: this.open }, { bubbles: false, composed: false })
   }
 
   private syncHeight() {

@@ -10,12 +10,10 @@ type DismissOn = 'backdrop' | 'escape'
 
 interface SheetControllerOptions {
   isOpen: () => boolean
-  /** 트리거 클릭으로 열고 닫을 때 호스트에 상태 변경을 요청한다 */
+  /** 트리거 클릭이나 dismissOn 조건으로 열고 닫을 때 호스트에 상태 변경을 요청한다 */
   setOpen: (open: boolean) => void
   /** 스스로 닫히는 조건. 표면의 용도가 정하므로 호스트가 명시한다 */
   dismissOn: DismissOn[]
-  /** 스스로 닫힐 때 호출된다(dismissOn 조건). 실제 상태 변경은 호스트가 수행한다 */
-  onDismiss: () => void
 }
 
 /**
@@ -27,7 +25,7 @@ interface SheetControllerOptions {
  * 클릭 토글과 aria-expanded 반영은 DisclosureController가 맡고, aria-haspopup="dialog"는 트리거가
  * 직접 선언한다.
  * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 이 컨트롤러는
- * isOpen/setOpen/onDismiss로 읽기·쓰기·알림만 위임받는다.
+ * isOpen/setOpen으로 읽기·쓰기만 위임받는다. 열고 닫힐 때의 toggle 이벤트는 DisclosureController가 디스패치한다.
  * 포커스는 열린 동안 portal 컨테이너 바깥의 body 자식을 inert로 만들어 표면 안에 가두고,
  * 닫히면 inert를 풀고 연 요소로 돌려준다. shadow DOM을 가로지르는 Tab 순서를 직접 계산하지 않기 위해서다.
  */
@@ -105,12 +103,12 @@ export class SheetController implements ReactiveController {
 
   private handleBackdropClick = (e: MouseEvent) => {
     if (!this.options.dismissOn.includes('backdrop') || !this.options.isOpen()) return
-    if (e.target === this.host) this.options.onDismiss()
+    if (e.target === this.host) this.options.setOpen(false)
   }
   private handleKeydown = (e: KeyboardEvent) => {
     if (e.key !== 'Escape' || !this.options.dismissOn.includes('escape')) return
     if (!this.options.isOpen()) return
 
-    this.options.onDismiss()
+    this.options.setOpen(false)
   }
 }

@@ -9,7 +9,7 @@ import '@/components/common/list-item/list-item-group'
 import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit, uniqueId } from '@/utils'
+import { uniqueId } from '@/utils'
 import '@/components/indicators/expand-indicator/expand-indicator'
 
 /**
@@ -55,7 +55,6 @@ export class SidebarSection extends LitElement {
     isOpen: () => this.open,
     setOpen: open => {
       this.open = open
-      emit(this, 'toggle', { open }, { bubbles: false, composed: false })
     },
     getTrigger: () => this.trigger ?? undefined,
   })
