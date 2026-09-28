@@ -36,7 +36,7 @@ const componentProps: ComponentPropItemData[] = [
     ),
   },
   { name: 'slot: trigger', type: 'HTMLElement' },
-  { name: 'popover-toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
+  { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = []

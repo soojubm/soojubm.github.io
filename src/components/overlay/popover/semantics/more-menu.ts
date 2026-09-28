@@ -50,7 +50,7 @@ export class MoreMenu extends LitElement {
       <mm-popover
         placement=${this.placement}
         ?open=${this.open}
-        @popover-toggle=${this.handlePopoverToggle}
+        @toggle=${this.handleOverlayToggle}
       >
         ${this.renderTrigger()} ${this.renderActionList()}
       </mm-popover>
@@ -63,7 +63,7 @@ export class MoreMenu extends LitElement {
       <mm-sheet
         aria-label=${this.ariaLabel}
         ?open=${this.compact.matches && this.open}
-        @sheet-close=${this.handleSheetClose}
+        @toggle=${this.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
         <mm-sheet-body>${this.compact.matches ? this.renderActionList() : nothing}</mm-sheet-body>
@@ -129,13 +129,9 @@ export class MoreMenu extends LitElement {
     this.open = !this.open
   }
 
-  // popover는 열림을 스스로 토글하므로, 트리거가 아니라 popover가 알려 오는 상태를 받아 적는다.
-  private handlePopoverToggle(event: CustomEvent<{ open: boolean }>) {
+  // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 알려 오는 상태를 받아 적는다.
+  private handleOverlayToggle(event: CustomEvent<{ open: boolean }>) {
     this.open = event.detail.open
-  }
-
-  private handleSheetClose() {
-    this.open = false
   }
 
   // 명령을 누르면 목록을 닫고 항목의 onClick을 실행한 뒤 어떤 명령인지 알린다.

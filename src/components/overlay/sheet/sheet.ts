@@ -41,22 +41,12 @@ export class Sheet extends LitElement {
     },
     // 시트는 닫아도 잃는 것이 없는 내용을 담으므로 배경 클릭과 ESC로 모두 닫힌다.
     dismissOn: ['backdrop', 'escape'],
-    onDismiss: () => emit(this, 'sheet-close'),
+    onDismiss: () => this.close(),
   })
-
-  // 리스너 대상이 호스트 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
-  constructor() {
-    super()
-    this.addEventListener('sheet-close', this.handleSheetClose)
-  }
 
   connectedCallback() {
     super.connectedCallback()
     this.setAttribute('role', 'dialog')
-  }
-
-  private handleSheetClose = () => {
-    this.close()
   }
 
   render() {
@@ -104,11 +94,15 @@ export class Sheet extends LitElement {
     this.sheetEl.style.transition = ''
     this.sheetEl.style.transform = ''
 
-    if (deltaY > this.sheetEl.offsetHeight * DRAG_CLOSE_THRESHOLD_RATIO) emit(this, 'sheet-close')
+    if (deltaY > this.sheetEl.offsetHeight * DRAG_CLOSE_THRESHOLD_RATIO) this.close()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
     if (changedProperties.has('height')) this.syncHeight()
+    if (changedProperties.get('open') === undefined) return
+
+    // 배경·ESC·드래그·닫기 버튼·소비자 중 어느 경로로 바뀌었든 알린다. popover와 같이 버블링하지 않는다.
+    emit(this, 'toggle', { open: this.open }, { bubbles: false, composed: false })
   }
 
   private syncHeight() {

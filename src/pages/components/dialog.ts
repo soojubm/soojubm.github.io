@@ -22,7 +22,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'primaryAction', type: 'ActionConfig', optional: true },
   { name: 'secondaryAction', type: 'ActionConfig', optional: true },
   { name: 'slot: default', type: 'HTMLElement', optional: true },
-  { name: 'dialog-close', type: 'CustomEvent', kind: 'event' },
+  { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

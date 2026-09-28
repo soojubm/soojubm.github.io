@@ -78,7 +78,7 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'mm-sheet-header heading', type: 'string', optional: true },
   { name: 'mm-sheet-footer primaryAction', type: 'ActionConfig', optional: true },
   { name: 'mm-sheet-footer secondaryAction', type: 'ActionConfig', optional: true },
-  { name: 'sheet-close', type: 'CustomEvent', kind: 'event' },
+  { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -120,7 +120,7 @@ function sheetPageTemplate() {
 
       <mm-component-anatomy
         .parts=${[
-          '헤더 — 타이틀과 닫기 버튼. 닫기 버튼은 sheet-close 이벤트를 버블링합니다.',
+          '헤더 — 타이틀과 닫기 버튼. 닫기 버튼은 자신을 담은 시트를 닫습니다.',
           '바디 — header·footer를 제외한 나머지를 채우고, 콘텐츠가 넘치면 내부에서 스크롤됩니다.',
           '푸터 — primaryAction·secondaryAction 버튼을 배치합니다.',
         ]}

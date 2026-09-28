@@ -64,7 +64,7 @@ export class NavbarSearch extends LitElement {
         placement="top"
         style="--backdrop-blur: 2px"
         ?open=${this.isOpen}
-        @sheet-close=${this.closeSearch}
+        @toggle=${this.handleSheetToggle}
       >
         <mm-sheet-header heading="검색"></mm-sheet-header>
         <mm-sheet-body>
@@ -119,6 +119,12 @@ export class NavbarSearch extends LitElement {
   private closeSearch = () => {
     this.isOpen = false
     this.resetSearch(true)
+  }
+  // 시트가 배경·ESC·닫기 버튼으로 스스로 닫힌 경우만 받는다. 직접 닫은 경우는 이미 정리했다.
+  private handleSheetToggle = (e: CustomEvent<{ open: boolean }>) => {
+    if (e.detail.open || !this.isOpen) return
+
+    this.closeSearch()
   }
   private handleSearchInput = (e: Event) => {
     this.query = this.getInputValue(e)

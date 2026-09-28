@@ -70,7 +70,7 @@ export class Select extends LitElement {
       <mm-popover
         placement=${this.placement}
         ?open=${this.open}
-        @popover-toggle=${this.handlePopoverToggle}
+        @toggle=${this.handleOverlayToggle}
       >
         ${this.renderTrigger()} ${this.renderOptionList()}
       </mm-popover>
@@ -86,7 +86,7 @@ export class Select extends LitElement {
       <mm-sheet
         aria-label=${this.ariaLabel || nothing}
         ?open=${this.compact.matches && this.open}
-        @sheet-close=${this.handleSheetClose}
+        @toggle=${this.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
         <mm-sheet-body>${this.compact.matches ? this.renderOptionList() : nothing}</mm-sheet-body>
@@ -192,13 +192,9 @@ export class Select extends LitElement {
     this.open = !this.open
   }
 
-  // popover는 열림을 스스로 토글하므로, 트리거가 아니라 popover가 알려 오는 상태를 받아 적는다.
-  private handlePopoverToggle(event: CustomEvent<{ open: boolean }>) {
+  // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 알려 오는 상태를 받아 적는다.
+  private handleOverlayToggle(event: CustomEvent<{ open: boolean }>) {
     this.open = event.detail.open
-  }
-
-  private handleSheetClose() {
-    this.open = false
   }
 
   // 옵션 활성화 시: 값 반영 후 목록 닫기
