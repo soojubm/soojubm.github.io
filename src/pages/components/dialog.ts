@@ -7,7 +7,7 @@ import type {
 } from '@/components/domains/component'
 import type { ActionConfig } from '@/types'
 
-import { componentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, openStateMethods } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -19,6 +19,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-dialog'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
+  ...openStateMethods,
   { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 

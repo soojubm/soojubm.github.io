@@ -11,6 +11,7 @@ import { DisclosureController } from '@/controllers/disclosure-controller'
 import { EscapeKeyController } from '@/controllers/escape-key-controller'
 import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { getDeepActiveElement } from '@/utils'
+import { withOpenState } from '@/utils/open-state'
 
 export type PopoverPlacement = Extract<
   OverlayPlacement,
@@ -28,9 +29,8 @@ const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
  * 좌표는 placement prop으로, 폭·여백은 `--overlay-panel-*` 토큰으로 정합니다.
  */
 @customElement('mm-popover')
-export class Popover extends LitElement {
+export class Popover extends withOpenState(LitElement) {
   static styles = [overlaySurfaceStyles, popoverPositionStyles]
-  @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-start'
   @queryAssignedElements({ slot: 'trigger', flatten: true })
   private triggerElements!: HTMLElement[]
@@ -71,10 +71,6 @@ export class Popover extends LitElement {
     }
 
     this.restoreFocus()
-  }
-
-  close() {
-    this.open = false
   }
 
   // 메뉴·목록이 열리면 포커스를 그 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.

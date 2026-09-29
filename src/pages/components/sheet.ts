@@ -9,7 +9,11 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
+import {
+  componentPropsOf,
+  openStateMethods,
+  subComponentPropsOf,
+} from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -67,6 +71,7 @@ const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-sheet'),
   ...subComponentPropsOf('mm-sheet-header'),
   ...subComponentPropsOf('mm-sheet-footer'),
+  ...openStateMethods,
   { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 

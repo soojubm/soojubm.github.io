@@ -7,7 +7,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { componentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, openStateMethods } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -17,8 +17,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-toast'),
-  { name: 'show()', type: 'method' },
-  { name: 'close()', type: 'method' },
+  ...openStateMethods,
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

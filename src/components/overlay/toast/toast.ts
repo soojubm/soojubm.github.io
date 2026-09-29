@@ -1,8 +1,9 @@
 import { LitElement, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import { toastStyles } from '@/components/overlay/overlay.styles'
 import { PortalController } from '@/controllers/portal-controller'
+import { withOpenState } from '@/utils/open-state'
 
 // 스스로 닫히기까지의 표시 시간(ms). transient 동작은 내부 책임이라 prop으로 노출하지 않는다.
 const DURATION = 3000
@@ -14,9 +15,8 @@ const DURATION = 3000
  * portal로 옮기는 이유: 조상의 쌓임 맥락에 갇히지 않고, 모달이 열려 본문이 inert가 된 동안에도 알림이 읽히게 한다.
  */
 @customElement('mm-toast')
-export class Toast extends LitElement {
+export class Toast extends withOpenState(LitElement) {
   static styles = toastStyles
-  @property({ type: Boolean, reflect: true }) open = false
   private hideTimer: ReturnType<typeof setTimeout> | null = null
   private portal = new PortalController(this)
 
@@ -37,14 +37,14 @@ export class Toast extends LitElement {
     super.disconnectedCallback()
   }
 
-  show() {
-    this.open = true
+  override show() {
+    super.show()
     this.restartTimer()
   }
 
-  close() {
+  override close() {
     this.clearTimer()
-    this.open = false
+    super.close()
   }
 
   // 열려 있을 때 다시 열면 남은 시간을 초기화한다.

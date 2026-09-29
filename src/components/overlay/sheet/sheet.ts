@@ -11,6 +11,7 @@ import {
 } from '@/components/overlay/overlay.styles'
 import '@/components/overlay/backdrop/backdrop'
 import { SheetController } from '@/controllers/sheet-controller'
+import { withOpenState } from '@/utils/open-state'
 
 export type SheetPlacement = Extract<OverlayPlacement, 'top' | 'bottom' | 'left' | 'right'>
 
@@ -22,14 +23,13 @@ const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
  * sheet 컴포넌트 계층에서 일관되게 관리한다. `full-width`는 폭 제한을 푼다.
  */
 @customElement('mm-sheet')
-export class Sheet extends LitElement {
+export class Sheet extends withOpenState(LitElement) {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal: AriaBoolean =
     'true'
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'bottom'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'full-width' }) fullWidth = false
-  @property({ type: Boolean, reflect: true }) open = false
   @query('.panel') private sheetEl!: HTMLElement
   private dragging = false
   private dragStartY = 0
@@ -106,22 +106,5 @@ export class Sheet extends LitElement {
     }
 
     this.style.setProperty('--overlay-panel-height', this.height)
-  }
-
-  show() {
-    this.open = true
-  }
-
-  close() {
-    this.open = false
-  }
-
-  toggle() {
-    if (this.open) {
-      this.close()
-      return
-    }
-
-    this.show()
   }
 }

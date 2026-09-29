@@ -9,9 +9,10 @@ import type { ActionConfig, AriaBoolean } from '@/types'
 
 import { sheetPositionStyles, overlaySurfaceStyles } from '@/components/overlay/overlay.styles'
 import { SheetController } from '@/controllers/sheet-controller'
+import { withOpenState } from '@/utils/open-state'
 
 @customElement('mm-dialog')
-export class Dialog extends LitElement {
+export class Dialog extends withOpenState(LitElement) {
   static styles = [
     overlaySurfaceStyles,
     sheetPositionStyles,
@@ -24,7 +25,6 @@ export class Dialog extends LitElement {
   ]
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal: AriaBoolean =
     'true'
-  @property({ type: Boolean, reflect: true }) open = false
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ attribute: false }) primaryAction?: ActionConfig
@@ -62,13 +62,5 @@ export class Dialog extends LitElement {
         ></mm-sheet-footer>
       </div>
     `
-  }
-
-  show() {
-    this.open = true
-  }
-
-  close() {
-    this.open = false
   }
 }

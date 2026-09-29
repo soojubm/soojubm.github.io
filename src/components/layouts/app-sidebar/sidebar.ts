@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit'
-import { customElement, property, query } from 'lit/decorators.js'
+import { customElement, query } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { Scroll } from '@/components/common/scroll/scroll'
@@ -15,6 +15,7 @@ import { DisclosureController } from '@/controllers/disclosure-controller'
 import { EscapeKeyController } from '@/controllers/escape-key-controller'
 import { SITEMAP } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
+import { withOpenState } from '@/utils/open-state'
 
 type SidebarSection = Extract<SitemapNode, { type: 'standalone' }>
 type SidebarGroup = Extract<SitemapNode, { type: 'group' }>
@@ -25,9 +26,8 @@ const groupNodes = SITEMAP.filter((node): node is SidebarGroup => node.type === 
 const hasChildren = (node: SidebarSection) => !!node.children?.length
 
 @customElement('mm-sidebar')
-export class Sidebar extends LitElement {
+export class Sidebar extends withOpenState(LitElement) {
   static styles = [sidebarStyles]
-  @property({ type: Boolean, reflect: true }) open = false
   @query('mm-scroll') private scrollEl?: Scroll
   private currentPageId = getCurrentPageId()
   private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
@@ -120,10 +120,6 @@ export class Sidebar extends LitElement {
   protected updated(changedProperties: Map<string, unknown>) {
     // 닫힌 사이드바로 포커스가 들어가지 않도록 열림 상태에 맞춰 inert를 맞춘다.
     if (changedProperties.has('open')) this.inert = !this.open
-  }
-
-  close() {
-    this.open = false
   }
 
   private handleMobileChange = (e: MediaQueryListEvent) => {
