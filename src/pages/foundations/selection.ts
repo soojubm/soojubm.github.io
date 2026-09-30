@@ -1,6 +1,11 @@
 import { html } from 'lit'
 
-import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
+import {
+  code,
+  codeList,
+  rule,
+  type ComponentReferenceItemData,
+} from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -37,6 +42,17 @@ html\`
     ]}
   ></mm-radio-group>
 \``
+
+const checkedComponentRows = html`
+  <tr>
+    <th scope="row">${code('checked')}</th>
+    <td>${codeList(['mm-checkbox-group', 'mm-radio-group'])}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('aria-checked')}</th>
+    <td>${codeList(['mm-switch', 'mm-menu-item-radio', 'mm-menu-item-checkbox'])}</td>
+  </tr>
+`
 
 const selectionRows = html`
   <tr>
@@ -106,12 +122,33 @@ const main = html`
     <mm-content-section-list>
       <mm-notice>
         <mm-text size="14">
-          ${code('mm-tab')}은 값을 고르는 selection이 아니라 보이는 콘텐츠를 바꾸는 content
-          switching 맥락에 속합니다.
+          ${code('mm-tab')}은 ${code('aria-selected')}를 쓰지만 값을 고르는 selection이 아니라
+          보이는 콘텐츠를 바꾸는 content switching 맥락에 속합니다.
         </mm-text>
       </mm-notice>
 
       <mm-content-section heading-level="3" heading="Overview">
+        <mm-grid columns="2" gap="4">
+          <mm-surface>
+            <mm-content-section heading-level="3" heading="Single selection">
+              <mm-paragraph>
+                선택지가 5개 이하면 ${code('mm-radio-group')} ·
+                ${code('mm-toggle-button-group')}으로 펼쳐 보이고, 6개부터는 ${code('mm-select')}로
+                접습니다.
+              </mm-paragraph>
+            </mm-content-section>
+          </mm-surface>
+          <mm-surface>
+            <mm-content-section heading-level="3" heading="Multiple selection">
+              <mm-paragraph>
+                선택지가 5개 이하면 ${code('mm-checkbox-group')}으로 펼쳐 보이고, 6개부터는
+                ${code('mm-filter-button-group')}이나 ${code('mm-sheet')} 안의
+                ${code('mm-menu-item-checkbox-group')}으로 옮깁니다.
+              </mm-paragraph>
+            </mm-content-section>
+          </mm-surface>
+        </mm-grid>
+
         <mm-table
           .rows=${selectionRows}
           caption="값을 고르는 컴포넌트의 선택 개수·옵션 전달 방식·사용 시점 비교"
@@ -119,62 +156,85 @@ const main = html`
         ></mm-table>
       </mm-content-section>
 
-      <mm-grid columns="2" gap="4">
-        <mm-surface>
-          <mm-content-section heading-level="3" heading="Single selection">
-            <mm-paragraph>
-              선택지가 5개 이하면 ${code('mm-radio-group')} · ${code('mm-toggle-button-group')}으로
-              펼쳐 보이고, 6개부터는 ${code('mm-select')}로 접습니다.
-            </mm-paragraph>
-          </mm-content-section>
-        </mm-surface>
-        <mm-surface>
-          <mm-content-section heading-level="3" heading="Multiple selection">
-            <mm-paragraph>
-              선택지가 5개 이하면 ${code('mm-checkbox-group')}으로 펼쳐 보이고, 6개부터는
-              ${code('mm-filter-button-group')}이나 ${code('mm-sheet')} 안의
-              ${code('mm-menu-item-checkbox-group')}으로 옮깁니다.
-            </mm-paragraph>
-          </mm-content-section>
-        </mm-surface>
-      </mm-grid>
-
       <mm-content-section heading-level="3" heading="기본값">
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            rule(
-              '기본값은 기존 데이터가 그 값을 뒷받침할 때 미리 선택한다',
-              '미리 선택된 값은 응답을 그 값 쪽으로 편향시킨다',
-            ),
-          ]}
-        ></mm-text-list>
+        <mm-paragraph>
+          기본값은 기존 데이터가 그 값을 뒷받침할 때 미리 선택합니다. 미리 선택된 값은 응답을 그 값
+          쪽으로 편향시키기 때문입니다.
+        </mm-paragraph>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="상태 소유">
         <mm-paragraph>
-          ${code('SingleSelectionController')} · ${code('MultipleSelectionController')} ·
-          ${code('SelectionGroupController')}
+          선택 상태는 항목이 아니라 그룹이 소유하며, ${code('SingleSelectionController')} ·
+          ${code('MultipleSelectionController')} · ${code('SelectionGroupController')}가 이를
+          맡습니다. 하나를 고르면 ${code('value')}, 여럿을 고르면 ${code('values')}에 두고, 바뀌면
+          같은 이름으로 ${code('change')}에 담아 알립니다. 선택지 없이 값 하나를 켜고 끄는
+          컴포넌트만 그룹 없이 자기 상태를 갖습니다.
+        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            html`
+              ${code('mm-switch')}는 자기 ${code('checked')}를 갖는다
+            `,
+            html`
+              ${code('mm-toggle-button')}은 자기 ${code('pressed')}를 갖는다
+            `,
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Pressed">
+        <mm-paragraph>
+          스스로 눌림 상태를 유지하는 컨트롤은 ${code('aria-pressed')}로 표현하고,
+          Checked·Selected와 같은 강조 토큰을 공유합니다. ${code('mm-toggle-button')}과 그 시맨틱
+          컴포넌트(follow·bookmark·reveal), toggle·filter 버튼 그룹이 씁니다.
+        </mm-paragraph>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Checked">
+        <mm-paragraph>
+          컨트롤 자체의 on/off 값입니다. 네이티브 ${code('checked')}가 있으면 그것을, 없으면
+          ${code('aria-checked')}를 씁니다.
         </mm-paragraph>
         <mm-text-list
           variant="check"
           .texts=${[
             rule(
-              '선택 상태는 항목이 아니라 그룹이 소유한다',
-              html`
-                하나를 고르면 ${code('value')}, 여럿을 고르면 ${code('values')}에 두고, 바뀌면 같은
-                이름으로 ${code('change')}에 담아 알린다
-              `,
-            ),
-            rule(
-              '선택지 없이 값 하나를 켜고 끄는 컴포넌트는 자기 상태를 갖는다',
-              html`
-                ${code('mm-switch')} · ${code('mm-toggle-button')}은 그룹 없이 자기
-                ${code('checked')} · ${code('pressed')}를 갖는다
-              `,
+              '값은 on/off를 유지하는 컨트롤만 갖는다',
+              '눌러 실행되는 항목이나 화면을 바꾸는 탭은 결과가 화면 변화로 드러나므로 값을 남기지 않는다',
             ),
           ]}
         ></mm-text-list>
+        <mm-table
+          .rows=${checkedComponentRows}
+          caption="Checked 상태 attribute와 그것을 쓰는 컴포넌트"
+          .columns=${[{ label: '상태', width: '160px' }, { label: '컴포넌트' }]}
+        ></mm-table>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="Selected">
+        <mm-paragraph>
+          컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로 고른
+          값을 나타내며, 강조 토큰은 Checked와 같습니다.
+        </mm-paragraph>
+        <mm-paragraph>
+          체크 표시는 ${code('mm-selected-indicator')}가 ${code('selected')}를 받아 체크 노출로
+          반영하는 표시만 맡고, 선택 상호작용과 ${code('aria-selected')}는 옵션이 소유합니다. 고르지
+          않은 행에도 자리를 남겨 행마다 트레일링 폭이 같습니다.
+        </mm-paragraph>
+        <mm-surface variant="outlined" radius="large">
+          <mm-flex gap="6">
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-selected-indicator></mm-selected-indicator>
+              <mm-caption>선택 안 됨</mm-caption>
+            </mm-flex>
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-selected-indicator selected></mm-selected-indicator>
+              <mm-caption>선택됨</mm-caption>
+            </mm-flex>
+          </mm-flex>
+        </mm-surface>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="옵션 타입">

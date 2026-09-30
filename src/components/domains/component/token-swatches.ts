@@ -18,6 +18,8 @@ export class TokenSwatches extends LitElement {
       display: flex;
       align-items: flex-end;
       gap: var(--token-swatches-gap);
+      /* hover lift 스와치가 위로 뜬 만큼 mm-scroll의 overflow가 잘라내지 않도록 남기는 여유 */
+      padding-top: var(--space-1);
     }
 
     ${unsafeCSS(buildAttributeRules('gap', spaceTokens('--token-swatches-gap')))}

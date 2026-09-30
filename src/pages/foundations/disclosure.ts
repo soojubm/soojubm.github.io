@@ -26,6 +26,54 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
+const expandedComponentRows = html`
+  <tr>
+    <th scope="row">${code('mm-read-more-button')}</th>
+    <td>잘린 텍스트</td>
+    <td>미사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-hamburger-button')}</th>
+    <td>내비게이션 메뉴</td>
+    <td>미사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-more-button')}</th>
+    <td>오버플로 메뉴</td>
+    <td>미사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-sidebar-section')}</th>
+    <td>하위 페이지 링크</td>
+    <td>사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-select')}</th>
+    <td>옵션 목록</td>
+    <td>사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-navbar-search')}</th>
+    <td>검색 패널</td>
+    <td>미사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-chat-source')}</th>
+    <td>출처 상세</td>
+    <td>미사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-popover')}</th>
+    <td>앵커된 패널</td>
+    <td>미사용</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-faq-item')}</th>
+    <td>패널 본문</td>
+    <td>사용</td>
+  </tr>
+`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -38,8 +86,8 @@ const main = html`
         트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라 트리거와
         내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로 유지합니다.
         트리거 옆이나 화면 위로 떠서 덮는 표면은
-        <mm-link href="./overlay.html">Overlay</mm-link>
-        문서가 다룹니다.
+        <mm-link href="./layout.html">Layout</mm-link>
+        문서의 Overlay 탭이 다룹니다.
       </mm-paragraph>
 
       <mm-content-section heading-level="3" heading="언제 접나요">
@@ -71,13 +119,33 @@ const main = html`
                 펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
               `,
               html`
-                컴포넌트마다 다른 아이콘을 직접 그리지 않는다. 표시 방식은
-                <mm-link href="./interaction.html">Interaction</mm-link>
-                문서의 Expanded를 따른다
+                컴포넌트마다 다른 아이콘을 직접 그리지 않는다. ${code('expanded')}를 받아 아이콘
+                회전으로 반영하는 표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가 소유한다
               `,
             ),
           ]}
         ></mm-text-list>
+        <mm-surface variant="outlined" radius="large">
+          <mm-flex gap="6">
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-expand-indicator></mm-expand-indicator>
+              <mm-caption>접힘</mm-caption>
+            </mm-flex>
+            <mm-flex direction="column" gap="2" align-items="center">
+              <mm-expand-indicator expanded></mm-expand-indicator>
+              <mm-caption>펼침</mm-caption>
+            </mm-flex>
+          </mm-flex>
+        </mm-surface>
+        <mm-table
+          .rows=${expandedComponentRows}
+          caption="Expanded 컴포넌트와 펼치는 대상"
+          .columns=${[
+            { label: '컴포넌트', width: '220px' },
+            { label: '펼치는 대상' },
+            { label: 'mm-expand-indicator', width: '160px' },
+          ]}
+        ></mm-table>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="DisclosureController">

@@ -45,13 +45,10 @@ export const SITEMAP: SitemapNode[] = [
     children: [
       { id: 'foundations', name: 'Overview' },
       { id: 'layout', name: 'Layout' },
-      { id: 'container', name: 'Container' },
       { id: 'interaction', name: 'Interaction' },
       { id: 'disclosure', name: 'Disclosure' },
       { id: 'selection', name: 'Selection' },
       { id: 'search', name: 'Search' },
-      { id: 'feedback', name: 'Feedback' },
-      { id: 'overlay', name: 'Overlay' },
       { id: 'collection', name: 'Collection' },
       { id: 'content', name: 'Content' },
       { id: 'iconography', name: 'Iconography' },

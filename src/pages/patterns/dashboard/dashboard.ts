@@ -177,22 +177,19 @@ const containerUsages: ComponentUsageItem[] = [
   },
   {
     label: 'content-section-list',
-    count: 21,
-    pageCount: 16,
+    count: 20,
+    pageCount: 13,
     pages: toPages([
       'cake',
       'checkout',
       'collection',
-      'container',
       'content',
       'disclosure',
-      'feedback',
       'foundations',
       'home',
       'interaction',
       'layout',
       'list-item',
-      'overlay',
       'search',
       'selection',
       'tokens',
@@ -202,9 +199,9 @@ const containerUsages: ComponentUsageItem[] = [
     label: 'form-field',
     count: 16,
     pageCount: 6,
-    pages: toPages(['auth', 'checkout', 'container', 'input', 'setting', 'sheet']),
+    pages: toPages(['auth', 'checkout', 'input', 'layout', 'setting', 'sheet']),
   },
-  { label: 'text-block', count: 6, pageCount: 2, pages: toPages(['container', 'surface']) },
+  { label: 'text-block', count: 6, pageCount: 2, pages: toPages(['layout', 'surface']) },
 ]
 
 const main = html`
