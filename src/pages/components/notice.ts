@@ -115,7 +115,6 @@ const main = html`
       <mm-text-list
         .texts=${[
           'role="alert" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role="status"를 사용하세요.',
-          '시스템 오류로 실패하면 단순 "오류" 대신 무엇이 잘못됐는지 명확히 설명해, 사용자가 입력을 고칠지 다시 시도할지 알 수 있게 합니다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>

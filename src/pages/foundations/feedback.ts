@@ -61,12 +61,8 @@ const main = html`
           variant="check"
           .texts=${[
             rule(
-              '결과의 의미를 톤으로 구분한다',
-              '색상만으로 전달하지 않고 톤, 명시적인 메시지, 영향을 받는 필드나 영역, 그리고 접근 가능한 관계를 함께 제공해 사용자가 원인과 대상을 이해하게 한다',
-            ),
-            rule(
-              '시스템 오류로 실패하면 무엇이 잘못됐는지 문구로 설명한다',
-              '사용자는 입력을 고칠지, 다시 시도하거나 기다리면 되는지 알 수 있다',
+              '사용자 행동으로 인한 오류와 시스템 오류를 구분한다',
+              '시스템 오류로 실패하면 단순 "오류" 대신 무엇이 잘못됐는지 명확히 설명하여 사용자가 다시 시도할 수 있게 안내한다',
             ),
           ]}
         ></mm-text-list>
@@ -106,16 +102,6 @@ const main = html`
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Data/async states">
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            rule(
-              '비동기 흐름의 단계마다 노출할 화면을 정한다',
-              '스켈레톤·스피너·에러 화면·빈 화면 중 무엇을 노출할지 단계마다 정한다. 흐름의 실패는 알림 톤인 Status의 Error와 구분해 Rejected로 부른다',
-            ),
-          ]}
-        ></mm-text-list>
-
         <mm-list-item-group>
           <mm-list-item
             icon=${ICON_NAMES.IDLE}

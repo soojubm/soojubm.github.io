@@ -27,7 +27,16 @@ const optionItemCode = `type OptionItem = {
 
 type FilterOption = OptionItem & {
   selectAll?: boolean
-}`
+}
+
+html\`
+  <mm-radio-group
+    .options=\${[
+      { value: 'email', label: '이메일' },
+      { value: 'sms', label: '문자', disabled: true },
+    ]}
+  ></mm-radio-group>
+\``
 
 const selectionRows = html`
   <tr>
@@ -55,10 +64,10 @@ const selectionRows = html`
     <td>6개 이상 선택지 중 하나를 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row">${code('mm-filter-button-group')} ${code('mode="single"')}</th>
-    <td>Single</td>
+    <th scope="row">${code('mm-filter-button-group')}</th>
+    <td>Single · Multiple</td>
     <td>배열</td>
-    <td>목록·콘텐츠를 걸러 볼 조건 하나를 고를 때.</td>
+    <td>목록·콘텐츠를 걸러 볼 조건 하나 또는 여럿을 고를 때.</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-radio-group')}</th>
@@ -73,12 +82,6 @@ const selectionRows = html`
     <td>폼에서 5개 이하 선택지 중 여럿을 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row">${code('mm-filter-button-group')} ${code('mode="multiple"')}</th>
-    <td>Multiple</td>
-    <td>배열</td>
-    <td>목록·콘텐츠를 걸러 볼 조건 여럿을 고를 때.</td>
-  </tr>
-  <tr>
     <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
     <td>Multiple</td>
     <td>자식 요소</td>
@@ -88,7 +91,7 @@ const selectionRows = html`
 
 const selectionTableColumns = [
   { label: '컴포넌트', width: '240px' },
-  { label: '선택', width: '100px' },
+  { label: '선택', width: '140px' },
   { label: '옵션 전달', width: '100px' },
   { label: '언제' },
 ]
@@ -159,21 +162,6 @@ const main = html`
               `,
             ),
             rule(
-              '배열로 받은 옵션의 선택 여부는 그룹이 렌더할 때 정한다',
-              html`
-                항목이 자기 상태를 갖지 않으므로, 그룹이 소유한 값과 옵션의 ${code('value')}를 맞춰
-                ${code('checked')}를 내려준다
-              `,
-            ),
-            rule(
-              '자식 요소로 받은 항목의 선택도 그룹이 내려보낸다',
-              html`
-                ${code('SelectionGroupController')}가 마크업의 초기 선택을 흡수하고, 그룹 상태를
-                항목의 ${code('checked')}에 반영하고, 항목의 변경을 그룹의 ${code('change')}로
-                올린다
-              `,
-            ),
-            rule(
               '선택지 없이 값 하나를 켜고 끄는 컴포넌트는 자기 상태를 갖는다',
               html`
                 ${code('mm-switch')} · ${code('mm-toggle-button')}은 그룹 없이 자기
@@ -185,44 +173,19 @@ const main = html`
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="옵션 타입">
-        <mm-paragraph>
-          옵션을 배열로 받는 그룹은 ${code('@/types')}의 ${code('OptionItem')} 모양을 공유하고,
-          컴포넌트 고유 필드는 이를 확장해 더합니다.
-        </mm-paragraph>
         <mm-code-block language="typescript" .code=${optionItemCode}></mm-code-block>
         <mm-text-list
           variant="check"
           .texts=${[
             rule(
               html`
-                ${code('value')}는 옵션마다 고유하게 둔다
+                ${code('value')}를 옵션의 key로 사용한다
               `,
-              '선택 상태와 목록 렌더의 키로 함께 쓰인다',
+              '선택 상태와 목록 렌더가 같은 값을 기준으로 삼는다',
             ),
-            rule(
-              html`
-                고유 필드는 ${code('OptionItem')}에 교차 타입으로 더한다
-              `,
-              html`
-                ${code('OptionItem')}을 다시 선언하지 않아야 그룹끼리 옵션 모양이 같게 유지된다
-              `,
-            ),
-            rule(
-              html`
-                옵션 배열은 ${code('.options')} property binding으로 넘긴다
-              `,
-              '배열을 attribute 문자열로 바꾸는 단계 없이 그대로 전달된다',
-            ),
-            rule(
-              html`
-                ${code('OptionItem')}에 담기지 않는 콘텐츠를 가진 선택지는 자식 요소로 받는다
-              `,
-              html`
-                선택지마다 상세한 정보를 제공해야 하면 ${code('mm-radio-card-group')}처럼, 행이
-                description·emoji·avatar를 가지면 ${code('mm-menu-item-radio-group')} ·
-                ${code('mm-menu-item-checkbox-group')}처럼 자식 요소를 받는 그룹을 쓴다
-              `,
-            ),
+            html`
+              고유 필드는 ${code('OptionItem')}에 교차 타입으로 더한다
+            `,
           ]}
         ></mm-text-list>
       </mm-content-section>
@@ -231,12 +194,6 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            rule(
-              html`
-                ${code('mm-radio-group')}은 네이티브 radio를 직접 렌더한다
-              `,
-              '같은 name의 radio가 한 shadow root에 모여야 브라우저가 화살표 이동과 단일 선택을 처리한다',
-            ),
             rule(
               '화살표 키는 포커스를 옮기고, Space·Enter가 선택을 확정한다',
               html`
