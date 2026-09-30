@@ -9,7 +9,7 @@ type ComponentNoticeVariant = 'todo' | 'exception'
 
 const VARIANTS = {
   todo: { tone: 'info', label: 'TODO' },
-  exception: { tone: 'warning', label: '예외' },
+  exception: { tone: 'info', label: '예외' },
 } as const satisfies Record<ComponentNoticeVariant, { tone: NoticeVariant; label: string }>
 
 /**

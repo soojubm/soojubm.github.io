@@ -34,15 +34,13 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
-      <mm-notice>
-        <mm-text size="14">
-          트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
-          트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
-          유지합니다. 트리거 옆이나 화면 위로 떠서 덮는 표면은
-          <mm-link href="./overlay.html">Overlay</mm-link>
-          문서가 다룹니다.
-        </mm-text>
-      </mm-notice>
+      <mm-paragraph>
+        트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라 트리거와
+        내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로 유지합니다.
+        트리거 옆이나 화면 위로 떠서 덮는 표면은
+        <mm-link href="./overlay.html">Overlay</mm-link>
+        문서가 다룹니다.
+      </mm-paragraph>
 
       <mm-content-section heading-level="3" heading="언제 접나요">
         <mm-text-list
@@ -64,14 +62,59 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="형태">
+      <mm-content-section heading-level="3" heading="펼침 기표">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            rule(
+              html`
+                펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
+              `,
+              html`
+                컴포넌트마다 다른 아이콘을 직접 그리지 않는다. 표시 방식은
+                <mm-link href="./interaction.html">Interaction</mm-link>
+                문서의 Expanded를 따른다
+              `,
+            ),
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="DisclosureController">
         <mm-paragraph>
-          접힌 자리에 무엇을 남기는지로 형태를 고릅니다. 항목을 통째로 접으면 제목만 남아 훑어 고를
-          수 있고(${code('mm-faq-item')}), 이어지는 본문을 접으면 앞부분이 남아 읽던 문장을
-          이어가며(${code('mm-read-more-paragraph')}), 하위 목록을 접으면 부모 항목만 남아 목록의
-          깊이가 한 단계로 줄어듭니다(${code('mm-sidebar-section')}).
+          ${code('DisclosureController')}는 열고 닫는 상태를 소유하고, 트리거 클릭에 따른 토글과
+          ${code('aria-expanded')} 동기화를 맡습니다.
         </mm-paragraph>
-        <mm-component-example>
+        <mm-component-notice
+          variant="exception"
+          heading="DisclosureController를 사용하지 않는 예외 케이스"
+        >
+          ${code('mm-component-props')}는 한 번 펼치면 다시 접지 않아 토글이 필요 없으므로
+          컨트롤러를 쓰지 않는다
+        </mm-component-notice>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="접근성">
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            rule(
+              '훑어서 고르는 목록의 트리거는 heading으로 감싼다',
+              '스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
+            ),
+            rule(
+              '접힌 내용은 포커스되지 않도록 한다',
+              html`
+                시각적으로만 숨기면 화면에 없는 내용이 탭 순서에 남는다. ${code('inert')}로 포커스와
+                접근성 트리에서 함께 뺀다
+              `,
+            ),
+          ]}
+        ></mm-text-list>
+      </mm-content-section>
+
+      <mm-component-section heading="컴포넌트 예시">
+        <mm-flex direction="column" gap="6">
           <mm-faq-list>
             <mm-faq-item question="서비스를 탈퇴하고 싶어요." open>
               <mm-paragraph>
@@ -85,88 +128,18 @@ const main = html`
               </mm-paragraph>
             </mm-faq-item>
           </mm-faq-list>
-        </mm-component-example>
-        <mm-component-example>
           <mm-read-more-paragraph
             max-length="80"
             content="접힌 자리에 앞부분이 남아 있어, 사용자는 이 문단을 계속 읽을지 여기서 멈출지 본문을 보고 정합니다. 훑어 고르는 목록과 달리 문장이 이어지므로 트리거는 문단 끝에 이어 붙습니다."
           ></mm-read-more-paragraph>
-        </mm-component-example>
-        <mm-component-example>
           <div role="list">
             <mm-sidebar-section icon=${ICON_NAMES.PALETTE} label="Foundations" open>
               <mm-sidebar-page-link emoji="#" label="Interaction"></mm-sidebar-page-link>
               <mm-sidebar-page-link emoji="#" label="Disclosure"></mm-sidebar-page-link>
             </mm-sidebar-section>
           </div>
-        </mm-component-example>
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            rule(
-              '트리거 텍스트는 펼칠 내용을 한 문장으로 말한다',
-              '"더 보기"처럼 무엇이 열리는지 알 수 없는 문구는 쓰지 않는다',
-            ),
-            rule(
-              '펼친 내용 안의 링크·버튼은 그대로 둔다',
-              '내용을 눌러 다시 접히게 하면 그 안의 인터랙션을 쓸 수 없다. 접는 조작은 트리거만 갖는다',
-            ),
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
-
-      <mm-content-section heading-level="3" heading="상태 소유">
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            rule(
-              html`
-                열고 닫는 상태는 ${code('DisclosureController')}가 소유한다
-              `,
-              html`
-                트리거 클릭 토글과 ${code('aria-expanded')} 동기화를 컨트롤러가 맡고, 소비자는
-                트리거를 표준 attribute로 대상에 연결하기만 한다
-              `,
-            ),
-            rule(
-              html`
-                펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
-              `,
-              html`
-                컴포넌트마다 다른 아이콘을 직접 그리지 않는다. 표시 방식은
-                <mm-link href="./interaction.html">Interaction</mm-link>
-                문서의 Expanded를 따른다
-              `,
-            ),
-          ]}
-        ></mm-text-list>
-        <mm-component-notice variant="exception" heading="다시 접지 않는 펼침은 호스트가 직접 연다">
-          ${code('mm-component-props')}처럼 한 번 펼치면 끝나는 목록은 토글이 없으므로 컨트롤러 없이
-          호스트가 ${code('open')}만 켜고, 트리거에 ${code('aria-expanded')}를 반영한 뒤 트리거를
-          감춘다
-        </mm-component-notice>
-      </mm-content-section>
-
-      <mm-content-section heading-level="3" heading="접근성">
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            rule(
-              '훑어서 고르는 목록의 트리거는 heading으로 감싼다',
-              '스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
-            ),
-            rule(
-              html`
-                접힌 내용은 ${code('inert')}로 포커스에서 뺀다
-              `,
-              html`
-                높이만 0으로 줄이면 내용이 화면에 없는데도 탭 순서에 남는다.
-                ${code('aria-hidden')}은 포커스를 막지 않으므로 ${code('inert')}를 쓴다
-              `,
-            ),
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
+        </mm-flex>
+      </mm-component-section>
 
       <mm-component-references .items=${componentReferences}></mm-component-references>
     </mm-content-section-list>
