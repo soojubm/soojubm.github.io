@@ -35,14 +35,14 @@ export const checkboxStyles = css`
   input[type='checkbox'] + label > .indicator::after {
     content: '';
     display: block;
-    width: 6px;
-    height: 2px;
-    border-left: 1px solid;
-    border-bottom: 1px solid;
+    width: calc(var(--checkbox-size) * 0.375);
+    height: calc(var(--checkbox-size) / 8);
+    border-left: var(--border-width) solid;
+    border-bottom: var(--border-width) solid;
     border-color: var(--checkbox-border-color);
     position: absolute;
-    left: 4px;
-    top: 5px;
+    left: calc(var(--checkbox-size) / 4);
+    top: calc(var(--checkbox-size) * 0.3125);
     transform: rotate(-50deg) scale(0);
   }
 
@@ -58,12 +58,6 @@ export const checkboxStyles = css`
     ${focusRingStyles};
   }
 
-  :host([size='large']) input[type='checkbox']:checked + label > .indicator::after {
-    left: 8px;
-    top: 9px;
-    transform: rotate(-50deg) scale(1.5);
-  }
-
   input[type='checkbox']:indeterminate + label > .indicator {
     --checkbox-border-color: var(--interaction-selected-border-color);
     --checkbox-background-color: var(--interaction-selected-background-color);
@@ -71,10 +65,10 @@ export const checkboxStyles = css`
 
   input[type='checkbox']:indeterminate + label > .indicator::after {
     display: block;
-    width: 8px;
+    width: calc(var(--checkbox-size) / 2);
     background: var(--interaction-selected-background-color);
     border: none;
-    left: 4px;
+    left: calc(var(--checkbox-size) / 4);
     top: 48%;
     transform: rotate(0deg);
   }
@@ -82,18 +76,6 @@ export const checkboxStyles = css`
   input:disabled + label {
     opacity: 0.5;
     cursor: not-allowed;
-  }
-
-  @keyframes checkmark {
-    0% {
-      background-position-y: 5px;
-    }
-    50% {
-      background-position-y: -2px;
-    }
-    100% {
-      background-position-y: 0;
-    }
   }
 
   :host([size='large']) {
