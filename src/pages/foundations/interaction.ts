@@ -186,6 +186,7 @@ const main = html`
       </mm-tab-list>
 
       <mm-tab-panel value="state">
+        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="상호작용 기표">
             <mm-paragraph>
@@ -406,6 +407,7 @@ const main = html`
       </mm-tab-panel>
 
       <mm-tab-panel value="selection">
+        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             선택지 가운데 값을 고르는 컴포넌트가 공유하는 계약입니다. 선택 개수와 선택지 수로

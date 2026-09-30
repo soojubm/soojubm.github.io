@@ -205,6 +205,7 @@ const main = html`
       </mm-tab-list>
 
       <mm-tab-panel value="disclosure">
+        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             부차적인 정보를 접어 두었다가 트리거를 눌렀을 때만 펼칩니다. 첫 화면이 제목만으로 짧게
@@ -342,6 +343,7 @@ const main = html`
       </mm-tab-panel>
 
       <mm-tab-panel value="search">
+        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             키워드로 콘텐츠를 찾는 흐름입니다. 진입·포커스·입력·제출 단계마다 최근 검색어와
@@ -557,6 +559,7 @@ const main = html`
       </mm-tab-panel>
 
       <mm-tab-panel value="collection">
+        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             사용자가 만든 묶음에 항목을 담고, 묶음을 만들고 함께 관리하는 흐름입니다. 담는 흐름

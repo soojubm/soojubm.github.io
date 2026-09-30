@@ -65,6 +65,14 @@ const contentSectionCode = `<mm-content-section-list>
   </mm-content-section>
 </mm-content-section-list>`
 
+const pageHeaderCode = `<mm-flex justify-content="space-between" align-items="flex-start">
+  <mm-page-header heading="설정" description="계정과 알림을 관리합니다."></mm-page-header>
+  <mm-button-group>
+    <mm-button variant="secondary">취소</mm-button>
+    <mm-button>저장</mm-button>
+  </mm-button-group>
+</mm-flex>`
+
 const textBlockCode = `<mm-text-block level="3" heading="제목" description="제목을 보충하는 설명"></mm-text-block>`
 
 const formFieldCode = `<mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
@@ -210,8 +218,8 @@ const layoutGroupRows = html`
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-group')}</th>
-    <td>세로로 쌓는다</td>
-    <td>${code('--space-1')}</td>
+    <td>세로로 쌓고, 소제목은 목록과 ${code('--space-1')} 간격으로 붙는다</td>
+    <td>0 · large는 ${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-meta-item-group')}</th>
@@ -260,13 +268,13 @@ const selectionGroupRows = html`
     <th scope="row">${code('mm-menu-item-radio-group')}</th>
     <td>Single</td>
     <td>${code('mm-menu-item-group')}으로 세로로 쌓는다</td>
-    <td>${code('--space-1')}</td>
+    <td>0 · large는 ${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
     <td>Multiple</td>
     <td>${code('mm-menu-item-group')}으로 세로로 쌓는다</td>
-    <td>${code('--space-1')}</td>
+    <td>0 · large는 ${code('--space-2')}</td>
   </tr>
 `
 
@@ -308,6 +316,7 @@ const main = html`
         </mm-tab-list>
 
         <mm-tab-panel value="page">
+          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-feature-group columns="2">
               <mm-feature
@@ -453,6 +462,7 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="section">
+          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-paragraph>Section 컴포넌트: ${codeList(SECTION_COMPONENTS)}</mm-paragraph>
 
@@ -483,6 +493,27 @@ const main = html`
               <mm-paragraph>
                 수평·수직 배치는 ${code('mm-flex')}로 하고, gap은 소비처가 정합니다.
               </mm-paragraph>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '형제 사이 간격은 부모의 gap으로 정한다',
+                    html`
+                      항목마다 여백을 따로 주지 않는다. 섹션 사이는 ${code('--space-section')} 같은
+                      의미 토큰을 쓴다
+                    `,
+                  ),
+                  rule(
+                    html`
+                      컴포넌트 안에서는 ${code('mm-flex')}를 중첩하지 않는다
+                    `,
+                    html`
+                      shadow DOM 안에서는 host를 직접 flex 컨테이너로 만들어 shadow 깊이를 줄인다.
+                      ${code('mm-flex')}는 페이지·콘텐츠 조립에 쓴다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
               <mm-flex-preview></mm-flex-preview>
             </mm-content-section>
 
@@ -502,9 +533,47 @@ const main = html`
                       수는 따로 지정하지 않는다
                     `,
                   ),
+                  rule(
+                    html`
+                      반복 레이아웃은 CSS Grid를 직접 쓰지 않고 ${code('mm-grid')}를 쓴다
+                    `,
+                    '열 수와 최소 너비를 prop으로 정해, 자리마다 열이 줄어드는 규칙을 같게 한다',
+                  ),
                 ]}
               ></mm-text-list>
               <mm-grid-preview></mm-grid-preview>
+            </mm-content-section>
+
+            <mm-content-section heading-level="3" heading="Page Header">
+              <mm-paragraph>
+                ${code('mm-page-header')}는 페이지 최상단의 제목과 설명을 세우고, 아래 구획과의
+                간격을 자기 아래 여백으로 소유합니다. ${code('centered')}로 가운데 정렬합니다.
+              </mm-paragraph>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '헤더의 액션은 헤더와 버튼 그룹을 형제로 둔다',
+                    html`
+                      ${code('mm-page-header')}에는 액션 슬롯이 없다. 레이아웃 부모
+                      (${code('mm-flex')}) 안에 헤더와 ${code('mm-button-group')}을 나란히 배치한다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
+              <mm-component-example full-width>
+                <mm-flex justify-content="space-between" align-items="flex-start">
+                  <mm-page-header
+                    heading="설정"
+                    description="계정과 알림을 관리합니다."
+                  ></mm-page-header>
+                  <mm-button-group>
+                    <mm-button variant="secondary">취소</mm-button>
+                    <mm-button>저장</mm-button>
+                  </mm-button-group>
+                </mm-flex>
+              </mm-component-example>
+              <mm-code-block .code=${pageHeaderCode}></mm-code-block>
             </mm-content-section>
 
             <mm-content-section heading-level="3" heading="Content Section">
@@ -516,6 +585,19 @@ const main = html`
                 않습니다. "모두 보기" 링크처럼 섹션 전체에 걸리는 동작은 ${code('action')} 슬롯으로
                 받아 제목 줄 오른쪽에 둡니다.
               </mm-paragraph>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '제목 단계는 문서 구조를 따라 한 단계씩만 내린다',
+                    html`
+                      페이지 헤더(h1) 아래 최상위 구획은 기본값 ${code('2')}를 쓰고, 그 안의 구획은
+                      3, 4로 건너뛰지 않고 내려간다. 단계가 크기도 정하므로 크기를 맞추려고 단계를
+                      건너뛰지 않는다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
               <mm-surface variant="filled">
                 <mm-content-section-list>
                   <mm-content-section heading-level="4" heading="액션이 없는 섹션">
@@ -617,11 +699,30 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="group">
+          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-paragraph>
               그룹은 같은 컴포넌트를 나열하며 항목의 정렬과 간격을 소유합니다. 일부 그룹은 여기에
               선택 상태까지 소유합니다.
             </mm-paragraph>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '동종 항목이 여럿이면 계열 그룹으로 묶는다',
+                  '컨테이너에서 role과 간격을 직접 재현하지 않고 그룹이 소유하게 한다',
+                ),
+                rule('항목이 하나뿐이면 그룹으로 감싸지 않는다', '단일 엘리먼트를 그대로 둔다'),
+                rule(
+                  html`
+                    계열 그룹이 없는 이질 항목은 ${code('mm-flex')}로 배치한다
+                  `,
+                  html`
+                    ${code('mm-flex')}는 group 계층 밖에서 배치만 돕는 유틸리티다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
 
             <mm-content-section heading-level="3" heading="배치 그룹">
               <mm-paragraph>
@@ -667,6 +768,7 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="overlay">
+          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-content-section heading-level="3" heading="Overview">
               <mm-table
@@ -804,10 +906,11 @@ const main = html`
                   rule(
                     'Alignment',
                     html`
-                      ${code('start')}·${code('end')}로 쓰고, 생략하면 가운데에 맞춘다.
-                      ${code('bottom')}은 트리거 가운데 아래에 놓인다.
-                      ${code('left')}·${code('right')} 대신 논리 방향을 써서 쓰기 방향이 바뀌어도
-                      의미가 같다
+                      정렬은 ${code('start')}·${code('end')}로 쓰고, 생략하면 가운데에 맞춘다.
+                      ${code('bottom')}은 트리거 가운데 아래에 놓인다. 정렬은
+                      ${code('left')}·${code('right')} 대신 논리 값을 써서 쓰기 방향이 바뀌어도
+                      의미가 같고, 방향은
+                      ${code('top')}·${code('right')}·${code('bottom')}·${code('left')} 그대로 쓴다
                     `,
                   ),
                   rule(
