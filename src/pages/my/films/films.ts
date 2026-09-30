@@ -65,24 +65,16 @@ function renderFilters(films: Film[], state: FilterState, rerender: () => void) 
   render(
     html`
       <mm-flex direction="column" gap="2">
-        <mm-flex align-items="flex-start" gap="3">
-          <mm-text size="12" color="light" style="min-width: 2rem; padding-top: 6px">연대</mm-text>
-          <mm-filter-button-group
-            class="js-decade-filter"
-            mode="single"
-            .options=${decadeOptions}
-            style="flex: 1"
-          ></mm-filter-button-group>
-        </mm-flex>
-        <mm-flex align-items="flex-start" gap="3">
-          <mm-text size="12" color="light" style="min-width: 2rem; padding-top: 6px">국가</mm-text>
-          <mm-filter-button-group
-            class="js-country-filter"
-            mode="single"
-            .options=${countryOptions}
-            style="flex: 1"
-          ></mm-filter-button-group>
-        </mm-flex>
+        <mm-media-filter
+          class="js-decade-filter"
+          label="연대"
+          .options=${decadeOptions}
+        ></mm-media-filter>
+        <mm-media-filter
+          class="js-country-filter"
+          label="국가"
+          .options=${countryOptions}
+        ></mm-media-filter>
       </mm-flex>
     `,
     container,

@@ -59,15 +59,11 @@ function renderFilters(books: Book[], state: FilterState, rerender: () => void) 
 
   render(
     html`
-      <mm-flex align-items="flex-start" gap="3">
-        <mm-text size="12" color="light" style="min-width: 2rem; padding-top: 6px">국가</mm-text>
-        <mm-filter-button-group
-          class="js-country-filter"
-          mode="single"
-          .options=${countryOptions}
-          style="flex: 1"
-        ></mm-filter-button-group>
-      </mm-flex>
+      <mm-media-filter
+        class="js-country-filter"
+        label="국가"
+        .options=${countryOptions}
+      ></mm-media-filter>
     `,
     container,
   )
