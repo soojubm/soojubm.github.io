@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, queryAll } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
@@ -59,6 +59,7 @@ export class ToggleButtonGroup extends LitElement {
   // 아이콘만 보일 때 label을 보이는 텍스트 대신 버튼의 접근성 이름으로 쓴다.
   @property({ type: Boolean, attribute: 'hidden-label' }) hiddenLabel = false
   @property({ type: String }) orientation: Orientation = 'horizontal'
+  @queryAll('button') private buttons!: NodeListOf<HTMLButtonElement>
   private selection = new SingleSelectionController(this, {
     getValue: () => this.value,
     setValue: value => {
@@ -66,7 +67,7 @@ export class ToggleButtonGroup extends LitElement {
     },
   })
   private rovingFocus = new RovingFocusController(this, {
-    getItems: () => Array.from(this.renderRoot.querySelectorAll('button')),
+    getItems: () => Array.from(this.buttons),
     orientation: () => this.orientation,
     getActiveIndex: () => this.options.findIndex(option => this.selection.isOptionSelected(option)),
   })
