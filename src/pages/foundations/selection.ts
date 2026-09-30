@@ -119,20 +119,25 @@ const main = html`
         ></mm-table>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="Single selection">
-        <mm-paragraph>
-          선택지가 5개 이하면 ${code('mm-radio-group')} · ${code('mm-toggle-button-group')}으로 펼쳐
-          보이고, 6개부터는 ${code('mm-select')}로 접습니다.
-        </mm-paragraph>
-      </mm-content-section>
-
-      <mm-content-section heading-level="3" heading="Multiple selection">
-        <mm-paragraph>
-          선택지가 5개 이하면 ${code('mm-checkbox-group')}으로 펼쳐 보이고, 6개부터는
-          ${code('mm-filter-button-group')}이나 ${code('mm-sheet')} 안의
-          ${code('mm-menu-item-checkbox-group')}으로 옮깁니다.
-        </mm-paragraph>
-      </mm-content-section>
+      <mm-grid columns="2" gap="4">
+        <mm-surface>
+          <mm-content-section heading-level="3" heading="Single selection">
+            <mm-paragraph>
+              선택지가 5개 이하면 ${code('mm-radio-group')} · ${code('mm-toggle-button-group')}으로
+              펼쳐 보이고, 6개부터는 ${code('mm-select')}로 접습니다.
+            </mm-paragraph>
+          </mm-content-section>
+        </mm-surface>
+        <mm-surface>
+          <mm-content-section heading-level="3" heading="Multiple selection">
+            <mm-paragraph>
+              선택지가 5개 이하면 ${code('mm-checkbox-group')}으로 펼쳐 보이고, 6개부터는
+              ${code('mm-filter-button-group')}이나 ${code('mm-sheet')} 안의
+              ${code('mm-menu-item-checkbox-group')}으로 옮깁니다.
+            </mm-paragraph>
+          </mm-content-section>
+        </mm-surface>
+      </mm-grid>
 
       <mm-content-section heading-level="3" heading="기본값">
         <mm-text-list
