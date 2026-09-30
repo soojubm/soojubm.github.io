@@ -30,49 +30,49 @@ const disclosureReferences: ComponentReferenceItemData[] = [
 
 const expandedComponentRows = html`
   <tr>
-    <th scope="row">${code('mm-read-more-button')}</th>
-    <td>잘린 텍스트</td>
-    <td>미사용</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-hamburger-button')}</th>
-    <td>내비게이션 메뉴</td>
-    <td>미사용</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-more-button')}</th>
-    <td>오버플로 메뉴</td>
-    <td>미사용</td>
+    <th scope="row">${code('mm-faq-item')}</th>
+    <td>패널 본문</td>
+    <td>${code('mm-expand-indicator')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-sidebar-section')}</th>
     <td>하위 페이지 링크</td>
-    <td>사용</td>
+    <td>${code('mm-expand-indicator')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-select')}</th>
     <td>옵션 목록</td>
-    <td>사용</td>
+    <td>${code('mm-expand-indicator')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-read-more-button')}</th>
+    <td>잘린 텍스트</td>
+    <td>레이블(더 보기 ↔ 접기)</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-hamburger-button')}</th>
+    <td>내비게이션 메뉴</td>
+    <td>아이콘</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-more-button')}</th>
+    <td>오버플로 메뉴</td>
+    <td>아이콘</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-navbar-search')}</th>
     <td>검색 패널</td>
-    <td>미사용</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-chat-source')}</th>
-    <td>출처 상세</td>
-    <td>미사용</td>
+    <td>아이콘</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-popover')}</th>
     <td>앵커된 패널</td>
-    <td>미사용</td>
+    <td>트리거를 넣는 쪽이 정한다</td>
   </tr>
   <tr>
-    <th scope="row">${code('mm-faq-item')}</th>
-    <td>패널 본문</td>
-    <td>사용</td>
+    <th scope="row">${code('mm-chat-source')}</th>
+    <td>출처 상세</td>
+    <td>없음</td>
   </tr>
 `
 
@@ -255,6 +255,10 @@ const main = html`
                     회전으로 반영하는 표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가 소유한다
                   `,
                 ),
+                rule(
+                  '레이블이 내용을 가리키는 텍스트 트리거에 붙인다',
+                  '질문·섹션 이름·고른 값은 펼쳐진다는 것을 스스로 말하지 않는다. 아이콘만 있는 트리거는 그 아이콘이, "더 보기"처럼 상태에 따라 바뀌는 레이블은 그 글이 펼침을 알린다',
+                ),
               ]}
             ></mm-text-list>
             <mm-surface variant="outlined" radius="large">
@@ -271,13 +275,17 @@ const main = html`
             </mm-surface>
             <mm-table
               .rows=${expandedComponentRows}
-              caption="Expanded 컴포넌트와 펼치는 대상"
+              caption="Expanded 컴포넌트와 펼치는 대상, 펼침을 알리는 기표"
               .columns=${[
                 { label: '컴포넌트', width: '220px' },
                 { label: '펼치는 대상' },
-                { label: 'mm-expand-indicator', width: '160px' },
+                { label: '펼침 기표', width: '220px' },
               ]}
             ></mm-table>
+            <mm-component-notice heading="mm-chat-source 트리거의 펼침 기표를 정한다">
+              도메인 이름이 레이블인 텍스트 트리거지만 펼침 기표가 없다.
+              ${code('mm-expand-indicator')}를 붙일지, 출처 칩은 기표 없이 둘지 정하지 않았다
+            </mm-component-notice>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="DisclosureController">

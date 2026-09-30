@@ -435,7 +435,7 @@ const main = html`
                       hover에서 잠깐 떠오르는 ${code('--interaction-hover-lift')}는 층위가 아니라
                       상호작용 피드백이며,
                       <mm-link href="./interaction.html">Interaction</mm-link>
-                      문서의 Hover가 다룬다
+                      문서의 조작 상태가 다룬다
                     `,
                   ),
                 ]}
@@ -782,6 +782,20 @@ const main = html`
                   { label: 'z-index' },
                 ]}
               ></mm-table>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '동작은 컨트롤러가 소유하고 표현은 컴포넌트가 조합한다',
+                    html`
+                      배경을 막는지, 무엇으로 닫는지, 트리거와 어떻게 이어지는지는
+                      ${code('SheetController')}·${code('DisclosureController')} 같은 컨트롤러가
+                      맡는다. 패널 재질·너비·${code('placement')}는 각 컴포넌트가 공유 스타일을
+                      조합해 정한다. 표면이 달라도 열고 닫는 방식이 같아진다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
             </mm-content-section>
 
             <mm-grid columns="2" gap="4">

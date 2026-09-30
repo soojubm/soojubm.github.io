@@ -293,6 +293,11 @@ const main = html`
                 description="지금은 조작을 받지 않는다는 표시입니다."
               ></mm-list-item>
             </mm-list-item-group>
+            <mm-component-notice heading="Hover 처리 규칙을 정한다">
+              hover 값은 ${code('--interaction-hover-background-color')}·
+              ${code('--interaction-hover-lift')} 토큰으로만 남아 있다. 어느 요소가 어느 처리를
+              쓰는지, 포인터가 없는 터치 화면에서 클릭 가능성을 무엇으로 알릴지 정하지 않았다
+            </mm-component-notice>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="결과 상태">
@@ -364,6 +369,54 @@ const main = html`
                 { label: '컴포넌트' },
               ]}
             ></mm-table>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="Invalid">
+            <mm-paragraph>
+              입력값이 규칙을 어겼다는 표시입니다. 오류 상태와 그 이유를 필드에 붙여 알리므로,
+              사용자는 어느 값을 어떻게 고칠지 그 자리에서 확인합니다.
+            </mm-paragraph>
+            <mm-surface variant="outlined" radius="large">
+              <mm-textfield
+                label="이메일"
+                value="hello@example.com"
+                aria-invalid="true"
+                validation-text="이미 등록된 이메일입니다."
+                style="max-width: var(--layout-width-narrow)"
+              ></mm-textfield>
+            </mm-surface>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    오류 상태는 ${code('aria-invalid')}로 표시한다
+                  `,
+                  '필드가 테두리를 danger 색으로 바꾼다. 상태를 말하는 표준 attribute를 그대로 공개 API로 쓴다',
+                ),
+                rule(
+                  html`
+                    오류의 이유는 ${code('validation-text')}로 필드 바로 아래에 둔다
+                  `,
+                  html`
+                    테두리 색만으로는 무엇을 고칠지 전달되지 않는다. textfield 계열은 입력 요소의
+                    ${code('aria-describedby')}에 검증 텍스트를 스스로 연결해, 스크린리더가 필드와
+                    함께 읽는다
+                  `,
+                ),
+                rule(
+                  html`
+                    textfield가 아닌 컨트롤은 ${code('mm-form-field')}로 감싼다
+                  `,
+                  '체크박스 그룹·select처럼 슬롯으로 받는 컨트롤에도 레이블·설명·검증 텍스트가 같은 자리에 놓인다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-notice heading="필드가 검증을 소유하게 한다">
+              지금은 소비자가 값을 검사해 ${code('aria-invalid')}와 ${code('validation-text')}를
+              넘기고, 필드는 표시와 연결만 맡는다. 필드가 입력 규칙을 스스로 검사하는 범위와 검증
+              시점(입력 중·포커스를 벗어날 때·제출할 때)은 정하지 않았다
+            </mm-component-notice>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="의미 상태">
