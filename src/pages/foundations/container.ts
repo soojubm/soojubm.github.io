@@ -2,11 +2,13 @@ import { html } from 'lit'
 
 import '@/components/domains/component/component-pager'
 import { ICON_NAMES } from '@/components/common'
-import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
+import {
+  code,
+  codeList,
+  rule,
+  type ComponentReferenceItemData,
+} from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
-
-// prettier-ignore
-const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
 
 const GROUP_COMPONENTS = [
   'mm-button-group',
@@ -68,11 +70,8 @@ const overviewRows = html`
 `
 
 const contentSectionCode = `<mm-content-section-list>
-  <mm-content-section heading-level="3" heading="첫 번째 섹션">
-    <mm-paragraph>제목과 본문 사이 간격은 섹션이 소유합니다.</mm-paragraph>
-  </mm-content-section>
-  <mm-content-section heading-level="3" heading="두 번째 섹션">
-    <mm-paragraph>섹션 사이 간격은 섹션 목록이 소유합니다.</mm-paragraph>
+  <mm-content-section heading-level="3" heading="액션이 없는 섹션">
+    <mm-paragraph>제목과 본문 사이 간격은 섹션이, 섹션 사이 간격은 섹션 목록이 소유합니다.</mm-paragraph>
   </mm-content-section>
   <mm-content-section heading-level="3" heading="액션이 있는 섹션">
     <mm-link slot="action" href="./post.html">모두 보기</mm-link>
@@ -205,11 +204,10 @@ const main = html`
         </mm-paragraph>
         <mm-surface variant="filled">
           <mm-content-section-list>
-            <mm-content-section heading-level="4" heading="첫 번째 섹션">
-              <mm-paragraph>제목과 본문 사이 간격은 섹션이 소유합니다.</mm-paragraph>
-            </mm-content-section>
-            <mm-content-section heading-level="4" heading="두 번째 섹션">
-              <mm-paragraph>섹션 사이 간격은 섹션 목록이 소유합니다.</mm-paragraph>
+            <mm-content-section heading-level="4" heading="액션이 없는 섹션">
+              <mm-paragraph>
+                제목과 본문 사이 간격은 섹션이, 섹션 사이 간격은 섹션 목록이 소유합니다.
+              </mm-paragraph>
             </mm-content-section>
             <mm-content-section heading-level="4" heading="액션이 있는 섹션">
               <mm-link slot="action" href="./post.html">모두 보기</mm-link>

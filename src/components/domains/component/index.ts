@@ -26,7 +26,12 @@ export { FEATURE_ICONS } from '@/components/domains/component/component-feature-
 export type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 export type { ComponentChangelogItemData } from '@/components/domains/component/component-changelog'
 export type { ComponentPropItemData } from '@/components/domains/component/component-props'
-export { code, openStateMethods, rule } from '@/components/domains/component/component.helpers'
+export {
+  code,
+  codeList,
+  openStateMethods,
+  rule,
+} from '@/components/domains/component/component.helpers'
 export {
   componentPropsOf,
   sharedPropsOf,

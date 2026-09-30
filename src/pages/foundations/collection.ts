@@ -69,6 +69,10 @@ const main = html`
           ></mm-toggle-button-group>
           <mm-add-button label="이 컬렉션에 멤버 추가"></mm-add-button>
         </mm-flex>
+        <mm-component-notice heading="새 컬렉션 화면의 규칙을 정한다">
+          지금은 화면 구성만 전시한다. 이름과 공개 범위를 받는 기준, 멤버 추가로 이어지는 흐름의
+          규칙은 아직 정하지 않았다
+        </mm-component-notice>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="멤버 추가">

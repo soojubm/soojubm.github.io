@@ -3,7 +3,12 @@ import { html } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
-import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
+import {
+  code,
+  codeList,
+  rule,
+  type ComponentReferenceItemData,
+} from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 /**
@@ -52,50 +57,30 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const checkedComponentRows = html`
   <tr>
-    <th scope="row">${code('mm-checkbox-group')}</th>
-    <td>${code('checked')}</td>
+    <th scope="row">${code('checked')}</th>
+    <td>${codeList(['mm-checkbox-group', 'mm-radio-group'])}</td>
   </tr>
   <tr>
-    <th scope="row">${code('mm-radio-group')}</th>
-    <td>${code('checked')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-switch')}</th>
-    <td>${code('aria-checked')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-radio')}</th>
-    <td>${code('aria-checked')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-checkbox')}</th>
-    <td>${code('aria-checked')}</td>
+    <th scope="row">${code('aria-checked')}</th>
+    <td>${codeList(['mm-switch', 'mm-menu-item-radio', 'mm-menu-item-checkbox'])}</td>
   </tr>
 `
 const currentComponentRows = html`
   <tr>
-    <th scope="row">${code('mm-breadcrumb')}</th>
-    <td>${code('page')}</td>
+    <th scope="row">${code('page')}</th>
+    <td>
+      ${codeList([
+        'mm-breadcrumb',
+        'mm-pagination',
+        'mm-page-button',
+        'mm-bottom-bar',
+        'mm-sidebar-page-link',
+      ])}
+    </td>
   </tr>
   <tr>
-    <th scope="row">${code('mm-pagination')}</th>
-    <td>${code('page')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-page-button')}</th>
-    <td>${code('page')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-bottom-bar')}</th>
-    <td>${code('page')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-sidebar-page-link')}</th>
-    <td>${code('page')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-step-item')}</th>
-    <td>${code('step')}</td>
+    <th scope="row">${code('step')}</th>
+    <td>${code('mm-step-item')}</td>
   </tr>
 `
 const expandedComponentRows = html`
@@ -268,7 +253,7 @@ const main = html`
           <mm-list-item
             icon=${ICON_NAMES.REFRESH}
             size="medium"
-            label="진행 중"
+            label="Busy"
             description="결과가 올 때까지 다시 실행할 수 없다는 표시입니다."
           ></mm-list-item>
         </mm-list-item-group>
@@ -374,8 +359,8 @@ const main = html`
         ></mm-text-list>
         <mm-table
           .rows=${checkedComponentRows}
-          caption="Checked 컴포넌트와 상태 attribute"
-          .columns=${[{ label: '컴포넌트', width: '220px' }, { label: '상태' }]}
+          caption="Checked 상태 attribute와 그것을 쓰는 컴포넌트"
+          .columns=${[{ label: '상태', width: '160px' }, { label: '컴포넌트' }]}
         ></mm-table>
       </mm-content-section>
 
@@ -441,11 +426,8 @@ const main = html`
         </mm-surface>
         <mm-table
           .rows=${currentComponentRows}
-          caption="Current 컴포넌트와 값"
-          .columns=${[
-            { label: '컴포넌트', width: '180px' },
-            { label: '값', width: '100px' },
-          ]}
+          caption="aria-current 값과 그것을 쓰는 컴포넌트"
+          .columns=${[{ label: '값', width: '160px' }, { label: '컴포넌트' }]}
         ></mm-table>
       </mm-content-section>
 

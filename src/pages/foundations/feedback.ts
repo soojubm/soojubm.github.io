@@ -2,7 +2,31 @@ import { html } from 'lit'
 
 import { ICON_NAMES, STATUS_ICONS } from '@/components/common'
 import '@/components/domains/component/component-pager'
+import { rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
+
+const componentRows = html`
+  <tr>
+    <th scope="row"><mm-link href="./notice.html">Notice</mm-link></th>
+    <td>Status 톤 (Info·Success·Warning·Error)</td>
+    <td>화면에 남아 안내하는 자리</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./toast.html">Toast</mm-link></th>
+    <td>행동의 결과</td>
+    <td>놓쳐도 되는 결과를 잠깐 알리는 자리</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./result.html">Result</mm-link></th>
+    <td>완료·오류·빈 상태</td>
+    <td>섹션·페이지 단위의 결과 화면</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./loading.html">Loading</mm-link></th>
+    <td>Pending / Fetching</td>
+    <td>요소 안에서는 아이콘 크기로, 영역 안에서는 레이블과 함께</td>
+  </tr>
+`
 
 const main = html`
   <mm-main>
@@ -12,16 +36,40 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
-      <mm-notice
-        description="시스템 오류로 실패했다면 무엇이 잘못됐는지 문구로 명확히 설명합니다. 사용자는 입력을 고칠지, 다시 시도하거나 기다리면 되는지 알 수 있습니다."
-      ></mm-notice>
+      <mm-notice>
+        <mm-text size="14">
+          입력값이 유효하지 않거나 요청이 진행 중인 상태처럼 요소 하나의 상태 표시는
+          <mm-link href="./interaction.html">Interaction</mm-link>
+          문서가 다룹니다.
+        </mm-text>
+      </mm-notice>
+
+      <mm-content-section heading-level="3" heading="Overview">
+        <mm-table
+          .rows=${componentRows}
+          caption="결과를 알리는 컴포넌트별 알리는 것과 쓰는 자리 비교"
+          .columns=${[
+            { label: '컴포넌트', width: '140px' },
+            { label: '알리는 것' },
+            { label: '쓰는 자리' },
+          ]}
+        ></mm-table>
+      </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Status states">
-        <mm-paragraph>
-          <mm-text weight="bold">결과의 의미를 톤으로 구분합니다.</mm-text>
-          색상만으로 전달하지 않고 톤, 명시적인 메시지, 영향을 받는 필드나 영역, 그리고 접근 가능한
-          관계를 함께 제공해 사용자가 원인과 대상을 이해하게 합니다.
-        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            rule(
+              '결과의 의미를 톤으로 구분한다',
+              '색상만으로 전달하지 않고 톤, 명시적인 메시지, 영향을 받는 필드나 영역, 그리고 접근 가능한 관계를 함께 제공해 사용자가 원인과 대상을 이해하게 한다',
+            ),
+            rule(
+              '시스템 오류로 실패하면 무엇이 잘못됐는지 문구로 설명한다',
+              '사용자는 입력을 고칠지, 다시 시도하거나 기다리면 되는지 알 수 있다',
+            ),
+          ]}
+        ></mm-text-list>
 
         <mm-list-item-group>
           <mm-list-item
@@ -58,11 +106,15 @@ const main = html`
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Data/async states">
-        <mm-paragraph>
-          <mm-text weight="bold">비동기 데이터 흐름이 지나는 단계입니다.</mm-text>
-          각 단계가 스켈레톤·스피너·에러 화면·빈 화면 중 무엇을 노출할지 정합니다. 흐름의 실패는
-          알림 톤인 Status의 Error와 구분해 Rejected로 부릅니다.
-        </mm-paragraph>
+        <mm-text-list
+          variant="check"
+          .texts=${[
+            rule(
+              '비동기 흐름의 단계마다 노출할 화면을 정한다',
+              '스켈레톤·스피너·에러 화면·빈 화면 중 무엇을 노출할지 단계마다 정한다. 흐름의 실패는 알림 톤인 Status의 Error와 구분해 Rejected로 부른다',
+            ),
+          ]}
+        ></mm-text-list>
 
         <mm-list-item-group>
           <mm-list-item

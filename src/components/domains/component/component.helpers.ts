@@ -7,6 +7,10 @@ import type { ComponentPropItemData } from '@/components/domains/component/compo
 // prettier-ignore
 export const code = (name: string) => html`<mm-code>${name}</mm-code>`
 
+/** 여러 식별자를 쉼표로 이어 mm-code로 감싼다. */
+// prettier-ignore
+export const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
+
 /** 규칙 목록 항목. 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다. */
 export const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
   <span>
