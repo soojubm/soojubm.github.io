@@ -5,7 +5,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
   <mm-main>
-    <mm-content-section-list gap="section">
+    <mm-content-section-list>
       <mm-flex direction="column" gap="4">
         <mm-button>Back to Home</mm-button>
 

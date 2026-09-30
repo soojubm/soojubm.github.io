@@ -31,7 +31,7 @@ const main = html`
         style="flex: 1 1 240px"
       ></mm-thumbnail>
 
-      <mm-content-section-list gap="section" style="flex: 2 1 480px; min-width: 0">
+      <mm-content-section-list style="flex: 2 1 480px; min-width: 0">
         <mm-flex direction="column" gap="4">
           <mm-keyword-tag-group
             heading="개봉예정 D-12"

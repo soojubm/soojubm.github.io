@@ -9,7 +9,7 @@ const main = html`
         <mm-thumbnail src=""></mm-thumbnail>
       </div>
 
-      <mm-content-section-list gap="section" style="width:50%;padding:2rem;box-sizing:border-box;">
+      <mm-content-section-list style="width:50%;padding:2rem;box-sizing:border-box;">
         <mm-text size="32">
           Contact To buy our products or to learn more about Sandy Shore, don’t hesitate to reach
           out. We’ll be happy to respond.

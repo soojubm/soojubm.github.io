@@ -25,7 +25,7 @@ const main = html`
       <mm-paragraph size="large">수줍이님, 어서와요!</mm-paragraph>
     </mm-flex>
 
-    <mm-content-section-list gap="section">
+    <mm-content-section-list>
       <mm-flex direction="column" gap="3">
         <mm-list-item
           avatar-variant="tertiary"
