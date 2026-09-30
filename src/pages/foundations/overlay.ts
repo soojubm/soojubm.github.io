@@ -271,34 +271,24 @@ const main = html`
               `,
             ),
             rule(
-              '열림 상태',
               html`
-                열렸는지는 표면의 ${code('open')} 속성 하나로 나타낸다. 컨트롤러는 이 값을 따로 갖지
-                않고 읽고 쓰기만 한다
+                열림이 바뀌면 ${code('toggle')} 이벤트로 알린다
               `,
-            ),
-            rule(
-              '열림 알림',
               html`
-                열림이 바뀌면 ${code('toggle')} 이벤트의 ${code('detail.open')}으로 알린다. 어느
-                경로로 바뀌든 한 번씩 나가므로 쓰는 쪽은 트리거의 펼침 표시 같은 자기 상태를 맞춘다.
-                버블링하지 않아 안에 둔 다른 표면의 ${code('toggle')}이 섞이지 않는다
+                바깥 클릭·ESC로 표면이 스스로 닫혀도 ${code('detail.open')}에 열림 여부가 담겨
+                나가므로, 쓰는 쪽은 이 값으로 트리거의 ${code('aria-expanded')} 같은 자기 상태를
+                맞춘다. 이벤트는 버블링하지 않아 안에 둔 다른 표면의 ${code('toggle')}과 섞이지
+                않는다
               `,
             ),
           ]}
         ></mm-text-list>
-        <mm-component-notice
-          variant="exception"
-          heading="트리거와 시트를 함께 소유하는 컴포넌트는 열림 상태를 직접 갖는다"
-        >
-          ${code('mm-navbar-search')}·${code('mm-select')}·${code('mm-more-menu')}의 시트는
-          ${code('#portal-root')}로 옮겨져, 컴포넌트 shadow 안의 트리거를 ${code('aria-controls')}로
-          찾을 수 없다. 그래서 컴포넌트가 열림 상태를 갖고 시트의 ${code('open')}과 트리거의
-          ${code('aria-expanded')}에 직접 바인딩하며, 시트가 스스로 닫히면 ${code('toggle')}
-          이벤트로 상태를 맞춘다. ${code('mm-select')}·${code('mm-more-menu')}는 넓은 화면의
-          popover와 좁은 화면의 sheet가 이 상태 하나를 나눠 쓰므로
-          ${code('AdaptiveOverlayController')}가 소유한다
-        </mm-component-notice>
+        <mm-paragraph>
+          ${code('AdaptiveOverlayController')}는 넓은 화면의 popover와 좁은 화면의 sheet로 목록을
+          여는 컴포넌트(${code('mm-select')}·${code('mm-more-menu')})의 열림 상태를 소유합니다. 두
+          표면은 backdrop·portal·스크롤 잠금을 쥐는 방식이 달라 표면 컴포넌트를 갈아 끼우므로, 열림
+          상태는 표면이 나눠 갖지 않고 이 컨트롤러 하나가 갖습니다.
+        </mm-paragraph>
         <mm-table
           .rows=${dismissRows}
           caption="viewport 표면의 닫기 수단 비교"
@@ -327,7 +317,9 @@ const main = html`
           variant="check"
           .texts=${[
             rule(
-              '모이는 곳',
+              html`
+                ${code('#portal-root')}
+              `,
               html`
                 viewport overlay는 모두 ${code('#portal-root')} 컨테이너로 옮겨, 셸이 렌더하는
                 노드와 분리된 한곳에 모은다
@@ -353,17 +345,6 @@ const main = html`
             rule(
               '메뉴 트리거 위치',
               '메뉴 트리거는 스크롤 영역 바깥에 둡니다. 스크롤 영역 안의 항목은 누르면 다음 화면으로 넘어가게 하고, overflow는 내용이 영역을 넘치는 곳에만 줍니다.',
-            ),
-            rule(
-              '패널 높이',
-              html`
-                popover 패널은 400px와 화면 높이의 50% 중 작은 값까지 자라고, 넘치면 안에서
-                스크롤됩니다. ${code('mm-select')} 목록은 옵션 5개까지 보입니다.
-              `,
-            ),
-            rule(
-              '패널 폭',
-              'popover 패널은 240px보다 좁아지지 않습니다. 테이블 셀처럼 좁은 자리의 트리거에 붙이면 패널이 주변을 덮으니 그 범위를 함께 봅니다.',
             ),
           ]}
         ></mm-text-list>
