@@ -119,39 +119,42 @@ const handleRecentSearchSelect = (event: CustomEvent<{ value: string }>) => {
   searchField.value = event.detail.value
 }
 
+const yes = html`
+  <span role="img" aria-label="예">✅</span>
+`
+const no = html`
+  <span role="img" aria-label="아니오">❌</span>
+`
+
 const overviewRows = html`
   <tr>
     <th scope="row">검색 결과</th>
-    <td>O</td>
-    <td>X</td>
+    <td>${yes}</td>
+    <td>${no}</td>
   </tr>
   <tr>
     <th scope="row">최근 검색어</th>
-    <td>X</td>
-    <td>O</td>
+    <td>${no}</td>
+    <td>${yes}</td>
   </tr>
   <tr>
     <th scope="row">추천 검색어</th>
-    <td>O</td>
-    <td>O</td>
+    <td>${yes}</td>
+    <td>${yes}</td>
   </tr>
   <tr>
     <th scope="row">검색 결과 페이지</th>
-    <td>X</td>
-    <td>O</td>
+    <td>${no}</td>
+    <td>${yes}</td>
   </tr>
   <tr>
     <th scope="row">검색어 자동완성</th>
-    <td>O</td>
-    <td>O</td>
+    <td>${yes}</td>
+    <td>${yes}</td>
   </tr>
 `
 
-const overviewTableColumns = [
-  { label: '요소' },
-  { label: '입력할 때 (onChange)' },
-  { label: '제출할 때 (onSubmit)' },
-]
+const overviewTableColumns = [{ label: '요소' }, { label: '입력할 때' }, { label: '제출할 때' }]
 
 const flowRows = html`
   <tr>
@@ -219,7 +222,7 @@ const main = html`
             문서의 Overlay 탭이 다룹니다.
           </mm-paragraph>
 
-          <mm-content-section heading-level="3" heading="언제 접나요">
+          <mm-content-section heading-level="3" heading="접는 기준">
             <mm-text-list
               variant="check"
               .texts=${[
@@ -461,7 +464,7 @@ const main = html`
             </mm-component-example>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="최근 검색">
+          <mm-content-section heading-level="3" heading="최근 검색어">
             <mm-text-list
               variant="check"
               .texts=${[

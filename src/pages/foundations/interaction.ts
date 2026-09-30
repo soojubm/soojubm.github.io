@@ -68,6 +68,46 @@ const currentComponentRows = html`
     <td>${code('mm-step-item')}</td>
   </tr>
 `
+
+const feedbackRows = html`
+  <tr>
+    <th scope="row">${code('mm-toast')}</th>
+    <td>화면 하단 중앙</td>
+    <td>표시 시간이 지나면 스스로 닫힌다</td>
+    <td>저장·복사처럼 확인만 하면 끝나는 행동의 결과를 알릴 때</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-notice')}</th>
+    <td>관련 콘텐츠 곁</td>
+    <td>화면에 남는다</td>
+    <td>흐름 안에서 주의할 상태를 알리고 다음 행동을 곁에 둘 때</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-result')}</th>
+    <td>섹션·페이지 전체</td>
+    <td>화면에 남는다</td>
+    <td>작업이 끝난 뒤 완료·오류·빈 상태와 다음 행동을 제시할 때</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-dialog')}</th>
+    <td>화면 위, 배경을 막는다</td>
+    <td>사용자가 액션을 고를 때까지</td>
+    <td>되돌리기 어려운 작업을 실행하기 전에 확인을 받을 때</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-spinner')}</th>
+    <td>요소 안·영역 안</td>
+    <td>작업이 끝날 때까지</td>
+    <td>결과를 기다리는 동안 시스템이 응답하고 있음을 알릴 때</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-task-status')}</th>
+    <td>흐름 안의 한 줄</td>
+    <td>작업이 끝날 때까지</td>
+    <td>진행률을 알 수 없는 작업의 시도 횟수·경과 시간을 알릴 때</td>
+  </tr>
+`
+
 const selectionReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://m3.material.io/foundations/interaction/selection',
@@ -378,19 +418,19 @@ const main = html`
               <mm-list-item
                 icon=${ICON_NAMES.REFRESH}
                 size="medium"
-                label="Pending / Fetching"
+                label="Pending"
                 description="데이터를 가져오는 중입니다. 스켈레톤이나 스피너를 노출합니다."
               ></mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.SUCCESS}
                 size="medium"
-                label="Resolved / Success"
+                label="Resolved"
                 description="데이터를 성공적으로 가져와 정상 UI를 노출합니다."
               ></mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.FAILURE}
                 size="medium"
-                label="Rejected / Failed"
+                label="Rejected"
                 description="데이터를 가져오는 데 실패해 에러 화면을 노출합니다."
               ></mm-list-item>
               <mm-list-item
@@ -400,6 +440,51 @@ const main = html`
                 description="완료되었으나 데이터가 0건일 때 빈 화면을 노출합니다."
               ></mm-list-item>
             </mm-list-item-group>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="Feedback">
+            <mm-paragraph>
+              사용자 행동이나 시스템 상태의 결과를 알립니다. 알릴 내용은 의미 상태와 데이터 상태가
+              정하고, 알리는 자리와 머무는 시간은 결과 뒤에 다음 행동이 따르는지로 정합니다.
+            </mm-paragraph>
+            <mm-table
+              .rows=${feedbackRows}
+              caption="결과를 알리는 컴포넌트의 자리·머무는 시간·사용 시점 비교"
+              .columns=${[
+                { label: '컴포넌트', width: '180px' },
+                { label: '자리', width: '180px' },
+                { label: '머무는 시간', width: '220px' },
+                { label: '언제' },
+              ]}
+            ></mm-table>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '결과는 그 행동이 일어난 범위에서 알린다',
+                  html`
+                    요소 안의 진행은 그 요소 안의 ${code('mm-spinner')}로, 한 구획의 상태는 그 구획
+                    곁의 ${code('mm-notice')}로, 화면 전체의 결과는 ${code('mm-result')}로 알린다
+                  `,
+                ),
+                rule(
+                  '다음 행동이 따르는 결과는 화면에 남긴다',
+                  html`
+                    다시 시도하거나 고쳐야 하는 결과는 ${code('mm-notice')}·${code('mm-result')}로
+                    남기고, 스스로 사라지는 ${code('mm-toast')}는 확인만 하면 끝나는 결과에 쓴다
+                  `,
+                ),
+                rule(
+                  '결과는 한 번만 알린다',
+                  '페이지 이동이나 목록 변화가 결과를 보여 주면 그것으로 알림을 대신한다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-paragraph>
+              ${code('mm-toast')}의 표시 시간과 표면별 닫기 수단은
+              <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
+              문서 Overlay 탭의 Dismiss가 정합니다.
+            </mm-paragraph>
           </mm-content-section>
 
           <mm-component-references .items=${interactionReferences}></mm-component-references>
@@ -424,7 +509,7 @@ const main = html`
           <mm-content-section heading-level="3" heading="Overview">
             <mm-grid columns="2" gap="4">
               <mm-surface>
-                <mm-content-section heading-level="3" heading="단일 선택">
+                <mm-content-section heading-level="4" heading="단일 선택">
                   <mm-paragraph>
                     선택지가 5개 이하면 ${code('mm-radio-group')} ·
                     ${code('mm-toggle-button-group')}으로 펼쳐 보이고, 6개부터는
@@ -433,7 +518,7 @@ const main = html`
                 </mm-content-section>
               </mm-surface>
               <mm-surface>
-                <mm-content-section heading-level="3" heading="다중 선택">
+                <mm-content-section heading-level="4" heading="다중 선택">
                   <mm-paragraph>
                     선택지가 5개 이하면 ${code('mm-checkbox-group')}으로 펼쳐 보이고, 6개부터는
                     ${code('mm-filter-button-group')}이나 ${code('mm-sheet')} 안의
