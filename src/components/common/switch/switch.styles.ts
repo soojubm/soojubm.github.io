@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-import { focusRingStyles } from '@/stylesheets/shared.styles'
+import { disabledStyles, focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const switchStyles = css`
   :host {
@@ -36,8 +36,7 @@ export const switchStyles = css`
     }
 
     &:disabled + label {
-      cursor: not-allowed;
-      opacity: 0.5;
+      ${disabledStyles};
     }
   }
 

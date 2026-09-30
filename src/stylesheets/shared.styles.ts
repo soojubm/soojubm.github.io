@@ -85,6 +85,15 @@ export const focusRingStyles = css`
 `
 
 /**
+ * 공유 비활성 선언. 비활성 상태를 다루는 선택자 안에 펼쳐 쓴다.
+ * 눌림을 막으려 pointer-events를 끄는 행은 이 선언 뒤에 그것만 덧붙인다.
+ */
+export const disabledStyles = css`
+  opacity: var(--opacity-50);
+  cursor: not-allowed;
+`
+
+/**
  * 뒤에 깔리는 ::before 레이어를 품는 요소의 선언. 레이어를 품을 선택자 안에 펼쳐 쓴다.
  * z-index: -1 레이어가 조상 배경 뒤로 빠지지 않도록 요소에서 쌓임 맥락을 만든다.
  */

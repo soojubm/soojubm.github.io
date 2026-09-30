@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaIdRef, AriaInvalid } from '@/types'
 
-import { resetStyles } from '@/stylesheets/shared.styles'
+import { disabledStyles, resetStyles } from '@/stylesheets/shared.styles'
 
 export type InputType =
   | 'text'
@@ -59,8 +59,7 @@ export class Input extends LitElement {
         }
 
         &:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
+          ${disabledStyles};
         }
 
         &[type='date'] {

@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-import { focusRingStyles } from '@/stylesheets/shared.styles'
+import { disabledStyles, focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const checkboxStyles = css`
   :host {
@@ -74,8 +74,7 @@ export const checkboxStyles = css`
   }
 
   input:disabled + label {
-    opacity: 0.5;
-    cursor: not-allowed;
+    ${disabledStyles};
   }
 
   :host([size='large']) {

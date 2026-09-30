@@ -2,7 +2,9 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
+
 import '@/components/common/list-item/list-item'
+import { disabledStyles } from '@/stylesheets/shared.styles'
 
 type DisableableElement = HTMLElement & { disabled?: boolean }
 
@@ -19,7 +21,7 @@ export class SettingItem extends LitElement {
     }
 
     :host([disabled]) {
-      opacity: 0.5;
+      ${disabledStyles};
       pointer-events: none;
     }
   `

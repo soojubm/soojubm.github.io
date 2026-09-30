@@ -4,6 +4,7 @@ import type { ListItemSize } from '@/components/common/list-item/list-item'
 
 import {
   backgroundLayerStyles,
+  disabledStyles,
   interactiveElement,
   layerContainerStyles,
 } from '@/stylesheets/shared.styles'
@@ -118,7 +119,7 @@ export const interactiveRowStyles = css`
 
     &[disabled],
     &[aria-disabled='true'] {
-      opacity: 0.5;
+      ${disabledStyles};
       pointer-events: none;
     }
   }

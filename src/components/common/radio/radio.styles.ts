@@ -1,7 +1,7 @@
 import { css } from 'lit'
 
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
-import { focusRingStyles } from '@/stylesheets/shared.styles'
+import { disabledStyles, focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const radioStyles = css`
   :host {
@@ -44,8 +44,7 @@ export const radioStyles = css`
   }
 
   input:disabled + label {
-    opacity: 0.5;
-    cursor: not-allowed;
+    ${disabledStyles};
   }
 
   :host([size='large']) {
