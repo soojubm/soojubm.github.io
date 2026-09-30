@@ -15,7 +15,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'textarea.html', label: 'Textarea' },
   { href: 'select.html', label: 'Select' },
-  { href: 'search.html', label: 'Search' },
+  { href: 'pattern.html?tab=search', label: 'Search' },
 ]
 
 const componentChangelog: ComponentChangelogItemData[] = [

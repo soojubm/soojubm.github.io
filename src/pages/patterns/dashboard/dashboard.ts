@@ -178,20 +178,17 @@ const containerUsages: ComponentUsageItem[] = [
   {
     label: 'content-section-list',
     count: 20,
-    pageCount: 13,
+    pageCount: 10,
     pages: toPages([
       'cake',
       'checkout',
-      'collection',
       'content',
-      'disclosure',
       'foundations',
       'home',
       'interaction',
       'layout',
       'list-item',
-      'search',
-      'selection',
+      'pattern',
       'tokens',
     ]),
   },
@@ -206,7 +203,7 @@ const containerUsages: ComponentUsageItem[] = [
 
 const main = html`
   <mm-main>
-    <mm-content-section-list gap="section">
+    <mm-content-section-list>
       <mm-flex direction="column" gap="4">
         <mm-flex justify-content="space-between" align-items="center" gap="4">
           <mm-heading level="2">🌙 Tender is the night.</mm-heading>

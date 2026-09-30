@@ -11,7 +11,7 @@ import { subComponentPropsOf, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
-  { href: 'disclosure.html', label: 'Disclosure' },
+  { href: 'pattern.html?tab=disclosure', label: 'Disclosure' },
   { href: 'top-bar.html', label: 'Top Bar' },
 ]
 

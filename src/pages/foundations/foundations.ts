@@ -1,19 +1,14 @@
 import { html } from 'lit'
 
-import '@/components/domains/component/component-pager'
 import { rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { SITEMAP } from '@/sitemap'
 
 const FOUNDATION_DESCRIPTIONS: Record<string, string> = {
-  layout: '페이지 너비와 배경·표면 대비로 페이지의 성격과 작업 맥락을 담습니다.',
-  interaction: '상호작용할 수 있는 요소와 그 반응 상태를 정의합니다.',
-  disclosure: '접어 둔 부차 정보를 트리거로 펼치는 형태, 상태 소유, 접근성을 정의합니다.',
-  selection: '선택지를 고르는 컴포넌트의 선택 기준, 상태 소유, 옵션 모양을 정의합니다.',
-  search: '키워드로 콘텐츠를 찾는 흐름의 단계별 제안과 결과 처리 방식을 정의합니다.',
-  collection: '사용자가 만든 묶음에 항목을 담고 묶음을 만들고 관리하는 흐름을 정의합니다.',
-  content: '텍스트 슬롯의 이름과 어조, 스캔 가능한 문구 원칙입니다.',
-  iconography: '아이콘은 뜻을 지닐 때만 쓰고, 쓰이는 역할과 아이콘 목록을 한 곳에서 정합니다.',
+  layout: '페이지·섹션·오버레이가 놓이는 골격과 층위를 정합니다.',
+  interaction: '요소가 반응하는 상태와 선택지를 고르는 방식을 정합니다.',
+  pattern: '여러 컴포넌트가 이어지는 펼침·검색·모음 흐름을 정합니다.',
+  content: '텍스트의 이름과 어조, 아이콘의 뜻을 정합니다.',
 }
 
 // 사이드바와 같은 목록에서 만들어, 축을 추가하거나 옮겨도 카드가 빠지지 않는다.
@@ -24,72 +19,88 @@ const foundationItems = (
 
 const main = html`
   <mm-main>
+    <div style="height: var(--size-80)"></div>
     <mm-page-header
+      centered
       heading="Foundations"
-      description="제품 전체가 공유하는 시각 언어의 기본 축입니다. 각 문서가 하나의 축을 정의합니다."
+      description="제품 전체가 공유하는 시각 언어의 기반입니다."
     ></mm-page-header>
 
     <mm-flex direction="column" gap="16">
-      <mm-grid columns="3" gap="4">
-        ${foundationItems.map(
-          ({ id, name }) => html`
-            <mm-foundation-item
-              href="./${id}.html"
-              heading=${name}
-              description=${FOUNDATION_DESCRIPTIONS[id]}
-            ></mm-foundation-item>
-          `,
-        )}
-      </mm-grid>
+      <mm-flex justify-content="center">
+        <mm-grid columns="2" gap="4" style="width: 100%; max-width: var(--layout-width-small)">
+          ${foundationItems.map(
+            ({ id, name }) => html`
+              <mm-foundation-item
+                href="./${id}.html"
+                heading=${name}
+                description=${FOUNDATION_DESCRIPTIONS[id]}
+              ></mm-foundation-item>
+            `,
+          )}
+        </mm-grid>
+      </mm-flex>
 
       <mm-content-section-list>
-        <mm-content-section heading-level="3" heading="공통 원칙">
-          <mm-text-list
-            variant="check"
-            .texts=${[
-              rule(
-                '상호작용 가능성은 형태로 드러낸다',
-                html`
-                  색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. —
-                  <mm-link href="./interaction.html">Interaction</mm-link>
-                `,
-              ),
-              rule(
-                '상태는 색상만으로 표현하지 않는다',
-                html`
-                  선택·피드백·오류 상태는 아이콘·텍스트·형태·ARIA를 함께 써서 색각 이상이나
-                  스크린리더 사용자에게도 전달한다. —
-                  <mm-link href="./interaction.html">Interaction</mm-link>
-                `,
-              ),
-              rule(
-                '열기·선택·검증 같은 상호작용 상태는 컴포넌트가 소유한다',
-                html`
-                  닫힘 처리도 컴포넌트가 맡고, 트리거는 표준 attribute로 대상을 가리키기만 한다. —
-                  <mm-link href="./interaction.html">Interaction</mm-link>
-                `,
-              ),
-              rule(
-                '동종 항목은 계열 그룹 컴포넌트로 묶는다',
-                html`
-                  역할·간격·정렬은 그룹이 소유한다. —
-                  <mm-link href="./layout.html">Layout</mm-link>
-                `,
-              ),
-              rule(
-                '화면 위로 뜨는 표면은 동작과 표현을 분리한다',
-                html`
-                  modality·dismiss·reference 같은 동작은 컨트롤러가 소유하고,
-                  surface·width·placement 같은 표현은 각 컴포넌트가 조합한다. —
-                  <mm-link href="./layout.html">Layout</mm-link>
-                `,
-              ),
-            ]}
-          ></mm-text-list>
-        </mm-content-section>
+        <mm-surface
+          variant="filled"
+          style="--surface-border-radius: 0; --surface-padding: var(--space-8) 0; --surface-shadow: 0 0 0 100vmax var(--background-subtle-color); clip-path: inset(0 -100vmax)"
+        >
+          <mm-flex justify-content="center">
+            <mm-content-section
+              heading-level="3"
+              heading="공통 원칙"
+              style="width: 100%; max-width: var(--layout-width-small)"
+            >
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '상호작용 가능성은 형태로 드러낸다',
+                    html`
+                      색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. —
+                      <mm-link href="./interaction.html">Interaction</mm-link>
+                    `,
+                  ),
+                  rule(
+                    '상태는 색상만으로 표현하지 않는다',
+                    html`
+                      선택·피드백·오류 상태는 아이콘·텍스트·형태·ARIA를 함께 써서 색각 이상이나
+                      스크린리더 사용자에게도 전달한다. —
+                      <mm-link href="./interaction.html">Interaction</mm-link>
+                    `,
+                  ),
+                  rule(
+                    '열기·선택·검증 같은 상호작용 상태는 컴포넌트가 소유한다',
+                    html`
+                      닫힘 처리도 컴포넌트가 맡고, 트리거는 표준 attribute로 대상을 가리키기만 한다.
+                      —
+                      <mm-link href="./interaction.html">Interaction</mm-link>
+                    `,
+                  ),
+                  rule(
+                    '동종 항목은 계열 그룹 컴포넌트로 묶는다',
+                    html`
+                      역할·간격·정렬은 그룹이 소유한다. —
+                      <mm-link href="./layout.html?tab=group">Layout</mm-link>
+                    `,
+                  ),
+                  rule(
+                    '화면 위로 뜨는 표면은 동작과 표현을 분리한다',
+                    html`
+                      modality·dismiss·reference 같은 동작은 컨트롤러가 소유하고,
+                      surface·width·placement 같은 표현은 각 컴포넌트가 조합한다. —
+                      <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
+            </mm-content-section>
+          </mm-flex>
+        </mm-surface>
 
         <mm-content-section heading-level="3" heading="Component Feature">
-          <mm-content-section-list>
+          <mm-grid columns="2" gap="8">
             <mm-content-section heading-level="4" heading="Interaction">
               <mm-paragraph>조작을 받아 상태나 화면을 바꿉니다.</mm-paragraph>
               <mm-text-list
@@ -102,7 +113,7 @@ const main = html`
                     'Interactive - selection',
                     html`
                       선택 여부를 상태로 유지한다. 기준은
-                      <mm-link href="./selection.html">Selection</mm-link>
+                      <mm-link href="./interaction.html?tab=selection">Selection</mm-link>
                       문서가 정한다.
                     `,
                   ),
@@ -139,7 +150,7 @@ const main = html`
                     'Disclosure',
                     html`
                       부차적인 정보를 접어 두고 필요할 때만 펼친다. 기준은
-                      <mm-link href="./disclosure.html">Disclosure</mm-link>
+                      <mm-link href="./pattern.html">Pattern</mm-link>
                       문서가 정한다.
                     `,
                   ),
@@ -147,12 +158,10 @@ const main = html`
                 ]}
               ></mm-text-list>
             </mm-content-section>
-          </mm-content-section-list>
+          </mm-grid>
         </mm-content-section>
       </mm-content-section-list>
     </mm-flex>
-
-    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 

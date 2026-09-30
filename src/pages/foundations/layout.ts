@@ -5,7 +5,6 @@ import './layout.css'
 import '@/components/domains/comment/comment-item'
 import '@/components/overlay/sheet'
 import '@/components/domains/component/component-notice'
-import '@/components/domains/component/component-pager'
 import { ICON_NAMES } from '@/components/common'
 import {
   code,
@@ -15,24 +14,6 @@ import {
 } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
-const GROUP_COMPONENTS = [
-  'mm-button-group',
-  'mm-filter-button-group',
-  'mm-toggle-button-group',
-  'mm-radio-group',
-  'mm-checkbox-group',
-  'mm-radio-card-group',
-  'mm-avatar-group',
-  'mm-tag-group',
-  'mm-keyword-tag-group',
-  'mm-list-item-group',
-  'mm-menu-item-group',
-  'mm-menu-item-radio-group',
-  'mm-menu-item-checkbox-group',
-  'mm-meta-item-group',
-  'mm-feature-group',
-  'mm-paragraph-group',
-]
 const SECTION_COMPONENTS = ['mm-content-section', 'mm-page-header']
 
 const overviewRows = html`
@@ -190,15 +171,136 @@ type PlacementType =
 // viewport overlay (sheet · dialog)
 type ViewportPlacementType = 'center' | Side`
 
+const layoutGroupRows = html`
+  <tr>
+    <th scope="row">${code('mm-button-group')}</th>
+    <td>가로로 줄바꿈하고, 세로 전환·정렬·폭 채움을 정할 수 있다</td>
+    <td>${code('--space-2')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-tag-group')}</th>
+    <td>가로로 줄바꿈한다</td>
+    <td>${code('--space-1')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-keyword-tag-group')}</th>
+    <td>제목 태그와 키워드 태그를 ${code('mm-tag-group')}에 넣어 같은 규칙으로 놓는다</td>
+    <td>${code('--space-1')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-avatar-group')}</th>
+    <td>아바타를 겹쳐 놓고 세 명을 넘으면 +N으로 묶으며, 옆에 레이블을 둔다</td>
+    <td>${code('--space-2')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-list-item-group')}</th>
+    <td>세로로 쌓는다</td>
+    <td>${code('--space-3')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-menu-item-group')}</th>
+    <td>세로로 쌓는다</td>
+    <td>${code('--space-1')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-meta-item-group')}</th>
+    <td>가로가 기본이며 세로 전환·줄바꿈·간격을 정할 수 있다</td>
+    <td>기본 ${code('--space-4')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-feature-group')}</th>
+    <td>열 수(기본 2)에 맞춰 그리드로 놓는다</td>
+    <td>${code('--space-8')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-paragraph-group')}</th>
+    <td>세로로 쌓는다</td>
+    <td>${code('--space-4')}</td>
+  </tr>
+`
+
+const selectionGroupRows = html`
+  <tr>
+    <th scope="row">${code('mm-radio-group')}</th>
+    <td>Single</td>
+    <td>세로로 쌓는다</td>
+    <td>${code('--space-2')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-checkbox-group')}</th>
+    <td>Multiple</td>
+    <td>세로로 쌓는다</td>
+    <td>${code('--space-2')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-radio-card-group')}</th>
+    <td>Single</td>
+    <td>카드를 세로로 쌓는다</td>
+    <td>${code('--space-2')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-toggle-button-group')}</th>
+    <td>Single</td>
+    <td>버튼을 가로로 이어 붙인다</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-filter-button-group')}</th>
+    <td>Single · Multiple</td>
+    <td>가로로 줄바꿈한다</td>
+    <td>${code('--space-2')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-menu-item-radio-group')}</th>
+    <td>Single</td>
+    <td>${code('mm-menu-item-group')}으로 세로로 쌓는다</td>
+    <td>${code('--space-1')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
+    <td>Multiple</td>
+    <td>${code('mm-menu-item-group')}으로 세로로 쌓는다</td>
+    <td>${code('--space-1')}</td>
+  </tr>
+`
+
 const main = html`
   <mm-main>
     <mm-page-header
       heading="Layout"
-      description="페이지 너비, 배경 대비, 표면 대비는 장식이 아니라 페이지의 성격과 작업 맥락을 담는 신호입니다. 사용자가 의식적으로 알아차리지는 못하지만, 일관되게 쓰면 맥락이 달라졌다는 미묘한 감각을 전달합니다."
+      description="페이지 너비, 섹션의 배치, 화면 위로 뜨는 표면의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 담으므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
     ></mm-page-header>
 
     <mm-content-section-list>
-      <mm-tab-list value="page" variant="pill">
+      <mm-content-section heading-level="3" heading="Overview">
+        <mm-paragraph>
+          간격을 비롯한 값은 요소가 속한 구조적 단계에 따라 다른 기준을 갖습니다. 컴포넌트마다
+          간격을 따로 판단하지 않고, 소속된 단계에 맞는 토큰만 참조합니다.
+        </mm-paragraph>
+
+        <mm-list-item-group>
+          <mm-list-item
+            icon=${ICON_NAMES.IDLE}
+            size="medium"
+            label="Element"
+            description="단일 UI 유닛 안의 간격. --space-1 ~ --space-2."
+          ></mm-list-item>
+          <mm-list-item
+            icon=${ICON_NAMES.GROUP}
+            size="medium"
+            label="Group"
+            description="같은 컴포넌트를 나열한 리스트. 항목 사이 간격은 기본 --space-2, 조밀한 태그는 --space-1, 이어지는 묶음은 0."
+          ></mm-list-item>
+          <mm-list-item
+            icon=${ICON_NAMES.LIST_VIEW}
+            size="medium"
+            label="Section"
+            description="제목과 본문 사이 --space-3. 섹션끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
+          ></mm-list-item>
+        </mm-list-item-group>
+      </mm-content-section>
+
+      <mm-tab-list value="page" variant="pill" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
         <mm-tab value="section">Section</mm-tab>
         <mm-tab value="group">Group</mm-tab>
@@ -306,6 +408,20 @@ const main = html`
 
       <mm-tab-panel value="section">
         <mm-content-section-list>
+          <mm-paragraph>Section 컴포넌트: ${codeList(SECTION_COMPONENTS)}</mm-paragraph>
+
+          <mm-paragraph>
+            Section 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면으로, 제목 heading 요소와 본문
+            슬롯을 묶습니다. 같은 제목·설명 묶음이라도 본문 슬롯 없이 텍스트 한 쌍의 간격만 소유하는
+            ${code('mm-text-block')}은 이 계층이 아니라 상위 컴포넌트의 내부 부품이며, 문서 섹션으로
+            세울 때는 ${code('mm-content-section')}을 씁니다.
+          </mm-paragraph>
+
+          <mm-paragraph>
+            ${code('mm-flex')}·${code('mm-grid')} 같은 조립 레이아웃은 element·group·section 계층
+            밖에서 배치만 돕는 유틸리티입니다.
+          </mm-paragraph>
+
           <mm-content-section heading-level="3" heading="Overview">
             <mm-table
               .rows=${overviewRows}
@@ -317,49 +433,6 @@ const main = html`
                 { label: '쓰는 자리' },
               ]}
             ></mm-table>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="간격 단계">
-            <mm-paragraph>
-              간격을 비롯한 값은 요소가 속한 구조적 단계에 따라 다른 기준을 갖습니다. 컴포넌트마다
-              간격을 따로 판단하지 않고, 소속된 단계에 맞는 토큰만 참조합니다.
-            </mm-paragraph>
-
-            <mm-list-item-group>
-              <mm-list-item
-                icon=${ICON_NAMES.IDLE}
-                size="medium"
-                label="Element"
-                description="단일 UI 유닛 안의 간격. --space-1 ~ --space-2."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${ICON_NAMES.GROUP}
-                size="medium"
-                label="Group"
-                description="같은 컴포넌트를 나열한 리스트. 항목 사이 간격은 기본 --space-2, 조밀한 태그는 --space-1, 이어지는 묶음은 0."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${ICON_NAMES.LIST_VIEW}
-                size="medium"
-                label="Section"
-                description="제목과 본문 사이 --space-3. 섹션끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
-              ></mm-list-item>
-            </mm-list-item-group>
-
-            <mm-paragraph>Group 컴포넌트: ${codeList(GROUP_COMPONENTS)}</mm-paragraph>
-            <mm-paragraph>Section 컴포넌트: ${codeList(SECTION_COMPONENTS)}</mm-paragraph>
-
-            <mm-paragraph>
-              Section 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면으로, 제목 heading 요소와
-              본문 슬롯을 묶습니다. 같은 제목·설명 묶음이라도 본문 슬롯 없이 텍스트 한 쌍의 간격만
-              소유하는 ${code('mm-text-block')}은 이 계층이 아니라 상위 컴포넌트의 내부 부품이며,
-              문서 섹션으로 세울 때는 ${code('mm-content-section')}을 씁니다.
-            </mm-paragraph>
-
-            <mm-paragraph>
-              ${code('mm-flex')}·${code('mm-grid')} 같은 조립 레이아웃은 element·group·section 계층
-              밖에서 배치만 돕는 유틸리티입니다.
-            </mm-paragraph>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Flex">
@@ -496,6 +569,48 @@ const main = html`
           </mm-content-section>
 
           <mm-component-references .items=${componentReferences}></mm-component-references>
+        </mm-content-section-list>
+      </mm-tab-panel>
+
+      <mm-tab-panel value="group">
+        <mm-content-section-list>
+          <mm-paragraph>
+            그룹은 같은 컴포넌트를 나열하며 항목의 정렬과 간격을 소유합니다. 일부 그룹은 여기에 선택
+            상태까지 소유합니다.
+          </mm-paragraph>
+
+          <mm-content-section heading-level="3" heading="배치 그룹">
+            <mm-paragraph>
+              정렬과 간격만 소유합니다. 항목은 자기 바깥 간격을 갖지 않고, 그룹의 간격을 따릅니다.
+            </mm-paragraph>
+            <mm-table
+              .rows=${layoutGroupRows}
+              caption="배치 그룹의 배치 방식과 항목 간격"
+              .columns=${[
+                { label: '컴포넌트', width: '220px' },
+                { label: '배치' },
+                { label: '간격', width: '120px' },
+              ]}
+            ></mm-table>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="선택 그룹">
+            <mm-paragraph>
+              정렬과 간격에 더해 선택 상태를 소유합니다. 선택 기준과 상태 소유 방식은
+              <mm-link href="./interaction.html?tab=selection">Selection</mm-link>
+              탭이 정합니다.
+            </mm-paragraph>
+            <mm-table
+              .rows=${selectionGroupRows}
+              caption="선택 그룹의 선택 개수·배치 방식·항목 간격"
+              .columns=${[
+                { label: '컴포넌트', width: '260px' },
+                { label: '선택', width: '140px' },
+                { label: '배치' },
+                { label: '간격', width: '120px' },
+              ]}
+            ></mm-table>
+          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -751,8 +866,6 @@ const main = html`
         </mm-content-section-list>
       </mm-tab-panel>
     </mm-content-section-list>
-
-    <mm-component-pager></mm-component-pager>
   </mm-main>
 `
 
