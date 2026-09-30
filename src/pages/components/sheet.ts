@@ -38,32 +38,26 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.mozilla.org/ko/docs/Web/API/Popover_API',
     label: 'MDN - Popover API',
-    external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/presentation/action-sheets',
     label: 'Apple HIG - Action Sheets',
-    external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/sheets',
     label: 'Apple HIG - Sheets',
-    external: true,
   },
   {
     href: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role',
     label: 'MDN - alertdialog Role',
-    external: true,
   },
   {
     href: 'https://mobbin.com/glossary/bottom-sheet',
     label: 'Mobbin - Bottom Sheet',
-    external: true,
   },
   {
     href: 'https://ogp.me/',
     label: 'Open Graph Protocol',
-    external: true,
   },
 ]
 

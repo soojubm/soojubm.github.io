@@ -30,7 +30,6 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://support.google.com/accounts/answer/32040?visit_id=637702064644854938-965259796&p=pw_dont_reuse&hl=ko&rd=1',
     label: 'Google - Password Tips',
-    external: true,
   },
 ]
 

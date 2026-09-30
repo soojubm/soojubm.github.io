@@ -41,17 +41,14 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://m3.material.io/foundations/interaction/states/state-layers',
     label: 'MD3 - State Layers',
-    external: true,
   },
   {
     href: 'https://spectrum.adobe.com/page/states/',
     label: 'Adobe Spectrum - States',
-    external: true,
   },
   {
     href: 'https://carbondesignsystem.com/patterns/read-only-states-pattern/',
     label: 'Carbon - Read-only States',
-    external: true,
   },
 ]
 

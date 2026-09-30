@@ -105,7 +105,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Overlay"
-      description="화면 위로 뜨는 표면은 시각적 형태가 아니라 행동 계약으로 구분합니다. 행동(modality·dismiss·reference)은 컨트롤러가 소유하고, 외형(surface·width·placement)은 각 컴포넌트가 조합합니다."
+      description="화면 위로 뜨는 표면은 시각적 형태가 아니라 동작 계약으로 구분합니다. 동작(modality·dismiss·reference)은 컨트롤러가 소유하고, 표현(surface·width·placement)은 각 컴포넌트가 조합합니다."
     ></mm-page-header>
 
     <mm-content-section-list>

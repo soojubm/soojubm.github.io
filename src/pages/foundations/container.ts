@@ -89,7 +89,6 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://ix.siemens.io/docs/components/card-list/guide',
     label: 'Siemens iX - Card list',
-    external: true,
   },
 ]
 

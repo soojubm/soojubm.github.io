@@ -6,8 +6,11 @@ import '@/components/common'
 export interface ComponentReferenceItemData {
   href: string
   label: string
+  /** 외부 링크 표식. 생략하면 href가 절대 URL인지로 정한다. */
   external?: boolean
 }
+
+const isAbsoluteUrl = (href: string) => /^https?:\/\//.test(href)
 
 @customElement('mm-component-references')
 export class ComponentReferences extends LitElement {
@@ -64,13 +67,15 @@ export class ComponentReferences extends LitElement {
             <mm-separator></mm-separator>
           `
         : null}
-      <div class="references-links">
-        ${group.map(
-          item => html`
-            <mm-link ?external=${item.external} href=${item.href}>${item.label}</mm-link>
-          `,
-        )}
-      </div>
+      <div class="references-links">${group.map(item => this.renderLink(item))}</div>
+    `
+  }
+
+  private renderLink({ href, label, external }: ComponentReferenceItemData) {
+    const isExternal = external ?? isAbsoluteUrl(href)
+
+    return html`
+      <mm-link ?external=${isExternal} href=${href}>${label}</mm-link>
     `
   }
 }

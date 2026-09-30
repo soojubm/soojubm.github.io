@@ -27,38 +27,32 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
-  { href: 'https://mui.com/material-ui/react-paper/', label: 'MUI - Paper', external: true },
+  { href: 'https://mui.com/material-ui/react-paper/', label: 'MUI - Paper' },
   {
     href: 'https://carbondesignsystem.com/components/tile/usage/',
     label: 'Carbon Design System - Tile',
-    external: true,
   },
   {
     href: 'https://heroui.com/en/docs/react/components/surface',
     label: 'HeroUI (React) - Surface',
-    external: true,
   },
   {
     href: 'https://developer.dynatrace.com/design/components/layouts/Surface/',
     label: 'Dynatrace Design - Surface',
-    external: true,
   },
   {
     href: 'https://heroui.com/en/docs/native/components/surface',
     label: 'HeroUI (Native) - Surface',
-    external: true,
   },
-  { href: 'https://ant.design/components/card', label: 'Ant Design - Card', external: true },
-  { href: 'https://fluxui.dev/components/card', label: 'Flux UI - Card', external: true },
+  { href: 'https://ant.design/components/card', label: 'Ant Design - Card' },
+  { href: 'https://fluxui.dev/components/card', label: 'Flux UI - Card' },
   {
     href: 'https://ui.shadcn.com/docs/components/base/item',
     label: 'shadcn/ui - Item',
-    external: true,
   },
   {
     href: 'https://getcssscan.com/css-box-shadow-examples',
     label: 'CSS box-shadow examples',
-    external: true,
   },
 ]
 

@@ -19,38 +19,31 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.apple.com/documentation/swiftui/navigationstack',
     label: 'SwiftUI - NavigationStack',
-    external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/tab-views',
     label: 'Apple HIG - Tab Views',
-    external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/',
     label: 'Apple HIG - Segmented Controls',
-    external: true,
   },
-  { href: 'https://material.io/components/tabs', label: 'Material Design - Tabs', external: true },
+  { href: 'https://material.io/components/tabs', label: 'Material Design - Tabs' },
   {
     href: 'https://m3.material.io/components/top-app-bar/overview',
     label: 'MD3 - Top App Bar',
-    external: true,
   },
   {
     href: 'https://m2.material.io/components/bottom-navigation',
     label: 'MD2 - Bottom Navigation',
-    external: true,
   },
   {
     href: 'https://m3.material.io/components/navigation-bar/overview',
     label: 'MD3 - Navigation Bar',
-    external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars',
     label: 'Apple HIG - Tab Bars',
-    external: true,
   },
 ]
 

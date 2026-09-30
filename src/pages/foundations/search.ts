@@ -10,17 +10,14 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
     label: 'Apple Developer - UISearchBar',
-    external: true,
   },
   {
     href: 'https://material.io/design/navigation/search.html',
     label: 'Material Design - Search',
-    external: true,
   },
   {
     href: 'https://developer.android.com/reference/android/widget/SearchView',
     label: 'Android - SearchView',
-    external: true,
   },
 ]
 

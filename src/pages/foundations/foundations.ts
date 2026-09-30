@@ -13,7 +13,7 @@ const FOUNDATION_DESCRIPTIONS: Record<string, string> = {
   selection: '선택지를 고르는 컴포넌트의 선택 기준, 상태 소유, 옵션 모양을 정의합니다.',
   search: '키워드로 콘텐츠를 찾는 흐름의 단계별 제안과 결과 처리 방식을 정의합니다.',
   feedback: '행동·시스템 결과를 알리는 상태와 비동기 데이터 흐름을 정의합니다.',
-  overlay: '화면 위로 뜨는 표면의 행동 계약과 겹침 순서를 정의합니다.',
+  overlay: '화면 위로 뜨는 표면의 동작 계약과 겹침 순서를 정의합니다.',
   collection: '사용자가 만든 묶음에 항목을 담고 묶음을 만들고 관리하는 흐름을 정의합니다.',
   content: '텍스트 슬롯의 이름과 어조, 스캔 가능한 문구 원칙입니다.',
   iconography: '아이콘은 뜻을 지닐 때만 쓰고, 쓰이는 역할과 아이콘 목록을 한 곳에서 정합니다.',
@@ -58,9 +58,10 @@ const main = html`
                 `,
               ),
               rule(
-                '선택·피드백·오류 상태는 색상과 함께 아이콘·텍스트·형태·ARIA로 전달한다',
+                '상태는 색상만으로 표현하지 않는다',
                 html`
-                  색만으로는 색각 이상이나 스크린리더 사용자에게 상태가 전달되지 않는다. —
+                  선택·피드백·오류 상태는 아이콘·텍스트·형태·ARIA를 함께 써서 색각 이상이나
+                  스크린리더 사용자에게도 전달한다. —
                   <mm-link href="./interaction.html">Interaction</mm-link>
                 `,
               ),
@@ -87,10 +88,10 @@ const main = html`
                 `,
               ),
               rule(
-                '화면 위로 뜨는 표면은 행동 계약으로 구분한다',
+                '화면 위로 뜨는 표면은 동작과 표현을 분리한다',
                 html`
-                  modality·dismiss·reference는 컨트롤러가 소유하고, surface·width·placement 같은
-                  외형은 각 컴포넌트가 조합한다. —
+                  modality·dismiss·reference 같은 동작은 컨트롤러가 소유하고,
+                  surface·width·placement 같은 표현은 각 컴포넌트가 조합한다. —
                   <mm-link href="./overlay.html">Overlay</mm-link>
                 `,
               ),

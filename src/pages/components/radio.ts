@@ -21,17 +21,14 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://www.chakra-ui.com/docs/components/radio-card',
     label: 'Chakra UI - Radio Card',
-    external: true,
   },
   {
     href: 'https://carbondesignsystem.com/components/tile/usage/',
     label: 'Carbon - Selectable Tile',
-    external: true,
   },
   {
     href: 'https://www.lightningdesignsystem.com/components/visual-picker/',
     label: 'Lightning - Visual Picker',
-    external: true,
   },
 ]
 

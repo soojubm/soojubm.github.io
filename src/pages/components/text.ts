@@ -23,17 +23,14 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://design-system.service.gov.uk/components/summary-list/',
     label: 'GOV.UK Design System - Summary List',
-    external: true,
   },
   {
     href: 'https://en.wikipedia.org/wiki/Adjacency_pairs',
     label: 'Wikipedia - Adjacency Pairs',
-    external: true,
   },
   {
     href: 'https://design.innovaccer.com/components/keyValuePair/usage/',
     label: 'Innovaccer Design - Key Value Pair',
-    external: true,
   },
 ]
 

@@ -20,22 +20,18 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://carbondesignsystem.com/components/toggletip/usage/',
     label: 'Carbon - Toggletip',
-    external: true,
   },
   {
     href: 'https://playbook.ebay.com/design-system/components/tooltip',
     label: 'eBay Playbook - Tooltip',
-    external: true,
   },
   {
     href: 'https://playbook.ebay.com/design-system/components/tourtip',
     label: 'eBay Playbook - Tourtip',
-    external: true,
   },
   {
     href: 'https://spectrum.adobe.com/page/coach-mark/',
     label: 'Spectrum - Coach mark',
-    external: true,
   },
 ]
 

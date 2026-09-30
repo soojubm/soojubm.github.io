@@ -22,27 +22,22 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.android.com/reference/android/widget/HorizontalScrollView',
     label: 'Android - HorizontalScrollView',
-    external: true,
   },
   {
     href: 'https://developer.android.com/reference/com/google/android/material/chip/ChipGroup',
     label: 'Android - ChipGroup',
-    external: true,
   },
   {
     href: 'https://m3.material.io/components/segmented-buttons/overview',
     label: 'MD3 - Segmented Buttons',
-    external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/segmented-controls',
     label: 'Apple HIG - Segmented Controls',
-    external: true,
   },
   {
     href: 'https://www.w3.org/WAI/ARIA/apg/patterns/listbox/',
     label: 'WAI-ARIA APG - Listbox Pattern',
-    external: true,
   },
 ]
 

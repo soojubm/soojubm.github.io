@@ -16,16 +16,14 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
-  { href: 'https://fluxui.dev/components/composer', label: 'Flux UI - Composer', external: true },
+  { href: 'https://fluxui.dev/components/composer', label: 'Flux UI - Composer' },
   {
     href: 'https://www.prompt-kit.com/docs/prompt-input',
     label: 'prompt-kit - Prompt Input',
-    external: true,
   },
   {
     href: 'https://elements.ai-sdk.dev/components/prompt-input',
     label: 'AI Elements - Prompt Input',
-    external: true,
   },
 ]
 

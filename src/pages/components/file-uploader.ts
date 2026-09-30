@@ -20,17 +20,14 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file',
     label: 'MDN - input type="file"',
-    external: true,
   },
   {
     href: 'https://elements.ai-sdk.dev/components/attachments',
     label: 'AI SDK Elements - Attachments',
-    external: true,
   },
   {
     href: 'https://seed-design.io/react/components/attachment-display-field',
     label: 'Seed Design - Attachment Display Field',
-    external: true,
   },
 ]
 

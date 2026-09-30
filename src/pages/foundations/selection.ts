@@ -7,17 +7,14 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://m3.material.io/foundations/interaction/selection',
     label: 'MD3 - Selection',
-    external: true,
   },
   {
     href: 'https://designsystem.maersk.com/guidelines/selection-components/',
     label: 'Maersk - Selection components',
-    external: true,
   },
   {
     href: 'https://design.basis.com/patterns/selection-ui',
     label: 'Basis - Selection UI',
-    external: true,
   },
 ]
 

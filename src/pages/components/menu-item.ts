@@ -20,22 +20,18 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://www.w3.org/WAI/ARIA/apg/patterns/menubar/',
     label: 'WAI-ARIA APG - Menubar Pattern',
-    external: true,
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/menus',
     label: 'Apple HIG - Menus',
-    external: true,
   },
   {
     href: 'https://m3.material.io/components/menus/overview',
     label: 'MD3 - Menus',
-    external: true,
   },
   {
     href: 'https://seek-oss.github.io/braid-design-system/components/MenuItemCheckbox/',
     label: 'Braid Design System - MenuItemCheckbox',
-    external: true,
   },
 ]
 

@@ -19,22 +19,18 @@ const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://nextjs.org/docs/app/api-reference/components/image',
     label: 'Next.js - Image',
-    external: true,
   },
   {
     href: 'https://atlassian.design/components/image/examples',
     label: 'Atlassian Design - Image',
-    external: true,
   },
   {
     href: 'https://mantine.dev/core/image/',
     label: 'Mantine - Image',
-    external: true,
   },
   {
     href: 'https://mui.com/material-ui/react-image-list/',
     label: 'MUI - Image List',
-    external: true,
   },
 ]
 
