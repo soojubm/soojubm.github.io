@@ -7,7 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { componentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -143,29 +143,27 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          html`
-            <span>
-              <mm-text weight="bold">굵기는 제목이 갖는다</mm-text>
+          rule(
+            '굵기는 제목이 갖는다',
+            html`
               <mm-code>mm-heading</mm-code>
               이 level마다 굵기를 소유하고, 본문 안의 위계는 크기와 색으로 나눕니다. 네이티브
               <mm-code>strong</mm-code>
               ·
               <mm-code>b</mm-code>
               는 의미만 갖고 굵기는 문맥에서 물려받습니다
-            </span>
-          `,
-          html`
-            <span>
-              <mm-text weight="bold">
-                문단 안에 인라인으로 놓이는 컨트롤과 코드 조각은 굵기를 갖는다
-              </mm-text>
+            `,
+          ),
+          rule(
+            '문단 안에 인라인으로 놓이는 컨트롤과 코드 조각은 굵기를 갖는다',
+            html`
               <mm-code>mm-read-more-button</mm-code>
               은 문단 끝에 이어 붙고
               <mm-code>mm-code</mm-code>
               는 문장 사이에 끼어들어, 둘 다 주변 본문과 경계가 없습니다. 제목이 아니면서 굵기를
               갖는 예외입니다
-            </span>
-          `,
+            `,
+          ),
           '피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)',
         ]}
       ></mm-text-list>

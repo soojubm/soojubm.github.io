@@ -7,7 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { subComponentPropsOf } from '@/components/domains/component'
+import { subComponentPropsOf, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -200,21 +200,18 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">탭은 6개 이내로 구성한다</mm-text>
-                개수를 강제로 제한하지는 않는다. 탭이 화면 폭을 넘치면 가로로 스크롤되고 양 끝에
-                넘김 버튼이 나타나지만, 가려진 탭은 눈에 잘 띄지 않는다
-              </span>
-            `,
-            html`
-              <span>
-                <mm-text weight="bold">카테고리처럼 항목이 늘어나는 분류는 필터로 둔다</mm-text>
+            rule(
+              '탭은 6개 이내로 구성한다',
+              '개수를 강제로 제한하지는 않는다. 탭이 화면 폭을 넘치면 가로로 스크롤되고 양 끝에 넘김 버튼이 나타나지만, 가려진 탭은 눈에 잘 띄지 않는다',
+            ),
+            rule(
+              '카테고리처럼 항목이 늘어나는 분류는 필터로 둔다',
+              html`
                 카테고리 탭은 뷰를 바꾸는 것이 아니라 한 목록을 좁히는 필터의 역할이므로
                 <mm-code>mm-filter-button-group</mm-code>
                 을 쓴다
-              </span>
-            `,
+              `,
+            ),
           ]}
         ></mm-text-list>
       </mm-content-section>
@@ -223,31 +220,24 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">탭은 페이지에 한 단계로만 둔다</mm-text>
-                탭 줄이 두 겹 쌓이면 어느 줄이 상위인지, 지금 보는 뷰가 어디에 속하는지 탭만으로
-                되짚기 어렵다. Material 3의 primary·secondary tabs나 네이버 쇼핑의 다단계 탭 같은
-                중첩 구조는 쓰지 않는다
-              </span>
-            `,
-            html`
-              <span>
-                <mm-text weight="bold">탭 하나에는 과업 하나의 뷰를 담는다</mm-text>
-                탭은 페이지에서 하는 과업 하나를 같은 대상의 여러 뷰로 나눈다. 패널 안을 다시 탭으로
-                나눠야 할 만큼 콘텐츠가 크다면 그 패널이 별도 과업이라는 신호이므로 페이지를 나눈다
-              </span>
-            `,
-            html`
-              <span>
-                <mm-text weight="bold">패널 안의 하위 구분은 성격에 맞는 컴포넌트로 나눈다</mm-text>
+            rule(
+              '탭은 페이지에 한 단계로만 둔다',
+              '탭 줄이 두 겹 쌓이면 어느 줄이 상위인지, 지금 보는 뷰가 어디에 속하는지 탭만으로 되짚기 어렵다. Material 3의 primary·secondary tabs나 네이버 쇼핑의 다단계 탭 같은 중첩 구조는 쓰지 않는다',
+            ),
+            rule(
+              '탭 하나에는 과업 하나의 뷰를 담는다',
+              '탭은 페이지에서 하는 과업 하나를 같은 대상의 여러 뷰로 나눈다. 패널 안을 다시 탭으로 나눠야 할 만큼 콘텐츠가 크다면 그 패널이 별도 과업이라는 신호이므로 페이지를 나눈다',
+            ),
+            rule(
+              '패널 안의 하위 구분은 성격에 맞는 컴포넌트로 나눈다',
+              html`
                 한 목록을 좁히는 분류는
                 <mm-code>mm-filter-button-group</mm-code>
                 으로, 순서대로 거치는 단계는
                 <mm-code>mm-step</mm-code>
                 으로 둔다
-              </span>
-            `,
+              `,
+            ),
           ]}
         ></mm-text-list>
       </mm-content-section>
@@ -256,25 +246,19 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">
-                  페이지를 대표하는 탭 리스트에 search-param으로 키를 준다
-                </mm-text>
+            rule(
+              '페이지를 대표하는 탭 리스트에 search-param으로 키를 준다',
+              html`
                 <mm-code>search-param</mm-code>
                 을 준 탭 리스트는 진입 시 그 키의 값으로 탭을 열고, 탭을 바꾸면 URL을 replaceState로
                 바꾼다. 새로고침하거나 링크를 공유해도 같은 탭이 열리고, 탭 전환은 히스토리에 쌓이지
                 않아 뒤로 가기는 이전 페이지로 나간다. 문서 예제나 시트 안의 탭은 URL 없이 둔다
-              </span>
-            `,
-            html`
-              <span>
-                <mm-text weight="bold">
-                  한 페이지에 여럿이면 탭 리스트마다 키를 다르게 정한다
-                </mm-text>
-                같은 키를 쓰면 한쪽의 선택이 다른 쪽 URL 값을 덮는다
-              </span>
-            `,
+              `,
+            ),
+            rule(
+              '한 페이지에 여럿이면 탭 리스트마다 키를 다르게 정한다',
+              '같은 키를 쓰면 한쪽의 선택이 다른 쪽 URL 값을 덮는다',
+            ),
           ]}
         ></mm-text-list>
       </mm-content-section>

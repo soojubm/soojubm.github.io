@@ -9,7 +9,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, subComponentPropsOf, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -224,24 +224,14 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              html`
-                <span>
-                  <mm-text weight="bold">행 전체가 하나의 클릭 영역이면 menu-item을 쓴다</mm-text>
-                  눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에
-                  붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop 하나가 되고,
-                  항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다
-                </span>
-              `,
-              html`
-                <span>
-                  <mm-text weight="bold">
-                    이동하거나, 조작을 행 안의 컨트롤이 받으면 list-item을 쓴다
-                  </mm-text>
-                  행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 링크는
-                  list-item을 감싸는 도메인 컴포넌트가 소유하고, 버튼·스위치는 trailing에 두어 그
-                  컨트롤마다 Tab으로 닿게 한다
-                </span>
-              `,
+              rule(
+                '행 전체가 하나의 클릭 영역이면 menu-item을 쓴다',
+                '눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop 하나가 되고, 항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다',
+              ),
+              rule(
+                '이동하거나, 조작을 행 안의 컨트롤이 받으면 list-item을 쓴다',
+                '행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 링크는 list-item을 감싸는 도메인 컴포넌트가 소유하고, 버튼·스위치는 trailing에 두어 그 컨트롤마다 Tab으로 닿게 한다',
+              ),
             ]}
           ></mm-text-list>
         </mm-content-section>
@@ -249,9 +239,9 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              html`
-                <span>
-                  <mm-text weight="bold">이동하는 목록은 list로 읽히게 둔다</mm-text>
+              rule(
+                '이동하는 목록은 list로 읽히게 둔다',
+                html`
                   <mm-code>role="menu"</mm-code>
                   는 보조기술에 명령 메뉴로 알려진다. 인물·게시물처럼 다른 곳으로 이동하는 목록에
                   쓰면 성격이 다르게 전달되고,
@@ -261,17 +251,17 @@ const main = html`
                   이 목록의 role과 각 행의
                   <mm-code>listitem</mm-code>
                   을 채운다
-                </span>
-              `,
-              html`
-                <span>
-                  <mm-text weight="bold">한 그룹에는 같은 계열의 role을 갖는 행만 담는다</mm-text>
+                `,
+              ),
+              rule(
+                '한 그룹에는 같은 계열의 role을 갖는 행만 담는다',
+                html`
                   <mm-code>mm-menu-item-group</mm-code>
                   의 roving focus는 자식의 shadow에서 menuitem 계열 role을 찾아 tab stop을 옮긴다.
                   다른 행이 섞이면 그 행만 방향키에서 빠져 Tab으로만 닿게 되고, 한 목록 안에서
                   키보드 동선이 둘로 갈린다
-                </span>
-              `,
+                `,
+              ),
             ]}
           ></mm-text-list>
         </mm-content-section>
@@ -283,15 +273,15 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              html`
-                <span>
-                  <mm-text weight="bold">위아래 행간 차이의 절반만큼 content를 위로 옮긴다</mm-text>
+              rule(
+                '위아래 행간 차이의 절반만큼 content를 위로 옮긴다',
+                html`
                   medium에 description이 있으면 label(14/24)의 위 행간이 description(12/16)의 아래
                   행간보다 넓어 글자가 아래로 치우쳐 보인다. 이동에는
                   <mm-code>translate</mm-code>
                   속성을 써서 레이아웃 박스와 정렬은 그대로 둔다
-                </span>
-              `,
+                `,
+              ),
             ]}
           ></mm-text-list>
         </mm-content-section>

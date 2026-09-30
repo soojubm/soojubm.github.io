@@ -8,7 +8,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { componentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const scrollThumbnails = [
@@ -210,17 +210,15 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">
-                  compact 표면 안의 text-block은 default보다 한 단계 낮은 level을 쓴다
-                </mm-text>
+            rule(
+              'compact 표면 안의 text-block은 default보다 한 단계 낮은 level을 쓴다',
+              html`
                 <mm-code>density="compact"</mm-code>
                 는 안쪽 여백이 좁아서, default 표면과 같은 제목 크기를 두면 글자가 여백보다 커 보여
                 밀도가 맞지 않는다. default 표면에 level 3을 두었다면 compact 표면에는 level 4를
                 둔다
-              </span>
-            `,
+              `,
+            ),
           ]}
         ></mm-text-list>
       </mm-content-section>

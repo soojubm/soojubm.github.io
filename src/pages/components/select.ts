@@ -8,7 +8,7 @@ import type {
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { SelectVariant } from '@/components/overlay/select/select'
 
-import { componentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -108,13 +108,10 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">value가 비어 있으면 첫 번째 활성 옵션으로 채운다</mm-text>
-                네이티브 select와 같은 동작으로, 트리거가 빈 값으로 보이지 않게 한다. 비활성 옵션은
-                고를 수 없는 값이라 건너뛴다
-              </span>
-            `,
+            rule(
+              'value가 비어 있으면 첫 번째 활성 옵션으로 채운다',
+              '네이티브 select와 같은 동작으로, 트리거가 빈 값으로 보이지 않게 한다. 비활성 옵션은 고를 수 없는 값이라 건너뛴다',
+            ),
           ]}
         ></mm-text-list>
       </mm-content-section>
@@ -129,15 +126,10 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            html`
-              <span>
-                <mm-text weight="bold">
-                  indicator 박스 안 여백만큼 음수 margin으로 바깥에 흘린다
-                </mm-text>
-                아이콘 끝이 버튼 padding 경계에 닿아 좌우 여백이 같아 보인다. 버튼 padding은 버튼이
-                소유하므로 줄이지 않고, 트리거를 조립하는 select가 indicator 쪽에서 보정한다
-              </span>
-            `,
+            rule(
+              'indicator 박스 안 여백만큼 음수 margin으로 바깥에 흘린다',
+              '아이콘 끝이 버튼 padding 경계에 닿아 좌우 여백이 같아 보인다. 버튼 padding은 버튼이 소유하므로 줄이지 않고, 트리거를 조립하는 select가 indicator 쪽에서 보정한다',
+            ),
           ]}
         ></mm-text-list>
       </mm-content-section>
