@@ -1,26 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-
-import type { SearchResult } from '@/components/domains/search/search-result-list'
+import { createRef, ref } from 'lit/directives/ref.js'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 import '@/components/domains/search/search-result-list'
 import '@/components/overlay/sheet'
-
-type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
-type Pagefind = {
-  search: (q: string) => Promise<{ results: { data: () => Promise<PagefindResult> }[] }>
-}
-
-// Pagefind excerpt는 일치 구간을 <mark>로 감싼 HTML이라 태그를 걷어 설명 문구로 쓴다.
-function toSearchResult(result: PagefindResult): SearchResult {
-  return {
-    href: result.url,
-    label: result.meta.title || result.url,
-    description: result.excerpt.replace(/<[^>]*>/g, ''),
-  }
-}
+import { PagefindSearchController } from '@/controllers/pagefind-search-controller'
 
 function hasValue(target: EventTarget | null): target is HTMLInputElement | HTMLTextAreaElement {
   return target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement
@@ -38,17 +24,9 @@ export class NavbarSearch extends LitElement {
     }
   `
   @state() private isOpen = false
-  @state() private query = ''
-  @state() private results: SearchResult[] = []
-  @state() private searching = false
-  private pagefind: Pagefind | null = null
-  private debounceTimer: ReturnType<typeof setTimeout> | null = null
-  private searchRequestId = 0
-
-  // 검색 시트는 열릴 때 portal 컨테이너(#portal-root)로 이동하므로 renderRoot가 아닌 document에서 찾는다.
-  private getSearchField() {
-    return document.querySelector<HTMLElement>('.js-search-sheet mm-searchfield') ?? undefined
-  }
+  private search = new PagefindSearchController(this, { isActive: () => this.isOpen })
+  // 검색 시트는 열릴 때 portal 컨테이너로 이동하지만 엘리먼트는 그대로라 ref로 붙잡는다.
+  private searchField = createRef<HTMLElement>()
 
   render() {
     return html`
@@ -60,7 +38,6 @@ export class NavbarSearch extends LitElement {
       ></mm-icon-button>
 
       <mm-sheet
-        class="js-search-sheet"
         placement="top"
         style="--backdrop-blur: 2px"
         ?open=${this.isOpen}
@@ -70,8 +47,9 @@ export class NavbarSearch extends LitElement {
         <mm-sheet-body>
           <form role="search" style="display: flex; flex-direction: column; gap: var(--space-2)">
             <mm-searchfield
+              ${ref(this.searchField)}
               placeholder="컴포넌트, 패턴을 검색하세요"
-              .value=${this.query}
+              .value=${this.search.query}
               @input=${this.handleSearchInput}
             ></mm-searchfield>
             ${this.renderResults()}
@@ -79,25 +57,6 @@ export class NavbarSearch extends LitElement {
         </mm-sheet-body>
       </mm-sheet>
     `
-  }
-
-  disconnectedCallback() {
-    if (this.debounceTimer) {
-      clearTimeout(this.debounceTimer)
-      this.debounceTimer = null
-    }
-    super.disconnectedCallback()
-  }
-
-  private async loadPagefind() {
-    if (this.pagefind) return
-    try {
-      // webpack이 번들링하지 않도록 Function constructor로 동적 import
-      const dynamicImport = new Function('url', 'return import(url)')
-      this.pagefind = (await dynamicImport('/pagefind/pagefind.js')) as Pagefind
-    } catch {
-      console.warn('Pagefind not available. Run npm run build first.')
-    }
   }
 
   private handleSearchButtonClick = () => {
@@ -110,15 +69,15 @@ export class NavbarSearch extends LitElement {
 
   private openSearch() {
     this.isOpen = true
-    this.loadPagefind()
+    this.search.load()
     requestAnimationFrame(() => {
-      this.getSearchField()?.focus()
+      this.searchField.value?.focus()
     })
   }
 
   private closeSearch = () => {
     this.isOpen = false
-    this.resetSearch(true)
+    this.search.reset(true)
   }
   // 시트가 배경·ESC·닫기 버튼으로 스스로 닫힌 경우만 받는다. 직접 닫은 경우는 이미 정리했다.
   private handleSheetToggle = (e: CustomEvent<{ open: boolean }>) => {
@@ -127,16 +86,7 @@ export class NavbarSearch extends LitElement {
     this.closeSearch()
   }
   private handleSearchInput = (e: Event) => {
-    this.query = this.getInputValue(e)
-    if (this.debounceTimer) clearTimeout(this.debounceTimer)
-    if (!this.query.trim()) {
-      this.resetSearch()
-      return
-    }
-    this.debounceTimer = setTimeout(() => {
-      this.debounceTimer = null
-      this.search(this.query)
-    }, 200)
+    this.search.setQuery(this.getInputValue(e))
   }
 
   private getInputValue(e: Event) {
@@ -144,56 +94,23 @@ export class NavbarSearch extends LitElement {
     return detailValue ?? (hasValue(e.target) ? e.target.value : '')
   }
 
-  private resetSearch(clearQuery = false) {
-    if (clearQuery) this.query = ''
-
-    this.results = []
-    this.searching = false
-    this.searchRequestId++
-  }
-
-  private async search(query: string) {
-    const searchId = ++this.searchRequestId
-    const searchQuery = query.trim()
-    if (!searchQuery) return
-
-    await this.loadPagefind()
-    if (!this.isCurrentSearch(searchId, searchQuery)) return
-    if (!this.pagefind) {
-      this.searching = false
-      return
-    }
-
-    this.searching = true
-    try {
-      const { results } = await this.pagefind.search(searchQuery)
-      const data = await Promise.all(results.slice(0, 8).map(r => r.data()))
-      if (!this.isCurrentSearch(searchId, searchQuery)) return
-
-      this.results = data.map(toSearchResult)
-    } finally {
-      if (this.isCurrentSearch(searchId, searchQuery)) this.searching = false
-    }
-  }
-
-  private isCurrentSearch(searchId: number, query: string) {
-    return this.isOpen && searchId === this.searchRequestId && this.query.trim() === query
-  }
-
   private renderResults() {
-    if (!this.query) return nothing
-    if (this.searching) {
+    if (!this.search.query) return nothing
+    if (this.search.searching) {
       return html`
         <mm-paragraph color="light">검색 중...</mm-paragraph>
       `
     }
-    if (this.results.length === 0) {
+    if (this.search.results.length === 0) {
       return html`
-        <mm-paragraph color="light">'${this.query}'에 대한 결과가 없습니다.</mm-paragraph>
+        <mm-paragraph color="light">'${this.search.query}'에 대한 결과가 없습니다.</mm-paragraph>
       `
     }
     return html`
-      <mm-search-result-list heading="검색 결과" .results=${this.results}></mm-search-result-list>
+      <mm-search-result-list
+        heading="검색 결과"
+        .results=${this.search.results}
+      ></mm-search-result-list>
     `
   }
 }
