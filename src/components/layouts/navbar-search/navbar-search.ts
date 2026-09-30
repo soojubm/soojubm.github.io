@@ -1,7 +1,5 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html, nothing, type PropertyValues } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-
-import type { PropertyValues } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'

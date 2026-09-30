@@ -1,8 +1,6 @@
 import '@/components/common'
 import { html } from 'lit'
 
-import type { ComponentReferenceItemData } from '@/components/domains/component'
-
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/read-more-paragraph'
 import '@/components/domains/faq'
@@ -10,7 +8,7 @@ import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/component-notice'
-import { code, rule } from '@/components/domains/component'
+import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const componentReferences: ComponentReferenceItemData[] = [

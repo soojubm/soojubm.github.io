@@ -1,10 +1,9 @@
 import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
-import type { ComponentReferenceItemData } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { code, rule } from '@/components/domains/component'
+import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const componentReferences: ComponentReferenceItemData[] = [

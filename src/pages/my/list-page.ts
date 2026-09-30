@@ -1,9 +1,7 @@
 /**
  * films·books가 공유하는 "필터 + 페이지네이션 목록" 페이지 유틸리티.
  */
-import { render } from 'lit'
-
-import type { TemplateResult } from 'lit'
+import { render, type TemplateResult } from 'lit'
 
 const PAGE_SIZE = 60
 

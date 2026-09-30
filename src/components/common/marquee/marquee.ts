@@ -1,9 +1,7 @@
-import { LitElement, css, html, unsafeCSS } from 'lit'
+import { LitElement, css, html, unsafeCSS, type PropertyValues } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
-
-import type { PropertyValues } from 'lit'
 
 import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'

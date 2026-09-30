@@ -1,9 +1,7 @@
 import { html } from 'lit'
 
-import type { ComponentReferenceItemData } from '@/components/domains/component'
-
 import '@/components/domains/component/component-pager'
-import { code, rule } from '@/components/domains/component'
+import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const overviewRows = html`

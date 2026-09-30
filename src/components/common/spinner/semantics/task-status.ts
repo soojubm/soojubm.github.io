@@ -1,9 +1,7 @@
 import { LitElement, css, html, nothing, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { StatusTone } from '@/components/common/icon/icon-names'
-
-import { STATUS_ICONS } from '@/components/common/icon/icon-names'
+import { STATUS_ICONS, type StatusTone } from '@/components/common/icon/icon-names'
 import '@/components/common/icon'
 import '@/components/common/spinner/spinner'
 import '@/components/common/text/text'

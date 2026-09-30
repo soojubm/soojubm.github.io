@@ -1,11 +1,10 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, html, nothing, type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { ComponentSize } from '@/stylesheets/shared.styles'
-import type { PropertyValues } from 'lit'
 
 import { listItemStyles } from '@/components/common/list-item/list-item.styles'
 import '@/components/common/avatar/avatar'

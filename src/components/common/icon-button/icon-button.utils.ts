@@ -1,11 +1,10 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, type CSSResultGroup, type TemplateResult } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
-import type { CSSResultGroup, TemplateResult } from 'lit'
 
 import {
   iconButtonSecondarySkinStyles,

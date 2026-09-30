@@ -1,14 +1,13 @@
 import '@/components/common'
 import { html } from 'lit'
 
-import type { TableColumn } from '@/components/common'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common'
+import { ICON_NAMES, type TableColumn } from '@/components/common'
 import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'

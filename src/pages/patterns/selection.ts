@@ -1,8 +1,6 @@
 import { html } from 'lit'
 
-import type { ComponentReferenceItemData } from '@/components/domains/component'
-
-import { code, rule } from '@/components/domains/component'
+import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const componentReferences: ComponentReferenceItemData[] = [

@@ -1,6 +1,5 @@
 import { html } from 'lit'
 
-import type { FilterOption } from '@/components/common'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
@@ -9,7 +8,7 @@ import type {
 } from '@/components/domains/component'
 import type { OptionItem } from '@/types'
 
-import { ICON_NAMES } from '@/components/common'
+import { ICON_NAMES, type FilterOption } from '@/components/common'
 import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 

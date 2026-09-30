@@ -1,8 +1,7 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, type PropertyValues } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import type { StepItem, StepOrientation } from '@/components/indicators/step/step-item'
-import type { PropertyValues } from 'lit'
 
 import { stepStyles } from '@/components/indicators/step/step.styles'
 import '@/components/indicators/step/step-item'

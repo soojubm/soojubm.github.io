@@ -1,13 +1,12 @@
 import { html } from 'lit'
 
-import type { AvatarItem } from '@/components/common'
 import type {
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common'
+import { ICON_NAMES, type AvatarItem } from '@/components/common'
 import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 

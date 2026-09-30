@@ -1,14 +1,12 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { IconName } from '@/components/common/icon/icon-names'
-import type { Orientation } from '@/controllers/roving-focus-controller'
 import type { OptionItem } from '@/types'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
-import { ICON_NAMES } from '@/components/common/icon/icon-names'
+import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
-import { RovingFocusController } from '@/controllers/roving-focus-controller'
+import { RovingFocusController, type Orientation } from '@/controllers/roving-focus-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'

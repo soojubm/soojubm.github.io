@@ -1,11 +1,10 @@
 import { LitElement, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import type { StatusTone } from '@/components/common/icon/icon-names'
 import type { ActionConfig } from '@/types'
 
 import { renderActionButtons } from '@/components/common/button/button.utils'
-import { STATUS_ICONS } from '@/components/common/icon/icon-names'
+import { STATUS_ICONS, type StatusTone } from '@/components/common/icon/icon-names'
 import { noticeStyles } from '@/components/common/notice/notice.styles'
 import { emit } from '@/utils'
 import '@/components/common/button/button'

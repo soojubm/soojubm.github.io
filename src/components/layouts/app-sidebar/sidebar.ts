@@ -3,7 +3,6 @@ import { customElement, query } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { Scroll } from '@/components/common/scroll/scroll'
-import type { SitemapItem, SitemapNode } from '@/sitemap'
 
 import '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
@@ -13,7 +12,7 @@ import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { EscapeKeyController } from '@/controllers/escape-key-controller'
-import { SITEMAP } from '@/sitemap'
+import { SITEMAP, type SitemapItem, type SitemapNode } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
 import { withOpenState } from '@/utils/open-state'
 

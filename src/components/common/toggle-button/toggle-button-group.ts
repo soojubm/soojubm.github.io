@@ -3,11 +3,10 @@ import { customElement, property } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
-import type { Orientation } from '@/controllers/roving-focus-controller'
 import type { OptionItem } from '@/types'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
-import { RovingFocusController } from '@/controllers/roving-focus-controller'
+import { RovingFocusController, type Orientation } from '@/controllers/roving-focus-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'

@@ -1,6 +1,4 @@
-import type { IconName } from '@/components/common'
-
-import { ICON_NAMES } from '@/components/common'
+import { ICON_NAMES, type IconName } from '@/components/common'
 import { THEME_STORAGE_KEY } from '@/constants'
 
 export type Theme = 'light' | 'dark' | 'brutal' | 'glass'
