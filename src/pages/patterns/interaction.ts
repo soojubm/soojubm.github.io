@@ -32,19 +32,6 @@ const interactionSwatches = [
   'border: var(--border-width) solid var(--interaction-selected-border-color)',
 ]
 
-const swatchStyle =
-  'width: var(--size-48); height: var(--size-48); box-sizing: border-box; border-radius: var(--radius); background: var(--background-color)'
-
-const renderStage = (swatches: string[]) =>
-  swatches.map(
-    (swatch, index) => html`
-      <mm-flex direction="column" align-items="center" gap="2">
-        <div style="${swatchStyle}; ${swatch}"></div>
-        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
-      </mm-flex>
-    `,
-  )
-
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://m3.material.io/foundations/interaction/states/state-layers',
@@ -196,7 +183,7 @@ const main = html`
           재할당합니다.
         </mm-paragraph>
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">${renderStage(interactionSwatches)}</mm-flex>
+          <mm-token-swatches .swatches=${interactionSwatches}></mm-token-swatches>
         </mm-token-stage>
         <mm-token-group aria-label="interaction tokens">
           ${interactionTokens.map(

@@ -108,20 +108,6 @@ const renderColorTokens = (names: string[]) =>
     `,
   )
 
-/**
- * 스테이지 한 줄. 스와치는 공통 박스를 쓰고, 토큰마다 달라지는 선언만 인라인으로 얹는다.
- * 번호는 스와치를 가리키는 순번이며, 스테이지는 아래 토큰 목록과 같은 순서로 늘어놓는다.
- */
-const renderStage = (swatches: string[]) =>
-  swatches.map(
-    (swatch, index) => html`
-      <mm-flex direction="column" align-items="center" gap="2">
-        <div class="token-swatch" style=${swatch}></div>
-        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
-      </mm-flex>
-    `,
-  )
-
 /** 카테고리컬 컬러는 배경·테두리·텍스트를 한 벌로 쓰므로 번호마다 세 값을 한 스와치에 함께 칠한다. */
 const categoryNumbers = [...new Set(sectionTokens('category').map(name => name.split('-')[1]))]
 
@@ -406,9 +392,10 @@ const main = html`
         description="요소의 크기를 결정합니다. 주로 height에 사용하고 정사각형 요소에 한정하여 width에 사용합니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="8">
-            ${renderStage(sizeSwatches(sectionTokens('size')))}
-          </mm-flex>
+          <mm-token-swatches
+            gap="8"
+            .swatches=${sizeSwatches(sectionTokens('size'))}
+          ></mm-token-swatches>
         </mm-token-stage>
         <mm-token-group>${renderTokenItems(sectionTokens('size'))}</mm-token-group>
       </mm-token-section>
@@ -439,14 +426,14 @@ const main = html`
         description="테두리는 표면의 경계를 긋고, 모서리 곡률은 그 경계의 성격과 위계를 구분합니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">${renderStage(borderSwatches)}</mm-flex>
+          <mm-token-swatches .swatches=${borderSwatches}></mm-token-swatches>
         </mm-token-stage>
         <mm-token-group aria-label="border tokens">
           ${renderTokenItems(sectionTokens('border'))}
         </mm-token-group>
 
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">${renderStage(radiusSwatches)}</mm-flex>
+          <mm-token-swatches .swatches=${radiusSwatches}></mm-token-swatches>
         </mm-token-stage>
         <mm-token-group aria-label="radius tokens">
           ${renderTokenItems(sectionTokens('radius'))}
@@ -458,9 +445,9 @@ const main = html`
         description="재질은 표면이 뒤 배경에서 떠 보이는 정도입니다. 원시값은 값의 종류와 크기로 이름 짓고, 소비처는 원시값을 색 토큰과 조합한 티어를 씁니다. 티어가 선언하지 않은 속성은 base를 따릅니다."
       >
         <mm-token-stage>
-          <mm-flex align-items="flex-end" gap="4">
-            ${renderStage(shadowSwatches(sectionTokens('shadow')))}
-          </mm-flex>
+          <mm-token-swatches
+            .swatches=${shadowSwatches(sectionTokens('shadow'))}
+          ></mm-token-swatches>
         </mm-token-stage>
         <mm-token-group aria-label="shadow primitive tokens">
           ${renderTokenItems(sectionTokens('shadow'))}
@@ -468,12 +455,12 @@ const main = html`
 
         <mm-token-stage>
           <div class="material-stage">
-            <mm-flex gap="4">
-              ${renderStage([
+            <mm-token-swatches
+              .swatches=${[
                 ...blurSwatches(sectionTokens('blur')),
                 ...opacitySwatches(sectionTokens('opacity')),
-              ])}
-            </mm-flex>
+              ]}
+            ></mm-token-swatches>
           </div>
         </mm-token-stage>
         <mm-token-group aria-label="blur and opacity primitive tokens">
