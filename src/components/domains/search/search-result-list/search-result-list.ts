@@ -41,7 +41,7 @@ export class SearchResultList extends LitElement {
     return html`
       ${this.renderHeading()}
       <mm-list-item-group
-        size="small"
+        gap="0"
         aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}
       >
         ${repeat(

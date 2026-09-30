@@ -1,10 +1,17 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import type { ComponentSize } from '@/stylesheets/shared.styles'
+import { spaces, type Space } from '@/stylesheets/shared.styles'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-export type ListItemGroupSize = Extract<ComponentSize, 'small' | 'medium'>
 export type ListItemGroupRole = 'list' | 'group'
+
+/** 행 사이 간격은 space 단계 중 이 둘만 쓴다. 기본 3은 :host가 선언한다. */
+type ListItemGroupGap = Extract<Space, '0' | '3'>
+
+const listItemGroupGapTokens: AttributeTokens<Exclude<ListItemGroupGap, '3'>> = {
+  '0': { gap: spaces['0'] },
+}
 
 /**
  * 같은 성격의 행을 세로로 묶어 하나의 목록으로 읽히게 하는 그룹.
@@ -16,15 +23,13 @@ export class ListItemGroup extends LitElement {
     :host {
       display: flex;
       flex-direction: column;
-      gap: var(--space-3);
+      gap: ${unsafeCSS(spaces['3'])};
     }
 
-    :host([size='small']) {
-      gap: 0;
-    }
+    ${unsafeCSS(buildAttributeRules('gap', listItemGroupGapTokens))}
   `
   @property({ type: String, reflect: true }) role: ListItemGroupRole = 'list'
-  @property({ type: String, reflect: true }) size: ListItemGroupSize = 'medium'
+  @property({ type: String, reflect: true }) gap: ListItemGroupGap = '3'
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]
 
   render() {

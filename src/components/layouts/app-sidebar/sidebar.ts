@@ -37,7 +37,7 @@ export class Sidebar extends withOpenState(LitElement) {
     return html`
       <nav>
         <mm-scroll direction="column" gap="4">
-          <mm-list-item-group size="small">
+          <mm-list-item-group gap="0">
             ${repeat(standaloneNodes, node => node.id, this.renderStandalone)}
           </mm-list-item-group>
           ${repeat(groupNodes, node => node.id, this.renderGroup)}
@@ -78,7 +78,7 @@ export class Sidebar extends withOpenState(LitElement) {
     return html`
       <div class="group">
         <mm-heading level="5" id=${headingId}>${node.title}</mm-heading>
-        <mm-list-item-group size="small" aria-labelledby=${headingId}>
+        <mm-list-item-group gap="0" aria-labelledby=${headingId}>
           ${repeat(node.items, item => item.id, this.renderItemLink)}
         </mm-list-item-group>
       </div>

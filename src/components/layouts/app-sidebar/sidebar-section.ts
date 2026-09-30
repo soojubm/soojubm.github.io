@@ -68,7 +68,7 @@ export class SidebarSection extends LitElement {
       </button>
 
       <div id=${this.panelId} class="panel" ?inert=${!this.open}>
-        <mm-list-item-group size="small"><slot></slot></mm-list-item-group>
+        <mm-list-item-group gap="0"><slot></slot></mm-list-item-group>
       </div>
     `
   }
