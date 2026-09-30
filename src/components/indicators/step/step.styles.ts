@@ -16,7 +16,7 @@ export const stepStyles = css`
   :host::before {
     content: '';
     width: 100%;
-    height: 1px;
+    height: var(--border-width);
     background: var(--border-color);
     position: absolute;
     top: calc(var(--marker-size) / 2);
@@ -29,7 +29,7 @@ export const stepStyles = css`
   }
 
   :host([orientation='vertical'])::before {
-    width: 1px;
+    width: var(--border-width);
     height: 100%;
     top: 0;
     left: calc(var(--marker-size) / 2);

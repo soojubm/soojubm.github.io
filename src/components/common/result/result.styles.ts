@@ -6,7 +6,7 @@ export const resultStyles = css`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 400px;
+    max-width: var(--layout-width-narrow);
     gap: var(--space-4);
     margin: 0 auto;
   }

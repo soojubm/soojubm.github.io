@@ -21,7 +21,7 @@ export class Timeline extends LitElement {
 
     :host::before {
       content: '';
-      width: 1px;
+      width: var(--border-width);
       background: var(--border-color);
       position: absolute;
       top: 0;

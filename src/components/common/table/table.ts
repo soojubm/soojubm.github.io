@@ -26,7 +26,7 @@ export class Table extends LitElement {
         --table-cell-padding: var(--space-2) 0;
         --table-cell-padding-inline: var(--space-2);
         --table-cell-background-color: var(--background-color);
-        --table-checkbox-column-width: 32px;
+        --table-checkbox-column-width: var(--size-32);
 
         display: block;
         width: var(--table-width);
