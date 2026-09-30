@@ -13,7 +13,7 @@ export class PageHeader extends LitElement {
   `
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
-  @property({ type: Boolean, reflect: true }) centered = false
+  @property({ type: Boolean }) centered = false
 
   render() {
     return html`

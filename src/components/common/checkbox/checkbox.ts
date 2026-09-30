@@ -20,11 +20,11 @@ export class Checkbox extends LitElement {
   value?: string
   @property({ type: String, reflect: true })
   size: CheckboxSize = 'medium'
-  @property({ type: Boolean, reflect: true })
+  @property({ type: Boolean })
   checked = false
   @property({ type: Boolean, reflect: true })
   disabled = false
-  @property({ type: Boolean, reflect: true })
+  @property({ type: Boolean })
   indeterminate = false
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
   private inputId = uniqueId('checkbox')

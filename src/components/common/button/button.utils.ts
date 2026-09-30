@@ -20,7 +20,7 @@ export interface TogglePressed {
  */
 export const withTogglePressed = <T extends Constructor<LitElement>>(Base: T) => {
   class TogglePressedElement extends Base {
-    @property({ type: Boolean, reflect: true }) pressed = false
+    @property({ type: Boolean }) pressed = false
     @property({ type: String }) value = ''
     @property({ type: Boolean }) disabled = false
     private toggle = new ToggleController(this, 'pressed')

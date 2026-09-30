@@ -16,7 +16,7 @@ import '@/components/common/icon/icon'
 @customElement('mm-toggle-button')
 export class ToggleButton extends LitElement {
   static styles = [resetStyles, buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
-  @property({ type: Boolean, reflect: true }) pressed = false
+  @property({ type: Boolean }) pressed = false
   @property({ type: String, attribute: 'pressed-label' }) pressedLabel?: string
   @property({ type: String }) value = ''
   @property({ type: String }) icon?: IconName

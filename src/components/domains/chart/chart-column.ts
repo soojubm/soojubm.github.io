@@ -78,7 +78,7 @@ export class ChartColumn extends LitElement {
     `,
   ]
   @property({ type: Array }) items: ChartColumnItem[] = []
-  @property({ type: Boolean, reflect: true }) selectable = false
+  @property({ type: Boolean }) selectable = false
   @property({ type: String }) selected = ''
 
   connectedCallback() {
