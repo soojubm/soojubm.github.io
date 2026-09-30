@@ -1,5 +1,6 @@
 import './src/components'
 
+import { applyLargeText } from './src/utils/large-text'
 import { scrollAnimation, stopAnimation } from './src/utils/scroll'
 import { applyTheme } from './src/utils/theme'
 
@@ -10,6 +11,7 @@ stopAnimation()
 
 function initializePage() {
   applyTheme()
+  applyLargeText()
   applyWindowsFont()
   updateDocumentTitle()
   initializeScrollEffects()
