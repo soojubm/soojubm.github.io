@@ -122,7 +122,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Search"
-      description="키워드로 콘텐츠를 찾는 흐름에서 단계마다 보여줄 것과 결과를 다루는 방식입니다."
+      description="키워드로 콘텐츠를 찾는 흐름입니다. 진입·포커스·입력·제출 단계마다 최근 검색어와 추천·자동완성, 결과를 알맞은 때에 보여주므로, 사용자는 검색어를 다 쓰기 전에도 원하는 것에 닿을 수 있습니다."
     ></mm-page-header>
 
     <mm-content-section-list>

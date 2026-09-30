@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit'
 
 import { ICON_CATALOG } from '@/components/common'
-import { FEATURE_ICONS } from '@/components/domains/component'
+import { FEATURE_ICONS, code } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 /** 브랜드 표기처럼 대소문자가 고정된 이름만 예외로 둔다. */
@@ -180,13 +180,10 @@ const main = html`
             단락을 여는 제목은 heading, 글이나 작품이 스스로 갖는 제목은 title로 구분합니다.
           </mm-paragraph>
           <mm-paragraph>
-            같은 낱말을 form과 ARIA도 씁니다. form의
-            <mm-code>label</mm-code>
-            은 입력 컨트롤과 연결되어, 값이 비어 있을 때도 무엇을 넣는 자리인지 말하고 누르면
-            컨트롤로 포커스를 넘깁니다. 보이는 이름이 없는 컨트롤에만
-            <mm-code>aria-label</mm-code>
-            을 주며, 보이는 이름이 있는 자리에 함께 두면 보조기술과 음성 제어가 읽는 이름이 화면에
-            보이는 글자와 달라집니다.
+            같은 낱말을 form과 ARIA도 씁니다. form의 ${code('label')}은 입력 컨트롤과 연결되어, 값이
+            비어 있을 때도 무엇을 넣는 자리인지 말하고 누르면 컨트롤로 포커스를 넘깁니다. 보이는
+            이름이 없는 컨트롤에만 ${code('aria-label')}을 주며, 보이는 이름이 있는 자리에 함께 두면
+            보조기술과 음성 제어가 읽는 이름이 화면에 보이는 글자와 달라집니다.
           </mm-paragraph>
         </mm-content-section>
 

@@ -14,7 +14,16 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
-      <mm-content-section heading-level="3" heading="Overview">
+      <mm-notice>
+        <mm-text size="14">
+          이 문서는 페이지 바깥 골격을 정합니다. 그 안에서 자식을 배치하고 묶는 컨테이너의 단계와
+          간격은
+          <mm-link href="./container.html">Container</mm-link>
+          가 다룹니다.
+        </mm-text>
+      </mm-notice>
+
+      <mm-content-section heading-level="3" heading="원칙">
         <mm-feature-group columns="2">
           <mm-feature
             heading="너비로 읽기 밀도를 정한다"
@@ -25,27 +34,18 @@ const main = html`
             description="글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계 낮춰 다른 맥락으로 넘어왔다는 감각을 줍니다."
           ></mm-feature>
         </mm-feature-group>
-        <mm-notice>
-          <mm-text size="14">
-            이 문서는 페이지 바깥 골격을 정합니다. 그 안에서 자식을 배치하고 묶는 컨테이너의 단계와
-            간격은
-            <mm-link href="./container.html">Container</mm-link>
-            가 다룹니다.
-          </mm-text>
-        </mm-notice>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="컨테이너 너비">
         <mm-paragraph>
-          너비는 콘텐츠 성격에 맞는 토큰으로 정하고, 본문 골격은
-          <mm-code>mm-main</mm-code>
-          의 width로, 떠오르는 표면은 각 컴포넌트의 width로 지정합니다.
+          너비는 콘텐츠 성격에 맞는 토큰으로 정하고, 본문 골격은 ${code('mm-main')}의 width로,
+          떠오르는 표면은 각 컴포넌트의 width로 지정합니다.
         </mm-paragraph>
         <mm-flex direction="column" gap="2">
           <mm-surface variant="filled" style="max-width: var(--layout-width-narrow)">
             <mm-flex direction="column" gap="1">
               <mm-caption>집중형 · 폼, 인증, dialog, tooltip</mm-caption>
-              <mm-code>--layout-width-narrow · 400px</mm-code>
+              ${code('--layout-width-narrow · 400px')}
               <mm-flex gap="3">
                 <mm-link href="auth.html">Auth</mm-link>
                 <mm-link href="dialog.html">Dialog</mm-link>
@@ -56,7 +56,7 @@ const main = html`
           <mm-surface variant="filled" style="max-width: var(--layout-width-small)">
             <mm-flex direction="column" gap="1">
               <mm-caption>일반 문서 · 에디토리얼, 설정, 대화, sheet</mm-caption>
-              <mm-code>--layout-width-small · 640px</mm-code>
+              ${code('--layout-width-small · 640px')}
               <mm-flex gap="3">
                 <mm-link href="post.html">Post</mm-link>
                 <mm-link href="setting.html">Setting</mm-link>

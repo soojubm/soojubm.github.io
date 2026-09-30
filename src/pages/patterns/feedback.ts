@@ -8,17 +8,14 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Feedback"
-      description="사용자 행동이나 시스템 상태의 결과를 알립니다."
+      description="사용자 행동이나 시스템 상태의 결과를 알립니다. 결과의 의미는 톤으로, 비동기 데이터의 진행은 단계로 나누어 정하므로, 사용자는 지금 무슨 일이 일어났고 다음에 무엇을 하면 되는지 알 수 있습니다."
     ></mm-page-header>
 
-    <mm-notice>
-      <mm-text size="14">
-        시스템 오류로 실패했다면 무엇이 잘못됐는지 문구로 명확히 설명합니다. 사용자는 입력을 고칠지,
-        다시 시도하거나 기다리면 되는지 알 수 있습니다.
-      </mm-text>
-    </mm-notice>
-
     <mm-content-section-list>
+      <mm-notice
+        description="시스템 오류로 실패했다면 무엇이 잘못됐는지 문구로 명확히 설명합니다. 사용자는 입력을 고칠지, 다시 시도하거나 기다리면 되는지 알 수 있습니다."
+      ></mm-notice>
+
       <mm-content-section heading-level="3" heading="Status states">
         <mm-paragraph>
           <mm-text weight="bold">결과의 의미를 톤으로 구분합니다.</mm-text>

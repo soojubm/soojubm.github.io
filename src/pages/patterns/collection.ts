@@ -14,7 +14,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Collection"
-      description="사용자가 만든 묶음에 항목을 담고, 묶음을 만들고 함께 관리하는 흐름입니다."
+      description="사용자가 만든 묶음에 항목을 담고, 묶음을 만들고 함께 관리하는 흐름입니다. 담는 흐름 안에서 새 묶음을 바로 만들 수 있으므로, 사용자는 화면을 벗어나지 않고 항목을 모아 둘 수 있습니다."
     ></mm-page-header>
 
     <mm-content-section-list>

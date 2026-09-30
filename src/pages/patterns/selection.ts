@@ -34,61 +34,55 @@ type FilterOption = OptionItem & {
 
 const selectionRows = html`
   <tr>
-    <th scope="row"><mm-code>mm-radio-group</mm-code></th>
+    <th scope="row">${code('mm-radio-group')}</th>
     <td>Single</td>
     <td>배열</td>
     <td>폼에서 5개 이하 선택지 중 하나를 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-radio-card-group</mm-code></th>
+    <th scope="row">${code('mm-radio-card-group')}</th>
     <td>Single</td>
     <td>자식 요소</td>
     <td>레이블만으로 부족해 선택지마다 상세한 정보를 제공해야 할 때.</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-toggle-button-group</mm-code></th>
+    <th scope="row">${code('mm-toggle-button-group')}</th>
     <td>Single</td>
     <td>배열</td>
     <td>보기 방식처럼 화면 표시를 바로 바꾸는 5개 이하 선택지 중 하나를 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-select</mm-code></th>
+    <th scope="row">${code('mm-select')}</th>
     <td>Single</td>
     <td>배열</td>
     <td>6개 이상 선택지 중 하나를 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row">
-      <mm-code>mm-filter-button-group</mm-code>
-      <mm-code>mode="single"</mm-code>
-    </th>
+    <th scope="row">${code('mm-filter-button-group')} ${code('mode="single"')}</th>
     <td>Single</td>
     <td>배열</td>
     <td>목록·콘텐츠를 걸러 볼 조건 하나를 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-menu-item-radio-group</mm-code></th>
+    <th scope="row">${code('mm-menu-item-radio-group')}</th>
     <td>Single</td>
     <td>자식 요소</td>
     <td>팝오버·시트·설정 화면의 행 목록에서 하나를 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-checkbox-group</mm-code></th>
+    <th scope="row">${code('mm-checkbox-group')}</th>
     <td>Multiple</td>
     <td>배열</td>
     <td>폼에서 5개 이하 선택지 중 여럿을 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row">
-      <mm-code>mm-filter-button-group</mm-code>
-      <mm-code>mode="multiple"</mm-code>
-    </th>
+    <th scope="row">${code('mm-filter-button-group')} ${code('mode="multiple"')}</th>
     <td>Multiple</td>
     <td>배열</td>
     <td>목록·콘텐츠를 걸러 볼 조건 여럿을 고를 때.</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-menu-item-checkbox-group</mm-code></th>
+    <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
     <td>Multiple</td>
     <td>자식 요소</td>
     <td>팝오버·시트·설정 화면의 행 목록에서 여럿을 고를 때.</td>
@@ -106,10 +100,17 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Selection"
-      description="선택지 가운데 값을 고르는 컴포넌트가 공유하는 계약입니다."
+      description="선택지 가운데 값을 고르는 컴포넌트가 공유하는 계약입니다. 선택 개수와 선택지 수로 컴포넌트를 고르고 선택 상태는 항목이 아닌 그룹이 소유하므로, 사용자는 어떤 선택 컴포넌트에서도 같은 방식으로 값을 고르고 바꿀 수 있습니다."
     ></mm-page-header>
 
     <mm-content-section-list>
+      <mm-notice>
+        <mm-text size="14">
+          ${code('mm-tab')}은 값을 고르는 selection이 아니라 보이는 콘텐츠를 바꾸는 content
+          switching 맥락에 속합니다.
+        </mm-text>
+      </mm-notice>
+
       <mm-content-section heading-level="3" heading="Overview">
         <mm-table
           .rows=${selectionRows}
@@ -123,12 +124,6 @@ const main = html`
           선택지가 5개 이하면 ${code('mm-radio-group')} · ${code('mm-toggle-button-group')}으로 펼쳐
           보이고, 6개부터는 ${code('mm-select')}로 접습니다.
         </mm-paragraph>
-        <mm-notice>
-          <mm-text size="14">
-            ${code('mm-tab')}은 값을 고르는 selection이 아니라 보이는 콘텐츠를 바꾸는 content
-            switching 맥락에 속합니다.
-          </mm-text>
-        </mm-notice>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Multiple selection">
@@ -139,7 +134,7 @@ const main = html`
         </mm-paragraph>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="Default values">
+      <mm-content-section heading-level="3" heading="기본값">
         <mm-text-list
           variant="check"
           .texts=${[
@@ -192,7 +187,7 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="Option 타입">
+      <mm-content-section heading-level="3" heading="옵션 타입">
         <mm-paragraph>
           옵션을 배열로 받는 그룹은 ${code('@/types')}의 ${code('OptionItem')} 모양을 공유하고,
           컴포넌트 고유 필드는 이를 확장해 더합니다.

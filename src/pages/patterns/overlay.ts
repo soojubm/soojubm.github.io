@@ -131,11 +131,7 @@ const main = html`
               위치만으로 이어집니다.
             </mm-paragraph>
             <mm-paragraph>
-              <mm-code>mm-popover</mm-code>
-              ·
-              <mm-code>mm-select</mm-code>
-              ·
-              <mm-code>mm-tooltip</mm-code>
+              ${code('mm-popover')} · ${code('mm-select')} · ${code('mm-tooltip')}
             </mm-paragraph>
           </mm-content-section>
         </mm-surface>
@@ -146,11 +142,7 @@ const main = html`
               자리에 열려, 어디서 열었든 같은 표면이라는 인상을 줍니다.
             </mm-paragraph>
             <mm-paragraph>
-              <mm-code>mm-sheet</mm-code>
-              ·
-              <mm-code>mm-dialog</mm-code>
-              ·
-              <mm-code>mm-toast</mm-code>
+              ${code('mm-sheet')} · ${code('mm-dialog')} · ${code('mm-toast')}
             </mm-paragraph>
             <mm-button aria-controls="comment-sheet" aria-haspopup="dialog">
               댓글 시트 열기
@@ -257,11 +249,8 @@ const main = html`
       <mm-content-section heading-level="3" heading="Dismiss">
         <mm-paragraph>표면을 열고 닫는 방법을 정합니다.</mm-paragraph>
         <mm-paragraph>
-          <mm-code>DisclosureController</mm-code>
-          ·
-          <mm-code>SheetController</mm-code>
-          ·
-          <mm-code>AdaptiveOverlayController</mm-code>
+          ${code('DisclosureController')} · ${code('SheetController')} ·
+          ${code('AdaptiveOverlayController')}
         </mm-paragraph>
         <mm-text-list
           variant="check"
@@ -341,7 +330,7 @@ const main = html`
           portal로 옮긴 표면은 조상의 transform·contain에 갇히지 않아, 어느 자리에서 열려도 화면
           전체를 덮는 같은 층위에 뜹니다.
         </mm-paragraph>
-        <mm-paragraph><mm-code>PortalController</mm-code></mm-paragraph>
+        <mm-paragraph>${code('PortalController')}</mm-paragraph>
         <mm-text-list
           variant="check"
           .texts=${[

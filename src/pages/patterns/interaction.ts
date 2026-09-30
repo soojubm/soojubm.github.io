@@ -52,95 +52,95 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const checkedComponentRows = html`
   <tr>
-    <th scope="row"><mm-code>mm-checkbox-group</mm-code></th>
-    <td><mm-code>checked</mm-code></td>
+    <th scope="row">${code('mm-checkbox-group')}</th>
+    <td>${code('checked')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-radio-group</mm-code></th>
-    <td><mm-code>checked</mm-code></td>
+    <th scope="row">${code('mm-radio-group')}</th>
+    <td>${code('checked')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-switch</mm-code></th>
-    <td><mm-code>aria-checked</mm-code></td>
+    <th scope="row">${code('mm-switch')}</th>
+    <td>${code('aria-checked')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-menu-item-radio</mm-code></th>
-    <td><mm-code>aria-checked</mm-code></td>
+    <th scope="row">${code('mm-menu-item-radio')}</th>
+    <td>${code('aria-checked')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-menu-item-checkbox</mm-code></th>
-    <td><mm-code>aria-checked</mm-code></td>
+    <th scope="row">${code('mm-menu-item-checkbox')}</th>
+    <td>${code('aria-checked')}</td>
   </tr>
 `
 const currentComponentRows = html`
   <tr>
-    <th scope="row"><mm-code>mm-breadcrumb</mm-code></th>
-    <td><mm-code>page</mm-code></td>
+    <th scope="row">${code('mm-breadcrumb')}</th>
+    <td>${code('page')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-pagination</mm-code></th>
-    <td><mm-code>page</mm-code></td>
+    <th scope="row">${code('mm-pagination')}</th>
+    <td>${code('page')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-page-button</mm-code></th>
-    <td><mm-code>page</mm-code></td>
+    <th scope="row">${code('mm-page-button')}</th>
+    <td>${code('page')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-bottom-bar</mm-code></th>
-    <td><mm-code>page</mm-code></td>
+    <th scope="row">${code('mm-bottom-bar')}</th>
+    <td>${code('page')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-sidebar-page-link</mm-code></th>
-    <td><mm-code>page</mm-code></td>
+    <th scope="row">${code('mm-sidebar-page-link')}</th>
+    <td>${code('page')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-step-item</mm-code></th>
-    <td><mm-code>step</mm-code></td>
+    <th scope="row">${code('mm-step-item')}</th>
+    <td>${code('step')}</td>
   </tr>
 `
 const expandedComponentRows = html`
   <tr>
-    <th scope="row"><mm-code>mm-read-more-button</mm-code></th>
+    <th scope="row">${code('mm-read-more-button')}</th>
     <td>잘린 텍스트</td>
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-hamburger-button</mm-code></th>
+    <th scope="row">${code('mm-hamburger-button')}</th>
     <td>내비게이션 메뉴</td>
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-more-button</mm-code></th>
+    <th scope="row">${code('mm-more-button')}</th>
     <td>오버플로 메뉴</td>
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-sidebar-section</mm-code></th>
+    <th scope="row">${code('mm-sidebar-section')}</th>
     <td>하위 페이지 링크</td>
     <td>사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-select</mm-code></th>
+    <th scope="row">${code('mm-select')}</th>
     <td>옵션 목록</td>
     <td>사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-navbar-search</mm-code></th>
+    <th scope="row">${code('mm-navbar-search')}</th>
     <td>검색 패널</td>
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-chat-source</mm-code></th>
+    <th scope="row">${code('mm-chat-source')}</th>
     <td>출처 상세</td>
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-popover</mm-code></th>
+    <th scope="row">${code('mm-popover')}</th>
     <td>앵커된 패널</td>
     <td>미사용</td>
   </tr>
   <tr>
-    <th scope="row"><mm-code>mm-faq-item</mm-code></th>
+    <th scope="row">${code('mm-faq-item')}</th>
     <td>패널 본문</td>
     <td>사용</td>
   </tr>
@@ -328,31 +328,23 @@ const main = html`
         </mm-grid>
         <mm-notice>
           <mm-text size="14">
-            <mm-code>mm-marquee</mm-code>
-            의
-            <mm-code>pause-on-hover</mm-code>
-            와 커스텀 스크롤바 thumb는 상태 표현이 아니라 포인터가 있는 동안만 동작이 달라지는
-            기능입니다.
+            ${code('mm-marquee')}의 ${code('pause-on-hover')}와 커스텀 스크롤바 thumb는 상태 표현이
+            아니라 포인터가 있는 동안만 동작이 달라지는 기능입니다.
           </mm-text>
         </mm-notice>
       </mm-content-section>
       <mm-content-section heading-level="3" heading="Pressed">
         <mm-paragraph>
-          스스로 눌림 상태를 유지하는 컨트롤은
-          <mm-code>aria-pressed</mm-code>
-          로 표현하고, 선택 상태와 같은 강조 토큰을 공유합니다.
-          <mm-code>mm-toggle-button</mm-code>
-          과 그 시맨틱 컴포넌트(follow·bookmark·reveal), toggle·filter 버튼 그룹이 씁니다.
+          스스로 눌림 상태를 유지하는 컨트롤은 ${code('aria-pressed')}로 표현하고, 선택 상태와 같은
+          강조 토큰을 공유합니다. ${code('mm-toggle-button')}과 그 시맨틱
+          컴포넌트(follow·bookmark·reveal), toggle·filter 버튼 그룹이 씁니다.
         </mm-paragraph>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Checked">
         <mm-paragraph>
-          컨트롤 자체의 on/off 값입니다. 네이티브
-          <mm-code>checked</mm-code>
-          가 있으면 그것을, 없으면
-          <mm-code>aria-checked</mm-code>
-          를 씁니다.
+          컨트롤 자체의 on/off 값입니다. 네이티브 ${code('checked')}가 있으면 그것을, 없으면
+          ${code('aria-checked')}를 씁니다.
         </mm-paragraph>
         <mm-text-list
           variant="check"
@@ -382,26 +374,17 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="Selected">
         <mm-paragraph>
-          컬렉션에서 고른 항목입니다.
-          <mm-code>mm-select</mm-code>
-          의 옵션이
-          <mm-code>aria-selected</mm-code>
-          로 고른 값을 나타내며, 그룹 소유·키보드·강조 토큰 규칙은 Checked와 같습니다.
+          컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로 고른
+          값을 나타내며, 그룹 소유·키보드·강조 토큰 규칙은 Checked와 같습니다.
         </mm-paragraph>
         <mm-paragraph>
-          <mm-code>mm-tab</mm-code>
-          도
-          <mm-code>aria-selected</mm-code>
-          로 활성 탭을 나타내지만, 폼 값이 아니라 지금 보이는 패널을 가리킵니다.
+          ${code('mm-tab')}도 ${code('aria-selected')}로 활성 탭을 나타내지만, 폼 값이 아니라 지금
+          보이는 패널을 가리킵니다.
         </mm-paragraph>
         <mm-paragraph>
-          체크 표시는
-          <mm-code>mm-selected-indicator</mm-code>
-          가
-          <mm-code>selected</mm-code>
-          를 받아 체크 노출로 반영하는 표시만 맡고, 선택 상호작용과
-          <mm-code>aria-selected</mm-code>
-          는 옵션이 소유합니다. 고르지 않은 행에도 자리를 남겨 행마다 트레일링 폭이 같습니다.
+          체크 표시는 ${code('mm-selected-indicator')}가 ${code('selected')}를 받아 체크 노출로
+          반영하는 표시만 맡고, 선택 상호작용과 ${code('aria-selected')}는 옵션이 소유합니다. 고르지
+          않은 행에도 자리를 남겨 행마다 트레일링 폭이 같습니다.
         </mm-paragraph>
         <mm-surface variant="outlined" radius="large">
           <mm-flex gap="6">
@@ -419,19 +402,13 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="Current">
         <mm-paragraph>
-          지금 위치한 곳을
-          <mm-code>aria-current</mm-code>
-          로 표시합니다. 페이지·라우트를 가리키면
-          <mm-code>page</mm-code>
-          를 씁니다.
+          지금 위치한 곳을 ${code('aria-current')}로 표시합니다. 페이지·라우트를 가리키면
+          ${code('page')}를 씁니다.
         </mm-paragraph>
         <mm-paragraph>
-          점 표시는
-          <mm-code>mm-current-indicator</mm-code>
-          가 맡습니다. 현재라는 뜻은 항목의
-          <mm-code>aria-current</mm-code>
-          가 전하므로 점은 현재 항목에만 놓이고 보조 기술에 드러나지 않습니다. 가로로 늘어선 항목은
-          아래 가운데에, 세로 목록은 행 끝에 둡니다.
+          점 표시는 ${code('mm-current-indicator')}가 맡습니다. 현재라는 뜻은 항목의
+          ${code('aria-current')}가 전하므로 점은 현재 항목에만 놓이고 보조 기술에 드러나지
+          않습니다. 가로로 늘어선 항목은 아래 가운데에, 세로 목록은 행 끝에 둡니다.
         </mm-paragraph>
         <mm-surface variant="outlined" radius="large">
           <mm-flex gap="6" align-items="center">
@@ -465,14 +442,9 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="Expanded">
         <mm-paragraph>
-          펼침·접힘 여부는
-          <mm-code>aria-expanded</mm-code>
-          로 표시합니다. 방향 표시는
-          <mm-code>mm-expand-indicator</mm-code>
-          가
-          <mm-code>expanded</mm-code>
-          를 받아 아이콘 회전으로 반영하는 표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가
-          소유합니다.
+          펼침·접힘 여부는 ${code('aria-expanded')}로 표시합니다. 방향 표시는
+          ${code('mm-expand-indicator')}가 ${code('expanded')}를 받아 아이콘 회전으로 반영하는
+          표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가 소유합니다.
         </mm-paragraph>
         <mm-surface variant="outlined" radius="large">
           <mm-flex gap="6">

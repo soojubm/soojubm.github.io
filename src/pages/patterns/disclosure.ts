@@ -37,15 +37,15 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
-      <mm-content-section heading-level="3" heading="Overview">
-        <mm-paragraph>
+      <mm-notice>
+        <mm-text size="14">
           트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
           트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
           유지합니다. 트리거 옆이나 화면 위로 떠서 덮는 표면은
           <mm-link href="./overlay.html">Overlay</mm-link>
           문서가 다룹니다.
-        </mm-paragraph>
-      </mm-content-section>
+        </mm-text>
+      </mm-notice>
 
       <mm-content-section heading-level="3" heading="언제 접나요">
         <mm-text-list
@@ -118,7 +118,7 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="상태">
+      <mm-content-section heading-level="3" heading="상태 소유">
         <mm-text-list
           variant="check"
           .texts=${[
