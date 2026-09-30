@@ -218,7 +218,7 @@ const main = html`
             description="지금 누르고 있다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="check-square"
+            icon=${ICON_NAMES.PRESSED}
             size="medium"
             label="Pressed"
             description="그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다."
@@ -236,7 +236,7 @@ const main = html`
             description="목록에서 고른 항목이라는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="map-pin"
+            icon=${ICON_NAMES.CURRENT}
             size="medium"
             label="Current"
             description="내비게이션에서 지금 위치한 곳이라는 표시입니다."
@@ -260,9 +260,9 @@ const main = html`
             description="지금은 조작을 받지 않는다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
-            icon="eye-circle"
+            icon=${ICON_NAMES.READ_ONLY}
             size="medium"
-            label="Read-only (보류)"
+            label="Read-only"
             description="disabled와 달리 이동·낭독은 되고 수정만 막힌다는 표시입니다."
           ></mm-list-item>
           <mm-list-item
@@ -272,6 +272,10 @@ const main = html`
             description="결과가 올 때까지 다시 실행할 수 없다는 표시입니다."
           ></mm-list-item>
         </mm-list-item-group>
+        <mm-component-notice heading="Read-only 표현을 정한다">
+          읽기 전용을 갖는 컴포넌트가 아직 없어, 어떤 컴포넌트가 이 상태를 가질지와 어떻게 표시할지
+          정하지 않았다
+        </mm-component-notice>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Hover">
@@ -281,7 +285,10 @@ const main = html`
         </mm-paragraph>
         <mm-grid columns="2" gap="4">
           <mm-surface variant="outlined" radius="large">
-            <mm-menu-item-action icon="folder" label="배경 채움"></mm-menu-item-action>
+            <mm-menu-item-action
+              icon=${ICON_NAMES.DOCUMENT}
+              label="배경 채움"
+            ></mm-menu-item-action>
           </mm-surface>
           <mm-text-list
             variant="check"
@@ -422,7 +429,7 @@ const main = html`
             </mm-flex>
             <mm-flex direction="column" gap="2" align-items="center">
               <mm-sidebar-page-link
-                href="interaction.html"
+                href="./interaction.html"
                 emoji="#"
                 label="Interaction"
               ></mm-sidebar-page-link>

@@ -32,7 +32,7 @@ const main = html`
             ),
           ]}
         ></mm-text-list>
-        <mm-flex direction="column" gap="3" style="max-width: 400px">
+        <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
           <mm-top-bar nav="close" heading="컬렉션에 추가">
             <mm-button slot="action" variant="ghost">완료</mm-button>
           </mm-top-bar>
@@ -58,7 +58,7 @@ const main = html`
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="새 컬렉션">
-        <mm-flex direction="column" gap="3" style="max-width: 400px">
+        <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
           <mm-top-bar heading="새 컬렉션">
             <mm-button slot="action" variant="ghost">완료</mm-button>
           </mm-top-bar>
@@ -72,12 +72,15 @@ const main = html`
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="멤버 추가">
-        <mm-flex direction="column" gap="3" style="max-width: 400px">
+        <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
           <mm-top-bar heading="멤버 추가">
             <mm-button slot="action" variant="ghost">완료</mm-button>
           </mm-top-bar>
-          <mm-textfield label="TODO 멤버 검색" placeholder="멤버 이름"></mm-textfield>
+          <mm-textfield label="멤버 검색" placeholder="멤버 이름"></mm-textfield>
         </mm-flex>
+        <mm-component-notice heading="멤버 검색 결과와 선택 방식을 정한다">
+          지금은 검색 필드만 전시한다. 검색 결과를 보여 주고 멤버를 고르는 단계는 아직 만들지 않았다
+        </mm-component-notice>
       </mm-content-section>
     </mm-content-section-list>
 

@@ -47,9 +47,9 @@ const main = html`
               <mm-caption>집중형 · 폼, 인증, dialog, tooltip</mm-caption>
               ${code('--layout-width-narrow · 400px')}
               <mm-flex gap="3">
-                <mm-link href="auth.html">Auth</mm-link>
-                <mm-link href="dialog.html">Dialog</mm-link>
-                <mm-link href="tooltip.html">Tooltip</mm-link>
+                <mm-link href="./auth.html">Auth</mm-link>
+                <mm-link href="./dialog.html">Dialog</mm-link>
+                <mm-link href="./tooltip.html">Tooltip</mm-link>
               </mm-flex>
             </mm-flex>
           </mm-surface>
@@ -58,11 +58,11 @@ const main = html`
               <mm-caption>일반 문서 · 에디토리얼, 설정, 대화, sheet</mm-caption>
               ${code('--layout-width-small · 640px')}
               <mm-flex gap="3">
-                <mm-link href="post.html">Post</mm-link>
-                <mm-link href="setting.html">Setting</mm-link>
-                <mm-link href="chat.html">Chat</mm-link>
-                <mm-link href="sheet.html">Sheet</mm-link>
-                <mm-link href="profile.html">Profile</mm-link>
+                <mm-link href="./post.html">Post</mm-link>
+                <mm-link href="./setting.html">Setting</mm-link>
+                <mm-link href="./chat.html">Chat</mm-link>
+                <mm-link href="./sheet.html">Sheet</mm-link>
+                <mm-link href="./profile.html">Profile</mm-link>
               </mm-flex>
             </mm-flex>
           </mm-surface>

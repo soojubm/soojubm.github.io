@@ -347,22 +347,17 @@ const main = html`
             ),
           ]}
         ></mm-text-list>
-        <mm-notice
-          heading="anchored overlay는 종국에는 portal로 전환합니다."
-          description="지금은 portal 없이 트리거 옆에 띄워, 스크롤 컨테이너 안에서 잘리고 position·z-index를 가진 조상 밖으로 올라가지 못합니다. 전환 전까지 z-index는 실제로 겹치는 요소에만 주고, 전환할 때 React 구현도 함께 옮깁니다."
-        ></mm-notice>
+        <mm-component-notice heading="anchored overlay를 portal로 전환한다">
+          지금은 portal 없이 트리거 옆에 띄워, ${code('mm-sheet-body')}처럼 스크롤 영역 안에 놓인
+          popover는 화면에 자리가 남아 있어도 아래쪽이 잘리고 position·z-index를 가진 조상 밖으로
+          올라가지 못한다. 전환 전까지 z-index는 실제로 겹치는 요소에만 주고, 전환할 때 React 구현도
+          함께 옮긴다
+        </mm-component-notice>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="주의">
         <mm-text-list
           .texts=${[
-            rule(
-              '스크롤 영역 안의 잘림',
-              html`
-                ${code('mm-sheet-body')}처럼 스크롤 영역 안에 놓인 popover는 화면에 자리가 남아
-                있어도 아래쪽이 잘립니다. 아직 해결되지 않았습니다.
-              `,
-            ),
             rule(
               '메뉴 트리거 위치',
               '메뉴 트리거는 스크롤 영역 바깥에 둡니다. 스크롤 영역 안의 항목은 누르면 다음 화면으로 넘어가게 하고, overflow는 내용이 영역을 넘치는 곳에만 줍니다.',

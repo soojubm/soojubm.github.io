@@ -4,6 +4,7 @@ import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-pager'
 import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
+import { SITEMAP } from '@/sitemap'
 
 // prettier-ignore
 const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
@@ -28,6 +29,25 @@ const GROUP_COMPONENTS = [
 ]
 const SECTION_COMPONENTS = ['mm-content-section', 'mm-page-header']
 
+const FOUNDATION_DESCRIPTIONS: Record<string, string> = {
+  layout: '컨테이너 너비와 배경·표면 대비로 페이지의 성격과 작업 맥락을 담습니다.',
+  container: '자식을 배치하고 묶는 컨테이너 컴포넌트를 모아 봅니다.',
+  interaction: '상호작용할 수 있는 요소와 그 반응 상태를 정의합니다.',
+  disclosure: '접어 둔 부차 정보를 트리거로 펼치는 형태, 상태 소유, 접근성을 정의합니다.',
+  selection: '선택지를 고르는 컴포넌트의 선택 기준, 상태 소유, 옵션 모양을 정의합니다.',
+  search: '키워드로 콘텐츠를 찾는 흐름의 단계별 제안과 결과 처리 방식을 정의합니다.',
+  feedback: '행동·시스템 결과를 알리는 상태와 비동기 데이터 흐름을 정의합니다.',
+  overlay: '화면 위로 뜨는 표면의 행동 계약과 겹침 순서를 정의합니다.',
+  collection: '사용자가 만든 묶음에 항목을 담고 묶음을 만들고 관리하는 흐름을 정의합니다.',
+  content: '텍스트 슬롯의 이름과 어조, 아이콘의 의미, 스캔 가능한 문구 원칙입니다.',
+}
+
+// 사이드바와 같은 목록에서 만들어, 축을 추가하거나 옮겨도 카드가 빠지지 않는다.
+const foundationsNode = SITEMAP.find(node => node.id === 'foundations')
+const foundationItems = (
+  foundationsNode?.type === 'standalone' ? foundationsNode.children ?? [] : []
+).filter(item => item.id !== 'foundations')
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -37,51 +57,15 @@ const main = html`
 
     <mm-flex direction="column" gap="16">
       <mm-grid columns="3" gap="4">
-        <mm-foundation-item
-          href="./layout.html"
-          heading="Layout"
-          description="컨테이너 너비와 배경·표면 대비로 페이지의 성격과 작업 맥락을 담습니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./container.html"
-          heading="Container"
-          description="자식을 배치하고 묶는 컨테이너 컴포넌트를 모아 봅니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./interaction.html"
-          heading="Interaction"
-          description="상호작용할 수 있는 요소와 그 반응 상태를 정의합니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./selection.html"
-          heading="Selection"
-          description="선택지를 고르는 컴포넌트의 선택 기준, 상태 소유, 옵션 모양을 정의합니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./search.html"
-          heading="Search"
-          description="키워드로 콘텐츠를 찾는 흐름의 단계별 제안과 결과 처리 방식을 정의합니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./feedback.html"
-          heading="Feedback"
-          description="행동·시스템 결과를 알리는 상태와 비동기 데이터 흐름을 정의합니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./overlay.html"
-          heading="Overlay"
-          description="화면 위로 뜨는 표면의 행동 계약과 겹침 순서를 정의합니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./collection.html"
-          heading="Collection"
-          description="사용자가 만든 묶음에 항목을 담고 묶음을 만들고 관리하는 흐름을 정의합니다."
-        ></mm-foundation-item>
-        <mm-foundation-item
-          href="./content.html"
-          heading="Content"
-          description="텍스트 슬롯의 이름과 어조, 아이콘의 의미, 스캔 가능한 문구 원칙입니다."
-        ></mm-foundation-item>
+        ${foundationItems.map(
+          ({ id, name }) => html`
+            <mm-foundation-item
+              href="./${id}.html"
+              heading=${name}
+              description=${FOUNDATION_DESCRIPTIONS[id]}
+            ></mm-foundation-item>
+          `,
+        )}
       </mm-grid>
 
       <mm-content-section-list>

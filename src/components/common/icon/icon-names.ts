@@ -45,6 +45,7 @@ export const ICON_CATALOG = {
     PREVIOUS: 'arrow-left',
     NEXT: 'arrow-right',
     SCROLL_TOP: 'arrow-up',
+    CURRENT: 'map-pin',
   },
 
   indicators: {
@@ -70,6 +71,7 @@ export const ICON_CATALOG = {
     FAVORITE_SELECTED: 'star-solid',
     LIKE: 'heart',
     LIKE_SELECTED: 'heart-solid',
+    PRESSED: 'check-square',
     SELECTED: 'check-circle',
   },
 
@@ -143,6 +145,7 @@ export const ICON_CATALOG = {
     TIMER: 'timer',
     FIELD: 'input-field',
     LOCK: 'lock',
+    READ_ONLY: 'eye-circle',
     SEARCH: 'search',
     SUBTRACT: 'minus',
   },

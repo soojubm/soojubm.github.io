@@ -136,8 +136,9 @@ const main = html`
             태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자
             또는 단어의 수를 제한하고 개행 조건을 정의하세요.
           </mm-paragraph>
-          <mm-component-notice heading="제목 자르기">
-            제목을 자르는 것을 허용할 수 있나. 점점 더 작아지는 스크린. 폴더블, 와치
+          <mm-component-notice heading="제목 자르기를 허용할지 정한다">
+            레이블은 줄여 표시하지 않는 원칙이지만, 폴더블·워치처럼 화면이 점점 작아질 때 제목만은
+            잘라도 되는지 정하지 않았다
           </mm-component-notice>
         </mm-content-section>
 

@@ -10,42 +10,36 @@ const overviewRows = html`
     <td>가로·세로 한 줄</td>
     <td>소비처가 gap으로 정한다</td>
     <td>페이지·콘텐츠 조립</td>
-    <td>302회 · 62쪽</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-grid')}</th>
     <td>행·열</td>
     <td>소비처가 gap으로 정한다</td>
     <td>반복되는 항목</td>
-    <td>34회 · 14쪽</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-content-section')}</th>
     <td>세로</td>
     <td>제목–본문</td>
     <td>제목이 있는 문서 구획</td>
-    <td>95회 · 19쪽</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-content-section-list')}</th>
     <td>세로</td>
     <td>섹션–섹션</td>
     <td>페이지 구획을 쌓는 자리</td>
-    <td>28회 · 21쪽</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-text-block')}</th>
     <td>세로</td>
     <td>제목–설명</td>
     <td>제목과 설명 한 쌍</td>
-    <td>6회 · 2쪽</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-form-field')}</th>
     <td>세로</td>
     <td>레이블–컨트롤–설명</td>
     <td>textfield가 아닌 컨트롤</td>
-    <td>16회 · 6쪽</td>
   </tr>
 `
 
@@ -57,7 +51,7 @@ const contentSectionCode = `<mm-content-section-list>
     <mm-paragraph>섹션 사이 간격은 섹션 목록이 소유합니다.</mm-paragraph>
   </mm-content-section>
   <mm-content-section heading-level="3" heading="액션이 있는 섹션">
-    <mm-link slot="action" href="post.html">모두 보기</mm-link>
+    <mm-link slot="action" href="./post.html">모두 보기</mm-link>
     <mm-paragraph>제목 줄 오른쪽에 섹션 전체에 걸리는 동작을 둡니다.</mm-paragraph>
   </mm-content-section>
 </mm-content-section-list>`
@@ -95,13 +89,12 @@ const main = html`
       <mm-content-section heading-level="3" heading="Overview">
         <mm-table
           .rows=${overviewRows}
-          caption="컨테이너별 배치 방향·소유하는 간격·쓰는 자리·사용 횟수 비교"
+          caption="컨테이너별 배치 방향·소유하는 간격·쓰는 자리 비교"
           .columns=${[
             { label: 'UI' },
             { label: '배치' },
             { label: '간격' },
             { label: '쓰는 자리' },
-            { label: '사용' },
           ]}
         ></mm-table>
       </mm-content-section>
@@ -192,6 +185,11 @@ const main = html`
           ></mm-text-block>
         </mm-surface>
         <mm-code-block .code=${textBlockCode}></mm-code-block>
+        <mm-component-notice heading="mm-text-block을 유지할지 삭제할지">
+          ${code('mm-page-header')}·${code('mm-feature')}·${code('mm-banner')}처럼 제목–설명 한 쌍을
+          그리는 컴포넌트가 이 컴포넌트에 위임한다. 삭제하면 그 컴포넌트들이 제목–설명 간격을 각자
+          소유하게 된다. 유지할지 삭제할지 정하지 않았다
+        </mm-component-notice>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Form Field">
