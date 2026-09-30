@@ -1,8 +1,32 @@
 import { html } from 'lit'
 
 import '@/components/domains/component/component-pager'
+import { ICON_NAMES } from '@/components/common'
 import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
+
+// prettier-ignore
+const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
+
+const GROUP_COMPONENTS = [
+  'mm-button-group',
+  'mm-filter-button-group',
+  'mm-toggle-button-group',
+  'mm-radio-group',
+  'mm-checkbox-group',
+  'mm-radio-card-group',
+  'mm-avatar-group',
+  'mm-tag-group',
+  'mm-keyword-tag-group',
+  'mm-list-item-group',
+  'mm-menu-item-group',
+  'mm-menu-item-radio-group',
+  'mm-menu-item-checkbox-group',
+  'mm-meta-item-group',
+  'mm-feature-group',
+  'mm-paragraph-group',
+]
+const SECTION_COMPONENTS = ['mm-content-section', 'mm-page-header']
 
 const overviewRows = html`
   <tr>
@@ -97,6 +121,49 @@ const main = html`
             { label: '쓰는 자리' },
           ]}
         ></mm-table>
+      </mm-content-section>
+
+      <mm-content-section heading-level="3" heading="간격 단계">
+        <mm-paragraph>
+          간격을 비롯한 값은 요소가 속한 구조적 단계에 따라 다른 기준을 갖습니다. 컴포넌트마다
+          간격을 따로 판단하지 않고, 소속된 단계에 맞는 토큰만 참조합니다.
+        </mm-paragraph>
+
+        <mm-list-item-group>
+          <mm-list-item
+            icon=${ICON_NAMES.IDLE}
+            size="medium"
+            label="Element"
+            description="단일 UI 유닛 안의 간격. --space-1 ~ --space-2."
+          ></mm-list-item>
+          <mm-list-item
+            icon=${ICON_NAMES.GROUP}
+            size="medium"
+            label="Group"
+            description="같은 컴포넌트를 나열한 리스트. 항목 사이 간격은 기본 --space-2, 조밀한 태그는 --space-1, 이어지는 묶음은 0."
+          ></mm-list-item>
+          <mm-list-item
+            icon=${ICON_NAMES.LIST_VIEW}
+            size="medium"
+            label="Section"
+            description="제목과 본문 사이 --space-3. 섹션끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
+          ></mm-list-item>
+        </mm-list-item-group>
+
+        <mm-paragraph>Group 컴포넌트: ${codeList(GROUP_COMPONENTS)}</mm-paragraph>
+        <mm-paragraph>Section 컴포넌트: ${codeList(SECTION_COMPONENTS)}</mm-paragraph>
+
+        <mm-paragraph>
+          Section 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면으로, 제목 heading 요소와 본문
+          슬롯을 묶습니다. 같은 제목·설명 묶음이라도 본문 슬롯 없이 텍스트 한 쌍의 간격만 소유하는
+          ${code('mm-text-block')}은 이 계층이 아니라 상위 컴포넌트의 내부 부품이며, 문서 섹션으로
+          세울 때는 ${code('mm-content-section')}을 씁니다.
+        </mm-paragraph>
+
+        <mm-paragraph>
+          ${code('mm-flex')}·${code('mm-grid')} 같은 조립 레이아웃은 element·group·section 계층
+          밖에서 배치만 돕는 유틸리티입니다.
+        </mm-paragraph>
       </mm-content-section>
 
       <mm-content-section heading-level="3" heading="Flex">

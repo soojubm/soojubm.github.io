@@ -382,7 +382,9 @@ const main = html`
       <mm-content-section heading-level="3" heading="Selected">
         <mm-paragraph>
           컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로 고른
-          값을 나타내며, 그룹 소유·키보드·강조 토큰 규칙은 Checked와 같습니다.
+          값을 나타냅니다. 그룹 소유와 키보드 이동은
+          <mm-link href="./selection.html">Selection</mm-link>
+          문서를 따르고, 강조 토큰은 Checked와 같습니다.
         </mm-paragraph>
         <mm-paragraph>
           ${code('mm-tab')}도 ${code('aria-selected')}로 활성 탭을 나타내지만, 폼 값이 아니라 지금

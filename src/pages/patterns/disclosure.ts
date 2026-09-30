@@ -136,8 +136,9 @@ const main = html`
                 펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
               `,
               html`
-                ${code('expanded')}를 받아 아이콘 회전으로 반영한다. 컴포넌트마다 다른 아이콘을 직접
-                그리지 않는다
+                컴포넌트마다 다른 아이콘을 직접 그리지 않는다. 표시 방식은
+                <mm-link href="./interaction.html">Interaction</mm-link>
+                문서의 Expanded를 따른다
               `,
             ),
           ]}

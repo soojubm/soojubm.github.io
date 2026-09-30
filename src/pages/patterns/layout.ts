@@ -10,7 +10,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Layout"
-      description="컨테이너 너비, 배경 대비, 표면 대비는 장식이 아니라 페이지의 성격과 작업 맥락을 담는 신호입니다. 사용자가 의식적으로 알아차리지는 못하지만, 일관되게 쓰면 맥락이 달라졌다는 미묘한 감각을 전달합니다."
+      description="페이지 너비, 배경 대비, 표면 대비는 장식이 아니라 페이지의 성격과 작업 맥락을 담는 신호입니다. 사용자가 의식적으로 알아차리지는 못하지만, 일관되게 쓰면 맥락이 달라졌다는 미묘한 감각을 전달합니다."
     ></mm-page-header>
 
     <mm-content-section-list>
@@ -36,7 +36,7 @@ const main = html`
         </mm-feature-group>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="컨테이너 너비">
+      <mm-content-section heading-level="3" heading="페이지 너비">
         <mm-paragraph>
           너비는 콘텐츠 성격에 맞는 토큰으로 정하고, 본문 골격은 ${code('mm-main')}의 width로,
           떠오르는 표면은 각 컴포넌트의 width로 지정합니다.
@@ -78,9 +78,12 @@ const main = html`
         <mm-paragraph>
           화면에 고정된 내비게이션(chrome)이 콘텐츠(base)를 감싸고, 드롭다운·팝오버처럼 잠깐 뜨는
           표면(overlay)은 그 위로 겹칩니다. 전역 내비게이션은 페이지에 고정된 바보다 위에 남아야
-          하므로 chrome-top을 씁니다. 같은 이름이 그림자 단계이자 겹침 순서이며, paint order 규칙은
+          하므로 chrome-top을 씁니다. 같은 이름이 그림자 단계이자 겹침 순서입니다. 표면마다 쓰는
+          그룹은
           <mm-link href="./overlay.html">Overlay</mm-link>
-          가 다룹니다.
+          문서의 표에, 그룹 토큰은
+          <mm-link href="./tokens.html">Tokens</mm-link>
+          문서의 Z-index에 있습니다.
         </mm-paragraph>
         <mm-text-list
           variant="check"
@@ -92,8 +95,10 @@ const main = html`
             rule(
               '정적인 층위와 hover 피드백을 구분한다',
               html`
-                hover에서 잠깐 떠오르는 ${code('--interaction-hover-lift')}는 상호작용 피드백이며
-                층위가 아니다
+                hover에서 잠깐 떠오르는 ${code('--interaction-hover-lift')}는 층위가 아니라 상호작용
+                피드백이며,
+                <mm-link href="./interaction.html">Interaction</mm-link>
+                문서의 Hover가 다룬다
               `,
             ),
           ]}

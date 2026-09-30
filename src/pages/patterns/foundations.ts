@@ -1,36 +1,12 @@
 import { html } from 'lit'
 
-import { ICON_NAMES } from '@/components/common'
 import '@/components/domains/component/component-pager'
 import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { SITEMAP } from '@/sitemap'
 
-// prettier-ignore
-const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
-
-const GROUP_COMPONENTS = [
-  'mm-button-group',
-  'mm-filter-button-group',
-  'mm-toggle-button-group',
-  'mm-radio-group',
-  'mm-checkbox-group',
-  'mm-radio-card-group',
-  'mm-avatar-group',
-  'mm-tag-group',
-  'mm-keyword-tag-group',
-  'mm-list-item-group',
-  'mm-menu-item-group',
-  'mm-menu-item-radio-group',
-  'mm-menu-item-checkbox-group',
-  'mm-meta-item-group',
-  'mm-feature-group',
-  'mm-paragraph-group',
-]
-const SECTION_COMPONENTS = ['mm-content-section', 'mm-page-header']
-
 const FOUNDATION_DESCRIPTIONS: Record<string, string> = {
-  layout: '컨테이너 너비와 배경·표면 대비로 페이지의 성격과 작업 맥락을 담습니다.',
+  layout: '페이지 너비와 배경·표면 대비로 페이지의 성격과 작업 맥락을 담습니다.',
   container: '자식을 배치하고 묶는 컨테이너 컴포넌트를 모아 봅니다.',
   interaction: '상호작용할 수 있는 요소와 그 반응 상태를 정의합니다.',
   disclosure: '접어 둔 부차 정보를 트리거로 펼치는 형태, 상태 소유, 접근성을 정의합니다.',
@@ -75,30 +51,47 @@ const main = html`
             .texts=${[
               rule(
                 '상호작용 가능성은 형태로 드러낸다',
-                '색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. — Interaction',
+                html`
+                  색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. —
+                  <mm-link href="./interaction.html">Interaction</mm-link>
+                `,
               ),
               rule(
                 '선택·피드백·오류 상태는 색상과 함께 아이콘·텍스트·형태·ARIA로 전달한다',
-                '색만으로는 색각 이상이나 스크린리더 사용자에게 상태가 전달되지 않는다. — Interaction',
+                html`
+                  색만으로는 색각 이상이나 스크린리더 사용자에게 상태가 전달되지 않는다. —
+                  <mm-link href="./interaction.html">Interaction</mm-link>
+                `,
               ),
               rule(
                 '열기·선택·검증 같은 상호작용 상태는 컴포넌트가 소유한다',
-                '닫힘 처리도 컴포넌트가 맡고, 트리거는 표준 attribute로 대상을 가리키기만 한다. — Interaction',
+                html`
+                  닫힘 처리도 컴포넌트가 맡고, 트리거는 표준 attribute로 대상을 가리키기만 한다. —
+                  <mm-link href="./interaction.html">Interaction</mm-link>
+                `,
               ),
               rule(
                 '선택 상태는 그룹이 소유한다',
                 html`
                   항목이 아니라 그룹이 ${code('value')}·${code('values')}로 상태를 갖고, 옵션 배열은
-                  공용 ${code('OptionItem')} 모양을 따른다. — Selection
+                  공용 ${code('OptionItem')} 모양을 따른다. —
+                  <mm-link href="./selection.html">Selection</mm-link>
                 `,
               ),
               rule(
                 '동종 항목은 계열 그룹 컴포넌트로 묶는다',
-                '역할·간격·정렬은 그룹이 소유한다. — Component Level',
+                html`
+                  역할·간격·정렬은 그룹이 소유한다. —
+                  <mm-link href="./container.html">Container</mm-link>
+                `,
               ),
               rule(
                 '화면 위로 뜨는 표면은 행동 계약으로 구분한다',
-                'modality·dismiss·reference는 컨트롤러가 소유하고, surface·width·placement 같은 외형은 각 컴포넌트가 조합한다. — Overlay',
+                html`
+                  modality·dismiss·reference는 컨트롤러가 소유하고, surface·width·placement 같은
+                  외형은 각 컴포넌트가 조합한다. —
+                  <mm-link href="./overlay.html">Overlay</mm-link>
+                `,
               ),
             ]}
           ></mm-text-list>
@@ -116,7 +109,11 @@ const main = html`
                   ),
                   rule(
                     'Interactive - selection',
-                    '선택 여부를 상태로 유지한다. 미리 선택된 기본값은 편향된 응답을 부를 수 있어 피한다.',
+                    html`
+                      선택 여부를 상태로 유지한다. 기준은
+                      <mm-link href="./selection.html">Selection</mm-link>
+                      문서가 정한다.
+                    `,
                   ),
                   rule(
                     'Interactive - input',
@@ -124,7 +121,11 @@ const main = html`
                   ),
                   rule(
                     'Feedback',
-                    '사용자 행동이나 시스템 상태의 결과를 알린다. 시스템 오류로 실패하면 무엇이 잘못됐는지 문구로 명확히 설명한다.',
+                    html`
+                      사용자 행동이나 시스템 상태의 결과를 알린다. 기준은
+                      <mm-link href="./feedback.html">Feedback</mm-link>
+                      문서가 정한다.
+                    `,
                   ),
                 ]}
               ></mm-text-list>
@@ -145,56 +146,17 @@ const main = html`
                   rule('Structural', '상호작용 없이 반복되는 구조와 경계를 잡는다.'),
                   rule(
                     'Disclosure',
-                    '부차적인 정보를 접어 두고 필요할 때만 펼친다. 약관·경고처럼 반드시 읽어야 하는 정보는 disclosure를 쓰지 않는다.',
+                    html`
+                      부차적인 정보를 접어 두고 필요할 때만 펼친다. 기준은
+                      <mm-link href="./disclosure.html">Disclosure</mm-link>
+                      문서가 정한다.
+                    `,
                   ),
                   rule('Modality', '배경 상호작용 차단 여부로 레이어를 규정한다.'),
                 ]}
               ></mm-text-list>
             </mm-content-section>
           </mm-content-section-list>
-        </mm-content-section>
-
-        <mm-content-section heading-level="3" heading="Component Level">
-          <mm-paragraph>
-            간격을 비롯한 값은 요소가 속한 구조적 단계에 따라 다른 기준을 갖습니다. 컴포넌트마다
-            간격을 따로 판단하지 않고, 소속된 단계에 맞는 토큰만 참조합니다.
-          </mm-paragraph>
-
-          <mm-list-item-group>
-            <mm-list-item
-              icon=${ICON_NAMES.IDLE}
-              size="medium"
-              label="Element"
-              description="단일 UI 유닛 안의 간격. --space-1 ~ --space-2."
-            ></mm-list-item>
-            <mm-list-item
-              icon=${ICON_NAMES.GROUP}
-              size="medium"
-              label="Group"
-              description="같은 컴포넌트를 나열한 리스트. 항목 사이 간격은 기본 --space-2, 조밀한 태그는 --space-1, 이어지는 묶음은 0."
-            ></mm-list-item>
-            <mm-list-item
-              icon=${ICON_NAMES.LIST_VIEW}
-              size="medium"
-              label="Section"
-              description="제목과 본문 사이 --space-3. 섹션끼리의 바깥 간격은 페이지가 --space-section으로 정한다."
-            ></mm-list-item>
-          </mm-list-item-group>
-
-          <mm-paragraph>Group 컴포넌트: ${codeList(GROUP_COMPONENTS)}</mm-paragraph>
-          <mm-paragraph>Section 컴포넌트: ${codeList(SECTION_COMPONENTS)}</mm-paragraph>
-
-          <mm-paragraph>
-            Section 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면으로, 제목 heading 요소와 본문
-            슬롯을 묶습니다. 같은 제목·설명 묶음이라도 본문 슬롯 없이 텍스트 한 쌍의 간격만 소유하는
-            ${code('mm-text-block')}은 이 계층이 아니라 상위 컴포넌트의 내부 부품이며, 문서 섹션으로
-            세울 때는 ${code('mm-content-section')}을 씁니다.
-          </mm-paragraph>
-
-          <mm-paragraph>
-            ${code('mm-flex')}·${code('mm-grid')} 같은 조립 레이아웃은 element·group·section 계층
-            밖에서 배치만 돕는 유틸리티입니다.
-          </mm-paragraph>
         </mm-content-section>
       </mm-content-section-list>
     </mm-flex>
