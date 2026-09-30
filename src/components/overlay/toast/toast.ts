@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { toastStyles } from '@/components/overlay/overlay.styles'
+import { toastStyles } from '@/components/overlay/toast/toast.styles'
 import { PortalController } from '@/controllers/portal-controller'
 import { withOpenState } from '@/utils/open-state'
 
