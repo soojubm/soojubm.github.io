@@ -99,6 +99,7 @@ export class Sheet extends withOpenState(LitElement) {
     if (changedProperties.has('height')) this.syncHeight()
   }
 
+  // 임의 값이라 나열할 수 없고 host가 소비하므로 host에 직접 주입한다.
   private syncHeight() {
     if (!this.height) {
       this.style.removeProperty('--overlay-panel-height')

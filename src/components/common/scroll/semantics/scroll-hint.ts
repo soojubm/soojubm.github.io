@@ -124,6 +124,7 @@ export class ScrollHint extends LitElement {
     root.scrollBy({ left: direction * root.clientWidth * 0.8, behavior: 'smooth' })
   }
 
+  // gap은 측정값이고 host가 소비하므로 host에 직접 주입한다.
   // 스크롤 중에는 스타일을 건드리지 않아야 매 프레임 레이아웃을 다시 계산하지 않는다. gap은 크기가 바뀔 때만 잰다.
   private handleScrollRootResize = () => {
     const root = this.scrollRoot

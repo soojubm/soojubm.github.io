@@ -1,6 +1,7 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
+import { styleMap } from 'lit/directives/style-map.js'
 
 import type { PropertyValues } from 'lit'
 
@@ -22,8 +23,6 @@ export class Marquee extends LitElement {
       overflow: hidden;
       --marquee-gap: var(--space-4);
       --marquee-height: auto;
-      --marquee-distance: 0px;
-      --marquee-duration: 1s;
     }
 
     ${unsafeCSS(buildAttributeRules('gap', spaceTokens('--marquee-gap')))}
@@ -102,10 +101,14 @@ export class Marquee extends LitElement {
 
   render() {
     const cloneIndexes = Array.from({ length: this.copyCount - 1 }, (_, index) => index)
+    const trackStyle = {
+      '--marquee-distance': `${this.distance}px`,
+      '--marquee-duration': `${this.duration}s`,
+    }
 
     return html`
       <div class="viewport">
-        <div class="track">
+        <div class="track" style=${styleMap(trackStyle)}>
           <div class="group source">
             <slot @slotchange=${this.handleSlotChange}></slot>
           </div>
@@ -145,10 +148,6 @@ export class Marquee extends LitElement {
     if (changed.has('height')) this.updateHeight()
 
     if (changed.has('speed')) this.queueMeasure()
-
-    if (changed.has('distance')) this.style.setProperty('--marquee-distance', `${this.distance}px`)
-
-    if (changed.has('duration')) this.style.setProperty('--marquee-duration', `${this.duration}s`)
 
     if (changed.has('copyCount')) this.syncClones()
   }
@@ -205,6 +204,7 @@ export class Marquee extends LitElement {
     )
   }
 
+  // 임의 값이라 나열할 수 없고 host가 소비하므로 host에 직접 주입한다.
   private updateHeight() {
     if (!this.height) {
       this.style.removeProperty('--marquee-height')

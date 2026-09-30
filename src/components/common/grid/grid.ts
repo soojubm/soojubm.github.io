@@ -20,6 +20,7 @@ export class Grid extends LitElement {
     `
   }
 
+  // 임의 값이라 나열할 수 없고 host가 소비하므로 host에 직접 주입한다.
   protected willUpdate() {
     if (this.columnMinWidth) this.style.setProperty('--_col-min', this.columnMinWidth)
     else this.style.removeProperty('--_col-min')

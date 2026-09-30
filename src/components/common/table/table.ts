@@ -128,6 +128,7 @@ export class Table extends LitElement {
     `
   }
 
+  // 임의 값이라 나열할 수 없고 host가 소비하므로 host에 직접 주입한다.
   protected updated(changedProperties: PropertyValues) {
     if (!changedProperties.has('height')) return
 
