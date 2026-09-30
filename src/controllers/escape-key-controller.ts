@@ -1,5 +1,7 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
+import type { OpenState } from '@/utils/open-state'
+
 interface EscapeKeyOptions {
   /** 열려 있을 때만 콜백을 실행한다 (닫혀 있으면 ESC를 무시) */
   isOpen?: () => boolean
@@ -11,13 +13,21 @@ interface EscapeKeyOptions {
  * 연결 시 document 리스너를 걸고 해제 시 대칭으로 정리하므로,
  * 컴포넌트마다 connectedCallback/disconnectedCallback에 같은 코드를 반복하지 않는다.
  * OutsideClickController와 함께 떠 있는 표면이 스스로 닫히는 수단을 이룬다.
+ * `OpenState` 호스트는 콜백 없이 넘기면 열려 있을 때 `close()`를 부른다.
  */
 export class EscapeKeyController implements ReactiveController {
+  private onEscape: () => void
+  private options: EscapeKeyOptions
+
+  constructor(host: ReactiveControllerHost & OpenState)
+  constructor(host: ReactiveControllerHost, onEscape: () => void, options?: EscapeKeyOptions)
   constructor(
-    host: ReactiveControllerHost,
-    private onEscape: () => void,
-    private options: EscapeKeyOptions = {},
+    host: ReactiveControllerHost & Partial<OpenState>,
+    onEscape?: () => void,
+    options?: EscapeKeyOptions,
   ) {
+    this.onEscape = onEscape ?? (() => host.close?.())
+    this.options = options ?? { isOpen: () => !!host.open }
     host.addController(this)
   }
 

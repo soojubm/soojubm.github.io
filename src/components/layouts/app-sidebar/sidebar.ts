@@ -31,15 +31,8 @@ export class Sidebar extends withOpenState(LitElement) {
   @query('mm-scroll') private scrollEl?: Scroll
   private currentPageId = getCurrentPageId()
   private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
-  private disclosure = new DisclosureController(this, {
-    isOpen: () => this.open,
-    setOpen: open => {
-      this.open = open
-    },
-  })
-  private escapeKey = new EscapeKeyController(this, () => this.close(), {
-    isOpen: () => this.open,
-  })
+  private disclosure = new DisclosureController(this)
+  private escapeKey = new EscapeKeyController(this)
 
   render() {
     return html`

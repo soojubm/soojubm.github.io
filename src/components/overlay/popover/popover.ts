@@ -38,18 +38,12 @@ export class Popover extends withOpenState(LitElement) {
   private contentElements!: HTMLElement[]
   private returnFocusElement?: HTMLElement
   private disclosure = new DisclosureController(this, {
-    isOpen: () => this.open,
-    setOpen: open => {
-      this.open = open
-    },
     getTrigger: () => this.triggerElements[0],
   })
   private outsideClick = new OutsideClickController(this, () => this.close(), {
     isOpen: () => this.open,
   })
-  private escapeKey = new EscapeKeyController(this, () => this.close(), {
-    isOpen: () => this.open,
-  })
+  private escapeKey = new EscapeKeyController(this)
 
   render() {
     return html`

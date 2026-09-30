@@ -1,20 +1,25 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 import { emit } from '@/utils'
+import type { OpenState } from '@/utils/open-state'
 
 type Host = ReactiveControllerHost & HTMLElement
 
-interface DisclosureOptions {
-  isOpen: () => boolean
-  setOpen: (open: boolean) => void
+interface OpenStateDisclosureOptions {
   /** 토글 트리거. 반환값이 없으면 host.id를 aria-controls로 가리키는 요소로 폴백한다 */
   getTrigger?: () => HTMLElement | undefined
+}
+
+interface DisclosureOptions extends OpenStateDisclosureOptions {
+  isOpen: () => boolean
+  setOpen: (open: boolean) => void
 }
 
 /**
  * 열고 닫는 모든 disclosure의 트리거 클릭 토글, aria-expanded 동기화, toggle 이벤트 발행을 소유한다.
  * 여는 표면의 종류(aria-haspopup)는 호스트가 추정하지 않고 트리거가 표준 attribute로 직접 선언한다.
  * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 컨트롤러는 읽기/쓰기만 위임받는다.
+ * `OpenState` 호스트는 isOpen·setOpen 없이 넘기면 `open`을 읽고 `show()`·`close()`로 바꾼다.
  * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 호스트를 가리키는 외부 요소를 기본값으로 찾는다.
  * 외부 클릭·ESC로 스스로 닫히는 동작은 overlay 표면이 각자 소유한다.
  */
@@ -22,7 +27,19 @@ export class DisclosureController implements ReactiveController {
   private wiredTrigger?: HTMLElement
   private wasOpen?: boolean
 
-  constructor(private host: Host, private options: DisclosureOptions) {
+  private options: DisclosureOptions
+
+  constructor(host: Host & OpenState, options?: OpenStateDisclosureOptions)
+  constructor(host: Host, options: DisclosureOptions)
+  constructor(
+    private host: Host & Partial<OpenState>,
+    options: DisclosureOptions | OpenStateDisclosureOptions = {},
+  ) {
+    this.options = {
+      isOpen: () => !!host.open,
+      setOpen: open => (open ? host.show?.() : host.close?.()),
+      ...options,
+    }
     host.addController(this)
   }
 
