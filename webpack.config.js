@@ -20,9 +20,9 @@ const addPage = page => {
 
 SITEMAP.forEach(node => {
   if (node.type === 'standalone') {
-    if (node.id !== 'index') addPage({ id: node.id, subDir: 'patterns' })
+    if (node.id !== 'index') addPage({ id: node.id, subDir: 'foundations' })
     ;(node.children || []).forEach(item => {
-      addPage({ id: item.id, subDir: item.subDir || 'patterns' })
+      addPage({ id: item.id, subDir: item.subDir || 'foundations' })
     })
   } else if (node.type === 'group') {
     const subDir = node.id === 'patterns' ? 'patterns' : 'components'
