@@ -87,7 +87,9 @@ export class SheetController implements ReactiveController {
       element.inert = true
     })
 
-    this.host.focus()
+    // 네이티브 dialog처럼 autofocus를 단 자손이 있으면 그 요소가, 없으면 표면 자체가 포커스를 받는다.
+    const autofocusElement = this.host.querySelector<HTMLElement>('[autofocus]')
+    ;(autofocusElement ?? this.host).focus()
   }
 
   private releaseFocus() {

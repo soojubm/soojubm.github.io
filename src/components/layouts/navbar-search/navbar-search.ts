@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
-import { createRef, ref } from 'lit/directives/ref.js'
+
+import type { PropertyValues } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
@@ -25,9 +26,8 @@ export class NavbarSearch extends LitElement {
   `
   @state() private isOpen = false
   private search = new PagefindSearchController(this, { isActive: () => this.isOpen })
-  // 검색 시트는 열릴 때 portal 컨테이너로 이동하지만 엘리먼트는 그대로라 ref로 붙잡는다.
-  private searchField = createRef<HTMLElement>()
 
+  /* eslint-disable lit-a11y/no-autofocus -- 시트가 열릴 때 검색 입력으로 바로 들어가는 것이 이 표면의 목적이다. */
   render() {
     return html`
       <mm-icon-button
@@ -47,7 +47,7 @@ export class NavbarSearch extends LitElement {
         <mm-sheet-body>
           <form role="search" style="display: flex; flex-direction: column; gap: var(--space-2)">
             <mm-searchfield
-              ${ref(this.searchField)}
+              autofocus
               placeholder="컴포넌트, 패턴을 검색하세요"
               .value=${this.search.query}
               @input=${this.handleSearchInput}
@@ -59,31 +59,20 @@ export class NavbarSearch extends LitElement {
     `
   }
 
+  /* eslint-enable lit-a11y/no-autofocus */
+  protected updated(changed: PropertyValues) {
+    if (!changed.has('isOpen')) return
+
+    if (this.isOpen) this.search.load()
+    else this.search.reset(true)
+  }
+
   private handleSearchButtonClick = () => {
-    if (this.isOpen) {
-      this.closeSearch()
-      return
-    }
-    this.openSearch()
+    this.isOpen = !this.isOpen
   }
-
-  private openSearch() {
-    this.isOpen = true
-    this.search.load()
-    requestAnimationFrame(() => {
-      this.searchField.value?.focus()
-    })
-  }
-
-  private closeSearch = () => {
-    this.isOpen = false
-    this.search.reset(true)
-  }
-  // 시트가 배경·ESC·닫기 버튼으로 스스로 닫힌 경우만 받는다. 직접 닫은 경우는 이미 정리했다.
+  // 시트가 배경·ESC·닫기 버튼으로 스스로 닫힌 경우도 이 이벤트로 상태를 맞춘다.
   private handleSheetToggle = (e: CustomEvent<{ open: boolean }>) => {
-    if (e.detail.open || !this.isOpen) return
-
-    this.closeSearch()
+    this.isOpen = e.detail.open
   }
   private handleSearchInput = (e: Event) => {
     this.search.setQuery(this.getInputValue(e))
