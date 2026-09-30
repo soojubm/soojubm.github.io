@@ -179,7 +179,7 @@ const main = html`
       description="어떤 요소가 상호작용할 수 있는지, 상호작용할 때 어떻게 반응하는지, 선택지를 어떻게 고르는지를 일관된 시각 언어로 정의합니다. 상태는 색상만으로 전달하지 않습니다."
     ></mm-page-header>
 
-    <mm-content-section-list>
+    <mm-flex direction="column" gap="4">
       <mm-tab-list value="state" variant="pill" search-param="tab">
         <mm-tab value="state">State</mm-tab>
         <mm-tab value="selection">Selection</mm-tab>
@@ -326,15 +326,11 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="의미 상태">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '사용자 행동으로 인한 오류와 시스템 오류를 구분한다',
-                  '시스템 오류로 실패하면 단순 "오류" 대신 무엇이 잘못됐는지 명확히 설명하여 사용자가 다시 시도할 수 있게 안내한다',
-                ),
-              ]}
-            ></mm-text-list>
+            <mm-paragraph>
+              사용자 행동으로 인한 오류와 시스템 오류를 구분합니다. 시스템 오류로 실패하면 단순히
+              "오류"라고 하지 않고 무엇이 잘못됐는지 설명해, 사용자가 다시 시도할 수 있게
+              안내합니다.
+            </mm-paragraph>
 
             <mm-list-item-group>
               <mm-list-item
@@ -584,7 +580,7 @@ const main = html`
           <mm-component-references .items=${selectionReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
-    </mm-content-section-list>
+    </mm-flex>
   </mm-main>
 `
 

@@ -197,7 +197,7 @@ const main = html`
       description="여러 컴포넌트가 이어져 하나의 흐름을 이루는 방식을 정합니다. 펼치고, 찾고, 모으는 흐름을 같은 규칙으로 조립하므로, 사용자는 어느 화면에서든 같은 방식으로 정보를 다룹니다."
     ></mm-page-header>
 
-    <mm-content-section-list>
+    <mm-flex direction="column" gap="4">
       <mm-tab-list value="disclosure" variant="pill" search-param="tab">
         <mm-tab value="disclosure">Disclosure</mm-tab>
         <mm-tab value="search">Search</mm-tab>
@@ -468,8 +468,8 @@ const main = html`
                   '검색 필드에 다시 입력하지 않고 이전 검색을 이어간다',
                 ),
                 rule(
-                  '최근 검색 내역은 항목마다 삭제 버튼을 둔다',
-                  '금방 바뀌는 정보라서 편집 모드 없이 개별 삭제만으로 충분하다',
+                  '최근 검색 내역은 전체 삭제를 제공하지 않는다',
+                  '사용자 데이터를 실수로 한꺼번에 날릴 수 있으므로 항목마다 삭제 버튼을 두고 하나씩만 지우게 한다',
                 ),
                 rule(
                   '수집할 검색 데이터와 지울 수 있는 범위를 함께 정한다',
@@ -478,7 +478,7 @@ const main = html`
               ]}
             ></mm-text-list>
             <mm-component-example>
-              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+              <mm-flex direction="column" gap="4" style="max-width: var(--layout-width-narrow)">
                 <mm-searchfield
                   id="recent-search-field"
                   placeholder="컴포넌트, 패턴을 검색하세요"
@@ -577,43 +577,9 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
-              <mm-top-bar nav="close" heading="컬렉션에 추가">
-                <mm-button slot="action" variant="ghost">완료</mm-button>
-              </mm-top-bar>
-              <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
-                <mm-menu-item-checkbox
-                  size="medium"
-                  value="euljiro"
-                  label="을지로 맛집"
-                  description="장소 12개"
-                  emoji="🍜"
-                  checked
-                ></mm-menu-item-checkbox>
-                <mm-menu-item-checkbox
-                  size="medium"
-                  value="seongsu"
-                  label="성수 카페"
-                  description="장소 8개"
-                  emoji="☕"
-                ></mm-menu-item-checkbox>
-              </mm-menu-item-checkbox-group>
-              <mm-add-button label="새 컬렉션 만들기"></mm-add-button>
-            </mm-flex>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="새 컬렉션">
-            <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
-              <mm-top-bar heading="새 컬렉션">
-                <mm-button slot="action" variant="ghost">완료</mm-button>
-              </mm-top-bar>
-              <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
-              <mm-toggle-button-group
-                .options=${visibilityOptions}
-                value="public"
-              ></mm-toggle-button-group>
-              <mm-add-button label="이 컬렉션에 멤버 추가"></mm-add-button>
-            </mm-flex>
             <mm-component-notice heading="새 컬렉션 화면의 규칙을 정한다">
               지금은 화면 구성만 전시한다. 이름과 공개 범위를 받는 기준, 멤버 추가로 이어지는 흐름의
               규칙은 아직 정하지 않았다
@@ -621,20 +587,59 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="멤버 추가">
-            <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
-              <mm-top-bar heading="멤버 추가">
-                <mm-button slot="action" variant="ghost">완료</mm-button>
-              </mm-top-bar>
-              <mm-textfield label="멤버 검색" placeholder="멤버 이름"></mm-textfield>
-            </mm-flex>
             <mm-component-notice heading="멤버 검색 결과와 선택 방식을 정한다">
               지금은 검색 필드만 전시한다. 검색 결과를 보여 주고 멤버를 고르는 단계는 아직 만들지
               않았다
             </mm-component-notice>
           </mm-content-section>
+
+          <mm-component-section heading="컴포넌트 예시" full-width>
+            <mm-grid columns="3" column-min-width="17rem" gap="8">
+              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+                <mm-top-bar nav="close" heading="컬렉션에 추가">
+                  <mm-button slot="action" variant="ghost">완료</mm-button>
+                </mm-top-bar>
+                <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
+                  <mm-menu-item-checkbox
+                    size="medium"
+                    value="euljiro"
+                    label="을지로 맛집"
+                    description="장소 12개"
+                    emoji="🍜"
+                    checked
+                  ></mm-menu-item-checkbox>
+                  <mm-menu-item-checkbox
+                    size="medium"
+                    value="seongsu"
+                    label="성수 카페"
+                    description="장소 8개"
+                    emoji="☕"
+                  ></mm-menu-item-checkbox>
+                </mm-menu-item-checkbox-group>
+                <mm-add-button label="새 컬렉션 만들기"></mm-add-button>
+              </mm-flex>
+              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+                <mm-top-bar heading="새 컬렉션">
+                  <mm-button slot="action" variant="ghost">완료</mm-button>
+                </mm-top-bar>
+                <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
+                <mm-toggle-button-group
+                  .options=${visibilityOptions}
+                  value="public"
+                ></mm-toggle-button-group>
+                <mm-add-button label="이 컬렉션에 멤버 추가"></mm-add-button>
+              </mm-flex>
+              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+                <mm-top-bar heading="멤버 추가">
+                  <mm-button slot="action" variant="ghost">완료</mm-button>
+                </mm-top-bar>
+                <mm-textfield label="멤버 검색" placeholder="멤버 이름"></mm-textfield>
+              </mm-flex>
+            </mm-grid>
+          </mm-component-section>
         </mm-content-section-list>
       </mm-tab-panel>
-    </mm-content-section-list>
+    </mm-flex>
   </mm-main>
 `
 

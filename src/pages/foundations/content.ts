@@ -13,7 +13,7 @@ const toIconLabel = (key: string) =>
   ICON_LABELS[key] ?? key.charAt(0) + key.slice(1).toLowerCase().replace(/_/g, ' ')
 
 const renderIconGrid = (entries: [string, string][]) => html`
-  <mm-grid columns="4" column-min-width="120px">
+  <mm-grid columns="6" column-min-width="120px">
     ${entries.map(
       ([label, name]) => html`
         <mm-flex direction="column" align-items="center" gap="2">
@@ -34,10 +34,6 @@ const ACTION_ROLE_DETAIL: Record<string, { description: string; usage: string[] 
   CLOSE: {
     description: '열려 있던 대화형 표면을 닫습니다.',
     usage: ['모달', '패널', '시트'],
-  },
-  CLEAR: {
-    description: '입력한 값을 지워 빈 상태로 되돌립니다.',
-    usage: ['search input'],
   },
 }
 
@@ -107,7 +103,7 @@ const main = html`
       description="텍스트의 이름과 어조, 아이콘의 뜻을 정합니다. 훑어 읽는 콘텐츠를 한 곳에서 정하므로, 사용자는 어디서든 같은 말과 기호를 같은 뜻으로 읽습니다."
     ></mm-page-header>
 
-    <mm-content-section-list>
+    <mm-flex direction="column" gap="4">
       <mm-tab-list value="writing" variant="pill" search-param="tab">
         <mm-tab value="writing">Writing</mm-tab>
         <mm-tab value="iconography">Iconography</mm-tab>
@@ -120,38 +116,35 @@ const main = html`
             설명을 정독하지 않고도 빠르게 훑어 뜻을 파악할 수 있습니다.
           </mm-paragraph>
           <mm-content-section heading-level="3" heading="원칙">
-            <mm-content-section heading-level="4" heading="Easy scanning">
-              <mm-paragraph>
-                사용자는 설명을 정독하지 않습니다. 텍스트를 짧게 유지하고 스캔 가능한 덩어리로
-                나눕니다. 간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만듭니다.
-              </mm-paragraph>
-              <mm-paragraph>
-                분류·속성·키워드처럼 나열되는 값은 문장으로 풀지 않고 tag로 끊어 보여, 훑는 것만으로
-                구분되게 합니다.
-              </mm-paragraph>
-            </mm-content-section>
+            <mm-feature-group columns="3">
+              <mm-feature
+                heading="Easy scanning"
+                description="사용자는 설명을 정독하지 않습니다. 텍스트를 짧게 유지하고 스캔 가능한 덩어리로 나눕니다. 간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만듭니다."
+              >
+                <mm-paragraph>
+                  분류·속성·키워드처럼 나열되는 값은 문장으로 풀지 않고 tag로 끊어 보여, 훑는
+                  것만으로 구분되게 합니다.
+                </mm-paragraph>
+              </mm-feature>
+              <mm-feature
+                heading="관점에 맞는 이름"
+                description="슬롯의 화자가 사용자인지 시스템인지에 따라 이름과 어조를 맞춥니다. 실행 레이블은 사용자 시점의 동사로 쓰고 줄여 표시하지 않습니다."
+              >
+                <mm-paragraph>
+                  레이블이 잘리면 말줄임표로 감추지 않고 문구를 다듬습니다. 툴의 자동 축약보다
+                  writing 가이드가 우선합니다.
+                </mm-paragraph>
+              </mm-feature>
+              <mm-feature
+                heading="작은 화면의 행갈이"
+                description="태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요. 글자 또는 단어의 수를 제한하고 개행 조건을 정의하세요."
+              ></mm-feature>
+            </mm-feature-group>
 
-            <mm-content-section heading-level="4" heading="관점에 맞는 이름">
-              <mm-paragraph>
-                슬롯의 화자가 사용자인지 시스템인지에 따라 이름과 어조를 맞춥니다. 실행 레이블은
-                사용자 시점의 동사로 쓰고 줄여 표시하지 않습니다.
-              </mm-paragraph>
-              <mm-paragraph>
-                레이블이 잘리면 말줄임표로 감추지 않고 문구를 다듬습니다. 툴의 자동 축약보다 writing
-                가이드가 우선합니다.
-              </mm-paragraph>
-            </mm-content-section>
-
-            <mm-content-section heading-level="4" heading="작은 화면의 행갈이">
-              <mm-paragraph>
-                태그라인은 작은 화면에서도 임팩트를 줄 수 있도록 작성 단계에서 행갈이를 고려하세요.
-                글자 또는 단어의 수를 제한하고 개행 조건을 정의하세요.
-              </mm-paragraph>
-              <mm-component-notice heading="제목 자르기를 허용할지 정한다">
-                레이블은 줄여 표시하지 않는 원칙이지만, 폴더블·워치처럼 화면이 점점 작아질 때
-                제목만은 잘라도 되는지 정하지 않았다
-              </mm-component-notice>
-            </mm-content-section>
+            <mm-component-notice heading="제목 자르기를 허용할지 정한다">
+              레이블은 줄여 표시하지 않는 원칙이지만, 폴더블·워치처럼 화면이 점점 작아질 때 제목만은
+              잘라도 되는지 정하지 않았다
+            </mm-component-notice>
 
             <mm-content-section heading-level="4" heading="주목이 필요한 콘텐츠">
               <mm-paragraph>
@@ -244,17 +237,17 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="쓰이는 아이콘">
             <mm-paragraph>
-              아이콘 이름 맵의 키가 역할이고, 값이 그 역할이 지금 참조하는 라이브러리 파일입니다.
-              역할은 이 맵 한 곳에서만 정의하고, 아이콘이 필요한 곳은 모두 이 맵을 거칩니다. 파일
-              이름을 코드에 직접 적거나 역할 목록을 따로 두지 않습니다. 여러 역할이 우연히 같은
-              파일을 써도 정리 대상이 아니며, 역할이 갈라지면 그 역할의 값만 바꿉니다. 역할이 없는
-              이모지나 문자 기호는 이 맵에 넣지 않고, 콘텐츠로서 icon 대신 emoji로 넘깁니다.
+              역할은 ${code('icon-names.ts')}의 ${code('ICON_CATALOG')} 한 곳에서만 정의합니다. 키가
+              역할이고 값이 그 역할이 지금 쓰는 iconoir 아이콘 이름이며, 아이콘이 필요한 곳은 이를
+              펼친 ${code('ICON_NAMES')}로 가져옵니다. 파일 이름을 코드에 직접 적지 않고, 여러
+              역할이 같은 파일을 써도 합치지 않으며 역할이 갈라지면 그 역할의 값만 바꿉니다. 역할이
+              없는 이모지나 문자 기호는 이 맵에 넣지 않고 ${code('emoji')}로 넘깁니다.
             </mm-paragraph>
             ${renderIconCatalog()}
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
-    </mm-content-section-list>
+    </mm-flex>
   </mm-main>
 `
 
