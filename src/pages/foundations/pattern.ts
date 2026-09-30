@@ -537,6 +537,10 @@ const main = html`
                 </mm-search-suggestion-group>
               </mm-flex>
             </mm-component-example>
+            <mm-component-notice heading="검색어 자동완성의 규칙을 정한다">
+              표에는 입력·제출 단계에 자동완성이 있지만 컴포넌트와 규칙은 아직 없다. 추천 검색어와
+              어떻게 나뉘는지, 키보드로 제안을 고르는 방식을 정하지 않았다
+            </mm-component-notice>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="검색 바 패턴">
@@ -564,6 +568,39 @@ const main = html`
                 </mm-flex>
               </mm-flex>
             </mm-component-example>
+            <mm-component-notice heading="검색을 빠져나가는 액션의 위치를 정한다">
+              두 플랫폼의 방식을 나란히 전시만 한다. 지금 전역 검색(${code('mm-navbar-search')})은
+              위에서 내려오는 sheet로 열려 sheet의 닫기 수단으로 빠져나간다. 화면 안에 놓이는 검색
+              바가 플랫폼을 따라 바뀔지 하나로 고정할지 정하지 않았다
+            </mm-component-notice>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="접근성">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    검색 영역은 ${code('role="search"')}로 감싼다
+                  `,
+                  '스크린리더 사용자가 랜드마크 이동으로 검색에 바로 닿는다',
+                ),
+                rule(
+                  '검색 필드에는 보이는 레이블이 없어도 이름을 준다',
+                  html`
+                    ${code('mm-searchfield')}는 ${code('placeholder')}를 입력 요소의
+                    ${code('aria-label')}로 옮기고, 지우기 버튼에도 이름을 붙인다
+                  `,
+                ),
+                rule(
+                  '추천·최근 검색어 묶음에는 묶음의 이름을 붙인다',
+                  html`
+                    추천 검색어는 ${code('aria-label')}로, 최근 검색어는 제목으로 이름을 준다. 삭제
+                    버튼은 어느 검색어를 지우는지 이름에 담는다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
           </mm-content-section>
           <mm-component-references .items=${searchReferences}></mm-component-references>
         </mm-content-section-list>

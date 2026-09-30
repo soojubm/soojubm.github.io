@@ -25,8 +25,13 @@ const renderIconGrid = (entries: [string, string][]) => html`
   </mm-grid>
 `
 
-/** 같은 파일(xmark)을 쓰더라도 역할마다 남겨 두는 항목의 설명과 쓰는 곳. */
-const ACTION_ROLE_DETAIL: Record<string, { description: string; usage: string[] }> = {
+/**
+ * 목록으로 전시하는 역할의 뜻. 같은 파일을 쓰는 역할(DISMISS·CLOSE 등)도 뜻이 다르면 따로 적고,
+ * 쓰는 곳이 뜻을 가르는 역할에만 usage를 붙인다.
+ */
+const ROLE_DETAIL: Record<string, { description: string; usage?: string[] }> = {
+  ADD: { description: '항목을 하나 더하거나 값을 하나 올립니다.' },
+  ADD_CIRCLE: { description: '새 항목을 추가하는 흐름을 시작합니다.' },
   DISMISS: {
     description: '사용자가 띄운 비필수 표면을 걷어냅니다.',
     usage: ['배너', '알림', '토스트'],
@@ -35,6 +40,42 @@ const ACTION_ROLE_DETAIL: Record<string, { description: string; usage: string[] 
     description: '열려 있던 대화형 표면을 닫습니다.',
     usage: ['모달', '패널', '시트'],
   },
+  COPY: { description: '내용을 클립보드에 복사합니다.' },
+  COPY_SUCCESS: { description: '복사가 끝났음을 복사 버튼 자리에서 잠깐 알립니다.' },
+  DELETE: { description: '항목을 삭제합니다.' },
+  FILTER: { description: '목록을 걸러 볼 조건을 엽니다.' },
+  IMPORT: { description: '파일이나 데이터를 가져옵니다.' },
+  LOG_OUT: { description: '계정에서 로그아웃합니다.' },
+  MORE_ACTIONS: { description: '항목에 걸린 추가 동작 메뉴를 엽니다.' },
+  SHOW_MORE: { description: '가려진 나머지 항목을 더 보여 줍니다.' },
+  REFRESH: { description: '최신 내용으로 다시 불러옵니다.' },
+  RETRY: { description: '실패한 작업을 다시 시도합니다.' },
+  SETTINGS: { description: '설정 화면을 엽니다.' },
+  SUBMIT: { description: '입력한 내용을 보냅니다.' },
+  SHARE: { description: '항목을 다른 곳으로 공유합니다.' },
+  CAMERA: { description: '사진을 찍거나 이미지를 첨부합니다.' },
+  HIDE: { description: '보이던 값을 가립니다.' },
+  VIEW: { description: '가려진 값을 보여 줍니다.' },
+  THUMBS_UP: { description: '응답이 좋았다고 평가합니다.' },
+  DISLIKE: { description: '응답이 좋지 않았다고 평가합니다.' },
+  BACK: { description: '이전 화면으로 돌아갑니다.' },
+  COMPASS: { description: '내비게이션 영역을 나타냅니다.' },
+  COLLAPSE: { description: '펼친 내용을 접습니다.' },
+  EXPAND: { description: '접힌 내용을 펼칩니다.' },
+  FORWARD: { description: '다음 화면으로 넘어갑니다.' },
+  MENU: { description: '내비게이션 메뉴를 엽니다.' },
+  OPEN_EXTERNAL: { description: '새 창이나 외부 사이트로 엽니다.' },
+  PREVIOUS: { description: '순서상 이전 항목으로 갑니다.' },
+  NEXT: { description: '순서상 다음 항목으로 갑니다.' },
+  SCROLL_TOP: { description: '페이지 맨 위로 올라갑니다.' },
+  CURRENT: { description: '내비게이션에서 지금 있는 위치를 나타냅니다.' },
+  ERROR: { description: '오류나 수정이 필요한 상태를 나타냅니다.' },
+  DONE: { description: '작업이 끝나 더 진행할 것이 없음을 나타냅니다.' },
+  INFO: { description: '참고할 보조 정보를 나타냅니다.' },
+  SUCCESS: { description: '작업이 성공했음을 나타냅니다.' },
+  WARNING: { description: '진행 전에 주의가 필요함을 나타냅니다.' },
+  FAILURE: { description: '데이터를 가져오지 못했음을 나타냅니다.' },
+  IDLE: { description: '아직 아무 요청도 하지 않은 대기 상태를 나타냅니다.' },
 }
 
 const renderUsage = (usage: string[]) => {
@@ -50,7 +91,7 @@ const renderUsage = (usage: string[]) => {
 }
 
 const renderRoleItem = ([key, name]: [string, string]) => {
-  const detail = ACTION_ROLE_DETAIL[key]
+  const detail = ROLE_DETAIL[key]
 
   return html`
     <mm-list-item
@@ -59,7 +100,7 @@ const renderRoleItem = ([key, name]: [string, string]) => {
       label=${key.toLowerCase().replace(/_/g, ' ')}
       description=${detail?.description ?? ''}
     >
-      ${detail ? renderUsage(detail.usage) : nothing}
+      ${detail?.usage ? renderUsage(detail.usage) : nothing}
     </mm-list-item>
   `
 }
@@ -114,6 +155,21 @@ const termRows = html`
       부연은 ${code('description')}으로 나눈다
     </td>
     <td>목록 행의 사람 이름, 설정 항목의 이름</td>
+  </tr>
+  <tr>
+    <th scope="row">Heading</th>
+    <td>구획·표면·메시지의 제목. 아래에 오는 내용을 한 구로 가리킨다</td>
+    <td>섹션 제목, 다이얼로그 제목</td>
+  </tr>
+  <tr>
+    <th scope="row">Placeholder</th>
+    <td>값을 입력하기 전 필드 안에 보이는 안내</td>
+    <td>"컴포넌트, 패턴을 검색하세요"</td>
+  </tr>
+  <tr>
+    <th scope="row">Validation text</th>
+    <td>입력값이 규칙을 어긴 이유를 필드 아래에서 알리는 문구</td>
+    <td>"이미 등록된 이메일입니다."</td>
   </tr>
   <tr>
     <th scope="row">Interaction Label</th>
@@ -173,6 +229,10 @@ const main = html`
                   ),
                 ]}
               ></mm-text-list>
+              <mm-component-notice heading="어조 규칙을 정한다">
+                화자에 따라 어조를 나눈다는 원칙만 있다. 시스템이 말하는 문구와 사용자 행동을
+                가리키는 문구를 각각 어떤 어미로 쓰는지 정하지 않았다
+              </mm-component-notice>
             </mm-content-section>
 
             <mm-content-section heading-level="4" heading="작은 화면의 행갈이">

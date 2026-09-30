@@ -93,6 +93,20 @@ const main = html`
                       <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
                     `,
                   ),
+                  rule(
+                    '접는 것은 훑어서 고르는 목록에만 쓴다',
+                    html`
+                      약관·경고·오류처럼 반드시 읽어야 하는 정보는 펼쳐 둔다. —
+                      <mm-link href="./pattern.html">Pattern</mm-link>
+                    `,
+                  ),
+                  rule(
+                    '하나의 아이콘에는 하나의 의미만 준다',
+                    html`
+                      뜻은 이름 맵 한 곳에서 정해, 어디서든 같은 기호가 같은 뜻으로 읽힌다. —
+                      <mm-link href="./content.html?tab=iconography">Content</mm-link>
+                    `,
+                  ),
                 ]}
               ></mm-text-list>
             </mm-content-section>

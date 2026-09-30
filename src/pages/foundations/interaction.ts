@@ -273,26 +273,53 @@ const main = html`
                 size="medium"
                 label="Hover"
                 description="포인터가 올라와 있다는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">:hover</mm-code>
+              </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.CUBE_SCAN}
                 size="medium"
                 label="Focus"
                 description="키보드가 지금 이 요소에 있다는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">:focus-visible</mm-code>
+              </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.MOUSE_BUTTON}
                 size="medium"
                 label="Active"
                 description="지금 누르고 있다는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">:active</mm-code>
+              </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.LOCK}
                 size="medium"
                 label="Disabled"
                 description="지금은 조작을 받지 않는다는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">disabled</mm-code>
+              </mm-list-item>
             </mm-list-item-group>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '포커스 링은 키보드로 옮겨 왔을 때 그린다',
+                  html`
+                    ${code(':focus-visible')}에 ${code('--interaction-focus-outline')}을 요소에서
+                    2px 띄워 그린다. 포인터로 누른 요소에는 링이 남지 않는다
+                  `,
+                ),
+                rule(
+                  '비활성 요소는 흐리게 표시하고 상태를 attribute로 알린다',
+                  html`
+                    불투명도를 절반으로 낮추고 커서를 not-allowed로 바꾼다. 네이티브 컨트롤은
+                    ${code('disabled')}, 그 밖의 역할은 ${code('aria-disabled')}로 알린다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
             <mm-component-notice heading="Hover 처리 규칙을 정한다">
               hover 값은 ${code('--interaction-hover-background-color')}·
               ${code('--interaction-hover-lift')} 토큰으로만 남아 있다. 어느 요소가 어느 처리를
@@ -308,31 +335,41 @@ const main = html`
                 size="medium"
                 label="Pressed"
                 description="그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">aria-pressed</mm-code>
+              </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.CHECK}
                 size="medium"
                 label="Checked"
                 description="컨트롤의 on/off 값이 켜져 있다는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">checked</mm-code>
+              </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.SELECTED}
                 size="medium"
                 label="Selected"
                 description="목록에서 고른 항목이라는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">aria-selected</mm-code>
+              </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.CURRENT}
                 size="medium"
                 label="Current"
                 description="내비게이션에서 지금 위치한 곳이라는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">aria-current</mm-code>
+              </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.WARNING}
                 size="medium"
                 label="Invalid"
                 description="입력값이 유효하지 않다는 표시입니다."
-              ></mm-list-item>
+              >
+                <mm-code slot="trailing">aria-invalid</mm-code>
+              </mm-list-item>
             </mm-list-item-group>
           </mm-content-section>
 
@@ -458,9 +495,26 @@ const main = html`
                 description="작업이 끝나 더 이상 진행할 것이 없음을 나타냅니다."
               ></mm-list-item>
             </mm-list-item-group>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '의미 상태는 톤과 함께 아이콘·텍스트로 알린다',
+                  html`
+                    색만으로는 상태가 전달되지 않는다. ${code('mm-notice')}·
+                    ${code('mm-task-status')}·${code('mm-tag')}가 같은 톤 이름을 쓰고, 아이콘은
+                    ${code('STATUS_ICONS')} 한 곳에서 가져온다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="데이터 상태">
+            <mm-paragraph>
+              데이터를 요청한 뒤 화면이 거치는 상태입니다. 상태마다 알리는 컴포넌트의 자리와 머무는
+              시간은 Feedback이 정합니다.
+            </mm-paragraph>
             <mm-list-item-group>
               <mm-list-item
                 icon=${ICON_NAMES.IDLE}
@@ -472,7 +526,7 @@ const main = html`
                 icon=${ICON_NAMES.REFRESH}
                 size="medium"
                 label="Pending"
-                description="데이터를 가져오는 중입니다. 스켈레톤이나 스피너를 노출합니다."
+                description="데이터를 가져오는 중입니다. mm-spinner로 진행 중임을 알립니다."
               ></mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.SUCCESS}
@@ -484,13 +538,13 @@ const main = html`
                 icon=${ICON_NAMES.FAILURE}
                 size="medium"
                 label="Rejected"
-                description="데이터를 가져오는 데 실패해 에러 화면을 노출합니다."
+                description="데이터를 가져오지 못했습니다. mm-result로 이유와 다시 시도를 제시합니다."
               ></mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.EMPTY}
                 size="medium"
                 label="Empty"
-                description="완료되었으나 데이터가 0건일 때 빈 화면을 노출합니다."
+                description="완료되었으나 데이터가 0건입니다. mm-result로 빈 상태와 다음 행동을 제시합니다."
               ></mm-list-item>
             </mm-list-item-group>
           </mm-content-section>
@@ -580,6 +634,15 @@ const main = html`
                 </mm-content-section>
               </mm-surface>
             </mm-grid>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '선택지가 5개 이하면 펼쳐 두고 6개부터 접는다',
+                  '펼쳐 두면 누르지 않고도 선택지를 한눈에 비교할 수 있다. 6개부터는 목록이 화면을 길게 차지해 주변 흐름을 밀어내므로 접는다',
+                ),
+              ]}
+            ></mm-text-list>
 
             <mm-table
               .rows=${selectionRows}
@@ -692,10 +755,25 @@ const main = html`
               variant="check"
               .texts=${[
                 rule(
-                  '화살표 키는 포커스를 옮기고, Space·Enter가 선택을 확정한다',
+                  '그룹은 Tab 한 번으로 들어가고 화살표 키로 항목 사이를 옮긴다',
                   html`
-                    ${code('mm-toggle-button-group')} · ${code('mm-filter-button-group')}이 이
-                    방식을 따른다
+                    Tab으로 들어오면 선택된 항목에 포커스가 놓이고, 끝 항목에서는 멈춘다.
+                    ${code('mm-toggle-button-group')} · ${code('mm-filter-button-group')} ·
+                    ${code('mm-menu-item-group')} · ${code('mm-select')}의 옵션 목록이
+                    ${code('RovingFocusController')}로 같은 방식을 쓴다
+                  `,
+                ),
+                rule(
+                  '버튼 그룹은 Space·Enter가 선택을 확정한다',
+                  html`
+                    화살표 키는 포커스만 옮긴다. ${code('mm-toggle-button-group')} ·
+                    ${code('mm-filter-button-group')}이 이 방식을 따른다
+                  `,
+                ),
+                rule(
+                  'radio 목록은 포커스를 옮기면 곧 선택된다',
+                  html`
+                    ${code('mm-menu-item-radio-group')}과 네이티브 radio는 이동이 선택이다
                   `,
                 ),
                 rule(

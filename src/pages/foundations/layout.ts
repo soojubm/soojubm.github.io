@@ -190,46 +190,87 @@ type PlacementType =
 // viewport overlay (sheet · dialog)
 type ViewportPlacementType = 'center' | Side`
 
+const anchoredDismissRows = html`
+  <tr>
+    <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
+    <td>${yes}</td>
+    <td>${yes}</td>
+    <td>내용이 ${code('close()')}를 호출할 때</td>
+    <td>트리거 곁에 잠깐 뜨는 보조 표면이라, 다른 곳을 누르면 곧바로 물러나게 한다</td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
+    <td>${yes}</td>
+    <td>${yes}</td>
+    <td>옵션을 골랐을 때</td>
+    <td>
+      값을 고르면 할 일이 끝나므로 고르는 즉시 닫는다. 좁은 화면에서는 sheet로 열려 sheet의 닫기
+      수단을 따른다
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
+    <td>${no}</td>
+    <td>${no}</td>
+    <td>포인터나 포커스가 트리거를 벗어날 때</td>
+    <td>트리거에 머무는 동안만 보이는 설명이라 열고 닫는 조작을 따로 두지 않는다</td>
+  </tr>
+`
+
 const layoutGroupRows = html`
   <tr>
     <th scope="row">${code('mm-button-group')}</th>
+    <td>없음</td>
     <td>가로로 줄바꿈하고, 세로 전환·정렬·폭 채움을 정할 수 있다</td>
     <td>${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-tag-group')}</th>
+    <td>없음</td>
     <td>가로로 줄바꿈한다</td>
     <td>${code('--space-1')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-keyword-tag-group')}</th>
+    <td>없음</td>
     <td>제목 태그와 키워드 태그를 ${code('mm-tag-group')}에 넣어 같은 규칙으로 놓는다</td>
     <td>${code('--space-1')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-avatar-group')}</th>
+    <td>없음</td>
     <td>아바타를 겹쳐 놓고 세 명을 넘으면 +N으로 묶으며, 옆에 레이블을 둔다</td>
     <td>${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-list-item-group')}</th>
+    <td>list, 항목은 listitem</td>
     <td>세로로 쌓고, ${code('gap')}을 0으로 두면 이어 붙는다</td>
     <td>${code('--space-3')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-group')}</th>
+    <td>menu</td>
     <td>세로로 쌓고, 소제목은 목록과 ${code('--space-1')} 간격으로 붙는다</td>
     <td>0 · large는 ${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-meta-item-group')}</th>
+    <td>group</td>
     <td>가로가 기본이며 세로 전환·줄바꿈·간격을 정할 수 있다</td>
     <td>기본 ${code('--space-4')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-paragraph-group')}</th>
+    <td>없음</td>
     <td>세로로 쌓는다</td>
     <td>${code('--space-4')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-search-suggestion-group')}</th>
+    <td>group</td>
+    <td>한 줄에 두고 넘치면 가로로 스크롤한다</td>
+    <td>${code('--space-2')}</td>
   </tr>
 `
 
@@ -237,42 +278,49 @@ const selectionGroupRows = html`
   <tr>
     <th scope="row">${code('mm-radio-group')}</th>
     <td>Single</td>
+    <td>fieldset</td>
     <td>세로로 쌓는다</td>
     <td>${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-checkbox-group')}</th>
     <td>Multiple</td>
+    <td>fieldset</td>
     <td>세로로 쌓는다</td>
     <td>${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-radio-card-group')}</th>
     <td>Single</td>
+    <td>fieldset</td>
     <td>카드를 세로로 쌓는다</td>
     <td>${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-toggle-button-group')}</th>
     <td>Single</td>
+    <td>group</td>
     <td>버튼을 가로로 이어 붙인다</td>
     <td>0</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-filter-button-group')}</th>
     <td>Single · Multiple</td>
+    <td>group</td>
     <td>가로로 줄바꿈한다</td>
     <td>${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-radio-group')}</th>
     <td>Single</td>
+    <td>radiogroup</td>
     <td>${code('mm-menu-item-group')}으로 세로로 쌓는다</td>
     <td>0 · large는 ${code('--space-2')}</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
     <td>Multiple</td>
+    <td>group</td>
     <td>${code('mm-menu-item-group')}으로 세로로 쌓는다</td>
     <td>0 · large는 ${code('--space-2')}</td>
   </tr>
@@ -730,9 +778,10 @@ const main = html`
               </mm-paragraph>
               <mm-table
                 .rows=${layoutGroupRows}
-                caption="배치 그룹의 배치 방식과 항목 간격"
+                caption="배치 그룹의 role·배치 방식·항목 간격"
                 .columns=${[
-                  { label: '컴포넌트', width: '220px' },
+                  { label: '컴포넌트', width: '240px' },
+                  { label: 'Role', width: '160px' },
                   { label: '배치' },
                   { label: '간격', width: '120px' },
                 ]}
@@ -755,10 +804,11 @@ const main = html`
               </mm-paragraph>
               <mm-table
                 .rows=${selectionGroupRows}
-                caption="선택 그룹의 선택 개수·배치 방식·항목 간격"
+                caption="선택 그룹의 선택 개수·role·배치 방식·항목 간격"
                 .columns=${[
                   { label: '컴포넌트', width: '260px' },
                   { label: '선택', width: '140px' },
+                  { label: 'Role', width: '120px' },
                   { label: '배치' },
                   { label: '간격', width: '120px' },
                 ]}
@@ -989,6 +1039,17 @@ const main = html`
                   { label: '배경 클릭' },
                   { label: 'ESC' },
                   { label: '닫기 아이콘' },
+                  { label: '이유' },
+                ]}
+              ></mm-table>
+              <mm-table
+                .rows=${anchoredDismissRows}
+                caption="anchored 표면의 닫기 수단 비교"
+                .columns=${[
+                  { label: 'UI' },
+                  { label: '바깥 클릭' },
+                  { label: 'ESC' },
+                  { label: '그 밖의 닫힘' },
                   { label: '이유' },
                 ]}
               ></mm-table>
