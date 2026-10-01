@@ -327,7 +327,7 @@ const main = html`
             ]}
           ></mm-text-list>
 
-          <mm-content-section heading-level="3" heading="페이지 설명">
+          <mm-content-section heading-level="3" heading="컴포넌트 페이지 디스크립션 작성 가이드">
             <mm-text-list
               variant="check"
               .texts=${[

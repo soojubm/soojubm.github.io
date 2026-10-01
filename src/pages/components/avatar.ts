@@ -102,13 +102,15 @@ const main = html`
               </mm-avatar>
               <mm-avatar size="40"></mm-avatar>
             </mm-flex>
-            <mm-paragraph>
-              src가 없으면 슬롯의 이니셜·이모지를, 슬롯도 비어 있으면 기본 아이콘을 표시합니다.
-            </mm-paragraph>
-            <mm-paragraph>
-              이모지는 슬롯 요소에 글자 크기를 직접 줍니다. 32·48·80은 아바타가 글자 크기를 정하지만
-              기본인 40은 정하지 않아 주변 본문 크기를 물려받습니다.
-            </mm-paragraph>
+            <mm-paragraph-group>
+              <mm-paragraph>
+                src가 없으면 슬롯의 이니셜·이모지를, 슬롯도 비어 있으면 기본 아이콘을 표시합니다.
+              </mm-paragraph>
+              <mm-paragraph>
+                이모지는 슬롯 요소에 글자 크기를 직접 줍니다. 32·48·80은 아바타가 글자 크기를
+                정하지만 기본인 40은 정하지 않아 주변 본문 크기를 물려받습니다.
+              </mm-paragraph>
+            </mm-paragraph-group>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>

@@ -193,10 +193,6 @@ const main = html`
 
       <mm-tab-panel value="writing">
         <mm-content-section-list>
-          <mm-paragraph>
-            텍스트 슬롯은 관점에 따라 이름과 어조를 나눕니다. 문구를 짧게 끊어 쓰므로 사용자는
-            설명을 정독하지 않고도 빠르게 훑어 뜻을 파악할 수 있습니다.
-          </mm-paragraph>
           <mm-content-section heading-level="3" heading="훑어 읽기">
             <mm-text-list
               variant="check"
@@ -218,18 +214,18 @@ const main = html`
               variant="check"
               .texts=${[
                 rule(
-                  '슬롯의 화자에 따라 이름과 어조를 맞춘다',
-                  '화자가 사용자인지 시스템인지로 나눈다. 실행 레이블은 사용자 시점의 동사로 쓴다',
+                  '문구를 말하는 쪽에 따라 이름과 어조를 맞춘다',
+                  '시스템이 안내하는 문구인지, 사용자가 누르는 행동인지로 나눈다. 실행 레이블은 사용자 시점의 동사로 쓴다',
                 ),
                 rule(
-                  '레이블이 잘리면 문구를 다듬는다',
-                  '말줄임표로 감추거나 줄여 표시하지 않는다. 툴의 자동 축약보다 writing 가이드가 우선한다',
+                  '레이블이 잘리면 말줄임표 대신 문구를 다시 쓴다',
+                  '말줄임표로 감추거나 글자를 줄여 표시하지 않고, 더 짧은 문구로 고쳐 전체가 보이게 한다',
                 ),
               ]}
             ></mm-text-list>
             <mm-component-notice heading="어조 규칙을 정한다">
-              화자에 따라 어조를 나눈다는 원칙만 있다. 시스템이 말하는 문구와 사용자 행동을 가리키는
-              문구를 각각 어떤 어미로 쓰는지 정하지 않았다
+              말하는 쪽에 따라 어조를 나눈다는 원칙만 있다. 시스템이 말하는 문구와 사용자 행동을
+              가리키는 문구를 각각 어떤 어미로 쓰는지 정하지 않았다
             </mm-component-notice>
           </mm-content-section>
 
@@ -243,9 +239,9 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <mm-component-notice heading="제목 자르기를 허용할지 정한다">
-              레이블은 줄여 표시하지 않는 원칙이지만, 폴더블·워치처럼 화면이 점점 작아질 때 제목만은
-              잘라도 되는지 정하지 않았다
+            <mm-component-notice heading="잘린 제목의 전체를 보여주는 방법을 정한다">
+              폴더블·워치처럼 화면이 점점 작아져 제목이 잘릴 수 있다. 자를지 여부보다, 잘렸을 때
+              사용자가 전체 제목을 확인하는 방법을 정하지 않았다
             </mm-component-notice>
           </mm-content-section>
 

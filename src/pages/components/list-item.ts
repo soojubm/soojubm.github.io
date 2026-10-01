@@ -99,15 +99,17 @@ const main = html`
                 avatar-src="/src/images/soojubm.png"
               ></mm-list-item>
             </mm-list-item-group>
-            <mm-paragraph>
-              small은 한 줄만 그리는 행이라 description을 받아도 그리지 않습니다. 설명이 필요하면
-              medium 이상을 씁니다.
-            </mm-paragraph>
-            <mm-paragraph>
-              행 전체가 눌리는 목록을 촘촘히 늘어놓을 때는 그룹의
-              <mm-code>size="small"</mm-code>
-              로 행 사이 간격을 없앱니다. hover 채움이 행의 경계를 대신 그립니다.
-            </mm-paragraph>
+            <mm-paragraph-group>
+              <mm-paragraph>
+                small은 한 줄만 그리는 행이라 description을 받아도 그리지 않습니다. 설명이 필요하면
+                medium 이상을 씁니다.
+              </mm-paragraph>
+              <mm-paragraph>
+                행 전체가 눌리는 목록을 촘촘히 늘어놓을 때는 그룹의
+                <mm-code>size="small"</mm-code>
+                로 행 사이 간격을 없앱니다. hover 채움이 행의 경계를 대신 그립니다.
+              </mm-paragraph>
+            </mm-paragraph-group>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>

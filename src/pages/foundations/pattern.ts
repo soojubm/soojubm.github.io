@@ -10,23 +10,8 @@ import '@/components/domains/faq'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-notice'
-import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
+import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
-
-const disclosureReferences: ComponentReferenceItemData[] = [
-  {
-    href: 'https://www.w3.org/WAI/ARIA/apg/patterns/accordion/',
-    label: 'WAI-ARIA APG - Accordion Pattern',
-  },
-  {
-    href: 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/',
-    label: 'WAI-ARIA APG - Disclosure Pattern',
-  },
-  {
-    href: 'https://nuli.navercorp.com/community/article/1132889',
-    label: 'NULI - Web Accessibility',
-  },
-]
 
 const expandedComponentRows = html`
   <tr>
@@ -75,21 +60,6 @@ const expandedComponentRows = html`
     <td>없음</td>
   </tr>
 `
-
-const searchReferences: ComponentReferenceItemData[] = [
-  {
-    href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
-    label: 'Apple Developer - UISearchBar',
-  },
-  {
-    href: 'https://material.io/design/navigation/search.html',
-    label: 'Material Design - Search',
-  },
-  {
-    href: 'https://developer.android.com/reference/android/widget/SearchView',
-    label: 'Android - SearchView',
-  },
-]
 
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
@@ -209,17 +179,22 @@ const main = html`
 
       <mm-tab-panel value="disclosure">
         <mm-content-section-list>
-          <mm-paragraph>
-            부차적인 정보를 접어 두었다가 트리거를 눌렀을 때만 펼칩니다. 첫 화면이 제목만으로 짧게
-            유지되므로, 사용자는 긴 정보 더미를 훑고 관심 있는 것만 골라 읽습니다.
-          </mm-paragraph>
-          <mm-paragraph>
-            트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
-            트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
-            유지합니다. 트리거 옆이나 화면 위로 떠서 덮는 표면은
-            <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
-            문서의 Overlay 탭이 다룹니다.
-          </mm-paragraph>
+          <mm-paragraph-group>
+            <mm-paragraph>
+              부차적인 정보를 접어 두었다가 트리거를 눌렀을 때만 펼칩니다. 첫 화면이 제목만으로 짧게
+              유지되므로, 사용자는 긴 정보 더미를 훑고 관심 있는 것만 골라 읽습니다.
+            </mm-paragraph>
+            <mm-paragraph>
+              트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
+              트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
+              유지합니다.
+            </mm-paragraph>
+            <mm-link-prompt
+              message="트리거 옆이나 화면 위로 떠서 덮는 표면이 궁금하신가요?"
+              link-label="Overlay"
+              href="./layout.html?tab=overlay"
+            ></mm-link-prompt>
+          </mm-paragraph-group>
 
           <mm-content-section heading-level="3" heading="접는 기준">
             <mm-text-list
@@ -230,7 +205,7 @@ const main = html`
                   '자주 묻는 질문, 커리큘럼, 필터처럼 항목이 많고 사용자가 그중 일부만 읽는 콘텐츠가 여기에 해당한다',
                 ),
                 rule(
-                  '반드시 읽어야 하는 정보는 disclosure를 쓰지 않는다',
+                  '반드시 읽어야 하는 정보는 접은 상태로 제공하지 않는다',
                   '약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보가 여기에 해당한다',
                 ),
                 rule(
@@ -347,8 +322,6 @@ const main = html`
               </div>
             </mm-flex>
           </mm-component-section>
-
-          <mm-component-references .items=${disclosureReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -600,7 +573,6 @@ const main = html`
               ]}
             ></mm-text-list>
           </mm-content-section>
-          <mm-component-references .items=${searchReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
 

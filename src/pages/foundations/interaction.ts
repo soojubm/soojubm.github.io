@@ -3,12 +3,7 @@ import { html } from 'lit'
 
 import { ICON_NAMES, STATUS_ICONS } from '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
-import {
-  code,
-  codeList,
-  rule,
-  type ComponentReferenceItemData,
-} from '@/components/domains/component'
+import { code, codeList, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 /**
@@ -35,17 +30,6 @@ const interactionSwatches = [
   'background: var(--interaction-selected-background-color)',
   'background: var(--interaction-selected-foreground-color)',
   'border: var(--border-width) solid var(--interaction-selected-border-color)',
-]
-
-const interactionReferences: ComponentReferenceItemData[] = [
-  {
-    href: 'https://m3.material.io/foundations/interaction/states/state-layers',
-    label: 'MD3 - State Layers',
-  },
-  {
-    href: 'https://spectrum.adobe.com/page/states/',
-    label: 'Adobe Spectrum - States',
-  },
 ]
 
 const currentComponentRows = html`
@@ -107,21 +91,6 @@ const feedbackRows = html`
     <td>진행률을 알 수 없는 작업의 시도 횟수·경과 시간을 알릴 때</td>
   </tr>
 `
-
-const selectionReferences: ComponentReferenceItemData[] = [
-  {
-    href: 'https://m3.material.io/foundations/interaction/selection',
-    label: 'MD3 - Selection',
-  },
-  {
-    href: 'https://designsystem.maersk.com/guidelines/selection-components/',
-    label: 'Maersk - Selection components',
-  },
-  {
-    href: 'https://design.basis.com/patterns/selection-ui',
-    label: 'Basis - Selection UI',
-  },
-]
 
 const optionItemCode = `type OptionItem = {
   value: string
@@ -586,14 +555,12 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <mm-paragraph>
-              ${code('mm-toast')}의 표시 시간과 표면별 닫기 수단은
-              <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
-              문서 Overlay 탭의 Dismiss가 정합니다.
-            </mm-paragraph>
+            <mm-link-prompt
+              message="표시 시간과 표면별 닫기 수단이 궁금하신가요?"
+              link-label="Dismiss"
+              href="./layout.html?tab=overlay"
+            ></mm-link-prompt>
           </mm-content-section>
-
-          <mm-component-references .items=${interactionReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -712,15 +679,17 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Selected">
-            <mm-paragraph>
-              컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로
-              고른 값을 나타내며, 강조 토큰은 Checked와 같습니다.
-            </mm-paragraph>
-            <mm-paragraph>
-              체크 표시는 ${code('mm-selected-indicator')}가 ${code('selected')}를 받아 체크 노출로
-              반영하는 표시만 맡고, 선택 상호작용과 ${code('aria-selected')}는 옵션이 소유합니다.
-              고르지 않은 행에도 자리를 남겨 행마다 트레일링 폭이 같습니다.
-            </mm-paragraph>
+            <mm-paragraph-group>
+              <mm-paragraph>
+                컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로
+                고른 값을 나타내며, 강조 토큰은 Checked와 같습니다.
+              </mm-paragraph>
+              <mm-paragraph>
+                체크 표시는 ${code('mm-selected-indicator')}가 ${code('selected')}를 받아 체크
+                노출로 반영하는 표시만 맡고, 선택 상호작용과 ${code('aria-selected')}는 옵션이
+                소유합니다. 고르지 않은 행에도 자리를 남겨 행마다 트레일링 폭이 같습니다.
+              </mm-paragraph>
+            </mm-paragraph-group>
             <mm-surface variant="outlined" radius="large">
               <mm-flex gap="6">
                 <mm-flex direction="column" gap="2" align-items="center">
@@ -803,8 +772,6 @@ const main = html`
               ]}
             ></mm-text-list>
           </mm-content-section>
-
-          <mm-component-references .items=${selectionReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
     </mm-flex>
