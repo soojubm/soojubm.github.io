@@ -196,7 +196,7 @@ const main = html`
 
       <mm-tab-panel value="state">
         <mm-content-section-list>
-          <mm-content-section heading-level="3" heading="상호작용 기표">
+          <mm-content-section heading-level="3" heading="상호작용 단서">
             <mm-paragraph>
               클릭 가능성은 형태로 드러냅니다. 이 단서는 장식이나 일반 강조로 쓰지 않습니다.
             </mm-paragraph>
@@ -687,7 +687,7 @@ const main = html`
               <mm-paragraph>
                 체크 표시는 ${code('mm-selected-indicator')}가 ${code('selected')}를 받아 체크
                 노출로 반영하는 표시만 맡고, 선택 상호작용과 ${code('aria-selected')}는 옵션이
-                소유합니다. 고르지 않은 행에도 자리를 남겨 행마다 트레일링 폭이 같습니다.
+                소유합니다. 고르지 않은 행에도 자리를 남겨 행마다 끝 자리 폭이 같습니다.
               </mm-paragraph>
             </mm-paragraph-group>
             <mm-surface variant="outlined" radius="large">

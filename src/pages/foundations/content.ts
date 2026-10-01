@@ -269,7 +269,7 @@ const main = html`
 
             <mm-table
               .rows=${termRows}
-              caption="텍스트 슬롯 용어의 뜻과 예"
+              caption="텍스트 용어의 뜻과 예"
               .columns=${[
                 { label: '용어', width: '150px' },
                 { label: '뜻', width: '340px' },
@@ -282,11 +282,6 @@ const main = html`
 
       <mm-tab-panel value="iconography">
         <mm-content-section-list>
-          <mm-paragraph>
-            아이콘은 텍스트와 함께 뜻을 전달하는 콘텐츠입니다. 하나의 아이콘에는 하나의 의미만 주고
-            그 뜻을 이름 맵 한 곳에서 정하므로, 사용자는 어디서든 같은 기호를 같은 뜻으로 읽을 수
-            있습니다.
-          </mm-paragraph>
           <mm-content-section heading-level="3" heading="원칙">
             <mm-paragraph>
               아이콘은 장식으로 쓰지 않고 레이블을 보완하거나, 좁은 공간에서 레이블을 대신하거나,

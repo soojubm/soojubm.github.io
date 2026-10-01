@@ -51,7 +51,7 @@ const expandedComponentRows = html`
   </tr>
   <tr>
     <th scope="row">${code('mm-popover')}</th>
-    <td>앵커된 패널</td>
+    <td>트리거 옆에 붙는 패널</td>
     <td>트리거를 넣는 쪽이 정한다</td>
   </tr>
   <tr>
@@ -216,7 +216,7 @@ const main = html`
             ></mm-text-list>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="펼침 기표">
+          <mm-content-section heading-level="3" heading="펼침 단서">
             <mm-text-list
               variant="check"
               .texts=${[
@@ -249,16 +249,16 @@ const main = html`
             </mm-surface>
             <mm-table
               .rows=${expandedComponentRows}
-              caption="Expanded 컴포넌트와 펼치는 대상, 펼침을 알리는 기표"
+              caption="Expanded 컴포넌트와 펼치는 대상, 펼침을 알리는 단서"
               .columns=${[
                 { label: '컴포넌트', width: '220px' },
                 { label: '펼치는 대상' },
-                { label: '펼침 기표', width: '220px' },
+                { label: '펼침 단서', width: '220px' },
               ]}
             ></mm-table>
-            <mm-component-notice heading="mm-chat-source 트리거의 펼침 기표를 정한다">
-              도메인 이름이 레이블인 텍스트 트리거지만 펼침 기표가 없다.
-              ${code('mm-expand-indicator')}를 붙일지, 출처 칩은 기표 없이 둘지 정하지 않았다
+            <mm-component-notice heading="mm-chat-source 트리거의 펼침 단서를 정한다">
+              도메인 이름이 레이블인 텍스트 트리거지만 펼침 단서가 없다.
+              ${code('mm-expand-indicator')}를 붙일지, 출처 칩은 단서 없이 둘지 정하지 않았다
             </mm-component-notice>
           </mm-content-section>
 

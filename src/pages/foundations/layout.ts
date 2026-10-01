@@ -506,10 +506,10 @@ const main = html`
           <mm-paragraph>Section 컴포넌트: ${codeList(SECTION_COMPONENTS)}</mm-paragraph>
 
           <mm-paragraph>
-            Section 컴포넌트는 정해진 조립을 이름으로 감싼 시멘틱 표면으로, 제목 heading 요소와 본문
-            슬롯을 묶습니다. 같은 제목·설명 묶음이라도 본문 슬롯 없이 텍스트 한 쌍의 간격만 소유하는
-            ${code('mm-text-block')}은 이 계층이 아니라 상위 컴포넌트의 내부 부품이며, 문서 섹션으로
-            세울 때는 ${code('mm-content-section')}을 씁니다.
+            Section 컴포넌트는 제목 heading 요소와 본문을 한 덩어리로 묶어 이름을 붙인
+            컴포넌트입니다. 본문 없이 제목·설명 한 쌍의 간격만 소유하는 ${code('mm-text-block')}은
+            Section이 아니라 상위 컴포넌트의 내부 부품이며, 문서 섹션으로 세울 때는
+            ${code('mm-content-section')}을 씁니다.
           </mm-paragraph>
 
           <mm-paragraph>
@@ -745,12 +745,12 @@ const main = html`
             variant="check"
             .texts=${[
               rule(
-                '동종 항목이 여럿이면 계열 그룹으로 묶는다',
-                '컨테이너에서 role과 간격을 직접 재현하지 않고 그룹이 소유하게 한다. 항목이 하나뿐이면 그룹으로 감싸지 않고 단일 엘리먼트를 그대로 둔다',
+                '같은 종류의 항목이 여럿이면 계열 그룹으로 묶는다',
+                '컨테이너에서 role과 간격을 직접 만들지 않고 그룹이 소유하게 한다. 항목이 하나뿐이면 그룹으로 감싸지 않고 단일 엘리먼트를 그대로 둔다',
               ),
               rule(
                 html`
-                  계열 그룹이 없는 이질 항목은 ${code('mm-flex')}로 배치한다
+                  계열 그룹이 없는 서로 다른 종류의 항목은 ${code('mm-flex')}로 배치한다
                 `,
                 html`
                   ${code('mm-flex')}는 group 계층 밖에서 배치만 돕는 유틸리티다

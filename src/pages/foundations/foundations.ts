@@ -116,7 +116,7 @@ const main = html`
                   rule(
                     '상호작용 가능성은 형태로 드러낸다',
                     html`
-                      색·밑줄·표면 같은 기표는 장식이나 일반 강조로 쓰지 않는다. —
+                      색·밑줄·표면 같은 단서는 장식이나 일반 강조로 쓰지 않는다. —
                       <mm-link href="./interaction.html">Interaction</mm-link>
                     `,
                   ),
@@ -137,7 +137,7 @@ const main = html`
                     `,
                   ),
                   rule(
-                    '동종 항목은 계열 그룹 컴포넌트로 묶는다',
+                    '같은 종류의 항목은 계열 그룹 컴포넌트로 묶는다',
                     html`
                       역할·간격·정렬은 그룹이 소유한다. —
                       <mm-link href="./layout.html?tab=group">Layout</mm-link>
