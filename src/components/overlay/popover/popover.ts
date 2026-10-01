@@ -7,6 +7,7 @@ import {
   type OverlayPlacement,
 } from '@/components/overlay/overlay.styles'
 import '@/components/common'
+import { AnchorController } from '@/controllers/anchor-controller'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { EscapeKeyController } from '@/controllers/escape-key-controller'
 import { OutsideClickController } from '@/controllers/outside-click-controller'
@@ -53,6 +54,16 @@ export class Popover extends withOpenState(LitElement) {
     getSafeElements: () => [this.anchorElement],
   })
   private escapeKey = new EscapeKeyController(this)
+  private anchorPosition = new AnchorController(this, {
+    getAnchor: () => this.anchorElement,
+    isOpen: () => this.open,
+    variables: {
+      left: '--popover-anchor-left',
+      top: '--popover-anchor-top',
+      width: '--popover-anchor-width',
+      height: '--popover-anchor-height',
+    },
+  })
 
   render() {
     return html`
@@ -69,19 +80,14 @@ export class Popover extends withOpenState(LitElement) {
     // 열릴 때 목록이 없는 내용은 표면 자체가 포커스를 받을 수 있게 하되, Tab 순서에는 넣지 않는다.
     if (!this.hasAttribute('tabindex')) this.tabIndex = -1
     this.addEventListener('keydown', this.handleKeydown)
-    window.addEventListener('scroll', this.handleViewportChange, { capture: true, passive: true })
-    window.addEventListener('resize', this.handleViewportChange)
   }
 
   disconnectedCallback() {
     this.removeEventListener('keydown', this.handleKeydown)
-    window.removeEventListener('scroll', this.handleViewportChange, { capture: true })
-    window.removeEventListener('resize', this.handleViewportChange)
     super.disconnectedCallback()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
-    if (changedProperties.has('open') || changedProperties.has('anchor')) this.measureAnchor()
     if (changedProperties.get('open') === undefined) return
 
     if (this.open) {
@@ -96,9 +102,6 @@ export class Popover extends withOpenState(LitElement) {
     return this.anchor ?? this.disclosure.trigger
   }
 
-  private handleViewportChange = () => {
-    this.measureAnchor()
-  }
   // portal로 문서 끝에 놓여 Tab으로 밖에 나가면 엉뚱한 곳에 닿으므로, 포커스가 표면을 벗어나면 닫고 트리거로 돌려보낸다.
   // 포커스는 Tab 처리가 끝난 뒤에 옮겨 가므로 한 틱 뒤에 판단한다.
   private handleKeydown = (event: KeyboardEvent) => {
@@ -110,21 +113,6 @@ export class Popover extends withOpenState(LitElement) {
       this.close()
       this.returnFocus()
     })
-  }
-
-  // 놓이는 자리는 placement가 CSS에서 정하고, 여기서는 기준 요소의 화면 좌표만 알린다.
-  private measureAnchor() {
-    // 닫힌 popover는 scroll·resize마다 기준 요소를 찾지 않도록 열림부터 확인한다.
-    if (!this.open) return
-
-    const anchor = this.anchorElement
-    if (!anchor) return
-
-    const { left, top, width, height } = anchor.getBoundingClientRect()
-    this.style.setProperty('--popover-anchor-left', `${left}px`)
-    this.style.setProperty('--popover-anchor-top', `${top}px`)
-    this.style.setProperty('--popover-anchor-width', `${width}px`)
-    this.style.setProperty('--popover-anchor-height', `${height}px`)
   }
 
   // 열리면 포커스를 표면 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.
