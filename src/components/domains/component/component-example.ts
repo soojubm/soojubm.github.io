@@ -6,6 +6,7 @@ import { componentExampleStyles } from '@/components/domains/component/component
 @customElement('mm-component-example')
 export class ComponentExample extends LitElement {
   static styles = componentExampleStyles
+  @property({ type: String, reflect: true }) width: 'narrow' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   render() {

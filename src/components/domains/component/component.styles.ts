@@ -1,6 +1,11 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
 
 import { MEDIA } from '@/constants'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
+
+const exampleWidthTokens: AttributeTokens<'narrow'> = {
+  narrow: { '--component-content-max-width': 'var(--layout-width-narrow)' },
+}
 
 export const componentContentFrameStyles = css`
   /* 프레임 안 콘텐츠는 폭이 들쭉날쭉하지 않도록 좁은 폭을 기본으로 두고, 넓어야 하는 시연만 full-width로 푼다. */
@@ -51,6 +56,8 @@ export const componentExampleStyles = [
     :host {
       display: block;
     }
+
+    ${unsafeCSS(buildAttributeRules('width', exampleWidthTokens))}
 
     .component-example {
       --component-content-frame-margin: 0 0 var(--space-4)

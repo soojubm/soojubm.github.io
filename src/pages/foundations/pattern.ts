@@ -382,11 +382,10 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <mm-component-example>
+            <mm-component-example width="narrow">
               <mm-searchfield
                 value="버튼"
                 placeholder="컴포넌트, 패턴을 검색하세요"
-                style="max-width: var(--layout-width-narrow)"
               ></mm-searchfield>
             </mm-component-example>
           </mm-content-section>
@@ -454,8 +453,8 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <mm-component-example>
-              <mm-flex direction="column" gap="4" style="max-width: var(--layout-width-narrow)">
+            <mm-component-example width="narrow">
+              <mm-flex direction="column" gap="4">
                 <mm-searchfield
                   id="recent-search-field"
                   placeholder="컴포넌트, 패턴을 검색하세요"
@@ -483,8 +482,8 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <mm-component-example>
-              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+            <mm-component-example width="narrow">
+              <mm-flex direction="column" gap="3">
                 <mm-searchfield
                   id="suggestion-search-field"
                   placeholder="컴포넌트, 패턴을 검색하세요"
@@ -512,8 +511,8 @@ const main = html`
               검색 바는 ${code('mm-searchfield')} 옆에 검색을 빠져나가는 액션을 둡니다. iOS는 필드
               뒤에 취소 버튼을, Android는 필드 앞에 뒤로 버튼을 둡니다.
             </mm-paragraph>
-            <mm-component-example>
-              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+            <mm-component-example width="narrow">
+              <mm-flex direction="column" gap="3">
                 <mm-flex align-items="center" gap="2">
                   <mm-searchfield
                     size="small"
