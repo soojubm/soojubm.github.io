@@ -16,7 +16,7 @@ export class Footer extends LitElement {
      스크린리더가 "저작권"으로 그대로 읽는다. role=img로 감싸면 오히려 읽기가 나빠진다. */
   render() {
     return html`
-      <footer class="footer js-observer" id="footer" role="contentinfo">
+      <footer class="footer" id="footer" role="contentinfo">
         <figure hidden></figure>
         <mm-user-snippet
           name="수줍이"

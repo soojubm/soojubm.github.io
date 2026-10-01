@@ -23,6 +23,3 @@ export const MEDIA = {
 
 export const THEME_STORAGE_KEY = 'theme'
 export const LARGE_TEXT_STORAGE_KEY = 'large-text'
-
-/** IntersectionObserver가 노출된 요소에 붙이는 전역 클래스. */
-export const ANIMATED_CLASSNAME = 'is-observed'

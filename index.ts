@@ -1,20 +1,17 @@
 import './src/components'
 
 import { applyLargeText } from './src/utils/large-text'
-import { scrollAnimation, stopAnimation } from './src/utils/scroll'
 import { applyTheme } from './src/utils/theme'
 
 const WINDOWS_FONT_FAMILY = "'Alan Sans', 'Pretendard', sans-serif"
 
 document.addEventListener('DOMContentLoaded', initializePage)
-stopAnimation()
 
 function initializePage() {
   applyTheme()
   applyLargeText()
   applyWindowsFont()
   updateDocumentTitle()
-  initializeScrollEffects()
 }
 
 function applyWindowsFont() {
@@ -26,8 +23,4 @@ function applyWindowsFont() {
 function updateDocumentTitle() {
   const path = window.location.pathname.substring(1)
   document.title = `이경수 ${path}`
-}
-
-function initializeScrollEffects() {
-  scrollAnimation({ selector: '.js-observer' })
 }
