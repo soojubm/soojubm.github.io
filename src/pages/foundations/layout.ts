@@ -3,7 +3,6 @@ import { html } from 'lit'
 import './layout.css'
 
 import '@/components/domains/component/component-notice'
-import { ICON_NAMES } from '@/components/common'
 import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -315,32 +314,10 @@ const groupRows = html`
 
 const main = html`
   <mm-main layout="split">
-    <mm-flex direction="column">
-      <mm-page-header
-        heading="Layout"
-        description="페이지 너비, 섹션의 배치, 화면 위로 뜨는 표면의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 담으므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
-      ></mm-page-header>
-      <mm-list-item-group>
-        <mm-list-item
-          icon=${ICON_NAMES.IDLE}
-          size="medium"
-          label="Element"
-          description="단일 UI 유닛 안의 간격. --space-1 ~ --space-2."
-        ></mm-list-item>
-        <mm-list-item
-          icon=${ICON_NAMES.GROUP}
-          size="medium"
-          label="Group"
-          description="같은 컴포넌트를 나열한 리스트. 항목 사이 간격은 --space-1 ~ --space-4에서 컴포넌트가 정하고, 이어 붙는 묶음은 0."
-        ></mm-list-item>
-        <mm-list-item
-          icon=${ICON_NAMES.LIST_VIEW}
-          size="medium"
-          label="Section"
-          description="제목과 본문 사이 --space-3. 섹션끼리의 바깥 간격은 섹션 목록이 --space-section으로 정한다."
-        ></mm-list-item>
-      </mm-list-item-group>
-    </mm-flex>
+    <mm-page-header
+      heading="Layout"
+      description="페이지 너비, 섹션의 배치, 화면 위로 뜨는 표면의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 담으므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
+    ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="page" variant="pill" search-param="tab">

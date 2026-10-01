@@ -1,5 +1,6 @@
-import { html } from 'lit'
+import { html, type TemplateResult } from 'lit'
 
+import { ICON_NAMES } from '@/components/common'
 import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { SITEMAP } from '@/sitemap'
@@ -74,6 +75,111 @@ const references: ComponentReferenceItemData[][] = [
     },
   ],
 ]
+
+type FeatureCategory = 'Interaction' | 'Presentation'
+
+type ComponentFeature = {
+  category: FeatureCategory
+  heading: string
+  description: string | TemplateResult
+}
+
+const FEATURE_TAG_TONES = { Interaction: 'blue', Presentation: 'purple' } as const
+
+const componentFeatures: ComponentFeature[] = [
+  {
+    category: 'Interaction',
+    heading: 'Interactive - action',
+    description:
+      '누르면 이동하거나 실행되는 최종 상호작용. 결과는 페이지 이동·정보 구조 변화로도 드러나므로 중복해서 알리지 않는다.',
+  },
+  {
+    category: 'Interaction',
+    heading: 'Interactive - selection',
+    description: html`
+      선택 여부를 상태로 유지한다. 기준은
+      <mm-link href="./interaction.html?tab=selection">Selection</mm-link>
+      문서가 정한다.
+    `,
+  },
+  {
+    category: 'Interaction',
+    heading: 'Interactive - input',
+    description: html`
+      제한된 선택지가 아니라 자유 형식 값을 받고, 입력 규칙 검증과 오류 표시를 소유한다. 오류는 해당
+      필드와 연결한다. 기준은
+      <mm-link href="./interaction.html">Interaction</mm-link>
+      문서가 정한다.
+    `,
+  },
+  {
+    category: 'Interaction',
+    heading: 'Feedback',
+    description: html`
+      사용자 행동이나 시스템 상태의 결과를 알린다. 기준은
+      <mm-link href="./interaction.html">Interaction</mm-link>
+      문서가 정한다.
+    `,
+  },
+  {
+    category: 'Presentation',
+    heading: 'Glanceable',
+    description: html`
+      훑는 것만으로 뜻이 파악되게 한다. 레이블은 짧게 쓰되 줄여 표시하지 않는다. 기준은
+      <mm-link href="./content.html">Content</mm-link>
+      문서가 정한다.
+    `,
+  },
+  {
+    category: 'Presentation',
+    heading: 'Representative',
+    description:
+      '사용자·브랜드·객체를 대표하는 시각 정보. 원본이 없거나 실패해도 대체 표현과 대체 텍스트로 형태와 정체성을 유지한다.',
+  },
+  {
+    category: 'Presentation',
+    heading: 'Statusful',
+    description: html`
+      의미 상태를 톤으로 구분하고 아이콘·텍스트를 함께 준다. 기준은
+      <mm-link href="./interaction.html">Interaction</mm-link>
+      문서가 정한다.
+    `,
+  },
+  {
+    category: 'Presentation',
+    heading: 'Structural',
+    description: '상호작용 없이 반복되는 구조와 경계를 잡는다.',
+  },
+  {
+    category: 'Presentation',
+    heading: 'Disclosure',
+    description: html`
+      부차적인 정보를 접어 두고 필요할 때만 펼친다. 기준은
+      <mm-link href="./pattern.html">Pattern</mm-link>
+      문서가 정한다.
+    `,
+  },
+  {
+    category: 'Presentation',
+    heading: 'Modality',
+    description: html`
+      배경 상호작용 차단 여부로 레이어를 규정한다. 기준은
+      <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
+      문서가 정한다.
+    `,
+  },
+]
+
+const renderFeatureCard = ({ category, heading, description }: ComponentFeature) => html`
+  <mm-surface>
+    <mm-flex direction="column" gap="2" align-items="flex-start">
+      <mm-tag tone=${FEATURE_TAG_TONES[category]}>${category}</mm-tag>
+      <mm-text-block level="4" heading=${heading}>
+        <mm-text size="14">${description}</mm-text>
+      </mm-text-block>
+    </mm-flex>
+  </mm-surface>
+`
 
 const main = html`
   <mm-main>
@@ -173,93 +279,32 @@ const main = html`
           </mm-flex>
         </mm-surface>
 
-        <mm-content-section heading-level="3" heading="Component Feature">
-          <mm-grid columns="2" gap="8">
-            <mm-content-section heading-level="4" heading="Interaction">
-              <mm-paragraph>조작을 받아 상태나 화면을 바꿉니다.</mm-paragraph>
-              <mm-text-list
-                .texts=${[
-                  rule(
-                    'Interactive - action',
-                    '누르면 이동하거나 실행되는 최종 상호작용. 결과는 페이지 이동·정보 구조 변화로도 드러나므로 중복해서 알리지 않는다.',
-                  ),
-                  rule(
-                    'Interactive - selection',
-                    html`
-                      선택 여부를 상태로 유지한다. 기준은
-                      <mm-link href="./interaction.html?tab=selection">Selection</mm-link>
-                      문서가 정한다.
-                    `,
-                  ),
-                  rule(
-                    'Interactive - input',
-                    html`
-                      제한된 선택지가 아니라 자유 형식 값을 받고, 입력 규칙 검증과 오류 표시를
-                      소유한다. 오류는 해당 필드와 연결한다. 기준은
-                      <mm-link href="./interaction.html">Interaction</mm-link>
-                      문서가 정한다.
-                    `,
-                  ),
-                  rule(
-                    'Feedback',
-                    html`
-                      사용자 행동이나 시스템 상태의 결과를 알린다. 기준은
-                      <mm-link href="./interaction.html">Interaction</mm-link>
-                      문서가 정한다.
-                    `,
-                  ),
-                ]}
-              ></mm-text-list>
-            </mm-content-section>
+        <mm-content-section heading-level="3" heading="Component Level">
+          <mm-paragraph>컴포넌트의 레벨에 따라 간격과 그루핑 규칙이 정해집니다.</mm-paragraph>
+          <mm-list-item-group>
+            <mm-list-item
+              icon=${ICON_NAMES.IDLE}
+              size="medium"
+              label="Element"
+              description="단일 UI 유닛."
+            ></mm-list-item>
+            <mm-list-item
+              icon=${ICON_NAMES.GROUP}
+              size="medium"
+              label="Group"
+              description="같은 Element를 묶어 나열한 리스트."
+            ></mm-list-item>
+            <mm-list-item
+              icon=${ICON_NAMES.LIST_VIEW}
+              size="medium"
+              label="Section"
+              description="제목과 본문으로 이루어진 구획."
+            ></mm-list-item>
+          </mm-list-item-group>
+        </mm-content-section>
 
-            <mm-content-section heading-level="4" heading="Presentation">
-              <mm-paragraph>
-                대상·상태·구조를 보여주거나 화면에 자리 잡고 물러나는 규칙을 가집니다.
-              </mm-paragraph>
-              <mm-text-list
-                .texts=${[
-                  rule(
-                    'Glanceable',
-                    html`
-                      훑는 것만으로 뜻이 파악되게 한다. 레이블은 짧게 쓰되 줄여 표시하지 않는다.
-                      기준은
-                      <mm-link href="./content.html">Content</mm-link>
-                      문서가 정한다.
-                    `,
-                  ),
-                  rule(
-                    'Representative',
-                    '사용자·브랜드·객체를 대표하는 시각 정보. 원본이 없거나 실패해도 대체 표현과 대체 텍스트로 형태와 정체성을 유지한다.',
-                  ),
-                  rule(
-                    'Statusful',
-                    html`
-                      의미 상태를 톤으로 구분하고 아이콘·텍스트를 함께 준다. 기준은
-                      <mm-link href="./interaction.html">Interaction</mm-link>
-                      문서가 정한다.
-                    `,
-                  ),
-                  rule('Structural', '상호작용 없이 반복되는 구조와 경계를 잡는다.'),
-                  rule(
-                    'Disclosure',
-                    html`
-                      부차적인 정보를 접어 두고 필요할 때만 펼친다. 기준은
-                      <mm-link href="./pattern.html">Pattern</mm-link>
-                      문서가 정한다.
-                    `,
-                  ),
-                  rule(
-                    'Modality',
-                    html`
-                      배경 상호작용 차단 여부로 레이어를 규정한다. 기준은
-                      <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
-                      문서가 정한다.
-                    `,
-                  ),
-                ]}
-              ></mm-text-list>
-            </mm-content-section>
-          </mm-grid>
+        <mm-content-section heading-level="3" heading="Component Feature">
+          <mm-grid columns="4" gap="4">${componentFeatures.map(renderFeatureCard)}</mm-grid>
         </mm-content-section>
         <mm-component-references .items=${references}></mm-component-references>
       </mm-content-section-list>
