@@ -8,6 +8,8 @@ type Host = ReactiveControllerHost & HTMLElement
 interface OpenStateDisclosureOptions {
   /** 토글 트리거. 반환값이 없으면 host.id를 aria-controls로 가리키는 요소로 폴백한다 */
   getTrigger?: () => HTMLElement | undefined
+  /** aria-controls로 트리거를 찾을 root. portal로 옮겨지는 호스트는 옮기기 전 자리의 root를 넘긴다. 생략하면 호스트의 root */
+  getRoot?: () => Document | ShadowRoot
 }
 
 interface DisclosureOptions extends OpenStateDisclosureOptions {
@@ -56,12 +58,12 @@ export class DisclosureController implements ReactiveController {
     this.dispatchToggle()
   }
 
-  private get trigger() {
+  get trigger() {
     const explicit = this.options.getTrigger?.()
     if (explicit) return explicit
     if (!this.host.id) return undefined
 
-    const root = this.host.getRootNode() as Document | ShadowRoot
+    const root = this.options.getRoot?.() ?? (this.host.getRootNode() as Document | ShadowRoot)
     return root.querySelector<HTMLElement>(`[aria-controls="${this.host.id}"]`) ?? undefined
   }
 

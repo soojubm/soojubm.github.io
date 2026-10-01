@@ -18,7 +18,7 @@ export type MoreMenuAction = OptionItem & { tone?: MenuItemTone; onClick?: () =>
 
 /**
  * 더보기 버튼으로 여는 명령 목록. 값을 고르는 mm-select와 달리 선택 상태를 남기지 않고, 누른 명령만 알린다.
- * 좁은 화면에서는 mm-select처럼 목록을 sheet로 올린다. sheet는 portal로 옮겨져 slot으로 받은 항목을
+ * 좁은 화면에서는 mm-select처럼 목록을 sheet로 올린다. 두 표면은 portal로 옮겨져 slot으로 받은 항목을
  * 투영할 수 없으므로, 항목은 actions 배열로 받아 어느 표면이든 직접 렌더한다.
  */
 @customElement('mm-more-menu')
@@ -35,26 +35,24 @@ export class MoreMenu extends LitElement {
 
   render() {
     return html`
-      ${this.renderPopover()} ${this.renderSheet()}
+      ${this.renderTrigger()} ${this.renderPopover()} ${this.renderSheet()}
     `
   }
 
-  // 좁은 화면에서는 sheet가 목록을 맡으므로 popover 없이 트리거만 남긴다.
+  // popover·sheet는 portal로 옮겨져 조건부로 걷어낼 수 없으므로 늘 마운트해 두고 목록만 넣고 뺀다.
   private renderPopover() {
-    if (this.overlay.compact) return this.renderTrigger()
-
     return html`
       <mm-popover
         placement=${this.placement}
-        ?open=${this.overlay.open}
+        .anchor=${this.overlay.trigger}
+        ?open=${!this.overlay.compact && this.overlay.open}
         @toggle=${this.overlay.handleOverlayToggle}
       >
-        ${this.renderTrigger()} ${this.renderActionList()}
+        ${this.overlay.compact ? nothing : this.renderActionList()}
       </mm-popover>
     `
   }
 
-  // sheet는 portal로 옮겨져 조건부로 걷어낼 수 없으므로 늘 마운트해 두고 목록만 넣고 뺀다.
   private renderSheet() {
     return html`
       <mm-sheet
@@ -68,21 +66,15 @@ export class MoreMenu extends LitElement {
     `
   }
 
-  // popover는 slot=trigger의 클릭과 aria-expanded를 스스로 배선하지만, portal로 옮겨진 sheet는 직접 배선한다.
+  // 두 표면은 portal로 옮겨져 다른 트리 아래의 트리거를 찾을 수 없어, 더보기 메뉴가 클릭과 aria-expanded를 직접 배선한다.
   private renderTrigger() {
-    if (this.overlay.compact) {
-      return html`
-        <mm-more-button
-          aria-label=${this.ariaLabel}
-          aria-haspopup="dialog"
-          aria-expanded=${this.overlay.open ? 'true' : 'false'}
-          @click=${this.overlay.handleTriggerClick}
-        ></mm-more-button>
-      `
-    }
-
     return html`
-      <mm-more-button slot="trigger" aria-label=${this.ariaLabel}></mm-more-button>
+      <mm-more-button
+        aria-label=${this.ariaLabel}
+        aria-haspopup=${this.overlay.compact ? 'dialog' : 'menu'}
+        aria-expanded=${this.overlay.open ? 'true' : 'false'}
+        @click=${this.overlay.handleTriggerClick}
+      ></mm-more-button>
     `
   }
 

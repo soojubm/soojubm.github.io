@@ -293,7 +293,7 @@ const main = html`
           <mm-text size="24" weight="bold" as="h2">TODO</mm-text>
           <mm-text-list
             .texts=${[
-              '모바일 anchored overlay 전환 검토: 좁은 화면에서 popover를 바텀 시트로 바꿀지 정한다. 터치 타겟과 화면 가장자리 잘림에는 유리하지만, 시트 안에서 열리는 popover가 시트 위 시트가 되어 "모달 표면은 얕게 유지한다"와 부딪친다. 트리거 규약도 popover는 slot="trigger", sheet는 aria-controls로 달라서 한 컴포넌트가 둘을 오가려면 규약부터 맞춰야 한다. 스크롤 컨테이너 잘림은 이 전환으로 해결되지 않으므로 별건으로 다룬다.',
+              '모바일 anchored overlay 전환 검토: 좁은 화면에서 popover를 바텀 시트로 바꿀지 정한다. 터치 타겟과 화면 가장자리 잘림에는 유리하지만, 시트 안에서 열리는 popover가 시트 위 시트가 되어 "모달 표면은 얕게 유지한다"와 부딪친다.',
             ]}
           ></mm-text-list>
         </mm-flex>

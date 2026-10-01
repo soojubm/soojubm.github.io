@@ -187,8 +187,9 @@ export const sheetPositionStyles = css`
 
 /**
  * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
- * 호스트가 스스로 positioned 앵커가 되고, placement별로 패널을 트리거의 어느 모서리에 붙일지 정한다.
- * 표면 재질은 overlaySurfaceStyles가 맡는다.
+ * 호스트는 portal 컨테이너로 옮겨져 트리거의 자손이 아니므로, 트리거와 같은 자리·크기로 겹쳐 놓인
+ * 투명한 박스가 되어 패널의 기준(positioned 앵커)이 된다. 좌표(--popover-anchor-*)는 열릴 때 잰다.
+ * placement별로 패널을 그 박스의 어느 모서리에 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가 맡는다.
  * `--overlay-panel-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
  */
 export const popoverPositionStyles = css`
@@ -204,9 +205,17 @@ export const popoverPositionStyles = css`
     --overlay-panel-border-radius: var(--radius);
     --popover-offset: var(--space-1);
 
-    /* 슬롯된 트리거를 감싸 popover 스스로 앵커(positioned wrapper)가 된다. */
-    display: flex;
-    position: relative;
+    display: block;
+    width: var(--popover-anchor-width);
+    height: var(--popover-anchor-height);
+
+    /* 박스가 트리거 위를 덮어 클릭을 가로채지 않도록, 눌리는 것은 열린 패널뿐이다 */
+    pointer-events: none;
+
+    position: fixed;
+    top: var(--popover-anchor-top);
+    left: var(--popover-anchor-left);
+    z-index: var(--material-zindex-popover);
   }
 
   .panel {
@@ -218,9 +227,8 @@ export const popoverPositionStyles = css`
     top: calc(100% + var(--popover-offset));
     left: 0;
     right: 0;
-    z-index: var(--material-zindex-popover);
 
-    /* 호스트는 트리거를 감싸므로 늘 보인다. 뜨고 지는 것은 패널만의 상태다. */
+    /* 호스트는 늘 떠 있는 빈 박스다. 뜨고 지는 것은 패널만의 상태다. */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

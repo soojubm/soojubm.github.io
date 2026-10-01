@@ -32,6 +32,15 @@ export class PortalController implements ReactiveController {
     this.portaled = true
   }
 
+  /**
+   * 옮기기 전 자리의 root(document나 소비자의 shadow root). 자리표 주석이 그곳에 남아 있어,
+   * 옮겨진 뒤에도 선언한 트리 안의 요소(aria-controls로 가리키는 트리거 등)를 찾을 때 쓴다.
+   */
+  get originRoot() {
+    const origin = this.portaled ? this.anchor : this.host
+    return origin.getRootNode() as Document | ShadowRoot
+  }
+
   hostDisconnected() {
     if (this.moving) return
     if (!this.portaled) return

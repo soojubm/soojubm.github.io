@@ -5,14 +5,15 @@ import { MediaQueryController } from '@/controllers/media-query-controller'
 
 /**
  * 넓은 화면에서는 popover로, 좁은 화면에서는 sheet로 목록을 여는 컴포넌트(mm-select, mm-more-menu)의 열림 상태를 소유한다.
- * 두 표면은 backdrop·portal·스크롤 잠금을 쥐는 방식이 달라 한 표면을 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
- * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 이 컨트롤러가 갖고, 호스트는 open·compact를 읽어 두 표면과 트리거에 내려준다.
+ * 두 표면은 backdrop·스크롤 잠금·포커스 가두기를 쥐는 방식이 달라 한 표면을 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
+ * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 이 컨트롤러가 갖고, 호스트는 open·compact·trigger를 읽어 두 표면과 트리거에 내려준다.
  * 트리거·목록 템플릿은 호스트마다 달라 호스트가 그린다.
  */
 export class AdaptiveOverlayController implements ReactiveController {
   private media: MediaQueryController
   private wasCompact: boolean
   private isOpen = false
+  private triggerElement?: HTMLElement
 
   constructor(private host: ReactiveControllerHost) {
     this.media = new MediaQueryController(host, MEDIA_QUERY.compact)
@@ -22,6 +23,11 @@ export class AdaptiveOverlayController implements ReactiveController {
 
   get open() {
     return this.isOpen
+  }
+
+  /** 마지막으로 누른 트리거. popover가 이 요소의 화면 좌표를 기준으로 놓인다. */
+  get trigger() {
+    return this.triggerElement
   }
 
   /** 좁은 화면이라 sheet가 목록을 맡는지 여부 */
@@ -42,8 +48,9 @@ export class AdaptiveOverlayController implements ReactiveController {
   }
 
   // Lit은 템플릿 리스너를 호스트를 this로 두고 부르므로, 템플릿에 넘기는 핸들러는 화살표 함수로 둔다.
-  // popover는 slot=trigger의 클릭을 스스로 배선하지만, portal로 옮겨진 sheet는 트리거를 찾을 수 없어 호스트 트리거가 직접 연다.
-  handleTriggerClick = () => {
+  // popover·sheet는 portal로 옮겨져 이 호스트의 트리거를 aria-controls로 찾지 않으므로, 호스트 트리거가 직접 연다.
+  handleTriggerClick = (event: Event) => {
+    this.triggerElement = event.currentTarget as HTMLElement
     this.setOpen(!this.isOpen)
   }
   // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 디스패치하는 toggle 이벤트의 open 값으로 상태를 맞춘다.

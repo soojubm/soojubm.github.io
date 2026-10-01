@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property, query } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
 import type { Popover } from '@/components/overlay/popover/popover'
 
@@ -17,17 +17,16 @@ export class ThemeSelector extends LitElement {
     }
   `
   @property({ type: String }) value: Theme = 'light'
-  @query('mm-popover') private popoverEl?: Popover
 
   render() {
     return html`
-      <mm-popover placement="bottom-end">
-        <mm-icon-button
-          slot="trigger"
-          variant="ghost"
-          icon=${this.currentIcon}
-          aria-label="테마 변경"
-        ></mm-icon-button>
+      <mm-icon-button
+        variant="ghost"
+        icon=${this.currentIcon}
+        aria-label="테마 변경"
+        aria-controls="theme-panel"
+      ></mm-icon-button>
+      <mm-popover id="theme-panel" placement="bottom-end">
         <mm-menu-item-radio-group
           name="theme"
           value=${this.value}
@@ -63,9 +62,9 @@ export class ThemeSelector extends LitElement {
     return THEMES.find(theme => theme.value === this.value)?.icon ?? ICON_NAMES.LIGHT_MODE
   }
 
-  // 선택 시 테마를 저장하고 현재 값을 동기화
+  // 선택 시 테마를 저장하고 현재 값을 동기화. popover는 portal로 옮겨져 이 shadow에서 찾을 수 없어 이벤트가 닿은 자리에서 찾는다.
   private handleThemeChange(event: CustomEvent<{ value: string }>) {
     this.value = saveTheme(event.detail.value as Theme)
-    this.popoverEl?.close()
+    ;(event.currentTarget as HTMLElement).closest<Popover>('mm-popover')?.close()
   }
 }

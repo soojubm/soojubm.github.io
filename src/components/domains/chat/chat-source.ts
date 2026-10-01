@@ -16,19 +16,6 @@ export class ChatSource extends LitElement {
     :host {
       display: inline-block;
     }
-
-    .detail {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-    }
-
-    .detail-header {
-      display: flex;
-      align-items: center;
-      gap: var(--space-1);
-      color: var(--foreground-subtle-color);
-    }
   `
   @property({ type: String }) href = ''
   @property({ type: String }) heading = ''
@@ -38,12 +25,14 @@ export class ChatSource extends LitElement {
 
   render() {
     return html`
-      <mm-popover>
-        <mm-button slot="trigger" variant="tertiary">${this.renderIcon()} ${this.domain}</mm-button>
-        <div class="detail">
+      <mm-button variant="tertiary" aria-controls="source-detail">
+        ${this.renderIcon()} ${this.domain}
+      </mm-button>
+      <mm-popover id="source-detail">
+        <mm-flex direction="column" gap="1">
           ${this.renderDetailHeader()} ${this.renderHeading()} ${this.renderDescription()}
           ${this.renderLink()}
-        </div>
+        </mm-flex>
       </mm-popover>
     `
   }
@@ -60,10 +49,10 @@ export class ChatSource extends LitElement {
     if (!this.href) return nothing
 
     return html`
-      <div class="detail-header">
+      <mm-flex align-items="center" gap="1">
         ${this.renderIcon()}
-        <mm-text size="12" max-lines="1">${this.domain}</mm-text>
-      </div>
+        <mm-text size="12" max-lines="1" color="light">${this.domain}</mm-text>
+      </mm-flex>
     `
   }
 

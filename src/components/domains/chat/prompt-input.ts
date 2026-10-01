@@ -76,13 +76,13 @@ export class PromptInput extends LitElement {
   private renderStartActions() {
     return html`
       <div class="actions">
-        <mm-popover placement="top-start">
-          <mm-icon-button
-            slot="trigger"
-            icon=${ICON_NAMES.ADD_CIRCLE}
-            aria-label="이미지 첨부"
-            aria-haspopup="menu"
-          ></mm-icon-button>
+        <mm-icon-button
+          icon=${ICON_NAMES.ADD_CIRCLE}
+          aria-label="이미지 첨부"
+          aria-haspopup="menu"
+          aria-controls="attach-menu"
+        ></mm-icon-button>
+        <mm-popover id="attach-menu" placement="top-start">
           <mm-menu-item-group aria-label="이미지 첨부">
             <mm-menu-item-action
               icon=${ICON_NAMES.IMPORT}
