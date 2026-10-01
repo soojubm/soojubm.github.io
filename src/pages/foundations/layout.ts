@@ -491,20 +491,6 @@ const main = html`
               <mm-paragraph>
                 자식을 가로나 세로 한 줄로 배치하는 레이아웃 유틸리티입니다.
               </mm-paragraph>
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    html`
-                      컴포넌트 안에서는 ${code('mm-flex')}를 중첩하지 않는다
-                    `,
-                    html`
-                      shadow DOM 안에서는 host를 직접 flex 컨테이너로 만들어 shadow 깊이를 줄인다.
-                      ${code('mm-flex')}는 페이지·콘텐츠 조립에 쓴다
-                    `,
-                  ),
-                ]}
-              ></mm-text-list>
               <mm-flex-preview></mm-flex-preview>
             </mm-content-section>
 
@@ -512,22 +498,6 @@ const main = html`
               <mm-paragraph>
                 반복되는 항목을 열 단위로 늘어놓는 레이아웃 유틸리티입니다.
               </mm-paragraph>
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    html`
-                      ${code('columns')}는 최대 열 수로 정한다
-                    `,
-                    html`
-                      한 열이 ${code('column-min-width')}(기본 12rem) 아래로 좁아지면 열 수가
-                      줄어든다. 기준은 뷰포트가 아니라 그리드가 놓인 컨테이너의 너비라서, 사이드바
-                      옆이나 카드 안처럼 좁은 자리에서도 같은 규칙으로 줄어든다. 좁은 화면을 위한 열
-                      수는 따로 지정하지 않는다
-                    `,
-                  ),
-                ]}
-              ></mm-text-list>
               <mm-grid-preview></mm-grid-preview>
             </mm-content-section>
           </mm-content-section>
@@ -869,15 +839,6 @@ const main = html`
                 속하지 않습니다.
               </mm-paragraph>
             </mm-paragraph-group>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '표면이 문서에 연결될 때 한 번만 옮긴다',
-                  '열 때는 open만 토글한다. 열 때 옮기면 닫힌 상태가 한 번도 그려지지 않아 열림 애니메이션이 재생되지 않는다',
-                ),
-              ]}
-            ></mm-text-list>
             <mm-component-notice variant="exception" heading="tooltip 말풍선은 열 때 만든다">
               ${code('mm-tooltip-bubble')}은 트리거마다 미리 만들면 표가 큰 페이지에서 요소가 수백
               개가 되므로, 처음 열릴 때 만들어 바로 연다. 열림 전환은 만들어지는 순간의 시작

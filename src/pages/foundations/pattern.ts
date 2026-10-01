@@ -261,8 +261,8 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="DisclosureController">
             <mm-paragraph>
-              ${code('DisclosureController')}는 열고 닫는 상태를 소유하고, 트리거 클릭에 따른 토글과
-              ${code('aria-expanded')} 동기화를 맡습니다.
+              열고 닫는 상태를 소유하고, 트리거 클릭에 따른 토글과 ${code('aria-expanded')} 동기화를
+              맡습니다.
             </mm-paragraph>
             <mm-component-notice
               variant="exception"

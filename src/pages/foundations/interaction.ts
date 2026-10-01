@@ -177,6 +177,17 @@ const selectionOwnerRows = html`
   </tr>
 `
 
+const slottedSelectionRows = html`
+  <tr>
+    <th scope="row">카드를 자식으로 받는 그룹</th>
+    <td>${codeList(['mm-radio-card-group'])}</td>
+  </tr>
+  <tr>
+    <th scope="row">메뉴 행을 자식으로 받는 그룹</th>
+    <td>${codeList(['mm-menu-item-radio-group', 'mm-menu-item-checkbox-group'])}</td>
+  </tr>
+`
+
 const selectionRows = html`
   <tr>
     <th scope="row">${code('mm-radio-group')}</th>
@@ -389,8 +400,7 @@ const main = html`
           <mm-content-section heading-level="3" heading="Current">
             <mm-paragraph>
               같은 집합 안에서 지금 위치한 항목이라는 표시입니다. 사용자가 이동하는 동안에도 어디에
-              있는지 다른 항목과 구분해 보여 주므로 위치를 잃지 않습니다. ${code('aria-current')}가
-              필요한 요소에 ${code('mm-current-indicator')}를 씁니다.
+              있는지 다른 항목과 구분해 보여 주므로 위치를 잃지 않습니다.
             </mm-paragraph>
             <mm-surface variant="outlined" radius="large">
               <mm-flex gap="6" align-items="center">
@@ -616,10 +626,13 @@ const main = html`
             <mm-paragraph>
               ${code('SlottedSelectionController')}는 slot으로 받은 항목을 위 컨트롤러에 잇습니다.
               값은 소유하지 않고, 그룹의 값을 항목의 ${code('checked')}에 반영하며 항목의
-              ${code('change')}를 그룹의 ${code('change')}로 올립니다. 카드나 메뉴 행처럼 옵션
-              배열로 표현할 수 없는 항목을 자식으로 받는 ${code('mm-radio-card-group')}·
-              ${code('mm-menu-item-radio-group')}·${code('mm-menu-item-checkbox-group')}이 씁니다.
+              ${code('change')}를 그룹의 ${code('change')}로 올립니다.
             </mm-paragraph>
+            <mm-table
+              .rows=${slottedSelectionRows}
+              caption="SlottedSelectionController를 쓰는 자리와 그룹"
+              .columns=${[{ label: '쓰는 자리', width: '240px' }, { label: '컴포넌트' }]}
+            ></mm-table>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Pressed">
