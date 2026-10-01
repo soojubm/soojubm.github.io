@@ -1,10 +1,7 @@
 {
   "name": "soojubm",
   "version": "1.0.0",
-  "description": "## 커밋 메시지 1. 설정 : package.json의 변화가 있을 때 사용한다.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "npm run manifest",
     "predev": "npm run manifest",
     "dev": "webpack-dev-server --open",
