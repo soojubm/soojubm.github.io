@@ -129,7 +129,7 @@ export const ICON_NAMES = {
   ...ICON_CATALOG.etc,
 } as const
 
-export type IconName = typeof ICON_NAMES[keyof typeof ICON_NAMES]
+export type IconName = (typeof ICON_NAMES)[keyof typeof ICON_NAMES]
 
 /** 상태 톤마다 쓰는 아이콘. 톤을 가진 컴포넌트와 Feedback 문서가 함께 참조한다. */
 export const STATUS_ICONS = {

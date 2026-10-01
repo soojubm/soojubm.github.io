@@ -11,9 +11,6 @@
   "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "ignore",
 
-  "jsxBracketSameLine": false,
-  "jsxSingleQuote": false,
-
-  "ignorePath": ".prettierignore",
-  "disableLanguages": []
+  "bracketSameLine": false,
+  "jsxSingleQuote": false
 }

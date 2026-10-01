@@ -23,10 +23,7 @@ const statusDotLabels: Record<StatusDotVariant, string> = {
 }
 
 const variantTokens = Object.fromEntries(
-  Object.entries(statusDotToneMap).map(([variant, tone]) => [
-    variant,
-    dotToneTokens(tone),
-  ]),
+  Object.entries(statusDotToneMap).map(([variant, tone]) => [variant, dotToneTokens(tone)]),
 )
 
 /**

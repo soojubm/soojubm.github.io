@@ -90,7 +90,7 @@ export function tokenCategoryLabel(name: string) {
 // 카테고리가 없는 토큰은 맨 뒤로 보낸다.
 export function tokenCategorySortIndex(name: string) {
   const [primary] = tokenCategories(name)
-  const index = CATEGORY_DISPLAY_ORDER.indexOf(primary as typeof CATEGORY_DISPLAY_ORDER[number])
+  const index = CATEGORY_DISPLAY_ORDER.indexOf(primary as (typeof CATEGORY_DISPLAY_ORDER)[number])
 
   return index === -1 ? CATEGORY_DISPLAY_ORDER.length : index
 }

@@ -15,11 +15,11 @@ const PLATFORMS = [
   { key: 'notion', label: 'Notion', icon: ICON_NAMES.NOTION },
 ] as const
 
-type PlatformKey = typeof PLATFORMS[number]['key']
+type PlatformKey = (typeof PLATFORMS)[number]['key']
 type SocialLink = {
   key: PlatformKey
   label: string
-  icon: typeof ICON_NAMES[keyof typeof ICON_NAMES]
+  icon: (typeof ICON_NAMES)[keyof typeof ICON_NAMES]
   href: string
 }
 

@@ -48,7 +48,7 @@
     "pagefind": "^1.5.2",
     "postcss": "^8.5.15",
     "postcss-lit": "^1.4.1",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.8",
     "stylelint": "^16.26.1",
     "ts-loader": "^9.6.0",
     "ts-node": "^10.9.2",
