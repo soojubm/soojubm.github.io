@@ -128,57 +128,48 @@ const selectionRows = html`
     <th scope="row">${code('mm-radio-group')}</th>
     <td>Single</td>
     <td>배열</td>
-    <td>폼에서 5개 이하 선택지 중 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-radio-card-group')}</th>
     <td>Single</td>
     <td>자식 요소</td>
-    <td>레이블만으로 부족해 선택지마다 상세한 정보를 제공해야 할 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-toggle-button-group')}</th>
     <td>Single</td>
     <td>배열</td>
-    <td>보기 방식처럼 화면 표시를 바로 바꾸는 5개 이하 선택지 중 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-select')}</th>
     <td>Single</td>
     <td>배열</td>
-    <td>6개 이상 선택지 중 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-filter-button-group')}</th>
     <td>Single · Multiple</td>
     <td>배열</td>
-    <td>목록·콘텐츠를 걸러 볼 조건 하나 또는 여럿을 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-radio-group')}</th>
     <td>Single</td>
     <td>자식 요소</td>
-    <td>팝오버·시트·설정 화면의 행 목록에서 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-checkbox-group')}</th>
     <td>Multiple</td>
     <td>배열</td>
-    <td>폼에서 5개 이하 선택지 중 여럿을 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
     <td>Multiple</td>
     <td>자식 요소</td>
-    <td>팝오버·시트·설정 화면의 행 목록에서 여럿을 고를 때</td>
   </tr>
 `
 
 const selectionTableColumns = [
   { label: '컴포넌트', width: '240px' },
   { label: '선택', width: '140px' },
-  { label: '옵션 전달', width: '100px' },
-  { label: '언제' },
+  { label: '옵션 전달' },
 ]
 
 const main = html`
@@ -343,7 +334,9 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="Current">
             <mm-paragraph>
-              ${code('aria-current')}가 필요한 요소에 ${code('mm-current-indicator')}를 씁니다.
+              같은 집합 안에서 지금 위치한 항목이라는 표시입니다. 사용자가 이동하는 동안에도 어디에
+              있는지 다른 항목과 구분해 보여 주므로 위치를 잃지 않습니다. ${code('aria-current')}가
+              필요한 요소에 ${code('mm-current-indicator')}를 씁니다.
             </mm-paragraph>
             <mm-surface variant="outlined" radius="large">
               <mm-flex gap="6" align-items="center">
@@ -543,15 +536,8 @@ const main = html`
                   `,
                 ),
                 rule(
-                  '다음 행동이 따르는 결과는 화면에 남긴다',
-                  html`
-                    다시 시도하거나 고쳐야 하는 결과는 ${code('mm-notice')}·${code('mm-result')}로
-                    남기고, 스스로 사라지는 ${code('mm-toast')}는 확인만 하면 끝나는 결과에 쓴다
-                  `,
-                ),
-                rule(
-                  '결과는 한 번만 알린다',
-                  '페이지 이동이나 목록 변화가 결과를 보여 주면 그것으로 알림을 대신한다',
+                  '페이지 이동이나 UI 변화도 피드백으로 쓴다',
+                  '결과가 화면 변화로 드러나면 그 변화가 곧 피드백이므로, 같은 결과를 알림으로 한 번 더 알리지 않는다',
                 ),
               ]}
             ></mm-text-list>
@@ -566,36 +552,18 @@ const main = html`
 
       <mm-tab-panel value="selection">
         <mm-content-section-list>
-          <mm-paragraph>
-            선택지 가운데 값을 고르는 컴포넌트가 공유하는 계약입니다. 선택 개수와 선택지 수로
-            컴포넌트를 고르고 선택 상태는 항목이 아닌 그룹이 소유하므로, 사용자는 어떤 선택
-            컴포넌트에서도 같은 방식으로 값을 고르고 바꿀 수 있습니다.
-          </mm-paragraph>
-          <mm-notice>
-            <mm-text size="14">
-              ${code('mm-tab')}은 ${code('aria-selected')}를 쓰지만 값을 고르는 selection이 아니라
-              보이는 콘텐츠를 바꾸는 content switching 맥락에 속합니다.
-            </mm-text>
-          </mm-notice>
-
-          <mm-content-section heading-level="3" heading="Overview">
+          <mm-flex direction="column" gap="3">
             <mm-grid columns="2" gap="4">
               <mm-surface>
                 <mm-content-section heading-level="4" heading="단일 선택">
                   <mm-paragraph>
-                    선택지가 5개 이하면 ${code('mm-radio-group')} ·
-                    ${code('mm-toggle-button-group')}으로 펼쳐 보이고, 6개부터는
-                    ${code('mm-select')}로 접습니다.
+                    선택지 가운데 하나만 고르며, 다른 선택지를 고르면 이전 선택이 해제됩니다.
                   </mm-paragraph>
                 </mm-content-section>
               </mm-surface>
               <mm-surface>
                 <mm-content-section heading-level="4" heading="다중 선택">
-                  <mm-paragraph>
-                    선택지가 5개 이하면 ${code('mm-checkbox-group')}으로 펼쳐 보이고, 6개부터는
-                    ${code('mm-filter-button-group')}이나 ${code('mm-sheet')} 안의
-                    ${code('mm-menu-item-checkbox-group')}으로 옮깁니다.
-                  </mm-paragraph>
+                  <mm-paragraph>선택지마다 켜고 꺼서 원하는 만큼 고릅니다.</mm-paragraph>
                 </mm-content-section>
               </mm-surface>
             </mm-grid>
@@ -611,10 +579,16 @@ const main = html`
 
             <mm-table
               .rows=${selectionRows}
-              caption="값을 고르는 컴포넌트의 선택 개수·옵션 전달 방식·사용 시점 비교"
+              caption="값을 고르는 컴포넌트의 선택 개수·옵션 전달 방식 비교"
               .columns=${selectionTableColumns}
             ></mm-table>
-          </mm-content-section>
+            <mm-notice>
+              <mm-text size="14">
+                ${code('mm-tab')}은 ${code('aria-selected')}를 쓰지만 값을 고르는 selection이 아니라
+                보이는 콘텐츠를 바꾸는 content switching 맥락에 속합니다.
+              </mm-text>
+            </mm-notice>
+          </mm-flex>
 
           <mm-content-section heading-level="3" heading="기본값">
             <mm-text-list
@@ -662,15 +636,6 @@ const main = html`
               컨트롤 자체의 on/off 값입니다. 네이티브 ${code('checked')}가 있으면 그것을, 없으면
               ${code('aria-checked')}를 씁니다.
             </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '값은 on/off를 유지하는 컨트롤만 갖는다',
-                  '눌러 실행되는 항목이나 화면을 바꾸는 탭은 결과가 화면 변화로 드러나므로 값을 남기지 않는다',
-                ),
-              ]}
-            ></mm-text-list>
             <mm-table
               .rows=${checkedComponentRows}
               caption="Checked 상태 attribute와 그것을 쓰는 컴포넌트"

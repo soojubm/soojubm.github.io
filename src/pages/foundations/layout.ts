@@ -913,13 +913,14 @@ const main = html`
           <mm-content-section heading-level="3" heading="Portal">
             <mm-paragraph-group>
               <mm-paragraph>
-                Portal은 표면을 선언한 자리에서 떼어 ${code('index.html')} 끝의
-                ${code('#portal-root')} 컨테이너로 옮겨 렌더하는 방식입니다. 이 컨테이너는
-                ${code('body')}의 마지막 자식이라 앱 셸의 어떤 조상에도 속하지 않습니다.
+                Portal은 표면을 선언한 자리에서 떼어 다른 곳에 렌더하는 방식입니다. 표면이 조상의
+                transform·contain 안에 놓이면 위치와 층위가 그 조상에 갇히므로, 표면을 조상에서
+                분리해 어느 자리에서 열려도 화면 전체를 덮는 같은 층위에 띄웁니다.
               </mm-paragraph>
               <mm-paragraph>
-                portal로 옮긴 표면은 조상의 transform·contain에 갇히지 않아, 어느 자리에서 열려도
-                화면 전체를 덮는 같은 층위에 뜹니다.
+                표면은 ${code('index.html')} 끝의 ${code('#portal-root')} 컨테이너로 옮겨
+                렌더합니다. 이 컨테이너는 ${code('body')}의 마지막 자식이라 앱 셸의 어떤 조상에도
+                속하지 않습니다.
               </mm-paragraph>
               <mm-paragraph>${code('PortalController')}</mm-paragraph>
             </mm-paragraph-group>
