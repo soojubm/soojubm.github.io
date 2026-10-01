@@ -114,8 +114,11 @@ export class Popover extends withOpenState(LitElement) {
 
   // 놓이는 자리는 placement가 CSS에서 정하고, 여기서는 기준 요소의 화면 좌표만 알린다.
   private measureAnchor() {
+    // 닫힌 popover는 scroll·resize마다 기준 요소를 찾지 않도록 열림부터 확인한다.
+    if (!this.open) return
+
     const anchor = this.anchorElement
-    if (!this.open || !anchor) return
+    if (!anchor) return
 
     const { left, top, width, height } = anchor.getBoundingClientRect()
     this.style.setProperty('--popover-anchor-left', `${left}px`)

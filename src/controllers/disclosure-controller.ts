@@ -1,7 +1,7 @@
+import type { OpenState } from '@/utils/open-state'
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 import { emit } from '@/utils'
-import type { OpenState } from '@/utils/open-state'
 
 type Host = ReactiveControllerHost & HTMLElement
 
@@ -30,7 +30,6 @@ interface DisclosureOptions extends OpenStateDisclosureOptions {
 export class DisclosureController implements ReactiveController {
   private wiredTrigger?: HTMLElement
   private wasOpen?: boolean
-
   private options: DisclosureOptions
 
   constructor(host: Host & OpenState, options?: OpenStateDisclosureOptions)

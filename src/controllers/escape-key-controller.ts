@@ -1,6 +1,5 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
-
 import type { OpenState } from '@/utils/open-state'
+import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 interface EscapeKeyOptions {
   /** 열려 있을 때만 콜백을 실행한다 (닫혀 있으면 ESC를 무시) */
