@@ -1,9 +1,38 @@
 /**
  * films·books가 공유하는 "필터 + 페이지네이션 목록" 페이지 유틸리티.
  */
-import { render, type TemplateResult } from 'lit'
+import { html, render, type TemplateResult } from 'lit'
+
+import type { FilterOption } from '@/components/common'
+
+import '@/components/domains/media-card'
 
 const PAGE_SIZE = 60
+
+/** films·books가 공유하는 목록 항목. */
+export interface MediaItem {
+  releasedate: number
+  titlekorean: string
+  titleenglish: string
+  director: string
+  country: string
+  etc: string
+}
+
+export const renderMediaCard = (item: MediaItem) => html`
+  <mm-media-card
+    title=${item.titlekorean}
+    subtitle=${item.titleenglish}
+    director=${item.director}
+    country=${item.country ?? ''}
+    year=${item.releasedate ?? ''}
+  ></mm-media-card>
+`
+
+export const toFilterOptions = (
+  values: string[],
+  getLabel = (value: string) => value,
+): FilterOption[] => values.map(value => ({ value, label: getLabel(value) }))
 
 /**
  * 아이템 목록을 렌더링하고 "더 보기" 버튼을 연결합니다.
@@ -13,7 +42,6 @@ export function renderList<T>(items: T[], toCard: (item: T) => TemplateResult) {
   const listEl = document.querySelector<HTMLElement>('.js-list')
   const countEl = document.querySelector<HTMLElement>('.js-count')
   const moreWrap = document.querySelector<HTMLElement>('.js-more')
-  const moreBtn = document.querySelector<HTMLElement>('.js-more-btn')
   if (!listEl || !countEl || !moreWrap) return
 
   countEl.textContent = String(items.length)
@@ -27,12 +55,13 @@ export function renderList<T>(items: T[], toCard: (item: T) => TemplateResult) {
 
   showMore()
 
-  if (moreBtn) {
-    // 필터 재렌더 시 이전 리스너가 남지 않도록 버튼을 교체하고 다시 연결한다.
-    const freshBtn = moreBtn.cloneNode(true) as HTMLElement
-    moreBtn.replaceWith(freshBtn)
-    freshBtn.addEventListener('click', showMore)
-  }
+  // 필터가 바뀌어 다시 부르면 같은 템플릿의 클릭 핸들러만 새 showMore로 바뀌므로 리스너가 쌓이지 않는다.
+  render(
+    html`
+      <mm-show-more-button @click=${showMore}></mm-show-more-button>
+    `,
+    moreWrap,
+  )
 }
 
 /**

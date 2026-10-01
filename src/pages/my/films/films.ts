@@ -1,10 +1,14 @@
 import { html, render } from 'lit'
 
-import type { FilterOption } from '@/components/common'
-
 import { renderPage } from '@/components/layouts/base-layouts'
-import '@/components/domains/media-card'
-import { renderList, getCountries, loadJson } from '@/pages/my/list-page'
+import {
+  renderList,
+  renderMediaCard,
+  getCountries,
+  loadJson,
+  toFilterOptions,
+  type MediaItem,
+} from '@/pages/my/list-page'
 
 const main = html`
   <mm-main>
@@ -23,39 +27,27 @@ const main = html`
 
       <mm-grid class="js-list" column-min-width="220px" gap="3"></mm-grid>
 
-      <div class="js-more" hidden>
-        <mm-show-more-button class="js-more-btn"></mm-show-more-button>
-      </div>
+      <div class="js-more" hidden></div>
     </mm-flex>
   </mm-main>
 `
-
-interface Film {
-  id: number
-  releasedate: number
-  titlekorean: string
-  titleenglish: string
-  director: string
-  country: string
-  etc: string
-}
 
 type FilterState = { decade: string; country: string }
 
 renderPage(main, { initialize: initPage })
 
 async function initPage() {
-  const films = await loadJson<Film>('/src/pages/my/films/films.json')
+  const films = await loadJson<MediaItem>('/src/pages/my/films/films.json')
   if (!films?.length) return
 
   const state: FilterState = { decade: '', country: '' }
-  const rerender = () => renderList(getFiltered(films, state), renderFilmCard)
+  const rerender = () => renderList(getFiltered(films, state), renderMediaCard)
 
   renderFilters(films, state, rerender)
   rerender()
 }
 
-function renderFilters(films: Film[], state: FilterState, rerender: () => void) {
+function renderFilters(films: MediaItem[], state: FilterState, rerender: () => void) {
   const container = document.querySelector<HTMLElement>('.js-filters')
   if (!container) return
 
@@ -91,19 +83,7 @@ function renderFilters(films: Film[], state: FilterState, rerender: () => void) 
   })
 }
 
-function renderFilmCard(film: Film) {
-  return html`
-    <mm-media-card
-      title=${film.titlekorean}
-      subtitle=${film.titleenglish}
-      director=${film.director}
-      country=${film.country ?? ''}
-      year=${film.releasedate ?? ''}
-    ></mm-media-card>
-  `
-}
-
-function getFiltered(films: Film[], state: FilterState) {
+function getFiltered(films: MediaItem[], state: FilterState) {
   return films.filter(f => {
     if (state.decade) {
       const filmDecade = String(Math.floor(f.releasedate / 10) * 10)
@@ -114,13 +94,9 @@ function getFiltered(films: Film[], state: FilterState) {
   })
 }
 
-function getDecades(films: Film[]) {
+function getDecades(films: MediaItem[]) {
   const set = new Set(
     films.filter(f => f.releasedate >= 1880).map(f => String(Math.floor(f.releasedate / 10) * 10)),
   )
   return [...set].sort()
-}
-
-function toFilterOptions(values: string[], getLabel = (value: string) => value): FilterOption[] {
-  return values.map(value => ({ value, label: getLabel(value) }))
 }

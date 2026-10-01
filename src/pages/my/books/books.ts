@@ -1,10 +1,14 @@
 import { html, render } from 'lit'
 
-import type { FilterOption } from '@/components/common'
-
 import { renderPage } from '@/components/layouts/base-layouts'
-import '@/components/domains/media-card'
-import { renderList, getCountries, loadJson } from '@/pages/my/list-page'
+import {
+  renderList,
+  renderMediaCard,
+  getCountries,
+  loadJson,
+  toFilterOptions,
+  type MediaItem,
+} from '@/pages/my/list-page'
 
 const main = html`
   <mm-main>
@@ -20,38 +24,27 @@ const main = html`
 
       <mm-grid class="js-list" column-min-width="220px" gap="3"></mm-grid>
 
-      <div class="js-more" hidden>
-        <mm-show-more-button class="js-more-btn"></mm-show-more-button>
-      </div>
+      <div class="js-more" hidden></div>
     </mm-flex>
   </mm-main>
 `
-
-interface Book {
-  releasedate: number
-  titlekorean: string
-  titleenglish: string
-  director: string
-  country: string
-  etc: string
-}
 
 type FilterState = { country: string }
 
 renderPage(main, { initialize: initPage })
 
 async function initPage() {
-  const books = await loadJson<Book>('/src/pages/my/books/books.json')
+  const books = await loadJson<MediaItem>('/src/pages/my/books/books.json')
   if (!books?.length) return
 
   const state: FilterState = { country: '' }
-  const rerender = () => renderList(getFiltered(books, state), renderBookCard)
+  const rerender = () => renderList(getFiltered(books, state), renderMediaCard)
 
   renderFilters(books, state, rerender)
   rerender()
 }
 
-function renderFilters(books: Book[], state: FilterState, rerender: () => void) {
+function renderFilters(books: MediaItem[], state: FilterState, rerender: () => void) {
   const container = document.querySelector<HTMLElement>('.js-filters')
   if (!container) return
 
@@ -74,25 +67,9 @@ function renderFilters(books: Book[], state: FilterState, rerender: () => void) 
   })
 }
 
-function renderBookCard(book: Book) {
-  return html`
-    <mm-media-card
-      title=${book.titlekorean}
-      subtitle=${book.titleenglish}
-      director=${book.director}
-      country=${book.country ?? ''}
-      year=${book.releasedate ?? ''}
-    ></mm-media-card>
-  `
-}
-
-function getFiltered(books: Book[], state: FilterState) {
+function getFiltered(books: MediaItem[], state: FilterState) {
   return books.filter(b => {
     if (state.country && b.country !== state.country) return false
     return true
   })
-}
-
-function toFilterOptions(values: string[]): FilterOption[] {
-  return values.map(value => ({ value, label: value }))
 }
