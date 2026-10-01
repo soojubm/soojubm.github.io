@@ -474,10 +474,10 @@ const main = html`
             .rows=${overviewRows}
             caption="컨테이너별 성격·배치 방향·소유하는 간격·쓰는 자리 비교"
             .columns=${[
-              { label: 'UI' },
-              { label: '성격' },
-              { label: '배치' },
-              { label: '간격' },
+              { label: 'UI', width: '220px' },
+              { label: '성격', width: '100px' },
+              { label: '배치', width: '160px' },
+              { label: '간격', width: '220px' },
               { label: '쓰는 자리' },
             ]}
           ></mm-table>
@@ -725,11 +725,11 @@ const main = html`
               .rows=${classificationRows}
               caption="화면 위로 뜨는 표면의 modal 여부·위치 기준·드러나는 role·레이어 비교"
               .columns=${[
-                { label: 'UI' },
-                { label: 'Modal' },
-                { label: 'Anchor' },
-                { label: 'Role' },
-                { label: 'z-index' },
+                { label: 'UI', width: '140px' },
+                { label: 'Modal', width: '100px' },
+                { label: 'Anchor', width: '120px' },
+                { label: 'Role', width: '140px' },
+                { label: 'z-index', width: '120px' },
                 { label: '열 때 포커스 이동' },
               ]}
             ></mm-table>
@@ -812,10 +812,10 @@ const main = html`
               .rows=${dismissRows}
               caption="표면의 닫기 수단 비교"
               .columns=${[
-                { label: 'UI' },
-                { label: '바깥 클릭' },
-                { label: 'ESC' },
-                { label: '그 밖의 닫힘' },
+                { label: 'UI', width: '100px' },
+                { label: '바깥 클릭', width: '100px' },
+                { label: 'ESC', width: '80px' },
+                { label: '그 밖의 닫힘', width: '260px' },
                 { label: '이유' },
               ]}
             ></mm-table>

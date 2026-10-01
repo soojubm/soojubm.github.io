@@ -561,14 +561,14 @@ const main = html`
           <mm-flex direction="column" gap="3">
             <mm-grid columns="2" gap="4">
               <mm-surface>
-                <mm-content-section heading-level="4" heading="단일 선택">
+                <mm-content-section heading-level="3" heading="단일 선택">
                   <mm-paragraph>
                     선택지 가운데 하나만 고르며, 다른 선택지를 고르면 이전 선택이 해제됩니다.
                   </mm-paragraph>
                 </mm-content-section>
               </mm-surface>
               <mm-surface>
-                <mm-content-section heading-level="4" heading="다중 선택">
+                <mm-content-section heading-level="3" heading="다중 선택">
                   <mm-paragraph>선택지마다 켜고 꺼서 원하는 만큼 고릅니다.</mm-paragraph>
                 </mm-content-section>
               </mm-surface>
@@ -634,12 +634,7 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Checked">
-            <mm-paragraph>
-              컨트롤이 켜져 있는지 꺼져 있는지를 나타내는 값입니다. 네이티브 input은
-              ${code('checked')}로, input이 아닌 행은 ${code('aria-checked')}로 알려 어느 쪽이든
-              스크린리더가 같은 켜짐 상태를 읽습니다. 네이티브가 이미 상태를 말하므로
-              ${code('aria-checked')}를 겹쳐 달지 않습니다.
-            </mm-paragraph>
+            <mm-paragraph>컨트롤이 켜져 있는지 꺼져 있는지를 나타내는 값입니다.</mm-paragraph>
             <mm-table
               .rows=${checkedComponentRows}
               caption="Checked 상태 attribute와 그것을 쓰는 컴포넌트"
@@ -648,10 +643,7 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Selected">
-            <mm-paragraph>
-              컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로
-              고른 값을 나타내며, 강조 토큰은 Checked와 같습니다.
-            </mm-paragraph>
+            <mm-paragraph>컬렉션에서 고른 항목입니다.</mm-paragraph>
             <mm-table
               .rows=${selectedComponentRows}
               caption="aria-selected를 쓰는 자리와 컴포넌트"

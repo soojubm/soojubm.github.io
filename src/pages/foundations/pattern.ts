@@ -117,7 +117,11 @@ const overviewRows = html`
   </tr>
 `
 
-const overviewTableColumns = [{ label: '요소' }, { label: '입력할 때' }, { label: '제출할 때' }]
+const overviewTableColumns = [
+  { label: '요소', width: '160px' },
+  { label: '입력할 때', width: '120px' },
+  { label: '제출할 때' },
+]
 
 const flowRows = html`
   <tr>
