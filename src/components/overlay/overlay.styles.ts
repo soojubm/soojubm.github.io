@@ -218,6 +218,11 @@ export const popoverPositionStyles = css`
     z-index: var(--material-zindex-popover);
   }
 
+  /* 열릴 때 포커스를 받는 호스트는 트리거 크기의 투명 박스라 윤곽선을 그리지 않는다 */
+  :host(:focus) {
+    outline: none;
+  }
+
   .panel {
     /* 트리거에 붙은 모서리에서 자라나도록, placement가 원점을 축별로 뒤집는다 */
     --popover-origin-block: top;

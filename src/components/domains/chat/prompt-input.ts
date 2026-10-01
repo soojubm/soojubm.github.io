@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 import '@/components/overlay/popover/popover'
-import { emit } from '@/utils'
+import { emit, uniqueId } from '@/utils'
 import '@/components/domains/chat/model-selector'
 
 @customElement('mm-prompt-input')
@@ -33,6 +33,8 @@ export class PromptInput extends LitElement {
   @property({ type: String }) model = 'claude-sonnet'
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
   @property({ type: Boolean }) loading = false
+  // popover는 portal로 옮겨져 한 트리에 모이므로, 인스턴스가 여럿이어도 id가 겹치지 않게 한다.
+  private readonly attachMenuId = uniqueId('attach-menu')
 
   render() {
     return html`
@@ -80,9 +82,9 @@ export class PromptInput extends LitElement {
           icon=${ICON_NAMES.ADD_CIRCLE}
           aria-label="이미지 첨부"
           aria-haspopup="menu"
-          aria-controls="attach-menu"
+          aria-controls=${this.attachMenuId}
         ></mm-icon-button>
-        <mm-popover id="attach-menu" placement="top-start">
+        <mm-popover id=${this.attachMenuId} placement="top-start">
           <mm-menu-item-group aria-label="이미지 첨부">
             <mm-menu-item-action
               icon=${ICON_NAMES.IMPORT}

@@ -63,11 +63,15 @@ export class Popover extends withOpenState(LitElement) {
 
   connectedCallback() {
     super.connectedCallback()
+    // 열릴 때 목록이 없는 내용은 표면 자체가 포커스를 받을 수 있게 하되, Tab 순서에는 넣지 않는다.
+    if (!this.hasAttribute('tabindex')) this.tabIndex = -1
+    this.addEventListener('keydown', this.handleKeydown)
     window.addEventListener('scroll', this.handleViewportChange, { capture: true, passive: true })
     window.addEventListener('resize', this.handleViewportChange)
   }
 
   disconnectedCallback() {
+    this.removeEventListener('keydown', this.handleKeydown)
     window.removeEventListener('scroll', this.handleViewportChange, { capture: true })
     window.removeEventListener('resize', this.handleViewportChange)
     super.disconnectedCallback()
@@ -78,7 +82,7 @@ export class Popover extends withOpenState(LitElement) {
     if (changedProperties.get('open') === undefined) return
 
     if (this.open) {
-      this.focusList()
+      this.focusContent()
       return
     }
 
@@ -91,6 +95,18 @@ export class Popover extends withOpenState(LitElement) {
 
   private handleViewportChange = () => {
     this.measureAnchor()
+  }
+  // portal로 문서 끝에 놓여 Tab으로 밖에 나가면 엉뚱한 곳에 닿으므로, 포커스가 표면을 벗어나면 닫고 트리거로 돌려보낸다.
+  // 포커스는 Tab 처리가 끝난 뒤에 옮겨 가므로 한 틱 뒤에 판단한다.
+  private handleKeydown = (event: KeyboardEvent) => {
+    if (event.key !== 'Tab') return
+
+    setTimeout(() => {
+      if (!this.open || this.matches(':focus-within')) return
+
+      this.close()
+      this.returnFocus()
+    })
   }
 
   // 놓이는 자리는 placement가 CSS에서 정하고, 여기서는 기준 요소의 화면 좌표만 알린다.
@@ -105,10 +121,12 @@ export class Popover extends withOpenState(LitElement) {
     this.style.setProperty('--popover-anchor-height', `${height}px`)
   }
 
-  // 메뉴·목록이 열리면 포커스를 그 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.
-  private focusList() {
+  // 열리면 포커스를 표면 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.
+  // 목록이 있으면 목록으로, 안의 autofocus 요소가 있으면 그 요소로, 없으면 표면 자체로 옮긴다.
+  private focusContent() {
     this.returnFocusElement = getDeepActiveElement() as HTMLElement | undefined
-    this.findList()?.focus()
+    const target = this.findList() ?? this.querySelector<HTMLElement>('[autofocus]') ?? this
+    target.focus({ preventScroll: true })
   }
 
   // 선택 그룹처럼 목록을 자기 shadow 안에 렌더하는 래퍼도 있으므로 한 단계 안까지 찾는다.
@@ -124,6 +142,10 @@ export class Popover extends withOpenState(LitElement) {
   private restoreFocus() {
     if (!this.matches(':focus-within')) return
 
-    this.returnFocusElement?.focus()
+    this.returnFocus()
+  }
+
+  private returnFocus() {
+    ;(this.returnFocusElement ?? this.anchorElement)?.focus()
   }
 }

@@ -7,6 +7,7 @@ import '@/components/common'
 import '@/components/overlay/popover/popover'
 
 import { ICON_NAMES, type IconName } from '@/components/common'
+import { uniqueId } from '@/utils'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
 @customElement('mm-theme-selector')
@@ -17,6 +18,8 @@ export class ThemeSelector extends LitElement {
     }
   `
   @property({ type: String }) value: Theme = 'light'
+  // popover는 portal로 옮겨져 한 트리에 모이므로, 인스턴스가 여럿이어도 id가 겹치지 않게 한다.
+  private readonly panelId = uniqueId('theme-panel')
 
   render() {
     return html`
@@ -24,9 +27,9 @@ export class ThemeSelector extends LitElement {
         variant="ghost"
         icon=${this.currentIcon}
         aria-label="테마 변경"
-        aria-controls="theme-panel"
+        aria-controls=${this.panelId}
       ></mm-icon-button>
-      <mm-popover id="theme-panel" placement="bottom-end">
+      <mm-popover id=${this.panelId} placement="bottom-end">
         <mm-menu-item-radio-group
           name="theme"
           value=${this.value}

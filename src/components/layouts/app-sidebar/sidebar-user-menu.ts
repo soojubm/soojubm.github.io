@@ -10,6 +10,7 @@ import { interactiveRowStyles } from '@/components/common/list-item/list-item.st
 import '@/components/common/menu-item'
 import '@/components/overlay/popover/popover'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import { uniqueId } from '@/utils'
 
 /**
  * 사이드바 하단에 고정되는 현재 사용자 영역.
@@ -33,10 +34,12 @@ export class SidebarUserMenu extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String }) description = ''
   @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  // popover는 portal로 옮겨져 한 트리에 모이므로, 인스턴스가 여럿이어도 id가 겹치지 않게 한다.
+  private readonly menuId = uniqueId('account-menu')
 
   render() {
     return html`
-      <button type="button" aria-haspopup="menu" aria-controls="account-menu">
+      <button type="button" aria-haspopup="menu" aria-controls=${this.menuId}>
         <mm-user-item
           size="medium"
           label=${this.name}
@@ -46,7 +49,7 @@ export class SidebarUserMenu extends LitElement {
           <mm-icon slot="trailing" name=${ICON_NAMES.MORE_ACTIONS} size="small"></mm-icon>
         </mm-user-item>
       </button>
-      <mm-popover id="account-menu" placement="top-start">
+      <mm-popover id=${this.menuId} placement="top-start">
         <mm-menu-item-group aria-label="계정" @click=${this.handleMenuClick}>
           <mm-menu-item-action icon=${ICON_NAMES.PROFILE} label="프로필"></mm-menu-item-action>
           <mm-menu-item-action icon=${ICON_NAMES.SETTINGS} label="설정"></mm-menu-item-action>

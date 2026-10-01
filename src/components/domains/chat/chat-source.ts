@@ -5,6 +5,7 @@ import type { IconName } from '@/components/common'
 
 import '@/components/common'
 import '@/components/overlay/popover/popover'
+import { uniqueId } from '@/utils'
 
 /**
  * AI 응답 출처 소스 칩. 클릭하면 칩에 앵커된 popover로 상세 정보를 펼칩니다.
@@ -22,13 +23,15 @@ export class ChatSource extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) label = ''
   @property({ type: String }) icon?: IconName
+  // popover는 portal로 옮겨져 한 트리에 모이므로, 칩이 여럿이어도 id가 겹치지 않게 한다.
+  private readonly detailId = uniqueId('source-detail')
 
   render() {
     return html`
-      <mm-button variant="tertiary" aria-controls="source-detail">
+      <mm-button variant="tertiary" aria-controls=${this.detailId}>
         ${this.renderIcon()} ${this.domain}
       </mm-button>
-      <mm-popover id="source-detail">
+      <mm-popover id=${this.detailId}>
         <mm-flex direction="column" gap="1">
           ${this.renderDetailHeader()} ${this.renderHeading()} ${this.renderDescription()}
           ${this.renderLink()}
