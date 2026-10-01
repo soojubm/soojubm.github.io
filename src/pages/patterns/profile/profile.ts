@@ -17,7 +17,7 @@ const followerAvatars: AvatarItem[] = [
 ]
 
 const main = html`
-  <mm-main class="profile">
+  <mm-main class="profile" full-width>
     <section class="profile-user">
       <mm-user-snippet
         name="수줍이"

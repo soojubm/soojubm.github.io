@@ -40,7 +40,6 @@ export const ICON_CATALOG = {
     PREVIOUS: 'arrow-left',
     NEXT: 'arrow-right',
     SCROLL_TOP: 'arrow-up',
-    CURRENT: 'map-pin',
   },
 
   status: {
@@ -57,6 +56,7 @@ export const ICON_CATALOG = {
     BOOKMARK: 'bookmark',
     BOOKMARK_SELECTED: 'bookmark-solid',
     CHECK: 'check',
+    CURRENT: 'map-pin',
     FAVORITE: 'star',
     FAVORITE_SELECTED: 'star-solid',
     LIKE: 'heart',

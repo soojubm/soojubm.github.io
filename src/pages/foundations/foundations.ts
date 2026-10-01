@@ -137,7 +137,7 @@ const main = html`
                     `,
                   ),
                   rule(
-                    '같은 종류의 항목은 계열 그룹 컴포넌트로 묶는다',
+                    '같은 종류의 항목은 그 계열의 그룹 컴포넌트로 묶는다',
                     html`
                       역할·간격·정렬은 그룹이 소유한다. —
                       <mm-link href="./layout.html?tab=group">Layout</mm-link>

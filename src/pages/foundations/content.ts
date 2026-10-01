@@ -1,7 +1,7 @@
 import { html, nothing } from 'lit'
 
 import { ICON_CATALOG } from '@/components/common'
-import { FEATURE_ICONS, code, rule } from '@/components/domains/component'
+import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 /** 브랜드 표기처럼 대소문자가 고정된 이름만 예외로 둔다. */
@@ -33,11 +33,11 @@ const ROLE_DETAIL: Record<string, { description: string; usage?: string[] }> = {
   ADD: { description: '항목을 하나 더하거나 값을 하나 올립니다.' },
   ADD_CIRCLE: { description: '새 항목을 추가하는 흐름을 시작합니다.' },
   DISMISS: {
-    description: '사용자가 띄운 비필수 표면을 걷어냅니다.',
+    description: '사용자가 띄운 부가 창을 걷어냅니다.',
     usage: ['배너', '알림', '토스트'],
   },
   CLOSE: {
-    description: '열려 있던 대화형 표면을 닫습니다.',
+    description: '열려 있던 창을 닫습니다.',
     usage: ['모달', '패널', '시트'],
   },
   COPY: { description: '내용을 클립보드에 복사합니다.' },
@@ -68,7 +68,6 @@ const ROLE_DETAIL: Record<string, { description: string; usage?: string[] }> = {
   PREVIOUS: { description: '순서상 이전 항목으로 갑니다.' },
   NEXT: { description: '순서상 다음 항목으로 갑니다.' },
   SCROLL_TOP: { description: '페이지 맨 위로 올라갑니다.' },
-  CURRENT: { description: '내비게이션에서 지금 있는 위치를 나타냅니다.' },
   ERROR: { description: '오류나 수정이 필요한 상태를 나타냅니다.' },
   DONE: { description: '작업이 끝나 더 진행할 것이 없음을 나타냅니다.' },
   INFO: { description: '참고할 보조 정보를 나타냅니다.' },
@@ -113,13 +112,6 @@ const renderRoleList = (icons: Record<string, string>) => html`
 const ROLE_LIST_CATEGORIES = ['actions', 'navigations', 'status']
 
 const renderIconCatalog = () => [
-  html`
-    <mm-surface>
-      <mm-content-section heading-level="4" heading="Component features">
-        ${renderIconGrid(Object.entries(FEATURE_ICONS))}
-      </mm-content-section>
-    </mm-surface>
-  `,
   ...Object.entries(ICON_CATALOG)
     .filter(([, icons]) => Object.keys(icons).length > 0)
     .map(
@@ -151,8 +143,8 @@ const termRows = html`
   <tr>
     <th scope="row">Label</th>
     <td>
-      대상을 가리키는 이름. 화면에서의 위치가 아니라 대상이 이미 갖고 있는 이름을 그대로 쓰고,
-      부연은 ${code('description')}으로 나눈다
+      대상을 가리키는 이름. 화면에서의 위치가 아니라 대상이 이미 갖고 있는 이름을 그대로 쓰고, 추가
+      설명은 ${code('description')}으로 나눈다
     </td>
     <td>목록 행의 사람 이름, 설정 항목의 이름</td>
   </tr>
@@ -198,7 +190,7 @@ const main = html`
               variant="check"
               .texts=${[
                 rule(
-                  '텍스트는 짧게 유지하고 스캔 가능한 덩어리로 나눈다',
+                  '텍스트는 짧게 유지하고 훑어볼 수 있는 덩어리로 나눈다',
                   '간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
                 ),
                 rule(
@@ -235,7 +227,7 @@ const main = html`
               .texts=${[
                 rule(
                   '태그라인의 행갈이는 작성 단계에서 정한다',
-                  '글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 임팩트를 준다',
+                  '글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 인상을 남긴다',
                 ),
               ]}
             ></mm-text-list>
@@ -251,7 +243,7 @@ const main = html`
               .texts=${[
                 rule(
                   '상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 가운데 정렬한다',
-                  '주변 콘텐츠와 대비를 만들어 사용자의 주의를 환기한다',
+                  '주변 콘텐츠와 대비를 만들어 사용자의 주의를 끌어온다',
                 ),
               ]}
             ></mm-text-list>

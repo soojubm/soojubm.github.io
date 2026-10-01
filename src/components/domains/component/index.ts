@@ -22,7 +22,6 @@ import '@/components/domains/component/type-specimen'
 import '@/components/domains/component/component-usage'
 import '@/components/domains/component/component-notice'
 
-export { FEATURE_ICONS } from '@/components/domains/component/component-feature-list'
 export type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 export type { ComponentChangelogItemData } from '@/components/domains/component/component-changelog'
 export type { ComponentPropItemData } from '@/components/domains/component/component-props'

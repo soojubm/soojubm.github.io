@@ -7,7 +7,6 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common'
 import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -40,7 +39,6 @@ const componentProps: ComponentPropItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Input - file',
-    icon: ICON_NAMES.IMPORT,
     description:
       '자유 입력 대신 파일을 첨부받고, 첨부한 목록을 보여주며 개별로 제거합니다. 선택 상태는 uploader가 스스로 소유하고 바뀔 때 change로 알립니다.',
   },

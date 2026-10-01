@@ -343,7 +343,7 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="Current">
             <mm-paragraph>
-              ${code('aria-current')}가 필요한 엘리먼트에 ${code('mm-current-indicator')}를 씁니다.
+              ${code('aria-current')}가 필요한 요소에 ${code('mm-current-indicator')}를 씁니다.
             </mm-paragraph>
             <mm-surface variant="outlined" radius="large">
               <mm-flex gap="6" align-items="center">
@@ -418,7 +418,7 @@ const main = html`
               ]}
             ></mm-text-list>
             <mm-component-notice heading="필드가 검증을 소유하게 한다">
-              지금은 소비자가 값을 검사해 ${code('aria-invalid')}와 ${code('validation-text')}를
+              지금은 쓰는 쪽이 값을 검사해 ${code('aria-invalid')}와 ${code('validation-text')}를
               넘기고, 필드는 표시와 연결만 맡는다. 필드가 입력 규칙을 스스로 검사하는 범위와 검증
               시점(입력 중·포커스를 벗어날 때·제출할 때)은 정하지 않았다
             </mm-component-notice>
@@ -713,7 +713,7 @@ const main = html`
                   html`
                     ${code('value')}를 옵션의 key로 사용한다
                   `,
-                  '선택 상태와 목록 렌더가 같은 값을 기준으로 삼는다',
+                  '선택 상태와 목록 표시가 같은 값을 기준으로 삼는다',
                 ),
                 rule(
                   html`
