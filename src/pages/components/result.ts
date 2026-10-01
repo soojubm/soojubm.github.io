@@ -60,7 +60,7 @@ const main = html`
         .primaryAction=${primaryAction}
         .secondaryAction=${secondaryAction}
       >
-        <mm-meta-item-group direction="column" gap="2" style="width:100%">
+        <mm-meta-item-group direction="column" gap="2">
           <mm-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></mm-meta-item>
           <mm-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></mm-meta-item>
         </mm-meta-item-group>

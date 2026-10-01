@@ -11,7 +11,7 @@ export const resultStyles = css`
     margin: 0 auto;
   }
 
-  slot:not([name]) {
+  ::slotted(*) {
     width: 100%;
   }
 `
