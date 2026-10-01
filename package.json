@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --open",
     "prestart": "npm run manifest",
     "start": "webpack serve --open --mode=development",
-    "build": "npm run manifest && webpack --mode=production && node scripts/build-search-index.mjs",
+    "build": "npm run manifest && webpack --mode=production && node scripts/copy-static-assets.mjs && node scripts/build-search-index.mjs",
     "manifest": "node scripts/build-component-manifest.mjs",
     "remove": "rm -r node_modules",
     "stat": "npx webpack --mode production --json artifacts/webpack-stats.json",
