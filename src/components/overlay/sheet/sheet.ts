@@ -14,20 +14,18 @@ import { SheetController } from '@/controllers/sheet-controller'
 import { withOpenState } from '@/utils/open-state'
 
 export type SheetPlacement = Extract<OverlayPlacement, 'top' | 'bottom' | 'left' | 'right'>
+export type SheetWidth = 'small' | 'large'
 
 // 드래그로 내린 거리가 패널 높이의 이 비율을 넘으면 닫힘으로 판정한다.
 const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 
-/**
- * 높이·위치(placement/height)와 스크롤 책임(mm-sheet-body)을
- * sheet 컴포넌트 계층에서 일관되게 관리한다. `full-width`는 폭 제한을 푼다.
- */
 @customElement('mm-sheet')
 export class Sheet extends withOpenState(LitElement) {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal: AriaBoolean =
     'true'
   @property({ type: String, reflect: true }) placement: SheetPlacement = 'bottom'
+  @property({ type: String, reflect: true }) width: SheetWidth = 'small'
   @property({ type: String }) height?: string
   @property({ type: Boolean, reflect: true, attribute: 'full-width' }) fullWidth = false
   @query('.panel') private sheetEl!: HTMLElement

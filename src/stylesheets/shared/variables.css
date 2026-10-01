@@ -21,6 +21,7 @@
 
   --navbar-height: calc(var(--size-32) + 1.5rem);
 
+  --layout-width-large: 960px;
   --layout-width-small: 640px;
   --layout-width-narrow: 400px;
   --layout-width-sidebar: 244px;

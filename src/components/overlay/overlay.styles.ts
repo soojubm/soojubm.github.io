@@ -1,6 +1,14 @@
-import { css } from 'lit'
+import { css, unsafeCSS } from 'lit'
+
+import type { SheetWidth } from '@/components/overlay/sheet/sheet'
 
 import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
+
+// small은 패널의 기본 폭 상한이라 따로 선언하지 않는다.
+const sheetWidthTokens: AttributeTokens<Exclude<SheetWidth, 'small'>> = {
+  large: { '--overlay-panel-max-width': 'var(--layout-width-large)' },
+}
 
 /**
  * 오버레이가 기준(트리거나 화면)의 어느 변에 어느 정렬로 놓일지를 나타내는 표준 12개 값.
@@ -130,7 +138,9 @@ export const sheetPositionStyles = css`
     z-index: var(--material-zindex-sheet);
   }
 
-  /* full-width는 placement와 상관없이 폭 제한을 푼다 */
+  ${unsafeCSS(buildAttributeRules('width', sheetWidthTokens))}
+
+  /* full-width는 placement와 상관없이 폭 제한을 푼다. width와 함께 쓰면 이쪽이 이기도록 뒤에 둔다 */
   :host([full-width]) {
     --overlay-panel-max-width: 100%;
   }
