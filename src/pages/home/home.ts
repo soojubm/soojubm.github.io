@@ -4,7 +4,6 @@ import type { ToggleButtonGroup } from '@/components/common'
 
 import { code, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
-import { ScrollSpyController } from '@/controllers/scroll-spy-controller'
 import './home.css'
 
 const platformReferences: ComponentReferenceItemData[] = [
@@ -264,7 +263,7 @@ const main = html`
 
       <div hidden>
         <mm-surface>
-          <mm-text size="24" weight="bold" as="h2">Scroll Spy Controller Sampler</mm-text>
+          <mm-text size="24" weight="bold" as="h2">Scroll Spy Sampler</mm-text>
           <div class="scroll-spy-sampler js-scroll-spy-sampler">
             <mm-toggle-button-group
               class="js-scroll-spy-nav"
@@ -425,22 +424,16 @@ function setupScrollSpySampler() {
 
   if (!scrollRoot || !nav || !targets.length) return
 
-  const host = {
-    addController: () => {},
-    removeController: () => {},
-    requestUpdate: () => {},
-    updateComplete: Promise.resolve(true),
-  }
-
-  const scrollSpy = new ScrollSpyController(host, {
-    root: scrollRoot,
-    rootMargin: '0px 0px -55% 0px',
-    onActiveChange: id => {
-      nav.value = id
+  const observer = new IntersectionObserver(
+    entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+      if (visible.length) nav.value = visible[0].target.id
     },
-  })
-
-  scrollSpy.observe(targets)
+    { root: scrollRoot, rootMargin: '0px 0px -55% 0px' },
+  )
+  targets.forEach(target => observer.observe(target))
 
   nav.addEventListener('change', event => {
     const target = document.getElementById((event as CustomEvent<{ value: string }>).detail.value)

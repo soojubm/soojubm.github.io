@@ -1,7 +1,6 @@
 import type { SearchResult } from '@/components/domains/search/search-result-list'
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
-
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {
   search: (q: string) => Promise<{ results: { data: () => Promise<PagefindResult> }[] }>
@@ -31,7 +30,7 @@ export class PagefindSearchController implements ReactiveController {
   query = ''
   results: SearchResult[] = []
   searching = false
-private pagefind: Pagefind | null = null
+  private pagefind: Pagefind | null = null
   private debounceTimer: ReturnType<typeof setTimeout> | null = null
   private requestId = 0
 
@@ -49,7 +48,8 @@ private pagefind: Pagefind | null = null
   async load() {
     if (this.pagefind) return
     try {
-      // webpack이 번들링하지 않도록 Function constructor로 동적 import
+      // webpack이 번들링하지 않도록 Function constructor로 동적 import한다.
+      // tsconfig가 commonjs라 import()를 직접 쓰면 require로 바뀌어 webpackIgnore 주석이 소용없다.
       const dynamicImport = new Function('url', 'return import(url)')
       this.pagefind = (await dynamicImport('/pagefind/pagefind.js')) as Pagefind
     } catch {

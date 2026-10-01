@@ -12,8 +12,6 @@ interface RovingFocusControllerOptions {
   orientation?: Orientation | (() => Orientation)
   // Tab으로 진입했을 때 tabindex=0이 될 기준 항목. 보통 선택된 항목이다.
   getActiveIndex?: () => number
-  // Enter/Space 활성화를 컨트롤러가 처리해야 하는 비네이티브 항목에서만 넘긴다.
-  onActivate?: (index: number) => void
   // 키보드로 포커스를 옮긴 뒤 호출한다. 이동이 곧 선택인 radiogroup에서 넘긴다.
   onFocusMove?: (index: number) => void
 }
@@ -111,25 +109,17 @@ export class RovingFocusController implements ReactiveController {
     if (target === undefined) return
 
     event.preventDefault()
-
-    if (target === 'activate') {
-      this.activate(items)
-      return
-    }
-
     this.moveFocus(items, target)
     this.options.onFocusMove?.(target)
   }
 
-  // 키를 목표 인덱스나 'activate'로 해석한다. 처리 대상이 아니면 undefined.
-  private targetIndex(event: KeyboardEvent, items: HTMLElement[]): number | 'activate' | undefined {
+  // 키를 목표 인덱스로 해석한다. 처리 대상이 아니면 undefined.
+  private targetIndex(event: KeyboardEvent, items: HTMLElement[]): number | undefined {
     const current = this.currentIndex(items)
     const isFocusable = (index: number) => this.isFocusable(items[index])
 
     if (event.key === 'Home') return nextFocusableIndex(-1, 1, isFocusable, items.length)
     if (event.key === 'End') return nextFocusableIndex(items.length, -1, isFocusable, items.length)
-
-    if (this.options.onActivate && (event.key === 'Enter' || event.key === ' ')) return 'activate'
 
     const step = directionFor(event.key, this.orientation)
     if (step === undefined) return undefined
@@ -146,11 +136,5 @@ export class RovingFocusController implements ReactiveController {
     this.focusedIndex = index
     items[index]?.focus()
     this.host.requestUpdate()
-  }
-
-  private activate(items: HTMLElement[]) {
-    const index = this.currentIndex(items)
-    if (!this.isFocusable(items[index])) return
-    this.options.onActivate?.(index)
   }
 }

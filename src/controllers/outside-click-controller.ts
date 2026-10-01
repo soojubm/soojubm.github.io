@@ -3,8 +3,6 @@ import type { ReactiveController, ReactiveControllerHost } from 'lit'
 type Host = ReactiveControllerHost & HTMLElement
 
 interface OutsideClickOptions {
-  /** 감지할 이벤트 (기본 'pointerdown') */
-  event?: 'click' | 'pointerdown'
   /** 열려 있을 때만 콜백을 실행한다 (닫혀 있으면 바깥 클릭을 무시) */
   isOpen?: () => boolean
   /** host 밖이지만 바깥으로 치지 않을 요소들 (예: 열림을 토글하는 트리거) */
@@ -28,16 +26,12 @@ export class OutsideClickController implements ReactiveController {
     host.addController(this)
   }
 
-  private get event() {
-    return this.options.event ?? 'pointerdown'
-  }
-
   hostConnected() {
-    document.addEventListener(this.event, this.handleOutsideEvent)
+    document.addEventListener('pointerdown', this.handleOutsideEvent)
   }
 
   hostDisconnected() {
-    document.removeEventListener(this.event, this.handleOutsideEvent)
+    document.removeEventListener('pointerdown', this.handleOutsideEvent)
   }
 
   private handleOutsideEvent = (e: Event) => {

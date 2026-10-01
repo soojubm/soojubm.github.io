@@ -38,12 +38,6 @@ export class MultipleSelectionController {
     return this.optionValues.length > 0 && this.optionValues.every(value => this.isSelected(value))
   }
 
-  sync<T extends SelectionOption>(options: T[], apply: (option: T, selected: boolean) => void) {
-    options.forEach(option => {
-      apply(option, this.isSelected(option.value))
-    })
-  }
-
   private getValuesForState(option: SelectionOption, selected: boolean) {
     if (option.selectAll) return selected ? this.optionValues : []
 

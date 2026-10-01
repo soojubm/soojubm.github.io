@@ -31,10 +31,4 @@ export class SingleSelectionController {
   isOptionSelected(option: SelectionOption) {
     return this.isSelected(option.value)
   }
-
-  sync<T extends SelectionOption>(options: T[], apply: (option: T, selected: boolean) => void) {
-    options.forEach(option => {
-      apply(option, this.isSelected(option.value))
-    })
-  }
 }
