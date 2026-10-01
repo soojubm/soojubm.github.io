@@ -613,6 +613,13 @@ const main = html`
                 { label: '컴포넌트' },
               ]}
             ></mm-table>
+            <mm-paragraph>
+              ${code('SlottedSelectionController')}는 slot으로 받은 항목을 위 컨트롤러에 잇습니다.
+              값은 소유하지 않고, 그룹의 값을 항목의 ${code('checked')}에 반영하며 항목의
+              ${code('change')}를 그룹의 ${code('change')}로 올립니다. 카드나 메뉴 행처럼 옵션
+              배열로 표현할 수 없는 항목을 자식으로 받는 ${code('mm-radio-card-group')}·
+              ${code('mm-menu-item-radio-group')}·${code('mm-menu-item-checkbox-group')}이 씁니다.
+            </mm-paragraph>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Pressed">

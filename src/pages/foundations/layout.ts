@@ -54,12 +54,9 @@ const overviewRows = html`
 `
 
 const contentSectionCode = `<mm-content-section-list>
-  <mm-content-section heading-level="3" heading="액션이 없는 섹션">
-    <mm-paragraph>제목과 본문 사이 간격은 섹션이, 섹션 사이 간격은 섹션 목록이 소유합니다.</mm-paragraph>
-  </mm-content-section>
+  <mm-content-section heading-level="3" heading="액션이 없는 섹션"></mm-content-section>
   <mm-content-section heading-level="3" heading="액션이 있는 섹션">
     <mm-link slot="action" href="./post.html">모두 보기</mm-link>
-    <mm-paragraph>제목 줄 오른쪽에 섹션 전체에 걸리는 동작을 둡니다.</mm-paragraph>
   </mm-content-section>
 </mm-content-section-list>`
 
@@ -492,18 +489,11 @@ const main = html`
             </mm-paragraph>
             <mm-content-section heading-level="3" heading="Flex">
               <mm-paragraph>
-                ${code('mm-flex')}는 자식을 가로나 세로 한 줄로 배치하는 레이아웃 유틸리티입니다.
+                자식을 가로나 세로 한 줄로 배치하는 레이아웃 유틸리티입니다.
               </mm-paragraph>
               <mm-text-list
                 variant="check"
                 .texts=${[
-                  rule(
-                    '형제 사이 간격은 부모의 gap으로 정한다',
-                    html`
-                      항목마다 여백을 따로 주지 않는다. 섹션 사이는 ${code('--space-section')} 같은
-                      의미 토큰을 쓴다
-                    `,
-                  ),
                   rule(
                     html`
                       컴포넌트 안에서는 ${code('mm-flex')}를 중첩하지 않는다
@@ -520,7 +510,7 @@ const main = html`
 
             <mm-content-section heading-level="3" heading="Grid">
               <mm-paragraph>
-                ${code('mm-grid')}는 반복되는 항목을 열 단위로 늘어놓는 레이아웃 유틸리티입니다.
+                반복되는 항목을 열 단위로 늘어놓는 레이아웃 유틸리티입니다.
               </mm-paragraph>
               <mm-text-list
                 variant="check"
@@ -546,21 +536,9 @@ const main = html`
             <mm-paragraph>제목이 놓이는 자리가 쓸 컴포넌트를 정합니다.</mm-paragraph>
             <mm-content-section heading-level="3" heading="Page Header">
               <mm-paragraph>
-                ${code('mm-page-header')}는 페이지 최상단의 제목과 설명을 구성하고, 아래 구획과의
-                간격을 자기 아래 여백으로 소유합니다. ${code('centered')}로 가운데 정렬합니다.
+                페이지 최상단의 제목과 설명을 구성하고, 아래 구획과의 간격을 자기 아래 여백으로
+                소유합니다. ${code('centered')}로 가운데 정렬합니다.
               </mm-paragraph>
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '헤더의 액션은 헤더와 버튼 그룹을 형제로 둔다',
-                    html`
-                      ${code('mm-page-header')}에는 액션 슬롯이 없다. 레이아웃 부모
-                      (${code('mm-flex')}) 안에 헤더와 ${code('mm-button-group')}을 나란히 배치한다
-                    `,
-                  ),
-                ]}
-              ></mm-text-list>
               <mm-component-example full-width>
                 <mm-flex justify-content="space-between" align-items="flex-start">
                   <mm-page-header
@@ -578,36 +556,18 @@ const main = html`
 
             <mm-content-section heading-level="3" heading="Content Section">
               <mm-paragraph>
-                ${code('mm-content-section')}은 제목과 본문을 한 묶음으로 구성하고 그 사이 간격을
-                소유합니다. ${code('heading-level')}은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이
-                문서 구조에서 놓인 자리에 맞춰 지정합니다. 섹션끼리의 바깥 간격은
-                ${code('mm-content-section-list')}가 정하므로, 페이지는 섹션 사이에 간격을 따로 주지
-                않습니다. "모두 보기" 링크처럼 섹션 전체에 걸리는 동작은 ${code('action')} 슬롯으로
-                받아 제목 줄 오른쪽에 둡니다.
+                제목과 본문을 한 묶음으로 구성하고 그 사이 간격을 소유합니다.
+                ${code('heading-level')}은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이 문서 구조에서
+                놓인 자리에 맞춰 지정합니다.
               </mm-paragraph>
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '제목 단계는 문서 구조를 따라 한 단계씩만 내린다',
-                    html`
-                      페이지 헤더(h1) 아래 최상위 구획은 기본값 ${code('2')}를 쓰고, 그 안의 구획은
-                      3, 4로 건너뛰지 않고 내려간다. 단계가 크기도 정하므로 크기를 맞추려고 단계를
-                      건너뛰지 않는다
-                    `,
-                  ),
-                ]}
-              ></mm-text-list>
               <mm-surface variant="filled">
                 <mm-content-section-list>
-                  <mm-content-section heading-level="4" heading="액션이 없는 섹션">
-                    <mm-paragraph>
-                      제목과 본문 사이 간격은 섹션이, 섹션 사이 간격은 섹션 목록이 소유합니다.
-                    </mm-paragraph>
-                  </mm-content-section>
+                  <mm-content-section
+                    heading-level="4"
+                    heading="액션이 없는 섹션"
+                  ></mm-content-section>
                   <mm-content-section heading-level="4" heading="액션이 있는 섹션">
                     <mm-link slot="action" href="./post.html">모두 보기</mm-link>
-                    <mm-paragraph>제목 줄 오른쪽에 섹션 전체에 걸리는 동작을 둡니다.</mm-paragraph>
                   </mm-content-section>
                 </mm-content-section-list>
               </mm-surface>
@@ -622,9 +582,9 @@ const main = html`
 
             <mm-content-section heading-level="3" heading="Text Block">
               <mm-paragraph>
-                ${code('mm-text-block')}은 제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다.
-                ${code('level')}로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다. 본문이
-                딸린 구획에는 ${code('mm-content-section')}을 씁니다.
+                제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다. ${code('level')}로 문서 안의 깊이와
+                두 텍스트의 크기 단계를 함께 정합니다. 본문이 딸린 구획에는
+                ${code('mm-content-section')}을 씁니다.
               </mm-paragraph>
               <mm-surface variant="filled">
                 <mm-text-block
@@ -655,9 +615,9 @@ const main = html`
 
             <mm-content-section heading-level="3" heading="Form Field">
               <mm-paragraph>
-                ${code('mm-form-field')}는 textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를
-                같은 규칙으로 붙입니다. 컨트롤은 슬롯으로 받고 필드는 레이블이 붙은
-                ${code('role="group"')}이 됩니다. 컨트롤별 조합은
+                textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를 같은 규칙으로 붙입니다.
+                컨트롤은 슬롯으로 받고 필드는 레이블이 붙은 ${code('role="group"')}이 됩니다.
+                컨트롤별 조합은
                 <mm-link href="./input.html">Input</mm-link>
                 이 전시합니다.
               </mm-paragraph>
@@ -695,16 +655,6 @@ const main = html`
 
       <mm-tab-panel value="group">
         <mm-content-section-list>
-          <mm-text-list
-            variant="check"
-            .texts=${[
-              rule(
-                '같은 종류의 항목이 여럿이면 그 계열의 그룹으로 묶는다',
-                '컨테이너에서 role과 간격을 직접 만들지 않고 그룹이 소유하게 한다. 항목이 하나뿐이면 그룹으로 감싸지 않고 단일 요소를 그대로 둔다',
-              ),
-            ]}
-          ></mm-text-list>
-
           <mm-flex direction="column" gap="4">
             <mm-grid columns="2" gap="4">
               <mm-surface>
@@ -734,7 +684,7 @@ const main = html`
                 { label: '컴포넌트', width: '260px' },
                 { label: '선택', width: '140px' },
                 { label: 'Role', width: '160px' },
-                { label: '간격', width: '120px' },
+                { label: '간격' },
               ]}
             ></mm-table>
             <mm-component-notice

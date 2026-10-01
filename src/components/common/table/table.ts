@@ -117,7 +117,7 @@ export class Table extends LitElement {
 
   render() {
     return html`
-      <table>
+      <table style=${styleMap(this.getTableStyle())}>
         <caption hidden>${this.caption}</caption>
         <colgroup>${this.renderColumns()}</colgroup>
         <thead>
@@ -138,6 +138,19 @@ export class Table extends LitElement {
     }
 
     this.style.setProperty('--table-height', this.height)
+  }
+
+  // 너비를 준 열은 그만큼만 차지하고, 너비 없는 마지막 열이 남는 폭을 채운다.
+  // 마지막 열이 0으로 무너지지 않도록 고정 열 폭의 합에 최소 폭을 더해 그 아래에서는 가로 스크롤로 넘긴다.
+  private getTableStyle() {
+    const fixedWidths = this.columns.map(column => column.width).filter(Boolean)
+    const lastColumn = this.columns[this.columns.length - 1]
+    if (!lastColumn || lastColumn.width || fixedWidths.length === 0) return {}
+
+    return {
+      width: '100%',
+      minWidth: `calc(${fixedWidths.join(' + ')} + var(--size-80) * 2)`,
+    }
   }
 
   private renderColumns() {
