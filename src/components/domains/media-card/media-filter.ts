@@ -8,7 +8,7 @@ import '@/components/common'
 
 /**
  * 감상 기록 목록의 필터 한 줄. 라벨과 단일 선택 필터 그룹을 나란히 두고, 라벨을 그룹의 이름으로 쓴다.
- * films·books 목록이 공유하며, 선택이 바뀌면 그룹의 change를 끊고 자기 change로 다시 알린다.
+ * mm-media-list가 필터마다 하나씩 쓰며, 선택이 바뀌면 그룹의 change를 끊고 자기 change로 다시 알린다.
  */
 @customElement('mm-media-filter')
 export class MediaFilter extends LitElement {

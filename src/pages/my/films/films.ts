@@ -1,14 +1,9 @@
-import { html, render } from 'lit'
+import { html } from 'lit'
+
+import type { MediaItem, MediaList, MediaListFilter } from '@/components/domains/media-card'
 
 import { renderPage } from '@/components/layouts/base-layouts'
-import {
-  renderList,
-  renderMediaCard,
-  getCountries,
-  loadJson,
-  toFilterOptions,
-  type MediaItem,
-} from '@/pages/my/list-page'
+import { countryFilter, loadJson, toFilterOptions } from '@/pages/my/list-page'
 
 const main = html`
   <mm-main>
@@ -18,85 +13,30 @@ const main = html`
         description="감상한 영화를 기록합니다."
       ></mm-page-header>
 
-      <div class="js-filters"></div>
-
-      <mm-paragraph size="small" color="light">
-        <span class="js-count"></span>
-        편
-      </mm-paragraph>
-
-      <mm-grid class="js-list" column-min-width="220px" gap="3"></mm-grid>
-
-      <div class="js-more" hidden></div>
+      <mm-media-list unit="편"></mm-media-list>
     </mm-flex>
   </mm-main>
 `
-
-type FilterState = { decade: string; country: string }
 
 renderPage(main, { initialize: initPage })
 
 async function initPage() {
   const films = await loadJson<MediaItem>('/src/pages/my/films/films.json')
-  if (!films?.length) return
+  const list = document.querySelector<MediaList>('mm-media-list')
+  if (!films?.length || !list) return
 
-  const state: FilterState = { decade: '', country: '' }
-  const rerender = () => renderList(getFiltered(films, state), renderMediaCard)
-
-  renderFilters(films, state, rerender)
-  rerender()
+  list.items = films
+  list.filters = [decadeFilter(films), countryFilter(films, 20)]
 }
 
-function renderFilters(films: MediaItem[], state: FilterState, rerender: () => void) {
-  const container = document.querySelector<HTMLElement>('.js-filters')
-  if (!container) return
+const getDecade = (film: MediaItem) => String(Math.floor(film.releasedate / 10) * 10)
 
-  const decadeOptions = toFilterOptions(getDecades(films), value => `${value}s`)
-  const countryOptions = toFilterOptions(getCountries(films, 20))
+function decadeFilter(films: MediaItem[]): MediaListFilter {
+  const decades = new Set(films.filter(film => film.releasedate >= 1880).map(getDecade))
 
-  render(
-    html`
-      <mm-flex direction="column" gap="2">
-        <mm-media-filter
-          class="js-decade-filter"
-          label="연대"
-          .options=${decadeOptions}
-        ></mm-media-filter>
-        <mm-media-filter
-          class="js-country-filter"
-          label="국가"
-          .options=${countryOptions}
-        ></mm-media-filter>
-      </mm-flex>
-    `,
-    container,
-  )
-
-  container.querySelector('.js-decade-filter')?.addEventListener('change', e => {
-    state.decade = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
-    rerender()
-  })
-
-  container.querySelector('.js-country-filter')?.addEventListener('change', e => {
-    state.country = (e as CustomEvent<{ values: string[] }>).detail.values[0] ?? ''
-    rerender()
-  })
-}
-
-function getFiltered(films: MediaItem[], state: FilterState) {
-  return films.filter(f => {
-    if (state.decade) {
-      const filmDecade = String(Math.floor(f.releasedate / 10) * 10)
-      if (filmDecade !== state.decade) return false
-    }
-    if (state.country && f.country !== state.country) return false
-    return true
-  })
-}
-
-function getDecades(films: MediaItem[]) {
-  const set = new Set(
-    films.filter(f => f.releasedate >= 1880).map(f => String(Math.floor(f.releasedate / 10) * 10)),
-  )
-  return [...set].sort()
+  return {
+    label: '연대',
+    options: toFilterOptions([...decades].sort(), value => `${value}s`),
+    matches: (film, decade) => getDecade(film) === decade,
+  }
 }
