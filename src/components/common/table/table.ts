@@ -55,7 +55,7 @@ export class Table extends LitElement {
         background: var(--table-cell-background-color);
       }
       table caption {
-        padding: 0.5rem 0;
+        padding: var(--space-2) 0;
         font-size: var(--font-size-12);
         text-align: left;
       }

@@ -20,10 +20,7 @@ export const switchStyles = css`
   input {
     opacity: 0;
     position: absolute;
-    left: -0.5rem;
-    right: -0.5rem;
-    top: -0.5rem;
-    bottom: -0.5rem;
+    inset: calc(var(--space-2) * -1);
     inline-size: 100%;
 
     &:checked + label {

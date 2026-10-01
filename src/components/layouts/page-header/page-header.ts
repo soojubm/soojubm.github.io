@@ -8,7 +8,7 @@ export class PageHeader extends LitElement {
   static styles = css`
     :host {
       display: block;
-      padding-bottom: 2rem;
+      padding-bottom: var(--space-8);
     }
   `
   @property({ type: String }) heading = ''
