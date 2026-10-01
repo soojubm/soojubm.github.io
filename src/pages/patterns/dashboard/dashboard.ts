@@ -212,7 +212,10 @@ const main = html`
     <mm-content-section-list>
       <mm-flex direction="column" gap="4">
         <mm-flex justify-content="space-between" align-items="center" gap="4">
-          <mm-heading level="2">🌙 Tender is the night.</mm-heading>
+          <mm-heading level="2">
+            <span aria-hidden="true">🌙</span>
+            Tender is the night.
+          </mm-heading>
           <mm-button-group>
             <mm-button icon=${ICON_NAMES.IMPORT}>가져오기</mm-button>
             <mm-button variant="primary">추가하기</mm-button>

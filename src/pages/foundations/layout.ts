@@ -5,7 +5,7 @@ import type { TemplateResult } from 'lit'
 import './layout.css'
 
 import '@/components/domains/component/component-notice'
-import { code, rule } from '@/components/domains/component'
+import { code, no, rule, yes } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const overviewRows = html`
@@ -76,13 +76,6 @@ const textBlockCode = `<mm-text-block level="3" heading="제목" description="�
 const formFieldCode = `<mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
   <mm-checkbox-group name="topics" .options=\${topicOptions}></mm-checkbox-group>
 </mm-form-field>`
-
-const yes = html`
-  <span role="img" aria-label="예">✅</span>
-`
-const no = html`
-  <span role="img" aria-label="아니오">❌</span>
-`
 
 const classificationRows = html`
   <tr>

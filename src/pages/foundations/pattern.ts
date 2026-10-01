@@ -10,7 +10,7 @@ import '@/components/domains/faq'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-notice'
-import { code, rule } from '@/components/domains/component'
+import { code, no, rule, yes } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const expandedComponentRows = html`
@@ -32,7 +32,7 @@ const expandedComponentRows = html`
   <tr>
     <th scope="row">${code('mm-read-more-button')}</th>
     <td>잘린 텍스트</td>
-    <td>레이블(더 보기 ↔ 접기)</td>
+    <td>레이블(더 보기·접기)</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-hamburger-button')}</th>
@@ -88,13 +88,6 @@ const handleRecentSearchSelect = (event: CustomEvent<{ value: string }>) => {
 
   searchField.value = event.detail.value
 }
-
-const yes = html`
-  <span role="img" aria-label="예">✅</span>
-`
-const no = html`
-  <span role="img" aria-label="아니오">❌</span>
-`
 
 const overviewRows = html`
   <tr>

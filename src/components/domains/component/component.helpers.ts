@@ -19,6 +19,14 @@ export const rule = (title: string | TemplateResult, description: string | Templ
   </span>
 `
 
+/** 표 칸의 예·아니오 표시. 이모지만으로는 뜻이 읽히지 않으므로 이름을 함께 단다. */
+export const yes = html`
+  <span role="img" aria-label="예">✅</span>
+`
+export const no = html`
+  <span role="img" aria-label="아니오">❌</span>
+`
+
 /** withOpenState를 쓰는 표면이 함께 갖는 공개 메서드. 선언에서 읽을 수 없어 문서에 따로 적는다. */
 export const openStateMethods: ComponentPropItemData[] = [
   { name: 'show()', type: 'method' },
