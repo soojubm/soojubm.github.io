@@ -52,6 +52,7 @@ export class Thumbnail extends LitElement {
         aspect-ratio: 16 / 9;
         border: var(--thumbnail-border);
         border-radius: var(--thumbnail-border-radius);
+        box-sizing: border-box;
         background-color: var(--thumbnail-background-color-empty);
         overflow: hidden;
       }
