@@ -3,6 +3,7 @@ import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
+import { FrameController } from '@/controllers/frame-controller'
 import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
@@ -95,7 +96,7 @@ export class Marquee extends LitElement {
   @query('.source') private sourceElement?: HTMLElement
   @query('slot') private slotElement?: HTMLSlotElement
   private resizeObserver?: ResizeObserver
-  private measureFrame = 0
+  private measureFrame = new FrameController(this, () => this.measure())
 
   render() {
     const cloneIndexes = Array.from({ length: this.copyCount - 1 }, (_, index) => index)
@@ -125,14 +126,14 @@ export class Marquee extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.setAttribute('role', 'marquee')
-    this.resizeObserver = new ResizeObserver(() => this.queueMeasure())
+    this.resizeObserver = new ResizeObserver(() => this.measureFrame.request())
     // 최초 연결은 firstUpdated에서 관찰을 시작하고, 이후 재연결(DOM 이동 등)은 여기서 바로 다시 관찰한다.
     if (this.hasUpdated) this.observeResizeTargets()
   }
 
   firstUpdated() {
     this.observeResizeTargets()
-    this.queueMeasure()
+    this.measureFrame.request()
   }
 
   private observeResizeTargets() {
@@ -141,11 +142,11 @@ export class Marquee extends LitElement {
   }
 
   updated(changed: PropertyValues) {
-    if (changed.has('gap')) this.queueMeasure()
+    if (changed.has('gap')) this.measureFrame.request()
 
     if (changed.has('height')) this.updateHeight()
 
-    if (changed.has('speed')) this.queueMeasure()
+    if (changed.has('speed')) this.measureFrame.request()
 
     if (changed.has('copyCount')) this.syncClones()
   }
@@ -153,20 +154,11 @@ export class Marquee extends LitElement {
   disconnectedCallback() {
     super.disconnectedCallback()
     this.resizeObserver?.disconnect()
-    cancelAnimationFrame(this.measureFrame)
   }
 
   private handleSlotChange = () => {
-    this.queueMeasure()
+    this.measureFrame.request()
     this.updateComplete.then(() => this.syncClones())
-  }
-
-  private queueMeasure() {
-    cancelAnimationFrame(this.measureFrame)
-    this.measureFrame = requestAnimationFrame(() => {
-      this.measureFrame = 0
-      this.measure()
-    })
   }
 
   private measure() {

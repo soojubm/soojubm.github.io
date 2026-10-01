@@ -12,6 +12,7 @@ import { sidebarStyles } from '@/components/layouts/app-sidebar/sidebar.styles'
 import { MEDIA_QUERY } from '@/constants'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { EscapeKeyController } from '@/controllers/escape-key-controller'
+import { MediaQueryController } from '@/controllers/media-query-controller'
 import { SITEMAP, type SitemapItem, type SitemapNode } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
 import { withOpenState } from '@/utils/open-state'
@@ -30,9 +31,12 @@ export class Sidebar extends withOpenState(LitElement) {
   static styles = [sidebarStyles]
   @query('mm-scroll') private scrollEl?: Scroll
   private currentPageId = getCurrentPageId()
-  private mobileQuery = window.matchMedia(MEDIA_QUERY.default)
   private disclosure = new DisclosureController(this)
   private escapeKey = new EscapeKeyController(this)
+  // 좁은 화면에서는 열린 채로 본문을 가리지 않도록, 연결될 때와 좁아질 때 닫는다.
+  private mobileQuery = new MediaQueryController(this, MEDIA_QUERY.default, matches => {
+    if (matches) this.close()
+  })
 
   render() {
     return html`
@@ -98,25 +102,9 @@ export class Sidebar extends withOpenState(LitElement) {
     this.restoreScrollPosition()
   }
 
-  connectedCallback() {
-    super.connectedCallback()
-
-    if (this.mobileQuery.matches) this.open = false
-    this.mobileQuery.addEventListener('change', this.handleMobileChange)
-  }
-
-  disconnectedCallback() {
-    this.mobileQuery.removeEventListener('change', this.handleMobileChange)
-    super.disconnectedCallback()
-  }
-
   protected updated(changedProperties: Map<string, unknown>) {
     // 닫힌 사이드바로 포커스가 들어가지 않도록 열림 상태에 맞춰 inert를 맞춘다.
     if (changedProperties.has('open')) this.inert = !this.open
-  }
-
-  private handleMobileChange = (e: MediaQueryListEvent) => {
-    if (e.matches) this.close()
   }
 
   private restoreScrollPosition() {

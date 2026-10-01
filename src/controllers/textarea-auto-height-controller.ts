@@ -1,5 +1,7 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
+import { FrameController } from '@/controllers/frame-controller'
+
 type Host = ReactiveControllerHost & HTMLElement
 
 interface TextareaAutoHeightControllerOptions {
@@ -9,9 +11,10 @@ interface TextareaAutoHeightControllerOptions {
 }
 
 export class TextareaAutoHeightController implements ReactiveController {
-  private resizeFrame = 0
+  private frame: FrameController
 
   constructor(host: Host, private options: TextareaAutoHeightControllerOptions) {
+    this.frame = new FrameController(host, () => this.syncHeight())
     host.addController(this)
   }
 
@@ -19,16 +22,8 @@ export class TextareaAutoHeightController implements ReactiveController {
     this.resizeToContent()
   }
 
-  hostDisconnected() {
-    cancelAnimationFrame(this.resizeFrame)
-  }
-
   resizeToContent() {
-    cancelAnimationFrame(this.resizeFrame)
-    this.resizeFrame = requestAnimationFrame(() => {
-      this.resizeFrame = 0
-      this.syncHeight()
-    })
+    this.frame.request()
   }
 
   private syncHeight() {

@@ -1,5 +1,7 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
+import { FrameController } from '@/controllers/frame-controller'
+
 type Host = ReactiveControllerHost & HTMLElement
 type SelectionIndicatorAxis = 'x' | 'y'
 
@@ -12,14 +14,11 @@ interface SelectionIndicatorControllerOptions {
 }
 
 export class SelectionIndicatorController implements ReactiveController {
-  private updateFrame = 0
+  private frame: FrameController
 
   constructor(private host: Host, private options: SelectionIndicatorControllerOptions) {
+    this.frame = new FrameController(host, () => this.syncPosition())
     host.addController(this)
-  }
-
-  hostDisconnected() {
-    cancelAnimationFrame(this.updateFrame)
   }
 
   hostUpdated() {
@@ -27,11 +26,7 @@ export class SelectionIndicatorController implements ReactiveController {
   }
 
   update = () => {
-    cancelAnimationFrame(this.updateFrame)
-    this.updateFrame = requestAnimationFrame(() => {
-      this.updateFrame = 0
-      this.syncPosition()
-    })
+    this.frame.request()
   }
 
   private syncPosition() {

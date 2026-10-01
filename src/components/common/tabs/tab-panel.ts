@@ -1,6 +1,8 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { FrameController } from '@/controllers/frame-controller'
+
 const FOCUSABLE_SELECTOR =
   'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"]), audio[controls], video[controls]'
 
@@ -17,6 +19,7 @@ export class TabPanel extends LitElement {
   @property({ type: String }) value = ''
   /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
   @property({ type: Boolean, reflect: true }) active = false
+  private tabStopFrame = new FrameController(this, () => this.syncTabStop())
 
   connectedCallback() {
     super.connectedCallback()
@@ -31,9 +34,11 @@ export class TabPanel extends LitElement {
 
   // 내부에 포커스 가능한 요소가 없을 때만 패널 자체를 탭 스톱으로 만든다 (ARIA APG tabpanel).
   private handleSlotChange() {
-    requestAnimationFrame(() => {
-      this.tabIndex = this.hasFocusableContent(this) ? -1 : 0
-    })
+    this.tabStopFrame.request()
+  }
+
+  private syncTabStop() {
+    this.tabIndex = this.hasFocusableContent(this) ? -1 : 0
   }
 
   private hasFocusableContent(root: ParentNode): boolean {
