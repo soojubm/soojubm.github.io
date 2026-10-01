@@ -255,6 +255,18 @@ const groupRows = html`
     <td>${code('--space-4')}</td>
   </tr>
   <tr>
+    <th scope="row">${code('mm-feature-group')}</th>
+    <td>없음</td>
+    <td>group</td>
+    <td>${code('--space-8')}</td>
+  </tr>
+  <tr>
+    <th scope="row">${code('mm-pricing-card-group')}</th>
+    <td>없음</td>
+    <td>list, 항목은 listitem</td>
+    <td>${code('--space-8')}</td>
+  </tr>
+  <tr>
     <th scope="row">${code('mm-search-suggestion-group')}</th>
     <td>없음</td>
     <td>group</td>
@@ -604,22 +616,6 @@ const main = html`
               <mm-code-block .code=${formFieldCode}></mm-code-block>
             </mm-content-section>
           </mm-content-section>
-
-          <mm-content-section heading="주의">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    구획은 gap과
-                    <mm-link href="./separator.html">separator</mm-link>
-                    중 하나로만 나눈다
-                  `,
-                  'separator가 구획을 맡는 컨테이너는 gap을 두지 않고 separator의 자체 간격에 맡긴다. 둘을 겹치면 경계가 두 번 그어진다',
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -657,14 +653,31 @@ const main = html`
                 { label: '간격' },
               ]}
             ></mm-table>
-            <mm-component-notice
-              variant="exception"
-              heading="mm-feature-group은 그리드로 놓고 간격 --space-8을 고정한다"
-            >
-              한 줄로 나열하는 다른 그룹과 달리 ${code('mm-grid')}에 배치를 맡기는 조립이라 그룹의
-              간격 단계(--space-1 ~ --space-4)를 벗어난다. 사례가 늘면 그룹 간격을 단계로 올릴지
-              정한다
-            </mm-component-notice>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '그룹 간격은 묶는 항목의 레벨을 따른다',
+                  html`
+                    Element 그룹은 ${code('--space-1')}~${code('--space-3')}, Article 그룹은
+                    ${code('--space-8')}, Section 그룹은 ${code('--space-section')}을 쓴다.
+                    Article은 Element보다 덩어리가 커서 같은 간격으로 놓으면 경계가 흐려진다
+                  `,
+                ),
+                rule(
+                  '레벨에 맞는 수단으로 구획을 나눈다',
+                  'Element 그룹은 선이나 면 없이 간격만으로 한 덩어리로 읽히게 한다. Article 그룹은 이웃과 구분되어야 해서 선이나 면으로 경계를 긋고, 면이 덩어리를 이미 나누는 격자는 gap만 쓴다. Section 그룹은 선 없이 여백과 제목으로 나눈다',
+                ),
+                rule(
+                  html`
+                    구획은 gap과
+                    <mm-link href="./separator.html">separator</mm-link>
+                    중 하나로만 나눈다
+                  `,
+                  'separator가 구획을 맡는 컨테이너는 gap을 두지 않고 separator의 자체 간격에 맡긴다. 둘을 겹치면 경계가 두 번 그어진다',
+                ),
+              ]}
+            ></mm-text-list>
           </mm-flex>
         </mm-content-section-list>
       </mm-tab-panel>

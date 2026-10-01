@@ -208,27 +208,35 @@ const main = html`
 
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="Component Level">
-          <mm-paragraph>컴포넌트의 레벨에 따라 간격과 그루핑 규칙이 정해집니다.</mm-paragraph>
+          <mm-paragraph>컴포넌트의 레벨에 따라 간격과 구획 규칙이 정해집니다.</mm-paragraph>
           <mm-list-item-group>
             <mm-list-item
               icon=${ICON_NAMES.IDLE}
               size="medium"
               label="Element"
-              description="단일 UI 유닛."
+              description="단일 UI 유닛. 이웃과 간격으로 나눈다."
             ></mm-list-item>
             <mm-list-item
-              icon=${ICON_NAMES.GROUP}
+              icon=${ICON_NAMES.DOCUMENT}
               size="medium"
-              label="Group"
-              description="같은 Element를 묶어 나열한 리스트."
+              label="Article"
+              description="Element 여럿이 모여 혼자 읽혀도 되는 내용 단위. 같은 모양이 반복되며 선이나 면으로 경계를 긋는다."
             ></mm-list-item>
             <mm-list-item
               icon=${ICON_NAMES.LIST_VIEW}
               size="medium"
               label="Section"
-              description="제목과 본문으로 이루어진 구획."
+              description="제목과 본문으로 이루어진 구획. 여백과 제목으로 나눈다."
             ></mm-list-item>
           </mm-list-item-group>
+        </mm-content-section>
+
+        <mm-content-section heading-level="3" heading="Group">
+          <mm-paragraph>
+            같은 레벨의 항목을 반복해 놓는 방식입니다. 간격과 구획은 그룹이 소유하며, 단계와 수단은
+            <mm-link href="./layout.html?tab=group">Layout</mm-link>
+            문서가 정합니다.
+          </mm-paragraph>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="Component Feature">
