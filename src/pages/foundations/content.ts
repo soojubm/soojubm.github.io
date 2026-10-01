@@ -197,74 +197,72 @@ const main = html`
             텍스트 슬롯은 관점에 따라 이름과 어조를 나눕니다. 문구를 짧게 끊어 쓰므로 사용자는
             설명을 정독하지 않고도 빠르게 훑어 뜻을 파악할 수 있습니다.
           </mm-paragraph>
-          <mm-flex direction="column" gap="3">
-            <mm-content-section heading-level="4" heading="훑어 읽기">
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '텍스트는 짧게 유지하고 스캔 가능한 덩어리로 나눈다',
-                    '간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
-                  ),
-                  rule(
-                    '분류·속성·키워드처럼 나열되는 값은 tag로 끊어 보인다',
-                    '문장으로 풀지 않아 훑는 것만으로 구분된다',
-                  ),
-                ]}
-              ></mm-text-list>
-            </mm-content-section>
+          <mm-content-section heading-level="3" heading="훑어 읽기">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '텍스트는 짧게 유지하고 스캔 가능한 덩어리로 나눈다',
+                  '간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
+                ),
+                rule(
+                  '분류·속성·키워드처럼 나열되는 값은 tag로 끊어 보인다',
+                  '문장으로 풀지 않아 훑는 것만으로 구분된다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
 
-            <mm-content-section heading-level="4" heading="관점에 맞는 이름">
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '슬롯의 화자에 따라 이름과 어조를 맞춘다',
-                    '화자가 사용자인지 시스템인지로 나눈다. 실행 레이블은 사용자 시점의 동사로 쓴다',
-                  ),
-                  rule(
-                    '레이블이 잘리면 문구를 다듬는다',
-                    '말줄임표로 감추거나 줄여 표시하지 않는다. 툴의 자동 축약보다 writing 가이드가 우선한다',
-                  ),
-                ]}
-              ></mm-text-list>
-              <mm-component-notice heading="어조 규칙을 정한다">
-                화자에 따라 어조를 나눈다는 원칙만 있다. 시스템이 말하는 문구와 사용자 행동을
-                가리키는 문구를 각각 어떤 어미로 쓰는지 정하지 않았다
-              </mm-component-notice>
-            </mm-content-section>
+          <mm-content-section heading-level="3" heading="관점에 맞는 이름">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '슬롯의 화자에 따라 이름과 어조를 맞춘다',
+                  '화자가 사용자인지 시스템인지로 나눈다. 실행 레이블은 사용자 시점의 동사로 쓴다',
+                ),
+                rule(
+                  '레이블이 잘리면 문구를 다듬는다',
+                  '말줄임표로 감추거나 줄여 표시하지 않는다. 툴의 자동 축약보다 writing 가이드가 우선한다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-notice heading="어조 규칙을 정한다">
+              화자에 따라 어조를 나눈다는 원칙만 있다. 시스템이 말하는 문구와 사용자 행동을 가리키는
+              문구를 각각 어떤 어미로 쓰는지 정하지 않았다
+            </mm-component-notice>
+          </mm-content-section>
 
-            <mm-content-section heading-level="4" heading="작은 화면의 행갈이">
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '태그라인의 행갈이는 작성 단계에서 정한다',
-                    '글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 임팩트를 준다',
-                  ),
-                ]}
-              ></mm-text-list>
-              <mm-component-notice heading="제목 자르기를 허용할지 정한다">
-                레이블은 줄여 표시하지 않는 원칙이지만, 폴더블·워치처럼 화면이 점점 작아질 때
-                제목만은 잘라도 되는지 정하지 않았다
-              </mm-component-notice>
-            </mm-content-section>
+          <mm-content-section heading-level="3" heading="작은 화면의 행갈이">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '태그라인의 행갈이는 작성 단계에서 정한다',
+                  '글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 임팩트를 준다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-notice heading="제목 자르기를 허용할지 정한다">
+              레이블은 줄여 표시하지 않는 원칙이지만, 폴더블·워치처럼 화면이 점점 작아질 때 제목만은
+              잘라도 되는지 정하지 않았다
+            </mm-component-notice>
+          </mm-content-section>
 
-            <mm-content-section heading-level="4" heading="주목이 필요한 콘텐츠">
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 가운데 정렬한다',
-                    '주변 콘텐츠와 대비를 만들어 사용자의 주의를 환기한다',
-                  ),
-                ]}
-              ></mm-text-list>
-              <mm-keyword-tag-group
-                .keywords=${['Result component', 'Empty state', 'Success message']}
-              ></mm-keyword-tag-group>
-            </mm-content-section>
-          </mm-flex>
+          <mm-content-section heading-level="3" heading="주목이 필요한 콘텐츠">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 가운데 정렬한다',
+                  '주변 콘텐츠와 대비를 만들어 사용자의 주의를 환기한다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-paragraph>
+              완료·오류·빈 상태를 보여 주는 ${code('mm-result')}가 이 규칙을 따릅니다.
+            </mm-paragraph>
+          </mm-content-section>
 
           <mm-content-section heading-level="3" heading="용어">
             <mm-content-section heading-level="4" heading="텍스트 단위">

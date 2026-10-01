@@ -159,49 +159,49 @@ const selectionRows = html`
     <th scope="row">${code('mm-radio-group')}</th>
     <td>Single</td>
     <td>배열</td>
-    <td>폼에서 5개 이하 선택지 중 하나를 고를 때.</td>
+    <td>폼에서 5개 이하 선택지 중 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-radio-card-group')}</th>
     <td>Single</td>
     <td>자식 요소</td>
-    <td>레이블만으로 부족해 선택지마다 상세한 정보를 제공해야 할 때.</td>
+    <td>레이블만으로 부족해 선택지마다 상세한 정보를 제공해야 할 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-toggle-button-group')}</th>
     <td>Single</td>
     <td>배열</td>
-    <td>보기 방식처럼 화면 표시를 바로 바꾸는 5개 이하 선택지 중 하나를 고를 때.</td>
+    <td>보기 방식처럼 화면 표시를 바로 바꾸는 5개 이하 선택지 중 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-select')}</th>
     <td>Single</td>
     <td>배열</td>
-    <td>6개 이상 선택지 중 하나를 고를 때.</td>
+    <td>6개 이상 선택지 중 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-filter-button-group')}</th>
     <td>Single · Multiple</td>
     <td>배열</td>
-    <td>목록·콘텐츠를 걸러 볼 조건 하나 또는 여럿을 고를 때.</td>
+    <td>목록·콘텐츠를 걸러 볼 조건 하나 또는 여럿을 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-radio-group')}</th>
     <td>Single</td>
     <td>자식 요소</td>
-    <td>팝오버·시트·설정 화면의 행 목록에서 하나를 고를 때.</td>
+    <td>팝오버·시트·설정 화면의 행 목록에서 하나를 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-checkbox-group')}</th>
     <td>Multiple</td>
     <td>배열</td>
-    <td>폼에서 5개 이하 선택지 중 여럿을 고를 때.</td>
+    <td>폼에서 5개 이하 선택지 중 여럿을 고를 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
     <td>Multiple</td>
     <td>자식 요소</td>
-    <td>팝오버·시트·설정 화면의 행 목록에서 여럿을 고를 때.</td>
+    <td>팝오버·시트·설정 화면의 행 목록에서 여럿을 고를 때</td>
   </tr>
 `
 
@@ -650,10 +650,15 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="기본값">
-            <mm-paragraph>
-              기본값은 기존 데이터가 그 값을 뒷받침할 때 미리 선택합니다. 미리 선택된 값은 응답을 그
-              값 쪽으로 편향시키기 때문입니다.
-            </mm-paragraph>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '기존 데이터가 뒷받침하는 값만 미리 선택한다',
+                  '미리 선택된 값은 응답을 그 값 쪽으로 편향시킨다',
+                ),
+              ]}
+            ></mm-text-list>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="상태 소유">
@@ -741,9 +746,15 @@ const main = html`
                   `,
                   '선택 상태와 목록 렌더가 같은 값을 기준으로 삼는다',
                 ),
-                html`
-                  고유 필드는 ${code('OptionItem')}에 교차 타입으로 더한다
-                `,
+                rule(
+                  html`
+                    고유 필드는 ${code('OptionItem')}에 교차 타입으로 더한다
+                  `,
+                  html`
+                    ${code('FilterOption')}의 ${code('selectAll')}처럼 한 컴포넌트만 쓰는 필드는
+                    공통 타입에 섞지 않는다
+                  `,
+                ),
               ]}
             ></mm-text-list>
           </mm-content-section>
