@@ -2,8 +2,6 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { AriaTriState } from '@/types'
-
 import { switchStyles } from '@/components/common/switch/switch.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -19,8 +17,6 @@ export class Switch extends LitElement {
   private toggle = new ToggleController(this, 'checked')
 
   render() {
-    const ariaChecked: AriaTriState = this.checked ? 'true' : 'false'
-
     return html`
       <div>
         <input
@@ -28,7 +24,6 @@ export class Switch extends LitElement {
           name=${ifDefined(this.name || undefined)}
           type="checkbox"
           role="switch"
-          aria-checked=${ariaChecked}
           .checked=${this.checked}
           ?disabled=${this.disabled}
           @change=${this.handleInputChange}

@@ -20,6 +20,10 @@ export class SingleSelectionController {
     this.host.requestUpdate()
   }
 
+  isEmpty() {
+    return !this.options.getValue()
+  }
+
   isSelected(value: string) {
     return this.options.getValue() === value
   }

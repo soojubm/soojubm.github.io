@@ -485,188 +485,197 @@ const main = html`
             ]}
           ></mm-table>
 
-          <mm-content-section heading-level="3" heading="Flex">
+          <mm-content-section heading="배치">
             <mm-paragraph>
-              ${code('mm-flex')}는 자식을 가로나 세로 한 줄로 배치하는 레이아웃 유틸리티입니다.
+              항목을 한 줄로 놓으면 ${code('mm-flex')}, 같은 항목을 열로 반복하면
+              ${code('mm-grid')}를 씁니다.
             </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '형제 사이 간격은 부모의 gap으로 정한다',
-                  html`
-                    항목마다 여백을 따로 주지 않는다. 섹션 사이는 ${code('--space-section')} 같은
-                    의미 토큰을 쓴다
-                  `,
-                ),
-                rule(
-                  html`
-                    컴포넌트 안에서는 ${code('mm-flex')}를 중첩하지 않는다
-                  `,
-                  html`
-                    shadow DOM 안에서는 host를 직접 flex 컨테이너로 만들어 shadow 깊이를 줄인다.
-                    ${code('mm-flex')}는 페이지·콘텐츠 조립에 쓴다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-flex-preview></mm-flex-preview>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="Grid">
-            <mm-paragraph>
-              ${code('mm-grid')}는 반복되는 항목을 열 단위로 늘어놓는 레이아웃 유틸리티입니다.
-            </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    ${code('columns')}는 최대 열 수로 정한다
-                  `,
-                  html`
-                    한 열이 ${code('column-min-width')}(기본 12rem) 아래로 좁아지면 열 수가
-                    줄어든다. 기준은 뷰포트가 아니라 그리드가 놓인 컨테이너의 너비라서, 사이드바
-                    옆이나 카드 안처럼 좁은 자리에서도 같은 규칙으로 줄어든다. 좁은 화면을 위한 열
-                    수는 따로 지정하지 않는다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-grid-preview></mm-grid-preview>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="Page Header">
-            <mm-paragraph>
-              ${code('mm-page-header')}는 페이지 최상단의 제목과 설명을 구성하고, 아래 구획과의
-              간격을 자기 아래 여백으로 소유합니다. ${code('centered')}로 가운데 정렬합니다.
-            </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '헤더의 액션은 헤더와 버튼 그룹을 형제로 둔다',
-                  html`
-                    ${code('mm-page-header')}에는 액션 슬롯이 없다. 레이아웃 부모
-                    (${code('mm-flex')}) 안에 헤더와 ${code('mm-button-group')}을 나란히 배치한다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-component-example full-width>
-              <mm-flex justify-content="space-between" align-items="flex-start">
-                <mm-page-header
-                  heading="설정"
-                  description="계정과 알림을 관리합니다."
-                ></mm-page-header>
-                <mm-button-group>
-                  <mm-button variant="secondary">취소</mm-button>
-                  <mm-button>저장</mm-button>
-                </mm-button-group>
-              </mm-flex>
-            </mm-component-example>
-            <mm-code-block .code=${pageHeaderCode}></mm-code-block>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="Content Section">
-            <mm-paragraph>
-              ${code('mm-content-section')}은 제목과 본문을 한 묶음으로 구성하고 그 사이 간격을
-              소유합니다. ${code('heading-level')}은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이 문서
-              구조에서 놓인 자리에 맞춰 지정합니다. 섹션끼리의 바깥 간격은
-              ${code('mm-content-section-list')}가 정하므로, 페이지는 섹션 사이에 간격을 따로 주지
-              않습니다. "모두 보기" 링크처럼 섹션 전체에 걸리는 동작은 ${code('action')} 슬롯으로
-              받아 제목 줄 오른쪽에 둡니다.
-            </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '제목 단계는 문서 구조를 따라 한 단계씩만 내린다',
-                  html`
-                    페이지 헤더(h1) 아래 최상위 구획은 기본값 ${code('2')}를 쓰고, 그 안의 구획은 3,
-                    4로 건너뛰지 않고 내려간다. 단계가 크기도 정하므로 크기를 맞추려고 단계를
-                    건너뛰지 않는다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-surface variant="filled">
-              <mm-content-section-list>
-                <mm-content-section heading-level="4" heading="액션이 없는 섹션">
-                  <mm-paragraph>
-                    제목과 본문 사이 간격은 섹션이, 섹션 사이 간격은 섹션 목록이 소유합니다.
-                  </mm-paragraph>
-                </mm-content-section>
-                <mm-content-section heading-level="4" heading="액션이 있는 섹션">
-                  <mm-link slot="action" href="./post.html">모두 보기</mm-link>
-                  <mm-paragraph>제목 줄 오른쪽에 섹션 전체에 걸리는 동작을 둡니다.</mm-paragraph>
-                </mm-content-section>
-              </mm-content-section-list>
-            </mm-surface>
-            <mm-code-block .code=${contentSectionCode}></mm-code-block>
-            <mm-component-notice heading="모두 보기 링크를 받는 섹션">
-              ${code('view-all-href')}를 받으면 ${code('action')} 슬롯에 "모두 보기" 링크를 스스로
-              채우는 파생 컴포넌트를 둔다. 받지 않으면 기본형과 같다. 이동이라 버튼이 아닌 링크로
-              렌더하고, 무엇을 모두 보는지 섹션 제목과 잇는다. 본문이 그리드든 좌우 스크롤이든
-              섹션은 관여하지 않는다
-            </mm-component-notice>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="Text Block">
-            <mm-paragraph>
-              ${code('mm-text-block')}은 제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다.
-              ${code('level')}로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다. 본문이 딸린
-              구획에는 ${code('mm-content-section')}을 씁니다.
-            </mm-paragraph>
-            <mm-surface variant="filled">
-              <mm-text-block
-                level="1"
-                heading="Level 1 Title"
-                description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
-              ></mm-text-block>
-              <mm-separator></mm-separator>
-              <mm-text-block
-                level="3"
-                heading="Level 3 Title"
-                description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
-              ></mm-text-block>
-              <mm-separator></mm-separator>
-              <mm-text-block
-                level="5"
-                heading="Level 5 Title"
-                description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
-              ></mm-text-block>
-            </mm-surface>
-            <mm-code-block .code=${textBlockCode}></mm-code-block>
-            <mm-component-notice heading="mm-text-block을 유지할지 삭제할지">
-              ${code('mm-page-header')}·${code('mm-feature')}·${code('mm-banner')}처럼 제목–설명 한
-              쌍을 그리는 컴포넌트가 이 컴포넌트에 위임한다. 삭제하면 그 컴포넌트들이 제목–설명
-              간격을 각자 소유하게 된다. 유지할지 삭제할지 정하지 않았다
-            </mm-component-notice>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="Form Field">
-            <mm-paragraph>
-              ${code('mm-form-field')}는 textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를
-              같은 규칙으로 붙입니다. 컨트롤은 슬롯으로 받고 필드는 레이블이 붙은
-              ${code('role="group"')}이 됩니다. 컨트롤별 조합은
-              <mm-link href="./input.html">Input</mm-link>
-              이 전시합니다.
-            </mm-paragraph>
-            <mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
-              <mm-checkbox-group
-                name="container-topics"
-                .options=${[
-                  { value: 'tech', label: '기술' },
-                  { value: 'design', label: '디자인' },
-                  { value: 'biz', label: '비즈니스' },
+            <mm-content-section heading-level="3" heading="Flex">
+              <mm-paragraph>
+                ${code('mm-flex')}는 자식을 가로나 세로 한 줄로 배치하는 레이아웃 유틸리티입니다.
+              </mm-paragraph>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '형제 사이 간격은 부모의 gap으로 정한다',
+                    html`
+                      항목마다 여백을 따로 주지 않는다. 섹션 사이는 ${code('--space-section')} 같은
+                      의미 토큰을 쓴다
+                    `,
+                  ),
+                  rule(
+                    html`
+                      컴포넌트 안에서는 ${code('mm-flex')}를 중첩하지 않는다
+                    `,
+                    html`
+                      shadow DOM 안에서는 host를 직접 flex 컨테이너로 만들어 shadow 깊이를 줄인다.
+                      ${code('mm-flex')}는 페이지·콘텐츠 조립에 쓴다
+                    `,
+                  ),
                 ]}
-              ></mm-checkbox-group>
-            </mm-form-field>
-            <mm-code-block .code=${formFieldCode}></mm-code-block>
+              ></mm-text-list>
+              <mm-flex-preview></mm-flex-preview>
+            </mm-content-section>
+
+            <mm-content-section heading-level="3" heading="Grid">
+              <mm-paragraph>
+                ${code('mm-grid')}는 반복되는 항목을 열 단위로 늘어놓는 레이아웃 유틸리티입니다.
+              </mm-paragraph>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    html`
+                      ${code('columns')}는 최대 열 수로 정한다
+                    `,
+                    html`
+                      한 열이 ${code('column-min-width')}(기본 12rem) 아래로 좁아지면 열 수가
+                      줄어든다. 기준은 뷰포트가 아니라 그리드가 놓인 컨테이너의 너비라서, 사이드바
+                      옆이나 카드 안처럼 좁은 자리에서도 같은 규칙으로 줄어든다. 좁은 화면을 위한 열
+                      수는 따로 지정하지 않는다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
+              <mm-grid-preview></mm-grid-preview>
+            </mm-content-section>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="주의">
+          <mm-content-section heading="제목과 본문 묶기">
+            <mm-paragraph>제목이 놓이는 자리가 쓸 컴포넌트를 정합니다.</mm-paragraph>
+            <mm-content-section heading-level="3" heading="Page Header">
+              <mm-paragraph>
+                ${code('mm-page-header')}는 페이지 최상단의 제목과 설명을 구성하고, 아래 구획과의
+                간격을 자기 아래 여백으로 소유합니다. ${code('centered')}로 가운데 정렬합니다.
+              </mm-paragraph>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '헤더의 액션은 헤더와 버튼 그룹을 형제로 둔다',
+                    html`
+                      ${code('mm-page-header')}에는 액션 슬롯이 없다. 레이아웃 부모
+                      (${code('mm-flex')}) 안에 헤더와 ${code('mm-button-group')}을 나란히 배치한다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
+              <mm-component-example full-width>
+                <mm-flex justify-content="space-between" align-items="flex-start">
+                  <mm-page-header
+                    heading="설정"
+                    description="계정과 알림을 관리합니다."
+                  ></mm-page-header>
+                  <mm-button-group>
+                    <mm-button variant="secondary">취소</mm-button>
+                    <mm-button>저장</mm-button>
+                  </mm-button-group>
+                </mm-flex>
+              </mm-component-example>
+              <mm-code-block .code=${pageHeaderCode}></mm-code-block>
+            </mm-content-section>
+
+            <mm-content-section heading-level="3" heading="Content Section">
+              <mm-paragraph>
+                ${code('mm-content-section')}은 제목과 본문을 한 묶음으로 구성하고 그 사이 간격을
+                소유합니다. ${code('heading-level')}은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이
+                문서 구조에서 놓인 자리에 맞춰 지정합니다. 섹션끼리의 바깥 간격은
+                ${code('mm-content-section-list')}가 정하므로, 페이지는 섹션 사이에 간격을 따로 주지
+                않습니다. "모두 보기" 링크처럼 섹션 전체에 걸리는 동작은 ${code('action')} 슬롯으로
+                받아 제목 줄 오른쪽에 둡니다.
+              </mm-paragraph>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '제목 단계는 문서 구조를 따라 한 단계씩만 내린다',
+                    html`
+                      페이지 헤더(h1) 아래 최상위 구획은 기본값 ${code('2')}를 쓰고, 그 안의 구획은
+                      3, 4로 건너뛰지 않고 내려간다. 단계가 크기도 정하므로 크기를 맞추려고 단계를
+                      건너뛰지 않는다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
+              <mm-surface variant="filled">
+                <mm-content-section-list>
+                  <mm-content-section heading-level="4" heading="액션이 없는 섹션">
+                    <mm-paragraph>
+                      제목과 본문 사이 간격은 섹션이, 섹션 사이 간격은 섹션 목록이 소유합니다.
+                    </mm-paragraph>
+                  </mm-content-section>
+                  <mm-content-section heading-level="4" heading="액션이 있는 섹션">
+                    <mm-link slot="action" href="./post.html">모두 보기</mm-link>
+                    <mm-paragraph>제목 줄 오른쪽에 섹션 전체에 걸리는 동작을 둡니다.</mm-paragraph>
+                  </mm-content-section>
+                </mm-content-section-list>
+              </mm-surface>
+              <mm-code-block .code=${contentSectionCode}></mm-code-block>
+              <mm-component-notice heading="모두 보기 링크를 받는 섹션">
+                ${code('view-all-href')}를 받으면 ${code('action')} 슬롯에 "모두 보기" 링크를 스스로
+                채우는 파생 컴포넌트를 둔다. 받지 않으면 기본형과 같다. 이동이라 버튼이 아닌 링크로
+                렌더하고, 무엇을 모두 보는지 섹션 제목과 잇는다. 본문이 그리드든 좌우 스크롤이든
+                섹션은 관여하지 않는다
+              </mm-component-notice>
+            </mm-content-section>
+
+            <mm-content-section heading-level="3" heading="Text Block">
+              <mm-paragraph>
+                ${code('mm-text-block')}은 제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다.
+                ${code('level')}로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다. 본문이
+                딸린 구획에는 ${code('mm-content-section')}을 씁니다.
+              </mm-paragraph>
+              <mm-surface variant="filled">
+                <mm-text-block
+                  level="1"
+                  heading="Level 1 Title"
+                  description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
+                ></mm-text-block>
+                <mm-separator></mm-separator>
+                <mm-text-block
+                  level="3"
+                  heading="Level 3 Title"
+                  description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
+                ></mm-text-block>
+                <mm-separator></mm-separator>
+                <mm-text-block
+                  level="5"
+                  heading="Level 5 Title"
+                  description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
+                ></mm-text-block>
+              </mm-surface>
+              <mm-code-block .code=${textBlockCode}></mm-code-block>
+              <mm-component-notice heading="mm-text-block을 유지할지 삭제할지">
+                ${code('mm-page-header')}·${code('mm-feature')}·${code('mm-banner')}처럼 제목–설명
+                한 쌍을 그리는 컴포넌트가 이 컴포넌트에 위임한다. 삭제하면 그 컴포넌트들이 제목–설명
+                간격을 각자 소유하게 된다. 유지할지 삭제할지 정하지 않았다
+              </mm-component-notice>
+            </mm-content-section>
+
+            <mm-content-section heading-level="3" heading="Form Field">
+              <mm-paragraph>
+                ${code('mm-form-field')}는 textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를
+                같은 규칙으로 붙입니다. 컨트롤은 슬롯으로 받고 필드는 레이블이 붙은
+                ${code('role="group"')}이 됩니다. 컨트롤별 조합은
+                <mm-link href="./input.html">Input</mm-link>
+                이 전시합니다.
+              </mm-paragraph>
+              <mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
+                <mm-checkbox-group
+                  name="container-topics"
+                  .options=${[
+                    { value: 'tech', label: '기술' },
+                    { value: 'design', label: '디자인' },
+                    { value: 'biz', label: '비즈니스' },
+                  ]}
+                ></mm-checkbox-group>
+              </mm-form-field>
+              <mm-code-block .code=${formFieldCode}></mm-code-block>
+            </mm-content-section>
+          </mm-content-section>
+
+          <mm-content-section heading="주의">
             <mm-text-list
               variant="check"
               .texts=${[

@@ -225,8 +225,13 @@ const main = html`
 
     <mm-component-section
       heading="Description &amp; Validation Text"
-      description="description은 입력을 돕는 설명을, validation-text는 오류의 이유를 입력 필드 아래에 전달합니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
+      description="description은 입력을 돕는 설명을, validation-text는 오류의 이유를 입력 필드 아래에 전달합니다. 테두리 색만으로는 무엇을 고칠지 전달되지 않으므로, 검증 텍스트는 입력 요소의 aria-describedby에 스스로 연결되어 스크린리더가 필드와 함께 읽습니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
     >
+      <mm-component-notice slot="notice" variant="todo" heading="필드가 검증을 소유하게 한다">
+        지금은 쓰는 쪽이 값을 검사해 aria-invalid와 validation-text를 넘기고, 필드는 표시와 연결만
+        맡습니다. 필드가 입력 규칙을 스스로 검사하는 범위와 검증 시점(입력 중·포커스를 벗어날
+        때·제출할 때)은 정하지 않았습니다.
+      </mm-component-notice>
       <mm-flex direction="column" gap="2">
         <mm-textfield-description>가입 후에는 변경할 수 없어요.</mm-textfield-description>
         <mm-textfield-validation>올바른 이메일 형식으로 입력하세요.</mm-textfield-validation>

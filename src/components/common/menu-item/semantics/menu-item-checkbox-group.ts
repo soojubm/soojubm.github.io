@@ -8,9 +8,9 @@ import '@/components/common/menu-item/menu-item-group'
 import '@/components/common/menu-item/semantics/menu-item-checkbox'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import {
-  SelectionGroupController,
+  SlottedSelectionController,
   selectionItemValue,
-} from '@/controllers/selection-group-controller'
+} from '@/controllers/slotted-selection-controller'
 import { emit } from '@/utils'
 
 /**
@@ -37,10 +37,9 @@ export class MenuItemCheckboxGroup extends LitElement {
     },
     getOptions: () => this.checkboxes.map(checkbox => ({ value: selectionItemValue(checkbox) })),
   })
-  private group = new SelectionGroupController<MenuItemCheckbox>({
+  private group = new SlottedSelectionController<MenuItemCheckbox>(this, {
     selection: this.selection,
     getItems: () => this.checkboxes,
-    isEmpty: () => !this.values.length,
     onChange: () => {
       emit(this, 'change', { values: this.values })
     },
@@ -57,11 +56,5 @@ export class MenuItemCheckboxGroup extends LitElement {
         <slot @slotchange=${this.group.handleSlotChange}></slot>
       </mm-menu-item-group>
     `
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('values')) return
-
-    this.group.sync()
   }
 }

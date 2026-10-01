@@ -6,7 +6,7 @@ import type { MenuItemRadio } from '@/components/common/menu-item/semantics/menu
 
 import '@/components/common/menu-item/menu-item-group'
 import '@/components/common/menu-item/semantics/menu-item-radio'
-import { SelectionGroupController } from '@/controllers/selection-group-controller'
+import { SlottedSelectionController } from '@/controllers/slotted-selection-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { emit } from '@/utils'
 
@@ -29,10 +29,9 @@ export class MenuItemRadioGroup extends LitElement {
       this.value = value
     },
   })
-  private group = new SelectionGroupController<MenuItemRadio>({
+  private group = new SlottedSelectionController<MenuItemRadio>(this, {
     selection: this.selection,
     getItems: () => this.radios,
-    isEmpty: () => !this.value,
     applyItem: radio => {
       if (this.name) radio.name = this.name
     },
@@ -52,11 +51,5 @@ export class MenuItemRadioGroup extends LitElement {
         <slot @slotchange=${this.group.handleSlotChange}></slot>
       </mm-menu-item-group>
     `
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    if (!changedProperties.has('value') && !changedProperties.has('name')) return
-
-    this.group.sync()
   }
 }

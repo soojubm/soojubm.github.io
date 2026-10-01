@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { RadioCard } from '@/components/common/radio/semantics/radio-card'
 
 import { inputSelectionGroupStyles } from '@/components/common/input/input.styles'
-import { SelectionGroupController } from '@/controllers/selection-group-controller'
+import { SlottedSelectionController } from '@/controllers/slotted-selection-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
@@ -28,10 +28,9 @@ export class RadioCardGroup extends LitElement {
       this.value = value
     },
   })
-  private group = new SelectionGroupController<RadioCard>({
+  private group = new SlottedSelectionController<RadioCard>(this, {
     selection: this.selection,
     getItems: () => this.cards,
-    isEmpty: () => !this.value,
     applyItem: card => {
       if (this.name) card.name = this.name
       // 그룹 disabled는 항목 자신의 disabled를 덮지 않고 더한다.
@@ -50,12 +49,5 @@ export class RadioCardGroup extends LitElement {
         <slot @slotchange=${this.group.handleSlotChange}></slot>
       </fieldset>
     `
-  }
-
-  protected updated(changedProperties: Map<string, unknown>) {
-    const syncedProperties = ['value', 'name', 'disabled']
-    if (!syncedProperties.some(propertyName => changedProperties.has(propertyName))) return
-
-    this.group.sync()
   }
 }

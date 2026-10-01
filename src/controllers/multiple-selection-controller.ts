@@ -24,6 +24,10 @@ export class MultipleSelectionController {
     this.host.requestUpdate()
   }
 
+  isEmpty() {
+    return this.options.getValues().length === 0
+  }
+
   isSelected(value: string) {
     return this.options.getValues().includes(value)
   }

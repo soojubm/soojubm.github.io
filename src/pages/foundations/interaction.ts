@@ -115,11 +115,65 @@ html\`
 const checkedComponentRows = html`
   <tr>
     <th scope="row">${code('checked')}</th>
-    <td>${codeList(['mm-checkbox-group', 'mm-radio-group'])}</td>
+    <td>
+      ${codeList(['mm-checkbox', 'mm-radio', 'mm-switch', 'mm-checkbox-group', 'mm-radio-group'])}
+    </td>
   </tr>
   <tr>
     <th scope="row">${code('aria-checked')}</th>
-    <td>${codeList(['mm-switch', 'mm-menu-item-radio', 'mm-menu-item-checkbox'])}</td>
+    <td>${codeList(['mm-menu-item-radio', 'mm-menu-item-checkbox', 'mm-menu-item-switch'])}</td>
+  </tr>
+`
+
+const pressedComponentRows = html`
+  <tr>
+    <th scope="row">단독 버튼</th>
+    <td>
+      ${codeList([
+        'mm-toggle-button',
+        'mm-follow-button',
+        'mm-bookmark-button',
+        'mm-reveal-button',
+      ])}
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">그룹의 항목</th>
+    <td>${codeList(['mm-toggle-button-group', 'mm-filter-button-group'])}</td>
+  </tr>
+`
+
+const selectedComponentRows = html`
+  <tr>
+    <th scope="row">목록의 옵션</th>
+    <td>${codeList(['mm-select-option'])}</td>
+  </tr>
+  <tr>
+    <th scope="row">탭</th>
+    <td>${codeList(['mm-tab'])}</td>
+  </tr>
+`
+
+const selectionOwnerRows = html`
+  <tr>
+    <th scope="row">${code('SingleSelectionController')}</th>
+    <td>${code('value: string')}</td>
+    <td>
+      ${codeList([
+        'mm-radio-group',
+        'mm-radio-card-group',
+        'mm-toggle-button-group',
+        'mm-filter-button-group',
+        'mm-menu-item-radio-group',
+      ])}
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">${code('MultipleSelectionController')}</th>
+    <td>${code('values: string[]')}</td>
+    <td>
+      ${codeList(['mm-checkbox-group', 'mm-filter-button-group', 'mm-menu-item-checkbox-group'])}
+    </td>
   </tr>
 `
 
@@ -369,54 +423,6 @@ const main = html`
             ></mm-table>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="Invalid">
-            <mm-paragraph>
-              입력값이 규칙을 어겼다는 표시입니다. 오류 상태와 그 이유를 필드에 붙여 알리므로,
-              사용자는 어느 값을 어떻게 고칠지 그 자리에서 확인합니다.
-            </mm-paragraph>
-            <mm-surface variant="outlined" radius="large">
-              <mm-textfield
-                label="이메일"
-                value="hello@example.com"
-                aria-invalid="true"
-                validation-text="이미 등록된 이메일입니다."
-                style="max-width: var(--layout-width-narrow)"
-              ></mm-textfield>
-            </mm-surface>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    오류 상태는 ${code('aria-invalid')}로 표시한다
-                  `,
-                  '필드가 테두리를 danger 색으로 바꾼다. 상태를 말하는 표준 attribute를 그대로 공개 API로 쓴다',
-                ),
-                rule(
-                  html`
-                    오류의 이유는 ${code('validation-text')}로 필드 바로 아래에 둔다
-                  `,
-                  html`
-                    테두리 색만으로는 무엇을 고칠지 전달되지 않는다. textfield 계열은 입력 요소의
-                    ${code('aria-describedby')}에 검증 텍스트를 스스로 연결해, 스크린리더가 필드와
-                    함께 읽는다
-                  `,
-                ),
-                rule(
-                  html`
-                    textfield가 아닌 컨트롤은 ${code('mm-form-field')}로 감싼다
-                  `,
-                  '체크박스 그룹·select처럼 슬롯으로 받는 컨트롤에도 레이블·설명·검증 텍스트가 같은 자리에 놓인다',
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-component-notice heading="필드가 검증을 소유하게 한다">
-              지금은 쓰는 쪽이 값을 검사해 ${code('aria-invalid')}와 ${code('validation-text')}를
-              넘기고, 필드는 표시와 연결만 맡는다. 필드가 입력 규칙을 스스로 검사하는 범위와 검증
-              시점(입력 중·포커스를 벗어날 때·제출할 때)은 정하지 않았다
-            </mm-component-notice>
-          </mm-content-section>
-
           <mm-content-section heading-level="3" heading="의미 상태">
             <mm-paragraph>
               사용자 행동으로 인한 오류와 시스템 오류를 구분합니다. 시스템 오류로 실패하면 단순히
@@ -567,16 +573,6 @@ const main = html`
                 </mm-content-section>
               </mm-surface>
             </mm-grid>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '선택지가 5개 이하면 펼쳐 두고 6개부터 접는다',
-                  '펼쳐 두면 누르지 않고도 선택지를 한눈에 비교할 수 있다. 6개부터는 목록이 화면을 길게 차지해 주변 흐름을 밀어내므로 접는다',
-                ),
-              ]}
-            ></mm-text-list>
-
             <mm-table
               .rows=${selectionRows}
               caption="값을 고르는 컴포넌트의 선택 개수·옵션 전달 방식 비교"
@@ -604,37 +600,38 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="상태 소유">
             <mm-paragraph>
-              선택 상태는 항목이 아니라 그룹이 소유하며, ${code('SingleSelectionController')} ·
-              ${code('MultipleSelectionController')} · ${code('SelectionGroupController')}가 이를
-              맡습니다. 하나를 고르면 ${code('value')}, 여럿을 고르면 ${code('values')}에 두고,
-              바뀌면 같은 이름으로 ${code('change')}에 담아 알립니다. 선택지 없이 값 하나를 켜고
-              끄는 컴포넌트만 그룹 없이 자기 상태를 갖습니다.
+              선택 상태는 항목이 아니라 그룹이 소유하고, 바뀌면 값과 같은 이름으로
+              ${code('change')}에 담아 알립니다. 선택지 없이 값 하나를 켜고 끄는 컴포넌트만 그룹
+              없이 자기 상태를 갖습니다.
             </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                html`
-                  ${code('mm-switch')}는 자기 ${code('checked')}를 갖는다
-                `,
-                html`
-                  ${code('mm-toggle-button')}은 자기 ${code('pressed')}를 갖는다
-                `,
+            <mm-table
+              .rows=${selectionOwnerRows}
+              caption="선택 상태를 소유하는 컨트롤러와 그것을 쓰는 그룹"
+              .columns=${[
+                { label: '컨트롤러', width: '280px' },
+                { label: '값', width: '340px' },
+                { label: '컴포넌트' },
               ]}
-            ></mm-text-list>
+            ></mm-table>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Pressed">
             <mm-paragraph>
-              스스로 눌림 상태를 유지하는 컨트롤은 ${code('aria-pressed')}로 표현하고,
-              Checked·Selected와 같은 강조 토큰을 공유합니다. ${code('mm-toggle-button')}과 그
-              시맨틱 컴포넌트(follow·bookmark·reveal), toggle·filter 버튼 그룹이 씁니다.
+              한 번 누르면 눌린 채 유지되고 다시 누르면 풀리는 버튼의 상태입니다.
             </mm-paragraph>
+            <mm-table
+              .rows=${pressedComponentRows}
+              caption="aria-pressed를 쓰는 자리와 컴포넌트"
+              .columns=${[{ label: '쓰는 자리', width: '160px' }, { label: '컴포넌트' }]}
+            ></mm-table>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Checked">
             <mm-paragraph>
-              컨트롤 자체의 on/off 값입니다. 네이티브 ${code('checked')}가 있으면 그것을, 없으면
-              ${code('aria-checked')}를 씁니다.
+              컨트롤이 켜져 있는지 꺼져 있는지를 나타내는 값입니다. 네이티브 input은
+              ${code('checked')}로, input이 아닌 행은 ${code('aria-checked')}로 알려 어느 쪽이든
+              스크린리더가 같은 켜짐 상태를 읽습니다. 네이티브가 이미 상태를 말하므로
+              ${code('aria-checked')}를 겹쳐 달지 않습니다.
             </mm-paragraph>
             <mm-table
               .rows=${checkedComponentRows}
@@ -644,17 +641,15 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Selected">
-            <mm-paragraph-group>
-              <mm-paragraph>
-                컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로
-                고른 값을 나타내며, 강조 토큰은 Checked와 같습니다.
-              </mm-paragraph>
-              <mm-paragraph>
-                체크 표시는 ${code('mm-selected-indicator')}가 ${code('selected')}를 받아 체크
-                노출로 반영하는 표시만 맡고, 선택 상호작용과 ${code('aria-selected')}는 옵션이
-                소유합니다. 고르지 않은 행에도 자리를 남겨 행마다 끝 자리 폭이 같습니다.
-              </mm-paragraph>
-            </mm-paragraph-group>
+            <mm-paragraph>
+              컬렉션에서 고른 항목입니다. ${code('mm-select')}의 옵션이 ${code('aria-selected')}로
+              고른 값을 나타내며, 강조 토큰은 Checked와 같습니다.
+            </mm-paragraph>
+            <mm-table
+              .rows=${selectedComponentRows}
+              caption="aria-selected를 쓰는 자리와 컴포넌트"
+              .columns=${[{ label: '쓰는 자리', width: '160px' }, { label: '컴포넌트' }]}
+            ></mm-table>
             <mm-surface variant="outlined" radius="large">
               <mm-flex gap="6">
                 <mm-flex direction="column" gap="2" align-items="center">
