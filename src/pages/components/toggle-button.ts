@@ -96,9 +96,13 @@ const main = html`
 
     <mm-component-example>
       <mm-button-group>
-        <mm-toggle-button value="bold" icon=${ICON_NAMES.BOLD} pressed>굵게</mm-toggle-button>
-        <mm-toggle-button value="italic" icon=${ICON_NAMES.ITALIC}>기울임</mm-toggle-button>
-        <mm-toggle-button value="underline" icon=${ICON_NAMES.UNDERLINE}>밑줄</mm-toggle-button>
+        <mm-toggle-button value="bookmark" icon=${ICON_NAMES.BOOKMARK} pressed>
+          북마크
+        </mm-toggle-button>
+        <mm-toggle-button value="like" icon=${ICON_NAMES.LIKE}>좋아요</mm-toggle-button>
+        <mm-toggle-button value="notification" icon=${ICON_NAMES.NOTIFICATION}>
+          알림
+        </mm-toggle-button>
         <mm-toggle-button value="disabled" disabled>비활성</mm-toggle-button>
       </mm-button-group>
     </mm-component-example>

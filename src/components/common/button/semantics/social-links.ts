@@ -12,7 +12,7 @@ const PLATFORMS = [
   { key: 'github', label: 'Github', icon: ICON_NAMES.GITHUB },
   { key: 'pinterest', label: 'Pinterest', icon: ICON_NAMES.PINTEREST },
   { key: 'facebook', label: 'Facebook', icon: ICON_NAMES.FACEBOOK },
-  { key: 'notion', label: 'Notion', icon: ICON_NAMES.PEOPLE_TAG },
+  { key: 'notion', label: 'Notion', icon: ICON_NAMES.NOTION },
 ] as const
 
 type PlatformKey = typeof PLATFORMS[number]['key']

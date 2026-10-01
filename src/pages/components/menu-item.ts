@@ -290,7 +290,7 @@ const main = html`
       <mm-menu-item-group size="large">
         <mm-menu-item-link
           size="medium"
-          icon=${ICON_NAMES.APP_WINDOW}
+          icon=${ICON_NAMES.HOME_PAGE}
           label="수줍이 앱"
           target="_self"
           description="앱에서 게시물을 엽니다."
@@ -299,7 +299,7 @@ const main = html`
         </mm-menu-item-link>
         <mm-menu-item-link
           size="medium"
-          icon=${ICON_NAMES.OPEN_EXTERNAL}
+          icon=${ICON_NAMES.LINK}
           label="MDN Web Docs"
           href="https://developer.mozilla.org"
           description="외부 링크"

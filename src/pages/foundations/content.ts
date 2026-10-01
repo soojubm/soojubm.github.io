@@ -58,13 +58,14 @@ const ROLE_DETAIL: Record<string, { description: string; usage?: string[] }> = {
   VIEW: { description: '가려진 값을 보여 줍니다.' },
   THUMBS_UP: { description: '응답이 좋았다고 평가합니다.' },
   DISLIKE: { description: '응답이 좋지 않았다고 평가합니다.' },
+  GRID_VIEW: { description: '항목을 그리드로 펼쳐 보여 줍니다.' },
+  LIST_VIEW: { description: '항목을 한 줄씩 목록으로 보여 줍니다.' },
   BACK: { description: '이전 화면으로 돌아갑니다.' },
-  COMPASS: { description: '내비게이션 영역을 나타냅니다.' },
   COLLAPSE: { description: '펼친 내용을 접습니다.' },
   EXPAND: { description: '접힌 내용을 펼칩니다.' },
   FORWARD: { description: '다음 화면으로 넘어갑니다.' },
+  HOME_PAGE: { description: '서비스의 첫 화면으로 이동합니다.' },
   MENU: { description: '내비게이션 메뉴를 엽니다.' },
-  OPEN_EXTERNAL: { description: '새 창이나 외부 사이트로 엽니다.' },
   PREVIOUS: { description: '순서상 이전 항목으로 갑니다.' },
   NEXT: { description: '순서상 다음 항목으로 갑니다.' },
   SCROLL_TOP: { description: '페이지 맨 위로 올라갑니다.' },
@@ -75,6 +76,18 @@ const ROLE_DETAIL: Record<string, { description: string; usage?: string[] }> = {
   WARNING: { description: '진행 전에 주의가 필요함을 나타냅니다.' },
   FAILURE: { description: '데이터를 가져오지 못했음을 나타냅니다.' },
   IDLE: { description: '아직 아무 요청도 하지 않은 대기 상태를 나타냅니다.' },
+  APPLE: { description: 'Apple 계정으로 로그인하는 흐름을 나타냅니다.' },
+  FACEBOOK: { description: 'Facebook 계정이나 프로필 링크를 나타냅니다.' },
+  FIGMA: { description: 'Figma에서 나온 자료를 나타냅니다.' },
+  GITHUB: { description: 'GitHub 프로필이나 저장소를 나타냅니다.' },
+  GOOGLE: { description: 'Google 계정으로 로그인하는 흐름을 나타냅니다.' },
+  NOTION: { description: 'Notion 페이지나 워크스페이스를 나타냅니다.' },
+  PINTEREST: { description: 'Pinterest 프로필이나 보드를 나타냅니다.' },
+  BRUTAL_MODE: { description: '브루탈 테마를 고릅니다.' },
+  DARK_MODE: { description: '어두운 테마를 고릅니다.' },
+  GLASS_MODE: { description: '글래스 테마를 고릅니다.' },
+  LIGHT_MODE: { description: '밝은 테마를 고릅니다.' },
+  PALETTE: { description: '색 토큰과 팔레트를 나타냅니다.' },
 }
 
 const renderUsage = (usage: string[]) => {
@@ -109,7 +122,7 @@ const renderRoleList = (icons: Record<string, string>) => html`
 `
 
 /** 역할을 목록으로 전시하는 그룹. 나머지는 아이콘 그리드로 둔다. */
-const ROLE_LIST_CATEGORIES = ['actions', 'navigations', 'status']
+const ROLE_LIST_CATEGORIES = ['actions', 'navigations', 'status', 'brand', 'theme']
 
 const renderIconCatalog = () => [
   ...Object.entries(ICON_CATALOG)

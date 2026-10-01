@@ -30,7 +30,7 @@ const main = html`
         <mm-list-item
           avatar-variant="tertiary"
           size="medium"
-          icon=${ICON_NAMES.USER_BADGE_CHECK}
+          icon=${ICON_NAMES.USER}
           label="사용자 정보"
           description="전자 메일, 일정, 연락처에서 사용하는 계정"
         ></mm-list-item>
@@ -74,7 +74,7 @@ const main = html`
                   description="문화/예술, 인권, 경제"
                 ></mm-menu-item-link>
                 <mm-menu-item-switch
-                  icon=${ICON_NAMES.MAIL_IN}
+                  icon=${ICON_NAMES.MAIL}
                   label="시사 뉴스레터"
                   value="newsletter"
                 ></mm-menu-item-switch>
@@ -104,7 +104,7 @@ const main = html`
           </mm-flex>
         </mm-surface>
         <mm-link-prompt
-          icon=${ICON_NAMES.PIPE}
+          icon=${ICON_NAMES.INFO}
           message="To delete your account permanently"
           link-label="로그아웃"
           href="#"

@@ -41,7 +41,7 @@ export const SITEMAP: SitemapNode[] = [
     type: 'standalone',
     id: 'foundations',
     title: 'Foundations',
-    icon: ICON_NAMES.DESIGN,
+    icon: ICON_NAMES.BOOK,
     children: [
       { id: 'foundations', name: 'Overview' },
       { id: 'layout', name: 'Layout' },
@@ -87,7 +87,7 @@ export const SITEMAP: SitemapNode[] = [
     type: 'group',
     id: 'overlays',
     title: 'Overlays',
-    icon: ICON_NAMES.MULTI_WINDOW,
+    icon: ICON_NAMES.COMMENT,
     items: [
       { id: 'tooltip', name: 'Tooltip' },
       { id: 'popover', name: 'Popover', badge: 'pattern' },
@@ -114,7 +114,7 @@ export const SITEMAP: SitemapNode[] = [
     type: 'group',
     id: 'navigations',
     title: 'Navigations',
-    icon: ICON_NAMES.COMPASS,
+    icon: ICON_NAMES.MENU,
     items: [
       { id: 'tabs', name: 'Tabs' },
       { id: 'top-bar', name: 'Top Bar' },
@@ -127,7 +127,7 @@ export const SITEMAP: SitemapNode[] = [
     type: 'group',
     id: 'forms',
     title: 'Forms',
-    icon: ICON_NAMES.FIELD,
+    icon: ICON_NAMES.DOCUMENT_CHECK,
     items: [
       { id: 'checkbox', name: 'Checkbox' },
       { id: 'radio', name: 'Radio' },
@@ -141,7 +141,7 @@ export const SITEMAP: SitemapNode[] = [
     type: 'group',
     id: 'feedbacks',
     title: 'Feedbacks',
-    icon: ICON_NAMES.REPLY,
+    icon: ICON_NAMES.NOTIFICATION,
     items: [
       { id: 'notice', name: 'Notice' },
       { id: 'loading', name: 'Loading' },
@@ -152,7 +152,7 @@ export const SITEMAP: SitemapNode[] = [
     type: 'group',
     id: 'patterns',
     title: 'Pages',
-    icon: ICON_NAMES.PLACE,
+    icon: ICON_NAMES.DOCUMENT,
     items: [
       { id: 'profile', name: 'User Profile', badge: '🔥' },
       { id: 'setting', name: 'Setting', hideNavbar: true },

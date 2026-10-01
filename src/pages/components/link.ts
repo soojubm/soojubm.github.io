@@ -68,13 +68,13 @@ const main = html`
       <section>
         <mm-flex direction="column" gap="2">
           <mm-link-prompt
-            icon=${ICON_NAMES.PIPE}
+            icon=${ICON_NAMES.COMMENT}
             message="궁금증이 해결되지 않는다면?"
             link-label="지금 문의하기"
             href="#"
           ></mm-link-prompt>
           <mm-link-prompt
-            icon=${ICON_NAMES.PIPE}
+            icon=${ICON_NAMES.COMMENT}
             message="Something's not right?"
             link-label="Get in touch with us."
             href="#"
