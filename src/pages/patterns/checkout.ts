@@ -87,7 +87,6 @@ const main = html`
               </mm-menu-item-radio-group>
             </mm-surface>
 
-            <!-- TODO 카드 정보(소유자·번호·유효기간·CVV·청구지)는 별도 화면에서 관리한다. -->
             <mm-list-item
               size="medium"
               icon=${ICON_NAMES.CREDIT_CARD}

@@ -55,7 +55,6 @@ const main = html`
                 ></mm-icon-button>
               </mm-button-group>
 
-              <!-- TODO text-list -->
               <div>
                 <mm-flex align-items="center" gap="1">
                   <mm-icon name=${ICON_NAMES.DELIVERY}></mm-icon>

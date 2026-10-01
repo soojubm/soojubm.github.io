@@ -236,17 +236,6 @@ const main = html`
       </div>
     </mm-component-section>
 
-    <mm-component-section heading="ViewMoreButton" description="TODO define expandable indicator">
-      <mm-button-group>
-        <mm-button variant="ghost" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
-          View More
-        </mm-button>
-        <mm-button variant="ghost" icon=${ICON_NAMES.COLLAPSE} icon-position="trailing">
-          View Less
-        </mm-button>
-      </mm-button-group>
-    </mm-component-section>
-
     <mm-component-section heading="AddButton" description="새 항목을 추가합니다.">
       <mm-add-button label="항목 추가"></mm-add-button>
     </mm-component-section>

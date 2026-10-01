@@ -288,17 +288,6 @@ const main = html`
         </mm-surface>
       </div>
 
-      <mm-surface>
-        <mm-flex direction="column" gap="3">
-          <mm-text size="24" weight="bold" as="h2">TODO</mm-text>
-          <mm-text-list
-            .texts=${[
-              '모바일 anchored overlay 전환 검토: 좁은 화면에서 popover를 바텀 시트로 바꿀지 정한다. 터치 타겟과 화면 가장자리 잘림에는 유리하지만, 시트 안에서 열리는 popover가 시트 위 시트가 되어 "모달 표면은 얕게 유지한다"와 부딪친다.',
-            ]}
-          ></mm-text-list>
-        </mm-flex>
-      </mm-surface>
-
       <mm-content-section-list>
         <mm-content-section heading="디자인 시스템에 대한 생각">
           <mm-paragraph>틀릴 수도 있지만 오랫동안 고민한 것들.</mm-paragraph>
@@ -358,6 +347,7 @@ const main = html`
               'render() 안의 조건부 DOM 조각이 커지면 render*() helper로 분리하고, render()에는 각 helper를 직접 나열한다.',
               'render*() 이름은 상태를 다시 중계하지 않고 실제 조각의 의미를 드러낸다. 예: renderContent()가 아니라 renderImage()',
               '파생 컴포넌트는 기반의 성격에 따라 조합 방식을 고른다. 상호작용·접근성 의미가 없는 기반은 그대로 렌더해 prop으로 단계를 고르고, 상호작용과 접근성 이름을 가진 기반은 공유 스타일·템플릿 조각을 조합한다. 후자를 렌더하면 shadow가 한 단계 깊어지고 이름·상태·이벤트를 안쪽으로 중계해야 하기 때문이다. 예: mm-current-indicator는 mm-dot을 렌더하고, mm-dismiss-button은 iconButtonStyles와 renderIconAction을 조합한다.',
+              '화면 위로 뜨는 표면은 동작과 표현을 분리한다. 배경을 막는지, 무엇으로 닫는지, 트리거와 어떻게 이어지는지는 SheetController·DisclosureController 같은 컨트롤러가 맡고, 패널 재질·너비·placement는 각 컴포넌트가 공유 스타일을 조합해 정한다. 표면이 달라도 열고 닫는 방식이 같아진다.',
             ]}
           ></mm-text-list>
           <mm-table

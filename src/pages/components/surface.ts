@@ -365,7 +365,10 @@ const main = html`
       </mm-flex>
     </mm-component-section>
 
-    <mm-component-section heading="Marquee" description="TODO">
+    <mm-component-section
+      heading="Marquee"
+      description="콘텐츠를 가로로 끊김 없이 반복해 흘려보내는 영역입니다. 콘텐츠 폭을 재서 복제 수와 이동 거리를 맞추므로 길이가 달라도 빈틈 없이 이어지며, 모션 줄이기를 켠 환경에서는 움직이지 않습니다."
+    >
       <mm-flex direction="column" gap="4">
         <mm-marquee gap="6" speed="64" pause-on-hover>
           <mm-paragraph>짧은 문장</mm-paragraph>

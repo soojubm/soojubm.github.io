@@ -10,7 +10,6 @@ import {
 } from '@/components/common/text/text.styles'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-/* TODO */
 const paragraphMaxWidthTokens: AttributeTokens<ParagraphSize> = {
   small: { 'max-width': '560px' },
   medium: { 'max-width': '560px' },

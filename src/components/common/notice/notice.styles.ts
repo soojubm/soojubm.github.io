@@ -6,7 +6,6 @@ import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const noticeVariantTokens: AttributeTokens<Exclude<NoticeVariant, 'info'>> = {
   success: {
-    // TODO on-
     '--notice-text-color': 'var(--foreground-success-color)',
   },
   warning: {
