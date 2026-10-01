@@ -60,7 +60,6 @@ const main = html`
         <mm-tab-list value="projects" variant="pill" search-param="tab">
           <mm-tab value="projects">프로젝트</mm-tab>
           <mm-tab value="second">두번째 탭</mm-tab>
-          <mm-tab value="empty">빈 상태</mm-tab>
         </mm-tab-list>
 
         <menu role="menubar">
@@ -71,7 +70,7 @@ const main = html`
         </menu>
 
         <mm-tab-panel value="projects">
-          <mm-grid columns="3">
+          <mm-grid columns="4">
             <mm-portfolio-item
               modal="newneek"
               label="뉴닉"
@@ -103,7 +102,7 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="second">
-          <mm-grid columns="3">
+          <mm-grid columns="4">
             <mm-portfolio-item
               modal="flat_sitemap"
               label="Flat sitemap"
@@ -111,20 +110,13 @@ const main = html`
             ></mm-portfolio-item>
           </mm-grid>
         </mm-tab-panel>
-
-        <mm-tab-panel value="empty">
-          <mm-result
-            heading="아직 새 글이 없어요."
-            description="포트폴리오를 업로드하여 수줍이님을 알려보세요."
-          ></mm-result>
-        </mm-tab-panel>
       </mm-flex>
     </section>
   </mm-main>
 
   <!-- 포트폴리오 시트 -->
 
-  <mm-sheet id="sheet-newneek" placement="bottom" height="90vh">
+  <mm-sheet id="sheet-newneek" placement="bottom" width="large" height="90vh">
     <mm-sheet-header heading="뉴닉"></mm-sheet-header>
     <mm-sheet-body class="newneek-sheet-body">
       <mm-content-section-list>
@@ -236,7 +228,7 @@ const main = html`
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-etc-works" placement="bottom" height="90vh">
+  <mm-sheet id="sheet-etc-works" placement="bottom" width="large" height="90vh">
     <mm-sheet-header heading="스터디움 프로모션 웹사이트"></mm-sheet-header>
     <mm-sheet-body>
       <figure>
@@ -255,7 +247,7 @@ const main = html`
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-lettering" placement="bottom" height="90vh">
+  <mm-sheet id="sheet-lettering" placement="bottom" width="large" height="90vh">
     <mm-sheet-header heading="레터링"></mm-sheet-header>
     <mm-sheet-body>
       <figure>
@@ -265,7 +257,7 @@ const main = html`
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-flat_sitemap" placement="bottom" height="90vh">
+  <mm-sheet id="sheet-flat_sitemap" placement="bottom" width="large" height="90vh">
     <mm-sheet-header heading='"Flat" Site Architecture'></mm-sheet-header>
     <mm-sheet-body>
       <div>
@@ -288,89 +280,11 @@ const main = html`
             '멘탈 모델은 뭔가 현실 세계에서 작동하는 방법에 대한 다른 사람의 생각에 대한 설명입니다.',
           ]}
         ></mm-text-list>
-        <mm-separator></mm-separator>
-        <section><mm-heading level="1">Home</mm-heading></section>
-        <section>
-          <div>
-            <mm-text weight="bold">1</mm-text>
-            <mm-heading level="2">design system</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">1-1</mm-text>
-            <mm-heading level="3">Principles</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">1-2</mm-text>
-            <mm-heading level="3">Components</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">1-3</mm-text>
-            <mm-heading level="3">Writings or Voice & Tone</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">1-4</mm-text>
-            <mm-heading level="3">Source Code or Coding Conventions</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">1-5</mm-text>
-            <mm-heading level="3">Accessibility</mm-heading>
-          </div>
-        </section>
-        <section>
-          <div>
-            <mm-text weight="bold">2</mm-text>
-            <mm-heading level="2">Pages</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">2-1</mm-text>
-            <mm-heading level="3">Temp</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">2-2</mm-text>
-            <mm-heading level="3">Temp</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">2-3</mm-text>
-            <mm-heading level="3">Temp</mm-heading>
-          </div>
-        </section>
-        <section>
-          <div>
-            <mm-text weight="bold">5</mm-text>
-            <mm-heading level="2">about</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">5-1</mm-text>
-            <mm-heading level="3">about</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">5-2</mm-text>
-            <mm-heading level="3">contact</mm-heading>
-          </div>
-        </section>
-        <section>
-          <div>
-            <mm-text weight="bold">0</mm-text>
-            <mm-heading level="2">Login / Signup</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">0-1</mm-text>
-            <mm-heading level="3">Forgot password</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">0-2</mm-text>
-            <mm-heading level="3">User Profile</mm-heading>
-          </div>
-          <div>
-            <mm-text weight="bold">0-3</mm-text>
-            <mm-heading level="3">Settings</mm-heading>
-          </div>
-        </section>
       </div>
     </mm-sheet-body>
   </mm-sheet>
 
-  <mm-sheet id="sheet-woolf" placement="bottom" height="90vh">
+  <mm-sheet id="sheet-woolf" placement="bottom" width="large" height="90vh">
     <mm-sheet-header heading="울프"></mm-sheet-header>
     <mm-sheet-body></mm-sheet-body>
   </mm-sheet>
@@ -408,7 +322,7 @@ function handleViewMode(event: Event) {
     item.layout = layout
   })
   containerElement?.querySelectorAll('mm-grid').forEach(gridElement => {
-    gridElement.setAttribute('columns', layout === 'list' ? '1' : '3')
+    gridElement.setAttribute('columns', layout === 'list' ? '1' : '4')
   })
 }
 
