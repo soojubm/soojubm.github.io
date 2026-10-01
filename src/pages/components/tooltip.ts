@@ -101,7 +101,7 @@ const main = html`
     </mm-flex>
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .elements=${['mm-tooltip']}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-tooltip-bubble']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list

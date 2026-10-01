@@ -330,7 +330,7 @@ const main = html`
           <mm-text-list
             .texts=${[
               '상태에 따라 재할당된다 — variant·size·hover 같은 상태 selector가 이 토큰 하나에 값을 다시 넣는다.',
-              '소비처마다 다를 수 있어 소비자에게 연다 — tooltip-max-width, table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System 토큰을 직접 참조한다.',
+              '소비처마다 다를 수 있어 소비자에게 연다 — table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System 토큰을 직접 참조한다.',
             ]}
           ></mm-text-list>
         </mm-content-section>

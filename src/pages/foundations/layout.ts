@@ -939,10 +939,11 @@ const main = html`
               ]}
             ></mm-text-list>
             <mm-component-notice heading="anchored overlay를 portal로 전환한다">
-              지금은 portal 없이 트리거 옆에 띄워, ${code('mm-sheet-body')}처럼 스크롤 영역 안에
-              놓인 popover는 화면에 자리가 남아 있어도 아래쪽이 잘리고 position·z-index를 가진 조상
-              밖으로 올라가지 못한다. 전환 전까지 z-index는 실제로 겹치는 요소에만 주고, 전환할 때
-              React 구현도 함께 옮긴다
+              ${code('mm-tooltip')}은 말풍선만 portal로 옮기고 트리거의 화면 좌표로 위치를 잡도록
+              전환했다. 나머지는 지금 portal 없이 트리거 옆에 띄워, ${code('mm-sheet-body')}처럼
+              스크롤 영역 안에 놓인 popover는 화면에 자리가 남아 있어도 아래쪽이 잘리고
+              position·z-index를 가진 조상 밖으로 올라가지 못한다. 전환 전까지 z-index는 실제로
+              겹치는 요소에만 주고, 전환할 때 React 구현도 함께 옮긴다
             </mm-component-notice>
           </mm-content-section>
 
