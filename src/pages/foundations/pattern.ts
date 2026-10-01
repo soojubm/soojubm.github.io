@@ -194,7 +194,7 @@ const visibilityOptions: OptionItem[] = [
 ]
 
 const main = html`
-  <mm-main>
+  <mm-main layout="split">
     <mm-page-header
       heading="Pattern"
       description="여러 컴포넌트가 이어져 하나의 흐름을 이루는 방식을 정합니다. 펼치고, 찾고, 모으는 흐름을 같은 규칙으로 조립하므로, 사용자는 어느 화면에서든 같은 방식으로 정보를 다룹니다."
@@ -208,7 +208,6 @@ const main = html`
       </mm-tab-list>
 
       <mm-tab-panel value="disclosure">
-        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             부차적인 정보를 접어 두었다가 트리거를 눌렀을 때만 펼칩니다. 첫 화면이 제목만으로 짧게
@@ -354,7 +353,6 @@ const main = html`
       </mm-tab-panel>
 
       <mm-tab-panel value="search">
-        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             키워드로 콘텐츠를 찾는 흐름입니다. 진입·포커스·입력·제출 단계마다 최근 검색어와
@@ -607,7 +605,6 @@ const main = html`
       </mm-tab-panel>
 
       <mm-tab-panel value="collection">
-        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             사용자가 만든 묶음에 항목을 담고, 묶음을 만들고 함께 관리하는 흐름입니다. 담는 흐름

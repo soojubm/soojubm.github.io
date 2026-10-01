@@ -1,11 +1,16 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { MEDIA } from '@/constants'
+
 /**
  * 모든 페이지의 본문 셸. main 랜드마크가 되어 상단 여백·좌우 패딩·최소 높이를 소유한다.
  * 상단 바나 푸터는 이 안이 아니라 형제로 둔다.
  * 사이드바가 열릴 때 밀려나는 폭은 body가 노출하는 `--sidebar-content-shift`를 따르며,
  * 스스로 가운데 정렬되는 width·layout 변형은 그 대신 기본 좌우 패딩으로 되돌린다.
+ * `layout="split"`은 첫 자식 mm-page-header를 왼쪽 칼럼에 sticky로 두고 나머지 콘텐츠를 오른쪽에 둔다.
+ * 칼럼 간격은 좌우 패딩과 같아, 오른쪽 칼럼의 콘텐츠 프레임이 패딩만큼 바깥으로 나와도 왼쪽 칼럼과 겹치지 않는다.
+ * 좁은 폭에서는 한 칼럼으로 접히며 sticky도 풀린다.
  */
 @customElement('mm-main')
 export class Main extends LitElement {
@@ -60,9 +65,31 @@ export class Main extends LitElement {
       flex: 1;
       min-height: 0;
     }
+
+    :host([layout='split']) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--layout-padding-inline);
+    }
+
+    :host([layout='split']) ::slotted(mm-page-header) {
+      align-self: start;
+      position: sticky;
+      top: calc(var(--navbar-height) + var(--layout-main-space-top));
+    }
+
+    @media ${MEDIA.narrow} {
+      :host([layout='split']) {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      :host([layout='split']) ::slotted(mm-page-header) {
+        position: static;
+      }
+    }
   `
   @property({ type: String, reflect: true }) width: 'small' | 'narrow' | '' = ''
-  @property({ type: String, reflect: true }) layout: 'chat' | '' = ''
+  @property({ type: String, reflect: true }) layout: 'chat' | 'split' | '' = ''
   @property({ type: String, reflect: true }) background: 'subtle' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 

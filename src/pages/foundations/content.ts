@@ -179,7 +179,7 @@ const termRows = html`
 `
 
 const main = html`
-  <mm-main>
+  <mm-main layout="split">
     <mm-page-header
       heading="Content"
       description="텍스트의 이름과 어조, 아이콘의 뜻을 정합니다. 훑어 읽는 콘텐츠를 한 곳에서 정하므로, 사용자는 어디서든 같은 말과 기호를 같은 뜻으로 읽습니다."
@@ -192,7 +192,6 @@ const main = html`
       </mm-tab-list>
 
       <mm-tab-panel value="writing">
-        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             텍스트 슬롯은 관점에 따라 이름과 어조를 나눕니다. 문구를 짧게 끊어 쓰므로 사용자는
@@ -288,7 +287,6 @@ const main = html`
       </mm-tab-panel>
 
       <mm-tab-panel value="iconography">
-        <mm-component-example full-width></mm-component-example>
         <mm-content-section-list>
           <mm-paragraph>
             아이콘은 텍스트와 함께 뜻을 전달하는 콘텐츠입니다. 하나의 아이콘에는 하나의 의미만 주고

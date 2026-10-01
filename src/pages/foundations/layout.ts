@@ -327,7 +327,7 @@ const selectionGroupRows = html`
 `
 
 const main = html`
-  <mm-main>
+  <mm-main layout="split">
     <mm-page-header
       heading="Layout"
       description="페이지 너비, 섹션의 배치, 화면 위로 뜨는 표면의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 담으므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
@@ -364,7 +364,6 @@ const main = html`
         </mm-tab-list>
 
         <mm-tab-panel value="page">
-          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-feature-group columns="2">
               <mm-feature
@@ -443,6 +442,15 @@ const main = html`
                     `,
                     '페이지 스크롤 없이 안의 영역이 남은 높이에서 스스로 스크롤한다. 대화 화면이 쓴다',
                   ),
+                  rule(
+                    html`
+                      ${code('layout="split"')}은 헤더와 콘텐츠를 반반으로 나눈다
+                    `,
+                    html`
+                      ${code('mm-page-header')}가 왼쪽에 고정되고 콘텐츠가 오른쪽에서 스크롤된다.
+                      좁은 폭에서는 한 칼럼으로 접힌다. 문서 페이지가 쓴다
+                    `,
+                  ),
                 ]}
               ></mm-text-list>
               <mm-component-notice
@@ -510,7 +518,6 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="section">
-          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-paragraph>Section 컴포넌트: ${codeList(SECTION_COMPONENTS)}</mm-paragraph>
 
@@ -747,7 +754,6 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="group">
-          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-paragraph>
               그룹은 같은 컴포넌트를 나열하며 항목의 정렬과 간격을 소유합니다. 일부 그룹은 여기에
@@ -818,7 +824,6 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="overlay">
-          <mm-component-example full-width></mm-component-example>
           <mm-content-section-list>
             <mm-content-section heading-level="3" heading="Overview">
               <mm-table
