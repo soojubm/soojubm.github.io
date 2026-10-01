@@ -147,14 +147,14 @@ const dismissRows = html`
     <th scope="row"><mm-link href="./sheet.html">Sheet</mm-link></th>
     <td>${yes}</td>
     <td>${yes}</td>
-    <td>${yes}</td>
+    <td>닫기 아이콘을 누를 때</td>
     <td>닫아도 잃는 것이 없는 내용(댓글, 검색 등)을 담으므로 가볍게 닫히게 한다</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./dialog.html">Dialog</mm-link></th>
     <td>${no}</td>
     <td>${yes}</td>
-    <td>${no}</td>
+    <td>내용이 ${code('close()')}를 호출할 때</td>
     <td>
       확인이 필요한 중요한 작업에 쓰므로 의도가 불분명한 배경 클릭으로 흐름이 끊기지 않게 한다.
       ESC는 키보드 사용자의 탈출 수단이라 남기되, 보조 액션이 파괴적일 수 있어 어느 액션도 실행하지
@@ -165,29 +165,13 @@ const dismissRows = html`
     <th scope="row"><mm-link href="./toast.html">Toast</mm-link></th>
     <td>${no}</td>
     <td>${no}</td>
-    <td>${no}</td>
+    <td>표시 시간이 지나면</td>
     <td>
       결과를 알리는 데 그치고 배경 조작을 막지 않으므로 따로 닫게 하지 않는다. 표시 시간(3초)이
       지나면 스스로 닫히되, 포인터나 포커스가 올라와 있는 동안은 시간이 멈추고 벗어나면 처음부터
       다시 흐른다. 열려 있을 때 다시 열어도 처음부터 다시 흐른다
     </td>
   </tr>
-`
-
-const placementTypeCode = `type Side = 'top' | 'right' | 'bottom' | 'left'
-type Alignment = 'start' | 'end'
-
-// anchored overlay (popover · select · tooltip): \`\${Side}\` | \`\${Side}-\${Alignment}\`
-type PlacementType =
-  | 'top' | 'top-start' | 'top-end'
-  | 'right' | 'right-start' | 'right-end'
-  | 'bottom' | 'bottom-start' | 'bottom-end'
-  | 'left' | 'left-start' | 'left-end'
-
-// viewport overlay (sheet · dialog)
-type ViewportPlacementType = 'center' | Side`
-
-const anchoredDismissRows = html`
   <tr>
     <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
     <td>${yes}</td>
@@ -213,6 +197,19 @@ const anchoredDismissRows = html`
     <td>트리거에 머무는 동안만 보이는 설명이라 열고 닫는 조작을 따로 두지 않는다</td>
   </tr>
 `
+
+const placementTypeCode = `type Side = 'top' | 'right' | 'bottom' | 'left'
+type Alignment = 'start' | 'end'
+
+// anchored overlay (popover · select · tooltip): \`\${Side}\` | \`\${Side}-\${Alignment}\`
+type PlacementType =
+  | 'top' | 'top-start' | 'top-end'
+  | 'right' | 'right-start' | 'right-end'
+  | 'bottom' | 'bottom-start' | 'bottom-end'
+  | 'left' | 'left-start' | 'left-end'
+
+// viewport overlay (sheet · dialog)
+type ViewportPlacementType = 'center' | Side`
 
 const groupRows = html`
   <tr>
@@ -707,14 +704,6 @@ const main = html`
                 '같은 종류의 항목이 여럿이면 그 계열의 그룹으로 묶는다',
                 '컨테이너에서 role과 간격을 직접 만들지 않고 그룹이 소유하게 한다. 항목이 하나뿐이면 그룹으로 감싸지 않고 단일 요소를 그대로 둔다',
               ),
-              rule(
-                html`
-                  그 계열의 그룹이 없는 서로 다른 종류의 항목은 ${code('mm-flex')}로 배치한다
-                `,
-                html`
-                  ${code('mm-flex')}는 group 계층 밖에서 배치만 돕는 유틸리티다
-                `,
-              ),
             ]}
           ></mm-text-list>
 
@@ -841,13 +830,7 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="Dismiss">
-            <mm-paragraph-group>
-              <mm-paragraph>표면을 열고 닫는 방법을 정합니다.</mm-paragraph>
-              <mm-paragraph>
-                ${code('DisclosureController')} · ${code('SheetController')} ·
-                ${code('AdaptiveOverlayController')}
-              </mm-paragraph>
-            </mm-paragraph-group>
+            <mm-paragraph>표면을 열고 닫는 방법을 정합니다.</mm-paragraph>
             <mm-text-list
               variant="check"
               .texts=${[
@@ -866,40 +849,11 @@ const main = html`
                     경우에만 내용이 ${code('close()')}를 호출한다
                   `,
                 ),
-                rule(
-                  html`
-                    열림이 바뀌면 ${code('toggle')} 이벤트로 알린다
-                  `,
-                  html`
-                    바깥 클릭·ESC로 표면이 스스로 닫혀도 ${code('detail.open')}에 열림 여부가 담겨
-                    나가므로, 쓰는 쪽은 이 값으로 트리거의 ${code('aria-expanded')} 같은 자기 상태를
-                    맞춘다. 이벤트는 버블링하지 않아 안에 둔 다른 표면의 ${code('toggle')}과 섞이지
-                    않는다
-                  `,
-                ),
               ]}
             ></mm-text-list>
-            <mm-paragraph>
-              ${code('AdaptiveOverlayController')}는 넓은 화면의 popover와 좁은 화면의 sheet로
-              목록을 여는 컴포넌트(${code('mm-select')}·${code('mm-more-menu')})의 열림 상태를
-              소유합니다. 두 표면은 backdrop·portal·스크롤 잠금을 처리하는 방식이 달라 표면
-              컴포넌트를 갈아 끼우므로, 열림 상태는 표면이 나눠 갖지 않고 이 컨트롤러 하나가
-              갖습니다.
-            </mm-paragraph>
             <mm-table
               .rows=${dismissRows}
-              caption="viewport 표면의 닫기 수단 비교"
-              .columns=${[
-                { label: 'UI' },
-                { label: '배경 클릭' },
-                { label: 'ESC' },
-                { label: '닫기 아이콘' },
-                { label: '이유' },
-              ]}
-            ></mm-table>
-            <mm-table
-              .rows=${anchoredDismissRows}
-              caption="anchored 표면의 닫기 수단 비교"
+              caption="표면의 닫기 수단 비교"
               .columns=${[
                 { label: 'UI' },
                 { label: '바깥 클릭' },
@@ -910,7 +864,38 @@ const main = html`
             ></mm-table>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="Portal">
+          <mm-content-section heading-level="3" heading="DisclosureController">
+            <mm-paragraph>
+              열고 닫는 모든 표면이 공통으로 쓰는 컨트롤러입니다. 트리거 클릭으로 열림을 토글하고
+              ${code('aria-expanded')}를 맞추며, 열림이 바뀌면 ${code('toggle')} 이벤트로 알립니다.
+              트리거는 ${code('aria-controls')}로 표면을 가리키기만 하고 여는 표면의 종류는
+              ${code('aria-haspopup')}으로 직접 선언하므로, 쓰는 쪽은 클릭 핸들러를 따로 달지
+              않습니다. 열림 상태는 호스트의 ${code('open')}이 갖고 컨트롤러는 읽고 쓰기만 하며,
+              바깥 클릭·ESC로 닫는 동작은 표면이 각자 소유합니다.
+            </mm-paragraph>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="SheetController">
+            <mm-paragraph>
+              viewport 기준 modal 표면(${code('mm-sheet')}·${code('mm-dialog')})이 공통으로 쓰는
+              컨트롤러입니다. 트리거 연결, portal 이동, 스크롤 잠금, 배경 클릭·ESC로 닫기를 한곳에서
+              맡으므로 표면은 닫는 조건만 ${code('dismissOn')}으로 밝힙니다. 열린 동안에는 portal
+              컨테이너 바깥의 ${code('body')} 자식을 ${code('inert')}로 만들어 포커스를 표면 안에
+              가두고, 닫히면 풀어 연 요소로 되돌립니다.
+            </mm-paragraph>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="AdaptiveOverlayController">
+            <mm-paragraph>
+              넓은 화면의 popover와 좁은 화면의 sheet로 목록을 여는
+              컴포넌트(${code('mm-select')}·${code('mm-more-menu')})의 열림 상태를 소유합니다. 두
+              표면은 backdrop·portal·스크롤 잠금을 처리하는 방식이 달라 표면 컴포넌트를 갈아
+              끼우므로, 열림 상태는 표면이 나눠 갖지 않고 이 컨트롤러 하나가 갖습니다. 호스트는
+              ${code('open')}·${code('compact')}를 읽어 두 표면과 트리거에 내려 줍니다.
+            </mm-paragraph>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="PortalController">
             <mm-paragraph-group>
               <mm-paragraph>
                 Portal은 표면을 선언한 자리에서 떼어 다른 곳에 렌더하는 방식입니다. 표면이 조상의
@@ -922,39 +907,13 @@ const main = html`
                 렌더합니다. 이 컨테이너는 ${code('body')}의 마지막 자식이라 앱 셸의 어떤 조상에도
                 속하지 않습니다.
               </mm-paragraph>
-              <mm-paragraph>${code('PortalController')}</mm-paragraph>
             </mm-paragraph-group>
             <mm-text-list
               variant="check"
               .texts=${[
                 rule(
-                  html`
-                    viewport overlay는 모두 ${code('#portal-root')}로 옮긴다
-                  `,
-                  '셸이 렌더하는 노드와 분리된 한곳에 모은다',
-                ),
-                rule(
                   '표면이 문서에 연결될 때 한 번만 옮긴다',
                   '열 때는 open만 토글한다. 열 때 옮기면 닫힌 상태가 한 번도 그려지지 않아 열림 애니메이션이 재생되지 않는다',
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-component-notice heading="anchored overlay를 portal로 전환한다">
-              ${code('mm-tooltip')}은 말풍선만 portal로 옮기고 트리거의 화면 좌표로 위치를 잡도록
-              전환했다. 나머지는 지금 portal 없이 트리거 옆에 띄워, ${code('mm-sheet-body')}처럼
-              스크롤 영역 안에 놓인 popover는 화면에 자리가 남아 있어도 아래쪽이 잘리고
-              position·z-index를 가진 조상 밖으로 올라가지 못한다. 전환 전까지 z-index는 실제로
-              겹치는 요소에만 주고, 전환할 때 React 구현도 함께 옮긴다
-            </mm-component-notice>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="주의">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '메뉴 트리거는 스크롤 영역 바깥에 둔다',
-                  '스크롤 영역 안의 항목은 누르면 다음 화면으로 넘어가게 하고, overflow는 내용이 영역을 넘치는 곳에만 준다',
                 ),
               ]}
             ></mm-text-list>
