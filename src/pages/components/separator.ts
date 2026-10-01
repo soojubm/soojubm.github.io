@@ -30,7 +30,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 const main = html`
   <mm-main>
     <mm-page-header
-      heading="Seperator"
+      heading="Separator"
       description="서로 다른 맥락 사이에 긋는 경계선입니다. 요소 사이에는 좁은 간격으로, 섹션 사이에는 넓은 간격으로 선을 두어 내용을 나누므로, 사용자는 화면이 의미 단위로 정돈되어 있다는 인상 속에서 흐름을 따라 읽을 수 있습니다."
     ></mm-page-header>
 
