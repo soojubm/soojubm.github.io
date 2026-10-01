@@ -9,6 +9,7 @@ import { CATEGORIES, type CategoryKey } from '@/pages/mocks'
 
 type StatCard = {
   icon: string
+  trendIcon: string
   label: string
   value: string
   tone: string
@@ -16,7 +17,7 @@ type StatCard = {
   notes: readonly string[]
 }
 
-const renderStatCard = ({ icon, label, value, tone, change, notes }: StatCard) => html`
+const renderStatCard = ({ icon, trendIcon, label, value, tone, change, notes }: StatCard) => html`
   <mm-surface variant="outlined" radius="large">
     <mm-flex direction="column" gap="3">
       <mm-avatar variant="secondary" size="40" icon=${icon}></mm-avatar>
@@ -25,7 +26,7 @@ const renderStatCard = ({ icon, label, value, tone, change, notes }: StatCard) =
           <mm-text size="12">${label}</mm-text>
           <mm-heading>${value}</mm-heading>
         </mm-flex>
-        <mm-tag icon=${icon} tone=${tone}>${change}</mm-tag>
+        <mm-tag icon=${trendIcon} tone=${tone}>${change}</mm-tag>
       </mm-flex>
       <mm-flex direction="column" gap="0">
         ${notes.map(
@@ -42,6 +43,7 @@ const renderStatCard = ({ icon, label, value, tone, change, notes }: StatCard) =
 /** 변화율은 지난 분기 대비. */
 const systemStats = [
   {
+    icon: ICON_NAMES.CUBE_SCAN,
     label: '컴포넌트',
     value: '212',
     change: '+6.0%',
@@ -50,6 +52,7 @@ const systemStats = [
     caption: '커스텀 엘리먼트 기준',
   },
   {
+    icon: ICON_NAMES.DOCUMENT,
     label: '문서 페이지',
     value: '34',
     change: '+9.7%',
@@ -58,6 +61,7 @@ const systemStats = [
     caption: '패턴 25개 별도',
   },
   {
+    icon: ICON_NAMES.PALETTE,
     label: '디자인 토큰',
     value: '148',
     change: '-5.1%',
@@ -66,6 +70,7 @@ const systemStats = [
     caption: '테마 3벌에 공통 적용',
   },
   {
+    icon: ICON_NAMES.WARNING,
     label: '접근성 경고',
     value: '7',
     change: '-30%',
@@ -110,8 +115,9 @@ const toShares = (counts: { label: string; count: number }[]) => {
 const semanticsShares = toShares(semanticsCounts)
 
 const systemStatCards: StatCard[] = systemStats.map(
-  ({ label, value, change, trend, summary, caption }) => ({
-    icon: trendIcons[trend],
+  ({ icon, label, value, change, trend, summary, caption }) => ({
+    icon,
+    trendIcon: trendIcons[trend],
     tone: trendTones[trend],
     label,
     value,
