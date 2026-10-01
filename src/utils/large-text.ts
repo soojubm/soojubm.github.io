@@ -1,9 +1,10 @@
 import { LARGE_TEXT_STORAGE_KEY } from '@/constants'
+import { readStorage, writeStorage } from '@/utils/storage'
 
 const LARGE_TEXT_CLASS = 'large-text'
 
 export function isLargeText() {
-  return localStorage.getItem(LARGE_TEXT_STORAGE_KEY) === 'true'
+  return readStorage(LARGE_TEXT_STORAGE_KEY) === 'true'
 }
 
 export function applyLargeText(enabled = isLargeText()) {
@@ -12,6 +13,6 @@ export function applyLargeText(enabled = isLargeText()) {
 }
 
 export function saveLargeText(enabled: boolean) {
-  localStorage.setItem(LARGE_TEXT_STORAGE_KEY, String(enabled))
+  writeStorage(LARGE_TEXT_STORAGE_KEY, String(enabled))
   return applyLargeText(enabled)
 }

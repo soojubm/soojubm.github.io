@@ -15,6 +15,7 @@ import { EscapeKeyController } from '@/controllers/escape-key-controller'
 import { SITEMAP, type SitemapItem, type SitemapNode } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
 import { withOpenState } from '@/utils/open-state'
+import { readStorage, writeStorage } from '@/utils/storage'
 
 type SidebarSection = Extract<SitemapNode, { type: 'standalone' }>
 type SidebarGroup = Extract<SitemapNode, { type: 'group' }>
@@ -119,7 +120,7 @@ export class Sidebar extends withOpenState(LitElement) {
   }
 
   private restoreScrollPosition() {
-    const saved = localStorage.getItem('sidebarScroll')
+    const saved = readStorage('sidebarScroll')
     if (saved && this.scrollEl) this.scrollEl.scrollTop = Number(saved)
   }
 
@@ -128,7 +129,7 @@ export class Sidebar extends withOpenState(LitElement) {
   }
 
   private saveScrollPosition() {
-    localStorage.setItem('sidebarScroll', String(this.scrollEl?.scrollTop ?? 0))
+    writeStorage('sidebarScroll', String(this.scrollEl?.scrollTop ?? 0))
   }
 
   private containsCurrentPage(node: SidebarSection) {

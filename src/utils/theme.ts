@@ -1,5 +1,6 @@
 import { ICON_NAMES, type IconName } from '@/components/common'
 import { THEME_STORAGE_KEY } from '@/constants'
+import { readStorage, writeStorage } from '@/utils/storage'
 
 export type Theme = 'light' | 'dark' | 'brutal' | 'glass'
 
@@ -17,7 +18,7 @@ function isTheme(value: string | null): value is Theme {
 }
 
 function getStoredTheme(): Theme | null {
-  const theme = localStorage.getItem(THEME_STORAGE_KEY)
+  const theme = readStorage(THEME_STORAGE_KEY)
   return isTheme(theme) ? theme : null
 }
 
@@ -36,6 +37,6 @@ export function applyTheme(theme = getPreferredTheme()) {
 }
 
 export function saveTheme(theme: Theme) {
-  localStorage.setItem(THEME_STORAGE_KEY, theme)
+  writeStorage(THEME_STORAGE_KEY, theme)
   return applyTheme(theme)
 }
