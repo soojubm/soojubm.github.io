@@ -31,7 +31,7 @@ const main = html`
                   placeholder="soojubm@gmail.com"
                 ></mm-textfield>
                 <mm-passwordfield label="비밀번호" placeholder="8자리 이상">
-                  <mm-link slot="link" href="forgot.html">비밀번호를 잊으셨나요?</mm-link>
+                  <mm-link slot="link" href="#">비밀번호를 잊으셨나요?</mm-link>
                 </mm-passwordfield>
                 <mm-checkbox name="remember">로그인 상태 유지</mm-checkbox>
               </mm-flex>
@@ -47,7 +47,7 @@ const main = html`
 
         <mm-flex justify-content="center" gap="2">
           계정이 없으신가요?
-          <mm-link href="signup.html">지금 가입하기</mm-link>
+          <mm-link href="#">지금 가입하기</mm-link>
         </mm-flex>
       </mm-flex>
 
@@ -187,7 +187,7 @@ const main = html`
         </form>
 
         <mm-flex justify-content="center">
-          <mm-link href="signin.html">인증번호 재전송</mm-link>
+          <mm-link href="#">인증번호 재전송</mm-link>
         </mm-flex>
       </mm-flex>
     </mm-flex>

@@ -265,7 +265,7 @@ const main = html`
                 Monotonectally productivate progressive human capital without user friendly portals.
                 Globally benchmark top-line ideas with distributed catalysts for change.
                 Authoritatively restore ubiquitous partnerships vis-a-vis
-                <mm-link href="#feed">synergistic models</mm-link>
+                <mm-link href="#">synergistic models</mm-link>
                 .
               </mm-paragraph>
               <mm-text-list

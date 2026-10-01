@@ -215,7 +215,7 @@ const main = html`
         </mm-button-group>
         <mm-separator></mm-separator>
         <mm-button-group>
-          <mm-button variant="primary" size="large" href="#components">지금 가입하기</mm-button>
+          <mm-button variant="primary" size="large" href="#">지금 가입하기</mm-button>
           <mm-button variant="ghost" size="large">더 알아보기</mm-button>
         </mm-button-group>
       </mm-flex>
