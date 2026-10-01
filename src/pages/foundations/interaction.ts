@@ -180,7 +180,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
-      <mm-tab-list value="state" variant="pill" search-param="tab">
+      <mm-tab-list value="state" variant="text" search-param="tab">
         <mm-tab value="state">State</mm-tab>
         <mm-tab value="selection">Selection</mm-tab>
       </mm-tab-list>

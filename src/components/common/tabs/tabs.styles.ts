@@ -65,4 +65,33 @@ export const tabsStyles = css`
       border-radius: var(--radius);
     }
   }
+
+  /* ==========================================================
+     3) Text 형태 (제목 크기 굵은 글자 + 상단 점 인디케이터)
+     ========================================================== */
+  :host([variant='text']) {
+    gap: var(--space-4);
+    padding-top: var(--space-2);
+
+    & .indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 0;
+      height: var(--size-16);
+    }
+  }
+
+  /* 글자 크기는 페이지 제목(mm-heading level 1)과 같은 단계다. 탭 토큰은 탭 요소 자신에게 재할당한다. */
+  :host([variant='text']) ::slotted(mm-tab) {
+    --tab-height: var(--size-48);
+    --tab-padding-inline: 0;
+    --tab-text-size: var(--font-size-32);
+
+    font-weight: var(--font-weight-bold);
+  }
+
+  :host([variant='text']) ::slotted(mm-tab[aria-selected='true']) {
+    --tab-text-color: var(--foreground-color);
+  }
 `

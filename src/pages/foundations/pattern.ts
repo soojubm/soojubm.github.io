@@ -164,7 +164,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
-      <mm-tab-list value="disclosure" variant="pill" search-param="tab">
+      <mm-tab-list value="disclosure" variant="text" search-param="tab">
         <mm-tab value="disclosure">Disclosure</mm-tab>
         <mm-tab value="search">Search</mm-tab>
         <mm-tab value="collection">Collection</mm-tab>

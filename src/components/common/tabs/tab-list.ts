@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { LitElement, html, nothing } from 'lit'
 import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js'
 
 import { Tab } from '@/components/common/tabs/tab'
@@ -7,9 +7,10 @@ import { tabsStyles } from '@/components/common/tabs/tabs.styles'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { emit, uniqueId } from '@/utils'
 import { getSearchParam, replaceSearchParam } from '@/utils/search-param'
+import '@/components/common/dot/dot'
 import '@/components/common/scroll/semantics/scroll-hint'
 
-export type TabListVariant = 'line' | 'pill'
+export type TabListVariant = 'line' | 'pill' | 'text'
 
 @customElement('mm-tab-list')
 export class TabList extends LitElement {
@@ -30,9 +31,17 @@ export class TabList extends LitElement {
   render() {
     return html`
       <mm-scroll-hint placement="start" size="small"></mm-scroll-hint>
-      <div class="indicator"></div>
+      <div class="indicator">${this.renderDot()}</div>
       <slot @slotchange=${this.handleSlotChange}></slot>
       <mm-scroll-hint placement="end" size="small"></mm-scroll-hint>
+    `
+  }
+
+  private renderDot() {
+    if (this.variant !== 'text') return nothing
+
+    return html`
+      <mm-dot tone="gray" size="6"></mm-dot>
     `
   }
 

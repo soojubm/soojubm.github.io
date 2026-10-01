@@ -35,8 +35,8 @@ export class Tab extends LitElement {
         font-weight var(--transition-duration) var(--transition-easing);
     }
 
-    :host([aria-selected='true']) .tab-content {
-      color: var(--interaction-selected-foreground-color);
+    :host([aria-selected='true']) {
+      --tab-text-color: var(--interaction-selected-foreground-color);
     }
 
     :host(:focus-visible) {

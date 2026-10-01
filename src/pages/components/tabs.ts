@@ -134,6 +134,27 @@ const main = html`
                 이번 달 정산 데이터...
               </mm-tab-panel>
             </mm-flex>
+
+            <mm-flex direction="column" gap="3">
+              <mm-tab-list value="posts" variant="text">
+                <mm-tab value="posts">게시글</mm-tab>
+                <mm-tab value="comments">댓글</mm-tab>
+                <mm-tab value="bookmarks">북마크</mm-tab>
+              </mm-tab-list>
+
+              <mm-tab-panel value="posts">
+                <span aria-hidden="true">📝</span>
+                작성한 게시글...
+              </mm-tab-panel>
+              <mm-tab-panel value="comments">
+                <span aria-hidden="true">💬</span>
+                작성한 댓글...
+              </mm-tab-panel>
+              <mm-tab-panel value="bookmarks">
+                <span aria-hidden="true">🔖</span>
+                저장한 북마크...
+              </mm-tab-panel>
+            </mm-flex>
           </mm-flex>
         </mm-component-example>
       </mm-tab-panel>

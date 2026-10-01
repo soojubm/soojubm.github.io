@@ -337,7 +337,7 @@ const main = html`
     ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
-      <mm-tab-list value="page" variant="pill" search-param="tab">
+      <mm-tab-list value="page" variant="text" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
         <mm-tab value="section">Section</mm-tab>
         <mm-tab value="group">Group</mm-tab>
