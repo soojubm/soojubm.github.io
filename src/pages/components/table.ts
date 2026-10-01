@@ -144,17 +144,15 @@ const main = html`
         ></mm-toggle-button-group>
       </mm-button-group>
 
-      <menu role="menubar" style="margin: var(--space-3) 0">
-        <mm-flex align-items="center" gap="4">
-          <mm-searchfield
-            size="small"
-            hidden-label
-            placeholder="검색꾸"
-            value="유저"
-          ></mm-searchfield>
-          <mm-checkbox name="test1">28 selected</mm-checkbox>
-        </mm-flex>
-      </menu>
+      <mm-flex align-items="center" gap="4" style="margin: var(--space-3) 0">
+        <mm-searchfield
+          size="small"
+          hidden-label
+          placeholder="검색꾸"
+          value="유저"
+        ></mm-searchfield>
+        <mm-checkbox name="test1">28 selected</mm-checkbox>
+      </mm-flex>
       <mm-table
         id="product-table"
         caption="히라가나 오십음도"

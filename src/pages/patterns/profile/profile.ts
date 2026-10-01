@@ -1,6 +1,7 @@
 import { html } from 'lit'
 
 import type { AvatarItem } from '@/components/common'
+import type { Grid, GridColumns } from '@/components/common/grid/grid'
 import type { PortfolioItem } from '@/components/domains/portfolio-item'
 import type { Sheet } from '@/components/overlay/sheet'
 
@@ -8,6 +9,9 @@ import { renderPage } from '@/components/layouts/base-layouts'
 import { TOPICS } from '@/pages/mocks'
 
 import './profile.css'
+
+// 그리드 보기의 칼럼 수. 목록 보기에서 돌아올 때도 이 값으로 되돌린다.
+const portfolioGridColumns: GridColumns = 4
 
 const followerAvatars: AvatarItem[] = [
   { name: '수줍이', src: '/src/images/soojubm.png' },
@@ -62,15 +66,13 @@ const main = html`
           <mm-tab value="second">두번째 탭</mm-tab>
         </mm-tab-list>
 
-        <menu role="menubar">
-          <mm-flex justify-content="space-between" gap="2">
-            <mm-view-mode-switcher></mm-view-mode-switcher>
-            <mm-sort-selector></mm-sort-selector>
-          </mm-flex>
-        </menu>
+        <mm-flex justify-content="space-between" gap="2">
+          <mm-view-mode-switcher></mm-view-mode-switcher>
+          <mm-sort-selector></mm-sort-selector>
+        </mm-flex>
 
         <mm-tab-panel value="projects">
-          <mm-grid columns="4">
+          <mm-grid columns=${portfolioGridColumns}>
             <mm-portfolio-item
               modal="newneek"
               label="뉴닉"
@@ -102,7 +104,7 @@ const main = html`
         </mm-tab-panel>
 
         <mm-tab-panel value="second">
-          <mm-grid columns="4">
+          <mm-grid columns=${portfolioGridColumns}>
             <mm-portfolio-item
               modal="flat_sitemap"
               label="Flat sitemap"
@@ -283,11 +285,6 @@ const main = html`
       </div>
     </mm-sheet-body>
   </mm-sheet>
-
-  <mm-sheet id="sheet-woolf" placement="bottom" width="large" height="90vh">
-    <mm-sheet-header heading="울프"></mm-sheet-header>
-    <mm-sheet-body></mm-sheet-body>
-  </mm-sheet>
 `
 
 type PortfolioItemOpenEvent = CustomEvent<{ modal: string }>
@@ -321,8 +318,8 @@ function handleViewMode(event: Event) {
   containerElement?.querySelectorAll<PortfolioItem>('mm-portfolio-item').forEach(item => {
     item.layout = layout
   })
-  containerElement?.querySelectorAll('mm-grid').forEach(gridElement => {
-    gridElement.setAttribute('columns', layout === 'list' ? '1' : '4')
+  containerElement?.querySelectorAll<Grid>('mm-grid').forEach(gridElement => {
+    gridElement.columns = layout === 'list' ? 1 : portfolioGridColumns
   })
 }
 
@@ -335,8 +332,8 @@ function handleSort(event: Event) {
     const items = Array.from(gridElement.querySelectorAll<HTMLElement>('mm-portfolio-item'))
     items
       .sort((a, b) => {
-        const aDate = Date.parse(a.getAttribute('date') ?? '')
-        const bDate = Date.parse(b.getAttribute('date') ?? '')
+        const aDate = Date.parse(a.getAttribute('datetime') ?? '')
+        const bDate = Date.parse(b.getAttribute('datetime') ?? '')
         return sortEvent.detail.value === 'latest' ? bDate - aDate : aDate - bDate
       })
       .forEach(item => gridElement.append(item))
