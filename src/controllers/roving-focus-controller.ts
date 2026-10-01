@@ -3,7 +3,7 @@ import type { ReactiveController, ReactiveControllerHost } from 'lit'
 import { getDeepActiveElement } from '@/utils'
 
 type Host = ReactiveControllerHost & HTMLElement
-export type Orientation = 'horizontal' | 'vertical' | 'both'
+export type Orientation = 'horizontal' | 'vertical'
 
 interface RovingFocusControllerOptions {
   // 포커스를 순회할 항목들을 DOM 순서대로 반환한다. 비활성 항목도 포함해 인덱스를 정렬한다.
@@ -23,8 +23,6 @@ function directionFor(key: string, orientation: Orientation): 1 | -1 | undefined
 
   if (key === forward) return 1
   if (key === backward) return -1
-  if (orientation === 'both' && key === 'ArrowDown') return 1
-  if (orientation === 'both' && key === 'ArrowUp') return -1
   return undefined
 }
 

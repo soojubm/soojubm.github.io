@@ -1,4 +1,4 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
+import type { ReactiveControllerHost } from 'lit'
 
 import { MEDIA_QUERY } from '@/constants'
 import { MediaQueryController } from '@/controllers/media-query-controller'
@@ -11,16 +11,16 @@ import { MediaQueryController } from '@/controllers/media-query-controller'
  * 걸면 표면의 DisclosureController가 같은 클릭을 또 토글하기 때문이다. 마지막으로 누른 트리거는 popover의 기준 요소가 된다.
  * 트리거·목록 템플릿은 호스트마다 달라 호스트가 그린다.
  */
-export class AdaptiveOverlayController implements ReactiveController {
+export class AdaptiveOverlayController {
   private media: MediaQueryController
-  private wasCompact: boolean
   private isOpen = false
   private triggerElement?: HTMLElement
 
   constructor(private host: ReactiveControllerHost) {
-    this.media = new MediaQueryController(host, MEDIA_QUERY.compact)
-    this.wasCompact = this.media.matches
-    host.addController(this)
+    // 표면이 갈리면 트리거 배선도 새 표면으로 옮겨가므로, 열린 채로 넘어가지 않게 렌더 전에 닫는다.
+    this.media = new MediaQueryController(host, MEDIA_QUERY.compact, () => {
+      this.isOpen = false
+    })
   }
 
   get open() {
@@ -35,14 +35,6 @@ export class AdaptiveOverlayController implements ReactiveController {
   /** 좁은 화면이라 sheet가 목록을 맡는지 여부 */
   get compact() {
     return this.media.matches
-  }
-
-  // 표면이 갈리면 트리거 배선도 새 표면으로 옮겨가므로, 열린 채로 넘어가지 않게 렌더 직전에 닫는다.
-  hostUpdate() {
-    if (this.compact === this.wasCompact) return
-
-    this.wasCompact = this.compact
-    this.isOpen = false
   }
 
   close() {

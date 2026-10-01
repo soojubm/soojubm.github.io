@@ -789,6 +789,14 @@ const main = html`
                     닫히는 경우에만 내용이 ${code('close()')}를 호출한다
                   `,
                 ),
+                rule(
+                  'ESC는 가장 나중에 연 표면 하나만 닫는다',
+                  html`
+                    표면이 겹쳐 열려 있어도 한 번에 모두 닫히지 않으므로, 사용자는 방금 연 표면부터
+                    차례로 빠져나온다. ${code('mm-dialog')} 안에서 ${code('mm-popover')}를 열었다면
+                    첫 ESC는 popover만 닫는다
+                  `,
+                ),
               ]}
             ></mm-text-list>
             <mm-table
