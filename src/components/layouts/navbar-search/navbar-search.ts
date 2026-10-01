@@ -4,8 +4,8 @@ import { customElement, state } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 import '@/components/domains/search/search-result-list'
+import { PagefindSearchController } from '@/components/layouts/navbar-search/pagefind-search-controller'
 import '@/components/overlay/sheet'
-import { PagefindSearchController } from '@/controllers/pagefind-search-controller'
 
 function hasValue(target: EventTarget | null): target is HTMLInputElement | HTMLTextAreaElement {
   return target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement

@@ -1,3 +1,4 @@
+import type { SelectionStore } from '@/controllers/selection-store'
 import type { ReactiveControllerHost } from 'lit'
 
 type Host = ReactiveControllerHost
@@ -8,7 +9,7 @@ interface SingleSelectionControllerOptions {
   setValue: (value: string) => void
 }
 
-export class SingleSelectionController {
+export class SingleSelectionController implements SelectionStore {
   constructor(private host: Host, private options: SingleSelectionControllerOptions) {}
 
   select(option: SelectionOption) {

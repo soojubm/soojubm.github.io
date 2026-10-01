@@ -5,6 +5,8 @@ import type { IconButtonSize } from '@/components/common/icon-button/icon-button
 
 import '@/components/common/icon-button/semantics/prev-button'
 import '@/components/common/icon-button/semantics/next-button'
+import { FrameController } from '@/controllers/frame-controller'
+import { ResizeController } from '@/controllers/resize-controller'
 
 type ScrollHintPlacement = 'start' | 'end'
 
@@ -68,7 +70,11 @@ export class ScrollHint extends LitElement {
   @property({ type: String, reflect: true }) placement: ScrollHintPlacement = 'end'
   @property({ type: String }) size: IconButtonSize = 'medium'
   private scrollRoot?: HTMLElement
-  private resizeObserver?: ResizeObserver
+  private measureFrame = new FrameController(this, () => this.handleScrollRootResize())
+  private resize: ResizeController = new ResizeController(this, {
+    getTargets: () => this.resizeTargets,
+    onResize: () => this.handleScrollRootResize(),
+  })
 
   connectedCallback() {
     super.connectedCallback()
@@ -79,24 +85,13 @@ export class ScrollHint extends LitElement {
     this.scrollRoot =
       parent instanceof ShadowRoot ? (parent.host as HTMLElement) : this.parentElement ?? undefined
     this.scrollRoot?.addEventListener('scroll', this.handleScrollRootScroll)
-    this.resizeObserver = new ResizeObserver(this.handleScrollRootResize)
-    this.resizeObserver.observe(this)
-    // scrollRoot 자체는 크기가 고정돼 있어도 슬라이드 이미지가 늦게 로드되며 scrollWidth만 늘어날 수 있으므로,
-    // 콘텐츠 자식들도 함께 관찰해야 그 변화를 잡아낸다. 합성 컴포넌트가 slot으로 넘긴 자식은 slot을 펼쳐 관찰한다.
-    if (this.scrollRoot) {
-      this.resizeObserver.observe(this.scrollRoot)
-      Array.from(this.scrollRoot.children)
-        .flatMap(child =>
-          child instanceof HTMLSlotElement ? child.assignedElements({ flatten: true }) : [child],
-        )
-        .forEach(child => this.resizeObserver!.observe(child))
-    }
-    requestAnimationFrame(this.handleScrollRootResize)
+    // scrollRoot는 연결된 뒤에야 알 수 있어, 연결 시점의 관찰 대상을 여기서 다시 맞춘다.
+    this.resize.refresh()
+    this.measureFrame.request()
   }
 
   disconnectedCallback() {
     this.scrollRoot?.removeEventListener('scroll', this.handleScrollRootScroll)
-    this.resizeObserver?.disconnect()
     this.scrollRoot = undefined
     super.disconnectedCallback()
   }
@@ -111,6 +106,17 @@ export class ScrollHint extends LitElement {
     return html`
       <mm-next-button size=${this.size} @next=${this.handleNextClick}></mm-next-button>
     `
+  }
+
+  // scrollRoot 자체는 크기가 고정돼 있어도 슬라이드 이미지가 늦게 로드되며 scrollWidth만 늘어날 수 있으므로,
+  // 콘텐츠 자식들도 함께 관찰해야 그 변화를 잡아낸다. 합성 컴포넌트가 slot으로 넘긴 자식은 slot을 펼쳐 관찰한다.
+  private get resizeTargets(): Element[] {
+    if (!this.scrollRoot) return [this]
+
+    const children = Array.from(this.scrollRoot.children).flatMap(child =>
+      child instanceof HTMLSlotElement ? child.assignedElements({ flatten: true }) : [child],
+    )
+    return [this, this.scrollRoot, ...children]
   }
 
   private handlePrevClick = () => this.scrollByPage(-1)

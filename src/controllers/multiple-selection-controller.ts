@@ -1,3 +1,4 @@
+import type { SelectionStore } from '@/controllers/selection-store'
 import type { ReactiveControllerHost } from 'lit'
 
 type Host = ReactiveControllerHost
@@ -12,7 +13,7 @@ interface MultipleSelectionControllerOptions {
   getOptions: () => SelectionOption[]
 }
 
-export class MultipleSelectionController {
+export class MultipleSelectionController implements SelectionStore {
   constructor(private host: Host, private options: MultipleSelectionControllerOptions) {}
 
   select(option: SelectionOption) {

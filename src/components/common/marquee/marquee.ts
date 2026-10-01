@@ -4,6 +4,7 @@ import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 import { FrameController } from '@/controllers/frame-controller'
+import { ResizeController } from '@/controllers/resize-controller'
 import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
@@ -95,8 +96,11 @@ export class Marquee extends LitElement {
   @state() private duration = 1
   @query('.source') private sourceElement?: HTMLElement
   @query('slot') private slotElement?: HTMLSlotElement
-  private resizeObserver?: ResizeObserver
   private measureFrame = new FrameController(this, () => this.measure())
+  private resize: ResizeController = new ResizeController(this, {
+    getTargets: () => [this, this.sourceElement],
+    onResize: () => this.measureFrame.request(),
+  })
 
   render() {
     const cloneIndexes = Array.from({ length: this.copyCount - 1 }, (_, index) => index)
@@ -126,19 +130,6 @@ export class Marquee extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.setAttribute('role', 'marquee')
-    this.resizeObserver = new ResizeObserver(() => this.measureFrame.request())
-    // 최초 연결은 firstUpdated에서 관찰을 시작하고, 이후 재연결(DOM 이동 등)은 여기서 바로 다시 관찰한다.
-    if (this.hasUpdated) this.observeResizeTargets()
-  }
-
-  firstUpdated() {
-    this.observeResizeTargets()
-    this.measureFrame.request()
-  }
-
-  private observeResizeTargets() {
-    if (this.sourceElement) this.resizeObserver?.observe(this.sourceElement)
-    this.resizeObserver?.observe(this)
   }
 
   updated(changed: PropertyValues) {
@@ -149,11 +140,6 @@ export class Marquee extends LitElement {
     if (changed.has('speed')) this.measureFrame.request()
 
     if (changed.has('copyCount')) this.syncClones()
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback()
-    this.resizeObserver?.disconnect()
   }
 
   private handleSlotChange = () => {

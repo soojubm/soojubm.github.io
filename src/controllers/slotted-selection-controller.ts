@@ -1,11 +1,5 @@
+import type { SelectionStore } from '@/controllers/selection-store'
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
-
-/** 선택 값을 소유하는 컨트롤러(Single/MultipleSelectionController)에게서 위임받는 표면. */
-export interface SelectionStore {
-  isEmpty(): boolean
-  isSelected(value: string): boolean
-  setSelected(option: { value: string }, selected: boolean): void
-}
 
 /** slot으로 배정되는 선택 항목이 공통으로 갖는 상태. */
 export interface SlottedSelectionItem extends HTMLElement {
