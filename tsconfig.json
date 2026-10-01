@@ -8,12 +8,11 @@
     "module": "commonjs",
     "lib": ["DOM", "DOM.Iterable", "ES2021"],
     "strict": true,
-    "noImplicitAny": false,
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "inlineSourceMap": true,
-    "forceConsistentCasingInFileNames": false,
+    "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "useDefineForClassFields": false
   }

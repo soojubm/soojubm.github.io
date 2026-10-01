@@ -22,7 +22,7 @@ export class RadioCard extends LitElement {
   @property({ type: Boolean }) disabled = false
   // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
   private inputId = uniqueId('radio-card')
-  private toggle = new ToggleController(this, 'checked')
+  private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
 
   render() {
     return html`

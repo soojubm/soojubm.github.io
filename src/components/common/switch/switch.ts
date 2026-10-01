@@ -14,7 +14,7 @@ export class Switch extends LitElement {
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
   private inputId = uniqueId('switch')
-  private toggle = new ToggleController(this, 'checked')
+  private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
 
   render() {
     return html`

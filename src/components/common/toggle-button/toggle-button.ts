@@ -22,7 +22,7 @@ export class ToggleButton extends LitElement {
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  private toggle = new ToggleController(this, 'pressed')
+  private toggle: ToggleController<'pressed'> = new ToggleController(this, 'pressed')
 
   render() {
     return html`

@@ -23,7 +23,7 @@ export const withTogglePressed = <T extends Constructor<LitElement>>(Base: T) =>
     @property({ type: Boolean }) pressed = false
     @property({ type: String }) value = ''
     @property({ type: Boolean }) disabled = false
-    private toggle = new ToggleController(this, 'pressed')
+    private toggle: ToggleController<'pressed'> = new ToggleController(this, 'pressed')
 
     handleToggleClick() {
       if (!this.toggle.toggle()) return

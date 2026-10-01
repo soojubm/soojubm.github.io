@@ -112,7 +112,7 @@ export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base:
     @property({ type: Boolean }) disabled = false
     @property({ type: Boolean }) checked = false
     @property({ type: String }) value = ''
-    private toggle = new ToggleController(this, 'checked')
+    private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
     activate = () => {
       if (!this.toggle.set(!this.checked)) return
 
