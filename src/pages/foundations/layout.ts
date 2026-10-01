@@ -336,7 +336,7 @@ const main = html`
       description="페이지 너비, 섹션의 배치, 화면 위로 뜨는 표면의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 담으므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
     ></mm-page-header>
 
-    <mm-flex direction="column" gap="4">
+    <mm-page-body>
       <mm-tab-list value="page" variant="text" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
         <mm-tab value="section">Section</mm-tab>
@@ -397,17 +397,6 @@ const main = html`
                 `)}
               </mm-flex>
             </mm-component-example>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    ${code('full-width')}는 좌우 여백을 없앤다
-                  `,
-                  '화면을 나눠 쓰는 페이지가 쓴다. 안의 콘텐츠 폭은 페이지가 정한다',
-                ),
-              ]}
-            ></mm-text-list>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="배경 대비">
@@ -938,7 +927,7 @@ const main = html`
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
-    </mm-flex>
+    </mm-page-body>
   </mm-main>
 `
 

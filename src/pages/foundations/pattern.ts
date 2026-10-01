@@ -163,7 +163,7 @@ const main = html`
       description="여러 컴포넌트가 이어져 하나의 흐름을 이루는 방식을 정합니다. 펼치고, 찾고, 모으는 흐름을 같은 규칙으로 조립하므로, 사용자는 어느 화면에서든 같은 방식으로 정보를 다룹니다."
     ></mm-page-header>
 
-    <mm-flex direction="column" gap="4">
+    <mm-page-body>
       <mm-tab-list value="disclosure" variant="text" search-param="tab">
         <mm-tab value="disclosure">Disclosure</mm-tab>
         <mm-tab value="search">Search</mm-tab>
@@ -651,7 +651,7 @@ const main = html`
           </mm-component-section>
         </mm-content-section-list>
       </mm-tab-panel>
-    </mm-flex>
+    </mm-page-body>
   </mm-main>
 `
 

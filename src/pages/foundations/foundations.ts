@@ -191,7 +191,7 @@ const main = html`
       description="제품 전체가 공유하는 시각 언어의 기반입니다."
     ></mm-page-header>
 
-    <mm-flex direction="column" gap="16">
+    <mm-page-body>
       <mm-flex justify-content="center">
         <mm-grid columns="2" gap="4" style="width: 100%; max-width: var(--layout-width-small)">
           ${foundationItems.map(
@@ -236,7 +236,7 @@ const main = html`
         </mm-content-section>
         <mm-component-references .items=${references}></mm-component-references>
       </mm-content-section-list>
-    </mm-flex>
+    </mm-page-body>
   </mm-main>
 `
 
