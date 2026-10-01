@@ -173,7 +173,7 @@ const selectionTableColumns = [
 ]
 
 const main = html`
-  <mm-main layout="split">
+  <mm-main>
     <mm-page-header
       heading="Interaction"
       description="어떤 요소가 상호작용할 수 있는지, 상호작용할 때 어떻게 반응하는지, 선택지를 어떻게 고르는지를 일관된 시각 언어로 정의합니다. 상태는 색상만으로 전달하지 않습니다."

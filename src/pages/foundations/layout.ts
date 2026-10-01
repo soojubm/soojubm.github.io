@@ -330,7 +330,7 @@ const browserWindow = (content: TemplateResult) => html`
 `
 
 const main = html`
-  <mm-main layout="split">
+  <mm-main>
     <mm-page-header
       heading="Layout"
       description="페이지 너비, 섹션의 배치, 화면 위로 뜨는 표면의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 담으므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
@@ -405,15 +405,6 @@ const main = html`
                     ${code('full-width')}는 좌우 여백을 없앤다
                   `,
                   '화면을 나눠 쓰는 페이지가 쓴다. 안의 콘텐츠 폭은 페이지가 정한다',
-                ),
-                rule(
-                  html`
-                    ${code('layout="split"')}은 헤더와 콘텐츠를 반반으로 나눈다
-                  `,
-                  html`
-                    첫 자식(헤더)이 왼쪽에 고정되고 나머지가 오른쪽에서 스크롤된다. 좁은 폭에서는 한
-                    칼럼으로 접힌다. 문서 페이지가 쓴다
-                  `,
                 ),
               ]}
             ></mm-text-list>

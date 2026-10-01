@@ -1,7 +1,8 @@
 import { html, type TemplateResult } from 'lit'
 
+import type { ComponentReferenceItemData } from '@/components/domains/component'
+
 import { ICON_NAMES } from '@/components/common'
-import { code, rule, type ComponentReferenceItemData } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { SITEMAP } from '@/sitemap'
 
@@ -206,79 +207,6 @@ const main = html`
       </mm-flex>
 
       <mm-content-section-list>
-        <mm-surface
-          variant="filled"
-          style="--surface-border-radius: 0; --surface-padding: var(--space-8) 0; --surface-shadow: 0 0 0 100vmax var(--background-subtle-color); clip-path: inset(0 -100vmax)"
-        >
-          <mm-flex justify-content="center">
-            <mm-content-section
-              heading-level="3"
-              heading="공통 원칙"
-              style="width: 100%; max-width: var(--layout-width-small)"
-            >
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '상호작용 가능성은 형태로 드러낸다',
-                    html`
-                      색·밑줄·표면 같은 단서는 장식이나 일반 강조로 쓰지 않는다. —
-                      <mm-link href="./interaction.html">Interaction</mm-link>
-                    `,
-                  ),
-                  rule(
-                    '상태는 색상만으로 표현하지 않는다',
-                    html`
-                      선택·피드백·오류 상태는 아이콘·텍스트·형태·ARIA를 함께 써서 색각 이상이나
-                      스크린리더 사용자에게도 전달한다. —
-                      <mm-link href="./interaction.html">Interaction</mm-link>
-                    `,
-                  ),
-                  rule(
-                    '열기·선택·검증 같은 상호작용 상태는 컴포넌트가 소유한다',
-                    html`
-                      닫힘 처리도 컴포넌트가 맡고, 트리거는 표준 attribute로 대상을 가리키기만 한다.
-                      —
-                      <mm-link href="./interaction.html">Interaction</mm-link>
-                    `,
-                  ),
-                  rule(
-                    '같은 종류의 항목은 그 계열의 그룹 컴포넌트로 묶는다',
-                    html`
-                      역할·간격·정렬은 그룹이 소유한다. —
-                      <mm-link href="./layout.html?tab=group">Layout</mm-link>
-                    `,
-                  ),
-                  rule(
-                    '화면 위로 뜨는 표면은 동작과 표현을 분리한다',
-                    html`
-                      배경을 막는지, 무엇으로 닫는지, 트리거와 어떻게 이어지는지는
-                      ${code('SheetController')}·${code('DisclosureController')} 같은 컨트롤러가
-                      맡는다. 패널 재질·너비·${code('placement')}는 각 컴포넌트가 공유 스타일을
-                      조합해 정한다. 표면이 달라도 열고 닫는 방식이 같아진다. —
-                      <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
-                    `,
-                  ),
-                  rule(
-                    '접는 것은 훑어서 고르는 목록에만 쓴다',
-                    html`
-                      약관·경고·오류처럼 반드시 읽어야 하는 정보는 펼쳐 둔다. —
-                      <mm-link href="./pattern.html">Pattern</mm-link>
-                    `,
-                  ),
-                  rule(
-                    '하나의 아이콘에는 하나의 의미만 준다',
-                    html`
-                      뜻은 이름 맵 한 곳에서 정해, 어디서든 같은 기호가 같은 뜻으로 읽힌다. —
-                      <mm-link href="./content.html?tab=iconography">Content</mm-link>
-                    `,
-                  ),
-                ]}
-              ></mm-text-list>
-            </mm-content-section>
-          </mm-flex>
-        </mm-surface>
-
         <mm-content-section heading-level="3" heading="Component Level">
           <mm-paragraph>컴포넌트의 레벨에 따라 간격과 그루핑 규칙이 정해집니다.</mm-paragraph>
           <mm-list-item-group>

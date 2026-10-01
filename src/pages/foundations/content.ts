@@ -184,7 +184,7 @@ const termRows = html`
 `
 
 const main = html`
-  <mm-main layout="split">
+  <mm-main>
     <mm-page-header
       heading="Content"
       description="텍스트의 이름과 어조, 아이콘의 뜻을 정합니다. 훑어 읽는 콘텐츠를 한 곳에서 정하므로, 사용자는 어디서든 같은 말과 기호를 같은 뜻으로 읽습니다."

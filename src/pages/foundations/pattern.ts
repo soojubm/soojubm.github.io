@@ -157,7 +157,7 @@ const visibilityOptions: OptionItem[] = [
 ]
 
 const main = html`
-  <mm-main layout="split">
+  <mm-main>
     <mm-page-header
       heading="Pattern"
       description="여러 컴포넌트가 이어져 하나의 흐름을 이루는 방식을 정합니다. 펼치고, 찾고, 모으는 흐름을 같은 규칙으로 조립하므로, 사용자는 어느 화면에서든 같은 방식으로 정보를 다룹니다."
