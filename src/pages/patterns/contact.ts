@@ -4,12 +4,10 @@ import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
   <mm-main full-width>
-    <mm-flex wrap="wrap" gap="0">
-      <div style="width:50%">
-        <mm-thumbnail src=""></mm-thumbnail>
-      </div>
+    <mm-grid columns="2" gap="0">
+      <mm-thumbnail src=""></mm-thumbnail>
 
-      <mm-content-section-list style="width:50%;padding:2rem;box-sizing:border-box;">
+      <mm-content-section-list style="padding: var(--space-8)">
         <mm-text size="32">
           Contact To buy our products or to learn more about Sandy Shore, don’t hesitate to reach
           out. We’ll be happy to respond.
@@ -23,7 +21,7 @@ const main = html`
           ></mm-meta-item>
         </mm-meta-item-group>
       </mm-content-section-list>
-    </mm-flex>
+    </mm-grid>
   </mm-main>
 `
 

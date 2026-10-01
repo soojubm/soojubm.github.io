@@ -243,9 +243,9 @@ const main = html`
       </mm-pricing-card>
     </mm-component-section>
 
-    <mm-component-section heading="FeedSurface" description="">
+    <mm-component-section heading="FeedSurface" description="" width="narrow">
       <section role="feed" aria-busy="false">
-        <article aria-setsize="3" aria-posinset="1" style="max-width: 400px">
+        <article aria-setsize="3" aria-posinset="1">
           <mm-flex direction="column" gap="3">
             <mm-flex as="header" direction="column" gap="3">
               <mm-tag>
@@ -379,30 +379,11 @@ const main = html`
           <mm-paragraph>화면 폭이 달라져도 필요한 복제 수를 다시 맞춥니다.</mm-paragraph>
         </mm-marquee>
         <mm-marquee gap="3" height="120px" speed="72" pause-on-hover>
-          <mm-thumbnail
-            style="width: 120px"
-            ratio="1:1"
-            src="/src/images/temp.png"
-            alt="풍경 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            style="width: 120px"
-            ratio="1:1"
-            src="/src/images/soojubm.png"
-            alt="프로필 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            style="width: 120px"
-            ratio="1:1"
-            src="/src/images/work-studium.jpg"
-            alt="작업 샘플"
-          ></mm-thumbnail>
-          <mm-thumbnail
-            style="width: 120px"
-            ratio="1:1"
-            src="/src/images/cake_gosum.jpg"
-            alt="고슴이 샘플"
-          ></mm-thumbnail>
+          ${scrollThumbnails.slice(0, 4).map(
+            ({ src, alt }) => html`
+              <mm-thumbnail style="width: 120px" ratio="1:1" src=${src} alt=${alt}></mm-thumbnail>
+            `,
+          )}
         </mm-marquee>
       </mm-flex>
     </mm-component-section>

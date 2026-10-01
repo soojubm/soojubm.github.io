@@ -193,7 +193,7 @@ const main = html`
 
     <mm-page-body>
       <mm-flex justify-content="center">
-        <mm-grid columns="2" gap="4" style="width: 100%; max-width: var(--layout-width-small)">
+        <mm-grid columns="2" gap="4" style="max-width: var(--layout-width-small)">
           ${foundationItems.map(
             ({ id, name }) => html`
               <mm-foundation-item

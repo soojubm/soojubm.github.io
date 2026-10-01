@@ -140,7 +140,7 @@ const main = html`
         </div>
 
         <section class="today-poll">
-          <div style="width:100%;margin-bottom:2rem;">
+          <div>
             <mm-text size="24" weight="bold" centered>오늘 기분 어때요?</mm-text>
             <mm-text centered>
               <span aria-hidden="true">🦔</span>
@@ -238,7 +238,7 @@ const main = html`
     <mm-sheet-header heading="스터디움 프로모션 웹사이트"></mm-sheet-header>
     <mm-sheet-body>
       <figure>
-        <img src="/src/images/work-studium.jpg" alt="" style="width: 100%" />
+        <img src="/src/images/work-studium.jpg" alt="" />
       </figure>
       <mm-paragraph size="large">페이머스 프로덕트 디자인</mm-paragraph>
       <figure>

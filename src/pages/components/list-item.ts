@@ -168,9 +168,9 @@ const main = html`
         </mm-component-example>
       </mm-tab-panel>
       <mm-tab-panel value="multiline">
-        <mm-component-example>
+        <mm-component-example width="narrow">
           <mm-flex direction="column" gap="6">
-            <mm-list-item-group style="max-width: 360px">
+            <mm-list-item-group>
               <mm-list-item
                 icon=${ICON_NAMES.NOTIFICATION}
                 label="small 행의 라벨이 영역보다 길어져서 두 줄 이상으로 넘어가는 경우"
@@ -308,7 +308,6 @@ const main = html`
         avatar-variant="primary"
         avatar-shape="circle"
         avatar-src="/src/images/soojubm.png"
-        style="width: 100%"
       >
         <mm-follow-button slot="trailing"></mm-follow-button>
       </mm-list-item>

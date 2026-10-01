@@ -28,6 +28,7 @@ export class ComponentSection extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String }) code = ''
+  @property({ type: String, reflect: true }) width: 'narrow' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   render() {
