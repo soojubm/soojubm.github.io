@@ -43,12 +43,12 @@ export class MyChatMessage extends LitElement {
   render() {
     return html`
       <slot></slot>
-      ${renderChatMessageFailedActions(this.failed, () => this.handleRetry())}
+      ${renderChatMessageFailedActions(this.failed, () => this.handleRetryClick())}
       ${renderChatMessageTime(this.datetime)}
     `
   }
 
-  private handleRetry() {
+  private handleRetryClick() {
     emit(this, 'retry')
   }
 }

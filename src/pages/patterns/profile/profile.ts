@@ -295,8 +295,10 @@ renderPage(main, {
   closeSidebar: true,
   initialize: () => {
     setupPortfolioModal()
-    document.querySelector('mm-view-mode-switcher')?.addEventListener('change', handleViewMode)
-    document.querySelector('mm-sort-selector')?.addEventListener('change', handleSort)
+    document
+      .querySelector('mm-view-mode-switcher')
+      ?.addEventListener('change', handleViewModeChange)
+    document.querySelector('mm-sort-selector')?.addEventListener('change', handleSortChange)
   },
 })
 
@@ -309,7 +311,7 @@ function setupPortfolioModal() {
   })
 }
 
-function handleViewMode(event: Event) {
+function handleViewModeChange(event: Event) {
   const target = event.target as HTMLElement
   const viewModeEvent = event as ViewModeEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
@@ -323,7 +325,7 @@ function handleViewMode(event: Event) {
   })
 }
 
-function handleSort(event: Event) {
+function handleSortChange(event: Event) {
   const target = event.target as HTMLElement
   const sortEvent = event as SortEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
