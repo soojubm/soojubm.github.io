@@ -1,9 +1,11 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
+
+import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
 import '@/components/common'
-import { emit } from '@/utils'
 
 export type PortfolioItemLayout = 'grid' | 'list'
 
@@ -83,16 +85,20 @@ export class PortfolioItem extends LitElement {
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''
   @property({ type: String }) badge = ''
-  @property({ type: String }) modal = ''
   @property({ type: String }) datetime = ''
+  @property({ type: String, attribute: 'aria-expanded' }) ariaExpanded: AriaBoolean = null
+  @property({ type: String, attribute: 'aria-haspopup' }) ariaHasPopup: AriaHasPopup = null
+  @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
   @property({ attribute: false }) keywords: string[] = []
 
   render() {
     return html`
       <article
-        role=${this.modal ? 'button' : 'article'}
-        tabindex=${this.modal ? '0' : '-1'}
-        @click=${this.handleCardClick}
+        role=${this.ariaControls ? 'button' : 'article'}
+        tabindex=${this.ariaControls ? '0' : '-1'}
+        aria-expanded=${ifDefined(this.ariaExpanded ?? undefined)}
+        aria-haspopup=${ifDefined(this.ariaHasPopup ?? undefined)}
+        aria-controls=${ifDefined(this.ariaControls ?? undefined)}
         @keydown=${this.handleKeyDown}
       >
         ${this.renderBadge()}
@@ -155,16 +161,13 @@ export class PortfolioItem extends LitElement {
     `
   }
 
-  private handleCardClick() {
-    if (!this.modal) return
-
-    emit(this, 'portfolio-item-open', { modal: this.modal })
-  }
-
+  // 클릭은 호스트까지 올라가 aria-controls가 가리키는 표면이 받는다. 키보드는 네이티브 button처럼 클릭으로 바꿔 보낸다.
   private handleKeyDown(event: KeyboardEvent) {
+    if (!this.ariaControls) return
     if (event.key !== 'Enter' && event.key !== ' ') return
+
     event.preventDefault()
-    this.handleCardClick()
+    ;(event.currentTarget as HTMLElement).click()
   }
 
   private get formattedDatetime() {

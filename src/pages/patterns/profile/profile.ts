@@ -3,7 +3,6 @@ import { html } from 'lit'
 import type { AvatarItem } from '@/components/common'
 import type { Grid, GridColumns } from '@/components/common/grid/grid'
 import type { PortfolioItem } from '@/components/domains/portfolio-item'
-import type { Sheet } from '@/components/overlay/sheet'
 
 import { renderPage } from '@/components/layouts/base-layouts'
 import { TOPICS } from '@/pages/mocks'
@@ -74,7 +73,8 @@ const main = html`
         <mm-tab-panel value="projects">
           <mm-grid columns=${portfolioGridColumns}>
             <mm-portfolio-item
-              modal="newneek"
+              aria-controls="sheet-newneek"
+              aria-haspopup="dialog"
               label="뉴닉"
               description="디스크립션..."
               src="/src/images/newneek/gosum-spinner.png"
@@ -84,7 +84,8 @@ const main = html`
             ></mm-portfolio-item>
 
             <mm-portfolio-item
-              modal="etc-works"
+              aria-controls="sheet-etc-works"
+              aria-haspopup="dialog"
               label="프리랜서"
               description="선별된..."
               src="/src/images/work-studium.jpg"
@@ -93,7 +94,8 @@ const main = html`
             ></mm-portfolio-item>
 
             <mm-portfolio-item
-              modal="lettering"
+              aria-controls="sheet-lettering"
+              aria-haspopup="dialog"
               label="레터링"
               description="취미생활?"
               src="/src/images/budha.png"
@@ -106,7 +108,8 @@ const main = html`
         <mm-tab-panel value="second">
           <mm-grid columns=${portfolioGridColumns}>
             <mm-portfolio-item
-              modal="flat_sitemap"
+              aria-controls="sheet-flat_sitemap"
+              aria-haspopup="dialog"
               label="Flat sitemap"
               datetime="2023-04-01"
             ></mm-portfolio-item>
@@ -287,29 +290,18 @@ const main = html`
   </mm-sheet>
 `
 
-type PortfolioItemOpenEvent = CustomEvent<{ modal: string }>
 type ViewModeEvent = CustomEvent<{ value: 'grid' | 'list' }>
 type SortEvent = CustomEvent<{ value: 'latest' | 'oldest' }>
 
 renderPage(main, {
   closeSidebar: true,
   initialize: () => {
-    setupPortfolioModal()
     document
       .querySelector('mm-view-mode-switcher')
       ?.addEventListener('change', handleViewModeChange)
     document.querySelector('mm-sort-selector')?.addEventListener('change', handleSortChange)
   },
 })
-
-/** mm-portfolio-item의 portfolio-item-open 이벤트를 mm-sheet 컴포넌트 show()에 연결한다. */
-function setupPortfolioModal() {
-  document.addEventListener('portfolio-item-open', event => {
-    const { modal } = (event as PortfolioItemOpenEvent).detail
-    const sheet = document.querySelector<Sheet>(`#sheet-${modal}`)
-    sheet?.show()
-  })
-}
 
 function handleViewModeChange(event: Event) {
   const target = event.target as HTMLElement
