@@ -91,7 +91,7 @@ export class Table extends LitElement {
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      table .right {
+      table .cell-align-right {
         text-align: right;
       }
       table tbody[role='rowgroup'] tr th {
