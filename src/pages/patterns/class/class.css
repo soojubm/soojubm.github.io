@@ -189,8 +189,3 @@ mm-marquee {
     background: var(--background-color);
   }
 }
-
-.class-refund {
-  border: var(--border);
-  border-top: 0;
-}

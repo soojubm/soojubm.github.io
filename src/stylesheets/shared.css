@@ -2,7 +2,6 @@
 @import '/src/stylesheets/shared/webfonts.css';
 @import '/src/stylesheets/shared/reset.css';
 @import '/src/stylesheets/shared/shell.css';
-@import '/src/stylesheets/shared/keyframes.css';
 
 progress[value] {
   width: 100%;
