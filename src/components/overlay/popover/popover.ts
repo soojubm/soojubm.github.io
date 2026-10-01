@@ -12,6 +12,7 @@ import { DisclosureController } from '@/controllers/disclosure-controller'
 import { EscapeKeyController } from '@/controllers/escape-key-controller'
 import { OutsideClickController } from '@/controllers/outside-click-controller'
 import { PortalController } from '@/controllers/portal-controller'
+import { ScheduleController } from '@/controllers/schedule-controller'
 import { getDeepActiveElement } from '@/utils'
 import { withOpenState } from '@/utils/open-state'
 
@@ -64,6 +65,7 @@ export class Popover extends withOpenState(LitElement) {
       height: '--popover-anchor-height',
     },
   })
+  private focusExitCheck = new ScheduleController(this, () => this.closeIfFocusLeft(), { delay: 0 })
 
   render() {
     return html`
@@ -107,12 +109,14 @@ export class Popover extends withOpenState(LitElement) {
   private handleKeydown = (event: KeyboardEvent) => {
     if (event.key !== 'Tab') return
 
-    setTimeout(() => {
-      if (!this.open || this.matches(':focus-within')) return
+    this.focusExitCheck.request()
+  }
 
-      this.close()
-      this.returnFocus()
-    })
+  private closeIfFocusLeft() {
+    if (!this.open || this.matches(':focus-within')) return
+
+    this.close()
+    this.returnFocus()
   }
 
   // 열리면 포커스를 표면 안으로 옮기고, 닫힐 때 돌아갈 요소를 기억한다.

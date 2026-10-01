@@ -1,6 +1,6 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
-import { FrameController } from '@/controllers/frame-controller'
+import { ScheduleController } from '@/controllers/schedule-controller'
 
 type Host = ReactiveControllerHost & HTMLElement
 type SelectionIndicatorAxis = 'x' | 'y'
@@ -14,10 +14,10 @@ interface SelectionIndicatorControllerOptions {
 }
 
 export class SelectionIndicatorController implements ReactiveController {
-  private frame: FrameController
+  private frame: ScheduleController
 
   constructor(private host: Host, private options: SelectionIndicatorControllerOptions) {
-    this.frame = new FrameController(host, () => this.syncPosition())
+    this.frame = new ScheduleController(host, () => this.syncPosition())
     host.addController(this)
   }
 

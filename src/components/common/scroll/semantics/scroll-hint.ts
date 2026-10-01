@@ -5,8 +5,8 @@ import type { IconButtonSize } from '@/components/common/icon-button/icon-button
 
 import '@/components/common/icon-button/semantics/prev-button'
 import '@/components/common/icon-button/semantics/next-button'
-import { FrameController } from '@/controllers/frame-controller'
 import { ResizeController } from '@/controllers/resize-controller'
+import { ScheduleController } from '@/controllers/schedule-controller'
 
 type ScrollHintPlacement = 'start' | 'end'
 
@@ -70,7 +70,7 @@ export class ScrollHint extends LitElement {
   @property({ type: String, reflect: true }) placement: ScrollHintPlacement = 'end'
   @property({ type: String }) size: IconButtonSize = 'medium'
   private scrollRoot?: HTMLElement
-  private measureFrame = new FrameController(this, () => this.handleScrollRootResize())
+  private measureFrame = new ScheduleController(this, () => this.handleScrollRootResize())
   private resize: ResizeController = new ResizeController(this, {
     getTargets: () => this.resizeTargets,
     onResize: () => this.handleScrollRootResize(),

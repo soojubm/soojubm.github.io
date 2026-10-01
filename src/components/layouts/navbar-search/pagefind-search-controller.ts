@@ -1,5 +1,7 @@
 import type { SearchResult } from '@/components/domains/search/search-result-list'
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
+import type { ReactiveControllerHost } from 'lit'
+
+import { ScheduleController } from '@/controllers/schedule-controller'
 
 type PagefindResult = { url: string; meta: { title: string }; excerpt: string }
 type Pagefind = {
@@ -26,23 +28,21 @@ function toSearchResult(result: PagefindResult): SearchResult {
  * Pagefind 색인 로딩·debounce·요청 순서 관리를 소유하는 검색 컨트롤러.
  * query·results·searching이 바뀌면 호스트를 다시 그린다.
  */
-export class PagefindSearchController implements ReactiveController {
+export class PagefindSearchController {
   query = ''
   results: SearchResult[] = []
   searching = false
   private pagefind: Pagefind | null = null
-  private debounceTimer: ReturnType<typeof setTimeout> | null = null
+  private debounce: ScheduleController
   private requestId = 0
 
   constructor(
     private host: ReactiveControllerHost,
     private options: PagefindSearchControllerOptions,
   ) {
-    host.addController(this)
-  }
-
-  hostDisconnected() {
-    this.clearDebounce()
+    this.debounce = new ScheduleController(host, () => this.search(this.query), {
+      delay: DEBOUNCE_MS,
+    })
   }
 
   async load() {
@@ -59,33 +59,22 @@ export class PagefindSearchController implements ReactiveController {
 
   setQuery(query: string) {
     this.query = query
-    this.clearDebounce()
     if (!query.trim()) {
       this.reset()
       return
     }
-    this.debounceTimer = setTimeout(() => {
-      this.debounceTimer = null
-      this.search(query)
-    }, DEBOUNCE_MS)
+    this.debounce.request()
     this.host.requestUpdate()
   }
 
   reset(clearQuery = false) {
     if (clearQuery) this.query = ''
 
-    this.clearDebounce()
+    this.debounce.cancel()
     this.results = []
     this.searching = false
     this.requestId++
     this.host.requestUpdate()
-  }
-
-  private clearDebounce() {
-    if (!this.debounceTimer) return
-
-    clearTimeout(this.debounceTimer)
-    this.debounceTimer = null
   }
 
   private async search(query: string) {

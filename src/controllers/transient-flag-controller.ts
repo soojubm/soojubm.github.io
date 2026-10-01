@@ -1,4 +1,6 @@
-import type { ReactiveController, ReactiveControllerHost } from 'lit'
+import type { ReactiveControllerHost } from 'lit'
+
+import { ScheduleController } from '@/controllers/schedule-controller'
 
 interface TransientFlagControllerOptions {
   /** 활성 상태 지속 시간(ms) */
@@ -8,31 +10,20 @@ interface TransientFlagControllerOptions {
 }
 
 /**
- * 잠깐 켜졌다가 일정 시간 뒤 스스로 꺼지는 상태(복사 성공 표시 등)를 관리하는 ReactiveController.
- * host 분리 시 예약된 타이머를 정리한다.
+ * 잠깐 켜졌다가 일정 시간 뒤 스스로 꺼지는 상태(복사 성공 표시 등)를 관리한다.
+ * 끄는 시점은 ScheduleController가 예약하므로 host 분리 시 예약된 타이머가 정리된다.
  */
-export class TransientFlagController implements ReactiveController {
-  private timer = 0
+export class TransientFlagController {
+  private expiry: ScheduleController
 
   constructor(host: ReactiveControllerHost, private options: TransientFlagControllerOptions) {
-    host.addController(this)
+    this.expiry = new ScheduleController(host, () => this.options.onChange(false), {
+      delay: options.duration,
+    })
   }
 
   trigger() {
-    this.clear()
     this.options.onChange(true)
-    this.timer = window.setTimeout(() => {
-      this.timer = 0
-      this.options.onChange(false)
-    }, this.options.duration)
-  }
-
-  hostDisconnected() {
-    this.clear()
-  }
-
-  private clear() {
-    if (this.timer) window.clearTimeout(this.timer)
-    this.timer = 0
+    this.expiry.request()
   }
 }

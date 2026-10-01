@@ -3,6 +3,7 @@ import { customElement } from 'lit/decorators.js'
 
 import { toastStyles } from '@/components/overlay/toast/toast.styles'
 import { PortalController } from '@/controllers/portal-controller'
+import { ScheduleController } from '@/controllers/schedule-controller'
 import { withOpenState } from '@/utils/open-state'
 
 // 스스로 닫히기까지의 표시 시간(ms). transient 동작은 내부 책임이라 prop으로 노출하지 않는다.
@@ -18,7 +19,7 @@ const DURATION = 3000
 @customElement('mm-toast')
 export class Toast extends withOpenState(LitElement) {
   static styles = toastStyles
-  private hideTimer: ReturnType<typeof setTimeout> | null = null
+  private hideTimer = new ScheduleController(this, () => this.close(), { delay: DURATION })
   private engagedBy = new Set<'hover' | 'focus'>()
   private portal = new PortalController(this)
 
@@ -37,9 +38,8 @@ export class Toast extends withOpenState(LitElement) {
     `
   }
 
-  // 자동 닫힘 타이머와 리스너는 연결과 함께 생성되므로 연결 해제 시 대칭으로 정리한다.
+  // 리스너는 연결과 함께 생성되므로 연결 해제 시 대칭으로 정리한다.
   disconnectedCallback() {
-    this.clearTimer()
     this.removeEventListener('mouseenter', this.handleHostEnter)
     this.removeEventListener('focusin', this.handleHostEnter)
     this.removeEventListener('mouseleave', this.handleHostLeave)
@@ -53,14 +53,14 @@ export class Toast extends withOpenState(LitElement) {
   }
 
   override close() {
-    this.clearTimer()
+    this.hideTimer.cancel()
     this.engagedBy.clear()
     super.close()
   }
 
   private handleHostEnter = (event: Event) => {
     this.engagedBy.add(event.type === 'mouseenter' ? 'hover' : 'focus')
-    this.clearTimer()
+    this.hideTimer.cancel()
   }
   // 포인터와 포커스 중 하나라도 남아 있으면 계속 멈춰 둔다.
   private handleHostLeave = (event: Event) => {
@@ -72,15 +72,11 @@ export class Toast extends withOpenState(LitElement) {
 
   // 열려 있을 때 다시 열면 남은 시간을 초기화한다. 읽거나 조작 중이면 시간을 재지 않는다.
   private restartTimer() {
-    this.clearTimer()
-    if (this.engagedBy.size > 0) return
+    if (this.engagedBy.size > 0) {
+      this.hideTimer.cancel()
+      return
+    }
 
-    this.hideTimer = setTimeout(() => this.close(), DURATION)
-  }
-
-  private clearTimer() {
-    if (!this.hideTimer) return
-    clearTimeout(this.hideTimer)
-    this.hideTimer = null
+    this.hideTimer.request()
   }
 }

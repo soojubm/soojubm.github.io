@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { FrameController } from '@/controllers/frame-controller'
+import { ScheduleController } from '@/controllers/schedule-controller'
 
 const FOCUSABLE_SELECTOR =
   'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"]), audio[controls], video[controls]'
@@ -19,7 +19,7 @@ export class TabPanel extends LitElement {
   @property({ type: String }) value = ''
   /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
   @property({ type: Boolean, reflect: true }) active = false
-  private tabStopFrame = new FrameController(this, () => this.syncTabStop())
+  private tabStopFrame = new ScheduleController(this, () => this.syncTabStop())
 
   connectedCallback() {
     super.connectedCallback()

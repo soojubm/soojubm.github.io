@@ -3,8 +3,8 @@ import { customElement, property, query, state } from 'lit/decorators.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
-import { FrameController } from '@/controllers/frame-controller'
 import { ResizeController } from '@/controllers/resize-controller'
+import { ScheduleController } from '@/controllers/schedule-controller'
 import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
 import { buildAttributeRules } from '@/utils'
 
@@ -96,7 +96,7 @@ export class Marquee extends LitElement {
   @state() private duration = 1
   @query('.source') private sourceElement?: HTMLElement
   @query('slot') private slotElement?: HTMLSlotElement
-  private measureFrame = new FrameController(this, () => this.measure())
+  private measureFrame = new ScheduleController(this, () => this.measure())
   private resize: ResizeController = new ResizeController(this, {
     getTargets: () => [this, this.sourceElement],
     onResize: () => this.measureFrame.request(),
