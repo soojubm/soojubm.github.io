@@ -33,18 +33,6 @@
   }
 }
 
-.list mm-portfolio-item {
-  width: 100%;
-}
-.list mm-media {
-  width: 120px;
-  height: var(--size-80);
-}
-
-.newneek-sheet-body {
-  /* padding: var(--space-8) var(--layout-padding-inline); */
-}
-
 .home-mangrove {
   display: flex;
   flex-direction: column;

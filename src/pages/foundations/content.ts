@@ -61,7 +61,6 @@ const ROLE_DETAIL: Record<string, { description: string; usage?: string[] }> = {
   GRID_VIEW: { description: '항목을 그리드로 펼쳐 보여 줍니다.' },
   LIST_VIEW: { description: '항목을 한 줄씩 목록으로 보여 줍니다.' },
   BACK: { description: '이전 화면으로 돌아갑니다.' },
-  COLLAPSE: { description: '펼친 내용을 접습니다.' },
   EXPAND: { description: '접힌 내용을 펼칩니다.' },
   FORWARD: { description: '다음 화면으로 넘어갑니다.' },
   HOME_PAGE: { description: '서비스의 첫 화면으로 이동합니다.' },

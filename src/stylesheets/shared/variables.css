@@ -191,16 +191,13 @@
   --material-zindex-tooltip: 900; /* 포인터·포커스를 따라 잠깐 뜨는 설명: 모든 표면 위 */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
-  /* 기본 모션은 이 duration 하나를 쓰고, 등장 강조 모션만 더 길게 간다.
-     easing도 같은 축으로 기본과 오버슈트(등장 강조)로 나뉜다. */
+  /* 모션은 이 duration 하나를 쓰고, easing만 기본과 오버슈트(등장 강조)로 나뉜다. */
   --transition-duration: 180ms;
-  --transition-duration-emphasis: 0.4s;
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-easing-emphasis: cubic-bezier(0.18, 1.25, 0.4, 1);
 
   --animation-delay-first: 0.2s;
   --animation-delay-second: 0.4s;
-  --animation-delay-third: 0.6s;
 }
 
 .shape-square {

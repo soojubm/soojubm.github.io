@@ -120,7 +120,7 @@ const main = html`
 
   <mm-sheet id="sheet-newneek" placement="bottom" width="large" height="90vh">
     <mm-sheet-header heading="뉴닉"></mm-sheet-header>
-    <mm-sheet-body class="newneek-sheet-body">
+    <mm-sheet-body>
       <mm-content-section-list>
         <div class="home-mangrove">
           <div>

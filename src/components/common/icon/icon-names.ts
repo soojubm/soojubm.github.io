@@ -33,7 +33,6 @@ export const ICON_CATALOG = {
 
   navigations: {
     BACK: 'arrow-left',
-    COLLAPSE: 'nav-arrow-up',
     EXPAND: 'nav-arrow-down',
     FORWARD: 'arrow-right',
     HOME_PAGE: 'home-simple-door',
