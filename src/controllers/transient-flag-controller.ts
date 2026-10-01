@@ -14,10 +14,7 @@ interface TransientFlagControllerOptions {
 export class TransientFlagController implements ReactiveController {
   private timer = 0
 
-  constructor(
-    private host: ReactiveControllerHost,
-    private options: TransientFlagControllerOptions,
-  ) {
+  constructor(host: ReactiveControllerHost, private options: TransientFlagControllerOptions) {
     host.addController(this)
   }
 

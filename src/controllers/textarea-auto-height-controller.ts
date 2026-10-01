@@ -11,7 +11,7 @@ interface TextareaAutoHeightControllerOptions {
 export class TextareaAutoHeightController implements ReactiveController {
   private resizeFrame = 0
 
-  constructor(private host: Host, private options: TextareaAutoHeightControllerOptions) {
+  constructor(host: Host, private options: TextareaAutoHeightControllerOptions) {
     host.addController(this)
   }
 

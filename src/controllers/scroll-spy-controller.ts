@@ -24,7 +24,7 @@ export class ScrollSpyController implements ReactiveController {
   private observer?: IntersectionObserver
   private targets: Element[] = []
 
-  constructor(private host: ReactiveControllerHost, private options: ScrollSpyOptions) {
+  constructor(host: ReactiveControllerHost, private options: ScrollSpyOptions) {
     host.addController(this)
   }
 
