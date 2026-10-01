@@ -5,6 +5,7 @@ import type { IconName } from '@/components/common'
 
 import {
   renderSuggestionButton,
+  resolveSuggestionValue,
   suggestionButtonStyles,
 } from '@/components/domains/shared/suggestion-button'
 import { emit } from '@/utils'
@@ -24,7 +25,6 @@ export class SearchSuggestion extends LitElement {
   }
 
   private handleClick = () => {
-    const value = this.value || this.textContent?.trim() || ''
-    emit(this, 'search-suggestion-select', { value })
+    emit(this, 'search-suggestion-select', { value: resolveSuggestionValue(this) })
   }
 }
