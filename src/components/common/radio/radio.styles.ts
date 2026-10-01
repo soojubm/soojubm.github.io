@@ -50,6 +50,19 @@ export const radioStyles = css`
   :host([size='large']) {
     --radio-size: var(--size-24);
   }
+
+  /* 선택하면 면 전체가 선택색으로 찼다가 안쪽 링이 자라 점으로 줄어든다. 끝 값은 선택된 규칙의 box-shadow를 그대로 쓴다. */
+  @keyframes radiomark {
+    from {
+      box-shadow: 0 0 0 0 var(--background-color) inset;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    input[type='radio']:checked + label > .indicator {
+      animation: none;
+    }
+  }
 `
 
 export const radioCardStyles = css`

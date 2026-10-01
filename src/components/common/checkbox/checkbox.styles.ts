@@ -54,6 +54,11 @@ export const checkboxStyles = css`
     transform: rotate(-50deg) scale(1);
   }
 
+  /* 부분 선택의 막대는 체크 표시가 아니므로 체크 애니메이션에서 뺀다. */
+  input[type='checkbox']:checked:not(:indeterminate) + label > .indicator::after {
+    animation: checkmark var(--transition-duration) ease-out;
+  }
+
   input:focus-visible + label > .indicator {
     ${focusRingStyles};
   }
@@ -79,5 +84,18 @@ export const checkboxStyles = css`
 
   :host([size='large']) {
     --checkbox-size: var(--size-24);
+  }
+
+  /* 선택하면 체크 표시가 0에서 커진다. 끝 값은 선택된 규칙의 transform을 그대로 쓴다. */
+  @keyframes checkmark {
+    from {
+      transform: rotate(-50deg) scale(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    input[type='checkbox']:checked:not(:indeterminate) + label > .indicator::after {
+      animation: none;
+    }
   }
 `
