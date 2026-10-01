@@ -67,7 +67,7 @@ const main = html`
       <mm-text-list
         .texts=${[
           '열림 상태는 popover가 소유한다. 트리거는 popover 밖에 두고 aria-controls로 popover의 id를 가리키면, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.',
-          'popover는 portal 컨테이너로 옮겨져 트리거의 화면 좌표로 위치를 잡는다. 스크롤 영역이나 transform·z-index를 가진 조상 안에 트리거가 있어도 잘리지 않는다.',
+          'popover는 portal 컨테이너로 옮겨져 트리거의 화면 좌표로 위치를 잡는다. 스크롤 영역이나 transform·contain을 가진 조상 안에 트리거가 있어도 잘리지 않고, sheet 안에서 열려도 sheet 위에 보인다.',
           '목록 컴포넌트처럼 열림 상태를 따로 소유해 트리거를 직접 배선하는 쪽은 aria-controls 대신 anchor로 기준 요소를 넘긴다.',
           '패널 폭·여백은 --overlay-panel-* 토큰으로 정한다.',
           '패널은 400px와 화면 높이의 50% 중 작은 값까지 자라고, 넘치면 안에서 스크롤된다.',

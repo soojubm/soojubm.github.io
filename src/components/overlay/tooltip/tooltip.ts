@@ -11,7 +11,8 @@ export type TooltipPlacement = Extract<OverlayPlacement, 'bottom' | 'bottom-star
 
 /**
  * 트리거를 감싸 hover·포커스를 듣고, 말풍선(mm-tooltip-bubble)을 띄우고 거두는 일을 소유합니다.
- * 말풍선은 portal 컨테이너로 옮겨져 트리거 곁 DOM에 남지 않으므로, 내용은 대상 요소의 aria-description으로 직접 싣습니다.
+ * 말풍선은 portal 컨테이너로 옮겨지므로 처음 열릴 때 만들고, 연결이 끊기면 함께 지웁니다.
+ * 트리거는 대개 다른 shadow root 안에 있어 id 참조(aria-describedby)가 닿지 않으므로, 내용은 대상 요소의 aria-description으로 직접 싣습니다.
  */
 @customElement('mm-tooltip')
 export class Tooltip extends LitElement {

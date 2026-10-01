@@ -66,7 +66,8 @@ export class MoreMenu extends LitElement {
     `
   }
 
-  // 두 표면은 portal로 옮겨져 다른 트리 아래의 트리거를 찾을 수 없어, 더보기 메뉴가 클릭과 aria-expanded를 직접 배선한다.
+  // 열림 상태를 AdaptiveOverlayController가 소유하므로 aria-controls를 걸지 않고(걸면 표면이 같은 클릭을 또 토글한다),
+  // 더보기 메뉴가 클릭과 aria-expanded를 직접 배선한다.
   private renderTrigger() {
     return html`
       <mm-more-button

@@ -482,8 +482,8 @@ const main = html`
             'chrome — 화면에 고정된 내비게이션·툴바. 예: mm-top-bar(sticky 상태), mm-fixed-bottom(mm-bottom-bar가 이 안에 놓여 함께 뜬다)',
             'chrome-top — 그중 화면 전체를 덮는 전역 내비게이션. 페이지 고정 바 위에 남아야 한다. 예: mm-navbar, 사이드 메뉴',
             'backdrop — modal 표면 뒤를 덮는 dim·blur 레이어. 예: mm-backdrop',
-            'popover — 트리거에 앵커되어 뜨는 표면. 예: mm-popover(mm-select 등 드롭다운의 기반)',
             'sheet — viewport를 기준으로 화면을 덮는 표면. 예: mm-sheet, mm-dialog',
+            'popover — 트리거에 앵커되어 뜨는 표면. 트리거가 sheet 안에 있어도 그 위에 보여야 한다. 예: mm-popover(mm-select 등 드롭다운의 기반)',
             'tooltip — 포인터나 포커스를 따라 잠깐 뜨는 설명. 가리키는 대상이 어느 표면에 있든 그 위에 보여야 한다. 예: mm-tooltip',
             'toast — 알림, 스낵바처럼 항상 다른 모든 레이어 위에 있어야 하는 요소. 예: mm-toast, 건너뛰기(skip) 링크, 오프라인 배너',
           ]}

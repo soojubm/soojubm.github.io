@@ -89,7 +89,8 @@ export class Select extends LitElement {
   }
 
   /**
-   * 두 표면은 portal로 옮겨져 다른 트리 아래의 트리거를 찾을 수 없어, select가 클릭과 aria-expanded를 직접 배선한다.
+   * 열림 상태를 AdaptiveOverlayController가 소유하고 열 표면도 화면 폭에 따라 갈리므로, 트리거는 aria-controls로
+   * 표면을 가리키지 않고 select가 클릭과 aria-expanded를 직접 배선한다. aria-controls를 걸면 표면이 같은 클릭을 또 토글한다.
    * 열린 표면의 종류만 aria-haspopup으로 알린다.
    */
   private renderTrigger() {

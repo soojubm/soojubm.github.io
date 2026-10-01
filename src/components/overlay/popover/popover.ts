@@ -19,7 +19,8 @@ export type PopoverPlacement = Extract<
   'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'
 >
 
-// 열리면 포커스를 받아 방향키로 탐색하는 목록. 방향키 탐색은 이 목록이 소유한다.
+// 열리면 포커스를 먼저 받아 방향키로 탐색하는 목록(없으면 autofocus 요소, 그것도 없으면 표면 자체가 받는다).
+// 방향키 탐색은 이 목록이 소유한다.
 const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
 
 /**
@@ -30,6 +31,8 @@ const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
  * 선언한 자리의 root에서 찾습니다. 여는 표면의 종류(aria-haspopup)는 트리거에, role은 안에 넣는 목록 컴포넌트에 둡니다.
  * 트리거를 소비자가 직접 배선하는 쪽(mm-select 등)은 aria-controls 대신 `anchor`로 기준 요소를 넘깁니다.
  * 트리거의 자손이 아니므로 위치는 기준 요소의 화면 좌표를 재어 정하고, 열려 있는 동안 스크롤·리사이즈를 따라갑니다.
+ * 열리면 포커스를 표면 안으로 옮기고, Tab으로 표면을 벗어나면 닫고 트리거로 돌려보냅니다.
+ * 표면이 문서 끝(portal 컨테이너)에 놓여 Tab으로 나가면 트리거 다음 요소가 아니라 엉뚱한 곳에 닿기 때문입니다.
  * 좌표는 placement prop으로, 폭·여백은 `--overlay-panel-*` 토큰으로 정합니다.
  */
 @customElement('mm-popover')

@@ -185,8 +185,8 @@
   --material-zindex-chrome: 100; /* 내비게이션, 툴바 (Apple의 "기능 레이어"에 해당) */
   --material-zindex-chrome-top: 101; /* 그중 화면 전체를 덮는 전역 내비게이션: navbar, 사이드바 */
   --material-zindex-backdrop: 150; /* modal 표면 뒤를 덮는 dim·blur 레이어: backdrop */
-  --material-zindex-popover: 200; /* 트리거 기준 표면: popover, select */
-  --material-zindex-sheet: 300; /* viewport 기준 표면: sheet, dialog */
+  --material-zindex-sheet: 200; /* viewport 기준 표면: sheet, dialog */
+  --material-zindex-popover: 300; /* 트리거 기준 표면: popover, select. sheet 안에서 열려도 그 위에 보인다 */
   --material-zindex-tooltip: 900; /* 포인터·포커스를 따라 잠깐 뜨는 설명: 모든 표면 위 */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 

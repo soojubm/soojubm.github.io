@@ -18,7 +18,7 @@ interface SheetControllerOptions {
 }
 
 /**
- * viewport 기준 modal 표면(mm-sheet, mm-dialog)가 공통으로 소유하는 트리거·portal·스크롤 잠금·
+ * viewport 기준 modal 표면(mm-sheet, mm-dialog)이 공통으로 쓰는 트리거·portal·스크롤 잠금·
  * 닫기 배관을 소유하는 ReactiveController. dismissOn에 켠 배경 클릭·ESC로 스스로 닫히는 처리까지 담당한다.
  * 배경(mm-backdrop)은 호스트의 shadow DOM 안에 있어 클릭이 호스트로 retarget되므로,
  * 닫기 판정은 호스트 자신을 target으로 보는 것으로 충분하다.

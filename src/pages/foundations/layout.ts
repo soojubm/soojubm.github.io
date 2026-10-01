@@ -114,7 +114,7 @@ const classificationRows = html`
     <td>Trigger</td>
     <td>없음</td>
     <td>popover</td>
-    <td>목록이 있으면</td>
+    <td>${yes}</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
@@ -176,8 +176,11 @@ const dismissRows = html`
     <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
     <td>${yes}</td>
     <td>${yes}</td>
-    <td>내용이 ${code('close()')}를 호출할 때</td>
-    <td>트리거 곁에 잠깐 뜨는 보조 표면이라, 다른 곳을 누르면 곧바로 물러나게 한다</td>
+    <td>Tab으로 표면을 벗어나거나 내용이 ${code('close()')}를 호출할 때</td>
+    <td>
+      트리거 곁에 잠깐 뜨는 보조 표면이라, 다른 곳을 누르면 곧바로 물러나게 한다. 표면이 문서 끝으로
+      옮겨져 Tab으로 나가면 엉뚱한 곳에 닿으므로, 벗어나면 닫고 트리거로 돌려보낸다
+    </td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
@@ -809,9 +812,16 @@ const main = html`
                     열 때는 안의 ${code('autofocus')} 요소로, 없으면 표면 자체로 옮긴다. 닫을 때
                     모달은 열기 직전에 포커스가 있던 요소(주로 트리거)로 되돌린다. 비모달은 포커스가
                     표면 안에 있다가 닫힐 때만 트리거로 돌려, 이미 다른 곳으로 옮겨 간 포커스를
-                    빼앗지 않으면서 숨겨진 요소에 포커스가 남지 않게 한다. 비모달 표면은
-                    ${code('#portal-root')}로 옮겨져 문서 끝에 놓이므로, Tab으로 표면을 벗어나면
-                    닫고 트리거로 돌려보낸다
+                    빼앗지 않으면서 숨겨진 요소에 포커스가 남지 않게 한다
+                  `,
+                ),
+                rule(
+                  '비모달 표면은 Tab으로 벗어나면 닫고 트리거로 돌려보낸다',
+                  html`
+                    비모달 표면은 ${code('#portal-root')}로 옮겨져 문서 끝에 놓이므로, Tab으로 밖에
+                    나가면 트리거 다음 요소가 아니라 엉뚱한 곳에 닿는다. 포커스가 표면을 벗어나면
+                    닫고 트리거로 되돌려, 다음 Tab이 트리거에서 이어지게 한다. 바깥을 눌러 닫을 때는
+                    사용자가 고른 곳의 포커스를 빼앗지 않는다
                   `,
                 ),
                 rule(
@@ -846,9 +856,9 @@ const main = html`
                 rule(
                   '바깥 클릭·ESC 같은 닫기는 표면이 스스로 처리한다',
                   html`
-                    viewport 표면은 ${code('SheetController')}가, anchored 표면은
-                    ${code('mm-popover')}가 맡는다. 저장 완료·항목 선택처럼 작업 결과로 닫히는
-                    경우에만 내용이 ${code('close()')}를 호출한다
+                    viewport 표면은 ${code('SheetController')}가, 열고 닫는 조작이 있는 anchored
+                    표면은 ${code('mm-popover')}가 맡는다. 저장 완료·항목 선택처럼 작업 결과로
+                    닫히는 경우에만 내용이 ${code('close()')}를 호출한다
                   `,
                 ),
               ]}
@@ -872,8 +882,9 @@ const main = html`
               ${code('aria-expanded')}를 맞추며, 열림이 바뀌면 ${code('toggle')} 이벤트로 알립니다.
               트리거는 ${code('aria-controls')}로 표면을 가리키기만 하고 여는 표면의 종류는
               ${code('aria-haspopup')}으로 직접 선언하므로, 쓰는 쪽은 클릭 핸들러를 따로 달지
-              않습니다. 열림 상태는 호스트의 ${code('open')}이 갖고 컨트롤러는 읽고 쓰기만 하며,
-              바깥 클릭·ESC로 닫는 동작은 표면이 각자 소유합니다.
+              않습니다. 표면이 portal로 옮겨져도 옮기기 전 자리의 root에서 트리거를 찾으므로,
+              트리거가 소비자의 shadow 안에 있어도 됩니다. 열림 상태는 호스트의 ${code('open')}이
+              갖고 컨트롤러는 읽고 쓰기만 하며, 바깥 클릭·ESC로 닫는 동작은 표면이 각자 소유합니다.
             </mm-paragraph>
           </mm-content-section>
 
@@ -892,9 +903,11 @@ const main = html`
               넓은 화면의 popover와 좁은 화면의 sheet로 목록을 여는
               컴포넌트(${code('mm-select')}·${code('mm-more-menu')})의 열림 상태를 소유합니다. 두
               표면은 backdrop·스크롤 잠금·포커스 가두기를 처리하는 방식이 달라 표면 컴포넌트를 갈아
-              끼우므로, 열림 상태는 표면이 나눠 갖지 않고 이 컨트롤러 하나가 갖습니다. 호스트는
+              끼우므로, 열림 상태는 표면이 나눠 갖지 않고 이 컨트롤러 하나가 갖습니다. 그래서
+              트리거는 ${code('aria-controls')}로 표면을 가리키지 않고 호스트가 클릭을 직접
+              배선합니다. 걸면 표면이 같은 클릭을 또 토글합니다. 호스트는
               ${code('open')}·${code('compact')}·${code('trigger')}를 읽어 두 표면과 트리거에 내려
-              줍니다.
+              주며, 마지막으로 누른 트리거는 popover의 기준 요소가 됩니다.
             </mm-paragraph>
           </mm-content-section>
 
@@ -903,7 +916,7 @@ const main = html`
               <mm-paragraph>
                 Portal은 표면을 선언한 자리에서 떼어 다른 곳에 렌더하는 방식입니다. 표면이 조상의
                 transform·contain 안에 놓이면 위치와 층위가 그 조상에 갇히므로, 표면을 조상에서
-                분리해 어느 자리에서 열려도 화면 전체를 덮는 같은 층위에 띄웁니다.
+                분리해 어느 자리에서 열려도 조상에 상관없이 같은 기준으로 놓이게 합니다.
               </mm-paragraph>
               <mm-paragraph>
                 표면은 ${code('index.html')} 끝의 ${code('#portal-root')} 컨테이너로 옮겨
@@ -920,6 +933,11 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
+            <mm-component-notice variant="exception" heading="tooltip 말풍선은 열 때 만든다">
+              ${code('mm-tooltip-bubble')}은 트리거마다 미리 만들면 표가 큰 페이지에서 요소가 수백
+              개가 되므로, 처음 열릴 때 만들어 바로 연다. 열림 전환은 만들어지는 순간의 시작
+              스타일(${code('@starting-style')})이 재생한다
+            </mm-component-notice>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>

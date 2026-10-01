@@ -33,8 +33,10 @@ const unwatch = (controller: PortalController) => {
  *
  * open 상태가 아니라 connect 생명주기에 이동을 묶은 이유: open이 바뀌는 시점에 이동까지 겹치면
  * "이동 직후 열림"이 같은 프레임에서 처리되어 브라우저가 전환 시작 스타일을 커밋하지 못하고
- * CSS transition이 재생되지 않는다. host는 항상 미리 마운트돼 있고 open만 토글되므로,
+ * CSS transition이 재생되지 않는다. sheet·toast·popover의 host는 미리 마운트돼 있고 open만 토글되므로,
  * 이동을 connect 시점으로 분리해두면 open 전환 전에 위치가 이미 안정된 상태다.
+ * 열릴 때 만들어지는 표면(tooltip 말풍선)은 만들자마자 열리므로 이 방식에 기대지 않고,
+ * 만들어지는 순간의 시작 스타일(`@starting-style`)로 열림 전환을 재생한다.
  */
 export class PortalController implements ReactiveController {
   private anchor = document.createComment('portal')
