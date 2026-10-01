@@ -1,5 +1,7 @@
 import { html } from 'lit'
 
+import type { TemplateResult } from 'lit'
+
 import './layout.css'
 
 import '@/components/domains/component/component-notice'
@@ -312,6 +314,28 @@ const groupRows = html`
   </tr>
 `
 
+/** 뷰포트 안에서 본문이 차지하는 너비를 보이는 브라우저 창 그래픽. */
+const browserWindow = (content: TemplateResult) => html`
+  <div class="browser-window">
+    <div class="browser-window-header" aria-hidden="true">
+      <div class="browser-window-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="browser-window-address">
+        <mm-caption>localhost:3000</mm-caption>
+      </div>
+      <div class="browser-window-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="browser-window-body">${content}</div>
+  </div>
+`
+
 const main = html`
   <mm-main layout="split">
     <mm-page-header
@@ -336,42 +360,50 @@ const main = html`
               정하며, 본문 골격은 ${code('mm-main')}의 width로, 떠오르는 표면은 각 컴포넌트의
               width로 지정합니다.
             </mm-paragraph>
-            <mm-flex direction="column" gap="2">
-              <mm-surface variant="filled" style="max-width: var(--layout-width-narrow)">
-                <mm-flex direction="column" gap="1">
-                  <mm-caption>집중형 · 폼, 인증, dialog, tooltip</mm-caption>
-                  ${code('--layout-width-narrow · 400px')}
-                  <mm-flex gap="3">
-                    <mm-link href="./auth.html">Auth</mm-link>
-                    <mm-link href="./dialog.html">Dialog</mm-link>
-                    <mm-link href="./tooltip.html">Tooltip</mm-link>
-                  </mm-flex>
-                </mm-flex>
-              </mm-surface>
-              <mm-surface variant="filled" style="max-width: var(--layout-width-small)">
-                <mm-flex direction="column" gap="1">
-                  <mm-caption>일반 문서 · 에디토리얼, 설정, 대화, sheet</mm-caption>
-                  ${code('--layout-width-small · 640px')}
-                  <mm-flex gap="3">
-                    <mm-link href="./post.html">Post</mm-link>
-                    <mm-link href="./setting.html">Setting</mm-link>
-                    <mm-link href="./chat.html">Chat</mm-link>
-                    <mm-link href="./sheet.html">Sheet</mm-link>
-                  </mm-flex>
-                </mm-flex>
-              </mm-surface>
-              <mm-surface variant="filled">
-                <mm-flex direction="column" gap="1">
-                  <mm-caption>확장형 · 목록, 대시보드, 상품, 프로필</mm-caption>
-                  ${code('width 미지정 · 콘텐츠 영역 전체')}
-                  <mm-flex gap="3">
-                    <mm-link href="./dashboard.html">Dashboard</mm-link>
-                    <mm-link href="./product.html">Product</mm-link>
-                    <mm-link href="./profile.html">Profile</mm-link>
-                  </mm-flex>
-                </mm-flex>
-              </mm-surface>
-            </mm-flex>
+            <mm-component-example full-width>
+              <mm-flex direction="column" gap="4">
+                ${browserWindow(html`
+                  <mm-surface variant="filled" style="max-width: var(--layout-width-narrow)">
+                    <mm-flex direction="column" gap="1">
+                      <mm-caption>집중형 · 폼, 인증, dialog, tooltip</mm-caption>
+                      ${code('--layout-width-narrow · 400px')}
+                      <mm-flex gap="3">
+                        <mm-link href="./auth.html">Auth</mm-link>
+                        <mm-link href="./dialog.html">Dialog</mm-link>
+                        <mm-link href="./tooltip.html">Tooltip</mm-link>
+                      </mm-flex>
+                    </mm-flex>
+                  </mm-surface>
+                `)}
+                ${browserWindow(html`
+                  <mm-surface variant="filled" style="max-width: var(--layout-width-small)">
+                    <mm-flex direction="column" gap="1">
+                      <mm-caption>일반 문서 · 에디토리얼, 설정, 대화, sheet</mm-caption>
+                      ${code('--layout-width-small · 640px')}
+                      <mm-flex gap="3">
+                        <mm-link href="./post.html">Post</mm-link>
+                        <mm-link href="./setting.html">Setting</mm-link>
+                        <mm-link href="./chat.html">Chat</mm-link>
+                        <mm-link href="./sheet.html">Sheet</mm-link>
+                      </mm-flex>
+                    </mm-flex>
+                  </mm-surface>
+                `)}
+                ${browserWindow(html`
+                  <mm-surface variant="filled">
+                    <mm-flex direction="column" gap="1">
+                      <mm-caption>확장형 · 목록, 대시보드, 상품, 프로필</mm-caption>
+                      ${code('width 미지정 · 콘텐츠 영역 전체')}
+                      <mm-flex gap="3">
+                        <mm-link href="./dashboard.html">Dashboard</mm-link>
+                        <mm-link href="./product.html">Product</mm-link>
+                        <mm-link href="./profile.html">Profile</mm-link>
+                      </mm-flex>
+                    </mm-flex>
+                  </mm-surface>
+                `)}
+              </mm-flex>
+            </mm-component-example>
             <mm-text-list
               variant="check"
               .texts=${[
@@ -441,23 +473,27 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <div class="app-shell">
-              <mm-surface variant="outlined" density="compact" class="app-shell-topbar">
-                <mm-caption>Top Bar · chrome</mm-caption>
-              </mm-surface>
-              <mm-surface variant="outlined" density="compact" class="app-shell-sidebar">
-                <mm-caption>Sidebar · chrome-top</mm-caption>
-              </mm-surface>
-              <mm-surface variant="ghost" density="compact" class="app-shell-content">
-                <mm-caption>Content · base</mm-caption>
-                <mm-surface variant="elevated" density="compact" class="app-shell-overlay">
-                  <mm-caption>Overlay · toast</mm-caption>
-                </mm-surface>
-              </mm-surface>
-              <mm-surface variant="outlined" density="compact" class="app-shell-bottombar">
-                <mm-caption>Bottom Bar · chrome</mm-caption>
-              </mm-surface>
-            </div>
+            <mm-component-example full-width>
+              ${browserWindow(html`
+                <div class="app-shell">
+                  <mm-surface variant="outlined" density="compact" class="app-shell-topbar">
+                    <mm-caption>Top Bar · chrome</mm-caption>
+                  </mm-surface>
+                  <mm-surface variant="outlined" density="compact" class="app-shell-sidebar">
+                    <mm-caption>Sidebar · chrome-top</mm-caption>
+                  </mm-surface>
+                  <mm-surface variant="ghost" density="compact" class="app-shell-content">
+                    <mm-caption>Content · base</mm-caption>
+                    <mm-surface variant="elevated" density="compact" class="app-shell-overlay">
+                      <mm-caption>Overlay · toast</mm-caption>
+                    </mm-surface>
+                  </mm-surface>
+                  <mm-surface variant="outlined" density="compact" class="app-shell-bottombar">
+                    <mm-caption>Bottom Bar · chrome</mm-caption>
+                  </mm-surface>
+                </div>
+              `)}
+            </mm-component-example>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
