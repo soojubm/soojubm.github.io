@@ -7,6 +7,7 @@ import type { PortfolioItem } from '@/components/domains/portfolio-item'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { TOPICS } from '@/pages/mocks'
 
+import '../cta-arrow.css'
 import './profile.css'
 
 // 그리드 보기의 칼럼 수. 목록 보기에서 돌아올 때도 이 값으로 되돌린다.

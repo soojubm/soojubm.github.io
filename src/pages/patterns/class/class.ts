@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import '../cta-arrow.css'
 import './class.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 import '@/components/common'

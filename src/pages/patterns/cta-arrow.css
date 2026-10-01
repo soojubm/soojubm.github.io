@@ -1,0 +1,29 @@
+/* 구매·구독 유도 줄 끝에 붙는 화살표. 화살촉이 .line의 배경색을 상속하므로 색은 소비처가 .line에서 바꾼다. */
+.cta-arrow {
+  max-width: 67px;
+  flex-grow: 1;
+  padding: 17px 0;
+}
+.cta-arrow .line {
+  width: 100%;
+  height: 2px;
+  background: var(--foreground-color);
+  position: relative;
+}
+.cta-arrow .line::before,
+.cta-arrow .line::after {
+  content: '';
+  width: 12px;
+  height: 2px;
+  background: inherit;
+  position: absolute;
+  right: 0;
+}
+.cta-arrow .line::before {
+  transform: rotate(-50deg);
+  transform-origin: top right;
+}
+.cta-arrow .line::after {
+  transform: rotate(50deg);
+  transform-origin: bottom right;
+}
