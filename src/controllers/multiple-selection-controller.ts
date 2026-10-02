@@ -1,7 +1,5 @@
 import type { SelectionStore } from '@/controllers/selection-store'
-import type { ReactiveControllerHost } from 'lit'
 
-type Host = ReactiveControllerHost
 type SelectionOption = {
   value: string
   selectAll?: boolean
@@ -9,12 +7,13 @@ type SelectionOption = {
 
 interface MultipleSelectionControllerOptions {
   getValues: () => string[]
+  /** 값은 호스트의 reactive property라 대입하면 호스트가 스스로 다시 그린다 */
   setValues: (values: string[]) => void
   getOptions: () => SelectionOption[]
 }
 
 export class MultipleSelectionController implements SelectionStore {
-  constructor(private host: Host, private options: MultipleSelectionControllerOptions) {}
+  constructor(private options: MultipleSelectionControllerOptions) {}
 
   select(option: SelectionOption) {
     this.setSelected(option, !this.isOptionSelected(option))
@@ -22,7 +21,6 @@ export class MultipleSelectionController implements SelectionStore {
 
   setSelected(option: SelectionOption, selected: boolean) {
     this.options.setValues(this.getValuesForState(option, selected))
-    this.host.requestUpdate()
   }
 
   isEmpty() {

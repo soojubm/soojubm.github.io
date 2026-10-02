@@ -4,8 +4,8 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import type { RadioCard } from '@/components/common/radio/semantics/radio-card'
 
 import { inputSelectionGroupStyles } from '@/components/common/input/input.styles'
-import { SlottedSelectionController } from '@/controllers/slotted-selection-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
+import { SlottedSelectionController } from '@/controllers/slotted-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
@@ -22,7 +22,7 @@ export class RadioCardGroup extends LitElement {
   @property({ type: String }) legend = ''
   @queryAssignedElements({ selector: 'mm-radio-card' })
   private cards!: RadioCard[]
-  private selection = new SingleSelectionController(this, {
+  private selection = new SingleSelectionController({
     getValue: () => this.value,
     setValue: value => {
       this.value = value

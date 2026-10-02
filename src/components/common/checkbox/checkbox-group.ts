@@ -33,7 +33,7 @@ export class CheckboxGroup extends LitElement {
   @property({ type: String }) legend?: string
   // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
   private idPrefix = uniqueId('checkbox-group')
-  private selection = new MultipleSelectionController(this, {
+  private selection = new MultipleSelectionController({
     getValues: () => this.values,
     setValues: values => {
       this.values = values

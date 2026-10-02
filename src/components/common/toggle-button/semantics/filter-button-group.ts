@@ -37,13 +37,13 @@ export class FilterButtonGroup extends LitElement {
   @property({ type: String }) orientation: Orientation = 'horizontal'
   @queryAll('button') private buttons!: NodeListOf<HTMLButtonElement>
   // single/multiple 모드가 런타임에 바뀔 수 있어 두 컨트롤러를 모두 들고 mode로 분기한다.
-  private singleSelection = new SingleSelectionController(this, {
+  private singleSelection = new SingleSelectionController({
     getValue: () => this.values[0] ?? '',
     setValue: value => {
       this.values = value ? [value] : []
     },
   })
-  private multipleSelection = new MultipleSelectionController(this, {
+  private multipleSelection = new MultipleSelectionController({
     getValues: () => this.values,
     setValues: values => {
       this.values = values

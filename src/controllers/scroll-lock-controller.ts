@@ -20,7 +20,6 @@ function lockBodyScroll() {
     width: document.body.style.width,
   }
 
-  document.body.classList.add('lock-scroll')
   document.body.style.position = 'fixed'
   document.body.style.top = `-${lockedScrollY}px`
   document.body.style.left = '0'
@@ -35,7 +34,6 @@ function unlockBodyScroll() {
   scrollLockCount -= 1
   if (scrollLockCount > 0) return
 
-  document.body.classList.remove('lock-scroll')
   document.body.style.position = previousBodyStyles.position ?? ''
   document.body.style.top = previousBodyStyles.top ?? ''
   document.body.style.left = previousBodyStyles.left ?? ''

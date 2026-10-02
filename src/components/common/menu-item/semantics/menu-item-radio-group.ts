@@ -6,8 +6,8 @@ import type { MenuItemRadio } from '@/components/common/menu-item/semantics/menu
 
 import '@/components/common/menu-item/menu-item-group'
 import '@/components/common/menu-item/semantics/menu-item-radio'
-import { SlottedSelectionController } from '@/controllers/slotted-selection-controller'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
+import { SlottedSelectionController } from '@/controllers/slotted-selection-controller'
 import { emit } from '@/utils'
 
 @customElement('mm-menu-item-radio-group')
@@ -23,7 +23,7 @@ export class MenuItemRadioGroup extends LitElement {
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @queryAssignedElements({ selector: 'mm-menu-item-radio' })
   private radios!: MenuItemRadio[]
-  private selection = new SingleSelectionController(this, {
+  private selection = new SingleSelectionController({
     getValue: () => this.value,
     setValue: value => {
       this.value = value

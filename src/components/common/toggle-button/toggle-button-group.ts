@@ -60,7 +60,7 @@ export class ToggleButtonGroup extends LitElement {
   @property({ type: Boolean, attribute: 'hidden-label' }) hiddenLabel = false
   @property({ type: String }) orientation: Orientation = 'horizontal'
   @queryAll('button') private buttons!: NodeListOf<HTMLButtonElement>
-  private selection = new SingleSelectionController(this, {
+  private selection = new SingleSelectionController({
     getValue: () => this.value,
     setValue: value => {
       this.value = value

@@ -28,7 +28,7 @@ export class RadioGroup extends LitElement {
   @property({ type: String }) legend = ''
   // name을 주지 않아도 네이티브 radio가 한 그룹으로 묶이도록 내부 이름을 둔다.
   private fallbackName = uniqueId('radio-group')
-  private selection = new SingleSelectionController(this, {
+  private selection = new SingleSelectionController({
     getValue: () => this.value,
     setValue: value => {
       this.value = value

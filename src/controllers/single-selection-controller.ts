@@ -1,16 +1,15 @@
 import type { SelectionStore } from '@/controllers/selection-store'
-import type { ReactiveControllerHost } from 'lit'
 
-type Host = ReactiveControllerHost
 type SelectionOption = { value: string }
 
 interface SingleSelectionControllerOptions {
   getValue: () => string
+  /** 값은 호스트의 reactive property라 대입하면 호스트가 스스로 다시 그린다 */
   setValue: (value: string) => void
 }
 
 export class SingleSelectionController implements SelectionStore {
-  constructor(private host: Host, private options: SingleSelectionControllerOptions) {}
+  constructor(private options: SingleSelectionControllerOptions) {}
 
   select(option: SelectionOption) {
     this.setSelected(option, true)
@@ -18,7 +17,6 @@ export class SingleSelectionController implements SelectionStore {
 
   setSelected(option: SelectionOption, selected: boolean) {
     this.options.setValue(selected ? option.value : '')
-    this.host.requestUpdate()
   }
 
   isEmpty() {

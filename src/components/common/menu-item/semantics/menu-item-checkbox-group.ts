@@ -30,7 +30,7 @@ export class MenuItemCheckboxGroup extends LitElement {
   @property({ attribute: false }) values: string[] = []
   @queryAssignedElements({ selector: 'mm-menu-item-checkbox' })
   private checkboxes!: MenuItemCheckbox[]
-  private selection = new MultipleSelectionController(this, {
+  private selection = new MultipleSelectionController({
     getValues: () => this.values,
     setValues: values => {
       this.values = values
