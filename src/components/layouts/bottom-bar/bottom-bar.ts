@@ -101,8 +101,6 @@ export class BottomBar extends LitElement {
   @query('.indicator') private indicator?: HTMLElement
   @query("a[aria-current='page']") private currentLink?: HTMLElement
   private indicatorPosition = new SelectionIndicatorController(this, {
-    axis: 'x',
-    autoUpdate: true,
     getContainer: () => this.bottomBar,
     getIndicator: () => this.indicator,
     getTarget: () => this.currentLink ?? undefined,

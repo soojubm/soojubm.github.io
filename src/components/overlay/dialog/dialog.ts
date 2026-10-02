@@ -30,10 +30,6 @@ export class Dialog extends withOpenState(LitElement) {
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
   private sheet = new SheetController(this, {
-    isOpen: () => this.open,
-    setOpen: open => {
-      this.open = open
-    },
     // 확인이 필요한 작업에 쓰므로 의도가 불분명한 배경 클릭으로는 닫지 않는다.
     // ESC는 키보드 사용자의 탈출 수단으로 남기되, 어느 액션도 실행하지 않고 닫기만 한다.
     // 보조 액션이 파괴적인 쪽(예: 나가기)일 수 있어 취소로 간주하지 않기 때문이다.

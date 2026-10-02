@@ -5,6 +5,7 @@ import type { ChatReasoningFlow } from '@/components/domains/chat/chat-reasoning
 
 import '@/components/domains/chat/chat-reasoning-flow'
 import '@/components/common'
+import { ScheduleController } from '@/controllers/schedule-controller'
 
 // 생각 중일 때 flow를 하나씩 넘겨 보여주는 간격.
 const FLOW_INTERVAL_MS = 2200
@@ -44,7 +45,9 @@ export class ChatReasoning extends LitElement {
   @queryAssignedElements({ selector: 'mm-chat-reasoning-flow', flatten: true })
   private assignedFlows!: ChatReasoningFlow[]
   private flowIndex = 0
-  private intervalId = 0
+  private flowRotation = new ScheduleController(this, () => this.showNextFlow(), {
+    delay: FLOW_INTERVAL_MS,
+  })
 
   // role="status"는 암묵적으로 aria-live="polite"라 따로 두지 않는다.
   connectedCallback() {
@@ -77,48 +80,38 @@ export class ChatReasoning extends LitElement {
     if (changed.has('thinking')) this.handleFlowSlotChange()
   }
 
-  disconnectedCallback() {
-    this.stopTransition()
-    super.disconnectedCallback()
-  }
-
   private getFlows() {
     return this.assignedFlows.filter(flow => !flow.hidden)
   }
 
   private handleFlowSlotChange = () => {
+    this.flowRotation.cancel()
+
     const flows = this.getFlows()
-    if (!flows.length) {
-      this.stopTransition()
-      return
-    }
+    if (!flows.length) return
 
     if (this.flowIndex >= flows.length) this.flowIndex = 0
-
     this.activateFlow(flows)
-    this.stopTransition()
 
     if (!this.thinking || flows.length < 2) return
 
-    this.intervalId = window.setInterval(() => {
-      const currentFlows = this.getFlows()
-      if (!currentFlows.length) return
+    this.flowRotation.request()
+  }
 
-      this.flowIndex = (this.flowIndex + 1) % currentFlows.length
-      this.activateFlow(currentFlows)
-    }, FLOW_INTERVAL_MS)
+  // 다음 차례를 먼저 다시 예약해, 생각하는 동안 일정한 간격으로 계속 넘긴다.
+  private showNextFlow() {
+    this.flowRotation.request()
+
+    const flows = this.getFlows()
+    if (!flows.length) return
+
+    this.flowIndex = (this.flowIndex + 1) % flows.length
+    this.activateFlow(flows)
   }
 
   private activateFlow(flows: ChatReasoningFlow[]) {
     flows.forEach((flow, index) => {
       flow.active = index === this.flowIndex
     })
-  }
-
-  private stopTransition() {
-    if (!this.intervalId) return
-
-    window.clearInterval(this.intervalId)
-    this.intervalId = 0
   }
 }

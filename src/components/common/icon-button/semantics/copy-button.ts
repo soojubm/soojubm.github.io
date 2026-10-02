@@ -9,10 +9,13 @@ import {
   iconButtonVariantSkin,
 } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
-import { TransientFlagController } from '@/controllers/transient-flag-controller'
+import { ScheduleController } from '@/controllers/schedule-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import { copyToClipboard } from '@/utils/clipboard'
+
+// 복사됨 표시를 유지하는 시간(ms).
+const COPIED_DURATION = 1500
 
 /**
  * 텍스트를 클립보드에 복사하는 버튼.
@@ -33,16 +36,20 @@ export class CopyButton extends LitElement {
   @property({ type: String, attribute: 'tooltip-placement' })
   tooltipPlacement: TooltipPlacement = 'bottom-start'
   @state() private copied = false
-  private copiedFlag = new TransientFlagController(this, {
-    duration: 1500,
-    onChange: copied => (this.copied = copied),
-  })
+  private copiedReset = new ScheduleController(
+    this,
+    () => {
+      this.copied = false
+    },
+    { delay: COPIED_DURATION },
+  )
   private handleClick = async () => {
     const text = this.value || this.textContent?.trim() || ''
     if (!(await copyToClipboard(text))) return
 
     emit(this, 'copy', { value: text })
-    this.copiedFlag.trigger()
+    this.copied = true
+    this.copiedReset.request()
   }
 
   render() {

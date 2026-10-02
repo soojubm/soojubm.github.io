@@ -24,7 +24,6 @@ export class TabList extends LitElement {
   @queryAssignedElements({ flatten: true }) private assignedElements!: HTMLElement[]
   @query('.indicator') private indicator?: HTMLElement
   private indicatorPosition = new SelectionIndicatorController(this, {
-    axis: 'x',
     getIndicator: () => this.indicator,
     getTarget: () => this.querySelector<HTMLElement>('mm-tab[active]') ?? undefined,
   })

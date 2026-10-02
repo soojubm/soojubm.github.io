@@ -1,3 +1,4 @@
+import type { OpenState } from '@/utils/open-state'
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 import { DisclosureController } from '@/controllers/disclosure-controller'
@@ -6,7 +7,7 @@ import { PortalController } from '@/controllers/portal-controller'
 import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 import { getDeepActiveElement } from '@/utils'
 
-type Host = ReactiveControllerHost & HTMLElement
+type Host = ReactiveControllerHost & HTMLElement & OpenState
 type DismissOn = 'backdrop' | 'escape'
 
 // 모달이 겹쳐 열려도 아래쪽 표면과 본문이 위 표면이 닫히는 순서와 무관하게 풀리도록, 요소마다 inert를 건 표면의 수를 센다.
@@ -38,9 +39,6 @@ const releaseInert = (element: HTMLElement) => {
 }
 
 interface SheetControllerOptions {
-  isOpen: () => boolean
-  /** 트리거 클릭이나 dismissOn 조건으로 열고 닫을 때 호스트에 상태 변경을 요청한다 */
-  setOpen: (open: boolean) => void
   /** 스스로 닫히는 조건. 표면의 용도가 정하므로 호스트가 명시한다 */
   dismissOn: DismissOn[]
 }
@@ -53,8 +51,8 @@ interface SheetControllerOptions {
  * 여는 쪽은 popover와 같은 규약을 쓴다. aria-controls로 호스트를 가리키는 요소가 트리거가 되고,
  * 클릭 토글과 aria-expanded 반영은 DisclosureController가 맡고, aria-haspopup="dialog"는 트리거가
  * 직접 선언한다. 트리거는 portal로 옮겨지기 전 자리의 root에서 찾으므로 소비자의 shadow 안에 있어도 된다.
- * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 이 컨트롤러는
- * isOpen/setOpen으로 읽기·쓰기만 위임받는다. 열고 닫힐 때의 toggle 이벤트는 DisclosureController가 디스패치한다.
+ * 열림 상태는 호스트가 `OpenState`로 소유하고, 이 컨트롤러는 `open`을 읽고 `close()`로 닫기만 한다.
+ * 열고 닫힐 때의 toggle 이벤트는 DisclosureController가 디스패치한다.
  * 포커스는 열린 동안 portal 컨테이너 바깥의 body 자식과 이미 열려 있는 아래쪽 모달 표면을 inert로 만들어
  * 표면 안에 가두고, 닫히면 inert를 풀고 연 요소로 돌려준다. shadow DOM을 가로지르는 Tab 순서를 직접 계산하지 않기 위해서다.
  * 모달이 겹쳐 열리면 같은 요소를 여러 표면이 맡으므로, 닫히는 순서와 무관하게 마지막 표면이 닫힐 때 푼다.
@@ -68,12 +66,8 @@ export class SheetController implements ReactiveController {
   constructor(private host: Host, private options: SheetControllerOptions) {
     this.scrollLock = new ScrollLockController(host)
     const portal = new PortalController(host)
-    new DisclosureController(host, {
-      isOpen: options.isOpen,
-      setOpen: options.setOpen,
-      getRoot: () => portal.originRoot,
-    })
-    new EscapeKeyController(host, this.handleEscapeKeydown, { isOpen: options.isOpen })
+    new DisclosureController(host, { getRoot: () => portal.originRoot })
+    new EscapeKeyController(host, this.handleEscapeKeydown)
 
     host.addController(this)
     // 리스너 대상이 host 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
@@ -90,7 +84,7 @@ export class SheetController implements ReactiveController {
   }
 
   hostUpdated() {
-    const open = this.options.isOpen()
+    const open = this.host.open
     this.scrollLock.set(open)
 
     if (open === this.wasOpen) return
@@ -132,12 +126,12 @@ export class SheetController implements ReactiveController {
   }
 
   private handleBackdropClick = (e: MouseEvent) => {
-    if (!this.options.dismissOn.includes('backdrop') || !this.options.isOpen()) return
-    if (e.target === this.host) this.options.setOpen(false)
+    if (!this.options.dismissOn.includes('backdrop') || !this.host.open) return
+    if (e.target === this.host) this.host.close()
   }
   private handleEscapeKeydown = () => {
     if (!this.options.dismissOn.includes('escape')) return
 
-    this.options.setOpen(false)
+    this.host.close()
   }
 }
