@@ -23,28 +23,24 @@ export class Toast extends withOpenState(LitElement) {
   private engagedBy = new Set<'hover' | 'focus'>()
   private portal = new PortalController(this)
 
-  connectedCallback() {
-    super.connectedCallback()
-    this.setAttribute('role', 'status')
+  constructor() {
+    super()
+    // 리스너 대상이 host 자신이라 연결이 바뀌어도 유지되므로 생성자에서 한 번만 등록한다.
     this.addEventListener('mouseenter', this.handleHostEnter)
     this.addEventListener('focusin', this.handleHostEnter)
     this.addEventListener('mouseleave', this.handleHostLeave)
     this.addEventListener('focusout', this.handleHostLeave)
   }
 
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'status')
+  }
+
   render() {
     return html`
       <slot></slot>
     `
-  }
-
-  // 리스너는 연결과 함께 생성되므로 연결 해제 시 대칭으로 정리한다.
-  disconnectedCallback() {
-    this.removeEventListener('mouseenter', this.handleHostEnter)
-    this.removeEventListener('focusin', this.handleHostEnter)
-    this.removeEventListener('mouseleave', this.handleHostLeave)
-    this.removeEventListener('focusout', this.handleHostLeave)
-    super.disconnectedCallback()
   }
 
   override show() {

@@ -10,6 +10,8 @@ interface RovingFocusControllerOptions {
   getItems: () => HTMLElement[]
   // 방향키 매핑을 결정한다. 함수로 주면 매 입력마다 다시 읽는다.
   orientation?: Orientation | (() => Orientation)
+  // 끝에서 반대편 끝으로 이어 순환한다. 기본은 경계에서 멈춘다. 탭처럼 순환하는 패턴에서 켠다.
+  wrap?: boolean
   // Tab으로 진입했을 때 tabindex=0이 될 기준 항목. 보통 선택된 항목이다.
   getActiveIndex?: () => number
   // 키보드로 포커스를 옮긴 뒤 호출한다. 이동이 곧 선택인 radiogroup에서 넘긴다.
@@ -26,38 +28,40 @@ function directionFor(key: string, orientation: Orientation): 1 | -1 | undefined
   return undefined
 }
 
-// 비활성 항목을 건너뛰며 방향으로 다음 포커스 가능한 인덱스를 찾는다. 경계에서 멈춘다(순환 없음).
+// 비활성 항목을 건너뛰며 방향으로 다음 포커스 가능한 인덱스를 찾는다. 순환하지 않으면 경계에서 멈춘다.
 function nextFocusableIndex(
   from: number,
   step: 1 | -1,
   isFocusable: (index: number) => boolean,
   length: number,
+  wrap: boolean,
 ): number {
-  let index = from + step
-  while (index >= 0 && index < length) {
-    if (isFocusable(index)) return index
-    index += step
+  for (let offset = 1; offset <= length; offset++) {
+    const index = from + step * offset
+    if (!wrap && (index < 0 || index >= length)) return from
+
+    const candidate = (index + length) % length
+    if (isFocusable(candidate)) return candidate
   }
   return from
 }
 
 export class RovingFocusController implements ReactiveController {
-  private focusedIndex = -1
-
   constructor(private host: Host, private options: RovingFocusControllerOptions) {
     host.addController(this)
-  }
-
-  hostConnected() {
-    this.host.addEventListener('keydown', this.handleKeydown)
-  }
-
-  hostDisconnected() {
-    this.host.removeEventListener('keydown', this.handleKeydown)
+    // 리스너 대상이 host 자신이라 연결이 바뀌어도 유지되므로 생성자에서 한 번만 등록한다.
+    host.addEventListener('keydown', this.handleKeydown)
+    host.addEventListener('focusin', this.handleFocusChange)
+    host.addEventListener('focusout', this.handleFocusChange)
   }
 
   // 렌더 후 항목이 갱신되면 tab stop 하나만 tabindex=0으로 유지한다.
   hostUpdated() {
+    this.refresh()
+  }
+
+  /** tab stop을 다시 맞춘다. 호스트 렌더와 무관하게 항목이나 기준 항목이 바뀌면 직접 부른다. */
+  refresh() {
     const items = this.options.getItems()
     const tabStop = this.resolveTabStop(items)
 
@@ -69,7 +73,10 @@ export class RovingFocusController implements ReactiveController {
   private resolveTabStop(items: HTMLElement[]) {
     const focusable = (index: number) => this.isFocusable(items[index])
 
-    if (this.focusedIndex >= 0 && focusable(this.focusedIndex)) return this.focusedIndex
+    // 포커스가 그룹 안에 있으면 그 항목이, 밖에 있으면 기준 항목이 tab stop이다.
+    // 마지막으로 키보드로 옮긴 항목을 기억하지 않으므로 클릭으로 고른 항목과 어긋나지 않는다.
+    const focused = items.indexOf(getDeepActiveElement() as HTMLElement)
+    if (focused >= 0 && focusable(focused)) return focused
 
     const active = this.options.getActiveIndex?.() ?? -1
     if (active >= 0 && focusable(active)) return active
@@ -91,11 +98,12 @@ export class RovingFocusController implements ReactiveController {
   focusTabStop() {
     const items = this.options.getItems()
     const tabStop = this.resolveTabStop(items)
-    if (tabStop < 0) return
-
-    this.moveFocus(items, tabStop)
+    items[tabStop]?.focus()
   }
 
+  private handleFocusChange = () => {
+    this.refresh()
+  }
   private handleKeydown = (event: KeyboardEvent) => {
     // 중첩된 그룹이 이미 처리한 키는 바깥 그룹이 다시 처리하지 않는다.
     if (event.defaultPrevented) return
@@ -107,32 +115,23 @@ export class RovingFocusController implements ReactiveController {
     if (target === undefined) return
 
     event.preventDefault()
-    this.moveFocus(items, target)
+    items[target]?.focus()
     this.options.onFocusMove?.(target)
   }
 
   // 키를 목표 인덱스로 해석한다. 처리 대상이 아니면 undefined.
   private targetIndex(event: KeyboardEvent, items: HTMLElement[]): number | undefined {
-    const current = this.currentIndex(items)
     const isFocusable = (index: number) => this.isFocusable(items[index])
+    const wrap = this.options.wrap ?? false
+    const next = (from: number, step: 1 | -1) =>
+      nextFocusableIndex(from, step, isFocusable, items.length, wrap)
 
-    if (event.key === 'Home') return nextFocusableIndex(-1, 1, isFocusable, items.length)
-    if (event.key === 'End') return nextFocusableIndex(items.length, -1, isFocusable, items.length)
+    if (event.key === 'Home') return next(-1, 1)
+    if (event.key === 'End') return next(items.length, -1)
 
     const step = directionFor(event.key, this.orientation)
     if (step === undefined) return undefined
-    return nextFocusableIndex(current, step, isFocusable, items.length)
-  }
 
-  private currentIndex(items: HTMLElement[]) {
-    const active = items.indexOf(getDeepActiveElement() as HTMLElement)
-    if (active >= 0) return active
-    return this.resolveTabStop(items)
-  }
-
-  private moveFocus(items: HTMLElement[], index: number) {
-    this.focusedIndex = index
-    items[index]?.focus()
-    this.host.requestUpdate()
+    return next(this.resolveTabStop(items), step)
   }
 }

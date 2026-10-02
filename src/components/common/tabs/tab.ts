@@ -61,16 +61,16 @@ export class Tab extends LitElement {
     `
   }
 
-  // role·tabindex·focus를 host가 가지므로 클릭도 host에서 받는다.
-  connectedCallback() {
-    super.connectedCallback()
-    this.setAttribute('role', 'tab')
+  constructor() {
+    super()
+    // role·tabindex·focus를 host가 가지므로 클릭도 host에서 받는다.
+    // 리스너 대상이 host 자신이라 연결이 바뀌어도 유지되므로 생성자에서 한 번만 등록한다.
     this.addEventListener('click', this.handleClick)
   }
 
-  disconnectedCallback() {
-    this.removeEventListener('click', this.handleClick)
-    super.disconnectedCallback()
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'tab')
   }
 
   public select() {
@@ -86,6 +86,5 @@ export class Tab extends LitElement {
     if (!changedProperties.has('active')) return
 
     this.ariaSelected = this.active ? 'true' : 'false'
-    this.tabIndex = this.active ? 0 : -1
   }
 }

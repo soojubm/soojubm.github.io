@@ -35,18 +35,19 @@ export class Tooltip extends LitElement {
     this.syncDescription()
   }
 
-  render() {
-    return html`
-      <slot name="trigger" @slotchange=${this.handleTriggerSlotChange}></slot>
-    `
-  }
-
-  connectedCallback() {
-    super.connectedCallback()
+  constructor() {
+    super()
+    // 리스너 대상이 host 자신이라 연결이 바뀌어도 유지되므로 생성자에서 한 번만 등록한다.
     this.addEventListener('mouseover', this.handleTriggerShow)
     this.addEventListener('mouseout', this.handleTriggerHide)
     this.addEventListener('focusin', this.handleTriggerShow)
     this.addEventListener('focusout', this.handleTriggerHide)
+  }
+
+  render() {
+    return html`
+      <slot name="trigger" @slotchange=${this.handleTriggerSlotChange}></slot>
+    `
   }
 
   protected updated() {
@@ -54,10 +55,6 @@ export class Tooltip extends LitElement {
   }
 
   disconnectedCallback() {
-    this.removeEventListener('mouseover', this.handleTriggerShow)
-    this.removeEventListener('mouseout', this.handleTriggerHide)
-    this.removeEventListener('focusin', this.handleTriggerShow)
-    this.removeEventListener('focusout', this.handleTriggerHide)
     this.clearDescriptionTargets()
     this.removeBubble()
     super.disconnectedCallback()

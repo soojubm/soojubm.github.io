@@ -4,6 +4,7 @@ import { customElement, property, query, queryAssignedElements } from 'lit/decor
 import { Tab } from '@/components/common/tabs/tab'
 import { TabPanel } from '@/components/common/tabs/tab-panel'
 import { tabsStyles } from '@/components/common/tabs/tabs.styles'
+import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import { SelectionIndicatorController } from '@/controllers/selection-indicator-controller'
 import { emit, uniqueId } from '@/utils'
 import { getSearchParam, replaceSearchParam } from '@/utils/search-param'
@@ -27,6 +28,19 @@ export class TabList extends LitElement {
     getIndicator: () => this.indicator,
     getTarget: () => this.querySelector<HTMLElement>('mm-tab[active]') ?? undefined,
   })
+  // 방향키로 포커스가 옮겨지면 곧 선택이 따라오는 자동 활성화 탭이라, 포커스 이동이 선택이고 끝에서는 순환한다.
+  private rovingFocus = new RovingFocusController(this, {
+    getItems: () => this.tabs,
+    getActiveIndex: () => this.tabs.findIndex(tab => tab.active),
+    wrap: true,
+    onFocusMove: index => this.tabs[index]?.select(),
+  })
+
+  constructor() {
+    super()
+    // 리스너 대상이 host 자신이라 연결이 바뀌어도 유지되므로 생성자에서 한 번만 등록한다.
+    this.addEventListener('tab-select', this.handleTabSelect)
+  }
 
   render() {
     return html`
@@ -65,15 +79,6 @@ export class TabList extends LitElement {
     super.connectedCallback()
     this.setAttribute('role', 'tablist')
     if (this.searchParam) this.value = getSearchParam(this.searchParam) ?? this.value
-
-    this.addEventListener('tab-select', this.handleTabSelect)
-    this.addEventListener('keydown', this.handleKeydown)
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener('tab-select', this.handleTabSelect)
-    this.removeEventListener('keydown', this.handleKeydown)
-    super.disconnectedCallback()
   }
 
   protected firstUpdated() {
@@ -97,44 +102,6 @@ export class TabList extends LitElement {
     this.value = customEvent.detail.value
     if (this.searchParam) replaceSearchParam(this.searchParam, this.value)
     emit(this, 'change', { value: this.value })
-  }
-  private handleKeydown = (event: KeyboardEvent) => {
-    const currentTab = event.composedPath().find(element => element instanceof Tab) as
-      | Tab
-      | undefined
-    if (!currentTab) return
-
-    const tabs = this.tabs
-    const currentIndex = tabs.indexOf(currentTab)
-    if (currentIndex < 0) return
-
-    let nextIndex: number | undefined
-    switch (event.key) {
-      case 'ArrowRight':
-        nextIndex = (currentIndex + 1) % tabs.length
-        break
-      case 'ArrowLeft':
-        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length
-        break
-      case 'Home':
-        nextIndex = 0
-        break
-      case 'End':
-        nextIndex = tabs.length - 1
-        break
-      case 'Enter':
-      case ' ':
-        event.preventDefault()
-        currentTab.select()
-        return
-      default:
-        return
-    }
-
-    event.preventDefault()
-    const nextTab = tabs[nextIndex]
-    nextTab.select()
-    nextTab.focus()
   }
 
   /** 선택값 기준으로 탭·패널의 active와 ARIA 관계를 맞추고 인디케이터를 정렬한다. */
@@ -166,6 +133,7 @@ export class TabList extends LitElement {
       if (!tabs.some(tab => tab.value === panel.value)) panel.removeAttribute('aria-labelledby')
     })
 
+    this.rovingFocus.refresh()
     this.indicatorPosition.update()
   }
 }

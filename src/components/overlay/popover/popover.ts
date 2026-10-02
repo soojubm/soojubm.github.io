@@ -67,6 +67,12 @@ export class Popover extends withOpenState(LitElement) {
   })
   private focusExitCheck = new ScheduleController(this, () => this.closeIfFocusLeft(), { delay: 0 })
 
+  constructor() {
+    super()
+    // 리스너 대상이 host 자신이라 연결이 바뀌어도 유지되므로 생성자에서 한 번만 등록한다.
+    this.addEventListener('keydown', this.handleKeydown)
+  }
+
   render() {
     return html`
       <div class="panel">
@@ -81,12 +87,6 @@ export class Popover extends withOpenState(LitElement) {
     super.connectedCallback()
     // 열릴 때 목록이 없는 내용은 표면 자체가 포커스를 받을 수 있게 하되, Tab 순서에는 넣지 않는다.
     if (!this.hasAttribute('tabindex')) this.tabIndex = -1
-    this.addEventListener('keydown', this.handleKeydown)
-  }
-
-  disconnectedCallback() {
-    this.removeEventListener('keydown', this.handleKeydown)
-    super.disconnectedCallback()
   }
 
   protected updated(changedProperties: Map<string, unknown>) {
