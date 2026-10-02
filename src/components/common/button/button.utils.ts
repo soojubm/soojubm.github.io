@@ -3,9 +3,9 @@ import { property } from 'lit/decorators.js'
 
 import type { ButtonSize, ButtonVariant } from '@/components/common/button/button'
 import type { ActionConfig } from '@/types'
+import type { Constructor } from '@/utils'
 
 import { ToggleController } from '@/controllers/toggle-controller'
-import { type Constructor, emit } from '@/utils'
 
 export interface TogglePressed {
   pressed: boolean
@@ -26,9 +26,7 @@ export const withTogglePressed = <T extends Constructor<LitElement>>(Base: T) =>
     private toggle: ToggleController<'pressed'> = new ToggleController(this, 'pressed')
 
     handleToggleClick() {
-      if (!this.toggle.toggle()) return
-
-      emit(this, 'change', { pressed: this.pressed, value: this.value })
+      this.toggle.toggle()
     }
   }
 

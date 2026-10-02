@@ -6,10 +6,10 @@ import type { AvatarShape, AvatarVariant } from '@/components/common/avatar/avat
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { ListItem, ListItemSize } from '@/components/common/list-item/list-item'
 import type { AriaTriState } from '@/types'
+import type { Constructor } from '@/utils'
 
 import '@/components/common/list-item/list-item'
 import { ToggleController } from '@/controllers/toggle-controller'
-import { type Constructor, emit } from '@/utils'
 
 /**
  * menu-item 계열이 공유하는 표시 prop의 공개 인터페이스.
@@ -114,9 +114,7 @@ export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base:
     @property({ type: String }) value = ''
     private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
     activate = () => {
-      if (!this.toggle.set(!this.checked)) return
-
-      emit(this, 'change', { checked: this.checked, value: this.value })
+      this.toggle.toggle()
     }
   }
 

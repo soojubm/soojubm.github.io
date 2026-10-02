@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAll } from 'lit/decorators.js'
 
+import type { SelectionStore } from '@/controllers/selection-store'
 import type { OptionItem } from '@/types'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
@@ -36,7 +37,7 @@ export class FilterButtonGroup extends LitElement {
   @property({ attribute: false }) options: FilterOption[] = []
   @property({ type: String }) orientation: Orientation = 'horizontal'
   @queryAll('button') private buttons!: NodeListOf<HTMLButtonElement>
-  // single/multiple 모드가 런타임에 바뀔 수 있어 두 컨트롤러를 모두 들고 mode로 분기한다.
+  // single/multiple 모드가 런타임에 바뀔 수 있어 두 컨트롤러를 모두 들고 selection에서 mode로 고른다.
   private singleSelection = new SingleSelectionController({
     getValue: () => this.values[0] ?? '',
     setValue: value => {
@@ -54,7 +55,7 @@ export class FilterButtonGroup extends LitElement {
   private rovingFocus = new RovingFocusController(this, {
     getItems: () => Array.from(this.buttons),
     orientation: () => this.orientation,
-    getActiveIndex: () => this.options.findIndex(option => this.isOptionSelected(option)),
+    getActiveIndex: () => this.options.findIndex(option => this.selection.isOptionSelected(option)),
   })
 
   connectedCallback() {
@@ -68,19 +69,14 @@ export class FilterButtonGroup extends LitElement {
     `
   }
 
-  private isOptionSelected(option: FilterOption) {
-    return this.mode === 'multiple'
-      ? this.multipleSelection.isOptionSelected(option)
-      : this.singleSelection.isOptionSelected(option)
-  }
+  private get selection(): SelectionStore {
+    if (this.mode === 'multiple') return this.multipleSelection
 
-  private select(option: FilterOption) {
-    if (this.mode === 'multiple') this.multipleSelection.select(option)
-    else this.singleSelection.select(option)
+    return this.singleSelection
   }
 
   private renderOption(option: FilterOption) {
-    const selected = this.isOptionSelected(option)
+    const selected = this.selection.isOptionSelected(option)
     const iconName = option.icon ?? (selected ? ICON_NAMES.CHECK : undefined)
 
     return html`
@@ -106,7 +102,7 @@ export class FilterButtonGroup extends LitElement {
   private handleOptionClick(option: FilterOption) {
     if (option.disabled) return
 
-    this.select(option)
+    this.selection.select(option)
     emit(this, 'change', { values: this.values })
   }
 }

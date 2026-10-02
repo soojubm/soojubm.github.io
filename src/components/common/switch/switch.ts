@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { switchStyles } from '@/components/common/switch/switch.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit, uniqueId } from '@/utils'
+import { uniqueId } from '@/utils'
 
 @customElement('mm-switch')
 export class Switch extends LitElement {
@@ -35,8 +35,6 @@ export class Switch extends LitElement {
 
   private handleInputChange(event: Event) {
     const target = event.target as HTMLInputElement
-    if (!this.toggle.set(target.checked)) return
-
-    emit(this, 'change', { checked: this.checked })
+    this.toggle.set(target.checked)
   }
 }

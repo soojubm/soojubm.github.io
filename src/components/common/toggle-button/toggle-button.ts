@@ -10,7 +10,6 @@ import {
 } from '@/components/common/button/button.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 
 @customElement('mm-toggle-button')
@@ -56,8 +55,6 @@ export class ToggleButton extends LitElement {
 
   private handleClick(event: Event) {
     event.stopPropagation()
-    if (!this.toggle.toggle()) return
-
-    emit(this, 'change', { pressed: this.pressed, value: this.value })
+    this.toggle.toggle()
   }
 }

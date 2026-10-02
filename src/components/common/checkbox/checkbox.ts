@@ -6,7 +6,7 @@ import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles, type ComponentSize } from '@/stylesheets/shared.styles'
-import { emit, uniqueId } from '@/utils'
+import { uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 export type CheckboxSize = Extract<ComponentSize, 'medium' | 'large'>
@@ -57,20 +57,11 @@ export class Checkbox extends LitElement {
     `
   }
 
-  private commitChecked(checked: boolean) {
-    if (!this.toggle.set(checked)) return
-
-    this.indeterminate = false
-
-    emit(this, 'change', {
-      checked: this.checked,
-      value: this.value || '', // 부모 컴포넌트와의 타입 동기화를 위해 항상 string을 보장합니다.
-    })
-  }
-
   private handleCheckboxChange = (event: Event) => {
     const target = event.target as HTMLInputElement
 
-    this.commitChecked(target.checked)
+    // 네이티브 체크박스처럼 누르면 indeterminate가 먼저 풀린 뒤 change가 나간다.
+    this.indeterminate = false
+    this.toggle.set(target.checked)
   }
 }

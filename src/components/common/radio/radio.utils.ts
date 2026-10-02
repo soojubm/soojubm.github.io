@@ -3,8 +3,6 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { ToggleController } from '@/controllers/toggle-controller'
 
-import { emit } from '@/utils'
-
 interface RadioInputHost extends HTMLElement {
   name: string
   value: string
@@ -26,9 +24,7 @@ export function renderRadioInput(
     event.stopPropagation() // 네이티브 이벤트 전파 차단
 
     const target = event.target as HTMLInputElement
-    if (!toggle.set(target.checked)) return
-
-    emit(host, 'change', { checked: host.checked, value: host.value })
+    toggle.set(target.checked)
   }
 
   return html`

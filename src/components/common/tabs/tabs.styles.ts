@@ -66,12 +66,8 @@ export const tabsStyles = css`
     }
   }
 
-  /* ==========================================================
-     3) Text 형태 (제목 크기 굵은 글자 + 상단 점 인디케이터)
-     ========================================================== */
   :host([variant='text']) {
     gap: var(--space-4);
-    padding-top: var(--space-2);
 
     & .indicator {
       display: flex;
@@ -86,7 +82,7 @@ export const tabsStyles = css`
   :host([variant='text']) ::slotted(mm-tab) {
     --tab-height: var(--size-48);
     --tab-padding-inline: 0;
-    --tab-text-size: var(--font-size-32);
+    --tab-text-size: var(--font-size-24);
 
     font-weight: var(--font-weight-bold);
   }
