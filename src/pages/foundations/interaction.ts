@@ -710,7 +710,8 @@ const main = html`
                     Tab으로 들어오면 선택된 항목에 포커스가 놓이고, 끝 항목에서는 멈춘다.
                     ${code('mm-toggle-button-group')} · ${code('mm-filter-button-group')} ·
                     ${code('mm-menu-item-group')} · ${code('mm-select')}의 옵션 목록이
-                    ${code('RovingFocusController')}로 같은 방식을 쓴다
+                    ${code('RovingFocusController')}로 같은 방식을 쓴다. ${code('mm-tab-list')}도 이
+                    컨트롤러를 쓰지만 끝에서 반대편 끝으로 이어진다
                   `,
                 ),
                 rule(
@@ -723,7 +724,9 @@ const main = html`
                 rule(
                   'radio 목록은 포커스를 옮기면 곧 선택된다',
                   html`
-                    ${code('mm-menu-item-radio-group')}과 네이티브 radio는 이동이 선택이다
+                    ${code('mm-menu-item-radio-group')}과 네이티브 radio는 이동이 선택이다.
+                    ${code('mm-tab-list')}도 이동이 선택이라 Enter·Space 없이 방향키만으로 탭이
+                    바뀐다
                   `,
                 ),
                 rule(
