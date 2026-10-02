@@ -829,8 +829,9 @@ const main = html`
               viewport 기준 modal 표면(${code('mm-sheet')}·${code('mm-dialog')})이 공통으로 쓰는
               컨트롤러입니다. 트리거 연결, portal 이동, 스크롤 잠금, 배경 클릭·ESC로 닫기를 한곳에서
               맡으므로 표면은 닫는 조건만 ${code('dismissOn')}으로 밝힙니다. 열린 동안에는 portal
-              컨테이너 바깥의 ${code('body')} 자식을 ${code('inert')}로 만들어 포커스를 표면 안에
-              가두고, 닫히면 풀어 연 요소로 되돌립니다.
+              컨테이너 바깥의 ${code('body')} 자식과 먼저 열려 있는 아래쪽 모달 표면을
+              ${code('inert')}로 만들어 포커스를 표면 안에 가두고, 닫히면 풀어 연 요소로 되돌립니다.
+              모달이 겹쳐 열려도 닫히는 순서와 무관하게 마지막 표면이 닫힐 때 풀립니다.
             </mm-paragraph>
           </mm-content-section>
 

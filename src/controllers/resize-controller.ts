@@ -17,12 +17,14 @@ interface ResizeOptions {
 export class ResizeController implements ReactiveController {
   private observer?: ResizeObserver
   private observed = new Set<Element>()
+  private connected = false
 
   constructor(host: ReactiveControllerHost, private options: ResizeOptions) {
     host.addController(this)
   }
 
   hostConnected() {
+    this.connected = true
     this.refresh()
   }
 
@@ -31,13 +33,16 @@ export class ResizeController implements ReactiveController {
   }
 
   hostDisconnected() {
+    this.connected = false
     this.observer?.disconnect()
     this.observer = undefined
     this.observed.clear()
   }
 
-  /** 관찰 대상을 getTargets 기준으로 다시 맞춘다. */
+  /** 관찰 대상을 getTargets 기준으로 다시 맞춘다. 연결이 끊긴 동안에는 관찰을 되살리지 않는다. */
   refresh() {
+    if (!this.connected) return
+
     const observer = (this.observer ??= new ResizeObserver(() => this.options.onResize()))
     const targets = new Set(
       this.options.getTargets().filter((target): target is Element => target != null),
