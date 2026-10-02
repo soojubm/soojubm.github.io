@@ -83,30 +83,16 @@ export class CheckboxGroup extends LitElement {
   }
 
   get checked() {
-    const selectable = this.selectableOptions
-    return (
-      selectable.length > 0 && selectable.every(option => this.selection.isOptionSelected(option))
-    )
+    return this.selection.isAllSelected()
   }
 
   get indeterminate() {
-    const selectable = this.selectableOptions
-    const checkedCount = selectable.filter(option => this.selection.isOptionSelected(option)).length
-
-    return checkedCount > 0 && checkedCount < selectable.length
+    return this.selection.isPartiallySelected()
   }
 
   toggleAll() {
-    const checked = !this.checked
-    const selectableValues = this.selectableOptions.map(option => option.value)
-    const otherValues = this.values.filter(value => !selectableValues.includes(value))
-
-    this.values = checked ? [...otherValues, ...selectableValues] : otherValues
+    this.selection.setAllSelected(!this.checked)
     this.dispatchValueChange()
-  }
-
-  private get selectableOptions() {
-    return this.options.filter(option => !option.disabled)
   }
 
   private handleOptionChange(option: OptionItem) {
