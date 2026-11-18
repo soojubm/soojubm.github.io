@@ -8,7 +8,7 @@ import {
   iconButtonStyles,
   iconButtonVariantSkin,
 } from '@/components/common/icon-button/icon-button.styles'
-import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
@@ -30,7 +30,7 @@ export class HamburgerButton extends LitElement {
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
   render() {
-    return renderIconAction({
+    return renderIconButton({
       icon: ICON_NAMES.MENU,
       ariaLabel: this.ariaLabel,
       ariaExpanded: this.ariaExpanded,

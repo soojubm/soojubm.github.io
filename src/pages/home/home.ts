@@ -420,7 +420,7 @@ const main = html`
           <mm-text-list
             .texts=${[
               'mm-current-indicator는 mm-dot을 렌더링한다.',
-              'mm-dismiss-button은 iconButtonStyles와 renderIconAction을 조합한다.',
+              'mm-dismiss-button은 iconButtonStyles와 renderIconButton을 조합한다.',
             ]}
           ></mm-text-list>
           <mm-content-section heading-level="2" heading="Shared Style Modules">

@@ -9,7 +9,7 @@ import {
   iconButtonSecondarySkinStyles,
   iconButtonStyles,
 } from '@/components/common/icon-button/icon-button.styles'
-import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
@@ -27,7 +27,7 @@ export class MoreButton extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   render() {
-    return renderIconAction({
+    return renderIconButton({
       icon: ICON_NAMES.MORE_ACTIONS,
       ariaLabel: this.ariaLabel,
       tooltipPlacement: this.tooltipPlacement,

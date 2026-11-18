@@ -5,7 +5,7 @@ import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
-import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
@@ -29,7 +29,7 @@ export class ClearButton extends LitElement {
   @property({ type: Boolean }) disabled = false
 
   render() {
-    return renderIconAction({
+    return renderIconButton({
       icon: ICON_NAMES.CLOSE,
       ariaLabel: this.ariaLabel,
       tooltipPlacement: this.tooltipPlacement,

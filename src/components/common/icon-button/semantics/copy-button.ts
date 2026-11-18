@@ -8,7 +8,7 @@ import {
   iconButtonStyles,
   iconButtonVariantSkin,
 } from '@/components/common/icon-button/icon-button.styles'
-import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { ScheduleController } from '@/controllers/schedule-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
@@ -53,7 +53,7 @@ export class CopyButton extends LitElement {
   }
 
   render() {
-    return renderIconAction({
+    return renderIconButton({
       icon: this.copied ? ICON_NAMES.COPY_SUCCESS : ICON_NAMES.COPY,
       ariaLabel: this.copied ? '복사됨' : '복사',
       tooltipPlacement: this.tooltipPlacement,

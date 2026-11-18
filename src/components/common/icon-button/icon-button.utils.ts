@@ -42,7 +42,7 @@ export const withIconAction = <T extends Constructor<LitElement>>(Base: T, event
   return IconActionElement as Constructor<IconAction> & T
 }
 
-export interface IconActionRenderOptions {
+export interface IconButtonRenderOptions {
   icon?: IconName
   ariaLabel: string
   tooltipPlacement?: TooltipPlacement
@@ -57,7 +57,7 @@ export interface IconActionRenderOptions {
  * icon-button 계열(아이콘 하나로 동작을 알리는 시맨틱 버튼)이 공유하는 button+아이콘 조립 템플릿.
  * 아이콘만으로는 의미를 알 수 없으므로 aria-label은 필수이고, 같은 이름을 tooltip으로 항상 보여준다.
  */
-export const renderIconAction = ({
+export const renderIconButton = ({
   icon,
   ariaLabel,
   tooltipPlacement = 'bottom-start',
@@ -66,7 +66,7 @@ export const renderIconAction = ({
   ariaHasPopup,
   ariaExpanded,
   ariaControls,
-}: IconActionRenderOptions): TemplateResult => html`
+}: IconButtonRenderOptions): TemplateResult => html`
   <mm-tooltip content=${ariaLabel} placement=${tooltipPlacement}>
     <button
       slot="trigger"
@@ -101,7 +101,7 @@ export const iconActionElement = ({ event, icon, ariaLabel }: IconActionDefiniti
     static styles: CSSResultGroup = [resetStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
 
     render() {
-      return renderIconAction({
+      return renderIconButton({
         icon,
         ariaLabel,
         tooltipPlacement: this.tooltipPlacement,

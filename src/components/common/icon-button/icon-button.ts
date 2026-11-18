@@ -6,7 +6,7 @@ import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
-import { renderIconAction } from '@/components/common/icon-button/icon-button.utils'
+import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles, type ComponentSize, type ComponentVariant } from '@/stylesheets/shared.styles'
 
 export type IconButtonVariant = ComponentVariant
@@ -27,7 +27,7 @@ export class IconButton extends LitElement {
   @property({ type: String, attribute: 'aria-controls' }) ariaControls: AriaIdRef = null
 
   render() {
-    return renderIconAction({
+    return renderIconButton({
       icon: this.icon,
       ariaLabel: this.ariaLabel,
       tooltipPlacement: this.tooltipPlacement,
