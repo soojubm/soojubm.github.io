@@ -43,6 +43,21 @@ const pagerCode = `<mm-pager
   .next=\${{ href: 'button.html', heading: 'Button', description: '다음 문서' }}
 ></mm-pager>`
 
+const linkPromptCode = `<mm-link-prompt
+  icon="message"
+  message="궁금증이 해결되지 않는다면?"
+  link-label="지금 문의하기"
+  href="#"
+></mm-link-prompt>`
+
+const readMoreParagraphCode = `<mm-read-more-paragraph
+  max-length="120"
+  content="긴 문단의 전체 내용"
+></mm-read-more-paragraph>
+<mm-keyword-tag-group .keywords=\${keywords}></mm-keyword-tag-group>`
+
+const exampleCode = `<mm-link href="#" external>고래잡이</mm-link>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -53,35 +68,9 @@ const main = html`
     <mm-component-aka .items=${['Anchor']}></mm-component-aka>
 
     <mm-component-example>
-      <mm-flex direction="column" gap="3">
-        <mm-read-more-paragraph
-          max-length="120"
-          content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!"
-        ></mm-read-more-paragraph>
-        <mm-keyword-tag-group
-          .keywords=${['이것은헤시태그', '해시태그는클릭할수있다?', '해시태그를통한검색']}
-        ></mm-keyword-tag-group>
-      </mm-flex>
-      <mm-separator></mm-separator>
       <mm-link href="#" external="true">고래잡이</mm-link>
-      <mm-separator></mm-separator>
-      <section>
-        <mm-flex direction="column" gap="2">
-          <mm-link-prompt
-            icon=${ICON_NAMES.COMMENT}
-            message="궁금증이 해결되지 않는다면?"
-            link-label="지금 문의하기"
-            href="#"
-          ></mm-link-prompt>
-          <mm-link-prompt
-            icon=${ICON_NAMES.COMMENT}
-            message="Something's not right?"
-            link-label="Get in touch with us."
-            href="#"
-          ></mm-link-prompt>
-        </mm-flex>
-      </section>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -102,11 +91,47 @@ const main = html`
         '레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.',
         '외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external).',
       ]}
-      .code=${'<mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>'}
       .markers=${[{ placement: 'block-start', offset: '2.5rem' }, { placement: 'inline-end' }]}
     >
       <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
     </mm-component-anatomy>
+
+    <mm-component-section
+      heading="Read More Paragraph"
+      description="긴 문단을 지정한 글자 수에서 줄이고 더 보기와 접기 버튼으로 전체 내용을 전환합니다. 이어서 문단과 관련된 키워드를 태그로 모아 보여줍니다."
+      .code=${readMoreParagraphCode}
+    >
+      <mm-flex direction="column" gap="3">
+        <mm-read-more-paragraph
+          max-length="120"
+          content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!"
+        ></mm-read-more-paragraph>
+        <mm-keyword-tag-group
+          .keywords=${['이것은헤시태그', '해시태그는클릭할수있다?', '해시태그를통한검색']}
+        ></mm-keyword-tag-group>
+      </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="Link Prompt"
+      description="안내 문구 뒤에 링크를 이어 붙여 도움이나 다음 행동으로 안내합니다. 문구가 상황을 먼저 말하고 링크가 행동을 제안하므로, 사용자는 막혔을 때 어디로 가야 하는지 바로 알 수 있습니다."
+      .code=${linkPromptCode}
+    >
+      <mm-flex direction="column" gap="2">
+        <mm-link-prompt
+          icon=${ICON_NAMES.COMMENT}
+          message="궁금증이 해결되지 않는다면?"
+          link-label="지금 문의하기"
+          href="#"
+        ></mm-link-prompt>
+        <mm-link-prompt
+          icon=${ICON_NAMES.COMMENT}
+          message="Something's not right?"
+          link-label="Get in touch with us."
+          href="#"
+        ></mm-link-prompt>
+      </mm-flex>
+    </mm-component-section>
 
     <mm-component-section
       heading="Pager"

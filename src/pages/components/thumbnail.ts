@@ -44,6 +44,11 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const exampleCode = `<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="1:1"></mm-thumbnail>
+<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="4:3" href="/video/1025"></mm-thumbnail>
+<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>
+<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="full"></mm-thumbnail>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -76,6 +81,7 @@ const main = html`
         </mm-flex>
       </mm-grid>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -84,10 +90,6 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph>TODO 고해상도 디바이스를 위한 이미지 가이드.</mm-paragraph>
     </mm-component-guide>
-
-    <mm-component-anatomy
-      .code=${'<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>'}
-    ></mm-component-anatomy>
 
     <mm-component-section
       heading="Caption"

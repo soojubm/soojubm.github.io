@@ -59,6 +59,86 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const sizeCode = `<mm-list-item-group>
+  <mm-list-item
+    label="Small"
+    avatar-shape="circle"
+    avatar-src="/src/images/soojubm.png"
+  ></mm-list-item>
+  <mm-list-item
+    size="medium"
+    label="Medium"
+    description="Youtube Subscriber"
+    avatar-shape="circle"
+    avatar-src="/src/images/soojubm.png"
+  ></mm-list-item>
+  <mm-list-item
+    size="large"
+    label="Large"
+    description="Youtube Subscriber"
+    avatar-shape="circle"
+    avatar-src="/src/images/soojubm.png"
+  ></mm-list-item>
+</mm-list-item-group>`
+
+const leadingCode = `<mm-list-item-group>
+  <mm-list-item icon="user" label="아이콘"></mm-list-item>
+  <mm-list-item emoji="🦔" label="이모지"></mm-list-item>
+  <mm-list-item
+    avatar-src="/src/images/soojubm.png"
+    avatar-shape="circle"
+    label="아바타"
+  ></mm-list-item>
+</mm-list-item-group>
+<mm-list-item-group>
+  <mm-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
+    <mm-button slot="trailing">변경</mm-button>
+  </mm-list-item>
+  <mm-list-item size="medium" label="관심분야" description="문화/예술, 인권, 경제">
+    <mm-tag slot="trailing">3개</mm-tag>
+  </mm-list-item>
+</mm-list-item-group>`
+
+const trailingCode = `<mm-list-item-group>
+  <mm-list-item
+    size="medium"
+    label="수줍이"
+    description="UI Designer"
+    avatar-shape="circle"
+    avatar-src="/src/images/soojubm.png"
+  >
+    <mm-follow-button slot="trailing"></mm-follow-button>
+  </mm-list-item>
+  <mm-list-item icon="bell" label="알림">
+    <mm-tag slot="trailing">신규</mm-tag>
+  </mm-list-item>
+</mm-list-item-group>`
+
+const multilineCode = `<mm-list-item-group>
+  <mm-list-item
+    icon="bell"
+    label="small 행의 라벨이 영역보다 길어져서 두 줄 이상으로 넘어가는 경우"
+  >
+    <mm-tag slot="trailing">신규</mm-tag>
+  </mm-list-item>
+  <mm-list-item
+    size="medium"
+    label="medium 행의 라벨이 영역보다 길어져서 두 줄로 넘어가는 경우"
+    description="설명도 영역을 넘치면 줄바꿈되어 행의 높이가 내용만큼 늘어납니다."
+    avatar-shape="circle"
+    avatar-src="/src/images/soojubm.png"
+  >
+    <mm-button slot="trailing">변경</mm-button>
+  </mm-list-item>
+  <mm-list-item
+    size="large"
+    label="large 행의 긴 라벨이 두 줄로 넘어가는 경우"
+    description="설명이 길어 여러 줄이 되면 leading과 trailing은 content 높이의 가운데에 정렬됩니다."
+    avatar-shape="circle"
+    avatar-src="/src/images/soojubm.png"
+  ></mm-list-item>
+</mm-list-item-group>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -112,6 +192,7 @@ const main = html`
             </mm-paragraph-group>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="leading">
         <mm-component-example>
@@ -143,6 +224,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${leadingCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="trailing">
         <mm-component-example>
@@ -166,6 +248,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${trailingCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="multiline">
         <mm-component-example width="narrow">
@@ -202,6 +285,7 @@ const main = html`
             </mm-component-notice>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${multilineCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -292,9 +376,6 @@ const main = html`
         'content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.',
         'trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
       ]}
-      .code=${`<mm-list-item label="수줍이" description="바보" size="medium" avatar-shape="circle" avatar-src="...">
-    <mm-follow-button slot="trailing"></mm-follow-button>
-</mm-list-item>`}
       .markers=${[
         { placement: 'block-end', offset: '1.5rem' },
         { placement: 'block-end', offset: '9.41rem' },

@@ -31,6 +31,29 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const variantCode = `<mm-notice variant="info" description="새 기능이 추가되었습니다."></mm-notice>
+<mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
+<mm-notice
+  variant="warning"
+  description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
+></mm-notice>
+<mm-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></mm-notice>`
+
+const headingCode = `<mm-notice
+  variant="info"
+  heading="헤딩"
+  description="배너. 히어로와 콜아웃의 차이."
+></mm-notice>`
+
+const actionCode = `<mm-notice
+  variant="warning"
+  heading="구독이 곧 만료됩니다."
+  description="결제 수단을 확인해 주세요."
+  .primaryAction=\${primaryAction}
+  .secondaryAction=\${secondaryAction}
+  @dismiss=\${handleDismiss}
+></mm-notice>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -65,6 +88,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="heading">
         <mm-component-example>
@@ -79,6 +103,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${headingCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="action">
         <mm-component-example>
@@ -104,6 +129,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${actionCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -119,16 +145,6 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-anatomy
-      .code=${`<mm-notice
-    variant="warning"
-    heading="구독이 곧 만료됩니다."
-    description="결제 수단을 확인해 주세요."
-    .primaryAction=\${{ label: '갱신하기', onClick: handleRenew }}
-    .secondaryAction=\${{ label: '나중에', onClick: handleLater }}
-    @dismiss=\${handleDismiss}
-></mm-notice>`}
-    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

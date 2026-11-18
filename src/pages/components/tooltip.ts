@@ -52,6 +52,36 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const defaultCode = `<mm-tooltip
+  content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다."
+>
+  <mm-icon
+    slot="trigger"
+    name="help-circle"
+    role="img"
+    aria-label="해임건의 요건 도움말"
+    tabindex="0"
+  ></mm-icon>
+</mm-tooltip>`
+
+const placementCode = `<mm-button-group>
+  <mm-icon-button
+    icon="user"
+    aria-label="좌측 정렬"
+    tooltip-placement="bottom-start"
+  ></mm-icon-button>
+  <mm-icon-button
+    icon="user"
+    aria-label="가운데 정렬"
+    tooltip-placement="bottom"
+  ></mm-icon-button>
+  <mm-icon-button
+    icon="user"
+    aria-label="우측 정렬"
+    tooltip-placement="bottom-end"
+  ></mm-icon-button>
+</mm-button-group>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -80,6 +110,7 @@ const main = html`
             ></mm-icon>
           </mm-tooltip>
         </mm-component-example>
+        <mm-component-code .code=${defaultCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="placement">
         <mm-component-example>
@@ -101,6 +132,7 @@ const main = html`
             ></mm-icon-button>
           </mm-button-group>
         </mm-component-example>
+        <mm-component-code .code=${placementCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -129,12 +161,6 @@ const main = html`
         ></mm-text-block>
       </mm-content-section>
     </mm-component-guide>
-
-    <mm-component-anatomy
-      .code=${`<mm-tooltip content="해임건의 요건">
-    <mm-icon slot="trigger" name="help-circle" role="img" aria-label="도움말" tabindex="0"></mm-icon>
-</mm-tooltip>`}
-    ></mm-component-anatomy>
 
     <mm-component-section
       heading="GuideTip"

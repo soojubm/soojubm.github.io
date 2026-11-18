@@ -19,18 +19,14 @@ export interface AnatomyMarkerData {
 
 /**
  * 컴포넌트 해부도(Anatomy) 섹션.
- * 슬롯에 시연 대상을 넣고, code에 조립 마크업을 넘기면 제목 바로 아래에 코드 블록으로 보여줍니다.
+ * 슬롯에 시연 대상을 넣어 보여줍니다.
  * parts 배열을 넘기면 번호 매긴 구성요소 범례를 덧붙이고, markers에 같은 순서로 위치를 넘기면
  * 무대 위에 그 번호를 찍습니다. 번호는 배열 순서에서 나오므로 범례와 어긋날 수 없습니다.
- * 나눌 구성요소가 없는 단일 요소 컴포넌트는 parts 없이 시연과 코드만 전시합니다.
- *
- * code의 바인딩 표현식 안에 `/`나 `>`가 들어가면 하이라이터가 여는 태그를 못 읽고 색을 잃으므로,
- * 데이터와 핸들러는 값을 펼치지 말고 이름으로 참조합니다.
+ * 나눌 구성요소가 없는 단일 요소 컴포넌트는 parts 없이 시연만 전시합니다.
  *
  * <mm-component-anatomy
  *   .parts=${["컨테이너", "옵션 버튼", "선택 인디케이터"]}
  *   .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', offset: '25%' }]}
- *   .code=${'<mm-select> … </mm-select>'}
  * >
  *   < 시연 마크업 />
  * </mm-component-anatomy>
@@ -116,13 +112,11 @@ export class ComponentAnatomy extends LitElement {
   @property({ type: String }) heading = 'Anatomy'
   @property({ attribute: false }) parts: string[] = []
   @property({ attribute: false }) markers: AnatomyMarkerData[] = []
-  @property({ type: String }) code = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   render() {
     return html`
       <mm-heading level="2">${this.heading}</mm-heading>
-      ${this.renderCode()}
       <div class="component-content-frame">
         <div class="measure">
           <div class="stage">
@@ -154,18 +148,6 @@ export class ComponentAnatomy extends LitElement {
 
     return html`
       <mm-text-list variant="number" .texts=${this.parts}></mm-text-list>
-    `
-  }
-
-  private renderCode() {
-    if (!this.code) return nothing
-
-    return html`
-      <div class="component-content-frame">
-        <div class="measure">
-          <mm-code-block variant="plain" .code=${this.code} .copyable=${false}></mm-code-block>
-        </div>
-      </div>
     `
   }
 }

@@ -117,15 +117,6 @@ function sheetPageTemplate() {
           { placement: 'inline-start', offset: '3.75rem' },
           { placement: 'inline-start', offset: 'calc(100% - 1.5rem)' },
         ]}
-        .code=${`<mm-button aria-controls="filter-sheet" aria-haspopup="dialog">필터</mm-button>
-
-<mm-sheet id="filter-sheet" placement="bottom" height="360px">
-    <mm-sheet-header heading="필터"></mm-sheet-header>
-    <mm-sheet-body>
-        <mm-paragraph>넘치는 콘텐츠는 body 안에서 스크롤됩니다.</mm-paragraph>
-    </mm-sheet-body>
-    <mm-sheet-footer .primaryAction=\${primaryAction}></mm-sheet-footer>
-</mm-sheet>`}
         style="--component-anatomy-stage-width: var(--layout-width-narrow)"
       >
         ${sheetAnatomyTemplate()}

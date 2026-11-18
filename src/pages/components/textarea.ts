@@ -42,6 +42,24 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const defaultCode = `<mm-textarea placeholder="자유롭게 적어주세요"></mm-textarea>`
+
+const labelCode = `<mm-textarea-field
+  label="자기소개"
+  description="200자 이내로 입력하세요."
+  placeholder="자유롭게 적어주세요"
+></mm-textarea-field>`
+
+const optionalCode = `<mm-textarea-field
+  label="요청 사항"
+  placeholder="직접 입력"
+  optional
+></mm-textarea-field>`
+
+const stateCode = `<mm-textarea placeholder="Placeholder"></mm-textarea>
+<mm-textarea placeholder="Disabled" disabled></mm-textarea>
+<mm-textarea value="Invalid" aria-invalid="true"></mm-textarea>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -67,6 +85,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${defaultCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="label">
         <mm-component-example>
@@ -83,6 +102,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${labelCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="optional">
         <mm-component-example>
@@ -98,6 +118,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${optionalCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
@@ -110,6 +131,7 @@ const main = html`
             <mm-paragraph>aria-invalid로 오류 상태를 표시합니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${stateCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -118,15 +140,6 @@ const main = html`
     <mm-component-tokens .elements=${['mm-textarea']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
-
-    <mm-component-anatomy
-      .code=${`<mm-textarea-field
-    label="자기소개"
-    placeholder="Textarea placeholder..."
-    description="레이블과 헬퍼 텍스트를 가질 수 있다."
-    rows="2"
-></mm-textarea-field>`}
-    ></mm-component-anatomy>
 
     <mm-component-section heading="Comment Input" description="댓글 작성 입력 패턴">
       <mm-comment-input

@@ -28,6 +28,8 @@ const navItems: BottomBarItem[] = [
   { label: '설정', href: '#', icon: 'settings' },
 ]
 
+const exampleCode = `<mm-bottom-bar .items=\${navItems}></mm-bottom-bar>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -38,6 +40,7 @@ const main = html`
     <mm-component-example>
       <mm-bottom-bar .items=${navItems}></mm-bottom-bar>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -49,15 +52,6 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-anatomy
-      .code=${`<mm-bottom-bar
-    .items=\${[
-        { label: '홈', href: '#', icon: 'home-simple-door', active: true },
-        { label: '검색', href: '#', icon: 'search' },
-        { label: '설정', href: '#', icon: 'settings' },
-    ]}
-></mm-bottom-bar>`}
-    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

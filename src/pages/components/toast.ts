@@ -39,6 +39,9 @@ function setupToastTrigger() {
   trigger.addEventListener('click', () => toast.show())
 }
 
+const exampleCode = `<mm-button data-open-toast>토스트 띄우기</mm-button>
+<mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -52,6 +55,7 @@ const main = html`
       <mm-button data-open-toast>토스트 띄우기</mm-button>
       <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -78,10 +82,6 @@ const main = html`
         </mm-paragraph>
       </mm-paragraph-group>
     </mm-component-guide>
-
-    <mm-component-anatomy
-      .code=${'<mm-toast open>저장되었습니다.</mm-toast>'}
-    ></mm-component-anatomy>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 

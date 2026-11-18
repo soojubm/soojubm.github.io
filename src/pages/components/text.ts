@@ -38,6 +38,23 @@ const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-text')]
 
 const componentFeatures: ComponentFeatureItem[] = []
 
+const sizeCode = `<mm-text size="32">font size 32px</mm-text>
+<mm-text size="24">font size 24px</mm-text>
+<mm-text size="18">font size 18px</mm-text>
+<mm-text size="14">font size 14px</mm-text>
+<mm-text size="12">font size 12px</mm-text>`
+
+const weightCode = `<mm-text weight="medium">font weight medium</mm-text>
+<mm-text weight="bold">font weight bold</mm-text>`
+
+const colorCode = `<mm-text color="inherit">color inherit</mm-text>
+<mm-text color="light">color light</mm-text>
+<mm-text color="danger">color danger</mm-text>`
+
+const maxLinesCode = `<mm-text as="p" max-lines="1">한 줄에서 말줄임되는 텍스트입니다.</mm-text>
+<mm-text as="p" max-lines="2">두 줄까지 노출되는 텍스트입니다.</mm-text>
+<mm-text as="p" max-lines="3">세 줄까지 노출되는 텍스트입니다.</mm-text>`
+
 const headingCode = `<mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
 <mm-heading level="2">섹션 레벨의 타이틀</mm-heading>`
 
@@ -93,6 +110,7 @@ const main = html`
             <mm-text size="12">font size 12px</mm-text>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="weight">
         <mm-component-example>
@@ -101,6 +119,7 @@ const main = html`
             <mm-text weight="bold">font weight bold</mm-text>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${weightCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="color">
         <mm-component-example>
@@ -110,6 +129,7 @@ const main = html`
             <mm-text color="danger">color danger</mm-text>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${colorCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="max-lines">
         <mm-component-example>
@@ -132,6 +152,7 @@ const main = html`
             </mm-text>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${maxLinesCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -148,10 +169,6 @@ const main = html`
         ]}
       ></mm-text-list>
     </mm-component-guide>
-
-    <mm-component-anatomy
-      .code=${'<mm-text size="24" weight="bold">Text</mm-text>'}
-    ></mm-component-anatomy>
 
     <mm-component-section
       heading="Headings"

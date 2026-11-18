@@ -21,10 +21,27 @@ const componentProps: ComponentPropItemData[] = [
 
 const componentFeatures: ComponentFeatureItem[] = []
 
-const stepCode = `<mm-step>
+const horizontalCode = `<mm-step>
   <mm-step-item active aria-current="step" label="장바구니"></mm-step-item>
   <mm-step-item label="결제"></mm-step-item>
   <mm-step-item label="주문완료"></mm-step-item>
+</mm-step>`
+
+const verticalCode = `<mm-step orientation="vertical">
+  <mm-step-item active label="I'm an engineer"></mm-step-item>
+  <mm-step-item
+    active
+    aria-current="step"
+    label="I want to design from scratch"
+  ></mm-step-item>
+  <mm-step-item label="One last thing ㅡ how will you use your prototpe?">
+    <mm-caption>(You can pick more than one)</mm-caption>
+    <mm-button-group>
+      <mm-button>Share for feedback</mm-button>
+      <mm-button>Present live</mm-button>
+      <mm-button>Test with users</mm-button>
+    </mm-button-group>
+  </mm-step-item>
 </mm-step>`
 
 const main = html`
@@ -49,6 +66,7 @@ const main = html`
             <mm-step-item label="주문완료"></mm-step-item>
           </mm-step>
         </mm-component-example>
+        <mm-component-code .code=${horizontalCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="vertical">
         <mm-component-example full-width>
@@ -77,6 +95,7 @@ const main = html`
             </mm-step-item>
           </mm-step>
         </mm-component-example>
+        <mm-component-code .code=${verticalCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -190,8 +209,6 @@ const main = html`
         </mm-timeline-item>
       </mm-timeline>
     </mm-component-section>
-
-    <mm-component-anatomy .code=${stepCode}></mm-component-anatomy>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 

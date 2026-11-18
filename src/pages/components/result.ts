@@ -43,6 +43,19 @@ const secondaryAction: ActionConfig = {
   onClick: () => {},
 }
 
+const exampleCode = `<mm-result
+  avatar-icon="clipboard-check"
+  heading="주문을 확인해주세요."
+  description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
+  .primaryAction=\${primaryAction}
+  .secondaryAction=\${secondaryAction}
+>
+  <mm-meta-item-group direction="column" gap="2">
+    <mm-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></mm-meta-item>
+    <mm-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></mm-meta-item>
+  </mm-meta-item-group>
+</mm-result>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -66,6 +79,7 @@ const main = html`
         </mm-meta-item-group>
       </mm-result>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -86,16 +100,6 @@ const main = html`
       </mm-paragraph-group>
     </mm-component-guide>
 
-    <mm-component-anatomy
-      .code=${`<mm-result
-    avatar-icon="clipboard-check"
-    heading="주문을 확인해주세요."
-    description="주문 내역은 마이페이지에서 다시 볼 수 있습니다."
-    .primaryAction=\${primaryAction}
->
-    <mm-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></mm-meta-item>
-</mm-result>`}
-    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

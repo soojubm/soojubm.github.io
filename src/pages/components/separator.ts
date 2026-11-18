@@ -27,6 +27,9 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const exampleCode = `<mm-separator></mm-separator>
+<mm-separator>또는</mm-separator>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -49,6 +52,7 @@ const main = html`
         </div>
       </mm-grid>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -70,7 +74,6 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-anatomy .code=${'<mm-separator>또는</mm-separator>'}></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

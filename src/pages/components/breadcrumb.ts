@@ -25,6 +25,8 @@ const breadcrumbItems: BreadcrumbItem[] = [
   { label: '현재 페이지' },
 ]
 
+const exampleCode = `<mm-breadcrumb .items=\${breadcrumbItems}></mm-breadcrumb>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -35,6 +37,7 @@ const main = html`
     <mm-component-example>
       <mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -50,9 +53,6 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-anatomy
-      .code=${'<mm-breadcrumb .items=${breadcrumbItems}></mm-breadcrumb>'}
-    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

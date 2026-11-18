@@ -49,6 +49,12 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const exampleCode = `<mm-file-uploader
+  description="Only .jpg and .png files. 500kb max file size."
+  accept=".jpg,.png"
+  multiple
+></mm-file-uploader>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -63,6 +69,7 @@ const main = html`
         multiple
       ></mm-file-uploader>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -82,7 +89,6 @@ const main = html`
         '상태 텍스트 — 허용 조건(description)과 현재 선택 개수를 함께 전달합니다.',
         '첨부 목록 — 첨부한 파일을 유형·크기와 함께 보여주고 개별로 제거합니다.',
       ]}
-      .code=${'<mm-file-uploader label="사진 업로드" accept=".jpg,.png" multiple></mm-file-uploader>'}
     >
       <mm-file-uploader label="사진 업로드" accept=".jpg,.png" multiple></mm-file-uploader>
     </mm-component-anatomy>

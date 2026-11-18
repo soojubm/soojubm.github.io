@@ -1,4 +1,5 @@
 import '@/components/domains/component/component-example'
+import '@/components/domains/component/component-code'
 import '@/components/domains/component/component-anatomy'
 import '@/components/domains/component/component-props'
 import '@/components/domains/component/component-tokens'

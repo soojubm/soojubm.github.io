@@ -47,6 +47,35 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const sizeCode = `<mm-textfield placeholder="Default"></mm-textfield>
+<mm-textfield size="small" placeholder="Small"></mm-textfield>`
+
+const labelCode = `<mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
+<mm-textfield
+  label="이메일"
+  description="가입 후에는 변경할 수 없어요."
+  placeholder="name@example.com"
+></mm-textfield>`
+
+const iconCode = `<mm-textfield placeholder="name@example.com">
+  <mm-icon slot="leading" name="mail"></mm-icon>
+</mm-textfield>
+<mm-textfield type="date" placeholder="YYYY. MM. DD.">
+  <mm-icon slot="trailing" name="calendar"></mm-icon>
+</mm-textfield>`
+
+const optionalCode = `<mm-textfield label="받는 분" placeholder="이름"></mm-textfield>
+<mm-textfield label="배송 메시지" placeholder="직접 입력" optional></mm-textfield>`
+
+const stateCode = `<mm-textfield placeholder="Placeholder"></mm-textfield>
+<mm-textfield placeholder="Disabled" disabled></mm-textfield>
+<mm-textfield
+  value="Invalid"
+  placeholder="Placeholder..."
+  aria-invalid="true"
+  validation-text="이미 등록된 이메일입니다."
+></mm-textfield>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -76,6 +105,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="label">
         <mm-component-example>
@@ -91,6 +121,7 @@ const main = html`
             <mm-paragraph>label은 입력 항목의 이름이며, 화면에 보이게 둡니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${labelCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="icon">
         <mm-component-example>
@@ -110,6 +141,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${iconCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="optional">
         <mm-component-example>
@@ -124,6 +156,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${optionalCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
@@ -143,6 +176,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${stateCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -161,14 +195,6 @@ const main = html`
         '설명 텍스트 — 입력 필드 아래에서 입력 형식이나 보조 정보를 안내합니다(description).',
         '검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text).',
       ]}
-      .code=${`<mm-textfield
-    label="이메일"
-    placeholder="name@example.com"
-    description="가입 후에는 변경할 수 없어요."
-    validation-text="올바른 이메일 형식으로 입력하세요."
->
-    <mm-icon slot="leading" name="mail"></mm-icon>
-</mm-textfield>`}
       .markers=${[
         { placement: 'inline-start', offset: '0.75rem' },
         { placement: 'inline-start', offset: '2.5rem' },

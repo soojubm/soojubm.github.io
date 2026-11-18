@@ -51,6 +51,15 @@ const legendItems: ChartLegendItem[] = Object.values(CATEGORIES).map(({ label, t
   tone,
 }))
 
+const toneCode = `<mm-dot tone="blue"></mm-dot>
+<mm-dot tone="green"></mm-dot>
+<mm-dot tone="gray"></mm-dot>`
+
+const sizeCode = `<mm-dot tone="blue" size="16"></mm-dot>
+<mm-dot tone="blue" size="12"></mm-dot>
+<mm-dot tone="blue" size="8"></mm-dot>
+<mm-dot tone="blue" size="6"></mm-dot>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -77,6 +86,7 @@ const main = html`
             )}
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${toneCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="size">
         <mm-component-example>
@@ -91,6 +101,7 @@ const main = html`
             )}
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 

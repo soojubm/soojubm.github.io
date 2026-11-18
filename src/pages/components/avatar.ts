@@ -42,6 +42,29 @@ const userAvatarCode =
 
 const groupCode = '<mm-avatar-group .avatars=${avatars} label="수줍이 외 3명"></mm-avatar-group>'
 
+const variantCode = `<mm-avatar variant="primary" size="48" icon="profile-circle"></mm-avatar>
+<mm-avatar variant="secondary" size="48" icon="profile-circle"></mm-avatar>
+<mm-avatar variant="tertiary" size="48" icon="profile-circle"></mm-avatar>`
+
+const sizeCode = `<mm-avatar size="80" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+<mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+<mm-avatar size="40" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+<mm-avatar size="32" shape="circle" src="/src/images/soojubm.png"></mm-avatar>`
+
+const shapeCode = `<mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+<mm-avatar size="48" icon="github"></mm-avatar>`
+
+const fallbackCode = `<mm-avatar size="40">MM</mm-avatar>
+<mm-avatar size="40">
+  <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
+</mm-avatar>
+<mm-avatar size="40"></mm-avatar>`
+
+const ariaLabelCode = `<mm-avatar size="40" shape="circle" src="/src/images/soojubm.png" aria-label="수줍이"></mm-avatar>
+<mm-avatar size="40" shape="circle" aria-label="고슴이">
+  <span aria-hidden="true">🦔</span>
+</mm-avatar>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -65,6 +88,7 @@ const main = html`
             <mm-avatar variant="tertiary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="size">
         <mm-component-example>
@@ -78,6 +102,7 @@ const main = html`
             <mm-paragraph>48 이상에서는 아이콘과 이니셜도 한 단계 커집니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="shape">
         <mm-component-example>
@@ -91,6 +116,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${shapeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="fallback">
         <mm-component-example>
@@ -113,6 +139,7 @@ const main = html`
             </mm-paragraph-group>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${fallbackCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="aria-label">
         <mm-component-example>
@@ -150,6 +177,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${ariaLabelCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -164,7 +192,6 @@ const main = html`
         '컨테이너 — variant·size로 형태와 크기·배경을 정의합니다.',
         '콘텐츠 — 이미지 &gt; 이니셜 &gt; 기본 아이콘 순서로 폴백합니다.',
       ]}
-      .code=${'<mm-avatar variant="secondary" size="80"></mm-avatar>'}
       .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', inset: true }]}
     >
       <mm-avatar size="80" variant="secondary"></mm-avatar>

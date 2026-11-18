@@ -36,6 +36,13 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const exampleCode = `<mm-button aria-controls="dialog-confirm" aria-haspopup="dialog">Confirm</mm-button>
+<mm-dialog
+  id="dialog-confirm"
+  heading="페이지를 나가시겠어요?"
+  description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
+></mm-dialog>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -63,6 +70,7 @@ const main = html`
         description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
       ></mm-dialog>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -77,17 +85,6 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-anatomy
-      .code=${`<mm-button aria-controls="confirm-dialog" aria-haspopup="dialog">나가기</mm-button>
-
-<mm-dialog
-    id="confirm-dialog"
-    heading="페이지를 나가시겠어요?"
-    description="저장되지 않은 변경 사항이 있습니다."
-    .primaryAction=\${primaryAction}
-    .secondaryAction=\${secondaryAction}
-></mm-dialog>`}
-    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

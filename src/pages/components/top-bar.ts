@@ -30,6 +30,17 @@ const moreMenuActions: MoreMenuAction[] = [
 
 const componentFeatures: ComponentFeatureItem[] = []
 
+const exampleCode = `<mm-top-bar nav="close" heading="상세 정보"></mm-top-bar>
+<mm-top-bar heading="컬렉션에 추가">
+  <mm-button slot="action" variant="ghost">완료</mm-button>
+</mm-top-bar>
+<mm-top-bar heading="수줍이님">
+  <mm-button-group slot="action">
+    <mm-button>저장</mm-button>
+    <mm-more-menu .actions=\${moreMenuActions}></mm-more-menu>
+  </mm-button-group>
+</mm-top-bar>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -59,6 +70,7 @@ const main = html`
         두는 액션은 3개까지입니다.
       </mm-text>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -75,11 +87,6 @@ const main = html`
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-anatomy
-      .code=${`<mm-top-bar nav="close" heading="컬렉션에 추가">
-    <mm-button slot="action" variant="ghost">완료</mm-button>
-</mm-top-bar>`}
-    ></mm-component-anatomy>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

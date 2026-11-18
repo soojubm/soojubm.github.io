@@ -27,6 +27,9 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const exampleCode = `<mm-switch name="newsletter">뉴스레터 받아보기</mm-switch>
+<mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -42,6 +45,7 @@ const main = html`
         <mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>
       </mm-flex>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -55,7 +59,6 @@ const main = html`
         '썸(Thumb) — 트랙 위를 좌우로 이동하며 상태를 나타내는 손잡이.',
         '레이블 — 설정 항목을 설명하는 텍스트.',
       ]}
-      .code=${'<mm-switch checked>뉴스레터 받아보기</mm-switch>'}
       .markers=${[
         { placement: 'block-start', offset: '0.75rem' },
         { placement: 'block-end', offset: '1.25rem' },

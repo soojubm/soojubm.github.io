@@ -42,6 +42,26 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const variantCode = `<mm-select
+  aria-label="릴리스 채널"
+  variant="tertiary"
+  value="stable"
+  .options=\${options}
+></mm-select>
+<mm-select
+  aria-label="릴리스 채널"
+  variant="ghost"
+  value="stable"
+  .options=\${options}
+></mm-select>`
+
+const placementCode = `<mm-select
+  aria-label="패널 위치"
+  placement="bottom-start"
+  value="bottom-start"
+  .options=\${options}
+></mm-select>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -71,6 +91,7 @@ const main = html`
             )}
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="placement">
         <mm-component-example>
@@ -87,6 +108,7 @@ const main = html`
             )}
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${placementCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -143,17 +165,6 @@ const main = html`
         ]}
       ></mm-text-list>
     </mm-component-guide>
-
-    <mm-component-anatomy
-      .code=${`<mm-select
-    aria-label="릴리스 채널"
-    value="stable"
-    .options=\${[
-        { value: 'stable', label: 'Stable' },
-        { value: 'beta', label: 'Beta' },
-    ]}
-></mm-select>`}
-    ></mm-component-anatomy>
 
     <mm-component-section
       heading="SortSelector"

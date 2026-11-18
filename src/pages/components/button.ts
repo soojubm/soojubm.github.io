@@ -94,6 +94,32 @@ const chipNamingRows = html`
   </tr>
 `
 
+const variantCode = `<mm-button-group>
+  <mm-button variant="primary" size="large">primary</mm-button>
+  <mm-button variant="secondary" size="large">secondary</mm-button>
+  <mm-button variant="tertiary" size="large">tertiary</mm-button>
+  <mm-button variant="danger" size="large">danger</mm-button>
+  <mm-button variant="ghost" size="large">ghost</mm-button>
+</mm-button-group>`
+
+const sizeCode = `<mm-button-group>
+  <mm-button variant="primary" size="large">large</mm-button>
+  <mm-button variant="primary">medium</mm-button>
+</mm-button-group>`
+
+const iconCode = `<mm-button-group>
+  <mm-button variant="tertiary" icon="arrow-left">이전</mm-button>
+  <mm-button variant="tertiary" icon="arrow-right" icon-position="trailing">
+    다음
+  </mm-button>
+</mm-button-group>`
+
+const stateCode = `<mm-button-group>
+  <mm-button variant="tertiary">hovered</mm-button>
+  <mm-button variant="tertiary">focused</mm-button>
+  <mm-button variant="tertiary" disabled>disabled</mm-button>
+</mm-button-group>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -118,6 +144,7 @@ const main = html`
             <mm-button variant="ghost" size="large">ghost</mm-button>
           </mm-button-group>
         </mm-component-example>
+        <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="size">
         <mm-component-example>
@@ -126,6 +153,7 @@ const main = html`
             <mm-button variant="primary">medium</mm-button>
           </mm-button-group>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="icon">
         <mm-component-example>
@@ -136,6 +164,7 @@ const main = html`
             </mm-button>
           </mm-button-group>
         </mm-component-example>
+        <mm-component-code .code=${iconCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
@@ -148,6 +177,7 @@ const main = html`
             <mm-paragraph>권장: 비활성화 대신 제출 후 오류 메시지로 이유를 알립니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${stateCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -179,7 +209,6 @@ const main = html`
         '아이콘 — 레이블을 보조하는 선택적 메타포(icon).',
         '레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트.',
       ]}
-      .code=${'<mm-button variant="primary" size="large" icon="arrow-up">보내기</mm-button>'}
       .markers=${[
         { placement: 'inline-start' },
         { placement: 'block-end', offset: '1.75rem' },

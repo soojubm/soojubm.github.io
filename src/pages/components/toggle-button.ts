@@ -85,6 +85,12 @@ const genreOptions: FilterOption[] = [
   { value: 'music', label: '음악' },
 ]
 
+const exampleCode = `<mm-button-group>
+  <mm-toggle-button value="bookmark" icon="bookmark" pressed>북마크</mm-toggle-button>
+  <mm-toggle-button value="like" icon="heart">좋아요</mm-toggle-button>
+  <mm-toggle-button value="disabled" disabled>비활성</mm-toggle-button>
+</mm-button-group>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -106,6 +112,7 @@ const main = html`
         <mm-toggle-button value="disabled" disabled>비활성</mm-toggle-button>
       </mm-button-group>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -143,13 +150,6 @@ const main = html`
         '선택 인디케이터 — 현재 선택된 옵션을 배경·색상으로 표시합니다.',
         '구분선 — 옵션 사이의 시각적 경계(선택).',
       ]}
-      .code=${`<mm-toggle-button-group
-    value="list"
-    .options=\${[
-        { value: 'list', icon: 'table-rows', label: '목록' },
-        { value: 'grid', icon: 'view-grid', label: '그리드' },
-    ]}
-></mm-toggle-button-group>`}
       .markers=${[
         { placement: 'inline-start' },
         { placement: 'block-start' },

@@ -36,6 +36,25 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const singleCode = `<mm-checkbox name="remember" value="remember">로그인 상태 유지</mm-checkbox>`
+
+const sizeCode = `<mm-checkbox-group
+  name="size-default"
+  .options=\${options}
+></mm-checkbox-group>
+<mm-checkbox-group
+  name="size-large"
+  size="large"
+  .options=\${options}
+></mm-checkbox-group>`
+
+const stateCode = `<mm-checkbox-group
+  name="state"
+  .options=\${options}
+  .values=\${['checked', 'disabled-checked']}
+></mm-checkbox-group>
+<mm-checkbox indeterminate>Indeterminate</mm-checkbox>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -74,6 +93,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="single">
         <mm-component-example>
@@ -86,6 +106,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${singleCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
@@ -108,6 +129,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${stateCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -129,7 +151,6 @@ const main = html`
         '체크 표식 — 선택 시 나타나는 체크 아이콘(또는 indeterminate 표식).',
         '레이블 — 선택지를 설명하는 클릭 가능한 텍스트.',
       ]}
-      .code=${'<mm-checkbox size="large" checked>관심 분야</mm-checkbox>'}
       .markers=${[
         { placement: 'inline-start' },
         { placement: 'block-end', offset: '0.5rem' },

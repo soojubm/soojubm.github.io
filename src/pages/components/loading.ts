@@ -24,6 +24,12 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const exampleCode = `<mm-button variant="primary" disabled>
+  <mm-spinner label="저장 중"></mm-spinner>
+  저장
+</mm-button>
+<mm-spinner variant="section" label="불러오는 중"></mm-spinner>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -45,14 +51,11 @@ const main = html`
       <mm-separator variant="section"></mm-separator>
       <mm-spinner variant="section" label="불러오는 중"></mm-spinner>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
-
-    <mm-component-anatomy
-      .code=${'<mm-spinner variant="section" label="불러오는 중"></mm-spinner>'}
-    ></mm-component-anatomy>
 
     <mm-component-section
       heading="TaskStatus"

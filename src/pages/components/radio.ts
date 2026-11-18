@@ -59,6 +59,30 @@ const membershipOptions: OptionItem[] = [
   { value: 'ultimate', label: '얼티메이트 요금제', disabled: true },
 ]
 
+const sizeCode = `<mm-radio-group
+  name="membership-size-default"
+  value="basic"
+  .options=\${options}
+></mm-radio-group>
+<mm-radio-group
+  name="membership-size-large"
+  size="large"
+  value="basic"
+  .options=\${options}
+></mm-radio-group>`
+
+const stateCode = `<mm-radio-group
+  name="membership-option-disabled"
+  value="premium"
+  .options=\${options}
+></mm-radio-group>
+<mm-radio-group
+  name="membership-disabled"
+  value="premium"
+  disabled
+  .options=\${options}
+></mm-radio-group>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -90,6 +114,7 @@ const main = html`
             <mm-paragraph>size="large"는 선택지가 화면의 주요 입력일 때 씁니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
@@ -114,6 +139,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${stateCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -130,14 +156,6 @@ const main = html`
         '선택 표식 — 선택 시 원 안에 채워지는 점(dot).',
         '레이블 — 선택지를 설명하는 클릭 가능한 텍스트.',
       ]}
-      .code=${`<mm-radio-group
-    name="membership"
-    value="premium"
-    .options=\${[
-        { value: 'basic', label: '베이직 요금제' },
-        { value: 'premium', label: '프리미엄 요금제' },
-    ]}
-></mm-radio-group>`}
       .markers=${[
         { placement: 'block-start' },
         { placement: 'inline-start', offset: 'calc(100% - 0.5rem)' },

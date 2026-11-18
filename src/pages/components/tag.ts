@@ -26,6 +26,10 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const defaultCode = `<mm-tag>Tag</mm-tag>`
+
+const iconCode = `<mm-tag icon="check-circle">Tag</mm-tag>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -55,11 +59,13 @@ const main = html`
         <mm-component-example>
           <mm-tag>Tag</mm-tag>
         </mm-component-example>
+        <mm-component-code .code=${defaultCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="icon">
         <mm-component-example>
           <mm-tag icon=${ICON_NAMES.SUCCESS}>Tag</mm-tag>
         </mm-component-example>
+        <mm-component-code .code=${iconCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -75,7 +81,6 @@ const main = html`
         '아이콘 — 분류나 상태를 보조하는 선택적 메타포입니다.',
         '레이블 — 분류·상태를 나타내는 짧은 텍스트.',
       ]}
-      .code=${'<mm-tag tone="green" icon="check-circle">승인됨</mm-tag>'}
       .markers=${[
         { placement: 'inline-start' },
         { placement: 'block-end', offset: '0.75rem' },

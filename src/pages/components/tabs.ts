@@ -302,16 +302,6 @@ const main = html`
       </mm-content-section>
     </mm-component-guide>
 
-    <mm-component-anatomy
-      .code=${`<mm-tab-list value="menu1" variant="line">
-    <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
-    <mm-tab value="menu2">두 번째 메뉴</mm-tab>
-</mm-tab-list>
-
-<mm-tab-panel value="menu1">1번 콘텐츠 영역입니다.</mm-tab-panel>
-<mm-tab-panel value="menu2">2번 콘텐츠 영역입니다.</mm-tab-panel>`}
-    ></mm-component-anatomy>
-
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-references .items=${componentReferences}></mm-component-references>

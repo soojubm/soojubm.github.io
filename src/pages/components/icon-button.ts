@@ -30,6 +30,75 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const variantCode = `<mm-button-group>
+  <mm-icon-button
+    variant="primary"
+    icon="arrow-right"
+    aria-label="Primary"
+    tooltip-placement="bottom"
+  ></mm-icon-button>
+  <mm-icon-button
+    variant="secondary"
+    icon="arrow-right"
+    aria-label="Secondary"
+    tooltip-placement="bottom"
+  ></mm-icon-button>
+  <mm-icon-button
+    variant="tertiary"
+    icon="arrow-right"
+    aria-label="Tertiary"
+    tooltip-placement="bottom"
+  ></mm-icon-button>
+  <mm-icon-button
+    variant="ghost"
+    icon="arrow-right"
+    aria-label="Ghost"
+    tooltip-placement="bottom"
+  ></mm-icon-button>
+  <mm-icon-button
+    variant="danger"
+    icon="trash"
+    aria-label="Danger"
+    tooltip-placement="bottom"
+  ></mm-icon-button>
+</mm-button-group>`
+
+const sizeCode = `<mm-button-group>
+  <mm-icon-button
+    icon="xmark"
+    size="medium"
+    aria-label="medium"
+  ></mm-icon-button>
+  <mm-icon-button
+    icon="xmark"
+    size="small"
+    aria-label="small"
+  ></mm-icon-button>
+</mm-button-group>`
+
+const stateCode = `<mm-button-group>
+  <mm-icon-button
+    variant="primary"
+    icon="arrow-right"
+    aria-label="다음"
+    tooltip-placement="bottom"
+    disabled
+  ></mm-icon-button>
+  <mm-icon-button
+    icon="heart"
+    aria-label="좋아요"
+    tooltip-placement="bottom"
+    disabled
+  ></mm-icon-button>
+  <mm-icon-button
+    variant="secondary"
+    icon="arrow-left"
+    aria-label="이전"
+    tooltip-placement="bottom"
+    disabled
+  ></mm-icon-button>
+</mm-button-group>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -83,6 +152,7 @@ const main = html`
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="size">
         <mm-component-example>
@@ -111,6 +181,7 @@ const main = html`
             </mm-component-notice>
           </mm-flex>
         </mm-component-example>
+        <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
@@ -137,6 +208,7 @@ const main = html`
             ></mm-icon-button>
           </mm-button-group>
         </mm-component-example>
+        <mm-component-code .code=${stateCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -161,7 +233,6 @@ const main = html`
         '접근성 레이블 — 화면에 보이지 않지만 액션을 설명하는 텍스트(aria-label).',
         '툴팁 — 접근성 레이블을 화면에 보여줍니다.',
       ]}
-      .code=${'<mm-icon-button variant="primary" icon="heart" aria-label="좋아요"></mm-icon-button>'}
       .markers=${[
         { placement: 'inline-start' },
         { placement: 'block-end' },

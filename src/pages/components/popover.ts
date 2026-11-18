@@ -86,10 +86,6 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      .code=${`<mm-button aria-controls="popover">팝오버 열기</mm-button>
-<mm-popover id="popover">
-    <mm-paragraph>트리거에 앵커되는 non-modal 레이어 표면입니다.</mm-paragraph>
-</mm-popover>`}
     ></mm-component-anatomy>
 
     <mm-component-section
