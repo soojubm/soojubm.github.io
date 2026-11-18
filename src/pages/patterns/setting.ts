@@ -10,7 +10,7 @@ const main = html`
       id="setting-top-bar"
       heading="설정"
       style="
-      padding-inline: 5vw;
+      padding-inline: var(--layout-padding-inline);
     "
     ></mm-top-bar>
   </mm-fixed-top>

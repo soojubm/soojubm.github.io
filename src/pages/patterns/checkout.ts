@@ -20,7 +20,7 @@ const main = html`
       id="checkout-top-bar"
       heading="주문/결제"
       style="
-      padding-inline: 5vw;
+      padding-inline: var(--layout-padding-inline);
     "
     ></mm-top-bar>
   </mm-fixed-top>

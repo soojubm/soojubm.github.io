@@ -266,7 +266,7 @@ const main = html`
       <mm-flex
         gap="8"
         direction="column"
-        style="margin: -2rem -5vw; padding: 4rem 5vw; background:var(--background-subtle-color);"
+        style="margin: -2rem calc(var(--layout-padding-inline) * -1); padding: 4rem var(--layout-padding-inline); background:var(--background-subtle-color);"
       >
         <mm-heading level="1">
           Our research teams study the inner workings of AI models, stress-test their limits, and
