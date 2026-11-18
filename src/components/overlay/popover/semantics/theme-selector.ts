@@ -39,7 +39,10 @@ export class ThemeSelector extends LitElement {
           ${this.renderThemeOptions()}
         </mm-menu-item-radio-group>
         <mm-separator></mm-separator>
-        <mm-radius-picker></mm-radius-picker>
+        <mm-flex direction="column" gap="2">
+          <mm-radius-picker></mm-radius-picker>
+          <mm-color-picker></mm-color-picker>
+        </mm-flex>
       </mm-popover>
     `
   }

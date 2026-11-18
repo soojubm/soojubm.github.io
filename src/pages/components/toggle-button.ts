@@ -214,6 +214,21 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section
+      heading="ColorChip"
+      description="색 하나를 고르는 토글입니다. 면 전체가 색이라 aria-label에 색 이름을 적고, 선택되면 테두리와 안쪽 링으로 표시합니다."
+    >
+      <mm-button-group>
+        <mm-color-chip
+          value="black"
+          color="var(--black800)"
+          aria-label="블랙"
+          pressed
+        ></mm-color-chip>
+        <mm-color-chip value="green" color="var(--green800)" aria-label="그린"></mm-color-chip>
+      </mm-button-group>
+    </mm-component-section>
+
+    <mm-component-section
       heading="FollowButton"
       description="ToggleButton을 확장한 도메인 버튼. 선택(팔로잉) 상태에 따라 레이블과 아이콘이 전환됩니다."
     >

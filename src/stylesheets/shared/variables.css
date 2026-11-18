@@ -36,6 +36,9 @@
   --gray400: #8a908d;
   --gray800: #303b35;
 
+  --black100: rgba(0, 0, 0, 0.08);
+  --black800: #1a1a1a;
+  --white100: rgba(255, 255, 255, 0.1);
   --green100: rgba(10, 160, 80, 0.075);
   --green800: #1b995c;
   --red800: #f02849;
@@ -73,8 +76,8 @@
 
   --newneek-color: #fb7800;
   --newneek-gray-color: #ebebeb;
-  --primary-color: var(--green800);
-  --primary-subtle-color: var(--green100);
+  --primary-color: var(--black800);
+  --primary-subtle-color: var(--black100);
   --accent-color: var(--yellow800);
   --foreground-success-color: #1e40af;
   --warning-color: var(--orange800);
@@ -206,9 +209,9 @@
   --radius-full: 0%;
 }
 
-.color-black {
-  --primary-color: #1a1a1a;
-  --green100: rgba(0, 0, 0, 0.08);
+.color-green {
+  --primary-color: var(--green800);
+  --primary-subtle-color: var(--green100);
 }
 
 :root [data-theme='dark'] {
@@ -246,7 +249,17 @@
   --foreground-color: #d3d4d5;
   --foreground-subtle-color: var(--gray400);
   --foreground-on-strong-color: var(--gray800);
-  --foreground-on-primary-color: var(--gray0);
+  --foreground-on-primary-color: var(--gray800);
+
+  /*
+   * 블랙 primary는 어두운 배경에 묻히므로 밝은 색으로 뒤집는다.
+   * selected 토큰은 :root에서 primary를 이미 풀어 둔 값이라, primary를 바꾼 이 자리에서 다시 선언해야 따라온다.
+   */
+  --primary-color: var(--gray100);
+  --primary-subtle-color: var(--white100);
+  --interaction-selected-background-color: var(--primary-subtle-color);
+  --interaction-selected-foreground-color: var(--primary-color);
+  --interaction-selected-border-color: var(--primary-color);
 
   --background-color: rgb(31, 35, 33);
   --background-subtle-color: #292f2c;
@@ -264,6 +277,13 @@
   --border-color: var(--gray800);
 
   --border: var(--border-width) solid var(--border-color);
+}
+
+/* 그린은 어두운 배경에서도 보이므로 다크 테마의 블랙 뒤집기를 되돌린다. */
+:root.color-green [data-theme='dark'] {
+  --primary-color: var(--green800);
+  --primary-subtle-color: var(--green100);
+  --foreground-on-primary-color: var(--gray0);
 }
 
 :root [data-theme='brutal'] {
