@@ -3,6 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 import { ICON_NAMES } from '@/components/common'
+import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 
 export interface ComponentFeatureItem {
   heading: string
@@ -16,28 +17,34 @@ export interface ComponentFeatureItem {
  */
 @customElement('mm-component-feature-list')
 export class ComponentFeatureList extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-    }
-  `
+  static styles = [
+    componentContentFrameStyles,
+    css`
+      :host {
+        display: block;
+        padding: var(--space-section) 0 0;
+      }
+    `,
+  ]
   @property({ attribute: false }) features: ComponentFeatureItem[] = []
 
   render() {
     return html`
-      <mm-feature-group columns="2">
-        ${this.features.map(
-          feature => html`
-            <mm-feature
-              heading=${feature.heading}
-              description=${feature.description}
-              icon=${ICON_NAMES.INFO}
-            >
-              ${this.renderRules(feature.rules)}
-            </mm-feature>
-          `,
-        )}
-      </mm-feature-group>
+      <div class="component-content-frame">
+        <mm-feature-group columns="2">
+          ${this.features.map(
+            feature => html`
+              <mm-feature
+                heading=${feature.heading}
+                description=${feature.description}
+                icon=${ICON_NAMES.INFO}
+              >
+                ${this.renderRules(feature.rules)}
+              </mm-feature>
+            `,
+          )}
+        </mm-feature-group>
+      </div>
     `
   }
 

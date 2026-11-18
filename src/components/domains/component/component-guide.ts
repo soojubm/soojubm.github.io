@@ -12,7 +12,6 @@ export class ComponentGuide extends LitElement {
       display: flex;
       flex-direction: column;
       gap: var(--space-8);
-      padding: var(--space-section) 0 0;
     }
   `
   @property({ attribute: false }) features: ComponentFeatureItem[] = []
