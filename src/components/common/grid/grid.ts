@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { Space } from '@/stylesheets/shared.styles'
+import type { Space } from '@/stylesheets/shared.types'
 
 import { gridStyles } from '@/components/common/grid/grid.styles'
 

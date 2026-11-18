@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 
-import type { FlexDirection } from '@/stylesheets/shared.styles'
+import type { FlexDirection } from '@/stylesheets/shared.types'
 import type { OptionItem } from '@/types'
 
 import '@/components/common/code-block/code-block'

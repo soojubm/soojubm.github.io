@@ -1,7 +1,8 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import { spaces, type Space } from '@/stylesheets/shared.styles'
+import { spaces } from '@/stylesheets/shared.styles'
+import type { Space } from '@/stylesheets/shared.types'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type ListItemGroupRole = 'list' | 'group'

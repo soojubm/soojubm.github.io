@@ -1,7 +1,8 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
+import { spaceTokens } from '@/stylesheets/shared.styles'
+import type { Space } from '@/stylesheets/shared.types'
 import { buildAttributeRules } from '@/utils'
 import '@/components/common'
 

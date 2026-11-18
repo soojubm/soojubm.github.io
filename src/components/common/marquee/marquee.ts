@@ -5,7 +5,8 @@ import { styleMap } from 'lit/directives/style-map.js'
 
 import { ResizeController } from '@/controllers/resize-controller'
 import { ScheduleController } from '@/controllers/schedule-controller'
-import { spaceTokens, type Space } from '@/stylesheets/shared.styles'
+import { spaceTokens } from '@/stylesheets/shared.styles'
+import type { Space } from '@/stylesheets/shared.types'
 import { buildAttributeRules } from '@/utils'
 
 type MarqueeDirection = 'left' | 'right'

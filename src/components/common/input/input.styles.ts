@@ -1,6 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
-import { visuallyHiddenStyles, type ComponentSize } from '@/stylesheets/shared.styles'
+import { visuallyHiddenStyles } from '@/stylesheets/shared.styles'
+import type { ComponentSize } from '@/stylesheets/shared.types'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 /** radio·checkbox처럼 네이티브 input을 시각적으로 숨기고 label의 인디케이터로 대체하는 컨트롤이 공유하는 규칙. */

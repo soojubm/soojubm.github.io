@@ -13,7 +13,8 @@ import {
 import '@/components/common/dot/semantics/current-indicator'
 import { dotBelowStyles } from '@/components/common/dot/dot.styles'
 import '@/components/common/icon'
-import { resetStyles, type ComponentSize, type ComponentVariant } from '@/stylesheets/shared.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import type { ComponentSize, ComponentVariant } from '@/stylesheets/shared.types'
 
 export type ButtonVariant = ComponentVariant
 export type ButtonSize = Extract<ComponentSize, 'medium' | 'large'>

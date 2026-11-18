@@ -2,15 +2,8 @@ import { LitElement, css, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js'
 
-import {
-  justifyContentTokens,
-  resetStyles,
-  spaceTokens,
-  type JustifyContent,
-  type Space,
-  type FlexDirection,
-  type FlexWrap,
-} from '@/stylesheets/shared.styles'
+import { justifyContentTokens, resetStyles, spaceTokens } from '@/stylesheets/shared.styles'
+import type { JustifyContent, Space, FlexDirection, FlexWrap } from '@/stylesheets/shared.types'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 type AlignItems = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'

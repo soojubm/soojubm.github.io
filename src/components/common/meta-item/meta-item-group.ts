@@ -1,7 +1,8 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { spaces, type FlexDirection, type FlexWrap, type Space } from '@/stylesheets/shared.styles'
+import { spaces } from '@/stylesheets/shared.styles'
+import type { FlexDirection, FlexWrap, Space } from '@/stylesheets/shared.types'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 /** 메타 정보 사이 간격은 space 단계 중 이 넷만 쓴다. 기본 4는 :host가 선언한다. */

@@ -1,7 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import type { ComponentSize } from '@/stylesheets/shared.styles'
+import type { ComponentSize } from '@/stylesheets/shared.types'
 
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
 import '@/components/common/text/semantics/heading'

@@ -5,7 +5,8 @@ import { visuallyHiddenInputStyles } from '@/components/common/input/input.style
 import { radioStyles } from '@/components/common/radio/radio.styles'
 import { renderRadioInput } from '@/components/common/radio/radio.utils'
 import { ToggleController } from '@/controllers/toggle-controller'
-import { resetStyles, type ComponentSize } from '@/stylesheets/shared.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import type { ComponentSize } from '@/stylesheets/shared.types'
 import { uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 

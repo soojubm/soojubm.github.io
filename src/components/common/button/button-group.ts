@@ -1,11 +1,8 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import {
-  justifyContentTokens,
-  type JustifyContent,
-  type FlexDirection,
-} from '@/stylesheets/shared.styles'
+import { justifyContentTokens } from '@/stylesheets/shared.styles'
+import type { JustifyContent, FlexDirection } from '@/stylesheets/shared.types'
 import { buildAttributeRules } from '@/utils'
 
 @customElement('mm-button-group')

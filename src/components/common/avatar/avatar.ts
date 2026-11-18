@@ -6,7 +6,8 @@ import type { IconSize } from '@/components/common/icon/icon.styles'
 
 import { avatarStyles } from '@/components/common/avatar/avatar.styles'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
-import { resetStyles, type ComponentVariant } from '@/stylesheets/shared.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import type { ComponentVariant } from '@/stylesheets/shared.types'
 
 export type AvatarVariant = Extract<ComponentVariant, 'primary' | 'secondary' | 'tertiary'>
 export type AvatarSize = '80' | '48' | '40' | '32'

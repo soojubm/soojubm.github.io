@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AvatarShape, AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
-import type { ComponentSize } from '@/stylesheets/shared.styles'
+import type { ComponentSize } from '@/stylesheets/shared.types'
 
 import { listItemStyles } from '@/components/common/list-item/list-item.styles'
 import '@/components/common/avatar/avatar'

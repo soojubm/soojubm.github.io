@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import type { ComponentSize } from '@/stylesheets/shared.styles'
+import type { ComponentSize } from '@/stylesheets/shared.types'
 
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 

@@ -1,6 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
-import { scrollbarStyles, spaceTokens, type FlexDirection } from '@/stylesheets/shared.styles'
+import { scrollbarStyles, spaceTokens } from '@/stylesheets/shared.styles'
+import type { FlexDirection } from '@/stylesheets/shared.types'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 // 이게 왜 필요..

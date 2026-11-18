@@ -7,7 +7,8 @@ import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
 import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
-import { resetStyles, type ComponentSize, type ComponentVariant } from '@/stylesheets/shared.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
+import type { ComponentSize, ComponentVariant } from '@/stylesheets/shared.types'
 
 export type IconButtonVariant = ComponentVariant
 export type IconButtonSize = Extract<ComponentSize, 'small' | 'medium'>
