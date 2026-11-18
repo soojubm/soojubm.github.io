@@ -23,6 +23,12 @@ export const listMarkerStyles = css`
     color: var(--list-marker-text-color);
   }
 
+  /* 체크는 배경 없이 기호만 두므로 글자색을 일반 전경색으로 맞춘다. */
+  :host([variant='check']) {
+    --list-marker-background-color: transparent;
+    --list-marker-text-color: var(--foreground-color);
+  }
+
   svg {
     width: 0.5rem;
     height: 0.5rem;

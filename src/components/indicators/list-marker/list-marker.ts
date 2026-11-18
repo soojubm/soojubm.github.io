@@ -8,7 +8,7 @@ export type ListMarkerVariant = 'number' | 'check'
 @customElement('mm-list-marker')
 export class ListMarker extends LitElement {
   static styles = listMarkerStyles
-  @property({ type: String }) variant: ListMarkerVariant = 'number'
+  @property({ type: String, reflect: true }) variant: ListMarkerVariant = 'number'
   @property({ type: Number }) value = 1
 
   render() {
