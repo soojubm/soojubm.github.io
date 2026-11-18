@@ -117,7 +117,6 @@ const main = html`
 
     <mm-component-section heading="StatusTag" description="">
       <mm-tag-group>
-        <mm-status-tag variant="neutral">neutral</mm-status-tag>
         <mm-status-tag variant="success">success</mm-status-tag>
         <mm-status-tag variant="warning">warning</mm-status-tag>
         <mm-status-tag variant="error">error</mm-status-tag>

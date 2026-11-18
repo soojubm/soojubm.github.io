@@ -9,7 +9,7 @@ import { renderTag } from '@/components/common/tag/tag.utils'
 
 @customElement('mm-status-tag')
 export class StatusTag extends LitElement {
-  @property({ type: String }) variant: StatusTagVariant = 'neutral'
+  @property({ type: String }) variant: StatusTagVariant = 'info'
   @property({ type: String }) icon?: IconName
 
   render() {

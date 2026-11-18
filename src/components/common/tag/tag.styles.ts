@@ -64,17 +64,13 @@ export type TagTone = keyof typeof tagToneStyles
  * --------------------------------------------------
  */
 
-/** 상태 태그는 상태 톤 중 결과를 알리는 넷에 톤 없는 neutral을 더한다. */
-export type StatusTagVariant =
-  | Extract<StatusTone, 'success' | 'warning' | 'error' | 'info'>
-  | 'neutral'
+export type StatusTagVariant = Extract<StatusTone, 'success' | 'warning' | 'error' | 'info'>
 
 export const statusToneMap = defineToneMap<Record<StatusTagVariant, TagTone>>({
   success: 'green',
   warning: 'yellow',
   error: 'red',
   info: 'blue',
-  neutral: 'default',
 })
 
 /** 상태 톤(green·yellow·red·blue)은 의미를 전하는 색이라 category 색으로 쓰지 않는다. */
