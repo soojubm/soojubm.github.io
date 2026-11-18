@@ -111,9 +111,9 @@ export class MediaList extends LitElement {
 
   private renderCards(items: MediaItem[]) {
     return html`
-      <mm-grid column-min-width="220px" gap="3">
+      <mm-flex gap="3" wrap="wrap">
         ${items.slice(0, this.visibleCount).map(item => this.renderCard(item))}
-      </mm-grid>
+      </mm-flex>
     `
   }
 

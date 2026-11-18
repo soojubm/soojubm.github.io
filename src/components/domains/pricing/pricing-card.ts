@@ -39,7 +39,10 @@ export class PricingCard extends LitElement {
 
   render() {
     return html`
-      <mm-text-block level="3" heading=${this.plan} description=${this.description}></mm-text-block>
+      <div>
+        <mm-heading level="2">${this.plan}</mm-heading>
+        <mm-paragraph>${this.description}</mm-paragraph>
+      </div>
       <div class="price">
         <mm-text size="32" weight="bold">${this.price}</mm-text>
         <mm-text color="light">${this.period}</mm-text>

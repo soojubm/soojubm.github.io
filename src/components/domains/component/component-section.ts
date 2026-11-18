@@ -13,7 +13,7 @@ export class ComponentSection extends LitElement {
       :host {
         display: flex;
         flex-direction: column;
-        gap: var(--space-6);
+        gap: var(--space-4);
         margin-top: var(--space-section);
       }
 

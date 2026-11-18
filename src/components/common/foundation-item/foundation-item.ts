@@ -7,8 +7,6 @@ import { interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * Foundations Overview에서 하위 문서로 이동하는 링크 카드.
- * 제목·설명은 text-block에 위임하고, 표면은 surface 면 선언에 elevated 그림자와 큰 반경을 얹어
- * hover에서 --interaction-hover-lift만큼 떠오른다.
  */
 @customElement('mm-foundation-item')
 export class FoundationItem extends LitElement {

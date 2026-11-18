@@ -14,10 +14,6 @@ export class MediaCard extends LitElement {
       display: flex;
     }
 
-    mm-surface {
-      gap: var(--space-1);
-    }
-
     header {
       display: flex;
       align-items: center;
@@ -34,13 +30,13 @@ export class MediaCard extends LitElement {
   render() {
     return html`
       <mm-surface>
-        <header>
-          <mm-text as="time" size="12" color="light">${this.year}</mm-text>
-          <mm-text size="12" color="light">${this.country}</mm-text>
+        <header style="margin-bottom:var(--space-1);">
+          <mm-text as="time" size="14">${this.year}</mm-text>
+          <mm-text size="14">${this.country}</mm-text>
         </header>
         <mm-text weight="bold">${this.title}</mm-text>
-        <mm-paragraph size="small" color="light">${this.subtitle}</mm-paragraph>
-        <mm-paragraph>${this.director}</mm-paragraph>
+        <mm-paragraph size="small">${this.subtitle}</mm-paragraph>
+        <mm-paragraph style="margin-top:var(--space-2);">${this.director}</mm-paragraph>
       </mm-surface>
     `
   }

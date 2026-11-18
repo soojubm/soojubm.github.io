@@ -12,7 +12,7 @@ export const code = (name: string) => html`<mm-code>${name}</mm-code>`
 export const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
 
 /** 규칙 목록 항목. 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다. */
-export const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
+export const rule = (title: string | TemplateResult, description?: string | TemplateResult) => html`
   <span>
     <mm-text weight="bold">${title}</mm-text>
     ${description}
