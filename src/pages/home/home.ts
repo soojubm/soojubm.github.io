@@ -1,9 +1,8 @@
-import { html, type TemplateResult } from 'lit'
+import { html } from 'lit'
 
 import type { ToggleButtonGroup } from '@/components/common'
 
 import {
-  code,
   ComponentFeatureItem,
   type ComponentReferenceItemData,
 } from '@/components/domains/component'
@@ -165,61 +164,27 @@ interface SharedStyleModule {
   description: TemplateResult
 }
 
-const sharedStyleModules: SharedStyleModule[] = [
+const stats: Stat[] = [
+  { value: '1,671', description: 'icons available in this very moment, and they’re growing fast.' },
   {
-    module: 'list-item.styles',
-    usageCount: 8,
-    description: html`
-      ${code('interactiveRowStyles')}: 눌리는 행의 hover·포커스·선택·비활성 스킨. menu-item 계열과
-      사이드바·검색 목록
-    `,
+    value: '100%',
+    description: 'free icons. Iconoir is open source and we’re ready for your help.',
   },
   {
-    module: 'dot.styles',
-    usageCount: 6,
-    description: html`
-      ${code('dotStyles')}와 크기·tone 단계: 점 모양과 조합 컴포넌트가 고르는 단계
-    `,
+    value: '738K',
+    description: 'downloads a month on React alone. Also on React Native, Flutter and CSS.',
   },
   {
-    module: 'surface.styles',
-    usageCount: 7,
-    description: html`
-      ${code('surfaceBaseStyles')}: faq·banner·radio card·code-block·pager·token-item·color-token
-    `,
-  },
-  {
-    module: 'input.styles',
-    usageCount: 5,
-    description: html`
-      ${code('visuallyHiddenInputStyles')}: radio·checkbox가 네이티브 input을 숨기는 조각. 입력 필드
-      스타일은 input 계열 안에서만 쓴다
-    `,
-  },
-  {
-    module: 'tag.styles',
-    usageCount: 5,
-    description: html`
-      ${code('TagTone')}: tone 이름과 색. dot·chart가 tag와 같은 색을 맞출 때 쓴다
-    `,
-  },
-  {
-    module: 'button.styles',
-    usageCount: 4,
-    description: html`
-      ${code('buttonBaseStyles')} · ${code('buttonSelectedStyles')}: 버튼 골격과 눌림 스킨.
-      icon-button 스타일이 이 위에 서서 아이콘 버튼 계열까지 퍼진다
-    `,
+    value: '4.6K',
+    description: 'people starred the project on GitHub. Show your support and be one of them.',
   },
 ]
 
-const renderSharedStyleCard = ({ module, usageCount, description }: SharedStyleModule) => html`
-  <mm-surface>
-    <mm-flex direction="column" gap="2" align-items="flex-start">
-      <mm-tag>${usageCount}곳에서 사용</mm-tag>
-      <mm-text-block level="4" heading=${module}>
-        <mm-text size="14">${description}</mm-text>
-      </mm-text-block>
+const renderStatCard = ({ value, description }: Stat) => html`
+  <mm-surface variant="outlined" radius="large">
+    <mm-flex direction="column" gap="2">
+      <mm-text size="32" weight="bold">${value}</mm-text>
+      <mm-text size="14" color="light">${description}</mm-text>
     </mm-flex>
   </mm-surface>
 `
@@ -423,9 +388,6 @@ const main = html`
               'mm-dismiss-button은 iconButtonStyles와 renderIconButton을 조합한다.',
             ]}
           ></mm-text-list>
-          <mm-content-section heading-level="2" heading="Shared Style Modules">
-            <mm-grid columns="3" gap="4">${sharedStyleModules.map(renderSharedStyleCard)}</mm-grid>
-          </mm-content-section>
         </mm-content-section>
       </mm-content-section-list>
 

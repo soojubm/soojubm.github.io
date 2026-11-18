@@ -60,6 +60,41 @@ const main = html`
     ></mm-page-header>
 
     <mm-content-section-list>
+      <mm-content-section heading="buttonBaseStyles">
+        <mm-paragraph>
+          버튼 골격과 눌림 스킨(${code('buttonSelectedStyles')}). icon-button 스타일이 이 위에 서서
+          아이콘 버튼 계열까지 퍼집니다.
+        </mm-paragraph>
+        <mm-paragraph>
+          모든 버튼형 컴포넌트가 공유하는 기반 스타일입니다. 구조(레이아웃·크기·간격·타이포)와 기본
+          스킨, 상호작용 상태(focus·active·disabled)를 포함합니다.
+        </mm-paragraph>
+      </mm-content-section>
+
+      <mm-content-section heading="interactiveRowStyles">
+        <mm-paragraph>
+          눌리는 행의 hover·포커스·선택·비활성 스킨. menu-item 계열과 사이드바·검색 목록
+        </mm-paragraph>
+      </mm-content-section>
+
+      <mm-content-section heading="dotStyles">
+        <mm-paragraph>점 모양과 크기·tone 단계. 조합 컴포넌트가 고르는 단계</mm-paragraph>
+      </mm-content-section>
+
+      <mm-content-section heading="surfaceBaseStyles">
+        <mm-paragraph>faq·banner·radio card·code-block·pager·token-item·color-token</mm-paragraph>
+      </mm-content-section>
+
+      <mm-content-section heading="visuallyHiddenInputStyles">
+        <mm-paragraph>
+          radio·checkbox가 네이티브 input을 숨기는 조각. 입력 필드 스타일은 input 계열 안에서만 쓴다
+        </mm-paragraph>
+      </mm-content-section>
+
+      <mm-content-section heading="TagTone">
+        <mm-paragraph>tone 이름과 색. dot·chart가 tag와 같은 색을 맞출 때 쓴다</mm-paragraph>
+      </mm-content-section>
+
       <mm-content-section heading="Flex">
         <mm-paragraph>자식을 가로나 세로 한 줄로 배치합니다.</mm-paragraph>
         <mm-component-example>
