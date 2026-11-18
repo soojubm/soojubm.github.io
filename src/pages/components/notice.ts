@@ -25,7 +25,7 @@ const secondaryAction: ActionConfig = { label: '나중에', onClick: () => {} }
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
-    heading: 'Statusful',
+    heading: 'Stateful',
     description:
       '성공·경고·오류·정보 등 의미 상태를 variant 톤으로 전달합니다. 색상만으로 의미를 전달하지 않고 아이콘·텍스트를 함께 제공합니다.',
   },

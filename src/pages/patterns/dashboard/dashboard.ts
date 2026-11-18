@@ -153,60 +153,6 @@ const adSpendItems = categoryAdSpends.map(({ category, share, value }) => ({
 
 const toPages = (ids: string[]) => ids.map(id => ({ href: `./${id}.html`, label: id }))
 
-/**
- * 저장소 안에서 각 컨테이너가 템플릿에 나타난 횟수와 쓰는 페이지 수. 이 페이지의 예시도 함께 세었다.
- * 페이지가 열여섯을 넘으면 목록 대신 개수만 둔다.
- */
-const containerUsages: ComponentUsageItem[] = [
-  { label: 'flex', count: 302, pageCount: 62 },
-  { label: 'content-section', count: 95, pageCount: 19 },
-  {
-    label: 'grid',
-    count: 34,
-    pageCount: 14,
-    pages: toPages([
-      'books',
-      'button',
-      'class',
-      'content',
-      'dashboard',
-      'films',
-      'foundations',
-      'interaction',
-      'product',
-      'profile',
-      'separator',
-      'surface',
-      'thumbnail',
-      'tokens',
-    ]),
-  },
-  {
-    label: 'content-section-list',
-    count: 20,
-    pageCount: 10,
-    pages: toPages([
-      'cake',
-      'checkout',
-      'content',
-      'foundations',
-      'home',
-      'interaction',
-      'layout',
-      'list-item',
-      'pattern',
-      'tokens',
-    ]),
-  },
-  {
-    label: 'form-field',
-    count: 16,
-    pageCount: 6,
-    pages: toPages(['auth', 'checkout', 'input', 'layout', 'setting', 'sheet']),
-  },
-  { label: 'text-block', count: 6, pageCount: 2, pages: toPages(['layout', 'surface']) },
-]
-
 const main = html`
   <mm-main>
     <mm-content-section-list>
@@ -253,19 +199,6 @@ const main = html`
           >
             <mm-button slot="action" variant="primary">제안하기</mm-button>
           </mm-banner>
-        </mm-grid>
-
-        <mm-grid columns="2" gap="4">
-          <mm-surface variant="outlined" radius="large">
-            <mm-flex direction="column" gap="4">
-              <mm-text-block
-                level="3"
-                heading="컨테이너 사용 현황"
-                description="mm-flex 하나가 302회로 배치 대부분을 맡습니다. 막대를 누르면 어느 페이지에서 쓰는지 폅니다."
-              ></mm-text-block>
-              <mm-component-usage .items=${containerUsages}></mm-component-usage>
-            </mm-flex>
-          </mm-surface>
           <mm-surface variant="outlined" radius="large">
             <mm-flex direction="column" gap="4">
               <mm-text-block

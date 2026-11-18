@@ -512,8 +512,7 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="검색 바 패턴">
             <mm-paragraph>
-              검색 바는 ${code('mm-searchfield')} 옆에 검색을 빠져나가는 액션을 둡니다. iOS는 필드
-              뒤에 취소 버튼을, Android는 필드 앞에 뒤로 버튼을 둡니다.
+              검색 바는 ${code('mm-searchfield')} 옆에 검색을 빠져나가는 액션을 둡니다.
             </mm-paragraph>
             <mm-component-example width="narrow">
               <mm-flex direction="column" gap="3">
@@ -535,11 +534,6 @@ const main = html`
                 </mm-flex>
               </mm-flex>
             </mm-component-example>
-            <mm-component-notice heading="검색을 빠져나가는 액션의 위치를 정한다">
-              두 플랫폼의 방식을 나란히 전시만 한다. 지금 전역 검색(${code('mm-navbar-search')})은
-              위에서 내려오는 sheet로 열려 sheet의 닫기 수단으로 빠져나간다. 화면 안에 놓이는 검색
-              바가 플랫폼을 따라 바뀔지 하나로 고정할지 정하지 않았다
-            </mm-component-notice>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="접근성">

@@ -98,7 +98,7 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-dot']}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <!-- <mm-component-guide .features=${componentFeatures}></mm-component-guide> -->
 
     <mm-component-section
       heading="StatusDot"

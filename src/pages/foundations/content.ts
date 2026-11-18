@@ -197,7 +197,7 @@ const main = html`
 
       <mm-tab-panel value="writing">
         <mm-content-section-list>
-          <mm-content-section heading-level="3" heading="훑어 읽기">
+          <mm-content-section heading-level="3" heading="Overview" data-kr="개요/훑어읽기">
             <mm-text-list
               variant="check"
               .texts=${[
@@ -218,13 +218,10 @@ const main = html`
               variant="check"
               .texts=${[
                 rule(
-                  '문구를 말하는 쪽에 따라 이름과 어조를 맞춘다',
+                  '어조는 화자에 맞춘다',
                   '시스템이 안내하는 문구인지, 사용자가 누르는 행동인지로 나눈다. 실행 레이블은 사용자 시점의 동사로 쓴다',
                 ),
-                rule(
-                  '레이블이 잘리면 말줄임표 대신 문구를 다시 쓴다',
-                  '말줄임표로 감추거나 글자를 줄여 표시하지 않고, 더 짧은 문구로 고쳐 전체가 보이게 한다',
-                ),
+                rule('레이블을 말줄임표로 줄이지 않고 고쳐 쓴다'),
               ]}
             ></mm-text-list>
             <mm-component-notice heading="어조 규칙을 정한다">
@@ -249,16 +246,11 @@ const main = html`
             </mm-component-notice>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="주목이 필요한 콘텐츠">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 가운데 정렬한다',
-                  '주변 콘텐츠와 대비를 만들어 사용자의 주의를 끌어온다',
-                ),
-              ]}
-            ></mm-text-list>
+          <mm-content-section heading-level="3" heading="콘텐츠 모듈의 대비">
+            <mm-paragraph>
+              상태변화·결과·맥락전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의
+              주의를 끌어온다
+            </mm-paragraph>
             <mm-paragraph>
               완료·오류·빈 상태를 보여 주는 ${code('mm-result')}가 이 규칙을 따릅니다.
             </mm-paragraph>
@@ -288,27 +280,38 @@ const main = html`
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="원칙">
             <mm-paragraph>
-              아이콘은 장식으로 쓰지 않고 레이블을 보완하거나, 좁은 공간에서 레이블을 대신하거나,
-              상태와 행동 가능성을 분명히 할 때 사용합니다. 널리 통용되는 기호만 쓰고 새 의미를
-              임의로 붙이지 않습니다.
+              아이콘은 장식으로 쓰지 않는다. 좁은 공간에서 레이블을 대신하거나 인접한 시각 정보
+              더미에서 상태와 행동 가능성을 분명히 할 때 사용합니다.
             </mm-paragraph>
 
             <mm-content-section heading-level="4" heading="하나의 아이콘, 하나의 의미">
               <mm-paragraph>
                 같은 아이콘을 맥락마다 다른 뜻으로 재사용하지 않습니다. 의미가 흔들리면 사용자가
-                매번 다시 해석해야 합니다. 뜻은 컴포넌트가 아니라 제품 전체에서 일관합니다.
+                매번 다시 해석해야 합니다.
+                <span hidden>뜻은 컴포넌트가 아니라 제품 전체에서 일관합니다.</span>
               </mm-paragraph>
             </mm-content-section>
 
             <mm-content-section heading-level="4" heading="중복 표현하지 않기">
-              <mm-paragraph>
+              <!-- TODO -->
+              <!-- <mm-paragraph>
                 보이는 레이블이 이미 온전히 가리키는 것을 아이콘으로 되풀이하지 않습니다. 레이블이
                 붙은 텍스트필드에는 뜻이 겹치는 장식 아이콘을 더하지 않습니다. 아이콘이 여는 방식을
                 암시하는 자리도, 값의 형식을 글로 보이면(날짜 필드의 YYYY. MM. DD.) 그 글이 더
                 명료해 아이콘은 다시 중복이 됩니다. 남는 아이콘은 뜻을 지니면 대체 텍스트를 주고,
                 순수한 장식이면 접근성 트리에서 숨깁니다.
+              </mm-paragraph> -->
+              <mm-paragraph>
+                형제 엘리먼트 목록에서 명확한 대비가 필요한 경우. 사용자의 실수를 방지할 수 있을 때.
               </mm-paragraph>
+
+              <mm-text>언제 사용하나요?</mm-text>
             </mm-content-section>
+
+            <mm-text-list
+              variant="check"
+              .texts=${[rule('널리 통용되는 기호를 쓰고 있나요?')]}
+            ></mm-text-list>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="쓰이는 아이콘">

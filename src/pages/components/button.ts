@@ -157,17 +157,12 @@ const main = html`
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph-group>
-        <mm-paragraph size="large">
-          chip/button small - 사용자 여정을 보조하는 액션입니다. 사용자는 페이지 내에서 즉각적인
-          결과를 기대할 수 있습니다.
-        </mm-paragraph>
-
         <mm-component-aka
           .items=${['Tag', 'Pill', 'Badge', 'Token', 'Label', 'Pick Button']}
         ></mm-component-aka>
-
         <mm-text-list
           .texts=${[
+            'chip/button small - 사용자 여정을 보조하는 액션입니다. 사용자는 페이지 내에서 즉각적인 결과를 기대할 수 있습니다.',
             'Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.',
             '실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.',
             '맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected',

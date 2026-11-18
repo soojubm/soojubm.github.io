@@ -32,7 +32,12 @@ const componentProps: ComponentPropItemData[] = [
   { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 
-const componentFeatures: ComponentFeatureItem[] = []
+const componentFeatures: ComponentFeatureItem[] = [
+  {
+    heading: 'Contextual',
+    description: 'TODO',
+  },
+]
 
 const main = html`
   <mm-main>

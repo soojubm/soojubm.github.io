@@ -192,39 +192,18 @@ const main = html`
       heading="DatePicker"
       description="type='date'는 네이티브 날짜 피커를 씁니다."
     >
+      <mm-component-notice slot="notice" heading="달력 선택"></mm-component-notice>
       <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
         <mm-icon slot="trailing" name="calendar"></mm-icon>
       </mm-textfield>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="DateRangePicker"
-      description="기간은 시작일과 종료일을 한 필드에 이어 받아 하나의 값으로 읽히게 합니다."
-    >
-      <mm-component-notice slot="notice" heading="달력 선택">
-        지금은 텍스트 입력만 받습니다. 네이티브 type='date'는 날짜 하나만 고르므로, 시작일과
-        종료일을 달력에서 이어 고르는 선택 UI를 따로 만들어야 합니다.
-      </mm-component-notice>
+      <mm-separator></mm-separator>
       <mm-textfield name="date-range" label="숙박 기간" placeholder="YYYY. MM. DD. – YYYY. MM. DD.">
         <mm-icon slot="trailing" name="calendar"></mm-icon>
       </mm-textfield>
     </mm-component-section>
 
     <mm-component-section
-      heading="단위가 이어지는 필드"
-      description="치수처럼 한 값을 여러 필드로 나눠 받을 때는 필드 사이에 연산 기호를 두어 관계를 드러냅니다."
-    >
-      <mm-flex align-items="flex-end">
-        <mm-textfield label="Length" placeholder="cm unit"></mm-textfield>
-        <mm-icon name=${ICON_NAMES.CLOSE}></mm-icon>
-        <mm-textfield label="Width" placeholder="x means"></mm-textfield>
-        <mm-icon name=${ICON_NAMES.CLOSE}></mm-icon>
-        <mm-textfield label="Height" placeholder="cm"></mm-textfield>
-      </mm-flex>
-    </mm-component-section>
-
-    <mm-component-section
-      heading="Description &amp; Validation Text"
+      heading="Validation Text"
       description="description은 입력을 돕는 설명을, validation-text는 오류의 이유를 입력 필드 아래에 전달합니다. 테두리 색만으로는 무엇을 고칠지 전달되지 않으므로, 검증 텍스트는 입력 요소의 aria-describedby에 스스로 연결되어 스크린리더가 필드와 함께 읽습니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
     >
       <mm-component-notice slot="notice" variant="todo" heading="필드가 검증을 소유하게 한다">
@@ -267,11 +246,11 @@ const main = html`
 
     <mm-component-section
       heading="PasswordField"
-      description="searchfield처럼 textfield를 확장하며, trailing에 reveal-button을 두어 입력값 노출을 토글합니다."
+      description="textfield를 확장하여 trailing에 reveal-button을 배치합니다."
     >
       <mm-notice
         slot="notice"
-        description="리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다. 확인 필드가 있으면 두 번 입력해 오타를 걸러내므로, 두 필드 모두 type='password'인 textfield를 씁니다."
+        description="리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다. 확인 필드가 있으면 두 번 입력해 오입력을 걸러낼 수 있습니다."
       ></mm-notice>
       <mm-passwordfield
         label="비밀번호"
@@ -290,50 +269,13 @@ const main = html`
       </mm-flex>
     </mm-component-section>
 
-    <mm-component-section
-      heading="FormField"
-      description="textfield가 아닌 컨트롤에 레이블·헬퍼·검증 텍스트를 같은 규칙으로 붙이는 래퍼입니다. 컨트롤은 slot으로 받고, 필드는 레이블이 붙은 role=group이 됩니다."
-    >
-      <mm-flex direction="column" gap="3">
-        <mm-form-field label="성별">
-          <mm-gender-selector stretch></mm-gender-selector>
-        </mm-form-field>
-        <mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
-          <mm-checkbox-group
-            name="topics"
-            .options=${[
-              { value: 'tech', label: '기술' },
-              { value: 'design', label: '디자인' },
-              { value: 'biz', label: '비즈니스' },
-            ]}
-          ></mm-checkbox-group>
-        </mm-form-field>
-        <mm-form-field label="국가" description="배송 가능한 국가만 표시됩니다.">
-          <mm-select
-            .options=${[
-              { value: 'kr', label: '대한민국' },
-              { value: 'jp', label: '일본' },
-              { value: 'us', label: '미국' },
-            ]}
-          ></mm-select>
-        </mm-form-field>
-      </mm-flex>
-    </mm-component-section>
-
     <mm-component-section heading="Newsletter">
       <form>
-        <mm-flex direction="column" gap="4">
-          <mm-text-block
-            level="3"
-            heading="Newsletter subscribe"
-            description="섭스크라이브 유아이 콤포넌트 입니다. 두 줄 단락을 위해 쓰고 있습니다."
-          ></mm-text-block>
           <mm-textfield type="email" placeholder="Enter Your Email..">
             <mm-icon slot="leading" name="mail"></mm-icon>
             <mm-button slot="trailing" type="submit" variant="primary" size="medium">
               뉴스레터 구독
             </mm-button>
-          </mm-textfield>
         </mm-flex>
       </form>
     </mm-component-section>

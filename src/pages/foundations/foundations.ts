@@ -126,7 +126,7 @@ const componentFeatures: ComponentFeature[] = [
     category: 'Presentation',
     heading: 'Glanceable',
     description: html`
-      훑는 것만으로 뜻이 파악되게 한다. 레이블은 짧게 쓰되 줄여 표시하지 않는다. 기준은
+      훑는 것만으로 뜻이 파악되게 한다. 기준은
       <mm-link href="./content.html">Content</mm-link>
       문서가 정한다.
     `,
@@ -139,7 +139,7 @@ const componentFeatures: ComponentFeature[] = [
   },
   {
     category: 'Presentation',
-    heading: 'Statusful',
+    heading: 'Stateful',
     description: html`
       의미 상태를 톤으로 구분하고 아이콘·텍스트를 함께 준다. 기준은
       <mm-link href="./interaction.html">Interaction</mm-link>
@@ -153,22 +153,28 @@ const componentFeatures: ComponentFeature[] = [
   },
   {
     category: 'Presentation',
-    heading: 'Disclosure',
-    description: html`
-      부차적인 정보를 접어 두고 필요할 때만 펼친다. 기준은
-      <mm-link href="./pattern.html">Pattern</mm-link>
-      문서가 정한다.
-    `,
+    heading: 'Contextual',
+    description: '상호작용 맥락이나 기준 요소에 따라 표현 방식 또는 동작이 결정되는 컴포넌트 특성',
   },
-  {
-    category: 'Presentation',
-    heading: 'Modality',
-    description: html`
-      배경 상호작용 차단 여부로 레이어를 규정한다. 기준은
-      <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
-      문서가 정한다.
-    `,
-  },
+  // dsclosure와 modalty 는 특정 패턴에 가까워서 제외하는 게 낫다. 패턴 문서에서 다루는 게 더 적절하다.
+  // {
+  //   category: 'Presentation',
+  //   heading: 'Disclosure',
+  //   description: html`
+  //     부차적인 정보를 접어 두고 필요할 때만 펼친다. 기준은
+  //     <mm-link href="./pattern.html">Pattern</mm-link>
+  //     문서가 정한다.
+  //   `,
+  // },
+  // {
+  //   category: 'Presentation',
+  //   heading: 'Modality',
+  //   description: html`
+  //     배경 상호작용 차단 여부로 레이어를 규정한다. 기준은
+  //     <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
+  //     문서가 정한다.
+  //   `,
+  // },
 ]
 
 const renderFeatureCard = ({ category, heading, description }: ComponentFeature) => html`
@@ -207,7 +213,8 @@ const main = html`
       </mm-flex>
 
       <mm-content-section-list>
-        <mm-content-section heading-level="3" heading="Component Level">
+        <!-- 아토믹 디자인 패턴의 단점 답습 -->
+        <!-- <mm-content-section heading-level="3" heading="Component Level">
           <mm-paragraph>컴포넌트의 레벨에 따라 간격과 구획 규칙이 정해집니다.</mm-paragraph>
           <mm-list-item-group>
             <mm-list-item
@@ -229,15 +236,15 @@ const main = html`
               description="제목과 본문으로 이루어진 구획. 여백과 제목으로 나눈다."
             ></mm-list-item>
           </mm-list-item-group>
-        </mm-content-section>
+        </mm-content-section> -->
 
-        <mm-content-section heading-level="3" heading="Group">
+        <!-- <mm-content-section heading-level="3" heading="Group">
           <mm-paragraph>
             같은 레벨의 항목을 반복해 놓는 방식입니다. 간격과 구획은 그룹이 소유하며, 단계와 수단은
             <mm-link href="./layout.html?tab=group">Layout</mm-link>
             문서가 정합니다.
           </mm-paragraph>
-        </mm-content-section>
+        </mm-content-section> -->
 
         <mm-content-section heading-level="3" heading="Component Feature">
           <mm-grid columns="4" gap="4">${componentFeatures.map(renderFeatureCard)}</mm-grid>

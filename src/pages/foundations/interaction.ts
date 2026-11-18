@@ -56,38 +56,26 @@ const currentComponentRows = html`
 const feedbackRows = html`
   <tr>
     <th scope="row">${code('mm-toast')}</th>
-    <td>화면 하단 중앙</td>
-    <td>표시 시간이 지나면 스스로 닫힌다</td>
     <td>저장·복사처럼 확인만 하면 끝나는 행동의 결과를 알릴 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-notice')}</th>
-    <td>관련 콘텐츠 곁</td>
-    <td>화면에 남는다</td>
     <td>흐름 안에서 주의할 상태를 알리고 다음 행동을 곁에 둘 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-result')}</th>
-    <td>섹션·페이지 전체</td>
-    <td>화면에 남는다</td>
     <td>작업이 끝난 뒤 완료·오류·빈 상태와 다음 행동을 제시할 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-dialog')}</th>
-    <td>화면 위, 배경을 막는다</td>
-    <td>사용자가 액션을 고를 때까지</td>
     <td>되돌리기 어려운 작업을 실행하기 전에 확인을 받을 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-spinner')}</th>
-    <td>요소 안·영역 안</td>
-    <td>작업이 끝날 때까지</td>
     <td>결과를 기다리는 동안 시스템이 응답하고 있음을 알릴 때</td>
   </tr>
   <tr>
     <th scope="row">${code('mm-task-status')}</th>
-    <td>흐름 안의 한 줄</td>
-    <td>작업이 끝날 때까지</td>
     <td>진행률을 알 수 없는 작업의 시도 횟수·경과 시간을 알릴 때</td>
   </tr>
 `
@@ -304,18 +292,18 @@ const main = html`
                 icon=${ICON_NAMES.CUBE_SCAN}
                 size="medium"
                 label="Focus"
-                description="키보드가 지금 이 요소에 있다는 표시입니다."
+                description="키보드가 지금 이 요소에 있다는 표시입니다. 포인터로 누른 요소에는 링이 남지 않는다"
               >
                 <mm-code slot="trailing">:focus-visible</mm-code>
               </mm-list-item>
-              <mm-list-item
+              <!-- <mm-list-item
                 icon=${ICON_NAMES.MOUSE_BUTTON}
                 size="medium"
                 label="Active"
                 description="지금 누르고 있다는 표시입니다."
               >
                 <mm-code slot="trailing">:active</mm-code>
-              </mm-list-item>
+              </mm-list-item> -->
               <mm-list-item
                 icon=${ICON_NAMES.LOCK}
                 size="medium"
@@ -328,26 +316,17 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '포커스 링은 키보드로 옮겨 왔을 때 그린다',
-                  html`
-                    ${code(':focus-visible')}에 ${code('--interaction-focus-outline')}을 요소에서
-                    2px 띄워 그린다. 포인터로 누른 요소에는 링이 남지 않는다
-                  `,
-                ),
-                rule(
-                  '비활성 요소는 흐리게 표시하고 상태를 attribute로 알린다',
-                  html`
-                    불투명도를 절반으로 낮추고 커서를 not-allowed로 바꾼다. 네이티브 컨트롤은
-                    ${code('disabled')}, 그 밖의 역할은 ${code('aria-disabled')}로 알린다
-                  `,
-                ),
+                rule('포인터로 누른 요소에는 링이 남지 않는다'),
+                // rule(
+                // '불투명도를 절반으로 낮추고 커서를 not-allowed로 바꾼다. 네이티브 컨트롤은 ${code('disabled')}, 그 밖의 역할은 ${code('aria-disabled')}로 알린다',
+                // ),
               ]}
             ></mm-text-list>
             <mm-component-notice heading="Hover 처리 규칙을 정한다">
               hover 값은 ${code('--interaction-hover-background-color')}·
               ${code('--interaction-hover-lift')} 토큰으로만 남아 있다. 어느 요소가 어느 처리를
-              쓰는지, 포인터가 없는 터치 화면에서 클릭 가능성을 무엇으로 알릴지 정하지 않았다
+              쓰는지, 포인터가 없는 터치 화면에서 클릭 가능성을 무엇으로 알릴지 정하지 않았다.
+              surface 전용토큰
             </mm-component-notice>
           </mm-content-section>
 
@@ -355,8 +334,9 @@ const main = html`
             <mm-paragraph>UI 요소의 상호작용 결과 상태입니다.</mm-paragraph>
             <mm-list-item-group>
               <mm-list-item
+                avatar-variant="icon"
                 icon=${ICON_NAMES.PRESSED}
-                size="medium"
+                size="large"
                 label="Pressed"
                 description="그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다."
               >
@@ -368,7 +348,7 @@ const main = html`
                 label="Checked"
                 description="컨트롤의 on/off 값이 켜져 있다는 표시입니다."
               >
-                <mm-code slot="trailing">checked</mm-code>
+                <mm-code slot="trailing">aria-checked/checked</mm-code>
               </mm-list-item>
               <mm-list-item
                 icon=${ICON_NAMES.SELECTED}
@@ -386,14 +366,6 @@ const main = html`
               >
                 <mm-code slot="trailing">aria-current</mm-code>
               </mm-list-item>
-              <mm-list-item
-                icon=${ICON_NAMES.WARNING}
-                size="medium"
-                label="Invalid"
-                description="입력값이 유효하지 않다는 표시입니다."
-              >
-                <mm-code slot="trailing">aria-invalid</mm-code>
-              </mm-list-item>
             </mm-list-item-group>
           </mm-content-section>
 
@@ -402,26 +374,6 @@ const main = html`
               같은 집합 안에서 지금 위치한 항목이라는 표시입니다. 사용자가 이동하는 동안에도 어디에
               있는지 다른 항목과 구분해 보여 주므로 위치를 잃지 않습니다.
             </mm-paragraph>
-            <mm-surface variant="outlined" radius="large">
-              <mm-flex gap="6" align-items="center">
-                <mm-flex direction="column" gap="4" align-items="center">
-                  <mm-flex gap="1">
-                    <mm-page-button page="1"></mm-page-button>
-                    <mm-page-button page="2" aria-current="page"></mm-page-button>
-                    <mm-page-button page="3"></mm-page-button>
-                  </mm-flex>
-                  <mm-caption>가로 배치</mm-caption>
-                </mm-flex>
-                <mm-flex direction="column" gap="2" align-items="center">
-                  <mm-sidebar-page-link
-                    href="./interaction.html"
-                    emoji="#"
-                    label="Interaction"
-                  ></mm-sidebar-page-link>
-                  <mm-caption>세로 배치</mm-caption>
-                </mm-flex>
-              </mm-flex>
-            </mm-surface>
             <mm-table
               .rows=${currentComponentRows}
               caption="aria-current 값과 가리키는 대상, 그것을 쓰는 컴포넌트"
@@ -523,6 +475,16 @@ const main = html`
                 label="Empty"
                 description="완료되었으나 데이터가 0건입니다. mm-result로 빈 상태와 다음 행동을 제시합니다."
               ></mm-list-item>
+
+              <!-- 입력 상태에 가까움 -->
+              <mm-list-item
+                icon=${ICON_NAMES.WARNING}
+                size="medium"
+                label="Invalid"
+                description="입력값이 유효하지 않다는 표시입니다."
+              >
+                <mm-code slot="trailing">aria-invalid</mm-code>
+              </mm-list-item>
             </mm-list-item-group>
           </mm-content-section>
 
@@ -534,12 +496,7 @@ const main = html`
             <mm-table
               .rows=${feedbackRows}
               caption="결과를 알리는 컴포넌트의 자리·머무는 시간·사용 시점 비교"
-              .columns=${[
-                { label: '컴포넌트', width: '180px' },
-                { label: '자리', width: '180px' },
-                { label: '머무는 시간', width: '220px' },
-                { label: '언제' },
-              ]}
+              .columns=${[{ label: '컴포넌트', width: '180px' }, { label: '언제' }]}
             ></mm-table>
             <mm-text-list
               variant="check"
