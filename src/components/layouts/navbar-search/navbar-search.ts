@@ -41,7 +41,6 @@ export class NavbarSearch extends LitElement {
         ?open=${this.isOpen}
         @toggle=${this.handleSheetToggle}
       >
-        <mm-sheet-header heading="검색"></mm-sheet-header>
         <mm-sheet-body>
           <form role="search" style="display: flex; flex-direction: column; gap: var(--space-2)">
             <mm-searchfield
