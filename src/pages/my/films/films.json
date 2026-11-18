@@ -1,55 +1,136 @@
 [
   {
+    "id": 202611,
+    "releasedate": 2024,
+    "titlekorean": "정체",
+    "titleenglish": "Faceless",
+    "director": "후지이 미치히토",
+    "country": "일본",
+    "etc": ""
+  },
+  {
+    "id": 202611,
+    "releasedate": 2024,
+    "titlekorean": "악마와의 토크쇼",
+    "titleenglish": "Late Night with the Devil",
+    "director": "콜린 케언즈, 카메론 케언즈",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202610,
+    "releasedate": 1968,
+    "titlekorean": "폭풍의 밤",
+    "titleenglish": "Love Me Once Again",
+    "director": "한형모",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202610,
+    "releasedate": 2008,
+    "titlekorean": "즐거운 도난",
+    "titleenglish": "The Pleasure of Being Robbed",
+    "director": "조쉬 사프디",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202610,
+    "releasedate": 2017,
+    "titlekorean": "남한산성",
+    "titleenglish": "The Fortress",
+    "director": "황동혁",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202610,
+    "releasedate": 1968,
+    "titlekorean": "주성치 다시보기",
+    "titleenglish": "Love Me Once Again",
+    "director": "한형모",
+    "country": "한국",
+    "etc": ""
+  },
+  {
+    "id": 202610,
+    "releasedate": 1968,
+    "titlekorean": "미워도 다시한번",
+    "titleenglish": "Love Me Once Again",
+    "director": "한형모",
+    "country": "한국",
+    "etc": ""
+  },
+  {
     "id": 202609,
-    "releasedate": 2026,
+    "releasedate": 2001,
+    "titlekorean": "A.I.",
+    "titleenglish": "A.I. Artificial Intelligence",
+    "director": "스티븐 스필버그",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202609,
+    "releasedate": 2024,
+    "titlekorean": "컴플리트 언노운",
+    "titleenglish": "A Complete Unknown",
+    "director": " 제임스 맨골드",
+    "country": "미국",
+    "etc": ""
+  },
+  {
+    "id": 202609,
+    "releasedate": 2017,
     "titlekorean": "이름 없는 새",
-    "titleenglish": "",
-    "director": "",
+    "titleenglish": "Birds Without Names",
+    "director": "시라이시 카즈야",
     "country": "일본",
     "etc": ""
   },
   {
     "id": 202609,
-    "releasedate": 2026,
+    "releasedate": 2014,
     "titlekorean": "디 아더 원: 밥 위어의 길고 이상한 여행",
-    "titleenglish": "",
-    "director": "",
-    "country": "한국",
-    "etc": ""
+    "titleenglish": "The Other One: The Long, Strange Trip of Bob Weir",
+    "director": "마이크 플라이스",
+    "country": "미국",
+    "etc": "넷플릭스"
   },
   {
     "id": 202609,
-    "releasedate": 2026,
+    "releasedate": 2002,
     "titlekorean": "오아시스",
-    "titleenglish": "",
-    "director": "",
+    "titleenglish": "Oasis",
+    "director": "이창동",
     "country": "한국",
     "etc": ""
   },
   {
     "id": 202609,
-    "releasedate": 2026,
+    "releasedate": 2012,
     "titlekorean": "제로 다크 서티",
-    "titleenglish": "",
-    "director": "",
-    "country": "한국",
+    "titleenglish": "Zero Dark Thirty",
+    "director": "캐서린 비글로우",
+    "country": "미국",
     "etc": ""
   },
   {
     "id": 202608,
     "releasedate": 2026,
     "titlekorean": "왕과 사는 남자",
-    "titleenglish": "",
-    "director": "",
+    "titleenglish": "The King's Warden",
+    "director": "장항준",
     "country": "한국",
     "etc": ""
   },
   {
     "id": 202608,
-    "releasedate": 2026,
+    "releasedate": 2018,
     "titlekorean": "스타 이즈 본",
-    "titleenglish": "",
-    "director": "",
+    "titleenglish": "A Star Is Born",
+    "director": "브래들리 쿠퍼",
     "country": "미국",
     "etc": ""
   },
@@ -57,8 +138,8 @@
     "id": 202608,
     "releasedate": 2026,
     "titlekorean": "살목지",
-    "titleenglish": "",
-    "director": "",
+    "titleenglish": "Salmokji: Whispering Water",
+    "director": "이상민",
     "country": "한국",
     "etc": "호러"
   },
@@ -66,7 +147,7 @@
     "id": 202608,
     "releasedate": 2026,
     "titlekorean": "오딧세이",
-    "titleenglish": "Odissay TODO",
+    "titleenglish": "Odissay",
     "director": "크리스토퍼 놀란",
     "country": "미국",
     "etc": "왕십리"
@@ -75,26 +156,26 @@
     "id": 202608,
     "releasedate": 2023,
     "titlekorean": "추락의 해부",
-    "titleenglish": "Odissay TODO",
-    "director": "크리스토퍼 놀란",
+    "titleenglish": "Anatomie d'une chute",
+    "director": "쥐스틴 트리에",
     "country": "프랑스",
     "etc": ""
   },
   {
     "id": 202608,
-    "releasedate": 2026,
+    "releasedate": 2007,
     "titlekorean": "300",
     "titleenglish": "300",
-    "director": "",
+    "director": "잭 스나이더",
     "country": "미국",
     "etc": ""
   },
   {
     "id": 202607,
-    "releasedate": 2026,
+    "releasedate": 2025,
     "titlekorean": "만약에 우리",
-    "titleenglish": "If Only We Were",
-    "director": "",
+    "titleenglish": "Once We Were Us",
+    "director": "김도영",
     "country": "한국",
     "etc": ""
   },
@@ -10000,7 +10081,7 @@
     "titleenglish": "Stachka",
     "director": "세르게이 M. 에이젠슈타인",
     "country": "러시아",
-    "etc": "TODO"
+    "etc": ""
   },
   {
     "releasedate": "2015",

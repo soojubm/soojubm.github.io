@@ -1,6 +1,15 @@
 [
   {
     "releasedate": 1937,
+    "titlekorean": "경희",
+    "titleenglish": "瓊姬",
+    "director": "나혜석",
+    "country": "한국",
+    "etc": ""
+  },
+
+  {
+    "releasedate": 1937,
     "titlekorean": "성찬",
     "titleenglish": "聖餐",
     "director": "이효석",
