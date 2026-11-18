@@ -78,7 +78,7 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
-          <mm-flex gap="4">
+          <mm-button-group>
             ${variants.map(
               variant => html`
                 <mm-select
@@ -89,13 +89,13 @@ const main = html`
                 ></mm-select>
               `,
             )}
-          </mm-flex>
+          </mm-button-group>
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="placement">
         <mm-component-example>
-          <mm-flex gap="4" wrap="wrap">
+          <mm-button-group>
             ${placements.map(
               placement => html`
                 <mm-select
@@ -106,7 +106,7 @@ const main = html`
                 ></mm-select>
               `,
             )}
-          </mm-flex>
+          </mm-button-group>
         </mm-component-example>
         <mm-component-code .code=${placementCode}></mm-component-code>
       </mm-tab-panel>
