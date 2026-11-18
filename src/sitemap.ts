@@ -56,6 +56,12 @@ export const SITEMAP: SitemapNode[] = [
     title: 'Tokens',
     icon: ICON_NAMES.PALETTE,
   },
+  {
+    type: 'standalone',
+    id: 'utilities',
+    title: 'Utilities',
+    icon: ICON_NAMES.GRID_VIEW,
+  },
 
   // 2. 접고 펼치는 메뉴 그룹
   {
