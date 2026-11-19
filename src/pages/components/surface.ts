@@ -115,38 +115,35 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-surface variant="ghost">
-                <mm-text-block
-                  level="3"
-                  heading="ghost"
-                  description="투명한 배경. 클릭할 수 없다."
-                ></mm-text-block>
-              </mm-surface>
-              <mm-surface variant="outlined">
-                <mm-text-block
-                  level="3"
-                  heading="outlined"
-                  description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."
-                ></mm-text-block>
-              </mm-surface>
-              <mm-surface variant="filled">
-                <mm-text-block
-                  level="3"
-                  heading="filled"
-                  description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."
-                ></mm-text-block>
-              </mm-surface>
-              <mm-surface variant="elevated">
-                <mm-text-block
-                  level="3"
-                  heading="elevated"
-                  description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
-                ></mm-text-block>
-              </mm-surface>
-            </mm-flex>
-            <mm-paragraph>표면의 층위와 클릭 가능 여부를 함께 알립니다.</mm-paragraph>
+          <mm-flex direction="column" gap="3">
+            <mm-surface variant="ghost">
+              <mm-text-block
+                level="3"
+                heading="ghost"
+                description="투명한 배경. 클릭할 수 없다."
+              ></mm-text-block>
+            </mm-surface>
+            <mm-surface variant="outlined">
+              <mm-text-block
+                level="3"
+                heading="outlined"
+                description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."
+              ></mm-text-block>
+            </mm-surface>
+            <mm-surface variant="filled">
+              <mm-text-block
+                level="3"
+                heading="filled"
+                description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."
+              ></mm-text-block>
+            </mm-surface>
+            <mm-surface variant="elevated">
+              <mm-text-block
+                level="3"
+                heading="elevated"
+                description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
+              ></mm-text-block>
+            </mm-surface>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
@@ -189,32 +186,13 @@ const main = html`
         </mm-paragraph>
       </mm-paragraph-group>
 
-      <mm-text-list
-        .texts=${[
-          'surface 안의 leading·trailing 요소에 따라 위치를 맞추는 보정이 필요할 수 있습니다.',
-          'inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다.',
-        ]}
-      ></mm-text-list>
+      <mm-paragraph-group>
+        <mm-heading level="3">시각 보정이 필요해요</mm-heading>
+        <mm-paragraph>
+          surface 안의 leading·trailing 요소에 따라 위치를 맞추는 보정이 필요할 수 있습니다.
+        </mm-paragraph>
+      </mm-paragraph-group>
     </mm-component-guide>
-
-    <mm-component-section
-      heading="PricingCard"
-      description="표면 없이 카드 사이 간격으로 요금제를 나눕니다. 카드 안의 전체 너비 버튼이 커서, 표면을 두르면 표면과 버튼이 서로 다른 면으로 겹쳐 보여 시각 정보가 충돌하기 때문입니다."
-    >
-      <mm-pricing-card
-        plan="Standard"
-        description="리서치, 정리, 낮은 한도"
-        price="₩ 6,800"
-        period="매월 청구"
-        .features=${['스토리지 2TB', 'Google 전문가와의 상담', '회원을 위한 추가 혜택']}
-      >
-        <mm-tag slot="badge">
-          <span aria-hidden="true">🔥</span>
-          Most Popular
-        </mm-tag>
-        <mm-button slot="action" variant="primary" size="large" full-width>업그레이드</mm-button>
-      </mm-pricing-card>
-    </mm-component-section>
 
     <mm-component-section heading="FeedSurface" description="" width="narrow">
       <section role="feed" aria-busy="false">
@@ -245,8 +223,7 @@ const main = html`
                 .texts=${[
                   'TODO 원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.',
                   'TODO 글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.',
-                  'TODO 리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다.',
-                  'TODO 리액션한 사용자 목록을 어떻게 보여줄 것인가.',
+                  'TODO 리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가.',
                   'TODO 중복 리액션과 횟수 등 기능 정의.',
                   '리액션 =&gt; 알림.',
                 ]}
@@ -254,7 +231,7 @@ const main = html`
               <mm-keyword-tag-group
                 .keywords=${['Google', 'Meta', 'Nvidia']}
               ></mm-keyword-tag-group>
-              <mm-surface variant="elevated">
+              <mm-surface radius="large" variant="elevated">
                 <mm-flex direction="column" gap="2">
                   <mm-tag>3월 14일 수정됨</mm-tag>
                   <mm-menu-item-group size="large">
@@ -305,41 +282,34 @@ const main = html`
                 `,
               )}
             </mm-scroll>
-            <mm-paragraph>
-              가로로 넘기는 목록에 씁니다. 트랙패드나 가로 휠이 없어도 넘길 수 있습니다.
-            </mm-paragraph>
+            <mm-paragraph>트랙패드나 가로 휠이 없어도 넘길 수 있습니다.</mm-paragraph>
           </mm-flex>
         </mm-tab-panel>
         <mm-tab-panel value="column">
-          <mm-flex direction="column" gap="6">
-            <mm-scroll direction="column" gap="3" style="max-height: calc(var(--size-80) * 3)">
-              <mm-surface>
-                <mm-text weight="bold">Surface 1</mm-text>
-              </mm-surface>
-              <mm-surface>
-                <mm-text weight="bold">Surface 2</mm-text>
-              </mm-surface>
-              <mm-surface>
-                <mm-text weight="bold">Surface 3</mm-text>
-              </mm-surface>
-              <mm-surface>
-                <mm-text weight="bold">Surface 4</mm-text>
-              </mm-surface>
-              <mm-surface>
-                <mm-text weight="bold">Surface 5</mm-text>
-              </mm-surface>
-            </mm-scroll>
-            <mm-paragraph>
-              고정 높이 안에서 세로로 쌓이는 목록에 씁니다. 스크롤바로 남은 분량을 드러냅니다.
-            </mm-paragraph>
-          </mm-flex>
+          <mm-scroll direction="column" gap="3" style="max-height: calc(var(--size-80) * 3)">
+            <mm-surface>
+              <mm-text weight="bold">Surface 1</mm-text>
+            </mm-surface>
+            <mm-surface>
+              <mm-text weight="bold">Surface 2</mm-text>
+            </mm-surface>
+            <mm-surface>
+              <mm-text weight="bold">Surface 3</mm-text>
+            </mm-surface>
+            <mm-surface>
+              <mm-text weight="bold">Surface 4</mm-text>
+            </mm-surface>
+            <mm-surface>
+              <mm-text weight="bold">Surface 5</mm-text>
+            </mm-surface>
+          </mm-scroll>
         </mm-tab-panel>
       </mm-flex>
     </mm-component-section>
 
     <mm-component-section
       heading="Marquee"
-      description="콘텐츠를 가로로 끊김 없이 반복해 흘려보내는 영역입니다. 길이가 달라도 빈틈 없이 이어지며, 모션 줄이기를 켠 환경에서는 움직이지 않습니다."
+      description="콘텐츠를 가로로 끊김 없이 반복해 흘려보내는 영역입니다. 모션 줄이기를 켠 환경에서는 움직이지 않습니다."
     >
       <mm-flex direction="column" gap="4">
         <mm-marquee gap="6" speed="64" pause-on-hover>

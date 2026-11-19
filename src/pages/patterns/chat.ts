@@ -57,14 +57,12 @@ const main = html`
             </mm-ai-chat-message>
 
             <mm-ai-chat-message hidden-reactions>
-              <mm-flex direction="column" gap="2">
-                <mm-chat-reasoning thinking>
-                  <mm-chat-reasoning-flow label="요청을 확인하는 중"></mm-chat-reasoning-flow>
-                  <mm-chat-reasoning-flow label="관련 자료 탐색 중"></mm-chat-reasoning-flow>
-                  <mm-chat-reasoning-flow label="핵심 구조 정리 중"></mm-chat-reasoning-flow>
-                  <mm-chat-reasoning-flow label="답변 문장 다듬는 중"></mm-chat-reasoning-flow>
-                </mm-chat-reasoning>
-              </mm-flex>
+              <mm-process-status-list>
+                <mm-process-status variant="success" label="요청을 확인함"></mm-process-status>
+                <mm-process-status variant="success" label="관련 자료를 탐색함"></mm-process-status>
+                <mm-process-status label="핵심 구조 정리 중"></mm-process-status>
+                <mm-process-status variant="pending" label="답변 문장 다듬기"></mm-process-status>
+              </mm-process-status-list>
 
               <mm-chat-confirmation
                 message="example.txt 파일을 삭제하려고 합니다. 이 작업을 승인하시겠어요?"

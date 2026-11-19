@@ -115,6 +115,11 @@ export const interactiveRowStyles = css`
     &[aria-selected='true'] {
       --interactive-row-background-color: var(--interaction-selected-background-color);
       color: var(--interaction-selected-foreground-color);
+
+      /* 보더는 배경 레이어에 그려 행의 레이아웃 박스를 밀지 않는다. */
+      &::before {
+        border: var(--border-selected);
+      }
     }
 
     &[disabled],

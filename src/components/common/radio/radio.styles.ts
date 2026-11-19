@@ -100,7 +100,7 @@ export const radioCardStyles = css`
   }
 
   input[type='radio']:checked + label {
-    --radio-card-border: var(--border-width) solid var(--interaction-selected-border-color);
+    --radio-card-border: var(--border-selected);
     --radio-card-background-color: var(--interaction-selected-background-color);
   }
 

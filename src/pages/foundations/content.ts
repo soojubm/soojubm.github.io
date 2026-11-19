@@ -193,6 +193,7 @@ const main = html`
       <mm-tab-list value="writing" variant="text" search-param="tab">
         <mm-tab value="writing">Writing</mm-tab>
         <mm-tab value="iconography">Iconography</mm-tab>
+        <mm-tab value="accessibility">Accessibility</mm-tab>
       </mm-tab-list>
 
       <mm-tab-panel value="writing">
@@ -222,6 +223,12 @@ const main = html`
                   '시스템이 안내하는 문구인지, 사용자가 누르는 행동인지로 나눈다. 실행 레이블은 사용자 시점의 동사로 쓴다',
                 ),
                 rule('레이블을 말줄임표로 줄이지 않고 고쳐 쓴다'),
+                rule('트리거 버튼 레이블은 다이얼로그 제목의 동사와 페어링한다'),
+                rule('질문은 부정어로 만들지 않는다'),
+                rule(
+                  '실행 결과를 예측할 수 있는 레이블을 쓴다',
+                  '레이블만으로 결과가 전해지면 툴팁이나 보조 텍스트 같은 별도 안내가 필요하지 않다',
+                ),
               ]}
             ></mm-text-list>
             <mm-component-notice heading="어조 규칙을 정한다">
@@ -323,6 +330,60 @@ const main = html`
               없는 이모지나 문자 기호는 이 맵에 넣지 않고 ${code('emoji')}로 넘깁니다.
             </mm-paragraph>
             ${renderIconCatalog()}
+          </mm-content-section>
+        </mm-content-section-list>
+      </mm-tab-panel>
+
+      <mm-tab-panel value="accessibility">
+        <mm-content-section-list>
+          <mm-content-section heading-level="3" heading="이름">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '화면에 글자가 없어도 버튼의 이름을 들을 수 있게 한다',
+                  '아이콘만 보이는 버튼은 보조기술 사용자에게 이름이 전해지지 않으면 무엇을 하는 버튼인지 알 수 없다',
+                ),
+                rule(
+                  '묶음 전체에 항상 이름을 준다',
+                  "옵션 레이블만으로는 무엇에 대한 선택인지 알 수 없어서, 이름이 없으면 보조기술 사용자는 '왼쪽·가운데·오른쪽'을 듣고도 무엇을 고르는지 알 수 없다. '텍스트 정렬'처럼 선택의 주제를 이름으로 적는다",
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="팝업을 여는 트리거">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '트리거는 어떤 패널이 열리는지 미리 알린다',
+                  html`
+                    누르기 전에 스크린리더가 열릴 패널을 안내해야, 사용자가 열린 뒤의 조작을 예상할
+                    수 있다. 열리는 내용에 맞는 값을 ${code('aria-haspopup')}으로 준다
+                  `,
+                ),
+                rule(
+                  '메뉴를 여는 트리거는 menu로 둔다',
+                  html`
+                    ${code('aria-haspopup="menu"')}
+                  `,
+                ),
+                rule(
+                  '옵션 목록을 여는 트리거는 listbox로 둔다',
+                  html`
+                    ${code('aria-haspopup="listbox"')}
+                  `,
+                ),
+                rule(
+                  '설정 컨트롤을 넣은 패널은 열림 여부만 알린다',
+                  html`
+                    토글·슬라이더 같은 컨트롤을 넣은 패널은 menu·listbox 어느 쪽에도 맞지 않는다.
+                    ${code('aria-haspopup')}을 빼고 ${code('aria-expanded')}만 둔다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>

@@ -120,6 +120,7 @@
   --border: var(--border-width) solid var(--border-color);
   --border-transparent: var(--border-width) solid transparent;
   --border-danger: var(--border-width) solid var(--danger-color);
+  --border-selected: var(--border-width) solid var(--interaction-selected-border-color);
 
   --radius: 6px;
   --radius-large: 1rem;
@@ -233,6 +234,7 @@
   --interaction-selected-background-color: var(--primary-subtle-color);
   --interaction-selected-foreground-color: var(--primary-color);
   --interaction-selected-border-color: var(--primary-color);
+  --border-selected: var(--border-width) solid var(--interaction-selected-border-color);
 
   --background-color: rgb(33, 33, 33);
   --background-subtle-color: #2b2b2b;

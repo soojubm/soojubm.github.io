@@ -43,7 +43,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Dialog"
-      description="되돌리기 어려운 작업 앞에서 확인을 받는 modal 창입니다. 제목과 설명, 확인·취소 액션만 담아 배경 클릭으로는 닫히지 않으므로, 사용자는 정보나 재산을 바꾸거나 지우기 전에 결과를 한 번 더 확인할 수 있습니다."
+      description="되돌리기 어려운 작업 앞에서 확인을 받는 modal 창입니다. 제목과 설명, 확인·취소 액션만 넣어 배경 클릭으로는 닫히지 않으므로, 사용자는 정보나 재산을 바꾸거나 지우기 전에 결과를 한 번 더 확인할 수 있습니다."
     ></mm-page-header>
 
     <mm-component-aka .items=${['Alert', 'Modal', 'Prompt']}></mm-component-aka>
@@ -72,14 +72,7 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-dialog']}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
-        .texts=${[
-          '프라이머리 버튼 레이블은 다이얼로그 제목의 동사와 페어링합니다.',
-          '질문은 부정어로 만들지 않습니다.',
-        ]}
-      ></mm-text-list>
-    </mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 

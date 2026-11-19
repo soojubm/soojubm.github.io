@@ -93,22 +93,6 @@ const main = html`
           '트리거를 가리키는 화살표는 두지 않는다. 사용자가 직접 연 패널이라 어디에서 나왔는지 이미 분명하다.',
         ]}
       ></mm-text-list>
-
-      <mm-paragraph-group>
-        <mm-heading level="3">트리거는 어떤 패널이 열리는지 알려야 하나요?</mm-heading>
-        <mm-paragraph>
-          버튼을 누르기 전에 스크린리더가 어떤 패널이 열릴지 미리 안내해야, 사용자가 열린 뒤의
-          조작을 예상할 수 있습니다. 열리는 내용에 맞는 값을 aria-haspopup으로 줍니다.
-        </mm-paragraph>
-      </mm-paragraph-group>
-
-      <mm-text-list
-        .texts=${[
-          '메뉴를 여는 트리거는 aria-haspopup="menu"로 둔다.',
-          '옵션 목록을 여는 트리거는 aria-haspopup="listbox"로 둔다.',
-          '토글·슬라이더 같은 설정 컨트롤을 담은 패널은 menu·listbox 어느 쪽에도 맞지 않는다. aria-haspopup을 빼고 열림 여부를 알리는 aria-expanded만 둔다.',
-        ]}
-      ></mm-text-list>
     </mm-component-guide>
 
     <mm-component-section

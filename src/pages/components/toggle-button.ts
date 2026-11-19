@@ -119,28 +119,11 @@ const main = html`
     <mm-component-tokens .elements=${['mm-toggle-button']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
-      <mm-content-section heading="접근성" heading-level="3">
-        <mm-text-block
-          level="4"
-          heading="레이블이 보일 때"
-          description="보이는 레이블이 곧 버튼의 이름입니다. 누른 상태는 보조기술이 따로 알려 주므로 레이블에 '켜짐'·'선택됨' 같은 상태를 덧붙이지 않습니다."
-        ></mm-text-block>
-        <mm-text-block
-          level="4"
-          heading="아이콘만 보일 때"
-          description="화면에 글자가 없어도 보조기술 사용자는 버튼의 이름을 들을 수 있어야 합니다."
-        ></mm-text-block>
-        <mm-text-block
-          level="4"
-          heading="눌린 뒤 할 행동으로 레이블을 바꿀 때"
-          description="연동처럼 같은 버튼이 누른 뒤에는 반대 행동을 맡으면, 눌린 뒤의 레이블을 그 행동으로 바꿉니다. 현재 상태를 말하는 '켜짐'·'선택됨'은 보조기술이 이미 전달하므로 적지 않습니다."
-        ></mm-text-block>
-        <mm-text-block
-          level="4"
-          heading="그룹 이름"
-          description="옵션만으로 무엇을 고르는지 알기 어려우면 묶음 전체에 이름을 줍니다."
-        ></mm-text-block>
-      </mm-content-section>
+      <mm-text-list
+        .texts=${[
+          '맥락이 다른 액션을 묶어 제공할 때는 단일선택·다중선택·삭제·펼침메뉴 같은 성격을 기표로 충분히 드러낸다.',
+        ]}
+      ></mm-text-list>
     </mm-component-guide>
 
     <mm-component-anatomy

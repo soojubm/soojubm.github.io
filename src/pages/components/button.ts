@@ -95,11 +95,11 @@ const chipNamingRows = html`
 `
 
 const variantCode = `<mm-button-group>
-  <mm-button variant="primary" size="large">primary</mm-button>
-  <mm-button variant="secondary" size="large">secondary</mm-button>
-  <mm-button variant="tertiary" size="large">tertiary</mm-button>
-  <mm-button variant="danger" size="large">danger</mm-button>
-  <mm-button variant="ghost" size="large">ghost</mm-button>
+  <mm-button variant="primary">primary</mm-button>
+  <mm-button variant="secondary">secondary</mm-button>
+  <mm-button variant="tertiary">tertiary</mm-button>
+  <mm-button variant="danger">danger</mm-button>
+  <mm-button variant="ghost">ghost</mm-button>
 </mm-button-group>`
 
 const sizeCode = `<mm-button-group>
@@ -137,11 +137,11 @@ const main = html`
       <mm-tab-panel value="variant">
         <mm-component-example full-width>
           <mm-button-group>
-            <mm-button variant="primary" size="large">primary</mm-button>
-            <mm-button variant="secondary" size="large">secondary</mm-button>
-            <mm-button variant="tertiary" size="large">tertiary</mm-button>
-            <mm-button variant="danger" size="large">danger</mm-button>
-            <mm-button variant="ghost" size="large">ghost</mm-button>
+            <mm-button variant="primary">primary</mm-button>
+            <mm-button variant="secondary">secondary</mm-button>
+            <mm-button variant="tertiary">tertiary</mm-button>
+            <mm-button variant="danger">danger</mm-button>
+            <mm-button variant="ghost">ghost</mm-button>
           </mm-button-group>
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
@@ -168,14 +168,11 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-button-group>
-              <mm-button variant="tertiary">hovered</mm-button>
-              <mm-button variant="tertiary">focused</mm-button>
-              <mm-button variant="tertiary" disabled>disabled</mm-button>
-            </mm-button-group>
-            <mm-paragraph>권장: 비활성화 대신 제출 후 오류 메시지로 이유를 알립니다.</mm-paragraph>
-          </mm-flex>
+          <mm-button-group>
+            <mm-button variant="tertiary">hovered</mm-button>
+            <mm-button variant="tertiary">focused</mm-button>
+            <mm-button variant="tertiary" disabled>disabled</mm-button>
+          </mm-button-group>
         </mm-component-example>
         <mm-component-code .code=${stateCode}></mm-component-code>
       </mm-tab-panel>
@@ -193,8 +190,6 @@ const main = html`
         <mm-text-list
           .texts=${[
             'disabled 버튼은 피한다. 불완전한 폼도 제출하게 두고 오류 메시지로 무엇이 잘못됐는지 알린다.',
-            '실행 결과를 예측할 수 있는 레이블을 쓴다. 레이블만으로 결과가 전해지면 툴팁이나 보조 텍스트 같은 별도 안내가 필요하지 않다.',
-            '맥락이 다른 액션을 묶어 제공할 때는 단일선택·다중선택·삭제·펼침메뉴 같은 성격을 기표로 충분히 드러낸다.',
           ]}
         ></mm-text-list>
       </mm-paragraph-group>
@@ -212,32 +207,36 @@ const main = html`
         { placement: 'block-end', offset: 'calc(100% - 1.5rem)' },
       ]}
     >
-      <mm-button variant="primary" size="large" icon=${ICON_NAMES.SUBMIT}>보내기</mm-button>
+      <mm-button variant="primary" icon=${ICON_NAMES.SUBMIT}>보내기</mm-button>
     </mm-component-anatomy>
 
     <mm-component-section
       heading="Button Group"
-      description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. TODO 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결. Reject-Approve Pattern, Confirmation Pattern"
+      .checks=${[
+        '항상 primary action에 먼저 포커스되어야 합니다.',
+        '포커스 순서는 tabindex 대신 마크업 순서로 맞추고, 화면에 보이는 배치는 정렬 스타일링으로 따로 잡습니다.',
+      ]}
+      description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. TODO Reject-Approve Pattern, Confirmation Pattern"
     >
       <mm-flex direction="column" gap="2">
         <mm-button-group aria-label="상품 정보 묶음">
-          <mm-button variant="tertiary" size="large">취소</mm-button>
-          <mm-button variant="primary" size="large">저장</mm-button>
+          <mm-button variant="tertiary">취소</mm-button>
+          <mm-button variant="primary">저장</mm-button>
         </mm-button-group>
         <mm-separator></mm-separator>
         <mm-button-group>
-          <mm-button variant="ghost" size="large">건너뛰기</mm-button>
-          <mm-button variant="secondary" size="large">다음</mm-button>
+          <mm-button variant="ghost">건너뛰기</mm-button>
+          <mm-button variant="secondary">다음</mm-button>
         </mm-button-group>
         <mm-separator></mm-separator>
         <mm-button-group>
-          <mm-button variant="tertiary" size="large">이전</mm-button>
-          <mm-button variant="secondary" size="large">다음</mm-button>
+          <mm-button variant="tertiary">이전</mm-button>
+          <mm-button variant="secondary">다음</mm-button>
         </mm-button-group>
         <mm-separator></mm-separator>
         <mm-button-group>
-          <mm-button variant="primary" size="large" href="#">지금 가입하기</mm-button>
-          <mm-button variant="ghost" size="large">더 알아보기</mm-button>
+          <mm-button variant="primary" href="#">지금 가입하기</mm-button>
+          <mm-button variant="ghost">더 알아보기</mm-button>
         </mm-button-group>
       </mm-flex>
     </mm-component-section>
@@ -245,7 +244,8 @@ const main = html`
     <mm-component-section
       heading="ShowMoreButton"
       full-width
-      description="TODO Image Button, CheckoutButton. full-width로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
+      description=""
+      .checks=${['콘텐츠 목록의 너비와 대비되도록 강조하기 위해 full-width로 사용하지 마세요.']}
     >
       <mm-grid columns="3">
         <mm-ui-placeholder></mm-ui-placeholder>
@@ -263,7 +263,7 @@ const main = html`
 
     <mm-component-section
       heading="SocialAuthButton"
-      description="외부 계정으로 로그인·가입을 시작합니다. 레이블과 아이콘은 provider가 정합니다."
+      description="외부 계정으로 로그인·가입을 시작합니다."
     >
       <mm-flex direction="column" gap="2">
         <mm-social-auth-button provider="facebook"></mm-social-auth-button>

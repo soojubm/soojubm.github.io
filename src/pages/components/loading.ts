@@ -58,27 +58,39 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-section
-      heading="TaskStatus"
+      heading="ProcessStatus"
       description="진행률을 알 수 없는 작업의 현재 상태를 한 줄로 알립니다. 채울 막대가 없으므로 시도 횟수나 경과 시간처럼 기다릴지 판단할 근거를 글로 줍니다."
     >
       <mm-flex direction="column" gap="3">
-        <mm-task-status label="업로드 중" .meta=${['3/12개', '1m 04s']}></mm-task-status>
-        <mm-task-status
+        <mm-process-status label="업로드 중" .meta=${['3/12개', '1m 04s']}></mm-process-status>
+        <mm-process-status
           variant="warning"
           label="요청 실패"
           .meta=${['재시도 중 (7/10)', '2m 11s']}
-        ></mm-task-status>
-        <mm-task-status
+        ></mm-process-status>
+        <mm-process-status
           variant="success"
           label="동기화 완료"
           .meta=${['12,480건']}
-        ></mm-task-status>
-        <mm-task-status
+        ></mm-process-status>
+        <mm-process-status
           variant="error"
           label="업로드 실패"
           .meta=${['재시도 10회 초과']}
-        ></mm-task-status>
+        ></mm-process-status>
       </mm-flex>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="ProcessStatusList"
+      description="여러 단계로 이어지는 작업의 과정을 ProcessStatus로 나열합니다. 지나온 단계는 완료로, 지금 단계는 진행 중으로, 남은 단계는 대기로 표시해 사용자가 어디까지 왔는지 한눈에 가늠합니다."
+    >
+      <mm-process-status-list>
+        <mm-process-status variant="success" label="요청을 확인함"></mm-process-status>
+        <mm-process-status variant="success" label="관련 자료를 탐색함"></mm-process-status>
+        <mm-process-status label="핵심 구조 정리 중"></mm-process-status>
+        <mm-process-status variant="pending" label="답변 문장 다듬기"></mm-process-status>
+      </mm-process-status-list>
     </mm-component-section>
 
     <mm-component-section

@@ -25,6 +25,11 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '배경 상호작용을 막지 않고 화면 하단 중앙에 잠깐 떠올랐다 표시 시간이 지나면 자동으로 닫힙니다. 포인터나 포커스가 올라와 있는 동안은 시간이 멈추고 벗어나면 처음부터 다시 흐르며, 열려 있을 때 다시 부르면 시간이 처음부터 다시 흐릅니다.',
   },
+  {
+    heading: 'Feedback',
+    description:
+      '복사·저장·삭제처럼 사용자가 한 행동의 결과를 짧은 문구로 알립니다. 사용자는 하던 일을 멈추지 않고도 행동이 제대로 처리됐는지 확인할 수 있습니다.',
+  },
 ]
 
 type ToastElement = HTMLElement & {

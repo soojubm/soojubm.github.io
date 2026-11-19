@@ -156,13 +156,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
-        .texts=${[
-          '행간은 비율이 아니라 고정 값으로 정한다. 소수점이 생기지 않아 디자인과 코드에서 같은 값을 쓴다.',
-        ]}
-      ></mm-text-list>
-    </mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-section
       heading="Headings"

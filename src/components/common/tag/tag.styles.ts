@@ -32,7 +32,7 @@ export const tagToneStyles = {
     border: 'var(--border)',
   },
   gold: {
-    background: 'color-mix(in srgb, var(--accent-color) 65%, transparent)',
+    background: 'color-mix(in srgb, var(--accent-color) 65%, var(--background-color))',
     textColor: 'var(--gray800)',
     border: 'var(--border-transparent)',
   },

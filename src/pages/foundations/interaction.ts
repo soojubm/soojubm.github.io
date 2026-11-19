@@ -29,7 +29,7 @@ const interactionSwatches = [
   'box-shadow: var(--interaction-active-shadow)',
   'background: var(--interaction-selected-background-color)',
   'background: var(--interaction-selected-foreground-color)',
-  'border: var(--border-width) solid var(--interaction-selected-border-color)',
+  'border: var(--border-selected)',
 ]
 
 const currentComponentRows = html`
@@ -75,7 +75,7 @@ const feedbackRows = html`
     <td>결과를 기다리는 동안 시스템이 응답하고 있음을 알릴 때</td>
   </tr>
   <tr>
-    <th scope="row">${code('mm-task-status')}</th>
+    <th scope="row">${code('mm-process-status')}</th>
     <td>진행률을 알 수 없는 작업의 시도 횟수·경과 시간을 알릴 때</td>
   </tr>
 `
@@ -247,7 +247,7 @@ const main = html`
             <mm-grid columns="3">
               <mm-surface variant="elevated">
                 <mm-paragraph>
-                  떠 있는 표면은 그 자체가 클릭 대상이거나 안에 클릭할 요소를 담습니다. 표면 자체가
+                  떠 있는 표면은 그 자체가 클릭 대상이거나 안에 클릭할 요소를 넣습니다. 표면 자체가
                   대상이면 hover에서 한 단계 더 떠올라 이를 확인시킵니다.
                 </mm-paragraph>
               </mm-surface>
@@ -431,7 +431,7 @@ const main = html`
                   '의미 상태는 톤과 함께 아이콘·텍스트로 알린다',
                   html`
                     색만으로는 상태가 전달되지 않는다. ${code('mm-notice')}·
-                    ${code('mm-task-status')}·${code('mm-tag')}가 같은 톤 이름을 쓰고, 아이콘은
+                    ${code('mm-process-status')}·${code('mm-tag')}가 같은 톤 이름을 쓰고, 아이콘은
                     ${code('STATUS_ICONS')} 한 곳에서 가져온다
                   `,
                 ),
@@ -568,8 +568,8 @@ const main = html`
           <mm-content-section heading-level="3" heading="상태 소유">
             <mm-paragraph>
               선택 상태는 항목이 아니라 그룹이 소유하고, 바뀌면 값과 같은 이름으로
-              ${code('change')}에 담아 알립니다. 선택지 없이 값 하나를 켜고 끄는 컴포넌트만 그룹
-              없이 자기 상태를 갖습니다.
+              ${code('change')}로 알립니다. 선택지 없이 값 하나를 켜고 끄는 컴포넌트만 그룹 없이
+              자기 상태를 갖습니다.
             </mm-paragraph>
             <mm-table
               .rows=${selectionOwnerRows}

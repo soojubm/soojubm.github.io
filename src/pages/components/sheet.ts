@@ -146,7 +146,7 @@ function sheetPageTemplate() {
   `
 }
 
-// 패널 gap(--overlay-panel-padding-block)이 벌리는 간격을 placeholder 높이로 드러낸다.
+// 패널 gap(--overlay-panel-gap)이 벌리는 간격을 placeholder 높이로 드러낸다.
 function sheetAnatomyTemplate() {
   const gapPlaceholder = html`
     <mm-ui-placeholder style="--ui-placeholder-height: var(--space-4)">

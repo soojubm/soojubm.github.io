@@ -229,13 +229,12 @@ const renderMaterialStage = (tokens: string[]) =>
 /**
  * 경계의 역할별 변형. border-color·border-width는 조립 재료라 혼자서는 그릴 수 없어
  * 이들을 합친 border부터 목록 순서대로 늘어놓고, 상태 경계는 뒤에 붙인다.
- * 선택 상태 토큰은 색만 담으므로 두께·스타일과 함께 조립한다.
  */
 const borderSwatches = [
   'border: var(--border)',
   'border: var(--border-transparent); background: var(--background-subtle-color)',
   'border: var(--border-danger)',
-  'border: var(--border-width) solid var(--interaction-selected-border-color)',
+  'border: var(--border-selected)',
 ]
 
 const radiusSwatches = [

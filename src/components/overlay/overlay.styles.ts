@@ -60,8 +60,8 @@ export const overlaySurfaceStyles = css`
     max-width: var(--overlay-panel-max-width);
     height: var(--overlay-panel-height);
     max-height: var(--overlay-panel-max-height);
-    gap: var(--overlay-panel-padding-block);
-    padding: var(--overlay-panel-padding-block) var(--overlay-panel-padding-inline);
+    gap: var(--overlay-panel-gap);
+    padding: var(--overlay-panel-padding);
 
     border: var(--material-overlay-border);
     border-radius: var(--overlay-panel-border-radius);
@@ -94,9 +94,8 @@ export const sheetPositionStyles = css`
     --overlay-panel-max-width: var(--layout-width-small);
     --overlay-panel-height: auto;
     --overlay-panel-max-height: 90vh;
-    --overlay-panel-viewport-max-height: 100vh;
-    --overlay-panel-padding-block: var(--space-4);
-    --overlay-panel-padding-inline: var(--space-4);
+    --overlay-panel-gap: var(--space-4);
+    --overlay-panel-padding: var(--space-4);
     --overlay-panel-border-radius: var(--radius-large);
     --backdrop-background-color: transparent;
     --backdrop-blur: 0px;
@@ -149,13 +148,13 @@ export const sheetPositionStyles = css`
   :host([placement='bottom']) .panel,
   :host([placement='left']) .panel,
   :host([placement='right']) .panel {
-    padding-bottom: calc(var(--overlay-panel-padding-block) + env(safe-area-inset-bottom));
+    padding-bottom: calc(var(--overlay-panel-padding) + env(safe-area-inset-bottom));
   }
 
   /* top */
   :host([placement='top']) .panel {
     margin-bottom: auto;
-    padding-top: calc(var(--overlay-panel-padding-block) + env(safe-area-inset-top));
+    padding-top: calc(var(--overlay-panel-padding) + env(safe-area-inset-top));
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     transform: translateY(-100%);
@@ -172,7 +171,7 @@ export const sheetPositionStyles = css`
   /* left/right */
   :host([placement='left']) .panel {
     height: 100%;
-    max-height: var(--overlay-panel-viewport-max-height);
+    max-height: 100vh;
     margin-right: auto;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -181,7 +180,7 @@ export const sheetPositionStyles = css`
 
   :host([placement='right']) .panel {
     height: 100%;
-    max-height: var(--overlay-panel-viewport-max-height);
+    max-height: 100vh;
     margin-left: auto;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -210,8 +209,8 @@ export const popoverPositionStyles = css`
     --overlay-panel-height: auto;
     /* 길어진 목록은 패널을 키우지 않고 안의 mm-scroll이 스크롤한다 */
     --overlay-panel-max-height: min(400px, 50vh);
-    --overlay-panel-padding-block: var(--space-2);
-    --overlay-panel-padding-inline: var(--space-2);
+    --overlay-panel-gap: var(--space-2);
+    --overlay-panel-padding: var(--space-2);
     --overlay-panel-border-radius: var(--radius);
     --popover-offset: var(--space-1);
 

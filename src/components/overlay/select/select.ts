@@ -22,7 +22,7 @@ export type SelectVariant = Extract<ButtonVariant, 'tertiary' | 'ghost'>
 // 옵션 5개까지 보이고 나머지는 스크롤한다. 옵션 행은 small list-item 높이이고, 패널의 padding·border를 더한다.
 // popover는 portal로 옮겨져 이 컴포넌트의 shadow 스타일이 닿지 않으므로 인라인으로 싣는다.
 const POPOVER_MAX_HEIGHT =
-  'min(400px, calc(5 * var(--size-32) + 2 * (var(--overlay-panel-padding-block) + var(--border-width))))'
+  'min(400px, calc(5 * var(--size-32) + 2 * (var(--overlay-panel-padding) + var(--border-width))))'
 
 /**
  * popover를 프리미티브로 하는 선택 입력.
