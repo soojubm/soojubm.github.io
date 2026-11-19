@@ -178,7 +178,7 @@ const main = html`
 
         <mm-notice
           heading="태그 색은 방향만 알립니다"
-          description="오르면 red, 내리면 blue입니다. 디자인 토큰이나 접근성 경고처럼 줄어드는 게 좋은 지표도 파랑이 되므로, 좋고 나쁨까지 색에 담으려면 지표마다 기준을 따로 정해야 합니다."
+          description="오르면 red, 내리면 blue입니다. 디자인 토큰이나 접근성 경고처럼 줄어드는 게 좋은 지표도 파랑이 되므로, 좋고 나쁨까지 색에 나타내려면 지표마다 기준을 따로 정해야 합니다."
         ></mm-notice>
 
         <mm-grid columns="2" gap="4">
@@ -299,7 +299,7 @@ const main = html`
             </mm-flex>
             <mm-notice
               heading="진행률을 알면 progress, 모르면 스피너입니다"
-              description="둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 담고 있어서, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
+              description="둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
             ></mm-notice>
           </mm-flex>
         </mm-surface>
