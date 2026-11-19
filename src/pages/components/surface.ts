@@ -110,21 +110,6 @@ const radiusCode = `<mm-surface radius="default">
   ></mm-text-block>
 </mm-surface>`
 
-const densityCode = `<mm-surface density="default">
-  <mm-text-block
-    level="3"
-    heading="default density"
-    description="본문 콘텐츠를 담는 표면의 기본 여백이다."
-  ></mm-text-block>
-</mm-surface>
-<mm-surface density="compact">
-  <mm-text-block
-    level="4"
-    heading="compact density"
-    description="한 줄짜리 항목처럼 내부 콘텐츠가 얕을 때 사용한다."
-  ></mm-text-block>
-</mm-surface>`
-
 const main = html`
   <mm-main>
     <mm-page-header
@@ -151,7 +136,6 @@ const main = html`
       <mm-tab-list value="variant" variant="pill">
         <mm-tab value="variant">Variant</mm-tab>
         <mm-tab value="radius">Radius</mm-tab>
-        <mm-tab value="density">Density</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
@@ -214,30 +198,6 @@ const main = html`
         </mm-component-example>
         <mm-component-code .code=${radiusCode}></mm-component-code>
       </mm-tab-panel>
-      <mm-tab-panel value="density">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-grid columns="2">
-              <mm-surface density="default">
-                <mm-text-block
-                  level="3"
-                  heading="default density"
-                  description="본문 콘텐츠를 담는 표면의 기본 여백이다."
-                ></mm-text-block>
-              </mm-surface>
-              <mm-surface density="compact">
-                <mm-text-block
-                  level="4"
-                  heading="compact density"
-                  description="한 줄짜리 항목처럼 내부 콘텐츠가 얕을 때 사용한다."
-                ></mm-text-block>
-              </mm-surface>
-            </mm-grid>
-            <mm-paragraph>내부 콘텐츠의 깊이에 맞춰 안쪽 여백을 고릅니다.</mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${densityCode}></mm-component-code>
-      </mm-tab-panel>
     </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -261,23 +221,6 @@ const main = html`
           'inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다.',
         ]}
       ></mm-text-list>
-
-      <mm-content-section heading-level="3" heading="Density">
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            rule(
-              'compact 표면 안의 text-block은 default보다 한 단계 낮은 level을 쓴다',
-              html`
-                <mm-code>density="compact"</mm-code>
-                는 안쪽 여백이 좁아서, default 표면과 같은 제목 크기를 두면 글자가 여백보다 커 보여
-                밀도가 맞지 않는다. default 표면에 level 3을 두었다면 compact 표면에는 level 4를
-                둔다
-              `,
-            ),
-          ]}
-        ></mm-text-list>
-      </mm-content-section>
     </mm-component-guide>
 
     <mm-component-section

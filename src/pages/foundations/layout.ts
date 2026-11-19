@@ -392,19 +392,19 @@ const main = html`
             <mm-component-example full-width>
               ${browserWindow(html`
                 <div class="app-shell">
-                  <mm-surface variant="outlined" density="compact" class="app-shell-topbar">
+                  <mm-surface variant="outlined" class="app-shell-topbar">
                     <mm-caption>Top Bar · chrome</mm-caption>
                   </mm-surface>
-                  <mm-surface variant="outlined" density="compact" class="app-shell-sidebar">
+                  <mm-surface variant="outlined" class="app-shell-sidebar">
                     <mm-caption>Sidebar · chrome-top</mm-caption>
                   </mm-surface>
-                  <mm-surface variant="ghost" density="compact" class="app-shell-content">
+                  <mm-surface variant="ghost" class="app-shell-content">
                     <mm-caption>Content · base</mm-caption>
-                    <mm-surface variant="elevated" density="compact" class="app-shell-overlay">
+                    <mm-surface variant="elevated" class="app-shell-overlay">
                       <mm-caption>Overlay · toast</mm-caption>
                     </mm-surface>
                   </mm-surface>
-                  <mm-surface variant="outlined" density="compact" class="app-shell-bottombar">
+                  <mm-surface variant="outlined" class="app-shell-bottombar">
                     <mm-caption>Bottom Bar · chrome</mm-caption>
                   </mm-surface>
                 </div>

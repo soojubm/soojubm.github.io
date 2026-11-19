@@ -4,13 +4,16 @@ import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
 export type SurfaceRadius = 'default' | 'large'
-export type SurfaceDensity = 'default' | 'compact'
 
 /**
  * variant별로 재정의하는 surface 컴포넌트 토큰. 이 오브젝트가 실제 :host([variant=...]) 규칙을
  * 생성하는 유일한 소스다(아래 surfaceVariantStyles 참고). 키가 컴포넌트 토큰 이름이라
  * 리액트로 옮길 때도 같은 이름의 CSS 커스텀 프로퍼티를 그대로 재사용할 수 있다.
  */
+const surfaceElevatedTokens = {
+  '--surface-shadow': 'var(--material-elevated-shadow)',
+}
+
 const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
   ghost: {
     '--surface-border': 'var(--border-transparent)',
@@ -25,10 +28,17 @@ const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
     '--surface-border': 'var(--border-transparent)',
     '--surface-background-color': 'var(--background-subtle-color)',
   },
-  elevated: {
-    '--surface-shadow': 'var(--material-elevated-shadow)',
-  },
+  elevated: surfaceElevatedTokens,
 }
+
+/** elevated variant의 선언. variant 속성 없이 호스트에서 직접 면을 쓰는 컴포넌트가 가져다 쓴다. */
+export const surfaceElevatedStyles = css`
+  ${unsafeCSS(
+    Object.entries(surfaceElevatedTokens)
+      .map(([name, value]) => `${name}: ${value};`)
+      .join(' '),
+  )}
+`
 
 /**
  * surface 면 선언. 면을 맡을 선택자는 사용부가 정한다.
@@ -69,15 +79,6 @@ const surfaceRadiusStyles = css`
   ${unsafeCSS(buildAttributeRules('radius', surfaceRadiusTokens))}
 `
 
-const surfaceDensityTokens: AttributeTokens<SurfaceDensity> = {
-  default: { '--surface-padding': 'var(--space-4)' },
-  compact: { '--surface-padding': 'var(--space-2)' },
-}
-
-const surfaceDensityStyles = css`
-  ${unsafeCSS(buildAttributeRules('density', surfaceDensityTokens))}
-`
-
 const surfaceVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', surfaceVariants))}
 `
@@ -89,6 +90,5 @@ export const surfaceStyles = [
     }
   `,
   surfaceRadiusStyles,
-  surfaceDensityStyles,
   surfaceVariantStyles,
 ]
