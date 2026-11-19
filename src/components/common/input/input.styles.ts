@@ -44,7 +44,7 @@ const inputSizeTokens: AttributeTokens<Exclude<InputSize, 'medium'>> = {
   },
 }
 
-export const inputStyles = css`
+export const inputBaseStyles = css`
   :host {
     display: block;
     position: relative;
@@ -120,7 +120,7 @@ export const inputStyles = css`
 
 /** label·description·validation을 함께 렌더하는 field 계열(textfield, textarea-field, numberfield)의 공유 규칙. */
 export const textfieldStyles = [
-  inputStyles,
+  inputBaseStyles,
   css`
     mm-textfield-description,
     mm-textfield-validation {

@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaIdRef, AriaInvalid } from '@/types'
 
-import { inputStyles } from '@/components/common/input/input.styles'
+import { inputBaseStyles } from '@/components/common/input/input.styles'
 import { TextareaAutoHeightController } from '@/controllers/textarea-auto-height-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
@@ -15,7 +15,7 @@ let uniqueIdCounter = 0
 export class Textarea extends LitElement {
   static styles = [
     resetStyles,
-    inputStyles,
+    inputBaseStyles,
     css`
       .textarea-control {
         flex-direction: column;
