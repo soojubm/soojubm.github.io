@@ -39,7 +39,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - selection',
     description:
-      '누를 때마다 누름(pressed) 상태가 토글되어 선택 여부를 드러내고, 그룹에서는 단일 선택으로 동작합니다.',
+      '누를 때마다 눌림 여부가 바뀌어 선택 여부를 드러냅니다. 그룹에서는 하나만 선택됩니다.',
   },
 ]
 
@@ -95,7 +95,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="ToggleButton"
-      description="누를 때마다 켜짐과 꺼짐이 바뀌는 버튼입니다. 눌린 상태를 버튼 스스로 표시하고, 여러 개를 묶으면 그중 하나만 선택되는 세그먼트로 동작하므로, 사용자는 현재 적용된 설정을 한눈에 보고 한 번의 클릭으로 전환할 수 있습니다."
+      description="누를 때마다 켜짐과 꺼짐이 바뀌는 버튼입니다. 눌린 상태가 버튼에 표시되고 여러 개를 묶으면 하나만 선택되므로, 사용자는 현재 적용된 설정을 한눈에 보고 한 번의 클릭으로 전환할 수 있습니다."
     ></mm-page-header>
 
     <mm-component-aka .items=${['Toggle', 'Switch button', 'Pressed button']}></mm-component-aka>
@@ -184,7 +184,7 @@ const main = html`
 
     <mm-component-section
       heading="FilterButtonGroup"
-      description="콘텐츠 필터링을 위한 옵션 버튼. ToggleButton 계열로 선택 상태를 표현하며 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
+      description="콘텐츠 필터링을 위한 옵션 버튼입니다. 그룹으로 묶어 단일 선택 또는 다중 선택을 지원합니다."
     >
       <mm-flex direction="column" gap="4">
         <mm-text>Single selection (라디오형)</mm-text>

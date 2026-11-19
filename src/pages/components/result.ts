@@ -85,17 +85,10 @@ const main = html`
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-paragraph-group>
-        <mm-paragraph>You're done!</mm-paragraph>
+        <mm-heading level="3">언제 사용하나요</mm-heading>
         <mm-paragraph>
-          empty content, error feedback, Order Completed, Booking Confirmed, Registration Complete,
-          Submission Successful, Payment Successful
-        </mm-paragraph>
-        <mm-paragraph>텍스트 모듈</mm-paragraph>
-        <mm-paragraph>
-          <del>
-            왼쪽 정렬의 기본적인 텍스트 모듈과 대비를 위해 가운데 정렬합니다. foundation:: 콘텐츠
-            모듈로 콘텐츠 간의 맥락 전환을 시각화하는 것이 . 보류
-          </del>
+          주문 완료·예약 확정·가입 완료·결제 성공처럼 작업의 결과를 알릴 때, 그리고 빈 콘텐츠나
+          오류처럼 화면이 비어 결과를 대신 설명해야 할 때 사용합니다.
         </mm-paragraph>
       </mm-paragraph-group>
     </mm-component-guide>

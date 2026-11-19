@@ -105,9 +105,13 @@ const main = html`
 
     <mm-component-section
       heading="AccentTag"
-      description="단일 엘리먼트에 시각적 강조를 부여하는 작은 라벨형 컴포넌트입니다. 리스트나 카드 안에서 특정 항목 하나를 다른 항목들과 구분 짓거나(New, Beta, Featured 등) 콘텐츠의 상태·속성을 짧은 텍스트로 표시할 때 사용합니다."
+      description="단일 엘리먼트에 시각적 강조를 부여하는 작은 라벨형 컴포넌트입니다. 리스트나 카드 안에서 특정 항목 하나를 다른 항목들과 구분 짓거나 콘텐츠의 상태·속성을 짧은 텍스트로 표시할 때 사용합니다."
     >
-      <mm-accent-tag>Featured</mm-accent-tag>
+      <mm-tag-group>
+        <mm-accent-tag>Featured</mm-accent-tag>
+        <mm-accent-tag>New</mm-accent-tag>
+        <mm-accent-tag>Beta</mm-accent-tag>
+      </mm-tag-group>
     </mm-component-section>
 
     <mm-component-section heading="CategoryTag" description="">

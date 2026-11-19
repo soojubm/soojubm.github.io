@@ -60,12 +60,11 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - action',
     description:
-      '행 전체가 하나의 클릭 영역이 되어 hover·포커스·키보드 탐색과 명령 실행을 항목이 소유합니다. 조작을 행 안의 컨트롤이 받는 행은 list-item을 사용하세요.',
+      '행 전체를 눌러 명령을 실행합니다. 조작을 행 안의 컨트롤이 받는 행은 list-item을 사용하세요.',
   },
   {
     heading: 'Interactive - selection',
-    description:
-      '선택 항목이 체크 상태를 소유해 선택 여부를 드러냅니다. role은 놓이는 부모를 따라 radiogroup 안에서는 radio, 체크 그룹 안에서는 checkbox입니다.',
+    description: '행을 눌러 선택 여부를 바꿉니다.',
   },
 ]
 
@@ -111,7 +110,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="MenuItem"
-      description="메뉴 안에서 실행하거나 선택할 수 있는 행동 하나입니다. hover·포커스·키보드 탐색을 항목이 직접 처리하고 체크 상태로 선택 여부를 표시하므로, 사용자는 목록을 훑으며 원하는 명령을 빠르게 찾아 실행할 수 있습니다."
+      description="메뉴 안에서 실행하거나 선택할 수 있는 행동 하나입니다. 행 전체를 눌러 명령을 실행하거나 선택 여부를 바꾸므로, 사용자는 목록을 훑으며 원하는 명령을 바로 찾아 실행할 수 있습니다."
     ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
@@ -123,43 +122,29 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="size">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-menu-item-group aria-label="크기 메뉴" size="large">
-              <mm-menu-item-action icon=${ICON_NAMES.USER} label="Small"></mm-menu-item-action>
-              <mm-menu-item-action
-                size="medium"
-                icon=${ICON_NAMES.GROUP}
-                label="Frontend Group"
-                description="프론트엔드 개발자 모임"
-              ></mm-menu-item-action>
-            </mm-menu-item-group>
-            <mm-paragraph>
-              설명이 함께 놓이거나 시트처럼 손가락으로 누르는 메뉴에서는 medium으로 행을 키웁니다.
-              항목 사이 간격은 그룹 자체의
-              <mm-code>size="large"</mm-code>
-              가 넓힙니다.
-            </mm-paragraph>
-          </mm-flex>
+          <mm-menu-item-group aria-label="크기 메뉴" size="large">
+            <mm-menu-item-action icon=${ICON_NAMES.USER} label="Small"></mm-menu-item-action>
+            <mm-menu-item-action
+              size="medium"
+              icon=${ICON_NAMES.GROUP}
+              label="Frontend Group"
+              description="프론트엔드 개발자 모임"
+            ></mm-menu-item-action>
+          </mm-menu-item-group>
         </mm-component-example>
         <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="leading">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-menu-item-group aria-label="리딩 메뉴">
-              <mm-menu-item-action icon=${ICON_NAMES.USER} label="아이콘"></mm-menu-item-action>
-              <mm-menu-item-action emoji="🦔" label="이모지"></mm-menu-item-action>
-              <mm-menu-item-action
-                avatar-src="/src/images/soojubm.png"
-                avatar-shape="circle"
-                label="아바타"
-              ></mm-menu-item-action>
-            </mm-menu-item-group>
-            <mm-paragraph>
-              icon·emoji·avatar-src 중 하나로 항목 앞에 시각 단서를 둡니다. 사람을 나타내면 아바타를
-              circle로 둡니다.
-            </mm-paragraph>
-          </mm-flex>
+          <mm-menu-item-group aria-label="리딩 메뉴">
+            <mm-menu-item-action icon=${ICON_NAMES.USER} label="아이콘"></mm-menu-item-action>
+            <mm-menu-item-action emoji="🦔" label="이모지"></mm-menu-item-action>
+            <mm-menu-item-action
+              avatar-src="/src/images/soojubm.png"
+              avatar-shape="circle"
+              label="아바타"
+            ></mm-menu-item-action>
+          </mm-menu-item-group>
         </mm-component-example>
         <mm-component-code .code=${leadingCode}></mm-component-code>
       </mm-tab-panel>
@@ -174,7 +159,7 @@ const main = html`
                 tone="danger"
               ></mm-menu-item-action>
             </mm-menu-item-group>
-            <mm-paragraph>되돌릴 수 없는 명령에는 tone="danger"를 줍니다.</mm-paragraph>
+            <mm-paragraph>되돌릴 수 없는 명령에 씁니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${toneCode}></mm-component-code>
@@ -190,9 +175,7 @@ const main = html`
                 disabled
               ></mm-menu-item-action>
             </mm-menu-item-group>
-            <mm-paragraph>
-              지금 실행할 수 없는 명령은 disabled로 두어 목록 안의 위치를 유지합니다.
-            </mm-paragraph>
+            <mm-paragraph>지금 실행할 수 없는 명령도 목록 안의 위치를 유지합니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${disabledCode}></mm-component-code>
@@ -203,20 +186,12 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-menu-item-action']}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
-        .texts=${[
-          'mm-menu-item-group은 기본이 명령 목록(role=menu)이고, 선택 그룹 안에서는 radiogroup·group이 됩니다. 값을 고르는 listbox는 mm-select가 따로 소유합니다.',
-          'mm-menu-item-link는 메뉴에서 다른 곳으로 나가는 링크라 현재 위치를 표시하지 않습니다. 지금 보고 있는 페이지를 가리키는 내비게이션 링크 목록은 menu가 아닌 list로 읽히게 두고 aria-current="page"를 링크가 갖습니다.',
-          'target="_blank"인 링크는 새 창에서 열린다는 사실을 이름에 덧붙여, 아이콘으로만 전달되지 않게 합니다.',
-        ]}
-      ></mm-text-list>
-    </mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-anatomy
       .parts=${[
-        '컨테이너 — role=menuitem을 갖는 클릭 가능한 행입니다.',
-        '아이콘 — 액션을 보조하는 선택적 메타포(icon).',
+        '컨테이너 — 눌러서 실행하는 행입니다.',
+        '아이콘 — 액션을 보조하는 선택 요소입니다.',
         '레이블 — 실행 결과를 예측할 수 있는 텍스트.',
       ]}
       .markers=${[
@@ -230,7 +205,7 @@ const main = html`
 
     <mm-component-section
       heading="MenuItemGroup"
-      description="heading을 주면 목록 위에 소제목을 보여주고, 같은 문구를 목록의 aria-label로 씁니다."
+      description="값을 고르는 드롭다운은 mm-select를 사용하세요."
     >
       <mm-menu-item-group heading="공유">
         <mm-menu-item-action icon=${ICON_NAMES.LINK} label="링크 복사"></mm-menu-item-action>
@@ -243,7 +218,7 @@ const main = html`
 
     <mm-component-section
       heading="More"
-      description="항목이 많으면 자주 쓰는 명령만 먼저 보여주고, 나머지는 목록 끝의 더보기 항목으로 펼칩니다."
+      description="자주 쓰는 명령만 먼저 보여 주고, 나머지는 더보기로 펼칩니다."
     >
       <mm-menu-item-group aria-label="더보기 메뉴">
         <mm-menu-item-action icon=${ICON_NAMES.LINK} label="링크 복사"></mm-menu-item-action>
@@ -320,14 +295,14 @@ const main = html`
       </mm-menu-item-radio-group>
     </mm-component-section>
 
-    <mm-component-section
-      heading="MenuItemRadioSwitch"
-      description="role은 놓이는 부모를 따릅니다. mm-menu-item-group(role=menu) 안이면 menuitemcheckbox, 이 예시처럼 독립적으로 쓰이면 switch로 읽힙니다."
-    >
+    <mm-component-section heading="MenuItemRadioSwitch">
       <mm-menu-item-switch icon=${ICON_NAMES.WIFI} label="Wi-Fi" value="wifi"></mm-menu-item-switch>
     </mm-component-section>
 
-    <mm-component-section heading="MenuItemLink">
+    <mm-component-section
+      heading="MenuItemLink"
+      description="메뉴에서 다른 곳으로 나가는 링크라 현재 위치를 표시하지 않습니다. 현재 페이지를 가리키는 내비게이션은 list로 만듭니다. 새 창으로 열리는 링크는 그 사실을 이름에 덧붙입니다."
+    >
       <mm-menu-item-group size="large">
         <mm-menu-item-link
           size="medium"

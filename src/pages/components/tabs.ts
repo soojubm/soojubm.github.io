@@ -202,26 +202,18 @@ const main = html`
     <mm-component-tokens .elements=${['mm-tab-list', 'mm-tab']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
-      <mm-paragraph>
-        Make sure the controls within a pane affect content only in the same pane. Panes are
-        mutually exclusive, so ensure they're fully self-contained. Use a segmented control to
-        provide closely related choices that affect an object, state, or view. For example, a
-        segmented control can help people switch between views in a toolbar. Avoid using a segmented
-        control to offer actions, such as adding, removing, or editing content.
-      </mm-paragraph>
-
       <mm-content-section heading-level="3" heading="Count">
         <mm-text-list
           variant="check"
           .texts=${[
             rule(
               '탭은 6개 이내로 구성한다',
-              '개수를 강제로 제한하지는 않는다. 탭이 화면 폭을 넘치면 가로로 스크롤되고 양 끝에 넘김 버튼이 나타나지만, 가려진 탭은 눈에 잘 띄지 않는다',
+              '탭이 화면 폭을 넘치면 가로로 스크롤되지만, 가려진 탭은 눈에 잘 띄지 않는다',
             ),
             rule(
-              '카테고리처럼 항목이 늘어나는 분류는 필터로 둔다',
+              '카테고리처럼 늘어나는 분류는 필터로 둔다',
               html`
-                카테고리 탭은 뷰를 바꾸는 것이 아니라 한 목록을 좁히는 필터의 역할이므로
+                카테고리 탭은 뷰를 바꾸지 않고 목록을 좁히므로
                 <mm-code>mm-filter-button-group</mm-code>
                 을 쓴다
               `,
@@ -235,17 +227,13 @@ const main = html`
           variant="check"
           .texts=${[
             rule(
-              '탭은 페이지에 한 단계로만 둔다',
-              '탭 줄이 두 겹 쌓이면 어느 줄이 상위인지, 지금 보는 뷰가 어디에 속하는지 탭만으로 되짚기 어렵다. Material 3의 primary·secondary tabs나 네이버 쇼핑의 다단계 탭 같은 중첩 구조는 쓰지 않는다',
-            ),
-            rule(
-              '탭 하나에는 과업 하나의 뷰를 담는다',
-              '탭은 페이지에서 하는 과업 하나를 같은 대상의 여러 뷰로 나눈다. 패널 안을 다시 탭으로 나눠야 할 만큼 콘텐츠가 크다면 그 패널이 별도 과업이라는 신호이므로 페이지를 나눈다',
+              '탭은 한 단계로만 둔다',
+              '탭 줄이 두 겹이면 어느 줄이 상위인지, 지금 보는 뷰가 어디에 속하는지 알기 어렵다',
             ),
             rule(
               '패널 안의 하위 구분은 성격에 맞는 컴포넌트로 나눈다',
               html`
-                한 목록을 좁히는 분류는
+                목록을 좁히는 분류는
                 <mm-code>mm-filter-button-group</mm-code>
                 으로, 순서대로 거치는 단계는
                 <mm-code>mm-step</mm-code>
@@ -262,43 +250,14 @@ const main = html`
           .texts=${[
             rule(
               '페이지를 대표하는 탭 리스트에 search-param으로 키를 준다',
-              html`
-                <mm-code>search-param</mm-code>
-                을 준 탭 리스트는 진입 시 그 키의 값으로 탭을 열고, 탭을 바꾸면 URL을 replaceState로
-                바꾼다. 새로고침하거나 링크를 공유해도 같은 탭이 열리고, 탭 전환은 히스토리에 쌓이지
-                않아 뒤로 가기는 이전 페이지로 나간다. 문서 예제나 시트 안의 탭은 URL 없이 둔다
-              `,
+              '새로고침하거나 링크를 공유해도 같은 탭이 열리고, 탭 전환은 뒤로 가기 기록에 쌓이지 않는다. 문서 예제나 시트 안의 탭에는 쓰지 않는다',
             ),
             rule(
-              '한 페이지에 여럿이면 탭 리스트마다 키를 다르게 정한다',
-              '같은 키를 쓰면 한쪽의 선택이 다른 쪽 URL 값을 덮는다',
+              '한 페이지에 여럿이면 키를 다르게 정한다',
+              '같은 키를 쓰면 한쪽의 선택이 다른 쪽을 덮는다',
             ),
           ]}
         ></mm-text-list>
-      </mm-content-section>
-
-      <mm-content-section heading-level="3" heading="Flutter">
-        <mm-flex direction="column" gap="3">
-          <mm-paragraph>
-            탭 줄(TabBar)은 AppBar 아래에, 뷰(TabBarView)는 body에 떨어져 있고
-            DefaultTabController가 둘의 선택 상태를 잇는다.
-            <mm-code>mm-tab-list</mm-code>
-            가 형제
-            <mm-code>mm-tab-panel</mm-code>
-            을 찾아 연결하는 것과 같은 구조다.
-          </mm-paragraph>
-          <mm-code-block
-            language="text"
-            .copyable=${false}
-            .code=${`DefaultTabController
-└─ Scaffold
-   ├─ appBar: AppBar
-   │  └─ bottom: TabBar (mm-tab-list)
-   │     └─ tabs: [Tab, …] (mm-tab)
-   └─ body: TabBarView
-      └─ children: [Widget, …] (mm-tab-panel)`}
-          ></mm-code-block>
-        </mm-flex>
       </mm-content-section>
     </mm-component-guide>
 

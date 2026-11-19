@@ -142,7 +142,7 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          '내용은 보조기술이 읽을 수 있도록 대상 요소의 설명으로 연결하고, hover뿐 아니라 키보드 포커스로도 열 수 있어야 합니다.',
+          'hover뿐 아니라 키보드 포커스로도 열 수 있어야 한다.',
           '트리거를 가리키는 화살표는 두지 않는다. 사용자가 포인터나 손가락으로 직접 연 표면이라 어디에서 나왔는지 이미 분명하다. 화살표는 로딩 시점에 스스로 떠서 대상을 지목하는 GuideTip이 쓴다.',
           'short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip',
         ]}

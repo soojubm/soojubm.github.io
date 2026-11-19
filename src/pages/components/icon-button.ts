@@ -31,79 +31,29 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const variantCode = `<mm-button-group>
-  <mm-icon-button
-    variant="primary"
-    icon="arrow-right"
-    aria-label="Primary"
-    tooltip-placement="bottom"
-  ></mm-icon-button>
-  <mm-icon-button
-    variant="secondary"
-    icon="arrow-right"
-    aria-label="Secondary"
-    tooltip-placement="bottom"
-  ></mm-icon-button>
-  <mm-icon-button
-    variant="tertiary"
-    icon="arrow-right"
-    aria-label="Tertiary"
-    tooltip-placement="bottom"
-  ></mm-icon-button>
-  <mm-icon-button
-    variant="ghost"
-    icon="arrow-right"
-    aria-label="Ghost"
-    tooltip-placement="bottom"
-  ></mm-icon-button>
-  <mm-icon-button
-    variant="danger"
-    icon="trash"
-    aria-label="Danger"
-    tooltip-placement="bottom"
-  ></mm-icon-button>
+  <mm-icon-button variant="primary" icon="arrow-right" aria-label="Primary"></mm-icon-button>
+  <mm-icon-button variant="secondary" icon="arrow-right" aria-label="Secondary"></mm-icon-button>
+  <mm-icon-button variant="tertiary" icon="arrow-right" aria-label="Tertiary"></mm-icon-button>
+  <mm-icon-button variant="ghost" icon="arrow-right" aria-label="Ghost"></mm-icon-button>
+  <mm-icon-button variant="danger" icon="trash" aria-label="Danger"></mm-icon-button>
 </mm-button-group>`
 
 const sizeCode = `<mm-button-group>
-  <mm-icon-button
-    icon="xmark"
-    size="medium"
-    aria-label="medium"
-  ></mm-icon-button>
-  <mm-icon-button
-    icon="xmark"
-    size="small"
-    aria-label="small"
-  ></mm-icon-button>
+  <mm-icon-button icon="xmark" size="medium" aria-label="medium"></mm-icon-button>
+  <mm-icon-button icon="xmark" size="small" aria-label="small"></mm-icon-button>
 </mm-button-group>`
 
 const stateCode = `<mm-button-group>
-  <mm-icon-button
-    variant="primary"
-    icon="arrow-right"
-    aria-label="다음"
-    tooltip-placement="bottom"
-    disabled
-  ></mm-icon-button>
-  <mm-icon-button
-    icon="heart"
-    aria-label="좋아요"
-    tooltip-placement="bottom"
-    disabled
-  ></mm-icon-button>
-  <mm-icon-button
-    variant="secondary"
-    icon="arrow-left"
-    aria-label="이전"
-    tooltip-placement="bottom"
-    disabled
-  ></mm-icon-button>
+  <mm-icon-button variant="primary" icon="arrow-right" aria-label="다음" disabled></mm-icon-button>
+  <mm-icon-button icon="heart" aria-label="좋아요" disabled></mm-icon-button>
+  <mm-icon-button variant="secondary" icon="arrow-left" aria-label="이전" disabled></mm-icon-button>
 </mm-button-group>`
 
 const main = html`
   <mm-main>
     <mm-page-header
       heading="Icon Button"
-      description="레이블 없이 메타포 아이콘 하나로 행동을 나타내는 간결한 버튼입니다. 좁은 공간에 반복되는 보조 액션을 담고 용도를 툴팁으로 알려 주므로, 사용자는 화면을 복잡하게 만들지 않고도 자주 쓰는 기능에 바로 닿을 수 있습니다."
+      description="레이블 없이 메타포 아이콘 하나로 행동을 나타내는 간결한 버튼입니다. 좁은 공간에 반복되는 보조 액션을 담고 용도는 툴팁으로 알려 주므로, 사용자는 화면을 복잡하게 만들지 않고도 자주 쓰는 기능에 바로 닿을 수 있습니다."
     ></mm-page-header>
 
     <mm-flex direction="column" gap="4">
@@ -170,10 +120,7 @@ const main = html`
               ></mm-icon-button>
             </mm-button-group>
             <mm-paragraph>small은 콘텐츠 사이에 촘촘히 놓이는 보조 액션에 씁니다.</mm-paragraph>
-            <mm-component-notice
-              variant="exception"
-              heading="아이콘은 크기 단계에 없는 tiny를 쓴다"
-            >
+            <mm-component-notice heading="아이콘은 크기 단계에 없는 tiny를 쓴다">
               컴포넌트 크기 단계는 small·medium·large지만,
               <mm-code>mm-icon</mm-code>
               은 표 머리의 정렬 표시처럼 글자보다 작게 놓이는 자리를 위해 tiny(12)를 더 갖는다. 쓰는
@@ -250,21 +197,18 @@ const main = html`
       </mm-tooltip>
     </mm-component-anatomy>
 
-    <mm-component-section
-      heading="HamburgerButton"
-      description="사이드바·내비게이션 메뉴를 여닫는 버튼."
-    >
+    <mm-component-section heading="HamburgerButton" description="내비게이션 메뉴를 여닫습니다.">
       <mm-hamburger-button aria-controls="hamburger-menu-example"></mm-hamburger-button>
       <div id="hamburger-menu-example" hidden></div>
     </mm-component-section>
 
-    <mm-component-section heading="MoreButton" description="추가 액션 메뉴를 여는 버튼.">
+    <mm-component-section heading="MoreButton" description="추가 액션 메뉴를 엽니다.">
       <mm-more-button></mm-more-button>
     </mm-component-section>
 
     <mm-component-section
       heading="PrevButton, NextButton"
-      description="페이지·캐러셀·단계형 흐름에서 이전/다음 항목으로 이동합니다."
+      description="이전·다음 항목으로 이동합니다."
     >
       <mm-button-group>
         <mm-prev-button tooltip-placement="bottom"></mm-prev-button>
@@ -272,38 +216,35 @@ const main = html`
       </mm-button-group>
     </mm-component-section>
 
-    <mm-component-section
-      heading="Close Button"
-      description="모달, 패널, 시트 등 레이어를 닫는 보조 액션 버튼입니다."
-    >
+    <mm-component-section heading="Close Button" description="레이어를 닫습니다.">
       <mm-close-button tooltip-placement="bottom"></mm-close-button>
     </mm-component-section>
 
     <mm-component-section
       heading="Dismiss Button"
-      description="배너, 알림, 토스트 등에서 콘텐츠를 비파괴적으로 해제하는 보조 액션 버튼입니다."
+      description="배너·알림·토스트를 화면에서 치웁니다. 콘텐츠 자체는 지우지 않습니다."
     >
       <mm-dismiss-button tooltip-placement="bottom"></mm-dismiss-button>
     </mm-component-section>
 
     <mm-component-section
       heading="Delete Button / Remove Button"
-      description="아이템·데이터를 영구 삭제하는 파괴적 액션 버튼. 다이얼로그로 확인하기 때문에 시각적 노이즈 최소화."
+      description="항목을 영구 삭제합니다. 다이얼로그로 확인하므로 버튼은 눈에 띄지 않게 둡니다."
     >
       <mm-delete-button tooltip-placement="bottom"></mm-delete-button>
     </mm-component-section>
 
     <mm-component-section
       heading="Copy Button"
-      description="텍스트를 클립보드에 복사하는 버튼. 복사 성공 시 일시적으로 체크 아이콘으로 전환됩니다."
+      description="텍스트를 클립보드에 복사합니다. 복사되면 잠시 체크 아이콘으로 바뀝니다."
     >
       <mm-copy-button tooltip-placement="bottom" value="copied text"></mm-copy-button>
     </mm-component-section>
 
-    <mm-component-section heading="Clear Button" description="search field에서 사용.">
+    <mm-component-section heading="Clear Button" description="검색 입력값을 지웁니다.">
       <mm-flex direction="column" gap="4">
         <mm-clear-button aria-label="입력 지우기" tooltip-placement="bottom"></mm-clear-button>
-        <mm-component-notice variant="exception" heading="크기 단계에 없는 16을 쓴다">
+        <mm-component-notice heading="크기 단계에 없는 16을 쓴다">
           아이콘 버튼의 크기 단계는 32·24지만,
           <mm-code>mm-clear-button</mm-code>
           은 입력 필드 높이 안에 놓여야 해서 16을 쓴다. 쓰는 곳이 이 컴포넌트 하나뿐이라 단계로
@@ -313,7 +254,7 @@ const main = html`
     </mm-component-section>
     <mm-component-section
       heading="Expand Button"
-      description="스스로 여닫는 토글 버튼. 클릭 상호작용과 aria-expanded를 직접 소유합니다."
+      description="누르면 펼침 여부가 바뀌고, aria-expanded도 버튼이 맞춥니다."
     >
       <mm-icon-button
         variant="secondary"
@@ -325,17 +266,20 @@ const main = html`
     </mm-component-section>
     <mm-component-section
       heading="Expand Indicator"
-      description="트리거가 따로 있는 곳에서 펼침 상태만 방향으로 반영하는 장식 요소. 상호작용은 갖지 않습니다."
+      description="펼침 여부를 방향으로 보여 주는 장식 요소입니다. 상호작용은 갖지 않습니다."
     >
       <mm-expand-indicator></mm-expand-indicator>
       <mm-expand-indicator expanded></mm-expand-indicator>
     </mm-component-section>
     <mm-component-section
       heading="Selected Indicator"
-      description="행이 선택 상태를 소유하는 곳에서 선택 여부만 체크로 반영하는 장식 요소. 선택되지 않아도 자리를 유지합니다."
+      description="선택 여부를 체크로 보여 주는 장식 요소입니다. 선택되지 않아도 자리를 유지합니다."
     >
       <mm-selected-indicator></mm-selected-indicator>
       <mm-selected-indicator selected></mm-selected-indicator>
+    </mm-component-section>
+    <mm-component-section heading="ToTopButton" description="페이지의 최상단으로 스크롤합니다.">
+      <mm-to-top-button></mm-to-top-button>
     </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 

@@ -178,12 +178,12 @@ const main = html`
           .texts=${[
             rule(
               html`
-                열고 닫는 상태는 ${code('DisclosureController')}가 소유한다
+                열고 닫는 상태는 컴포넌트가 소유한다
               `,
               html`
-                트리거 클릭 토글과 ${code('aria-expanded')} 동기화를 컨트롤러가 맡고, 소비자는
-                트리거를 표준 attribute로 대상에 연결하기만 한다. 외부 클릭·ESC로 스스로 닫혀야 하는
-                표면만 ${code('dismissOn')}을 켠다
+                트리거 클릭에 따른 토글과 ${code('aria-expanded')} 동기화는 컴포넌트가 맡고,
+                사용하는 쪽은 트리거를 ${code('aria-controls')}로 대상에 연결하기만 한다. 외부
+                클릭·ESC로 스스로 닫혀야 하는 표면만 ${code('dismissOn')}을 켠다
               `,
             ),
             rule(

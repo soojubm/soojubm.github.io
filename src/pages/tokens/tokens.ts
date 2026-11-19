@@ -296,15 +296,16 @@ const main = html`
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="계층">
           <mm-paragraph>
-            토큰은 계층을 이루며, 소비처에 가까운 단계일수록 구체적입니다. 각 단계는 원칙적으로 바로
-            앞 단계의 토큰을 참조해 값을 물려받고, 소비처는 자신에게 가장 가까운 단계를 참조합니다.
+            토큰은 계층을 이루며, 실제로 쓰이는 자리에 가까운 단계일수록 구체적입니다. 각 단계는
+            원칙적으로 바로 앞 단계의 토큰을 참조해 값을 물려받고, 토큰을 쓰는 쪽은 자신에게 가장
+            가까운 단계를 참조합니다.
           </mm-paragraph>
           <mm-text-list
             variant="number"
             .texts=${[
               'Primitive — 색·크기·간격의 원시 값. 색은 gray800·green100처럼 색상과 단계로, 크기·간격은 size-, space-처럼 값의 종류로 이름 짓는다.',
               'System — primitive를 인터페이스의 역할에 매핑한다. background-color, border-color, foreground-subtle-color처럼 역할과 용도로 이름 짓는다.',
-              'Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-background-color, notice-text-color처럼 컴포넌트명과 소비하는 속성으로 이름 짓는다.',
+              'Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-background-color, notice-text-color처럼 컴포넌트명과 값을 적용하는 CSS 속성으로 이름 짓는다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
@@ -330,7 +331,7 @@ const main = html`
           <mm-text-list
             .texts=${[
               '상태에 따라 재할당된다 — variant·size·hover 같은 상태 selector가 이 토큰 하나에 값을 다시 넣는다.',
-              '소비처마다 다를 수 있어 소비자에게 연다 — table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System 토큰을 직접 참조한다.',
+              '쓰는 자리마다 다를 수 있어 사용하는 쪽에 연다 — table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System 토큰을 직접 참조한다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
@@ -436,7 +437,7 @@ const main = html`
 
       <mm-token-section
         heading="Material"
-        description="재질은 표면이 뒤 배경에서 떠 보이는 정도입니다. 원시값은 값의 종류와 크기로 이름 짓고, 소비처는 원시값을 색 토큰과 조합한 티어를 씁니다. 티어가 선언하지 않은 속성은 base를 따릅니다."
+        description="재질은 표면이 뒤 배경에서 떠 보이는 정도입니다. 원시값은 값의 종류와 크기로 이름 짓고, 사용하는 쪽은 원시값을 색 토큰과 조합한 티어를 씁니다. 티어가 선언하지 않은 속성은 base를 따릅니다."
       >
         <mm-token-stage>
           <mm-token-swatches

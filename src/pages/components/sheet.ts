@@ -100,7 +100,7 @@ function sheetPageTemplate() {
       <mm-component-guide .features=${componentFeatures}>
         <mm-text-list
           .texts=${[
-            '안전마진의 소유 — 패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백을 더 둡니다. footer 유무와 상관없이 같은 여백을 유지하도록 footer나 소비처에서 따로 두지 않습니다.',
+            '안전마진의 소유 — 패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백을 더 둡니다. footer 유무와 상관없이 같은 여백을 유지하도록 footer나 사용하는 쪽에서 따로 두지 않습니다.',
             '화면 가운데에 띄우는 확인·알림은 mm-dialog를 사용합니다. sheet의 placement는 패널이 붙는 변만 고릅니다.',
           ]}
         ></mm-text-list>

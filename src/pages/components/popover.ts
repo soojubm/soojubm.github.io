@@ -35,9 +35,15 @@ const componentProps: ComponentPropItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Contextual',
-    description: 'TODO',
+    description:
+      '트리거 가까이에 열려 사용자가 보던 맥락을 떠나지 않고 추가 동작이나 정보를 다룹니다. 배경은 그대로 조작할 수 있고, 바깥을 누르거나 ESC를 누르면 닫혀 작업 흐름이 끊기지 않습니다.',
   },
 ]
+
+const triggerCode = `<mm-button aria-controls="menu-popover" aria-haspopup="menu">더보기</mm-button>
+<mm-popover id="menu-popover" placement="bottom-start">
+  ...
+</mm-popover>`
 
 const main = html`
   <mm-main>
@@ -60,37 +66,54 @@ const main = html`
         )}
       </mm-flex>
     </mm-component-example>
-        </mm-component-example>
-      </mm-tab-panel>
-    </mm-flex>
+
+    <mm-component-code .code=${triggerCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-tokens .elements=${['mm-popover']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
+      <mm-paragraph-group>
+        <mm-heading level="3">언제 사용하나요</mm-heading>
+        <mm-paragraph>
+          컨텍스트 메뉴나 댓글 항목의 수정·삭제 메뉴처럼, 보던 맥락을 떠나지 않고 추가 동작을 꺼낼
+          때 사용합니다. 값을 고르는 드롭다운에는
+          <mm-code>mm-select</mm-code>
+          를 사용하세요.
+        </mm-paragraph>
+      </mm-paragraph-group>
+
       <mm-text-list
         .texts=${[
-          '열림 상태는 popover가 소유한다. 트리거는 popover 밖에 두고 aria-controls로 popover의 id를 가리키면, 클릭 토글·외부 클릭·ESC 닫기·aria-expanded 반영까지 자동으로 연결된다.',
-          'popover는 portal 컨테이너로 옮겨져 트리거의 화면 좌표로 위치를 잡는다. 스크롤 영역이나 transform·contain을 가진 조상 안에 트리거가 있어도 잘리지 않고, sheet 안에서 열려도 sheet 위에 보인다.',
-          '목록 컴포넌트처럼 열림 상태를 따로 소유해 트리거를 직접 배선하는 쪽은 aria-controls 대신 anchor로 기준 요소를 넘긴다.',
-          '패널 폭·여백은 --overlay-panel-* 토큰으로 정한다.',
-          '패널은 400px와 화면 높이의 50% 중 작은 값까지 자라고, 넘치면 안에서 스크롤된다.',
-          '패널은 240px보다 좁아지지 않는다. 테이블 셀처럼 좁은 자리의 트리거에 붙이면 패널이 주변을 덮으니 그 범위를 함께 본다.',
-          '여는 표면의 종류는 트리거의 aria-haspopup으로 알리고, role은 안에 넣는 목록 컴포넌트가 소유한다. 설정 컨트롤을 담은 패널은 aria-haspopup 없이 aria-expanded만 둔다.',
-          '열리면 포커스가 표면 안으로 옮겨 간다. 메뉴·목록이면 선택된 항목(없으면 첫 항목)에서 방향키로 탐색하고, 그 밖의 내용이면 표면 자체가 받는다. 포커스가 안에 있던 채로 닫히거나 Tab으로 표면을 벗어나면 닫히고 트리거로 돌아온다. 표면이 문서 끝으로 옮겨져 Tab으로 나가면 엉뚱한 곳에 닿기 때문이다.',
-          '트리거를 가리키는 화살표는 두지 않는다. 사용자가 직접 연 표면이라 어디에서 나왔는지 이미 분명하다.',
-          '용례: 컨텍스트 메뉴, 댓글 항목의 수정·삭제 메뉴. 값을 고르는 드롭다운은 Select를 사용한다.',
+          '패널은 내용만큼 자라고, 넘치면 안에서 스크롤된다. 테이블 셀처럼 좁은 자리의 트리거에 붙이면 패널이 주변을 덮는다.',
+          '패널이 열리면 포커스가 패널 안으로 옮겨 간다.',
+          '메뉴·목록이면 선택된 항목(없으면 첫 항목)에서 시작해 방향키로 탐색한다.',
+          '패널이 닫히면 포커스는 트리거로 돌아온다. Tab으로 패널을 벗어나도 닫힌다.',
+          '트리거를 가리키는 화살표는 두지 않는다. 사용자가 직접 연 패널이라 어디에서 나왔는지 이미 분명하다.',
+        ]}
+      ></mm-text-list>
+
+      <mm-paragraph-group>
+        <mm-heading level="3">트리거의 aria-haspopup</mm-heading>
+        <mm-paragraph>
+          트리거는 열리는 내용에 맞는 값을 aria-haspopup으로 알립니다. 스크린 리더가 어떤 패널이
+          열릴지 미리 안내하고, 사용자는 그에 맞는 조작을 예상할 수 있습니다.
+        </mm-paragraph>
+      </mm-paragraph-group>
+
+      <mm-text-list
+        .texts=${[
+          '메뉴를 여는 트리거는 aria-haspopup="menu"로 둔다.',
+          '옵션 목록을 여는 트리거는 aria-haspopup="listbox"로 둔다.',
+          '토글·슬라이더 같은 설정 컨트롤을 담은 패널은 menu·listbox 어느 쪽에도 맞지 않는다. aria-haspopup을 빼고 열림 여부를 알리는 aria-expanded만 둔다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>
 
-    <mm-component-anatomy
-    ></mm-component-anatomy>
-
     <mm-component-section
       heading="MoreMenu"
-      description="더보기 버튼으로 여는 명령 목록입니다. 좁은 화면에서는 목록을 sheet로 올립니다."
+      description="더보기 버튼으로 여는 명령 목록입니다. 좁은 화면에서는 목록이 sheet로 열립니다."
     >
       <mm-more-menu aria-label="추가 액션" .actions=${moreMenuActions}></mm-more-menu>
     </mm-component-section>

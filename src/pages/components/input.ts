@@ -132,7 +132,7 @@ const main = html`
               </mm-textfield>
             </mm-flex>
             <mm-paragraph>
-              leading 슬롯에는 입력값의 종류를 알리는 아이콘을, trailing 슬롯에는 입력을 돕는
+              앞쪽(leading)에는 입력값의 종류를 알리는 아이콘을, 뒤쪽(trailing)에는 입력을 돕는
               아이콘이나 단위를 둡니다. leading 아이콘은 레이블 역할을 하므로 label과 함께 쓰지
               않습니다.
             </mm-paragraph>

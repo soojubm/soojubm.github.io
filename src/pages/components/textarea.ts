@@ -80,7 +80,7 @@ const main = html`
             <mm-textarea placeholder="자유롭게 적어주세요"></mm-textarea>
             <mm-paragraph>
               <mm-code>mm-textarea</mm-code>
-              는 레이블 없이 입력 영역만 렌더합니다. 주변 제목이나 맥락이 입력 항목을 설명할 때
+              는 레이블 없이 입력 영역만 보여 줍니다. 주변 제목이나 맥락이 입력 항목을 설명할 때
               씁니다.
             </mm-paragraph>
           </mm-flex>
@@ -112,10 +112,7 @@ const main = html`
               placeholder="직접 입력"
               optional
             ></mm-textarea-field>
-            <mm-paragraph>
-              텍스트 영역은 기본적으로 필수 입력입니다. 입력하면 명확한 이점이 있을 때만 optional로
-              선택 입력을 표시합니다.
-            </mm-paragraph>
+            <mm-paragraph>텍스트 영역은 기본적으로 필수 입력입니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${optionalCode}></mm-component-code>

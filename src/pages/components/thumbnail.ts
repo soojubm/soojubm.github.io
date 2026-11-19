@@ -87,9 +87,7 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-thumbnail']}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-paragraph>TODO 고해상도 디바이스를 위한 이미지 가이드.</mm-paragraph>
-    </mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-section
       heading="Caption"

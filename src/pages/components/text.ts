@@ -168,7 +168,7 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          '피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)',
+          'line-height는 비율이 아니라 고정값으로 정한다. 소수점이 생기지 않아 토큰으로 관리하기 좋다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>
@@ -280,7 +280,7 @@ const main = html`
 
     <mm-component-section
       heading="Hero Section"
-      description="페이지 최상단에서 가장 먼저 읽히는 제목과 설명을 세웁니다. 아래 슬롯에 버튼 그룹이나 목록을 두어 다음 행동을 이어 줍니다. 사용자는 페이지의 목적과 시작점을 한눈에 알 수 있습니다."
+      description="페이지 최상단에서 가장 먼저 읽히는 제목과 설명을 세웁니다. 그 아래에 버튼 그룹이나 목록을 두어 다음 행동을 이어 줍니다. 사용자는 페이지의 목적과 시작점을 한눈에 알 수 있습니다."
       .code=${heroSectionCode}
     >
       <mm-hero-section

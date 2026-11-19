@@ -65,21 +65,18 @@ const main = html`
       <mm-paragraph-group>
         <mm-heading level="3">언제 사용하나요</mm-heading>
         <mm-paragraph>
-          놓쳐도 되는 정보에만 씁니다. 사용자의 확인이 필요하면
+          복사·저장·삭제처럼 사용자가 한 행동의 결과를 짧게 알릴 때 사용합니다. 놓쳐도 흐름에 지장이
+          없는 피드백이어야 하며, 사용자의 확인이 필요하면
           <mm-code>mm-dialog</mm-code>
           , 화면에 계속 남아야 하면
           <mm-code>mm-notice</mm-code>
-          를 씁니다.
+          를 사용하세요.
         </mm-paragraph>
       </mm-paragraph-group>
 
       <mm-paragraph-group>
         <mm-heading level="3">접근성</mm-heading>
-        <mm-paragraph>
-          기본
-          <mm-code>role="status"</mm-code>
-          로 두어 스크린리더가 사용자의 흐름을 끊지 않고 읽게 합니다.
-        </mm-paragraph>
+        <mm-paragraph>스크린리더는 사용자의 흐름을 끊지 않고 읽습니다.</mm-paragraph>
       </mm-paragraph-group>
     </mm-component-guide>
 

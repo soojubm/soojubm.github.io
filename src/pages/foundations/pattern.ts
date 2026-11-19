@@ -259,14 +259,14 @@ const main = html`
             </mm-component-notice>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="DisclosureController">
+          <mm-content-section heading-level="3" heading="열고 닫는 상태">
             <mm-paragraph>
-              열고 닫는 상태를 소유하고, 트리거 클릭에 따른 토글과 ${code('aria-expanded')} 동기화를
-              맡습니다.
+              열고 닫는 상태는 컴포넌트가 소유하고, 트리거 클릭에 따른 토글과
+              ${code('aria-expanded')} 동기화도 컴포넌트가 맡습니다.
             </mm-paragraph>
-            <mm-component-notice heading="DisclosureController를 사용하지 않는 예외 케이스">
-              ${code('mm-component-props')}는 한 번 펼치면 다시 접지 않아 토글이 필요 없으므로
-              컨트롤러를 쓰지 않는다
+            <mm-component-notice heading="열고 닫는 상태를 두지 않는 예외 케이스">
+              ${code('mm-component-props')}는 한 번 펼치면 다시 접지 않아 토글이 필요 없으므로 열고
+              닫는 상태를 두지 않는다
             </mm-component-notice>
           </mm-content-section>
 

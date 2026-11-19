@@ -67,7 +67,7 @@ const main = html`
 
       <mm-tab-panel value="styles">
         <mm-content-section-list>
-          <mm-content-section heading="buttonBaseStyles">
+          <mm-content-section heading-level="3" heading="buttonBaseStyles">
             <mm-paragraph>
               버튼 골격과 눌림 스킨(${code('buttonSelectedStyles')}). icon-button 스타일이 이 위에
               서서 아이콘 버튼 계열까지 퍼집니다.
@@ -78,55 +78,55 @@ const main = html`
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="inputBaseStyles">
+          <mm-content-section heading-level="3" heading="inputBaseStyles">
             <mm-paragraph>
               입력 필드의 기반 스타일입니다. 높이·여백·배경·테두리와 hover·포커스·비활성·오류 상태를
               포함하며, size로 small 단계를 고릅니다. textarea와 searchfield가 이 위에 섭니다.
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="interactiveRowStyles">
+          <mm-content-section heading-level="3" heading="interactiveRowStyles">
             <mm-paragraph>
               눌리는 행의 hover·포커스·선택·비활성 스킨. menu-item 계열과 사이드바·검색 목록
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="dotStyles">
+          <mm-content-section heading-level="3" heading="dotStyles">
             <mm-paragraph>점 모양과 크기·tone 단계. 조합 컴포넌트가 고르는 단계</mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="surfaceBaseStyles">
+          <mm-content-section heading-level="3" heading="surfaceBaseStyles">
             <mm-paragraph>
               faq·banner·radio card·code-block·pager·token-item·color-token
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="visuallyHiddenInputStyles">
+          <mm-content-section heading-level="3" heading="visuallyHiddenInputStyles">
             <mm-paragraph>
               radio·checkbox가 네이티브 input을 숨기는 조각. 입력 필드 스타일은 input 계열 안에서만
               쓴다
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="TagTone">
+          <mm-content-section heading-level="3" heading="TagTone">
             <mm-paragraph>tone 이름과 색. dot·chart가 tag와 같은 색을 맞출 때 쓴다</mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="textfieldStyles">
+          <mm-content-section heading-level="3" heading="textfieldStyles">
             <mm-paragraph>
-              label·description·validation을 함께 렌더하는 field 계열(textfield, textarea-field,
+              label·description·validation을 함께 갖는 field 계열(textfield, textarea-field,
               numberfield, passwordfield)의 공유 규칙입니다.
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="inputSelectionGroupStyles">
+          <mm-content-section heading-level="3" heading="inputSelectionGroupStyles">
             <mm-paragraph>
               선택 컨트롤을 fieldset으로 묶는 그룹입니다. 그룹 이름(legend)은 스크린리더에만
               전달합니다. radio·checkbox 그룹이 씁니다.
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="interactiveControlStyles">
+          <mm-content-section heading-level="3" heading="interactiveControlStyles">
             <mm-paragraph>
               눌리는 컨트롤의 포커스 링과 비활성 표시입니다. button 태그뿐 아니라 a 기반 파생
               컴포넌트도 같은 스킨을 가져다 쓰도록 공용 상호작용 선택자로 잡습니다.
@@ -134,28 +134,28 @@ const main = html`
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="iconButtonStyles">
+          <mm-content-section heading-level="3" heading="iconButtonStyles">
             <mm-paragraph>
-              icon-button 계열의 기반 스타일입니다. 자체 button을 렌더하는 파생 컴포넌트가
+              icon-button 계열의 기반 스타일입니다. 자체 button을 쓰는 파생 컴포넌트가
               hover·focus·disabled를 빠뜨리기 쉬워 ${code('interactiveControlStyles')}를 함께 묶어
               내보냅니다.
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="menuItemStyles">
+          <mm-content-section heading-level="3" heading="menuItemStyles">
             <mm-paragraph>
               눌리는 명령 행의 스타일입니다. menu-item 계열과 select option이 씁니다.
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="overlaySurfaceStyles">
+          <mm-content-section heading-level="3" heading="overlaySurfaceStyles">
             <mm-paragraph>
               떠 있는 표면 패널의 재질입니다. backdrop-filter는 조상에 걸리면 자손의 blur가 죽으므로
               ::before 레이어에 분리해 깝니다. dialog·popover·sheet가 씁니다.
             </mm-paragraph>
           </mm-content-section>
 
-          <mm-content-section heading="sheetPositionStyles">
+          <mm-content-section heading-level="3" heading="sheetPositionStyles">
             <mm-paragraph>
               viewport 기준 modal 표면(sheet, dialog)의 위치입니다. placement별로 패널을 어느 변에
               붙일지 정하고, placement가 없는 dialog는 화면 가운데에 앉습니다.
@@ -228,18 +228,18 @@ const main = html`
             </mm-component-example>
             <mm-component-props .props=${contentSectionProps}></mm-component-props>
             <mm-component-notice heading="모두 보기 링크를 받는 섹션">
-              ${code('view-all-href')}를 받으면 ${code('action')} 슬롯에 "모두 보기" 링크를 스스로
+              ${code('view-all-href')}를 받으면 ${code('action')} 자리에 "모두 보기" 링크를 스스로
               채우는 파생 컴포넌트를 둔다. 받지 않으면 기본형과 같다. 이동이라 버튼이 아닌 링크로
-              렌더하고, 무엇을 모두 보는지 섹션 제목과 잇는다. 본문이 그리드든 좌우 스크롤이든
-              섹션은 관여하지 않는다
+              두고, 무엇을 모두 보는지 섹션 제목과 잇는다. 본문이 그리드든 좌우 스크롤이든 섹션은
+              관여하지 않는다
             </mm-component-notice>
           </mm-content-section>
 
           <mm-content-section heading="Form Field">
             <mm-paragraph>
               textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를 같은 규칙으로 붙입니다.
-              컨트롤은 슬롯으로 받고 필드는 레이블이 붙은 ${code('role="group"')}이 됩니다. 컨트롤별
-              조합은
+              컨트롤은 안에 넣어 받고 필드는 레이블이 붙은 ${code('role="group"')}이 됩니다.
+              컨트롤별 조합은
               <mm-link href="./input.html">Input</mm-link>
               이 전시합니다.
             </mm-paragraph>

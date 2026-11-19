@@ -61,15 +61,14 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          'hr 태그를 사용하면 의미론적으로 주제를 분리할 수 있고 컴포넌트의 고유성을 유지할 수 있습니다.',
-          '물리적 픽셀 단위(retina), 논리적 픽셀 단위(1px)',
+          'hr 태그를 사용하므로 주제의 구분이 의미로도 전달된다.',
           html`
             Article 그룹의 구획에 사용합니다. Element와 Section 그룹은 쓰지 않으며, 레벨별 구획
             규칙은
             <mm-link href="./layout.html?tab=group">Layout</mm-link>
             문서가 정합니다.
           `,
-          '불릿 컴포넌트의 정의. 불릿, 콤마, 콜론, 슬래시, 따옴표, 괄호 등으로 나열하는 맥락에 불릿 컴포넌트를 사용한다. 클립보드 복사를 위해 텍스트 더미를 드래그앤드롭으로 선택할 때에 불릿은 선택되지 않아야 한다.',
+          '불릿은 콤마·콜론·슬래시·따옴표·괄호처럼 항목을 나열하는 맥락에 쓴다. 텍스트를 드래그해 복사할 때 불릿은 선택되지 않아야 한다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>

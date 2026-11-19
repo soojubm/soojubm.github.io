@@ -192,12 +192,9 @@ const main = html`
         ></mm-component-aka>
         <mm-text-list
           .texts=${[
-            'chip/button small - 사용자 여정을 보조하는 액션입니다. 사용자는 페이지 내에서 즉각적인 결과를 기대할 수 있습니다.',
-            'Avoid disabled buttons. Let the user send incomplete form and use error messages to explain what is wrong.',
-            '실행 결과를 에측할 수 있는 레이블을 작성하세요. 툴팁으로 부연하거나, 실행을 유도하는 보조 텍스트 또는 실행 결과를 보충하는 보조 텍스트로 버튼 이외의 가이드가 필요하지 않습니다.',
-            '맥락이 다른 액션을 그룹으로 제공할 수 있습니다. 이 때 단일선택, 다중선택, 삭제여부, 펼침메뉴 등의 기표를 충분히 제공하세요. ariaHaspopup/ariaSelected',
-            'Split button이란? 사용자에게 더 많은 작업을 표시하는 경우 작업을 선택하여 트리거할 수 있도록 선택 + 버튼 조합을 사용. 것이 좋습니다.',
-            '빈 버튼이 필요한가? 리액트에서 포커싱이 가능한 전체 영역의 버튼. 도는 버튼 내부에서포지셔닝되는 버튼. 시각적으로는 버튼 내부의 버튼이지만 구조적으로 대안이 되는 형태의 버튼',
+            'disabled 버튼은 피한다. 불완전한 폼도 제출하게 두고 오류 메시지로 무엇이 잘못됐는지 알린다.',
+            '실행 결과를 예측할 수 있는 레이블을 쓴다. 레이블만으로 결과가 전해지면 툴팁이나 보조 텍스트 같은 별도 안내가 필요하지 않다.',
+            '맥락이 다른 액션을 묶어 제공할 때는 단일선택·다중선택·삭제·펼침메뉴 같은 성격을 기표로 충분히 드러낸다.',
           ]}
         ></mm-text-list>
       </mm-paragraph-group>
@@ -273,10 +270,6 @@ const main = html`
         <mm-social-auth-button provider="google"></mm-social-auth-button>
         <mm-social-auth-button provider="apple"></mm-social-auth-button>
       </mm-flex>
-    </mm-component-section>
-
-    <mm-component-section heading="ToTopButton" description="페이지 최상단으로 스크롤합니다.">
-      <mm-to-top-button></mm-to-top-button>
     </mm-component-section>
 
     <mm-table

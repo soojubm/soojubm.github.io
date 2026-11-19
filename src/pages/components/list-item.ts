@@ -228,25 +228,20 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="trailing">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-list-item-group>
-              <mm-list-item
-                size="medium"
-                label="수줍이"
-                description="UI Designer"
-                avatar-shape="circle"
-                avatar-src="/src/images/soojubm.png"
-              >
-                <mm-follow-button slot="trailing"></mm-follow-button>
-              </mm-list-item>
-              <mm-list-item icon=${ICON_NAMES.NOTIFICATION} label="알림">
-                <mm-tag slot="trailing">신규</mm-tag>
-              </mm-list-item>
-            </mm-list-item-group>
-            <mm-paragraph>
-              trailing 슬롯에 액션 버튼·태그·메타 텍스트를 두어 행 오른쪽 끝에 정렬합니다.
-            </mm-paragraph>
-          </mm-flex>
+          <mm-list-item-group>
+            <mm-list-item
+              size="medium"
+              label="수줍이"
+              description="UI Designer"
+              avatar-shape="circle"
+              avatar-src="/src/images/soojubm.png"
+            >
+              <mm-follow-button slot="trailing"></mm-follow-button>
+            </mm-list-item>
+            <mm-list-item icon=${ICON_NAMES.NOTIFICATION} label="알림">
+              <mm-tag slot="trailing">신규</mm-tag>
+            </mm-list-item>
+          </mm-list-item-group>
         </mm-component-example>
         <mm-component-code .code=${trailingCode}></mm-component-code>
       </mm-tab-panel>
@@ -300,14 +295,14 @@ const main = html`
             <mm-code>mm-list-item</mm-code>
             은 행의 골격만 그리고,
             <mm-code>mm-menu-item-action</mm-code>
-            같은 menu-item 계열은 이 골격을 렌더한 뒤 role·포커스·키보드 조작·이벤트를 더합니다.
+            같은 menu-item 계열은 이 골격 위에 role·포커스·키보드 조작·이벤트를 더합니다.
           </mm-paragraph>
           <mm-text-list
             variant="check"
             .texts=${[
               rule(
                 '행 전체가 하나의 클릭 영역이면 menu-item을 쓴다',
-                '눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체가 tab stop 하나가 되고, 항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다',
+                '눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체에 Tab으로는 한 번만 닿고, 항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다',
               ),
               rule(
                 '이동하거나, 조작을 행 안의 컨트롤이 받으면 list-item을 쓴다',
@@ -338,9 +333,8 @@ const main = html`
                 '한 그룹에는 같은 계열의 role을 갖는 행만 담는다',
                 html`
                   <mm-code>mm-menu-item-group</mm-code>
-                  의 roving focus는 자식의 shadow에서 menuitem 계열 role을 찾아 tab stop을 옮긴다.
-                  다른 행이 섞이면 그 행만 방향키에서 빠져 Tab으로만 닿게 되고, 한 목록 안에서
-                  키보드 동선이 둘로 갈린다
+                  는 방향키로 행 사이를 옮겨 다닌다. 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
+                  Tab으로만 닿게 되고, 한 목록 안에서 키보드 동선이 둘로 갈린다
                 `,
               ),
             ]}
@@ -356,12 +350,7 @@ const main = html`
             .texts=${[
               rule(
                 '위아래 행간 차이의 절반만큼 content를 위로 옮긴다',
-                html`
-                  medium에 description이 있으면 label(14/24)의 위 행간이 description(12/16)의 아래
-                  행간보다 넓어 글자가 아래로 치우쳐 보인다. 이동에는
-                  <mm-code>translate</mm-code>
-                  속성을 써서 레이아웃 박스와 정렬은 그대로 둔다
-                `,
+                'medium에 description이 있으면 label의 위 행간이 description의 아래 행간보다 넓어 글자가 아래로 치우쳐 보인다. 옮기는 것은 글자뿐이라 행의 크기와 정렬은 그대로다',
               ),
             ]}
           ></mm-text-list>
@@ -374,7 +363,7 @@ const main = html`
       .parts=${[
         'leading — 아이콘 또는 아바타를 담는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.',
         'content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.',
-        'trailing — 오른쪽에 배치되는 선택적 슬롯. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
+        'trailing — 오른쪽에 배치되는 선택적 영역. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
       ]}
       .markers=${[
         { placement: 'block-end', offset: '1.5rem' },
@@ -424,7 +413,7 @@ const main = html`
 
     <mm-component-section
       heading="SettingItem"
-      description="설정 맥락. 행은 라벨과 설명만 그리고, action 슬롯에 놓인 스위치·버튼이 조작을 직접 받습니다."
+      description="설정 맥락. 행은 라벨과 설명만 그리고, action 자리에 놓인 스위치·버튼이 조작을 직접 받습니다."
     >
       <mm-list-item-group>
         <mm-setting-item

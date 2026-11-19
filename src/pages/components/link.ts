@@ -78,10 +78,7 @@ const main = html`
 
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
-        .texts=${[
-          'text button과의 차이. Link는 항상 텍스트 단락과 함께 사용합니다. word, phrase, paragraph와 사용되는 케이스 정의',
-          '내부 링크와 외부 링크의 구별. 형태적 구별과 코드상 구별 target=_blank rel=noopener noreferrer',
-        ]}
+        .texts=${['Link는 text button과 달리 항상 텍스트 단락 안에서 사용한다.']}
       ></mm-text-list>
     </mm-component-guide>
 

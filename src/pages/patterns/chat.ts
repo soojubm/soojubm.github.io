@@ -59,18 +59,10 @@ const main = html`
             <mm-ai-chat-message hidden-reactions>
               <mm-flex direction="column" gap="2">
                 <mm-chat-reasoning thinking>
-                  <mm-chat-reasoning-flow tone="thinking" label="요청을 확인하는 중">
-                    디자인 토큰 계층 구조를 어떤 관점에서 설명해야 할지 살피고 있어요.
-                  </mm-chat-reasoning-flow>
-                  <mm-chat-reasoning-flow tone="searching" label="관련 자료 탐색 중">
-                    Figma, Atlassian, Style Dictionary 문서를 함께 대조하고 있어요.
-                  </mm-chat-reasoning-flow>
-                  <mm-chat-reasoning-flow tone="reading" label="핵심 구조 정리 중">
-                    글로벌, 앨리어스, 컴포넌트 토큰의 역할을 구분하고 있어요.
-                  </mm-chat-reasoning-flow>
-                  <mm-chat-reasoning-flow tone="writing" label="답변 문장 다듬는 중">
-                    바로 적용할 수 있는 형태로 예시와 함께 정리하고 있어요.
-                  </mm-chat-reasoning-flow>
+                  <mm-chat-reasoning-flow label="요청을 확인하는 중"></mm-chat-reasoning-flow>
+                  <mm-chat-reasoning-flow label="관련 자료 탐색 중"></mm-chat-reasoning-flow>
+                  <mm-chat-reasoning-flow label="핵심 구조 정리 중"></mm-chat-reasoning-flow>
+                  <mm-chat-reasoning-flow label="답변 문장 다듬는 중"></mm-chat-reasoning-flow>
                 </mm-chat-reasoning>
               </mm-flex>
 
@@ -78,7 +70,7 @@ const main = html`
                 message="example.txt 파일을 삭제하려고 합니다. 이 작업을 승인하시겠어요?"
               ></mm-chat-confirmation>
 
-              <mm-surface variant="elevated" density="compact">
+              <mm-surface variant="elevated">
                 <mm-menu-item-action
                   size="medium"
                   icon=${ICON_NAMES.DOCUMENT}
