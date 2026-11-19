@@ -16,7 +16,7 @@ const placements: PopoverPlacement[] = ['bottom-start', 'bottom-end', 'top-start
 const moreMenuActions: MoreMenuAction[] = [
   { value: 'share', label: '공유', onClick: () => alert('clicked') },
   { value: 'edit', label: '수정', onClick: () => alert('clicked') },
-  { value: 'delete', label: '삭제', tone: 'danger', onClick: () => alert('clicked') },
+  { value: 'delete', label: '삭제', destructive: true, onClick: () => alert('clicked') },
 ]
 
 const relatedComponents: ComponentRelatedItemData[] = [

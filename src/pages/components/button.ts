@@ -98,9 +98,9 @@ const variantCode = `<mm-button-group>
   <mm-button variant="primary">primary</mm-button>
   <mm-button variant="secondary">secondary</mm-button>
   <mm-button variant="tertiary">tertiary</mm-button>
-  <mm-button variant="danger">danger</mm-button>
-  <mm-button variant="ghost">ghost</mm-button>
-</mm-button-group>`
+</mm-button-group>
+<mm-separator></mm-separator>
+<mm-button variant="primary" destructive>destructive</mm-button>`
 
 const sizeCode = `<mm-button-group>
   <mm-button variant="primary" size="large">large</mm-button>
@@ -108,16 +108,16 @@ const sizeCode = `<mm-button-group>
 </mm-button-group>`
 
 const iconCode = `<mm-button-group>
-  <mm-button variant="tertiary" icon="arrow-left">이전</mm-button>
-  <mm-button variant="tertiary" icon="arrow-right" icon-position="trailing">
+  <mm-button variant="secondary" icon="arrow-left">이전</mm-button>
+  <mm-button variant="secondary" icon="arrow-right" icon-position="trailing">
     다음
   </mm-button>
 </mm-button-group>`
 
 const stateCode = `<mm-button-group>
-  <mm-button variant="tertiary">hovered</mm-button>
-  <mm-button variant="tertiary">focused</mm-button>
-  <mm-button variant="tertiary" disabled>disabled</mm-button>
+  <mm-button variant="secondary">hovered</mm-button>
+  <mm-button variant="secondary">focused</mm-button>
+  <mm-button variant="secondary" disabled>disabled</mm-button>
 </mm-button-group>`
 
 const main = html`
@@ -140,9 +140,9 @@ const main = html`
             <mm-button variant="primary">primary</mm-button>
             <mm-button variant="secondary">secondary</mm-button>
             <mm-button variant="tertiary">tertiary</mm-button>
-            <mm-button variant="danger">danger</mm-button>
-            <mm-button variant="ghost">ghost</mm-button>
           </mm-button-group>
+          <mm-separator></mm-separator>
+          <mm-button variant="primary" destructive>destructive</mm-button>
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
@@ -158,8 +158,8 @@ const main = html`
       <mm-tab-panel value="icon">
         <mm-component-example>
           <mm-button-group>
-            <mm-button variant="tertiary" icon=${ICON_NAMES.PREVIOUS}>이전</mm-button>
-            <mm-button variant="tertiary" icon=${ICON_NAMES.NEXT} icon-position="trailing">
+            <mm-button variant="secondary" icon=${ICON_NAMES.PREVIOUS}>이전</mm-button>
+            <mm-button variant="secondary" icon=${ICON_NAMES.NEXT} icon-position="trailing">
               다음
             </mm-button>
           </mm-button-group>
@@ -169,9 +169,9 @@ const main = html`
       <mm-tab-panel value="state">
         <mm-component-example>
           <mm-button-group>
-            <mm-button variant="tertiary">hovered</mm-button>
-            <mm-button variant="tertiary">focused</mm-button>
-            <mm-button variant="tertiary" disabled>disabled</mm-button>
+            <mm-button variant="secondary">hovered</mm-button>
+            <mm-button variant="secondary">focused</mm-button>
+            <mm-button variant="secondary" disabled>disabled</mm-button>
           </mm-button-group>
         </mm-component-example>
         <mm-component-code .code=${stateCode}></mm-component-code>
@@ -190,6 +190,7 @@ const main = html`
         <mm-text-list
           .texts=${[
             'disabled 버튼은 피한다. 불완전한 폼도 제출하게 두고 오류 메시지로 무엇이 잘못됐는지 알린다.',
+            '되돌리기 어려운 행동에는 destructive를 쓴다. 강조 단계(variant)는 그대로 두고 색만 위험을 알리는 색으로 바뀐다.',
           ]}
         ></mm-text-list>
       </mm-paragraph-group>
@@ -218,27 +219,21 @@ const main = html`
       ]}
       description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. TODO Reject-Approve Pattern, Confirmation Pattern"
     >
-      <mm-flex direction="column" gap="2">
-        <mm-button-group aria-label="상품 정보 묶음">
-          <mm-button variant="tertiary">취소</mm-button>
-          <mm-button variant="primary">저장</mm-button>
-        </mm-button-group>
-        <mm-separator></mm-separator>
-        <mm-button-group>
-          <mm-button variant="ghost">건너뛰기</mm-button>
-          <mm-button variant="secondary">다음</mm-button>
-        </mm-button-group>
-        <mm-separator></mm-separator>
-        <mm-button-group>
-          <mm-button variant="tertiary">이전</mm-button>
-          <mm-button variant="secondary">다음</mm-button>
-        </mm-button-group>
-        <mm-separator></mm-separator>
-        <mm-button-group>
-          <mm-button variant="primary" href="#">지금 가입하기</mm-button>
-          <mm-button variant="ghost">더 알아보기</mm-button>
-        </mm-button-group>
-      </mm-flex>
+      <mm-button-group aria-label="상품 정보 묶음">
+        <mm-button variant="secondary">취소</mm-button>
+        <mm-button variant="primary">저장</mm-button>
+      </mm-button-group>
+      <mm-separator></mm-separator>
+      <mm-button-group>
+        <mm-button variant="tertiary">건너뛰기</mm-button>
+        <mm-button variant="secondary">이전</mm-button>
+        <mm-button variant="primary">다음</mm-button>
+      </mm-button-group>
+      <mm-separator></mm-separator>
+      <mm-button-group>
+        <mm-button variant="primary" href="#">지금 가입하기</mm-button>
+        <mm-button variant="tertiary">더 알아보기</mm-button>
+      </mm-button-group>
     </mm-component-section>
 
     <mm-component-section

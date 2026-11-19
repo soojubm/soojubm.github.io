@@ -12,6 +12,7 @@ export const ICON_CATALOG = {
     COPY: 'copy',
     COPY_SUCCESS: 'check',
     DELETE: 'trash',
+    EDIT: 'edit-pencil',
     FILTER: 'filter',
     IMPORT: 'import',
     LOG_OUT: 'log-out',
@@ -116,6 +117,9 @@ export const ICON_CATALOG = {
     LOCK: 'lock',
     SEARCH: 'search',
     SUBTRACT: 'minus',
+    TIMER: 'timer',
+    TOGGLE: 'toggle-on',
+    WINDOW: 'app-window',
   },
 } as const
 

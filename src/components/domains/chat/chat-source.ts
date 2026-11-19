@@ -28,7 +28,7 @@ export class ChatSource extends LitElement {
 
   render() {
     return html`
-      <mm-button variant="tertiary" aria-controls=${this.detailId}>
+      <mm-button variant="secondary" aria-controls=${this.detailId}>
         ${this.renderIcon()} ${this.domain}
       </mm-button>
       <mm-popover id=${this.detailId}>

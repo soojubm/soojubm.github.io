@@ -12,6 +12,23 @@ export interface ComponentFeatureItem {
   rules?: string[]
 }
 
+// 컴포넌트 특성(heading)마다 쓰는 아이콘. 목록에 없는 heading은 INFO로 둔다.
+const FEATURE_ICONS: Record<string, string> = {
+  'Interactive - action': ICON_NAMES.CLICK,
+  'Interactive - selection': ICON_NAMES.PRESSED,
+  'Interactive - input': ICON_NAMES.EDIT,
+  'Input - file': ICON_NAMES.IMPORT,
+  Feedback: ICON_NAMES.NOTIFICATION,
+  Glanceable: ICON_NAMES.VIEW,
+  Structural: ICON_NAMES.GRID_VIEW,
+  Contextual: ICON_NAMES.CURRENT,
+  Representative: ICON_NAMES.PROFILE,
+  Modality: ICON_NAMES.WINDOW,
+  Transient: ICON_NAMES.TIMER,
+  Stateful: ICON_NAMES.TOGGLE,
+  Disclosure: ICON_NAMES.EXPAND,
+}
+
 /**
  * 컴포넌트 문서 페이지의 mm-feature 목록 칼럼 레이아웃을 소유한다.
  */
@@ -37,7 +54,7 @@ export class ComponentFeatureList extends LitElement {
               <mm-feature
                 heading=${feature.heading}
                 description=${feature.description}
-                icon=${ICON_NAMES.INFO}
+                icon=${FEATURE_ICONS[feature.heading] ?? ICON_NAMES.INFO}
               >
                 ${this.renderRules(feature.rules)}
               </mm-feature>

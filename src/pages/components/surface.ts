@@ -116,13 +116,6 @@ const main = html`
       <mm-tab-panel value="variant">
         <mm-component-example>
           <mm-flex direction="column" gap="3">
-            <mm-surface variant="ghost">
-              <mm-text-block
-                level="3"
-                heading="ghost"
-                description="투명한 배경. 클릭할 수 없다."
-              ></mm-text-block>
-            </mm-surface>
             <mm-surface variant="outlined">
               <mm-text-block
                 level="3"
@@ -142,6 +135,13 @@ const main = html`
                 level="3"
                 heading="elevated"
                 description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
+              ></mm-text-block>
+            </mm-surface>
+            <mm-surface variant="ghost">
+              <mm-text-block
+                level="3"
+                heading="ghost"
+                description="투명한 배경. 클릭할 수 없다."
               ></mm-text-block>
             </mm-surface>
           </mm-flex>
@@ -187,7 +187,7 @@ const main = html`
       </mm-paragraph-group>
 
       <mm-paragraph-group>
-        <mm-heading level="3">시각 보정이 필요해요</mm-heading>
+        <mm-heading level="3">시각보정이 필요해요</mm-heading>
         <mm-paragraph>
           surface 안의 leading·trailing 요소에 따라 위치를 맞추는 보정이 필요할 수 있습니다.
         </mm-paragraph>

@@ -194,7 +194,7 @@ function sheetExampleTemplate() {
           <mm-menu-item-action size="medium" label="보관"></mm-menu-item-action>
           <mm-menu-item-action size="medium" label="숨기기"></mm-menu-item-action>
           <mm-menu-item-action size="medium" label="신고"></mm-menu-item-action>
-          <mm-menu-item-action size="medium" label="삭제" tone="danger"></mm-menu-item-action>
+          <mm-menu-item-action size="medium" label="삭제" destructive></mm-menu-item-action>
         </mm-menu-item-group>
       </mm-sheet-body>
       <mm-sheet-footer

@@ -34,7 +34,7 @@ const main = html`
 
       <mm-button-group>
         <mm-follow-button></mm-follow-button>
-        <mm-button variant="tertiary">메시지</mm-button>
+        <mm-button variant="secondary">메시지</mm-button>
       </mm-button-group>
       <mm-read-more-paragraph
         max-length="100"

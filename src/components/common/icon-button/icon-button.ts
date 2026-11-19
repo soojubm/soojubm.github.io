@@ -10,7 +10,7 @@ import { renderIconButton } from '@/components/common/icon-button/icon-button.ut
 import { resetStyles } from '@/stylesheets/shared.styles'
 import type { ComponentSize, ComponentVariant } from '@/stylesheets/shared.types'
 
-export type IconButtonVariant = ComponentVariant
+export type IconButtonVariant = Exclude<ComponentVariant, 'danger'>
 export type IconButtonSize = Extract<ComponentSize, 'small' | 'medium'>
 
 @customElement('mm-icon-button')
@@ -18,6 +18,7 @@ export class IconButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles]
   @property({ type: String }) icon?: IconName
   @property({ type: String, reflect: true }) variant: IconButtonVariant = 'tertiary'
+  @property({ type: Boolean, reflect: true }) destructive = false
   @property({ type: String, reflect: true }) size: IconButtonSize = 'medium'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @property({ type: String, attribute: 'tooltip-placement' })

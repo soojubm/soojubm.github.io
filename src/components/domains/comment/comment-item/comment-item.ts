@@ -10,7 +10,7 @@ import '@/components/common/list-item/domain/user-item'
 
 const MENU_ACTIONS: MoreMenuAction[] = [
   { value: 'edit', label: '수정' },
-  { value: 'delete', label: '삭제', tone: 'danger' },
+  { value: 'delete', label: '삭제', destructive: true },
 ]
 
 /**
@@ -76,7 +76,7 @@ export class CommentItem extends LitElement {
     if (!this.replyLabel) return nothing
 
     return html`
-      <mm-button variant="ghost" @click=${() => this.emitAction('reply')}>
+      <mm-button variant="tertiary" @click=${() => this.emitAction('reply')}>
         ${this.replyLabel}
       </mm-button>
     `

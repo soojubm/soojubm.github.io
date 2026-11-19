@@ -16,7 +16,7 @@ import '@/components/common/icon'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import type { ComponentSize, ComponentVariant } from '@/stylesheets/shared.types'
 
-export type ButtonVariant = ComponentVariant
+export type ButtonVariant = Exclude<ComponentVariant, 'ghost' | 'danger'>
 export type ButtonSize = Extract<ComponentSize, 'medium' | 'large'>
 export type ButtonIconPosition = 'leading' | 'trailing'
 export type ButtonType = 'button' | 'submit' | 'reset'
@@ -38,7 +38,8 @@ export class Button extends LitElement {
       }
     `,
   ]
-  @property({ type: String, reflect: true }) variant: ButtonVariant = 'tertiary'
+  @property({ type: String, reflect: true }) variant: ButtonVariant = 'secondary'
+  @property({ type: Boolean, reflect: true }) destructive = false
   @property({ type: String, reflect: true }) size: ButtonSize = 'medium'
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
   @property({ type: String }) type: ButtonType = 'button'

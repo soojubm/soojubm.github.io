@@ -279,7 +279,7 @@ const main = html`
             ]}
           ></mm-text-list>
         </mm-content-section>
-        <mm-content-section heading-level="3" heading="시각보정">
+        <mm-content-section heading-level="3" heading="시각보정이 필요해요">
           <mm-paragraph>
             label과 description이 함께 있으면 글자가 앞의 아이콘보다 아래로 치우쳐 보입니다. 글자만
             위로 조금 올려 아이콘과 가운데를 맞추고, 행의 크기는 그대로 둡니다.

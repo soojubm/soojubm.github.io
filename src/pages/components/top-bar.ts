@@ -36,12 +36,12 @@ const componentProps: ComponentPropItemData[] = [
 const moreMenuActions: MoreMenuAction[] = [
   { value: 'share', label: '공유', onClick: () => alert('clicked') },
   { value: 'edit', label: '프로필 수정', onClick: () => alert('clicked') },
-  { value: 'block', label: '차단', tone: 'danger', onClick: () => alert('clicked') },
+  { value: 'block', label: '차단', destructive: true, onClick: () => alert('clicked') },
 ]
 
 const exampleCode = `<mm-top-bar nav="close" heading="상세 정보"></mm-top-bar>
 <mm-top-bar heading="컬렉션에 추가">
-  <mm-button slot="action" variant="ghost">완료</mm-button>
+  <mm-button slot="action" variant="tertiary">완료</mm-button>
 </mm-top-bar>
 <mm-top-bar heading="수줍이님">
   <mm-button-group slot="action">
@@ -64,7 +64,7 @@ const main = html`
       </mm-text>
       <mm-separator></mm-separator>
       <mm-top-bar heading="컬렉션에 추가">
-        <mm-button slot="action" variant="ghost">완료</mm-button>
+        <mm-button slot="action" variant="tertiary">완료</mm-button>
       </mm-top-bar>
       <mm-text>화면의 작업을 마치는 액션 하나는 텍스트 버튼으로 오른쪽 끝에 둡니다.</mm-text>
       <mm-separator></mm-separator>

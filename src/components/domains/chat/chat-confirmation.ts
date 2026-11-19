@@ -40,10 +40,10 @@ export class ChatConfirmation extends LitElement {
       <mm-notice heading="승인 요청" description=${this.message}>
         <slot></slot>
         <mm-button-group>
-          <mm-button variant="tertiary" size="medium" @click=${this.handleRejectClick}>
+          <mm-button variant="secondary" size="medium" @click=${this.handleRejectClick}>
             거부
           </mm-button>
-          <mm-button variant="tertiary" size="medium" @click=${this.handleApproveClick}>
+          <mm-button variant="secondary" size="medium" @click=${this.handleApproveClick}>
             승인
           </mm-button>
         </mm-button-group>

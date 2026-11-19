@@ -40,7 +40,7 @@ export const codeBlockStyles = css`
     display: block;
     font-family: var(--font-family);
     font-size: var(--font-size-14);
-    line-height: var(--font-line-height-24);
+    line-height: 20px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
   }

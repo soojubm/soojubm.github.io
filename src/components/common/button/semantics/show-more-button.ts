@@ -20,7 +20,7 @@ export class ShowMoreButton extends LitElement {
 
   render() {
     return html`
-      <mm-button variant="tertiary" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
+      <mm-button variant="secondary" icon=${ICON_NAMES.EXPAND} icon-position="trailing">
         더 불러오기
       </mm-button>
     `

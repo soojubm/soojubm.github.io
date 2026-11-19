@@ -17,7 +17,7 @@ import '@/components/overlay/sheet'
 import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-controller'
 import { emit } from '@/utils'
 
-export type SelectVariant = Extract<ButtonVariant, 'tertiary' | 'ghost'>
+export type SelectVariant = Extract<ButtonVariant, 'secondary' | 'tertiary'>
 
 // 옵션 5개까지 보이고 나머지는 스크롤한다. 옵션 행은 small list-item 높이이고, 패널의 padding·border를 더한다.
 // popover는 portal로 옮겨져 이 컴포넌트의 shadow 스타일이 닿지 않으므로 인라인으로 싣는다.
@@ -45,8 +45,8 @@ export class Select extends LitElement {
   `
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
-  /** 트리거 버튼의 variant. 배경 없이 본문에 얹을 때 ghost를 쓴다. */
-  @property({ type: String }) variant: SelectVariant = 'tertiary'
+  /** 트리거 버튼의 variant. 배경 없이 본문에 얹을 때 tertiary를 쓴다. */
+  @property({ type: String }) variant: SelectVariant = 'secondary'
   @property({ type: String }) placement: PopoverPlacement = 'bottom-start'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   private overlay = new AdaptiveOverlayController(this)

@@ -35,7 +35,7 @@ const variantCode = `<mm-button-group>
   <mm-icon-button variant="secondary" icon="arrow-right" aria-label="Secondary"></mm-icon-button>
   <mm-icon-button variant="tertiary" icon="arrow-right" aria-label="Tertiary"></mm-icon-button>
   <mm-icon-button variant="ghost" icon="arrow-right" aria-label="Ghost"></mm-icon-button>
-  <mm-icon-button variant="danger" icon="trash" aria-label="Danger"></mm-icon-button>
+  <mm-icon-button variant="primary" destructive icon="trash" aria-label="Destructive"></mm-icon-button>
 </mm-button-group>`
 
 const sizeCode = `<mm-button-group>
@@ -64,43 +64,39 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-button-group>
-              <mm-icon-button
-                variant="primary"
-                icon=${ICON_NAMES.FORWARD}
-                aria-label="Primary"
-                tooltip-placement="bottom"
-              ></mm-icon-button>
-              <mm-icon-button
-                variant="secondary"
-                icon=${ICON_NAMES.FORWARD}
-                aria-label="Secondary"
-                tooltip-placement="bottom"
-              ></mm-icon-button>
-              <mm-icon-button
-                variant="tertiary"
-                icon=${ICON_NAMES.FORWARD}
-                aria-label="Tertiary"
-                tooltip-placement="bottom"
-              ></mm-icon-button>
-              <mm-icon-button
-                variant="ghost"
-                icon=${ICON_NAMES.FORWARD}
-                aria-label="Ghost"
-                tooltip-placement="bottom"
-              ></mm-icon-button>
-              <mm-icon-button
-                variant="danger"
-                icon=${ICON_NAMES.DELETE}
-                aria-label="Danger"
-                tooltip-placement="bottom"
-              ></mm-icon-button>
-            </mm-button-group>
-            <mm-paragraph>
-              버튼과 같은 위계 체계를 따릅니다. danger는 되돌리기 어려운 액션에 씁니다.
-            </mm-paragraph>
-          </mm-flex>
+          <mm-button-group>
+            <mm-icon-button
+              variant="primary"
+              icon=${ICON_NAMES.FORWARD}
+              aria-label="Primary"
+              tooltip-placement="bottom"
+            ></mm-icon-button>
+            <mm-icon-button
+              variant="secondary"
+              icon=${ICON_NAMES.FORWARD}
+              aria-label="Secondary"
+              tooltip-placement="bottom"
+            ></mm-icon-button>
+            <mm-icon-button
+              variant="tertiary"
+              icon=${ICON_NAMES.FORWARD}
+              aria-label="Tertiary"
+              tooltip-placement="bottom"
+            ></mm-icon-button>
+            <mm-icon-button
+              variant="ghost"
+              icon=${ICON_NAMES.FORWARD}
+              aria-label="Ghost"
+              tooltip-placement="bottom"
+            ></mm-icon-button>
+            <mm-icon-button
+              variant="primary"
+              destructive
+              icon=${ICON_NAMES.DELETE}
+              aria-label="Destructive"
+              tooltip-placement="bottom"
+            ></mm-icon-button>
+          </mm-button-group>
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
@@ -164,12 +160,19 @@ const main = html`
     <mm-component-tokens .elements=${['mm-icon-button']}></mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}>
-      <mm-paragraph>
-        Toggled states. Buttons can swap icons based on data states.
-        <br />
-        There are several icons within our library that have a “Filled” counterpart to indicate
-        whether a state is toggled on. The “Outlined” version indicates it is toggled off.
-      </mm-paragraph>
+      <mm-paragraph-group>
+        <mm-text-list
+          .texts=${[
+            '되돌리기 어려운 행동에는 destructive를 쓴다. 강조 단계(variant)는 그대로 두고 색만 위험을 알리는 색으로 바뀐다.',
+          ]}
+        ></mm-text-list>
+        <mm-paragraph>
+          Toggled states. Buttons can swap icons based on data states.
+          <br />
+          There are several icons within our library that have a “Filled” counterpart to indicate
+          whether a state is toggled on. The “Outlined” version indicates it is toggled off.
+        </mm-paragraph>
+      </mm-paragraph-group>
     </mm-component-guide>
 
     <mm-component-anatomy

@@ -10,8 +10,8 @@ export const menuItemStyles = [
       display: block;
     }
 
-    /* tone=danger: color를 행에 지정하면 list-item 내부 텍스트·아이콘이 상속받는다 */
-    :host([tone='danger']) ${interactiveElement} {
+    /* destructive: color를 행에 지정하면 list-item 내부 텍스트·아이콘이 상속받는다 */
+    :host([destructive]) ${interactiveElement} {
       color: var(--danger-color);
     }
   `,

@@ -59,61 +59,46 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="size">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="4">
-              <mm-checkbox-group
-                name="size-default"
-                .options=${[
-                  { value: 'a', label: '기본 크기' },
-                  { value: 'b', label: '기본 크기' },
-                ]}
-              ></mm-checkbox-group>
-              <mm-checkbox-group
-                name="size-large"
-                size="large"
-                .options=${[
-                  { value: 'a', label: 'large 크기' },
-                  { value: 'b', label: 'large 크기' },
-                ]}
-              ></mm-checkbox-group>
-            </mm-flex>
-            <mm-paragraph>약관 동의처럼 선택지가 화면의 주요 입력일 때 크게 씁니다.</mm-paragraph>
+          <mm-flex direction="column" gap="4">
+            <mm-checkbox-group
+              name="size-default"
+              .options=${[
+                { value: 'a', label: '기본 크기' },
+                { value: 'b', label: '기본 크기' },
+              ]}
+            ></mm-checkbox-group>
+            <mm-checkbox-group
+              name="size-large"
+              size="large"
+              .options=${[
+                { value: 'a', label: 'large 크기' },
+                { value: 'b', label: 'large 크기' },
+              ]}
+            ></mm-checkbox-group>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${sizeCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="single">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-checkbox name="remember" value="remember">로그인 상태 유지</mm-checkbox>
-            <mm-paragraph>
-              선택지가 하나면 그룹으로 감싸지 않고
-              <mm-code>mm-checkbox</mm-code>
-              를 단독으로 씁니다.
-            </mm-paragraph>
-          </mm-flex>
+          <mm-checkbox name="remember" value="remember">로그인 상태 유지</mm-checkbox>
         </mm-component-example>
         <mm-component-code .code=${singleCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="4">
-              <mm-checkbox-group
-                name="state"
-                .options=${[
-                  { value: 'unchecked', label: 'Unchecked' },
-                  { value: 'checked', label: 'Checked' },
-                  { value: 'disabled', label: 'Disabled', disabled: true },
-                  { value: 'disabled-checked', label: 'Disabled checked', disabled: true },
-                ]}
-                .values=${['checked', 'disabled-checked']}
-              ></mm-checkbox-group>
-              <mm-checkbox indeterminate>Indeterminate</mm-checkbox>
-            </mm-flex>
-            <mm-paragraph>
-              하위 선택지 중 일부만 선택된 상위 체크박스는 일부 선택 상태로 표시합니다.
-            </mm-paragraph>
+          <mm-flex direction="column" gap="4">
+            <mm-checkbox-group
+              name="state"
+              .options=${[
+                { value: 'unchecked', label: 'Unchecked' },
+                { value: 'checked', label: 'Checked' },
+                { value: 'disabled', label: 'Disabled', disabled: true },
+                { value: 'disabled-checked', label: 'Disabled checked', disabled: true },
+              ]}
+              .values=${['checked', 'disabled-checked']}
+            ></mm-checkbox-group>
+            <mm-checkbox indeterminate>Indeterminate</mm-checkbox>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${stateCode}></mm-component-code>

@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import type { MenuItemTone } from '@/components/common/menu-item/menu-item.utils'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { OptionItem } from '@/types'
 
@@ -14,7 +13,7 @@ import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-contro
 import { emit } from '@/utils'
 
 // onClick은 항목마다 할 일이 정해진 경우에 쓰고, action 이벤트는 onClick 유무와 상관없이 늘 알린다.
-export type MoreMenuAction = OptionItem & { tone?: MenuItemTone; onClick?: () => void }
+export type MoreMenuAction = OptionItem & { destructive?: boolean; onClick?: () => void }
 
 /**
  * 더보기 버튼으로 여는 명령 목록. 값을 고르는 mm-select와 달리 선택 상태를 남기지 않고, 누른 명령만 알린다.
@@ -96,7 +95,7 @@ export class MoreMenu extends LitElement {
       <mm-menu-item-action
         label=${action.label}
         icon=${ifDefined(action.icon)}
-        tone=${action.tone ?? ''}
+        ?destructive=${action.destructive}
         ?disabled=${action.disabled}
         @click=${() => this.handleActionClick(action)}
       ></mm-menu-item-action>

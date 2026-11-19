@@ -98,7 +98,7 @@ const main = html`
                 label="계정 비활성화"
                 description="비활성화 페이지에서 할 수 있습니다."
               >
-                <mm-button slot="action" variant="danger">영구 비활성화</mm-button>
+                <mm-button slot="action" destructive variant="primary">영구 비활성화</mm-button>
               </mm-setting-item>
             </mm-list-item-group>
           </mm-flex>
@@ -147,7 +147,9 @@ const main = html`
         <mm-surface variant="paper" radius="large">
           <mm-flex direction="column" gap="2">
             <mm-setting-item icon=${ICON_NAMES.CREDIT_CARD} label="Premium 개인">
-              <mm-button slot="action" variant="ghost" aria-label="자세히보기">구독 관리</mm-button>
+              <mm-button slot="action" variant="tertiary" aria-label="자세히보기">
+                구독 관리
+              </mm-button>
             </mm-setting-item>
             <mm-meta-item-group direction="column" gap="2">
               <mm-meta-item label="다음 결제 예정일" value="2024.04.02."></mm-meta-item>
@@ -164,7 +166,7 @@ const main = html`
           heading="iPhone을 백업할 수 없음"
           description="저장 공간이 부족하여 최근 iPhone 백업이 iCloud에 저장되지 않았습니다. 저장 공간을 추가 또는 관리하여 iPhone 백업을 유지하십시오."
         >
-          <mm-button variant="ghost">저장 공간 추가</mm-button>
+          <mm-button variant="tertiary">저장 공간 추가</mm-button>
         </mm-text-block>
       </mm-notice>
 
@@ -178,7 +180,7 @@ const main = html`
 
       <mm-flex direction="column" gap="3">
         <mm-top-bar heading="닉네임 변경">
-          <mm-button slot="action" variant="ghost">완료</mm-button>
+          <mm-button slot="action" variant="tertiary">완료</mm-button>
         </mm-top-bar>
         <form>
           <mm-flex direction="column" gap="3">

@@ -416,7 +416,7 @@ const main = html`
                 rule(
                   '제출한 검색에 일치하는 결과가 없으면 결과 없음 상태로 새 검색을 유도한다',
                   html`
-                    ${code('mm-result')}로 검색어를 밝히고 추천 검색어를 제안한다
+                    ${code('mm-result')}로 검색어를 보여 주고 추천 검색어를 제안한다
                   `,
                 ),
                 rule(
@@ -519,7 +519,7 @@ const main = html`
                     placeholder="iOS pattern"
                     style="flex: 1"
                   ></mm-searchfield>
-                  <mm-button variant="tertiary">취소</mm-button>
+                  <mm-button variant="secondary">취소</mm-button>
                 </mm-flex>
                 <mm-flex align-items="center" gap="2">
                   <mm-icon-button icon=${ICON_NAMES.BACK} aria-label="뒤로"></mm-icon-button>
@@ -604,7 +604,7 @@ const main = html`
             <mm-grid columns="3" column-min-width="17rem" gap="8">
               <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
                 <mm-top-bar nav="close" heading="컬렉션에 추가">
-                  <mm-button slot="action" variant="ghost">완료</mm-button>
+                  <mm-button slot="action" variant="tertiary">완료</mm-button>
                 </mm-top-bar>
                 <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
                   <mm-menu-item-checkbox
@@ -627,7 +627,7 @@ const main = html`
               </mm-flex>
               <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
                 <mm-top-bar heading="새 컬렉션">
-                  <mm-button slot="action" variant="ghost">완료</mm-button>
+                  <mm-button slot="action" variant="tertiary">완료</mm-button>
                 </mm-top-bar>
                 <mm-textfield label="컬렉션 이름" placeholder="컬렉션 이름"></mm-textfield>
                 <mm-toggle-button-group
@@ -638,7 +638,7 @@ const main = html`
               </mm-flex>
               <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
                 <mm-top-bar heading="멤버 추가">
-                  <mm-button slot="action" variant="ghost">완료</mm-button>
+                  <mm-button slot="action" variant="tertiary">완료</mm-button>
                 </mm-top-bar>
                 <mm-textfield label="멤버 검색" placeholder="멤버 이름"></mm-textfield>
               </mm-flex>

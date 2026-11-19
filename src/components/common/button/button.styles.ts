@@ -86,25 +86,27 @@ const buttonVariantTokens: AttributeTokens<ButtonVariant> = {
     '--button-text-color': 'var(--foreground-on-primary-color)',
   },
   secondary: {
-    '--button-background-color': 'var(--primary-subtle-color)',
-    '--button-text-color': 'var(--primary-color)',
-  },
-  tertiary: {
     '--button-text-color': 'var(--foreground-color)',
   },
-  ghost: {
+  tertiary: {
     '--button-background-color': 'transparent',
     '--button-text-color': 'var(--primary-color)',
   },
-  danger: {
-    '--button-background-color': 'var(--danger-color)',
-    '--button-text-color': 'var(--foreground-on-danger-color)',
-  },
 }
 
-/** mm-button 색 변형(variant). */
+/** mm-button 색 변형(variant)과, 파괴적 행동임을 알리는 destructive 의도. */
 export const buttonVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', buttonVariantTokens))}
+
+  :host([destructive][variant='primary']) {
+    --button-background-color: var(--danger-color);
+    --button-text-color: var(--foreground-on-danger-color);
+  }
+
+  :host([destructive][variant='secondary']),
+  :host([destructive][variant='tertiary']) {
+    --button-text-color: var(--danger-color);
+  }
 `
 
 /** 자체 button을 렌더하는 시맨틱 컴포넌트가 variant 하나를 골라 스킨으로 얹는 선언. 얹을 선택자 안에 펼쳐 쓴다. */

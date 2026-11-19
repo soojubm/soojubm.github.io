@@ -156,6 +156,10 @@ const designSystemThoughts: Thought[] = [
     heading: 'Constraint-driven design',
     body: '기술적 제약을 받아들이고, 사용자에게 새로운 학습을 요구하는 인터페이스를 최소화한다. 구조는 변경하기 쉽도록 설계하되, 중복을 없애기 위해 불필요한 추상화를 만들지 않는다. 모든 내용을 문서화하거나 처음부터 완결된 체계를 갖추려 하지 않는다. 대신 실제 제품을 만드는 과정에서 드러나는 문제와 동료의 피드백을 모아 필요한 부분부터 개선한다.',
   },
+  {
+    heading: 'tone은 색, destructive는 의도',
+    body: 'tone은 mm-tag·mm-dot에서는 pink·cyan 같은 색 팔레트를, mm-menu-item에서는 danger라는 의도를 뜻했다. 한 prop이 종류가 다른 값을 받으면 새 값을 더할 때마다 어느 쪽인지 다시 따져야 하고, 소비자는 같은 이름의 prop이 컴포넌트마다 다르게 동작하는 것을 외워야 한다. 그래서 파괴적 행동은 값이 하나뿐인 의도이므로 destructive boolean으로 분리하고, tone은 색 팔레트에만 남긴다. variant도 같은 원칙을 따른다. primary·secondary·tertiary는 강조 단계이고 destructive는 의도다. 축마다 이름을 따로 두면 조합이 곱으로 늘지 않고, 강조 단계는 그대로 둔 채 파괴적 의도만 얹을 수 있다.',
+  },
 ]
 
 interface Stat {
@@ -191,7 +195,7 @@ const renderStatCard = ({ value, description }: Stat) => html`
 // 임시 전시: MoreMenu·CommentItem 패턴을 React 컴포넌트로 옮긴 모습
 const reactMoreMenuCode = `const MENU_ACTIONS: MoreMenuAction[] = [
   { value: 'edit', label: '수정' },
-  { value: 'delete', label: '삭제', tone: 'danger' },
+  { value: 'delete', label: '삭제', destructive: true },
 ]
 
 function CommentItem({ onEdit, onDelete, ...props }: CommentItemProps) {

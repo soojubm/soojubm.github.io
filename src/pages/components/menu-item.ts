@@ -79,9 +79,9 @@ const leadingCode = `<mm-menu-item-group aria-label="리딩 메뉴">
   <mm-menu-item-action avatar-src="/src/images/soojubm.png" avatar-shape="circle" label="아바타"></mm-menu-item-action>
 </mm-menu-item-group>`
 
-const toneCode = `<mm-menu-item-group aria-label="톤 메뉴">
+const destructiveCode = `<mm-menu-item-group aria-label="파괴적 명령 메뉴">
   <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
-  <mm-menu-item-action icon="trash" label="삭제" tone="danger"></mm-menu-item-action>
+  <mm-menu-item-action icon="trash" label="삭제" destructive></mm-menu-item-action>
 </mm-menu-item-group>`
 
 const disabledCode = `<mm-menu-item-group aria-label="비활성 메뉴">
@@ -100,7 +100,7 @@ const main = html`
       <mm-tab-list value="size" variant="pill">
         <mm-tab value="size">Size</mm-tab>
         <mm-tab value="leading">Leading</mm-tab>
-        <mm-tab value="tone">Tone</mm-tab>
+        <mm-tab value="destructive">Destructive</mm-tab>
         <mm-tab value="disabled">Disabled</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="size">
@@ -131,21 +131,21 @@ const main = html`
         </mm-component-example>
         <mm-component-code .code=${leadingCode}></mm-component-code>
       </mm-tab-panel>
-      <mm-tab-panel value="tone">
+      <mm-tab-panel value="destructive">
         <mm-component-example>
           <mm-flex direction="column" gap="6">
-            <mm-menu-item-group aria-label="톤 메뉴">
+            <mm-menu-item-group aria-label="파괴적 명령 메뉴">
               <mm-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></mm-menu-item-action>
               <mm-menu-item-action
                 icon=${ICON_NAMES.DELETE}
                 label="삭제"
-                tone="danger"
+                destructive
               ></mm-menu-item-action>
             </mm-menu-item-group>
-            <mm-paragraph>되돌릴 수 없는 명령에 씁니다.</mm-paragraph>
+            <mm-paragraph>되돌리기 어려운 명령에 씁니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
-        <mm-component-code .code=${toneCode}></mm-component-code>
+        <mm-component-code .code=${destructiveCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="disabled">
         <mm-component-example>

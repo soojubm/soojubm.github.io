@@ -37,14 +37,14 @@ export class HeroSection extends LitElement {
     `
   }
 
-  // 히어로는 주 행동을 먼저, 보조 행동을 ghost로 이어 둔다. dialog 계열의 버튼 쌍 규칙과 순서·variant가 달라 공유하지 않는다.
+  // 히어로는 주 행동을 먼저, 보조 행동을 tertiary로 이어 둔다. dialog 계열의 버튼 쌍 규칙과 순서·variant가 달라 공유하지 않는다.
   private renderActions() {
     if (!this.primaryAction && !this.secondaryAction) return nothing
 
     return html`
       <mm-button-group>
         ${this.renderActionButton(this.primaryAction, 'primary')}
-        ${this.renderActionButton(this.secondaryAction, 'ghost')}
+        ${this.renderActionButton(this.secondaryAction, 'tertiary')}
       </mm-button-group>
     `
   }

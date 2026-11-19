@@ -18,7 +18,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'menu-item.html', label: 'Menu Item' },
 ]
 
-const variants: SelectVariant[] = ['tertiary', 'ghost']
+const variants: SelectVariant[] = ['secondary', 'tertiary']
 const placements: PopoverPlacement[] = ['bottom-start', 'bottom-end', 'top-start', 'top-end']
 // 트리거에 현재 위치 이름이 보이도록 위치를 옵션 값으로 둔다.
 const placementOptions = placements.map(placement => ({ value: placement, label: placement }))
@@ -42,8 +42,8 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const variantCode = `<mm-select aria-label="릴리스 채널" variant="tertiary" value="stable" .options=\${options}></mm-select>
-<mm-select aria-label="릴리스 채널" variant="ghost" value="stable" .options=\${options}></mm-select>`
+const variantCode = `<mm-select aria-label="릴리스 채널" variant="secondary" value="stable" .options=\${options}></mm-select>
+<mm-select aria-label="릴리스 채널" variant="tertiary" value="stable" .options=\${options}></mm-select>`
 
 const placementCode = `<mm-select aria-label="패널 위치" placement="bottom-start" value="bottom-start" .options=\${options}></mm-select>`
 
@@ -118,7 +118,7 @@ const main = html`
         </mm-paragraph>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="화살표 아이콘도 시각보정이 필요한가요?">
+      <mm-content-section heading-level="3" heading="시각보정이 필요해요">
         <mm-paragraph>
           트리거 오른쪽의 화살표 아이콘 때문에 오른쪽 여백이 왼쪽보다 넓어 보입니다. 아이콘 쪽을
           보정해 좌우 여백이 같아 보이게 합니다.

@@ -121,7 +121,7 @@ const main = html`
               장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트
               데스크의 귀중품 보관함도 시설 내에 마련되어 있습니다.
             </mm-paragraph>
-            <mm-button variant="tertiary">Read More Reviews</mm-button>
+            <mm-button variant="secondary">Read More Reviews</mm-button>
           </mm-content-section>
         </mm-content-section-list>
       </mm-content-section-list>
