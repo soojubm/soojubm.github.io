@@ -5,7 +5,9 @@ export const tabsStyles = css`
     position: relative;
     display: flex;
     align-items: center;
+    box-sizing: border-box;
     width: max-content;
+    min-width: 0;
     max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
