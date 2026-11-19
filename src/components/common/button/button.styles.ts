@@ -61,6 +61,7 @@ export const buttonBaseStyles = [
       font-size: var(--button-text-size);
       font-weight: var(--button-text-weight);
       text-transform: capitalize;
+      white-space: nowrap;
 
       &:hover:not(:disabled) {
         --button-border: var(--border);
