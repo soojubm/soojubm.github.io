@@ -9,5 +9,6 @@ import '@/components/common/text/semantics/code'
 import '@/components/common/text/semantics/text-list'
 import '@/components/common/text/semantics/text-block'
 import '@/components/common/text/semantics/status-message'
+import '@/components/common/text/semantics/hero-section'
 
 export {}

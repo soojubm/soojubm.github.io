@@ -158,10 +158,9 @@ const designSystemThoughts: Thought[] = [
   },
 ]
 
-interface SharedStyleModule {
-  module: string
-  usageCount: number
-  description: TemplateResult
+interface Stat {
+  value: string
+  description: string
 }
 
 const stats: Stat[] = [
@@ -226,21 +225,20 @@ const features: ComponentFeatureItem[] = [
 
 const main = html`
   <mm-main>
-    <!-- TODO hero section -->
     <mm-flex direction="column" gap="section">
-      <mm-flex
-        gap="8"
-        direction="column"
+      <div
         style="margin: -2rem calc(var(--layout-padding-inline) * -1); padding: 4rem var(--layout-padding-inline); background:var(--background-subtle-color);"
       >
-        <mm-heading level="1">
-          Our research teams study the inner workings of AI models, stress-test their limits, and
-          track their effects in the real world.
-        </mm-heading>
-        <mm-text-list
-          .texts=${['Web Component - Lit', 'Github Actions', 'Pattern-first design']}
-        ></mm-text-list>
-      </mm-flex>
+        <mm-hero-section
+          heading="Our research teams study the inner workings of AI models, stress-test their limits, and track their effects in the real world."
+        >
+          <mm-text-list
+            .texts=${['Web Component - Lit', 'Github Actions', 'Pattern-first design']}
+          ></mm-text-list>
+        </mm-hero-section>
+      </div>
+
+      <mm-grid columns="4" gap="4">${stats.map(renderStatCard)}</mm-grid>
 
       <div hidden>
         <mm-surface>

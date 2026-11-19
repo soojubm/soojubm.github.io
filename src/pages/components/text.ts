@@ -81,6 +81,13 @@ const metaItemGroupCode = `<mm-meta-item-group>
   <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
 </mm-meta-item-group>`
 
+const heroSectionCode = `<mm-hero-section
+  heading="Hero Title"
+  description="페이지의 목적을 설명하는 문장"
+  .primaryAction=\${{ label: '콜 투 액션', onClick: () => {} }}
+  .secondaryAction=\${{ label: '더 알아보기', onClick: () => {} }}
+></mm-hero-section>`
+
 const textListCode = `<mm-text-list
   variant="check"
   .texts=\${['첫 번째 항목', '두 번째 항목']}
@@ -161,10 +168,6 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          html`
-            <mm-code>mm-read-more-button</mm-code>
-            는 본문과 경계가 없습니다. 제목이 아니면서 굵기를 갖는 예외입니다
-          `,
           '피그마에서 소숫점 올림한다. line height를 고정값을 사용하는 것이 토큰화에도 좋다. (TODO 아이콘과 텍스트의 가운데 정렬 문제에 대하여)',
         ]}
       ></mm-text-list>
@@ -283,23 +286,15 @@ const main = html`
 
     <mm-component-section
       heading="Hero Section"
-      description="A hero section is a large, prominent section at the top of a webpage that typically includes a headline, subheadline, and a call-to-action button."
+      description="페이지 최상단에서 가장 먼저 읽히는 제목과 설명을 세웁니다. 아래 슬롯에 버튼 그룹이나 목록을 두어 다음 행동을 이어 줍니다. 사용자는 페이지의 목적과 시작점을 한눈에 알 수 있습니다."
+      .code=${heroSectionCode}
     >
-      <section>
-        <mm-flex direction="column" gap="8">
-          <mm-text-block
-            level="1"
-            heading="Hero Title"
-            description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
-            부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 이야기를 들을 기대에
-          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다."
-          ></mm-text-block>
-          <mm-button-group>
-            <mm-button variant="primary" size="large">콜 투 액션</mm-button>
-            <mm-button variant="ghost" size="large">더 알아보기</mm-button>
-          </mm-button-group>
-        </mm-flex>
-      </section>
+      <mm-hero-section
+        heading="Hero Title"
+        description="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다."
+        .primaryAction=${{ label: '콜 투 액션' }}
+        .secondaryAction=${{ label: '더 알아보기' }}
+      ></mm-hero-section>
     </mm-component-section>
 
     <mm-component-section
