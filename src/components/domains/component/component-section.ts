@@ -1,15 +1,21 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html, nothing, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-import { componentExampleStyles } from '@/components/domains/component/component.styles'
+import {
+  componentContentFrameStyles,
+  exampleWidthTokens,
+} from '@/components/domains/component/component.styles'
+import { buildAttributeRules } from '@/utils'
 
 @customElement('mm-component-section')
 export class ComponentSection extends LitElement {
   static styles = [
-    componentExampleStyles,
+    componentContentFrameStyles,
     css`
+      ${unsafeCSS(buildAttributeRules('width', exampleWidthTokens))}
+
       :host {
         display: flex;
         flex-direction: column;

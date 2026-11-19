@@ -1,11 +1,32 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { componentExampleStyles } from '@/components/domains/component/component.styles'
+import {
+  componentContentFrameStyles,
+  exampleWidthTokens,
+} from '@/components/domains/component/component.styles'
+import { buildAttributeRules } from '@/utils'
 
 @customElement('mm-component-example')
 export class ComponentExample extends LitElement {
-  static styles = componentExampleStyles
+  static styles = [
+    componentContentFrameStyles,
+    css`
+      :host {
+        display: block;
+      }
+
+      ${unsafeCSS(buildAttributeRules('width', exampleWidthTokens))}
+
+      .component-example {
+        --component-content-frame-margin: 0 0 0 var(--component-content-offset-inline-start);
+
+        box-sizing: border-box;
+        border-left-color: var(--foreground-color);
+      }
+    `,
+  ]
+
   @property({ type: String, reflect: true }) width: 'narrow' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 

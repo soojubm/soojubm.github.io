@@ -3,7 +3,7 @@ import { css, unsafeCSS } from 'lit'
 import { MEDIA } from '@/constants'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-const exampleWidthTokens: AttributeTokens<'narrow'> = {
+export const exampleWidthTokens: AttributeTokens<'narrow'> = {
   narrow: { '--component-content-max-width': 'var(--layout-width-narrow)' },
 }
 
@@ -50,25 +50,6 @@ export const componentContentFrameStyles = css`
   }
 `
 
-export const componentExampleStyles = [
-  componentContentFrameStyles,
-  css`
-    :host {
-      display: block;
-    }
-
-    ${unsafeCSS(buildAttributeRules('width', exampleWidthTokens))}
-
-    .component-example {
-      --component-content-frame-margin: 0 0 var(--space-4)
-        var(--component-content-offset-inline-start);
-
-      box-sizing: border-box;
-      border-left-color: var(--foreground-color);
-    }
-  `,
-]
-
 export const componentPropsStyles = [
   componentContentFrameStyles,
   css`
@@ -84,7 +65,7 @@ export const componentPropsStyles = [
       position: relative;
       cursor: pointer;
       --component-content-frame-border: var(--border-transparent);
-      --component-content-padding-block: calc(var(--space-6) + var(--space-1));
+      --component-content-padding-block: var(--space-6);
     }
     .component-props-list {
       display: flex;
@@ -106,23 +87,6 @@ export const componentPropsStyles = [
     }
     :host([open]) .component-props-more {
       display: none;
-    }
-  `,
-]
-
-export const tokenStyles = [
-  css`
-    .token-row {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-
-    .token-category {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-1);
-      width: 160px;
     }
   `,
 ]
