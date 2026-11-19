@@ -2,15 +2,15 @@ import { LitElement, html, type CSSResultOrNative } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { componentTokensStyles } from '@/components/domains/component/component.styles'
-import '@/components/domains/component/token'
 import {
+  formatTokenName,
   tokenCategoryLabel,
   tokenCategorySortIndex,
 } from '@/components/domains/component/token.utils'
 
 /**
  * 컴포넌트 CSS 커스텀 프로퍼티(토큰) 목록.
- * mm-component-props와 동일한 레이아웃으로 토큰을 소개합니다.
+ * 카테고리(dimension·surface·state)마다 mm-keyword-tag-group으로 묶어, 카테고리를 제목 태그로, 토큰 이름을 키워드 태그로 나열합니다.
  * 목록은 손으로 적지 않고 elements로 넘긴 컴포넌트의 스타일에서 직접 읽어, 코드와 문서가 어긋나지 않게 한다.
  */
 @customElement('mm-component-tokens')
@@ -19,19 +19,18 @@ export class ComponentTokens extends LitElement {
   @property({ attribute: false }) elements: string[] = []
 
   render() {
-    const names = this.sortedNames()
+    const groups = this.groupedNames(this.sortedNames())
 
     return html`
       <section class="component-content-frame" style="margin-top: var(--space-4)">
-        <!-- <mm-heading>Component Tokens</mm-heading> -->
         <div class="token-list">
-          ${names.map(
-            (name, index) =>
+          ${groups.map(
+            ({ label, names }) =>
               html`
-                <mm-token
-                  name=${name}
-                  .showCategory=${this.isCategoryStart(names, index)}
-                ></mm-token>
+                <mm-keyword-tag-group
+                  heading=${label}
+                  .keywords=${names.map(formatTokenName)}
+                ></mm-keyword-tag-group>
               `,
           )}
         </div>
@@ -57,12 +56,18 @@ export class ComponentTokens extends LitElement {
     return [...names]
   }
 
-  // 앞선 토큰과 카테고리가 같으면 그 행에서는 태그를 생략해, 같은 분류가 이어지는 구간에서
-  // 맨 위 한 번만 보이게 한다.
-  private isCategoryStart(names: string[], index: number) {
-    if (index === 0) return true
+  // 정렬된 토큰에서 카테고리가 같은 연속 구간을 한 그룹으로 묶는다.
+  private groupedNames(names: string[]) {
+    return names.reduce<{ label: string; names: string[] }[]>((groups, name) => {
+      const label = tokenCategoryLabel(name)
+      const last = groups[groups.length - 1]
+      if (last?.label === label) {
+        last.names.push(name)
+        return groups
+      }
 
-    return tokenCategoryLabel(names[index]) !== tokenCategoryLabel(names[index - 1])
+      return [...groups, { label, names: [name] }]
+    }, [])
   }
 }
 
