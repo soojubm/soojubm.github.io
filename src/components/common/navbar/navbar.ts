@@ -1,15 +1,12 @@
 import { LitElement, html } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
 import { SITEMAP } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
-import { isLargeText, saveLargeText } from '@/utils/large-text'
 import './navbar.css'
 
 @customElement('mm-navbar')
 export class Navbar extends LitElement {
-  @state() private largeText = isLargeText()
-
   render() {
     return html`
       <nav class="navbar">
@@ -22,9 +19,6 @@ export class Navbar extends LitElement {
         </mm-flex>
 
         <div class="navbar-user">
-          <mm-switch ?checked=${this.largeText} @change=${this.handleLargeTextChange}>
-            큰글씨
-          </mm-switch>
           <mm-theme-selector></mm-theme-selector>
           <mm-navbar-search></mm-navbar-search>
         </div>
@@ -35,10 +29,6 @@ export class Navbar extends LitElement {
         <mm-bottom-bar .items=${this.bottomBarItems}></mm-bottom-bar>
       </mm-fixed-bottom>
     `
-  }
-
-  private handleLargeTextChange = (e: CustomEvent<{ checked: boolean }>) => {
-    this.largeText = saveLargeText(e.detail.checked)
   }
 
   private get bottomBarItems() {

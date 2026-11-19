@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import type { Popover } from '@/components/overlay/popover/popover'
 
@@ -8,6 +8,7 @@ import '@/components/overlay/popover/popover'
 
 import { ICON_NAMES, type IconName } from '@/components/common'
 import { uniqueId } from '@/utils'
+import { isLargeText, saveLargeText } from '@/utils/large-text'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
 @customElement('mm-theme-selector')
@@ -18,6 +19,7 @@ export class ThemeSelector extends LitElement {
     }
   `
   @property({ type: String }) value: Theme = 'light'
+  @state() private largeText = isLargeText()
   // popover는 portal로 옮겨져 한 트리에 모이므로, 인스턴스가 여럿이어도 id가 겹치지 않게 한다.
   private readonly panelId = uniqueId('theme-panel')
 
@@ -38,6 +40,15 @@ export class ThemeSelector extends LitElement {
         >
           ${this.renderThemeOptions()}
         </mm-menu-item-radio-group>
+        <mm-separator></mm-separator>
+        <mm-menu-item-group aria-label="글자 크기">
+          <mm-menu-item-switch
+            icon=${ICON_NAMES.TEXT_SIZE}
+            label="큰글씨"
+            ?checked=${this.largeText}
+            @change=${this.handleLargeTextChange}
+          ></mm-menu-item-switch>
+        </mm-menu-item-group>
         <mm-separator></mm-separator>
         <mm-flex direction="column" gap="2">
           <mm-radius-picker></mm-radius-picker>
@@ -72,5 +83,10 @@ export class ThemeSelector extends LitElement {
   private handleThemeChange(event: CustomEvent<{ value: string }>) {
     this.value = saveTheme(event.detail.value as Theme)
     ;(event.currentTarget as HTMLElement).closest<Popover>('mm-popover')?.close()
+  }
+
+  private handleLargeTextChange(event: CustomEvent<{ checked: boolean }>) {
+    event.stopPropagation()
+    this.largeText = saveLargeText(event.detail.checked)
   }
 }

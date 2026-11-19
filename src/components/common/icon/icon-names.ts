@@ -82,6 +82,7 @@ export const ICON_CATALOG = {
     GLASS_MODE: 'droplet',
     LIGHT_MODE: 'sun-light',
     PALETTE: 'palette',
+    TEXT_SIZE: 'text-size',
   },
 
   etc: {
