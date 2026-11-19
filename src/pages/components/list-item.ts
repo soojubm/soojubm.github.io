@@ -60,35 +60,15 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const sizeCode = `<mm-list-item-group>
-  <mm-list-item
-    label="Small"
-    avatar-shape="circle"
-    avatar-src="/src/images/soojubm.png"
-  ></mm-list-item>
-  <mm-list-item
-    size="medium"
-    label="Medium"
-    description="Youtube Subscriber"
-    avatar-shape="circle"
-    avatar-src="/src/images/soojubm.png"
-  ></mm-list-item>
-  <mm-list-item
-    size="large"
-    label="Large"
-    description="Youtube Subscriber"
-    avatar-shape="circle"
-    avatar-src="/src/images/soojubm.png"
-  ></mm-list-item>
+  <mm-list-item label="Small" avatar-shape="circle" avatar-src="/src/images/soojubm.png"></mm-list-item>
+  <mm-list-item size="medium" label="Medium" description="Youtube Subscriber" avatar-shape="circle" avatar-src="/src/images/soojubm.png"></mm-list-item>
+  <mm-list-item size="large" label="Large" description="Youtube Subscriber" avatar-shape="circle" avatar-src="/src/images/soojubm.png"></mm-list-item>
 </mm-list-item-group>`
 
 const leadingCode = `<mm-list-item-group>
   <mm-list-item icon="user" label="아이콘"></mm-list-item>
   <mm-list-item emoji="🦔" label="이모지"></mm-list-item>
-  <mm-list-item
-    avatar-src="/src/images/soojubm.png"
-    avatar-shape="circle"
-    label="아바타"
-  ></mm-list-item>
+  <mm-list-item avatar-src="/src/images/soojubm.png" avatar-shape="circle" label="아바타"></mm-list-item>
 </mm-list-item-group>
 <mm-list-item-group>
   <mm-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
@@ -100,13 +80,7 @@ const leadingCode = `<mm-list-item-group>
 </mm-list-item-group>`
 
 const trailingCode = `<mm-list-item-group>
-  <mm-list-item
-    size="medium"
-    label="수줍이"
-    description="UI Designer"
-    avatar-shape="circle"
-    avatar-src="/src/images/soojubm.png"
-  >
+  <mm-list-item size="medium" label="수줍이" description="UI Designer" avatar-shape="circle" avatar-src="/src/images/soojubm.png">
     <mm-follow-button slot="trailing"></mm-follow-button>
   </mm-list-item>
   <mm-list-item icon="bell" label="알림">
@@ -115,28 +89,13 @@ const trailingCode = `<mm-list-item-group>
 </mm-list-item-group>`
 
 const multilineCode = `<mm-list-item-group>
-  <mm-list-item
-    icon="bell"
-    label="small 행의 라벨이 영역보다 길어져서 두 줄 이상으로 넘어가는 경우"
-  >
+  <mm-list-item icon="bell" label="small 행의 라벨이 영역보다 길어져서 두 줄 이상으로 넘어가는 경우">
     <mm-tag slot="trailing">신규</mm-tag>
   </mm-list-item>
-  <mm-list-item
-    size="medium"
-    label="medium 행의 라벨이 영역보다 길어져서 두 줄로 넘어가는 경우"
-    description="설명도 영역을 넘치면 줄바꿈되어 행의 높이가 내용만큼 늘어납니다."
-    avatar-shape="circle"
-    avatar-src="/src/images/soojubm.png"
-  >
+  <mm-list-item size="medium" label="medium 행의 라벨이 영역보다 길어져서 두 줄로 넘어가는 경우" description="설명도 영역을 넘치면 줄바꿈되어 행의 높이가 내용만큼 늘어납니다." avatar-shape="circle" avatar-src="/src/images/soojubm.png">
     <mm-button slot="trailing">변경</mm-button>
   </mm-list-item>
-  <mm-list-item
-    size="large"
-    label="large 행의 긴 라벨이 두 줄로 넘어가는 경우"
-    description="설명이 길어 여러 줄이 되면 leading과 trailing은 content 높이의 가운데에 정렬됩니다."
-    avatar-shape="circle"
-    avatar-src="/src/images/soojubm.png"
-  ></mm-list-item>
+  <mm-list-item size="large" label="large 행의 긴 라벨이 두 줄로 넘어가는 경우" description="설명이 길어 여러 줄이 되면 leading과 trailing은 content 높이의 가운데에 정렬됩니다." avatar-shape="circle" avatar-src="/src/images/soojubm.png"></mm-list-item>
 </mm-list-item-group>`
 
 const main = html`
@@ -179,17 +138,10 @@ const main = html`
                 avatar-src="/src/images/soojubm.png"
               ></mm-list-item>
             </mm-list-item-group>
-            <mm-paragraph-group>
-              <mm-paragraph>
-                small은 한 줄만 그리는 행이라 description을 받아도 그리지 않습니다. 설명이 필요하면
-                medium 이상을 씁니다.
-              </mm-paragraph>
-              <mm-paragraph>
-                행 전체가 눌리는 목록을 촘촘히 늘어놓을 때는 그룹의
-                <mm-code>size="small"</mm-code>
-                로 행 사이 간격을 없앱니다. hover 채움이 행의 경계를 대신 그립니다.
-              </mm-paragraph>
-            </mm-paragraph-group>
+            <mm-paragraph>
+              small은 한 줄만 그리는 행이라 description을 받아도 그리지 않습니다. 설명이 필요하면
+              medium 이상을 씁니다.
+            </mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${sizeCode}></mm-component-code>
@@ -206,10 +158,7 @@ const main = html`
                 label="아바타"
               ></mm-list-item>
             </mm-list-item-group>
-            <mm-paragraph>
-              icon·emoji·avatar-src 중 하나로 leading을 채웁니다. 사람·상품처럼 행이 개체를 대표할
-              때 씁니다.
-            </mm-paragraph>
+            <mm-paragraph>사람·상품처럼 행이 개체를 대표할 때 씁니다.</mm-paragraph>
             <mm-list-item-group>
               <mm-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
                 <mm-button slot="trailing">변경</mm-button>

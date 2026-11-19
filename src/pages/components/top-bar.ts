@@ -1,14 +1,25 @@
 import { html } from 'lit'
 
 import type {
-  ComponentFeatureItem,
   ComponentPropItemData,
+  ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
 import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://m3.material.io/components/app-bars/overview',
+    label: 'MD3 - App Bars',
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/toolbars',
+    label: 'Apple HIG - Toolbars',
+  },
+]
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'bottom-bar.html', label: 'Bottom Bar' },
@@ -27,8 +38,6 @@ const moreMenuActions: MoreMenuAction[] = [
   { value: 'edit', label: '프로필 수정', onClick: () => alert('clicked') },
   { value: 'block', label: '차단', tone: 'danger', onClick: () => alert('clicked') },
 ]
-
-const componentFeatures: ComponentFeatureItem[] = []
 
 const exampleCode = `<mm-top-bar nav="close" heading="상세 정보"></mm-top-bar>
 <mm-top-bar heading="컬렉션에 추가">
@@ -76,18 +85,9 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-top-bar']}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
-        .texts=${[
-          'sheet-header와의 구별 — top-bar는 화면 단위 상단 바라 높이·배경을 스스로 갖습니다. sheet 안에서는 패널이 간격을 소유하므로 mm-sheet-header를 씁니다. 지금 형태가 닮았어도 맥락이 달라 각자 따로 확장합니다.',
-          '좌우 여백 — top-bar는 좌우 여백을 갖지 않습니다. 페이지 본문과 맞출지, 화면 끝까지 붙일지는 놓이는 맥락이 정하므로 사용처에서 지정합니다.',
-          'fixed-top과의 구별 — fixed-top은 viewport 상단에 붙이는 위치만 맡고 높이·간격·배경을 갖지 않습니다. 스크롤해도 남아야 하는 top-bar는 fixed-top 안에 둡니다.',
-          '제목 레벨 — heading은 상단 바 크기에 맞춘 레벨로 고정됩니다. 레벨을 올리면 글자도 함께 커지기 때문입니다. 페이지 최상위 제목은 본문의 page-header가 맡습니다.',
-        ]}
-      ></mm-text-list>
-    </mm-component-guide>
-
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-references .items=${componentReferences}></mm-component-references>
 
     <mm-component-pager></mm-component-pager>
   </mm-main>

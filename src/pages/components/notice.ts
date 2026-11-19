@@ -1,7 +1,6 @@
 import { html } from 'lit'
 
 import type {
-  ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
@@ -22,14 +21,6 @@ const componentProps: ComponentPropItemData[] = [
 
 const primaryAction: ActionConfig = { label: '갱신하기', onClick: () => {} }
 const secondaryAction: ActionConfig = { label: '나중에', onClick: () => {} }
-
-const componentFeatures: ComponentFeatureItem[] = [
-  {
-    heading: 'Stateful',
-    description:
-      '성공·경고·오류·정보 등 의미 상태를 variant 톤으로 전달합니다. 색상만으로 의미를 전달하지 않고 아이콘·텍스트를 함께 제공합니다.',
-  },
-]
 
 const variantCode = `<mm-notice variant="info" description="새 기능이 추가되었습니다."></mm-notice>
 <mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
@@ -73,19 +64,14 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="2">
-              <mm-notice variant="info" description="새 기능이 추가되었습니다."></mm-notice>
-              <mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
-              <mm-notice
-                variant="warning"
-                description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
-              ></mm-notice>
-              <mm-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></mm-notice>
-            </mm-flex>
-            <mm-paragraph>
-              variant마다 아이콘과 글자색이 함께 바뀌어 색상만으로 의미를 전달하지 않습니다.
-            </mm-paragraph>
+          <mm-flex direction="column" gap="2">
+            <mm-notice variant="info" description="새 기능이 추가되었습니다."></mm-notice>
+            <mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
+            <mm-notice
+              variant="warning"
+              description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
+            ></mm-notice>
+            <mm-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></mm-notice>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
@@ -136,14 +122,6 @@ const main = html`
     <mm-component-props .props=${componentProps}></mm-component-props>
 
     <mm-component-tokens .elements=${['mm-notice']}></mm-component-tokens>
-
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
-        .texts=${[
-          'role="alert" 속성이 있는 요소는 브라우저가 즉시 사용자에게 읽습니다. 긴급도가 낮은 알림에는 role="status"를 사용하세요.',
-        ]}
-      ></mm-text-list>
-    </mm-component-guide>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 

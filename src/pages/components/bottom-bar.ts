@@ -1,14 +1,25 @@
 import { html } from 'lit'
 
 import type {
-  ComponentFeatureItem,
   ComponentPropItemData,
+  ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 import type { BottomBarItem } from '@/components/layouts/bottom-bar'
 
 import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
+
+const componentReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://m3.material.io/components/navigation-bar/overview',
+    label: 'MD3 - Navigation Bar',
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/tab-bars',
+    label: 'Apple HIG - Tab Bars',
+  },
+]
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'top-bar.html', label: 'Top Bar' },
@@ -19,8 +30,6 @@ const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-bottom-bar'),
   { name: 'change', type: 'CustomEvent detail: index', kind: 'event' },
 ]
-
-const componentFeatures: ComponentFeatureItem[] = []
 
 const navItems: BottomBarItem[] = [
   { label: '홈', href: '#', icon: 'home-simple-door', active: true },
@@ -44,9 +53,9 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
-
     <mm-component-related .items=${relatedComponents}></mm-component-related>
+
+    <mm-component-references .items=${componentReferences}></mm-component-references>
 
     <mm-component-pager></mm-component-pager>
   </mm-main>

@@ -6,7 +6,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { code, componentPropsOf, rule, subComponentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, rule, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -106,19 +106,12 @@ const main = html`
         variant="check"
         .texts=${[
           rule(
-            html`
-              지나온 단계는 ${code('active')}로, 지금 단계는 ${code('aria-current="step"')}로
-              표시한다
-            `,
-            html`
-              ${code('active')}는 채움과 글자 색으로 어디까지 왔는지 보이고,
-              ${code('aria-current')}는 그중 지금 밟고 있는 한 단계를 보조기술에 알립니다. 번호와
-              ${code('orientation')}은 순서에서 나오므로 ${code('mm-step')}이 채웁니다
-            `,
+            '지나온 단계와 지금 단계를 구분해 표시한다',
+            '둘이 구분되지 않으면 사용자는 어디까지 왔고 얼마나 남았는지 가늠하지 못한다. 보조기술 사용자에게도 지금 단계를 알린다',
           ),
           rule(
             '지나간 이력은 timeline으로 둔다',
-            'step은 앞으로 밟을 순서를 같은 무게로 늘어놓고 끝을 예고합니다. 시점마다 내용이 다르고 최근 것이 먼저 오는 기록은 순서가 아니라 역순 이력이라 timeline이 맡습니다',
+            '시점마다 내용이 다르고 최근 것이 먼저 오는 기록을 step으로 두면, 사용자는 앞으로 밟을 단계로 오해한다',
           ),
         ]}
       ></mm-text-list>
