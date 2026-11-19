@@ -7,6 +7,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
+import { tagToneStyles } from '@/components/common/tag/tag.styles'
 import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { CATEGORIES } from '@/pages/mocks'
@@ -26,7 +27,9 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const defaultCode = `<mm-tag>Tag</mm-tag>`
+const tones = Object.keys(tagToneStyles)
+
+const toneCode = tones.map(tone => `<mm-tag tone="${tone}">${tone}</mm-tag>`).join('\n')
 
 const iconCode = `<mm-tag icon="check-circle">Tag</mm-tag>`
 
@@ -51,15 +54,22 @@ const main = html`
     ></mm-component-aka>
 
     <mm-flex direction="column" gap="4">
-      <mm-tab-list value="default" variant="pill">
-        <mm-tab value="default">Default</mm-tab>
+      <mm-tab-list value="tone" variant="pill">
+        <mm-tab value="tone">Tone</mm-tab>
         <mm-tab value="icon">With Icon</mm-tab>
       </mm-tab-list>
-      <mm-tab-panel value="default">
+      <mm-tab-panel value="tone">
         <mm-component-example>
-          <mm-tag>Tag</mm-tag>
+          <mm-tag-group>
+            ${tones.map(
+              tone =>
+                html`
+                  <mm-tag tone=${tone}>${tone}</mm-tag>
+                `,
+            )}
+          </mm-tag-group>
         </mm-component-example>
-        <mm-component-code .code=${defaultCode}></mm-component-code>
+        <mm-component-code .code=${toneCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="icon">
         <mm-component-example>
