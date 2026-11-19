@@ -76,7 +76,7 @@ const statusMessageCode = `<mm-status-message
   message="주문 내역은 마이페이지에서 확인할 수 있습니다."
 ></mm-status-message>`
 
-const metaItemGroupCode = `<mm-meta-item-group>
+const metaItemGroupCode = `<mm-meta-item-group gap="2">
   <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
   <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
 </mm-meta-item-group>`
@@ -218,11 +218,7 @@ const main = html`
       </mm-paragraph-group>
     </mm-component-section>
 
-    <mm-component-section
-      heading="Read More Paragraph"
-      description="긴 문단을 지정한 글자 수에서 줄이고, 더 보기와 접기 버튼으로 전체 내용을 전환합니다."
-      .code=${readMoreParagraphCode}
-    >
+    <mm-component-section heading="Read More Paragraph" .code=${readMoreParagraphCode}>
       <mm-read-more-paragraph
         max-length="100"
         content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다."
@@ -240,29 +236,27 @@ const main = html`
       ></mm-status-message>
     </mm-component-section>
 
-    <mm-component-section
-      heading="Meta Item Group"
-      description="연관된 메타 정보를 Flex와 기본 gap 4로 묶습니다. direction으로 가로 또는 세로 배치를 선택합니다."
-      .code=${metaItemGroupCode}
-    >
-      <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
-      <mm-meta-item label="배송비" value="무료"></mm-meta-item>
-      <mm-meta-item label="총 결제 금액" value="₩ 16,000"></mm-meta-item>
+    <mm-component-section heading="Meta Item Group" .code=${metaItemGroupCode}>
+      <mm-meta-item-group direction="column" gap="2">
+        <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
+        <mm-meta-item label="배송비" value="무료"></mm-meta-item>
+        <mm-meta-item label="총 결제 금액" value="₩ 16,000"></mm-meta-item>
+      </mm-meta-item-group>
       <mm-separator></mm-separator>
-      <mm-meta-item-group>
+      <mm-meta-item-group gap="2">
         <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
         <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
         <mm-meta-item layout="inline" label="장르" value="드라마"></mm-meta-item>
         <mm-meta-item layout="inline" label="러닝타임" value="103분"></mm-meta-item>
       </mm-meta-item-group>
       <mm-separator></mm-separator>
-      <mm-meta-item-group>
+      <mm-meta-item-group gap="2">
         <mm-meta-item layout="stacked" label="사이즈" value="보통"></mm-meta-item>
         <mm-meta-item layout="stacked" label="한글" value="작은 거 필요하나"></mm-meta-item>
         <mm-meta-item layout="stacked" label="Move" value="562 kcal"></mm-meta-item>
       </mm-meta-item-group>
       <mm-separator></mm-separator>
-      <mm-meta-item-group>
+      <mm-meta-item-group gap="2">
         <mm-meta-item
           layout="stacked"
           label="리뷰 116개"

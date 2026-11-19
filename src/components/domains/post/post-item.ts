@@ -35,7 +35,7 @@ export class PostItem extends LitElement {
     const body = html`
       <mm-thumbnail src=${this.thumbnail} ratio="1:1"></mm-thumbnail>
       <mm-heading level="3">${this.title}</mm-heading>
-      <mm-meta-item-group gap="3">
+      <mm-meta-item-group gap="2">
         <mm-text>${this.category}</mm-text>
         <mm-text as="time" color="light">${this.date}</mm-text>
       </mm-meta-item-group>

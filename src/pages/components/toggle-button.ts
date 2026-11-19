@@ -160,10 +160,7 @@ const main = html`
       <mm-toggle-button-group value="list" .options=${anatomyViewOptions}></mm-toggle-button-group>
     </mm-component-anatomy>
 
-    <mm-component-section
-      heading="ToggleButtonGroup"
-      description="여러 ToggleButton을 묶어 단일 선택(세그먼트 컨트롤)으로 동작합니다. 레이블·아이콘·아이콘 전용·disabled 옵션을 지원합니다."
-    >
+    <mm-component-section heading="ToggleButtonGroup">
       <mm-flex direction="column" gap="4">
         <mm-toggle-button-group
           hidden-label

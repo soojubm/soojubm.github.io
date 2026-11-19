@@ -93,10 +93,7 @@ const main = html`
       <mm-file-uploader label="사진 업로드" accept=".jpg,.png" multiple></mm-file-uploader>
     </mm-component-anatomy>
 
-    <mm-component-section
-      heading="AttachmentButton"
-      description="숨긴 파일 입력을 감싼 트리거입니다. accept·multiple·capture로 선택 범위를 정하고, 고른 파일을 change로 올립니다."
-    >
+    <mm-component-section heading="AttachmentButton">
       <mm-attachment-button label="파일 선택" accept=".jpg,.png" multiple></mm-attachment-button>
     </mm-component-section>
 

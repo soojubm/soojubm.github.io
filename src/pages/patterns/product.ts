@@ -38,22 +38,15 @@ const main = html`
             </mm-flex>
 
             <mm-flex direction="column" gap="2">
-              <mm-button-group>
-                <mm-button
-                  aria-controls="cart-sheet"
-                  aria-haspopup="dialog"
-                  variant="primary"
-                  size="large"
-                  full-width
-                >
-                  장바구니 추가
-                </mm-button>
-                <mm-icon-button
-                  variant="ghost"
-                  icon=${ICON_NAMES.FAVORITE}
-                  aria-label="찜하기"
-                ></mm-icon-button>
-              </mm-button-group>
+              <mm-button
+                aria-controls="cart-sheet"
+                aria-haspopup="dialog"
+                variant="primary"
+                size="large"
+                full-width
+              >
+                장바구니 추가
+              </mm-button>
 
               <div>
                 <mm-flex align-items="center" gap="1">
@@ -205,7 +198,7 @@ const main = html`
       <!-- 상품 상세정보 고지 -->
       <section>
         <mm-heading level="2">상품상세정보 고지</mm-heading>
-        <mm-meta-item-group style="margin: var(--space-3) 0">
+        <mm-meta-item-group gap="2" style="margin: var(--space-3) 0">
           <mm-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></mm-meta-item>
           <mm-meta-item layout="inline" label="소재" value="금속"></mm-meta-item>
           <mm-meta-item layout="inline" label="치수" value="20mm * 40mm"></mm-meta-item>

@@ -12,7 +12,7 @@ const main = html`
           Contact To buy our products or to learn more about Sandy Shore, don’t hesitate to reach
           out. We’ll be happy to respond.
         </mm-text>
-        <mm-meta-item-group>
+        <mm-meta-item-group gap="2">
           <mm-meta-item layout="stacked" label="Phone" value="519-875-3382"></mm-meta-item>
           <mm-meta-item
             layout="stacked"

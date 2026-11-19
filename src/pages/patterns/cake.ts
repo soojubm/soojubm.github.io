@@ -67,7 +67,7 @@ const main = html`
               ></mm-read-more-paragraph>
             </mm-flex>
 
-            <mm-meta-item-group>
+            <mm-meta-item-group gap="2">
               <mm-meta-item
                 layout="stacked"
                 label="리뷰 116개"
