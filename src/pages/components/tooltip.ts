@@ -123,7 +123,7 @@ const main = html`
       <mm-text-list
         .texts=${[
           'hover뿐 아니라 키보드 포커스로도 열 수 있어야 한다.',
-          '트리거를 가리키는 화살표는 두지 않는다. 사용자가 포인터나 손가락으로 직접 연 표면이라 어디에서 나왔는지 이미 분명하다. 화살표는 로딩 시점에 스스로 떠서 대상을 지목하는 GuideTip이 쓴다.',
+          '트리거를 가리키는 화살표는 두지 않는다. 사용자가 포인터나 손가락으로 직접 연 표면이라 어디에서 나왔는지 이미 분명하다. 화살표는 로딩 시점에 이미 열려 대상을 지목하는 GuideTip이 쓴다.',
           'short text, long form text. MD3 rich tooltip(title, description, actions-link/button) / plain tooltip',
         ]}
       ></mm-text-list>
@@ -144,7 +144,7 @@ const main = html`
 
     <mm-component-section
       heading="GuideTip"
-      description="arrow tooltip, tourtip, coachmark, 로딩 시점에 이미 열려 있다. doorhanger/pointing arrow."
+      description="TODO arrow tooltip, tourtip, coachmark, 로딩 시점에 이미 열려 있다. doorhanger/pointing arrow."
     ></mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

@@ -176,8 +176,7 @@ function sheetExampleTemplate() {
       <mm-sheet-header heading="Top Sheet"></mm-sheet-header>
       <mm-sheet-body>
         <mm-paragraph>
-          화면 위 변에서 내려옵니다. 상단 트리거에서 여는 검색·알림처럼 시작점이 위쪽인 흐름에
-          씁니다.
+          상단 트리거에서 여는 검색·알림처럼 시작점이 위쪽인 흐름에 씁니다.
         </mm-paragraph>
       </mm-sheet-body>
     </mm-sheet>

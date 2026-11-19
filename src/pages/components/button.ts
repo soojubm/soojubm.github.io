@@ -56,7 +56,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Feedback',
     description:
-      '물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)',
+      'TODO 물리적인 인터페이스의 출현만이 수행 결과의 피드백이 아닙니다. 예측할 수 있는 페이지 이동이나 페이지 새로고침, 정보 구조의 변화도 피드백으로 취급될 수 있습니다. (ex bad case: 인스타그램 앱에서 로그인되었다는 toast. 홈으로 이동과 피드 노출만으로 로그인 상태를 인지할수 있다.)',
   },
 ]
 
@@ -217,7 +217,7 @@ const main = html`
 
     <mm-component-section
       heading="Button Group"
-      description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결. Reject-Approve Pattern, Confirmation Pattern"
+      description="버튼 그룹은 관련된 액션을 묶어 사용자가 선택할 수 있도록 합니다. TODO 항상primary action에 먼저 포커스되어야 합니다. tabindex는 불필요. 마크업 순서와 정렬 스타일링으로 해결. Reject-Approve Pattern, Confirmation Pattern"
     >
       <mm-flex direction="column" gap="2">
         <mm-button-group aria-label="상품 정보 묶음">
@@ -245,7 +245,7 @@ const main = html`
     <mm-component-section
       heading="ShowMoreButton"
       full-width
-      description="Image Button, CheckoutButton. full-width로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
+      description="TODO Image Button, CheckoutButton. full-width로 사용하지 마세요. 콘텐츠 목록의 너비와의 대비를 통한 강조."
     >
       <mm-grid columns="3">
         <mm-ui-placeholder></mm-ui-placeholder>

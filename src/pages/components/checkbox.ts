@@ -32,7 +32,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Glanceable',
     description:
-      '옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다.',
+      '옵션 목록을 파악하기 쉽게 수직 정렬합니다. 레이블은 최대 2단어로 작성합니다. TODO choice냐 action option(?)이냐. action option일 때는 동사를 포함하여 작성합니다.',
   },
 ]
 

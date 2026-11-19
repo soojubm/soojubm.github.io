@@ -51,8 +51,8 @@ const publishFilterOptions = [
 
 const guideTexts = [
   '첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 마세요. 최초 페이지와 최종 페이지 넘버를 제공하면 사용자는 대략적인 콘텐츠 수량을 파악할 수 있습니다.',
-  '서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.',
-  '모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요',
+  'TODO 서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.',
+  'TODO 모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요',
 ]
 
 const rows = html`

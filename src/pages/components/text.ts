@@ -284,7 +284,7 @@ const main = html`
 
     <mm-component-section
       heading="Text List"
-      description="텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은
+      description="TODO 텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은
   화면에 적합하지 않다. 약관에서는 사용해야 할 수도."
       .code=${textListCode}
     >

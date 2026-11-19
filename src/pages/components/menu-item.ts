@@ -60,7 +60,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - action',
     description:
-      '행 전체를 눌러 명령을 실행합니다. 조작을 행 안의 컨트롤이 받는 행은 list-item을 사용하세요.',
+      '행 전체를 눌러 명령을 실행합니다. 행 안의 버튼·스위치로 조작하는 행은 list-item을 사용하세요.',
   },
   {
     heading: 'Interactive - selection',

@@ -244,7 +244,7 @@ const main = html`
             <mm-code>mm-list-item</mm-code>
             은 행의 골격만 그리고,
             <mm-code>mm-menu-item-action</mm-code>
-            같은 menu-item 계열은 이 골격 위에 role·포커스·키보드 조작·이벤트를 더합니다.
+            같은 menu-item 계열은 이 골격에 눌러서 실행하는 동작을 더합니다.
           </mm-paragraph>
           <mm-text-list
             variant="check"
@@ -292,7 +292,7 @@ const main = html`
       style="--component-anatomy-stage-width: 320px"
       .parts=${[
         'leading — 아이콘 또는 아바타를 담는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.',
-        'content — label과 description으로 구성된 본문. flex: 1로 남은 공간을 채웁니다.',
+        'content — label과 description으로 구성된 본문. 남은 공간을 채웁니다.',
         'trailing — 오른쪽에 배치되는 선택적 영역. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
       ]}
       .markers=${[
@@ -365,7 +365,7 @@ const main = html`
 
     <mm-component-section
       heading="CastList"
-      description="크레딧 맥락. 행 전체가 인물 상세로 가는 링크이고, 명령이 아닌 탐색이므로 list로 읽혀 행마다 Tab으로 닿습니다."
+      description="크레딧 맥락. 행 전체가 인물 상세로 가는 링크이고, 명령이 아닌 탐색이라 목록으로 다룹니다."
     >
       <mm-cast-list .casts=${casts}></mm-cast-list>
     </mm-component-section>
