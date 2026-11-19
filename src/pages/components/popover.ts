@@ -95,10 +95,10 @@ const main = html`
       ></mm-text-list>
 
       <mm-paragraph-group>
-        <mm-heading level="3">트리거의 aria-haspopup</mm-heading>
+        <mm-heading level="3">트리거는 어떤 패널이 열리는지 알려야 하나요?</mm-heading>
         <mm-paragraph>
-          트리거는 열리는 내용에 맞는 값을 aria-haspopup으로 알립니다. 스크린 리더가 어떤 패널이
-          열릴지 미리 안내하고, 사용자는 그에 맞는 조작을 예상할 수 있습니다.
+          버튼을 누르기 전에 스크린리더가 어떤 패널이 열릴지 미리 안내해야, 사용자가 열린 뒤의
+          조작을 예상할 수 있습니다. 열리는 내용에 맞는 값을 aria-haspopup으로 줍니다.
         </mm-paragraph>
       </mm-paragraph-group>
 

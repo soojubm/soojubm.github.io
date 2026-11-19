@@ -103,11 +103,15 @@ function sheetPageTemplate() {
       <mm-component-tokens .elements=${['mm-sheet']}></mm-component-tokens>
 
       <mm-component-guide .features=${componentFeatures}>
+        <mm-content-section heading-level="3" heading="안전마진도 고려해야 하나요?">
+          <mm-paragraph>
+            패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백이 더해집니다. footer 유무와
+            상관없이 같은 여백이 유지되므로, footer나 사용하는 쪽에서 따로 두지 않습니다.
+          </mm-paragraph>
+        </mm-content-section>
+
         <mm-text-list
-          .texts=${[
-            '안전마진 — 패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백을 더 둡니다. footer 유무와 상관없이 같은 여백이 유지되므로 footer나 사용하는 쪽에서 따로 두지 않습니다.',
-            '사용자의 확인이 필요하거나 꼭 알려야 하는 내용은 mm-dialog를 사용합니다.',
-          ]}
+          .texts=${['사용자의 확인이 필요하거나 꼭 알려야 하는 내용은 mm-dialog를 사용합니다.']}
         ></mm-text-list>
       </mm-component-guide>
 
