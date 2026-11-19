@@ -16,9 +16,9 @@ export const tabsStyles = css`
     --tabs-indicator-background-color: var(--interaction-selected-foreground-color);
     --tabs-line-color: var(--border-color);
     --tabs-line-width: var(--border-width);
-    --tabs-pill-indicator-background-color: var(--background-color);
+    --tabs-pill-indicator-background-color: var(--interaction-selected-background-color);
     --tabs-pill-border: var(--border-transparent);
-    --tabs-pill-indicator-border: var(--border-transparent);
+    --tabs-pill-indicator-border: var(--border-selected);
   }
 
   :host::-webkit-scrollbar {
