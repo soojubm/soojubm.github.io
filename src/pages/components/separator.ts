@@ -6,7 +6,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { componentPropsOf } from '@/components/domains/component'
+import { code, componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -61,17 +61,32 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          '주제가 바뀌는 지점을 보조기술에도 알린다.',
+          html`
+            주제가 바뀌는 지점을 보조기술에도 알린다. 내부에서 ${code('<hr>')}를 렌더하므로 화면
+            낭독기가 그 위치에서 "구분선"이라고 읽는다.
+          `,
           html`
             Article 그룹의 구획에 사용합니다. Element와 Section 그룹은 쓰지 않으며, 레벨별 구획
             규칙은
             <mm-link href="./layout.html?tab=group">Layout</mm-link>
             문서가 정합니다.
           `,
-          '불릿은 콤마·콜론·슬래시·따옴표·괄호처럼 항목을 나열하는 맥락에 쓴다. 텍스트를 드래그해 복사할 때 불릿은 선택되지 않아야 한다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>
+
+    <mm-component-section
+      heading="Bullet"
+      description="단어 사이의 구분선입니다. 콤마·콜론·슬래시·따옴표·괄호처럼 항목을 나열하는 맥락에 쓰며, 텍스트를 드래그해 복사할 때 선택되지 않습니다."
+    >
+      <mm-flex gap="2">
+        <mm-text>업로드 중</mm-text>
+        <mm-bullet></mm-bullet>
+        <mm-text>3/12개</mm-text>
+        <mm-bullet></mm-bullet>
+        <mm-text>1m 04s</mm-text>
+      </mm-flex>
+    </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
