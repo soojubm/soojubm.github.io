@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 import { tokenStyles } from '@/components/domains/component/component.styles'
-import { categoryNameAt, tokenCategoryLabel } from '@/components/domains/component/token.utils'
+import { categoryNameAt, tokenCategoryLabels } from '@/components/domains/component/token.utils'
 
 /**
  * 개별 CSS 커스텀 프로퍼티(토큰) 행.
@@ -26,12 +26,14 @@ export class Token extends LitElement {
   }
 
   private renderCategoryTag() {
-    const label = tokenCategoryLabel(this.name)
-    if (!label || !this.showCategory) return nothing
+    const labels = tokenCategoryLabels(this.name)
+    if (labels.length === 0 || !this.showCategory) return nothing
 
-    return html`
-      <mm-keyword-tag>${label}</mm-keyword-tag>
-    `
+    return labels.map(
+      label => html`
+        <mm-keyword-tag>${label}</mm-keyword-tag>
+      `,
+    )
   }
 
   // state/surface/dimension 그룹이 바뀌는 경계에서만 '-'를 '.'으로 바꿔, 같은 그룹의 합성어(border-radius 등)는

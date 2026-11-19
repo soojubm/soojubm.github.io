@@ -118,7 +118,10 @@ export const tokenStyles = [
     }
 
     .token-category {
-      width: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1);
+      width: 160px;
     }
   `,
 ]

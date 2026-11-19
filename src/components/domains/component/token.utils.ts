@@ -81,9 +81,14 @@ function capitalize(word: string) {
   return `${word[0].toUpperCase()}${word.slice(1)}`
 }
 
-/** 카테고리 태그에 표시할 레이블. "Surface", "Dimension-State"처럼 합성 카테고리는 '-'로 잇는다. */
+/** 카테고리 태그에 표시할 레이블들. "Dimension"과 "State"처럼 카테고리마다 태그를 따로 둔다. */
+export function tokenCategoryLabels(name: string) {
+  return tokenCategories(name).map(capitalize)
+}
+
+/** 앞선 토큰과 같은 카테고리 구간인지 비교하는 키. */
 export function tokenCategoryLabel(name: string) {
-  return tokenCategories(name).map(capitalize).join('-')
+  return tokenCategoryLabels(name).join('-')
 }
 
 // 같은 카테고리 토큰을 표시 순서(dimension → surface → state)로 묶어 정렬할 때 쓰는 키.
