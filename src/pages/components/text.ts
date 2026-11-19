@@ -175,7 +175,7 @@ const main = html`
 
     <mm-component-section
       heading="Headings"
-      description="level(1–5)로 의미 단계(h1–h5)와 크기를 함께 지정하며, 기본값은 2입니다. level 5는 그룹 라벨용으로 보조 색을 갖습니다."
+      description="level 5는 그룹 라벨용으로 보조 색을 갖습니다."
       .code=${headingCode}
     >
       <mm-flex direction="column" gap="3">
@@ -202,18 +202,18 @@ const main = html`
     >
       <mm-paragraph-group>
         <mm-paragraph size="small">
-          Paragraph small은 font-size-12입니다. 카드의 부제나 출처 설명처럼 본문보다 한 단계 낮은
-          보조 정보에 사용합니다.
+          카드의 부제나 출처 설명처럼 본문보다 한 단계 낮은 보조 정보를 전달합니다.
         </mm-paragraph>
         <mm-paragraph max-lines="3">
-          Paragraph medium은 font-size-14입니다. 일반적인 UI 본문에 사용됩니다. 레이아웃에서 여러
-          문단이 이어질 때 ParagraphGroup으로 묶어 일관된 간격을 유지합니다. 문단 사이 간격은
-          var(--space-4)로 고정되어 있어 사용처마다 따로 간격을 지정하지 않아도 됩니다. 긴 본문
-          콘텐츠나 설명 영역에서 활용하세요.
+          이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에
+          부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들
+          난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래를 잡아 올리고 눈도
+          깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 아침 식탁에서는 양 떼마냥
+          부끄러워하며 서로를 힐끔거릴 뿐이었다.
         </mm-paragraph>
         <mm-paragraph size="large">
-          Paragraph large는 font-size-32와 페어링합니다. 포스트나 게시판 등의 콘텐츠 뷰에서
-          본문용으로 사용합니다.
+          포스트나 게시판 같은 콘텐츠 뷰에서는 글이 화면의 주인공이므로 본문을 크고 여유 있게
+          읽히도록 합니다.
         </mm-paragraph>
       </mm-paragraph-group>
     </mm-component-section>

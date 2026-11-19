@@ -225,20 +225,14 @@ const main = html`
       </mm-button-group>
     </mm-component-section>
 
-    <mm-component-section
-      heading="FollowButton"
-      description="ToggleButton을 확장한 도메인 버튼. 선택(팔로잉) 상태에 따라 레이블과 아이콘이 전환됩니다."
-    >
+    <mm-component-section heading="FollowButton">
       <mm-button-group>
         <mm-follow-button></mm-follow-button>
         <mm-follow-button pressed></mm-follow-button>
       </mm-button-group>
     </mm-component-section>
 
-    <mm-component-section
-      heading="BookmarkButton"
-      description="ToggleButton을 확장한 아이콘 전용 토글. shape으로 별·북마크·하트를 선택하며 selection foreground 토큰을 사용합니다."
-    >
+    <mm-component-section heading="BookmarkButton">
       <mm-button-group>
         <mm-bookmark-button shape="star"></mm-bookmark-button>
         <mm-bookmark-button shape="star" pressed></mm-bookmark-button>
