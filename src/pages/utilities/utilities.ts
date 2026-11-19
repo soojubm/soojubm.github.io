@@ -295,8 +295,8 @@ const main = html`
                 ></mm-text-block>
                 <mm-separator></mm-separator>
                 <mm-text-block
-                  level="5"
-                  heading="Level 5 Title"
+                  level="4"
+                  heading="Level 4 Title"
                   description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
                 ></mm-text-block>
                 <mm-code-block .code=${textBlockCode}></mm-code-block>

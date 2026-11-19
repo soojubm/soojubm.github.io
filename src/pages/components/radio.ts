@@ -154,7 +154,7 @@ const main = html`
       <mm-radio-card-group name="license" value="standard">
         <mm-radio-card value="standard" checked>
           <mm-text-block
-            level="5"
+            level="4"
             heading="Standard License"
             description="개인·사내 프로젝트에 사용할 수 있습니다."
           ></mm-text-block>
@@ -165,7 +165,7 @@ const main = html`
         </mm-radio-card>
         <mm-radio-card value="extended">
           <mm-text-block
-            level="5"
+            level="4"
             heading="Extended License"
             description="재판매·배포용 제품에 포함할 수 있습니다."
           ></mm-text-block>

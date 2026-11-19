@@ -6,12 +6,11 @@ import '@/components/common/text/semantics/heading'
 import '@/components/common/text/semantics/paragraph'
 import { buildAttributeRules } from '@/utils'
 
-export type TextBlockLevel = '1' | '2' | '3' | '4' | '5'
+export type TextBlockLevel = '1' | '2' | '3' | '4'
 
 const textBlockLevelTokens = {
   1: { gap: 'var(--space-3)' },
   4: { gap: 'var(--space-1)' },
-  5: { gap: '0' },
 }
 
 /**
@@ -60,12 +59,6 @@ export class TextBlock extends LitElement {
     if (this.level === '1') {
       return html`
         <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
-      `
-    }
-
-    if (this.level === '5') {
-      return html`
-        <mm-text size="14" color="light" ?centered=${this.centered}>${this.description}</mm-text>
       `
     }
 
