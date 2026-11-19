@@ -24,17 +24,10 @@ const secondaryAction: ActionConfig = { label: '나중에', onClick: () => {} }
 
 const variantCode = `<mm-notice variant="info" description="새 기능이 추가되었습니다."></mm-notice>
 <mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
-<mm-notice
-  variant="warning"
-  description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."
-></mm-notice>
+<mm-notice variant="warning" description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."></mm-notice>
 <mm-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></mm-notice>`
 
-const headingCode = `<mm-notice
-  variant="info"
-  heading="헤딩"
-  description="배너. 히어로와 콜아웃의 차이."
-></mm-notice>`
+const headingCode = `<mm-notice variant="info" heading="헤딩" description="배너. 히어로와 콜아웃의 차이."></mm-notice>`
 
 const actionCode = `<mm-notice
   variant="warning"
@@ -84,9 +77,6 @@ const main = html`
               heading="헤딩"
               description="배너. 히어로와 콜아웃의 차이."
             ></mm-notice>
-            <mm-paragraph>
-              헤딩은 설명 첫 줄 앞에 붙고, 넘치는 줄은 헤딩 아래로 흐릅니다.
-            </mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${headingCode}></mm-component-code>
@@ -109,10 +99,6 @@ const main = html`
                 @dismiss=${() => {}}
               ></mm-notice>
             </mm-flex>
-            <mm-paragraph>
-              액션 버튼과 닫기 버튼은 우측에 놓이며, primaryAction·secondaryAction을 넘기거나
-              dismiss 이벤트를 구독한 것만 나타납니다.
-            </mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${actionCode}></mm-component-code>

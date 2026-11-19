@@ -149,10 +149,7 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="overlaySurfaceStyles">
-            <mm-paragraph>
-              떠 있는 표면 패널의 재질입니다. backdrop-filter는 조상에 걸리면 자손의 blur가 죽으므로
-              ::before 레이어에 분리해 깝니다. dialog·popover·sheet가 씁니다.
-            </mm-paragraph>
+            <mm-paragraph>떠 있는 패널의 재질입니다. dialog·popover·sheet가 씁니다.</mm-paragraph>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="sheetPositionStyles">

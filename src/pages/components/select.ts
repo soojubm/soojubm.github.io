@@ -38,29 +38,14 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - selection',
     description:
-      '여러 옵션 중 하나만 선택할 수 있으며, 선택된 값은 트리거에, 선택 여부는 목록 안 옵션의 aria-selected 상태로 드러납니다. 옵션을 고르면 목록이 닫히고 값이 바로 반영됩니다.',
+      '여러 옵션 중 하나만 선택할 수 있으며, 선택된 값은 트리거에 보입니다. 옵션을 고르면 목록이 닫히고 값이 바로 반영됩니다.',
   },
 ]
 
-const variantCode = `<mm-select
-  aria-label="릴리스 채널"
-  variant="tertiary"
-  value="stable"
-  .options=\${options}
-></mm-select>
-<mm-select
-  aria-label="릴리스 채널"
-  variant="ghost"
-  value="stable"
-  .options=\${options}
-></mm-select>`
+const variantCode = `<mm-select aria-label="릴리스 채널" variant="tertiary" value="stable" .options=\${options}></mm-select>
+<mm-select aria-label="릴리스 채널" variant="ghost" value="stable" .options=\${options}></mm-select>`
 
-const placementCode = `<mm-select
-  aria-label="패널 위치"
-  placement="bottom-start"
-  value="bottom-start"
-  .options=\${options}
-></mm-select>`
+const placementCode = `<mm-select aria-label="패널 위치" placement="bottom-start" value="bottom-start" .options=\${options}></mm-select>`
 
 const main = html`
   <mm-main>
@@ -140,28 +125,15 @@ const main = html`
 
       <mm-content-section heading-level="3" heading="시각보정">
         <mm-paragraph>
-          트리거 끝의
-          <mm-code>mm-expand-indicator</mm-code>
-          는 아이콘보다 큰 박스를 가져, 박스 안 여백이 버튼 padding에 더해지면 오른쪽 여백이
-          왼쪽보다 넓어 보입니다.
+          트리거 오른쪽의 화살표 아이콘 때문에 오른쪽 여백이 왼쪽보다 넓어 보입니다. 아이콘 쪽을
+          보정해 좌우 여백이 같아 보이게 합니다.
         </mm-paragraph>
-        <mm-text-list
-          variant="check"
-          .texts=${[
-            rule(
-              'indicator 박스 안 여백만큼 음수 margin으로 바깥에 흘린다',
-              '아이콘 끝이 버튼 padding 경계에 닿아 좌우 여백이 같아 보인다. 버튼 padding은 버튼이 소유하므로 줄이지 않고, 트리거를 조립하는 select가 indicator 쪽에서 보정한다',
-            ),
-          ]}
-        ></mm-text-list>
       </mm-content-section>
 
       <mm-text-list
         .texts=${[
-          '트리거·옵션 목록·선택 상태와 열림 상태는 select가 소유하고, 목록을 담는 표면만 popover와 sheet에 맡긴다.',
-          '좁은 화면에서는 목록이 트리거 옆이 아니라 화면 아래의 bottom sheet로 열린다. 트리거 아래 남는 자리가 작고, 손이 닿는 화면 아래에서 고르는 편이 편하기 때문이다.',
+          '좁은 화면에서는 목록이 화면 아래의 bottom sheet로 열린다.',
           '옵션 목록은 5개까지 보이고, 넘치면 안에서 스크롤된다.',
-          '보이는 레이블 없이 쓰므로 aria-label로 컨트롤 이름을 준다. 트리거는 이름과 현재 값을 함께 읽고, 목록은 이름만 읽는다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>

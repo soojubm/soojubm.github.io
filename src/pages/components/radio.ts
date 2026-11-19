@@ -59,29 +59,11 @@ const membershipOptions: OptionItem[] = [
   { value: 'ultimate', label: '얼티메이트 요금제', disabled: true },
 ]
 
-const sizeCode = `<mm-radio-group
-  name="membership-size-default"
-  value="basic"
-  .options=\${options}
-></mm-radio-group>
-<mm-radio-group
-  name="membership-size-large"
-  size="large"
-  value="basic"
-  .options=\${options}
-></mm-radio-group>`
+const sizeCode = `<mm-radio-group name="membership-size-default" value="basic" .options=\${options}></mm-radio-group>
+<mm-radio-group name="membership-size-large" size="large" value="basic" .options=\${options}></mm-radio-group>`
 
-const stateCode = `<mm-radio-group
-  name="membership-option-disabled"
-  value="premium"
-  .options=\${options}
-></mm-radio-group>
-<mm-radio-group
-  name="membership-disabled"
-  value="premium"
-  disabled
-  .options=\${options}
-></mm-radio-group>`
+const stateCode = `<mm-radio-group name="membership-option-disabled" value="premium" .options=\${options}></mm-radio-group>
+<mm-radio-group name="membership-disabled" value="premium" disabled .options=\${options}></mm-radio-group>`
 
 const main = html`
   <mm-main>
@@ -111,7 +93,7 @@ const main = html`
                 .options=${membershipOptions.slice(0, 2)}
               ></mm-radio-group>
             </mm-flex>
-            <mm-paragraph>size="large"는 선택지가 화면의 주요 입력일 때 씁니다.</mm-paragraph>
+            <mm-paragraph>선택지가 화면의 주요 입력일 때 크게 씁니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${sizeCode}></mm-component-code>
@@ -132,11 +114,6 @@ const main = html`
                 .options=${membershipOptions.slice(0, 2)}
               ></mm-radio-group>
             </mm-flex>
-            <mm-paragraph>
-              선택지 하나만 막을 때는 option의 disabled를, 그룹 전체를 막을 때는
-              <mm-code>mm-radio-group</mm-code>
-              의 disabled를 씁니다.
-            </mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${stateCode}></mm-component-code>
@@ -172,7 +149,7 @@ const main = html`
 
     <mm-component-section
       heading="RadioCard"
-      description="레이블만으로 부족해 가격·배지·설명을 담아야 할 때, 면 전체를 선택지로 만듭니다. 옵션 배열로 담을 수 없는 콘텐츠라 카드를 자식으로 받는 mm-radio-card-group으로 묶습니다."
+      description="레이블만으로 부족해 가격·배지·설명을 담아야 할 때, 면 전체를 선택지로 만듭니다."
     >
       <mm-radio-card-group name="license" value="standard">
         <mm-radio-card value="standard" checked>

@@ -43,17 +43,9 @@ const pagerCode = `<mm-pager
   .next=\${{ href: 'button.html', heading: 'Button', description: '다음 문서' }}
 ></mm-pager>`
 
-const linkPromptCode = `<mm-link-prompt
-  icon="message"
-  message="궁금증이 해결되지 않는다면?"
-  link-label="지금 문의하기"
-  href="#"
-></mm-link-prompt>`
+const linkPromptCode = `<mm-link-prompt icon="message" message="궁금증이 해결되지 않는다면?" link-label="지금 문의하기" href="#"></mm-link-prompt>`
 
-const readMoreParagraphCode = `<mm-read-more-paragraph
-  max-length="120"
-  content="긴 문단의 전체 내용"
-></mm-read-more-paragraph>
+const readMoreParagraphCode = `<mm-read-more-paragraph max-length="120" content="긴 문단의 전체 내용"></mm-read-more-paragraph>
 <mm-keyword-tag-group .keywords=\${keywords}></mm-keyword-tag-group>`
 
 const exampleCode = `<mm-link href="#" external>고래잡이</mm-link>`

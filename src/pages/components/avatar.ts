@@ -133,8 +133,8 @@ const main = html`
                 src가 없으면 안에 넣은 이니셜·이모지를, 그것도 비어 있으면 기본 아이콘을 표시합니다.
               </mm-paragraph>
               <mm-paragraph>
-                이모지에는 글자 크기를 직접 줍니다. 32·48·80은 아바타가 글자 크기를 정하지만 기본인
-                40은 정하지 않아 주변 본문 크기를 물려받습니다.
+                이모지 크기는 아바타 크기를 따르고, 기본 크기(40)에서만 주변 본문 크기를
+                물려받습니다.
               </mm-paragraph>
             </mm-paragraph-group>
           </mm-flex>
@@ -159,8 +159,8 @@ const main = html`
               ></mm-avatar>
             </mm-flex>
             <mm-paragraph>
-              아바타가 이름 옆에 놓이면 장식으로 두고, 아바타만으로 개체를 알려야 할 때 aria-label을
-              줍니다. aria-label이 있으면 host가 role=img를 갖습니다.
+              아바타가 이름 옆에 놓이면 장식으로 두고, 아바타만으로 개체를 알려야 할 때는 이름을
+              따로 줍니다.
             </mm-paragraph>
             <mm-flex gap="4" align-items="center">
               <mm-list-item size="medium" emoji="🦔" label="고슴이"></mm-list-item>

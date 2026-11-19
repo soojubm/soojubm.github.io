@@ -107,8 +107,8 @@ const componentFeatures: ComponentFeature[] = [
     category: 'Interaction',
     heading: 'Interactive - input',
     description: html`
-      제한된 선택지가 아니라 자유 형식 값을 받고, 입력 규칙 검증과 오류 표시를 소유한다. 오류는 해당
-      필드와 연결한다. 기준은
+      제한된 선택지가 아니라 자유 형식 값을 받고, 입력 규칙 검증과 오류 표시를 함께 제공한다. 오류는
+      해당 필드와 연결한다. 기준은
       <mm-link href="./interaction.html">Interaction</mm-link>
       문서가 정한다.
     `,

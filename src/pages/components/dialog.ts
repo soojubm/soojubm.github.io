@@ -37,11 +37,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const exampleCode = `<mm-button aria-controls="dialog-confirm" aria-haspopup="dialog">Confirm</mm-button>
-<mm-dialog
-  id="dialog-confirm"
-  heading="페이지를 나가시겠어요?"
-  description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
-></mm-dialog>`
+<mm-dialog id="dialog-confirm" heading="페이지를 나가시겠어요?" description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."></mm-dialog>`
 
 const main = html`
   <mm-main>

@@ -26,7 +26,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Glanceable',
     description:
-      '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 합니다. aria-label은 필수이며 툴팁으로 그대로 보입니다.',
+      '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 하며, 용도는 툴팁으로도 알려 줍니다.',
   },
 ]
 
@@ -252,10 +252,7 @@ const main = html`
         </mm-component-notice>
       </mm-flex>
     </mm-component-section>
-    <mm-component-section
-      heading="Expand Button"
-      description="누르면 펼침 여부가 바뀌고, aria-expanded도 버튼이 맞춥니다."
-    >
+    <mm-component-section heading="Expand Button" description="누르면 펼침 여부가 바뀝니다.">
       <mm-icon-button
         variant="secondary"
         size="small"

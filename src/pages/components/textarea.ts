@@ -38,23 +38,15 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - input',
     description:
-      '제한된 선택지가 아니라 자유 형식의 긴 텍스트를 받고, 규칙 검증과 오류 표시를 소유합니다. 글자 수 제한 같은 규칙은 오류가 나기 전에 미리 알리고, 여러 줄 입력이 예상되는 맥락에만 사용합니다. 높이는 기본 2줄(rows)을 유지해 한 줄 입력 필드와 구분하고, leading·trailing 슬롯에 액션이 있으면 액션 줄이 높이를 보태므로 rows와 관계없이 1줄에서 시작합니다.',
+      '제한된 선택지가 아니라 자유 형식의 긴 텍스트를 받고, 규칙 검증과 오류 표시를 함께 제공합니다. 글자 수 제한 같은 규칙은 오류가 나기 전에 미리 알리고, 여러 줄 입력이 예상되는 맥락에만 사용합니다.',
   },
 ]
 
 const defaultCode = `<mm-textarea placeholder="자유롭게 적어주세요"></mm-textarea>`
 
-const labelCode = `<mm-textarea-field
-  label="자기소개"
-  description="200자 이내로 입력하세요."
-  placeholder="자유롭게 적어주세요"
-></mm-textarea-field>`
+const labelCode = `<mm-textarea-field label="자기소개" description="200자 이내로 입력하세요." placeholder="자유롭게 적어주세요"></mm-textarea-field>`
 
-const optionalCode = `<mm-textarea-field
-  label="요청 사항"
-  placeholder="직접 입력"
-  optional
-></mm-textarea-field>`
+const optionalCode = `<mm-textarea-field label="요청 사항" placeholder="직접 입력" optional></mm-textarea-field>`
 
 const stateCode = `<mm-textarea placeholder="Placeholder"></mm-textarea>
 <mm-textarea placeholder="Disabled" disabled></mm-textarea>
@@ -98,7 +90,7 @@ const main = html`
             <mm-paragraph>
               레이블과 설명이 필요하면
               <mm-code>mm-textarea-field</mm-code>
-              를 씁니다. label은 입력 항목의 이름이며, 화면에 보이게 둡니다.
+              를 씁니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
@@ -119,13 +111,10 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-textarea placeholder="Placeholder"></mm-textarea>
-              <mm-textarea placeholder="Disabled" disabled></mm-textarea>
-              <mm-textarea value="Invalid" aria-invalid="true"></mm-textarea>
-            </mm-flex>
-            <mm-paragraph>aria-invalid로 오류 상태를 표시합니다.</mm-paragraph>
+          <mm-flex direction="column" gap="3">
+            <mm-textarea placeholder="Placeholder"></mm-textarea>
+            <mm-textarea placeholder="Disabled" disabled></mm-textarea>
+            <mm-textarea value="Invalid" aria-invalid="true"></mm-textarea>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${stateCode}></mm-component-code>

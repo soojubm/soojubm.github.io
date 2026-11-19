@@ -39,8 +39,7 @@ const componentProps: ComponentPropItemData[] = [
 const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Input - file',
-    description:
-      '자유 입력 대신 파일을 첨부받고, 첨부한 목록을 보여주며 개별로 제거합니다. 선택 상태는 uploader가 스스로 소유하고 바뀔 때 change로 알립니다.',
+    description: '자유 입력 대신 파일을 첨부받고, 첨부한 목록을 보여주며 개별로 제거합니다.',
   },
   {
     heading: 'Feedback',
@@ -49,11 +48,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<mm-file-uploader
-  description="Only .jpg and .png files. 500kb max file size."
-  accept=".jpg,.png"
-  multiple
-></mm-file-uploader>`
+const exampleCode = `<mm-file-uploader description="Only .jpg and .png files. 500kb max file size." accept=".jpg,.png" multiple></mm-file-uploader>`
 
 const main = html`
   <mm-main>
@@ -77,8 +72,8 @@ const main = html`
       <mm-text-list
         .texts=${[
           '미리보기가 의미 있는 이미지는 썸네일로, 그 외 파일은 유형과 크기로 표현합니다.',
-          '여러 파일을 받는 맥락에서만 multiple을, 즉석 촬영이 필요한 맥락에서만 capture를 켭니다.',
-          '이미지 업로드와 문서 업로드는 accept와 안내 문구로 구분해 기대를 좁힙니다.',
+          '여러 파일을 받는 맥락에서만 여러 파일 선택을, 즉석 촬영이 필요한 맥락에서만 촬영을 허용합니다.',
+          '이미지 업로드와 문서 업로드는 허용 형식과 안내 문구로 구분해 기대를 좁힙니다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>
@@ -126,8 +121,7 @@ const main = html`
 
     <mm-component-section heading="Drag and Drop Area" description="TODO">
       <mm-paragraph color="light">
-        파일을 끌어다 놓아 첨부하는 영역. dragenter·dragover·drop을 uploader가 받아 첨부 버튼과 같은
-        경로로 파일을 올리고, 드래그 중 상태를 시각적으로 알린다.
+        파일을 끌어다 놓아 첨부하는 영역입니다. 드래그하는 동안에는 놓을 수 있다는 상태를 알립니다.
       </mm-paragraph>
     </mm-component-section>
 

@@ -61,7 +61,7 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          'hr 태그를 사용하므로 주제의 구분이 의미로도 전달된다.',
+          '주제가 바뀌는 지점을 보조기술에도 알린다.',
           html`
             Article 그룹의 구획에 사용합니다. Element와 Section 그룹은 쓰지 않으며, 레벨별 구획
             규칙은

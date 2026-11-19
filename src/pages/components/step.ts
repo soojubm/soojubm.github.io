@@ -1,12 +1,11 @@
 import { html } from 'lit'
 
 import type {
-  ComponentFeatureItem,
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { componentPropsOf, rule, subComponentPropsOf } from '@/components/domains/component'
+import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -19,8 +18,6 @@ const componentProps: ComponentPropItemData[] = [
   ...subComponentPropsOf('mm-step-item'),
 ]
 
-const componentFeatures: ComponentFeatureItem[] = []
-
 const horizontalCode = `<mm-step>
   <mm-step-item active aria-current="step" label="장바구니"></mm-step-item>
   <mm-step-item label="결제"></mm-step-item>
@@ -29,11 +26,7 @@ const horizontalCode = `<mm-step>
 
 const verticalCode = `<mm-step orientation="vertical">
   <mm-step-item active label="I'm an engineer"></mm-step-item>
-  <mm-step-item
-    active
-    aria-current="step"
-    label="I want to design from scratch"
-  ></mm-step-item>
+  <mm-step-item active aria-current="step" label="I want to design from scratch"></mm-step-item>
   <mm-step-item label="One last thing ㅡ how will you use your prototpe?">
     <mm-caption>(You can pick more than one)</mm-caption>
     <mm-button-group>
@@ -101,25 +94,9 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
-        variant="check"
-        .texts=${[
-          rule(
-            '지나온 단계와 지금 단계를 구분해 표시한다',
-            '둘이 구분되지 않으면 사용자는 어디까지 왔고 얼마나 남았는지 가늠하지 못한다. 보조기술 사용자에게도 지금 단계를 알린다',
-          ),
-          rule(
-            '지나간 이력은 timeline으로 둔다',
-            '시점마다 내용이 다르고 최근 것이 먼저 오는 기록을 step으로 두면, 사용자는 앞으로 밟을 단계로 오해한다',
-          ),
-        ]}
-      ></mm-text-list>
-    </mm-component-guide>
-
     <mm-component-section
       heading="Timeline"
-      description="같은 선 위에 항목을 세우지만 방향이 반대입니다. 시점을 태그로 앞세우고 그 아래 기록을 쌓으며, 항목마다 담기는 내용의 양이 다릅니다."
+      description="시점마다 쌓인 지나간 이력을 최근 순으로 보여 줍니다."
     >
       <mm-timeline>
         <mm-timeline-item label="2022. 11. 4.">

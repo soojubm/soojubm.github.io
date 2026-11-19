@@ -250,12 +250,12 @@ const main = html`
             variant="check"
             .texts=${[
               rule(
-                '행 전체가 하나의 클릭 영역이면 menu-item을 쓴다',
-                '눌러서 명령이 실행되거나 값이 바뀌는 행이 조건이다. 팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 그룹이 방향키 이동을 맡아 목록 전체에 Tab으로는 한 번만 닿고, 항목은 놓이는 부모에 맞는 role(menuitem·radio·checkbox 등)을 갖는다',
+                '행을 눌러 명령을 실행하거나 값을 바꾸면 menu-item을 쓴다',
+                '팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 목록 전체에 Tab으로는 한 번만 닿고, 행 사이는 방향키로 옮긴다',
               ),
               rule(
-                '이동하거나, 조작을 행 안의 컨트롤이 받으면 list-item을 쓴다',
-                '행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 링크는 list-item을 감싸는 도메인 컴포넌트가 소유하고, 버튼·스위치는 trailing에 두어 그 컨트롤마다 Tab으로 닿게 한다',
+                '다른 곳으로 이동하거나, 행 안의 버튼·스위치로 조작하면 list-item을 쓴다',
+                '행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 버튼·스위치는 trailing에 두어 컨트롤마다 Tab으로 닿게 한다',
               ),
             ]}
           ></mm-text-list>
@@ -265,18 +265,8 @@ const main = html`
             variant="check"
             .texts=${[
               rule(
-                '이동하는 목록은 list로 읽히게 둔다',
-                html`
-                  <mm-code>role="menu"</mm-code>
-                  는 보조기술에 명령 메뉴로 알려진다. 인물·게시물처럼 다른 곳으로 이동하는 목록에
-                  쓰면 성격이 다르게 전달되고,
-                  <mm-code>role="list"</mm-code>
-                  는 그대로 목록으로 읽힌다.
-                  <mm-code>mm-list-item-group</mm-code>
-                  이 목록의 role과 각 행의
-                  <mm-code>listitem</mm-code>
-                  을 채운다
-                `,
+                '인물·게시물처럼 각 행이 다른 곳으로 이동하는 목록은 menu가 아니라 list로 둔다',
+                '명령을 실행하는 menu로 알리면 보조기술 사용자는 이 목록을 명령 메뉴로 받아들인다. list로 두면 일반 목록으로 읽힌다',
               ),
               rule(
                 '한 그룹에는 같은 계열의 role을 갖는 행만 담는다',
@@ -291,18 +281,9 @@ const main = html`
         </mm-content-section>
         <mm-content-section heading-level="3" heading="시각보정">
           <mm-paragraph>
-            content 박스는 leading과 가운데 정렬되지만, 줄마다 행간이 달라 글자 묶음은 위아래 여백이
-            다르게 남습니다.
+            label과 description이 함께 있으면 글자가 앞의 아이콘보다 아래로 치우쳐 보입니다. 글자만
+            위로 조금 올려 아이콘과 가운데를 맞추고, 행의 크기는 그대로 둡니다.
           </mm-paragraph>
-          <mm-text-list
-            variant="check"
-            .texts=${[
-              rule(
-                '위아래 행간 차이의 절반만큼 content를 위로 옮긴다',
-                'medium에 description이 있으면 label의 위 행간이 description의 아래 행간보다 넓어 글자가 아래로 치우쳐 보인다. 옮기는 것은 글자뿐이라 행의 크기와 정렬은 그대로다',
-              ),
-            ]}
-          ></mm-text-list>
         </mm-content-section>
       </mm-content-section-list>
     </mm-component-guide>

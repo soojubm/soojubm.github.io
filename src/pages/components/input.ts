@@ -51,11 +51,7 @@ const sizeCode = `<mm-textfield placeholder="Default"></mm-textfield>
 <mm-textfield size="small" placeholder="Small"></mm-textfield>`
 
 const labelCode = `<mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
-<mm-textfield
-  label="이메일"
-  description="가입 후에는 변경할 수 없어요."
-  placeholder="name@example.com"
-></mm-textfield>`
+<mm-textfield label="이메일" description="가입 후에는 변경할 수 없어요." placeholder="name@example.com"></mm-textfield>`
 
 const iconCode = `<mm-textfield placeholder="name@example.com">
   <mm-icon slot="leading" name="mail"></mm-icon>
@@ -69,12 +65,7 @@ const optionalCode = `<mm-textfield label="받는 분" placeholder="이름"></mm
 
 const stateCode = `<mm-textfield placeholder="Placeholder"></mm-textfield>
 <mm-textfield placeholder="Disabled" disabled></mm-textfield>
-<mm-textfield
-  value="Invalid"
-  placeholder="Placeholder..."
-  aria-invalid="true"
-  validation-text="이미 등록된 이메일입니다."
-></mm-textfield>`
+<mm-textfield value="Invalid" placeholder="Placeholder..." aria-invalid="true" validation-text="이미 등록된 이메일입니다."></mm-textfield>`
 
 const main = html`
   <mm-main>
@@ -132,9 +123,8 @@ const main = html`
               </mm-textfield>
             </mm-flex>
             <mm-paragraph>
-              앞쪽(leading)에는 입력값의 종류를 알리는 아이콘을, 뒤쪽(trailing)에는 입력을 돕는
-              아이콘이나 단위를 둡니다. leading 아이콘은 레이블 역할을 하므로 label과 함께 쓰지
-              않습니다.
+              입력값의 종류를 알리는 아이콘은 앞쪽에, 입력을 돕는 아이콘이나 단위는 뒤쪽에 둡니다.
+              앞쪽 아이콘이 레이블 역할을 하면 label은 함께 쓰지 않습니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>
@@ -154,20 +144,15 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="state">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-textfield placeholder="Placeholder"></mm-textfield>
-              <mm-textfield placeholder="Disabled" disabled></mm-textfield>
-              <mm-textfield
-                value="Invalid"
-                placeholder="Placeholder..."
-                aria-invalid="true"
-                validation-text="이미 등록된 이메일입니다."
-              ></mm-textfield>
-            </mm-flex>
-            <mm-paragraph>
-              aria-invalid로 오류 상태를 표시하고, validation-text로 이유를 필드 아래에 알립니다.
-            </mm-paragraph>
+          <mm-flex direction="column" gap="3">
+            <mm-textfield placeholder="Placeholder"></mm-textfield>
+            <mm-textfield placeholder="Disabled" disabled></mm-textfield>
+            <mm-textfield
+              value="Invalid"
+              placeholder="Placeholder..."
+              aria-invalid="true"
+              validation-text="이미 등록된 이메일입니다."
+            ></mm-textfield>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${stateCode}></mm-component-code>
@@ -219,7 +204,7 @@ const main = html`
 
     <mm-component-section
       heading="Validation Text"
-      description="description은 입력을 돕는 설명을, validation-text는 오류의 이유를 입력 필드 아래에 전달합니다. 테두리 색만으로는 무엇을 고칠지 전달되지 않으므로, 검증 텍스트는 입력 요소의 aria-describedby에 스스로 연결되어 스크린리더가 필드와 함께 읽습니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
+      description="입력을 돕는 설명과 오류의 이유를 입력 필드 아래에 전달합니다. 테두리 색만으로는 무엇을 고칠지 알 수 없으므로, 검증 텍스트는 스크린리더도 필드와 함께 읽습니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
     >
       <mm-textfield
         label="닉네임"

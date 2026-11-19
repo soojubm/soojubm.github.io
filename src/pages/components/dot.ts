@@ -105,10 +105,7 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-dot']}></mm-component-tokens>
 
-    <mm-component-section
-      heading="StatusDot"
-      description="항목의 상태를 알립니다. 스크린 리더가 읽는 이름은 variant가 정합니다."
-    >
+    <mm-component-section heading="StatusDot" description="항목의 상태를 알립니다.">
       <mm-flex direction="column" gap="6">
         <mm-flex gap="4" align-items="center">
           ${statusVariants.map(
@@ -139,10 +136,7 @@ const main = html`
       <mm-component-code .code=${statusCode}></mm-component-code>
     </mm-component-section>
 
-    <mm-component-section
-      heading="ProgressDot"
-      description="작업의 진행 단계를 알립니다. 스크린 리더가 읽는 이름은 라벨이 정합니다."
-    >
+    <mm-component-section heading="ProgressDot" description="작업의 진행 단계를 알립니다.">
       <mm-flex gap="4" align-items="center">
         <mm-progress-dot variant="todo">시작 전</mm-progress-dot>
         <mm-progress-dot variant="in-progress">진행 중</mm-progress-dot>
@@ -152,10 +146,7 @@ const main = html`
       <mm-component-code .code=${progressCode}></mm-component-code>
     </mm-component-section>
 
-    <mm-component-section
-      heading="CurrentIndicator"
-      description="현재 항목을 가리킵니다. 스크린 리더에는 항목의 aria-current가 현재라는 뜻을 전합니다."
-    >
+    <mm-component-section heading="CurrentIndicator" description="현재 항목을 가리킵니다.">
       <mm-pagination current-page="2" page-count="5"></mm-pagination>
       <mm-component-code .code=${currentIndicatorCode}></mm-component-code>
     </mm-component-section>

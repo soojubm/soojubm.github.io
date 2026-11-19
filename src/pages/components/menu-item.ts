@@ -70,40 +70,23 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const sizeCode = `<mm-menu-item-group aria-label="크기 메뉴" size="large">
   <mm-menu-item-action icon="user" label="Small"></mm-menu-item-action>
-  <mm-menu-item-action
-    size="medium"
-    icon="group"
-    label="Frontend Group"
-    description="프론트엔드 개발자 모임"
-  ></mm-menu-item-action>
+  <mm-menu-item-action size="medium" icon="group" label="Frontend Group" description="프론트엔드 개발자 모임"></mm-menu-item-action>
 </mm-menu-item-group>`
 
 const leadingCode = `<mm-menu-item-group aria-label="리딩 메뉴">
   <mm-menu-item-action icon="user" label="아이콘"></mm-menu-item-action>
   <mm-menu-item-action emoji="🦔" label="이모지"></mm-menu-item-action>
-  <mm-menu-item-action
-    avatar-src="/src/images/soojubm.png"
-    avatar-shape="circle"
-    label="아바타"
-  ></mm-menu-item-action>
+  <mm-menu-item-action avatar-src="/src/images/soojubm.png" avatar-shape="circle" label="아바타"></mm-menu-item-action>
 </mm-menu-item-group>`
 
 const toneCode = `<mm-menu-item-group aria-label="톤 메뉴">
   <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
-  <mm-menu-item-action
-    icon="trash"
-    label="삭제"
-    tone="danger"
-  ></mm-menu-item-action>
+  <mm-menu-item-action icon="trash" label="삭제" tone="danger"></mm-menu-item-action>
 </mm-menu-item-group>`
 
 const disabledCode = `<mm-menu-item-group aria-label="비활성 메뉴">
   <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
-  <mm-menu-item-action
-    icon="log-out"
-    label="로그아웃"
-    disabled
-  ></mm-menu-item-action>
+  <mm-menu-item-action icon="log-out" label="로그아웃" disabled></mm-menu-item-action>
 </mm-menu-item-group>`
 
 const main = html`

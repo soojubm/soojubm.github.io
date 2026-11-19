@@ -123,22 +123,22 @@ const main = html`
         <mm-text-block
           level="4"
           heading="레이블이 보일 때"
-          description="보이는 레이블이 곧 버튼의 이름이므로 aria-label을 따로 주지 않습니다. 누름 여부는 aria-pressed가 전달하므로 레이블에 '켜짐'·'선택됨' 같은 상태를 덧붙이지 않습니다."
+          description="보이는 레이블이 곧 버튼의 이름입니다. 누른 상태는 보조기술이 따로 알려 주므로 레이블에 '켜짐'·'선택됨' 같은 상태를 덧붙이지 않습니다."
         ></mm-text-block>
         <mm-text-block
           level="4"
           heading="아이콘만 보일 때"
-          description="단독 토글은 aria-label로 이름을 줍니다. 그룹은 옵션의 label을 그대로 두고 hidden-label을 켜서, label이 화면 대신 버튼의 이름으로 쓰이게 합니다."
+          description="화면에 글자가 없어도 보조기술 사용자는 버튼의 이름을 들을 수 있어야 합니다."
         ></mm-text-block>
         <mm-text-block
           level="4"
           heading="눌린 뒤 할 행동으로 레이블을 바꿀 때"
-          description="연동처럼 같은 버튼이 반대 행동을 이어서 맡으면 pressed-label에 그 행동을 적습니다. 현재 상태를 말하는 '켜짐'·'선택됨'은 aria-pressed가 이미 전달하므로 적지 않습니다."
+          description="연동처럼 같은 버튼이 누른 뒤에는 반대 행동을 맡으면, 눌린 뒤의 레이블을 그 행동으로 바꿉니다. 현재 상태를 말하는 '켜짐'·'선택됨'은 보조기술이 이미 전달하므로 적지 않습니다."
         ></mm-text-block>
         <mm-text-block
           level="4"
           heading="그룹 이름"
-          description="옵션만으로 무엇을 고르는지 알기 어려우면 그룹에 aria-label을 주어 묶음 전체의 이름을 전달합니다."
+          description="옵션만으로 무엇을 고르는지 알기 어려우면 묶음 전체에 이름을 줍니다."
         ></mm-text-block>
       </mm-content-section>
     </mm-component-guide>
@@ -212,7 +212,7 @@ const main = html`
 
     <mm-component-section
       heading="ColorChip"
-      description="색 하나를 고르는 토글입니다. 면 전체가 색이라 aria-label에 색 이름을 적고, 선택되면 테두리와 안쪽 링으로 표시합니다."
+      description="색 하나를 고르는 토글입니다. 면 전체가 색이라 보조기술 사용자를 위해 색 이름을 함께 전합니다."
     >
       <mm-button-group>
         <mm-color-chip

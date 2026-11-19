@@ -67,47 +67,23 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const variantCode = `<mm-surface variant="ghost">
-  <mm-text-block
-    level="3"
-    heading="ghost"
-    description="투명한 배경. 클릭할 수 없다."
-  ></mm-text-block>
+  <mm-text-block level="3" heading="ghost" description="투명한 배경. 클릭할 수 없다."></mm-text-block>
 </mm-surface>
 <mm-surface variant="outlined">
-  <mm-text-block
-    level="3"
-    heading="outlined"
-    description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."
-  ></mm-text-block>
+  <mm-text-block level="3" heading="outlined" description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."></mm-text-block>
 </mm-surface>
 <mm-surface variant="filled">
-  <mm-text-block
-    level="3"
-    heading="filled"
-    description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."
-  ></mm-text-block>
+  <mm-text-block level="3" heading="filled" description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."></mm-text-block>
 </mm-surface>
 <mm-surface variant="elevated">
-  <mm-text-block
-    level="3"
-    heading="elevated"
-    description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."
-  ></mm-text-block>
+  <mm-text-block level="3" heading="elevated" description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."></mm-text-block>
 </mm-surface>`
 
 const radiusCode = `<mm-surface radius="default">
-  <mm-text-block
-    level="3"
-    heading="default radius"
-    description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."
-  ></mm-text-block>
+  <mm-text-block level="3" heading="default radius" description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."></mm-text-block>
 </mm-surface>
 <mm-surface radius="large">
-  <mm-text-block
-    level="3"
-    heading="large radius"
-    description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."
-  ></mm-text-block>
+  <mm-text-block level="3" heading="large radius" description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."></mm-text-block>
 </mm-surface>`
 
 const main = html`
@@ -217,7 +193,7 @@ const main = html`
 
       <mm-text-list
         .texts=${[
-          'surface 내부 leading, tailing 컴포넌트에 따라 시각보정이 필요할 수 있습니다.',
+          'surface 안의 leading·trailing 요소에 따라 위치를 맞추는 보정이 필요할 수 있습니다.',
           'inset이 너무 커지면 물리적 화면 크기에 따라 inset의 변경이 필요할 수 있다. 콘텐츠 모듈을 가운데 정렬로 해결할 수 있다.',
         ]}
       ></mm-text-list>
@@ -366,7 +342,7 @@ const main = html`
 
     <mm-component-section
       heading="Marquee"
-      description="콘텐츠를 가로로 끊김 없이 반복해 흘려보내는 영역입니다. 콘텐츠 폭을 재서 복제 수와 이동 거리를 맞추므로 길이가 달라도 빈틈 없이 이어지며, 모션 줄이기를 켠 환경에서는 움직이지 않습니다."
+      description="콘텐츠를 가로로 끊김 없이 반복해 흘려보내는 영역입니다. 길이가 달라도 빈틈 없이 이어지며, 모션 줄이기를 켠 환경에서는 움직이지 않습니다."
     >
       <mm-flex direction="column" gap="4">
         <mm-marquee gap="6" speed="64" pause-on-hover>
@@ -374,8 +350,8 @@ const main = html`
           <mm-paragraph>
             길이가 서로 다른 콘텐츠도 같은 트랙 안에서 자연스럽게 반복됩니다.
           </mm-paragraph>
-          <mm-paragraph>콘텐츠 폭을 기준으로 이동 거리를 계산합니다.</mm-paragraph>
-          <mm-paragraph>화면 폭이 달라져도 필요한 복제 수를 다시 맞춥니다.</mm-paragraph>
+          <mm-paragraph>문장이 끊김 없이 이어서 흐릅니다.</mm-paragraph>
+          <mm-paragraph>화면 폭이 달라져도 빈틈 없이 이어집니다.</mm-paragraph>
         </mm-marquee>
         <mm-marquee gap="3" height="120px" speed="72" pause-on-hover>
           ${scrollThumbnails.slice(0, 4).map(

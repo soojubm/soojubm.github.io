@@ -38,21 +38,10 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const singleCode = `<mm-checkbox name="remember" value="remember">로그인 상태 유지</mm-checkbox>`
 
-const sizeCode = `<mm-checkbox-group
-  name="size-default"
-  .options=\${options}
-></mm-checkbox-group>
-<mm-checkbox-group
-  name="size-large"
-  size="large"
-  .options=\${options}
-></mm-checkbox-group>`
+const sizeCode = `<mm-checkbox-group name="size-default" .options=\${options}></mm-checkbox-group>
+<mm-checkbox-group name="size-large" size="large" .options=\${options}></mm-checkbox-group>`
 
-const stateCode = `<mm-checkbox-group
-  name="state"
-  .options=\${options}
-  .values=\${['checked', 'disabled-checked']}
-></mm-checkbox-group>
+const stateCode = `<mm-checkbox-group name="state" .options=\${options} .values=\${['checked', 'disabled-checked']}></mm-checkbox-group>
 <mm-checkbox indeterminate>Indeterminate</mm-checkbox>`
 
 const main = html`
@@ -88,9 +77,7 @@ const main = html`
                 ]}
               ></mm-checkbox-group>
             </mm-flex>
-            <mm-paragraph>
-              size="large"는 약관 동의처럼 선택지가 화면의 주요 입력일 때 씁니다.
-            </mm-paragraph>
+            <mm-paragraph>약관 동의처럼 선택지가 화면의 주요 입력일 때 크게 씁니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${sizeCode}></mm-component-code>
@@ -125,7 +112,7 @@ const main = html`
               <mm-checkbox indeterminate>Indeterminate</mm-checkbox>
             </mm-flex>
             <mm-paragraph>
-              indeterminate는 하위 선택지 중 일부만 선택된 상위 체크박스에 씁니다.
+              하위 선택지 중 일부만 선택된 상위 체크박스는 일부 선택 상태로 표시합니다.
             </mm-paragraph>
           </mm-flex>
         </mm-component-example>

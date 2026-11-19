@@ -75,6 +75,11 @@ const componentFeatures: ComponentFeatureItem[] = [
     description:
       '배경 상호작용을 차단하며, backdrop·ESC·닫기 버튼으로 사용자가 흐름을 빠져나갈 수 있어야 합니다.',
   },
+  {
+    heading: 'Contextual',
+    description:
+      '현재 페이지 위에 열려 backdrop 너머로 보던 화면이 그대로 남습니다. 사용자는 페이지를 옮기지 않고 하위 작업을 마친 뒤, 방금 있던 자리로 돌아옵니다.',
+  },
 ]
 
 renderPage(sheetPageTemplate())
@@ -100,17 +105,17 @@ function sheetPageTemplate() {
       <mm-component-guide .features=${componentFeatures}>
         <mm-text-list
           .texts=${[
-            '안전마진의 소유 — 패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백을 더 둡니다. footer 유무와 상관없이 같은 여백을 유지하도록 footer나 사용하는 쪽에서 따로 두지 않습니다.',
-            '화면 가운데에 띄우는 확인·알림은 mm-dialog를 사용합니다. sheet의 placement는 패널이 붙는 변만 고릅니다.',
+            '안전마진 — 패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백을 더 둡니다. footer 유무와 상관없이 같은 여백이 유지되므로 footer나 사용하는 쪽에서 따로 두지 않습니다.',
+            '사용자의 확인이 필요하거나 꼭 알려야 하는 내용은 mm-dialog를 사용합니다.',
           ]}
         ></mm-text-list>
       </mm-component-guide>
 
       <mm-component-anatomy
         .parts=${[
-          '헤더 — 타이틀과 닫기 버튼. 닫기 버튼은 자신을 담은 시트를 닫습니다.',
+          '헤더 — 타이틀과 닫기 버튼.',
           '바디 — header·footer를 제외한 나머지를 채우고, 콘텐츠가 넘치면 내부에서 스크롤됩니다.',
-          '푸터 — primaryAction·secondaryAction 버튼을 배치합니다.',
+          '푸터 — 주요·보조 액션 버튼을 배치합니다.',
         ]}
         .markers=${[
           { placement: 'inline-start', offset: '1rem' },

@@ -223,7 +223,7 @@ const main = html`
                   `,
                   html`
                     컴포넌트마다 다른 아이콘을 직접 그리지 않는다. ${code('expanded')}를 받아 아이콘
-                    회전으로 반영하는 표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가 소유한다
+                    회전으로 반영하는 표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가 맡는다
                   `,
                 ),
                 rule(
@@ -261,8 +261,8 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="열고 닫는 상태">
             <mm-paragraph>
-              열고 닫는 상태는 컴포넌트가 소유하고, 트리거 클릭에 따른 토글과
-              ${code('aria-expanded')} 동기화도 컴포넌트가 맡습니다.
+              열고 닫는 상태와 트리거 클릭에 따른 토글, ${code('aria-expanded')} 동기화는 컴포넌트가
+              맡습니다.
             </mm-paragraph>
             <mm-component-notice heading="열고 닫는 상태를 두지 않는 예외 케이스">
               ${code('mm-component-props')}는 한 번 펼치면 다시 접지 않아 토글이 필요 없으므로 열고

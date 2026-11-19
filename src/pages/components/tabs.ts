@@ -58,7 +58,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - selection',
     description:
-      '여러 탭 중 현재 보고 있는 탭 하나를 aria-selected 상태로 드러냅니다. 페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요. 좌우 방향키로 탭을 이동하고 Home·End로 처음·마지막 탭을 선택합니다.',
+      '여러 탭 중 현재 보고 있는 탭 하나를 드러냅니다. 페이지 링크, 콘텐츠 정렬, 콘텐츠 필터 또는 탭투스크롤로 사용하지 마세요. 키보드로는 좌우 방향키로 탭을 이동하고 Home·End로 처음·마지막 탭을 선택합니다.',
   },
   {
     heading: 'Glanceable',

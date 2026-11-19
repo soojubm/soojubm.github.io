@@ -52,34 +52,14 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const defaultCode = `<mm-tooltip
-  content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다."
->
-  <mm-icon
-    slot="trigger"
-    name="help-circle"
-    role="img"
-    aria-label="해임건의 요건 도움말"
-    tabindex="0"
-  ></mm-icon>
+const defaultCode = `<mm-tooltip content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.">
+  <mm-icon slot="trigger" name="help-circle" role="img" aria-label="해임건의 요건 도움말" tabindex="0"></mm-icon>
 </mm-tooltip>`
 
 const placementCode = `<mm-button-group>
-  <mm-icon-button
-    icon="user"
-    aria-label="좌측 정렬"
-    tooltip-placement="bottom-start"
-  ></mm-icon-button>
-  <mm-icon-button
-    icon="user"
-    aria-label="가운데 정렬"
-    tooltip-placement="bottom"
-  ></mm-icon-button>
-  <mm-icon-button
-    icon="user"
-    aria-label="우측 정렬"
-    tooltip-placement="bottom-end"
-  ></mm-icon-button>
+  <mm-icon-button icon="user" aria-label="좌측 정렬" tooltip-placement="bottom-start"></mm-icon-button>
+  <mm-icon-button icon="user" aria-label="가운데 정렬" tooltip-placement="bottom"></mm-icon-button>
+  <mm-icon-button icon="user" aria-label="우측 정렬" tooltip-placement="bottom-end"></mm-icon-button>
 </mm-button-group>`
 
 const main = html`
@@ -152,12 +132,12 @@ const main = html`
         <mm-text-block
           level="4"
           heading="액션 보완형"
-          description="아이콘 버튼의 이름을 보여주는 툴팁이므로 따로 감싸지 않고, 버튼의 aria-label을 그대로 툴팁으로 씁니다. 이름과 같은 내용은 설명으로 다시 연결하지 않습니다."
+          description="아이콘 버튼의 이름을 보여주는 툴팁이라 따로 감싸지 않습니다. 이름과 같은 내용을 설명으로 다시 읽어 주지 않습니다."
         ></mm-text-block>
         <mm-text-block
           level="4"
           heading="정보 설명형"
-          description="이미 존재하는 이름의 부가 설명이므로, 대상 요소의 설명(aria-description)으로 연결합니다."
+          description="이미 이름이 있는 대상의 부가 설명이라, 보조기술에는 이름과 별개의 설명으로 전달됩니다."
         ></mm-text-block>
       </mm-content-section>
     </mm-component-guide>

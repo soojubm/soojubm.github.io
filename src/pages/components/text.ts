@@ -66,15 +66,9 @@ const paragraphCode = `<mm-paragraph-group>
   <mm-paragraph size="large">콘텐츠 뷰의 본문입니다.</mm-paragraph>
 </mm-paragraph-group>`
 
-const readMoreParagraphCode = `<mm-read-more-paragraph
-  max-length="100"
-  content="긴 문단의 전체 내용"
-></mm-read-more-paragraph>`
+const readMoreParagraphCode = `<mm-read-more-paragraph max-length="100" content="긴 문단의 전체 내용"></mm-read-more-paragraph>`
 
-const statusMessageCode = `<mm-status-message
-  heading="주문이 완료되었습니다."
-  message="주문 내역은 마이페이지에서 확인할 수 있습니다."
-></mm-status-message>`
+const statusMessageCode = `<mm-status-message heading="주문이 완료되었습니다." message="주문 내역은 마이페이지에서 확인할 수 있습니다."></mm-status-message>`
 
 const metaItemGroupCode = `<mm-meta-item-group gap="2">
   <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
@@ -88,10 +82,7 @@ const heroSectionCode = `<mm-hero-section
   .secondaryAction=\${{ label: '더 알아보기', onClick: () => {} }}
 ></mm-hero-section>`
 
-const textListCode = `<mm-text-list
-  variant="check"
-  .texts=\${['첫 번째 항목', '두 번째 항목']}
-></mm-text-list>`
+const textListCode = `<mm-text-list variant="check" .texts=\${['첫 번째 항목', '두 번째 항목']}></mm-text-list>`
 
 const main = html`
   <mm-main>
@@ -168,7 +159,7 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}>
       <mm-text-list
         .texts=${[
-          'line-height는 비율이 아니라 고정값으로 정한다. 소수점이 생기지 않아 토큰으로 관리하기 좋다.',
+          '행간은 비율이 아니라 고정 값으로 정한다. 소수점이 생기지 않아 디자인과 코드에서 같은 값을 쓴다.',
         ]}
       ></mm-text-list>
     </mm-component-guide>
