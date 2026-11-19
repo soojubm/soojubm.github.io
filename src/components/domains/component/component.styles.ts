@@ -84,6 +84,7 @@ export const componentPropsStyles = [
       position: relative;
       cursor: pointer;
       --component-content-frame-border: var(--border-transparent);
+      --component-content-padding-block: calc(var(--space-6) + var(--space-1));
     }
     .component-props-list {
       display: flex;
