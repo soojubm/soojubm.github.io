@@ -30,7 +30,7 @@ const iconButtonVariantTokens: AttributeTokens<Exclude<IconButtonVariant, 'terti
   },
   danger: {
     '--icon-button-background-color': 'var(--danger-color)',
-    '--icon-button-text-color': 'var(--foreground-on-primary-color)',
+    '--icon-button-text-color': 'var(--foreground-on-danger-color)',
   },
 }
 

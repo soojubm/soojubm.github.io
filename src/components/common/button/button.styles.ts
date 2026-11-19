@@ -97,7 +97,7 @@ const buttonVariantTokens: AttributeTokens<ButtonVariant> = {
   },
   danger: {
     '--button-background-color': 'var(--danger-color)',
-    '--button-text-color': 'var(--foreground-on-primary-color)',
+    '--button-text-color': 'var(--foreground-on-danger-color)',
   },
 }
 

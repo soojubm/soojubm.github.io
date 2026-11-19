@@ -111,6 +111,7 @@
   --foreground-subtle-color: var(--gray400);
   --foreground-on-strong-color: var(--gray0);
   --foreground-on-primary-color: var(--gray0);
+  --foreground-on-danger-color: var(--gray0);
 
   --size-16: 16px;
   --size-24: 24px;
