@@ -67,23 +67,23 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const variantCode = `<mm-surface variant="ghost">
-  <mm-text-block level="3" heading="ghost" description="투명한 배경. 클릭할 수 없다."></mm-text-block>
+  <mm-text-block level="3" heading="ghost" description="..."></mm-text-block>
 </mm-surface>
 <mm-surface variant="outlined">
-  <mm-text-block level="3" heading="outlined" description="콘텐츠 레벨에서 테두리로 영역을 구획할 때 사용한다. 클릭할 수 없다."></mm-text-block>
+  <mm-text-block level="3" heading="outlined" description="..."></mm-text-block>
 </mm-surface>
 <mm-surface variant="filled">
-  <mm-text-block level="3" heading="filled" description="콘텐츠 레벨에서 내부에 클릭 가능한 액션이 있을 때 배경으로 강조한다."></mm-text-block>
+  <mm-text-block level="3" heading="filled" description="..."></mm-text-block>
 </mm-surface>
 <mm-surface variant="elevated">
-  <mm-text-block level="3" heading="elevated" description="시스템 레벨에서 화면 위에 떠 있는 요소를 그림자로 강조할 때 사용한다."></mm-text-block>
+  <mm-text-block level="3" heading="elevated" description="..."></mm-text-block>
 </mm-surface>`
 
 const radiusCode = `<mm-surface radius="default">
-  <mm-text-block level="3" heading="default radius" description="엘리먼트 레벨에서 사용한다. 본문 안에서 반복되는 개별 항목의 경계를 표현한다."></mm-text-block>
+  <mm-text-block level="3" heading="default radius" description="..."></mm-text-block>
 </mm-surface>
 <mm-surface radius="large">
-  <mm-text-block level="3" heading="large radius" description="섹션 레벨에서 사용한다. 여러 콘텐츠를 하나로 묶는 상위 영역의 경계를 표현한다."></mm-text-block>
+  <mm-text-block level="3" heading="large radius" description="..."></mm-text-block>
 </mm-surface>`
 
 const main = html`
