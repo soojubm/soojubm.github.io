@@ -28,6 +28,7 @@ export class ComponentSection extends LitElement {
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String }) code = ''
+  @property({ attribute: false }) checks: string[] = []
   @property({ type: String, reflect: true }) width: 'narrow' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
@@ -38,6 +39,7 @@ export class ComponentSection extends LitElement {
         heading=${this.heading}
         description=${this.description}
       ></mm-text-block>
+      ${this.renderChecks()}
       <slot name="notice"></slot>
       <div class="example">
         ${this.renderCode()}
@@ -45,6 +47,14 @@ export class ComponentSection extends LitElement {
           <slot></slot>
         </div>
       </div>
+    `
+  }
+
+  private renderChecks() {
+    if (!this.checks.length) return nothing
+
+    return html`
+      <mm-text-list .texts=${this.checks}></mm-text-list>
     `
   }
 

@@ -24,7 +24,10 @@ export class NumberField extends withTextfieldState(LitElement) {
   render() {
     return html`
       ${renderFieldLabel(this.inputId, this.label, this.optional)}
-      <div class="textfield-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
+      <div
+        class="textfield-control"
+        aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
+      >
         <mm-input
           input-id=${this.inputId}
           .type=${'number'}
@@ -36,12 +39,13 @@ export class NumberField extends withTextfieldState(LitElement) {
           .max=${this.max}
           .step=${this.step}
           ?disabled=${this.disabled}
-          aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
+          aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
           aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
+          @focusout=${this.handleInputFocusout}
         ></mm-input>
         <mm-icon-button
-          variant="ghost"
+          variant="secondary"
           size="small"
           icon=${ICON_NAMES.SUBTRACT}
           aria-label="감소"
@@ -50,7 +54,7 @@ export class NumberField extends withTextfieldState(LitElement) {
           @click=${this.handleDecrementClick}
         ></mm-icon-button>
         <mm-icon-button
-          variant="ghost"
+          variant="secondary"
           size="small"
           icon=${ICON_NAMES.ADD}
           aria-label="증가"
@@ -60,7 +64,7 @@ export class NumberField extends withTextfieldState(LitElement) {
         ></mm-icon-button>
       </div>
       ${renderFieldDescription(this.description, `${this.inputId}-description`)}
-      ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
+      ${renderFieldValidation(`${this.inputId}-validation`, this.resolvedValidationText)}
     `
   }
 

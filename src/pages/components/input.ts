@@ -36,6 +36,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-textfield'),
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
+  { name: 'validation-change', type: 'CustomEvent detail: valid', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -43,7 +44,6 @@ const componentFeatures: ComponentFeatureItem[] = [
     heading: 'Interactive - input',
     description:
       '제한된 선택지가 아니라 자유 형식 값을 받고, 입력값의 규칙 위반을 검증해 오류를 표시합니다. 오류 메시지는 영향을 받는 필드와 연결합니다. 사용자 여정에 허들이 될 수 있는 불필요한 정보 입력을 유도하지 마세요 — 모든 텍스트필드는 필수 입력이며, 명확한 이점이 있는 경우에만 "선택입력" 텍스트와 함께 선택 필드를 제안합니다.',
-    rules: ['오류는 색과 함께 validation-text로 이유를 알립니다.'],
   },
 ]
 
@@ -109,16 +109,13 @@ const main = html`
       </mm-tab-panel>
       <mm-tab-panel value="label">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
-              <mm-textfield
-                label="이메일"
-                description="가입 후에는 변경할 수 없어요."
-                placeholder="name@example.com"
-              ></mm-textfield>
-            </mm-flex>
-            <mm-paragraph>label은 입력 항목의 이름이며, 화면에 보이게 둡니다.</mm-paragraph>
+          <mm-flex direction="column" gap="3">
+            <mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
+            <mm-textfield
+              label="이메일"
+              description="가입 후에는 변경할 수 없어요."
+              placeholder="name@example.com"
+            ></mm-textfield>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${labelCode}></mm-component-code>
@@ -150,10 +147,7 @@ const main = html`
               <mm-textfield label="받는 분" placeholder="이름"></mm-textfield>
               <mm-textfield label="배송 메시지" placeholder="직접 입력" optional></mm-textfield>
             </mm-flex>
-            <mm-paragraph>
-              텍스트필드는 기본적으로 필수 입력입니다. 입력하면 명확한 이점이 있을 때만 optional로
-              선택 입력을 표시합니다.
-            </mm-paragraph>
+            <mm-paragraph>텍스트필드는 기본적으로 필수 입력입니다.</mm-paragraph>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${optionalCode}></mm-component-code>
@@ -214,15 +208,10 @@ const main = html`
       </mm-textfield>
     </mm-component-anatomy>
 
-    <mm-component-section
-      heading="DatePicker"
-      description="type='date'는 네이티브 날짜 피커를 씁니다."
-    >
-      <mm-component-notice slot="notice" heading="달력 선택"></mm-component-notice>
+    <mm-component-section heading="DatePicker">
       <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
         <mm-icon slot="trailing" name="calendar"></mm-icon>
       </mm-textfield>
-      <mm-separator></mm-separator>
       <mm-textfield name="date-range" label="숙박 기간" placeholder="YYYY. MM. DD. – YYYY. MM. DD.">
         <mm-icon slot="trailing" name="calendar"></mm-icon>
       </mm-textfield>
@@ -232,11 +221,12 @@ const main = html`
       heading="Validation Text"
       description="description은 입력을 돕는 설명을, validation-text는 오류의 이유를 입력 필드 아래에 전달합니다. 테두리 색만으로는 무엇을 고칠지 전달되지 않으므로, 검증 텍스트는 입력 요소의 aria-describedby에 스스로 연결되어 스크린리더가 필드와 함께 읽습니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
     >
-      <mm-component-notice slot="notice" variant="todo" heading="필드가 검증을 소유하게 한다">
-        지금은 쓰는 쪽이 값을 검사해 aria-invalid와 validation-text를 넘기고, 필드는 표시와 연결만
-        맡습니다. 필드가 입력 규칙을 스스로 검사하는 범위와 검증 시점(입력 중·포커스를 벗어날
-        때·제출할 때)은 정하지 않았습니다.
-      </mm-component-notice>
+      <mm-textfield
+        label="닉네임"
+        required
+        minlength="2"
+        description="2자 이상 입력하세요."
+      ></mm-textfield>
       <mm-flex direction="column" gap="2">
         <mm-textfield-description>가입 후에는 변경할 수 없어요.</mm-textfield-description>
         <mm-textfield-validation>올바른 이메일 형식으로 입력하세요.</mm-textfield-validation>
@@ -272,12 +262,11 @@ const main = html`
 
     <mm-component-section
       heading="PasswordField"
-      description="textfield를 확장하여 trailing에 reveal-button을 배치합니다."
+      .checks=${[
+        '리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다.',
+        '확인 필드가 있으면 두 번 입력해 오입력을 걸러낼 수 있습니다.',
+      ]}
     >
-      <mm-notice
-        slot="notice"
-        description="리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다. 확인 필드가 있으면 두 번 입력해 오입력을 걸러낼 수 있습니다."
-      ></mm-notice>
       <mm-passwordfield
         label="비밀번호"
         placeholder="비밀번호를 입력하세요"
@@ -285,24 +274,21 @@ const main = html`
       ></mm-passwordfield>
     </mm-component-section>
 
-    <mm-component-section
-      heading="SearchField"
-      description="textfield를 확장하며, leading에 검색 인디케이터, trailing에 clear 버튼을 제공합니다."
-    >
+    <mm-component-section heading="SearchField">
       <mm-flex direction="column" gap="3">
         <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
         <mm-searchfield size="small" placeholder="작은 검색 필드"></mm-searchfield>
       </mm-flex>
     </mm-component-section>
 
-    <mm-component-section heading="Newsletter">
+    <mm-component-section heading="NewsletterField">
       <form>
-          <mm-textfield type="email" placeholder="Enter Your Email..">
-            <mm-icon slot="leading" name="mail"></mm-icon>
-            <mm-button slot="trailing" type="submit" variant="primary" size="medium">
-              뉴스레터 구독
-            </mm-button>
-        </mm-flex>
+        <mm-textfield type="email" placeholder="Enter Your Email..">
+          <mm-icon slot="leading" name="mail"></mm-icon>
+          <mm-button slot="trailing" type="submit" variant="primary" size="medium">
+            뉴스레터 구독
+          </mm-button>
+        </mm-textfield>
       </form>
     </mm-component-section>
 

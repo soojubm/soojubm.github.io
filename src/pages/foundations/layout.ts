@@ -653,7 +653,7 @@ const main = html`
                 속하지 않습니다.
               </mm-paragraph>
             </mm-paragraph-group>
-            <mm-component-notice variant="exception" heading="tooltip 말풍선은 열 때 만든다">
+            <mm-component-notice heading="tooltip 말풍선은 열 때 만든다">
               ${code('mm-tooltip-bubble')}은 트리거마다 미리 만들면 표가 큰 페이지에서 요소가 수백
               개가 되므로, 처음 열릴 때 만들어 바로 연다. 열림 전환은 만들어지는 순간의 시작
               스타일(${code('@starting-style')})이 재생한다

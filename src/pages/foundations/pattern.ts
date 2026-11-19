@@ -264,10 +264,7 @@ const main = html`
               열고 닫는 상태를 소유하고, 트리거 클릭에 따른 토글과 ${code('aria-expanded')} 동기화를
               맡습니다.
             </mm-paragraph>
-            <mm-component-notice
-              variant="exception"
-              heading="DisclosureController를 사용하지 않는 예외 케이스"
-            >
+            <mm-component-notice heading="DisclosureController를 사용하지 않는 예외 케이스">
               ${code('mm-component-props')}는 한 번 펼치면 다시 접지 않아 토글이 필요 없으므로
               컨트롤러를 쓰지 않는다
             </mm-component-notice>

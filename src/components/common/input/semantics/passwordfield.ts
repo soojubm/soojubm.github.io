@@ -21,7 +21,10 @@ export class PasswordField extends withTextfieldState(LitElement) {
     return html`
       ${renderFieldLabel(this.inputId, this.label, this.optional)}
       <slot name="link"></slot>
-      <div class="textfield-control" aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}>
+      <div
+        class="textfield-control"
+        aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
+      >
         <mm-input
           input-id=${this.inputId}
           .type=${this.revealed ? 'text' : 'password'}
@@ -29,9 +32,10 @@ export class PasswordField extends withTextfieldState(LitElement) {
           .name=${this.name}
           .placeholder=${this.placeholder}
           aria-label=${this.label ?? this.placeholder ?? nothing}
-          aria-invalid=${ifDefined(this.ariaInvalid ?? undefined)}
+          aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
           aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
+          @focusout=${this.handleInputFocusout}
         ></mm-input>
         <mm-reveal-button
           .revealed=${this.revealed}
@@ -39,7 +43,7 @@ export class PasswordField extends withTextfieldState(LitElement) {
         ></mm-reveal-button>
       </div>
       ${renderFieldDescription(this.description, `${this.inputId}-description`)}
-      ${renderFieldValidation(`${this.inputId}-validation`, this.validationText)}
+      ${renderFieldValidation(`${this.inputId}-validation`, this.resolvedValidationText)}
     `
   }
 
