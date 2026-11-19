@@ -30,6 +30,7 @@ export class Pager extends LitElement {
       a {
         ${surfaceBaseStyles};
         --surface-shadow: var(--material-elevated-shadow);
+        --surface-border-radius: var(--radius-large);
         --lift: none;
 
         flex: 1;
