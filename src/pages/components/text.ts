@@ -61,7 +61,7 @@ const headingCode = `<mm-heading level="1">페이지 레벨의 타이틀</mm-hea
 const captionCode = `<mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>`
 
 const paragraphCode = `<mm-paragraph-group>
-  <mm-paragraph size="small">보조 정보를 담는 본문입니다.</mm-paragraph>
+  <mm-paragraph size="small">보조 정보를 전하는 본문입니다.</mm-paragraph>
   <mm-paragraph max-lines="3">일반적인 UI 본문입니다.</mm-paragraph>
   <mm-paragraph size="large">콘텐츠 뷰의 본문입니다.</mm-paragraph>
 </mm-paragraph-group>`

@@ -37,11 +37,6 @@ const groupAvatars: AvatarItem[] = [
   {},
 ]
 
-const userAvatarCode =
-  '<mm-user-avatar name="수줍이" src="/src/images/soojubm.png" online></mm-user-avatar>'
-
-const groupCode = '<mm-avatar-group .avatars=${avatars} label="수줍이 외 3명"></mm-avatar-group>'
-
 const variantCode = `<mm-avatar variant="primary" size="48" icon="profile-circle"></mm-avatar>
 <mm-avatar variant="secondary" size="48" icon="profile-circle"></mm-avatar>
 <mm-avatar variant="tertiary" size="48" icon="profile-circle"></mm-avatar>`
@@ -60,11 +55,6 @@ const fallbackCode = `<mm-avatar size="40">MM</mm-avatar>
 </mm-avatar>
 <mm-avatar size="40"></mm-avatar>`
 
-const ariaLabelCode = `<mm-avatar size="40" shape="circle" src="/src/images/soojubm.png" aria-label="수줍이"></mm-avatar>
-<mm-avatar size="40" shape="circle" aria-label="고슴이">
-  <span aria-hidden="true">🦔</span>
-</mm-avatar>`
-
 const main = html`
   <mm-main>
     <mm-page-header
@@ -78,7 +68,6 @@ const main = html`
         <mm-tab value="size">Size</mm-tab>
         <mm-tab value="shape">Shape</mm-tab>
         <mm-tab value="fallback">Fallback</mm-tab>
-        <mm-tab value="aria-label">Accessible Label</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
@@ -122,11 +111,11 @@ const main = html`
         <mm-component-example>
           <mm-flex direction="column" gap="6">
             <mm-flex gap="2">
-              <mm-avatar size="40">MM</mm-avatar>
-              <mm-avatar size="40">
+              <mm-avatar size="48">MM</mm-avatar>
+              <mm-avatar size="48">
                 <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
               </mm-avatar>
-              <mm-avatar size="40"></mm-avatar>
+              <mm-avatar size="48"></mm-avatar>
             </mm-flex>
             <mm-paragraph-group>
               <mm-paragraph>
@@ -140,44 +129,6 @@ const main = html`
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${fallbackCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="aria-label">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex gap="4" align-items="center">
-              <mm-user-item
-                size="medium"
-                label="수줍이"
-                description="UI Designer"
-                avatar-src="/src/images/soojubm.png"
-              ></mm-user-item>
-              <mm-avatar
-                size="40"
-                shape="circle"
-                src="/src/images/soojubm.png"
-                aria-label="수줍이"
-              ></mm-avatar>
-            </mm-flex>
-            <mm-paragraph>
-              아바타가 이름 옆에 놓이면 장식으로 두고, 아바타만으로 개체를 알려야 할 때는 이름을
-              따로 줍니다.
-            </mm-paragraph>
-            <mm-flex gap="4" align-items="center">
-              <mm-list-item size="medium" emoji="🦔" label="고슴이"></mm-list-item>
-              <mm-avatar size="40" shape="circle" aria-label="고슴이">
-                <span aria-hidden="true">🦔</span>
-              </mm-avatar>
-            </mm-flex>
-            <mm-paragraph>
-              이모지는 스크린리더가 글리프 이름을 읽으므로
-              <mm-code>aria-hidden="true"</mm-code>
-              인 요소에 담습니다. 개체의 이름은 옆 텍스트가 전하고, 아바타만 놓이면
-              <mm-code>aria-label</mm-code>
-              이 전합니다.
-            </mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${ariaLabelCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 
@@ -200,7 +151,6 @@ const main = html`
     <mm-component-section
       heading="UserAvatar"
       description="사람을 대표하는 아바타입니다. 원형을 고정하고 이름의 앞 글자로 폴백하며, 접속 중이면 우하단에 점을 띄워 지금 닿을 수 있는 상대인지 알립니다."
-      .code=${userAvatarCode}
     >
       <mm-flex gap="2" align-items="flex-end">
         <mm-user-avatar
@@ -223,7 +173,6 @@ const main = html`
     <mm-component-section
       heading="AvatarGroup"
       description="최대 3개를 겹쳐 표시하고 초과 인원은 숫자로 대체합니다."
-      .code=${groupCode}
     >
       <mm-avatar-group .avatars=${groupAvatars} label="수줍이 외 3명"></mm-avatar-group>
     </mm-component-section>

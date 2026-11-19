@@ -73,7 +73,7 @@ const dismissRows = html`
     <td>${yes}</td>
     <td>${yes}</td>
     <td>닫기 아이콘을 누를 때</td>
-    <td>닫아도 잃는 것이 없는 내용(댓글, 검색 등)을 담으므로 가볍게 닫히게 한다</td>
+    <td>닫아도 잃는 것이 없는 내용(댓글, 검색 등)을 두므로 가볍게 닫히게 한다</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./dialog.html">Dialog</mm-link></th>

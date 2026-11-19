@@ -269,7 +269,7 @@ const main = html`
                 '명령을 실행하는 menu로 알리면 보조기술 사용자는 이 목록을 명령 메뉴로 받아들인다. list로 두면 일반 목록으로 읽힌다',
               ),
               rule(
-                '한 그룹에는 같은 계열의 role을 갖는 행만 담는다',
+                '한 그룹에는 같은 계열의 role을 갖는 행만 둔다',
                 html`
                   <mm-code>mm-menu-item-group</mm-code>
                   는 방향키로 행 사이를 옮겨 다닌다. 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
@@ -291,7 +291,7 @@ const main = html`
     <mm-component-anatomy
       style="--component-anatomy-stage-width: 320px"
       .parts=${[
-        'leading — 아이콘 또는 아바타를 담는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.',
+        'leading — 아이콘 또는 아바타를 넣는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.',
         'content — label과 description으로 구성된 본문. 남은 공간을 채웁니다.',
         'trailing — 오른쪽에 배치되는 선택적 영역. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
       ]}

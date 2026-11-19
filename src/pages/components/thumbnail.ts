@@ -91,7 +91,7 @@ const main = html`
 
     <mm-component-section
       heading="Caption"
-      description="이미지 아래에 짧은 설명을 덧붙입니다. 출처나 촬영 정보처럼 이미지를 보조하는 내용만 담고, 본문으로 읽을 텍스트는 담지 않습니다."
+      description="이미지 아래에 짧은 설명을 덧붙입니다. 출처나 촬영 정보처럼 이미지를 보조하는 내용만 넣고, 본문으로 읽을 텍스트는 넣지 않습니다."
     >
       <mm-thumbnail
         src="/src/images/temp.png"

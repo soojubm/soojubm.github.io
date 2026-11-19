@@ -195,7 +195,7 @@ const main = html`
           <mm-banner
             variant="primary"
             heading="새 계열을 제안해 주세요"
-            description="기존 기반으로 담기지 않는 패턴을 발견했다면 알려 주세요."
+            description="기존 기반으로 다루지 못하는 패턴을 발견했다면 알려 주세요."
           >
             <mm-button slot="action" variant="primary">제안하기</mm-button>
           </mm-banner>

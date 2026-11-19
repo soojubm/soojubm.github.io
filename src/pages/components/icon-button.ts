@@ -21,7 +21,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - action',
     description:
-      '누르면 바로 실행되는 보조 액션입니다. 좁은 공간에 반복되는 행동을 담고, 화면의 핵심 행동은 레이블이 보이는 버튼에 맡깁니다.',
+      '누르면 바로 실행되는 보조 액션입니다. 좁은 공간에 반복되는 행동을 두고, 화면의 핵심 행동은 레이블이 보이는 버튼에 맡깁니다.',
   },
   {
     heading: 'Glanceable',
@@ -53,7 +53,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Icon Button"
-      description="레이블 없이 메타포 아이콘 하나로 행동을 나타내는 간결한 버튼입니다. 좁은 공간에 반복되는 보조 액션을 담고 용도는 툴팁으로 알려 주므로, 사용자는 화면을 복잡하게 만들지 않고도 자주 쓰는 기능에 바로 닿을 수 있습니다."
+      description="레이블 없이 메타포 아이콘 하나로 행동을 나타내는 간결한 버튼입니다. 좁은 공간에 반복되는 보조 액션을 두고 용도는 툴팁으로 알려 주므로, 사용자는 화면을 복잡하게 만들지 않고도 자주 쓰는 기능에 바로 닿을 수 있습니다."
     ></mm-page-header>
 
     <mm-flex direction="column" gap="4">

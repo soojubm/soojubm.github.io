@@ -149,7 +149,7 @@ const main = html`
 
     <mm-component-section
       heading="RadioCard"
-      description="레이블만으로 부족해 가격·배지·설명을 담아야 할 때, 면 전체를 선택지로 만듭니다."
+      description="레이블만으로 부족해 가격·배지·설명을 넣어야 할 때, 면 전체를 선택지로 만듭니다."
     >
       <mm-radio-card-group name="license" value="standard">
         <mm-radio-card value="standard" checked>
