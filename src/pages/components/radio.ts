@@ -32,12 +32,13 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
+const groupProps = componentPropsOf('mm-radio-group')
+
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-radio'),
-  ...subComponentPropsOf('mm-radio-group'),
-  ...subComponentPropsOf('mm-radio-card-group'),
-  { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
-  { name: 'mm-radio-group change', type: 'CustomEvent detail: value, name', kind: 'event' },
+  ...groupProps,
+  { name: 'change', type: 'CustomEvent detail: value, name', kind: 'event' },
+  ...subComponentPropsOf('mm-radio', groupProps),
+  { name: 'mm-radio change', type: 'CustomEvent detail: checked, value', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
