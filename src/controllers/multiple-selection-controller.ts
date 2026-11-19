@@ -16,6 +16,7 @@ interface MultipleSelectionControllerOptions {
 /**
  * 여러 값을 고르는 그룹의 선택 값을 소유한다.
  * 전체 선택은 고를 수 있는 항목(disabled와 전체 선택 항목 자신을 뺀 나머지)만 대상으로 삼는다.
+ * 전체 선택 컨트롤(그룹 안의 항목이든 그룹 밖의 헤더든)은 isAllSelected·isPartiallySelected로 표시하고 toggleAll로 누른다.
  * 켜고 끌 때 그 밖의 값(disabled 항목에 이미 걸린 선택 등)은 사용자가 바꿀 수 없으므로 그대로 둔다.
  */
 export class MultipleSelectionController implements SelectionStore {
@@ -58,6 +59,11 @@ export class MultipleSelectionController implements SelectionStore {
     const selectableValues = this.selectableValues
     const selectedCount = selectableValues.filter(value => this.isSelected(value)).length
     return selectedCount > 0 && selectedCount < selectableValues.length
+  }
+
+  /** 전부 선택돼 있으면 해제하고, 아니면(일부·없음) 전부 선택한다. 전체 선택 컨트롤을 누른 동작이다. */
+  toggleAll() {
+    this.setAllSelected(!this.isAllSelected())
   }
 
   setAllSelected(selected: boolean) {

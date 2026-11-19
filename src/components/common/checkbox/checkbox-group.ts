@@ -82,19 +82,6 @@ export class CheckboxGroup extends LitElement {
     `
   }
 
-  get checked() {
-    return this.selection.isAllSelected()
-  }
-
-  get indeterminate() {
-    return this.selection.isPartiallySelected()
-  }
-
-  toggleAll() {
-    this.selection.setAllSelected(!this.checked)
-    this.dispatchValueChange()
-  }
-
   private handleOptionChange(option: OptionItem) {
     this.selection.select(option)
     this.dispatchValueChange()
