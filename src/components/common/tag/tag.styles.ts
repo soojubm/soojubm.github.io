@@ -17,8 +17,8 @@ const categoryTone = (token: number): ToneStyle => {
 
   return {
     background: `var(--category-${token}-background-color)`,
-    textColor: `var(--category-${token}-text-color)`,
-    border: `var(--border-width) solid ${borderColor}`,
+    textColor: 'var(--foreground-color)',
+    border: 'var(--border-transparent)',
     borderColor,
   }
 }
