@@ -1,49 +1,86 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { ICON_NAMES, type IconName } from '@/components/common'
+import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 
-export type ChatReasoningFlowTone = 'thinking' | 'searching' | 'reading' | 'writing'
-
-const toneIconMap: Record<ChatReasoningFlowTone, IconName> = {
-  thinking: ICON_NAMES.SPARKS,
-  searching: ICON_NAMES.SEARCH,
-  reading: ICON_NAMES.BOOK,
-  writing: ICON_NAMES.DOCUMENT_CHECK,
-}
-
+export type ChatReasoningFlowStatus = 'complete' | 'current' | 'pending'
 /**
- * 현재 진행 중인 reasoning 흐름.
+ * reasoning 단계 하나. status(완료·진행 중·진행 전)는 mm-chat-reasoning이 채웁니다.
  *
- * <mm-chat-reasoning-flow tone="searching" label="관련 자료 탐색">
- *   디자인 토큰 문서를 찾는 중
- * </mm-chat-reasoning-flow>
+ * <mm-chat-reasoning-flow label="관련 자료 탐색 중"></mm-chat-reasoning-flow>
  */
 @customElement('mm-chat-reasoning-flow')
 export class ChatReasoningFlow extends LitElement {
   static styles = css`
     :host {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
+      --marker-size: var(--size-16);
+
+      display: grid;
+      grid-template-columns: var(--marker-size) 1fr;
+      column-gap: var(--space-1);
+      padding-bottom: var(--space-2);
     }
 
     :host([hidden]) {
       display: none;
     }
+
+    :host(:last-child) {
+      padding-bottom: 0;
+    }
+
+    .marker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: var(--marker-size);
+      height: var(--marker-size);
+      border-radius: 50%;
+      color: var(--foreground-color);
+      /* 진행 중은 실선 링. 점선·실선 링은 separator에 없어 outline으로 그린다. */
+      outline: var(--border-width) solid var(--foreground-color);
+      outline-offset: calc(var(--border-width) * -1);
+    }
+
+    :host([status='complete']) .marker {
+      outline: none;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    /* 진행 전: 점선 마커. 점선 선택지가 separator에 없어 outline으로 그린다. */
+    :host([status='pending']) .marker {
+      outline-style: dashed;
+      outline-color: var(--border-color);
+    }
+
+    :host([status='pending']) .label {
+      color: var(--foreground-subtle-color);
+    }
   `
-  @property({ type: Boolean, reflect: true }) active = false
-  @property({ type: String }) tone: ChatReasoningFlowTone = 'thinking'
+  /** @internal 순서를 소유한 mm-chat-reasoning이 채운다. */
+  @property({ type: String, reflect: true }) status: ChatReasoningFlowStatus = 'pending'
   @property({ type: String }) label = ''
-  @property({ type: String }) description = ''
-  @property({ type: String }) icon?: IconName
 
   render() {
     return html`
-      <mm-icon name=${this.icon || toneIconMap[this.tone] || ICON_NAMES.SPARKS}></mm-icon>
-      ${this.renderLabel()} ${this.renderDescription()}
-      <mm-text size="12" color="light"><slot></slot></mm-text>
+      <span class="marker" aria-hidden="true">${this.renderCompleteIndicator()}</span>
+      <div class="content" aria-current=${this.status === 'current' ? 'step' : nothing}>
+        ${this.renderLabel()}
+      </div>
+    `
+  }
+
+  private renderCompleteIndicator() {
+    if (this.status !== 'complete') return nothing
+
+    return html`
+      <mm-icon name=${ICON_NAMES.CHECK} size="12"></mm-icon>
     `
   }
 
@@ -51,15 +88,7 @@ export class ChatReasoningFlow extends LitElement {
     if (!this.label) return nothing
 
     return html`
-      <mm-text size="14" weight="bold">${this.label}</mm-text>
-    `
-  }
-
-  private renderDescription() {
-    if (!this.description) return nothing
-
-    return html`
-      <mm-text size="12" color="light">${this.description}</mm-text>
+      <mm-text class="label" size="14">${this.label}</mm-text>
     `
   }
 }
