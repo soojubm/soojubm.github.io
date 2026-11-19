@@ -47,24 +47,16 @@
 
   /*
    * 카테고리컬 컬러. 순서나 크기 없이 서로 다른 항목(분류 태그, 차트 계열 등)을 구분하는 색이다.
-   * 번호는 항목에 배정하는 순서이며 의미를 담지 않는다. 한 번호의 배경·테두리·텍스트는 한 벌로 함께 쓴다.
+   * 번호는 항목에 배정하는 순서이며 의미를 담지 않는다. 한 번호의 배경은 tag·dot 등이 함께 쓴다.
    */
   --category-1-background-color: #e5f0fe;
-  --category-1-border-color: #93c5fd;
   --category-2-background-color: #e6fced;
-  --category-2-border-color: #86efac;
   --category-3-background-color: #fcecf5;
-  --category-3-border-color: #f9a8d4;
   --category-4-background-color: #fff2e1;
-  --category-4-border-color: #fdba74;
   --category-5-background-color: #ddfcfe;
-  --category-5-border-color: #67e8f9;
   --category-6-background-color: #fef7d9;
-  --category-6-border-color: #fcd34d;
   --category-7-background-color: #feeaea;
-  --category-7-border-color: #fca5a5;
   --category-8-background-color: #f6eeff;
-  --category-8-border-color: #d8b4fe;
 
   --newneek-color: #fb7800;
   --newneek-gray-color: #ebebeb;
@@ -215,21 +207,13 @@
   --gray200: #2a2a2a;
 
   --category-1-background-color: #172554;
-  --category-1-border-color: #1e40af;
   --category-2-background-color: #052e16;
-  --category-2-border-color: #166534;
   --category-3-background-color: #500724;
-  --category-3-border-color: #9d174d;
   --category-4-background-color: #431407;
-  --category-4-border-color: #9a3412;
   --category-5-background-color: #083344;
-  --category-5-border-color: #155e75;
   --category-6-background-color: #422006;
-  --category-6-border-color: #854d0e;
   --category-7-background-color: #450a0a;
-  --category-7-border-color: #991b1b;
   --category-8-background-color: #3b0764;
-  --category-8-border-color: #6b21a8;
 
   --foreground-success-color: #93c5fd;
   --foreground-warning-color: #fdba74;
@@ -287,16 +271,6 @@
   --border-transparent: var(--brutal-border);
   --material-chrome-border: var(--border);
   --material-overlay-border: var(--border);
-
-  /* 테두리는 한 겹 검정으로 통일하므로 카테고리컬 컬러도 배경·텍스트만 남기고 테두리는 같은 값을 쓴다 */
-  --category-1-border-color: var(--border-color);
-  --category-2-border-color: var(--border-color);
-  --category-3-border-color: var(--border-color);
-  --category-4-border-color: var(--border-color);
-  --category-5-border-color: var(--border-color);
-  --category-6-border-color: var(--border-color);
-  --category-7-border-color: var(--border-color);
-  --category-8-border-color: var(--border-color);
 
   --material-chrome-shadow: none;
   --material-overlay-shadow: none;

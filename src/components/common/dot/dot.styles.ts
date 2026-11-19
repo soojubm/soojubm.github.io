@@ -44,15 +44,15 @@ export const dotBelowStyles = css`
 `
 
 const tagToneColors = Object.fromEntries(
-  Object.entries(tagToneStyles).map(([tone, { borderColor }]) => [tone, borderColor]),
+  Object.entries(tagToneStyles).map(([tone, { background }]) => [tone, background]),
 ) as Record<TagTone, string>
 
 /**
- * 점은 면이 작아 배경 틴트로는 색이 드러나지 않는다. tag의 tone은 테두리로 쓰는 값을 채우고,
- * gray는 tag에 없는 점 전용 tone으로 진한 회색을 채운다.
+ * tag의 tone은 배경색을 그대로 채우고, default·gray는 tag에 없는 점 전용 tone으로 회색을 채운다.
  */
 export const dotToneColors = {
   ...tagToneColors,
+  default: 'var(--foreground-subtle-color)',
   gray: 'var(--background-strong-color)',
 }
 

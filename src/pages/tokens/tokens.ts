@@ -102,7 +102,7 @@ const renderColorTokens = (names: string[]) =>
     `,
   )
 
-/** 카테고리컬 컬러는 배경·테두리를 한 벌로 쓰므로 번호마다 두 값을 한 스와치에 함께 칠하고, 텍스트는 기본 foreground를 쓴다. */
+/** 카테고리컬 컬러는 배경 위에 기본 foreground 텍스트를 올려 쓰므로 번호마다 한 스와치에 함께 칠한다. */
 const categoryNumbers = [...new Set(sectionTokens('category').map(name => name.split('-')[1]))]
 
 const renderCategoryStage = (numbers: string[]) =>
@@ -114,7 +114,6 @@ const renderCategoryStage = (numbers: string[]) =>
           style="
             display: grid;
             place-items: center;
-            border: var(--border-width) solid var(--category-${number}-border-color);
             background: var(--category-${number}-background-color);
             color: var(--foreground-color);
           "

@@ -46,16 +46,6 @@ const sizeCode = `<mm-dot tone="blue" size="16"></mm-dot>
 <mm-dot tone="blue" size="8"></mm-dot>
 <mm-dot tone="blue" size="6"></mm-dot>`
 
-const statusCode = `<mm-status-dot variant="online"></mm-status-dot>
-<mm-status-dot variant="unread"></mm-status-dot>`
-
-const progressCode = `<mm-progress-dot variant="in-progress">진행 중</mm-progress-dot>
-<mm-progress-dot variant="done">완료</mm-progress-dot>`
-
-const currentIndicatorCode = `<mm-pagination current-page="2" page-count="5"></mm-pagination>`
-
-const legendCode = `<mm-chart-legend .items=\${[{ label: '식비', tone: 'blue' }]}></mm-chart-legend>`
-
 const main = html`
   <mm-main>
     <mm-page-header
@@ -133,7 +123,6 @@ const main = html`
           )}
         </mm-flex>
       </mm-flex>
-      <mm-component-code .code=${statusCode}></mm-component-code>
     </mm-component-section>
 
     <mm-component-section heading="ProgressDot" description="작업의 진행 단계를 알립니다.">
@@ -143,17 +132,14 @@ const main = html`
         <mm-progress-dot variant="done">완료</mm-progress-dot>
         <mm-progress-dot variant="blocked">보류</mm-progress-dot>
       </mm-flex>
-      <mm-component-code .code=${progressCode}></mm-component-code>
     </mm-component-section>
 
     <mm-component-section heading="CurrentIndicator" description="현재 항목을 가리킵니다.">
       <mm-pagination current-page="2" page-count="5"></mm-pagination>
-      <mm-component-code .code=${currentIndicatorCode}></mm-component-code>
     </mm-component-section>
 
     <mm-component-section heading="ChartLegend" description="차트의 시리즈가 무엇인지 알립니다.">
       <mm-chart-legend .items=${legendItems}></mm-chart-legend>
-      <mm-component-code .code=${legendCode}></mm-component-code>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>

@@ -8,20 +8,13 @@ type ToneStyle = {
   background: string
   textColor: string
   border: string
-  /** 테두리 색만 따로 소비하는 곳(dot 등)을 위한 값. */
-  borderColor: string
 }
 
-const categoryTone = (token: number): ToneStyle => {
-  const borderColor = `var(--category-${token}-border-color)`
-
-  return {
-    background: `var(--category-${token}-background-color)`,
-    textColor: 'var(--foreground-color)',
-    border: 'var(--border-transparent)',
-    borderColor,
-  }
-}
+const categoryTone = (token: number): ToneStyle => ({
+  background: `var(--category-${token}-background-color)`,
+  textColor: 'var(--foreground-color)',
+  border: 'var(--border-transparent)',
+})
 
 const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
 
@@ -37,14 +30,11 @@ export const tagToneStyles = {
     background: 'var(--background-color)',
     textColor: 'var(--foreground-color)',
     border: 'var(--border)',
-    borderColor: 'var(--border-color)',
   },
   gold: {
-    background: 'var(--accent-color)',
+    background: 'color-mix(in srgb, var(--accent-color) 65%, transparent)',
     textColor: 'var(--gray800)',
     border: 'var(--border-transparent)',
-    /* 테두리는 투명하지만, 색만 쓰는 곳은 같은 계열인 yellow의 값을 따른다. */
-    borderColor: 'var(--category-6-border-color)',
   },
   green: categoryTone(2),
   yellow: categoryTone(6),
