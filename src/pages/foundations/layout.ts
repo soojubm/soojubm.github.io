@@ -139,117 +139,6 @@ type PlacementType =
 // viewport overlay (sheet · dialog)
 type ViewportPlacementType = 'center' | Side`
 
-const groupRows = html`
-  <tr>
-    <th scope="row">${code('mm-button-group')}</th>
-    <td>없음</td>
-    <td>없음</td>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-tag-group')}</th>
-    <td>없음</td>
-    <td>없음</td>
-    <td>${code('--space-1')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-keyword-tag-group')}</th>
-    <td>없음</td>
-    <td>없음</td>
-    <td>${code('--space-1')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-avatar-group')}</th>
-    <td>없음</td>
-    <td>없음</td>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-list-item-group')}</th>
-    <td>없음</td>
-    <td>list, 항목은 listitem</td>
-    <td>${code('--space-3')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-group')}</th>
-    <td>없음</td>
-    <td>menu</td>
-    <td>0 · large는 ${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-meta-item-group')}</th>
-    <td>없음</td>
-    <td>group</td>
-    <td>기본 ${code('--space-4')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-paragraph-group')}</th>
-    <td>없음</td>
-    <td>없음</td>
-    <td>${code('--space-4')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-feature-group')}</th>
-    <td>없음</td>
-    <td>group</td>
-    <td>${code('--space-8')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-pricing-card-group')}</th>
-    <td>없음</td>
-    <td>list, 항목은 listitem</td>
-    <td>${code('--space-8')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-search-suggestion-group')}</th>
-    <td>없음</td>
-    <td>group</td>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-radio-group')}</th>
-    <td>Single</td>
-    <td>fieldset</td>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-checkbox-group')}</th>
-    <td>Multiple</td>
-    <td>fieldset</td>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-radio-card-group')}</th>
-    <td>Single</td>
-    <td>fieldset</td>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-toggle-button-group')}</th>
-    <td>Single</td>
-    <td>group</td>
-    <td>0</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-filter-button-group')}</th>
-    <td>Single · Multiple</td>
-    <td>group</td>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-radio-group')}</th>
-    <td>Single</td>
-    <td>radiogroup</td>
-    <td>0 · large는 ${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
-    <td>Multiple</td>
-    <td>group</td>
-    <td>0 · large는 ${code('--space-2')}</td>
-  </tr>
-`
-
 /** 뷰포트 안에서 본문이 차지하는 너비를 보이는 브라우저 창 그래픽. */
 const browserWindow = (content: TemplateResult) => html`
   <div class="browser-window">
@@ -272,6 +161,35 @@ const browserWindow = (content: TemplateResult) => html`
   </div>
 `
 
+/** 설명을 브라우저 그래픽 위에 두고, 창 안에는 본문이 차지하는 너비만 보인다. */
+const widthExample = (options: {
+  caption: string
+  token: string
+  maxWidth?: string
+  links: [href: string, label: string][]
+}) => html`
+  <mm-flex direction="column" gap="2">
+    <mm-flex direction="column" gap="1">
+      <mm-caption>${options.caption}</mm-caption>
+      ${code(options.token)}
+      <mm-flex gap="3">
+        ${options.links.map(
+          ([href, label]) =>
+            html`
+              <mm-link href=${href}>${label}</mm-link>
+            `,
+        )}
+      </mm-flex>
+    </mm-flex>
+    ${browserWindow(html`
+      <mm-surface
+        variant="filled"
+        style=${options.maxWidth ? `max-width: ${options.maxWidth}` : ''}
+      ></mm-surface>
+    `)}
+  </mm-flex>
+`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -283,7 +201,7 @@ const main = html`
       <mm-tab-list value="page" variant="text" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
         <mm-tab value="section">Section</mm-tab>
-        <mm-tab value="group">Group</mm-tab>
+        <mm-tab value="element">Element</mm-tab>
         <mm-tab value="overlay">Overlay</mm-tab>
       </mm-tab-list>
 
@@ -303,47 +221,37 @@ const main = html`
               ]}
             ></mm-text-list>
             <mm-component-example full-width>
-              <mm-flex direction="column" gap="4">
-                ${browserWindow(html`
-                  <mm-surface variant="filled" style="max-width: var(--layout-width-narrow)">
-                    <mm-flex direction="column" gap="1">
-                      <mm-caption>집중형 · 폼, 인증, dialog, tooltip</mm-caption>
-                      ${code('--layout-width-narrow · 400px')}
-                      <mm-flex gap="3">
-                        <mm-link href="./auth.html">Auth</mm-link>
-                        <mm-link href="./dialog.html">Dialog</mm-link>
-                        <mm-link href="./tooltip.html">Tooltip</mm-link>
-                      </mm-flex>
-                    </mm-flex>
-                  </mm-surface>
-                `)}
-                ${browserWindow(html`
-                  <mm-surface variant="filled" style="max-width: var(--layout-width-small)">
-                    <mm-flex direction="column" gap="1">
-                      <mm-caption>일반 문서 · 에디토리얼, 설정, 대화, sheet</mm-caption>
-                      ${code('--layout-width-small · 640px')}
-                      <mm-flex gap="3">
-                        <mm-link href="./post.html">Post</mm-link>
-                        <mm-link href="./setting.html">Setting</mm-link>
-                        <mm-link href="./chat.html">Chat</mm-link>
-                        <mm-link href="./sheet.html">Sheet</mm-link>
-                      </mm-flex>
-                    </mm-flex>
-                  </mm-surface>
-                `)}
-                ${browserWindow(html`
-                  <mm-surface variant="filled">
-                    <mm-flex direction="column" gap="1">
-                      <mm-caption>확장형 · 목록, 대시보드, 상품, 프로필</mm-caption>
-                      ${code('width 미지정 · 콘텐츠 영역 전체')}
-                      <mm-flex gap="3">
-                        <mm-link href="./dashboard.html">Dashboard</mm-link>
-                        <mm-link href="./product.html">Product</mm-link>
-                        <mm-link href="./profile.html">Profile</mm-link>
-                      </mm-flex>
-                    </mm-flex>
-                  </mm-surface>
-                `)}
+              <mm-flex direction="column" gap="6">
+                ${widthExample({
+                  caption: '집중형 · 폼, 인증, dialog, tooltip',
+                  token: '--layout-width-narrow · 400px',
+                  maxWidth: 'var(--layout-width-narrow)',
+                  links: [
+                    ['./auth.html', 'Auth'],
+                    ['./dialog.html', 'Dialog'],
+                    ['./tooltip.html', 'Tooltip'],
+                  ],
+                })}
+                ${widthExample({
+                  caption: '일반 문서 · 에디토리얼, 설정, 대화, sheet',
+                  token: '--layout-width-small · 640px',
+                  maxWidth: 'var(--layout-width-small)',
+                  links: [
+                    ['./post.html', 'Post'],
+                    ['./setting.html', 'Setting'],
+                    ['./chat.html', 'Chat'],
+                    ['./sheet.html', 'Sheet'],
+                  ],
+                })}
+                ${widthExample({
+                  caption: '확장형 · 목록, 대시보드, 상품, 프로필',
+                  token: 'width 미지정 · 콘텐츠 영역 전체',
+                  links: [
+                    ['./dashboard.html', 'Dashboard'],
+                    ['./product.html', 'Product'],
+                    ['./profile.html', 'Profile'],
+                  ],
+                })}
               </mm-flex>
             </mm-component-example>
           </mm-content-section>
@@ -415,6 +323,99 @@ const main = html`
 
       <mm-tab-panel value="section">
         <mm-content-section-list>
+          <mm-content-section heading-level="3" heading="섹션 간격">
+            <mm-paragraph>
+              섹션은 제목을 가진 가장 큰 콘텐츠 덩어리입니다. 섹션 사이는 요소나 묶음 사이보다 크게
+              벌려, 사용자가 주제가 바뀌었다는 것을 간격만으로 알아차리게 합니다.
+            </mm-paragraph>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    섹션 간격은 ${code('--space-section')}을 쓴다
+                  `,
+                  '숫자 간격을 섹션마다 따로 고르면 페이지마다 호흡이 달라져, 같은 위계의 덩어리가 서로 다른 무게로 읽힌다',
+                ),
+                rule(
+                  html`
+                    간격은 섹션 각자의 여백이 아니라 ${code('mm-content-section-list')}의
+                    ${code('gap')}으로 둔다
+                  `,
+                  '섹션마다 여백을 두면 섹션이 빠지거나 순서가 바뀔 때 간격이 두 번 겹치거나 사라진다',
+                ),
+                rule(
+                  '섹션 안의 요소·묶음 간격은 섹션 간격보다 작게 둔다',
+                  '안쪽 간격이 바깥과 비슷하면 어디까지가 한 섹션인지 흐려져 제목이 어느 내용의 것인지 알기 어렵다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="섹션 제목">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    섹션 제목은 ${code('heading-level')} 2~4단계만 쓴다 (2단계 24px, 3단계 18px,
+                    4단계 14px)
+                  `,
+                  '1단계와 5단계는 섹션의 자리가 아니다. 1단계를 섹션에 쓰면 페이지 제목과 위계가 겹치고, 5단계를 쓰면 섹션의 시작이 묻힌다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="간격과 Separator">
+            <mm-paragraph>
+              섹션을 나누는 수단은 간격이 기본이고,
+              <mm-link href="./separator.html">separator</mm-link>
+              는 간격만으로 부족할 때 더하는 경계선입니다.
+            </mm-paragraph>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '섹션은 선 없이 여백과 제목으로 나눈다',
+                  '섹션마다 선을 그으면 페이지가 칸막이로 쪼개져 보이고, 제목과 여백이 만드는 흐름이 끊긴다',
+                ),
+                rule(
+                  'separator는 서로 다른 맥락 사이에만 둔다',
+                  '같은 맥락 안에 선을 그으면 이어 읽어야 할 내용이 둘로 끊겨 보인다',
+                ),
+                rule(
+                  'separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다',
+                  'separator는 자체 간격을 가지므로 gap을 겹치면 경계 주변이 두 배로 벌어진다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="간격 토큰">
+            <mm-paragraph>
+              간격은 숫자를 직접 쓰지 않고 토큰으로 정합니다. 단계가 정해져 있어야 화면마다 같은
+              위계에 같은 간격이 쓰이고, 값이 바뀌어도 한 곳에서 고칩니다.
+            </mm-paragraph>
+            <mm-text-list
+              .texts=${[
+                html`
+                  ${code('--space-1')}~${code('--space-3')} · 4~12px · 한 의미 단위 안의 요소 사이
+                `,
+                html`
+                  ${code('--space-4')}~${code('--space-8')} · 16~32px · 묶음과 Article 사이
+                `,
+                html`
+                  ${code('--space-section')} · 64px · 섹션 사이. 값은 ${code('--space-16')}을
+                  참조한다
+                `,
+                html`
+                  요소 자체의 고정 치수에는 space 토큰 대신 ${code('--size-*')} 토큰을 쓴다
+                `,
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
           <mm-content-section heading="Utilities">
             <mm-paragraph>
               페이지·콘텐츠 조립의 배치와 구획은
@@ -426,61 +427,36 @@ const main = html`
         </mm-content-section-list>
       </mm-tab-panel>
 
-      <mm-tab-panel value="group">
+      <mm-tab-panel value="element">
         <mm-content-section-list>
-          <mm-grid columns="4" gap="4">
-            <mm-surface>
-              <mm-content-section heading-level="3" heading="배치 그룹">
-                <mm-paragraph>
-                  정렬과 간격만 소유합니다. 항목은 자기 바깥 간격을 갖지 않고, 그룹의 간격을
-                  따릅니다.
-                </mm-paragraph>
-              </mm-content-section>
-            </mm-surface>
-            <mm-surface>
-              <mm-content-section heading-level="3" heading="선택 그룹">
-                <mm-paragraph>정렬과 간격에 더해 선택 상태를 소유합니다.</mm-paragraph>
-              </mm-content-section>
-            </mm-surface>
-          </mm-grid>
-
-          <mm-text-list
-            variant="check"
-            .texts=${[
-              rule(
-                '그룹 간격은 묶는 항목의 레벨을 따른다',
-                html`
-                  Element 그룹은 ${code('--space-1')}~${code('--space-3')}, Article 그룹은
-                  ${code('--space-8')}, Section 그룹은 ${code('--space-section')}을 쓴다. Article은
-                  Element보다 덩어리가 커서 같은 간격으로 놓으면 경계가 흐려진다
-                `,
-              ),
-              rule(
-                '레벨에 맞는 수단으로 구획을 나눈다',
-                'Element 그룹은 선이나 면 없이 간격만으로 한 덩어리로 읽히게 한다. Article 그룹은 이웃과 구분되어야 해서 선이나 면으로 경계를 긋고, 면이 덩어리를 이미 나누는 격자는 gap만 쓴다. Section 그룹은 선 없이 여백과 제목으로 나눈다',
-              ),
-              rule(
-                html`
-                  구획은 gap과
-                  <mm-link href="./separator.html">separator</mm-link>
-                  중 하나로만 나눈다
-                `,
-                'separator가 구획을 맡는 컨테이너는 gap을 두지 않고 separator의 자체 간격에 맡긴다. 둘을 겹치면 경계가 두 번 그어진다',
-              ),
-            ]}
-          ></mm-text-list>
-
-          <!-- TODO 그룹을 여기 다 모아서 보여줄 필요가 없다. -->
-          <!-- <mm-table
-              .rows=${groupRows}
-              caption="그룹의 선택 개수·role·항목 간격"
-              .columns=${[
-            { label: '컴포넌트', width: '260px' },
-            { label: '선택', width: '140px' },
-            { label: 'Role', width: '160px' },
-            { label: '간격' },
-          ]}
-            ></mm-table> -->
+          <mm-content-section heading-level="3" heading="Group">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    Element 그룹은 ${code('--space-1')}~${code('--space-3')}으로 붙여 놓는다
+                  `,
+                  '간격이 넓으면 한 단위가 둘로 쪼개져 보여, 라벨이 어느 값의 것인지 다시 훑어야 한다',
+                ),
+                rule(
+                  html`
+                    간격은 항목 각자의 여백이 아니라 부모 ${code('mm-flex')}의 ${code('gap')}으로
+                    둔다
+                  `,
+                  '항목마다 여백을 두면 항목이 빠지거나 순서가 바뀔 때 간격이 어긋나고, 간격의 출처를 찾기 어렵다',
+                ),
+                rule(
+                  '간격 단계는 한 그룹 안에서 한 가지로 통일한다',
+                  '같은 그룹에서 단계가 섞이면 가까운 항목과 먼 항목이 생겨 관계가 잘못 읽힌다',
+                ),
+                rule(
+                  'Element 그룹은 선이나 면 없이 간격만으로 한 덩어리로 읽히게 한다',
+                  '작은 항목마다 경계를 그으면 덩어리가 잘게 쪼개져 시선이 머물 곳이 흐려진다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -508,13 +484,13 @@ const main = html`
 
             <mm-table
               .rows=${classificationRows}
-              caption="화면 위로 뜨는 overlay의 modal 여부·위치 기준·드러나는 role·레이어 비교"
+              caption="화면 위로 뜨는 overlay의 modal 여부·위치 기준·드러나는 role·레이어·열 때 포커스 이동 비교"
               .columns=${[
                 { label: 'UI', width: '140px' },
                 { label: 'Modal', width: '100px' },
                 { label: 'Anchor', width: '120px' },
                 { label: 'Role', width: '140px' },
-                { label: 'z-index', width: '120px' },
+                { label: 'Layer', width: '120px' },
                 { label: '열 때 포커스 이동' },
               ]}
             ></mm-table>
@@ -609,7 +585,10 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="DisclosureController">
-            <mm-paragraph>열고 닫는 모든 overlay가 공통으로 쓰는 컨트롤러입니다.</mm-paragraph>
+            <mm-paragraph>
+              열고 닫는 컴포넌트가 공통으로 쓰는 컨트롤러입니다. overlay뿐 아니라 FAQ·사이드바
+              섹션처럼 제자리에서 펼치는 컴포넌트도 같은 컨트롤러를 씁니다.
+            </mm-paragraph>
             <mm-text-list
               .texts=${[
                 html`

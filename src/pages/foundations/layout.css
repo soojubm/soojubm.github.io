@@ -112,3 +112,7 @@
 .browser-window-body > mm-surface {
   width: 100%;
 }
+
+.browser-window-body > mm-surface:empty {
+  min-height: var(--size-16);
+}

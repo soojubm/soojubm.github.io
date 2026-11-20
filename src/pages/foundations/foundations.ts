@@ -2,7 +2,6 @@ import { html, type TemplateResult } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { SITEMAP } from '@/sitemap'
 
@@ -116,11 +115,7 @@ const componentFeatures: ComponentFeature[] = [
   {
     category: 'Interaction',
     heading: 'Feedback',
-    description: html`
-      사용자 행동이나 시스템 상태의 결과를 알린다. 기준은
-      <mm-link href="./interaction.html">Interaction</mm-link>
-      문서가 정한다.
-    `,
+    description: '사용자 행동이나 시스템 상태의 결과를 알린다.',
   },
   {
     category: 'Presentation',
@@ -190,11 +185,10 @@ const renderFeatureCard = ({ category, heading, description }: ComponentFeature)
 
 const main = html`
   <mm-main>
-    <div style="height: var(--size-48)"></div>
     <mm-page-header
       centered
       heading="Foundations"
-      description="제품 전체가 공유하는 시각 언어의 기반입니다."
+      description="제품 전체가 공유하는 시각 언어의 기반입니다. 배치·상호작용·패턴·콘텐츠를 한 곳에서 정하므로, 사용자는 어느 화면에서든 같은 방식으로 제품을 읽고 다룹니다."
     ></mm-page-header>
 
     <mm-page-body>
@@ -213,39 +207,6 @@ const main = html`
       </mm-flex>
 
       <mm-content-section-list>
-        <!-- 아토믹 디자인 패턴의 단점 답습 -->
-        <!-- <mm-content-section heading-level="3" heading="Component Level">
-          <mm-paragraph>컴포넌트의 레벨에 따라 간격과 구획 규칙이 정해집니다.</mm-paragraph>
-          <mm-list-item-group>
-            <mm-list-item
-              icon=${ICON_NAMES.IDLE}
-              size="medium"
-              label="Element"
-              description="단일 UI 유닛. 이웃과 간격으로 나눈다."
-            ></mm-list-item>
-            <mm-list-item
-              icon=${ICON_NAMES.DOCUMENT}
-              size="medium"
-              label="Article"
-              description="Element 여럿이 모여 혼자 읽혀도 되는 내용 단위. 같은 모양이 반복되며 선이나 면으로 경계를 긋는다."
-            ></mm-list-item>
-            <mm-list-item
-              icon=${ICON_NAMES.LIST_VIEW}
-              size="medium"
-              label="Section"
-              description="제목과 본문으로 이루어진 구획. 여백과 제목으로 나눈다."
-            ></mm-list-item>
-          </mm-list-item-group>
-        </mm-content-section> -->
-
-        <!-- <mm-content-section heading-level="3" heading="Group">
-          <mm-paragraph>
-            같은 레벨의 항목을 반복해 놓는 방식입니다. 간격과 구획은 그룹이 소유하며, 단계와 수단은
-            <mm-link href="./layout.html?tab=group">Layout</mm-link>
-            문서가 정합니다.
-          </mm-paragraph>
-        </mm-content-section> -->
-
         <mm-content-section heading-level="3" heading="Component Feature">
           <mm-grid columns="4" gap="4">${componentFeatures.map(renderFeatureCard)}</mm-grid>
         </mm-content-section>
