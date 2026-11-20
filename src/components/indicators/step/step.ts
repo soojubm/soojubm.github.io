@@ -1,48 +1,53 @@
-import { LitElement, html, type PropertyValues } from 'lit'
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { LitElement, html, nothing, type TemplateResult } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
-import type { StepItem, StepOrientation } from '@/components/indicators/step/step-item'
+import type { StepOrientation } from '@/components/indicators/step/step-item'
+import type { AriaCurrent } from '@/types'
 
 import { stepStyles } from '@/components/indicators/step/step.styles'
 import '@/components/indicators/step/step-item'
 
+export type StepItemData = {
+  label: string
+  active?: boolean
+  ariaCurrent?: AriaCurrent
+  /** 단계 아래에 펼쳐 보일 내용 */
+  content?: TemplateResult
+}
+
 /**
  * <mm-step>
  * 단계를 순서대로 늘어놓고 단계를 잇는 선을 그리는 진행 표시입니다.
- * 번호와 orientation은 항목마다 받지 않고 순서를 소유한 이 그룹이 채웁니다.
+ * items 배열로 단계를 받아 번호와 orientation을 순서에 맞춰 채웁니다.
  */
 @customElement('mm-step')
 export class Step extends LitElement {
   static styles = stepStyles
   @property({ type: String, reflect: true }) orientation: StepOrientation = 'horizontal'
-  @queryAssignedElements({ flatten: true, selector: 'mm-step-item' })
-  private items!: StepItem[]
+  @property({ attribute: false }) items: StepItemData[] = []
 
   connectedCallback() {
     super.connectedCallback()
     this.setAttribute('role', 'list')
   }
 
-  protected updated(changed: PropertyValues) {
-    if (!changed.has('orientation')) return
-
-    this.syncItems()
-  }
-
   render() {
     return html`
-      <slot @slotchange=${this.handleSlotChange}></slot>
+      ${this.items.map((item, index) => this.renderItem(item, index))}
     `
   }
 
-  private handleSlotChange() {
-    this.syncItems()
-  }
-
-  private syncItems() {
-    this.items.forEach((item, index) => {
-      item.orientation = this.orientation
-      item.value = index + 1
-    })
+  private renderItem(item: StepItemData, index: number) {
+    return html`
+      <mm-step-item
+        .orientation=${this.orientation}
+        .value=${index + 1}
+        .label=${item.label}
+        ?active=${item.active}
+        .ariaCurrent=${item.ariaCurrent ?? null}
+      >
+        ${item.content ?? nothing}
+      </mm-step-item>
+    `
   }
 }

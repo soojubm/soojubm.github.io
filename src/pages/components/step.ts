@@ -1,11 +1,12 @@
 import { html } from 'lit'
 
+import type { StepItemData } from '@/components/indicators/step/step'
 import type {
   ComponentPropItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -13,29 +14,52 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'loading.html', label: 'Loading' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-step'),
-  ...subComponentPropsOf('mm-step-item'),
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-step')]
+
+const horizontalItems: StepItemData[] = [
+  { label: '장바구니', active: true, ariaCurrent: 'step' },
+  { label: '결제' },
+  { label: '주문완료' },
 ]
 
-const horizontalCode = `<mm-step>
-  <mm-step-item active aria-current="step" label="장바구니"></mm-step-item>
-  <mm-step-item label="결제"></mm-step-item>
-  <mm-step-item label="주문완료"></mm-step-item>
-</mm-step>`
+const verticalItems: StepItemData[] = [
+  {
+    label: "I'm an engineer",
+    active: true,
+    content: html`
+      <mm-paragraph>
+        대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의 조직·직무범위
+        기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다.
+      </mm-paragraph>
+    `,
+  },
+  { label: 'I want to design from scratch', active: true, ariaCurrent: 'step' },
+  {
+    label: 'One last thing ㅡ how will you use your prototpe?',
+    content: html`
+      <mm-flex direction="column" gap="3" align-items="flex-start">
+        <mm-caption>(You can pick more than one)</mm-caption>
+        <mm-button-group>
+          <mm-button>Share for feedback</mm-button>
+          <mm-button>Present live</mm-button>
+          <mm-button>Test with users</mm-button>
+        </mm-button-group>
+      </mm-flex>
+    `,
+  },
+]
 
-const verticalCode = `<mm-step orientation="vertical">
-  <mm-step-item active label="I'm an engineer"></mm-step-item>
-  <mm-step-item active aria-current="step" label="I want to design from scratch"></mm-step-item>
-  <mm-step-item label="One last thing ㅡ how will you use your prototpe?">
-    <mm-caption>(You can pick more than one)</mm-caption>
-    <mm-button-group>
-      <mm-button>Share for feedback</mm-button>
-      <mm-button>Present live</mm-button>
-      <mm-button>Test with users</mm-button>
-    </mm-button-group>
-  </mm-step-item>
-</mm-step>`
+const horizontalCode = `<mm-step .items=\${[
+  { label: '장바구니', active: true, ariaCurrent: 'step' },
+  { label: '결제' },
+  { label: '주문완료' },
+]}></mm-step>`
+
+const verticalCode = `<mm-step orientation="vertical" .items=\${[
+  { label: "I'm an engineer", active: true, content: html\`<mm-paragraph>...</mm-paragraph>\` },
+  { label: 'I want to design from scratch', active: true, ariaCurrent: 'step' },
+  { label: 'One last thing', content: html\`<mm-button-group>...</mm-button-group>\` },
+]}></mm-step>`
 
 const main = html`
   <mm-main>
@@ -53,40 +77,13 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="horizontal">
         <mm-component-example full-width>
-          <mm-step>
-            <mm-step-item active aria-current="step" label="장바구니"></mm-step-item>
-            <mm-step-item label="결제"></mm-step-item>
-            <mm-step-item label="주문완료"></mm-step-item>
-          </mm-step>
+          <mm-step .items=${horizontalItems}></mm-step>
         </mm-component-example>
         <mm-component-code .code=${horizontalCode}></mm-component-code>
       </mm-tab-panel>
       <mm-tab-panel value="vertical">
         <mm-component-example full-width>
-          <mm-step orientation="vertical">
-            <mm-step-item active label="I'm an engineer">
-              <mm-paragraph>
-                대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다. 국가원로자문회의의
-                조직·직무범위 기타 필요한 사항은 법률로 정한다. 국가는 대외무역을 육성하며, 이를
-                규제·조정할 수 있다.
-              </mm-paragraph>
-            </mm-step-item>
-            <mm-step-item
-              active
-              aria-current="step"
-              label="I want to design from scratch"
-            ></mm-step-item>
-            <mm-step-item label="One last thing ㅡ how will you use your prototpe?">
-              <mm-flex direction="column" gap="3" align-items="flex-start">
-                <mm-caption>(You can pick more than one)</mm-caption>
-                <mm-button-group>
-                  <mm-button>Share for feedback</mm-button>
-                  <mm-button>Present live</mm-button>
-                  <mm-button>Test with users</mm-button>
-                </mm-button-group>
-              </mm-flex>
-            </mm-step-item>
-          </mm-step>
+          <mm-step orientation="vertical" .items=${verticalItems}></mm-step>
         </mm-component-example>
         <mm-component-code .code=${verticalCode}></mm-component-code>
       </mm-tab-panel>
@@ -153,7 +150,7 @@ const main = html`
           ></mm-list-item>
         </mm-timeline-item>
         <mm-timeline-item label="2017.07 ~ 2017.09">
-          <mm-list-item-group>
+          <mm-list-item-group gap="2">
             <mm-list-item
               size="medium"
               avatar-variant="secondary"

@@ -7,11 +7,12 @@ import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type ListItemGroupRole = 'list' | 'group'
 
-/** 행 사이 간격은 space 단계 중 이 둘만 쓴다. 기본 3은 :host가 선언한다. */
-type ListItemGroupGap = Extract<Space, '0' | '3'>
+/** 행 사이 간격은 space 단계 중 이 셋만 쓴다. 기본 3은 :host가 선언한다. */
+type ListItemGroupGap = Extract<Space, '0' | '2' | '3'>
 
 const listItemGroupGapTokens: AttributeTokens<Exclude<ListItemGroupGap, '3'>> = {
   '0': { gap: spaces['0'] },
+  '2': { gap: spaces['2'] },
 }
 
 /**

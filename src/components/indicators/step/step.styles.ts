@@ -10,6 +10,7 @@ export const stepStyles = css`
     justify-content: space-around;
     width: 100%;
     position: relative;
+    isolation: isolate;
   }
 
   /* 단계를 잇는 선은 마커 가운데를 지나며, 마커가 그 위에 얹힌다. */
@@ -43,6 +44,7 @@ export const stepItemStyles = css`
     align-items: center;
     flex: 1;
     gap: var(--space-1);
+    position: relative;
     text-align: center;
   }
 
@@ -75,15 +77,5 @@ export const stepItemStyles = css`
 
   :host([orientation='vertical']) .content {
     grid-column: 2;
-  }
-
-  /* 세로 단계에서는 점이 라벨 줄의 끝에 선다. 가로 단계에서는 흐름대로 라벨 아래에 놓인다. */
-  :host([orientation='vertical'][aria-current]) {
-    grid-template-columns: auto 1fr auto;
-  }
-
-  :host([orientation='vertical']) mm-current-indicator {
-    grid-row: 1;
-    grid-column: 3;
   }
 `
