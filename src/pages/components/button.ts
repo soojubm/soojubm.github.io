@@ -190,7 +190,6 @@ const main = html`
         <mm-text-list
           .texts=${[
             'disabled 버튼은 피한다. 불완전한 폼도 제출하게 두고 오류 메시지로 무엇이 잘못됐는지 알린다.',
-            '되돌리기 어려운 행동에는 destructive를 쓴다. 강조 단계(variant)는 그대로 두고 색만 위험을 알리는 색으로 바뀐다.',
           ]}
         ></mm-text-list>
       </mm-paragraph-group>

@@ -46,14 +46,13 @@ export class ComponentAnatomy extends LitElement {
         margin-top: var(--space-section);
       }
 
-      /* 프레임은 가장자리까지 흘리고, 코드와 시연은 그 안에서 같은 폭의
-         measure로 묶여 가운데로 모인다. 둘 다 measure의 시작점에서 뻗으므로
-         폭이 달라도 시작점은 나란히 맞는다. */
+      /* 프레임은 가장자리까지 흘리고, 시연은 그 안의 measure에서 가운데로 모인다. */
       .measure {
         display: flex;
         flex-direction: column;
-        align-items: start;
+        align-items: center;
         max-width: var(--layout-width-small);
+        margin-inline: auto;
       }
 
       /* 시연 대상 없이 코드만 전시할 때는 빈 무대 프레임을 걷어낸다. */
