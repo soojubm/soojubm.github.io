@@ -1,0 +1,107 @@
+.home-mangrove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  padding-top: calc(var(--space-16) * 2);
+  margin-top: 2.5rem;
+  border-top: 2px solid var(--foreground-color);
+  background: var(--newneek-color);
+  position: relative;
+}
+
+.mangrove1 {
+  display: block;
+  max-width: 240px;
+  margin-top: -140px;
+  margin-bottom: 110px;
+  transition: all var(--transition-duration) var(--transition-easing);
+}
+
+.mangrove2 {
+  display: block;
+  max-width: 230px;
+  margin-left: var(--space-8);
+  position: absolute;
+  bottom: var(--space-8);
+  transition: all var(--transition-duration) var(--transition-easing) 0.05s;
+}
+
+.mangrove-foot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--foreground-color);
+  border-bottom: 2px solid var(--foreground-color);
+  background: var(--background-color);
+  position: relative;
+  z-index: var(--material-zindex-elevated);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-mangrove:hover .mangrove1 {
+    transform: translateY(-1.5rem);
+  }
+  .home-mangrove:hover .mangrove2 {
+    transform: translateY(-1.05rem);
+  }
+}
+
+.today-poll {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+.today-poll mm-flex > div {
+  min-width: 80px;
+  background: var(--background-color);
+  text-align: center;
+}
+.today-poll mm-flex > div figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--foreground-color);
+  border-bottom-width: 1px;
+}
+.today-poll mm-flex > div figure span {
+  display: block;
+  margin-top: -3rem;
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+.today-poll .label {
+  display: block;
+  padding: 0.25rem 0;
+  border: 2px solid var(--foreground-color);
+  border-top: 0;
+  background: var(--background-subtle-color);
+}
+
+.zigzag-border {
+  --zigzag-width: 24px;
+  --zigzag-height: 12px;
+  --zigzag-gap: 8px;
+  --zigzag-color: var(--border-color);
+  position: relative;
+  padding-bottom: calc(var(--zigzag-height) + var(--zigzag-gap));
+}
+.zigzag-border::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--zigzag-height);
+  background-color: var(--zigzag-color);
+  mask-image: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='0,1 4,7 8,1 12,7 16,1' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  mask-repeat: repeat-x;
+  mask-size: var(--zigzag-width) var(--zigzag-height);
+}

@@ -7,8 +7,9 @@ import type { PortfolioItem } from '@/components/domains/portfolio-item'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { TOPICS } from '@/pages/mocks'
 
-import '../cta-arrow.css'
 import './profile.css'
+import { newneekSheet } from './newneek-sheet'
+import { flatSitemapSheet, letteringSheet, worksSheet } from './portfolio-sheets'
 
 // 그리드 보기의 칼럼 수. 목록 보기에서 돌아올 때도 이 값으로 되돌린다.
 const portfolioGridColumns: GridColumns = 4
@@ -38,7 +39,7 @@ const main = html`
       </mm-button-group>
       <mm-read-more-paragraph
         max-length="100"
-        content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring. 유아이를 그립니다. 배경을 넣어보았다. 모바일에서 팔로우 버튼을 상단으로 조정해야 한다. 업로드 버튼과 설정 버튼."
+        content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring."
       ></mm-read-more-paragraph>
       <mm-keyword-tag-group .keywords=${TOPICS}></mm-keyword-tag-group>
       <mm-flex direction="column" gap="1">
@@ -48,7 +49,7 @@ const main = html`
         </mm-meta-item-group>
         <mm-avatar-group
           .avatars=${followerAvatars}
-          label="Followed by 수줍이 외 4명"
+          label="Followed by 수줍이 외 3명"
         ></mm-avatar-group>
       </mm-flex>
       <mm-social-links
@@ -63,7 +64,7 @@ const main = html`
       <mm-flex direction="column" gap="3">
         <mm-tab-list value="projects" variant="pill" search-param="tab">
           <mm-tab value="projects">프로젝트</mm-tab>
-          <mm-tab value="second">두번째 탭</mm-tab>
+          <mm-tab value="second">아티클</mm-tab>
         </mm-tab-list>
 
         <mm-flex justify-content="space-between" gap="2">
@@ -77,7 +78,7 @@ const main = html`
               aria-controls="sheet-newneek"
               aria-haspopup="dialog"
               label="뉴닉"
-              description="디스크립션..."
+              description="일정 및 우선순위 수립, 프로덕트 디자인 및 프론트엔드 개발"
               src="/src/images/newneek/gosum-spinner.png"
               badge="최신"
               datetime="2024-06-20"
@@ -88,7 +89,7 @@ const main = html`
               aria-controls="sheet-etc-works"
               aria-haspopup="dialog"
               label="프리랜서"
-              description="선별된..."
+              description="웹사이트·프로덕트 디자인 작업"
               src="/src/images/work-studium.jpg"
               datetime="2022-09-12"
               .keywords=${['프리랜서', '디자인', '워드프레스']}
@@ -98,7 +99,7 @@ const main = html`
               aria-controls="sheet-lettering"
               aria-haspopup="dialog"
               label="레터링"
-              description="취미생활?"
+              description="레터링 작업물"
               src="/src/images/budha.png"
               datetime="2021-02-22"
               .keywords=${['취미생활', '레터링']}
@@ -120,175 +121,7 @@ const main = html`
     </section>
   </mm-main>
 
-  <!-- 포트폴리오 시트 -->
-
-  <mm-sheet id="sheet-newneek" placement="bottom" width="large" height="90vh">
-    <mm-sheet-header heading="뉴닉"></mm-sheet-header>
-    <mm-sheet-body>
-      <mm-content-section-list>
-        <div class="home-mangrove">
-          <div>
-            <img class="mangrove1" src="/src/images/newneek/home-mangrove1.png" alt="" />
-            <img class="mangrove2" src="/src/images/newneek/home-mangrove2.png" alt="" />
-          </div>
-          <div class="mangrove-foot">
-            <mm-text weight="bold">고슴이는 집을 찾을 수 있을까요?</mm-text>
-            <div class="cta-arrow">
-              <div class="line"></div>
-            </div>
-          </div>
-        </div>
-
-        <section class="today-poll">
-          <div>
-            <mm-text size="24" weight="bold" centered>오늘 기분 어때요?</mm-text>
-            <mm-text centered>
-              <span aria-hidden="true">🦔</span>
-              고슴이: 고슴이는...!
-            </mm-text>
-          </div>
-          <mm-flex justify-content="center" align-items="center" gap="2">
-            <div>
-              <figure><span aria-hidden="true">🧒</span></figure>
-              <span class="label">좋아</span>
-            </div>
-            <div>
-              <figure><span aria-hidden="true">👧</span></figure>
-              <span class="label">나쁘지 않아</span>
-            </div>
-            <div>
-              <figure><span aria-hidden="true">👦</span></figure>
-              <span class="label">안 좋아</span>
-            </div>
-            <div>
-              <figure><span aria-hidden="true">👦</span></figure>
-              <span class="label">잘 모르겠어</span>
-            </div>
-          </mm-flex>
-        </section>
-
-        <mm-chat-feed>
-          <mm-participant-chat-message name="신규방문자">
-            <mm-participant-chat-bubble>
-              OOO이 이슈인데 신문은 어렵고 재미없어.
-            </mm-participant-chat-bubble>
-            <mm-participant-chat-bubble>
-              뭐야 이렇게 쉬운 이슈였어? 뉴닉?
-            </mm-participant-chat-bubble>
-            <mm-participant-chat-bubble>이메일로 구독해보자!</mm-participant-chat-bubble>
-          </mm-participant-chat-message>
-          <mm-participant-chat-message name="뉴스레터 구독자">
-            <mm-participant-chat-bubble>
-              예전에 비슷한 이슈가 있었던 것 같은데...
-            </mm-participant-chat-bubble>
-            <mm-participant-chat-bubble>
-              뉴닉이 어떻게 쉽고 재미있게 풀어줬더라?
-            </mm-participant-chat-bubble>
-            <mm-button-group>
-              <mm-button>최신 콘텐츠 탐색</mm-button>
-              <mm-button>관심 분야로 탐색</mm-button>
-              <mm-button>큐레이션 콘텐츠 탐색</mm-button>
-              <mm-button>이슈나 인물로 검색</mm-button>
-              <mm-button>관심 콘텐츠 저장</mm-button>
-            </mm-button-group>
-          </mm-participant-chat-message>
-        </mm-chat-feed>
-
-        <div class="zigzag-border"></div>
-
-        <mm-chat-feed>
-          <mm-my-chat-message>
-            <mm-my-chat-bubble>뉴닉하면 어떤 색이 떠올라요?</mm-my-chat-bubble>
-          </mm-my-chat-message>
-          <mm-participant-chat-message name="찐뉴니커">
-            <mm-participant-chat-bubble>
-              후후.. 역시 뉴닉은 회색이죠! 네? 주황색은 본 적이 없는데...
-            </mm-participant-chat-bubble>
-          </mm-participant-chat-message>
-          <mm-my-chat-message>
-            <mm-my-chat-bubble>As-is 주황을 버튼에만 사용</mm-my-chat-bubble>
-            <mm-my-chat-bubble>
-              To-be 주황을 배경색으로 넓게 사용하여 브랜드 아이덴티티를 강화하고 주황색 배경에
-              검정색 버튼의 고대비로 주목도를 높이자.
-            </mm-my-chat-bubble>
-          </mm-my-chat-message>
-        </mm-chat-feed>
-
-        <section class="subscribe-gosum">
-          <mm-flex direction="column" gap="2">
-            <mm-paragraph-group>
-              <mm-paragraph>지금 구독하면 내일 아침에 읽을 수 있어요!</mm-paragraph>
-              <mm-paragraph>
-                <span aria-hidden="true">✨</span>
-                305,408명이 뉴닉을 읽고 있어요.
-              </mm-paragraph>
-            </mm-paragraph-group>
-            <mm-input placeholder="이메일 주소"></mm-input>
-            <mm-input placeholder="닉네임"></mm-input>
-            <mm-button variant="primary">뉴스레터 무료로 구독하기</mm-button>
-          </mm-flex>
-        </section>
-
-        <img src="/src/images/newneek-book.png" alt="" />
-      </mm-content-section-list>
-    </mm-sheet-body>
-  </mm-sheet>
-
-  <mm-sheet id="sheet-etc-works" placement="bottom" width="large" height="90vh">
-    <mm-sheet-header heading="스터디움 프로모션 웹사이트"></mm-sheet-header>
-    <mm-sheet-body>
-      <figure>
-        <img src="/src/images/work-studium.jpg" alt="" />
-      </figure>
-      <mm-paragraph size="large">페이머스 프로덕트 디자인</mm-paragraph>
-      <figure>
-        <img src="/src/images/work-famus.jpg" alt="" />
-      </figure>
-      <mm-paragraph size="large">한국문화예술위원회 창작산실 - 올해의 신작 2018</mm-paragraph>
-      <mm-paragraph>보름 남짓한 일정. 워드프레스로 개발.</mm-paragraph>
-      <figure>
-        <img src="/src/images/arko-main.jpg" alt="" />
-        <img src="/src/images/arko-sub.jpg" alt="" />
-      </figure>
-    </mm-sheet-body>
-  </mm-sheet>
-
-  <mm-sheet id="sheet-lettering" placement="bottom" width="large" height="90vh">
-    <mm-sheet-header heading="레터링"></mm-sheet-header>
-    <mm-sheet-body>
-      <figure>
-        <img src="/src/images/budha.png" alt="" />
-        <img src="/src/images/lettering.png" alt="" />
-      </figure>
-    </mm-sheet-body>
-  </mm-sheet>
-
-  <mm-sheet id="sheet-flat_sitemap" placement="bottom" width="large" height="90vh">
-    <mm-sheet-header heading='"Flat" Site Architecture'></mm-sheet-header>
-    <mm-sheet-body>
-      <div>
-        <header>
-          <mm-heading level="3">사이트맵을 만들고 유지하는 이유는 무엇일까요?</mm-heading>
-          <mm-paragraph>필요 이상으로 사이트가 복잡해지지 않도록 하기 위해서에요.</mm-paragraph>
-          <mm-paragraph>
-            A Flat Architecture means that users (and search engine crawlers) can reach any page on
-            your site in 4 clicks or less.
-          </mm-paragraph>
-        </header>
-        <div role="group">
-          <mm-tag>URL Structure</mm-tag>
-          <mm-tag>Category Pages</mm-tag>
-        </div>
-        <mm-text-list
-          .texts=${[
-            '프로젝트에 참여하는 모든 사람이 액세스 할 수 있는 형식으로 사이트 맵 유지',
-            '웹 사이트 구조에서 일어나는 모든 변화를 반영하는 살아있는 문서. 변경이 쉬워야 한다.',
-            '멘탈 모델은 뭔가 현실 세계에서 작동하는 방법에 대한 다른 사람의 생각에 대한 설명입니다.',
-          ]}
-        ></mm-text-list>
-      </div>
-    </mm-sheet-body>
-  </mm-sheet>
+  ${newneekSheet} ${worksSheet} ${letteringSheet} ${flatSitemapSheet}
 `
 
 type ViewModeEvent = CustomEvent<{ value: 'grid' | 'list' }>
@@ -299,12 +132,12 @@ renderPage(main, {
   initialize: () => {
     document
       .querySelector('mm-view-mode-switcher')
-      ?.addEventListener('change', handleViewModeChange)
-    document.querySelector('mm-sort-selector')?.addEventListener('change', handleSortChange)
+      ?.addEventListener('change', handleViewModeSwitcherChange)
+    document.querySelector('mm-sort-selector')?.addEventListener('change', handleSortSelectorChange)
   },
 })
 
-function handleViewModeChange(event: Event) {
+function handleViewModeSwitcherChange(event: Event) {
   const target = event.target as HTMLElement
   const viewModeEvent = event as ViewModeEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
@@ -318,7 +151,7 @@ function handleViewModeChange(event: Event) {
   })
 }
 
-function handleSortChange(event: Event) {
+function handleSortSelectorChange(event: Event) {
   const target = event.target as HTMLElement
   const sortEvent = event as SortEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
