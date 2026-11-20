@@ -68,6 +68,10 @@ const paragraphCode = `<mm-paragraph-group>
 
 const readMoreParagraphCode = `<mm-read-more-paragraph max-length="100" content="긴 문단의 전체 내용"></mm-read-more-paragraph>`
 
+const quotationCode = `<mm-quotation author="Kelly Emanuelli, Head of Luxury at Pinterest">
+  인용할 글의 내용
+</mm-quotation>`
+
 const statusMessageCode = `<mm-status-message heading="주문이 완료되었습니다." message="주문 내역은 마이페이지에서 확인할 수 있습니다."></mm-status-message>`
 
 const metaItemGroupCode = `<mm-meta-item-group gap="2">
@@ -208,6 +212,18 @@ const main = html`
         max-length="100"
         content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다."
       ></mm-read-more-paragraph>
+    </mm-component-section>
+
+    <mm-component-section
+      heading="Quotation"
+      description="다른 곳에서 가져온 글을 본문과 구분해 인용합니다. author를 주면 인용문 아래에 출처를 함께 보여줍니다."
+      .code=${quotationCode}
+    >
+      <mm-quotation author="Kelly Emanuelli, Head of Luxury at Pinterest">
+        With 3 in 5 luxury shoppers saying they use Pinterest to research luxury brands and
+        products, these brands have the opportunity to reach this highly engaged audience the moment
+        they form an opinion and make a purchase decision.
+      </mm-quotation>
     </mm-component-section>
 
     <mm-component-section

@@ -64,25 +64,16 @@ const main = html`
             링크(네비게이션)
           </mm-paragraph>
 
-          <q
-            style="display: flex; flex-direction: column; gap: var(--space-4); margin: var(--space-section) 0"
-          >
-            <mm-paragraph size="large">
-              Luxury brands around the world have been connecting with their ideal audience on
-              Pinterest: one that is coming to the platform with intent, looking for inspiration to
-              curate ideas and refine their taste for which luxury brands to invest in. With 3 in 5
-              luxury shoppers saying they use Pinterest to research luxury brands and products,
-              these brands have the opportunity to reach this highly engaged audience the moment
-              they form an opinion and make a purchase decision.
-            </mm-paragraph>
-            <address>
-              <mm-paragraph size="large">Kelly Emanuelli, Head of Luxury at Pinterest</mm-paragraph>
-            </address>
-          </q>
+          <mm-quotation author="Kelly Emanuelli, Head of Luxury at Pinterest">
+            Luxury brands around the world have been connecting with their ideal audience on
+            Pinterest: one that is coming to the platform with intent, looking for inspiration to
+            curate ideas and refine their taste for which luxury brands to invest in. With 3 in 5
+            luxury shoppers saying they use Pinterest to research luxury brands and products, these
+            brands have the opportunity to reach this highly engaged audience the moment they form
+            an opinion and make a purchase decision.
+          </mm-quotation>
 
-          <mm-text size="18" weight="bold" as="span">
-            포스트를 수정하고 삭제하기 위한 버튼이 필요하다.
-          </mm-text>
+          <mm-heading level="3">포스트를 수정하고 삭제하기 위한 버튼이 필요하다.</mm-heading>
           <mm-paragraph size="large">
             신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은
             콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다. Input zooming on iOS devices ::
@@ -140,7 +131,7 @@ const main = html`
       </mm-surface>
     </mm-flex>
     <mm-separator variant="section"></mm-separator>
-    <mm-content-section heading="댓글 192">
+    <mm-content-section heading="댓글 192" heading-level="3">
       <mm-flex direction="column" gap="8">
         <mm-comment-input
           placeholder="댓글을 입력해 주세요."
@@ -175,7 +166,7 @@ const main = html`
   </mm-main>
 
   <mm-flex direction="column" gap="8" style="padding: var(--space-8) var(--layout-padding-inline)">
-    <mm-content-section heading="더 읽어보기">
+    <mm-content-section heading="더 읽어보기" heading-level="3">
       <mm-link slot="action" href="post.html">모두 보기</mm-link>
       <mm-post-list>
         ${POSTS.map(

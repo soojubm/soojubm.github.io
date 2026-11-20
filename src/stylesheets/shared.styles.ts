@@ -39,6 +39,13 @@ export const resetStyles = css`
     font: inherit;
   }
 
+  /* reset.css의 문서 본문용 인용 박스(안쪽 여백·왼쪽 선)는 컴포넌트 안에서 되돌린다. */
+  blockquote {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+  }
+
   input,
   textarea {
     padding: 0;
