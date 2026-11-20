@@ -70,12 +70,25 @@ export const myChatBubbleStyles = [
       --chat-bubble-text-color: var(--foreground-on-primary-color);
     }
 
+    :host([status='failed']) {
+      --chat-bubble-background-color: color-mix(
+        in srgb,
+        var(--danger-color) 12%,
+        var(--background-color)
+      );
+      --chat-bubble-border: var(--border-danger);
+      --chat-bubble-text-color: var(--foreground-color);
+    }
+
     .status {
       display: block;
-      margin-top: var(--space-1);
       font-size: var(--font-size-12);
       color: color-mix(in srgb, currentColor 70%, transparent);
       text-align: right;
+    }
+
+    :host([status='failed']) .status {
+      color: var(--danger-color);
     }
   `,
 ]

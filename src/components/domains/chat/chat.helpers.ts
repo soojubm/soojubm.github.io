@@ -46,27 +46,6 @@ export const renderChatDate = (datetime: string) => {
   `
 }
 
-export const renderChatMessageFailedActions = (failed: boolean, onRetry?: () => void) => {
-  if (!failed) return nothing
-
-  return html`
-    <span class="failed-actions">
-      <mm-text size="12" color="danger" role="alert">전송 실패</mm-text>
-      ${onRetry ? renderRetryButton(onRetry) : nothing}
-    </span>
-  `
-}
-
-const renderRetryButton = (onRetry: () => void) => html`
-  <mm-icon-button
-    size="small"
-    variant="ghost"
-    icon=${ICON_NAMES.RETRY}
-    aria-label="재전송"
-    @click=${onRetry}
-  ></mm-icon-button>
-`
-
 const renderChatBubbleImages = (images: ChatImage[], typing: boolean) => {
   if (!isChatBubbleImage(images, typing)) return nothing
 

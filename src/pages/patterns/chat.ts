@@ -91,12 +91,14 @@ const main = html`
               </mm-chat-attachment>
             </mm-ai-chat-message>
 
-            <mm-my-chat-message failed @retry=${handleRetry}>
-              <mm-my-chat-bubble>네트워크 오류로 전송에 실패한 메시지입니다.</mm-my-chat-bubble>
+            <mm-my-chat-message @retry=${handleRetry}>
+              <mm-my-chat-bubble status="failed">
+                네트워크 오류로 전송에 실패한 메시지입니다.
+              </mm-my-chat-bubble>
             </mm-my-chat-message>
 
             <mm-my-chat-message datetime="2022-05-17T00:01">
-              <mm-my-chat-bubble status="전송됨">
+              <mm-my-chat-bubble status="sent">
                 감사합니다! 정리된 내용 확인했어요.
               </mm-my-chat-bubble>
               <mm-my-chat-bubble
@@ -131,7 +133,7 @@ const main = html`
             </mm-participant-chat-message>
 
             <mm-my-chat-message>
-              <mm-my-chat-bubble status="읽음">
+              <mm-my-chat-bubble status="read">
                 반갑습니다! 오늘도 좋은 하루 보내세요.
               </mm-my-chat-bubble>
             </mm-my-chat-message>
