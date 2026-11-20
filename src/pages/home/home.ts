@@ -139,57 +139,42 @@ const samplerSections: SamplerSection[] = [
 const samplerOptions = samplerSections.map(({ id, label }) => ({ value: id, label }))
 
 interface Thought {
+  caption: string
   heading: string
   body: string
+  points: string[]
 }
 
 const designSystemThoughts: Thought[] = [
   {
-    heading: '디자인 시스템도 린하게',
-    body: '제품은 린하게 만들면서 디자인 시스템은 왜 그렇지 않은가. 디자인 시스템의 규모보다 중요한 것은 제품의 의사결정을 얼마나 줄여 주는가다. 토큰을 통해 결정의 기준을 한곳에 모으고, 변경하기 쉽게 추상화하자. 모든 플랫폼에 토큰을 일관되게 적용한다는 거대한 목표보다, 필요한 변경을 적은 비용으로 반영할 수 있는 구조가 먼저다. 제품에 필요한 최소한의 기능과 최대한의 효율은 컴포넌트의 수가 아니라, 적절한 추상화에서 나온다.',
+    caption: '실현 방식 1',
+    heading: 'Lean',
+    body: '제품은 린하게 만들면서 디자인 시스템은 왜 완결된 체계를 추구하는가. 디자인 시스템의 목적은 체계를 구축하는 것이 아니라 제품 개발을 더 효율적으로 만드는 것이다.',
+    points: [
+      '토큰으로 결정의 기준을 한곳에 모아 변경하기 쉽게 만든다.',
+      '필요한 만큼만 추상화한다. 중복을 없애려고 불필요한 추상화를 만들지 않는다.',
+      '모든 플랫폼에 일관되게 적용한다는 큰 목표보다, 필요한 변경을 적은 비용으로 반영할 수 있는 구조를 먼저 갖춘다.',
+      '실제 제품을 만드는 과정에서 드러나는 문제와 동료의 피드백을 모아 필요한 부분부터 개선한다.',
+    ],
   },
   {
-    heading: '규칙은 기본값이다',
-    body: '우리가 해결하려는 문제는 인터페이스 자체가 아니라, 제품을 만드는 과정에서 반복되는 불필요한 의사결정이다. 세부사항에 대한 논의를 줄이려면 규칙을 명확히 정하고 기본값으로 따라야 한다. 다만 규칙은 목적이 아니라 수단이다. 출시를 앞당기거나 성과를 개선할 수 있다면 예외를 허용하고, 새로운 규칙은 언제든 실험할 수 있다. 기존의 규칙을 바꾸고 싶다면 그 이유와 기대 효과를 설득하는 것이 프로덕트 디자이너의 역할이다.',
-  },
-  {
-    heading: 'Constraint-driven design',
-    body: '기술적 제약을 받아들이고, 사용자에게 새로운 학습을 요구하는 인터페이스를 최소화한다. 구조는 변경하기 쉽도록 설계하되, 중복을 없애기 위해 불필요한 추상화를 만들지 않는다. 모든 내용을 문서화하거나 처음부터 완결된 체계를 갖추려 하지 않는다. 대신 실제 제품을 만드는 과정에서 드러나는 문제와 동료의 피드백을 모아 필요한 부분부터 개선한다.',
-  },
-  {
-    heading: 'tone은 색, destructive는 의도',
-    body: 'tone은 mm-tag·mm-dot에서는 pink·cyan 같은 색 팔레트를, mm-menu-item에서는 danger라는 의도를 뜻했다. 한 prop이 종류가 다른 값을 받으면 새 값을 더할 때마다 어느 쪽인지 다시 따져야 하고, 소비자는 같은 이름의 prop이 컴포넌트마다 다르게 동작하는 것을 외워야 한다. 그래서 파괴적 행동은 값이 하나뿐인 의도이므로 destructive boolean으로 분리하고, tone은 색 팔레트에만 남긴다. variant도 같은 원칙을 따른다. primary·secondary·tertiary는 강조 단계이고 destructive는 의도다. 축마다 이름을 따로 두면 조합이 곱으로 늘지 않고, 강조 단계는 그대로 둔 채 파괴적 의도만 얹을 수 있다.',
+    caption: '실현 방식 2',
+    heading: 'Rule',
+    body: '우리가 해결하려는 문제는 인터페이스 자체가 아니라, 제품을 만드는 과정에서 반복되는 불필요한 의사결정이다.',
+    points: [
+      '세부사항에 대한 논의를 줄이려면 규칙을 명확히 정하고 기본값으로 따라야 한다.',
+      '규칙은 목적이 아니라 수단이다. 출시를 앞당기거나 제품 성과를 개선할 수 있다면 예외를 허용한다.',
+      '규칙을 변경하려면 기존 규칙의 문제와 변경에 따른 기대 효과를 설명해야 한다. 프로덕트 디자이너는 규칙의 필요성을 제안하고, 그 효과를 검증할 책임이 있다.',
+    ],
   },
 ]
 
-interface Stat {
-  value: string
-  description: string
-}
-
-const stats: Stat[] = [
-  { value: '1,671', description: 'icons available in this very moment, and they’re growing fast.' },
-  {
-    value: '100%',
-    description: 'free icons. Iconoir is open source and we’re ready for your help.',
-  },
-  {
-    value: '738K',
-    description: 'downloads a month on React alone. Also on React Native, Flutter and CSS.',
-  },
-  {
-    value: '4.6K',
-    description: 'people starred the project on GitHub. Show your support and be one of them.',
-  },
-]
-
-const renderStatCard = ({ value, description }: Stat) => html`
-  <mm-surface variant="outlined" radius="large">
-    <mm-flex direction="column" gap="2">
-      <mm-text size="32" weight="bold">${value}</mm-text>
-      <mm-text size="14" color="light">${description}</mm-text>
-    </mm-flex>
-  </mm-surface>
+// 핵심 이름은 제목으로, 분류명은 그 위의 캡션으로 둔다. 괄호·대시로 잇지 않는다.
+const renderCardHeading = (caption: string, heading: string) => html`
+  <mm-flex direction="column" gap="1">
+    <mm-caption>${caption}</mm-caption>
+    <mm-heading level="3">${heading}</mm-heading>
+  </mm-flex>
 `
 
 // 임시 전시: MoreMenu·CommentItem 패턴을 React 컴포넌트로 옮긴 모습
@@ -227,22 +212,24 @@ const features: ComponentFeatureItem[] = [
   },
 ]
 
+// 쉼표 뒤에서 행갈이한다. 제목의 \n은 text-block이 줄바꿈으로 그린다.
+const heroHeading = 'Fewer decisions,\nfaster releases.'
+
 const main = html`
   <mm-main>
     <mm-flex direction="column" gap="section">
-      <div
-        style="margin: -2rem calc(var(--layout-padding-inline) * -1); padding: 4rem var(--layout-padding-inline); background:var(--background-subtle-color);"
-      >
-        <mm-hero-section
-          heading="Our research teams study the inner workings of AI models, stress-test their limits, and track their effects in the real world."
-        >
-          <mm-text-list
-            .texts=${['Web Component - Lit', 'Github Actions', 'Pattern-first design']}
-          ></mm-text-list>
-        </mm-hero-section>
-      </div>
-
-      <mm-grid columns="4" gap="4">${stats.map(renderStatCard)}</mm-grid>
+      <mm-hero-section heading=${heroHeading}>
+        <mm-text-list
+          .texts=${[
+            'Web Component - Lit',
+            'TypeScript',
+            'Webpack',
+            'ESLint · Stylelint · Prettier',
+            'Pagefind',
+            'Github Actions',
+          ]}
+        ></mm-text-list>
+      </mm-hero-section>
 
       <div hidden>
         <mm-surface>
@@ -282,116 +269,63 @@ const main = html`
         </mm-surface>
       </div>
 
-      <div>
-        <p>패턴 우선 (Pattern-first)</p>
-        <p>제품에서 필요한 패턴 - 반복되는 구조와 동작 추출 - 컴포넌트 · 토큰 · 레이아웃 정의</p>
+      <mm-flex direction="column" gap="4">
+        <mm-grid columns="2" gap="4">
+          <mm-surface variant="outlined" radius="large">
+            <mm-flex direction="column" gap="2">
+              <mm-caption>목표</mm-caption>
+              <mm-flex direction="column" gap="4">
+                <mm-text-block
+                  level="3"
+                  heading="Fast release"
+                  description="제품을 완성하고 사용자에게 전달하는 시간 단축"
+                ></mm-text-block>
+                <mm-text-block
+                  level="3"
+                  heading="Fast experiment"
+                  description="가설을 검증하고 제품을 개선하는 주기 단축"
+                ></mm-text-block>
+              </mm-flex>
+            </mm-flex>
+          </mm-surface>
+          <mm-surface variant="filled" radius="large">
+            <mm-flex direction="column" gap="2">
+              ${renderCardHeading('접근 방식', 'Pattern-first')}
+              <mm-paragraph>
+                제품에서 필요한 패턴 → 반복되는 구조와 동작 추출 → 컴포넌트 · 토큰 · 레이아웃 정의
+              </mm-paragraph>
+            </mm-flex>
+          </mm-surface>
+        </mm-grid>
 
-        <p>목표: 명확한 인터페이스 · 빠른 출시</p>
-
-        <p>설계 원칙: - 표준과 관습을 준수한다. - 제품 전반의 일관성을 유지한다.</p>
-
-        <p>실현 방식</p>
-        <mm-text-list
-          .texts=${[
-            '패턴에서 출발해 필요한 기반을 정의한다. 제품에 필요한 인터페이스 패턴을 먼저 정의한다. 추상적인 기반을 미리 구축하지 않는다.',
-            '적게 디자인하고 불필요한 선택지를 만들지 않는다.',
-            '익숙한 인터페이스와 웹 표준을 활용한다.',
-            '디자인 규약을 엄격하게 적용한다.',
-          ]}
-        ></mm-text-list>
-      </div>
-
-      <!-- <mm-component-feature-list .features=${features}></mm-component-feature-list> -->
-
-      <mm-paragraph-group>
-        ${designSystemThoughts.map(
-          ({ heading, body }) => html`
-                <mm-text-block level="3" heading=${heading} description=${body}></mm-text-block>
-                </mm-text-block>
-              `,
-        )}
-      </mm-paragraph-group>
-
-      <mm-content-section-list>
-        <mm-content-section heading="Meta Guidelines">
-          <mm-paragraph>모든 것을 문서화하지 않는다.</mm-paragraph>
-          <mm-text-list
-            variant="check"
-            .texts=${[
-              '문서화할 가치가 있다고 판단하려면 특정 횟수(예: 3회)만큼 발생해야 합니까?',
-              '자주(예: 월 1회 이상) 프로세스를 수행해야 합니까?',
-            ]}
-          ></mm-text-list>
-          <mm-content-section heading-level="4" heading="컴포넌트 페이지의 헤더 디스크립션">
+        <mm-surface variant="outlined" radius="large">
+          <mm-flex direction="column" gap="2">
+            ${renderCardHeading('설계 원칙', 'Constraint-driven design')}
+            <mm-paragraph>제약을 설계의 출발점으로 삼는다.</mm-paragraph>
             <mm-text-list
-              variant="check"
               .texts=${[
-                '컴포넌트 페이지 설명은 무엇인지, 어떻게 동작하는지, 사용자에게 어떤 이득인지 순서로 쓴다.',
+                '표준과 관습을 활용한다. 검증된 웹 표준과 기존 인터페이스 관습을 우선하고, 사용자에게 새로운 학습을 요구하는 패턴을 최소화한다.',
+                '기술적 제약을 받아들인다. 모든 환경에서 이상적인 구조를 추구하기보다 주어진 기술 환경에서 효율적인 해결책을 찾는다.',
+                '필요한 만큼 설계한다. 완결된 체계를 먼저 만드는 대신 실제 제품에 필요한 구조와 기능부터 정의한다.',
               ]}
             ></mm-text-list>
-          </mm-content-section>
-          <!-- <mm-content-section heading-level="4" heading="Prop 표">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-            '컴포넌트 페이지의 prop 표는 손으로 적지 않는다. 스크립트가 컴포넌트 코드의 @property 선언을 읽어 표를 만든다(npm run manifest). 이름·타입·기본값이 코드 한 곳에서 나오므로 문서가 구현과 어긋나지 않는다.',
-            '이벤트·slot·메서드는 선언에서 읽을 수 없어 페이지에 손으로 덧붙인다.',
-            '부모가 대신 채우는 prop은 선언에 @internal을 달아 표에서 뺀다. 예: mm-step이 번호를 매기는 mm-step-item의 value',
-            '만든 결과(src/generated)는 커밋하지 않는다. 설치·개발 서버·빌드 때마다 새로 만든다.',
-          ]}
-            ></mm-text-list>
-          </mm-content-section> -->
-        </mm-content-section>
+          </mm-flex>
+        </mm-surface>
 
-        <mm-content-section heading="Code Conventions">
-          <mm-paragraph>
-            ESLint나 Prettier가 처리하는 들여쓰기, 세미콜론 같은 규칙은 도구에 맡기고,
-          </mm-paragraph>
-
-          <mm-heading level="4">공통 코딩 스타일</mm-heading>
-          <mm-text-list
-            .texts=${[
-              '이벤트 핸들러 함수는 `handle` 접두사를 사용한다. (예: `handleClick`, `handleSubmit`)',
-              '컴포넌트의 이벤트 콜백 props는 `on` 접두사를 사용한다. (예: `onClick`, `onSubmit`)',
-            ]}
-          ></mm-text-list>
-
-          <mm-heading level="4">Lit 코딩 스타일</mm-heading>
-          <mm-text-list
-            .texts=${[
-              "host의 role이 고정값이면 connectedCallback에서 setAttribute('role', ...)로 지정하고, 외부에서 변경할 수 있어야 할 때만 role prop으로 공개한다.",
-              '조건부 DOM 조각의 렌더링 로직이 복잡해지면 render*() 메서드로 분리하고, render()에서는 해당 메서드를 직접 호출해 전체 구조를 드러낸다.',
-              'render() 내부의 렌더링 조건이 복잡해지면 render*() 메서드로 분리하고, 메서드 이름은 UI 조각의 의미를 드러낸다. 예: renderContent() 대신 renderImage()',
-            ]}
-          ></mm-text-list>
-          <mm-separator></mm-separator>
-          <mm-text-list
-            .texts=${[
-              '여러 컴포넌트에서 공유하는 동작 로직은 훅이나 컨트롤러로 분리하고, 시각적 표현은 공유 스타일과 템플릿을 조합해 구성한다. 이를 통해 컴포넌트별 표현은 유지하면서 공통 동작을 일관되게 재사용한다.',
-            ]}
-          ></mm-text-list>
-
-          <mm-text weight="bold">언제 분리할까요?</mm-text>
-          <mm-paragraph>
-            동일한 동작 로직이 두 곳 이상에서 사용될 때 훅이나 컨트롤러로 분리한다. 시각적 표현은
-            공유 스타일과 템플릿으로 재사용하고, 각 컴포넌트는 고유한 표현을 유지한다.
-          </mm-paragraph>
-
-          <mm-separator></mm-separator>
-          <!-- 파생 컴포넌트, 조합/합성 -->
-          <mm-paragraph>
-            파생 컴포넌트는 기반 컴포넌트의 역할에 따라 재사용 방식을 선택한다. 단순한 시각 요소는
-            기반 컴포넌트를 직접 렌더링하고, 상호작용이나 접근성 의미가 있는 컴포넌트는 공유
-            스타일과 템플릿만 재사용한다.
-          </mm-paragraph>
-          <mm-text-list
-            .texts=${[
-              'mm-current-indicator는 mm-dot을 렌더링한다.',
-              'mm-dismiss-button은 iconButtonStyles와 renderIconButton을 조합한다.',
-            ]}
-          ></mm-text-list>
-        </mm-content-section>
-      </mm-content-section-list>
+        <mm-grid columns="2" gap="4">
+          ${designSystemThoughts.map(
+            ({ caption, heading, body, points }) => html`
+              <mm-surface variant="outlined" radius="large">
+                <mm-flex direction="column" gap="2">
+                  ${renderCardHeading(caption, heading)}
+                  <mm-paragraph>${body}</mm-paragraph>
+                  <mm-text-list .texts=${points}></mm-text-list>
+                </mm-flex>
+              </mm-surface>
+            `,
+          )}
+        </mm-grid>
+      </mm-flex>
 
       <!-- <mm-content-section heading="React로 옮긴 MoreMenu 패턴">
         <mm-code-block language="typescript" .code=${reactMoreMenuCode}></mm-code-block>

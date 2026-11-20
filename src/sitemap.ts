@@ -48,6 +48,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'interaction', name: 'Interaction' },
       { id: 'pattern', name: 'Pattern' },
       { id: 'content', name: 'Content' },
+      { id: 'conventions', name: 'Conventions' },
     ],
   },
   {

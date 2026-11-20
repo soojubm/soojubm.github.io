@@ -253,10 +253,22 @@ const main = html`
             </mm-component-notice>
           </mm-content-section>
 
+          <mm-content-section heading-level="3" heading="제목과 분류명">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '핵심 이름은 제목으로, 분류명은 제목 위 캡션으로 둔다',
+                  '괄호나 대시로 이으면 두 이름이 한 덩어리로 읽혀 무엇이 핵심인지 훑는 눈이 멈춘다. 캡션으로 나누면 분류는 맥락으로 읽히고 제목만 훑어도 핵심이 보인다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
           <mm-content-section heading-level="3" heading="콘텐츠 모듈의 대비">
             <mm-paragraph>
-              상태변화·결과·맥락전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의
-              주의를 끌어온다
+              상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의
+              주의를 끌어옵니다.
             </mm-paragraph>
             <mm-paragraph>
               완료·오류·빈 상태를 보여 주는 ${code('mm-result')}가 이 규칙을 따릅니다.

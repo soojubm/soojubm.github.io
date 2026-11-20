@@ -47,10 +47,23 @@ export class TextBlock extends LitElement {
 
   render() {
     return html`
-      <mm-heading level=${Number(this.level)}>${this.heading}</mm-heading>
+      <mm-heading level=${Number(this.level)}>${this.renderHeadingLines()}</mm-heading>
       ${this.renderDescription()}
       <slot></slot>
     `
+  }
+
+  // 제목 안의 줄바꿈 문자(\n)는 행갈이로 그린다. 태그라인처럼 끊을 자리를 작성 단계에서 정하는 제목에 쓴다.
+  private renderHeadingLines() {
+    const lines = this.heading.split('\n')
+    return lines.map((line, index) =>
+      index === 0
+        ? line
+        : html`
+            <br />
+            ${line}
+          `,
+    )
   }
 
   private renderDescription() {

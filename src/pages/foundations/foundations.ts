@@ -10,6 +10,7 @@ const FOUNDATION_DESCRIPTIONS: Record<string, string> = {
   interaction: '요소가 반응하는 상태와 선택지를 고르는 방식을 정합니다.',
   pattern: '여러 컴포넌트가 이어지는 펼침·검색·모음 흐름을 정합니다.',
   content: '텍스트의 이름과 어조, 아이콘의 뜻을 정합니다.',
+  conventions: '코드와 문서를 쓰는 방식을 정합니다.',
 }
 
 // 사이드바와 같은 목록에서 만들어, 축을 추가하거나 옮겨도 카드가 빠지지 않는다.
