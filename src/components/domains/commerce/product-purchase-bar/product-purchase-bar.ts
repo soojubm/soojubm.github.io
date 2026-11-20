@@ -1,6 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { MEDIA } from '@/constants'
+
 import '@/components/domains/commerce/order-product-item'
 import '@/components/domains/commerce/product-price'
 
@@ -30,6 +32,21 @@ export class ProductPurchaseBar extends LitElement {
     mm-order-product-item {
       flex: 1;
       min-width: 0;
+    }
+
+    /* 좁은 폭에서는 상품 요약이 한 줄을 차지하고, 가격과 구매 버튼이 아래 줄을 나눈다. */
+    @media ${MEDIA.narrow} {
+      :host {
+        flex-wrap: wrap;
+      }
+
+      mm-order-product-item {
+        flex-basis: 100%;
+      }
+
+      mm-product-price {
+        flex: 1;
+      }
     }
   `
   @property({ type: String }) name = ''

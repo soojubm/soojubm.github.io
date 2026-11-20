@@ -14,8 +14,10 @@ export class ProductPrice extends LitElement {
   static styles = css`
     :host {
       display: flex;
+      flex-wrap: wrap;
       align-items: baseline;
-      gap: var(--space-2);
+      gap: 0 var(--space-2);
+      white-space: nowrap;
     }
 
     del {
