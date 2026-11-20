@@ -8,7 +8,7 @@ import { MEDIA } from '@/constants'
  * 상단 바나 푸터는 이 안이 아니라 형제로 둔다.
  * 사이드바가 열릴 때 밀려나는 폭은 body가 노출하는 `--sidebar-content-shift`를 따르며,
  * 스스로 가운데 정렬되는 width·layout 변형은 그 대신 기본 좌우 패딩으로 되돌린다.
- * `layout="split"`은 첫 자식(mm-page-header 또는 이를 묶은 레이아웃)을 왼쪽 칼럼에 sticky로 두고 나머지 콘텐츠를 오른쪽에 둔다.
+ * `layout="split"`은 첫 자식(mm-page-header 또는 이를 묶은 레이아웃)을 왼쪽 칼럼에 sticky로 두고 나머지 콘텐츠를 더 넓은 오른쪽(1:2)에 둔다.
  * 칼럼 간격은 좌우 패딩과 같아, 오른쪽 칼럼의 콘텐츠 프레임이 패딩만큼 바깥으로 나와도 왼쪽 칼럼과 겹치지 않는다.
  * 좁은 폭에서는 한 칼럼으로 접히며 sticky도 풀린다.
  */
@@ -73,7 +73,7 @@ export class Main extends LitElement {
 
     :host([layout='split']) {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
       gap: var(--layout-padding-inline);
     }
 

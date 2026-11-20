@@ -9,6 +9,7 @@ export class MetaItem extends LitElement {
   static styles = [metaItemStyles]
   @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' =
     'horizontal'
+  @property({ type: String, reflect: true }) align: 'start' | 'center' = 'start'
   @property({ type: String }) label = ''
   @property({ type: String }) value = ''
   @property({ type: String, attribute: 'value-size' }) valueSize: 'medium' | 'large' = 'medium'

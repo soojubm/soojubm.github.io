@@ -89,6 +89,7 @@ export const ICON_CATALOG = {
   },
 
   etc: {
+    AWARD: 'trophy',
     BOOK: 'book',
     CODE: 'code',
     DOCUMENT: 'page',

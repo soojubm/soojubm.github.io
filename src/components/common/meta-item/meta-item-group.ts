@@ -28,6 +28,10 @@ export class MetaItemGroup extends LitElement {
       flex-direction: column;
     }
 
+    :host([justify-content='center']) {
+      justify-content: center;
+    }
+
     :host([wrap='wrap']) {
       flex-wrap: wrap;
     }
@@ -40,6 +44,9 @@ export class MetaItemGroup extends LitElement {
   @property({ type: String, reflect: true }) direction: FlexDirection = 'row'
   @property({ type: String, reflect: true }) gap: MetaItemGroupGap = '4'
   @property({ type: String, reflect: true }) wrap: FlexWrap = 'nowrap'
+  @property({ type: String, reflect: true, attribute: 'justify-content' }) justifyContent:
+    | 'flex-start'
+    | 'center' = 'flex-start'
 
   connectedCallback() {
     super.connectedCallback()

@@ -11,6 +11,10 @@ export const metaItemStyles = css`
     gap: 0;
   }
 
+  :host([layout='stacked'][align='center']) {
+    align-items: center;
+  }
+
   :host([layout='inline']) {
     justify-content: flex-start;
     gap: var(--space-2);
