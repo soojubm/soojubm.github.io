@@ -140,7 +140,7 @@ const main = html`
       </mm-surface>
     </mm-flex>
     <mm-separator variant="section"></mm-separator>
-    <mm-content-section heading="댓글 192" heading-level="3">
+    <mm-content-section heading="댓글 192">
       <mm-flex direction="column" gap="8">
         <mm-comment-input
           placeholder="댓글을 입력해 주세요."
@@ -175,7 +175,7 @@ const main = html`
   </mm-main>
 
   <mm-flex direction="column" gap="8" style="padding: var(--space-8) var(--layout-padding-inline)">
-    <mm-content-section heading="더 읽어보기" heading-level="3">
+    <mm-content-section heading="더 읽어보기">
       <mm-link slot="action" href="post.html">모두 보기</mm-link>
       <mm-post-list>
         ${POSTS.map(

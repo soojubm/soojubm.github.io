@@ -30,11 +30,12 @@ export class PostItem extends LitElement {
   @property({ type: String }) title = ''
   @property({ type: String }) category = ''
   @property({ type: String }) date = ''
+  @property({ type: Number, attribute: 'heading-level' }) headingLevel = 3
 
   render() {
     const body = html`
       <mm-thumbnail src=${this.thumbnail} ratio="1:1"></mm-thumbnail>
-      <mm-heading level="3">${this.title}</mm-heading>
+      <mm-heading level=${this.headingLevel}>${this.title}</mm-heading>
       <mm-meta-item-group gap="2">
         <mm-text>${this.category}</mm-text>
         <mm-text as="time" color="light">${this.date}</mm-text>
