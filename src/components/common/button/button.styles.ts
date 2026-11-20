@@ -27,7 +27,7 @@ export const buttonBaseStyles = [
   css`
     :host {
       --button-height: var(--size-32);
-      --button-min-width: 4rem;
+      --button-min-width: 3rem;
       --button-border: var(--border-transparent);
       --button-padding-inline: var(--space-3);
       --button-border-radius: var(--radius);
@@ -132,6 +132,7 @@ export const toggleButtonStyles = css`
 
   button {
     width: 100%;
+    min-width: var(--button-min-width);
     border-radius: var(--toggle-button-border-radius);
   }
 `

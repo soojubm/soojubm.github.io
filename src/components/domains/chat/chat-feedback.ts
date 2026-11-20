@@ -42,10 +42,6 @@ export class ChatFeedback extends LitElement {
       align-items: center;
       gap: var(--space-2);
     }
-
-    mm-button {
-      --button-min-width: 3rem;
-    }
   `
   @property({ type: String }) question = ''
   @state() private value: ChatFeedbackValue | null = null
