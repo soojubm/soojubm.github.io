@@ -3,10 +3,9 @@ import { html } from 'lit'
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 
-// 반응·재전송·중단 버튼은 이벤트를 구독해야 나타난다. 데모라 동작은 연결하지 않는다.
-const handleChatReaction = () => {}
+// 닫기·재전송 버튼은 이벤트를 구독해야 나타난다. 데모라 동작은 연결하지 않는다.
+const handleFeedbackDismiss = () => {}
 const handleRetry = () => {}
-const handleStop = () => {}
 
 const main = html`
   <mm-main layout="chat" full-width>
@@ -20,10 +19,10 @@ const main = html`
           <mm-flex direction="column" gap="4">
             <mm-chat-date datetime="2022-05-17"></mm-chat-date>
 
-            <mm-ai-chat-message datetime="2022-05-17T00:00" @chat-reaction=${handleChatReaction}>
+            <mm-ai-chat-message datetime="2022-05-17T00:00">
               <mm-ai-chat-bubble>
                 안녕하세요
-                <mm-text aria-hidden="true">👋</mm-text>
+                <span aria-hidden="true">👋</span>
                 무엇을 도와드릴까요?
               </mm-ai-chat-bubble>
               <mm-ai-chat-bubble>
@@ -37,7 +36,7 @@ const main = html`
               ></mm-ai-chat-bubble>
             </mm-ai-chat-message>
 
-            <mm-ai-chat-message @chat-reaction=${handleChatReaction}>
+            <mm-ai-chat-message>
               <mm-ai-chat-bubble>
                 <mm-flex direction="column" gap="2">
                   <mm-paragraph>
@@ -121,6 +120,14 @@ const main = html`
               <mm-participant-chat-bubble>
                 같은 사람이 연속으로 보낸 버블도 한 메시지 안에서 묶을 수 있어요.
               </mm-participant-chat-bubble>
+              <mm-participant-chat-bubble>
+                메시지는 누가 보냈는지를 맡고, 버블은 말풍선 하나를 맡습니다. 같은 사람이 연속으로
+                보낸 글은 한 메시지 안에 버블을 여러 개 두면 됩니다.
+              </mm-participant-chat-bubble>
+              <mm-participant-chat-bubble>
+                TODO: 새 메시지가 붙을 때 바닥에 있으면 따라 내려가는 자동 스크롤. 위로 올려 둔
+                상태에서 새 메시지가 오면 알려주는 표시.
+              </mm-participant-chat-bubble>
             </mm-participant-chat-message>
 
             <mm-my-chat-message>
@@ -137,10 +144,14 @@ const main = html`
       </mm-chat-body>
 
       <mm-chat-footer>
+        <mm-chat-feedback
+          question="이번 대화는 어떤가요?"
+          @dismiss=${handleFeedbackDismiss}
+        ></mm-chat-feedback>
         <mm-chat-suggestions>
           <mm-chat-suggestion>
             네, 좋아요
-            <mm-text aria-hidden="true">👍</mm-text>
+            <span aria-hidden="true">👍</span>
           </mm-chat-suggestion>
           <mm-chat-suggestion>다시 설명해 주세요</mm-chat-suggestion>
           <mm-chat-suggestion icon=${ICON_NAMES.DATE}>일정 잡기</mm-chat-suggestion>
@@ -149,8 +160,6 @@ const main = html`
         <mm-prompt-input
           placeholder="메시지를 입력하세요..."
           model="claude-sonnet"
-          loading
-          @stop=${handleStop}
         ></mm-prompt-input>
       </mm-chat-footer>
     </mm-chat-room>

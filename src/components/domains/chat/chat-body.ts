@@ -23,6 +23,8 @@ export class ChatBody extends LitElement {
       box-sizing: border-box;
       overflow-x: hidden;
       overflow-y: auto;
+      /* 스크롤바가 생겨도 좌우 폭이 같아 피드가 헤더·푸터와 같은 중심에 놓인다. */
+      scrollbar-gutter: stable both-edges;
 
       ${scrollbarStyles};
     }
