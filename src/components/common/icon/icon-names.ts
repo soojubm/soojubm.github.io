@@ -22,6 +22,7 @@ export const ICON_CATALOG = {
     RETRY: 'refresh-double',
     SETTINGS: 'settings',
     SUBMIT: 'arrow-up',
+    STOP: 'square',
     SHARE: 'arrow-up-right',
     CAMERA: 'camera',
     HIDE: 'eye-closed',
@@ -41,6 +42,7 @@ export const ICON_CATALOG = {
     PREVIOUS: 'arrow-left',
     NEXT: 'arrow-right',
     SCROLL_TOP: 'arrow-up',
+    SCROLL_BOTTOM: 'arrow-down',
   },
 
   status: {

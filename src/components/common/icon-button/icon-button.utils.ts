@@ -50,6 +50,7 @@ export interface IconButtonRenderOptions {
   onClick?: (event: Event) => void
   ariaHasPopup?: AriaHasPopup
   ariaExpanded?: AriaBoolean
+  ariaPressed?: AriaBoolean
   ariaControls?: AriaIdRef
 }
 
@@ -65,6 +66,7 @@ export const renderIconButton = ({
   onClick = () => {},
   ariaHasPopup,
   ariaExpanded,
+  ariaPressed,
   ariaControls,
 }: IconButtonRenderOptions): TemplateResult => html`
   <mm-tooltip content=${ariaLabel} placement=${tooltipPlacement}>
@@ -74,6 +76,7 @@ export const renderIconButton = ({
       aria-label=${ariaLabel}
       aria-haspopup=${ifDefined(ariaHasPopup ?? undefined)}
       aria-expanded=${ifDefined(ariaExpanded ?? undefined)}
+      aria-pressed=${ifDefined(ariaPressed ?? undefined)}
       aria-controls=${ifDefined(ariaControls ?? undefined)}
       ?disabled=${disabled}
       @click=${onClick}
