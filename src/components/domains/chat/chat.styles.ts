@@ -19,16 +19,24 @@ export const chatBubbleStyles = css`
     --thumbnail-border-radius: var(--bubble-border-radius);
   }
 
+  /* 점 3개는 너비가 고정이라 부모 기준 max-width 비율에 눌리면 안 된다. */
+  :host([typing]) {
+    max-width: none;
+  }
+
+  :host([typing]) mm-typing-indicator {
+    display: flex;
+  }
+
   :host([image]) {
     padding: 0;
     background: none;
     overflow: hidden;
   }
 
-  :host([image]) mm-thumbnail {
-    display: block;
-    max-width: 240px;
-    overflow: hidden;
+  :host([image]) mm-grid {
+    width: 240px;
+    max-width: 100%;
   }
 `
 

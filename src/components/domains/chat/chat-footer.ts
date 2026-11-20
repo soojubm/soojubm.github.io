@@ -8,6 +8,7 @@ import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/share
 export class ChatFooter extends LitElement {
   static styles = css`
     :host {
+      padding-inline: var(--layout-padding-inline);
       box-sizing: border-box;
       ${layerContainerStyles};
       z-index: var(--material-zindex-elevated);
@@ -30,7 +31,7 @@ export class ChatFooter extends LitElement {
       max-width: var(--layout-width-small);
       margin: 0 auto;
       gap: var(--space-3);
-      padding: var(--space-4) var(--layout-padding-inline);
+      padding-block: var(--space-4);
       box-sizing: border-box;
     }
   `

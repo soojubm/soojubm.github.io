@@ -16,6 +16,13 @@ export class ChatFeed extends LitElement {
     }
   `
 
+  connectedCallback() {
+    super.connectedCallback()
+    // 새 메시지가 붙을 때 스크린리더가 알리도록 log로 고정한다.
+    this.setAttribute('role', 'log')
+    if (!this.hasAttribute('aria-label')) this.setAttribute('aria-label', '대화 내용')
+  }
+
   render() {
     return html`
       <slot></slot>

@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import {
   renderChatMessageFailedActions,
@@ -39,16 +39,50 @@ export class MyChatMessage extends LitElement {
   `
   @property({ type: String }) datetime = ''
   @property({ type: Boolean, reflect: true }) failed = false
+  @state() private retryable = false
+  private retryListenerCount = 0
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('role', 'group')
+    if (!this.hasAttribute('aria-label')) this.setAttribute('aria-label', '내 메시지')
+  }
 
   render() {
     return html`
       <slot></slot>
-      ${renderChatMessageFailedActions(this.failed, () => this.handleRetryClick())}
+      ${renderChatMessageFailedActions(
+        this.failed,
+        this.retryable ? this.handleRetryClick : undefined,
+      )}
       ${renderChatMessageTime(this.datetime)}
     `
   }
 
-  private handleRetryClick() {
-    emit(this, 'retry')
+  // 소비자가 retry를 구독할 때만 재전송 버튼을 노출한다.
+  override addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions,
+  ): void {
+    super.addEventListener(type, listener, options)
+
+    if (type !== 'retry') return
+    this.retryListenerCount += 1
+    this.retryable = true
   }
+
+  override removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions,
+  ): void {
+    super.removeEventListener(type, listener, options)
+
+    if (type !== 'retry') return
+    this.retryListenerCount = Math.max(0, this.retryListenerCount - 1)
+    this.retryable = this.retryListenerCount > 0
+  }
+
+  private handleRetryClick = () => emit(this, 'retry')
 }

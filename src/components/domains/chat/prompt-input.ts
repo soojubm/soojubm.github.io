@@ -1,5 +1,5 @@
 import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
@@ -32,7 +32,10 @@ export class PromptInput extends LitElement {
   @property({ type: String }) placeholder = 'Ask me anything...'
   @property({ type: String }) model = 'claude-sonnet'
   @property({ type: String, attribute: 'submit-label' }) submitLabel = '전송'
+  @property({ type: String, attribute: 'stop-label' }) stopLabel = '생성 중단'
   @property({ type: Boolean }) loading = false
+  @state() private stoppable = false
+  private stopListenerCount = 0
   // popover는 portal로 옮겨져 한 트리에 모이므로, 인스턴스가 여럿이어도 id가 겹치지 않게 한다.
   private readonly attachMenuId = uniqueId('attach-menu')
 
@@ -107,14 +110,61 @@ export class PromptInput extends LitElement {
     return html`
       <div class="actions">
         <slot name="trailing-actions"></slot>
-        <mm-icon-button
-          variant="primary"
-          icon=${ICON_NAMES.SUBMIT}
-          aria-label=${this.submitLabel}
-          ?disabled=${this.loading}
-          @click=${this.handleSubmitClick}
-        ></mm-icon-button>
+        ${this.renderSubmitOrStop()}
       </div>
     `
+  }
+
+  // 응답을 만드는 중에는 전송 대신 중단 버튼을 보인다.
+  private renderSubmitOrStop() {
+    if (this.loading && this.stoppable) {
+      return html`
+        <mm-icon-button
+          variant="primary"
+          icon=${ICON_NAMES.STOP}
+          aria-label=${this.stopLabel}
+          @click=${this.handleStopClick}
+        ></mm-icon-button>
+      `
+    }
+
+    return html`
+      <mm-icon-button
+        variant="primary"
+        icon=${ICON_NAMES.SUBMIT}
+        aria-label=${this.submitLabel}
+        ?disabled=${this.loading}
+        @click=${this.handleSubmitClick}
+      ></mm-icon-button>
+    `
+  }
+
+  // 소비자가 stop을 구독할 때만 중단 버튼을 노출한다.
+  override addEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | AddEventListenerOptions,
+  ): void {
+    super.addEventListener(type, listener, options)
+
+    if (type !== 'stop') return
+    this.stopListenerCount += 1
+    this.stoppable = true
+  }
+
+  override removeEventListener(
+    type: string,
+    listener: EventListenerOrEventListenerObject,
+    options?: boolean | EventListenerOptions,
+  ): void {
+    super.removeEventListener(type, listener, options)
+
+    if (type !== 'stop') return
+    this.stopListenerCount = Math.max(0, this.stopListenerCount - 1)
+    this.stoppable = this.stopListenerCount > 0
+  }
+
+  private handleStopClick = () => {
+    emit(this, 'stop')
   }
 }

@@ -29,7 +29,7 @@ export class MyChatBubble extends withChatBubbleImage(LitElement) {
     if (!this.status) return nothing
 
     return html`
-      <mm-text class="status" role="status">${this.status}</mm-text>
+      <mm-text class="status">${this.status}</mm-text>
     `
   }
 }

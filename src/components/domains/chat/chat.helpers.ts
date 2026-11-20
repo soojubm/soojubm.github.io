@@ -5,54 +5,95 @@ import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 import { type Constructor } from '@/utils'
 
-const isChatBubbleImage = (src: string, typing: boolean) => !!src && !typing
+export interface ChatImage {
+  src: string
+  /** 대화 속 이미지는 내용이므로 무엇이 담겼는지 설명한다. */
+  alt: string
+}
+
+const isChatBubbleImage = (images: ChatImage[], typing: boolean) => images.length > 0 && !typing
+
+const chatTimeFormat = new Intl.DateTimeFormat('ko-KR', { hour: 'numeric', minute: '2-digit' })
+const chatDateFormat = new Intl.DateTimeFormat('ko-KR', { dateStyle: 'long' })
+
+/** 날짜만 있는 값(2022-05-17)은 UTC가 아니라 로컬 자정으로 읽는다. */
+const parseChatDatetime = (datetime: string) =>
+  new Date(datetime.length === 10 ? `${datetime}T00:00` : datetime)
+
+/** 기계가 읽는 ISO 값을 화면용 문구로 바꾼다. 읽을 수 없는 값은 그대로 보인다. */
+const formatChatDatetime = (datetime: string, format: Intl.DateTimeFormat) => {
+  const date = parseChatDatetime(datetime)
+  if (Number.isNaN(date.getTime())) return datetime
+
+  return format.format(date)
+}
 
 export const renderChatMessageTime = (datetime: string) => {
   if (!datetime) return nothing
 
   return html`
-    <mm-text as="time" size="12">${datetime}</mm-text>
+    <mm-text size="12">
+      <time datetime=${datetime}>${formatChatDatetime(datetime, chatTimeFormat)}</time>
+    </mm-text>
   `
 }
 
-export const renderChatMessageFailedActions = (failed: boolean, onRetry: () => void) => {
+export const renderChatDate = (datetime: string) => {
+  if (!datetime) return nothing
+
+  return html`
+    <time datetime=${datetime}>${formatChatDatetime(datetime, chatDateFormat)}</time>
+  `
+}
+
+export const renderChatMessageFailedActions = (failed: boolean, onRetry?: () => void) => {
   if (!failed) return nothing
 
   return html`
     <span class="failed-actions">
       <mm-text size="12" color="danger" role="alert">전송 실패</mm-text>
-      <mm-icon-button
-        size="small"
-        variant="ghost"
-        icon=${ICON_NAMES.RETRY}
-        aria-label="재전송"
-        @click=${onRetry}
-      ></mm-icon-button>
+      ${onRetry ? renderRetryButton(onRetry) : nothing}
     </span>
   `
 }
 
-const renderChatBubbleImage = (src: string, typing: boolean) => {
-  if (!isChatBubbleImage(src, typing)) return nothing
+const renderRetryButton = (onRetry: () => void) => html`
+  <mm-icon-button
+    size="small"
+    variant="ghost"
+    icon=${ICON_NAMES.RETRY}
+    aria-label="재전송"
+    @click=${onRetry}
+  ></mm-icon-button>
+`
+
+const renderChatBubbleImages = (images: ChatImage[], typing: boolean) => {
+  if (!isChatBubbleImage(images, typing)) return nothing
 
   return html`
-    <mm-thumbnail src=${src} alt="" ratio="4:3"></mm-thumbnail>
+    <mm-grid columns=${images.length === 1 ? 1 : 2} column-min-width="6rem" gap="1">
+      ${images.map(
+        ({ src, alt }) => html`
+          <mm-thumbnail src=${src} alt=${alt} ratio="4:3"></mm-thumbnail>
+        `,
+      )}
+    </mm-grid>
   `
 }
 
 export interface ChatBubbleImage {
   typing: boolean
-  src: string
+  images: ChatImage[]
 }
 
-/** ai/participant/my-chat-bubble이 공유하는 typing/src 상태와 image attribute 동기화. */
+/** ai/participant/my-chat-bubble이 공유하는 typing/images 상태와 image attribute 동기화. */
 export const withChatBubbleImage = <T extends Constructor<LitElement>>(Base: T) => {
   class ChatBubbleImageElement extends Base {
-    @property({ type: Boolean }) typing = false
-    @property({ type: String }) src = ''
+    @property({ type: Boolean, reflect: true }) typing = false
+    @property({ attribute: false }) images: ChatImage[] = []
 
     protected willUpdate() {
-      this.toggleAttribute('image', isChatBubbleImage(this.src, this.typing))
+      this.toggleAttribute('image', isChatBubbleImage(this.images, this.typing))
     }
   }
 
@@ -70,5 +111,6 @@ export const renderChatBubbleShell = (host: ChatBubbleImage, message: unknown) =
         <mm-typing-indicator></mm-typing-indicator>
       `
     : nothing}
-  ${renderChatBubbleImage(host.src, host.typing)} ${host.typing || host.src ? nothing : message}
+  ${renderChatBubbleImages(host.images, host.typing)}
+  ${host.typing || host.images.length ? nothing : message}
 `
