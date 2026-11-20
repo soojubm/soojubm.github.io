@@ -1,15 +1,15 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 
-import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
+import { surfaceBaseStyles, surfaceFilledStyles } from '@/components/common/surface/surface.styles'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/indicators/expand-indicator/expand-indicator'
 
 /**
- * 질문 하나와 접힌 답변. question이 트리거, 기본 슬롯이 펼쳐지는 답변입니다.
- * 트리거는 h4로 감싸 스크린리더가 제목 단위로 질문을 건너뛰게 한다(APG accordion).
+ * 질문 하나와 접힌 답변. question이 트리거, 기본 슬롯이 펼쳐지는 답변이다.
+ * 트리거는 h2로 감싸 스크린리더가 제목 단위로 질문을 건너뛰게 한다(APG accordion).
  */
 @customElement('mm-faq-item')
 export class FaqItem extends LitElement {
@@ -17,16 +17,9 @@ export class FaqItem extends LitElement {
     resetStyles,
     css`
       :host {
-        --faq-item-padding: var(--space-2) var(--space-4);
-        --faq-item-border: var(--border-transparent);
-        --faq-item-border-radius: var(--radius);
-        --faq-item-background-color: var(--background-subtle-color);
-
         ${surfaceBaseStyles};
-        --surface-padding: var(--faq-item-padding);
-        --surface-border: var(--faq-item-border);
-        --surface-border-radius: var(--faq-item-border-radius);
-        --surface-background-color: var(--faq-item-background-color);
+        ${surfaceFilledStyles};
+        --surface-padding: var(--space-2) var(--space-4);
       }
 
       .question {
@@ -75,12 +68,12 @@ export class FaqItem extends LitElement {
 
   render() {
     return html`
-      <h4>
+      <h2>
         <button class="question" aria-controls=${this.answerId}>
           ${this.question}
           <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
         </button>
-      </h4>
+      </h2>
 
       <div id=${this.answerId} class="answer" ?inert=${!this.open}>
         <div><slot></slot></div>

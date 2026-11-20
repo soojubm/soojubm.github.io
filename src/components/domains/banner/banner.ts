@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
+import { surfaceBaseStyles, surfaceFilledStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common'
 
 /**
@@ -14,10 +14,9 @@ export class Banner extends LitElement {
   static styles = css`
     :host {
       ${surfaceBaseStyles};
+      ${surfaceFilledStyles};
       --surface-padding: var(--space-16) var(--space-6);
-      --surface-border: var(--border-transparent);
       --surface-border-radius: var(--radius-large);
-      --surface-background-color: var(--background-subtle-color);
 
       justify-content: center;
       align-items: center;

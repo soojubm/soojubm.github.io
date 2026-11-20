@@ -1,7 +1,7 @@
 import { html } from 'lit'
 
+import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
-import { CATEGORIES, type CategoryKey } from '@/pages/mocks'
 
 interface FaqItem {
   question: string
@@ -9,22 +9,32 @@ interface FaqItem {
 }
 
 interface FaqCategory {
-  category: CategoryKey
+  icon: string
+  label: string
+  description: string
   items: FaqItem[]
 }
 
 const faqCategories: FaqCategory[] = [
   {
-    category: 'product',
+    icon: ICON_NAMES.USER,
+    label: '계정',
+    description: '이메일과 비밀번호',
     items: [
       {
         question: '이메일 주소를 변경하고 싶어요.',
         answer: '마이페이지 → 계정 설정 → 이메일 변경에서 인증 후 변경할 수 있습니다.',
       },
+      {
+        question: '비밀번호를 잊어버렸어요.',
+        answer: '로그인 화면의 비밀번호 찾기에서 가입한 이메일로 재설정 링크를 받을 수 있습니다.',
+      },
     ],
   },
   {
-    category: 'design',
+    icon: ICON_NAMES.CREDIT_CARD,
+    label: '주문·결제',
+    description: '주문 취소와 영수증',
     items: [
       {
         question: '주문을 취소하고 싶어요.',
@@ -38,7 +48,9 @@ const faqCategories: FaqCategory[] = [
     ],
   },
   {
-    category: 'engineering',
+    icon: ICON_NAMES.DELIVERY,
+    label: '배송',
+    description: '배송 기간과 배송지',
     items: [
       {
         question: '배송은 얼마나 걸리나요?',
@@ -53,8 +65,15 @@ const faqCategories: FaqCategory[] = [
   },
 ]
 
-const renderFaqCategory = ({ category, items }: FaqCategory) => html`
-  <mm-content-section heading-level="3" heading=${CATEGORIES[category].label}>
+const renderFaqCategory = ({ icon, label, description, items }: FaqCategory) => html`
+  <mm-flex direction="column" gap="2">
+    <mm-list-item
+      avatar-variant="tertiary"
+      size="medium"
+      icon=${icon}
+      label=${label}
+      description=${description}
+    ></mm-list-item>
     <mm-faq-list>
       ${items.map(
         ({ question, answer }) => html`
@@ -64,8 +83,12 @@ const renderFaqCategory = ({ category, items }: FaqCategory) => html`
         `,
       )}
     </mm-faq-list>
-  </mm-content-section>
+  </mm-flex>
 `
+
+const handleContactClick = () => {
+  window.location.href = './contact.html'
+}
 
 const main = html`
   <mm-main width="small">
@@ -75,7 +98,12 @@ const main = html`
         description="원하는 답을 찾지 못했다면 고객센터로 문의해 주세요."
       ></mm-page-header>
 
-      <mm-flex direction="column" gap="6">${faqCategories.map(renderFaqCategory)}</mm-flex>
+      <mm-flex direction="column" gap="8">${faqCategories.map(renderFaqCategory)}</mm-flex>
+
+      <mm-flex direction="column" align-items="center" gap="2">
+        <mm-paragraph>원하는 답을 찾지 못하셨나요?</mm-paragraph>
+        <mm-button variant="primary" @click=${handleContactClick}>문의하기</mm-button>
+      </mm-flex>
     </mm-flex>
   </mm-main>
 `

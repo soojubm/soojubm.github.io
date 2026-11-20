@@ -15,6 +15,11 @@ const surfaceElevatedTokens = {
   '--surface-shadow': 'var(--material-elevated-shadow)',
 }
 
+const surfaceFilledTokens = {
+  '--surface-border': 'var(--border-transparent)',
+  '--surface-background-color': 'var(--background-subtle-color)',
+}
+
 const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
   ghost: {
     '--surface-border': 'var(--border-transparent)',
@@ -25,12 +30,18 @@ const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
     '--surface-background-color': 'var(--background-color)',
   },
   outlined: {},
-  filled: {
-    '--surface-border': 'var(--border-transparent)',
-    '--surface-background-color': 'var(--background-subtle-color)',
-  },
+  filled: surfaceFilledTokens,
   elevated: surfaceElevatedTokens,
 }
+
+/** filled variant의 선언. variant 속성 없이 호스트에서 직접 면을 쓰는 컴포넌트가 가져다 쓴다. */
+export const surfaceFilledStyles = css`
+  ${unsafeCSS(
+    Object.entries(surfaceFilledTokens)
+      .map(([name, value]) => `${name}: ${value};`)
+      .join(' '),
+  )}
+`
 
 /** elevated variant의 선언. variant 속성 없이 호스트에서 직접 면을 쓰는 컴포넌트가 가져다 쓴다. */
 export const surfaceElevatedStyles = css`
