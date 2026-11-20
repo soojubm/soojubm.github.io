@@ -3,6 +3,9 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
+/** 주기가 없는 카드도 가격 블록 높이를 같게 유지해 버튼 줄이 맞도록 비운 줄을 채운다. */
+const NO_BREAK_SPACE = '\u00a0'
+
 /**
  * 요금제 하나를 담는 카드. 요금제 이름과 설명, 결제 주기당 가격, 포함 혜택을 한 장에 보여준다.
  * 배지는 badge 슬롯으로, 가입·업그레이드 버튼은 action 슬롯으로 받아 표기와 동작을 소비자가 정한다.
@@ -23,13 +26,6 @@ export class PricingCard extends LitElement {
       top: 0;
       right: 0;
     }
-
-    .price {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: var(--space-1);
-    }
   `
   @property({ type: String }) plan = ''
   @property({ type: String }) description = ''
@@ -40,12 +36,12 @@ export class PricingCard extends LitElement {
   render() {
     return html`
       <div>
-        <mm-heading level="2">${this.plan}</mm-heading>
+        <mm-text as="h2" size="18" weight="bold">${this.plan}</mm-text>
         <mm-paragraph>${this.description}</mm-paragraph>
       </div>
-      <div class="price">
-        <mm-text size="32" weight="bold">${this.price}</mm-text>
-        <mm-text color="light">${this.period}</mm-text>
+      <div>
+        <mm-text size="24" weight="bold">${this.price}</mm-text>
+        <mm-text size="12" color="light">${this.period || NO_BREAK_SPACE}</mm-text>
       </div>
       <slot name="action"></slot>
       ${this.renderFeatures()}

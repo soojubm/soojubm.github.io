@@ -13,7 +13,7 @@ export class PricingCardGroup extends LitElement {
     :host {
       display: grid;
       width: 100%;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
       gap: var(--space-8);
     }
   `
