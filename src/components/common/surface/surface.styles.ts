@@ -1,5 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
+import { MEDIA } from '@/constants'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type SurfaceVariant = 'ghost' | 'paper' | 'outlined' | 'filled' | 'elevated'
@@ -83,6 +84,24 @@ const surfaceVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', surfaceVariants))}
 `
 
+/**
+ * 좁은 화면에서 면을 페이지 좌우 여백까지 넓힌다. 내용은 여백 안쪽에 그대로 남아 페이지 본문과 정렬된다.
+ * 페이지 본문이 `--layout-padding-inline`만큼 좌우 여백을 가진 맥락을 전제한다.
+ * radius·variant가 정한 값을 덮어쓰므로 그 규칙들 뒤에 둔다.
+ */
+const surfaceBleedStyles = css`
+  @media ${MEDIA.narrow} {
+    :host([bleed]) {
+      --surface-border-radius: 0;
+
+      width: calc(100% + var(--layout-padding-inline) * 2);
+      margin-inline: calc(var(--layout-padding-inline) * -1);
+      padding-inline: var(--layout-padding-inline);
+      border-inline-width: 0;
+    }
+  }
+`
+
 export const surfaceStyles = [
   css`
     :host {
@@ -91,4 +110,5 @@ export const surfaceStyles = [
   `,
   surfaceRadiusStyles,
   surfaceVariantStyles,
+  surfaceBleedStyles,
 ]

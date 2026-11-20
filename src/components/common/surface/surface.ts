@@ -13,6 +13,8 @@ export class Surface extends LitElement {
   /** `filled`는 상호작용 가능한 액션이 있는 맥락에서만 사용한다. */
   @property({ type: String, reflect: true }) variant?: SurfaceVariant
   @property({ type: String, reflect: true }) radius?: SurfaceRadius
+  /** 좁은 화면에서 면을 화면 가장자리까지 넓힌다. 페이지 좌우 여백 안에 놓인 섹션 단위 면에 쓴다. */
+  @property({ type: Boolean, reflect: true }) bleed = false
 
   render() {
     return html`

@@ -1,6 +1,7 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
+import type { AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
 
 import '@/components/common/list-item/list-item'
@@ -28,6 +29,7 @@ export class SettingItem extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
+  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
   @property({ type: Boolean, reflect: true }) disabled = false
   @queryAssignedElements({ slot: 'action', flatten: true })
   private actions!: DisableableElement[]
@@ -37,6 +39,7 @@ export class SettingItem extends LitElement {
       <mm-list-item
         size=${this.description ? 'medium' : 'small'}
         icon=${this.icon || nothing}
+        avatar-variant=${this.avatarVariant}
         label=${this.label}
         description=${this.description}
       >

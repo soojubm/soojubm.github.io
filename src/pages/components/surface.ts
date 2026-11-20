@@ -8,7 +8,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { componentPropsOf, rule } from '@/components/domains/component'
+import { code, componentPropsOf, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const scrollThumbnails = [
@@ -86,6 +86,10 @@ const radiusCode = `<mm-surface radius="default">
   <mm-text-block level="3" heading="large radius" description="..."></mm-text-block>
 </mm-surface>`
 
+const bleedCode = `<mm-surface variant="paper" radius="large" bleed>
+  <mm-text-block level="3" heading="bleed" description="..."></mm-text-block>
+</mm-surface>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -112,6 +116,7 @@ const main = html`
       <mm-tab-list value="variant" variant="pill">
         <mm-tab value="variant">Variant</mm-tab>
         <mm-tab value="radius">Radius</mm-tab>
+        <mm-tab value="bleed">Bleed</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
@@ -169,6 +174,18 @@ const main = html`
         </mm-component-example>
         <mm-component-code .code=${radiusCode}></mm-component-code>
       </mm-tab-panel>
+      <mm-tab-panel value="bleed">
+        <mm-component-example>
+          <mm-surface variant="paper" radius="large" bleed>
+            <mm-text-block
+              level="3"
+              heading="bleed"
+              description="화면이 좁아지면 면이 화면 가장자리까지 넓어진다."
+            ></mm-text-block>
+          </mm-surface>
+        </mm-component-example>
+        <mm-component-code .code=${bleedCode}></mm-component-code>
+      </mm-tab-panel>
     </mm-flex>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
@@ -183,6 +200,15 @@ const main = html`
           대비나 그림자로 영역의 층위를 드러내야 하거나, 그 배경 변화 자체가 클릭 가능 여부를 알리는
           기표로 쓰여야 하는 경우에 적합합니다. 단순히 요소 사이 여백만 필요하다면 surface 대신
           레이아웃 컴포넌트를 사용하세요.
+        </mm-paragraph>
+      </mm-paragraph-group>
+
+      <mm-paragraph-group>
+        <mm-heading level="3">좁은 화면에서는 어떻게 보이나요</mm-heading>
+        <mm-paragraph>
+          페이지 좌우 여백 안에 놓인 섹션 단위 면에는 ${code('bleed')}를 사용합니다. 좁은 화면에서
+          면이 화면 가장자리까지 넓어지고 내용은 본문과 같은 위치에 남아, 바깥 여백 때문에 내용이
+          좁아지는 일을 막습니다.
         </mm-paragraph>
       </mm-paragraph-group>
 
