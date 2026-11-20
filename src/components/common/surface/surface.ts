@@ -15,6 +15,8 @@ export class Surface extends LitElement {
   @property({ type: String, reflect: true }) radius?: SurfaceRadius
   /** 좁은 화면에서 면을 화면 가장자리까지 넓힌다. 페이지 좌우 여백 안에 놓인 섹션 단위 면에 쓴다. */
   @property({ type: Boolean, reflect: true }) bleed = false
+  /** 면을 화면 좌우 끝까지 넓힌 구획 띠로 만든다. 내용은 본문 칼럼 안에 남는다. */
+  @property({ type: Boolean, reflect: true }) band = false
 
   render() {
     return html`

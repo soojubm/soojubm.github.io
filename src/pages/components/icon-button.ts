@@ -276,6 +276,12 @@ const main = html`
     <mm-component-section heading="ToTopButton" description="페이지의 최상단으로 스크롤합니다.">
       <mm-to-top-button></mm-to-top-button>
     </mm-component-section>
+    <mm-component-section
+      heading="Share Button"
+      description="콘텐츠를 공유합니다. 무엇을 어떻게 공유할지는 쓰는 곳이 정하므로 누르면 share 이벤트만 알립니다."
+    >
+      <mm-share-button tooltip-placement="bottom"></mm-share-button>
+    </mm-component-section>
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>

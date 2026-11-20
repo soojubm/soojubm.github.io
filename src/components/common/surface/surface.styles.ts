@@ -113,6 +113,22 @@ const surfaceBleedStyles = css`
   }
 `
 
+/**
+ * 면을 화면 좌우 끝까지 넓힌다. 내용은 페이지 본문 칼럼 안에 그대로 남아 다른 구획과 정렬된다.
+ * 너비를 늘리지 않고 그림자와 clip-path로 면만 번지게 하므로 가로 스크롤이 생기지 않는다.
+ * 위아래 여백은 구획 간격 토큰으로 정해지고, radius·테두리는 걷는다. variant가 정한 값을 덮어쓰므로 뒤에 둔다.
+ */
+const surfaceBandStyles = css`
+  :host([band]) {
+    --surface-padding: var(--space-section) 0;
+    --surface-border: var(--border-transparent);
+    --surface-border-radius: 0;
+
+    box-shadow: 0 0 0 100vmax var(--surface-background-color);
+    clip-path: inset(0 -100vmax);
+  }
+`
+
 export const surfaceStyles = [
   css`
     :host {
@@ -122,4 +138,5 @@ export const surfaceStyles = [
   surfaceRadiusStyles,
   surfaceVariantStyles,
   surfaceBleedStyles,
+  surfaceBandStyles,
 ]

@@ -11,6 +11,7 @@ import '@/components/common/icon-button/semantics/next-button'
 import '@/components/common/icon-button/semantics/page-button'
 import '@/components/common/icon-button/semantics/more-button'
 import '@/components/common/icon-button/semantics/bookmark-button'
+import '@/components/common/icon-button/semantics/share-button'
 import '@/components/common/icon-button/semantics/clear-button'
 import '@/components/common/icon-button/semantics/to-top-button'
 

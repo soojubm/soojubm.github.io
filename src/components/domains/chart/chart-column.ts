@@ -24,16 +24,18 @@ export class ChartColumn extends LitElement {
     css`
       :host {
         --chart-column-height: var(--size-80);
+        --chart-column-width: 100%;
         --chart-column-color: var(--background-strong-color);
 
         display: flex;
+        justify-content: center;
         gap: var(--space-2);
       }
 
-      /* 열 너비는 컨테이너를 고르게 나눠 갖는다. 축의 폭은 차트가 놓인 자리가 정한다. */
+      /* 열 너비는 기본적으로 컨테이너를 고르게 나눠 갖고, --chart-column-width를 줄이면 그 폭으로 모여 가운데에 놓인다. */
       .column {
         display: flex;
-        flex: 1;
+        flex: 0 1 var(--chart-column-width);
         min-width: 0;
       }
 
@@ -56,7 +58,7 @@ export class ChartColumn extends LitElement {
       .track {
         display: flex;
         align-items: flex-end;
-        width: 100%;
+        width: var(--chart-column-width);
         height: var(--chart-column-height);
         border-radius: var(--radius);
         background: var(--background-subtle-color);

@@ -90,6 +90,10 @@ const bleedCode = `<mm-surface variant="paper" radius="large" bleed>
   <mm-text-block level="3" heading="bleed" description="..."></mm-text-block>
 </mm-surface>`
 
+const bandCode = `<mm-surface variant="filled" band>
+  <mm-text-block level="3" heading="band" description="..."></mm-text-block>
+</mm-surface>`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -117,6 +121,7 @@ const main = html`
         <mm-tab value="variant">Variant</mm-tab>
         <mm-tab value="radius">Radius</mm-tab>
         <mm-tab value="bleed">Bleed</mm-tab>
+        <mm-tab value="band">Band</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="variant">
         <mm-component-example>
@@ -185,6 +190,18 @@ const main = html`
           </mm-surface>
         </mm-component-example>
         <mm-component-code .code=${bleedCode}></mm-component-code>
+      </mm-tab-panel>
+      <mm-tab-panel value="band">
+        <mm-component-example>
+          <mm-surface variant="filled" band>
+            <mm-text-block
+              level="3"
+              heading="band"
+              description="면이 화면 좌우 끝까지 넓어지고 내용은 본문 칼럼에 남는다."
+            ></mm-text-block>
+          </mm-surface>
+        </mm-component-example>
+        <mm-component-code .code=${bandCode}></mm-component-code>
       </mm-tab-panel>
     </mm-flex>
 

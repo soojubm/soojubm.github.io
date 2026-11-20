@@ -19,6 +19,10 @@ export class FixedBottom extends LitElement {
       left: 0;
       z-index: var(--material-zindex-chrome);
     }
+
+    :host([hidden]) {
+      display: none;
+    }
   `
 
   render() {
