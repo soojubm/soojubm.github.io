@@ -81,7 +81,7 @@ export const withChatBubbleImage = <T extends Constructor<LitElement>>(Base: T) 
 
 /**
  * typing 인디케이터·이미지·메시지를 순서대로 조립하는 채팅 버블 셸.
- * 상태는 호스트가 이미 갖고 있으므로 호스트를 그대로 받고, 버블마다 다른 메시지 조각만 따로 받는다.
+ * 상태는 컴포넌트가 이미 갖고 있으므로 이를 그대로 받고, 버블마다 다른 메시지 조각만 따로 받는다.
  * 인디케이터 색은 버블의 color를 그대로 물려받는다.
  */
 export const renderChatBubbleShell = (host: ChatBubbleImage, message: unknown) => html`

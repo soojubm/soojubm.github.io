@@ -84,7 +84,7 @@ export const overlaySurfaceStyles = css`
 
 /**
  * viewport 기준 modal 표면(mm-sheet, mm-dialog)의 위치.
- * 호스트가 패널을 화면 기준으로 앉히는 고정 컨테이너가 되고, placement별로 패널을 어느 변에
+ * 컴포넌트가 패널을 화면 기준으로 앉히는 고정 컨테이너가 되고, placement별로 패널을 어느 변에
  * 붙일지 정한다. placement가 없는 표면(mm-dialog)은 화면 가운데에 앉는다. 표면 재질은 overlaySurfaceStyles가, 뒤를 덮는 재질은 mm-backdrop이 맡는다.
  * `--overlay-panel-*`와 backdrop 토큰의 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
  */
@@ -196,7 +196,7 @@ export const sheetPositionStyles = css`
 
 /**
  * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
- * 호스트는 portal 컨테이너로 옮겨져 트리거의 자손이 아니므로, 트리거와 같은 자리·크기로 겹쳐 놓인
+ * 컴포넌트는 portal 컨테이너로 옮겨져 트리거의 자손이 아니므로, 트리거와 같은 자리·크기로 겹쳐 놓인
  * 투명한 박스가 되어 패널의 기준(positioned 앵커)이 된다. 좌표(--popover-anchor-*)는 열릴 때 잰다.
  * placement별로 패널을 그 박스의 어느 모서리에 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가 맡는다.
  * `--overlay-panel-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
@@ -227,7 +227,7 @@ export const popoverPositionStyles = css`
     z-index: var(--material-zindex-popover);
   }
 
-  /* 열릴 때 포커스를 받는 호스트는 트리거 크기의 투명 박스라 윤곽선을 그리지 않는다 */
+  /* 열릴 때 포커스를 받는 컴포넌트는 트리거 크기의 투명 박스라 윤곽선을 그리지 않는다 */
   :host(:focus) {
     outline: none;
   }
@@ -242,7 +242,7 @@ export const popoverPositionStyles = css`
     left: 0;
     right: 0;
 
-    /* 호스트는 늘 떠 있는 빈 박스다. 뜨고 지는 것은 패널만의 상태다. */
+    /* 컴포넌트는 늘 떠 있는 빈 박스다. 뜨고 지는 것은 패널만의 상태다. */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

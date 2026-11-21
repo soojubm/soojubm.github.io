@@ -10,7 +10,7 @@ import {
 } from '@/components/common/surface/surface.styles'
 
 /**
- * AI가 만든 파일·결과물 카드. 호스트가 elevated 면을 직접 갖는다.
+ * AI가 만든 파일·결과물 카드. 컴포넌트가 elevated 면을 직접 갖는다.
  * 눌러 실행하는 행이 아니므로 menu-item이 아니라 list-item을 쓴다.
  * 동작(열기·다운로드)은 trailing slot의 버튼이 각자 맡는다.
  *

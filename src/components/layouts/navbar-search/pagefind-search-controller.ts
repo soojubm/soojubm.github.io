@@ -26,7 +26,7 @@ function toSearchResult(result: PagefindResult): SearchResult {
 
 /**
  * Pagefind 색인 로딩·debounce·요청 순서 관리를 소유하는 검색 컨트롤러.
- * query·results·searching이 바뀌면 호스트를 다시 그린다.
+ * query·results·searching이 바뀌면 컴포넌트를 다시 그린다.
  * 보여줄 결과가 아직 없으면 입력 직후부터 결과가 돌아올 때까지 searching이 켜져, debounce와 색인 로딩 중에
  * "결과 없음"이 잠깐 비치지 않는다. 보여줄 결과가 있으면 요청이 시작될 때까지 이전 결과를 그대로 둔다.
  */

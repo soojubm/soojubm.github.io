@@ -161,7 +161,7 @@ export class PortfolioItem extends LitElement {
     `
   }
 
-  // 클릭은 호스트까지 올라가 aria-controls가 가리키는 표면이 받는다. 키보드는 네이티브 button처럼 클릭으로 바꿔 보낸다.
+  // 클릭은 컴포넌트까지 올라가 aria-controls가 가리키는 표면이 받는다. 키보드는 네이티브 button처럼 클릭으로 바꿔 보낸다.
   private handleKeyDown(event: KeyboardEvent) {
     if (!this.ariaControls) return
     if (event.key !== 'Enter' && event.key !== ' ') return

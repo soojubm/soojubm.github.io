@@ -34,7 +34,7 @@ const surfaceVariants: Record<SurfaceVariant, Record<string, string>> = {
   elevated: surfaceElevatedTokens,
 }
 
-/** filled variant의 선언. variant 속성 없이 호스트에서 직접 면을 쓰는 컴포넌트가 가져다 쓴다. */
+/** filled variant의 선언. variant 속성 없이 자기 요소에 직접 면을 쓰는 컴포넌트가 가져다 쓴다. */
 export const surfaceFilledStyles = css`
   ${unsafeCSS(
     Object.entries(surfaceFilledTokens)
@@ -43,7 +43,7 @@ export const surfaceFilledStyles = css`
   )}
 `
 
-/** elevated variant의 선언. variant 속성 없이 호스트에서 직접 면을 쓰는 컴포넌트가 가져다 쓴다. */
+/** elevated variant의 선언. variant 속성 없이 자기 요소에 직접 면을 쓰는 컴포넌트가 가져다 쓴다. */
 export const surfaceElevatedStyles = css`
   ${unsafeCSS(
     Object.entries(surfaceElevatedTokens)

@@ -66,7 +66,7 @@ export class Textarea extends LitElement {
     return this.renderTextarea()
   }
 
-  // 호스트는 포커스를 받지 않으므로 실제 textarea로 넘긴다.
+  // 컴포넌트 자체는 포커스를 받지 않으므로 실제 textarea로 넘긴다.
   focus(options?: FocusOptions) {
     this.textarea?.focus(options)
   }

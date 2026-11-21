@@ -60,7 +60,7 @@ export class RovingFocusController implements ReactiveController {
     this.refresh()
   }
 
-  /** tab stop을 다시 맞춘다. 호스트 렌더와 무관하게 항목이나 기준 항목이 바뀌면 직접 부른다. */
+  /** tab stop을 다시 맞춘다. 컴포넌트 렌더와 무관하게 항목이나 기준 항목이 바뀌면 직접 부른다. */
   refresh() {
     const items = this.options.getItems()
     const tabStop = this.resolveTabStop(items)

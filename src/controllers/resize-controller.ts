@@ -11,8 +11,8 @@ interface ResizeOptions {
  * 요소들의 크기 변화를 관찰하는 ReactiveController.
  *
  * 연결·렌더가 끝날 때마다 getTargets와 관찰 중인 요소를 맞추고, 연결이 끊기면 관찰자를 정리한다.
- * 그래서 호스트는 최초 연결과 재연결(DOM 이동)을 가르거나 disconnectedCallback에서 관찰자를 끊지 않는다.
- * 호스트 렌더와 무관하게 대상이 바뀌면(부모의 자식 목록 등) refresh로 직접 맞춘다.
+ * 그래서 컴포넌트는 최초 연결과 재연결(DOM 이동)을 가르거나 disconnectedCallback에서 관찰자를 끊지 않는다.
+ * 컴포넌트 렌더와 무관하게 대상이 바뀌면(부모의 자식 목록 등) refresh로 직접 맞춘다.
  */
 export class ResizeController implements ReactiveController {
   private observer?: ResizeObserver

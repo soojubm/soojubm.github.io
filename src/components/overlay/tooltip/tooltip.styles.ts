@@ -48,7 +48,7 @@ export const tooltipBubbleStyles = css`
     left: var(--tooltip-bubble-anchor-left);
     z-index: var(--material-zindex-tooltip);
 
-    /* 호스트가 표면 자체라 여기서 뜨고 진다. 닫힐 때만 visibility를 지연시켜 fade-out을 남긴다. */
+    /* 컴포넌트가 표면 자체라 여기서 뜨고 진다. 닫힐 때만 visibility를 지연시켜 fade-out을 남긴다. */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;

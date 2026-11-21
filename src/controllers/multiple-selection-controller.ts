@@ -8,7 +8,7 @@ type SelectionOption = {
 
 interface MultipleSelectionControllerOptions {
   getValues: () => string[]
-  /** 값은 호스트의 reactive property라 대입하면 호스트가 스스로 다시 그린다 */
+  /** 값은 컴포넌트의 reactive property라 대입하면 컴포넌트가 스스로 다시 그린다 */
   setValues: (values: string[]) => void
   getOptions: () => SelectionOption[]
 }

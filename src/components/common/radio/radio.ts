@@ -20,7 +20,7 @@ export class Radio extends LitElement {
   @property({ type: String, reflect: true }) size: RadioSize = 'medium'
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
-  // shadow 안에서만 쓰는 label 연결용 id라 호스트의 id와 섞지 않는다.
+  // shadow 안에서만 쓰는 label 연결용 id라 컴포넌트의 id와 섞지 않는다.
   private inputId = uniqueId('radio')
   private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
 

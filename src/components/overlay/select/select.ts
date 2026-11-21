@@ -33,7 +33,7 @@ const POPOVER_MAX_HEIGHT =
 @customElement('mm-select')
 export class Select extends LitElement {
   static styles = css`
-    /* 트리거 콘텐츠 폭을 따른다. 패널은 트리거 폭에 맞춰 늘어나므로, 호스트가 부모를 채우면 놓인 자리마다 목록 폭이 달라진다 */
+    /* 트리거 콘텐츠 폭을 따른다. 패널은 트리거 폭에 맞춰 늘어나므로, 컴포넌트가 부모를 채우면 놓인 자리마다 목록 폭이 달라진다 */
     :host {
       display: inline-flex;
     }

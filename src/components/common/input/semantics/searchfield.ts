@@ -45,7 +45,7 @@ export class SearchField extends LitElement {
     `
   }
 
-  // 호스트는 포커스를 받지 않으므로 검색 입력으로 넘긴다.
+  // 컴포넌트 자체는 포커스를 받지 않으므로 검색 입력으로 넘긴다.
   focus(options?: FocusOptions) {
     this.input?.focus(options)
   }

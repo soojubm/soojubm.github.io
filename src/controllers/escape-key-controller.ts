@@ -34,7 +34,7 @@ const remove = (controller: EscapeKeyController) => {
  * 쌓고 빼는 일과 document 리스너는 이 컨트롤러가 연결·렌더·해제 시점에 맡으므로,
  * 컴포넌트마다 connectedCallback/disconnectedCallback에 같은 코드를 반복하지 않는다.
  * OutsideClickController와 함께 떠 있는 표면이 스스로 닫히는 수단을 이룬다.
- * 열림 여부는 `OpenState` 호스트의 `open`을 읽고, 콜백을 생략하면 `close()`를 부른다.
+ * 열림 여부는 `OpenState` 컴포넌트의 `open`을 읽고, 콜백을 생략하면 `close()`를 부른다.
  * 닫는 조건을 따로 가진 표면(SheetController의 dismissOn)만 콜백을 넘긴다.
  */
 export class EscapeKeyController implements ReactiveController {

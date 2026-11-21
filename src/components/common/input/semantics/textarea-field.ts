@@ -48,7 +48,7 @@ export class TextareaField extends LitElement {
     `
   }
 
-  // 호스트는 포커스를 받지 않으므로 mm-textarea로 넘긴다.
+  // 컴포넌트 자체는 포커스를 받지 않으므로 mm-textarea로 넘긴다.
   focus(options?: FocusOptions) {
     this.textarea?.focus(options)
   }

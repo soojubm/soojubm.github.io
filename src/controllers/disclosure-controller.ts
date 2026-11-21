@@ -8,7 +8,7 @@ type Host = ReactiveControllerHost & HTMLElement
 interface OpenStateDisclosureOptions {
   /** 토글 트리거. 반환값이 없으면 host.id를 aria-controls로 가리키는 요소로 폴백한다 */
   getTrigger?: () => HTMLElement | undefined
-  /** aria-controls로 트리거를 찾을 root. portal로 옮겨지는 호스트는 옮기기 전 자리의 root를 넘긴다. 생략하면 호스트의 root */
+  /** aria-controls로 트리거를 찾을 root. portal로 옮겨지는 컴포넌트는 옮기기 전 자리의 root를 넘긴다. 생략하면 컴포넌트의 root */
   getRoot?: () => Document | ShadowRoot
 }
 
@@ -19,11 +19,11 @@ interface DisclosureOptions extends OpenStateDisclosureOptions {
 
 /**
  * 열고 닫는 모든 disclosure의 트리거 클릭 토글, aria-expanded 동기화, toggle 이벤트 발행을 소유한다.
- * 여는 표면의 종류(aria-haspopup)는 호스트가 추정하지 않고 트리거가 표준 attribute로 직접 선언한다.
- * 열림 상태 자체는 공개 API라 호스트의 reflected property로 남기고, 컨트롤러는 읽기/쓰기만 위임받는다.
- * `OpenState` 호스트는 isOpen·setOpen 없이 넘기면 `open`을 읽고 `show()`·`close()`로 바꾼다.
- * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 호스트를 가리키는 외부 요소를 기본값으로 찾는다.
- * 그 요소를 찾을 root는 getRoot로 바꿀 수 있다. portal로 옮겨지는 호스트는 옮기기 전 자리의 root를 넘겨,
+ * 여는 표면의 종류(aria-haspopup)는 컴포넌트가 추정하지 않고 트리거가 표준 attribute로 직접 선언한다.
+ * 열림 상태 자체는 공개 API라 컴포넌트의 reflected property로 남기고, 컨트롤러는 읽기/쓰기만 위임받는다.
+ * `OpenState` 컴포넌트는 isOpen·setOpen 없이 넘기면 `open`을 읽고 `show()`·`close()`로 바꾼다.
+ * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 컴포넌트를 가리키는 외부 요소를 기본값으로 찾는다.
+ * 그 요소를 찾을 root는 getRoot로 바꿀 수 있다. portal로 옮겨지는 컴포넌트는 옮기기 전 자리의 root를 넘겨,
  * 소비자의 shadow 안에 있는 트리거도 찾는다.
  * 외부 클릭·ESC로 스스로 닫히는 동작은 overlay 표면이 각자 소유한다.
  */
@@ -82,11 +82,11 @@ export class DisclosureController implements ReactiveController {
     trigger.setAttribute('aria-expanded', String(this.options.isOpen()))
   }
 
-  // 호스트가 열리거나 닫히면 호스트 요소에서 toggle 이벤트를 디스패치한다. 호스트를 쓰는 쪽(소비자)은
-  // 이 이벤트에 리스너를 달아, 호스트가 외부 클릭·ESC처럼 스스로 닫힌 경우에도 자기 상태(펼침 표시 등)를 맞춘다.
+  // 열리거나 닫히면 그 요소에서 toggle 이벤트를 디스패치한다. 쓰는 쪽(소비자)은
+  // 이 이벤트에 리스너를 달아, 외부 클릭·ESC처럼 스스로 닫힌 경우에도 자기 상태(펼침 표시 등)를 맞춘다.
   // 열림 여부는 렌더가 끝날 때마다 직전 값과 비교해 판단하므로, 트리거·외부 클릭·ESC·소비자의 open 변경 중
   // 어느 경로로 바뀌었든 한 번씩 나간다. 첫 렌더는 바뀐 것이 아니므로 비교할 값만 기록한다.
-  // 네이티브 toggle처럼 버블링하지 않아 호스트에 직접 단 리스너만 받는다. 안에 둔 다른 disclosure의 toggle이
+  // 네이티브 toggle처럼 버블링하지 않아 그 요소에 직접 단 리스너만 받는다. 안에 둔 다른 disclosure의 toggle이
   // 부모로 올라가 바깥 리스너에 섞이지 않게 하기 위해서다.
   private dispatchToggle() {
     const open = this.options.isOpen()
