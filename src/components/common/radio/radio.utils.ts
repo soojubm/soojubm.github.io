@@ -1,7 +1,7 @@
 import { html } from 'lit'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
-import { setToggleState } from '@/utils'
+import { emit } from '@/utils'
 
 interface RadioInputHost extends HTMLElement {
   name: string
@@ -19,7 +19,8 @@ export function renderRadioInput(host: RadioInputHost, inputId: string, label: u
     event.stopPropagation() // 네이티브 이벤트 전파 차단
 
     const target = event.target as HTMLInputElement
-    setToggleState(host, { checked: target.checked })
+    host.checked = target.checked
+    emit(host, 'change', { checked: host.checked, value: host.value })
   }
 
   return html`

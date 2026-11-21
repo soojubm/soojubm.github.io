@@ -81,6 +81,45 @@ const main = html`
                   '같은 동작 로직을 두 곳 이상에서 쓰면 훅이나 컨트롤러로 분리한다',
                   '시각적 표현은 분리하지 않고 아래 방식으로 재사용하므로, 컴포넌트별 표현은 유지하면서 공통 동작을 일관되게 쓸 수 있다',
                 ),
+                rule(
+                  html`
+                    host의 생명주기에 참여하면 컨트롤러로, 호출될 때만 일하면 함수로 둔다
+                  `,
+                  html`
+                    연결이 끊길 때 정리할 리스너·관찰자·타이머가 있거나 렌더가 끝날 때마다 맞춰야
+                    하면 컨트롤러다. ${code('toggleState')}처럼 값을 바꾸고 이벤트를 내는 것이
+                    전부면 붙잡을 것이 없어 함수로 충분하다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="토글 상태">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    누르는 상태는 컴포넌트가 소유하고, 스스로 바꾼 뒤 ${code('change')}로 알린다
+                  `,
+                  html`
+                    ${code('checked')}·${code('pressed')}는 사용하는 쪽이 값을 덮어쓸 수 있지만
+                    바뀌는 것을 거부할 수는 없다. 네이티브 ${code('input')}과 같은 방식이다
+                  `,
+                ),
+                rule(
+                  html`
+                    네이티브 ${code('input')}이 상태를 가진 컨트롤은 그 값을 옮겨 적고, 그렇지 않은
+                    컨트롤은 ${code('toggleState')}로 뒤집는다
+                  `,
+                  html`
+                    ${code('mm-checkbox')}·${code('mm-switch')}·${code('mm-radio')}는 눌린 뒤의 값을
+                    ${code('input')}에서 읽어 ${code('checked')}에 대입하고 ${code('change')}를
+                    낸다. ${code('aria-pressed')}로만 표현하는 버튼은 읽을 값이 없어 현재 값을
+                    뒤집는다
+                  `,
+                ),
               ]}
             ></mm-text-list>
           </mm-content-section>

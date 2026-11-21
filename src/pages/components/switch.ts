@@ -16,7 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-switch'),
-  { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+  { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

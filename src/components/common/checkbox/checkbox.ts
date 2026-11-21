@@ -7,7 +7,7 @@ import type { ComponentSize } from '@/stylesheets/shared.types'
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { setToggleState, uniqueId } from '@/utils'
+import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 export type CheckboxSize = Extract<ComponentSize, 'medium' | 'large'>
@@ -62,6 +62,7 @@ export class Checkbox extends LitElement {
 
     // 네이티브 체크박스처럼 누르면 indeterminate가 먼저 풀린 뒤 change가 나간다.
     this.indeterminate = false
-    setToggleState(this, { checked: target.checked })
+    this.checked = target.checked
+    emit(this, 'change', { checked: this.checked })
   }
 }

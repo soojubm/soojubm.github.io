@@ -17,7 +17,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-checkbox'),
   ...subComponentPropsOf('mm-checkbox-group'),
-  { name: 'change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+  { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
   { name: 'mm-checkbox-group change', type: 'CustomEvent detail: values', kind: 'event' },
   ...subComponentPropsOf('mm-terms-agreement'),
   { name: 'mm-terms-agreement change', type: 'CustomEvent detail: values', kind: 'event' },
