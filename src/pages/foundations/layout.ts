@@ -16,6 +16,7 @@ const classificationRows = html`
     <td>alertdialog</td>
     <td>sheet</td>
     <td>${yes}</td>
+    <td><mm-keyword-tag-group .keywords=${['ESC', 'close() 호출']}></mm-keyword-tag-group></td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./sheet.html">Sheet</mm-link></th>
@@ -24,6 +25,9 @@ const classificationRows = html`
     <td>dialog</td>
     <td>sheet</td>
     <td>${yes}</td>
+    <td>
+      <mm-keyword-tag-group .keywords=${['바깥 클릭', 'ESC', '닫기 버튼']}></mm-keyword-tag-group>
+    </td>
   </tr>
   <tr>
     <th scope="row">Backdrop</th>
@@ -32,6 +36,7 @@ const classificationRows = html`
     <td>없음</td>
     <td>backdrop</td>
     <td>없음</td>
+    <td>없음</td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
@@ -40,6 +45,11 @@ const classificationRows = html`
     <td>없음</td>
     <td>popover</td>
     <td>${yes}</td>
+    <td>
+      <mm-keyword-tag-group
+        .keywords=${['바깥 클릭', 'ESC', '포커스 아웃', 'close() 호출']}
+      ></mm-keyword-tag-group>
+    </td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
@@ -48,6 +58,9 @@ const classificationRows = html`
     <td>listbox</td>
     <td>popover</td>
     <td>${yes}</td>
+    <td>
+      <mm-keyword-tag-group .keywords=${['바깥 클릭', 'ESC', '옵션 선택']}></mm-keyword-tag-group>
+    </td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
@@ -56,6 +69,9 @@ const classificationRows = html`
     <td>tooltip</td>
     <td>tooltip</td>
     <td>${no}</td>
+    <td>
+      <mm-keyword-tag-group .keywords=${['포인터 이탈', '포커스 아웃']}></mm-keyword-tag-group>
+    </td>
   </tr>
   <tr>
     <th scope="row"><mm-link href="./toast.html">Toast</mm-link></th>
@@ -64,65 +80,34 @@ const classificationRows = html`
     <td>status</td>
     <td>toast</td>
     <td>${no}</td>
+    <td><mm-keyword-tag-group .keywords=${['시간 경과']}></mm-keyword-tag-group></td>
   </tr>
 `
 
-const dismissRows = html`
+const groupGapRows = html`
   <tr>
-    <th scope="row"><mm-link href="./sheet.html">Sheet</mm-link></th>
-    <td>${yes}</td>
-    <td>${yes}</td>
-    <td>닫기 아이콘을 누를 때</td>
-    <td>닫아도 잃는 것이 없는 내용(댓글, 검색 등)이라 배경 클릭·ESC로 가볍게 닫히게 한다</td>
+    <th scope="row">${code('mm-tag-group')}</th>
+    <td>${code('--space-1')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-link href="./dialog.html">Dialog</mm-link></th>
-    <td>${no}</td>
-    <td>${yes}</td>
-    <td>내용이 ${code('close()')}를 호출할 때</td>
-    <td>
-      확인이 필요한 중요한 작업이라 의도가 불분명한 배경 클릭으로 흐름이 끊기지 않게 한다. ESC는
-      키보드 사용자가 빠져나올 수단이라 남기되, 보조 액션이 파괴적일 수 있어 어떤 액션도 실행하지
-      않고 닫기만 한다
-    </td>
+    <th scope="row">${code('mm-menu-item-group')}</th>
+    <td>${code('--space-1')}·${code('--space-2')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-link href="./toast.html">Toast</mm-link></th>
-    <td>${no}</td>
-    <td>${no}</td>
-    <td>표시 시간이 지나면</td>
-    <td>
-      결과를 알리는 데 그치고 배경 조작을 막지 않아 따로 닫게 하지 않는다. 표시 시간(3초)이 지나면
-      스스로 닫히고, 포인터나 포커스가 올라와 있는 동안은 시간이 멈춘다. 벗어나거나 열려 있을 때
-      다시 열면 시간이 처음부터 다시 흐른다
-    </td>
+    <th scope="row">${code('mm-button-group')}</th>
+    <td>${code('--space-2')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
-    <td>${yes}</td>
-    <td>${yes}</td>
-    <td>Tab으로 overlay를 벗어나거나 내용이 ${code('close()')}를 호출할 때</td>
-    <td>
-      트리거 곁에 잠깐 뜨는 보조 overlay라 다른 곳을 누르면 곧바로 물러나게 한다. Tab으로 나가면
-      포커스가 엉뚱한 곳으로 가므로, 벗어나면 닫고 트리거로 되돌린다
-    </td>
+    <th scope="row">${code('mm-filter-button-group')}</th>
+    <td>${code('--space-2')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
-    <td>${yes}</td>
-    <td>${yes}</td>
-    <td>옵션을 골랐을 때</td>
-    <td>
-      값을 고르면 할 일이 끝나므로 고르는 즉시 닫는다. 좁은 화면에서는 sheet로 열려 sheet의 닫기
-      수단을 따른다
-    </td>
+    <th scope="row">${code('mm-avatar-group')}</th>
+    <td>${code('--space-2')}</td>
   </tr>
   <tr>
-    <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
-    <td>${no}</td>
-    <td>${no}</td>
-    <td>포인터나 포커스가 트리거를 벗어날 때</td>
-    <td>트리거에 머무는 동안만 보이는 설명이라 열고 닫는 조작을 따로 두지 않는다</td>
+    <th scope="row">${code('mm-list-item-group')}</th>
+    <td>${code('--space-3')} (기본)</td>
   </tr>
 `
 
@@ -213,7 +198,6 @@ const main = html`
               .texts=${[
                 '좁은 폭은 폼·인증처럼 한 가지 작업에 집중시킨다',
                 '넓은 폭은 목록·대시보드처럼 훑어보는 화면에 쓴다',
-                '너비는 콘텐츠 성격에 맞는 토큰으로 정한다',
                 html`
                   본문 골격은 ${code('mm-main')}의 width로, 떠오르는 overlay는 각 컴포넌트의 width로
                   지정한다
@@ -323,140 +307,162 @@ const main = html`
 
       <mm-tab-panel value="section">
         <mm-content-section-list>
-          <mm-content-section heading-level="3" heading="섹션 간격">
+          <mm-flex direction="column" gap="4">
             <mm-paragraph>
               섹션은 제목을 가진 가장 큰 콘텐츠 덩어리입니다. 섹션 사이는 요소나 묶음 사이보다 크게
               벌려, 사용자가 주제가 바뀌었다는 것을 간격만으로 알아차리게 합니다.
             </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    섹션 간격은 ${code('--space-section')}을 쓴다
-                  `,
-                  '숫자 간격을 섹션마다 따로 고르면 페이지마다 호흡이 달라져, 같은 위계의 덩어리가 서로 다른 무게로 읽힌다',
-                ),
-                rule(
-                  html`
-                    간격은 섹션 각자의 여백이 아니라 ${code('mm-content-section-list')}의
-                    ${code('gap')}으로 둔다
-                  `,
-                  '섹션마다 여백을 두면 섹션이 빠지거나 순서가 바뀔 때 간격이 두 번 겹치거나 사라진다',
-                ),
-                rule(
-                  '섹션 안의 요소·묶음 간격은 섹션 간격보다 작게 둔다',
-                  '안쪽 간격이 바깥과 비슷하면 어디까지가 한 섹션인지 흐려져 제목이 어느 내용의 것인지 알기 어렵다',
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+            <mm-grid columns="2" gap="4">
+              <mm-surface>
+                <mm-content-section heading-level="3" heading="heading">
+                  <mm-paragraph>
+                    섹션이 무엇을 다루는지 대표하는 제목입니다. 위계는 ${code('heading-level')}로
+                    정합니다.
+                  </mm-paragraph>
+                  <mm-keyword-tag-group
+                    heading="heading-level"
+                    .keywords=${['2', '3', '4']}
+                  ></mm-keyword-tag-group>
+                </mm-content-section>
+              </mm-surface>
+              <mm-surface>
+                <mm-content-section heading-level="3" heading="action">
+                  <mm-paragraph>
+                    제목 줄 오른쪽에 놓이는 슬롯입니다. “모두 보기”처럼 섹션 전체에 걸리는 동작만
+                    받습니다.
+                  </mm-paragraph>
+                </mm-content-section>
+              </mm-surface>
+              <mm-surface>
+                <mm-content-section heading-level="3" heading="description">
+                  <mm-paragraph>
+                    본문의 첫 단락입니다. 내용을 읽기 전에 섹션이 다루는 범위를 먼저 알립니다.
+                  </mm-paragraph>
+                </mm-content-section>
+              </mm-surface>
+              <mm-surface>
+                <mm-content-section heading-level="3" heading="content">
+                  <mm-paragraph>
+                    설명 다음에 이어지는 기본 슬롯입니다. 섹션의 본문이 놓입니다.
+                  </mm-paragraph>
+                </mm-content-section>
+              </mm-surface>
+            </mm-grid>
+          </mm-flex>
+          <mm-text-block
+            level="3"
+            heading="섹션 사이는 어떻게 구분하나요"
+            description="섹션은 선 없이 여백과 제목으로 나눕니다. 섹션마다 선을 그으면 페이지가 칸막이로 쪼개져 보이고, 제목과 여백이 만드는 흐름이 끊깁니다. 같은 모양의 제목과 여백이 반복되는 콘텐츠의 흐름이 섹션이 바뀌었다는 인상을 줍니다."
+          >
+            <mm-content-section-list size="small">
+              <mm-text-block
+                level="4"
+                heading="간격"
+                description="간격은 숫자를 직접 쓰지 않고 토큰으로 정합니다. 단계가 정해져 있어야 화면마다 같은 위계에 같은 간격이 쓰이고, 값이 바뀌어도 한 곳에서 고칩니다."
+              >
+                <mm-text-list
+                  variant="check"
+                  .texts=${[
+                    rule(
+                      html`
+                        섹션 사이 간격은 부모 요소의 ${code('gap')}으로 둔다
+                      `,
+                      html`
+                        섹션의 ${code('margin')}·${code('padding')}으로 두지 않는다.
+                        <mm-link href="https://help.figma.com/hc/en-us/articles/360040451373">
+                          Figma 오토 레이아웃
+                        </mm-link>
+                        도 항목 사이 간격을 항목이 아니라 부모 프레임의 간격(Spacing between
+                        items)으로 정하며, 섹션이 빠지거나 순서가 바뀌어도 간격이 겹치거나 사라지지
+                        않는다
+                      `,
+                    ),
+                    html`
+                      ${code('mm-content-section-list')}가 섹션 사이의 ${code('gap')}을 맡는다
+                    `,
+                    html`
+                      ${code('mm-flex')}가 그 밖의 묶음 사이의 ${code('gap')}을 맡는다
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-flex direction="column" gap="2">
+                  <mm-surface>
+                    <mm-text size="14">
+                      ${code('--space-subsection')} · 32px · 섹션 안의 하위 섹션 사이. 값은
+                      ${code('--space-8')}을 참조한다
+                    </mm-text>
+                  </mm-surface>
+                  <mm-surface>
+                    <mm-text size="14">
+                      ${code('--space-section')} · 64px · 섹션 사이. 값은 ${code('--space-16')}을
+                      참조한다
+                    </mm-text>
+                  </mm-surface>
+                </mm-flex>
+              </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="섹션 제목">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    섹션 제목은 ${code('heading-level')} 2~4단계만 쓴다 (2단계 24px, 3단계 18px,
-                    4단계 14px)
-                  `,
-                  '1단계와 5단계는 섹션의 자리가 아니다. 1단계를 섹션에 쓰면 페이지 제목과 위계가 겹치고, 5단계를 쓰면 섹션의 시작이 묻힌다',
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+              <mm-text-block
+                level="4"
+                heading="구분선"
+                description="구분선은 간격만으로 부족할 때 더하는 경계선입니다."
+              >
+                <mm-text-list
+                  variant="check"
+                  .texts=${[
+                    rule('separator는 서로 다른 맥락 사이에만 둔다'),
+                    rule(
+                      'separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다',
+                      '선 위아래에 separator의 간격이 이미 있어서, gap이 더해지면 이 경계만 다른 곳보다 넓게 벌어진다',
+                    ),
+                  ]}
+                ></mm-text-list>
+              </mm-text-block>
+            </mm-content-section-list>
+          </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="간격과 Separator">
-            <mm-paragraph>
-              섹션을 나누는 수단은 간격이 기본이고,
-              <mm-link href="./separator.html">separator</mm-link>
-              는 간격만으로 부족할 때 더하는 경계선입니다.
-            </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '섹션은 선 없이 여백과 제목으로 나눈다',
-                  '섹션마다 선을 그으면 페이지가 칸막이로 쪼개져 보이고, 제목과 여백이 만드는 흐름이 끊긴다',
-                ),
-                rule(
-                  'separator는 서로 다른 맥락 사이에만 둔다',
-                  '같은 맥락 안에 선을 그으면 이어 읽어야 할 내용이 둘로 끊겨 보인다',
-                ),
-                rule(
-                  'separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다',
-                  'separator는 자체 간격을 가지므로 gap을 겹치면 경계 주변이 두 배로 벌어진다',
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="간격 토큰">
-            <mm-paragraph>
-              간격은 숫자를 직접 쓰지 않고 토큰으로 정합니다. 단계가 정해져 있어야 화면마다 같은
-              위계에 같은 간격이 쓰이고, 값이 바뀌어도 한 곳에서 고칩니다.
-            </mm-paragraph>
-            <mm-text-list
-              .texts=${[
-                html`
-                  ${code('--space-1')}~${code('--space-3')} · 4~12px · 한 의미 단위 안의 요소 사이
-                `,
-                html`
-                  ${code('--space-4')}~${code('--space-8')} · 16~32px · 묶음과 Article 사이
-                `,
-                html`
-                  ${code('--space-section')} · 64px · 섹션 사이. 값은 ${code('--space-16')}을
-                  참조한다
-                `,
-                html`
-                  요소 자체의 고정 치수에는 space 토큰 대신 ${code('--size-*')} 토큰을 쓴다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
-
-          <mm-content-section heading="Utilities">
-            <mm-paragraph>
+          <mm-notice>
+            <mm-text size="14">
               페이지·콘텐츠 조립의 배치와 구획은
               <mm-link href="./utilities.html">Utilities</mm-link>
               가 맡습니다. Flex·Grid는 배치를, Page Header·Content Section·Text Block·Form Field는
               제목과 구획을 정합니다.
-            </mm-paragraph>
-          </mm-content-section>
+            </mm-text>
+          </mm-notice>
         </mm-content-section-list>
       </mm-tab-panel>
 
       <mm-tab-panel value="element">
         <mm-content-section-list>
-          <mm-content-section heading-level="3" heading="Group">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    Element 그룹은 ${code('--space-1')}~${code('--space-3')}으로 붙여 놓는다
-                  `,
-                  '간격이 넓으면 한 단위가 둘로 쪼개져 보여, 라벨이 어느 값의 것인지 다시 훑어야 한다',
-                ),
-                rule(
-                  html`
-                    간격은 항목 각자의 여백이 아니라 부모 ${code('mm-flex')}의 ${code('gap')}으로
-                    둔다
-                  `,
-                  '항목마다 여백을 두면 항목이 빠지거나 순서가 바뀔 때 간격이 어긋나고, 간격의 출처를 찾기 어렵다',
-                ),
-                rule(
-                  '간격 단계는 한 그룹 안에서 한 가지로 통일한다',
-                  '같은 그룹에서 단계가 섞이면 가까운 항목과 먼 항목이 생겨 관계가 잘못 읽힌다',
-                ),
-                rule(
-                  'Element 그룹은 선이나 면 없이 간격만으로 한 덩어리로 읽히게 한다',
-                  '작은 항목마다 경계를 그으면 덩어리가 잘게 쪼개져 시선이 머물 곳이 흐려진다',
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+          <mm-paragraph>
+            엘리먼트는 섹션 안에서 라벨·값·아이콘처럼 더 쪼갤 수 없는 가장 작은 콘텐츠 단위입니다.
+            사용자는 엘리먼트를 하나씩 읽기보다, 가까이 놓인 것끼리 한 의미 단위로 묶어 읽습니다.
+          </mm-paragraph>
+          <mm-text-block
+            level="3"
+            heading="엘리먼트 사이의 간격"
+            description="엘리먼트 사이의 간격이 어떤 것이 한 의미 단위인지 알려 줍니다."
+          >
+            <mm-text-block
+              level="4"
+              heading="Group"
+              description="함께 읽어야 뜻이 완성되는 엘리먼트의 묶음입니다. 선이나 면 없이 간격만으로 한 덩어리로 읽히게 하며, 작은 항목마다 경계를 그으면 덩어리가 잘게 쪼개져 시선이 머물 곳이 흐려집니다."
+            >
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '간격 단계는 한 그룹 안에서 한 가지만 쓴다',
+                    '간격이 섞이면 더 벌어진 자리에서 그룹이 끊긴 것처럼 보여, 같은 그룹의 항목이 서로 다른 그룹으로 읽힌다',
+                  ),
+                ]}
+              ></mm-text-list>
+              <mm-table
+                .rows=${groupGapRows}
+                caption="그룹 컴포넌트가 쓰는 간격"
+                .columns=${[{ label: '그룹', width: '260px' }, { label: '간격' }]}
+              ></mm-table>
+            </mm-text-block>
+          </mm-text-block>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -484,14 +490,15 @@ const main = html`
 
             <mm-table
               .rows=${classificationRows}
-              caption="화면 위로 뜨는 overlay의 modal 여부·위치 기준·드러나는 role·레이어·열 때 포커스 이동 비교"
+              caption="화면 위로 뜨는 overlay의 modal 여부·위치 기준·드러나는 role·레이어·열 때 포커스 이동·닫는 방법 비교"
               .columns=${[
                 { label: 'UI', width: '140px' },
                 { label: 'Modal', width: '100px' },
                 { label: 'Anchor', width: '120px' },
                 { label: 'Role', width: '140px' },
                 { label: 'Layer', width: '120px' },
-                { label: '열 때 포커스 이동' },
+                { label: '열 때 포커스 이동', width: '140px' },
+                { label: '닫는 방법' },
               ]}
             ></mm-table>
           </mm-flex>
@@ -523,8 +530,8 @@ const main = html`
                   `,
                 ),
                 rule(
-                  '모달은 한 번에 하나만 연다',
-                  '모달 위에 모달을 열면 지금 어디에 있고 닫으면 어디로 돌아가는지 흐려져 사용자가 흐름을 잃는다. 단계가 이어지면 열린 overlay 안에서 내용을 바꿔 가며 진행한다',
+                  '겹쳐 열린 overlay는 가장 나중에 연 것부터 한 겹씩 닫는다',
+                  'ESC도 맨 위 하나만 닫아 한 겹씩 돌아온다. 아래 모달은 위 모달이 열린 동안 포커스를 받지 못하고, 위 모달이 닫히면 그 모달을 열었던 자리로 포커스가 돌아와 하던 곳에서 이어 갈 수 있다',
                 ),
               ]}
             ></mm-text-list>
@@ -535,142 +542,242 @@ const main = html`
             <mm-code-block language="typescript" .code=${placementTypeCode}></mm-code-block>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="Dismiss">
-            <mm-paragraph>overlay를 열고 닫는 방법을 정합니다.</mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '바깥 클릭·ESC로 닫는 동작은 overlay에 맡긴다',
-                  html`
-                    sheet·dialog는 ${code('SheetController')}가, popover·select는
-                    ${code('mm-popover')}가 처리한다. 사용하는 쪽은 저장 완료·항목 선택처럼 작업
-                    결과로 닫을 때만 ${code('close()')}를 호출한다
-                  `,
-                ),
-                rule('ESC는 가장 나중에 연 overlay 하나만 닫는다'),
-              ]}
-            ></mm-text-list>
-            <mm-table
-              .rows=${dismissRows}
-              caption="overlay의 닫기 수단 비교"
-              .columns=${[
-                { label: 'UI', width: '100px' },
-                { label: '바깥 클릭', width: '100px' },
-                { label: 'ESC', width: '80px' },
-                { label: '그 밖의 닫힘', width: '260px' },
-                { label: '이유' },
-              ]}
-            ></mm-table>
-          </mm-content-section>
+          <mm-text-block
+            level="3"
+            heading="컨트롤러"
+            description="열림 상태, 스크롤 잠금, portal 이동처럼 overlay가 공통으로 하는 동작은 컨트롤러가 맡고, overlay 컴포넌트는 이를 가져다 씁니다."
+          >
+            <mm-content-section-list size="small">
+              <mm-text-block
+                level="4"
+                heading="DisclosureController"
+                description="트리거를 누르면 컴포넌트를 열고 닫는 컨트롤러입니다. overlay뿐 아니라 FAQ·사이드바 섹션처럼 제자리에서 펼치는 컴포넌트에도 씁니다."
+              >
+                <mm-text-list
+                  .texts=${[
+                    html`
+                      ${code('toggle()')}을 제공: 열림 상태를 반대로 바꿉니다. 상태는 컴포넌트의
+                      ${code('open')} 값이 갖고, 컨트롤러는 따로 저장하지 않고
+                      ${code('show()')}·${code('close()')}로 바꿉니다.
+                    `,
+                    html`
+                      ${code('trigger')}를 제공: 이 컴포넌트를 열고 닫는 버튼 요소를 돌려줍니다.
+                      버튼의 ${code('aria-controls')}가 컴포넌트 ${code('id')}를 가리키면 그 버튼이
+                      트리거이고, 누르면 ${code('toggle()')}이 불려 클릭 핸들러를 따로 달 필요가
+                      없습니다. 여는 종류는 트리거가 ${code('aria-haspopup')}으로 선언합니다.
+                    `,
+                    html`
+                      열림 상태가 바뀔 때마다 트리거의 ${code('aria-expanded')}를 맞춥니다.
+                      스크린리더가 트리거가 펼쳐졌는지 알 수 있습니다.
+                    `,
+                    html`
+                      열림 상태가 바뀌면 ${code('toggle')} 이벤트를 발행합니다. ESC나 바깥 클릭처럼
+                      컴포넌트가 스스로 닫혀도 발행해, 사용하는 쪽이 자기 상태를 맞출 수 있습니다.
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${[
+                    'mm-popover',
+                    'mm-sheet',
+                    'mm-dialog',
+                    'mm-faq-item',
+                    'mm-read-more-paragraph',
+                    'mm-sidebar',
+                    'mm-sidebar-section',
+                  ]}
+                ></mm-keyword-tag-group>
+              </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="Focus">
-            <mm-paragraph>overlay를 열고 닫을 때 포커스가 어디로 가는지 정합니다.</mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '열 때 포커스를 overlay 안으로 옮기고, 닫을 때 트리거로 되돌린다',
-                  html`
-                    포커스가 열린 overlay 밖에 남으면 키보드·스크린리더 사용자는 overlay가 열린 줄
-                    모르고 뒤 화면을 헤맨다. 열 때는 안의 ${code('autofocus')} 요소로, 없으면
-                    overlay 자체로 옮긴다. 닫을 때 모달은 열기 직전에 포커스가 있던 요소(주로
-                    트리거)로 되돌려 하던 자리에서 이어 가게 한다. 비모달은 포커스가 overlay 안에
-                    있을 때만 트리거로 되돌린다. 그 사이 사용자가 다른 곳으로 옮긴 포커스는 빼앗지
-                    않고, 닫힌 overlay에 포커스가 남아 사라지는 일도 막는다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+              <mm-text-block
+                level="4"
+                heading="EscapeKeyController"
+                description="ESC를 누르면 열려 있는 overlay를 닫는 컨트롤러입니다."
+              >
+                <mm-text-list
+                  .texts=${[
+                    html`
+                      ${code('onEscape')} 콜백: ESC를 누르면 부릅니다. 생략하면 컴포넌트의
+                      ${code('close()')}를 부르고, ${code('SheetController')}는
+                      ${code('dismissOn')}에 ${code("'escape'")}가 있을 때만 닫는 콜백을 넘깁니다.
+                    `,
+                    html`
+                      열린 순서를 기억해, ESC는 가장 나중에 연 것 하나만 처리합니다. dialog 안에서
+                      popover를 열었다면 ESC 한 번에 popover만 닫힙니다. 맨 위 컴포넌트가 ESC로
+                      닫히지 않아도 아래 컴포넌트로 넘기지 않습니다.
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${['mm-popover', 'mm-sheet', 'mm-dialog', 'mm-sidebar']}
+                ></mm-keyword-tag-group>
+              </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="DisclosureController">
-            <mm-paragraph>
-              열고 닫는 컴포넌트가 공통으로 쓰는 컨트롤러입니다. overlay뿐 아니라 FAQ·사이드바
-              섹션처럼 제자리에서 펼치는 컴포넌트도 같은 컨트롤러를 씁니다.
-            </mm-paragraph>
-            <mm-text-list
-              .texts=${[
-                html`
-                  트리거를 누르면 열림을 바꾸고 ${code('aria-expanded')}를 맞춘다
-                `,
-                html`
-                  열림이 바뀌면 ${code('toggle')} 이벤트로 알린다
-                `,
-                html`
-                  트리거는 ${code('aria-controls')}로 overlay를 가리키고, 여는 overlay의 종류는
-                  ${code('aria-haspopup')}으로 선언한다. 사용하는 쪽은 클릭 핸들러를 달지 않는다
-                `,
-                'overlay가 portal로 옮겨져도 트리거를 찾으므로, 트리거가 사용하는 쪽 컴포넌트의 shadow 안에 있어도 된다',
-                html`
-                  열림 상태는 호스트의 ${code('open')}이 갖고, 바깥 클릭·ESC로 닫는 동작은 overlay가
-                  각자 소유한다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+              <mm-text-block
+                level="4"
+                heading="OutsideClickController"
+                description="overlay 바깥을 누르면 콜백을 호출해 닫게 하는 컨트롤러입니다."
+              >
+                <mm-text-list
+                  .texts=${[
+                    html`
+                      ${code('onOutside')} 콜백: 컴포넌트 바깥을 누르면 부릅니다. 누른 곳이 안인지는
+                      ${code('composedPath()')}로 판단해, 트리거가 다른 컴포넌트의 shadow DOM 안에
+                      있어도 맞게 동작합니다.
+                    `,
+                    html`
+                      ${code('isOpen')} 옵션: 열려 있는 동안에만 화면 전체에서 누르는
+                      동작(${code('pointerdown')})을 감지하고, 닫히면 멈춥니다. 생략하면 연결된 동안
+                      계속 감지합니다.
+                    `,
+                    html`
+                      ${code('getSafeElements')} 옵션: 넘긴 요소(열림을 토글하는 트리거)를 누르면
+                      바깥을 누른 것으로 보지 않습니다.
+                    `,
+                    html`
+                      sheet·dialog의 배경 클릭은 ${code('SheetController')}가 처리합니다. 배경을
+                      눌러도 컴포넌트 안을 누른 것으로 보여서, 이 컨트롤러로는 바깥 클릭을 구분할 수
+                      없기 때문입니다.
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${[
+                    'mm-popover',
+                    'mm-select',
+                    'mm-more-menu',
+                    'mm-theme-selector',
+                    'mm-sidebar-user-menu',
+                    'mm-chat-source',
+                    'mm-prompt-input',
+                  ]}
+                ></mm-keyword-tag-group>
+              </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="SheetController">
-            <mm-paragraph>
-              viewport 기준 modal overlay(${code('mm-sheet')}·${code('mm-dialog')})가 공통으로 쓰는
-              컨트롤러입니다.
-            </mm-paragraph>
-            <mm-text-list
-              .texts=${[
-                html`
-                  트리거 연결, portal 이동, 스크롤 잠금, 배경 클릭·ESC로 닫기를 한곳에서 맡는다.
-                  overlay는 닫는 조건만 ${code('dismissOn')}으로 지정한다
-                `,
-                html`
-                  열린 동안 portal 컨테이너 바깥의 ${code('body')} 자식과 먼저 열려 있는 아래쪽 모달
-                  overlay를 ${code('inert')}로 만들어 포커스를 overlay 안에 가두고, 닫히면 풀어 연
-                  요소로 되돌린다
-                `,
-                '모달이 겹쳐 열려도 닫히는 순서와 무관하게 마지막 overlay가 닫힐 때 풀린다',
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+              <mm-text-block
+                level="4"
+                heading="SheetController"
+                description="viewport 기준 modal overlay가 열린 동안 뒤 화면을 막고, 닫는 방법을 처리하는 컨트롤러입니다."
+              >
+                <mm-text-list
+                  .texts=${[
+                    html`
+                      ${code('dismissOn')}에 ${code("'backdrop'")}을 켜면 배경 클릭으로,
+                      ${code("'escape'")}를 켜면 ESC로 닫습니다. sheet는 둘 다, dialog는 ESC만
+                      켭니다.
+                    `,
+                    html`
+                      열릴 때 뒤 화면과 아래쪽 모달을 ${code('inert')}로 만들어 포커스를
+                      ${code('autofocus')} 요소나 컴포넌트 안으로 옮기고, 닫힐 때 풀어 포커스를 연
+                      요소로 돌립니다.
+                    `,
+                    html`
+                      여러 개 모달이 겹쳤을 때는 막은 횟수를 세어, 위 모달이 닫히면 아래 모달이 다시
+                      조작되고 마지막 모달이 닫힐 때 뒤 화면이 풀립니다. 닫히는 순서는 상관없습니다.
+                    `,
+                    html`
+                      ${code('PortalController')}·${code('DisclosureController')}·${code(
+                        'EscapeKeyController',
+                      )}·${code('ScrollLockController')}를
+                      함께 만들어 각각 이동·트리거·ESC·스크롤 잠금을 맡깁니다.
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${['mm-sheet', 'mm-dialog']}
+                ></mm-keyword-tag-group>
+              </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="AdaptiveOverlayController">
-            <mm-paragraph>
-              넓은 화면의 popover와 좁은 화면의 sheet로 목록을 여는
-              컴포넌트(${code('mm-select')}·${code('mm-more-menu')})의 열림 상태를 소유합니다.
-            </mm-paragraph>
-            <mm-text-list
-              .texts=${[
-                '두 overlay는 backdrop·스크롤 잠금·포커스 가두기 방식이 달라 overlay 컴포넌트를 갈아 끼우므로, 열림 상태는 overlay가 나눠 갖지 않고 이 컨트롤러 하나가 갖는다',
-                html`
-                  트리거는 ${code('aria-controls')}로 overlay를 가리키지 않고 호스트가 클릭을 직접
-                  연결한다. overlay까지 걸면 같은 클릭을 또 토글한다
-                `,
-                html`
-                  호스트는 ${code('open')}·${code('compact')}·${code('trigger')}를 읽어 두 overlay와
-                  트리거에 내려 주며, 마지막으로 누른 트리거가 popover의 기준 요소가 된다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+              <mm-text-block
+                level="4"
+                heading="AdaptiveOverlayController"
+                description="넓은 화면에서 popover로 열리는 overlay를 좁은 화면에서 bottom sheet로 전환하는 컨트롤러입니다."
+              >
+                <mm-text-list
+                  .texts=${[
+                    html`
+                      ${code('open')}을 제공: ${code('DisclosureController')}와 달리 열림 상태를
+                      컴포넌트가 아니라 이 컨트롤러가 저장하고, popover나 sheet의
+                      ${code('open')}으로 내려 줍니다. ${code('close()')}로 닫습니다.
+                    `,
+                    html`
+                      ${code('compact')}를 제공: ${code('MediaQueryController')}로 좁은 화면을
+                      감지합니다. true이면 sheet가, 아니면 popover가 맡고, 화면이 바뀌어 overlay가
+                      갈리면 열린 채 넘어가지 않게 닫습니다.
+                    `,
+                    html`
+                      ${code('trigger')}를 제공: 마지막으로 누른 트리거를 돌려줍니다. popover가 이
+                      요소를 기준으로 놓입니다.
+                    `,
+                    html`
+                      ${code('handleTriggerClick')}을 제공: 컴포넌트 트리거의 클릭에 연결해 열림
+                      상태를 바꿉니다. 트리거에는 ${code('aria-controls')}를 걸지 않습니다. 걸면
+                      overlay의 ${code('DisclosureController')}가 같은 클릭을 또 토글합니다.
+                    `,
+                    html`
+                      ${code('handleOverlayToggle')}을 제공: popover·sheet가 ${code('toggle')}
+                      이벤트로 알리는 ${code('open')} 값에 열림 상태를 맞춥니다. ESC 등으로
+                      overlay가 스스로 닫혀도 이 컨트롤러가 알 수 있습니다.
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${['mm-select', 'mm-more-menu']}
+                ></mm-keyword-tag-group>
+              </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="PortalController">
-            <mm-paragraph-group>
-              <mm-paragraph>
-                Portal은 overlay를 쓰는 자리에서 꺼내 페이지 맨 끝으로 옮겨 띄우는 방식입니다.
-                overlay가 ${code('transform')}·${code('contain')}이 걸린 요소 안에 있으면 위치와
-                겹침 순서가 그 요소에 갇혀 어긋나므로, 어디서 열어도 같은 기준으로 놓이도록 따로
-                옮깁니다.
-              </mm-paragraph>
-              <mm-paragraph>
-                overlay는 ${code('index.html')} 끝의 ${code('#portal-root')}로 옮겨 띄웁니다. 이
-                컨테이너는 ${code('body')}의 마지막 자식이라 앱 셸의 어떤 요소 안에도 속하지
-                않습니다.
-              </mm-paragraph>
-            </mm-paragraph-group>
-            <mm-component-notice heading="tooltip은 처음 열 때 렌더링된다">
-              트리거마다 tooltip을 미리 렌더링하면 표처럼 트리거가 많은 페이지에서 보이지 않는
-              요소가 수백 개 생겨 페이지가 무거워진다. 그래서 처음 열 때 렌더링하고, 이때도 이후와
-              같은 열림 애니메이션이 재생된다
-            </mm-component-notice>
-          </mm-content-section>
+              <mm-text-block
+                level="4"
+                heading="PortalController"
+                description="overlay를 쓰는 자리에서 꺼내 페이지 맨 끝으로 옮겨 띄우는 컨트롤러입니다."
+              >
+                <mm-text-list
+                  .texts=${[
+                    html`
+                      ${code('hostConnected()')}: 컴포넌트가 연결되면 ${code('index.html')} 끝의
+                      ${code('#portal-root')}로 옮기고 원래 자리에 주석 자리표를 남깁니다. 이
+                      컨테이너는 ${code('body')}의 마지막 자식이라 앱 셸의 어떤 요소 안에도 속하지
+                      않습니다.
+                    `,
+                    html`
+                      ${code('originRoot')}를 제공: 옮기기 전 자리의 root를 돌려줍니다.
+                      ${code('DisclosureController')}가 트리거를 찾을 때 씁니다.
+                    `,
+                    html`
+                      ${code('releaseIfOrphaned()')}를 제공: 원래 자리의 컴포넌트가 DOM에서 빠져
+                      자리표가 문서에서 떨어졌으면, 옮겨 둔 컴포넌트도 걷어냅니다.
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${[
+                    'mm-popover',
+                    'mm-sheet',
+                    'mm-dialog',
+                    'mm-tooltip-bubble',
+                    'mm-toast',
+                  ]}
+                ></mm-keyword-tag-group>
+                <mm-paragraph>
+                  overlay가 ${code('transform')}·${code('contain')}이 걸린 요소 안에 있으면 위치와
+                  겹침 순서가 그 요소에 갇혀 어긋납니다. 어디서 열어도 같은 기준으로 놓이도록 따로
+                  옮깁니다.
+                </mm-paragraph>
+                <mm-component-notice heading="tooltip은 처음 열 때 만들어진다">
+                  표처럼 트리거가 수백 개인 페이지에서 tooltip을 미리 다 만들어 두면, 화면에
+                  보이지도 않는 요소가 그만큼 늘어 페이지가 느려집니다. 그래서 사용자가 처음
+                  hover하거나 포커스할 때 그 tooltip 하나만 만들고, 이후에는 만든 것을 다시 씁니다.
+                  처음 열 때도 두 번째부터와 같은 나타나는 애니메이션이 재생됩니다.
+                </mm-component-notice>
+              </mm-text-block>
+            </mm-content-section-list>
+          </mm-text-block>
         </mm-content-section-list>
       </mm-tab-panel>
     </mm-page-body>

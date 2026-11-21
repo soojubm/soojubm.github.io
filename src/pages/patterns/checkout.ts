@@ -1,5 +1,7 @@
 import { html } from 'lit'
 
+import type { MenuOptionItem } from '@/types'
+
 import { ICON_NAMES } from '@/components/common'
 import { renderPage } from '@/components/layouts/base-layouts'
 import { findSitemapItem } from '@/sitemap'
@@ -13,6 +15,12 @@ const orderedProduct = html`
     price="₩ 11,900"
   ></mm-order-product-item>
 `
+
+const paymentOptions: MenuOptionItem[] = [
+  { value: 'card', label: '신용카드/체크카드', description: '개인/법인/카드사선택' },
+  { value: 'cash', label: '현금' },
+  { value: 'bank', label: '무통장입금', disabled: true },
+]
 
 const main = html`
   <mm-fixed-top style="background: var(--background-color)">
@@ -75,16 +83,12 @@ const main = html`
             <mm-button>보유 마일리지 1,186p 모두사용</mm-button>
 
             <mm-surface>
-              <mm-menu-item-radio-group name="payment" value="card" aria-label="결제수단 선택">
-                <mm-menu-item-radio
-                  size="medium"
-                  value="card"
-                  label="신용카드/체크카드"
-                  description="개인/법인/카드사선택"
-                ></mm-menu-item-radio>
-                <mm-menu-item-radio value="cash" label="현금"></mm-menu-item-radio>
-                <mm-menu-item-radio value="bank" label="무통장입금" disabled></mm-menu-item-radio>
-              </mm-menu-item-radio-group>
+              <mm-menu-item-radio-group
+                name="payment"
+                value="card"
+                aria-label="결제수단 선택"
+                .options=${paymentOptions}
+              ></mm-menu-item-radio-group>
             </mm-surface>
 
             <mm-list-item

@@ -27,7 +27,7 @@ export class UserSnippet extends LitElement {
       ></mm-user-avatar>
       ${this.renderTag()}
       <div class="detail">
-        <mm-text as="h2" size="24">${this.name}</mm-text>
+        <mm-text size="24">${this.name}</mm-text>
         ${this.renderDescription()}
         <mm-text size="12">${this.email}</mm-text>
         <mm-text size="12">${this.phone}</mm-text>

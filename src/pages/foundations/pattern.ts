@@ -2,7 +2,7 @@ import '@/components/common'
 import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
-import type { OptionItem } from '@/types'
+import type { MenuOptionItem, OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common/text/semantics/read-more-paragraph'
@@ -155,6 +155,11 @@ const flowTableColumns = [
   { label: '보여줄 것' },
 ]
 
+const collectionOptions: MenuOptionItem[] = [
+  { value: 'euljiro', label: '을지로 맛집', description: '장소 12개', emoji: '🍜' },
+  { value: 'seongsu', label: '성수 카페', description: '장소 8개', emoji: '☕' },
+]
+
 const visibilityOptions: OptionItem[] = [
   { label: '공개', value: 'public' },
   { label: '비공개', value: 'private' },
@@ -182,9 +187,10 @@ const main = html`
               유지되므로, 사용자는 긴 정보 더미를 훑고 관심 있는 것만 골라 읽습니다.
             </mm-paragraph>
             <mm-paragraph>
-              트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
-              트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
-              유지합니다.
+              기본은 트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가
+              공개라 트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를
+              그대로 유지합니다. 트리거 옆에 떠서 덮는 표면은 콘텐츠를 밀지 않지만, 펼침을 알리는
+              단서는 같은 규칙을 따릅니다.
             </mm-paragraph>
             <mm-link-prompt
               message="트리거 옆이나 화면 위로 떠서 덮는 표면이 궁금하신가요?"
@@ -246,7 +252,7 @@ const main = html`
             </mm-surface>
             <mm-table
               .rows=${expandedComponentRows}
-              caption="Expanded 컴포넌트와 펼치는 대상, 펼침을 알리는 단서"
+              caption="Expanded 컴포넌트(뜨는 표면 포함)와 펼치는 대상, 펼침을 알리는 단서"
               .columns=${[
                 { label: '컴포넌트', width: '220px' },
                 { label: '펼치는 대상' },
@@ -606,23 +612,11 @@ const main = html`
                 <mm-top-bar nav="close" heading="컬렉션에 추가">
                   <mm-button slot="action" variant="tertiary">완료</mm-button>
                 </mm-top-bar>
-                <mm-menu-item-checkbox-group aria-label="컬렉션 선택">
-                  <mm-menu-item-checkbox
-                    size="medium"
-                    value="euljiro"
-                    label="을지로 맛집"
-                    description="장소 12개"
-                    emoji="🍜"
-                    checked
-                  ></mm-menu-item-checkbox>
-                  <mm-menu-item-checkbox
-                    size="medium"
-                    value="seongsu"
-                    label="성수 카페"
-                    description="장소 8개"
-                    emoji="☕"
-                  ></mm-menu-item-checkbox>
-                </mm-menu-item-checkbox-group>
+                <mm-menu-item-checkbox-group
+                  aria-label="컬렉션 선택"
+                  .options=${collectionOptions}
+                  .values=${['euljiro']}
+                ></mm-menu-item-checkbox-group>
                 <mm-add-button label="새 컬렉션 만들기"></mm-add-button>
               </mm-flex>
               <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">

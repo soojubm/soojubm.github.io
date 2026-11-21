@@ -29,8 +29,8 @@ const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
  * 트리거에 앵커되어 떠 있는 non-modal 표면. mm-sheet처럼 host가 곧 표면이라 portal 컨테이너로 옮겨지고
  * 내용(자식)이 함께 따라가며, backdrop·스크롤 잠금 없이 배경 상호작용을 막지 않습니다.
  * 트리거는 popover 밖에 두고 aria-controls로 이 popover의 id를 가리킵니다. 클릭 토글·aria-expanded 배선은
- * DisclosureController가, 외부 클릭·ESC 닫기는 popover가 소유합니다. portal로 옮겨져도 트리거를 찾도록
- * 선언한 자리의 root에서 찾습니다. 여는 표면의 종류(aria-haspopup)는 트리거에, role은 안에 넣는 목록 컴포넌트에 둡니다.
+ * DisclosureController가, 외부 클릭·ESC 닫기는 OutsideClickController·EscapeKeyController가 맡습니다.
+ * portal로 옮겨져도 트리거를 찾도록 선언한 자리의 root에서 찾습니다. 여는 표면의 종류(aria-haspopup)는 트리거에, role은 안에 넣는 목록 컴포넌트에 둡니다.
  * 트리거를 소비자가 직접 배선하는 쪽(mm-select 등)은 aria-controls 대신 `anchor`로 기준 요소를 넘깁니다.
  * 트리거의 자손이 아니므로 위치는 기준 요소의 화면 좌표를 재어 정하고, 열려 있는 동안 스크롤·리사이즈를 따라갑니다.
  * 열리면 포커스를 표면 안으로 옮기고, Tab으로 표면을 벗어나면 닫고 트리거로 돌려보냅니다.

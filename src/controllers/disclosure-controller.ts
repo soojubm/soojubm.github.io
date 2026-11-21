@@ -25,7 +25,7 @@ interface DisclosureOptions extends OpenStateDisclosureOptions {
  * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 컴포넌트를 가리키는 외부 요소를 기본값으로 찾는다.
  * 그 요소를 찾을 root는 getRoot로 바꿀 수 있다. portal로 옮겨지는 컴포넌트는 옮기기 전 자리의 root를 넘겨,
  * 소비자의 shadow 안에 있는 트리거도 찾는다.
- * 외부 클릭·ESC로 스스로 닫히는 동작은 overlay 표면이 각자 소유한다.
+ * 외부 클릭·ESC로 닫히는 동작은 맡지 않는다. OutsideClickController·EscapeKeyController가 맡고, 표면이 조립해 쓴다.
  */
 export class DisclosureController implements ReactiveController {
   private wiredTrigger?: HTMLElement

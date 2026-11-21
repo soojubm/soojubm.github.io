@@ -130,12 +130,9 @@ const syncTotal = 12480
 const syncDone = 8486
 const syncShare = Math.round((syncDone / syncTotal) * 100)
 
-const answerShares = [
-  { label: '10대', share: 40, value: '40%' },
-  { label: '20대', share: 30, value: '30%' },
-  { label: '30대', share: 20, value: '20%' },
-  { label: '40대', share: 10, value: '10%' },
-]
+const goalTarget = 420000000
+const goalSaved = 273000000
+const goalShare = Math.round((goalSaved / goalTarget) * 100)
 
 const categoryAdSpends: { category: CategoryKey; share: number; value: string }[] = [
   { category: 'product', share: 45, value: '900,000원' },
@@ -213,15 +210,6 @@ const main = html`
         </mm-grid>
       </mm-flex>
 
-      <mm-flex direction="column" align-items="center" gap="3">
-        <mm-text centered>
-          1월 26일 컴퓨터통신 분야에서는
-          <br />
-          7백명의 지식iN들이 답변하셨습니다.
-        </mm-text>
-        <mm-chart-column .items=${answerShares}></mm-chart-column>
-      </mm-flex>
-
       <mm-grid columns="2">
         <mm-surface variant="outlined" radius="large">
           <mm-flex direction="column" gap="2">
@@ -256,7 +244,23 @@ const main = html`
             </mm-menu-item-group>
           </mm-flex>
         </mm-surface>
-        <mm-surface radius="large"></mm-surface>
+        <mm-surface radius="large">
+          <mm-flex direction="column" gap="4">
+            <mm-flex direction="column" gap="1">
+              <mm-text size="12" color="light">노후 자금</mm-text>
+              <mm-heading level="1">${`${goalTarget.toLocaleString()}원`}</mm-heading>
+            </mm-flex>
+            <progress
+              value=${goalSaved}
+              max=${goalTarget}
+              aria-label="노후 자금 목표 달성률"
+            ></progress>
+            <mm-flex justify-content="space-between" align-items="center" gap="4">
+              <mm-text color="light">${`${goalShare}% 달성`}</mm-text>
+              <mm-text>${`${goalSaved.toLocaleString()}원`}</mm-text>
+            </mm-flex>
+          </mm-flex>
+        </mm-surface>
       </mm-grid>
       <mm-grid columns="2" gap="4">
         <mm-surface variant="outlined" radius="large">

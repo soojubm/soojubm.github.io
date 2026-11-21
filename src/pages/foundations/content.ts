@@ -299,7 +299,7 @@ const main = html`
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="원칙">
             <mm-paragraph>
-              아이콘은 장식으로 쓰지 않는다. 좁은 공간에서 레이블을 대신하거나 인접한 시각 정보
+              아이콘은 장식으로 쓰지 않습니다. 좁은 공간에서 레이블을 대신하거나 인접한 시각 정보
               더미에서 상태와 행동 가능성을 분명히 할 때 사용합니다.
             </mm-paragraph>
 
@@ -307,29 +307,28 @@ const main = html`
               <mm-paragraph>
                 같은 아이콘을 맥락마다 다른 뜻으로 재사용하지 않습니다. 의미가 흔들리면 사용자가
                 매번 다시 해석해야 합니다.
-                <span hidden>뜻은 컴포넌트가 아니라 제품 전체에서 일관합니다.</span>
               </mm-paragraph>
             </mm-content-section>
 
             <mm-content-section heading-level="4" heading="중복 표현하지 않기">
-              <!-- TODO -->
-              <!-- <mm-paragraph>
+              <mm-paragraph>
                 보이는 레이블이 이미 온전히 가리키는 것을 아이콘으로 되풀이하지 않습니다. 레이블이
                 붙은 텍스트필드에는 뜻이 겹치는 장식 아이콘을 더하지 않습니다. 아이콘이 여는 방식을
                 암시하는 자리도, 값의 형식을 글로 보이면(날짜 필드의 YYYY. MM. DD.) 그 글이 더
                 명료해 아이콘은 다시 중복이 됩니다. 남는 아이콘은 뜻을 지니면 대체 텍스트를 주고,
-                순수한 장식이면 접근성 트리에서 숨깁니다.
-              </mm-paragraph> -->
-              <mm-paragraph>
-                형제 엘리먼트 목록에서 명확한 대비가 필요한 경우. 사용자의 실수를 방지할 수 있을 때.
+                순수한 장식이면 접근성 트리에서 숨깁니다. 다만 형제 항목 목록에서 대비가 필요하거나
+                사용자의 실수를 막을 수 있을 때는 예외로 둡니다.
               </mm-paragraph>
-
-              <mm-text>언제 사용하나요?</mm-text>
             </mm-content-section>
 
             <mm-text-list
               variant="check"
-              .texts=${[rule('널리 통용되는 기호를 쓰고 있나요?')]}
+              .texts=${[
+                rule(
+                  '널리 통용되는 기호를 쓴다',
+                  '낯선 기호는 사용자가 뜻을 매번 다시 해석해야 한다',
+                ),
+              ]}
             ></mm-text-list>
           </mm-content-section>
 
@@ -359,6 +358,21 @@ const main = html`
                 rule(
                   '묶음 전체에 항상 이름을 준다',
                   "옵션 레이블만으로는 무엇에 대한 선택인지 알 수 없어서, 이름이 없으면 보조기술 사용자는 '왼쪽·가운데·오른쪽'을 듣고도 무엇을 고르는지 알 수 없다. '텍스트 정렬'처럼 선택의 주제를 이름으로 적는다",
+                ),
+                rule(
+                  html`
+                    아이콘만 보여줄 때는 그룹에 ${code('hidden-label')}을 켠다
+                  `,
+                  html`
+                    ${code('label')}이 화면 텍스트 대신 ${code('aria-label')}로 옮겨진다
+                  `,
+                ),
+                rule(
+                  '레이블에는 선택지 이름만 쓴다',
+                  html`
+                    선택 여부는 ${code('aria-pressed')} · ${code('checked')} ·
+                    ${code('aria-selected')}가 전달한다
+                  `,
                 ),
               ]}
             ></mm-text-list>
@@ -392,6 +406,60 @@ const main = html`
                   html`
                     토글·슬라이더 같은 컨트롤을 넣은 패널은 menu·listbox 어느 쪽에도 맞지 않는다.
                     ${code('aria-haspopup')}을 빼고 ${code('aria-expanded')}만 둔다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="팝업의 포커스">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '열 때 포커스를 overlay 안으로 옮긴다',
+                  '포커스가 밖에 남으면 키보드·스크린리더 사용자는 overlay가 열린 줄 모르고 뒤 화면을 헤맨다',
+                ),
+                rule(
+                  '닫을 때 포커스를 열기 직전 자리로 되돌린다',
+                  '하던 자리에서 이어 갈 수 있고, 닫힌 overlay에 포커스가 남아 사라지는 일도 없다',
+                ),
+                rule(
+                  '비모달은 바깥을 눌러 닫을 때 포커스를 되돌리지 않는다',
+                  '눌린 요소가 이미 포커스를 받았는데 트리거로 되돌리면 사용자가 방금 고른 곳에서 포커스를 빼앗는다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="선택 그룹의 키보드">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '그룹은 Tab 한 번으로 들어가고 화살표 키로 항목 사이를 옮긴다',
+                  html`
+                    Tab으로 그룹에 들어오면 선택된 항목에 포커스가 놓이고, 끝 항목에서 화살표를 더
+                    눌러도 멈춘다. ${code('RovingFocusController')}가 이 동작을 맡으며
+                    ${code('mm-toggle-button-group')} · ${code('mm-filter-button-group')} ·
+                    ${code('mm-menu-item-group')} · ${code('mm-select')}의 옵션 목록이 같은 방식을
+                    쓴다. ${code('mm-tab-list')}만 끝에서 반대편 끝으로 이어진다
+                  `,
+                ),
+                rule(
+                  '버튼 그룹은 Space·Enter가 선택을 확정한다',
+                  html`
+                    화살표 키는 포커스만 옮기고, Space·Enter가 버튼을 눌러 선택을 바꾼다.
+                    ${code('mm-toggle-button-group')} · ${code('mm-filter-button-group')}이 이
+                    방식을 따른다
+                  `,
+                ),
+                rule(
+                  'radio 목록은 포커스를 옮기면 곧 선택된다',
+                  html`
+                    ${code('mm-menu-item-radio-group')}과 네이티브 radio는 이동이 선택이다.
+                    ${code('mm-tab-list')}도 이동이 선택이라 Enter·Space 없이 방향키만으로 탭이
+                    바뀐다
                   `,
                 ),
               ]}

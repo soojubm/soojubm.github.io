@@ -316,6 +316,9 @@ const main = html`
                   <mm-code slot="trailing">aria-checked/checked</mm-code>
                 </mm-list-item>
                 ${renderUsages(checkedUsages)}
+                <mm-caption>
+                  눌러서 켜고 끄는 버튼은 Pressed, 값을 고르는 컨트롤은 Checked를 씁니다.
+                </mm-caption>
               </mm-flex>
               <mm-flex direction="column" gap="2">
                 <mm-list-item

@@ -9,24 +9,32 @@ import { buildAttributeRules } from '@/utils'
 export type TextBlockLevel = '1' | '2' | '3' | '4'
 
 const textBlockLevelTokens = {
-  1: { gap: 'var(--space-3)' },
-  4: { gap: 'var(--space-1)' },
+  1: { '--text-block-header-gap': 'var(--space-3)' },
+  4: { '--text-block-header-gap': 'var(--space-1)' },
 }
 
 /**
  * <mm-text-block>
  * 제목과 설명 한 쌍을 세우고 그 사이 간격을 소유합니다.
  * 제목이 그 쌍을 대표하므로 heading은 필수이고, level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다.
+ * slot 내용은 제목·설명 쌍보다 한 단계 넓게 띄워 별개 덩어리로 읽히게 합니다.
  * 본문을 슬롯으로 받아 구획을 이루는 자리에는 mm-content-section을 씁니다.
  */
 @customElement('mm-text-block')
 export class TextBlock extends LitElement {
   static styles = css`
     :host {
+      --text-block-header-gap: var(--space-2);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: var(--space-2);
+      gap: var(--space-4);
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: inherit;
+      gap: var(--text-block-header-gap);
     }
     ${unsafeCSS(buildAttributeRules('level', textBlockLevelTokens))}
     :host([centered]) {
@@ -47,8 +55,10 @@ export class TextBlock extends LitElement {
 
   render() {
     return html`
-      <mm-heading level=${Number(this.level)}>${this.renderHeadingLines()}</mm-heading>
-      ${this.renderDescription()}
+      <header>
+        <mm-heading level=${Number(this.level)}>${this.renderHeadingLines()}</mm-heading>
+        ${this.renderDescription()}
+      </header>
       <slot></slot>
     `
   }

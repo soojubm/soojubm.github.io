@@ -6,9 +6,10 @@ import type {
   ComponentReferenceItemData,
   ComponentRelatedItemData,
 } from '@/components/domains/component'
+import type { MenuOptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
-import { sharedPropsOf, subComponentPropsOf } from '@/components/domains/component'
+import { code, sharedPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -65,6 +66,29 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Interactive - selection',
     description: '행을 눌러 선택 여부를 바꿉니다.',
+  },
+]
+
+const notificationOptions: MenuOptionItem[] = [
+  { value: 'push', label: '푸시 알림', icon: ICON_NAMES.NOTIFICATION },
+  { value: 'email', label: '이메일 알림', icon: ICON_NAMES.MAIL },
+  { value: 'sms', label: '문자 알림', icon: ICON_NAMES.COMMENT },
+]
+
+const themeOptions: MenuOptionItem[] = [
+  { value: 'light', label: '라이트 모드', icon: ICON_NAMES.LIGHT_MODE },
+  { value: 'dark', label: '다크 모드', icon: ICON_NAMES.DARK_MODE },
+  { value: 'system', label: '시스템 설정 동기화', icon: ICON_NAMES.SETTINGS },
+]
+
+const accessOptions: MenuOptionItem[] = [
+  { value: 'public', label: '전체공개', description: '모든 사용자', icon: ICON_NAMES.GROUP },
+  { value: 'friends', label: '친구만', description: '회원님의 친구', icon: ICON_NAMES.GROUP },
+  {
+    value: 'private',
+    label: '나만 보기',
+    description: '부끄러우니까 보지마요',
+    icon: ICON_NAMES.LOCK,
   },
 ]
 
@@ -169,7 +193,17 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-menu-item-action']}></mm-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <mm-component-guide .features=${componentFeatures}>
+      <mm-paragraph-group>
+        <mm-heading level="3">언제 사용하나요</mm-heading>
+        <mm-paragraph>
+          더보기·컨텍스트 메뉴처럼 눌러서 실행하는 명령 목록에 사용합니다. 메뉴 안에서 값을 하나
+          고르거나 여러 개 켜고 끌 때는 ${code('mm-menu-item-radio-group')}·
+          ${code('mm-menu-item-checkbox-group')}으로 행을 묶습니다. 이 그룹은 ${code('options')}로
+          받은 옵션을 메뉴 행으로 그립니다.
+        </mm-paragraph>
+      </mm-paragraph-group>
+    </mm-component-guide>
 
     <mm-component-anatomy
       .parts=${[
@@ -211,71 +245,30 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section heading="MenuItemCheckboxGroup">
-      <mm-menu-item-checkbox-group aria-label="알림 설정">
-        <mm-menu-item-checkbox
-          icon=${ICON_NAMES.NOTIFICATION}
-          label="푸시 알림"
-          value="push"
-          checked
-        ></mm-menu-item-checkbox>
-        <mm-menu-item-checkbox
-          icon=${ICON_NAMES.MAIL}
-          label="이메일 알림"
-          value="email"
-          checked
-        ></mm-menu-item-checkbox>
-        <mm-menu-item-checkbox
-          icon=${ICON_NAMES.COMMENT}
-          label="문자 알림"
-          value="sms"
-        ></mm-menu-item-checkbox>
-      </mm-menu-item-checkbox-group>
+      <mm-menu-item-checkbox-group
+        aria-label="알림 설정"
+        .options=${notificationOptions}
+        .values=${['push', 'email']}
+      ></mm-menu-item-checkbox-group>
     </mm-component-section>
 
     <mm-component-section heading="MenuItemRadioGroup">
-      <mm-menu-item-radio-group name="theme" value="dark" aria-label="테마 선택">
-        <mm-menu-item-radio
-          value="light"
-          icon=${ICON_NAMES.LIGHT_MODE}
-          label="라이트 모드"
-        ></mm-menu-item-radio>
-        <mm-menu-item-radio
-          value="dark"
-          icon=${ICON_NAMES.DARK_MODE}
-          label="다크 모드"
-        ></mm-menu-item-radio>
-        <mm-menu-item-radio
-          value="system"
-          icon=${ICON_NAMES.SETTINGS}
-          label="시스템 설정 동기화"
-        ></mm-menu-item-radio>
-      </mm-menu-item-radio-group>
+      <mm-menu-item-radio-group
+        name="theme"
+        value="dark"
+        aria-label="테마 선택"
+        .options=${themeOptions}
+      ></mm-menu-item-radio-group>
 
       <mm-separator></mm-separator>
 
-      <mm-menu-item-radio-group name="access" value="public" size="large" aria-label="공개 범위">
-        <mm-menu-item-radio
-          size="medium"
-          value="public"
-          icon=${ICON_NAMES.GROUP}
-          label="전체공개"
-          description="모든 사용자"
-        ></mm-menu-item-radio>
-        <mm-menu-item-radio
-          size="medium"
-          value="friends"
-          icon=${ICON_NAMES.GROUP}
-          label="친구만"
-          description="회원님의 친구"
-        ></mm-menu-item-radio>
-        <mm-menu-item-radio
-          size="medium"
-          icon=${ICON_NAMES.LOCK}
-          label="나만 보기"
-          description="부끄러우니까 보지마요"
-          value="private"
-        ></mm-menu-item-radio>
-      </mm-menu-item-radio-group>
+      <mm-menu-item-radio-group
+        name="access"
+        value="public"
+        size="large"
+        aria-label="공개 범위"
+        .options=${accessOptions}
+      ></mm-menu-item-radio-group>
     </mm-component-section>
 
     <mm-component-section heading="MenuItemRadioSwitch">

@@ -36,10 +36,9 @@ export class ThemeSelector extends LitElement {
           name="theme"
           value=${this.value}
           aria-label="테마 선택"
+          .options=${THEMES}
           @change=${this.handleThemeChange}
-        >
-          ${this.renderThemeOptions()}
-        </mm-menu-item-radio-group>
+        ></mm-menu-item-radio-group>
         <mm-separator></mm-separator>
         <mm-menu-item-group aria-label="글자 크기">
           <mm-menu-item-switch
@@ -56,18 +55,6 @@ export class ThemeSelector extends LitElement {
         </mm-flex>
       </mm-popover>
     `
-  }
-
-  private renderThemeOptions() {
-    return THEMES.map(
-      theme => html`
-        <mm-menu-item-radio
-          value=${theme.value}
-          icon=${theme.icon}
-          label=${theme.label}
-        ></mm-menu-item-radio>
-      `,
-    )
   }
 
   connectedCallback(): void {

@@ -23,3 +23,10 @@ export type OptionItem = {
   icon?: IconName
   disabled?: boolean
 }
+
+// 메뉴 행으로 렌더되는 선택 그룹(menu-item-radio-group·menu-item-checkbox-group)의 옵션 모양.
+// 행에 보조 설명이나 이모지가 붙으므로 OptionItem에 교차 타입으로 더한다.
+export type MenuOptionItem = OptionItem & {
+  description?: string
+  emoji?: string
+}
