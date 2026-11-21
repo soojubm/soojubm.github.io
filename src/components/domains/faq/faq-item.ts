@@ -59,7 +59,7 @@ export class FaqItem extends LitElement {
   @query('button.question') private trigger?: HTMLElement
   private readonly answerId = uniqueId('faq-answer')
   private disclosure = new DisclosureController(this, {
-    isOpen: () => this.open,
+    open: () => this.open,
     setOpen: open => {
       this.open = open
     },

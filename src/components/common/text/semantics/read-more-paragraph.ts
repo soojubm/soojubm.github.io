@@ -29,7 +29,7 @@ export class ReadMoreParagraph extends LitElement {
   @query('mm-read-more-button') private trigger?: HTMLElement
   private readonly contentId = uniqueId('read-more-content')
   private disclosure = new DisclosureController(this, {
-    isOpen: () => this.expanded,
+    open: () => this.expanded,
     setOpen: open => {
       this.expanded = open
     },

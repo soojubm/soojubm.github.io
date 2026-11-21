@@ -52,7 +52,7 @@ export class SidebarSection extends LitElement {
   @query('button') private trigger?: HTMLElement
   private readonly panelId = uniqueId('sidebar-section-panel')
   private disclosure = new DisclosureController(this, {
-    isOpen: () => this.open,
+    open: () => this.open,
     setOpen: open => {
       this.open = open
     },

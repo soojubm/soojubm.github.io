@@ -4,9 +4,9 @@ type Host = ReactiveControllerHost & HTMLElement
 
 interface OutsideClickOptions {
   /** 열려 있는 동안만 document 리스너를 건다 */
-  isOpen: () => boolean
-  /** host 밖이지만 바깥으로 치지 않을 요소들 (예: 열림을 토글하는 트리거) */
-  getSafeElements?: () => Array<EventTarget | null | undefined>
+  open: () => boolean
+  /** host 밖이지만 바깥으로 치지 않을 열림 토글 트리거. 누르면 그 클릭이 토글을 맡는다 */
+  getTrigger?: () => HTMLElement | undefined
 }
 
 /**
@@ -43,7 +43,7 @@ export class OutsideClickController implements ReactiveController {
 
   // 열림에 맞춰 리스너를 걸고 뺀다. 이미 걸려 있거나 빠져 있으면 아무것도 하지 않는다.
   private syncListener() {
-    if (this.options.isOpen()) this.addListener()
+    if (this.options.open()) this.addListener()
     else this.removeListener()
   }
 
@@ -62,11 +62,11 @@ export class OutsideClickController implements ReactiveController {
   }
 
   private handleOutsideEvent = (e: Event) => {
-    if (!this.options.isOpen()) return
+    if (!this.options.open()) return
     const path = e.composedPath()
     if (path.includes(this.host)) return
-    const safe = this.options.getSafeElements?.() ?? []
-    if (safe.some(el => el != null && path.includes(el))) return
+    const trigger = this.options.getTrigger?.()
+    if (trigger && path.includes(trigger)) return
     this.onOutsideClick()
   }
 }

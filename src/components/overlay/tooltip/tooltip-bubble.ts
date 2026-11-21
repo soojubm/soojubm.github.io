@@ -28,7 +28,7 @@ export class TooltipBubble extends LitElement {
   private portal = new PortalController(this)
   private anchorPosition = new AnchorController(this, {
     getAnchor: () => this.anchor,
-    isOpen: () => this.open,
+    open: () => this.open,
     variables: {
       left: '--tooltip-bubble-anchor-left',
       right: '--tooltip-bubble-anchor-right',

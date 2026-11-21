@@ -641,9 +641,9 @@ const main = html`
                       overlay의 ${code('DisclosureController')}가 같은 클릭을 또 토글합니다.
                     `,
                     html`
-                      ${code('handleOverlayToggle')}을 제공: popover·sheet의 ${code('toggle')}
-                      이벤트에 연결해, 이벤트가 알리는 ${code('open')} 값에 열림 상태를 맞춥니다.
-                      ESC 등으로 overlay가 스스로 닫혀도 이 컨트롤러가 알 수 있습니다.
+                      ${code('handleOverlayToggle')}을 제공: ESC 등으로 popover·sheet가 스스로
+                      닫혀도 열림 상태를 맞춥니다. 표면의 ${code('toggle')} 이벤트에 연결하면,
+                      이벤트가 알리는 ${code('open')} 값으로 상태를 바꿉니다.
                     `,
                   ]}
                 ></mm-text-list>
@@ -676,12 +676,12 @@ const main = html`
                       안인지는 ${code('composedPath()')}로 판단합니다.
                     `,
                     html`
-                      ${code('isOpen')} 옵션: 열려 있는 동안에만 화면 전체에서 누르는
+                      ${code('open')} 옵션: 열려 있는 동안에만 화면 전체에서 누르는
                       동작(${code('pointerdown')})을 감지하고, 닫히면 멈춥니다.
                     `,
                     html`
-                      ${code('getSafeElements')} 옵션: 넘긴 요소(열림을 토글하는 트리거)를 누르면
-                      바깥을 누른 것으로 보지 않습니다.
+                      ${code('getTrigger')} 옵션: 넘긴 트리거(열림을 토글하는 요소)를 누르면 바깥을
+                      누른 것으로 보지 않습니다.
                     `,
                     html`
                       sheet처럼 ${code('closeOnBackdrop')}을 켠 표면의 배경 클릭은
@@ -724,7 +724,7 @@ const main = html`
                       없어, ${code('DisclosureController')}가 트리거를 찾을 때 씁니다.
                     `,
                     html`
-                      ${code('releaseIfOrphaned()')}를 제공: 원래 자리의 컴포넌트가 DOM에서 빠져
+                      ${code('removeIfOrphaned()')}를 제공: 원래 자리의 컴포넌트가 DOM에서 빠져
                       자리표가 문서에서 떨어졌으면, 옮겨 둔 컴포넌트도 걷어냅니다.
                     `,
                   ]}

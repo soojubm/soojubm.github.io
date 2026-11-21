@@ -51,13 +51,13 @@ export class Popover extends withOpenState(LitElement) {
     getRoot: () => this.portal.originRoot,
   })
   private outsideClick = new OutsideClickController(this, () => this.close(), {
-    isOpen: () => this.open,
-    getSafeElements: () => [this.anchorElement],
+    open: () => this.open,
+    getTrigger: () => this.anchorElement,
   })
   private escapeKey = new EscapeKeyController(this)
   private anchorPosition = new AnchorController(this, {
     getAnchor: () => this.anchorElement,
-    isOpen: () => this.open,
+    open: () => this.open,
     variables: {
       left: '--popover-anchor-left',
       top: '--popover-anchor-top',

@@ -22,8 +22,8 @@ export class NavbarSearch extends LitElement {
       display: inline-flex;
     }
   `
-  @state() private isOpen = false
-  private search = new PagefindSearchController(this, { isActive: () => this.isOpen })
+  @state() private open = false
+  private search = new PagefindSearchController(this, { isActive: () => this.open })
 
   /* eslint-disable lit-a11y/no-autofocus -- 시트가 열릴 때 검색 입력으로 바로 들어가는 것이 이 표면의 목적이다. */
   render() {
@@ -31,14 +31,14 @@ export class NavbarSearch extends LitElement {
       <mm-icon-button
         icon=${ICON_NAMES.SEARCH}
         aria-label="검색"
-        aria-expanded=${this.isOpen ? 'true' : 'false'}
+        aria-expanded=${this.open ? 'true' : 'false'}
         @click=${this.handleSearchButtonClick}
       ></mm-icon-button>
 
       <mm-sheet
         placement="top"
         style="--backdrop-blur: 2px"
-        ?open=${this.isOpen}
+        ?open=${this.open}
         @toggle=${this.handleSheetToggle}
       >
         <mm-sheet-body>
@@ -58,18 +58,18 @@ export class NavbarSearch extends LitElement {
 
   /* eslint-enable lit-a11y/no-autofocus */
   protected updated(changed: PropertyValues) {
-    if (!changed.has('isOpen')) return
+    if (!changed.has('open')) return
 
-    if (this.isOpen) this.search.load()
+    if (this.open) this.search.load()
     else this.search.reset(true)
   }
 
   private handleSearchButtonClick = () => {
-    this.isOpen = !this.isOpen
+    this.open = !this.open
   }
   // 시트가 배경·ESC·닫기 버튼으로 스스로 닫힌 경우도 이 이벤트로 상태를 맞춘다.
   private handleSheetToggle = (e: CustomEvent<{ open: boolean }>) => {
-    this.isOpen = e.detail.open
+    this.open = e.detail.open
   }
   private handleSearchInput = (e: Event) => {
     this.search.setQuery(this.getInputValue(e))

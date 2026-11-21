@@ -13,7 +13,7 @@ interface OpenStateDisclosureOptions {
 }
 
 interface DisclosureOptions extends OpenStateDisclosureOptions {
-  isOpen: () => boolean
+  open: () => boolean
   setOpen: (open: boolean) => void
 }
 
@@ -21,7 +21,7 @@ interface DisclosureOptions extends OpenStateDisclosureOptions {
  * 열고 닫는 모든 disclosure의 트리거 클릭 토글, aria-expanded 동기화, toggle 이벤트 발행을 소유한다.
  * 여는 표면의 종류(aria-haspopup)는 컴포넌트가 추정하지 않고 트리거가 표준 attribute로 직접 선언한다.
  * 열림 상태 자체는 공개 API라 컴포넌트의 reflected property로 남기고, 컨트롤러는 읽기/쓰기만 위임받는다.
- * `OpenState` 컴포넌트는 isOpen·setOpen 없이 넘기면 `open`을 읽고 `show()`·`close()`로 바꾼다.
+ * `OpenState` 컴포넌트는 open·setOpen 없이 넘기면 `open`을 읽고 `show()`·`close()`로 바꾼다.
  * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 컴포넌트를 가리키는 외부 요소를 기본값으로 찾는다.
  * 그 요소를 찾을 root는 getRoot로 바꿀 수 있다. portal로 옮겨지는 컴포넌트는 옮기기 전 자리의 root를 넘겨,
  * 소비자의 shadow 안에 있는 트리거도 찾는다.
@@ -39,7 +39,7 @@ export class DisclosureController implements ReactiveController {
     options: DisclosureOptions | OpenStateDisclosureOptions = {},
   ) {
     this.options = {
-      isOpen: () => !!host.open,
+      open: () => !!host.open,
       setOpen: open => (open ? host.show?.() : host.close?.()),
       ...options,
     }
@@ -47,7 +47,7 @@ export class DisclosureController implements ReactiveController {
   }
 
   toggle() {
-    this.options.setOpen(!this.options.isOpen())
+    this.options.setOpen(!this.options.open())
   }
 
   hostDisconnected() {
@@ -79,7 +79,7 @@ export class DisclosureController implements ReactiveController {
     }
     if (!trigger) return
 
-    trigger.setAttribute('aria-expanded', String(this.options.isOpen()))
+    trigger.setAttribute('aria-expanded', String(this.options.open()))
   }
 
   // 열리거나 닫히면 그 요소에서 toggle 이벤트를 디스패치한다. 쓰는 쪽(소비자)은
@@ -89,7 +89,7 @@ export class DisclosureController implements ReactiveController {
   // 네이티브 toggle처럼 버블링하지 않아 그 요소에 직접 단 리스너만 받는다. 안에 둔 다른 disclosure의 toggle이
   // 부모로 올라가 바깥 리스너에 섞이지 않게 하기 위해서다.
   private dispatchToggle() {
-    const open = this.options.isOpen()
+    const open = this.options.open()
     const wasOpen = this.wasOpen
     this.wasOpen = open
     if (wasOpen === undefined || wasOpen === open) return

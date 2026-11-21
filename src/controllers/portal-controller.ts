@@ -7,10 +7,10 @@ type Host = ReactiveControllerHost & HTMLElement
 const watched = new Set<PortalController>()
 let observer: MutationObserver | undefined
 
-const releaseOrphans = () => watched.forEach(controller => controller.releaseIfOrphaned())
+const removeOrphans = () => watched.forEach(controller => controller.removeIfOrphaned())
 
 const watch = (controller: PortalController, roots: Node[]) => {
-  observer ??= new MutationObserver(releaseOrphans)
+  observer ??= new MutationObserver(removeOrphans)
   watched.add(controller)
   roots.forEach(root => observer?.observe(root, { childList: true, subtree: true }))
 }
@@ -75,7 +75,7 @@ export class PortalController implements ReactiveController {
   }
 
   /** 자리표가 문서에서 떨어졌으면 옮겨간 host를 걷어낸다. 공유 관찰자가 부른다. */
-  releaseIfOrphaned() {
+  removeIfOrphaned() {
     if (!this.portaled || this.anchor.isConnected) return
 
     this.host.remove()

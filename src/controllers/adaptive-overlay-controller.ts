@@ -13,7 +13,7 @@ import { MediaQueryController } from '@/controllers/media-query-controller'
  */
 export class AdaptiveOverlayController {
   private media: MediaQueryController
-  private isOpen = false
+  private opened = false
   private triggerElement?: HTMLElement
 
   constructor(private host: ReactiveControllerHost) {
@@ -21,7 +21,7 @@ export class AdaptiveOverlayController {
   }
 
   get open() {
-    return this.isOpen
+    return this.opened
   }
 
   /** 마지막으로 누른 트리거. popover가 이 요소의 화면 좌표를 기준으로 놓인다. */
@@ -41,7 +41,7 @@ export class AdaptiveOverlayController {
   // 열림 상태를 이 컨트롤러가 소유하므로 사용하는 컴포넌트의 트리거가 직접 연다. 트리거에는 aria-controls를 걸지 않는다.
   handleTriggerClick = (event: Event) => {
     this.triggerElement = event.currentTarget as HTMLElement
-    this.setOpen(!this.isOpen)
+    this.setOpen(!this.opened)
   }
   // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 디스패치하는 toggle 이벤트의 open 값으로 상태를 맞춘다.
   handleOverlayToggle = (event: CustomEvent<{ open: boolean }>) => {
@@ -49,9 +49,9 @@ export class AdaptiveOverlayController {
   }
 
   private setOpen(open: boolean) {
-    if (open === this.isOpen) return
+    if (open === this.opened) return
 
-    this.isOpen = open
+    this.opened = open
     this.host.requestUpdate()
   }
 }

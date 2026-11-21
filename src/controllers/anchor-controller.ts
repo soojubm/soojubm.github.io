@@ -7,7 +7,7 @@ interface AnchorOptions {
   /** 위치를 재는 기준 요소 */
   getAnchor: () => HTMLElement | undefined
   /** 열려 있는 동안에만 기준 요소를 따라간다 */
-  isOpen: () => boolean
+  open: () => boolean
   /** 기준 요소의 좌표와 그 값을 host에 싣는 CSS 변수. CSS가 읽는 좌표만 넘긴다 */
   variables: Partial<Record<AnchorEdge, string>>
 }
@@ -40,7 +40,7 @@ export class AnchorController implements ReactiveController {
 
   // 같은 리스너를 같은 옵션으로 다시 걸어도 한 번만 등록되므로 열려 있는 동안 반복 호출해도 안전하다.
   private syncListeners() {
-    if (!this.options.isOpen()) {
+    if (!this.options.open()) {
       this.unlisten()
       return
     }
@@ -59,7 +59,7 @@ export class AnchorController implements ReactiveController {
   }
 
   private measure() {
-    if (!this.options.isOpen()) return
+    if (!this.options.open()) return
 
     const anchor = this.options.getAnchor()
     if (!anchor) return
