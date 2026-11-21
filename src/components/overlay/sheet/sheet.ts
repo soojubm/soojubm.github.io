@@ -32,8 +32,8 @@ export class Sheet extends withOpenState(LitElement) {
   private dragging = false
   private dragStartY = 0
   private sheet = new SheetController(this, {
-    // 시트는 닫아도 잃는 것이 없는 내용을 담으므로 배경 클릭과 ESC로 모두 닫힌다.
-    dismissOn: ['backdrop', 'escape'],
+    // 시트는 닫아도 잃는 것이 없는 내용을 담으므로 배경 클릭으로도 닫힌다.
+    closeOnBackdrop: true,
   })
 
   connectedCallback() {

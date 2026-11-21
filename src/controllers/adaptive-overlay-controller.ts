@@ -6,7 +6,7 @@ import { MediaQueryController } from '@/controllers/media-query-controller'
 /**
  * 넓은 화면에서는 popover로, 좁은 화면에서는 sheet로 목록을 여는 컴포넌트(mm-select, mm-more-menu)의 열림 상태를 소유한다.
  * 두 표면은 backdrop·스크롤 잠금·포커스 가두기를 쥐는 방식이 달라 한 표면을 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
- * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 이 컨트롤러가 갖고, 사용하는 컴포넌트는 open·compact·trigger를 읽어 두 표면과 트리거에 내려준다.
+ * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 이 컨트롤러가 갖고, 사용하는 컴포넌트는 open·isViewportCompact·trigger를 읽어 두 표면과 트리거에 내려준다.
  * 열림 상태를 이 컨트롤러가 소유하므로 트리거는 aria-controls로 표면을 가리키지 않고 사용하는 컴포넌트가 handleTriggerClick으로 직접 배선한다.
  * 걸면 표면의 DisclosureController가 같은 클릭을 또 토글하기 때문이다. 마지막으로 누른 트리거는 popover의 기준 요소가 된다.
  * 트리거·목록 템플릿은 사용하는 컴포넌트마다 달라 그 컴포넌트가 그린다.
@@ -17,10 +17,7 @@ export class AdaptiveOverlayController {
   private triggerElement?: HTMLElement
 
   constructor(private host: ReactiveControllerHost) {
-    // 표면이 갈리면 트리거 배선도 새 표면으로 옮겨가므로, 열린 채로 넘어가지 않게 렌더 전에 닫는다.
-    this.media = new MediaQueryController(host, MEDIA_QUERY.compact, () => {
-      this.isOpen = false
-    })
+    this.media = new MediaQueryController(host, MEDIA_QUERY.compact)
   }
 
   get open() {
@@ -32,8 +29,7 @@ export class AdaptiveOverlayController {
     return this.triggerElement
   }
 
-  /** 좁은 화면이라 sheet가 목록을 맡는지 여부 */
-  get compact() {
+  get isViewportCompact() {
     return this.media.matches
   }
 

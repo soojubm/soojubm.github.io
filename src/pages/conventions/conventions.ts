@@ -129,6 +129,47 @@ const main = html`
               ]}
             ></mm-text-list>
           </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="열림 상태 이름">
+            <mm-paragraph>
+              열고 닫는 컴포넌트마다 상태와 동작의 이름이 다르면, 컨트롤러가 어느 이름을 읽고 불러야
+              할지 컴포넌트마다 따로 알아야 합니다. 네이티브 ${code('dialog')}·${code('details')}와
+              같은 이름으로 맞추면 사용하는 쪽이 이미 아는 방식 그대로 쓸 수 있습니다.
+            </mm-paragraph>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    열림 상태는 ${code('open')} boolean 하나로 나타낸다
+                  `,
+                  html`
+                    ${code('open')}은 "열려 있다"는 상태를 뜻하는 형용사다. ${code('isOpen')} 같은
+                    별칭은 표준 이름에서 벗어난다
+                  `,
+                ),
+                rule(
+                  html`
+                    상태를 바꾸는 동작은
+                    ${code('show()')}·${code('close()')}·${code('toggle()')}이다
+                  `,
+                  html`
+                    ${code('open')}이 이미 속성 이름이라 메서드로 쓸 수 없어, 여는 동사는
+                    ${code('show()')}다
+                  `,
+                ),
+                rule(
+                  html`
+                    열고 닫을 때는 ${code('open')}을 직접 바꾸지 않고 메서드를 부른다
+                  `,
+                  html`
+                    ${code('show()')}·${code('close()')}를 덮어써 할 일을 더한 컴포넌트(예: toast의
+                    자동 닫힘 타이머)는 ${code('open')}을 직접 바꾸면 그 동작이 실행되지 않는다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
 

@@ -66,11 +66,11 @@ export class Select extends LitElement {
       <mm-popover
         placement=${this.placement}
         .anchor=${this.overlay.trigger}
-        ?open=${!this.overlay.compact && this.overlay.open}
+        ?open=${!this.overlay.isViewportCompact && this.overlay.open}
         style=${styleMap({ '--overlay-panel-max-height': POPOVER_MAX_HEIGHT })}
         @toggle=${this.overlay.handleOverlayToggle}
       >
-        ${this.overlay.compact ? nothing : this.renderOptionList()}
+        ${this.overlay.isViewportCompact ? nothing : this.renderOptionList()}
       </mm-popover>
     `
   }
@@ -79,11 +79,13 @@ export class Select extends LitElement {
     return html`
       <mm-sheet
         aria-label=${this.ariaLabel || nothing}
-        ?open=${this.overlay.compact && this.overlay.open}
+        ?open=${this.overlay.isViewportCompact && this.overlay.open}
         @toggle=${this.overlay.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
-        <mm-sheet-body>${this.overlay.compact ? this.renderOptionList() : nothing}</mm-sheet-body>
+        <mm-sheet-body>
+          ${this.overlay.isViewportCompact ? this.renderOptionList() : nothing}
+        </mm-sheet-body>
       </mm-sheet>
     `
   }
@@ -97,7 +99,7 @@ export class Select extends LitElement {
     return html`
       <mm-button
         variant=${this.variant}
-        aria-haspopup=${this.overlay.compact ? 'dialog' : 'listbox'}
+        aria-haspopup=${this.overlay.isViewportCompact ? 'dialog' : 'listbox'}
         aria-expanded=${this.overlay.open ? 'true' : 'false'}
         aria-label=${this.triggerLabel || nothing}
         @click=${this.overlay.handleTriggerClick}

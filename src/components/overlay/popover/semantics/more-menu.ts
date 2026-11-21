@@ -44,10 +44,10 @@ export class MoreMenu extends LitElement {
       <mm-popover
         placement=${this.placement}
         .anchor=${this.overlay.trigger}
-        ?open=${!this.overlay.compact && this.overlay.open}
+        ?open=${!this.overlay.isViewportCompact && this.overlay.open}
         @toggle=${this.overlay.handleOverlayToggle}
       >
-        ${this.overlay.compact ? nothing : this.renderActionList()}
+        ${this.overlay.isViewportCompact ? nothing : this.renderActionList()}
       </mm-popover>
     `
   }
@@ -56,11 +56,13 @@ export class MoreMenu extends LitElement {
     return html`
       <mm-sheet
         aria-label=${this.ariaLabel}
-        ?open=${this.overlay.compact && this.overlay.open}
+        ?open=${this.overlay.isViewportCompact && this.overlay.open}
         @toggle=${this.overlay.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
-        <mm-sheet-body>${this.overlay.compact ? this.renderActionList() : nothing}</mm-sheet-body>
+        <mm-sheet-body>
+          ${this.overlay.isViewportCompact ? this.renderActionList() : nothing}
+        </mm-sheet-body>
       </mm-sheet>
     `
   }
@@ -71,7 +73,7 @@ export class MoreMenu extends LitElement {
     return html`
       <mm-more-button
         aria-label=${this.ariaLabel}
-        aria-haspopup=${this.overlay.compact ? 'dialog' : 'menu'}
+        aria-haspopup=${this.overlay.isViewportCompact ? 'dialog' : 'menu'}
         aria-expanded=${this.overlay.open ? 'true' : 'false'}
         @click=${this.overlay.handleTriggerClick}
       ></mm-more-button>

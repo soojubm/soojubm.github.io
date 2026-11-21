@@ -556,23 +556,17 @@ const main = html`
                 <mm-text-list
                   .texts=${[
                     html`
-                      ${code('toggle()')}을 제공: 열림 상태를 반대로 바꿉니다. 상태는 컴포넌트의
-                      ${code('open')} 값이 갖고, 컨트롤러는 따로 저장하지 않고
-                      ${code('show()')}·${code('close()')}로 바꿉니다.
+                      ${code('toggle()')}을 제공: 열림 상태 ${code('open')}을 토글합니다. 컨트롤러는
+                      따로 저장하지 않고 ${code('show()')}·${code('close()')}로 바꿉니다. 열림
+                      상태가 바뀔 때마다 ${code('toggle')} 이벤트를 발행하며, ESC나 바깥 클릭으로
+                      컴포넌트가 스스로 닫혀도 발행하므로 사용하는 쪽이 자기 상태를 맞출 수
+                      있습니다.
                     `,
                     html`
-                      ${code('trigger')}를 제공: 이 컴포넌트를 열고 닫는 버튼 요소를 돌려줍니다.
-                      버튼의 ${code('aria-controls')}가 컴포넌트 ${code('id')}를 가리키면 그 버튼이
-                      트리거이고, 누르면 ${code('toggle()')}이 불려 클릭 핸들러를 따로 달 필요가
-                      없습니다. 여는 종류는 트리거가 ${code('aria-haspopup')}으로 선언합니다.
-                    `,
-                    html`
-                      열림 상태가 바뀔 때마다 트리거의 ${code('aria-expanded')}를 맞춥니다.
-                      스크린리더가 트리거가 펼쳐졌는지 알 수 있습니다.
-                    `,
-                    html`
-                      열림 상태가 바뀌면 ${code('toggle')} 이벤트를 발행합니다. ESC나 바깥 클릭처럼
-                      컴포넌트가 스스로 닫혀도 발행해, 사용하는 쪽이 자기 상태를 맞출 수 있습니다.
+                      ${code('trigger')}를 제공: 이 컴포넌트를 열고 닫는 버튼 요소를 리턴합니다.
+                      트리거의 ${code('aria-controls')}가 컴포넌트 ${code('id')}를 가리키면 클릭 시
+                      ${code('toggle()')}이 불립니다. ${code('aria-haspopup')}이 여는 종류를
+                      선언합니다. ${code('aria-expanded')}로 열린 상태를 스크린리더에 알립니다.
                     `,
                   ]}
                 ></mm-text-list>
@@ -592,97 +586,26 @@ const main = html`
 
               <mm-text-block
                 level="4"
-                heading="EscapeKeyController"
-                description="ESC를 누르면 열려 있는 overlay를 닫는 컨트롤러입니다."
-              >
-                <mm-text-list
-                  .texts=${[
-                    html`
-                      ${code('onEscape')} 콜백: ESC를 누르면 부릅니다. 생략하면 컴포넌트의
-                      ${code('close()')}를 부르고, ${code('SheetController')}는
-                      ${code('dismissOn')}에 ${code("'escape'")}가 있을 때만 닫는 콜백을 넘깁니다.
-                    `,
-                    html`
-                      열린 순서를 기억해, ESC는 가장 나중에 연 것 하나만 처리합니다. dialog 안에서
-                      popover를 열었다면 ESC 한 번에 popover만 닫힙니다. 맨 위 컴포넌트가 ESC로
-                      닫히지 않아도 아래 컴포넌트로 넘기지 않습니다.
-                    `,
-                  ]}
-                ></mm-text-list>
-                <mm-keyword-tag-group
-                  heading="사용처"
-                  .keywords=${['mm-popover', 'mm-sheet', 'mm-dialog', 'mm-sidebar']}
-                ></mm-keyword-tag-group>
-              </mm-text-block>
-
-              <mm-text-block
-                level="4"
-                heading="OutsideClickController"
-                description="overlay 바깥을 누르면 콜백을 호출해 닫게 하는 컨트롤러입니다."
-              >
-                <mm-text-list
-                  .texts=${[
-                    html`
-                      ${code('onOutside')} 콜백: 컴포넌트 바깥을 누르면 부릅니다. 누른 곳이 안인지는
-                      ${code('composedPath()')}로 판단해, 트리거가 다른 컴포넌트의 shadow DOM 안에
-                      있어도 맞게 동작합니다.
-                    `,
-                    html`
-                      ${code('isOpen')} 옵션: 열려 있는 동안에만 화면 전체에서 누르는
-                      동작(${code('pointerdown')})을 감지하고, 닫히면 멈춥니다. 생략하면 연결된 동안
-                      계속 감지합니다.
-                    `,
-                    html`
-                      ${code('getSafeElements')} 옵션: 넘긴 요소(열림을 토글하는 트리거)를 누르면
-                      바깥을 누른 것으로 보지 않습니다.
-                    `,
-                    html`
-                      sheet·dialog의 배경 클릭은 ${code('SheetController')}가 처리합니다. 배경을
-                      눌러도 컴포넌트 안을 누른 것으로 보여서, 이 컨트롤러로는 바깥 클릭을 구분할 수
-                      없기 때문입니다.
-                    `,
-                  ]}
-                ></mm-text-list>
-                <mm-keyword-tag-group
-                  heading="사용처"
-                  .keywords=${[
-                    'mm-popover',
-                    'mm-select',
-                    'mm-more-menu',
-                    'mm-theme-selector',
-                    'mm-sidebar-user-menu',
-                    'mm-chat-source',
-                    'mm-prompt-input',
-                  ]}
-                ></mm-keyword-tag-group>
-              </mm-text-block>
-
-              <mm-text-block
-                level="4"
                 heading="SheetController"
                 description="viewport 기준 modal overlay가 열린 동안 뒤 화면을 막고, 닫는 방법을 처리하는 컨트롤러입니다."
               >
                 <mm-text-list
                   .texts=${[
                     html`
-                      ${code('dismissOn')}에 ${code("'backdrop'")}을 켜면 배경 클릭으로,
-                      ${code("'escape'")}를 켜면 ESC로 닫습니다. sheet는 둘 다, dialog는 ESC만
-                      켭니다.
+                      ESC로 항상 닫고, ${code('closeOnBackdrop')}을 켜면 배경 클릭으로도 닫습니다.
                     `,
                     html`
                       열릴 때 뒤 화면과 아래쪽 모달을 ${code('inert')}로 만들어 포커스를
                       ${code('autofocus')} 요소나 컴포넌트 안으로 옮기고, 닫힐 때 풀어 포커스를 연
-                      요소로 돌립니다.
+                      요소로 돌립니다. 배경(backdrop)은 마우스 클릭만 막으므로, 막지 않으면 키보드
+                      Tab이나 스크린리더가 뒤 화면으로 빠져나갑니다. 모달이 겹쳤을 때는 막은 횟수를
+                      세어, 위 모달이 닫혀도 아래 모달이 열려 있는 동안은 뒤 화면을 풀지 않습니다.
+                      닫히는 순서가 달라도 마지막 모달이 닫힐 때만 풀립니다.
                     `,
                     html`
-                      여러 개 모달이 겹쳤을 때는 막은 횟수를 세어, 위 모달이 닫히면 아래 모달이 다시
-                      조작되고 마지막 모달이 닫힐 때 뒤 화면이 풀립니다. 닫히는 순서는 상관없습니다.
-                    `,
-                    html`
-                      ${code('PortalController')}·${code('DisclosureController')}·${code(
-                        'EscapeKeyController',
-                      )}·${code('ScrollLockController')}를
-                      함께 만들어 각각 이동·트리거·ESC·스크롤 잠금을 맡깁니다.
+                      ${code('PortalController')}(이동), ${code('DisclosureController')}(트리거),
+                      ${code('EscapeKeyController')}(ESC), ${code('ScrollLockController')}(스크롤
+                      잠금)가 함께 연결됩니다.
                     `,
                   ]}
                 ></mm-text-list>
@@ -705,13 +628,12 @@ const main = html`
                       ${code('open')}으로 내려 줍니다. ${code('close()')}로 닫습니다.
                     `,
                     html`
-                      ${code('compact')}를 제공: ${code('MediaQueryController')}로 좁은 화면을
-                      감지합니다. true이면 sheet가, 아니면 popover가 맡고, 화면이 바뀌어 overlay가
-                      갈리면 열린 채 넘어가지 않게 닫습니다.
+                      ${code('isViewportCompact')}를 제공: 좁은 화면인지 알려 줍니다. true이면
+                      sheet가, false이면 popover가 맡습니다.
                     `,
                     html`
-                      ${code('trigger')}를 제공: 마지막으로 누른 트리거를 돌려줍니다. popover가 이
-                      요소를 기준으로 놓입니다.
+                      ${code('trigger')}를 제공: 마지막으로 누른 트리거를 리턴합니다. popover의
+                      ${code('AnchorController')}가 그 요소의 화면 좌표를 직접 재서 위치를 정합니다.
                     `,
                     html`
                       ${code('handleTriggerClick')}을 제공: 컴포넌트 트리거의 클릭에 연결해 열림
@@ -719,15 +641,67 @@ const main = html`
                       overlay의 ${code('DisclosureController')}가 같은 클릭을 또 토글합니다.
                     `,
                     html`
-                      ${code('handleOverlayToggle')}을 제공: popover·sheet가 ${code('toggle')}
-                      이벤트로 알리는 ${code('open')} 값에 열림 상태를 맞춥니다. ESC 등으로
-                      overlay가 스스로 닫혀도 이 컨트롤러가 알 수 있습니다.
+                      ${code('handleOverlayToggle')}을 제공: popover·sheet의 ${code('toggle')}
+                      이벤트에 연결해, 이벤트가 알리는 ${code('open')} 값에 열림 상태를 맞춥니다.
+                      ESC 등으로 overlay가 스스로 닫혀도 이 컨트롤러가 알 수 있습니다.
                     `,
                   ]}
                 ></mm-text-list>
                 <mm-keyword-tag-group
                   heading="사용처"
                   .keywords=${['mm-select', 'mm-more-menu']}
+                ></mm-keyword-tag-group>
+              </mm-text-block>
+
+              <mm-text-block
+                level="4"
+                heading="EscapeKeyController"
+                description="ESC를 누르면 열려 있는 overlay를 닫는 컨트롤러입니다."
+              >
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${['mm-popover', 'mm-sheet', 'mm-dialog', 'mm-sidebar']}
+                ></mm-keyword-tag-group>
+              </mm-text-block>
+
+              <mm-text-block
+                level="4"
+                heading="OutsideClickController"
+                description="overlay 바깥을 누르면 콜백을 호출해 닫게 하는 컨트롤러입니다."
+              >
+                <mm-text-list
+                  .texts=${[
+                    html`
+                      ${code('onOutsideClick')} 콜백: 컴포넌트 바깥을 누르면 부릅니다. 누른 곳이
+                      안인지는 ${code('composedPath()')}로 판단합니다.
+                    `,
+                    html`
+                      ${code('isOpen')} 옵션: 열려 있는 동안에만 화면 전체에서 누르는
+                      동작(${code('pointerdown')})을 감지하고, 닫히면 멈춥니다.
+                    `,
+                    html`
+                      ${code('getSafeElements')} 옵션: 넘긴 요소(열림을 토글하는 트리거)를 누르면
+                      바깥을 누른 것으로 보지 않습니다.
+                    `,
+                    html`
+                      sheet처럼 ${code('closeOnBackdrop')}을 켠 표면의 배경 클릭은
+                      ${code('SheetController')}가 처리합니다. 이 컨트롤러는 ${code('document')}에서
+                      누름을 받아, 모달이 겹쳐 있으면 위 모달 패널을 눌러도 아래 모달이 함께 닫히기
+                      때문입니다.
+                    `,
+                  ]}
+                ></mm-text-list>
+                <mm-keyword-tag-group
+                  heading="사용처"
+                  .keywords=${[
+                    'mm-popover',
+                    'mm-select',
+                    'mm-more-menu',
+                    'mm-theme-selector',
+                    'mm-sidebar-user-menu',
+                    'mm-chat-source',
+                    'mm-prompt-input',
+                  ]}
                 ></mm-keyword-tag-group>
               </mm-text-block>
 
@@ -745,8 +719,9 @@ const main = html`
                       않습니다.
                     `,
                     html`
-                      ${code('originRoot')}를 제공: 옮기기 전 자리의 root를 돌려줍니다.
-                      ${code('DisclosureController')}가 트리거를 찾을 때 씁니다.
+                      ${code('originRoot')}를 제공: 옮기기 전 자리의 root를 리턴합니다. 트리거가
+                      다른 컴포넌트의 shadow DOM 안에 있으면 옮겨진 뒤의 document에서는 찾을 수
+                      없어, ${code('DisclosureController')}가 트리거를 찾을 때 씁니다.
                     `,
                     html`
                       ${code('releaseIfOrphaned()')}를 제공: 원래 자리의 컴포넌트가 DOM에서 빠져
@@ -764,16 +739,12 @@ const main = html`
                     'mm-toast',
                   ]}
                 ></mm-keyword-tag-group>
-                <mm-paragraph>
-                  overlay가 ${code('transform')}·${code('contain')}이 걸린 요소 안에 있으면 위치와
-                  겹침 순서가 그 요소에 갇혀 어긋납니다. 어디서 열어도 같은 기준으로 놓이도록 따로
-                  옮깁니다.
-                </mm-paragraph>
-                <mm-component-notice heading="tooltip은 처음 열 때 만들어진다">
-                  표처럼 트리거가 수백 개인 페이지에서 tooltip을 미리 다 만들어 두면, 화면에
-                  보이지도 않는 요소가 그만큼 늘어 페이지가 느려집니다. 그래서 사용자가 처음
-                  hover하거나 포커스할 때 그 tooltip 하나만 만들고, 이후에는 만든 것을 다시 씁니다.
-                  처음 열 때도 두 번째부터와 같은 나타나는 애니메이션이 재생됩니다.
+                <mm-component-notice heading="tooltip은 한 번 만든 말풍선을 다시 그리지 않는다">
+                  표처럼 트리거가 수백 개인 페이지에서 말풍선을 미리 다 만들어 두면, 화면에 보이지도
+                  않는 요소가 그만큼 늘어 페이지가 느려집니다. 그래서 사용자가 처음 hover하거나
+                  포커스할 때 그 트리거의 말풍선만 한 번 만들고, 이후에는 다시 그리지 않고 열림
+                  상태만 바꿔 같은 말풍선을 씁니다. 처음 열 때도 두 번째부터와 같은 나타나는
+                  애니메이션이 재생됩니다.
                 </mm-component-notice>
               </mm-text-block>
             </mm-content-section-list>

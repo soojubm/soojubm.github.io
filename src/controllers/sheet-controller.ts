@@ -8,7 +8,6 @@ import { ScrollLockController } from '@/controllers/scroll-lock-controller'
 import { getDeepActiveElement } from '@/utils'
 
 type Host = ReactiveControllerHost & HTMLElement & OpenState
-type DismissOn = 'backdrop' | 'escape'
 
 // 모달이 겹쳐 열려도 아래쪽 표면과 본문이 위 표면이 닫히는 순서와 무관하게 풀리도록, 요소마다 inert를 건 표면의 수를 센다.
 // 이미 inert인 요소(닫힌 사이드바 등)는 그 요소가 상태를 소유하므로 세지 않고 건드리지 않는다.
@@ -39,13 +38,13 @@ const releaseInert = (element: HTMLElement) => {
 }
 
 interface SheetControllerOptions {
-  /** 스스로 닫히는 조건. 표면의 용도가 정하므로 컴포넌트가 명시한다 */
-  dismissOn: DismissOn[]
+  /** 배경 클릭으로 닫을지. 표면의 용도가 정하므로 컴포넌트가 명시한다. ESC는 항상 닫는다 */
+  closeOnBackdrop: boolean
 }
 
 /**
  * viewport 기준 modal 표면(mm-sheet, mm-dialog)이 공통으로 쓰는 트리거·portal·스크롤 잠금·
- * 닫기 배관을 소유하는 ReactiveController. dismissOn에 켠 배경 클릭·ESC로 스스로 닫히는 처리까지 담당한다.
+ * 닫기 배관을 소유하는 ReactiveController. ESC와, closeOnBackdrop을 켠 배경 클릭으로 스스로 닫히는 처리까지 담당한다.
  * 배경(mm-backdrop)은 컴포넌트의 shadow DOM 안에 있어 클릭이 컴포넌트로 retarget되므로,
  * 닫기 판정은 컴포넌트 자신을 target으로 보는 것으로 충분하다.
  * 여는 쪽은 popover와 같은 규약을 쓴다. aria-controls로 컴포넌트를 가리키는 요소가 트리거가 되고,
@@ -67,7 +66,7 @@ export class SheetController implements ReactiveController {
     this.scrollLock = new ScrollLockController(host)
     const portal = new PortalController(host)
     new DisclosureController(host, { getRoot: () => portal.originRoot })
-    new EscapeKeyController(host, this.handleEscapeKeydown)
+    new EscapeKeyController(host)
 
     host.addController(this)
     // 리스너 대상이 host 자신이라 portal 이동에도 유지되므로 생성자에서 한 번만 등록한다.
@@ -126,12 +125,7 @@ export class SheetController implements ReactiveController {
   }
 
   private handleBackdropClick = (e: MouseEvent) => {
-    if (!this.options.dismissOn.includes('backdrop') || !this.host.open) return
+    if (!this.options.closeOnBackdrop || !this.host.open) return
     if (e.target === this.host) this.host.close()
-  }
-  private handleEscapeKeydown = () => {
-    if (!this.options.dismissOn.includes('escape')) return
-
-    this.host.close()
   }
 }

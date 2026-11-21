@@ -183,7 +183,7 @@ const main = html`
               html`
                 트리거 클릭에 따른 토글과 ${code('aria-expanded')} 동기화는 컴포넌트가 맡고,
                 사용하는 쪽은 트리거를 ${code('aria-controls')}로 대상에 연결하기만 한다. 외부
-                클릭·ESC로 닫혀야 하는 표면만 ${code('dismissOn')}을 켠다
+                클릭으로 닫혀야 하는 표면만 ${code('closeOnBackdrop')}을 켠다
               `,
             ),
             rule(

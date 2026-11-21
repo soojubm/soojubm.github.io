@@ -3,8 +3,8 @@ import type { ReactiveController, ReactiveControllerHost } from 'lit'
 type Host = ReactiveControllerHost & HTMLElement
 
 interface OutsideClickOptions {
-  /** 열려 있는 동안만 document 리스너를 건다. 생략하면 연결된 동안 계속 건다 */
-  isOpen?: () => boolean
+  /** 열려 있는 동안만 document 리스너를 건다 */
+  isOpen: () => boolean
   /** host 밖이지만 바깥으로 치지 않을 요소들 (예: 열림을 토글하는 트리거) */
   getSafeElements?: () => Array<EventTarget | null | undefined>
 }
@@ -23,8 +23,8 @@ export class OutsideClickController implements ReactiveController {
 
   constructor(
     private host: Host,
-    private onOutside: () => void,
-    private options: OutsideClickOptions = {},
+    private onOutsideClick: () => void,
+    private options: OutsideClickOptions,
   ) {
     host.addController(this)
   }
@@ -43,8 +43,7 @@ export class OutsideClickController implements ReactiveController {
 
   // 열림에 맞춰 리스너를 걸고 뺀다. 이미 걸려 있거나 빠져 있으면 아무것도 하지 않는다.
   private syncListener() {
-    const shouldListen = this.options.isOpen?.() ?? true
-    if (shouldListen) this.addListener()
+    if (this.options.isOpen()) this.addListener()
     else this.removeListener()
   }
 
@@ -63,11 +62,11 @@ export class OutsideClickController implements ReactiveController {
   }
 
   private handleOutsideEvent = (e: Event) => {
-    if (this.options.isOpen && !this.options.isOpen()) return
+    if (!this.options.isOpen()) return
     const path = e.composedPath()
     if (path.includes(this.host)) return
     const safe = this.options.getSafeElements?.() ?? []
     if (safe.some(el => el != null && path.includes(el))) return
-    this.onOutside()
+    this.onOutsideClick()
   }
 }
