@@ -8,8 +8,8 @@ import {
   toggleButtonStyles,
   buttonSelectedStyles,
 } from '@/components/common/button/button.styles'
-import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
+import { toggleState } from '@/utils'
 import '@/components/common/icon/icon'
 
 @customElement('mm-toggle-button')
@@ -21,7 +21,6 @@ export class ToggleButton extends LitElement {
   @property({ type: String }) icon?: IconName
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  private toggle: ToggleController<'pressed'> = new ToggleController(this, 'pressed')
 
   render() {
     return html`
@@ -55,6 +54,6 @@ export class ToggleButton extends LitElement {
 
   private handleClick(event: Event) {
     event.stopPropagation()
-    this.toggle.toggle()
+    toggleState(this, 'pressed')
   }
 }

@@ -2,12 +2,12 @@ import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
+import type { ComponentSize } from '@/stylesheets/shared.types'
+
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
-import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import type { ComponentSize } from '@/stylesheets/shared.types'
-import { uniqueId } from '@/utils'
+import { setToggleState, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
 export type CheckboxSize = Extract<ComponentSize, 'medium' | 'large'>
@@ -29,7 +29,6 @@ export class Checkbox extends LitElement {
   indeterminate = false
   // SSR 환경 및 crypto가 없는 구형 환경에서도 터지지 않도록 고유 ID 생성을 보장합니다.
   private inputId = uniqueId('checkbox')
-  private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
 
   render() {
     // 가독성을 위한 구조 분해 할당
@@ -63,6 +62,6 @@ export class Checkbox extends LitElement {
 
     // 네이티브 체크박스처럼 누르면 indeterminate가 먼저 풀린 뒤 change가 나간다.
     this.indeterminate = false
-    this.toggle.set(target.checked)
+    setToggleState(this, { checked: target.checked })
   }
 }

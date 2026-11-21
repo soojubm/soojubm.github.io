@@ -4,7 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
 import { radioCardStyles, radioStyles } from '@/components/common/radio/radio.styles'
 import { renderRadioInput } from '@/components/common/radio/radio.utils'
-import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 
@@ -22,14 +21,12 @@ export class RadioCard extends LitElement {
   @property({ type: Boolean }) disabled = false
   // shadow 안에서만 쓰는 label 연결용 id라 컴포넌트의 id와 섞지 않는다.
   private inputId = uniqueId('radio-card')
-  private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
 
   render() {
     return html`
       ${renderRadioInput(
         this,
         this.inputId,
-        this.toggle,
         html`
           <slot></slot>
         `,

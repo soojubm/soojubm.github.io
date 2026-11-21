@@ -5,7 +5,7 @@ import type { ButtonSize, ButtonVariant } from '@/components/common/button/butto
 import type { ActionConfig } from '@/types'
 import type { Constructor } from '@/utils'
 
-import { ToggleController } from '@/controllers/toggle-controller'
+import { toggleState } from '@/utils'
 
 export interface TogglePressed {
   pressed: boolean
@@ -23,10 +23,9 @@ export const withTogglePressed = <T extends Constructor<LitElement>>(Base: T) =>
     @property({ type: Boolean }) pressed = false
     @property({ type: String }) value = ''
     @property({ type: Boolean }) disabled = false
-    private toggle: ToggleController<'pressed'> = new ToggleController(this, 'pressed')
 
     handleToggleClick() {
-      this.toggle.toggle()
+      toggleState(this, 'pressed')
     }
   }
 

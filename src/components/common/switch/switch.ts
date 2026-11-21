@@ -3,9 +3,8 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { switchStyles } from '@/components/common/switch/switch.styles'
-import { ToggleController } from '@/controllers/toggle-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { uniqueId } from '@/utils'
+import { setToggleState, uniqueId } from '@/utils'
 
 @customElement('mm-switch')
 export class Switch extends LitElement {
@@ -14,7 +13,6 @@ export class Switch extends LitElement {
   @property({ type: Boolean }) checked = false
   @property({ type: Boolean }) disabled = false
   private inputId = uniqueId('switch')
-  private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
 
   render() {
     return html`
@@ -35,6 +33,6 @@ export class Switch extends LitElement {
 
   private handleInputChange(event: Event) {
     const target = event.target as HTMLInputElement
-    this.toggle.set(target.checked)
+    setToggleState(this, { checked: target.checked })
   }
 }

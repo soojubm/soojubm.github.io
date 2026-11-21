@@ -15,6 +15,32 @@ export const emit = <T = unknown>(
 ): boolean =>
   host.dispatchEvent(new CustomEvent(type, { bubbles: true, composed: true, detail, ...init }))
 
+type ToggleKey = 'checked' | 'pressed'
+type ToggleState = Partial<Record<ToggleKey, boolean>>
+type ToggleHost<State extends ToggleState> = HTMLElement &
+  Record<keyof State, boolean> & { disabled: boolean; value?: string }
+
+/**
+ * 켜고 끄는 상태를 바꾸고 계열 공통 모양의 change로 알린다. disabled면 바꾸지도 알리지도 않는다.
+ * 바꿀 상태는 `{ checked: true }`처럼 이름과 값을 한 객체로 받고, 그 객체가 change detail이 된다. value는 늘 string으로 싣는다.
+ * 상태는 컴포넌트의 reactive property라 값을 바꾸면 컴포넌트가 스스로 다시 그린다.
+ */
+export const setToggleState = <State extends ToggleState>(
+  host: ToggleHost<State>,
+  state: State,
+) => {
+  if (host.disabled) return
+
+  Object.assign(host, state)
+  emit(host, 'change', { ...state, value: host.value ?? '' })
+}
+
+/** 켜고 끄는 상태를 뒤집는다. */
+export const toggleState = <Key extends ToggleKey>(
+  host: ToggleHost<Record<Key, boolean>>,
+  key: Key,
+) => setToggleState(host, { [key]: !host[key] } as Record<Key, boolean>)
+
 /**
  * prefix 기반 고유 ID를 생성한다.
  * crypto.randomUUID를 우선 쓰고, 미지원 환경에서는 Math.random으로 폴백한다.

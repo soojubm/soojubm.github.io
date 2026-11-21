@@ -8,8 +8,9 @@ import type { ListItem, ListItemSize } from '@/components/common/list-item/list-
 import type { AriaTriState } from '@/types'
 import type { Constructor } from '@/utils'
 
+import { toggleState } from '@/utils'
+
 import '@/components/common/list-item/list-item'
-import { ToggleController } from '@/controllers/toggle-controller'
 
 /**
  * menu-item 계열이 공유하는 표시 prop의 공개 인터페이스.
@@ -110,9 +111,8 @@ export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base:
     @property({ type: Boolean }) disabled = false
     @property({ type: Boolean }) checked = false
     @property({ type: String }) value = ''
-    private toggle: ToggleController<'checked'> = new ToggleController(this, 'checked')
     activate = () => {
-      this.toggle.toggle()
+      toggleState(this, 'checked')
     }
   }
 
