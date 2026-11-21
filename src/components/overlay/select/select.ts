@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 import { styleMap } from 'lit/directives/style-map.js'
@@ -15,7 +15,9 @@ import '@/components/overlay/select/select-listbox'
 import '@/components/overlay/select/select-option'
 import '@/components/overlay/sheet'
 import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-controller'
+import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
+import { withOpenState } from '@/utils/open-state'
 
 export type SelectVariant = Extract<ButtonVariant, 'secondary' | 'tertiary'>
 
@@ -28,10 +30,10 @@ const POPOVER_MAX_HEIGHT =
  * popover를 프리미티브로 하는 선택 입력.
  * 좁은 화면에서는 목록을 트리거에 앵커하지 않고 sheet로 올린다. 두 표면은 backdrop·스크롤 잠금·
  * 포커스 가두기를 쥐는 방식이 달라 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
- * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 AdaptiveOverlayController가 소유한다.
+ * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 select가 `open`으로 소유하고 AdaptiveOverlayController가 화면 폭에 맞는 표면에만 내려준다.
  */
 @customElement('mm-select')
-export class Select extends LitElement {
+export class Select extends withOpenState(LitElement) {
   static styles = css`
     /* 트리거 콘텐츠 폭을 따른다. 패널은 트리거 폭에 맞춰 늘어나므로, 컴포넌트가 부모를 채우면 놓인 자리마다 목록 폭이 달라진다 */
     :host {
@@ -49,7 +51,11 @@ export class Select extends LitElement {
   @property({ type: String }) variant: SelectVariant = 'secondary'
   @property({ type: String }) placement: PopoverPlacement = 'bottom-start'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
+  @query('mm-button[aria-haspopup]') private triggerElement?: HTMLElement
   private overlay = new AdaptiveOverlayController(this)
+  private disclosure = new DisclosureController(this, {
+    getTrigger: () => this.triggerElement ?? undefined,
+  })
 
   render() {
     return html`
@@ -65,8 +71,8 @@ export class Select extends LitElement {
     return html`
       <mm-popover
         placement=${this.placement}
-        .anchor=${this.overlay.trigger}
-        ?open=${!this.overlay.isViewportCompact && this.overlay.open}
+        .anchor=${this.disclosure.trigger}
+        ?open=${this.overlay.popoverOpen}
         style=${styleMap({ '--overlay-panel-max-height': POPOVER_MAX_HEIGHT })}
         @toggle=${this.overlay.handleOverlayToggle}
       >
@@ -79,7 +85,7 @@ export class Select extends LitElement {
     return html`
       <mm-sheet
         aria-label=${this.ariaLabel || nothing}
-        ?open=${this.overlay.isViewportCompact && this.overlay.open}
+        ?open=${this.overlay.sheetOpen}
         @toggle=${this.overlay.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
@@ -91,21 +97,18 @@ export class Select extends LitElement {
   }
 
   /**
-   * 열림 상태를 AdaptiveOverlayController가 소유하고 열 표면도 화면 폭에 따라 갈리므로, 트리거는 aria-controls로
-   * 표면을 가리키지 않고 select가 클릭과 aria-expanded를 직접 배선한다. aria-controls를 걸면 표면이 같은 클릭을 또 토글한다.
-   * 열린 표면의 종류만 aria-haspopup으로 알린다.
+   * 열 표면이 화면 폭에 따라 갈리므로 트리거는 aria-controls로 표면을 가리키지 않는다(걸면 표면이 같은 클릭을 또 토글한다).
+   * 클릭 토글과 aria-expanded는 DisclosureController가 getTrigger로 받은 이 버튼에 배선하고, 여기서는 열린 표면의 종류만 aria-haspopup으로 알린다.
    */
   private renderTrigger() {
     return html`
       <mm-button
         variant=${this.variant}
         aria-haspopup=${this.overlay.isViewportCompact ? 'dialog' : 'listbox'}
-        aria-expanded=${this.overlay.open ? 'true' : 'false'}
         aria-label=${this.triggerLabel || nothing}
-        @click=${this.overlay.handleTriggerClick}
       >
         ${this.currentLabel}
-        <mm-expand-indicator ?expanded=${this.overlay.open}></mm-expand-indicator>
+        <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
       </mm-button>
     `
   }
@@ -159,7 +162,7 @@ export class Select extends LitElement {
 
   // 옵션 활성화 시: 값 반영 후 목록 닫기
   private handleOptionInput(event: CustomEvent<{ value: string }>) {
-    this.overlay.close()
+    this.close()
     if (event.detail.value === this.value) return
 
     this.value = event.detail.value

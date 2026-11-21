@@ -8,7 +8,7 @@ import type {
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { SelectVariant } from '@/components/overlay/select/select'
 
-import { componentPropsOf, rule } from '@/components/domains/component'
+import { componentPropsOf, openStateMethods, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -31,7 +31,9 @@ const releaseChannelOptions = [
 
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-select'),
+  ...openStateMethods,
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
+  { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [

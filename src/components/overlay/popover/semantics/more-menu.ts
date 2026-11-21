@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
@@ -10,7 +10,9 @@ import '@/components/common'
 import '@/components/overlay/popover/popover'
 import '@/components/overlay/sheet'
 import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-controller'
+import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
+import { withOpenState } from '@/utils/open-state'
 
 // onClick은 항목마다 할 일이 정해진 경우에 쓰고, action 이벤트는 onClick 유무와 상관없이 늘 알린다.
 export type MoreMenuAction = OptionItem & { destructive?: boolean; onClick?: () => void }
@@ -21,7 +23,7 @@ export type MoreMenuAction = OptionItem & { destructive?: boolean; onClick?: () 
  * 투영할 수 없으므로, 항목은 actions 배열로 받아 어느 표면이든 직접 렌더한다.
  */
 @customElement('mm-more-menu')
-export class MoreMenu extends LitElement {
+export class MoreMenu extends withOpenState(LitElement) {
   static styles = css`
     :host {
       display: inline-flex;
@@ -30,7 +32,11 @@ export class MoreMenu extends LitElement {
   @property({ attribute: false }) actions: MoreMenuAction[] = []
   @property({ type: String }) placement: PopoverPlacement = 'bottom-end'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
+  @query('mm-more-button') private triggerElement?: HTMLElement
   private overlay = new AdaptiveOverlayController(this)
+  private disclosure = new DisclosureController(this, {
+    getTrigger: () => this.triggerElement ?? undefined,
+  })
 
   render() {
     return html`
@@ -43,8 +49,8 @@ export class MoreMenu extends LitElement {
     return html`
       <mm-popover
         placement=${this.placement}
-        .anchor=${this.overlay.trigger}
-        ?open=${!this.overlay.isViewportCompact && this.overlay.open}
+        .anchor=${this.disclosure.trigger}
+        ?open=${this.overlay.popoverOpen}
         @toggle=${this.overlay.handleOverlayToggle}
       >
         ${this.overlay.isViewportCompact ? nothing : this.renderActionList()}
@@ -56,7 +62,7 @@ export class MoreMenu extends LitElement {
     return html`
       <mm-sheet
         aria-label=${this.ariaLabel}
-        ?open=${this.overlay.isViewportCompact && this.overlay.open}
+        ?open=${this.overlay.sheetOpen}
         @toggle=${this.overlay.handleOverlayToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
@@ -67,15 +73,13 @@ export class MoreMenu extends LitElement {
     `
   }
 
-  // 열림 상태를 AdaptiveOverlayController가 소유하므로 aria-controls를 걸지 않고(걸면 표면이 같은 클릭을 또 토글한다),
-  // 더보기 메뉴가 클릭과 aria-expanded를 직접 배선한다.
+  // 열 표면이 화면 폭에 따라 갈리므로 aria-controls를 걸지 않는다(걸면 표면이 같은 클릭을 또 토글한다).
+  // 클릭 토글과 aria-expanded는 DisclosureController가 getTrigger로 받은 이 버튼에 배선한다.
   private renderTrigger() {
     return html`
       <mm-more-button
         aria-label=${this.ariaLabel}
         aria-haspopup=${this.overlay.isViewportCompact ? 'dialog' : 'menu'}
-        aria-expanded=${this.overlay.open ? 'true' : 'false'}
-        @click=${this.overlay.handleTriggerClick}
       ></mm-more-button>
     `
   }
@@ -108,7 +112,7 @@ export class MoreMenu extends LitElement {
   private handleActionClick(action: MoreMenuAction) {
     if (action.disabled) return
 
-    this.overlay.close()
+    this.close()
     action.onClick?.()
     emit(this, 'action', { value: action.value })
   }

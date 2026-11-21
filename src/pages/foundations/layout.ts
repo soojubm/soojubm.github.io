@@ -580,6 +580,8 @@ const main = html`
                     'mm-read-more-paragraph',
                     'mm-sidebar',
                     'mm-sidebar-section',
+                    'mm-select',
+                    'mm-more-menu',
                   ]}
                 ></mm-keyword-tag-group>
               </mm-text-block>
@@ -623,27 +625,19 @@ const main = html`
                 <mm-text-list
                   .texts=${[
                     html`
-                      ${code('open')}을 제공: ${code('DisclosureController')}와 달리 열림 상태를
-                      컴포넌트가 아니라 이 컨트롤러가 저장하고, popover나 sheet의
-                      ${code('open')}으로 내려 줍니다. ${code('close()')}로 닫습니다.
-                    `,
-                    html`
                       ${code('isViewportCompact')}를 제공: 좁은 화면인지 알려 줍니다. true이면
                       sheet가, false이면 popover가 맡습니다.
                     `,
                     html`
-                      ${code('trigger')}를 제공: 마지막으로 누른 트리거를 리턴합니다. popover의
-                      ${code('AnchorController')}가 그 요소의 화면 좌표를 직접 재서 위치를 정합니다.
-                    `,
-                    html`
-                      ${code('handleTriggerClick')}을 제공: 컴포넌트 트리거의 클릭에 연결해 열림
-                      상태를 바꿉니다. 트리거에는 ${code('aria-controls')}를 걸지 않습니다. 걸면
-                      overlay의 ${code('DisclosureController')}가 같은 클릭을 또 토글합니다.
+                      ${code('popoverOpen')}·${code('sheetOpen')}을 제공: 컴포넌트의
+                      ${code('open')}과 화면 폭을 합쳐, 화면 폭에 맞는 표면에만 열림을 내려 줍니다.
+                      열림 상태는 컴포넌트가 ${code('open')}으로 소유하고, 이 컨트롤러는 읽기만
+                      합니다.
                     `,
                     html`
                       ${code('handleOverlayToggle')}을 제공: ESC 등으로 popover·sheet가 스스로
                       닫혀도 열림 상태를 맞춥니다. 표면의 ${code('toggle')} 이벤트에 연결하면,
-                      이벤트가 알리는 ${code('open')} 값으로 상태를 바꿉니다.
+                      이벤트가 알리는 ${code('open')} 값으로 컴포넌트를 열거나 닫습니다.
                     `,
                   ]}
                 ></mm-text-list>
