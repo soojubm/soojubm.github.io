@@ -48,10 +48,7 @@ function unlockBodyScroll() {
 
 /**
  * 활성 동안 body 스크롤을 잠그는 ReactiveController.
- *
- * 컴포넌트당 한 번만 잠금을 점유하고, host가 disconnect되면 대칭으로 해제하므로
- * 컴포넌트마다 잠금 플래그와 정리 코드를 반복하지 않는다.
- * 전역 카운트를 공유하므로 모달이 중첩되어도 마지막 해제 시에만 원복된다.
+ * 전역 카운트를 공유해 모달이 중첩돼도 마지막 해제 시에만 원복하고, host가 분리되면 해제한다.
  */
 export class ScrollLockController implements ReactiveController {
   private locked = false

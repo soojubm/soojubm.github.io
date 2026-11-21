@@ -13,9 +13,8 @@ function watchTheme() {
 }
 
 /**
- * 테마가 바뀌면 컴포넌트를 다시 렌더한다.
- * 계산된 스타일에서 값을 읽어 보여주는 요소는 CSS 변수가 교체된 것을 Lit이 알 수 없어
- * 갱신 시점을 스스로 만들어야 한다.
+ * 테마가 바뀌면 컴포넌트를 다시 렌더하는 ReactiveController.
+ * 계산된 스타일에서 값을 읽는 요소는 CSS 변수가 교체된 것을 Lit이 알 수 없어 쓴다. data-theme 관찰자는 모듈이 하나만 둔다.
  */
 export class ThemeChangeController implements ReactiveController {
   constructor(private host: ReactiveControllerHost) {
@@ -29,5 +28,9 @@ export class ThemeChangeController implements ReactiveController {
 
   hostDisconnected() {
     hosts.delete(this.host)
+    if (hosts.size > 0) return
+
+    observer?.disconnect()
+    observer = undefined
   }
 }

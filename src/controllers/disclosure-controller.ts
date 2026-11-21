@@ -19,9 +19,7 @@ interface DisclosureOptions extends OpenStateDisclosureOptions {
 
 /**
  * 트리거를 누르면 컴포넌트를 열고 닫고, 열림 상태를 트리거의 aria-expanded와 toggle 이벤트로 알리는 ReactiveController.
- * 열림 상태는 컴포넌트가 소유하고 이 컨트롤러는 `open`을 읽어 `show()`·`close()`로 바꾼다. 다른 방식으로 상태를 갖는 컴포넌트는 open·setOpen을 넘긴다.
- * 트리거는 getTrigger로 지정하고, 생략하면 aria-controls로 컴포넌트를 가리키는 요소를 찾는다.
- * portal로 옮겨지는 컴포넌트는 getRoot로 옮기기 전 자리의 root를 넘긴다.
+ * 열림 상태는 컴포넌트의 `open`을 따르고(다르게 가지면 open·setOpen을 넘긴다), 트리거는 getTrigger로 지정하거나 aria-controls로 컴포넌트를 가리키는 요소에서 찾는다.
  */
 export class DisclosureController implements ReactiveController {
   private wiredTrigger?: HTMLElement
@@ -75,15 +73,14 @@ export class DisclosureController implements ReactiveController {
     }
     if (!trigger) return
 
-    trigger.setAttribute('aria-expanded', String(this.options.open()))
+    const expanded = String(this.options.open())
+    if (trigger.getAttribute('aria-expanded') === expanded) return
+
+    trigger.setAttribute('aria-expanded', expanded)
   }
 
-  // 열리거나 닫히면 그 요소에서 toggle 이벤트를 디스패치한다. 쓰는 쪽(소비자)은
-  // 이 이벤트에 리스너를 달아, 외부 클릭·ESC처럼 스스로 닫힌 경우에도 자기 상태(펼침 표시 등)를 맞춘다.
-  // 열림 여부는 렌더가 끝날 때마다 직전 값과 비교해 판단하므로, 트리거·외부 클릭·ESC·소비자의 open 변경 중
-  // 어느 경로로 바뀌었든 한 번씩 나간다. 첫 렌더는 바뀐 것이 아니므로 비교할 값만 기록한다.
-  // 네이티브 toggle처럼 버블링하지 않아 그 요소에 직접 단 리스너만 받는다. 안에 둔 다른 disclosure의 toggle이
-  // 부모로 올라가 바깥 리스너에 섞이지 않게 하기 위해서다.
+  // 렌더가 끝날 때마다 직전 열림 값과 비교해 toggle을 알리므로, 트리거·외부 클릭·ESC 등 어느 경로로 바뀌어도 한 번씩 나간다.
+  // 첫 렌더는 기록만 한다. 버블링하지 않아 안에 둔 다른 disclosure의 toggle이 바깥 리스너에 섞이지 않는다.
   private dispatchToggle() {
     const open = this.options.open()
     const wasOpen = this.wasOpen

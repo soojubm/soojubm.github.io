@@ -13,10 +13,7 @@ interface SelectionIndicatorControllerOptions {
 
 /**
  * 선택된 항목 아래에 인디케이터를 놓는 ReactiveController.
- * 위치는 컴포넌트가 렌더될 때마다, 그리고 컨테이너나 그 자식(항목)의 크기가 바뀔 때 다시 잰다. 측정은 다음 프레임 하나로 합친다.
- * 컴포넌트 렌더 없이 선택이나 항목이 바뀌면(slot으로 받은 항목 등) update를 직접 부른다.
- * 웹폰트가 늦게 로드되거나 창 폭이 바뀌면 선택된 항목의 크기뿐 아니라 앞선 항목 때문에 위치도 밀리므로,
- * 선택된 항목만이 아니라 컨테이너의 자식 전체를 관찰한다.
+ * 렌더가 끝날 때와 컨테이너·항목의 크기가 바뀔 때 위치를 다시 재며, 측정은 다음 프레임 하나로 합친다. 렌더 없이 선택이나 항목이 바뀌면 update를 직접 부른다.
  */
 export class SelectionIndicatorController implements ReactiveController {
   private frame: ScheduleController
@@ -31,8 +28,9 @@ export class SelectionIndicatorController implements ReactiveController {
     host.addController(this)
   }
 
+  // 관찰 대상은 ResizeController가 렌더가 끝날 때마다 맞추므로, 여기서는 위치만 다시 잰다.
   hostUpdated() {
-    this.update()
+    this.frame.request()
   }
 
   // 선택이 바뀌거나 항목이 늘고 줄 때 부르므로, 관찰 대상도 그에 맞춰 다시 맞춘다.

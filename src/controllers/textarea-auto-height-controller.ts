@@ -13,8 +13,7 @@ interface TextareaAutoHeightControllerOptions {
 
 /**
  * 내용과 폭에 맞춰 textarea 높이를 rows 범위 안에서 맞추는 ReactiveController.
- * 렌더가 끝날 때마다 다시 재고, textarea의 크기가 바뀌어도 다시 잰다. 숨겨진 채 측정됐다가 보이게 되거나
- * 폭이 바뀌어 줄바꿈이 달라지는 경우 렌더가 없어도 높이가 어긋나기 때문이다.
+ * 렌더가 끝날 때와 textarea의 크기가 바뀔 때 다시 잰다.
  */
 export class TextareaAutoHeightController implements ReactiveController {
   private frame: ScheduleController

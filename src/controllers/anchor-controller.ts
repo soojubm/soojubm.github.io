@@ -14,11 +14,7 @@ interface AnchorOptions {
 
 /**
  * portal로 옮겨져 기준 요소의 자손이 아닌 표면이, 기준 요소의 화면 좌표를 CSS 변수로 받게 하는 ReactiveController.
- *
- * 열려 있는 동안 렌더가 끝날 때마다, 그리고 scroll·resize마다 좌표를 다시 재고 host에 싣는다.
- * 놓이는 자리는 CSS가 이 변수로 정하므로 컨트롤러는 어느 모서리에 맞출지 모른다.
- * scroll·resize 리스너는 열려 있는 동안에만 걸고 닫히거나 연결이 끊기면 대칭으로 정리하므로,
- * 닫힌 표면이 window 이벤트마다 깨어나지 않는다.
+ * 열려 있는 동안 렌더·scroll·resize마다 좌표를 다시 재며, 놓이는 자리는 CSS가 이 변수로 정한다.
  */
 export class AnchorController implements ReactiveController {
   constructor(private host: Host, private options: AnchorOptions) {

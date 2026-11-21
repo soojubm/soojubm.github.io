@@ -28,13 +28,7 @@ const remove = (controller: EscapeKeyController) => {
 
 /**
  * ESC 키를 누르면 컴포넌트의 `close()`를 호출하는 ReactiveController.
- *
- * 열려 있는 표면을 열린 순서대로 쌓고 ESC는 맨 위 표면 하나만 처리한다. dialog 안에서 popover를 연 것처럼
- * 표면이 겹쳐 있어도 한 번에 한 겹씩 닫힌다.
- * 쌓고 빼는 일과 document 리스너는 이 컨트롤러가 연결·렌더·해제 시점에 맡으므로,
- * 컴포넌트마다 connectedCallback/disconnectedCallback에 같은 코드를 반복하지 않는다.
- * OutsideClickController와 함께 떠 있는 표면이 스스로 닫히는 수단을 이룬다.
- * 열림 여부는 `OpenState` 컴포넌트의 `open`을 읽는다.
+ * 열린 표면을 열린 순서대로 쌓아 맨 위 하나만 닫으므로, 표면이 겹쳐 있어도 한 번에 한 겹씩 닫힌다.
  */
 export class EscapeKeyController implements ReactiveController {
   constructor(private host: ReactiveControllerHost & Pick<OpenState, 'open' | 'close'>) {

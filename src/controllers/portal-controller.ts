@@ -24,19 +24,10 @@ const unwatch = (controller: PortalController) => {
 }
 
 /**
- * 연결된 동안 host를 index.html의 portal 컨테이너(#portal-root)로 옮겨, 조상의 transform·contain·stacking context에
- * 갇히지 않게 하는 ReactiveController.
- *
- * React의 createPortal과 같은 역할을 하되 host 노드를 통째로 이동하므로,
- * 이동 중 재실행되는 connected/disconnected lifecycle은 moving 플래그로 무시한다.
- * 원래 위치는 anchor 주석으로 표시한다. 이 주석이 문서에서 떨어지면(소비자가 DOM에서 빠지면) 옮겨간 host도 함께 걷어낸다.
- *
- * open 상태가 아니라 connect 생명주기에 이동을 묶은 이유: open이 바뀌는 시점에 이동까지 겹치면
- * "이동 직후 열림"이 같은 프레임에서 처리되어 브라우저가 전환 시작 스타일을 커밋하지 못하고
- * CSS transition이 재생되지 않는다. sheet·toast·popover의 host는 미리 마운트돼 있고 open만 토글되므로,
- * 이동을 connect 시점으로 분리해두면 open 전환 전에 위치가 이미 안정된 상태다.
- * 열릴 때 만들어지는 표면(tooltip 말풍선)은 만들자마자 열리므로 이 방식에 기대지 않고,
- * 만들어지는 순간의 시작 스타일(`@starting-style`)로 열림 전환을 재생한다.
+ * 연결된 동안 host를 #portal-root로 옮겨, 조상의 transform·contain·stacking context에 갇히지 않게 하는 ReactiveController.
+ * 원래 자리는 주석 노드로 표시하고, 이 노드가 문서에서 떨어지면 옮겨간 host도 걷어낸다. 이동 중 재실행되는 connected/disconnected는 moving 플래그로 무시한다.
+ * 이동을 open이 아니라 connect 시점에 묶은 것은, 둘이 같은 프레임에 겹치면 CSS transition이 재생되지 않기 때문이다.
+ * 열릴 때 만들어지는 표면(tooltip 말풍선)은 `@starting-style`로 전환을 재생한다.
  */
 export class PortalController implements ReactiveController {
   private anchor = document.createComment('portal')

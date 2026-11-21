@@ -43,18 +43,10 @@ interface SheetControllerOptions {
 }
 
 /**
- * viewport 기준 modal 표면(mm-sheet, mm-dialog)이 공통으로 쓰는 트리거·portal·스크롤 잠금·
- * 닫기 배관을 소유하는 ReactiveController. ESC와, closeOnBackdrop을 켠 배경 클릭으로 스스로 닫히는 처리까지 담당한다.
- * 배경(mm-backdrop)은 컴포넌트의 shadow DOM 안에 있어 클릭이 컴포넌트로 retarget되므로,
- * 닫기 판정은 컴포넌트 자신을 target으로 보는 것으로 충분하다.
- * 여는 쪽은 popover와 같은 규약을 쓴다. aria-controls로 컴포넌트를 가리키는 요소가 트리거가 되고,
- * 클릭 토글과 aria-expanded 반영은 DisclosureController가 맡고, aria-haspopup="dialog"는 트리거가
- * 직접 선언한다. 트리거는 portal로 옮겨지기 전 자리의 root에서 찾으므로 소비자의 shadow 안에 있어도 된다.
- * 열림 상태는 컴포넌트가 `OpenState`로 소유하고, 이 컨트롤러는 `open`을 읽고 `close()`로 닫기만 한다.
- * 열고 닫힐 때의 toggle 이벤트는 DisclosureController가 디스패치한다.
- * 포커스는 열린 동안 portal 컨테이너 바깥의 body 자식과 이미 열려 있는 아래쪽 모달 표면을 inert로 만들어
- * 표면 안에 가두고, 닫히면 inert를 풀고 연 요소로 돌려준다. shadow DOM을 가로지르는 Tab 순서를 직접 계산하지 않기 위해서다.
- * 모달이 겹쳐 열리면 같은 요소를 여러 표면이 맡으므로, 닫히는 순서와 무관하게 마지막 표면이 닫힐 때 푼다.
+ * viewport 기준 modal 표면(mm-sheet, mm-dialog)을 트리거로 열고, portal로 옮기고, 스크롤을 잠그고,
+ * ESC와 closeOnBackdrop을 켠 배경 클릭으로 닫아 주는 ReactiveController.
+ * 트리거는 aria-controls로 컴포넌트를 가리키는 요소이며, 열림 상태는 컴포넌트의 `open`을 따른다.
+ * 열린 동안 나머지 화면을 inert로 만들어 포커스를 표면 안에 가두고, 닫히면 연 요소로 돌려준다.
  */
 export class SheetController implements ReactiveController {
   private scrollLock: ScrollLockController
@@ -65,6 +57,7 @@ export class SheetController implements ReactiveController {
   constructor(private host: Host, private options: SheetControllerOptions) {
     this.scrollLock = new ScrollLockController(host)
     const portal = new PortalController(host)
+    // 부를 메서드가 없어 host에 등록만 하면 된다. 생성자가 addController를 호출한다.
     new DisclosureController(host, { getRoot: () => portal.originRoot })
     new EscapeKeyController(host)
 

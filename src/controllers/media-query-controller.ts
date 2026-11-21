@@ -1,11 +1,9 @@
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 /**
- * 미디어 쿼리의 일치 여부가 바뀌면 컴포넌트를 다시 렌더한다.
- * 같은 조건을 CSS로 표현할 수 있으면 미디어 쿼리를 쓰고, 이 컨트롤러는
- * 화면 크기에 따라 표면 컴포넌트 자체가 갈리는 것처럼 render에서 골라야 하는 분기에만 쓴다.
- * 조건은 constants의 MEDIA_QUERY를 넘겨 브레이크포인트를 CSS와 한 곳에서 공유한다.
- * 다시 렌더하는 것만으로 부족해 상태를 바꿔야 하면 onChange를 넘긴다. 연결될 때 한 번, 이후 일치 여부가 바뀔 때마다 호출된다.
+ * 미디어 쿼리의 일치 여부가 바뀌면 컴포넌트를 다시 렌더하는 ReactiveController.
+ * CSS로 쓸 수 있는 조건은 CSS로 쓰고, render에서 분기해야 할 때만 쓴다. 조건은 constants의 MEDIA_QUERY를 넘긴다.
+ * 상태도 바꿔야 하면 onChange를 넘긴다. 연결될 때 한 번, 이후 일치 여부가 바뀔 때마다 호출된다.
  */
 export class MediaQueryController implements ReactiveController {
   private query: MediaQueryList

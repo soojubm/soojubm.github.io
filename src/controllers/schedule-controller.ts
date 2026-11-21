@@ -7,10 +7,7 @@ interface ScheduleOptions {
 
 /**
  * 나중에 한 번 실행할 작업을 예약하는 ReactiveController.
- *
- * 요청이 겹치면 마지막 요청만 실행하므로, 렌더·리사이즈마다 쏟아지는 요청을 한 번의 측정이나
- * 스타일 쓰기로 합치고(다음 프레임), 입력이 멈출 때까지 기다리는 debounce나 자동 닫힘 같은
- * 시간 지연도 같은 규칙으로 다룬다(delay). host가 분리되면 예약을 취소해 분리된 뒤에 작업이 돌지 않는다.
+ * 요청이 겹치면 마지막 요청만 실행한다. delay를 생략하면 다음 프레임에, 주면 그 시간(ms) 뒤에 실행하고, host가 분리되면 예약을 취소한다.
  */
 export class ScheduleController implements ReactiveController {
   private handle = 0

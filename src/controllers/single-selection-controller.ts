@@ -8,6 +8,7 @@ interface SingleSelectionControllerOptions {
   setValue: (value: string) => void
 }
 
+/** 항목을 누르면 그 항목 하나만 선택하고, 선택된 항목을 다시 누르면 해제하는 컨트롤러. */
 export class SingleSelectionController implements SelectionStore {
   constructor(private options: SingleSelectionControllerOptions) {}
 

@@ -11,12 +11,7 @@ interface OutsideClickOptions {
 
 /**
  * host 바깥을 누르면 콜백을 호출하는 ReactiveController.
- *
- * 열려 있는 동안에만 document 리스너를 걸고 닫히거나 해제되면 대칭으로 뺀다.
- * 닫힌 채 연결만 된 컴포넌트가 많아도 누를 때마다 호출되지 않으며, 컴포넌트마다
- * connectedCallback/disconnectedCallback에 같은 코드를 반복하지 않는다.
- * composedPath()로 shadow 경계를 넘어 host 포함 여부를 판별하기 때문에,
- * 트리거가 다른 컴포넌트의 shadow DOM에 끼워져도 정상 동작한다.
+ * 열려 있는 동안에만 document 리스너를 걸고, shadow 경계는 composedPath()로 넘어 판별한다.
  */
 export class OutsideClickController implements ReactiveController {
   private listening = false
@@ -50,18 +45,18 @@ export class OutsideClickController implements ReactiveController {
   private addListener() {
     if (this.listening) return
 
-    document.addEventListener('pointerdown', this.handleOutsideEvent)
+    document.addEventListener('pointerdown', this.handleDocumentPointerdown)
     this.listening = true
   }
 
   private removeListener() {
     if (!this.listening) return
 
-    document.removeEventListener('pointerdown', this.handleOutsideEvent)
+    document.removeEventListener('pointerdown', this.handleDocumentPointerdown)
     this.listening = false
   }
 
-  private handleOutsideEvent = (e: Event) => {
+  private handleDocumentPointerdown = (e: Event) => {
     if (!this.options.open()) return
     const path = e.composedPath()
     if (path.includes(this.host)) return

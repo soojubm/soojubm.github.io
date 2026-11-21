@@ -46,13 +46,17 @@ function nextFocusableIndex(
   return from
 }
 
+/**
+ * 항목 중 하나만 Tab 순서에 두고 방향키·Home·End로 항목 사이를 옮겨 다니게 하는 ReactiveController.
+ * 비활성 항목은 건너뛰고, 포커스가 그룹 밖에 있으면 기준 항목(보통 선택된 항목)이 Tab 진입점이 된다.
+ */
 export class RovingFocusController implements ReactiveController {
   constructor(private host: Host, private options: RovingFocusControllerOptions) {
     host.addController(this)
     // 리스너 대상이 host 자신이라 연결이 바뀌어도 유지되므로 생성자에서 한 번만 등록한다.
-    host.addEventListener('keydown', this.handleKeydown)
-    host.addEventListener('focusin', this.handleFocusChange)
-    host.addEventListener('focusout', this.handleFocusChange)
+    host.addEventListener('keydown', this.handleHostKeydown)
+    host.addEventListener('focusin', this.handleHostFocusChange)
+    host.addEventListener('focusout', this.handleHostFocusChange)
   }
 
   // 렌더 후 항목이 갱신되면 tab stop 하나만 tabindex=0으로 유지한다.
@@ -101,10 +105,10 @@ export class RovingFocusController implements ReactiveController {
     items[tabStop]?.focus()
   }
 
-  private handleFocusChange = () => {
+  private handleHostFocusChange = () => {
     this.refresh()
   }
-  private handleKeydown = (event: KeyboardEvent) => {
+  private handleHostKeydown = (event: KeyboardEvent) => {
     // 중첩된 그룹이 이미 처리한 키는 바깥 그룹이 다시 처리하지 않는다.
     if (event.defaultPrevented) return
 

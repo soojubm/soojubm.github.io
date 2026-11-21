@@ -14,10 +14,8 @@ interface MultipleSelectionControllerOptions {
 }
 
 /**
- * 여러 값을 고르는 그룹의 선택 값을 소유한다.
- * 전체 선택은 고를 수 있는 항목(disabled와 전체 선택 항목 자신을 뺀 나머지)만 대상으로 삼는다.
- * 전체 선택 컨트롤(그룹 안의 항목이든 그룹 밖의 헤더든)은 isAllSelected·isPartiallySelected로 표시하고 toggleAll로 누른다.
- * 켜고 끌 때 그 밖의 값(disabled 항목에 이미 걸린 선택 등)은 사용자가 바꿀 수 없으므로 그대로 둔다.
+ * 항목을 누를 때마다 여러 값의 선택을 켜고 끄고, 전체 선택·부분 선택 상태를 알려 주는 컨트롤러.
+ * 전체 선택은 고를 수 있는 항목(disabled와 전체 선택 항목 자신 제외)만 대상으로 하며, 그 밖의 값은 그대로 둔다.
  */
 export class MultipleSelectionController implements SelectionStore {
   constructor(private options: MultipleSelectionControllerOptions) {}

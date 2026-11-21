@@ -7,12 +7,8 @@ import { MediaQueryController } from '@/controllers/media-query-controller'
 type Host = ReactiveControllerHost & OpenState
 
 /**
- * 넓은 화면에서는 popover로, 좁은 화면에서는 sheet로 목록을 여는 컴포넌트(mm-select, mm-more-menu)가
- * 열릴 표면을 고르게 하는 ReactiveController.
- * 두 표면은 backdrop·스크롤 잠금·포커스 가두기를 쥐는 방식이 달라 한 표면을 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
- * 열림 상태는 컴포넌트가 `open`으로 소유하고 두 표면이 나눠 갖지 않는다. 이 컨트롤러는 그 값을 읽어
- * 화면 폭에 맞는 표면에만 열림을 내려주고, 표면이 스스로 닫히면 컴포넌트의 상태를 맞춘다.
- * 트리거·목록 템플릿은 사용하는 컴포넌트마다 달라 그 컴포넌트가 그린다.
+ * 넓은 화면에서는 popover로, 좁은 화면에서는 sheet로 목록을 여는 컴포넌트(mm-select, mm-more-menu)가 열릴 표면을 고르는 컨트롤러.
+ * 열림 상태는 컴포넌트의 `open`이 쥐고, 이 컨트롤러는 화면 폭에 맞는 표면에만 열림을 내려준다. 표면이 스스로 닫히면 컴포넌트의 상태를 맞춘다.
  */
 export class AdaptiveOverlayController {
   private media: MediaQueryController
@@ -36,9 +32,9 @@ export class AdaptiveOverlayController {
     return this.isViewportCompact && this.host.open
   }
 
-  // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 알리는 toggle 이벤트의 open 값으로 컴포넌트의 상태를 맞춘다.
-  // 화면 폭이 바뀌어 표면이 갈릴 때는 물러나는 표면도 닫히며 toggle을 알린다. 그 닫힘은 열림을 넘기는 중이므로 활성 표면의 이벤트만 반영한다.
-  // Lit은 템플릿 리스너를 컴포넌트를 this로 두고 부르므로, 템플릿에 넘기는 핸들러는 화살표 함수로 둔다.
+  // 표면이 스스로 닫히면(외부 클릭·ESC·닫기 버튼) toggle 이벤트로 컴포넌트의 상태를 맞춘다.
+  // 화면 폭이 바뀌어 물러나는 표면의 닫힘은 무시하려고 활성 표면의 이벤트만 반영한다.
+  // 템플릿에 넘기는 핸들러는 Lit이 컴포넌트를 this로 부르므로 화살표 함수로 둔다.
   handlePopoverToggle = (event: CustomEvent<{ open: boolean }>) => {
     if (this.isViewportCompact) return
 
