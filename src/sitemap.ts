@@ -48,7 +48,6 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'interaction', name: 'Interaction' },
       { id: 'pattern', name: 'Pattern' },
       { id: 'content', name: 'Content' },
-      { id: 'conventions', name: 'Conventions' },
     ],
   },
   {
@@ -62,6 +61,12 @@ export const SITEMAP: SitemapNode[] = [
     id: 'utilities',
     title: 'Utilities',
     icon: ICON_NAMES.GRID_VIEW,
+  },
+  {
+    type: 'standalone',
+    id: 'conventions',
+    title: 'Conventions',
+    icon: ICON_NAMES.DOCUMENT,
   },
 
   // 2. 접고 펼치는 메뉴 그룹

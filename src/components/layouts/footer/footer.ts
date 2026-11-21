@@ -6,11 +6,13 @@ import '@/components/common'
 import soojubmImage from '@/images/soojubm.png'
 import '@/components/common/avatar/domain/user-snippet'
 import '@/components/common/button/semantics/social-links'
+import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {
-  static styles = [resetStyles, footerStyles]
+  static styles = [resetStyles, interactiveRowStyles, footerStyles]
 
   /* eslint-disable lit-a11y/accessible-emoji -- ©는 이모지가 아니라 활자 기호이고,
      스크린리더가 "저작권"으로 그대로 읽는다. role=img로 감싸면 오히려 읽기가 나빠진다. */
@@ -32,6 +34,18 @@ export class Footer extends LitElement {
             notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
             github="https://github.com/soojubm"
           ></mm-social-links>
+          <div role="list">
+            <div role="listitem">
+              <a href="/my/films/">
+                <mm-list-item label="영화감상 목록" icon=${ICON_NAMES.VIDEO}></mm-list-item>
+              </a>
+            </div>
+            <div role="listitem">
+              <a href="/my/books/">
+                <mm-list-item label="독서 목록" icon=${ICON_NAMES.BOOK}></mm-list-item>
+              </a>
+            </div>
+          </div>
         </div>
 
         <dl class="footer-address-info">

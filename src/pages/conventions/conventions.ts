@@ -14,6 +14,7 @@ const main = html`
       <mm-tab-list value="code" variant="text" search-param="tab">
         <mm-tab value="code">Code</mm-tab>
         <mm-tab value="documentation">Documentation</mm-tab>
+        <mm-tab value="agent">Agent Guide</mm-tab>
       </mm-tab-list>
 
       <mm-tab-panel value="code">
@@ -144,14 +145,6 @@ const main = html`
             ></mm-text-list>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="컴포넌트 페이지의 헤더 디스크립션">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '컴포넌트 페이지 설명은 무엇인지, 어떻게 동작하는지, 사용자에게 어떤 이득인지 순서로 쓴다.',
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
           <!-- <mm-content-section heading-level="3" heading="Prop 표">
             <mm-text-list
               variant="check"
@@ -163,6 +156,19 @@ const main = html`
           ]}
             ></mm-text-list>
           </mm-content-section> -->
+        </mm-content-section-list>
+      </mm-tab-panel>
+
+      <mm-tab-panel value="agent">
+        <mm-content-section-list>
+          <mm-content-section heading-level="3" heading="컴포넌트 페이지의 헤더 디스크립션">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                '컴포넌트 페이지 설명은 무엇인지, 어떻게 동작하는지, 사용자에게 어떤 이득인지 순서로 쓴다.',
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
     </mm-page-body>
