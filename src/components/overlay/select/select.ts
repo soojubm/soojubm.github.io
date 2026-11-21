@@ -74,7 +74,7 @@ export class Select extends withOpenState(LitElement) {
         .anchor=${this.disclosure.trigger}
         ?open=${this.overlay.popoverOpen}
         style=${styleMap({ '--overlay-panel-max-height': POPOVER_MAX_HEIGHT })}
-        @toggle=${this.overlay.handleOverlayToggle}
+        @toggle=${this.overlay.handlePopoverToggle}
       >
         ${this.overlay.isViewportCompact ? nothing : this.renderOptionList()}
       </mm-popover>
@@ -86,7 +86,7 @@ export class Select extends withOpenState(LitElement) {
       <mm-sheet
         aria-label=${this.ariaLabel || nothing}
         ?open=${this.overlay.sheetOpen}
-        @toggle=${this.overlay.handleOverlayToggle}
+        @toggle=${this.overlay.handleSheetToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
         <mm-sheet-body>

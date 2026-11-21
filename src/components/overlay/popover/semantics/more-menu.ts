@@ -51,7 +51,7 @@ export class MoreMenu extends withOpenState(LitElement) {
         placement=${this.placement}
         .anchor=${this.disclosure.trigger}
         ?open=${this.overlay.popoverOpen}
-        @toggle=${this.overlay.handleOverlayToggle}
+        @toggle=${this.overlay.handlePopoverToggle}
       >
         ${this.overlay.isViewportCompact ? nothing : this.renderActionList()}
       </mm-popover>
@@ -63,7 +63,7 @@ export class MoreMenu extends withOpenState(LitElement) {
       <mm-sheet
         aria-label=${this.ariaLabel}
         ?open=${this.overlay.sheetOpen}
-        @toggle=${this.overlay.handleOverlayToggle}
+        @toggle=${this.overlay.handleSheetToggle}
       >
         <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
         <mm-sheet-body>

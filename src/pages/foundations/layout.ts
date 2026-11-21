@@ -635,9 +635,11 @@ const main = html`
                       합니다.
                     `,
                     html`
-                      ${code('handleOverlayToggle')}을 제공: ESC 등으로 popover·sheet가 스스로
-                      닫혀도 열림 상태를 맞춥니다. 표면의 ${code('toggle')} 이벤트에 연결하면,
-                      이벤트가 알리는 ${code('open')} 값으로 컴포넌트를 열거나 닫습니다.
+                      ${code('handlePopoverToggle')}·${code('handleSheetToggle')}을 제공: ESC 등으로
+                      popover·sheet가 스스로 닫혀도 열림 상태를 맞춥니다. 각 표면의
+                      ${code('toggle')} 이벤트에 연결하면, 이벤트가 알리는 ${code('open')} 값으로
+                      컴포넌트를 열거나 닫습니다. 화면 폭이 바뀌어 표면이 갈릴 때 물러나는 표면이
+                      닫히며 보내는 이벤트는 무시해, 열림이 유지됩니다.
                     `,
                   ]}
                 ></mm-text-list>

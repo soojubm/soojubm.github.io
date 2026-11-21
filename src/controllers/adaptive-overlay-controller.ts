@@ -37,9 +37,22 @@ export class AdaptiveOverlayController {
   }
 
   // popover·sheet는 외부 클릭·ESC·닫기 버튼으로 스스로 닫히므로, 표면이 알리는 toggle 이벤트의 open 값으로 컴포넌트의 상태를 맞춘다.
+  // 화면 폭이 바뀌어 표면이 갈릴 때는 물러나는 표면도 닫히며 toggle을 알린다. 그 닫힘은 열림을 넘기는 중이므로 활성 표면의 이벤트만 반영한다.
   // Lit은 템플릿 리스너를 컴포넌트를 this로 두고 부르므로, 템플릿에 넘기는 핸들러는 화살표 함수로 둔다.
-  handleOverlayToggle = (event: CustomEvent<{ open: boolean }>) => {
-    if (event.detail.open) this.host.show()
+  handlePopoverToggle = (event: CustomEvent<{ open: boolean }>) => {
+    if (this.isViewportCompact) return
+
+    this.syncOpen(event.detail.open)
+  }
+
+  handleSheetToggle = (event: CustomEvent<{ open: boolean }>) => {
+    if (!this.isViewportCompact) return
+
+    this.syncOpen(event.detail.open)
+  }
+
+  private syncOpen(open: boolean) {
+    if (open) this.host.show()
     else this.host.close()
   }
 }

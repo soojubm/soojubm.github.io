@@ -18,14 +18,10 @@ interface DisclosureOptions extends OpenStateDisclosureOptions {
 }
 
 /**
- * 열고 닫는 모든 disclosure의 트리거 클릭 토글, aria-expanded 동기화, toggle 이벤트 발행을 소유한다.
- * 여는 표면의 종류(aria-haspopup)는 컴포넌트가 추정하지 않고 트리거가 표준 attribute로 직접 선언한다.
- * 열림 상태 자체는 공개 API라 컴포넌트의 reflected property로 남기고, 컨트롤러는 읽기/쓰기만 위임받는다.
- * `OpenState` 컴포넌트는 open·setOpen 없이 넘기면 `open`을 읽고 `show()`·`close()`로 바꾼다.
- * 트리거는 getTrigger로 지정하며, 생략하면 aria-controls로 컴포넌트를 가리키는 외부 요소를 기본값으로 찾는다.
- * 그 요소를 찾을 root는 getRoot로 바꿀 수 있다. portal로 옮겨지는 컴포넌트는 옮기기 전 자리의 root를 넘겨,
- * 소비자의 shadow 안에 있는 트리거도 찾는다.
- * 외부 클릭·ESC로 닫히는 동작은 맡지 않는다. OutsideClickController·EscapeKeyController가 맡고, 표면이 조립해 쓴다.
+ * 트리거를 누르면 컴포넌트를 열고 닫고, 열림 상태를 트리거의 aria-expanded와 toggle 이벤트로 알리는 ReactiveController.
+ * 열림 상태는 컴포넌트가 소유하고 이 컨트롤러는 `open`을 읽어 `show()`·`close()`로 바꾼다. 다른 방식으로 상태를 갖는 컴포넌트는 open·setOpen을 넘긴다.
+ * 트리거는 getTrigger로 지정하고, 생략하면 aria-controls로 컴포넌트를 가리키는 요소를 찾는다.
+ * portal로 옮겨지는 컴포넌트는 getRoot로 옮기기 전 자리의 root를 넘긴다.
  */
 export class DisclosureController implements ReactiveController {
   private wiredTrigger?: HTMLElement
