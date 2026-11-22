@@ -109,7 +109,7 @@ const main = html`
               <mm-text-block
                 level="4"
                 heading="iconButtonStyles"
-                description="icon-button 계열의 기반 스타일입니다. 자체 button을 쓰는 파생 컴포넌트가 포커스·비활성을 빠뜨리지 않도록 buttonInteractiveStyles를 button 규칙 안에 함께 입힙니다."
+                description="icon-button 계열의 기반 스타일입니다. 자체 button을 쓰는 파생 컴포넌트가 hover·포커스·비활성을 빠뜨리지 않도록 buttonInteractiveStyles를 button 규칙 안에 함께 입힙니다."
               >
                 <mm-code-block
                   language="typescript"

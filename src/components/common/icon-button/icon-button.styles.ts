@@ -64,7 +64,7 @@ export const iconButtonSelectedStyles = css`
   }
 `
 
-/** icon-button 계열의 기반 스타일. 자체 button을 렌더하는 파생 컴포넌트가 포커스·비활성을 빠뜨리지 않도록 buttonInteractiveStyles를 함께 입힌다. */
+/** icon-button 계열의 기반 스타일. 자체 button을 렌더하는 파생 컴포넌트가 hover·포커스·비활성을 빠뜨리지 않도록 buttonInteractiveStyles를 함께 입힌다. */
 export const iconButtonStyles = css`
   :host {
     display: inline-flex;
@@ -94,10 +94,6 @@ export const iconButtonStyles = css`
     -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
     color: var(--icon-button-text-color);
     font-family: var(--font-family);
-
-    &:hover {
-      --icon-button-border: var(--border);
-    }
   }
 
   ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}

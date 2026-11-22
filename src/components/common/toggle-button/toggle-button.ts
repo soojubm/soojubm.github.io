@@ -1,20 +1,34 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/common/icon/icon-names'
 
-import {
-  buttonBaseStyles,
-  toggleButtonStyles,
-  buttonSelectedStyles,
-} from '@/components/common/button/button.styles'
+import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { toggleState } from '@/utils'
 import '@/components/common/icon/icon'
 
 @customElement('mm-toggle-button')
 export class ToggleButton extends LitElement {
-  static styles = [resetStyles, buttonBaseStyles, toggleButtonStyles, buttonSelectedStyles]
+  static styles = [
+    resetStyles,
+    buttonBaseStyles,
+    // radius는 그룹이 모서리를 묶도록 토큰으로 노출한다.
+    css`
+      :host {
+        display: inline-flex;
+
+        --toggle-button-border-radius: var(--radius);
+      }
+
+      button {
+        width: 100%;
+        min-width: var(--button-min-width);
+        border-radius: var(--toggle-button-border-radius);
+      }
+    `,
+    buttonSelectedStyles,
+  ]
   @property({ type: Boolean }) pressed = false
   @property({ type: String, attribute: 'pressed-label' }) pressedLabel?: string
   @property({ type: String }) value = ''

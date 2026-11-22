@@ -1,12 +1,17 @@
 import { css, unsafeCSS } from 'lit'
 
-import type { ButtonVariant } from '@/components/common/button/button'
+import type { ButtonSize, ButtonVariant } from '@/components/common/button/button'
 
 import { disabledStyles, focusRingStyles } from '@/stylesheets/shared.styles'
 import { buildAttributeRules, buildDeclarations, type AttributeTokens } from '@/utils'
 
-/** 눌리는 컨트롤의 포커스 링과 비활성 표시. 선언만 담으므로 사용하는 컴포넌트가 자기 선택자 안에 펼친다. */
+/** 눌리는 컨트롤의 hover 테두리·포커스 링·비활성 표시. 선언만 담으므로 사용하는 컴포넌트가 자기 선택자 안에 펼친다. */
 export const buttonInteractiveStyles = css`
+  /* 눌림 상태는 자기 테두리 색을 지키므로 hover가 덮지 않는다. */
+  &:hover:not(:disabled, [aria-pressed='true']) {
+    border-color: var(--border-color);
+  }
+
   &:focus-visible {
     ${focusRingStyles};
   }
@@ -16,9 +21,15 @@ export const buttonInteractiveStyles = css`
   }
 `
 
+// size가 있는 mm-button에만 최소 폭을 준다. size가 없는 작은 버튼형 컴포넌트는 내용 폭을 따른다.
+const buttonSizeTokens: AttributeTokens<ButtonSize> = {
+  medium: { 'min-width': 'var(--button-min-width)' },
+  large: { '--button-height': 'var(--size-48)', 'min-width': 'var(--button-min-width)' },
+}
+
 /**
  * 모든 버튼형 컴포넌트가 공유하는 기반 스타일.
- * 구조(레이아웃·크기·간격·타이포)와 기본 스킨에 포커스·비활성(buttonInteractiveStyles)까지 함께 입힌다.
+ * 구조(레이아웃·크기·간격·타이포)와 기본 스킨에 hover·포커스·비활성(buttonInteractiveStyles)까지 함께 입힌다.
  */
 export const buttonBaseStyles = css`
   :host {
@@ -38,8 +49,10 @@ export const buttonBaseStyles = css`
     width: 100%;
   }
 
+  ${unsafeCSS(buildAttributeRules('size', buttonSizeTokens, ':is(button, a)'))}
+
   :is(button, a) {
-    ${buttonInteractiveStyles}
+    ${buttonInteractiveStyles};
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -53,26 +66,13 @@ export const buttonBaseStyles = css`
     background: var(--button-background-color);
     box-sizing: border-box;
 
-    color: var(--button-text-color);
     font-family: var(--font-family);
     font-size: var(--button-text-size);
     font-weight: var(--button-text-weight);
+    color: var(--button-text-color);
+
     text-transform: capitalize;
     white-space: nowrap;
-
-    &:hover:not(:disabled) {
-      --button-border: var(--border);
-    }
-  }
-`
-
-/** mm-button 크기 변형. */
-export const buttonSizeStyles = css`
-  :is(button, a) {
-    min-width: var(--button-min-width);
-  }
-  :host([size='large']) :is(button, a) {
-    --button-height: var(--size-48);
   }
 `
 
@@ -115,31 +115,5 @@ export const buttonSelectedStyles = css`
     --button-background-color: var(--interaction-selected-background-color);
     --button-text-color: var(--interaction-selected-foreground-color);
     border-color: var(--interaction-selected-border-color);
-  }
-`
-
-/** mm-toggle-button 비선택 스킨. radius는 그룹이 모서리를 묶도록 토큰으로 노출한다. */
-export const toggleButtonStyles = css`
-  :host {
-    display: inline-flex;
-
-    --toggle-button-border-radius: var(--radius);
-  }
-
-  button {
-    width: 100%;
-    min-width: var(--button-min-width);
-    border-radius: var(--toggle-button-border-radius);
-  }
-`
-
-/** mm-follow-button 비선택 스킨(팔로우 = primary). */
-export const followButtonStyles = css`
-  :host {
-    display: inline-flex;
-  }
-
-  button {
-    ${buttonVariantSkin('primary')};
   }
 `

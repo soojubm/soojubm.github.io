@@ -5,11 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { IconName } from '@/components/common/icon/icon-names'
 import type { AriaBoolean, AriaCurrent, AriaHasPopup, AriaIdRef } from '@/types'
 
-import {
-  buttonBaseStyles,
-  buttonSizeStyles,
-  buttonVariantStyles,
-} from '@/components/common/button/button.styles'
+import { buttonBaseStyles, buttonVariantStyles } from '@/components/common/button/button.styles'
 import '@/components/common/dot/semantics/current-indicator'
 import { dotBelowStyles } from '@/components/common/dot/dot.styles'
 import '@/components/common/icon'
@@ -26,7 +22,6 @@ export class Button extends LitElement {
   static styles = [
     resetStyles,
     buttonBaseStyles,
-    buttonSizeStyles,
     buttonVariantStyles,
     css`
       button[aria-current] {

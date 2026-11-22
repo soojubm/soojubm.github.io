@@ -1,17 +1,31 @@
-import { LitElement, html } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import {
   buttonBaseStyles,
-  followButtonStyles,
   buttonSelectedStyles,
+  buttonVariantSkin,
 } from '@/components/common/button/button.styles'
 import { withTogglePressed } from '@/components/common/button/button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-follow-button')
 export class FollowButton extends withTogglePressed(LitElement) {
-  static styles = [resetStyles, buttonBaseStyles, followButtonStyles, buttonSelectedStyles]
+  static styles = [
+    resetStyles,
+    buttonBaseStyles,
+    css`
+      :host {
+        display: inline-flex;
+      }
+
+      /* 팔로우 = primary */
+      button {
+        ${buttonVariantSkin('primary')};
+      }
+    `,
+    buttonSelectedStyles,
+  ]
 
   render() {
     return html`
