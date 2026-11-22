@@ -5,7 +5,8 @@
   gap: var(--space-6);
   width: 100%;
   box-sizing: border-box;
-  padding: var(--space-6);
+  /* 스테이지가 가로 스크롤이라 넘친 그림자가 잘린다. 가장 큰 그림자(shadow-48)가 들어갈 만큼 위아래를 띄운다 */
+  padding: var(--space-16) var(--space-6);
 }
 
 .material-swatch {

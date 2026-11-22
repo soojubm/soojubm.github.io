@@ -283,13 +283,13 @@ const tokenTiers: TokenTier[] = [
   {
     heading: 'Primitive',
     description:
-      '디자인 언어가 쓸 수 있는 값의 목록이다. 값만 담고 어디에 쓰는지는 말하지 않으므로, 대개 System Token을 거쳐 간접적으로 쓴다. 색은 색상과 단계로, 크기·간격은 값의 종류와 단계로 이름 짓는다.',
+      '디자인 언어가 쓸 수 있는 값이다. 쓰임을 말하지 않으므로 System Token을 거쳐 쓴다. 색은 색상과 단계로, 크기·간격은 값의 종류와 단계로 이름 짓는다.',
     examples: ['gray800', 'green800', 'size-32', 'space-4'],
   },
   {
     heading: 'System',
     description:
-      'Primitive에 인터페이스에서의 역할을 붙인 값이다. 이름이 쓰임을 말하므로 컴포넌트와 페이지가 직접 참조하고, 테마는 이 계층이 가리키는 Primitive를 바꿔 전체 인상을 바꾼다. 대상, 세기나 상태, 값의 종류 순으로 이름 짓는다.',
+      'Primitive에 인터페이스에서의 역할을 붙인 값이다. 컴포넌트와 페이지가 직접 참조하고, 테마는 이 계층이 가리키는 Primitive를 바꾼다. 대상, 세기나 상태, 값의 종류 순으로 이름 짓는다.',
     examples: ['background-color', 'foreground-subtle-color', 'interaction-hover-background-color'],
   },
   {
@@ -369,15 +369,14 @@ const main = html`
     <mm-flex direction="column" gap="16">
       <mm-page-header
         heading="Tokens"
-        description="제품의 시각 언어를 구성하는 원자 값입니다. 색상, 글꼴, 간격, 크기, 형태, 레이어, 모션을 토큰으로 관리해 컴포넌트와 패턴이 같은 기준을 공유하게 합니다."
+        description="제품의 시각 결정에 이름을 붙인 값입니다. 컴포넌트와 페이지는 값을 직접 쓰지 않고 토큰을 참조합니다. 토큰 하나만 바꿔 그 값을 쓰는 모든 화면을 함께 바꿀 수 있습니다."
       ></mm-page-header>
 
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="계층">
           <mm-paragraph>
-            토큰은 디자인 결정을 추상화 수준에 따라 세 계층으로 나눕니다. 아래 계층은 쓸 수 있는
-            값을, 위 계층은 그 값을 어디에 쓰는지를 정합니다. 각 계층은 바로 아래 계층을 참조해 값을
-            물려받고, 토큰을 쓰는 쪽은 자신에게 가장 가까운 계층을 참조합니다.
+            토큰은 세 계층으로 나뉘고, 각 계층은 바로 아래 계층을 참조합니다. 컴포넌트는 자기
+            Component Token을 쓰고, 없으면 System Token을 씁니다.
           </mm-paragraph>
           <mm-grid columns="3" gap="4">${tokenTiers.map(renderTokenTier)}</mm-grid>
         </mm-content-section>
@@ -403,9 +402,9 @@ const main = html`
           </mm-component-notice>
         </mm-content-section>
 
-        <mm-content-section heading-level="3" heading="Primitive Token은 언제 만드나요?">
+        <mm-content-section heading-level="3" heading="Primitive Token은 언제 정의하나요?">
           <mm-paragraph>
-            같은 값이 두 곳 이상에서 쓰일 때 만듭니다. 한 곳에서만 쓰는 값은 예외 케이스로
+            같은 값이 두 곳 이상에서 쓰일 때 정의합니다. 한 곳에서만 쓰는 값은 예외 케이스로
             기록해둡니다.
           </mm-paragraph>
         </mm-content-section>
@@ -413,7 +412,7 @@ const main = html`
 
       <mm-token-section
         heading="Color"
-        description="Primitive 팔레트에는 그 색으로 상태를 표현하는 역할 토큰을 태그로 붙입니다. background 역할 토큰은 대비쌍을 얹어 명도 대비를 함께 확인합니다."
+        description="팔레트 색은 System Token을 거쳐 역할과 상태를 표현합니다. 배경색은 위에 올라가는 글자색과 한 쌍으로 정해, 어느 배경에서도 글자가 읽히게 합니다."
       >
         <mm-notice
           heading="권장 명도 대비"
@@ -446,11 +445,11 @@ const main = html`
 
       <mm-token-section
         heading="Typography"
-        description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
+        description="글자 크기와 행간을 한 쌍으로 씁니다. 같은 크기의 글은 어디서나 줄 간격이 같아 읽는 리듬이 흔들리지 않습니다."
       >
         <mm-notice
           heading="크기와 행간의 비율"
-          description="mm-text의 size는 글자 크기와 행간을 한 쌍으로 묶습니다. 12/16(1.33), 14/24(1.71), 18/28(1.56), 24/32(1.33), 32/40(1.25)로, 비율을 하나로 고정하지 않고 행간을 4px 배수에 맞춥니다. 크기는 제목용(24·32, 1.25~1.33)과 본문용(14·18, 1.56~1.71)으로 나뉘고 12는 보조 텍스트에 쓰지만, 14와 18은 제목에도 쓰여 본문 기준의 넓은 행간이 제목에도 그대로 적용됩니다. 본문용인 두 크기도 비율이 서로 다릅니다. 같은 비율로 맞추면 4px 배수로는 28/36(2.0)이 가장 작아 지나치게 넓고, 2px 단위를 허용한 22/28(약 1.57)이 가장 가까운 대안입니다."
+          description="행간은 비율이 아니라 4px 배수로 정합니다. 제목용 24·32는 1.25~1.33, 본문용 14·18은 1.56~1.71이고, 14와 18은 제목에도 쓰여 넓은 행간이 제목에 그대로 적용됩니다. 두 본문 크기를 같은 비율로 맞추면 4px 배수로는 28/36(2.0)이 가장 작아, 2px 단위를 허용한 22/28(약 1.57)이 가장 가까운 안입니다."
         ></mm-notice>
         <mm-flex direction="column" gap="4">
           ${TEXT_SIZES.map(
@@ -465,7 +464,7 @@ const main = html`
 
       <mm-token-section
         heading="Size"
-        description="요소의 크기를 정하는 값입니다. 높이에 쓰고, 정사각형 요소에만 너비에도 씁니다. 같은 단계를 쓰는 요소는 크기가 같아 나란히 놓였을 때 어긋나 보이지 않습니다."
+        description="요소의 높이를 정합니다. 정사각형 요소는 예외로 너비에도 씁니다. 같은 단계를 쓴 요소끼리는 나란히 놓여도 높이가 어긋나지 않습니다."
       >
         <mm-token-stage>
           <mm-token-swatches
@@ -478,7 +477,7 @@ const main = html`
 
       <mm-token-section
         heading="Space"
-        description="요소 사이의 거리를 정하는 값입니다. Primitive Token은 단계별로 고르고, 섹션 사이·하위 섹션 사이처럼 구조의 층위가 정해진 곳에는 System Token을 씁니다. 같은 관계의 요소 사이는 어느 화면에서나 같은 간격이라 묶임과 구분이 한눈에 읽힙니다."
+        description="요소 사이의 거리를 정합니다. 구조의 층위가 정해진 간격은 System Token을, 나머지는 Primitive 단계를 씁니다. 같은 관계의 요소는 어느 화면에서나 간격이 같아 묶임과 나뉨이 자연스럽게 전해집니다."
       >
         <mm-token-stage>
           <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
@@ -498,7 +497,7 @@ const main = html`
 
       <mm-token-section
         heading="Layout"
-        description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
+        description="반복되는 구조의 최대 너비와 여백을 정합니다. 같은 구조는 어느 페이지에서나 같은 폭으로 놓여 화면을 옮겨도 읽는 자리가 흔들리지 않습니다."
       >
         <mm-token-group aria-label="layout Primitive Token">
           ${renderTokenItems(sectionTokens('layout').filter(name => !referencesOtherTokens(name)))}
@@ -512,7 +511,7 @@ const main = html`
 
       <mm-token-section
         heading="Border"
-        description="테두리는 표면의 경계를 긋고, 모서리 곡률은 그 경계의 성격과 위계를 구분합니다."
+        description="테두리는 표면의 경계를 긋고, 모서리 곡률은 표면의 위계를 구분합니다."
       >
         <mm-token-stage>
           <mm-token-swatches
@@ -535,34 +534,28 @@ const main = html`
 
       <mm-token-section
         heading="Material"
-        description="재질은 표면이 뒤 배경에서 떠 보이는 정도입니다. Primitive Token은 값의 종류와 크기로 이름 짓고, 사용하는 쪽은 Primitive Token을 색 토큰과 조합한 티어를 씁니다. 티어가 선언하지 않은 속성은 base를 따릅니다."
+        description="표면이 뒤 배경에서 떠 보이는 정도를 정합니다. 사용하는 쪽은 그림자·blur·투명도를 색과 조합한 티어를 쓰고, 원시 값은 티어를 정의할 때만 씁니다. 티어가 정하지 않은 속성은 base를 따릅니다."
       >
         <mm-token-stage backdrop>
           <div class="material-stage">
             <mm-token-swatches
-              .swatches=${shadowSwatches(sectionTokens('shadow'))}
-            ></mm-token-swatches>
-          </div>
-        </mm-token-stage>
-        <mm-token-group aria-label="그림자 Primitive Token">
-          ${renderTokenItems(sectionTokens('shadow'))}
-        </mm-token-group>
-
-        <mm-token-stage backdrop>
-          <div class="material-stage">
-            <mm-token-swatches
               .swatches=${[
+                ...shadowSwatches(sectionTokens('shadow')),
                 ...blurSwatches(sectionTokens('blur')),
                 ...opacitySwatches(sectionTokens('opacity')),
               ]}
             ></mm-token-swatches>
           </div>
         </mm-token-stage>
-        <mm-token-group aria-label="blur·opacity Primitive Token">
-          ${renderTokenItems([...sectionTokens('blur'), ...sectionTokens('opacity')])}
+        <mm-token-group aria-label="재질 Primitive Token">
+          ${renderTokenItems([
+            ...sectionTokens('shadow'),
+            ...sectionTokens('blur'),
+            ...sectionTokens('opacity'),
+          ])}
         </mm-token-group>
 
-        <mm-token-stage backdrop>
+        <mm-token-stage>
           <div class="material-stage">${renderMaterialStage(sectionTokens('material'))}</div>
         </mm-token-stage>
         <mm-token-group aria-label="재질 티어 토큰">
@@ -572,28 +565,28 @@ const main = html`
 
       <mm-token-section
         heading="Z-index"
-        description="z-index는 레이어의 우선순위를 정의합니다. 같은 레이어군 안에서만 비교되도록 의미 이름을 사용합니다."
+        description="표면이 겹칠 때 무엇이 위에 오는지 정합니다. 숫자 대신 역할에 맞는 그룹을 고르고, 서로 다른 그룹의 값은 비교하지 않습니다."
       >
         <mm-token-group>${renderTokenItems(sectionTokens('zIndex'))}</mm-token-group>
 
         <mm-text-list
           .texts=${[
-            'base — 형제 요소 위에 그리기 위한 로컬 레이어. 구분선, 배경 위에 놓는 텍스트가 쓴다.',
+            'base — 형제 요소 위에 그리는 로컬 레이어.',
             'elevated — 목록·그룹 안에서 형제보다 살짝 뜨는 요소.',
             'chrome — 화면에 고정된 내비게이션·툴바.',
-            'chrome-top — chrome 중 화면 전체를 덮는 전역 내비게이션. 페이지에 고정된 바 위에 남아야 한다.',
-            'backdrop — modal 표면 뒤를 덮는 dim·blur 레이어.',
+            'chrome-top — 고정된 바 위에 남아야 하는 전역 내비게이션.',
+            'backdrop — modal 표면 뒤를 덮는 레이어.',
             'sheet — viewport를 기준으로 화면을 덮는 표면.',
-            'popover — 트리거에 앵커되어 뜨는 표면. 트리거가 sheet 안에 있어도 그 위에 보여야 한다.',
-            'tooltip — 포인터나 포커스를 따라 잠깐 뜨는 설명. 가리키는 대상이 어느 표면에 있든 그 위에 보여야 한다.',
-            'toast — 알림처럼 항상 다른 모든 레이어 위에 있어야 하는 요소.',
+            'popover — 트리거에 앵커되는 표면. sheet 안에서 열려도 sheet 위에 보인다.',
+            'tooltip — 가리키는 대상이 어느 표면에 있든 그 위에 보이는 설명.',
+            'toast — 항상 최상단에 보이는 알림.',
           ]}
         ></mm-text-list>
       </mm-token-section>
 
       <mm-token-section
         heading="Transition"
-        description="기본 모션은 duration과 easing을 하나씩 공유하고, 등장 강조 모션만 더 긴 duration과 오버슈트 easing을 씁니다. 순차 등장은 delay로 시차를 둡니다. 스테이지에 마우스를 올리면 두 easing의 차이를 볼 수 있습니다."
+        description="모든 모션은 기본 duration과 easing을 함께 씁니다. 등장을 강조하는 모션만 예외로 더 길고 튀는 emphasis 값을 씁니다. 순차 등장은 delay로 시차를 둡니다. 스테이지에 포인터를 올리면 두 easing을 비교할 수 있습니다."
       >
         <mm-token-stage>
           <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>
