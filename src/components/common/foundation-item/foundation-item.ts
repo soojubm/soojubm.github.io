@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common/text/semantics/text-block'
-import { interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
  * Foundations Overview에서 하위 문서로 이동하는 링크 카드.
@@ -29,11 +29,11 @@ export class FoundationItem extends LitElement {
           transform var(--transition-duration) var(--transition-easing);
       }
 
-      ${interactiveElement}:hover {
+      a:hover {
         --lift: var(--interaction-hover-lift);
       }
 
-      ${interactiveElement}:focus-visible {
+      a:focus-visible {
         outline: var(--interaction-focus-outline);
         outline-offset: 2px;
       }

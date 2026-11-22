@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { css, LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/icon/icon'
@@ -13,7 +13,18 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-menu-item-action')
 export class MenuItemAction extends withMenuItemPresentation(LitElement) {
-  static styles = [resetStyles, menuItemStyles]
+  static styles = [
+    resetStyles,
+    css`
+      :host {
+        display: block;
+      }
+
+      button {
+        ${menuItemStyles}
+      }
+    `,
+  ]
   @property({ type: String, attribute: 'trailing-icon' }) trailingIcon?: IconName
   @property({ type: Boolean }) disabled = false
 

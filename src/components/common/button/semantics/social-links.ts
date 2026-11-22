@@ -27,7 +27,11 @@ type SocialLink = {
 export class SocialLinks extends LitElement {
   static styles = [
     resetStyles,
-    listItemInteractiveStyles,
+    css`
+      a {
+        ${listItemInteractiveStyles}
+      }
+    `,
     css`
       .compact {
         display: flex;

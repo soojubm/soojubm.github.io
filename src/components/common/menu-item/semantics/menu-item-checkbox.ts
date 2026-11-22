@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { css, LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
@@ -13,7 +13,17 @@ import '@/components/common/checkbox'
 export class MenuItemCheckbox extends withMenuItemToggleState(
   withMenuItemPresentation(LitElement),
 ) {
-  static styles = [menuItemStyles]
+  static styles = [
+    css`
+      :host {
+        display: block;
+      }
+
+      div[role] {
+        ${menuItemStyles}
+      }
+    `,
+  ]
 
   // menu 밖(체크 그룹)에서 쓰이므로 menuitemcheckbox가 아니라 checkbox로 둔다.
   render() {

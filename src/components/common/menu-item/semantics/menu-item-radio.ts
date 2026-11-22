@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { css, LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
@@ -12,7 +12,17 @@ import '@/components/common/radio'
 
 @customElement('mm-menu-item-radio')
 export class MenuItemRadio extends withMenuItemPresentation(LitElement) {
-  static styles = [menuItemStyles]
+  static styles = [
+    css`
+      :host {
+        display: block;
+      }
+
+      div[role] {
+        ${menuItemStyles}
+      }
+    `,
+  ]
   @property({ type: Boolean }) disabled = false
   @property({ type: Boolean }) checked = false
   @property({ type: String }) value = ''

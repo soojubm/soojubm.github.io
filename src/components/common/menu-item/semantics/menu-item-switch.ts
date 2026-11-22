@@ -1,4 +1,4 @@
-import { LitElement, html } from 'lit'
+import { css, LitElement, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 
 import type { MenuItemGroup } from '@/components/common/menu-item/menu-item-group'
@@ -19,7 +19,17 @@ import '@/components/common/switch'
  */
 @customElement('mm-menu-item-switch')
 export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresentation(LitElement)) {
-  static styles = [menuItemStyles]
+  static styles = [
+    css`
+      :host {
+        display: block;
+      }
+
+      div[role] {
+        ${menuItemStyles}
+      }
+    `,
+  ]
   @state() private rowRole: MenuItemToggleRowRole = 'switch'
 
   connectedCallback() {

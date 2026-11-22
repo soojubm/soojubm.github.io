@@ -64,57 +64,51 @@ export const iconButtonSelectedStyles = css`
   }
 `
 
-/**
- * icon-button 계열의 기반 스타일.
- * hover·focus·disabled는 자체 button을 렌더하는 파생 컴포넌트가 빠뜨리기 쉬우므로
- * buttonBaseStyles와 같이 buttonInteractiveStyles를 여기 묶어 함께 내보낸다.
- */
-export const iconButtonStyles = [
-  buttonInteractiveStyles,
-  css`
-    :host {
-      display: inline-flex;
-      --icon-button-width: var(--size-32);
-      --icon-button-height: var(--size-32);
-      --icon-button-background-color: var(--background-subtle-color);
-      --icon-button-border-radius: var(--radius);
-      --icon-button-border: var(--border-transparent);
-      --icon-button-text-color: var(--foreground-color);
-      --icon-button-shadow: none;
-      --icon-button-backdrop-filter: none;
+/** icon-button 계열의 기반 스타일. 자체 button을 렌더하는 파생 컴포넌트가 포커스·비활성을 빠뜨리지 않도록 buttonInteractiveStyles를 함께 입힌다. */
+export const iconButtonStyles = css`
+  :host {
+    display: inline-flex;
+    --icon-button-width: var(--size-32);
+    --icon-button-height: var(--size-32);
+    --icon-button-background-color: var(--background-subtle-color);
+    --icon-button-border-radius: var(--radius);
+    --icon-button-border: var(--border-transparent);
+    --icon-button-text-color: var(--foreground-color);
+    --icon-button-shadow: none;
+    --icon-button-backdrop-filter: none;
+  }
+
+  button {
+    ${buttonInteractiveStyles}
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-button-width);
+    height: var(--icon-button-height);
+    border: var(--icon-button-border);
+    border-radius: var(--icon-button-border-radius);
+
+    background: var(--icon-button-background-color);
+    box-shadow: var(--icon-button-shadow);
+    backdrop-filter: var(--icon-button-backdrop-filter);
+    -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
+    color: var(--icon-button-text-color);
+    font-family: var(--font-family);
+
+    &:hover {
+      --icon-button-border: var(--border);
     }
+  }
 
-    button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: var(--icon-button-width);
-      height: var(--icon-button-height);
-      border: var(--icon-button-border);
-      border-radius: var(--icon-button-border-radius);
+  ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
 
-      background: var(--icon-button-background-color);
-      box-shadow: var(--icon-button-shadow);
-      backdrop-filter: var(--icon-button-backdrop-filter);
-      -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
-      color: var(--icon-button-text-color);
-      font-family: var(--font-family);
+  :host([destructive][variant='primary']) button {
+    ${iconButtonDestructiveFilledSkin};
+  }
 
-      &:hover {
-        --icon-button-border: var(--border);
-      }
-    }
+  :host([destructive]:not([variant='primary'])) button {
+    --icon-button-text-color: var(--danger-color);
+  }
 
-    ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
-
-    :host([destructive][variant='primary']) button {
-      ${iconButtonDestructiveFilledSkin};
-    }
-
-    :host([destructive]:not([variant='primary'])) button {
-      --icon-button-text-color: var(--danger-color);
-    }
-
-    ${unsafeCSS(buildAttributeRules('size', iconButtonSizeTokens))}
-  `,
-]
+  ${unsafeCSS(buildAttributeRules('size', iconButtonSizeTokens))}
+`

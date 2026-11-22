@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { AriaBoolean, AriaHasPopup, AriaIdRef } from '@/types'
 
-import { focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
+import { focusRingStyles } from '@/stylesheets/shared.styles'
 import '@/components/common'
 
 export type PortfolioItemLayout = 'grid' | 'list'
@@ -30,11 +30,11 @@ export class PortfolioItem extends LitElement {
       transition: transform var(--transition-duration) var(--transition-easing);
     }
 
-    ${interactiveElement}:hover {
+    article[role='button']:hover {
       --lift: var(--interaction-hover-lift);
     }
 
-    ${interactiveElement}:focus-visible {
+    article[role='button']:focus-visible {
       ${focusRingStyles};
     }
 

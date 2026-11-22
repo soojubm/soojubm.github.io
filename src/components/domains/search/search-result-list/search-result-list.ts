@@ -24,7 +24,11 @@ export interface SearchResult {
 export class SearchResultList extends LitElement {
   static styles = [
     resetStyles,
-    listItemInteractiveStyles,
+    css`
+      a {
+        ${listItemInteractiveStyles}
+      }
+    `,
     css`
       :host {
         display: flex;

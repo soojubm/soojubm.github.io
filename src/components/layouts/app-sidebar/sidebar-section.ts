@@ -20,7 +20,11 @@ import '@/components/indicators/expand-indicator/expand-indicator'
 export class SidebarSection extends LitElement {
   static styles = [
     resetStyles,
-    listItemInteractiveStyles,
+    css`
+      button {
+        ${listItemInteractiveStyles}
+      }
+    `,
     css`
       :host {
         display: block;

@@ -17,10 +17,14 @@ import { emit } from '@/utils'
 @customElement('mm-select-option')
 export class SelectOption extends withMenuItemPresentation(LitElement) {
   static styles = [
-    menuItemStyles,
     css`
       :host {
-        --list-item-interactive-padding-inline: var(--space-2);
+        display: block;
+      }
+
+      [role='option'] {
+        ${menuItemStyles}
+        padding-inline: var(--space-2);
       }
     `,
   ]

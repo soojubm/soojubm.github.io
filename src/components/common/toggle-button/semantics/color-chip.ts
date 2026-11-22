@@ -14,13 +14,13 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 export class ColorChip extends withTogglePressed(LitElement) {
   static styles = [
     resetStyles,
-    buttonInteractiveStyles,
     css`
       :host {
         display: inline-flex;
       }
 
       button {
+        ${buttonInteractiveStyles}
         width: var(--size-32);
         height: var(--size-32);
         border: var(--border);

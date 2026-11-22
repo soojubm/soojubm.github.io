@@ -17,7 +17,11 @@ import '@/components/common'
 export class RecentSearchList extends LitElement {
   static styles = [
     resetStyles,
-    listItemInteractiveStyles,
+    css`
+      button {
+        ${listItemInteractiveStyles}
+      }
+    `,
     css`
       :host {
         display: flex;

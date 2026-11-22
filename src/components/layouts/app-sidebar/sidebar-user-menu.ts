@@ -20,7 +20,11 @@ import { uniqueId } from '@/utils'
 export class SidebarUserMenu extends LitElement {
   static styles = [
     resetStyles,
-    listItemInteractiveStyles,
+    css`
+      button {
+        ${listItemInteractiveStyles}
+      }
+    `,
     css`
       :host {
         display: block;

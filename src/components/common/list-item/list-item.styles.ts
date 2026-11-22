@@ -5,7 +5,6 @@ import type { ListItemSize } from '@/components/common/list-item/list-item'
 import {
   backgroundLayerStyles,
   disabledStyles,
-  interactiveElement,
   layerContainerStyles,
 } from '@/stylesheets/shared.styles'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
@@ -72,61 +71,56 @@ export const listItemStyles = css`
 `
 
 /**
- * list-item 행을 감싸 눌리는 요소(button·a·role 있는 행)에 얹는 상호작용 스킨.
- * 행의 의미(role·이벤트)는 감싸는 컴포넌트가 소유하고, 여기서는 hover·포커스·선택·비활성 표시만 맡는다.
+ * list-item 행을 감싸 눌리는 요소에 얹는 hover·포커스·선택·비활성 스킨.
+ * 선언만 담으므로 사용하는 컴포넌트가 자기 행 선택자(button·a·role 있는 행) 안에 펼친다.
  */
 export const listItemInteractiveStyles = css`
-  :host {
-    --list-item-interactive-background-color: transparent;
-    --list-item-interactive-padding-inline: 0;
+  --list-item-interactive-background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-inline: 0;
+  border-radius: var(--radius);
+  color: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
+  ${layerContainerStyles};
+
+  /* background state */
+  &::before {
+    border-radius: var(--radius);
+    background-color: var(--list-item-interactive-background-color);
+    ${backgroundLayerStyles};
   }
 
-  ${interactiveElement} {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding-inline: var(--list-item-interactive-padding-inline);
-    border-radius: var(--radius);
-    color: inherit;
-    box-sizing: border-box;
-    cursor: pointer;
-    ${layerContainerStyles};
+  &:hover {
+    --list-item-interactive-background-color: var(--interaction-hover-background-color);
+  }
 
-    /* background state */
+  &:focus-visible {
+    outline: var(--interaction-focus-outline);
+    outline-offset: -1px;
+  }
+
+  &[aria-current='page'] {
+    --list-item-interactive-background-color: var(--interaction-selected-background-color);
+  }
+
+  &[aria-selected='true'] {
+    --list-item-interactive-background-color: var(--interaction-selected-background-color);
+    color: var(--interaction-selected-foreground-color);
+
+    /* 보더는 배경 레이어에 그려 행의 레이아웃 박스를 밀지 않는다. */
     &::before {
-      border-radius: var(--radius);
-      background-color: var(--list-item-interactive-background-color);
-      ${backgroundLayerStyles};
+      border: var(--border-selected);
     }
+  }
 
-    &:hover {
-      --list-item-interactive-background-color: var(--interaction-hover-background-color);
-    }
-
-    &:focus-visible {
-      outline: var(--interaction-focus-outline);
-      outline-offset: -1px;
-    }
-
-    &[aria-current='page'] {
-      --list-item-interactive-background-color: var(--interaction-selected-background-color);
-    }
-
-    &[aria-selected='true'] {
-      --list-item-interactive-background-color: var(--interaction-selected-background-color);
-      color: var(--interaction-selected-foreground-color);
-
-      /* 보더는 배경 레이어에 그려 행의 레이아웃 박스를 밀지 않는다. */
-      &::before {
-        border: var(--border-selected);
-      }
-    }
-
-    &[disabled],
-    &[aria-disabled='true'] {
-      ${disabledStyles};
-      pointer-events: none;
-    }
+  &[disabled],
+  &[aria-disabled='true'] {
+    ${disabledStyles};
+    pointer-events: none;
   }
 
   mm-list-item {

@@ -19,7 +19,11 @@ import { isCurrentPage } from '@/utils'
 export class SidebarPageLink extends LitElement {
   static styles = [
     resetStyles,
-    listItemInteractiveStyles,
+    css`
+      a {
+        ${listItemInteractiveStyles}
+      }
+    `,
     css`
       :host {
         display: block;

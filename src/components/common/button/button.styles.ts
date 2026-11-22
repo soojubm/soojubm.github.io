@@ -2,73 +2,69 @@ import { css, unsafeCSS } from 'lit'
 
 import type { ButtonVariant } from '@/components/common/button/button'
 
-import { disabledStyles, focusRingStyles, interactiveElement } from '@/stylesheets/shared.styles'
+import { disabledStyles, focusRingStyles } from '@/stylesheets/shared.styles'
 import { buildAttributeRules, buildDeclarations, type AttributeTokens } from '@/utils'
 
-/** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓰도록 공용 상호작용 선택자로 잡는다. */
+/** 눌리는 컨트롤의 포커스 링과 비활성 표시. 선언만 담으므로 사용하는 컴포넌트가 자기 선택자 안에 펼친다. */
 export const buttonInteractiveStyles = css`
-  ${interactiveElement} {
-    &:focus-visible {
-      ${focusRingStyles};
-    }
+  &:focus-visible {
+    ${focusRingStyles};
+  }
 
-    &:disabled {
-      ${disabledStyles};
-    }
+  &:disabled {
+    ${disabledStyles};
   }
 `
 
 /**
  * 모든 버튼형 컴포넌트가 공유하는 기반 스타일.
- * 구조(레이아웃·크기·간격·타이포)와 기본 스킨, 상호작용 상태(focus·active·disabled)를 포함한다.
+ * 구조(레이아웃·크기·간격·타이포)와 기본 스킨에 포커스·비활성(buttonInteractiveStyles)까지 함께 입힌다.
  */
-export const buttonBaseStyles = [
-  buttonInteractiveStyles,
-  css`
-    :host {
-      --button-height: var(--size-32);
-      --button-min-width: 3rem;
-      --button-border: var(--border-transparent);
-      --button-padding-inline: var(--space-3);
-      --button-border-radius: var(--radius);
-      --button-background-color: var(--background-subtle-color);
-      --button-text-size: inherit;
-      --button-text-weight: var(--font-weight-normal);
-      --button-text-color: var(--foreground-color);
-      --button-width: max-content;
+export const buttonBaseStyles = css`
+  :host {
+    --button-height: var(--size-32);
+    --button-min-width: 3rem;
+    --button-border: var(--border-transparent);
+    --button-padding-inline: var(--space-3);
+    --button-border-radius: var(--radius);
+    --button-background-color: var(--background-subtle-color);
+    --button-text-size: inherit;
+    --button-text-weight: var(--font-weight-normal);
+    --button-text-color: var(--foreground-color);
+    --button-width: max-content;
+  }
+
+  :host([full-width]) :is(button, a) {
+    width: 100%;
+  }
+
+  :is(button, a) {
+    ${buttonInteractiveStyles}
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* max-content for trailing icons */
+    width: var(--button-width);
+    gap: var(--space-1);
+    height: var(--button-height);
+    padding: 0 var(--button-padding-inline);
+    border: var(--button-border);
+    border-radius: var(--button-border-radius);
+    background: var(--button-background-color);
+    box-sizing: border-box;
+
+    color: var(--button-text-color);
+    font-family: var(--font-family);
+    font-size: var(--button-text-size);
+    font-weight: var(--button-text-weight);
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    &:hover:not(:disabled) {
+      --button-border: var(--border);
     }
-
-    :host([full-width]) :is(button, a) {
-      width: 100%;
-    }
-
-    :is(button, a) {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      /* max-content for trailing icons */
-      width: var(--button-width);
-      gap: var(--space-1);
-      height: var(--button-height);
-      padding: 0 var(--button-padding-inline);
-      border: var(--button-border);
-      border-radius: var(--button-border-radius);
-      background: var(--button-background-color);
-      box-sizing: border-box;
-
-      color: var(--button-text-color);
-      font-family: var(--font-family);
-      font-size: var(--button-text-size);
-      font-weight: var(--button-text-weight);
-      text-transform: capitalize;
-      white-space: nowrap;
-
-      &:hover:not(:disabled) {
-        --button-border: var(--border);
-      }
-    }
-  `,
-]
+  }
+`
 
 /** mm-button 크기 변형. */
 export const buttonSizeStyles = css`

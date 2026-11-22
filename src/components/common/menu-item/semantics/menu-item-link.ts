@@ -19,7 +19,15 @@ import { resetStyles, visuallyHiddenStyles } from '@/stylesheets/shared.styles'
 export class MenuItemLink extends withMenuItemPresentation(LitElement) {
   static styles = [
     resetStyles,
-    menuItemStyles,
+    css`
+      :host {
+        display: block;
+      }
+
+      a {
+        ${menuItemStyles}
+      }
+    `,
     css`
       a > span {
         ${visuallyHiddenStyles};

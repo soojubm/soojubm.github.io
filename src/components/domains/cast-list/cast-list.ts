@@ -21,7 +21,11 @@ export interface CastMember {
 export class CastList extends LitElement {
   static styles = [
     resetStyles,
-    listItemInteractiveStyles,
+    css`
+      a {
+        ${listItemInteractiveStyles}
+      }
+    `,
     css`
       :host {
         display: block;

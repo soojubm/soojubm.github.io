@@ -2,7 +2,7 @@ import { LitElement, html, css, nothing, unsafeCSS } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/caption'
-import { focusRingStyles, interactiveElement, resetStyles } from '@/stylesheets/shared.styles'
+import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 export type ThumbnailRatio = '1:1' | '16:9' | '4:3' | 'full'
@@ -39,7 +39,7 @@ export class Thumbnail extends LitElement {
         object-fit: cover;
       }
 
-      ${interactiveElement}:hover .image-wrapper {
+      a:hover .image-wrapper {
         --thumbnail-border: var(--border);
       }
       /* a:focus-visible {
