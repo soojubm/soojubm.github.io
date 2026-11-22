@@ -2,7 +2,10 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
-import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
+import {
+  surfaceBaseStyles,
+  surfaceElevatedStyles,
+} from '@/components/common/surface/surface.styles'
 import { emit } from '@/utils'
 
 import '@/components/common'
@@ -25,7 +28,7 @@ export class ChatFeedback extends LitElement {
   static styles = css`
     :host {
       ${surfaceBaseStyles};
-      --surface-border-radius: var(--radius-large);
+      ${surfaceElevatedStyles};
 
       flex-direction: row;
       align-items: center;

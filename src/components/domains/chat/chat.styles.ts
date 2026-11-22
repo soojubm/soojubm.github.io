@@ -9,7 +9,7 @@ export const chatBubbleStyles = css`
     display: block;
     position: relative;
     width: fit-content;
-    max-width: min(85%, 600px);
+    max-width: min(85%, var(--layout-width-small));
     box-sizing: border-box;
     font-size: var(--font-size-14);
     line-height: var(--font-line-height-24);
@@ -35,7 +35,7 @@ export const chatBubbleStyles = css`
   }
 
   :host([image]) mm-grid {
-    width: 240px;
+    width: calc(var(--size-80) * 3);
     max-width: 100%;
   }
 `
@@ -71,11 +71,7 @@ export const myChatBubbleStyles = [
     }
 
     :host([status='failed']) {
-      --chat-bubble-background-color: color-mix(
-        in srgb,
-        var(--danger-color) 12%,
-        var(--background-color)
-      );
+      --chat-bubble-background-color: var(--background-subtle-color);
       --chat-bubble-border: var(--border-danger);
       --chat-bubble-text-color: var(--foreground-color);
     }
@@ -83,12 +79,11 @@ export const myChatBubbleStyles = [
     .status {
       display: block;
       font-size: var(--font-size-12);
-      color: color-mix(in srgb, currentColor 70%, transparent);
       text-align: right;
     }
 
     :host([status='failed']) .status {
-      color: var(--danger-color);
+      color: var(--foreground-danger-color);
     }
   `,
 ]

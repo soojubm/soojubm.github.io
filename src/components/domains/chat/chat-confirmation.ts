@@ -1,42 +1,36 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import {
+  surfaceBaseStyles,
+  surfaceElevatedStyles,
+} from '@/components/common/surface/surface.styles'
 import '@/components/common'
 import { emit } from '@/utils'
 
-export type ConfirmationStatus = 'pending' | 'approved' | 'rejected'
-
 /**
  * AI 툴 실행 승인 요청 UI.
- * 승인·거부하면 status가 approved·rejected로 바뀌고 같은 이름의 approve·reject 이벤트를 발행한다.
- * status="pending"  → 승인/거부 버튼 표시
- * status="approved" → 승인 완료 상태 표시
- * status="rejected" → 거부 완료 상태 표시
+ * 승인·거부하면 approve·reject 이벤트만 발행하고, 결과 표시는 소비자가 이어서 맡는다.
  */
 @customElement('mm-chat-confirmation')
 export class ChatConfirmation extends LitElement {
   static styles = css`
     :host {
-      display: block;
-      max-width: min(85%, 480px);
+      ${surfaceBaseStyles};
+      ${surfaceElevatedStyles};
+      --surface-padding: 0;
+
+      max-width: min(85%, calc(var(--size-80) * 6));
+    }
+
+    /* 면의 경계는 host가 그리므로, 안의 notice는 자기 경계를 그리지 않는다. */
+    mm-notice {
+      --notice-border-width: 0;
     }
   `
-  @property({ type: String }) status: ConfirmationStatus = 'pending'
   @property({ type: String }) message = ''
 
   render() {
-    if (this.status === 'approved') {
-      return html`
-        <mm-notice variant="info" description="승인했습니다"></mm-notice>
-      `
-    }
-
-    if (this.status === 'rejected') {
-      return html`
-        <mm-notice variant="error" description="거부했습니다"></mm-notice>
-      `
-    }
-
     return html`
       <mm-notice heading="승인 요청" description=${this.message}>
         <slot></slot>
@@ -53,12 +47,10 @@ export class ChatConfirmation extends LitElement {
   }
 
   private handleApproveClick() {
-    this.status = 'approved'
     emit(this, 'approve')
   }
 
   private handleRejectClick() {
-    this.status = 'rejected'
     emit(this, 'reject')
   }
 }

@@ -25,7 +25,7 @@ export class ChatAttachment extends LitElement {
       ${surfaceBaseStyles};
       ${surfaceElevatedStyles};
 
-      max-width: min(85%, 480px);
+      max-width: min(85%, calc(var(--size-80) * 6));
     }
   `
   @property({ type: String }) label = ''
