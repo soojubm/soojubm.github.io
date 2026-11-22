@@ -86,10 +86,6 @@ export const inputBaseStyles = css`
     }
   }
 
-  .textfield-control {
-    overflow: hidden;
-  }
-
   textarea {
     width: 100%;
     min-width: 0;

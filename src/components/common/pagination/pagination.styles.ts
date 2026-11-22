@@ -31,16 +31,5 @@ export const paginationStyles = css`
     .pagination {
       gap: 0;
     }
-
-    mm-prev-button,
-    mm-next-button,
-    mm-page-button {
-      --button-height: var(--size-24);
-    }
-
-    .pagination-ellipsis {
-      width: var(--size-24);
-      height: var(--size-24);
-    }
   }
 `

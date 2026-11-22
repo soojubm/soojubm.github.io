@@ -6,13 +6,12 @@ import { buildAttributeRules } from '@/utils'
 
 type ToneStyle = {
   background: string
-  textColor: string
-  border: string
+  textColor?: string
+  border?: string
 }
 
 const categoryTone = (token: number): ToneStyle => ({
   background: `var(--category-${token}-background-color)`,
-  textColor: 'var(--foreground-color)',
   border: 'var(--border-transparent)',
 })
 
@@ -28,8 +27,6 @@ const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
 export const tagToneStyles = {
   default: {
     background: 'var(--background-color)',
-    textColor: 'var(--foreground-color)',
-    border: 'var(--border)',
   },
   gold: {
     background: 'color-mix(in srgb, var(--accent-color) 65%, var(--background-color))',
@@ -73,12 +70,12 @@ export type CategoryTone = 'pink' | 'orange' | 'cyan' | 'purple'
  */
 
 const tagToneTokens = Object.fromEntries(
-  Object.entries(tagToneStyles).map(([tone, style]) => [
+  Object.entries(tagToneStyles as Record<TagTone, ToneStyle>).map(([tone, style]) => [
     tone,
     {
       '--tag-background-color': style.background,
-      '--tag-text-color': style.textColor,
-      '--tag-border': style.border,
+      ...(style.textColor && { '--tag-text-color': style.textColor }),
+      ...(style.border && { '--tag-border': style.border }),
     },
   ]),
 )
