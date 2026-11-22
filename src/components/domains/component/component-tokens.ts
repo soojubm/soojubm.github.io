@@ -11,6 +11,7 @@ import {
 /**
  * 컴포넌트 CSS 커스텀 프로퍼티(토큰) 목록.
  * 카테고리(dimension·surface·state)마다 mm-keyword-tag-group으로 묶어, 카테고리를 제목 태그로, 토큰 이름을 키워드 태그로 나열합니다.
+ * 슬롯에는 토큰 목록 아래에 이어 붙일 콘텐츠(예: 토큰 값 카드)를 넣는다.
  * 목록은 손으로 적지 않고 elements로 넘긴 컴포넌트의 스타일에서 직접 읽어, 코드와 문서가 어긋나지 않게 한다.
  */
 @customElement('mm-component-tokens')
@@ -33,6 +34,7 @@ export class ComponentTokens extends LitElement {
                 ></mm-keyword-tag-group>
               `,
           )}
+          <slot></slot>
         </div>
       </section>
     `

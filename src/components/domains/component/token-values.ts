@@ -95,32 +95,46 @@ const referenceName = (declared: string) =>
     .trim()
 
 /**
- * 컴포넌트가 :host에 기본값으로 선언한 토큰 값을, 참조하는 토큰 이름으로 보여준다.
+ * 컴포넌트가 선언한 토큰 값을, 참조하는 토큰 이름으로 보여준다.
  * 컴포넌트 토큰은 전역에 선언이 없어서 컴포넌트 스타일에서 직접 읽는다.
+ * `state`로 variant·size 같은 속성 값을 주면 `:host([size='48'])` 규칙이 덮은 값을 보여준다.
  */
-export function componentTokenValue(tagName: string, name: string) {
+export function componentTokenValue(
+  tagName: string,
+  name: string,
+  state: Record<string, string> = {},
+) {
   const element = customElements.get(tagName) as typeof LitElement | undefined
   const sheets = (element?.elementStyles ?? []).map(style =>
     style instanceof CSSStyleSheet ? style : style.styleSheet,
   )
-  const declared = sheets
-    .map(sheet => hostDeclaration(sheet?.cssRules, `--${name}`))
-    .find(value => value)
+  const declared = sheets.flatMap(sheet => hostDeclarations(sheet?.cssRules, `--${name}`, state))
 
-  return declared ? referenceName(declared) : ''
+  return declared.length ? referenceName(declared[declared.length - 1]) : ''
 }
 
-function hostDeclaration(rules: CSSRuleList | undefined, property: string): string {
-  for (const rule of rules ?? []) {
-    const nested = 'cssRules' in rule ? hostDeclaration(rule.cssRules as CSSRuleList, property) : ''
-    if (nested) return nested
-    if (rule instanceof CSSStyleRule && rule.selectorText === ':host') {
-      const value = rule.style.getPropertyValue(property).trim()
-      if (value) return value
-    }
-  }
+// 선언 순서대로 모은다. 뒤에 오는 규칙이 앞의 값을 덮으므로 마지막이 실제 값이다.
+function hostDeclarations(
+  rules: CSSRuleList | undefined,
+  property: string,
+  state: Record<string, string>,
+): string[] {
+  return [...(rules ?? [])].flatMap(rule => {
+    const nested =
+      'cssRules' in rule ? hostDeclarations(rule.cssRules as CSSRuleList, property, state) : []
+    if (!(rule instanceof CSSStyleRule) || !matchesHost(rule.selectorText, state)) return nested
 
-  return ''
+    const value = rule.style.getPropertyValue(property).trim()
+    return value ? [value, ...nested] : nested
+  })
+}
+
+// `:host`는 늘, `:host([attr='value'])`(브라우저는 따옴표를 "로 바꿔 읽는다)는 state가 그 속성 값을 골랐을 때만 맞는다.
+function matchesHost(selector: string, state: Record<string, string>) {
+  if (selector === ':host') return true
+
+  const match = selector.match(/^:host\(\[([\w-]+)=["']([^"']*)["']\]\)$/)
+  return match ? state[match[1]] === match[2] : false
 }
 
 /** 값이 다른 토큰을 참조해 만들어지는지. 원시값이 아니라 컴포넌트·시맨틱 단계의 토큰이다. */

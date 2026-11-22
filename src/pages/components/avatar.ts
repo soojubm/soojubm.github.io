@@ -7,7 +7,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES, type AvatarItem } from '@/components/common'
-import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -16,11 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dot.html', label: 'Dot' },
 ]
 
-const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-avatar'),
-  ...subComponentPropsOf('mm-user-avatar'),
-  ...subComponentPropsOf('mm-avatar-group'),
-]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-avatar')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -54,6 +50,35 @@ const fallbackCode = `<mm-avatar size="40">MM</mm-avatar>
   <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
 </mm-avatar>
 <mm-avatar size="40"></mm-avatar>`
+
+const avatarTokenVariants = ['primary', 'secondary', 'tertiary'].map(value => ({
+  value,
+  label: value,
+}))
+const avatarTokenShapes = ['square', 'circle'].map(value => ({ value, label: value }))
+const avatarTokenSizes = ['32', '40', '48', '80'].map(value => ({ value, label: value }))
+
+// select를 고르면 토큰 카드가 그 variant·size에서 먹는 값으로 바뀐다.
+const syncAvatarTokens = () => {
+  const variant = document.querySelector<HTMLElement & { value: string }>('#avatar-token-variant')
+  const size = document.querySelector<HTMLElement & { value: string }>('#avatar-token-size')
+  const shape = document.querySelector<HTMLElement & { value: string }>('#avatar-token-shape')
+  const items = document.querySelectorAll<HTMLElement & { state: Record<string, string> }>(
+    'mm-token-item[element="mm-avatar"]',
+  )
+  const update = () => {
+    items.forEach(item => {
+      item.state = {
+        variant: variant?.value ?? '',
+        size: size?.value ?? '',
+        shape: shape?.value ?? '',
+      }
+    })
+  }
+  variant?.addEventListener('change', update)
+  size?.addEventListener('change', update)
+  shape?.addEventListener('change', update)
+}
 
 const main = html`
   <mm-main>
@@ -134,15 +159,36 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .elements=${['mm-avatar']}></mm-component-tokens>
+    <mm-component-tokens .elements=${['mm-avatar']}>
+      <mm-flex gap="2">
+        <mm-toggle-button-group
+          id="avatar-token-variant"
+          aria-label="variant"
+          value="primary"
+          .options=${avatarTokenVariants}
+        ></mm-toggle-button-group>
+        <mm-toggle-button-group
+          id="avatar-token-size"
+          aria-label="size"
+          value="40"
+          .options=${avatarTokenSizes}
+        ></mm-toggle-button-group>
+        <mm-toggle-button-group
+          id="avatar-token-shape"
+          aria-label="shape"
+          value="square"
+          .options=${avatarTokenShapes}
+        ></mm-toggle-button-group>
+      </mm-flex>
 
-    <mm-token-group aria-label="avatar 토큰">
-      <mm-token-item element="mm-avatar" key="avatar-size"></mm-token-item>
-      <mm-token-item element="mm-avatar" key="avatar-background-color"></mm-token-item>
-      <mm-token-item element="mm-avatar" key="avatar-icon-color"></mm-token-item>
-      <mm-token-item element="mm-avatar" key="avatar-border"></mm-token-item>
-      <mm-token-item element="mm-avatar" key="avatar-border-radius"></mm-token-item>
-    </mm-token-group>
+      <mm-token-group aria-label="avatar 토큰">
+        <mm-token-item element="mm-avatar" key="avatar-size"></mm-token-item>
+        <mm-token-item element="mm-avatar" key="avatar-background-color"></mm-token-item>
+        <mm-token-item element="mm-avatar" key="avatar-icon-color"></mm-token-item>
+        <mm-token-item element="mm-avatar" key="avatar-border"></mm-token-item>
+        <mm-token-item element="mm-avatar" key="avatar-border-radius"></mm-token-item>
+      </mm-token-group>
+    </mm-component-tokens>
 
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
@@ -191,4 +237,4 @@ const main = html`
   </mm-main>
 `
 
-renderPage(main)
+renderPage(main, { initialize: syncAvatarTokens })
