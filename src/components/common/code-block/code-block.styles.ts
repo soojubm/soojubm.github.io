@@ -1,19 +1,12 @@
 import { css } from 'lit'
 
+import { codeTextStyles } from '@/components/common/text/semantics/code.styles'
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 
 export const codeBlockStyles = css`
   :host {
-    --code-block-tag-text-color: color-mix(
-      in srgb,
-      var(--foreground-danger-color) 85%,
-      transparent
-    );
-    --code-block-attr-name-text-color: color-mix(
-      in srgb,
-      var(--foreground-warning-color) 85%,
-      transparent
-    );
+    --code-block-tag-text-color: var(--foreground-danger-color);
+    --code-block-attr-name-text-color: var(--foreground-warning-color);
     --code-block-attr-value-text-color: color-mix(
       in srgb,
       var(--foreground-subtle-color) 85%,
@@ -54,8 +47,7 @@ export const codeBlockStyles = css`
 
   code {
     display: block;
-    font-family: var(--font-family);
-    font-size: var(--font-size-14);
+    ${codeTextStyles};
     line-height: 20px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;

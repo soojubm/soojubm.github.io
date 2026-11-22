@@ -55,39 +55,6 @@ const maxLinesCode = `<mm-text as="p" max-lines="1">한 줄에서 말줄임되�
 <mm-text as="p" max-lines="2">두 줄까지 노출되는 텍스트입니다.</mm-text>
 <mm-text as="p" max-lines="3">세 줄까지 노출되는 텍스트입니다.</mm-text>`
 
-const headingCode = `<mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
-<mm-heading level="2">섹션 레벨의 타이틀</mm-heading>`
-
-const captionCode = `<mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>`
-
-const paragraphCode = `<mm-paragraph-group>
-  <mm-paragraph size="small">보조 정보를 전하는 본문입니다.</mm-paragraph>
-  <mm-paragraph max-lines="3">일반적인 UI 본문입니다.</mm-paragraph>
-  <mm-paragraph size="large">콘텐츠 뷰의 본문입니다.</mm-paragraph>
-</mm-paragraph-group>`
-
-const readMoreParagraphCode = `<mm-read-more-paragraph max-length="100" content="긴 문단의 전체 내용"></mm-read-more-paragraph>`
-
-const quotationCode = `<mm-quotation author="Kelly Emanuelli, Head of Luxury at Pinterest">
-  인용할 글의 내용
-</mm-quotation>`
-
-const statusMessageCode = `<mm-status-message heading="주문이 완료되었습니다." message="주문 내역은 마이페이지에서 확인할 수 있습니다."></mm-status-message>`
-
-const metaItemGroupCode = `<mm-meta-item-group gap="2">
-  <mm-meta-item layout="inline" label="국가" value="미국"></mm-meta-item>
-  <mm-meta-item layout="inline" label="언어" value="영어"></mm-meta-item>
-</mm-meta-item-group>`
-
-const heroSectionCode = `<mm-hero-section
-  heading="Hero Title"
-  description="페이지의 목적을 설명하는 문장"
-  .primaryAction=\${{ label: '콜 투 액션', onClick: () => {} }}
-  .secondaryAction=\${{ label: '더 알아보기', onClick: () => {} }}
-></mm-hero-section>`
-
-const textListCode = `<mm-text-list variant="check" .texts=\${['첫 번째 항목', '두 번째 항목']}></mm-text-list>`
-
 const main = html`
   <mm-main>
     <mm-page-header
@@ -165,7 +132,6 @@ const main = html`
     <mm-component-section
       heading="Headings"
       description="level 5는 그룹 라벨용으로 보조 색을 갖습니다."
-      .code=${headingCode}
     >
       <mm-flex direction="column" gap="3">
         <mm-heading level="1">페이지 레벨의 타이틀</mm-heading>
@@ -179,7 +145,6 @@ const main = html`
     <mm-component-section
       heading="Caption"
       description="보조 설명, 메타 정보, 이미지 캡션처럼 낮은 위계의 텍스트입니다."
-      .code=${captionCode}
     >
       <mm-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></mm-thumbnail>
     </mm-component-section>
@@ -187,7 +152,6 @@ const main = html`
     <mm-component-section
       heading="Paragraph / ParagraphGroup"
       description="본문(Body). label, help text, caption / kicker/overline/eyebrow"
-      .code=${paragraphCode}
     >
       <mm-paragraph-group>
         <mm-paragraph size="small">
@@ -207,7 +171,7 @@ const main = html`
       </mm-paragraph-group>
     </mm-component-section>
 
-    <mm-component-section heading="Read More Paragraph" .code=${readMoreParagraphCode}>
+    <mm-component-section heading="Read More Paragraph">
       <mm-read-more-paragraph
         max-length="100"
         content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다."
@@ -217,7 +181,6 @@ const main = html`
     <mm-component-section
       heading="Quotation"
       description="다른 곳에서 가져온 글을 본문과 구분해 인용합니다. author를 주면 인용문 아래에 출처를 함께 보여줍니다."
-      .code=${quotationCode}
     >
       <mm-quotation author="Kelly Emanuelli, Head of Luxury at Pinterest">
         With 3 in 5 luxury shoppers saying they use Pinterest to research luxury brands and
@@ -229,7 +192,6 @@ const main = html`
     <mm-component-section
       heading="Status Message"
       description="시스템 상태를 사용자에게 전달하는 가운데 정렬 메시지 모듈입니다. message는 사용자의 관점에서, description은 시스템을 주어로 서술합니다. Dialog, Result에서 사용합니다."
-      .code=${statusMessageCode}
     >
       <mm-status-message
         heading="주문이 완료되었습니다."
@@ -237,7 +199,7 @@ const main = html`
       ></mm-status-message>
     </mm-component-section>
 
-    <mm-component-section heading="Meta Item Group" .code=${metaItemGroupCode}>
+    <mm-component-section heading="Meta Item Group">
       <mm-meta-item-group direction="column" gap="2">
         <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
         <mm-meta-item label="배송비" value="무료"></mm-meta-item>
@@ -282,7 +244,6 @@ const main = html`
     <mm-component-section
       heading="Hero Section"
       description="페이지 최상단에서 가장 먼저 읽히는 제목과 설명을 세웁니다. 그 아래에 버튼 그룹이나 목록을 두어 다음 행동을 이어 줍니다. 사용자는 페이지의 목적과 시작점을 한눈에 알 수 있습니다."
-      .code=${heroSectionCode}
     >
       <mm-hero-section
         heading="Hero Title"
@@ -296,7 +257,6 @@ const main = html`
       heading="Text List"
       description="TODO 텍스트 목록을 2 댑스(nested)로 제공하지 마세요. 중첩된 목록은 콘텐츠를 읽기 어렵게 하며 작은
   화면에 적합하지 않다. 약관에서는 사용해야 할 수도."
-      .code=${textListCode}
     >
       <div>
         <mm-text-list

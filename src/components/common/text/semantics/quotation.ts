@@ -22,6 +22,7 @@ export class Quotation extends LitElement {
         display: flex;
         flex-direction: column;
         gap: var(--space-4);
+        padding-inline-start: var(--space-6);
       }
 
       blockquote::before {

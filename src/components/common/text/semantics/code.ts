@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+import { codeTextStyles } from '@/components/common/text/semantics/code.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 /**
@@ -26,10 +27,8 @@ export class Code extends LitElement {
         border-radius: var(--radius);
         box-sizing: border-box;
         background: var(--background-color);
-        font-family: var(--font-family-code);
-        font-size: var(--font-size-12);
-        font-weight: var(--font-weight-bold);
-        color: color-mix(in srgb, var(--foreground-danger-color) 85%, transparent);
+        ${codeTextStyles};
+        color: var(--foreground-danger-color);
       }
     `,
   ]

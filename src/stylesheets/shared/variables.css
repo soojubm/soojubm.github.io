@@ -3,7 +3,7 @@
   color-scheme: light dark;
 
   --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
-  --font-family-code: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-family-code: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* 글자 토큰은 rem이라 html font-size(큰글씨 모드)를 따라 함께 커진다. */
   --font-size-12: 0.75rem;
