@@ -58,7 +58,21 @@ mm-token-stage:hover .motion-dot {
   gap: var(--space-1);
 }
 
-.name-hyphen {
+/* 단어가 많은 분류는 줄을 넘겨, 넘친 단어도 컴포넌트명 뒤 같은 세로선에서 이어진다. */
+/* mm-scroll은 자식을 내용 너비로 두므로, 줄바꿈·그리드가 스테이지 너비를 쓰려면 너비를 직접 채운다. */
+.stage-content {
+  width: 100%;
+}
+
+.category-words {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.name-joiner {
   height: var(--size-32);
   line-height: var(--size-32);
   font-family: var(--font-family-code);
@@ -84,4 +98,256 @@ mm-token-stage:hover .motion-dot {
 
 .name-segment[data-part='kind'] {
   background: var(--category-2-background-color);
+}
+
+.name-segment[data-part='name'] {
+  background: var(--background-subtle-color);
+}
+
+.name-segment[data-category='color'] {
+  background: var(--category-3-background-color);
+}
+
+.name-segment[data-category='dimension'] {
+  background: var(--category-1-background-color);
+}
+
+.name-segment[data-category='typography'] {
+  background: var(--category-4-background-color);
+}
+
+.name-segment[data-category='surface'] {
+  background: var(--category-2-background-color);
+}
+
+.name-segment[data-category='state'] {
+  background: var(--category-8-background-color);
+}
+
+.name-segment[data-tier='component'] {
+  background: var(--category-3-background-color);
+}
+
+.name-segment[data-tier='semantic'] {
+  background: var(--category-5-background-color);
+}
+
+.name-segment[data-tier='primitive'] {
+  background: var(--category-6-background-color);
+}
+
+/* 겹친 마름모와 3×3 원 묶음을 가운데에 나란히 둔다. 높이를 고정해 좁은 화면에서도 꼭짓점이 잘리지 않는다. */
+.tokens-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16);
+  height: calc(var(--size-16) * 18);
+  border-radius: var(--radius-large);
+  background: var(--background-subtle-color);
+  overflow: hidden;
+}
+
+/* 고리마다 선 한 줄과 바탕 한 칸을 inset 그림자로 번갈아 쌓아, 안쪽으로 같은 간격의 선이 반복된다. */
+.tokens-banner::before {
+  content: '';
+  flex-shrink: 0;
+  width: calc(var(--size-16) * 10);
+  aspect-ratio: 1;
+  background: var(--background-color);
+  box-shadow: inset 0 0 0 var(--border-width) var(--foreground-subtle-color),
+    inset 0 0 0 calc(var(--size-16) * 1) var(--background-color),
+    inset 0 0 0 calc(var(--size-16) * 1 + var(--border-width)) var(--foreground-subtle-color),
+    inset 0 0 0 calc(var(--size-16) * 2) var(--background-color),
+    inset 0 0 0 calc(var(--size-16) * 2 + var(--border-width)) var(--foreground-subtle-color),
+    inset 0 0 0 calc(var(--size-16) * 3) var(--background-color),
+    inset 0 0 0 calc(var(--size-16) * 3 + var(--border-width)) var(--foreground-subtle-color),
+    inset 0 0 0 calc(var(--size-16) * 4) var(--background-color),
+    inset 0 0 0 calc(var(--size-16) * 4 + var(--border-width)) var(--foreground-subtle-color);
+  rotate: 45deg;
+}
+
+/* 원 하나 크기의 칸을 3×3으로 깔아 원끼리 맞닿게 하고, 칸마다 같은 간격의 고리를 겹쳐 그린다. */
+/* 고리 경계에 0.5px 번짐을 두어, 1px 선이 계단처럼 끊겨 보이지 않게 한다. */
+.tokens-banner::after {
+  --circle-size: calc(var(--size-16) * 4);
+  --circle-ring: calc(var(--circle-size) / 8);
+
+  content: '';
+  flex-shrink: 0;
+  width: calc(var(--circle-size) * 3);
+  aspect-ratio: 1;
+  background: radial-gradient(
+      circle,
+      transparent calc(var(--circle-ring) * 1 - var(--border-width) - 0.5px),
+      var(--foreground-subtle-color) calc(var(--circle-ring) * 1 - var(--border-width))
+        calc(var(--circle-ring) * 1),
+      transparent calc(var(--circle-ring) * 1 + 0.5px)
+    ),
+    radial-gradient(
+      circle,
+      transparent calc(var(--circle-ring) * 2 - var(--border-width) - 0.5px),
+      var(--foreground-subtle-color) calc(var(--circle-ring) * 2 - var(--border-width))
+        calc(var(--circle-ring) * 2),
+      transparent calc(var(--circle-ring) * 2 + 0.5px)
+    ),
+    radial-gradient(
+      circle,
+      transparent calc(var(--circle-ring) * 3 - var(--border-width) - 0.5px),
+      var(--foreground-subtle-color) calc(var(--circle-ring) * 3 - var(--border-width))
+        calc(var(--circle-ring) * 3),
+      transparent calc(var(--circle-ring) * 3 + 0.5px)
+    ),
+    radial-gradient(
+      circle,
+      transparent calc(var(--circle-ring) * 4 - var(--border-width) - 0.5px),
+      var(--foreground-subtle-color) calc(var(--circle-ring) * 4 - var(--border-width))
+        calc(var(--circle-ring) * 4),
+      transparent calc(var(--circle-ring) * 4 + 0.5px)
+    ),
+    radial-gradient(
+      circle,
+      var(--background-color) calc(var(--circle-size) / 2),
+      transparent calc(var(--circle-size) / 2 + 0.5px)
+    );
+  background-size: var(--circle-size) var(--circle-size);
+}
+
+/* 종류마다 도형 하나를 그린다. 도형은 ::before와 ::after가 맡는다. */
+.kind-figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  height: var(--size-80);
+  border-radius: var(--radius);
+  background: var(--background-subtle-color);
+}
+
+.kind-figure::before,
+.kind-figure::after {
+  width: var(--size-40);
+  height: var(--size-40);
+  border-radius: var(--radius);
+}
+
+.kind-figure::before {
+  content: '';
+}
+
+.kind-figure[data-tier='semantic'][data-kind='background']::before {
+  background: var(--background-strong-color);
+}
+
+.kind-figure[data-tier='semantic'][data-kind='foreground']::before {
+  content: 'Aa';
+  width: auto;
+  height: auto;
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground-color);
+}
+
+.kind-figure[data-tier='semantic'][data-kind='border']::before {
+  box-shadow: inset 0 0 0 var(--border-width) var(--foreground-subtle-color);
+}
+
+.kind-figure[data-tier='semantic'][data-kind='interaction']::before {
+  outline: var(--interaction-focus-outline);
+  outline-offset: var(--space-1);
+  background: var(--interaction-active-background-color);
+}
+
+.kind-figure[data-tier='semantic'][data-kind='space']::before,
+.kind-figure[data-tier='semantic'][data-kind='space']::after {
+  content: '';
+  width: var(--space-1);
+  height: var(--size-40);
+  border-radius: var(--radius);
+  background: var(--background-strong-color);
+}
+
+.kind-figure[data-tier='semantic'][data-kind='material']::before {
+  background: var(--background-color);
+  box-shadow: var(--material-elevated-shadow);
+}
+
+.kind-figure[data-tier='primitive'][data-kind='color']::before {
+  width: calc(var(--size-80) * 1.5);
+  height: var(--size-24);
+  background: linear-gradient(
+    90deg,
+    var(--gray200) 0 33.3%,
+    var(--gray400) 33.3% 66.6%,
+    var(--gray800) 66.6%
+  );
+}
+
+/* 크기가 커지는 정사각형 셋을 바닥에 맞춰 나란히 둔다. */
+.kind-figure[data-tier='primitive'][data-kind='size']::before {
+  width: calc(var(--size-16) + var(--size-24) + var(--size-32) + var(--space-2) * 2);
+  height: var(--size-32);
+  border-radius: 0;
+  background: linear-gradient(var(--background-strong-color) 0 0) left bottom / var(--size-16)
+      var(--size-16) no-repeat,
+    linear-gradient(var(--background-strong-color) 0 0) calc(var(--size-16) + var(--space-2)) bottom /
+      var(--size-24) var(--size-24) no-repeat,
+    linear-gradient(var(--background-strong-color) 0 0) right bottom / var(--size-32) var(--size-32)
+      no-repeat;
+}
+
+/* 막대 사이 거리가 space-2 → space-4 → space-8로 벌어진다. */
+.kind-figure[data-tier='primitive'][data-kind='space']::before {
+  --bar: var(--border-width);
+
+  width: calc(var(--bar) * 4 + var(--space-2) + var(--space-4) + var(--space-8));
+  border-radius: 0;
+  background: linear-gradient(var(--background-strong-color) 0 0) 0 0 / var(--bar) 100% no-repeat,
+    linear-gradient(var(--background-strong-color) 0 0) calc(var(--bar) + var(--space-2)) 0 /
+      var(--bar) 100% no-repeat,
+    linear-gradient(var(--background-strong-color) 0 0)
+      calc(var(--bar) * 2 + var(--space-2) + var(--space-4)) 0 / var(--bar) 100% no-repeat,
+    linear-gradient(var(--background-strong-color) 0 0) right 0 / var(--bar) 100% no-repeat;
+}
+
+.kind-figure[data-tier='primitive'][data-kind='radius']::before,
+.kind-figure[data-tier='primitive'][data-kind='radius']::after {
+  content: '';
+  box-shadow: inset 0 0 0 var(--border-width) var(--foreground-subtle-color);
+}
+
+.kind-figure[data-tier='primitive'][data-kind='radius']::after {
+  border-radius: var(--radius-full);
+}
+
+/* 같은 글자를 작은 단계와 큰 단계로 놓아 기준선에 맞추고, 줄 전체는 칸 가운데에 둔다. */
+.kind-figure[data-tier='primitive'][data-kind='font-size'] {
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: baseline;
+}
+
+.kind-figure[data-tier='primitive'][data-kind='font-size']::before,
+.kind-figure[data-tier='primitive'][data-kind='font-size']::after {
+  content: 'Aa';
+  width: auto;
+  height: auto;
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-bold);
+  color: var(--foreground-color);
+}
+
+.kind-figure[data-tier='primitive'][data-kind='font-size']::after {
+  font-size: var(--font-size-32);
+}
+
+.kind-figure[data-tier='primitive'][data-kind='shadow']::before,
+.kind-figure[data-tier='primitive'][data-kind='shadow']::after {
+  content: '';
+  background: var(--background-color);
+  box-shadow: var(--shadow-12);
+}
+
+.kind-figure[data-tier='primitive'][data-kind='shadow']::after {
+  box-shadow: var(--shadow-32);
 }

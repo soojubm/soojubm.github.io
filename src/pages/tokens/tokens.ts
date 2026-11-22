@@ -1,9 +1,10 @@
-import { html } from 'lit'
+import { html, nothing } from 'lit'
 
+import type { DotTone } from '@/components/common/dot/dot.styles'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 
-import { WORD_CATEGORIES } from '@/components/domains/component/token.utils'
 import { referencesOtherTokens, rootTokenNames } from '@/components/domains/component/token-values'
+import { WORD_CATEGORIES } from '@/components/domains/component/token.utils'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './tokens.css'
 
@@ -181,7 +182,7 @@ const renderBackgroundTokens = (names: string[]) =>
     `,
   )
 
-/** System Token은 같은 모양의 두 자리표시자 사이에 놓인 간격으로 보여, 구조의 층위 차이를 거리로 비교하게 한다. */
+/** Semantic Token은 같은 모양의 두 자리표시자 사이에 놓인 간격으로 보여, 구조의 층위 차이를 거리로 비교하게 한다. */
 const renderSpaceSemanticStage = (tokens: string[]) =>
   tokens.map(
     (token, index) => html`
@@ -281,95 +282,170 @@ const motionTracks: EasingTrack[] = [
   { easing: 'var(--transition-easing-emphasis)', label: 'transition-easing-emphasis' },
 ]
 
-interface TokenTier {
-  heading: string
-  description: string
-  rules: string[]
-  examples: string[]
+/** 토큰이 놓이는 계층. 계층마다 한 색으로 칠해, 사슬이 달라도 같은 계층이 같은 자리에 있음을 보인다. */
+type TokenTier = 'component' | 'semantic' | 'primitive'
+
+/** 범례 점의 tone은 이름 조각을 칠한 category 색과 같은 번호를 고른다. */
+const tierLegends: Record<TokenTier, LegendItem> = {
+  component: { label: 'Component Token', tone: 'pink' },
+  semantic: { label: 'Semantic Token', tone: 'cyan' },
+  primitive: { label: 'Primitive Token', tone: 'yellow' },
 }
 
-/** 계층마다 무엇을 정하는 값인지를 한 문장으로 쓰고, 쓰임과 이름 짓는 법을 같은 순서로 나열한다. */
-const tokenTiers: TokenTier[] = [
-  {
-    heading: 'Primitive',
-    description: '서비스가 쓰는 모든 디자인 값을 한곳에 모아 둔 목록이다.',
-    rules: [
-      '화면에 쓰이는 색·크기·간격은 모두 이 목록에 있는 값에서 고른다.',
-      '값만 있고 쓰임은 말하지 않으므로 System Token을 거쳐 쓴다.',
-    ],
-    examples: ['gray800', 'green800', 'size-32', 'space-4'],
-  },
-  {
-    heading: 'System',
-    description: 'Primitive에 인터페이스에서의 역할을 붙인 값이다.',
-    rules: ['컴포넌트와 페이지가 직접 참조한다.', '테마는 이 계층이 가리키는 Primitive를 바꾼다.'],
-    examples: ['background-color', 'foreground-subtle-color', 'interaction-hover-background-color'],
-  },
-  {
-    heading: 'Component',
-    description: 'System을 한 컴포넌트의 속성에 연결한 값이다.',
-    rules: ['토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다.'],
-    examples: ['avatar-background-color', 'notice-text-color', 'table-width'],
-  },
-]
+interface LegendItem {
+  label: string
+  tone: DotTone
+}
 
-const renderTokenTier = ({ heading, description, rules, examples }: TokenTier) => html`
-  <mm-surface variant="outlined">
-    <mm-text-block level="4" heading=${heading} description=${description}>
-      <mm-text-list .texts=${rules}></mm-text-list>
-      <mm-tag-group>
-        ${examples.map(
-          example => html`
-            <mm-code>${example}</mm-code>
-          `,
-        )}
-      </mm-tag-group>
-    </mm-text-block>
-  </mm-surface>
+const renderLegend = (items: LegendItem[]) => html`
+  <mm-flex gap="4" wrap="wrap">
+    ${items.map(
+      ({ label, tone }) => html`
+        <mm-flex align-items="center" gap="2">
+          <mm-dot tone=${tone} size="12"></mm-dot>
+          <mm-caption>${label}</mm-caption>
+        </mm-flex>
+      `,
+    )}
+  </mm-flex>
 `
 
-interface TokenCategory {
-  heading: string
-  description: string
+/** 실제 토큰이 아래 계층을 참조하는 사슬. 페이지처럼 Component Token이 없는 소비자는 Semantic부터 시작한다. */
+const tierChains: [TokenTier, string][][] = [
+  [
+    ['component', 'avatar-background-color'],
+    ['semantic', 'background-subtle-color'],
+    ['primitive', 'gray100'],
+  ],
+  [
+    ['component', 'notice-text-color'],
+    ['semantic', 'foreground-color'],
+    ['primitive', 'gray800'],
+  ],
+  [
+    ['semantic', 'foreground-subtle-color'],
+    ['primitive', 'gray400'],
+  ],
+]
+
+const renderTierChain = (chain: [TokenTier, string][]) => {
+  const names = chain.map(([, name]) => name)
+
+  return html`
+    <div class="name-anatomy" aria-label=${names.join(' → ')} role="group">
+      ${chain.map(
+        ([tier, name], index) => html`
+          ${index > 0
+            ? html`
+                <span class="name-joiner" aria-hidden="true">→</span>
+              `
+            : ''}
+          <span class="name-segment" data-tier=${tier}>${name}</span>
+        `,
+      )}
+    </div>
+  `
 }
+
+/** Semantic Token 대상의 분류. Component Token과 같은 개념은 같은 이름·색을 쓰고, 색 대상만 Color로 따로 묶는다. */
+type SemanticGroup = 'color' | 'state' | 'dimension' | 'surface'
+
+const semanticGroups: Record<SemanticGroup, LegendItem> = {
+  color: { label: 'Color', tone: 'pink' },
+  state: { label: 'State', tone: 'purple' },
+  dimension: { label: 'Dimension', tone: 'blue' },
+  surface: { label: 'Surface', tone: 'green' },
+}
+
+interface TokenKind {
+  target: string
+  description: string
+  group?: SemanticGroup
+}
+
+/** Primitive Token의 종류. 도형은 같은 종류 안에서 단계가 커지는 리듬을 그린다. */
+const primitiveKinds: TokenKind[] = [
+  { target: 'color', description: '색상 이름과 단계로 나눈 팔레트' },
+  { target: 'size', description: '요소 자체의 고정 치수' },
+  { target: 'space', description: '요소 사이의 거리' },
+  { target: 'radius', description: '모서리의 둥근 정도' },
+  { target: 'font-size', description: '글자의 크기' },
+  { target: 'shadow', description: '표면이 떠 있는 정도' },
+]
+
+/** Semantic Token을 묶는 대상 이름. 도형은 그 대상이 화면에서 맡는 역할을 그린다. */
+const semanticKinds: TokenKind[] = [
+  { target: 'background', description: '면을 채우는 색', group: 'color' },
+  { target: 'foreground', description: '글자와 아이콘의 색', group: 'color' },
+  { target: 'border', description: '구획을 나누는 선', group: 'color' },
+  { target: 'interaction', description: 'hover·selected 같은 상태의 값', group: 'state' },
+  { target: 'space', description: '구조의 층위 사이 간격', group: 'dimension' },
+  { target: 'material', description: '그림자·blur·겹침 순서', group: 'surface' },
+]
+
+/** 계층마다 같은 이름의 종류(space)가 있어 도형은 계층과 종류를 함께 보고 고른다. 분류가 있으면 이름 조각을 분류 색으로 칠한다. */
+const renderTokenKind =
+  (tier: TokenTier) =>
+  ({ target, description, group }: TokenKind) =>
+    html`
+      <mm-flex direction="column" gap="3">
+        <span class="kind-figure" data-tier=${tier} data-kind=${target} aria-hidden="true"></span>
+        <mm-flex direction="column" align-items="flex-start" gap="1">
+          <span
+            class="name-segment"
+            data-part=${group ? nothing : 'target'}
+            data-category=${group ?? nothing}
+          >
+            ${target}
+          </span>
+          <mm-caption>${description}</mm-caption>
+        </mm-flex>
+      </mm-flex>
+    `
+
+type CategoryName = (typeof WORD_CATEGORIES)[number]['name']
 
 /**
  * Component Token 이름의 CSS 속성이 속하는 분류. 컴포넌트 문서의 토큰 목록이 같은 순서로 묶인다.
  * 분류에 드는 속성 단어는 token.utils에서 그대로 읽어, 목록 묶음과 설명이 어긋나지 않게 한다.
  */
-const tokenCategories: Record<(typeof WORD_CATEGORIES)[number]['name'], TokenCategory> = {
-  dimension: {
-    heading: 'Dimension',
-    description: '요소의 크기와 안팎의 거리를 정하는 값이다.',
-  },
-  typography: {
-    heading: 'Typography',
-    description: '글자의 크기·굵기·색을 정하는 값이다.',
-  },
-  surface: {
-    heading: 'Surface',
-    description: '배경·경계·그림자처럼 표면의 모양을 정하는 값이다.',
-  },
-  state: {
-    heading: 'State',
-    description: '상호작용 상태에 따라 다른 분류의 값을 바꾸는 변형이다.',
-  },
+const categoryHeadings: Record<CategoryName, string> = {
+  dimension: 'Dimension',
+  typography: 'Typography',
+  surface: 'Surface',
+  state: 'State',
 }
 
-const categoryWords = Object.fromEntries(WORD_CATEGORIES.map(({ name, words }) => [name, words]))
+/** 분류마다 범례 점과 이름 조각에 칠할 tone. 이름 조각은 같은 번호의 category 색을 쓴다. */
+const categoryTones: Record<CategoryName, DotTone> = {
+  dimension: 'blue',
+  typography: 'orange',
+  surface: 'green',
+  state: 'purple',
+}
 
-const renderTokenCategory = ([name, { heading, description }]: [string, TokenCategory]) => html`
-  <mm-surface variant="outlined">
-    <mm-text-block level="4" heading=${heading} description=${description}>
-      <mm-tag-group>
-        ${categoryWords[name].map(
-          word => html`
-            <mm-code>${word}</mm-code>
-          `,
-        )}
-      </mm-tag-group>
-    </mm-text-block>
-  </mm-surface>
+const categoryNames = Object.keys(categoryHeadings) as CategoryName[]
+
+const categoryWords = (category: CategoryName): readonly string[] =>
+  WORD_CATEGORIES.find(({ name }) => name === category)?.words ?? []
+
+/** 분류 하나의 속성 단어를 컴포넌트명 뒤에 나란히 놓아, 어느 단어가 그 분류에 드는지 색으로 보인다. */
+const renderCategoryWords = (category: CategoryName) => html`
+  <div
+    class="name-anatomy"
+    aria-label=${`${categoryHeadings[category]}: ${categoryWords(category).join(', ')}`}
+    role="group"
+  >
+    <span class="name-segment" data-part="name">button</span>
+    <span class="name-joiner" aria-hidden="true">-</span>
+    <div class="category-words">
+      ${categoryWords(category).map(
+        word => html`
+          <span class="name-segment" data-category=${category}>${word}</span>
+        `,
+      )}
+    </div>
+  </div>
 `
 
 /** 토큰 이름 조각이 맡는 자리. 같은 자리는 같은 색으로 칠해, 줄이 달라도 대상과 값의 종류가 같은 위치에 있음을 보인다. */
@@ -381,7 +457,7 @@ interface NameSegment {
   label: string
 }
 
-/** 기본값·세기·상태·on- 규칙을 하나씩 보여 주는 실제 System Token. 값의 종류를 이름 끝에 둔다는 규칙은 목록 대신 이 그래픽이 보여 준다. */
+/** 기본값·세기·상태·on- 규칙을 하나씩 보여 주는 실제 Semantic Token. 값의 종류를 이름 끝에 둔다는 규칙은 목록 대신 이 그래픽이 보여 준다. */
 const nameAnatomies: NameSegment[][] = [
   [
     { text: 'background', part: 'target', label: '대상' },
@@ -410,7 +486,7 @@ const renderNameAnatomy = (segments: NameSegment[]) => html`
       ({ text, part, label }, index) => html`
         ${index > 0
           ? html`
-              <span class="name-hyphen" aria-hidden="true">-</span>
+              <span class="name-joiner" aria-hidden="true">-</span>
             `
           : ''}
         <mm-flex direction="column" gap="1">
@@ -428,25 +504,110 @@ const main = html`
       <mm-page-header
         heading="Tokens"
         description="제품의 시각 결정에 이름을 붙인 값입니다. 컴포넌트와 페이지는 값을 직접 쓰지 않고 토큰을 참조합니다. 토큰 하나만 바꿔 그 값을 쓰는 모든 화면을 함께 바꿀 수 있습니다."
-      ></mm-page-header>
+      >
+        <div class="tokens-banner"></div>
+      </mm-page-header>
 
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="계층">
           <mm-paragraph>
             토큰은 세 계층으로 나뉘고, 각 계층은 바로 아래 계층을 참조합니다. 컴포넌트는 자기
-            Component Token을 쓰고, 없으면 System Token을 씁니다.
+            Component Token을 쓰고, 없으면 Semantic Token을 씁니다.
           </mm-paragraph>
-          <mm-grid columns="3" gap="4">${tokenTiers.map(renderTokenTier)}</mm-grid>
+          <mm-token-stage>
+            <mm-flex direction="column" gap="6">
+              ${renderLegend(Object.values(tierLegends))}
+              <mm-flex direction="column" gap="3">${tierChains.map(renderTierChain)}</mm-flex>
+            </mm-flex>
+          </mm-token-stage>
+          <mm-text-list
+            .texts=${[
+              'Primitive Token은 서비스가 쓰는 모든 디자인 값을 모은 목록이다. 화면의 색·크기·간격은 모두 이 목록에서 고른다.',
+              'Primitive Token은 값만 있고 쓰임은 말하지 않으므로 Semantic Token을 거쳐 쓴다.',
+              'Semantic Token은 Primitive에 인터페이스에서의 역할을 붙인 값이다. 컴포넌트와 페이지가 직접 참조한다.',
+              '테마는 Semantic Token이 가리키는 Primitive를 바꾼다.',
+              'Component Token은 Semantic Token을 한 컴포넌트의 속성에 연결한 값이다. 토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다.',
+            ]}
+          ></mm-text-list>
         </mm-content-section>
 
-        <mm-content-section heading-level="3" heading="분류">
+        <mm-content-section heading-level="3" heading="Primitive Token">
+          <mm-paragraph>
+            Primitive Token은 서비스가 쓰는 모든 디자인 값을 모은 목록입니다. 종류마다 단계로
+            나뉘고, 화면의 색·크기·간격은 모두 이 목록에서 고릅니다.
+          </mm-paragraph>
+          <mm-token-stage>
+            <mm-grid columns="3" gap="6">
+              ${primitiveKinds.map(renderTokenKind('primitive'))}
+            </mm-grid>
+          </mm-token-stage>
+          <mm-text-list
+            .texts=${[
+              '값만 있고 쓰임은 말하지 않으므로, 컴포넌트와 페이지는 Semantic Token을 거쳐 쓴다.',
+            ]}
+          ></mm-text-list>
+          <mm-text-block
+            level="4"
+            heading="Primitive Token은 언제 정의하나요?"
+            description="같은 값이 두 곳 이상에서 쓰일 때 정의합니다. 한 곳에서만 쓰는 값은 예외 케이스로 기록해둡니다."
+          ></mm-text-block>
+        </mm-content-section>
+
+        <mm-content-section heading-level="3" heading="Semantic Token">
+          <mm-paragraph>
+            Semantic Token은 Primitive에 인터페이스에서의 역할을 붙인 값입니다. 테마를 바꾸면 같은
+            이름이 테마에 맞는 다른 값을 냅니다.
+          </mm-paragraph>
+          <mm-token-stage>
+            <mm-flex class="stage-content" direction="column" gap="6">
+              ${renderLegend(Object.values(semanticGroups))}
+              <mm-grid columns="3" gap="6">
+                ${semanticKinds.map(renderTokenKind('semantic'))}
+              </mm-grid>
+            </mm-flex>
+          </mm-token-stage>
+          <mm-text-list
+            .texts=${[
+              '역할을 나타내는 대상 이름으로 묶고, 대상은 Color·State·Dimension·Surface로 나눈다.',
+              '컴포넌트와 페이지는 Primitive 대신 Semantic Token을 참조한다.',
+              '배경색은 위에 올라갈 글자색과 한 쌍으로 정한다. 강한 배경 위의 글자는 on- 토큰을 쓴다.',
+              '상호작용 상태는 interaction 대상 아래에 상태 이름을 넣어 표현한다.',
+            ]}
+          ></mm-text-list>
+        </mm-content-section>
+
+        <mm-content-section heading-level="3" heading="Component Token">
           <mm-paragraph>
             Component Token은 이름에 든 속성·상태 단어에 따라 네 분류로 나뉩니다. 컴포넌트 문서의
             토큰 목록도 이 분류로 묶여, 크기를 바꾸는 값과 색을 바꾸는 값을 따로 찾을 수 있습니다.
           </mm-paragraph>
-          <mm-grid columns="4" gap="4">
-            ${Object.entries(tokenCategories).map(renderTokenCategory)}
-          </mm-grid>
+          <mm-token-stage>
+            <mm-flex class="stage-content" direction="column" gap="6">
+              ${renderLegend(
+                categoryNames.map(name => ({
+                  label: categoryHeadings[name],
+                  tone: categoryTones[name],
+                })),
+              )}
+              <mm-flex direction="column" gap="4">
+                ${categoryNames.map(renderCategoryWords)}
+              </mm-flex>
+            </mm-flex>
+          </mm-token-stage>
+          <mm-text-list
+            .texts=${[
+              'Dimension은 요소의 크기와 안팎의 거리를 정한다.',
+              'Typography는 글자의 크기·굵기·색을 정한다.',
+              'Surface는 배경·경계·그림자처럼 표면의 모양을 정한다.',
+              'State는 상호작용 상태에 따라 다른 분류의 값을 바꾼다.',
+            ]}
+          ></mm-text-list>
+          <mm-text-block level="4" heading="Component Token은 언제 정의하나요?">
+            <mm-component-notice heading="Component Token을 정의하는 기준을 정한다">
+              토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다는 목표만 있다. 어떤 시각적 규칙에
+              Component Token을 두는지는 정하지 않았다
+            </mm-component-notice>
+          </mm-text-block>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="이름 규칙">
@@ -464,25 +625,11 @@ const main = html`
             ]}
           ></mm-text-list>
         </mm-content-section>
-
-        <mm-content-section heading-level="3" heading="Component Token은 언제 정의하나요?">
-          <mm-component-notice heading="Component Token을 정의하는 기준을 정한다">
-            토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다는 목표만 있다. 어떤 시각적 규칙에
-            Component Token을 두는지는 정하지 않았다
-          </mm-component-notice>
-        </mm-content-section>
-
-        <mm-content-section heading-level="3" heading="Primitive Token은 언제 정의하나요?">
-          <mm-paragraph>
-            같은 값이 두 곳 이상에서 쓰일 때 정의합니다. 한 곳에서만 쓰는 값은 예외 케이스로
-            기록해둡니다.
-          </mm-paragraph>
-        </mm-content-section>
       </mm-content-section-list>
 
       <mm-token-section
         heading="Color"
-        description="팔레트 색은 System Token을 거쳐 역할과 상태를 표현합니다. 배경색은 위에 올라가는 글자색과 한 쌍으로 정해, 어느 배경에서도 글자가 읽히게 합니다."
+        description="팔레트 색은 Semantic Token을 거쳐 역할과 상태를 표현합니다. 배경색은 위에 올라가는 글자색과 한 쌍으로 정해, 어느 배경에서도 글자가 읽히게 합니다."
       >
         <mm-notice
           heading="권장 명도 대비"
@@ -547,7 +694,7 @@ const main = html`
 
       <mm-token-section
         heading="Space"
-        description="요소 사이의 거리를 정합니다. 구조의 층위가 정해진 간격은 System Token을, 나머지는 Primitive 단계를 씁니다. 같은 관계의 요소는 어느 화면에서나 간격이 같아 묶임과 나뉨이 자연스럽게 전해집니다."
+        description="요소 사이의 거리를 정합니다. 구조의 층위가 정해진 간격은 Semantic Token을, 나머지는 Primitive 단계를 씁니다. 같은 관계의 요소는 어느 화면에서나 간격이 같아 묶임과 나뉨이 자연스럽게 전해집니다."
       >
         <mm-token-stage>
           <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
@@ -560,7 +707,7 @@ const main = html`
         <mm-token-stage>
           <mm-flex gap="4">${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}</mm-flex>
         </mm-token-stage>
-        <mm-token-group aria-label="space System Token">
+        <mm-token-group aria-label="space Semantic Token">
           ${renderTokenItems(sectionTokens('spaceSemantic'))}
         </mm-token-group>
       </mm-token-section>
@@ -574,7 +721,7 @@ const main = html`
         </mm-token-group>
 
         <mm-separator></mm-separator>
-        <mm-token-group aria-label="layout Component·System Token">
+        <mm-token-group aria-label="layout Component·Semantic Token">
           ${renderTokenItems(sectionTokens('layout').filter(isLayoutComposite))}
         </mm-token-group>
       </mm-token-section>
@@ -599,7 +746,7 @@ const main = html`
         <mm-token-stage>
           <mm-token-swatches .swatches=${borderSwatches(borderStyleTokens)}></mm-token-swatches>
         </mm-token-stage>
-        <mm-token-group aria-label="border Component·System Token">
+        <mm-token-group aria-label="border Component·Semantic Token">
           ${renderTokenItems(borderStyleTokens)}
         </mm-token-group>
       </mm-token-section>
