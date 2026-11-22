@@ -42,14 +42,26 @@ mm-token-stage:hover .motion-dot {
   transform: translateX(calc(var(--size-80) * 3 - var(--size-24) - var(--space-2)));
 }
 
+/* 좁은 화면에서도 두 데모가 한 줄로 쌓이지 않고 나란히 놓여, 넘치면 스테이지가 가로로 스크롤된다. */
+.space-cell {
+  flex: 0 0 calc(var(--size-80) * 3);
+}
+
 .space-demo {
   display: flex;
   flex-direction: column;
-  gap: var(--space-demo-gap);
-  width: var(--size-80);
+  width: 100%;
 }
 
-/* 컴포넌트 :host가 선언한 값을 덮으려면 요소 자체에 지정해야 한다. */
-.space-demo mm-ui-placeholder {
-  --ui-placeholder-height: var(--size-32);
+/* 두 면 사이의 간격 그 자체를 막대로 보여, 토큰 값만큼의 거리가 얼마나 되는지 눈으로 잰다. */
+.space-gap {
+  display: flex;
+  justify-content: center;
+  height: var(--space-demo-gap);
+}
+
+.space-gap::before {
+  content: '';
+  width: var(--space-1);
+  background: var(--primary-color);
 }

@@ -176,13 +176,14 @@ const renderBackgroundTokens = (names: string[]) =>
     `,
   )
 
-/** 의미 토큰은 같은 모양의 두 자리표시자 사이에 놓인 간격으로 보여, 구조의 층위 차이를 거리로 비교하게 한다. */
+/** System Token은 같은 모양의 두 자리표시자 사이에 놓인 간격으로 보여, 구조의 층위 차이를 거리로 비교하게 한다. */
 const renderSpaceSemanticStage = (tokens: string[]) =>
   tokens.map(
     (token, index) => html`
-      <mm-flex direction="column" align-items="center" gap="2">
+      <mm-flex class="space-cell" direction="column" align-items="center" gap="2">
         <div class="space-demo" style="--space-demo-gap: var(--${token})">
           <mm-ui-placeholder></mm-ui-placeholder>
+          <div class="space-gap"></div>
           <mm-ui-placeholder></mm-ui-placeholder>
         </div>
         <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
@@ -233,21 +234,21 @@ const renderMaterialStage = (tokens: string[]) =>
   )
 
 /**
- * 경계의 역할별 변형. border-color·border-width는 조립 재료라 혼자서는 그릴 수 없어
- * 이들을 합친 border부터 목록 순서대로 늘어놓고, 상태 경계는 뒤에 붙인다.
+ * 경계 토큰은 목록 순서 그대로 한 칸씩 그린다. border-width는 선 굵기 하나라
+ * 색을 붙인 선으로 그리고, 나머지는 이미 선·색·굵기를 합친 값이라 그대로 쓴다.
+ * 투명 경계도 보이도록 모든 칸에 같은 배경을 깐다.
  */
-const borderSwatches = [
-  'border: var(--border)',
-  'border: var(--border-transparent); background: var(--background-subtle-color)',
-  'border: var(--border-danger)',
-  'border: var(--border-selected)',
-]
+const borderSwatches = (tokens: string[]) =>
+  tokens.map(token => {
+    const border =
+      token === 'border-width'
+        ? `var(--border-width) solid var(--foreground-color)`
+        : `var(--${token})`
+    return `border: ${border}; background: var(--background-subtle-color)`
+  })
 
-const radiusSwatches = [
-  'border: var(--border)',
-  'border: var(--border); border-radius: var(--radius-large)',
-  'border: var(--border); border-radius: var(--radius-full)',
-]
+const radiusSwatches = (tokens: string[]) =>
+  tokens.map(token => `border: var(--border); border-radius: var(--${token})`)
 
 interface EasingTrack {
   easing: string
@@ -299,7 +300,7 @@ const main = html`
         <mm-content-section heading-level="3" heading="이름 규칙">
           <mm-text-list
             .texts=${[
-              'System 토큰 이름은 대상, 세기나 상태, 값의 종류 순으로 짓는다. 예: foreground-subtle-color는 foreground(대상)·subtle(세기)·color(값의 종류)다.',
+              'System Token 이름은 대상, 세기나 상태, 값의 종류 순으로 짓는다. 예: foreground-subtle-color는 foreground(대상)·subtle(세기)·color(값의 종류)다.',
               '값의 종류는 이름 끝에 둔다. 색 토큰은 primary-color처럼 -color로 끝난다.',
               '대상이 정적인 값이면 이름에 상태를 넣지 않고, hover·selected처럼 인터랙션에 따라 바뀌는 값에만 상태를 넣는다.',
               '기본값은 base·default 같은 단어 없이 대상과 값의 종류만으로 짓는다. 예: background-base-color가 아니라 background-color. 이름이 짧아져 토큰이 가벼워진다. material-base처럼 base가 기반 머티리얼이라는 대상의 이름일 때만 그대로 쓴다.',
@@ -311,39 +312,46 @@ const main = html`
 
         <mm-content-section heading-level="3" heading="Component Token은 언제 정의하나요?">
           <mm-paragraph>
-            Component 토큰은 값이 바뀌는 경로가 있을 때 둡니다. 값이 한 가지로 고정되면 System
-            토큰을 직접 참조합니다.
+            Component Token은 값이 바뀌는 경로가 있을 때 둡니다. 값이 한 가지로 고정되면 System
+            Token을 직접 참조합니다.
           </mm-paragraph>
           <mm-text-list
             .texts=${[
               '상태에 따라 재할당된다 — variant·size·hover 같은 상태 selector가 이 토큰 하나에 값을 다시 넣는다.',
-              '쓰는 자리마다 다를 수 있어 사용하는 쪽에 연다 — table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System 토큰을 직접 참조한다.',
+              '쓰는 자리마다 다를 수 있어 사용하는 쪽에 연다 — table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System Token을 직접 참조한다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
 
-        <mm-content-section heading-level="3" heading="Primitive 토큰은 언제 만드나요?">
+        <mm-content-section heading-level="3" heading="Primitive Token은 언제 만드나요?">
           <mm-paragraph>
-            Primitive 토큰은 같은 값이 두 곳 이상에서 쓰일 때 만듭니다. 한 곳에서만 쓰는 값은 예외로
-            보고, 그 값을 쓰는 System 토큰에 직접 적습니다. 나중에 두 번째 자리가 생기면 그때
-            Primitive 토큰으로 올립니다.
+            Primitive Token은 같은 값이 두 곳 이상에서 쓰일 때 만듭니다. 한 곳에서만 쓰는 값은
+            예외로 보고, 그 값을 쓰는 System Token에 직접 적습니다. 나중에 두 번째 자리가 생기면
+            그때 Primitive Token으로 올립니다.
           </mm-paragraph>
         </mm-content-section>
       </mm-content-section-list>
 
       <mm-token-section
         heading="Color"
-        description="원시 팔레트에는 그 색으로 상태를 표현하는 역할 토큰을 태그로 붙입니다. background 역할 토큰은 대비쌍을 얹어 명도 대비를 함께 확인합니다."
+        description="Primitive 팔레트에는 그 색으로 상태를 표현하는 역할 토큰을 태그로 붙입니다. background 역할 토큰은 대비쌍을 얹어 명도 대비를 함께 확인합니다."
       >
-        <mm-grid columns="6">${renderColorTokens(sectionTokens('palette'))}</mm-grid>
+        <mm-notice
+          heading="권장 명도 대비"
+          description="WCAG 2.1 AA 기준으로 일반 텍스트는 4.5:1 이상, 큰 텍스트(18px 굵게 또는 24px 이상)와 아이콘·테두리 같은 UI 요소는 3:1 이상이어야 합니다. 기준에 못 미치면 저시력 사용자가 글자와 경계를 구분하기 어렵습니다."
+        ></mm-notice>
+
+        <mm-grid columns="6" role="group" aria-label="팔레트 색상 토큰">
+          ${renderColorTokens(sectionTokens('palette'))}
+        </mm-grid>
 
         <mm-separator></mm-separator>
-        <mm-grid columns="4" aria-label="background color tokens">
+        <mm-grid columns="4" role="group" aria-label="배경색 토큰">
           ${renderBackgroundTokens(sectionTokens('background'))}
         </mm-grid>
 
         <mm-separator></mm-separator>
-        <mm-grid columns="4" aria-label="border color tokens">
+        <mm-grid columns="4" role="group" aria-label="테두리색 토큰">
           ${renderColorTokens(sectionTokens('borderColor'))}
         </mm-grid>
 
@@ -387,20 +395,20 @@ const main = html`
 
       <mm-token-section
         heading="Space"
-        description="요소 사이의 거리를 정하는 값입니다. 원시값은 단계별로 고르고, 섹션 사이·하위 섹션 사이처럼 구조의 층위가 정해진 곳에는 의미 토큰을 씁니다. 같은 관계의 요소 사이는 어느 화면에서나 같은 간격이라 묶임과 구분이 한눈에 읽힙니다."
+        description="요소 사이의 거리를 정하는 값입니다. Primitive Token은 단계별로 고르고, 섹션 사이·하위 섹션 사이처럼 구조의 층위가 정해진 곳에는 System Token을 씁니다. 같은 관계의 요소 사이는 어느 화면에서나 같은 간격이라 묶임과 구분이 한눈에 읽힙니다."
       >
         <mm-token-stage>
           <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
         </mm-token-stage>
-        <mm-token-group aria-label="space primitive tokens">
+        <mm-token-group aria-label="space Primitive Token">
           ${renderTokenItems(sectionTokens('space'))}
         </mm-token-group>
 
         <mm-separator></mm-separator>
         <mm-token-stage>
-          <mm-flex gap="8">${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}</mm-flex>
+          <mm-flex gap="4">${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}</mm-flex>
         </mm-token-stage>
-        <mm-token-group aria-label="space semantic tokens">
+        <mm-token-group aria-label="space System Token">
           ${renderTokenItems(sectionTokens('spaceSemantic'))}
         </mm-token-group>
       </mm-token-section>
@@ -409,12 +417,12 @@ const main = html`
         heading="Layout"
         description="레이아웃 토큰은 페이지, 팝오버, 폼 컨테이너처럼 반복되는 구조의 최대 너비와 여백을 정의합니다."
       >
-        <mm-token-group aria-label="layout primitive tokens">
+        <mm-token-group aria-label="layout Primitive Token">
           ${renderTokenItems(sectionTokens('layout').filter(name => !referencesOtherTokens(name)))}
         </mm-token-group>
 
         <mm-separator></mm-separator>
-        <mm-token-group aria-label="layout component and semantic tokens">
+        <mm-token-group aria-label="layout Component·System Token">
           ${renderTokenItems(sectionTokens('layout').filter(referencesOtherTokens))}
         </mm-token-group>
       </mm-token-section>
@@ -424,23 +432,27 @@ const main = html`
         description="테두리는 표면의 경계를 긋고, 모서리 곡률은 그 경계의 성격과 위계를 구분합니다."
       >
         <mm-token-stage>
-          <mm-token-swatches .swatches=${borderSwatches}></mm-token-swatches>
+          <mm-token-swatches
+            .swatches=${borderSwatches(sectionTokens('border'))}
+          ></mm-token-swatches>
         </mm-token-stage>
-        <mm-token-group aria-label="border tokens">
+        <mm-token-group aria-label="테두리 토큰">
           ${renderTokenItems(sectionTokens('border'))}
         </mm-token-group>
 
         <mm-token-stage>
-          <mm-token-swatches .swatches=${radiusSwatches}></mm-token-swatches>
+          <mm-token-swatches
+            .swatches=${radiusSwatches(sectionTokens('radius'))}
+          ></mm-token-swatches>
         </mm-token-stage>
-        <mm-token-group aria-label="radius tokens">
+        <mm-token-group aria-label="모서리 곡률 토큰">
           ${renderTokenItems(sectionTokens('radius'))}
         </mm-token-group>
       </mm-token-section>
 
       <mm-token-section
         heading="Material"
-        description="재질은 표면이 뒤 배경에서 떠 보이는 정도입니다. 원시값은 값의 종류와 크기로 이름 짓고, 사용하는 쪽은 원시값을 색 토큰과 조합한 티어를 씁니다. 티어가 선언하지 않은 속성은 base를 따릅니다."
+        description="재질은 표면이 뒤 배경에서 떠 보이는 정도입니다. Primitive Token은 값의 종류와 크기로 이름 짓고, 사용하는 쪽은 Primitive Token을 색 토큰과 조합한 티어를 씁니다. 티어가 선언하지 않은 속성은 base를 따릅니다."
       >
         <mm-token-stage backdrop>
           <div class="material-stage">
@@ -449,7 +461,7 @@ const main = html`
             ></mm-token-swatches>
           </div>
         </mm-token-stage>
-        <mm-token-group aria-label="shadow primitive tokens">
+        <mm-token-group aria-label="그림자 Primitive Token">
           ${renderTokenItems(sectionTokens('shadow'))}
         </mm-token-group>
 
@@ -463,14 +475,14 @@ const main = html`
             ></mm-token-swatches>
           </div>
         </mm-token-stage>
-        <mm-token-group aria-label="blur and opacity primitive tokens">
+        <mm-token-group aria-label="blur·opacity Primitive Token">
           ${renderTokenItems([...sectionTokens('blur'), ...sectionTokens('opacity')])}
         </mm-token-group>
 
         <mm-token-stage backdrop>
           <div class="material-stage">${renderMaterialStage(sectionTokens('material'))}</div>
         </mm-token-stage>
-        <mm-token-group aria-label="material tier tokens">
+        <mm-token-group aria-label="재질 티어 토큰">
           ${renderTokenItems(sectionTokens('material'))}
         </mm-token-group>
       </mm-token-section>

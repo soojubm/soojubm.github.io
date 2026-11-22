@@ -20,13 +20,13 @@ export class TokenStage extends LitElement {
 
     :host([backdrop]) mm-surface {
       --surface-background-color: repeating-linear-gradient(
-        135deg,
-        var(--primary-color) 0 var(--space-2),
-        var(--accent-color) var(--space-2) var(--space-4)
+        90deg,
+        var(--foreground-subtle-color) 0 var(--size-48),
+        var(--background-subtle-color) var(--size-48) calc(var(--size-48) * 2)
       );
     }
   `
-  /** 재질처럼 뒤에 무엇이 비치는지 보여야 하는 토큰을 위해, 경계가 또렷한 줄무늬를 스테이지 전체 바탕에 깐다. */
+  /** 재질처럼 뒤에 무엇이 비치는지 보여야 하는 토큰을 위해, 중간 톤과 밝은 면이 번갈아 맞닿는 바탕을 스테이지 전체에 깐다. */
   @property({ type: Boolean, reflect: true }) backdrop = false
 
   render() {
