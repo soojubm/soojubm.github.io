@@ -4,7 +4,16 @@ import type { ComponentPropItemData } from '@/components/domains/component'
 
 import '@/components/domains/component/component-notice'
 import { code, componentPropsOf } from '@/components/domains/component'
+import buttonStylesSource from '@/components/common/button/button.styles.ts?raw'
+import dotStylesSource from '@/components/common/dot/dot.styles.ts?raw'
+import iconButtonStylesSource from '@/components/common/icon-button/icon-button.styles.ts?raw'
+import inputStylesSource from '@/components/common/input/input.styles.ts?raw'
+import listItemStylesSource from '@/components/common/list-item/list-item.styles.ts?raw'
+import menuItemStylesSource from '@/components/common/menu-item/menu-item.styles.ts?raw'
+import surfaceStylesSource from '@/components/common/surface/surface.styles.ts?raw'
+import tagStylesSource from '@/components/common/tag/tag.styles.ts?raw'
 import { renderPage } from '@/components/layouts/base-layouts'
+import overlayStylesSource from '@/components/overlay/overlay.styles.ts?raw'
 
 const contentSectionCode = `<mm-content-section heading-level="3" heading="액션이 있는 섹션">
   <mm-link slot="action" href="./post.html">모두 보기</mm-link>
@@ -23,6 +32,15 @@ const pageHeaderCode = `<mm-flex justify-content="space-between" align-items="fl
 </mm-flex>`
 
 const textBlockCode = `<mm-text-block level="3" heading="제목" description="제목을 보충하는 설명"></mm-text-block>`
+
+// 공유 스타일 파일에서 export 선언 하나를 원문 그대로 잘라 보여 준다. 여러 줄 선언은 0열에서 닫힌다.
+const exportSourceOf = (source: string, name: string) => {
+  const lines = source.split('\n')
+  const start = lines.findIndex(line => new RegExp(`^export (const|type) ${name}\\b`).test(line))
+  if (!/[`[{(]$/.test(lines[start])) return lines[start]
+  const end = lines.findIndex((line, index) => index > start && /^\S/.test(line))
+  return lines.slice(start, end + 1).join('\n')
+}
 
 const flexProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-flex'),
@@ -69,20 +87,35 @@ const main = html`
               <mm-text-block
                 level="4"
                 heading="buttonBaseStyles"
-                description="버튼 골격과 눌림 스킨(buttonSelectedStyles). icon-button 스타일이 이 위에 서서 아이콘 버튼 계열까지 퍼집니다. 모든 버튼형 컴포넌트가 공유하는 기반 스타일입니다. 구조(레이아웃·크기·간격·타이포)와 기본 스킨, 상호작용 상태(focus·active·disabled)를 포함합니다."
-              ></mm-text-block>
+                description="버튼 골격과 눌림 스킨(buttonSelectedStyles). icon-button 스타일이 이 위에 서서 아이콘 버튼 계열까지 퍼집니다. 모든 버튼형 컴포넌트가 공유하는 기반 스타일입니다. 구조(레이아웃·크기·간격·타이포)와 기본 스킨에 포커스·비활성(buttonInteractiveStyles)까지 함께 입힙니다."
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(buttonStylesSource, 'buttonBaseStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="buttonInteractiveStyles"
-                description="눌리는 컨트롤의 포커스 링과 비활성 표시입니다. button 태그뿐 아니라 a 기반 파생 컴포넌트도 같은 스킨을 가져다 쓰도록 공용 상호작용 선택자로 잡습니다. button·icon-button·color-chip이 씁니다."
-              ></mm-text-block>
+                description="눌리는 컨트롤의 포커스 링과 비활성 표시입니다. 선언만 담으므로 사용하는 컴포넌트가 자기 button·a 선택자 안에 펼칩니다. buttonBaseStyles·iconButtonStyles가 품고, color-chip이 직접 씁니다."
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(buttonStylesSource, 'buttonInteractiveStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="iconButtonStyles"
-                description="icon-button 계열의 기반 스타일입니다. 자체 button을 쓰는 파생 컴포넌트가 hover·focus·disabled를 빠뜨리기 쉬워 buttonInteractiveStyles를 함께 묶어 내보냅니다."
-              ></mm-text-block>
+                description="icon-button 계열의 기반 스타일입니다. 자체 button을 쓰는 파생 컴포넌트가 포커스·비활성을 빠뜨리지 않도록 buttonInteractiveStyles를 button 규칙 안에 함께 입힙니다."
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(iconButtonStylesSource, 'iconButtonStyles')}
+                ></mm-code-block>
+              </mm-text-block>
             </mm-content-section-list>
           </mm-content-section>
 
@@ -92,25 +125,45 @@ const main = html`
                 level="4"
                 heading="inputBaseStyles"
                 description="입력 필드의 기반 스타일입니다. 높이·여백·배경·테두리와 hover·포커스·비활성·오류 상태를 포함하며, size로 small 단계를 고릅니다. textarea와 searchfield가 이 위에 섭니다."
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(inputStylesSource, 'inputBaseStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="textfieldStyles"
                 description="label·description·validation을 함께 갖는 field 계열(textfield, textarea-field, numberfield, passwordfield)의 공유 규칙입니다."
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(inputStylesSource, 'textfieldStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="inputSelectionGroupStyles"
                 description="선택 컨트롤을 fieldset으로 묶는 그룹입니다. 그룹 이름(legend)은 스크린리더에만 전달합니다. radio·checkbox 그룹이 씁니다."
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(inputStylesSource, 'inputSelectionGroupStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="inputVisuallyHiddenStyles"
                 description="radio·checkbox가 네이티브 input을 숨기는 조각. 입력 필드 스타일은 input 계열 안에서만 쓴다"
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(inputStylesSource, 'inputVisuallyHiddenStyles')}
+                ></mm-code-block>
+              </mm-text-block>
             </mm-content-section-list>
           </mm-content-section>
 
@@ -120,13 +173,23 @@ const main = html`
                 level="4"
                 heading="listItemInteractiveStyles"
                 description="눌리는 행의 hover·포커스·선택·비활성 스킨. menu-item 계열과 사이드바·검색 목록"
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(listItemStylesSource, 'listItemInteractiveStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="menuItemStyles"
                 description="눌리는 명령 행의 스타일입니다. menu-item 계열과 select option이 씁니다."
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(menuItemStylesSource, 'menuItemStyles')}
+                ></mm-code-block>
+              </mm-text-block>
             </mm-content-section-list>
           </mm-content-section>
 
@@ -136,19 +199,34 @@ const main = html`
                 level="4"
                 heading="surfaceBaseStyles"
                 description="faq·banner·radio card·code-block·pager·token-item·color-token"
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(surfaceStylesSource, 'surfaceBaseStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="overlaySurfaceStyles"
                 description="떠 있는 패널의 재질입니다. dialog·popover·sheet가 씁니다."
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(overlayStylesSource, 'overlaySurfaceStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="sheetPositionStyles"
                 description="viewport 기준 modal 표면(sheet, dialog)의 위치입니다. placement별로 패널을 어느 변에 붙일지 정하고, placement가 없는 dialog는 화면 가운데에 앉습니다."
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(overlayStylesSource, 'sheetPositionStyles')}
+                ></mm-code-block>
+              </mm-text-block>
             </mm-content-section-list>
           </mm-content-section>
 
@@ -158,13 +236,26 @@ const main = html`
                 level="4"
                 heading="dotStyles"
                 description="점 모양과 크기·tone 단계. 조합 컴포넌트가 고르는 단계"
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${exportSourceOf(dotStylesSource, 'dotStyles')}
+                ></mm-code-block>
+              </mm-text-block>
 
               <mm-text-block
                 level="4"
                 heading="TagTone"
                 description="tone 이름과 색. dot·chart가 tag와 같은 색을 맞출 때 쓴다"
-              ></mm-text-block>
+              >
+                <mm-code-block
+                  language="typescript"
+                  .code=${`${exportSourceOf(tagStylesSource, 'tagToneStyles')}\n\n${exportSourceOf(
+                    tagStylesSource,
+                    'TagTone',
+                  )}`}
+                ></mm-code-block>
+              </mm-text-block>
             </mm-content-section-list>
           </mm-content-section>
         </mm-content-section-list>

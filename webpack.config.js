@@ -106,6 +106,7 @@ module.exports = (env, argv) => {
         {
           test: /\.ts$/,
           exclude: /node_modules/,
+          resourceQuery: { not: [/raw/] },
           use: [
             {
               loader: 'ts-loader',
@@ -116,7 +117,7 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.css$/,
+          test: /\.(css|ts)$/,
           resourceQuery: /raw/,
           type: 'asset/source',
         },
