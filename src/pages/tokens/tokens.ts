@@ -91,6 +91,10 @@ const sectionTokens = (key: keyof typeof sectionPatterns) => tokensBySection[key
 /** 타이포그래피 스펙시멘으로 소개할 mm-text의 size 단계. 값과 행간은 스펙시멘이 직접 잰다. */
 const TEXT_SIZES = ['12', '14', '18', '24', '32']
 
+/** 다른 토큰을 참조해 만들어지는 레이아웃 토큰. chrome-inset은 :root에서 0px이지만 테마가 space 토큰으로 바꾸는 여백이라 여기 묶는다. */
+const isLayoutComposite = (name: string) =>
+  referencesOtherTokens(name) || name === 'layout-chrome-inset'
+
 const renderTokenItems = (keys: string[]) =>
   keys.map(
     key => html`
@@ -275,34 +279,39 @@ const motionTracks: EasingTrack[] = [
 interface TokenTier {
   heading: string
   description: string
+  rules: string[]
   examples: string[]
 }
 
-/** 계층마다 무엇을 정하고, 이름에 쓰임이 얼마나 드러나며, 누가 참조하는지를 같은 순서로 쓴다. */
+/** 계층마다 무엇을 정하는 값인지를 한 문장으로 쓰고, 쓰임과 이름 짓는 법을 같은 순서로 나열한다. */
 const tokenTiers: TokenTier[] = [
   {
     heading: 'Primitive',
-    description:
-      '디자인 언어가 쓸 수 있는 값이다. 쓰임을 말하지 않으므로 System Token을 거쳐 쓴다. 색은 색상과 단계로, 크기·간격은 값의 종류와 단계로 이름 짓는다.',
+    description: '서비스가 쓰는 모든 디자인 값을 한곳에 모아 둔 목록이다.',
+    rules: [
+      '화면에 쓰이는 색·크기·간격은 모두 이 목록에 있는 값에서 고른다.',
+      '값만 있고 쓰임은 말하지 않으므로 System Token을 거쳐 쓴다.',
+    ],
     examples: ['gray800', 'green800', 'size-32', 'space-4'],
   },
   {
     heading: 'System',
-    description:
-      'Primitive에 인터페이스에서의 역할을 붙인 값이다. 컴포넌트와 페이지가 직접 참조하고, 테마는 이 계층이 가리키는 Primitive를 바꾼다. 대상, 세기나 상태, 값의 종류 순으로 이름 짓는다.',
+    description: 'Primitive에 인터페이스에서의 역할을 붙인 값이다.',
+    rules: ['컴포넌트와 페이지가 직접 참조한다.', '테마는 이 계층이 가리키는 Primitive를 바꾼다.'],
     examples: ['background-color', 'foreground-subtle-color', 'interaction-hover-background-color'],
   },
   {
     heading: 'Component',
-    description:
-      'System을 한 컴포넌트의 속성에 연결한 값이다. 토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다. 컴포넌트명 뒤에 값을 적용하는 CSS 속성을 붙여 이름 짓는다.',
+    description: 'System을 한 컴포넌트의 속성에 연결한 값이다.',
+    rules: ['토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다.'],
     examples: ['avatar-background-color', 'notice-text-color', 'table-width'],
   },
 ]
 
-const renderTokenTier = ({ heading, description, examples }: TokenTier) => html`
+const renderTokenTier = ({ heading, description, rules, examples }: TokenTier) => html`
   <mm-surface variant="outlined">
     <mm-text-block level="4" heading=${heading} description=${description}>
+      <mm-text-list .texts=${rules}></mm-text-list>
       <mm-flex wrap="wrap" gap="2">
         ${examples.map(
           example => html`
@@ -388,9 +397,11 @@ const main = html`
           <mm-text-list
             .texts=${[
               '기본값에는 base·default를 붙이지 않는다. base가 대상 이름인 material-base는 예외로 그대로 쓴다.',
+              'Primitive Token은 색은 색상과 단계로, 크기·간격은 값의 종류와 단계로 이름 짓는다.',
               '세기 차이는 subtle·strong으로 나타낸다.',
               '상태는 인터랙션에 따라 바뀌는 값에만 넣는다.',
               '대비 표면 위에 올라가는 색은 on- 접두사를 붙인다.',
+              'Component Token은 컴포넌트명 뒤에 값을 적용하는 CSS 속성을 붙여 이름 짓는다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
@@ -500,12 +511,12 @@ const main = html`
         description="반복되는 구조의 최대 너비와 여백을 정합니다. 같은 구조는 어느 페이지에서나 같은 폭으로 놓여 화면을 옮겨도 읽는 자리가 흔들리지 않습니다."
       >
         <mm-token-group aria-label="layout Primitive Token">
-          ${renderTokenItems(sectionTokens('layout').filter(name => !referencesOtherTokens(name)))}
+          ${renderTokenItems(sectionTokens('layout').filter(name => !isLayoutComposite(name)))}
         </mm-token-group>
 
         <mm-separator></mm-separator>
         <mm-token-group aria-label="layout Component·System Token">
-          ${renderTokenItems(sectionTokens('layout').filter(referencesOtherTokens))}
+          ${renderTokenItems(sectionTokens('layout').filter(isLayoutComposite))}
         </mm-token-group>
       </mm-token-section>
 

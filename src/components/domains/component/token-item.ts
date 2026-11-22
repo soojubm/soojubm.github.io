@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
-import { computedTokenValue } from '@/components/domains/component/token-values'
+import { displayTokenValue } from '@/components/domains/component/token-values'
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
 import '@/components/common'
 
@@ -28,7 +28,7 @@ export class TokenItem extends LitElement {
   render() {
     return html`
       <mm-text size="12" weight="bold" color="light">${this.key}</mm-text>
-      <mm-text size="12" weight="bold">${computedTokenValue(this.key, this)}</mm-text>
+      <mm-text size="12" weight="bold">${displayTokenValue(this.key, this)}</mm-text>
     `
   }
 }

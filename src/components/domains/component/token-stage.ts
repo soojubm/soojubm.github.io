@@ -11,11 +11,14 @@ export class TokenStage extends LitElement {
     }
 
     mm-surface {
-      --surface-padding: var(--space-8) var(--space-16);
+      --surface-padding: 0;
     }
 
+    /* 여백을 스크롤 영역 안쪽에 둬서, 샘플의 그림자가 여백 위로 번진다. 표면 가장자리에서만 잘린다. */
     mm-scroll {
       width: 100%;
+      box-sizing: border-box;
+      padding: var(--space-8) var(--space-16);
     }
 
     :host([backdrop]) mm-surface {

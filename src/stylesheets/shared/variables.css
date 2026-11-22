@@ -19,8 +19,6 @@
   --font-weight-normal: 500;
   --font-weight-bold: 700;
 
-  /* 고정 내비게이션 표면이 화면 가장자리에서 떨어지는 간격. 테마가 재정의하면 떠 있는 표면이 된다 */
-  --layout-chrome-inset: 0px;
   --navbar-height: calc(var(--size-32) + 1.5rem);
 
   --layout-width-large: 960px;
@@ -31,6 +29,8 @@
 
   --layout-main-space-top: var(--space-6);
   --layout-sidebar-space-top: var(--space-2);
+  /* 고정 내비게이션 표면이 화면 가장자리에서 떨어지는 간격. 테마가 재정의하면 떠 있는 표면이 된다 */
+  --layout-chrome-inset: 0px;
 
   --gray0: #fff;
   --gray100: #f5f5f5;
@@ -130,7 +130,7 @@
   /* 재질 원시값. 값의 종류와 크기로 이름 짓고 테마가 건드리지 않는다.
      소비처는 원시값을 직접 쓰지 않고, 아래 material 티어가 색 토큰과 조합해 내보낸다. */
   --shadow-12: 0 4px 12px rgb(0 0 0 / 15%);
-  --shadow-48: 0 24px 48px rgb(0 0 0 / 28%);
+  --shadow-32: 0 16px 32px rgb(0 0 0 / 24%);
   --blur-20: 20px;
   --blur-28: 28px;
   --opacity-50: 50%;
@@ -165,7 +165,7 @@
   --material-overlay-background-color: var(--gray0);
   --material-overlay-border: var(--border);
   --material-overlay-backdrop-filter: none;
-  --material-overlay-shadow: var(--shadow-48);
+  --material-overlay-shadow: var(--shadow-32);
 
   /* z-index: 화면 위 높낮이를 표현하는 값. 같은 그룹 안에서만 값을 비교한다 */
   --material-zindex-base: 0; /* 기본 콘텐츠: 문서, 리스트, 배경 */

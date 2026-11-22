@@ -59,6 +59,35 @@ const rootValues = new Map(
   [...rootDeclarations.matchAll(/--([\w-]+):\s*([^;]+);/g)].map(([, name, value]) => [name, value]),
 )
 
+// 테마 블록(`:root [data-theme='x']`)이 다시 선언한 값. 테마가 값을 덮은 토큰도 참조 이름으로 보여주려고 읽는다.
+const themeValues = new Map(
+  [...variablesCss.matchAll(/\[data-theme='([\w-]+)'\]\s*\{([^}]*)\}/g)].map(([, theme, body]) => [
+    theme,
+    new Map(
+      [...body.replace(/\/\*[\s\S]*?\*\//g, '').matchAll(/--([\w-]+):\s*([^;]+);/g)].map(
+        ([, name, value]) => [name, value],
+      ),
+    ),
+  ]),
+)
+
+/**
+ * 현재 테마에서 이 토큰이 선언된 모양. 다른 토큰을 참조하면 `var(--x)`의 var를 벗겨 참조 이름으로 쓰고,
+ * 참조가 없는 값이면 계산된 값을 그대로 쓴다.
+ */
+export function displayTokenValue(name: string, element: Element) {
+  const theme = element.closest('[data-theme]')?.getAttribute('data-theme') ?? ''
+  const declared = themeValues.get(theme)?.get(name) ?? rootValues.get(name) ?? ''
+  if (!/var\(--/.test(declared)) return computedTokenValue(name, element)
+
+  return declared
+    .replace(/\s+/g, ' ')
+    .replace(/\( /g, '(')
+    .replace(/ \)/g, ')')
+    .replace(/var\(--([\w-]+)\)/g, '$1')
+    .trim()
+}
+
 /** 값이 다른 토큰을 참조해 만들어지는지. 원시값이 아니라 컴포넌트·시맨틱 단계의 토큰이다. */
 export const referencesOtherTokens = (name: string) => /var\(--/.test(rootValues.get(name) ?? '')
 
