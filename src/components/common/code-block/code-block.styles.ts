@@ -4,6 +4,22 @@ import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 
 export const codeBlockStyles = css`
   :host {
+    --code-block-tag-text-color: color-mix(
+      in srgb,
+      var(--foreground-danger-color) 85%,
+      transparent
+    );
+    --code-block-attr-name-text-color: color-mix(
+      in srgb,
+      var(--foreground-warning-color) 85%,
+      transparent
+    );
+    --code-block-attr-value-text-color: color-mix(
+      in srgb,
+      var(--foreground-subtle-color) 85%,
+      transparent
+    );
+
     display: block;
     position: relative;
   }
@@ -58,18 +74,20 @@ export const codeBlockStyles = css`
   }
 
   .token.tag,
+  .token.tag .punctuation,
   .token.keyword {
-    color: color-mix(in srgb, var(--foreground-danger-color) 85%, transparent);
+    color: var(--code-block-tag-text-color);
   }
 
   .token.attr-name,
   .token.property {
-    color: color-mix(in srgb, var(--foreground-warning-color) 85%, transparent);
+    color: var(--code-block-attr-name-text-color);
   }
 
   .token.attr-value,
+  .token.attr-value .punctuation:not(.attr-equals),
   .token.builtin,
   .token.class-name {
-    color: color-mix(in srgb, var(--foreground-subtle-color) 85%, transparent);
+    color: var(--code-block-attr-value-text-color);
   }
 `
