@@ -14,7 +14,7 @@ import '@/components/overlay/popover/popover'
 import '@/components/overlay/select/select-listbox'
 import '@/components/overlay/select/select-option'
 import '@/components/overlay/sheet'
-import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-controller'
+import { AdaptiveOverlay } from '@/controllers/adaptive-overlay'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
 import { withOpenState } from '@/utils/open-state'
@@ -30,7 +30,7 @@ const POPOVER_MAX_HEIGHT =
  * popover를 프리미티브로 하는 선택 입력.
  * 좁은 화면에서는 목록을 트리거에 앵커하지 않고 sheet로 올린다. 두 표면은 backdrop·스크롤 잠금·
  * 포커스 가두기를 쥐는 방식이 달라 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
- * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 select가 `open`으로 소유하고 AdaptiveOverlayController가 화면 폭에 맞는 표면에만 내려준다.
+ * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 select가 `open`으로 소유하고 AdaptiveOverlay가 화면 폭에 맞는 표면에만 내려준다.
  */
 @customElement('mm-select')
 export class Select extends withOpenState(LitElement) {
@@ -52,7 +52,7 @@ export class Select extends withOpenState(LitElement) {
   @property({ type: String }) placement: PopoverPlacement = 'bottom-start'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   @query('mm-button[aria-haspopup]') private triggerElement?: HTMLElement
-  private overlay = new AdaptiveOverlayController(this)
+  private overlay = new AdaptiveOverlay(this)
   private disclosure = new DisclosureController(this, {
     getTrigger: () => this.triggerElement ?? undefined,
   })

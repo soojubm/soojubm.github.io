@@ -10,7 +10,7 @@ import {
   inputVisuallyHiddenStyles,
 } from '@/components/common/input/input.styles'
 import { radioStyles } from '@/components/common/radio/radio.styles'
-import { SingleSelectionController } from '@/controllers/single-selection-controller'
+import { SingleSelection } from '@/controllers/single-selection'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
@@ -28,7 +28,7 @@ export class RadioGroup extends LitElement {
   @property({ type: String }) legend = ''
   // name을 주지 않아도 네이티브 radio가 한 그룹으로 묶이도록 내부 이름을 둔다.
   private fallbackName = uniqueId('radio-group')
-  private selection = new SingleSelectionController({
+  private selection = new SingleSelection({
     getValue: () => this.value,
     setValue: value => {
       this.value = value

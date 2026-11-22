@@ -200,7 +200,7 @@ const main = html`
       <mm-button-group>
         <mm-color-chip
           value="black"
-          color="var(--black800)"
+          color="var(--gray800)"
           aria-label="블랙"
           pressed
         ></mm-color-chip>

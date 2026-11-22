@@ -70,6 +70,6 @@ export const codeBlockStyles = css`
   .token.attr-value,
   .token.builtin,
   .token.class-name {
-    color: color-mix(in srgb, var(--foreground-success-color) 85%, transparent);
+    color: color-mix(in srgb, var(--foreground-subtle-color) 85%, transparent);
   }
 `

@@ -9,7 +9,7 @@ import type { OptionItem } from '@/types'
 import '@/components/common'
 import '@/components/overlay/popover/popover'
 import '@/components/overlay/sheet'
-import { AdaptiveOverlayController } from '@/controllers/adaptive-overlay-controller'
+import { AdaptiveOverlay } from '@/controllers/adaptive-overlay'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
 import { withOpenState } from '@/utils/open-state'
@@ -33,7 +33,7 @@ export class MoreMenu extends withOpenState(LitElement) {
   @property({ type: String }) placement: PopoverPlacement = 'bottom-end'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
   @query('mm-more-button') private triggerElement?: HTMLElement
-  private overlay = new AdaptiveOverlayController(this)
+  private overlay = new AdaptiveOverlay(this)
   private disclosure = new DisclosureController(this, {
     getTrigger: () => this.triggerElement ?? undefined,
   })

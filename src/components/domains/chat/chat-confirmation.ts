@@ -27,7 +27,7 @@ export class ChatConfirmation extends LitElement {
   render() {
     if (this.status === 'approved') {
       return html`
-        <mm-notice variant="success" description="승인했습니다"></mm-notice>
+        <mm-notice variant="info" description="승인했습니다"></mm-notice>
       `
     }
 

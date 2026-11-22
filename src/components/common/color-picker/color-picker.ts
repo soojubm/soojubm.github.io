@@ -9,7 +9,7 @@ const COLOR_CLASSES = ['color-black', 'color-green']
 type Color = 'green' | 'black'
 
 const COLOR_OPTIONS: { value: Color; label: string; color: string }[] = [
-  { value: 'black', label: 'Black', color: 'var(--black800)' },
+  { value: 'black', label: 'Black', color: 'var(--gray800)' },
   { value: 'green', label: 'Green', color: 'var(--green800)' },
 ]
 

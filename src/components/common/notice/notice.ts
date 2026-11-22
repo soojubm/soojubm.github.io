@@ -15,7 +15,7 @@ import '@/components/common/text/semantics/heading'
 import '@/components/common/icon-button/semantics/dismiss-button'
 
 export type NoticeRole = 'alert' | 'note' | 'status'
-export type NoticeVariant = Extract<StatusTone, 'info' | 'success' | 'warning' | 'error'>
+export type NoticeVariant = Extract<StatusTone, 'info' | 'warning' | 'error'>
 
 @customElement('mm-notice')
 export class Notice extends LitElement {

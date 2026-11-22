@@ -5,9 +5,6 @@ import type { NoticeVariant } from '@/components/common/notice/notice'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const noticeVariantTokens: AttributeTokens<Exclude<NoticeVariant, 'info'>> = {
-  success: {
-    '--notice-text-color': 'var(--foreground-success-color)',
-  },
   warning: {
     '--notice-text-color': 'var(--foreground-warning-color)',
   },

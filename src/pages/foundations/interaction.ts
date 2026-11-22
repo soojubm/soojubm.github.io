@@ -39,14 +39,9 @@ const selectedSwatches = [
   'border: var(--border-selected)',
 ]
 
-const semanticTokens = [
-  'foreground-success-color',
-  'foreground-warning-color',
-  'foreground-danger-color',
-]
+const semanticTokens = ['foreground-warning-color', 'foreground-danger-color']
 
 const semanticSwatches = [
-  'background: var(--foreground-success-color)',
   'background: var(--foreground-warning-color)',
   'background: var(--foreground-danger-color)',
 ]
@@ -122,7 +117,7 @@ type ComponentBlock = { label: string; description?: string; components: string[
 
 const selectionOwnerBlocks: ComponentBlock[] = [
   {
-    label: 'SingleSelectionController',
+    label: 'SingleSelection',
     description: 'value: string',
     components: [
       'mm-radio-group',
@@ -133,7 +128,7 @@ const selectionOwnerBlocks: ComponentBlock[] = [
     ],
   },
   {
-    label: 'MultipleSelectionController',
+    label: 'MultipleSelection',
     description: 'values: string[]',
     components: ['mm-checkbox-group', 'mm-filter-button-group', 'mm-menu-item-checkbox-group'],
   },

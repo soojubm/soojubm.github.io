@@ -619,8 +619,8 @@ const main = html`
 
               <mm-text-block
                 level="4"
-                heading="AdaptiveOverlayController"
-                description="넓은 화면에서 popover로 열리는 overlay를 좁은 화면에서 bottom sheet로 전환하는 컨트롤러입니다."
+                heading="AdaptiveOverlay"
+                description="넓은 화면에서 popover로 열리는 overlay를 좁은 화면에서 bottom sheet로 전환하는 클래스입니다."
               >
                 <mm-text-list
                   .texts=${[
@@ -631,7 +631,7 @@ const main = html`
                     html`
                       ${code('popoverOpen')}·${code('sheetOpen')}을 제공: 컴포넌트의
                       ${code('open')}과 화면 폭을 합쳐, 화면 폭에 맞는 표면에만 열림을 내려 줍니다.
-                      열림 상태는 컴포넌트가 ${code('open')}으로 소유하고, 이 컨트롤러는 읽기만
+                      열림 상태는 컴포넌트가 ${code('open')}으로 소유하고, 이 클래스는 읽기만
                       합니다.
                     `,
                     html`

@@ -6,9 +6,9 @@ import type { OptionItem } from '@/types'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
-import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
+import { MultipleSelection } from '@/controllers/multiple-selection'
 import { RovingFocusController, type Orientation } from '@/controllers/roving-focus-controller'
-import { SingleSelectionController } from '@/controllers/single-selection-controller'
+import { SingleSelection } from '@/controllers/single-selection'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon/icon'
@@ -38,13 +38,13 @@ export class FilterButtonGroup extends LitElement {
   @property({ type: String }) orientation: Orientation = 'horizontal'
   @queryAll('button') private buttons!: NodeListOf<HTMLButtonElement>
   // single/multiple 모드가 런타임에 바뀔 수 있어 두 컨트롤러를 모두 들고 selection에서 mode로 고른다.
-  private singleSelection = new SingleSelectionController({
+  private singleSelection = new SingleSelection({
     getValue: () => this.values[0] ?? '',
     setValue: value => {
       this.values = value ? [value] : []
     },
   })
-  private multipleSelection = new MultipleSelectionController({
+  private multipleSelection = new MultipleSelection({
     getValues: () => this.values,
     setValues: values => {
       this.values = values

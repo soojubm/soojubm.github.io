@@ -23,7 +23,6 @@ const primaryAction: ActionConfig = { label: '갱신하기', onClick: () => {} }
 const secondaryAction: ActionConfig = { label: '나중에', onClick: () => {} }
 
 const variantCode = `<mm-notice variant="info" description="새 기능이 추가되었습니다."></mm-notice>
-<mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
 <mm-notice variant="warning" description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."></mm-notice>
 <mm-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></mm-notice>`
 
@@ -59,7 +58,6 @@ const main = html`
         <mm-component-example>
           <mm-flex direction="column" gap="2">
             <mm-notice variant="info" description="새 기능이 추가되었습니다."></mm-notice>
-            <mm-notice variant="success" description="좋아요 표시한 동영상에 추가됨"></mm-notice>
             <mm-notice
               variant="warning"
               description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."

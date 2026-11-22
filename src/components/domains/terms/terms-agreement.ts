@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { OptionItem } from '@/types'
 
-import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
+import { MultipleSelection } from '@/controllers/multiple-selection'
 import { emit } from '@/utils'
 import '@/components/common/checkbox'
 import '@/components/common/surface'
@@ -26,7 +26,7 @@ export class TermsAgreement extends LitElement {
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ attribute: false }) values: string[] = []
   @property({ type: String }) name?: string
-  private selection = new MultipleSelectionController({
+  private selection = new MultipleSelection({
     getValues: () => this.values,
     setValues: values => {
       this.values = values

@@ -66,5 +66,5 @@ export const referencesOtherTokens = (name: string) => /var\(--/.test(rootValues
 export const computedTokenValue = (name: string, element: Element) =>
   getComputedStyle(element).getPropertyValue(`--${name}`).trim()
 
-/** 값의 종류를 나타내는 접미사를 뗀 표시 이름. `background-subtle-color` → `background-subtle` */
+/** 값의 종류를 나타내는 접미사를 뗀 역할 이름. `primary-color` → `primary` */
 export const tokenDisplayName = (name: string) => name.replace(/-color$/, '')

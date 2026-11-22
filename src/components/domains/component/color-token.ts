@@ -45,6 +45,7 @@ export class ColorToken extends LitElement {
         flex: 1;
         flex-direction: column;
         justify-content: flex-end;
+        gap: var(--space-2);
         min-height: var(--size-80);
         padding: var(--space-3) var(--space-4);
         background: var(--color-token-background-color);
@@ -56,14 +57,19 @@ export class ColorToken extends LitElement {
         margin-bottom: auto;
       }
 
+      /* 캡션처럼 이름을 위에, 값을 아래에 둔다. 이름은 라벨 색을 낮춰 값보다 한 걸음 물러난다. */
       .label-row {
         display: flex;
-        align-items: baseline;
-        gap: var(--space-2);
+        flex-direction: column;
       }
 
-      /* 명도 대비 값: 라벨 색으로 흐르되 보조 정보라 10px로 낮춘다. */
-      .contrast {
+      .key {
+        opacity: 0.7;
+      }
+
+      /* 명도 대비: 보조 정보라 값 옆에 10px로 낮춘다. */
+      .detail {
+        margin-left: var(--space-1);
         font-size: 10px;
         opacity: 0.7;
       }
@@ -116,8 +122,11 @@ export class ColorToken extends LitElement {
     return this.pairs.map(
       (pair, index) => html`
         <div class="label-row" style=${styleMap({ color: `var(--${pair})` })}>
-          <mm-text size="12" weight="bold">${tokenDisplayName(pair)}</mm-text>
-          <span class="contrast">${this.contrasts[index] ?? ''}</span>
+          <mm-text class="key" size="12" weight="bold">${pair}</mm-text>
+          <mm-text size="12" weight="bold">
+            ${this.referencedValue(pair)}
+            <span class="detail">${this.contrasts[index] ?? ''}</span>
+          </mm-text>
         </div>
       `,
     )
@@ -128,13 +137,18 @@ export class ColorToken extends LitElement {
 
     // 시맨틱 토큰은 실제 색이 아니라 물려받는 원시 토큰 이름을 보여준다. 값은 테마마다 바뀌어도
     // 어떤 원시 색을 참조하는지는 구조로 고정되어 있어, 그 구조를 그대로 문서화한다.
-    const value = primitiveTokenName(this.name) ?? computedTokenValue(this.name, this)
+    const value = this.referencedValue(this.name)
 
     return html`
       <figcaption>
-        <mm-text size="12" weight="bold">${tokenDisplayName(this.name)}: ${value}</mm-text>
+        <mm-text size="12" weight="bold" color="light">${this.name}</mm-text>
+        <mm-text size="12" weight="bold">${value}</mm-text>
       </figcaption>
     `
+  }
+
+  private referencedValue(name: string) {
+    return primitiveTokenName(name) ?? computedTokenValue(name, this)
   }
 
   /** 대비는 브라우저가 실제로 칠한 색끼리 잰다. 토큰이 어떤 단계를 거쳐 왔는지와 무관해진다. */

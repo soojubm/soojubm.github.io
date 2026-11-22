@@ -11,7 +11,7 @@ import {
   inputSelectionGroupStyles,
   inputVisuallyHiddenStyles,
 } from '@/components/common/input/input.styles'
-import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
+import { MultipleSelection } from '@/controllers/multiple-selection'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text'
@@ -33,7 +33,7 @@ export class CheckboxGroup extends LitElement {
   @property({ type: String }) legend?: string
   // shadow 안에서만 쓰는 label 연결용 id라 컴포넌트의 id와 섞지 않는다.
   private idPrefix = uniqueId('checkbox-group')
-  private selection = new MultipleSelectionController({
+  private selection = new MultipleSelection({
     getValues: () => this.values,
     setValues: values => {
       this.values = values

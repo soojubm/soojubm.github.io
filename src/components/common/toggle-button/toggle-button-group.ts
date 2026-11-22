@@ -7,7 +7,7 @@ import type { OptionItem } from '@/types'
 
 import { buttonBaseStyles, buttonSelectedStyles } from '@/components/common/button/button.styles'
 import { RovingFocusController, type Orientation } from '@/controllers/roving-focus-controller'
-import { SingleSelectionController } from '@/controllers/single-selection-controller'
+import { SingleSelection } from '@/controllers/single-selection'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon/icon'
@@ -60,7 +60,7 @@ export class ToggleButtonGroup extends LitElement {
   @property({ type: Boolean, attribute: 'hidden-label' }) hiddenLabel = false
   @property({ type: String }) orientation: Orientation = 'horizontal'
   @queryAll('button') private buttons!: NodeListOf<HTMLButtonElement>
-  private selection = new SingleSelectionController({
+  private selection = new SingleSelection({
     getValue: () => this.value,
     setValue: value => {
       this.value = value

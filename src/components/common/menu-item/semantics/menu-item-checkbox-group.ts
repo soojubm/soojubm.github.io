@@ -8,7 +8,7 @@ import type { MenuOptionItem } from '@/types'
 
 import '@/components/common/menu-item/menu-item-group'
 import '@/components/common/menu-item/semantics/menu-item-checkbox'
-import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
+import { MultipleSelection } from '@/controllers/multiple-selection'
 import { emit } from '@/utils'
 
 /**
@@ -27,7 +27,7 @@ export class MenuItemCheckboxGroup extends LitElement {
   @property({ attribute: false }) values: string[] = []
   @property({ type: String }) size: MenuItemGroupSize = 'medium'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  private selection = new MultipleSelectionController({
+  private selection = new MultipleSelection({
     getValues: () => this.values,
     setValues: values => {
       this.values = values

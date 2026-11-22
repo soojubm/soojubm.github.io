@@ -1,4 +1,4 @@
-import { LitElement, css, html, unsafeCSS } from 'lit'
+import { LitElement, css, html, nothing, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { spaceTokens } from '@/stylesheets/shared.styles'
@@ -26,6 +26,8 @@ export class TokenSwatches extends LitElement {
     ${unsafeCSS(buildAttributeRules('gap', spaceTokens('--token-swatches-gap')))}
 
     .swatch {
+      display: grid;
+      place-items: center;
       flex-shrink: 0;
       width: var(--size-48);
       height: var(--size-48);
@@ -42,6 +44,8 @@ export class TokenSwatches extends LitElement {
   `
   /** 칠할 CSS 선언 문자열. 원소마다 스와치 하나가 된다. */
   @property({ attribute: false }) swatches: string[] = []
+  /** 스와치 안에 올릴 짧은 텍스트. swatches와 같은 순서로 짝지어지며, 칠한 면 위에서 읽히는지 보여줄 때 쓴다. */
+  @property({ attribute: false }) contents: string[] = []
   @property({ type: String, reflect: true }) gap: Space = '4'
 
   render() {
@@ -53,9 +57,18 @@ export class TokenSwatches extends LitElement {
   private renderSwatch(swatch: string, index: number) {
     return html`
       <div class="column">
-        <div class="swatch" style=${swatch}></div>
+        <div class="swatch" style=${swatch}>${this.renderContent(index)}</div>
         <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
       </div>
+    `
+  }
+
+  private renderContent(index: number) {
+    const content = this.contents[index]
+    if (!content) return nothing
+
+    return html`
+      <mm-text size="12" weight="bold">${content}</mm-text>
     `
   }
 }

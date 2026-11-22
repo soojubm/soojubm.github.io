@@ -15,9 +15,8 @@ type ProcessStatusVariant =
   | Extract<StatusTone, 'success' | 'warning' | 'error'>
 
 const processStatusVariantTokens: AttributeTokens<
-  Exclude<ProcessStatusVariant, 'running' | 'pending'>
+  Exclude<ProcessStatusVariant, 'running' | 'pending' | 'success'>
 > = {
-  success: { '--process-status-icon-color': 'var(--foreground-success-color)' },
   warning: { '--process-status-icon-color': 'var(--foreground-warning-color)' },
   error: { '--process-status-icon-color': 'var(--foreground-danger-color)' },
 }

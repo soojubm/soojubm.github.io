@@ -40,7 +40,6 @@ export class AdaptiveOverlay {
 
     this.syncOpen(event.detail.open)
   }
-
   handleSheetToggle = (event: CustomEvent<{ open: boolean }>) => {
     if (!this.isViewportCompact) return
 
