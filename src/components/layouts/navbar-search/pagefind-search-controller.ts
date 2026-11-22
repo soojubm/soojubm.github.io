@@ -1,5 +1,5 @@
 import type { SearchResult } from '@/components/domains/search/search-result-list'
-import type { ReactiveControllerHost } from 'lit'
+import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 import { ScheduleController } from '@/controllers/schedule-controller'
 
@@ -28,7 +28,7 @@ function toSearchResult(result: PagefindResult): SearchResult {
  * 입력한 검색어를 debounce해 Pagefind로 검색하고, 오래된 응답은 버려 최신 결과만 남기는 컨트롤러.
  * query·results·searching이 바뀌면 컴포넌트를 다시 그린다. 보여줄 결과가 없으면 응답이 올 때까지 searching을 켜 "결과 없음"이 비치지 않게 한다.
  */
-export class PagefindSearchController {
+export class PagefindSearchController implements ReactiveController {
   query = ''
   results: SearchResult[] = []
   searching = false
@@ -44,6 +44,12 @@ export class PagefindSearchController {
     this.debounce = new ScheduleController(host, () => this.search(this.query), {
       delay: DEBOUNCE_MS,
     })
+    host.addController(this)
+  }
+
+  // 분리된 뒤에는 대기 중인 검색과 진행 중인 요청의 응답을 버려 결과가 남지 않게 한다.
+  hostDisconnected() {
+    this.reset()
   }
 
   // 열릴 때의 미리 불러오기와 첫 검색이 겹쳐도 한 번만 불러온다. 실패하면 다음 호출이 다시 시도한다.
