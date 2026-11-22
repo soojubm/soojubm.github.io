@@ -65,3 +65,37 @@ mm-token-stage:hover .motion-dot {
   width: var(--space-1);
   background: var(--primary-color);
 }
+
+.name-anatomy {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.name-hyphen {
+  height: var(--size-32);
+  line-height: var(--size-32);
+  font-family: var(--font-family-code);
+  color: var(--foreground-subtle-color);
+}
+
+/* 자리마다 카테고리컬 색을 하나씩 줘서, 줄이 달라도 같은 자리끼리 같은 색으로 묶여 읽힌다. */
+.name-segment {
+  display: inline-flex;
+  align-items: center;
+  height: var(--size-32);
+  padding: 0 var(--space-3);
+  border-radius: var(--radius);
+  background: var(--category-1-background-color);
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-14);
+  color: var(--foreground-color);
+}
+
+.name-segment[data-part='modifier'] {
+  background: var(--category-4-background-color);
+}
+
+.name-segment[data-part='kind'] {
+  background: var(--category-2-background-color);
+}

@@ -272,6 +272,98 @@ const motionTracks: EasingTrack[] = [
   { easing: 'var(--transition-easing-emphasis)', label: 'transition-easing-emphasis' },
 ]
 
+interface TokenTier {
+  heading: string
+  description: string
+  examples: string[]
+}
+
+/** 계층마다 무엇을 정하고, 이름에 쓰임이 얼마나 드러나며, 누가 참조하는지를 같은 순서로 쓴다. */
+const tokenTiers: TokenTier[] = [
+  {
+    heading: 'Primitive',
+    description:
+      '디자인 언어가 쓸 수 있는 값의 목록이다. 값만 담고 어디에 쓰는지는 말하지 않으므로, 대개 System Token을 거쳐 간접적으로 쓴다. 색은 색상과 단계로, 크기·간격은 값의 종류와 단계로 이름 짓는다.',
+    examples: ['gray800', 'green800', 'size-32', 'space-4'],
+  },
+  {
+    heading: 'System',
+    description:
+      'Primitive에 인터페이스에서의 역할을 붙인 값이다. 이름이 쓰임을 말하므로 컴포넌트와 페이지가 직접 참조하고, 테마는 이 계층이 가리키는 Primitive를 바꿔 전체 인상을 바꾼다. 대상, 세기나 상태, 값의 종류 순으로 이름 짓는다.',
+    examples: ['background-color', 'foreground-subtle-color', 'interaction-hover-background-color'],
+  },
+  {
+    heading: 'Component',
+    description:
+      'System을 한 컴포넌트의 속성에 연결한 값이다. 토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다. 컴포넌트명 뒤에 값을 적용하는 CSS 속성을 붙여 이름 짓는다.',
+    examples: ['avatar-background-color', 'notice-text-color', 'table-width'],
+  },
+]
+
+const renderTokenTier = ({ heading, description, examples }: TokenTier) => html`
+  <mm-surface variant="outlined">
+    <mm-text-block level="4" heading=${heading} description=${description}>
+      <mm-flex wrap="wrap" gap="2">
+        ${examples.map(
+          example => html`
+            <mm-code>${example}</mm-code>
+          `,
+        )}
+      </mm-flex>
+    </mm-text-block>
+  </mm-surface>
+`
+
+/** 토큰 이름 조각이 맡는 자리. 같은 자리는 같은 색으로 칠해, 줄이 달라도 대상과 값의 종류가 같은 위치에 있음을 보인다. */
+type NamePart = 'target' | 'modifier' | 'kind'
+
+interface NameSegment {
+  text: string
+  part: NamePart
+  label: string
+}
+
+/** 기본값·세기·상태·on- 규칙을 하나씩 보여 주는 실제 System Token. 값의 종류를 이름 끝에 둔다는 규칙은 목록 대신 이 그래픽이 보여 준다. */
+const nameAnatomies: NameSegment[][] = [
+  [
+    { text: 'background', part: 'target', label: '대상' },
+    { text: 'color', part: 'kind', label: '값의 종류' },
+  ],
+  [
+    { text: 'foreground', part: 'target', label: '대상' },
+    { text: 'subtle', part: 'modifier', label: '세기' },
+    { text: 'color', part: 'kind', label: '값의 종류' },
+  ],
+  [
+    { text: 'interaction', part: 'target', label: '대상' },
+    { text: 'hover', part: 'modifier', label: '상태' },
+    { text: 'background-color', part: 'kind', label: '값의 종류' },
+  ],
+  [
+    { text: 'foreground', part: 'target', label: '대상' },
+    { text: 'on-strong', part: 'modifier', label: '대비 표면' },
+    { text: 'color', part: 'kind', label: '값의 종류' },
+  ],
+]
+
+const renderNameAnatomy = (segments: NameSegment[]) => html`
+  <div class="name-anatomy" aria-label=${segments.map(({ text }) => text).join('-')} role="group">
+    ${segments.map(
+      ({ text, part, label }, index) => html`
+        ${index > 0
+          ? html`
+              <span class="name-hyphen" aria-hidden="true">-</span>
+            `
+          : ''}
+        <mm-flex direction="column" gap="1">
+          <span class="name-segment" data-part=${part}>${text}</span>
+          <mm-caption>${label}</mm-caption>
+        </mm-flex>
+      `,
+    )}
+  </div>
+`
+
 const main = html`
   <mm-main>
     <mm-flex direction="column" gap="16">
@@ -283,51 +375,38 @@ const main = html`
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="계층">
           <mm-paragraph>
-            토큰은 계층을 이루며, 실제로 쓰이는 자리에 가까운 단계일수록 구체적입니다. 각 단계는
-            원칙적으로 바로 앞 단계의 토큰을 참조해 값을 물려받고, 토큰을 쓰는 쪽은 자신에게 가장
-            가까운 단계를 참조합니다.
+            토큰은 디자인 결정을 추상화 수준에 따라 세 계층으로 나눕니다. 아래 계층은 쓸 수 있는
+            값을, 위 계층은 그 값을 어디에 쓰는지를 정합니다. 각 계층은 바로 아래 계층을 참조해 값을
+            물려받고, 토큰을 쓰는 쪽은 자신에게 가장 가까운 계층을 참조합니다.
           </mm-paragraph>
-          <mm-text-list
-            variant="number"
-            .texts=${[
-              'Primitive — 색·크기·간격의 원시 값. 색은 gray800·green100처럼 색상과 단계로, 크기·간격은 size-, space-처럼 값의 종류로 이름 짓는다.',
-              'System — primitive를 인터페이스의 역할에 매핑한다. background-color, border-color, foreground-subtle-color처럼 역할과 용도로 이름 짓는다.',
-              'Component — system을 특정 컴포넌트의 속성에 매핑한다. avatar-background-color, notice-text-color처럼 컴포넌트명과 값을 적용하는 CSS 속성으로 이름 짓는다.',
-            ]}
-          ></mm-text-list>
+          <mm-grid columns="3" gap="4">${tokenTiers.map(renderTokenTier)}</mm-grid>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="이름 규칙">
+          <mm-token-stage>
+            <mm-flex direction="column" gap="6">${nameAnatomies.map(renderNameAnatomy)}</mm-flex>
+          </mm-token-stage>
           <mm-text-list
             .texts=${[
-              'System Token 이름은 대상, 세기나 상태, 값의 종류 순으로 짓는다. 예: foreground-subtle-color는 foreground(대상)·subtle(세기)·color(값의 종류)다.',
-              '값의 종류는 이름 끝에 둔다. 색 토큰은 primary-color처럼 -color로 끝난다.',
-              '대상이 정적인 값이면 이름에 상태를 넣지 않고, hover·selected처럼 인터랙션에 따라 바뀌는 값에만 상태를 넣는다.',
-              '기본값은 base·default 같은 단어 없이 대상과 값의 종류만으로 짓는다. 예: background-base-color가 아니라 background-color. 이름이 짧아져 토큰이 가벼워진다. material-base처럼 base가 기반 머티리얼이라는 대상의 이름일 때만 그대로 쓴다.',
-              '세기 차이는 subtle·strong로 나타낸다.',
+              '기본값에는 base·default를 붙이지 않는다. base가 대상 이름인 material-base는 예외로 그대로 쓴다.',
+              '세기 차이는 subtle·strong으로 나타낸다.',
+              '상태는 인터랙션에 따라 바뀌는 값에만 넣는다.',
               '대비 표면 위에 올라가는 색은 on- 접두사를 붙인다.',
             ]}
           ></mm-text-list>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="Component Token은 언제 정의하나요?">
-          <mm-paragraph>
-            Component Token은 값이 바뀌는 경로가 있을 때 둡니다. 값이 한 가지로 고정되면 System
-            Token을 직접 참조합니다.
-          </mm-paragraph>
-          <mm-text-list
-            .texts=${[
-              '상태에 따라 재할당된다 — variant·size·hover 같은 상태 selector가 이 토큰 하나에 값을 다시 넣는다.',
-              '쓰는 자리마다 다를 수 있어 사용하는 쪽에 연다 — table-width처럼 놓이는 자리에 맞춰 조정하는 값이다. 겹침 순서처럼 컴포넌트가 소유하는 규칙은 System Token을 직접 참조한다.',
-            ]}
-          ></mm-text-list>
+          <mm-component-notice heading="Component Token을 정의하는 기준을 정한다">
+            토큰만 바꿔 컴포넌트를 테마에 맞출 수 있게 한다는 목표만 있다. 어떤 시각적 규칙에
+            Component Token을 두는지는 정하지 않았다
+          </mm-component-notice>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="Primitive Token은 언제 만드나요?">
           <mm-paragraph>
-            Primitive Token은 같은 값이 두 곳 이상에서 쓰일 때 만듭니다. 한 곳에서만 쓰는 값은
-            예외로 보고, 그 값을 쓰는 System Token에 직접 적습니다. 나중에 두 번째 자리가 생기면
-            그때 Primitive Token으로 올립니다.
+            같은 값이 두 곳 이상에서 쓰일 때 만듭니다. 한 곳에서만 쓰는 값은 예외 케이스로
+            기록해둡니다.
           </mm-paragraph>
         </mm-content-section>
       </mm-content-section-list>
@@ -369,6 +448,10 @@ const main = html`
         heading="Typography"
         description="타이포그래피 토큰은 크기와 고정 행간을 함께 사용합니다. 행간은 컴포넌트의 역할에 맞춰 조합합니다."
       >
+        <mm-notice
+          heading="크기와 행간의 비율"
+          description="mm-text의 size는 글자 크기와 행간을 한 쌍으로 묶습니다. 12/16(1.33), 14/24(1.71), 18/28(1.56), 24/32(1.33), 32/40(1.25)로, 비율을 하나로 고정하지 않고 행간을 4px 배수에 맞춥니다. 크기는 제목용(24·32, 1.25~1.33)과 본문용(14·18, 1.56~1.71)으로 나뉘고 12는 보조 텍스트에 쓰지만, 14와 18은 제목에도 쓰여 본문 기준의 넓은 행간이 제목에도 그대로 적용됩니다. 본문용인 두 크기도 비율이 서로 다릅니다. 같은 비율로 맞추면 4px 배수로는 28/36(2.0)이 가장 작아 지나치게 넓고, 2px 단위를 허용한 22/28(약 1.57)이 가장 가까운 대안입니다."
+        ></mm-notice>
         <mm-flex direction="column" gap="4">
           ${TEXT_SIZES.map(
             size => html`

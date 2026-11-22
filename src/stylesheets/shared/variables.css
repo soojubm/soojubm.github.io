@@ -40,7 +40,6 @@
   --gray400: #8c8c8c;
   --gray800: #343434;
 
-  --green100: rgba(10, 160, 80, 0.075);
   --green800: #1b995c;
   --red800: #c51635;
   --yellow800: #ffd700;
@@ -202,7 +201,7 @@
   --gray400: #8a908d;
   --gray800: #303b35;
   --primary-color: var(--green800);
-  --primary-subtle-color: var(--green100);
+  --primary-subtle-color: var(--gray200);
 }
 
 :root [data-theme='dark'] {
@@ -260,7 +259,7 @@
   --background-color: rgb(31, 35, 33);
   --background-subtle-color: #292f2c;
   --primary-color: var(--green800);
-  --primary-subtle-color: var(--green100);
+  --primary-subtle-color: var(--gray800);
   --foreground-on-primary-color: var(--gray0);
 }
 
@@ -289,8 +288,8 @@
 
   /* navbar·sidebar를 모서리에서 띄운다. navbar-height는 :root에서 계산돼 여기서 다시 선언해야 inset이 반영된다 */
   --layout-chrome-inset: var(--space-2);
-  --layout-chrome-shadow: var(--material-chrome-shadow);
   --layout-chrome-border-radius: var(--radius-large);
+  --layout-chrome-shadow: var(--material-chrome-shadow);
   --navbar-height: calc(var(--size-32) + 1.5rem + var(--layout-chrome-inset) * 2);
   /* --background-subtle-color: rgb(255 255 255 / 30%); */
 
