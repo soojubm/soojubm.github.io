@@ -6,7 +6,7 @@ import type { IconName } from '@/components/common/icon/icon-names'
 
 import '@/components/common/dot/semantics/current-indicator'
 import '@/components/common/list-item/list-item'
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { isCurrentPage } from '@/utils'
 
@@ -19,7 +19,7 @@ import { isCurrentPage } from '@/utils'
 export class SidebarPageLink extends LitElement {
   static styles = [
     resetStyles,
-    interactiveRowStyles,
+    listItemInteractiveStyles,
     css`
       :host {
         display: block;

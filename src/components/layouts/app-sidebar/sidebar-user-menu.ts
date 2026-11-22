@@ -6,7 +6,7 @@ import type { Popover } from '@/components/overlay/popover/popover'
 import '@/components/common/icon/icon'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/list-item/domain/user-item'
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import '@/components/common/menu-item'
 import '@/components/overlay/popover/popover'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -20,7 +20,7 @@ import { uniqueId } from '@/utils'
 export class SidebarUserMenu extends LitElement {
   static styles = [
     resetStyles,
-    interactiveRowStyles,
+    listItemInteractiveStyles,
     css`
       :host {
         display: block;

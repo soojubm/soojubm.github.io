@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES } from '@/components/common'
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common'
@@ -17,7 +17,7 @@ import '@/components/common'
 export class RecentSearchList extends LitElement {
   static styles = [
     resetStyles,
-    interactiveRowStyles,
+    listItemInteractiveStyles,
     css`
       :host {
         display: flex;

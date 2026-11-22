@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import { buttonInteractiveStyles } from '@/components/common/button/button.styles'
 import { withTogglePressed } from '@/components/common/button/button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -14,7 +14,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 export class ColorChip extends withTogglePressed(LitElement) {
   static styles = [
     resetStyles,
-    interactiveControlStyles,
+    buttonInteractiveStyles,
     css`
       :host {
         display: inline-flex;

@@ -7,7 +7,7 @@ import type { OptionItem } from '@/types'
 
 import {
   inputSelectionGroupStyles,
-  visuallyHiddenInputStyles,
+  inputVisuallyHiddenStyles,
 } from '@/components/common/input/input.styles'
 import { radioStyles } from '@/components/common/radio/radio.styles'
 import { SingleSelectionController } from '@/controllers/single-selection-controller'
@@ -19,7 +19,7 @@ import '@/components/common/text/semantics/paragraph'
 // 그래서 mm-radio를 감싸지 않고, 공유 스타일 모듈(radioStyles)을 조합해 input을 직접 렌더한다.
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
-  static styles = [resetStyles, visuallyHiddenInputStyles, inputSelectionGroupStyles, radioStyles]
+  static styles = [resetStyles, inputVisuallyHiddenStyles, inputSelectionGroupStyles, radioStyles]
   @property({ attribute: false }) options: OptionItem[] = []
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''

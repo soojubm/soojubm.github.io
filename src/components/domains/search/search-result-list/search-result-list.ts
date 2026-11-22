@@ -4,7 +4,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
 import { ICON_NAMES } from '@/components/common'
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/common'
@@ -24,7 +24,7 @@ export interface SearchResult {
 export class SearchResultList extends LitElement {
   static styles = [
     resetStyles,
-    interactiveRowStyles,
+    listItemInteractiveStyles,
     css`
       :host {
         display: flex;

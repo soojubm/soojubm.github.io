@@ -20,7 +20,7 @@ export class SelectOption extends withMenuItemPresentation(LitElement) {
     menuItemStyles,
     css`
       :host {
-        --interactive-row-padding-inline: var(--space-2);
+        --list-item-interactive-padding-inline: var(--space-2);
       }
     `,
   ]

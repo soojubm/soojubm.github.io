@@ -75,17 +75,17 @@ export const listItemStyles = css`
  * list-item 행을 감싸 눌리는 요소(button·a·role 있는 행)에 얹는 상호작용 스킨.
  * 행의 의미(role·이벤트)는 감싸는 컴포넌트가 소유하고, 여기서는 hover·포커스·선택·비활성 표시만 맡는다.
  */
-export const interactiveRowStyles = css`
+export const listItemInteractiveStyles = css`
   :host {
-    --interactive-row-background-color: transparent;
-    --interactive-row-padding-inline: 0;
+    --list-item-interactive-background-color: transparent;
+    --list-item-interactive-padding-inline: 0;
   }
 
   ${interactiveElement} {
     display: flex;
     align-items: center;
     width: 100%;
-    padding-inline: var(--interactive-row-padding-inline);
+    padding-inline: var(--list-item-interactive-padding-inline);
     border-radius: var(--radius);
     color: inherit;
     box-sizing: border-box;
@@ -95,12 +95,12 @@ export const interactiveRowStyles = css`
     /* background state */
     &::before {
       border-radius: var(--radius);
-      background-color: var(--interactive-row-background-color);
+      background-color: var(--list-item-interactive-background-color);
       ${backgroundLayerStyles};
     }
 
     &:hover {
-      --interactive-row-background-color: var(--interaction-hover-background-color);
+      --list-item-interactive-background-color: var(--interaction-hover-background-color);
     }
 
     &:focus-visible {
@@ -109,11 +109,11 @@ export const interactiveRowStyles = css`
     }
 
     &[aria-current='page'] {
-      --interactive-row-background-color: var(--interaction-selected-background-color);
+      --list-item-interactive-background-color: var(--interaction-selected-background-color);
     }
 
     &[aria-selected='true'] {
-      --interactive-row-background-color: var(--interaction-selected-background-color);
+      --list-item-interactive-background-color: var(--interaction-selected-background-color);
       color: var(--interaction-selected-foreground-color);
 
       /* 보더는 배경 레이어에 그려 행의 레이아웃 박스를 밀지 않는다. */

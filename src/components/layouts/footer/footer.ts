@@ -6,13 +6,13 @@ import '@/components/common'
 import soojubmImage from '@/images/soojubm.png'
 import '@/components/common/avatar/domain/user-snippet'
 import '@/components/common/button/semantics/social-links'
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('mm-footer')
 export class Footer extends LitElement {
-  static styles = [resetStyles, interactiveRowStyles, footerStyles]
+  static styles = [resetStyles, listItemInteractiveStyles, footerStyles]
 
   /* eslint-disable lit-a11y/accessible-emoji -- ©는 이모지가 아니라 활자 기호이고,
      스크린리더가 "저작권"으로 그대로 읽는다. role=img로 감싸면 오히려 읽기가 나빠진다. */

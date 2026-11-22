@@ -2,7 +2,7 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/avatar/avatar'
 import '@/components/common/icon/icon'
@@ -27,7 +27,7 @@ type SocialLink = {
 export class SocialLinks extends LitElement {
   static styles = [
     resetStyles,
-    interactiveRowStyles,
+    listItemInteractiveStyles,
     css`
       .compact {
         display: flex;

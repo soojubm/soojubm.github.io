@@ -6,7 +6,7 @@ import { disabledStyles, focusRingStyles, interactiveElement } from '@/styleshee
 import { buildAttributeRules, buildDeclarations, type AttributeTokens } from '@/utils'
 
 /** button 태그뿐 아니라 mm-hashtag-link 등 a 기반 파생 컴포넌트도 같은 스킨을 그대로 가져다 쓰도록 공용 상호작용 선택자로 잡는다. */
-export const interactiveControlStyles = css`
+export const buttonInteractiveStyles = css`
   ${interactiveElement} {
     &:focus-visible {
       ${focusRingStyles};
@@ -23,7 +23,7 @@ export const interactiveControlStyles = css`
  * 구조(레이아웃·크기·간격·타이포)와 기본 스킨, 상호작용 상태(focus·active·disabled)를 포함한다.
  */
 export const buttonBaseStyles = [
-  interactiveControlStyles,
+  buttonInteractiveStyles,
   css`
     :host {
       --button-height: var(--size-32);

@@ -9,7 +9,7 @@ import type { OptionItem } from '@/types'
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
 import {
   inputSelectionGroupStyles,
-  visuallyHiddenInputStyles,
+  inputVisuallyHiddenStyles,
 } from '@/components/common/input/input.styles'
 import { MultipleSelectionController } from '@/controllers/multiple-selection-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -22,7 +22,7 @@ import '@/components/common/text'
 export class CheckboxGroup extends LitElement {
   static styles = [
     resetStyles,
-    visuallyHiddenInputStyles,
+    inputVisuallyHiddenStyles,
     inputSelectionGroupStyles,
     checkboxStyles,
   ]

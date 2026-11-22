@@ -1,7 +1,7 @@
 import { LitElement, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
+import { inputVisuallyHiddenStyles } from '@/components/common/input/input.styles'
 import { radioCardStyles, radioStyles } from '@/components/common/radio/radio.styles'
 import { renderRadioInput } from '@/components/common/radio/radio.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -14,7 +14,7 @@ import { uniqueId } from '@/utils'
  */
 @customElement('mm-radio-card')
 export class RadioCard extends LitElement {
-  static styles = [resetStyles, visuallyHiddenInputStyles, radioStyles, radioCardStyles]
+  static styles = [resetStyles, inputVisuallyHiddenStyles, radioStyles, radioCardStyles]
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: Boolean }) checked = false

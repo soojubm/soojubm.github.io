@@ -6,7 +6,7 @@ import type { IconName } from '@/components/common/icon/icon-names'
 
 import '@/components/common/list-item/list-item'
 import '@/components/common/list-item/list-item-group'
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
@@ -20,7 +20,7 @@ import '@/components/indicators/expand-indicator/expand-indicator'
 export class SidebarSection extends LitElement {
   static styles = [
     resetStyles,
-    interactiveRowStyles,
+    listItemInteractiveStyles,
     css`
       :host {
         display: block;

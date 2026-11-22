@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import type { ComponentSize } from '@/stylesheets/shared.types'
 
 import { checkboxStyles } from '@/components/common/checkbox/checkbox.styles'
-import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
+import { inputVisuallyHiddenStyles } from '@/components/common/input/input.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
@@ -14,7 +14,7 @@ export type CheckboxSize = Extract<ComponentSize, 'medium' | 'large'>
 
 @customElement('mm-checkbox')
 export class Checkbox extends LitElement {
-  static styles = [resetStyles, visuallyHiddenInputStyles, checkboxStyles]
+  static styles = [resetStyles, inputVisuallyHiddenStyles, checkboxStyles]
   @property({ type: String })
   name?: string
   @property({ type: String })

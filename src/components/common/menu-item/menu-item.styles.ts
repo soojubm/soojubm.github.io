@@ -1,10 +1,10 @@
 import { css } from 'lit'
 
-import { interactiveRowStyles } from '@/components/common/list-item/list-item.styles'
+import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { interactiveElement } from '@/stylesheets/shared.styles'
 
 export const menuItemStyles = [
-  interactiveRowStyles,
+  listItemInteractiveStyles,
   css`
     :host {
       display: block;

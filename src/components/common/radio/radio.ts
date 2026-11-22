@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import type { ComponentSize } from '@/stylesheets/shared.types'
 
-import { visuallyHiddenInputStyles } from '@/components/common/input/input.styles'
+import { inputVisuallyHiddenStyles } from '@/components/common/input/input.styles'
 import { radioStyles } from '@/components/common/radio/radio.styles'
 import { renderRadioInput } from '@/components/common/radio/radio.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
@@ -14,7 +14,7 @@ export type RadioSize = Extract<ComponentSize, 'medium' | 'large'>
 
 @customElement('mm-radio')
 export class Radio extends LitElement {
-  static styles = [resetStyles, visuallyHiddenInputStyles, radioStyles]
+  static styles = [resetStyles, inputVisuallyHiddenStyles, radioStyles]
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: String, reflect: true }) size: RadioSize = 'medium'

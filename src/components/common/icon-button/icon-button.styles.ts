@@ -2,7 +2,7 @@ import { css, unsafeCSS } from 'lit'
 
 import type { IconButtonSize, IconButtonVariant } from '@/components/common/icon-button/icon-button'
 
-import { interactiveControlStyles } from '@/components/common/button/button.styles'
+import { buttonInteractiveStyles } from '@/components/common/button/button.styles'
 import { buildAttributeRules, buildDeclarations, type AttributeTokens } from '@/utils'
 
 const iconButtonSizeTokens: AttributeTokens<Exclude<IconButtonSize, 'medium'>> = {
@@ -67,10 +67,10 @@ export const iconButtonSelectedStyles = css`
 /**
  * icon-button 계열의 기반 스타일.
  * hover·focus·disabled는 자체 button을 렌더하는 파생 컴포넌트가 빠뜨리기 쉬우므로
- * buttonBaseStyles와 같이 interactiveControlStyles를 여기 묶어 함께 내보낸다.
+ * buttonBaseStyles와 같이 buttonInteractiveStyles를 여기 묶어 함께 내보낸다.
  */
 export const iconButtonStyles = [
-  interactiveControlStyles,
+  buttonInteractiveStyles,
   css`
     :host {
       display: inline-flex;
