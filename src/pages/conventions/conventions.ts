@@ -20,9 +20,7 @@ const main = html`
       <mm-tab-panel value="code">
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="공통 코딩 스타일">
-            <mm-paragraph>
-              들여쓰기·세미콜론처럼 ESLint와 Prettier가 처리하는 규칙은 도구에 맡깁니다.
-            </mm-paragraph>
+            <mm-paragraph>들여쓰기·세미콜론 등은 ESLint와 Prettier 규칙에 위임한다</mm-paragraph>
             <mm-text-list
               variant="check"
               .texts=${[
@@ -79,7 +77,7 @@ const main = html`
               .texts=${[
                 rule(
                   '같은 동작 로직을 두 곳 이상에서 쓰면 훅이나 컨트롤러로 분리한다',
-                  '시각적 표현은 분리하지 않고 아래 방식으로 재사용하므로, 컴포넌트별 표현은 유지하면서 공통 동작을 일관되게 쓸 수 있다',
+                  '시각적 표현은 분리하지 않고 동작만 분리하므로, 컴포넌트별 표현은 유지하면서 공통 동작을 일관되게 쓸 수 있다',
                 ),
                 rule(
                   html`
@@ -215,12 +213,11 @@ const main = html`
       <mm-tab-panel value="documentation">
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="문서화 기준">
-            <mm-paragraph>모든 것을 문서화하지 않습니다.</mm-paragraph>
             <mm-text-list
               variant="check"
               .texts=${[
-                '문서화할 가치가 있다고 판단하려면 특정 횟수(예: 3회)만큼 발생해야 합니까?',
-                '자주(예: 월 1회 이상) 프로세스를 수행해야 합니까?',
+                '규칙의 예외 케이스는 항상 문서로 남긴다',
+                '같은 코드가 2회 이상 쓰이면 컴포넌트나 공통 함수로 만든다',
               ]}
             ></mm-text-list>
           </mm-content-section>
