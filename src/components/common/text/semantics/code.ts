@@ -20,6 +20,7 @@ export class Code extends LitElement {
 
       code {
         display: inline-flex;
+        vertical-align: 1px;
         align-items: center;
         height: 20px;
         padding: 0 var(--space-1);

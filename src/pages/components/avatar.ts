@@ -136,6 +136,14 @@ const main = html`
 
     <mm-component-tokens .elements=${['mm-avatar']}></mm-component-tokens>
 
+    <mm-token-group aria-label="avatar 토큰">
+      <mm-token-item element="mm-avatar" key="avatar-size"></mm-token-item>
+      <mm-token-item element="mm-avatar" key="avatar-background-color"></mm-token-item>
+      <mm-token-item element="mm-avatar" key="avatar-icon-color"></mm-token-item>
+      <mm-token-item element="mm-avatar" key="avatar-border"></mm-token-item>
+      <mm-token-item element="mm-avatar" key="avatar-border-radius"></mm-token-item>
+    </mm-token-group>
+
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-anatomy

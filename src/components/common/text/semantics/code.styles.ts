@@ -5,5 +5,5 @@ export const codeTextStyles = css`
   font-family: var(--font-family-code);
   font-size: var(--font-size-12);
   font-weight: var(--font-weight-normal);
-  letter-spacing: 0.005em;
+  letter-spacing: 0.0005em;
 `

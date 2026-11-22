@@ -50,6 +50,7 @@ export const codeBlockStyles = css`
     ${codeTextStyles};
     line-height: 20px;
     white-space: pre-wrap;
+    tab-size: 2;
     overflow-wrap: anywhere;
   }
 

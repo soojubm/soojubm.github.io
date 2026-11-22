@@ -181,6 +181,7 @@ export const spaces = {
   '8': 'var(--space-8)',
   '12': 'var(--space-12)',
   '16': 'var(--space-16)',
+  subsection: 'var(--space-subsection)',
   section: 'var(--space-section)',
 } as const
 

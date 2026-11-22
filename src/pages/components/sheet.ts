@@ -82,6 +82,15 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+const exampleCode = `<mm-button aria-controls="bottom-sheet" aria-haspopup="dialog">Bottom</mm-button>
+<mm-sheet id="bottom-sheet" placement="bottom" height="360px">
+  <mm-sheet-header heading="Bottom Sheet"></mm-sheet-header>
+  <mm-sheet-body>
+    <mm-paragraph>콘텐츠</mm-paragraph>
+  </mm-sheet-body>
+  <mm-sheet-footer></mm-sheet-footer>
+</mm-sheet>`
+
 renderPage(sheetPageTemplate())
 
 function sheetPageTemplate() {
@@ -97,6 +106,7 @@ function sheetPageTemplate() {
       ></mm-component-aka>
 
       <mm-component-example>${sheetExampleTemplate()}</mm-component-example>
+      <mm-component-code .code=${exampleCode}></mm-component-code>
 
       <mm-component-props .props=${componentProps}></mm-component-props>
 
@@ -146,10 +156,10 @@ function sheetPageTemplate() {
   `
 }
 
-// 패널 gap(--overlay-panel-gap)이 벌리는 간격을 placeholder 높이로 드러낸다.
+// 패널 gap(--overlay-panel-gap)이 벌리는 간격을 placeholder의 space로 드러낸다.
 function sheetAnatomyTemplate() {
   const gapPlaceholder = html`
-    <mm-ui-placeholder style="--ui-placeholder-height: var(--space-4)">
+    <mm-ui-placeholder space="4">
       <mm-text size="12" weight="bold">space-4</mm-text>
     </mm-ui-placeholder>
   `

@@ -55,6 +55,13 @@ const guideTexts = [
   'TODO 모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요',
 ]
 
+const exampleCode = `<mm-table
+  caption="히라가나 오십음도"
+  height="320px"
+  .columns=\${columns}
+  .rows=\${rows}
+></mm-table>`
+
 const rows = html`
   <tr>
     <td><mm-checkbox></mm-checkbox></td>
@@ -162,6 +169,7 @@ const main = html`
       ></mm-table>
       <mm-pagination current-page="7" page-count="50"></mm-pagination>
     </mm-component-example>
+    <mm-component-code .code=${exampleCode}></mm-component-code>
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 

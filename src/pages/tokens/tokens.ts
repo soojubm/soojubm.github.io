@@ -185,9 +185,9 @@ const renderSpaceSemanticStage = (tokens: string[]) =>
   tokens.map(
     (token, index) => html`
       <mm-flex class="space-cell" direction="column" align-items="center" gap="2">
-        <div class="space-demo" style="--space-demo-gap: var(--${token})">
+        <div class="space-demo">
           <mm-ui-placeholder></mm-ui-placeholder>
-          <div class="space-gap"></div>
+          <mm-ui-placeholder space=${token.replace('space-', '')}></mm-ui-placeholder>
           <mm-ui-placeholder></mm-ui-placeholder>
         </div>
         <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
@@ -250,6 +250,10 @@ const borderSwatches = (tokens: string[]) =>
         : `var(--${token})`
     return `border: ${border}; background: var(--background-subtle-color)`
   })
+
+/** border-width는 선 굵기 하나만 정하는 primitive라, 선·색을 합친 나머지 토큰과 나눠 보여 준다. */
+const borderWidthTokens = sectionTokens('border').filter(name => name === 'border-width')
+const borderStyleTokens = sectionTokens('border').filter(name => name !== 'border-width')
 
 const radiusSwatches = (tokens: string[]) =>
   tokens.map(token => `border: var(--border); border-radius: var(--${token})`)
@@ -526,20 +530,22 @@ const main = html`
       >
         <mm-token-stage>
           <mm-token-swatches
-            .swatches=${borderSwatches(sectionTokens('border'))}
+            .swatches=${[
+              ...borderSwatches(borderWidthTokens),
+              ...radiusSwatches(sectionTokens('radius')),
+            ]}
           ></mm-token-swatches>
         </mm-token-stage>
-        <mm-token-group aria-label="테두리 토큰">
-          ${renderTokenItems(sectionTokens('border'))}
+        <mm-token-group aria-label="border Primitive Token">
+          ${renderTokenItems([...borderWidthTokens, ...sectionTokens('radius')])}
         </mm-token-group>
 
+        <mm-separator></mm-separator>
         <mm-token-stage>
-          <mm-token-swatches
-            .swatches=${radiusSwatches(sectionTokens('radius'))}
-          ></mm-token-swatches>
+          <mm-token-swatches .swatches=${borderSwatches(borderStyleTokens)}></mm-token-swatches>
         </mm-token-stage>
-        <mm-token-group aria-label="모서리 곡률 토큰">
-          ${renderTokenItems(sectionTokens('radius'))}
+        <mm-token-group aria-label="border Component·System Token">
+          ${renderTokenItems(borderStyleTokens)}
         </mm-token-group>
       </mm-token-section>
 

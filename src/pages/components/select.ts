@@ -26,7 +26,6 @@ const placementOptions = placements.map(placement => ({ value: placement, label:
 const releaseChannelOptions = [
   { value: 'stable', label: 'Stable' },
   { value: 'beta', label: 'Beta' },
-  { value: 'canary', label: 'Canary' },
 ]
 
 const componentProps: ComponentPropItemData[] = [

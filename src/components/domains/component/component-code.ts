@@ -31,13 +31,8 @@ export class ComponentCode extends LitElement {
   render() {
     return html`
       <div class="component-content-frame">
-        <mm-code-block variant="plain" .code=${this.indentedCode()}></mm-code-block>
+        <mm-code-block variant="plain" .code=${this.code}></mm-code-block>
       </div>
     `
-  }
-
-  // 예제 문자열은 2칸 들여쓰기로 적고, 문서에는 4칸으로 보여 준다(복사 값도 같다).
-  private indentedCode() {
-    return this.code.replace(/^ +/gm, spaces => spaces.repeat(2))
   }
 }

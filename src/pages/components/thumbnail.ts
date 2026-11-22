@@ -44,10 +44,10 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="1:1"></mm-thumbnail>
-<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="4:3" href="/video/1025"></mm-thumbnail>
-<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>
-<mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="full"></mm-thumbnail>`
+const exampleCode = `<mm-thumbnail src="..." alt="..." ratio="1:1"></mm-thumbnail>
+<mm-thumbnail src="..." alt="..." ratio="4:3" href="/video/1025"></mm-thumbnail>
+<mm-thumbnail src="..." alt="..." ratio="16:9"></mm-thumbnail>
+<mm-thumbnail src="..." alt="..." ratio="full"></mm-thumbnail>`
 
 const main = html`
   <mm-main>

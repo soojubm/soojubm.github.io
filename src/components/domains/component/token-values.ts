@@ -1,3 +1,5 @@
+import type { LitElement } from 'lit'
+
 import variablesCss from '@/stylesheets/shared/variables.css?raw'
 
 /**
@@ -80,12 +82,45 @@ export function displayTokenValue(name: string, element: Element) {
   const declared = themeValues.get(theme)?.get(name) ?? rootValues.get(name) ?? ''
   if (!/var\(--/.test(declared)) return computedTokenValue(name, element)
 
-  return declared
+  return referenceName(declared)
+}
+
+// `var(--x)`의 var를 벗겨 참조 이름으로 쓴다.
+const referenceName = (declared: string) =>
+  declared
     .replace(/\s+/g, ' ')
     .replace(/\( /g, '(')
     .replace(/ \)/g, ')')
     .replace(/var\(--([\w-]+)\)/g, '$1')
     .trim()
+
+/**
+ * 컴포넌트가 :host에 기본값으로 선언한 토큰 값을, 참조하는 토큰 이름으로 보여준다.
+ * 컴포넌트 토큰은 전역에 선언이 없어서 컴포넌트 스타일에서 직접 읽는다.
+ */
+export function componentTokenValue(tagName: string, name: string) {
+  const element = customElements.get(tagName) as typeof LitElement | undefined
+  const sheets = (element?.elementStyles ?? []).map(style =>
+    style instanceof CSSStyleSheet ? style : style.styleSheet,
+  )
+  const declared = sheets
+    .map(sheet => hostDeclaration(sheet?.cssRules, `--${name}`))
+    .find(value => value)
+
+  return declared ? referenceName(declared) : ''
+}
+
+function hostDeclaration(rules: CSSRuleList | undefined, property: string): string {
+  for (const rule of rules ?? []) {
+    const nested = 'cssRules' in rule ? hostDeclaration(rule.cssRules as CSSRuleList, property) : ''
+    if (nested) return nested
+    if (rule instanceof CSSStyleRule && rule.selectorText === ':host') {
+      const value = rule.style.getPropertyValue(property).trim()
+      if (value) return value
+    }
+  }
+
+  return ''
 }
 
 /** 값이 다른 토큰을 참조해 만들어지는지. 원시값이 아니라 컴포넌트·시맨틱 단계의 토큰이다. */

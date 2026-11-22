@@ -52,19 +52,6 @@ mm-token-stage:hover .motion-dot {
   width: 100%;
 }
 
-/* 두 면 사이의 간격 그 자체를 막대로 보여, 토큰 값만큼의 거리가 얼마나 되는지 눈으로 잰다. */
-.space-gap {
-  display: flex;
-  justify-content: center;
-  height: var(--space-demo-gap);
-}
-
-.space-gap::before {
-  content: '';
-  width: var(--space-1);
-  background: var(--primary-color);
-}
-
 .name-anatomy {
   display: flex;
   align-items: flex-start;
