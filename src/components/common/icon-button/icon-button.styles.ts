@@ -21,8 +21,7 @@ const iconButtonVariantTokens: AttributeTokens<Exclude<IconButtonVariant, 'terti
   secondary: {
     '--icon-button-border-radius': 'var(--radius-full)',
     '--icon-button-border': 'var(--border)',
-    '--icon-button-background-color': 'var(--material-base-background-color)',
-    '--icon-button-backdrop-filter': 'var(--material-base-backdrop-filter)',
+    '--icon-button-background-color': 'var(--background-color)',
     '--icon-button-shadow': 'var(--material-elevated-shadow)',
   },
   ghost: {
@@ -65,11 +64,9 @@ export const iconButtonStyles = css`
     --icon-button-border: var(--border-transparent);
     --icon-button-text-color: var(--foreground-color);
     --icon-button-shadow: none;
-    --icon-button-backdrop-filter: none;
   }
 
   button {
-    ${buttonInteractiveStyles}
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -80,13 +77,14 @@ export const iconButtonStyles = css`
 
     background: var(--icon-button-background-color);
     box-shadow: var(--icon-button-shadow);
-    backdrop-filter: var(--icon-button-backdrop-filter);
-    -webkit-backdrop-filter: var(--icon-button-backdrop-filter);
     color: var(--icon-button-text-color);
     font-family: var(--font-family);
+
+    ${buttonInteractiveStyles};
   }
 
   ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
+  ${unsafeCSS(buildAttributeRules('size', iconButtonSizeTokens))}
 
   :host([destructive][variant='primary']) button {
     --icon-button-background-color: var(--danger-color);
@@ -98,6 +96,4 @@ export const iconButtonStyles = css`
   :host([destructive][variant='ghost']) button {
     --icon-button-text-color: var(--danger-color);
   }
-
-  ${unsafeCSS(buildAttributeRules('size', iconButtonSizeTokens))}
 `
