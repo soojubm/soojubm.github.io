@@ -2,15 +2,15 @@
 // 위에서부터 먼저 매칭되는 그룹을 사용하므로 더 구체적인 그룹을 앞에 둔다.
 // state는 dimension·surface에 적용되는 변형이므로 겹치는 단어가 없어 순서와 무관하고,
 // surface는 border-width처럼 dimension 단어(width)를 포함하는 합성어를 갖고 있어 dimension보다 앞에 둔다.
-// typography는 text-size처럼 dimension 단어(size)를, text-color처럼 surface 단어를 포함하는 합성어를 갖고 있어 둘보다 앞에 둔다.
-const WORD_CATEGORIES = [
+// typography는 text- 합성어만 가져 다른 그룹과 겹치지 않는다.
+export const WORD_CATEGORIES = [
   {
     name: 'state',
     words: ['hover', 'active', 'focus', 'disabled', 'selected', 'pressed', 'checked'],
   },
   {
     name: 'typography',
-    words: ['text-size', 'text-weight', 'text-color', 'font-size', 'font-weight'],
+    words: ['text-size', 'text-weight', 'text-color'],
   },
   {
     name: 'surface',
@@ -23,9 +23,6 @@ const WORD_CATEGORIES = [
       'backdrop-filter',
       'shadow',
       'blur',
-      'accent',
-      'line-color',
-      'line-width',
     ],
   },
   {
@@ -33,15 +30,16 @@ const WORD_CATEGORIES = [
     words: [
       'width',
       'min-width',
+      'max-width',
       'height',
+      'min-height',
       'max-height',
       'margin',
+      'margin-inline-start',
       'padding',
       'padding-inline',
+      'padding-block',
       'gap',
-      'size',
-      'space',
-      'spacing',
       'offset',
     ],
   },

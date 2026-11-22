@@ -5,9 +5,21 @@ import type { AvatarSize, AvatarVariant } from '@/components/common/avatar/avata
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const avatarSizeTokens: AttributeTokens<Exclude<AvatarSize, '40'>> = {
-  '80': { '--avatar-size': 'var(--size-80)', 'font-size': 'var(--font-size-32)' },
-  '48': { '--avatar-size': 'var(--size-48)', 'font-size': 'var(--font-size-24)' },
-  '32': { '--avatar-size': 'var(--size-32)', 'font-size': 'var(--font-size-12)' },
+  '80': {
+    '--avatar-width': 'var(--size-80)',
+    '--avatar-height': 'var(--size-80)',
+    'font-size': 'var(--font-size-32)',
+  },
+  '48': {
+    '--avatar-width': 'var(--size-48)',
+    '--avatar-height': 'var(--size-48)',
+    'font-size': 'var(--font-size-24)',
+  },
+  '32': {
+    '--avatar-width': 'var(--size-32)',
+    '--avatar-height': 'var(--size-32)',
+    'font-size': 'var(--font-size-12)',
+  },
 }
 
 const avatarVariantTokens: AttributeTokens<AvatarVariant> = {
@@ -25,7 +37,8 @@ const avatarVariantTokens: AttributeTokens<AvatarVariant> = {
 
 export const avatarStyles = css`
   :host {
-    --avatar-size: var(--size-40);
+    --avatar-width: var(--size-40);
+    --avatar-height: var(--size-40);
     --avatar-background-color: var(--background-subtle-color);
     --avatar-icon-color: var(--foreground-color);
     --avatar-border: var(--border-transparent);
@@ -35,9 +48,9 @@ export const avatarStyles = css`
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    width: var(--avatar-size);
-    height: var(--avatar-size);
-    max-height: var(--avatar-size);
+    width: var(--avatar-width);
+    height: var(--avatar-height);
+    max-height: var(--avatar-height);
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--avatar-background-color);

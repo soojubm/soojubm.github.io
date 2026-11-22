@@ -4,7 +4,8 @@ import { disabledStyles, focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const checkboxStyles = css`
   :host {
-    --checkbox-size: var(--size-16);
+    --checkbox-width: var(--size-16);
+    --checkbox-height: var(--size-16);
     --checkbox-border-radius: var(--radius);
     --checkbox-border-color: var(--border-color);
     --checkbox-background-color: var(--background-color);
@@ -13,7 +14,7 @@ export const checkboxStyles = css`
   label {
     display: flex;
     align-items: center;
-    height: var(--checkbox-size);
+    height: var(--checkbox-height);
     gap: var(--space-2);
   }
 
@@ -23,8 +24,8 @@ export const checkboxStyles = css`
     cursor: pointer;
     position: relative;
     user-select: none;
-    width: var(--checkbox-size);
-    height: var(--checkbox-size);
+    width: var(--checkbox-width);
+    height: var(--checkbox-height);
     border: var(--border);
     border-color: var(--checkbox-border-color);
     box-sizing: border-box;
@@ -35,14 +36,14 @@ export const checkboxStyles = css`
   input[type='checkbox'] + label > .indicator::after {
     content: '';
     display: block;
-    width: calc(var(--checkbox-size) * 0.375);
-    height: calc(var(--checkbox-size) / 8);
+    width: calc(var(--checkbox-width) * 0.375);
+    height: calc(var(--checkbox-height) / 8);
     border-left: var(--border-width) solid;
     border-bottom: var(--border-width) solid;
     border-color: var(--checkbox-border-color);
     position: absolute;
-    left: calc(var(--checkbox-size) / 4);
-    top: calc(var(--checkbox-size) * 0.3125);
+    left: calc(var(--checkbox-width) / 4);
+    top: calc(var(--checkbox-height) * 0.3125);
     transform: rotate(-50deg) scale(0);
   }
 
@@ -70,10 +71,10 @@ export const checkboxStyles = css`
 
   input[type='checkbox']:indeterminate + label > .indicator::after {
     display: block;
-    width: calc(var(--checkbox-size) / 2);
+    width: calc(var(--checkbox-width) / 2);
     background: var(--interaction-selected-background-color);
     border: none;
-    left: calc(var(--checkbox-size) / 4);
+    left: calc(var(--checkbox-width) / 4);
     top: 48%;
     transform: rotate(0deg);
   }
@@ -83,7 +84,8 @@ export const checkboxStyles = css`
   }
 
   :host([size='large']) {
-    --checkbox-size: var(--size-24);
+    --checkbox-width: var(--size-24);
+    --checkbox-height: var(--size-24);
   }
 
   /* 선택하면 체크 표시가 0에서 커진다. 끝 값은 선택된 규칙의 transform을 그대로 쓴다. */

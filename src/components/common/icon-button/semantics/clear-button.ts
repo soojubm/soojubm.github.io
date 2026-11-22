@@ -18,7 +18,8 @@ export class ClearButton extends LitElement {
     iconButtonStyles,
     css`
       :host {
-        --icon-button-size: var(--size-16);
+        --icon-button-width: var(--size-16);
+        --icon-button-height: var(--size-16);
         --icon-button-border-radius: var(--radius-full);
       }
     `,

@@ -18,7 +18,8 @@ export class TypingIndicator extends LitElement {
     /* 점은 dot 계열의 크기 단계에서 고르고, 색은 놓인 자리의 글자색을 따른다. */
     span {
       ${dotStyles}
-      --dot-size: ${unsafeCSS(dotSizes['6'])};
+      --dot-width: ${unsafeCSS(dotSizes['6'])};
+      --dot-height: ${unsafeCSS(dotSizes['6'])};
       --dot-background-color: currentColor;
 
       animation: chatting 0.6s 0s ease infinite;

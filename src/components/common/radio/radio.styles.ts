@@ -5,7 +5,8 @@ import { disabledStyles, focusRingStyles } from '@/stylesheets/shared.styles'
 
 export const radioStyles = css`
   :host {
-    --radio-size: var(--size-16);
+    --radio-width: var(--size-16);
+    --radio-height: var(--size-16);
     --radio-border-radius: var(--radius-full);
     --radio-border-color: var(--border-color);
     --radio-background-color: var(--background-color);
@@ -23,8 +24,8 @@ export const radioStyles = css`
     cursor: pointer;
     position: relative;
     user-select: none;
-    width: var(--radio-size);
-    height: var(--radio-size);
+    width: var(--radio-width);
+    height: var(--radio-height);
     border: var(--border);
     border-color: var(--radio-border-color);
     box-sizing: border-box;
@@ -36,7 +37,7 @@ export const radioStyles = css`
     --radio-background-color: var(--interaction-selected-foreground-color);
     --radio-border-color: var(--interaction-selected-border-color);
     animation: radiomark var(--transition-duration) ease-out;
-    box-shadow: 0 0 0 calc(var(--radio-size) / 4) var(--background-color) inset;
+    box-shadow: 0 0 0 calc(var(--radio-width) / 4) var(--background-color) inset;
   }
 
   input:focus-visible + label > .indicator {
@@ -48,7 +49,8 @@ export const radioStyles = css`
   }
 
   :host([size='large']) {
-    --radio-size: var(--size-24);
+    --radio-width: var(--size-24);
+    --radio-height: var(--size-24);
   }
 
   /* 선택하면 면 전체가 선택색으로 찼다가 안쪽 링이 자라 점으로 줄어든다. 끝 값은 선택된 규칙의 box-shadow를 그대로 쓴다. */

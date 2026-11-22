@@ -2,6 +2,7 @@ import { html } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 
+import { WORD_CATEGORIES } from '@/components/domains/component/token.utils'
 import { referencesOtherTokens, rootTokenNames } from '@/components/domains/component/token-values'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './tokens.css'
@@ -316,13 +317,57 @@ const renderTokenTier = ({ heading, description, rules, examples }: TokenTier) =
   <mm-surface variant="outlined">
     <mm-text-block level="4" heading=${heading} description=${description}>
       <mm-text-list .texts=${rules}></mm-text-list>
-      <mm-flex wrap="wrap" gap="2">
+      <mm-tag-group>
         ${examples.map(
           example => html`
             <mm-code>${example}</mm-code>
           `,
         )}
-      </mm-flex>
+      </mm-tag-group>
+    </mm-text-block>
+  </mm-surface>
+`
+
+interface TokenCategory {
+  heading: string
+  description: string
+}
+
+/**
+ * Component Token 이름의 CSS 속성이 속하는 분류. 컴포넌트 문서의 토큰 목록이 같은 순서로 묶인다.
+ * 분류에 드는 속성 단어는 token.utils에서 그대로 읽어, 목록 묶음과 설명이 어긋나지 않게 한다.
+ */
+const tokenCategories: Record<(typeof WORD_CATEGORIES)[number]['name'], TokenCategory> = {
+  dimension: {
+    heading: 'Dimension',
+    description: '요소의 크기와 안팎의 거리를 정하는 값이다.',
+  },
+  typography: {
+    heading: 'Typography',
+    description: '글자의 크기·굵기·색을 정하는 값이다.',
+  },
+  surface: {
+    heading: 'Surface',
+    description: '배경·경계·그림자처럼 표면의 모양을 정하는 값이다.',
+  },
+  state: {
+    heading: 'State',
+    description: '상호작용 상태에 따라 다른 분류의 값을 바꾸는 변형이다.',
+  },
+}
+
+const categoryWords = Object.fromEntries(WORD_CATEGORIES.map(({ name, words }) => [name, words]))
+
+const renderTokenCategory = ([name, { heading, description }]: [string, TokenCategory]) => html`
+  <mm-surface variant="outlined">
+    <mm-text-block level="4" heading=${heading} description=${description}>
+      <mm-tag-group>
+        ${categoryWords[name].map(
+          word => html`
+            <mm-code>${word}</mm-code>
+          `,
+        )}
+      </mm-tag-group>
     </mm-text-block>
   </mm-surface>
 `
@@ -392,6 +437,16 @@ const main = html`
             Component Token을 쓰고, 없으면 System Token을 씁니다.
           </mm-paragraph>
           <mm-grid columns="3" gap="4">${tokenTiers.map(renderTokenTier)}</mm-grid>
+        </mm-content-section>
+
+        <mm-content-section heading-level="3" heading="분류">
+          <mm-paragraph>
+            Component Token은 이름에 든 속성·상태 단어에 따라 네 분류로 나뉩니다. 컴포넌트 문서의
+            토큰 목록도 이 분류로 묶여, 크기를 바꾸는 값과 색을 바꾸는 값을 따로 찾을 수 있습니다.
+          </mm-paragraph>
+          <mm-grid columns="4" gap="4">
+            ${Object.entries(tokenCategories).map(renderTokenCategory)}
+          </mm-grid>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="이름 규칙">

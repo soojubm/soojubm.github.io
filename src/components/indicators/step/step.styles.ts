@@ -4,7 +4,8 @@ import { markerShapeStyles } from '@/components/indicators/list-marker/list-mark
 
 export const stepStyles = css`
   :host {
-    --marker-size: var(--size-16);
+    --marker-width: var(--size-16);
+    --marker-height: var(--size-16);
 
     display: flex;
     justify-content: space-around;
@@ -20,7 +21,7 @@ export const stepStyles = css`
     height: var(--border-width);
     background: var(--border-color);
     position: absolute;
-    top: calc(var(--marker-size) / 2);
+    top: calc(var(--marker-height) / 2);
     left: 0;
   }
 
@@ -33,7 +34,7 @@ export const stepStyles = css`
     width: var(--border-width);
     height: 100%;
     top: 0;
-    left: calc(var(--marker-size) / 2);
+    left: calc(var(--marker-width) / 2);
   }
 `
 

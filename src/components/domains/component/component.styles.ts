@@ -22,13 +22,13 @@ export const componentContentFrameStyles = css`
   }
 
   .component-content-frame {
-    --component-content-offset-inline-start: calc(
+    --component-content-margin-inline-start: calc(
       var(--layout-padding-inline) * -1 + var(--space-4)
     );
     --component-content-padding-block: var(--space-8);
     --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
     --component-content-bleed-inline: calc(var(--layout-padding-inline) * -1);
-    --component-content-frame-margin: 0 0 0 var(--component-content-offset-inline-start);
+    --component-content-frame-margin: 0 0 0 var(--component-content-margin-inline-start);
     --component-content-frame-border: var(--border);
     --component-content-frame-border-radius: var(--radius-large);
 

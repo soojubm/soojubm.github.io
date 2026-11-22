@@ -12,15 +12,15 @@ import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 const listItemSizeTokens: AttributeTokens<Exclude<ListItemSize, 'small'>> = {
   medium: {
-    '--list-item-size': 'var(--size-40)',
+    '--list-item-min-height': 'var(--size-40)',
     '--list-item-gap': 'var(--space-2)',
-    '--list-item-font-size': 'var(--font-size-24)',
+    '--list-item-text-size': 'var(--font-size-24)',
     '--list-item-label-leading': 'calc(var(--font-line-height-24) - var(--font-size-14))',
   },
   large: {
-    '--list-item-size': 'var(--size-80)',
+    '--list-item-min-height': 'var(--size-80)',
     '--list-item-gap': 'var(--space-3)',
-    '--list-item-font-size': 'var(--font-size-24)',
+    '--list-item-text-size': 'var(--font-size-24)',
     '--list-item-label-leading': 'calc(var(--font-line-height-28) - var(--font-size-18))',
     '--list-item-description-leading': 'calc(var(--font-line-height-24) - var(--font-size-14))',
   },
@@ -30,12 +30,12 @@ export const listItemStyles = css`
   :host {
     display: flex;
     align-items: center;
-    min-height: var(--list-item-size);
+    min-height: var(--list-item-min-height);
     gap: var(--list-item-gap);
 
-    --list-item-size: var(--size-32);
+    --list-item-min-height: var(--size-32);
     --list-item-gap: var(--space-2);
-    --list-item-font-size: var(--font-size-14);
+    --list-item-text-size: var(--font-size-14);
     --list-item-label-leading: calc(var(--font-line-height-24) - var(--font-size-14));
     --list-item-description-leading: calc(var(--font-line-height-16) - var(--font-size-12));
   }
@@ -54,7 +54,7 @@ export const listItemStyles = css`
     flex-direction: column;
     justify-content: center;
     min-width: 0;
-    min-height: var(--list-item-size);
+    min-height: var(--list-item-min-height);
     flex: 1;
   }
 
@@ -66,7 +66,7 @@ export const listItemStyles = css`
 
   /* 이모지는 avatar 안의 글리프이며, 크기는 행 사이즈가 정한다. */
   .emoji {
-    font-size: var(--list-item-font-size);
+    font-size: var(--list-item-text-size);
     line-height: 1;
   }
 `

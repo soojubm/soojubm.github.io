@@ -22,7 +22,7 @@ export class ComponentCode extends LitElement {
       .component-content-frame {
         --component-content-padding-block: var(--space-6);
         --component-content-frame-margin: var(--space-4) 0 var(--space-4)
-          var(--component-content-offset-inline-start);
+          var(--component-content-margin-inline-start);
       }
     `,
   ]

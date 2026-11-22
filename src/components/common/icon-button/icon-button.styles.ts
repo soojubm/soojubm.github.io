@@ -6,7 +6,7 @@ import { buttonInteractiveStyles } from '@/components/common/button/button.style
 import { buildAttributeRules, buildDeclarations, type AttributeTokens } from '@/utils'
 
 const iconButtonSizeTokens: AttributeTokens<Exclude<IconButtonSize, 'medium'>> = {
-  small: { '--icon-button-size': 'var(--size-24)' },
+  small: { '--icon-button-width': 'var(--size-24)', '--icon-button-height': 'var(--size-24)' },
 }
 
 /** 자체 button을 렌더하는 시맨틱 컴포넌트가 크기 단계 하나를 골라 얹는 선언. 얹을 선택자 안에 펼쳐 쓴다. */
@@ -74,7 +74,8 @@ export const iconButtonStyles = [
   css`
     :host {
       display: inline-flex;
-      --icon-button-size: var(--size-32);
+      --icon-button-width: var(--size-32);
+      --icon-button-height: var(--size-32);
       --icon-button-background-color: var(--background-subtle-color);
       --icon-button-border-radius: var(--radius);
       --icon-button-border: var(--border-transparent);
@@ -87,8 +88,8 @@ export const iconButtonStyles = [
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: var(--icon-button-size);
-      height: var(--icon-button-size);
+      width: var(--icon-button-width);
+      height: var(--icon-button-height);
       border: var(--icon-button-border);
       border-radius: var(--icon-button-border-radius);
 

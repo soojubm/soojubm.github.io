@@ -13,7 +13,10 @@ export const dotSizes = {
 export type DotSize = keyof typeof dotSizes
 
 export const dotSizeTokens = Object.fromEntries(
-  Object.entries(dotSizes).map(([size, value]) => [size, { '--dot-size': value }]),
+  Object.entries(dotSizes).map(([size, value]) => [
+    size,
+    { '--dot-width': value, '--dot-height': value },
+  ]),
 )
 
 /**
@@ -21,13 +24,14 @@ export const dotSizeTokens = Object.fromEntries(
  * 색은 --dot-background-color 하나로 모이므로, 상태별로 달라질 때도 이 변수에 값을 다시 할당한다.
  */
 export const dotStyles = css`
-  --dot-size: ${unsafeCSS(dotSizes['8'])};
+  --dot-width: ${unsafeCSS(dotSizes['8'])};
+  --dot-height: ${unsafeCSS(dotSizes['8'])};
   --dot-background-color: var(--foreground-subtle-color);
 
   display: inline-block;
   flex-shrink: 0;
-  width: var(--dot-size);
-  height: var(--dot-size);
+  width: var(--dot-width);
+  height: var(--dot-height);
   border-radius: 50%;
   background-color: var(--dot-background-color);
 `

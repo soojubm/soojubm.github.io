@@ -14,8 +14,8 @@ export const tabsStyles = css`
     scrollbar-width: none;
 
     --tabs-indicator-background-color: var(--interaction-selected-foreground-color);
-    --tabs-line-color: var(--border-color);
-    --tabs-line-width: var(--border-width);
+    --tabs-border-color: var(--border-color);
+    --tabs-border-width: var(--border-width);
     --tabs-pill-indicator-background-color: var(--interaction-selected-background-color);
     --tabs-pill-border: var(--border-transparent);
     --tabs-pill-indicator-border: var(--border-selected);
@@ -41,11 +41,11 @@ export const tabsStyles = css`
   :host([variant='line']) {
     /* 스크롤 컨테이너는 border 영역의 자식을 잘라내므로, 기준선을 안쪽 그림자로 그려 인디케이터와 같은 줄에 둔다. */
     width: 100%;
-    box-shadow: inset 0 calc(var(--tabs-line-width) * -1) 0 var(--tabs-line-color);
+    box-shadow: inset 0 calc(var(--tabs-border-width) * -1) 0 var(--tabs-border-color);
 
     & .indicator {
       bottom: 0;
-      height: var(--tabs-line-width);
+      height: var(--tabs-border-width);
       background-color: var(--tabs-indicator-background-color);
     }
   }

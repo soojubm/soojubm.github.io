@@ -21,14 +21,15 @@ export const noticeStyles = css`
     width: 100%;
     padding: var(--notice-padding);
     box-sizing: border-box;
-    border: var(--notice-border-width) solid var(--notice-border-color);
+    border: var(--notice-border);
+    border-color: var(--notice-border-color);
     border-radius: var(--notice-border-radius);
     background: var(--notice-background-color);
     color: var(--notice-text-color);
 
     --notice-padding: var(--space-3);
     --notice-border-radius: var(--radius);
-    --notice-border-width: var(--border-width);
+    --notice-border: var(--border);
     --notice-text-color: var(--foreground-color);
     --notice-background-color: transparent;
     --notice-border-color: var(--border-color);

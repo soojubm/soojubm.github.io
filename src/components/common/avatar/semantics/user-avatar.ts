@@ -20,7 +20,7 @@ const presenceDotSizes = {
 const presenceDotSizeTokens = Object.fromEntries(
   Object.entries(presenceDotSizes).map(([avatarSize, dotSize]) => [
     avatarSize,
-    { '--dot-size': dotSizes[dotSize] },
+    { '--dot-width': dotSizes[dotSize], '--dot-height': dotSizes[dotSize] },
   ]),
 )
 
@@ -41,8 +41,8 @@ export class UserAvatar extends LitElement {
     mm-status-dot {
       outline: calc(var(--border-width) * 2) solid var(--background-color);
       position: absolute;
-      inset-inline-end: calc(14.6% - var(--dot-size) / 2);
-      inset-block-end: calc(14.6% - var(--dot-size) / 2);
+      inset-inline-end: calc(14.6% - var(--dot-width) / 2);
+      inset-block-end: calc(14.6% - var(--dot-height) / 2);
     }
 
     ${unsafeCSS(buildAttributeRules('size', presenceDotSizeTokens, 'mm-status-dot'))}

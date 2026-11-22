@@ -27,7 +27,7 @@ export class Breadcrumb extends LitElement {
         --breadcrumb-item-text-color: var(--primary-color);
         --breadcrumb-item-text-color-current: var(--foreground-color);
         --breadcrumb-divider-text-color: var(--border-color);
-        --breadcrumb-divider-space: var(--space-3);
+        --breadcrumb-divider-margin: var(--space-3);
       }
 
       .breadcrumb {
@@ -40,7 +40,7 @@ export class Breadcrumb extends LitElement {
       }
 
       .breadcrumb-divider {
-        margin: 0 var(--breadcrumb-divider-space);
+        margin: 0 var(--breadcrumb-divider-margin);
         color: var(--breadcrumb-divider-text-color);
       }
 

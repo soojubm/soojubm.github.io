@@ -25,7 +25,7 @@ export class ChatConfirmation extends LitElement {
 
     /* 면의 경계는 host가 그리므로, 안의 notice는 자기 경계를 그리지 않는다. */
     mm-notice {
-      --notice-border-width: 0;
+      --notice-border: none;
     }
   `
   @property({ type: String }) message = ''

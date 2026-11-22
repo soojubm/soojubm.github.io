@@ -9,7 +9,8 @@ export type SpinnerVariant = 'element' | 'section'
 export class Spinner extends LitElement {
   static styles = css`
     :host {
-      --spinner-size: 1em;
+      --spinner-width: 1em;
+      --spinner-height: 1em;
       --spinner-track-color: transparent;
       --spinner-indicator-color: currentColor;
 
@@ -19,7 +20,8 @@ export class Spinner extends LitElement {
     }
 
     :host([variant='section']) {
-      --spinner-size: var(--size-32);
+      --spinner-width: var(--size-32);
+      --spinner-height: var(--size-32);
       --spinner-track-color: var(--border-color);
       --spinner-indicator-color: var(--primary-color);
 
@@ -27,8 +29,8 @@ export class Spinner extends LitElement {
     }
 
     .spinner {
-      width: var(--spinner-size);
-      height: var(--spinner-size);
+      width: var(--spinner-width);
+      height: var(--spinner-height);
       flex-shrink: 0;
       border: 2px solid var(--spinner-track-color);
       border-top-color: var(--spinner-indicator-color);
