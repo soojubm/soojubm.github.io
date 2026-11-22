@@ -143,6 +143,17 @@ const main = html`
       </mm-tag-group>
     </mm-component-section>
 
+    <mm-component-section
+      heading="CodeTag"
+      description="컴포넌트 이름, 속성, 토큰처럼 코드로 읽어야 하는 짧은 조각을 본문 속에서 구분합니다."
+    >
+      <mm-flex gap="2">
+        <mm-code>mm-tag</mm-code>
+        <mm-code>tone="green"</mm-code>
+        <mm-code>--tag-background-color</mm-code>
+      </mm-flex>
+    </mm-component-section>
+
     <mm-component-related .items=${relatedComponents}></mm-component-related>
 
     <mm-component-pager></mm-component-pager>
