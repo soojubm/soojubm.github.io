@@ -17,11 +17,11 @@
 .navbar::before {
   content: '';
   border-bottom: var(--border-transparent);
-  border-radius: var(--layout-chrome-border-radius);
+  border-radius: var(--material-chrome-border-radius);
   box-sizing: border-box;
   background: var(--material-chrome-background-color);
   backdrop-filter: var(--material-chrome-backdrop-filter);
-  box-shadow: var(--layout-chrome-shadow);
+  box-shadow: var(--material-chrome-shadow);
   position: absolute;
   inset: var(--layout-chrome-inset);
   z-index: -1;

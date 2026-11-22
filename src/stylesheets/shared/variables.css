@@ -21,8 +21,6 @@
 
   /* 고정 내비게이션 표면이 화면 가장자리에서 떨어지는 간격. 테마가 재정의하면 떠 있는 표면이 된다 */
   --layout-chrome-inset: 0px;
-  --layout-chrome-border-radius: 0px;
-  --layout-chrome-shadow: none;
   --navbar-height: calc(var(--size-32) + 1.5rem);
 
   --layout-width-large: 960px;
@@ -130,10 +128,8 @@
   --control-border-radius: var(--radius-large);
 
   /* 재질 원시값. 값의 종류와 크기로 이름 짓고 테마가 건드리지 않는다.
-     소비처는 원시값을 직접 쓰지 않고, 아래 material 티어가 색 토큰과 조합해 내보낸다.
-     그림자는 깊이를 갖는 티어(elevated·chrome·overlay)마다 한 단계씩만 둔다. */
+     소비처는 원시값을 직접 쓰지 않고, 아래 material 티어가 색 토큰과 조합해 내보낸다. */
   --shadow-12: 0 4px 12px rgb(0 0 0 / 15%);
-  --shadow-32: 0 16px 32px rgb(0 0 0 / 20%);
   --shadow-48: 0 24px 48px rgb(0 0 0 / 28%);
   --blur-20: 20px;
   --blur-28: 28px;
@@ -161,7 +157,9 @@
   --material-chrome-background-color: var(--gray0);
   --material-chrome-border: var(--border);
   --material-chrome-backdrop-filter: none;
-  --material-chrome-shadow: var(--shadow-32);
+  /* 가장자리에 붙은 chrome은 테두리로 구분한다. 떠 있는 chrome을 그리는 테마가 반경과 그림자를 켠다 */
+  --material-chrome-border-radius: 0px;
+  --material-chrome-shadow: none;
 
   /* ===== material-overlay ===== */
   --material-overlay-background-color: var(--gray0);
@@ -273,7 +271,6 @@
   --material-chrome-border: var(--border);
   --material-overlay-border: var(--border);
 
-  --material-chrome-shadow: none;
   --material-overlay-shadow: none;
 }
 
@@ -288,8 +285,6 @@
 
   /* navbar·sidebar를 모서리에서 띄운다. navbar-height는 :root에서 계산돼 여기서 다시 선언해야 inset이 반영된다 */
   --layout-chrome-inset: var(--space-2);
-  --layout-chrome-border-radius: var(--radius-large);
-  --layout-chrome-shadow: var(--material-chrome-shadow);
   --navbar-height: calc(var(--size-32) + 1.5rem + var(--layout-chrome-inset) * 2);
   /* --background-subtle-color: rgb(255 255 255 / 30%); */
 
@@ -302,6 +297,7 @@
   --material-chrome-border: var(--border-width) solid
     color-mix(in srgb, var(--gray0) var(--opacity-50), transparent);
   --material-chrome-backdrop-filter: saturate(180%) blur(var(--blur-20));
+  --material-chrome-border-radius: var(--radius-large);
   --material-chrome-shadow: var(--shadow-12);
 
   /* ===== material-overlay ===== */
