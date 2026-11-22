@@ -21,7 +21,7 @@
   box-sizing: border-box;
   background: var(--material-chrome-background-color);
   backdrop-filter: var(--material-chrome-backdrop-filter);
-  box-shadow: var(--material-chrome-shadow);
+  box-shadow: var(--layout-chrome-shadow);
   position: absolute;
   inset: var(--layout-chrome-inset);
   z-index: -1;

@@ -29,7 +29,7 @@ export const sidebarStyles = css`
   /* 재질은 ::before 레이어가 소유한다. nav에 backdrop-filter를 두면 사용자 메뉴 popover의 blur가 죽는다 */
   nav::before {
     border-radius: var(--layout-chrome-border-radius);
-    box-shadow: var(--material-chrome-shadow);
+    box-shadow: var(--layout-chrome-shadow);
     background: var(--material-chrome-background-color);
     backdrop-filter: var(--material-chrome-backdrop-filter);
     -webkit-backdrop-filter: var(--material-chrome-backdrop-filter);
