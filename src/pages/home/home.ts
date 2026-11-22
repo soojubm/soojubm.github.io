@@ -402,3 +402,7 @@ function setupScrollSpySampler() {
     scrollRoot.scrollTo({ top, behavior: 'smooth' })
   })
 }
+
+// TODO: menu-item-radio·checkbox·switch가 입력을 가진 mm-radio·mm-checkbox·mm-switch를 inert로 중첩해
+// 모양만 쓴다. 입력 없이 시각 부분만 담은 공유 스타일 조각을 radio·checkbox·switch의 *.styles.ts에 두고
+// 행이 <span>에 입히도록 바꿔, inert·aria-hidden 중첩을 없앤다.

@@ -1,12 +1,13 @@
 import { css, LitElement, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
 
 import type { MenuItemGroup } from '@/components/common/menu-item/menu-item-group'
 
 import { menuItemStyles } from '@/components/common/menu-item/menu-item.styles'
 import {
-  type MenuItemToggleRowRole,
-  renderMenuItemToggleRow,
+  activateOnKeydown,
+  renderMenuItemContent,
   withMenuItemPresentation,
   withMenuItemToggleState,
 } from '@/components/common/menu-item/menu-item.utils'
@@ -30,7 +31,7 @@ export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresenta
       }
     `,
   ]
-  @state() private rowRole: MenuItemToggleRowRole = 'switch'
+  @state() private rowRole: 'menuitemcheckbox' | 'switch' = 'switch'
 
   connectedCallback() {
     super.connectedCallback()
@@ -39,8 +40,21 @@ export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresenta
   }
 
   render() {
-    return renderMenuItemToggleRow(this, this.rowRole, this.renderAction())
+    return html`
+      <div
+        role=${this.rowRole}
+        tabindex=${this.disabled ? '-1' : '0'}
+        aria-checked=${this.checked}
+        aria-disabled=${ifDefined(this.disabled ? 'true' : undefined)}
+        @click=${this.activate}
+        @keydown=${this.handleRowKeydown}
+      >
+        ${renderMenuItemContent(this, this.renderAction())}
+      </div>
+    `
   }
+
+  private handleRowKeydown = (event: KeyboardEvent) => activateOnKeydown(event, this.activate)
 
   private renderAction() {
     // 행(row)이 role·상태·상호작용을 소유하므로 내부 컨트롤은 시각 표시 전용(inert)이다.
