@@ -23,7 +23,6 @@ export class ToggleButton extends LitElement {
 
       button {
         width: 100%;
-        min-width: var(--button-min-width);
         border-radius: var(--toggle-button-border-radius);
       }
     `,

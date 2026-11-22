@@ -21,10 +21,8 @@ export const buttonInteractiveStyles = css`
   }
 `
 
-// size가 있는 mm-button에만 최소 폭을 준다. size가 없는 작은 버튼형 컴포넌트는 내용 폭을 따른다.
-const buttonSizeTokens: AttributeTokens<ButtonSize> = {
-  medium: { 'min-width': 'var(--button-min-width)' },
-  large: { '--button-height': 'var(--size-48)', 'min-width': 'var(--button-min-width)' },
+const buttonSizeTokens: AttributeTokens<Exclude<ButtonSize, 'medium'>> = {
+  large: { '--button-height': 'var(--size-48)' },
 }
 
 /**
@@ -42,14 +40,13 @@ export const buttonBaseStyles = css`
     --button-text-size: inherit;
     --button-text-weight: var(--font-weight-normal);
     --button-text-color: var(--foreground-color);
-    --button-width: max-content;
   }
+
+  ${unsafeCSS(buildAttributeRules('size', buttonSizeTokens))}
 
   :host([full-width]) :is(button, a) {
     width: 100%;
   }
-
-  ${unsafeCSS(buildAttributeRules('size', buttonSizeTokens, ':is(button, a)'))}
 
   :is(button, a) {
     ${buttonInteractiveStyles};
@@ -57,7 +54,8 @@ export const buttonBaseStyles = css`
     align-items: center;
     justify-content: center;
     /* max-content for trailing icons */
-    width: var(--button-width);
+    width: max-content;
+    min-width: var(--button-min-width);
     gap: var(--space-1);
     height: var(--button-height);
     padding: 0 var(--button-padding-inline);
@@ -114,6 +112,6 @@ export const buttonSelectedStyles = css`
   button[aria-pressed='true'] {
     --button-background-color: var(--interaction-selected-background-color);
     --button-text-color: var(--interaction-selected-foreground-color);
-    border-color: var(--interaction-selected-border-color);
+    --button-border: var(--border-selected);
   }
 `

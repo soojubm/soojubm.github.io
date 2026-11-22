@@ -25,23 +25,20 @@ export class ToggleButtonGroup extends LitElement {
     css`
       :host {
         display: inline-flex;
-        align-items: center;
       }
 
       button {
-        --button-border-radius: 0;
+        border-radius: 0;
       }
 
       button:first-child {
-        --button-border-radius: var(--radius) 0 0 var(--radius);
+        border-start-start-radius: var(--radius);
+        border-end-start-radius: var(--radius);
       }
 
       button:last-child {
-        --button-border-radius: 0 var(--radius) var(--radius) 0;
-      }
-
-      button:only-child {
-        --button-border-radius: var(--radius);
+        border-start-end-radius: var(--radius);
+        border-end-end-radius: var(--radius);
       }
 
       :host([stretch]) {
