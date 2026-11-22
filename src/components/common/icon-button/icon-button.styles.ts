@@ -30,16 +30,6 @@ const iconButtonVariantTokens: AttributeTokens<Exclude<IconButtonVariant, 'terti
   },
 }
 
-/** destructive 의도의 채움 스킨. primary에 얹히며, 자체 button을 렌더하는 mm-delete-button도 같은 값을 쓴다. */
-const iconButtonDestructiveFilledTokens = {
-  '--icon-button-background-color': 'var(--danger-color)',
-  '--icon-button-text-color': 'var(--foreground-on-danger-color)',
-}
-
-export const iconButtonDestructiveFilledSkin = unsafeCSS(
-  buildDeclarations(iconButtonDestructiveFilledTokens),
-)
-
 /** 자체 button을 렌더하는 시맨틱 컴포넌트가 variant 하나를 골라 얹는 선언. 얹을 선택자 안에 펼쳐 쓴다. */
 export const iconButtonVariantSkin = (variant: keyof typeof iconButtonVariantTokens) =>
   unsafeCSS(buildDeclarations(iconButtonVariantTokens[variant]))
@@ -99,10 +89,13 @@ export const iconButtonStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', iconButtonVariantTokens, 'button'))}
 
   :host([destructive][variant='primary']) button {
-    ${iconButtonDestructiveFilledSkin};
+    --icon-button-background-color: var(--danger-color);
+    --icon-button-text-color: var(--foreground-on-danger-color);
   }
 
-  :host([destructive]:not([variant='primary'])) button {
+  :host([destructive][variant='secondary']) button,
+  :host([destructive][variant='tertiary']) button,
+  :host([destructive][variant='ghost']) button {
     --icon-button-text-color: var(--danger-color);
   }
 

@@ -1,11 +1,7 @@
-import { css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import {
-  iconButtonStyles,
-  iconButtonDestructiveFilledSkin,
-} from '@/components/common/icon-button/icon-button.styles'
+import { iconButtonStyles } from '@/components/common/icon-button/icon-button.styles'
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
@@ -18,15 +14,15 @@ export class DeleteButton extends iconActionElement({
   icon: ICON_NAMES.DELETE,
   ariaLabel: '삭제',
 }) {
-  static styles = [
-    resetStyles,
-    iconButtonStyles,
-    css`
-      :host {
-        ${iconButtonDestructiveFilledSkin}
-      }
-    `,
-  ]
+  static styles = [resetStyles, iconButtonStyles]
+
+  // 스킨은 iconButtonStyles의 destructive primary 규칙이 맡으므로 같은 속성으로 알린다.
+  override connectedCallback() {
+    super.connectedCallback()
+    this.setAttribute('variant', 'primary')
+    this.setAttribute('destructive', '')
+  }
+
   // 파괴적 행동이라 확인을 거친 뒤에만 알린다.
   override handleActionClick() {
     if (!window.confirm('정말 삭제하시겠어요?')) return
