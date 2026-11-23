@@ -183,6 +183,7 @@ const backgroundPairs: Record<string, string[]> = {
     'foreground-danger-color',
   ],
   'background-strong-color': ['foreground-on-strong-color', 'foreground-subtle-color'],
+  'background-danger-color': ['foreground-on-danger-color'],
 }
 
 const renderBackgroundTokens = (names: string[]) =>
@@ -407,20 +408,15 @@ const renderTokenKind =
   (tier: TokenTier) =>
   ({ target, description, group, subtokens = [] }: TokenKind) =>
     html`
-      <mm-flex direction="column" gap="3">
-        <span class="kind-figure" data-tier=${tier} data-kind=${target} aria-hidden="true"></span>
-        <mm-flex direction="column" align-items="flex-start" gap="2">
-          <mm-tag-group>
-            <mm-code-tag tone=${kindTone(group)}>${target}</mm-code-tag>
-            ${subtokens.map(
-              subtoken => html`
-                <mm-code-tag tone=${tierTones.semantic}>${subtoken}</mm-code-tag>
-              `,
-            )}
-          </mm-tag-group>
-          <mm-caption>${description}</mm-caption>
-        </mm-flex>
-      </mm-flex>
+      <mm-figure-card description=${description}>
+        <span class="kind-figure" slot="figure" data-tier=${tier} data-kind=${target}></span>
+        <mm-code-tag slot="tags" tone=${kindTone(group)}>${target}</mm-code-tag>
+        ${subtokens.map(
+          subtoken => html`
+            <mm-code-tag slot="tags" tone=${tierTones.semantic}>${subtoken}</mm-code-tag>
+          `,
+        )}
+      </mm-figure-card>
     `
 
 type CategoryName = (typeof WORD_CATEGORIES)[number]['name']

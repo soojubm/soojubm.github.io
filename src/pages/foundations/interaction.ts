@@ -18,44 +18,6 @@ type FilterOption = OptionItem & {
   selectAll?: boolean
 }`
 
-type ComponentUsage = { label: TemplateResult | string; components: string[] }
-
-const pressedUsages: ComponentUsage[] = [
-  {
-    label: '단독 버튼',
-    components: ['mm-toggle-button', 'mm-follow-button', 'mm-bookmark-button', 'mm-reveal-button'],
-  },
-  { label: '그룹의 항목', components: ['mm-toggle-button-group', 'mm-filter-button-group'] },
-]
-
-const checkedUsages: ComponentUsage[] = [
-  {
-    label: code('checked'),
-    components: ['mm-checkbox', 'mm-radio', 'mm-switch', 'mm-checkbox-group', 'mm-radio-group'],
-  },
-  {
-    label: code('aria-checked'),
-    components: ['mm-menu-item-radio', 'mm-menu-item-checkbox', 'mm-menu-item-switch'],
-  },
-]
-
-const selectedUsages: ComponentUsage[] = [
-  { label: '목록의 옵션', components: ['mm-select-option'] },
-  { label: '탭', components: ['mm-tab'] },
-]
-
-const renderUsages = (usages: ComponentUsage[]) => html`
-  <mm-surface>
-    <mm-text-list
-      .texts=${usages.map(
-        ({ label, components }) => html`
-          ${label}: ${codeList(components)}
-        `,
-      )}
-    ></mm-text-list>
-  </mm-surface>
-`
-
 type ComponentBlock = { label: string; description?: string; components: string[] }
 
 const selectionOwnerBlocks: ComponentBlock[] = [
@@ -153,9 +115,6 @@ type StateCard = {
   aliases?: string[]
   description: string
   tokens: string[]
-  /** 값은 tokens 페이지가 소개하므로 이름만 태그로 나열하는 토큰. */
-  tokenKeys?: string[]
-  usages?: ComponentUsage[]
   note?: string
   /** 도형 대신 썸네일 안에 놓을 내용. */
   figure?: TemplateResult
@@ -203,14 +162,14 @@ const semanticStates: StateCard[] = [
     state: 'warning',
     selectors: [],
     description: '진행 전에 사용자의 주의가 필요한 상태입니다.',
-    tokens: ['warning-color', 'foreground-warning-color'],
+    tokens: ['foreground-warning-color'],
   },
   {
     state: 'error',
     selectors: ['aria-invalid'],
     description:
       '오류, 실패, 수정이 필요한 상태를 나타냅니다. 입력값이 유효하지 않으면 aria-invalid로 알립니다.',
-    tokens: ['danger-color', 'foreground-danger-color'],
+    tokens: ['foreground-danger-color'],
   },
   {
     state: 'success',
@@ -233,27 +192,21 @@ const resultStates: StateCard[] = [
     state: 'pressed',
     selectors: ['aria-pressed'],
     description: '그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다.',
-    usages: pressedUsages,
     tokens: [],
-    tokenKeys: selectedKeys,
   },
   {
     state: 'checked',
     selectors: ['aria-checked', 'checked'],
     description: '컨트롤의 on/off 값이 켜져 있다는 표시입니다.',
-    usages: checkedUsages,
     figure: checkedIndicator,
     note: '눌러서 켜고 끄는 버튼은 Pressed, 값을 고르는 컨트롤은 Checked를 씁니다.',
     tokens: [],
-    tokenKeys: selectedKeys,
   },
   {
     state: 'selected',
     selectors: ['aria-selected'],
     description: '목록에서 고른 항목이라는 표시입니다.',
-    usages: selectedUsages,
     tokens: [],
-    tokenKeys: selectedKeys,
   },
   {
     state: 'current',
@@ -262,7 +215,6 @@ const resultStates: StateCard[] = [
     description: '내비게이션에서 지금 위치한 곳이라는 표시입니다.',
     note: 'Current는 논리상 지금 어느 페이지에 있는지를 알리는 위치 표시지만, UI 형태는 선택 상태와 같아 함께 둡니다.',
     tokens: [],
-    tokenKeys: selectedKeys,
   },
 ]
 
@@ -291,37 +243,30 @@ const renderStateCard = ({
   aliases = [],
   description,
   tokens,
-  tokenKeys,
-  usages,
   note,
   figure,
 }: StateCard) => html`
-  <mm-flex direction="column" gap="3">
-    <div class="state-figure" data-state=${state} aria-hidden="true">${figure}</div>
-    <mm-flex direction="column" align-items="flex-start" gap="1">
-      <mm-tag-group>
-        ${[state, ...aliases].map(
-          name => html`
-            <mm-code-tag tone="purple">${name}</mm-code-tag>
-          `,
-        )}
-        ${selectors.filter(selector => selector !== state).map(renderSelector)}
-      </mm-tag-group>
-      <mm-caption>${description}</mm-caption>
-    </mm-flex>
-    ${usages ? renderUsages(usages) : nothing}
+  <mm-figure-card description=${description}>
+    <span class="state-figure" slot="figure" data-state=${state}>${figure}</span>
+    ${[state, ...aliases].map(
+      name => html`
+        <mm-code-tag slot="tags" tone="purple">${name}</mm-code-tag>
+      `,
+    )}
+    ${selectors
+      .filter(selector => selector !== state)
+      .map(
+        selector => html`
+          <mm-code-tag slot="tags">${selector}</mm-code-tag>
+        `,
+      )}
     ${note
       ? html`
           <mm-caption>${note}</mm-caption>
         `
       : nothing}
     ${renderStateTokens(state, tokens)}
-    ${tokenKeys
-      ? html`
-          <mm-caption>${codeList(tokenKeys)}</mm-caption>
-        `
-      : nothing}
-  </mm-flex>
+  </mm-figure-card>
 `
 
 const main = html`
@@ -367,8 +312,12 @@ const main = html`
             <mm-grid columns="4" gap="6">${operationStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="결과 상태">
-            <mm-paragraph>UI 요소의 상호작용 결과 상태입니다.</mm-paragraph>
+          <mm-content-section heading-level="3" heading="결과 상태 / 선택 상태">
+            <mm-paragraph>
+              UI 요소의 상호작용 결과 상태입니다. pressed·checked·selected·current는 같은 토큰을
+              씁니다.
+            </mm-paragraph>
+            <mm-tag-group>${selectedKeys.map(renderSelector)}</mm-tag-group>
             <mm-grid columns="4" gap="6">${resultStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 

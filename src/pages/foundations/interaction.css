@@ -1,13 +1,9 @@
-/* 조작 상태마다 그 상태의 토큰을 입힌 사각형 하나를 칸 가운데에 그린다. tokens 페이지의 종류 카드와 같은 틀이다. */
+/* 상태마다 그 상태의 토큰을 입힌 사각형 하나를 figure-card의 도형 칸 가운데에 그린다. */
 .state-figure {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-6);
-  height: var(--size-80);
-  border-radius: var(--border-radius);
-  background: var(--background-color);
-  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
 }
 
 .state-figure::before {
@@ -50,9 +46,9 @@
 }
 
 .state-figure[data-state='warning']::before {
-  box-shadow: inset 0 0 0 var(--border-width) var(--warning-color);
+  box-shadow: inset 0 0 0 var(--border-width) var(--foreground-warning-color);
 }
 
 .state-figure[data-state='error']::before {
-  box-shadow: inset 0 0 0 var(--border-width) var(--danger-color);
+  box-shadow: inset 0 0 0 var(--border-width) var(--foreground-danger-color);
 }

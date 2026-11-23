@@ -172,9 +172,6 @@ mm-token-stage:hover .motion-dot {
   align-items: center;
   justify-content: center;
   gap: var(--space-4);
-  height: var(--size-80);
-  border-radius: var(--border-radius);
-  background: var(--background-subtle-color);
 }
 
 .kind-figure::before,
