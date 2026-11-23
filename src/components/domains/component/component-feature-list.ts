@@ -14,19 +14,19 @@ export interface ComponentFeatureItem {
 
 // 컴포넌트 특성(heading)마다 쓰는 아이콘. 목록에 없는 heading은 INFO로 둔다.
 const FEATURE_ICONS: Record<string, string> = {
-  'Interactive - action': ICON_NAMES.CLICK,
-  'Interactive - selection': ICON_NAMES.PRESSED,
-  'Interactive - input': ICON_NAMES.EDIT,
+  'Interactive - action': ICON_NAMES.INTERACTIVE_ACTION,
+  'Interactive - selection': ICON_NAMES.INTERACTIVE_SELECTION,
+  'Interactive - input': ICON_NAMES.INTERACTIVE_INPUT,
   'Input - file': ICON_NAMES.IMPORT,
-  Feedback: ICON_NAMES.NOTIFICATION,
-  Glanceable: ICON_NAMES.VIEW,
-  Structural: ICON_NAMES.GRID_VIEW,
-  Contextual: ICON_NAMES.CURRENT,
-  Representative: ICON_NAMES.PROFILE,
-  Modality: ICON_NAMES.WINDOW,
-  Transient: ICON_NAMES.TIMER,
-  Stateful: ICON_NAMES.TOGGLE,
-  Disclosure: ICON_NAMES.EXPAND,
+  Feedback: ICON_NAMES.FEEDBACK,
+  Glanceable: ICON_NAMES.GLANCEABLE,
+  Structural: ICON_NAMES.STRUCTURAL,
+  Contextual: ICON_NAMES.CONTEXTUAL,
+  Representative: ICON_NAMES.REPRESENTATIVE,
+  Modality: ICON_NAMES.MODALITY,
+  Transient: ICON_NAMES.TRANSIENT,
+  Stateful: ICON_NAMES.STATEFUL,
+  Disclosure: ICON_NAMES.DISCLOSURE,
 }
 
 /**

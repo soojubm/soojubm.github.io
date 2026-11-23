@@ -16,9 +16,9 @@ export interface BottomBarItem {
 }
 
 const defaultItems: BottomBarItem[] = [
-  { label: '홈', href: '#', icon: ICON_NAMES.HOME, active: true },
-  { label: '카테고리', href: '#', icon: ICON_NAMES.HOME },
-  { label: '설정', href: '#', icon: ICON_NAMES.HOME },
+  { label: '홈', href: '#', icon: ICON_NAMES.HOME_PAGE, active: true },
+  { label: '카테고리', href: '#', icon: ICON_NAMES.GRID_VIEW },
+  { label: '설정', href: '#', icon: ICON_NAMES.SETTINGS },
 ]
 
 @customElement('mm-bottom-bar')
@@ -144,7 +144,7 @@ export class BottomBar extends LitElement {
         aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
         @click=${(e: Event) => this.handleItemClick(e, index, item)}
       >
-        <mm-avatar variant="tertiary" size="32" icon=${item.icon ?? ICON_NAMES.HOME}></mm-avatar>
+        <mm-avatar variant="tertiary" size="32" icon=${item.icon ?? ICON_NAMES.INFO}></mm-avatar>
         <mm-caption>${item.label}</mm-caption>
         ${this.renderCurrentIndicator(activeIndex === index)}
       </a>

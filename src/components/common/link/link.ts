@@ -32,7 +32,7 @@ export class Link extends LitElement {
     if (!this.external) return nothing
 
     return html`
-      <mm-icon name=${ICON_NAMES.LINK}></mm-icon>
+      <mm-icon name=${ICON_NAMES.EXTERNAL_LINK}></mm-icon>
     `
   }
 }

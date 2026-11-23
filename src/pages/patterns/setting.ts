@@ -187,7 +187,7 @@ const main = html`
         <mm-list-item
           avatar-variant="tertiary"
           size="medium"
-          icon=${ICON_NAMES.LINK}
+          icon=${ICON_NAMES.EXTERNAL_LINK}
           label="소셜 네트워크로 로그인"
           description="연동한 소셜 계정으로 간편하게 로그인"
         ></mm-list-item>

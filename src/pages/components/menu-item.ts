@@ -225,7 +225,10 @@ const main = html`
       description="값을 고르는 드롭다운은 mm-select를 사용하세요."
     >
       <mm-menu-item-group heading="공유">
-        <mm-menu-item-action icon=${ICON_NAMES.LINK} label="링크 복사"></mm-menu-item-action>
+        <mm-menu-item-action
+          icon=${ICON_NAMES.EXTERNAL_LINK}
+          label="링크 복사"
+        ></mm-menu-item-action>
         <mm-menu-item-action
           icon=${ICON_NAMES.SHARE}
           label="다른 앱으로 공유"
@@ -238,7 +241,10 @@ const main = html`
       description="자주 쓰는 명령만 먼저 보여 주고, 나머지는 더보기로 펼칩니다."
     >
       <mm-menu-item-group aria-label="더보기 메뉴">
-        <mm-menu-item-action icon=${ICON_NAMES.LINK} label="링크 복사"></mm-menu-item-action>
+        <mm-menu-item-action
+          icon=${ICON_NAMES.EXTERNAL_LINK}
+          label="링크 복사"
+        ></mm-menu-item-action>
         <mm-menu-item-action icon=${ICON_NAMES.SHARE} label="공유"></mm-menu-item-action>
         <mm-menu-item-action icon=${ICON_NAMES.SHOW_MORE} label="더보기"></mm-menu-item-action>
       </mm-menu-item-group>
@@ -291,7 +297,7 @@ const main = html`
         </mm-menu-item-link>
         <mm-menu-item-link
           size="medium"
-          icon=${ICON_NAMES.LINK}
+          icon=${ICON_NAMES.EXTERNAL_LINK}
           label="MDN Web Docs"
           href="https://developer.mozilla.org"
           description="외부 링크"

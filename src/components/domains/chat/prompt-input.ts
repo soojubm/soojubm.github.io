@@ -97,7 +97,10 @@ export class PromptInput extends LitElement {
               icon=${ICON_NAMES.CAMERA}
               label="카메라 촬영"
             ></mm-menu-item-action>
-            <mm-menu-item-action icon=${ICON_NAMES.LINK} label="URL로 추가"></mm-menu-item-action>
+            <mm-menu-item-action
+              icon=${ICON_NAMES.EXTERNAL_LINK}
+              label="URL로 추가"
+            ></mm-menu-item-action>
           </mm-menu-item-group>
         </mm-popover>
         <slot name="leading-actions"></slot>
