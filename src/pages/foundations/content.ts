@@ -249,7 +249,7 @@ const main = html`
             ></mm-text-list>
             <mm-component-notice heading="잘린 제목의 전체를 보여주는 방법을 정한다">
               폴더블·워치처럼 화면이 점점 작아져 제목이 잘릴 수 있다. 자를지 여부보다, 잘렸을 때
-              사용자가 전체 제목을 확인하는 방법을 정하지 않았다
+              사용자가 전체 제목을 확인하는 방법이 필요하다.
             </mm-component-notice>
           </mm-content-section>
 
@@ -263,16 +263,6 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="콘텐츠 모듈의 대비">
-            <mm-paragraph>
-              상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의
-              주의를 끌어옵니다.
-            </mm-paragraph>
-            <mm-paragraph>
-              완료·오류·빈 상태를 보여 주는 ${code('mm-result')}가 이 규칙을 따릅니다.
-            </mm-paragraph>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="용어">

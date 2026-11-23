@@ -11,7 +11,7 @@ import '@/components/common/button/button'
 import '@/components/common/button/button-group'
 import '@/components/common/icon'
 import '@/components/common/text/text'
-import '@/components/common/text/semantics/heading'
+import '@/components/common/text/semantics/text-block'
 import '@/components/common/icon-button/semantics/dismiss-button'
 
 export type NoticeRole = 'alert' | 'note' | 'status'
@@ -35,27 +35,29 @@ export class Notice extends LitElement {
 
     return html`
       <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
-      <div class="notice-content">
-        ${this.renderText()}
+      ${this.renderContent()} ${this.renderActions()}
+    `
+  }
+
+  private renderContent() {
+    if (!this.heading) {
+      return html`
+        <div>
+          ${this.renderDescription()}
+          <slot></slot>
+        </div>
+      `
+    }
+
+    return html`
+      <mm-text-block
+        class="notice-content"
+        level="4"
+        heading=${this.heading}
+        description=${this.description}
+      >
         <slot></slot>
-      </div>
-      ${this.renderActions()}
-    `
-  }
-
-  private renderText() {
-    if (!this.heading && !this.description) return nothing
-
-    return html`
-      <div class="notice-text">${this.renderHeading()} ${this.renderDescription()}</div>
-    `
-  }
-
-  private renderHeading() {
-    if (!this.heading) return nothing
-
-    return html`
-      <mm-heading level="4">${this.heading}</mm-heading>
+      </mm-text-block>
     `
   }
 

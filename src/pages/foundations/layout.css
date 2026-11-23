@@ -1,43 +1,62 @@
-/* 면의 명도 차이로 포함 관계를 보인다. 바깥 원은 옅은 면, 안쪽 원은 배경색 면으로 한 단계씩 올라온다. */
-.layout-tier-page {
+/* 자리표시자 사이를 실제 간격 토큰만큼 띄워 거리를 그린다. 태그는 간격 자리 한가운데에 걸쳐 놓는다. */
+.spacing-page {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-4);
-  padding: var(--space-4);
+  box-sizing: border-box;
+  padding: var(--layout-padding-inline);
   border: var(--border);
   border-radius: var(--border-radius-large);
-}
-
-.layout-tier-circle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  box-sizing: border-box;
-  aspect-ratio: 1;
-  border-radius: var(--border-radius-full);
-}
-
-.layout-tier-section {
-  width: calc(var(--size-80) * 3.5);
-  padding: var(--space-4);
-  background: var(--background-subtle-color);
-}
-
-.layout-tier-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-3);
-  border-radius: var(--border-radius);
   background: var(--background-color);
 }
 
-.layout-tier-diagram {
-  width: 100%;
+.spacing-page mm-ui-placeholder {
+  --ui-placeholder-height: var(--size-16);
+  --ui-placeholder-border-radius: var(--border-radius);
+}
+
+.spacing-page-tag,
+.spacing-gap mm-code-tag {
+  position: absolute;
+  z-index: 1;
+  translate: -50% -50%;
+}
+
+.spacing-page-tag {
+  top: calc(var(--layout-padding-inline) / 2);
+  left: 50%;
+}
+
+.spacing-gap {
+  position: relative;
+  flex: none;
+}
+
+.spacing-gap mm-code-tag {
+  top: 50%;
+  left: 50%;
+}
+
+.spacing-gap[data-level='section'] {
+  height: var(--space-section);
+}
+
+.spacing-gap[data-level='group'] {
+  width: var(--space-4);
+}
+
+.spacing-gap[data-level='element'] {
+  height: var(--space-2);
+}
+
+.spacing-section {
+  display: flex;
+}
+
+.spacing-group {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 /* 트랙은 화면 폭, 막대는 본문 폭이다. 막대가 트랙보다 좁으면 가운데에 놓인다. */
@@ -72,18 +91,31 @@
   border: var(--border);
 }
 
-/* 본문 슬롯은 제목·설명보다 넓은 영역을 차지하는 자리라, 최소 높이로 그 크기를 보인다. */
-.section-anatomy-content {
-  min-height: calc(var(--size-80) * 1.5);
+/* 왼쪽 정렬 본문 사이에 가운데 정렬 모듈을 끼운다. 모듈만 정렬이 달라 눈에 띈다. */
+.contrast-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
 }
 
-.section-flow-page {
-  flex: 1 1 var(--size-80);
-  min-width: calc(var(--size-80) * 2);
-  box-sizing: border-box;
+.contrast-flow,
+.contrast-module {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
-.section-flow-arrow {
-  font-family: var(--font-family-code);
-  color: var(--foreground-subtle-color);
+.contrast-flow {
+  align-items: flex-start;
+}
+
+.contrast-module {
+  align-items: center;
+  padding: var(--space-6);
+  border-radius: var(--border-radius);
+  background: var(--background-subtle-color);
+}
+
+.contrast-flow mm-ui-placeholder {
+  width: 100%;
 }

@@ -42,24 +42,20 @@ export const noticeStyles = css`
     margin-top: var(--space-1);
   }
 
-  .notice-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
+  mm-text-block,
+  div {
     flex: 1;
     min-width: 0;
   }
 
-  /* 헤딩을 설명 첫 줄에 붙이고, 넘치는 줄은 헤딩 아래로 흘린다. */
-  .notice-text mm-heading {
-    float: inline-start;
-    margin-inline-end: var(--space-2);
+  mm-text-block {
+    gap: var(--space-1);
   }
 
   .notice-actions {
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    flex: none;
     gap: var(--space-2);
   }
 `

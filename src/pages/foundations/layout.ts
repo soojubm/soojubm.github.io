@@ -1,11 +1,11 @@
 import { html } from 'lit'
 
 import type { TagTone } from '@/components/common/tag/tag.styles'
-import type { TemplateResult } from 'lit'
 
 import './layout.css'
 
 import '@/components/domains/component/component-notice'
+import '@/components/domains/ui-placeholder/ui-placeholder'
 import { code, no, rule, yes } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -85,33 +85,6 @@ const classificationRows = html`
   </tr>
 `
 
-const groupGapRows = html`
-  <tr>
-    <th scope="row">${code('mm-tag-group')}</th>
-    <td>${code('--space-1')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-group')}</th>
-    <td>${code('--space-1')}·${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-button-group')}</th>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-filter-button-group')}</th>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-avatar-group')}</th>
-    <td>${code('--space-2')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-list-item-group')}</th>
-    <td>${code('--space-3')} (기본)</td>
-  </tr>
-`
-
 const placementTypeCode = `type Side = 'top' | 'right' | 'bottom' | 'left'
 type Alignment = 'start' | 'end'
 
@@ -125,67 +98,49 @@ type PlacementType =
 // viewport overlay (sheet · dialog)
 type ViewportPlacementType = 'center' | Side`
 
-interface LayoutTier {
-  name: string
-  tone: TagTone
-}
-
-/** 큰 단위에서 작은 단위로 포함 관계를 따라 나열한다. */
-const layoutTiers: LayoutTier[] = [
-  { name: 'Page', tone: 'blue' },
-  { name: 'Section', tone: 'purple' },
-  { name: 'Group', tone: 'orange' },
-  { name: 'Element', tone: 'green' },
-]
-
-/** 오버레이는 Section 아래가 아니라 Page와 같은 수준에서 따로 놓인다. */
-const overlayTier: LayoutTier = {
-  name: 'Overlay',
-  tone: 'pink',
-}
-
-const [pageTier, sectionTier, groupTier, elementTier] = layoutTiers
-
-/** 한 섹션 안의 그룹 수와 한 그룹 안의 엘리먼트 수. 하나뿐이면 묶음처럼 보이지 않아 여럿을 둔다. */
-const sectionCount = 2
-const groupCountPerSection = 2
-const elementCountPerGroup = 3
-
-const repeat = (count: number, render: () => TemplateResult) =>
-  Array.from({ length: count }, render)
-
-const renderTierLabel = ({ name, tone }: LayoutTier) => html`
-  <mm-code-tag tone=${tone}>${name}</mm-code-tag>
+/** 간격 자리. 토큰을 알려 줄 자리에만 태그를 얹어, 태그가 간격의 한가운데에 걸치게 한다. */
+const renderSpacingGap = (level: 'section' | 'group' | 'element', token?: string) => html`
+  <span class="spacing-gap" data-level=${level}>
+    ${token
+      ? html`
+          <mm-code-tag>${token}</mm-code-tag>
+        `
+      : ''}
+  </span>
 `
 
-const renderGroupBox = () => html`
-  <div class="layout-tier-group">
-    ${renderTierLabel(groupTier)}
-    ${repeat(elementCountPerGroup, () => renderTierLabel(elementTier))}
+const renderSpacingElement = () => html`
+  <mm-ui-placeholder></mm-ui-placeholder>
+`
+
+/** 첫 그룹의 첫 요소 사이에만 토큰을 적고 나머지는 같은 간격만 둔다. */
+const renderSpacingGroup = (token?: string) => html`
+  <div class="spacing-group">
+    ${renderSpacingElement()}${renderSpacingGap('element', token)}${renderSpacingElement()}
+    ${renderSpacingGap('element')}${renderSpacingElement()}
   </div>
 `
 
-const renderSectionCircle = () => html`
-  <div class="layout-tier-circle layout-tier-section">
-    ${renderTierLabel(sectionTier)}
-    <mm-flex gap="2" align-items="center" justify-content="center">
-      ${repeat(groupCountPerSection, renderGroupBox)}
-    </mm-flex>
+const renderSpacingSection = (labeled = false) => html`
+  <div class="spacing-section">
+    ${renderSpacingGroup(labeled ? '--space-2' : undefined)}${renderSpacingGap(
+      'group',
+      labeled ? '--space-4' : undefined,
+    )}${renderSpacingGroup()}
   </div>
 `
 
-const renderLayoutTierDiagram = () => html`
-  <mm-flex direction="column" gap="6" class="layout-tier-diagram">
-    <mm-flex gap="4" wrap="wrap" align-items="flex-start">
-      <div class="layout-tier-page">
-        ${renderTierLabel(pageTier)}
-        <mm-flex gap="6" align-items="center" justify-content="center" wrap="wrap">
-          ${repeat(sectionCount, renderSectionCircle)}
-        </mm-flex>
-      </div>
-      <div class="layout-tier-page">${renderTierLabel(overlayTier)}</div>
-    </mm-flex>
-  </mm-flex>
+/** 네 가지 간격을 실제 토큰 값만큼 띄운 자리표시자로 한 화면에 그리고, 각 간격에 토큰 이름을 직접 적는다. */
+const renderSpacingOverview = () => html`
+  <mm-token-stage>
+    <div class="spacing-page stage-width">
+      <mm-code-tag class="spacing-page-tag">--layout-padding-inline</mm-code-tag>
+      ${renderSpacingSection(true)}${renderSpacingGap(
+        'section',
+        '--space-section',
+      )}${renderSpacingSection()}
+    </div>
+  </mm-token-stage>
 `
 
 /** 화면 폭을 나타내는 트랙 위에, 본문이 차지하는 너비만큼의 막대를 가운데에 놓는다. */
@@ -246,94 +201,54 @@ const renderBackgroundExample = (options: {
   </mm-flex>
 `
 
-/** 섹션의 슬롯 하나. 이름표 옆에 그 슬롯이 맡는 일을 한 줄로 적는다. */
-const renderSlotLabel = (name: string, tone: TagTone, role: TemplateResult | string) => html`
-  <mm-flex direction="column" align-items="flex-start" gap="1">
-    <mm-code-tag tone=${tone}>${name}</mm-code-tag>
-    <mm-caption>${role}</mm-caption>
-  </mm-flex>
-`
+/** 왼쪽 정렬로 흐르는 본문 사이에 가운데 정렬 모듈을 끼워, 정렬의 대비를 한 화면에 그린다. */
+const renderAlignmentContrast = () => {
+  const renderFlow = (tag: string) => html`
+    <div class="contrast-flow">
+      <mm-code-tag>${tag}</mm-code-tag>
+      <mm-ui-placeholder
+        style="--ui-placeholder-height: var(--size-24); width: 40%"
+      ></mm-ui-placeholder>
+      <mm-ui-placeholder style="--ui-placeholder-height: var(--size-16)"></mm-ui-placeholder>
+      <mm-ui-placeholder
+        style="--ui-placeholder-height: var(--size-16); width: 75%"
+      ></mm-ui-placeholder>
+    </div>
+  `
 
-/** 섹션을 슬롯 위치대로 그려, 제목 줄·설명·본문이 어디에 놓이는지 보인다. */
-const renderSectionAnatomy = () => html`
-  <mm-token-stage>
-    <mm-surface class="stage-width">
-      <mm-flex direction="column" gap="4">
-        <mm-flex justify-content="space-between" align-items="flex-start" gap="4" wrap="wrap">
-          ${renderSlotLabel(
-            'heading',
-            'blue',
-            html`
-              섹션이 무엇을 다루는지 대표하는 제목. 위계는 ${code('heading-level')}로 정한다
-            `,
-          )}
-          ${renderSlotLabel('action', 'orange', '“모두 보기”처럼 섹션 전체에 걸리는 동작만 받는다')}
-        </mm-flex>
-        ${renderSlotLabel('description', 'purple', '내용을 읽기 전에 섹션이 다루는 범위를 알린다')}
-        <mm-surface variant="filled" class="section-anatomy-content">
-          ${renderSlotLabel(
-            'content',
-            'green',
-            '설명 다음에 이어지는 기본 슬롯. 섹션의 본문이 놓인다',
-          )}
-        </mm-surface>
-      </mm-flex>
-    </mm-surface>
-  </mm-token-stage>
-`
-
-const renderElementLabels = (count: number) => repeat(count, () => renderTierLabel(elementTier))
-
-/** 섹션의 action으로 이동하면, 그 섹션의 content가 다음 화면의 페이지를 채우는 흐름. */
-const renderSectionFlow = () => html`
-  <mm-token-stage>
-    <mm-flex class="stage-width" gap="4" align-items="center" wrap="wrap">
-      <div class="layout-tier-page section-flow-page">
-        ${renderTierLabel(pageTier)}
-        <mm-surface>
-          <mm-flex direction="column" gap="3">
-            <mm-flex justify-content="space-between" align-items="center" gap="3">
-              ${renderTierLabel(sectionTier)}
-              <mm-code-tag tone="orange">action</mm-code-tag>
-            </mm-flex>
-            <mm-flex gap="1" wrap="wrap">${renderElementLabels(3)}</mm-flex>
-          </mm-flex>
-        </mm-surface>
-        <mm-surface>
-          <mm-flex direction="column" gap="3">
-            ${renderTierLabel(sectionTier)}
-            <mm-flex gap="1" wrap="wrap">${renderElementLabels(2)}</mm-flex>
-          </mm-flex>
-        </mm-surface>
+  return html`
+    <mm-token-stage>
+      <div class="contrast-page stage-width">
+        ${renderFlow('text-align: start')}
+        <div class="contrast-module">
+          <mm-code-tag tone="blue">text-align: center</mm-code-tag>
+          <mm-ui-placeholder
+            style="--ui-placeholder-height: var(--size-48); --ui-placeholder-border-radius: var(--border-radius-full); width: var(--size-48)"
+          ></mm-ui-placeholder>
+          <mm-ui-placeholder
+            style="--ui-placeholder-height: var(--size-24); width: 50%"
+          ></mm-ui-placeholder>
+          <mm-ui-placeholder
+            style="--ui-placeholder-height: var(--size-16); width: 70%"
+          ></mm-ui-placeholder>
+        </div>
+        ${renderFlow('text-align: start')}
       </div>
-      <mm-flex direction="column" align-items="center" gap="1">
-        <mm-caption>action</mm-caption>
-        <span class="section-flow-arrow" aria-hidden="true">→</span>
-      </mm-flex>
-      <div class="layout-tier-page section-flow-page">
-        ${renderTierLabel(pageTier)}
-        <mm-flex direction="column" align-items="flex-start" gap="1">
-          ${renderElementLabels(6)}
-        </mm-flex>
-      </div>
-    </mm-flex>
-  </mm-token-stage>
-`
+    </mm-token-stage>
+  `
+}
 
 const main = html`
   <mm-main>
     <mm-page-header
       heading="Layout"
-      description="페이지 너비, 섹션의 배치, 화면 위로 뜨는 overlay의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 드러내므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
+      description="페이지 너비, 요소 사이의 간격, 화면 위로 뜨는 overlay의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 드러내므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
     ></mm-page-header>
 
     <mm-page-body>
-      <mm-token-stage>${renderLayoutTierDiagram()}</mm-token-stage>
-
       <mm-tab-list value="page" variant="text" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
-        <mm-tab value="section">Section</mm-tab>
-        <mm-tab value="element">Element</mm-tab>
+        <mm-tab value="spacing">간격</mm-tab>
         <mm-tab value="overlay">Overlay</mm-tab>
       </mm-tab-list>
 
@@ -399,137 +314,69 @@ const main = html`
               </mm-flex>
             </mm-token-stage>
           </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="콘텐츠 모듈의 대비">
+            <mm-paragraph>
+              상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의
+              주의를 끌어옵니다.
+            </mm-paragraph>
+            <mm-paragraph>
+              완료·오류·빈 상태를 보여 주는 ${code('mm-result')}가 이 규칙을 따릅니다.
+            </mm-paragraph>
+            ${renderAlignmentContrast()}
+          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
 
-      <mm-tab-panel value="section">
+      <mm-tab-panel value="spacing">
         <mm-content-section-list>
-          <mm-flex direction="column" gap="4">
-            <mm-paragraph>
-              섹션은 제목을 가진 가장 큰 콘텐츠 덩어리입니다. 섹션 사이는 요소나 묶음 사이보다 크게
-              벌려, 사용자가 주제가 바뀌었다는 것을 간격만으로 알아차리게 합니다.
-            </mm-paragraph>
-            ${renderSectionAnatomy()}
-            <mm-paragraph>
-              섹션의 ${code('action')}으로 이동하면, 그 섹션의 ${code('content')}가 다음 화면의
-              페이지를 채웁니다. 한 화면의 섹션이 다음 화면에서는 콘텐츠 목록 페이지가 되므로,
-              섹션은 나중에 페이지로 펼쳐져도 어색하지 않은 단위로 나눕니다.
-            </mm-paragraph>
-            ${renderSectionFlow()}
-          </mm-flex>
           <mm-text-block
             level="3"
-            heading="섹션 사이는 어떻게 구분하나요"
-            description="섹션은 선 없이 여백과 제목으로 나눕니다. 섹션마다 선을 그으면 페이지가 칸막이로 쪼개져 보이고, 제목과 여백이 만드는 흐름이 끊깁니다. 같은 모양의 제목과 여백이 반복되는 콘텐츠의 흐름이 섹션이 바뀌었다는 인상을 줍니다."
+            heading="가까울수록 한 덩어리로 읽힌다"
+            description="사용자는 요소를 하나씩 읽기보다 가까이 놓인 것끼리 묶어 읽습니다. 그래서 덩어리 안의 간격은 덩어리 사이의 간격보다 좁아야 하며, 중첩이 한 단계 바깥으로 나갈수록 간격이 한 단계씩 커집니다. 같은 모양의 제목과 여백이 콘텐츠 그룹마다 반복되는 리듬은 구획되었다는 인상을 줍니다."
           >
-            <mm-content-section-list size="small">
-              <mm-text-block
-                level="4"
-                heading="간격"
-                description="간격은 숫자를 직접 쓰지 않고 토큰으로 정합니다. 단계가 정해져 있어야 화면마다 같은 위계에 같은 간격이 쓰이고, 값이 바뀌어도 한 곳에서 고칩니다."
-              >
-                <mm-text-list
-                  variant="check"
-                  .texts=${[
-                    rule(
-                      html`
-                        섹션 사이 간격은 부모 요소의 ${code('gap')}으로 둔다
-                      `,
-                      html`
-                        섹션의 ${code('margin')}·${code('padding')}으로 두지 않는다.
-                        <mm-link href="https://help.figma.com/hc/en-us/articles/360040451373">
-                          Figma 오토 레이아웃
-                        </mm-link>
-                        도 항목 사이 간격을 항목이 아니라 부모 프레임의 간격(Spacing between
-                        items)으로 정하며, 섹션이 빠지거나 순서가 바뀌어도 간격이 겹치거나 사라지지
-                        않는다
-                      `,
-                    ),
-                    html`
-                      ${code('mm-content-section-list')}가 섹션 사이의 ${code('gap')}을 맡는다
-                    `,
-                    html`
-                      ${code('mm-flex')}가 그 밖의 묶음 사이의 ${code('gap')}을 맡는다
-                    `,
-                  ]}
-                ></mm-text-list>
-                <mm-flex direction="column" gap="2">
-                  <mm-surface>
-                    <mm-text size="14">
-                      ${code('--space-subsection')} · 32px · 섹션 안의 하위 섹션 사이. 값은
-                      ${code('--space-8')}을 참조한다
-                    </mm-text>
-                  </mm-surface>
-                  <mm-surface>
-                    <mm-text size="14">
-                      ${code('--space-section')} · 64px · 섹션 사이. 값은 ${code('--space-16')}을
-                      참조한다
-                    </mm-text>
-                  </mm-surface>
-                </mm-flex>
-              </mm-text-block>
-
-              <mm-text-block
-                level="4"
-                heading="구분선"
-                description="구분선은 간격만으로 부족할 때 더하는 경계선입니다."
-              >
-                <mm-text-list
-                  variant="check"
-                  .texts=${[
-                    rule('separator는 서로 다른 맥락 사이에만 둔다'),
-                    rule(
-                      'separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다',
-                      '선 위아래에 separator의 간격이 이미 있어서, gap이 더해지면 이 경계만 다른 곳보다 넓게 벌어진다',
-                    ),
-                  ]}
-                ></mm-text-list>
-              </mm-text-block>
-            </mm-content-section-list>
+            ${renderSpacingOverview()}
           </mm-text-block>
 
-          <mm-notice>
-            <mm-text size="14">
-              페이지·콘텐츠 조립의 배치와 구획은
-              <mm-link href="./utilities.html">Utilities</mm-link>
-              가 맡습니다. Flex·Grid는 배치를, Page Header·Content Section·Text Block·Form Field는
-              제목과 구획을 정합니다.
-            </mm-text>
-          </mm-notice>
-        </mm-content-section-list>
-      </mm-tab-panel>
+          <mm-text-block level="3" heading="간격은 어떻게 정하나요">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    간격은 부모 요소의 ${code('gap')}으로 둔다
+                  `,
+                  html`
+                    형제의 ${code('margin')}·${code('padding')}으로 두지 않는다.
+                    <mm-link href="https://help.figma.com/hc/en-us/articles/360040451373">
+                      Figma 오토 레이아웃
+                    </mm-link>
+                    도 항목 사이 간격을 항목이 아니라 부모 프레임의 간격(Spacing between items)으로
+                    정하며, 항목이 빠지거나 순서가 바뀌어도 간격이 겹치거나 사라지지 않는다
+                  `,
+                ),
+                html`
+                  ${code('mm-content-section-list')}가 섹션 사이의 ${code('gap')}을 맡는다
+                `,
+              ]}
+            ></mm-text-list>
+          </mm-text-block>
 
-      <mm-tab-panel value="element">
-        <mm-content-section-list>
-          <mm-paragraph>
-            엘리먼트는 섹션 안에서 라벨·값·아이콘처럼 더 쪼갤 수 없는 가장 작은 콘텐츠 단위입니다.
-            사용자는 엘리먼트를 하나씩 읽기보다, 가까이 놓인 것끼리 한 의미 단위로 묶어 읽습니다.
-          </mm-paragraph>
           <mm-text-block
             level="3"
-            heading="엘리먼트 사이의 간격"
-            description="엘리먼트 사이의 간격이 어떤 것이 한 의미 단위인지 알려 줍니다."
+            heading="구분선"
+            description="구분선은 간격만으로 부족할 때 더하는 경계선입니다. 섹션마다 선을 그으면 페이지가 칸막이로 쪼개져 보이므로, 섹션은 기본적으로 여백과 제목으로 나눕니다."
           >
-            <mm-text-block
-              level="4"
-              heading="Group"
-              description="함께 읽어야 뜻이 완성되는 엘리먼트의 묶음입니다. 선이나 면 없이 간격만으로 한 덩어리로 읽히게 하며, 작은 항목마다 경계를 그으면 덩어리가 잘게 쪼개져 시선이 머물 곳이 흐려집니다."
-            >
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  rule(
-                    '간격 단계는 한 그룹 안에서 한 가지만 쓴다',
-                    '간격이 섞이면 더 벌어진 자리에서 그룹이 끊긴 것처럼 보여, 같은 그룹의 항목이 서로 다른 그룹으로 읽힌다',
-                  ),
-                ]}
-              ></mm-text-list>
-              <mm-table
-                .rows=${groupGapRows}
-                caption="그룹 컴포넌트가 쓰는 간격"
-                .columns=${[{ label: '그룹', width: '260px' }, { label: '간격' }]}
-              ></mm-table>
-            </mm-text-block>
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule('separator는 서로 다른 맥락 사이에만 둔다'),
+                rule(
+                  'separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다',
+                  '선 위아래에 separator의 간격이 이미 있어서, gap이 더해지면 이 경계만 다른 곳보다 넓게 벌어진다',
+                ),
+              ]}
+            ></mm-text-list>
           </mm-text-block>
         </mm-content-section-list>
       </mm-tab-panel>
