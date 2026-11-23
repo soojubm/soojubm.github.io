@@ -9,9 +9,16 @@ import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import type { ComponentVariant } from '@/stylesheets/shared.types'
 
-export type AvatarVariant = Extract<ComponentVariant, 'primary' | 'secondary' | 'tertiary'>
-export type AvatarSize = '80' | '48' | '40' | '32'
-export type AvatarShape = 'circle' | 'square'
+export const AVATAR_VARIANTS = [
+  'primary',
+  'secondary',
+  'tertiary',
+] as const satisfies readonly ComponentVariant[]
+export type AvatarVariant = (typeof AVATAR_VARIANTS)[number]
+export const AVATAR_SIZES = ['80', '48', '40', '32'] as const
+export type AvatarSize = (typeof AVATAR_SIZES)[number]
+export const AVATAR_SHAPES = ['square', 'circle'] as const
+export type AvatarShape = (typeof AVATAR_SHAPES)[number]
 @customElement('mm-avatar')
 export class Avatar extends LitElement {
   static styles = [resetStyles, avatarStyles]

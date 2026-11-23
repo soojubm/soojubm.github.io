@@ -6,7 +6,13 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { ICON_NAMES, type AvatarItem } from '@/components/common'
+import {
+  AVATAR_SHAPES,
+  AVATAR_SIZES,
+  AVATAR_VARIANTS,
+  ICON_NAMES,
+  type AvatarItem,
+} from '@/components/common'
 import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -33,14 +39,15 @@ const groupAvatars: AvatarItem[] = [
   {},
 ]
 
-const variantCode = `<mm-avatar variant="primary" size="48" icon="profile-circle"></mm-avatar>
-<mm-avatar variant="secondary" size="48" icon="profile-circle"></mm-avatar>
-<mm-avatar variant="tertiary" size="48" icon="profile-circle"></mm-avatar>`
+const variantCode = AVATAR_VARIANTS.map(
+  variant => `<mm-avatar variant="${variant}" size="48" icon="profile-circle"></mm-avatar>`,
+).join('\n')
 
-const sizeCode = `<mm-avatar size="80" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-<mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-<mm-avatar size="40" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-<mm-avatar size="32" shape="circle" src="/src/images/soojubm.png"></mm-avatar>`
+const sizeCode = [...AVATAR_SIZES]
+  .map(
+    size => `<mm-avatar size="${size}" shape="circle" src="/src/images/soojubm.png"></mm-avatar>`,
+  )
+  .join('\n')
 
 const shapeCode = `<mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
 <mm-avatar size="48" icon="github"></mm-avatar>`
@@ -51,12 +58,10 @@ const fallbackCode = `<mm-avatar size="40">MM</mm-avatar>
 </mm-avatar>
 <mm-avatar size="40"></mm-avatar>`
 
-const avatarTokenVariants = ['primary', 'secondary', 'tertiary'].map(value => ({
-  value,
-  label: value,
-}))
-const avatarTokenShapes = ['square', 'circle'].map(value => ({ value, label: value }))
-const avatarTokenSizes = ['32', '40', '48', '80'].map(value => ({ value, label: value }))
+const toOptions = (values: readonly string[]) => values.map(value => ({ value, label: value }))
+const avatarTokenVariants = toOptions(AVATAR_VARIANTS)
+const avatarTokenShapes = toOptions(AVATAR_SHAPES)
+const avatarTokenSizes = toOptions(AVATAR_SIZES)
 
 // select를 고르면 토큰 카드가 그 variant·size에서 먹는 값으로 바뀐다.
 const syncAvatarTokens = () => {
@@ -97,9 +102,11 @@ const main = html`
       <mm-tab-panel value="variant">
         <mm-component-example>
           <mm-flex gap="2">
-            <mm-avatar variant="primary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-            <mm-avatar variant="secondary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
-            <mm-avatar variant="tertiary" size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+            ${AVATAR_VARIANTS.map(
+              variant => html`
+                <mm-avatar variant=${variant} size="48" icon=${ICON_NAMES.PROFILE}></mm-avatar>
+              `,
+            )}
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
@@ -108,10 +115,11 @@ const main = html`
         <mm-component-example>
           <mm-flex direction="column" gap="6">
             <mm-flex gap="2" align-items="flex-end">
-              <mm-avatar size="80" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-              <mm-avatar size="48" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-              <mm-avatar size="40" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
-              <mm-avatar size="32" shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+              ${[...AVATAR_SIZES].map(
+                size => html`
+                  <mm-avatar size=${size} shape="circle" src="/src/images/soojubm.png"></mm-avatar>
+                `,
+              )}
             </mm-flex>
             <mm-paragraph>48 이상에서는 아이콘과 이니셜도 한 단계 커집니다.</mm-paragraph>
           </mm-flex>
