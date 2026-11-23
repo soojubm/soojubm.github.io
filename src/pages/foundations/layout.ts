@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { TagTone } from '@/components/common/tag/tag.styles'
 import type { TemplateResult } from 'lit'
 
 import './layout.css'
@@ -124,55 +125,199 @@ type PlacementType =
 // viewport overlay (sheet · dialog)
 type ViewportPlacementType = 'center' | Side`
 
-/** 뷰포트 안에서 본문이 차지하는 너비를 보이는 브라우저 창 그래픽. */
-const browserWindow = (content: TemplateResult) => html`
-  <div class="browser-window">
-    <div class="browser-window-header" aria-hidden="true">
-      <div class="browser-window-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="browser-window-address">
-        <mm-caption>localhost:3000</mm-caption>
-      </div>
-      <div class="browser-window-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-    <div class="browser-window-body">${content}</div>
+interface LayoutTier {
+  name: string
+  tone: TagTone
+}
+
+/** 큰 단위에서 작은 단위로 포함 관계를 따라 나열한다. */
+const layoutTiers: LayoutTier[] = [
+  { name: 'Page', tone: 'blue' },
+  { name: 'Section', tone: 'purple' },
+  { name: 'Group', tone: 'orange' },
+  { name: 'Element', tone: 'green' },
+]
+
+/** 오버레이는 Section 아래가 아니라 Page와 같은 수준에서 따로 놓인다. */
+const overlayTier: LayoutTier = {
+  name: 'Overlay',
+  tone: 'pink',
+}
+
+const [pageTier, sectionTier, groupTier, elementTier] = layoutTiers
+
+/** 한 섹션 안의 그룹 수와 한 그룹 안의 엘리먼트 수. 하나뿐이면 묶음처럼 보이지 않아 여럿을 둔다. */
+const sectionCount = 2
+const groupCountPerSection = 2
+const elementCountPerGroup = 3
+
+const repeat = (count: number, render: () => TemplateResult) =>
+  Array.from({ length: count }, render)
+
+const renderTierLabel = ({ name, tone }: LayoutTier) => html`
+  <mm-code-tag tone=${tone}>${name}</mm-code-tag>
+`
+
+const renderGroupBox = () => html`
+  <div class="layout-tier-group">
+    ${renderTierLabel(groupTier)}
+    ${repeat(elementCountPerGroup, () => renderTierLabel(elementTier))}
   </div>
 `
 
-/** 설명을 브라우저 그래픽 위에 두고, 창 안에는 본문이 차지하는 너비만 보인다. */
+const renderSectionCircle = () => html`
+  <div class="layout-tier-circle layout-tier-section">
+    ${renderTierLabel(sectionTier)}
+    <mm-flex gap="2" align-items="center" justify-content="center">
+      ${repeat(groupCountPerSection, renderGroupBox)}
+    </mm-flex>
+  </div>
+`
+
+const renderLayoutTierDiagram = () => html`
+  <mm-flex direction="column" gap="6" class="layout-tier-diagram">
+    <mm-flex gap="4" wrap="wrap" align-items="flex-start">
+      <div class="layout-tier-page">
+        ${renderTierLabel(pageTier)}
+        <mm-flex gap="6" align-items="center" justify-content="center" wrap="wrap">
+          ${repeat(sectionCount, renderSectionCircle)}
+        </mm-flex>
+      </div>
+      <div class="layout-tier-page">${renderTierLabel(overlayTier)}</div>
+    </mm-flex>
+  </mm-flex>
+`
+
+/** 화면 폭을 나타내는 트랙 위에, 본문이 차지하는 너비만큼의 막대를 가운데에 놓는다. */
 const widthExample = (options: {
   caption: string
   token: string
+  category: number
+  tone: TagTone
   maxWidth?: string
+  description?: string
   links: [href: string, label: string][]
 }) => html`
   <mm-flex direction="column" gap="2">
-    <mm-flex direction="column" gap="1">
-      <mm-caption>${options.caption}</mm-caption>
-      ${code(options.token)}
-      <mm-flex gap="3">
-        ${options.links.map(
-          ([href, label]) =>
-            html`
-              <mm-link href=${href}>${label}</mm-link>
-            `,
-        )}
-      </mm-flex>
+    <div class="width-track">
+      <div
+        class="width-bar"
+        style=${`--width-bar-background-color: var(--category-${
+          options.category
+        }-background-color);${options.maxWidth ? ` max-width: ${options.maxWidth}` : ''}`}
+      >
+        <mm-code-tag tone=${options.tone}>${options.token}</mm-code-tag>
+      </div>
+    </div>
+    <mm-caption>${options.caption}</mm-caption>
+    ${options.description
+      ? html`
+          <mm-paragraph>${options.description}</mm-paragraph>
+        `
+      : ''}
+    <mm-flex gap="3" wrap="wrap">
+      ${options.links.map(
+        ([href, label]) =>
+          html`
+            <mm-link href=${href}>${label}</mm-link>
+          `,
+      )}
     </mm-flex>
-    ${browserWindow(html`
-      <mm-surface
-        variant="filled"
-        style=${options.maxWidth ? `max-width: ${options.maxWidth}` : ''}
-      ></mm-surface>
-    `)}
   </mm-flex>
+`
+
+/** 페이지 너비와 같은 트랙·막대 모양으로, 트랙의 배경만 달리해 배경 대비를 보인다. */
+const renderBackgroundExample = (options: {
+  caption: string
+  value: string
+  subtle?: boolean
+}) => html`
+  <mm-flex direction="column" gap="2">
+    <div class="width-track" data-subtle=${options.subtle ? 'true' : 'false'}>
+      <div
+        class="width-bar"
+        data-outlined
+        style="--width-bar-background-color: var(--background-color); max-width: var(--layout-width-small)"
+      >
+        <mm-code-tag>${options.value}</mm-code-tag>
+      </div>
+    </div>
+    <mm-caption>${options.caption}</mm-caption>
+  </mm-flex>
+`
+
+/** 섹션의 슬롯 하나. 이름표 옆에 그 슬롯이 맡는 일을 한 줄로 적는다. */
+const renderSlotLabel = (name: string, tone: TagTone, role: TemplateResult | string) => html`
+  <mm-flex direction="column" align-items="flex-start" gap="1">
+    <mm-code-tag tone=${tone}>${name}</mm-code-tag>
+    <mm-caption>${role}</mm-caption>
+  </mm-flex>
+`
+
+/** 섹션을 슬롯 위치대로 그려, 제목 줄·설명·본문이 어디에 놓이는지 보인다. */
+const renderSectionAnatomy = () => html`
+  <mm-token-stage>
+    <mm-surface class="stage-width">
+      <mm-flex direction="column" gap="4">
+        <mm-flex justify-content="space-between" align-items="flex-start" gap="4" wrap="wrap">
+          ${renderSlotLabel(
+            'heading',
+            'blue',
+            html`
+              섹션이 무엇을 다루는지 대표하는 제목. 위계는 ${code('heading-level')}로 정한다
+            `,
+          )}
+          ${renderSlotLabel('action', 'orange', '“모두 보기”처럼 섹션 전체에 걸리는 동작만 받는다')}
+        </mm-flex>
+        ${renderSlotLabel('description', 'purple', '내용을 읽기 전에 섹션이 다루는 범위를 알린다')}
+        <mm-surface variant="filled" class="section-anatomy-content">
+          ${renderSlotLabel(
+            'content',
+            'green',
+            '설명 다음에 이어지는 기본 슬롯. 섹션의 본문이 놓인다',
+          )}
+        </mm-surface>
+      </mm-flex>
+    </mm-surface>
+  </mm-token-stage>
+`
+
+const renderElementLabels = (count: number) => repeat(count, () => renderTierLabel(elementTier))
+
+/** 섹션의 action으로 이동하면, 그 섹션의 content가 다음 화면의 페이지를 채우는 흐름. */
+const renderSectionFlow = () => html`
+  <mm-token-stage>
+    <mm-flex class="stage-width" gap="4" align-items="center" wrap="wrap">
+      <div class="layout-tier-page section-flow-page">
+        ${renderTierLabel(pageTier)}
+        <mm-surface>
+          <mm-flex direction="column" gap="3">
+            <mm-flex justify-content="space-between" align-items="center" gap="3">
+              ${renderTierLabel(sectionTier)}
+              <mm-code-tag tone="orange">action</mm-code-tag>
+            </mm-flex>
+            <mm-flex gap="1" wrap="wrap">${renderElementLabels(3)}</mm-flex>
+          </mm-flex>
+        </mm-surface>
+        <mm-surface>
+          <mm-flex direction="column" gap="3">
+            ${renderTierLabel(sectionTier)}
+            <mm-flex gap="1" wrap="wrap">${renderElementLabels(2)}</mm-flex>
+          </mm-flex>
+        </mm-surface>
+      </div>
+      <mm-flex direction="column" align-items="center" gap="1">
+        <mm-caption>action</mm-caption>
+        <span class="section-flow-arrow" aria-hidden="true">→</span>
+      </mm-flex>
+      <div class="layout-tier-page section-flow-page">
+        ${renderTierLabel(pageTier)}
+        <mm-flex direction="column" align-items="flex-start" gap="1">
+          ${renderElementLabels(6)}
+        </mm-flex>
+      </div>
+    </mm-flex>
+  </mm-token-stage>
 `
 
 const main = html`
@@ -183,6 +328,8 @@ const main = html`
     ></mm-page-header>
 
     <mm-page-body>
+      <mm-token-stage>${renderLayoutTierDiagram()}</mm-token-stage>
+
       <mm-tab-list value="page" variant="text" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
         <mm-tab value="section">Section</mm-tab>
@@ -193,43 +340,39 @@ const main = html`
       <mm-tab-panel value="page">
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="페이지 너비">
-            <mm-paragraph>너비로 읽기 밀도를 정합니다.</mm-paragraph>
-            <mm-text-list
-              .texts=${[
-                '좁은 폭은 폼·인증처럼 한 가지 작업에 집중시킨다',
-                '넓은 폭은 목록·대시보드처럼 훑어보는 화면에 쓴다',
-                html`
-                  본문 골격은 ${code('mm-main')}의 width로, 떠오르는 overlay는 각 컴포넌트의 width로
-                  지정한다
-                `,
-              ]}
-            ></mm-text-list>
-            <mm-component-example full-width>
-              <mm-flex direction="column" gap="6">
+            <mm-paragraph>
+              너비로 읽기 밀도를 정합니다. 본문 골격은 ${code('mm-main')}의 width로, 떠오르는
+              overlay는 각 컴포넌트의 width로 지정합니다.
+            </mm-paragraph>
+            <mm-token-stage>
+              <mm-flex class="stage-width" direction="column" gap="6">
                 ${widthExample({
-                  caption: '집중형 · 폼, 인증, dialog, tooltip',
-                  token: '--layout-width-narrow · 400px',
+                  caption: '집중형 · 폼, 인증',
+                  description: '좁은 폭은 폼·인증처럼 한 가지 작업에 집중시킨다',
+                  token: '400px',
+                  category: 2,
+                  tone: 'green',
                   maxWidth: 'var(--layout-width-narrow)',
-                  links: [
-                    ['./auth.html', 'Auth'],
-                    ['./dialog.html', 'Dialog'],
-                    ['./tooltip.html', 'Tooltip'],
-                  ],
+                  links: [['./auth.html', 'Auth']],
                 })}
                 ${widthExample({
-                  caption: '일반 문서 · 에디토리얼, 설정, 대화, sheet',
-                  token: '--layout-width-small · 640px',
+                  caption: '일반 문서 · 에디토리얼, 설정, 대화',
+                  token: '640px',
+                  category: 1,
+                  tone: 'blue',
                   maxWidth: 'var(--layout-width-small)',
                   links: [
                     ['./post.html', 'Post'],
                     ['./setting.html', 'Setting'],
                     ['./chat.html', 'Chat'],
-                    ['./sheet.html', 'Sheet'],
                   ],
                 })}
                 ${widthExample({
                   caption: '확장형 · 목록, 대시보드, 상품, 프로필',
-                  token: 'width 미지정 · 콘텐츠 영역 전체',
+                  description: '넓은 폭은 목록·대시보드처럼 훑어보는 화면에 쓴다',
+                  token: '콘텐츠 영역 전체',
+                  category: 8,
+                  tone: 'purple',
                   links: [
                     ['./dashboard.html', 'Dashboard'],
                     ['./product.html', 'Product'],
@@ -237,70 +380,24 @@ const main = html`
                   ],
                 })}
               </mm-flex>
-            </mm-component-example>
+            </mm-token-stage>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="배경 대비">
-            <mm-paragraph-group>
-              <mm-paragraph>
-                글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계
-                낮춰 다른 맥락으로 넘어왔다는 감각을 줍니다.
-              </mm-paragraph>
-              <mm-paragraph>
-                ${code('mm-main')}의 ${code('background')}를 ${code('subtle')}로 지정합니다.
-              </mm-paragraph>
-            </mm-paragraph-group>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="층위">
             <mm-paragraph>
-              층위는 특정 콘텐츠를 주변보다 앞으로 올려, 사용자의 시선이 그곳에 먼저 머물게 합니다.
+              글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계 낮춰
+              다른 맥락으로 넘어왔다는 감각을 줍니다.
             </mm-paragraph>
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '배경과 표면의 명도 차이로 앞뒤를 먼저 구분하고, 그림자는 강조되는 영역에도 쓴다',
-                ),
-                rule(
-                  html`
-                    폼·카드·편집 영역처럼 독립적으로 다루는 섹션만 ${code('mm-surface')}로 감싸
-                    분리한다
-                  `,
-                  '배경·표면·그림자를 여러 영역에 여러 단계로 겹치면 어디가 중요한지 흐려져 강조가 사라진다',
-                ),
-                rule(
-                  '정적인 층위와 hover 피드백을 구분한다',
-                  html`
-                    hover에서 잠깐 떠오르는 ${code('--interaction-hover-lift')}는 층위가 아니라
-                    상호작용 피드백이며,
-                    <mm-link href="./interaction.html">Interaction</mm-link>
-                    문서의 조작 상태가 다룬다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-component-example full-width>
-              ${browserWindow(html`
-                <div class="app-shell">
-                  <mm-surface variant="outlined" class="app-shell-topbar">
-                    <mm-caption>Top Bar · chrome</mm-caption>
-                  </mm-surface>
-                  <mm-surface variant="outlined" class="app-shell-sidebar">
-                    <mm-caption>Sidebar · chrome-top</mm-caption>
-                  </mm-surface>
-                  <mm-surface variant="ghost" class="app-shell-content">
-                    <mm-caption>Content · base</mm-caption>
-                    <mm-surface variant="elevated" class="app-shell-overlay">
-                      <mm-caption>Overlay · toast</mm-caption>
-                    </mm-surface>
-                  </mm-surface>
-                  <mm-surface variant="outlined" class="app-shell-bottombar">
-                    <mm-caption>Bottom Bar · chrome</mm-caption>
-                  </mm-surface>
-                </div>
-              `)}
-            </mm-component-example>
+            <mm-token-stage>
+              <mm-flex class="stage-width" direction="column" gap="6">
+                ${renderBackgroundExample({ caption: '이전 화면', value: 'background 기본' })}
+                ${renderBackgroundExample({
+                  caption: '다른 정보 구조 · 글쓰기, 설정, 소개',
+                  value: 'background="subtle"',
+                  subtle: true,
+                })}
+              </mm-flex>
+            </mm-token-stage>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
@@ -312,42 +409,13 @@ const main = html`
               섹션은 제목을 가진 가장 큰 콘텐츠 덩어리입니다. 섹션 사이는 요소나 묶음 사이보다 크게
               벌려, 사용자가 주제가 바뀌었다는 것을 간격만으로 알아차리게 합니다.
             </mm-paragraph>
-            <mm-grid columns="2" gap="4">
-              <mm-surface>
-                <mm-content-section heading-level="3" heading="heading">
-                  <mm-paragraph>
-                    섹션이 무엇을 다루는지 대표하는 제목입니다. 위계는 ${code('heading-level')}로
-                    정합니다.
-                  </mm-paragraph>
-                  <mm-keyword-tag-group
-                    heading="heading-level"
-                    .keywords=${['2', '3', '4']}
-                  ></mm-keyword-tag-group>
-                </mm-content-section>
-              </mm-surface>
-              <mm-surface>
-                <mm-content-section heading-level="3" heading="action">
-                  <mm-paragraph>
-                    제목 줄 오른쪽에 놓이는 슬롯입니다. “모두 보기”처럼 섹션 전체에 걸리는 동작만
-                    받습니다.
-                  </mm-paragraph>
-                </mm-content-section>
-              </mm-surface>
-              <mm-surface>
-                <mm-content-section heading-level="3" heading="description">
-                  <mm-paragraph>
-                    본문의 첫 단락입니다. 내용을 읽기 전에 섹션이 다루는 범위를 먼저 알립니다.
-                  </mm-paragraph>
-                </mm-content-section>
-              </mm-surface>
-              <mm-surface>
-                <mm-content-section heading-level="3" heading="content">
-                  <mm-paragraph>
-                    설명 다음에 이어지는 기본 슬롯입니다. 섹션의 본문이 놓입니다.
-                  </mm-paragraph>
-                </mm-content-section>
-              </mm-surface>
-            </mm-grid>
+            ${renderSectionAnatomy()}
+            <mm-paragraph>
+              섹션의 ${code('action')}으로 이동하면, 그 섹션의 ${code('content')}가 다음 화면의
+              페이지를 채웁니다. 한 화면의 섹션이 다음 화면에서는 콘텐츠 목록 페이지가 되므로,
+              섹션은 나중에 페이지로 펼쳐져도 어색하지 않은 단위로 나눕니다.
+            </mm-paragraph>
+            ${renderSectionFlow()}
           </mm-flex>
           <mm-text-block
             level="3"

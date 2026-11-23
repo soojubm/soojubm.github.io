@@ -1,118 +1,89 @@
-.app-shell {
-  display: grid;
-  grid-template-columns: minmax(var(--size-80), 0.3fr) minmax(0, 1fr);
-  grid-template-rows: auto minmax(calc(var(--size-80) * 2), 1fr) auto;
-  grid-template-areas:
-    'topbar topbar'
-    'sidebar content'
-    'bottombar bottombar';
-  gap: var(--space-1);
-  width: 100%;
-  padding: var(--space-1);
-  border-radius: var(--border-radius);
-  background: var(--background-subtle-color);
-  /* 예시 안의 toast z-index가 실제 navbar·사이드바 위로 올라가지 않도록 예시 안에 가둔다 */
-  isolation: isolate;
-}
-
-.app-shell mm-surface {
+/* 면의 명도 차이로 포함 관계를 보인다. 바깥 원은 옅은 면, 안쪽 원은 배경색 면으로 한 단계씩 올라온다. */
+.layout-tier-page {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-}
-
-.app-shell-topbar {
-  grid-area: topbar;
-}
-
-.app-shell-sidebar {
-  grid-area: sidebar;
-}
-
-.app-shell-content {
-  grid-area: content;
-  position: relative;
-}
-
-.app-shell-bottombar {
-  grid-area: bottombar;
-}
-
-.app-shell-overlay {
-  width: min(60%, calc(var(--size-80) * 3));
-  position: absolute;
-  right: var(--space-4);
-  bottom: var(--space-4);
-  z-index: var(--material-zindex-toast);
-}
-
-.browser-window {
-  overflow: hidden;
+  gap: var(--space-4);
+  padding: var(--space-4);
   border: var(--border);
   border-radius: var(--border-radius-large);
-  background: var(--background-color);
 }
 
-.browser-window-header {
+.layout-tier-circle {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-2) var(--space-4);
-  background: var(--background-subtle-color);
-}
-
-.browser-window-dots {
-  display: flex;
-  gap: var(--space-1);
-}
-
-.browser-window-dots span {
-  width: 8px;
-  height: 8px;
+  justify-content: center;
+  gap: var(--space-2);
+  box-sizing: border-box;
+  aspect-ratio: 1;
   border-radius: var(--border-radius-full);
 }
 
-.browser-window-dots span:nth-child(1) {
-  background: var(--red800);
+.layout-tier-section {
+  width: calc(var(--size-80) * 3.5);
+  padding: var(--space-4);
+  background: var(--background-subtle-color);
 }
 
-.browser-window-dots span:nth-child(2) {
-  background: var(--yellow800);
-}
-
-.browser-window-dots span:nth-child(3) {
-  background: var(--green800);
-}
-
-.browser-window-address {
-  flex: 1;
-  padding: var(--space-1) var(--space-3);
+.layout-tier-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3);
   border-radius: var(--border-radius);
   background: var(--background-color);
 }
 
-.browser-window-menu {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.browser-window-menu span {
-  width: var(--size-16);
-  height: calc(var(--border-width) * 2);
-  background: var(--foreground-subtle-color);
-}
-
-.browser-window-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--space-4);
-}
-
-.browser-window-body > mm-surface {
+.layout-tier-diagram {
   width: 100%;
 }
 
-.browser-window-body > mm-surface:empty {
-  min-height: var(--size-16);
+/* 트랙은 화면 폭, 막대는 본문 폭이다. 막대가 트랙보다 좁으면 가운데에 놓인다. */
+.stage-width {
+  width: 100%;
+}
+
+.width-track {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-2);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background: var(--background-color);
+}
+
+.width-track[data-subtle='true'] {
+  background: var(--background-subtle-color);
+}
+
+.width-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: var(--size-48);
+  border-radius: var(--border-radius);
+  background: var(--width-bar-background-color);
+}
+
+.width-bar[data-outlined] {
+  border: var(--border);
+}
+
+/* 본문 슬롯은 제목·설명보다 넓은 영역을 차지하는 자리라, 최소 높이로 그 크기를 보인다. */
+.section-anatomy-content {
+  min-height: calc(var(--size-80) * 1.5);
+}
+
+.section-flow-page {
+  flex: 1 1 var(--size-80);
+  min-width: calc(var(--size-80) * 2);
+  box-sizing: border-box;
+}
+
+.section-flow-arrow {
+  font-family: var(--font-family-code);
+  color: var(--foreground-subtle-color);
 }
