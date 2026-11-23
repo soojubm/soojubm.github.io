@@ -53,87 +53,40 @@ mm-token-stage:hover .motion-dot {
 }
 
 .name-anatomy {
+  --name-joiner-height: var(--size-24);
+
   display: flex;
   align-items: flex-start;
   gap: var(--space-1);
 }
 
-/* 단어가 많은 분류는 줄을 넘겨, 넘친 단어도 컴포넌트명 뒤 같은 세로선에서 이어진다. */
 /* mm-scroll은 자식을 내용 너비로 두므로, 줄바꿈·그리드가 스테이지 너비를 쓰려면 너비를 직접 채운다. */
 .stage-content {
   width: 100%;
 }
 
-.category-words {
-  display: flex;
-  flex: 1;
-  min-width: 0;
-  flex-wrap: wrap;
-  gap: var(--space-2);
+/* 자리는 줄어들지 않고, 정해진 열 수로 단어를 접어 내용 폭만 차지한다. */
+.name-slot {
+  flex-shrink: 0;
+}
+
+.slot-words {
+  display: grid;
+  grid-template-columns: repeat(var(--slot-columns), max-content);
+  justify-items: start;
+  gap: var(--space-1);
+}
+
+/* 계층 사슬은 큰 code-tag를 써서 화살표도 그 높이에 맞춘다. */
+.tier-chain {
+  --name-joiner-height: var(--size-32);
 }
 
 .name-joiner {
-  height: var(--size-32);
-  line-height: var(--size-32);
+  height: var(--name-joiner-height);
+  line-height: var(--name-joiner-height);
   font-family: var(--font-family-code);
   color: var(--foreground-subtle-color);
-}
-
-/* 자리마다 카테고리컬 색을 하나씩 줘서, 줄이 달라도 같은 자리끼리 같은 색으로 묶여 읽힌다. */
-.name-segment {
-  display: inline-flex;
-  align-items: center;
-  height: var(--size-32);
-  padding: 0 var(--space-3);
-  border-radius: var(--radius);
-  background: var(--category-1-background-color);
-  font-family: var(--font-family-code);
-  font-size: var(--font-size-14);
-  color: var(--foreground-color);
-}
-
-.name-segment[data-part='modifier'] {
-  background: var(--category-4-background-color);
-}
-
-.name-segment[data-part='kind'] {
-  background: var(--category-2-background-color);
-}
-
-.name-segment[data-part='name'] {
-  background: var(--background-subtle-color);
-}
-
-.name-segment[data-category='color'] {
-  background: var(--category-3-background-color);
-}
-
-.name-segment[data-category='dimension'] {
-  background: var(--category-1-background-color);
-}
-
-.name-segment[data-category='typography'] {
-  background: var(--category-4-background-color);
-}
-
-.name-segment[data-category='surface'] {
-  background: var(--category-2-background-color);
-}
-
-.name-segment[data-category='state'] {
-  background: var(--category-8-background-color);
-}
-
-.name-segment[data-tier='component'] {
-  background: var(--category-3-background-color);
-}
-
-.name-segment[data-tier='semantic'] {
-  background: var(--category-5-background-color);
-}
-
-.name-segment[data-tier='primitive'] {
-  background: var(--category-6-background-color);
 }
 
 /* 겹친 마름모와 3×3 원 묶음을 가운데에 나란히 둔다. 높이를 고정해 좁은 화면에서도 꼭짓점이 잘리지 않는다. */
@@ -235,41 +188,10 @@ mm-token-stage:hover .motion-dot {
   content: '';
 }
 
-.kind-figure[data-tier='semantic'][data-kind='background']::before {
-  background: var(--background-strong-color);
-}
-
-.kind-figure[data-tier='semantic'][data-kind='foreground']::before {
-  content: 'Aa';
-  width: auto;
-  height: auto;
-  font-size: var(--font-size-24);
-  font-weight: var(--font-weight-bold);
-  color: var(--foreground-color);
-}
-
-.kind-figure[data-tier='semantic'][data-kind='border']::before {
-  box-shadow: inset 0 0 0 var(--border-width) var(--foreground-subtle-color);
-}
-
 .kind-figure[data-tier='semantic'][data-kind='interaction']::before {
   outline: var(--interaction-focus-outline);
   outline-offset: var(--space-1);
   background: var(--interaction-active-background-color);
-}
-
-.kind-figure[data-tier='semantic'][data-kind='space']::before,
-.kind-figure[data-tier='semantic'][data-kind='space']::after {
-  content: '';
-  width: var(--space-1);
-  height: var(--size-40);
-  border-radius: var(--radius);
-  background: var(--background-strong-color);
-}
-
-.kind-figure[data-tier='semantic'][data-kind='material']::before {
-  background: var(--background-color);
-  box-shadow: var(--material-elevated-shadow);
 }
 
 .kind-figure[data-tier='primitive'][data-kind='color']::before {
@@ -310,25 +232,25 @@ mm-token-stage:hover .motion-dot {
     linear-gradient(var(--background-strong-color) 0 0) right 0 / var(--bar) 100% no-repeat;
 }
 
-.kind-figure[data-tier='primitive'][data-kind='radius']::before,
-.kind-figure[data-tier='primitive'][data-kind='radius']::after {
+.kind-figure[data-tier='primitive'][data-kind='border']::before,
+.kind-figure[data-tier='primitive'][data-kind='border']::after {
   content: '';
   box-shadow: inset 0 0 0 var(--border-width) var(--foreground-subtle-color);
 }
 
-.kind-figure[data-tier='primitive'][data-kind='radius']::after {
+.kind-figure[data-tier='primitive'][data-kind='border']::after {
   border-radius: var(--radius-full);
 }
 
 /* 같은 글자를 작은 단계와 큰 단계로 놓아 기준선에 맞추고, 줄 전체는 칸 가운데에 둔다. */
-.kind-figure[data-tier='primitive'][data-kind='font-size'] {
+.kind-figure[data-tier='primitive'][data-kind='typography'] {
   flex-wrap: wrap;
   align-content: center;
   align-items: baseline;
 }
 
-.kind-figure[data-tier='primitive'][data-kind='font-size']::before,
-.kind-figure[data-tier='primitive'][data-kind='font-size']::after {
+.kind-figure[data-tier='primitive'][data-kind='typography']::before,
+.kind-figure[data-tier='primitive'][data-kind='typography']::after {
   content: 'Aa';
   width: auto;
   height: auto;
@@ -337,17 +259,17 @@ mm-token-stage:hover .motion-dot {
   color: var(--foreground-color);
 }
 
-.kind-figure[data-tier='primitive'][data-kind='font-size']::after {
+.kind-figure[data-tier='primitive'][data-kind='typography']::after {
   font-size: var(--font-size-32);
 }
 
-.kind-figure[data-tier='primitive'][data-kind='shadow']::before,
-.kind-figure[data-tier='primitive'][data-kind='shadow']::after {
+.kind-figure[data-tier='primitive'][data-kind='material']::before,
+.kind-figure[data-tier='primitive'][data-kind='material']::after {
   content: '';
   background: var(--background-color);
   box-shadow: var(--shadow-12);
 }
 
-.kind-figure[data-tier='primitive'][data-kind='shadow']::after {
+.kind-figure[data-tier='primitive'][data-kind='material']::after {
   box-shadow: var(--shadow-32);
 }

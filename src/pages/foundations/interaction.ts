@@ -1,10 +1,11 @@
 import '@/components/common'
-import { html, type TemplateResult } from 'lit'
+import { html, nothing, type TemplateResult } from 'lit'
 
 import { ICON_NAMES, STATUS_ICONS } from '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import { code, codeList, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
+import './interaction.css'
 
 /**
  * 상태 토큰을 목록과 같은 순서로 칠한 스와치. 스와치는 공통 박스를 쓰고,
@@ -203,6 +204,49 @@ const selectionTableColumns = [
   { label: '옵션 전달' },
 ]
 
+/** 조작 상태마다 그 상태의 토큰을 입힌 도형과 이름·선택자·설명을 한 카드로 보여 준다. */
+const operationStates = [
+  { state: 'hover', selector: ':hover', description: '포인터가 올라와 있다는 표시입니다.' },
+  {
+    state: 'focus',
+    selector: ':focus-visible',
+    description:
+      '키보드가 지금 이 요소에 있다는 표시입니다. 포인터로 누른 요소에는 링이 남지 않습니다.',
+  },
+  { state: 'active', selector: ':active', description: '지금 누르고 있다는 표시입니다.' },
+  {
+    state: 'disabled',
+    selector: 'disabled',
+    description: '지금은 조작을 받지 않는다는 표시입니다.',
+  },
+]
+
+// 선택자가 상태 이름과 같으면(disabled) 같은 태그를 두 번 보이지 않는다.
+const renderSelector = (state: string, selector: string) => {
+  if (selector === state) return nothing
+
+  return html`
+    <mm-code-tag>${selector}</mm-code-tag>
+  `
+}
+
+const renderOperationState = ({
+  state,
+  selector,
+  description,
+}: (typeof operationStates)[number]) => html`
+  <mm-flex direction="column" gap="3">
+    <span class="state-figure" data-state=${state} aria-hidden="true"></span>
+    <mm-flex direction="column" align-items="flex-start" gap="1">
+      <mm-tag-group>
+        <mm-code-tag tone="purple">${state}</mm-code-tag>
+        ${renderSelector(state, selector)}
+      </mm-tag-group>
+      <mm-caption>${description}</mm-caption>
+    </mm-flex>
+  </mm-flex>
+`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -244,46 +288,7 @@ const main = html`
           <mm-content-section heading-level="3" heading="조작 상태">
             <mm-paragraph>UI 요소의 상호작용 상태입니다.</mm-paragraph>
             ${renderTokenSet('조작 상태', operationTokens, operationSwatches)}
-            <mm-flex direction="column" gap="6">
-              <mm-flex direction="column" gap="2">
-                <mm-list-item
-                  icon=${ICON_NAMES.CLICK}
-                  size="medium"
-                  label="Hover"
-                  description="포인터가 올라와 있다는 표시입니다."
-                >
-                  <mm-code slot="trailing">:hover</mm-code>
-                </mm-list-item>
-              </mm-flex>
-              <mm-flex direction="column" gap="2">
-                <mm-list-item
-                  icon=${ICON_NAMES.CUBE_SCAN}
-                  size="medium"
-                  label="Focus"
-                  description="키보드가 지금 이 요소에 있다는 표시입니다. 포인터로 누른 요소에는 링이 남지 않습니다."
-                >
-                  <mm-code slot="trailing">:focus-visible</mm-code>
-                </mm-list-item>
-              </mm-flex>
-              <mm-flex direction="column" gap="2">
-                <mm-list-item
-                  icon=${ICON_NAMES.MOUSE_BUTTON}
-                  size="medium"
-                  label="Active"
-                  description="지금 누르고 있다는 표시입니다."
-                >
-                  <mm-code slot="trailing">:active</mm-code>
-                </mm-list-item>
-              </mm-flex>
-              <mm-list-item
-                icon=${ICON_NAMES.LOCK}
-                size="medium"
-                label="Disabled"
-                description="지금은 조작을 받지 않는다는 표시입니다."
-              >
-                <mm-code slot="trailing">disabled</mm-code>
-              </mm-list-item>
-            </mm-flex>
+            <mm-grid columns="4" gap="6">${operationStates.map(renderOperationState)}</mm-grid>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="결과 상태">

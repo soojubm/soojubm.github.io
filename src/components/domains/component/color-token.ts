@@ -1,5 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query, queryAll, state } from 'lit/decorators.js'
+import { classMap } from 'lit/directives/class-map.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
@@ -36,6 +37,7 @@ export class ColorToken extends LitElement {
       :host {
         ${surfaceBaseStyles};
         --surface-padding: 0;
+        --surface-border: none;
 
         overflow: hidden;
       }
@@ -48,12 +50,19 @@ export class ColorToken extends LitElement {
         gap: var(--space-2);
         min-height: var(--size-80);
         padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius);
         background: var(--color-token-background-color);
         box-sizing: border-box;
       }
 
+      /* 카드 바탕과 같은 색은 면이 사라지므로 스와치에만 경계선을 두른다. */
+      .swatch.blends-in {
+        box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
+      }
+
       /* 이 색을 물려받는 상태 역할 태그: 칩 위쪽에 두고 대비쌍을 아래로 민다. */
-      mm-tag {
+      mm-code-tag {
+        align-self: flex-start;
         margin-bottom: auto;
       }
 
@@ -61,6 +70,7 @@ export class ColorToken extends LitElement {
       .label-row {
         display: flex;
         flex-direction: column;
+        font-family: var(--font-family-code);
       }
 
       .key {
@@ -76,8 +86,8 @@ export class ColorToken extends LitElement {
 
       figcaption {
         padding-bottom: var(--space-3);
-        margin-left: var(--space-4);
         margin-top: var(--space-2);
+        font-family: var(--font-family-code);
         color: var(--foreground-color);
       }
     `,
@@ -88,13 +98,14 @@ export class ColorToken extends LitElement {
   /** 이 표면 위에 얹는 전경색 토큰 이름, 위에서 아래로 쌓인다. */
   @property({ attribute: false }) pairs: string[] = []
   @state() private contrasts: string[] = []
+  @state() private blendsIn = false
   @query('.swatch') private swatch!: HTMLElement
   @queryAll('.label-row') private labelRows!: NodeListOf<HTMLElement>
 
   render() {
     return html`
       <figure
-        class="swatch"
+        class=${classMap({ swatch: true, 'blends-in': this.blendsIn })}
         style=${styleMap({ '--color-token-background-color': `var(--${this.name})` })}
       >
         ${this.renderRoleTag()} ${this.renderPairs()}
@@ -114,7 +125,7 @@ export class ColorToken extends LitElement {
     if (!role) return nothing
 
     return html`
-      <mm-tag>${role}</mm-tag>
+      <mm-code-tag>${role}</mm-code-tag>
     `
   }
 
@@ -154,6 +165,10 @@ export class ColorToken extends LitElement {
   /** 대비는 브라우저가 실제로 칠한 색끼리 잰다. 토큰이 어떤 단계를 거쳐 왔는지와 무관해진다. */
   private measureContrasts() {
     const background = getComputedStyle(this.swatch).backgroundColor
+    // 카드 바탕과 대비가 없으면 스와치 면이 보이지 않는다.
+    const blendsIn = contrastRatio(background, getComputedStyle(this).backgroundColor) === '1.0:1'
+    if (blendsIn !== this.blendsIn) this.blendsIn = blendsIn
+
     const measured = [...this.labelRows].map(row =>
       contrastRatio(getComputedStyle(row).color, background),
     )

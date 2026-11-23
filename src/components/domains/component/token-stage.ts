@@ -8,6 +8,8 @@ export class TokenStage extends LitElement {
   static styles = css`
     :host {
       display: block;
+      /* 왼쪽 정렬 flex 부모(mm-text-block 등) 안에서도 내용 폭으로 줄지 않고 가로를 채운다. */
+      align-self: stretch;
     }
 
     mm-surface {

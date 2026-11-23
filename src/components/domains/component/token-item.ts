@@ -22,6 +22,7 @@ export class TokenItem extends LitElement {
       --surface-padding: var(--space-3) var(--space-4);
 
       width: auto;
+      font-family: var(--font-family-code);
     }
   `
   private themeChange = new ThemeChangeController(this)

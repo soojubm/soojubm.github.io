@@ -145,13 +145,18 @@ const main = html`
 
     <mm-component-section
       heading="CodeTag"
-      description="컴포넌트 이름, 속성, 토큰처럼 코드로 읽어야 하는 짧은 조각을 본문 속에서 구분합니다."
+      description="토큰·속성 이름처럼 코드로 읽어야 하는 조각을 태그로 보여 줍니다. 톤은 Tag와 같아, 이름의 자리마다 색을 나눠 칠할 수 있습니다. 문장 속 코드 조각은 mm-code를 씁니다."
     >
-      <mm-flex gap="2">
-        <mm-code>mm-tag</mm-code>
-        <mm-code>tone="green"</mm-code>
-        <mm-code>--tag-background-color</mm-code>
-      </mm-flex>
+      <mm-tag-group>
+        <mm-code-tag>button</mm-code-tag>
+        <mm-code-tag tone="blue">background</mm-code-tag>
+        <mm-code-tag tone="orange">subtle</mm-code-tag>
+        <mm-code-tag tone="green">color</mm-code-tag>
+      </mm-tag-group>
+      <mm-code-tag size="large" tone="pink">avatar.background-color</mm-code-tag>
+      <mm-component-code
+        .code=${'<mm-code-tag tone="blue">background</mm-code-tag>\n<mm-code-tag size="large" tone="pink">avatar.background-color</mm-code-tag>'}
+      ></mm-component-code>
     </mm-component-section>
 
     <mm-component-related .items=${relatedComponents}></mm-component-related>
