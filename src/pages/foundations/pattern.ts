@@ -10,7 +10,8 @@ import '@/components/domains/faq'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-notice'
-import { code, no, rule, yes } from '@/components/domains/component'
+import { code, rule } from '@/components/domains/component'
+import './pattern.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const expandedComponentRows = html`
@@ -88,72 +89,6 @@ const handleRecentSearchSelect = (event: CustomEvent<{ value: string }>) => {
 
   searchField.value = event.detail.value
 }
-
-const overviewRows = html`
-  <tr>
-    <th scope="row">검색 결과</th>
-    <td>${yes}</td>
-    <td>${no}</td>
-  </tr>
-  <tr>
-    <th scope="row">최근 검색어</th>
-    <td>${no}</td>
-    <td>${yes}</td>
-  </tr>
-  <tr>
-    <th scope="row">추천 검색어</th>
-    <td>${yes}</td>
-    <td>${yes}</td>
-  </tr>
-  <tr>
-    <th scope="row">검색 결과 페이지</th>
-    <td>${no}</td>
-    <td>${yes}</td>
-  </tr>
-  <tr>
-    <th scope="row">검색어 자동완성</th>
-    <td>${yes}</td>
-    <td>${yes}</td>
-  </tr>
-`
-
-const overviewTableColumns = [
-  { label: '요소', width: '160px' },
-  { label: '입력할 때', width: '120px' },
-  { label: '제출할 때' },
-]
-
-const flowRows = html`
-  <tr>
-    <th scope="row">진입</th>
-    <td>검색 필드를 보기 전</td>
-    <td>
-      키워드 입력 필드, 해시태그·카테고리로 제안하는 인기·추천 키워드, 검색 화면으로 이동하는 검색
-      필드 모양의 버튼
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">포커스</th>
-    <td>입력한 키워드가 없을 때</td>
-    <td>최근 검색 내역, 추천·인기·개인화 큐레이션 제안</td>
-  </tr>
-  <tr>
-    <th scope="row">입력</th>
-    <td>키워드가 바뀔 때마다</td>
-    <td>추천, 자동완성</td>
-  </tr>
-  <tr>
-    <th scope="row">제출</th>
-    <td>Enter 키나 검색 버튼을 누를 때</td>
-    <td>본문 전체 결과. 입력과 일치하는 결과나 바로가기는 최상단에 둔다</td>
-  </tr>
-`
-
-const flowTableColumns = [
-  { label: '단계', width: '100px' },
-  { label: '시점', width: '200px' },
-  { label: '보여줄 것' },
-]
 
 const collectionOptions: MenuOptionItem[] = [
   { value: 'euljiro', label: '을지로 맛집', description: '장소 12개', emoji: '🍜' },
@@ -332,53 +267,57 @@ const main = html`
             추천·자동완성, 결과를 알맞은 때에 보여주므로, 사용자는 검색어를 다 쓰기 전에도 원하는
             것에 닿을 수 있습니다.
           </mm-paragraph>
-          <mm-content-section heading-level="3" heading="Overview">
-            <mm-table
-              .rows=${overviewRows}
-              caption="검색 실행 시점별로 보여주는 요소"
-              .columns=${overviewTableColumns}
-            ></mm-table>
-          </mm-content-section>
-
           <mm-content-section heading-level="3" heading="전역 검색 × 지역 검색">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '서비스 전체를 찾는 전역 검색은 기본 크기 검색 필드를 쓴다',
-                  'navbar의 검색 시트처럼 검색이 화면의 주 과제인 자리에 놓여 입력 영역이 먼저 눈에 들어온다',
-                ),
-                rule(
-                  html`
-                    현재 화면의 목록·표를 좁히는 지역 검색은 ${code('size="small"')} 검색 필드를
-                    쓴다
-                  `,
-                  '대상 콘텐츠 바로 위 툴바에 다른 컨트롤과 나란히 놓여, 콘텐츠보다 앞서지 않는다',
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-component-example>
-              <mm-grid columns="2" gap="4">
-                <mm-flex direction="column" gap="2">
-                  <mm-caption>전역 검색</mm-caption>
-                  <mm-searchfield placeholder="컴포넌트, 패턴을 검색하세요"></mm-searchfield>
-                </mm-flex>
-                <mm-flex direction="column" gap="2">
-                  <mm-caption>지역 검색</mm-caption>
-                  <mm-searchfield size="small" placeholder="컴포넌트 찾기"></mm-searchfield>
-                </mm-flex>
-              </mm-grid>
-            </mm-component-example>
+            <mm-surface>
+              <mm-flex justify-content="center" wrap="wrap" gap="6">
+                <mm-figure-card
+                  class="do-dont-card"
+                  description="서비스 전체를 찾는 전역 검색은 기본 크기 검색 필드를 쓴다. navbar의 검색 시트처럼 검색이 화면의 주 과제인 자리에 놓여 입력 영역이 먼저 눈에 들어온다."
+                >
+                  <mm-flex slot="figure" stretch class="search-figure">
+                    <mm-searchfield placeholder="컴포넌트, 패턴을 검색하세요"></mm-searchfield>
+                  </mm-flex>
+                  <mm-code-tag slot="tags">전역 검색</mm-code-tag>
+                </mm-figure-card>
+                <mm-figure-card
+                  class="do-dont-card"
+                  description='현재 화면의 목록·표를 좁히는 지역 검색은 size="small" 검색 필드를 쓴다. 대상 콘텐츠 바로 위 툴바에 다른 컨트롤과 나란히 놓여, 콘텐츠보다 앞서지 않는다.'
+                >
+                  <mm-flex slot="figure" stretch class="search-figure">
+                    <mm-searchfield size="small" placeholder="컴포넌트 찾기"></mm-searchfield>
+                  </mm-flex>
+                  <mm-code-tag slot="tags">지역 검색</mm-code-tag>
+                </mm-figure-card>
+              </mm-flex>
+            </mm-surface>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="입력할 때 검색">
+          <mm-text-block
+            level="3"
+            heading="입력할 때 검색"
+            description="결과를 바로 받을 수 있는 검색은 키워드가 바뀔 때마다 실행합니다. 현재 화면의 목록을 좁히거나 미리 받아 둔 색인을 찾을 때처럼 응답이 빨라, 입력하는 동안 결과가 그 자리에서 좁혀집니다."
+          >
+            <mm-flex direction="column" gap="2">
+              <mm-tag-group>
+                <mm-code-tag tone="gold">기본</mm-code-tag>
+                <mm-code-tag>Suggested Searches</mm-code-tag>
+              </mm-tag-group>
+              <mm-tag-group>
+                <mm-code-tag tone="cyan">onFocus</mm-code-tag>
+                <mm-code-tag>Recent Searches</mm-code-tag>
+                <mm-code-tag>Suggested Searches</mm-code-tag>
+              </mm-tag-group>
+              <mm-tag-group>
+                <mm-code-tag tone="orange">onChange</mm-code-tag>
+                <mm-code-tag>Search Results</mm-code-tag>
+                <mm-code-tag>Suggested Searches</mm-code-tag>
+                <mm-code-tag>Search Autocomplete</mm-code-tag>
+              </mm-tag-group>
+            </mm-flex>
+
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '결과를 바로 받을 수 있는 검색은 키워드가 바뀔 때마다 실행한다',
-                  '현재 화면의 목록을 좁히거나 미리 받아 둔 색인을 찾을 때처럼 응답이 빨라, 입력하는 동안 결과가 그 자리에서 좁혀진다',
-                ),
                 rule(
                   '입력이 멈춘 뒤에 결과를 갱신한다',
                   '글자마다 목록이 바뀌면 화면이 깜빡이고 요청이 쌓인다',
@@ -389,29 +328,27 @@ const main = html`
                 ),
               ]}
             ></mm-text-list>
-            <mm-component-example width="narrow">
-              <mm-searchfield
-                value="버튼"
-                placeholder="컴포넌트, 패턴을 검색하세요"
-              ></mm-searchfield>
-            </mm-component-example>
-          </mm-content-section>
+          </mm-text-block>
 
-          <mm-content-section heading-level="3" heading="제출할 때 검색">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '요청마다 비용이 큰 검색은 Enter 키나 검색 버튼을 누를 때 실행한다',
-                  '서버에서 전체 결과를 모아 오므로, 입력 중에는 제안만 보여주고 결과는 별도 화면에 모은다',
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-table
-              .rows=${flowRows}
-              caption="검색 단계별 시점과 보여줄 콘텐츠"
-              .columns=${flowTableColumns}
-            ></mm-table>
+          <mm-text-block
+            level="3"
+            heading="제출할 때 검색"
+            description="요청마다 비용이 큰 검색은 Enter 키나 검색 버튼을 누를 때 실행합니다. 서버에서 전체 결과를 모아 오므로, 입력 중에는 제안만 보여주고 결과는 별도 화면에 모읍니다."
+          >
+            <mm-flex direction="column" gap="2">
+              <mm-tag-group>
+                <mm-code-tag tone="orange">onChange</mm-code-tag>
+                <mm-code-tag>Search Results</mm-code-tag>
+                <mm-code-tag>Suggested Searches</mm-code-tag>
+                <mm-code-tag>Search Autocomplete</mm-code-tag>
+              </mm-tag-group>
+              <mm-tag-group>
+                <mm-code-tag tone="blue">onSubmit</mm-code-tag>
+                <mm-code-tag>Suggested Searches</mm-code-tag>
+                <mm-code-tag>Search Autocomplete</mm-code-tag>
+                <mm-code-tag>Search Results Page</mm-code-tag>
+              </mm-tag-group>
+            </mm-flex direction="column" gap="2">
             <mm-text-list
               variant="check"
               .texts=${[
@@ -419,18 +356,14 @@ const main = html`
                   '입력 중에는 키보드 위에 남는 높이 안에서 제안을 하나 이상 보여준다',
                   '일치하는 제안이 없으면 유사·추천 콘텐츠로 채워 다음에 고를 것을 남기고, 키보드에 가린 제안은 화면에 드러나지 않으므로 개수를 그 높이에 맞춘다',
                 ),
-                rule(
-                  '제출한 검색에 일치하는 결과가 없으면 결과 없음 상태로 새 검색을 유도한다',
-                  html`
-                    ${code('mm-result')}로 검색어를 보여 주고 추천 검색어를 제안한다
-                  `,
-                ),
-                rule(
-                  '결과 페이지는 URL로 공유할 수 있게 한다',
-                  '같은 URL로 같은 검색 결과를 다시 열 수 있다',
-                ),
               ]}
             ></mm-text-list>
+          </mm-text-block>
+
+          <p>결과 페이지는 URL로 공유할 수 있다. 같은 URL로 같은 검색 결과를 다시 열 수 있다.</p>
+
+          <mm-content-section heading-level="3" heading="검색 결과 없음" description="제출한 검색에 일치하는 결과가 없으면 결과 없음 상태로 추천 검색어를 제안하여 새 검색을 유도한다.">
+
             <mm-component-example>
               <mm-result heading="'[키워드]'와(과) 일치하는 내용이 없습니다.">
                 <mm-search-suggestion-group aria-label="추천 검색어">
@@ -446,10 +379,6 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '최근 검색어를 누르면 그 검색어로 바로 검색한다',
-                  '검색 필드에 다시 입력하지 않고 이전 검색을 이어간다',
-                ),
                 rule(
                   '최근 검색 내역은 전체 삭제를 제공하지 않는다',
                   '사용자 데이터를 실수로 한꺼번에 날릴 수 있으므로 항목마다 삭제 버튼을 두고 하나씩만 지우게 한다',
@@ -475,20 +404,7 @@ const main = html`
             </mm-component-example>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="추천 검색어">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '추천 검색어를 누르면 그 검색어로 바로 검색한다',
-                  '검색 필드에 다시 입력하지 않고 제안된 키워드로 이어간다',
-                ),
-                rule(
-                  '추천 검색어는 한 줄에 두고 넘치면 가로로 스크롤한다',
-                  '줄바꿈으로 결과 영역을 밀어내지 않고, 가려진 추천어가 남은 쪽 끝을 흐려 더 있음을 알린다',
-                ),
-              ]}
-            ></mm-text-list>
+          <mm-content-section heading-level="3" heading="추천 검색어" description="검색어를 입력하지 않아도, 사용자가 관심을 가질 만한 키워드를 추천하여 검색을 유도한다.">
             <mm-component-example width="narrow">
               <mm-flex direction="column" gap="3">
                 <mm-searchfield
@@ -508,8 +424,7 @@ const main = html`
               </mm-flex>
             </mm-component-example>
             <mm-component-notice heading="검색어 자동완성의 규칙을 정한다">
-              표에는 입력·제출 단계에 자동완성이 있지만 컴포넌트와 규칙은 아직 없다. 추천 검색어와
-              어떻게 나뉘는지, 키보드로 제안을 고르는 방식을 정하지 않았다
+               추천 검색어와 어떻게 나뉘는지, 키보드로 제안을 고르는 방식을 정하지 않았다
             </mm-component-notice>
           </mm-content-section>
 
