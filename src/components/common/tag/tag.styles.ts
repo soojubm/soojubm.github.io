@@ -86,7 +86,7 @@ export const tagStyles = css`
     --tag-padding-inline: var(--space-2);
     --tag-gap: var(--space-1);
     --tag-border: var(--border);
-    --tag-border-radius: var(--radius);
+    --tag-border-radius: var(--border-radius);
     --tag-background-color: var(--background-color);
     --tag-text-color: var(--foreground-color);
     --tag-text-size: var(--font-size-12);

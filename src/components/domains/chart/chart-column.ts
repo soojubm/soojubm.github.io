@@ -60,7 +60,7 @@ export class ChartColumn extends LitElement {
         align-items: flex-end;
         width: var(--chart-column-width);
         height: var(--chart-column-height);
-        border-radius: var(--radius);
+        border-radius: var(--border-radius);
         background: var(--background-subtle-color);
       }
 
@@ -74,7 +74,7 @@ export class ChartColumn extends LitElement {
 
       .bar {
         width: 100%;
-        border-radius: var(--radius);
+        border-radius: var(--border-radius);
         background: var(--chart-column-color);
       }
     `,

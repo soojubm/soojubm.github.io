@@ -32,13 +32,13 @@ export class ToggleButtonGroup extends LitElement {
       }
 
       button:first-child {
-        border-start-start-radius: var(--radius);
-        border-end-start-radius: var(--radius);
+        border-start-start-radius: var(--border-radius);
+        border-end-start-radius: var(--border-radius);
       }
 
       button:last-child {
-        border-start-end-radius: var(--radius);
-        border-end-end-radius: var(--radius);
+        border-start-end-radius: var(--border-radius);
+        border-end-end-radius: var(--border-radius);
       }
 
       :host([stretch]) {

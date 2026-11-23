@@ -18,7 +18,7 @@ export class ToggleButton extends LitElement {
       :host {
         display: inline-flex;
 
-        --toggle-button-border-radius: var(--radius);
+        --toggle-button-border-radius: var(--border-radius);
       }
 
       button {

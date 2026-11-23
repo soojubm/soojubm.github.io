@@ -96,7 +96,7 @@ export const sheetPositionStyles = css`
     --overlay-panel-max-height: 90vh;
     --overlay-panel-gap: var(--space-4);
     --overlay-panel-padding: var(--space-4);
-    --overlay-panel-border-radius: var(--radius-large);
+    --overlay-panel-border-radius: var(--border-radius-large);
     --backdrop-background-color: transparent;
     --backdrop-blur: 0px;
 
@@ -113,15 +113,15 @@ export const sheetPositionStyles = css`
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      visibility 0s linear var(--transition-duration);
+    transition: opacity var(--transition-duration-close) var(--transition-easing),
+      visibility 0s linear var(--transition-duration-close);
   }
 
   :host([open]) {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition: opacity var(--transition-duration) var(--transition-easing), visibility 0s;
+    transition: opacity var(--transition-duration-open) var(--transition-easing-open), visibility 0s;
   }
 
   /* 열릴 때 포커스를 받는 표면 자체는 화면 전체를 덮으므로 포커스 링을 그리지 않는다 */
@@ -190,7 +190,7 @@ export const sheetPositionStyles = css`
   /* 닫힘 상태의 placement 규칙과 선택자 무게가 같으므로, open을 함께 걸어 열림 규칙이 이기게 한다 */
   :host([open][placement]) .panel {
     transform: none;
-    transition: transform var(--transition-duration) var(--transition-easing-emphasis);
+    transition: transform var(--transition-duration-open) var(--transition-easing-open);
   }
 `
 
@@ -211,7 +211,7 @@ export const popoverPositionStyles = css`
     --overlay-panel-max-height: min(400px, 50vh);
     --overlay-panel-gap: var(--space-2);
     --overlay-panel-padding: var(--space-2);
-    --overlay-panel-border-radius: var(--radius);
+    --overlay-panel-border-radius: var(--border-radius);
     --popover-offset: var(--space-1);
 
     display: block;
@@ -248,9 +248,9 @@ export const popoverPositionStyles = css`
     pointer-events: none;
     transform: scale(0.96);
     transform-origin: var(--popover-origin-block) var(--popover-origin-inline);
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      transform var(--transition-duration) var(--transition-easing),
-      visibility 0s linear var(--transition-duration);
+    transition: opacity var(--transition-duration-close) var(--transition-easing),
+      transform var(--transition-duration-close) var(--transition-easing),
+      visibility 0s linear var(--transition-duration-close);
   }
 
   .panel mm-scroll {
@@ -263,8 +263,8 @@ export const popoverPositionStyles = css`
     visibility: visible;
     pointer-events: auto;
     transform: scale(1);
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      transform var(--transition-duration) var(--transition-easing-emphasis), visibility 0s;
+    transition: opacity var(--transition-duration-open) var(--transition-easing-open),
+      transform var(--transition-duration-open) var(--transition-easing-open), visibility 0s;
   }
 
   :host([placement='bottom-end']) .panel,
@@ -307,7 +307,7 @@ export const sheetDragHandleStyles = css`
     content: '';
     width: var(--size-32);
     height: var(--space-1);
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     background: var(--background-subtle-color);
 
     position: absolute;

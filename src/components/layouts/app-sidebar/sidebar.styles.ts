@@ -18,7 +18,7 @@ export const sidebarStyles = css`
     padding: var(--layout-sidebar-space-top) var(--space-3)
       calc(var(--space-4) + env(safe-area-inset-bottom)) calc(var(--layout-padding-inline));
     border-right: var(--border-transparent);
-    transition: transform var(--transition-duration) var(--transition-easing);
+    transition: transform var(--transition-duration-close) var(--transition-easing);
     transform: translateX(-120%);
     position: fixed;
     top: var(--navbar-height);
@@ -46,6 +46,8 @@ export const sidebarStyles = css`
 
   :host([open]) nav {
     transform: translateX(0);
+    transition-duration: var(--transition-duration-open);
+    transition-timing-function: var(--transition-easing-open);
   }
 
   :host([open]) mm-scroll {

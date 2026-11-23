@@ -33,7 +33,7 @@ export class UserAvatar extends LitElement {
       flex-shrink: 0;
       width: fit-content;
       height: fit-content;
-      border-radius: var(--radius-full);
+      border-radius: var(--border-radius-full);
       position: relative;
     }
 

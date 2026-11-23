@@ -13,13 +13,13 @@ export const postLinkStyles = css`
     --post-link-inset: 0px;
 
     display: flex;
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     color: inherit;
     ${layerContainerStyles};
   }
 
   .link::before {
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     background-color: var(--post-link-background-color);
     ${backgroundLayerStyles};
     inset: 0 calc(var(--post-link-inset) * -1);

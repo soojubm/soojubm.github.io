@@ -106,7 +106,7 @@ const main = html`
         style="
         display: inline-flex;
         padding: var(--space-3) var(--space-4);
-        border-radius: var(--radius-large);
+        border-radius: var(--border-radius-large);
         background: var(--primary-color);
       "
       >

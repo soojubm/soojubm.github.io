@@ -35,7 +35,7 @@ export class BottomBar extends LitElement {
         justify-content: space-around;
         margin: var(--space-2);
         border: var(--material-base-border);
-        border-radius: var(--radius-large);
+        border-radius: var(--border-radius-large);
         background: var(--material-base-background-color);
         box-shadow: var(--material-base-shadow);
         backdrop-filter: var(--material-base-backdrop-filter);
@@ -50,7 +50,7 @@ export class BottomBar extends LitElement {
         flex: 1;
         min-width: var(--size-48);
         padding-bottom: var(--space-1);
-        border-radius: var(--radius);
+        border-radius: var(--border-radius);
         color: var(--foreground-color);
         position: relative;
         z-index: var(--material-zindex-elevated);
@@ -82,7 +82,7 @@ export class BottomBar extends LitElement {
 
       .indicator {
         width: 0;
-        border-radius: var(--radius-large);
+        border-radius: var(--border-radius-large);
         background: var(--interaction-selected-background-color);
         position: absolute;
         top: 0;

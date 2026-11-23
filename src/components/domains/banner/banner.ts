@@ -16,7 +16,7 @@ export class Banner extends LitElement {
       ${surfaceBaseStyles};
       ${surfaceFilledStyles};
       --surface-padding: var(--space-16) var(--space-6);
-      --surface-border-radius: var(--radius-large);
+      --surface-border-radius: var(--border-radius-large);
 
       justify-content: center;
       align-items: center;

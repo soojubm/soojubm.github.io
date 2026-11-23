@@ -19,7 +19,7 @@ const iconButtonVariantTokens: AttributeTokens<Exclude<IconButtonVariant, 'terti
     '--icon-button-text-color': 'var(--foreground-on-primary-color)',
   },
   secondary: {
-    '--icon-button-border-radius': 'var(--radius-full)',
+    '--icon-button-border-radius': 'var(--border-radius-full)',
     '--icon-button-border': 'var(--border)',
     '--icon-button-background-color': 'var(--background-color)',
     '--icon-button-shadow': 'var(--material-elevated-shadow)',
@@ -39,7 +39,7 @@ export const iconButtonVariantSkin = (variant: keyof typeof iconButtonVariantTok
  */
 export const iconButtonSecondarySkinStyles = css`
   :host {
-    ${iconButtonVariantSkin('secondary')}
+    ${iconButtonVariantSkin('secondary')};
   }
 `
 
@@ -60,7 +60,7 @@ export const iconButtonStyles = css`
     --icon-button-width: var(--size-32);
     --icon-button-height: var(--size-32);
     --icon-button-background-color: var(--background-subtle-color);
-    --icon-button-border-radius: var(--radius);
+    --icon-button-border-radius: var(--border-radius);
     --icon-button-border: var(--border-transparent);
     --icon-button-text-color: var(--foreground-color);
     --icon-button-shadow: none;

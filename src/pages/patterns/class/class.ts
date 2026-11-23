@@ -83,8 +83,8 @@ const renderFaqItems = (questions: string[]) =>
 const main = html`
   <style>
     :root {
-      --radius: 0;
-      --radius-large: 0;
+      --border-radius: 0;
+      --border-radius-large: 0;
 
       mm-paragraph {
         max-width: 100%;

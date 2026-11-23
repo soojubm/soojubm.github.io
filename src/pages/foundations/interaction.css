@@ -3,23 +3,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-6);
   height: var(--size-80);
-  border-radius: var(--radius);
-  background: var(--background-subtle-color);
+  border-radius: var(--border-radius);
+  background: var(--background-color);
+  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
 }
 
 .state-figure::before {
   content: '';
   width: var(--size-40);
   height: var(--size-40);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   background: var(--background-color);
   box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
 }
 
-/* 배경 채움은 칸 바탕과 같은 색이라 보이지 않으므로, 떠 있는 표면이 떠오르는 hover로 그린다. */
+/* 칸 바탕이 흰색이라 hover 배경 채움이 보이고, 떠오르는 lift도 함께 그린다. */
 .state-figure[data-state='hover']::before {
-  box-shadow: var(--material-elevated-shadow);
+  background: var(--interaction-hover-background-color);
   transform: var(--interaction-hover-lift);
 }
 
@@ -30,11 +32,27 @@
 
 .state-figure[data-state='active']::before {
   background: var(--interaction-active-background-color);
-  box-shadow: none;
+  box-shadow: var(--interaction-active-shadow);
 }
 
 /* 채운 면을 비활성 요소처럼 흐리게 둔다. */
 .state-figure[data-state='disabled']::before {
   background: var(--background-strong-color);
-  opacity: var(--opacity-50);
+  opacity: var(--interaction-disabled-opacity);
+}
+
+.state-figure[data-state='pressed']::before,
+.state-figure[data-state='checked']::before,
+.state-figure[data-state='selected']::before,
+.state-figure[data-state='current']::before {
+  background: var(--interaction-selected-background-color);
+  box-shadow: inset 0 0 0 var(--border-width) var(--interaction-selected-border-color);
+}
+
+.state-figure[data-state='warning']::before {
+  box-shadow: inset 0 0 0 var(--border-width) var(--warning-color);
+}
+
+.state-figure[data-state='error']::before {
+  box-shadow: inset 0 0 0 var(--border-width) var(--danger-color);
 }

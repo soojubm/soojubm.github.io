@@ -42,7 +42,7 @@ export const avatarStyles = css`
     --avatar-background-color: var(--background-subtle-color);
     --avatar-icon-color: var(--foreground-color);
     --avatar-border: var(--border-transparent);
-    --avatar-border-radius: var(--radius);
+    --avatar-border-radius: var(--border-radius);
 
     display: inline-flex;
     flex-shrink: 0;
@@ -62,7 +62,7 @@ export const avatarStyles = css`
   }
 
   :host([shape='circle']) {
-    --avatar-border-radius: var(--radius-full);
+    --avatar-border-radius: var(--border-radius-full);
   }
 
   ${unsafeCSS(buildAttributeRules('size', avatarSizeTokens))}

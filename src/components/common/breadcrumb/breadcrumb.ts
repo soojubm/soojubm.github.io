@@ -45,7 +45,7 @@ export class Breadcrumb extends LitElement {
       }
 
       .breadcrumb-item {
-        border-radius: var(--radius);
+        border-radius: var(--border-radius);
         color: var(--breadcrumb-item-text-color);
         white-space: nowrap;
 

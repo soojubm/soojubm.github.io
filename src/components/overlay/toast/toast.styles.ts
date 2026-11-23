@@ -7,7 +7,7 @@ export const toastStyles = css`
     --toast-gap: var(--space-2);
     --toast-background-color: var(--background-strong-color);
     --toast-text-color: var(--background-color);
-    --toast-border-radius: var(--radius-large);
+    --toast-border-radius: var(--border-radius-large);
     --toast-padding-block: var(--space-2);
     --toast-padding-inline: var(--space-4);
     --toast-offset: var(--space-4);
@@ -43,7 +43,7 @@ export const toastStyles = css`
     visibility: visible;
     pointer-events: auto;
     transform: translateX(-50%) translateY(0);
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      transform var(--transition-duration) var(--transition-easing), visibility 0s;
+    transition: opacity var(--transition-duration) var(--transition-easing-open),
+      transform var(--transition-duration) var(--transition-easing-open), visibility 0s;
   }
 `

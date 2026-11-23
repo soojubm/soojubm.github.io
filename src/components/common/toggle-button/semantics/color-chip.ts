@@ -24,7 +24,7 @@ export class ColorChip extends withTogglePressed(LitElement) {
         width: var(--size-32);
         height: var(--size-32);
         border: var(--border);
-        border-radius: var(--radius-full);
+        border-radius: var(--border-radius-full);
       }
 
       /* radio처럼 안쪽에 배경색 링을 둘러 칠한 색과 선택 테두리 사이를 띄운다. */

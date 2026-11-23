@@ -24,7 +24,7 @@ export class Thumbnail extends LitElement {
         display: block;
         width: 100%;
         --thumbnail-border: var(--border-transparent);
-        --thumbnail-border-radius: var(--radius);
+        --thumbnail-border-radius: var(--border-radius);
         --thumbnail-background-color-empty: var(--background-subtle-color);
       }
 

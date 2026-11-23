@@ -28,7 +28,7 @@ export const tooltipBubbleStyles = css`
   :host {
     --tooltip-bubble-max-width: 280px;
     --tooltip-bubble-padding: 0.5rem var(--space-3);
-    --tooltip-bubble-border-radius: var(--radius);
+    --tooltip-bubble-border-radius: var(--border-radius);
     --tooltip-bubble-background-color: var(--background-strong-color);
     --tooltip-bubble-text-color: var(--background-color);
     --tooltip-bubble-shadow: var(--material-base-shadow);
@@ -52,15 +52,15 @@ export const tooltipBubbleStyles = css`
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--transition-duration) var(--transition-easing),
-      visibility 0s linear var(--transition-duration);
+    transition: opacity var(--transition-duration-close) var(--transition-easing),
+      visibility 0s linear var(--transition-duration-close);
   }
 
   /* 처음 열릴 때도 fade-in이 재생되도록, 만들어지는 순간의 시작 스타일을 밝힌다. */
   :host([open]) {
     opacity: 1;
     visibility: visible;
-    transition: opacity var(--transition-duration) var(--transition-easing), visibility 0s;
+    transition: opacity var(--transition-duration-open) var(--transition-easing-open), visibility 0s;
 
     @starting-style {
       opacity: 0;

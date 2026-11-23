@@ -9,7 +9,7 @@
   gap: var(--space-1);
   width: 100%;
   padding: var(--space-1);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   background: var(--background-subtle-color);
   /* 예시 안의 toast z-index가 실제 navbar·사이드바 위로 올라가지 않도록 예시 안에 가둔다 */
   isolation: isolate;
@@ -48,7 +48,7 @@
 .browser-window {
   overflow: hidden;
   border: var(--border);
-  border-radius: var(--radius-large);
+  border-radius: var(--border-radius-large);
   background: var(--background-color);
 }
 
@@ -68,7 +68,7 @@
 .browser-window-dots span {
   width: 8px;
   height: 8px;
-  border-radius: var(--radius-full);
+  border-radius: var(--border-radius-full);
 }
 
 .browser-window-dots span:nth-child(1) {
@@ -86,7 +86,7 @@
 .browser-window-address {
   flex: 1;
   padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   background: var(--background-color);
 }
 

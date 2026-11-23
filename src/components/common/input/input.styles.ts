@@ -52,7 +52,7 @@ export const inputBaseStyles = css`
     --input-padding-block: var(--space-3);
     --input-padding-inline: var(--space-3);
     --input-background-color: var(--background-subtle-color);
-    --input-border-radius: var(--radius);
+    --input-border-radius: var(--border-radius);
     --input-border: var(--border-transparent);
     --input-focus-outline: var(--interaction-focus-outline);
   }

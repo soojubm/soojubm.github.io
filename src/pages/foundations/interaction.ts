@@ -1,69 +1,11 @@
 import '@/components/common'
 import { html, nothing, type TemplateResult } from 'lit'
 
-import { ICON_NAMES, STATUS_ICONS } from '@/components/common'
+import { ICON_NAMES } from '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import { code, codeList, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './interaction.css'
-
-/**
- * 상태 토큰을 목록과 같은 순서로 칠한 스와치. 스와치는 공통 박스를 쓰고,
- * 토큰마다 달라지는 선언만 얹는다. 색만 담은 토큰은 두께·스타일과 함께 조립한다.
- * 섹션마다 그 섹션 상태들의 토큰을 스와치와 목록 한 벌로 전시한다.
- */
-const operationTokens = [
-  'interaction-focus-outline',
-  'interaction-hover-background-color',
-  'interaction-hover-lift',
-  'interaction-active-background-color',
-  'interaction-active-shadow',
-]
-
-const operationSwatches = [
-  'outline: var(--interaction-focus-outline); outline-offset: -4px',
-  'background: var(--interaction-hover-background-color)',
-  'border: var(--border); transform: var(--interaction-hover-lift)',
-  'background: var(--interaction-active-background-color)',
-  'box-shadow: var(--interaction-active-shadow)',
-]
-
-const selectedTokens = [
-  'interaction-selected-background-color',
-  'interaction-selected-foreground-color',
-  'interaction-selected-border-color',
-]
-
-const selectedSwatches = [
-  'background: var(--interaction-selected-background-color)',
-  'background: var(--interaction-selected-foreground-color)',
-  'border: var(--border-selected)',
-]
-
-const semanticTokens = ['foreground-warning-color', 'foreground-danger-color']
-
-const semanticSwatches = [
-  'background: var(--foreground-warning-color)',
-  'background: var(--foreground-danger-color)',
-]
-
-// 섹션 제목 아래에서 상태들이 공유하는 토큰을 스와치와 목록 한 벌로 보여 준다.
-const renderTokenSet = (label: string, tokens: string[], swatches: string[]) => html`
-  <mm-component-example full-width>
-    <mm-flex direction="column" gap="4">
-      <mm-token-stage>
-        <mm-token-swatches .swatches=${swatches}></mm-token-swatches>
-      </mm-token-stage>
-      <mm-token-group aria-label=${`${label} tokens`}>
-        ${tokens.map(
-          key => html`
-            <mm-token-item key=${key}></mm-token-item>
-          `,
-        )}
-      </mm-token-group>
-    </mm-flex>
-  </mm-component-example>
-`
 
 const optionItemCode = `type OptionItem = {
   value: string
@@ -204,46 +146,181 @@ const selectionTableColumns = [
   { label: '옵션 전달' },
 ]
 
+type StateCard = {
+  state: string
+  selectors: string[]
+  /** 같은 카드를 함께 쓰는 다른 상태 이름. 상태 태그와 같은 색으로 나란히 보인다. */
+  aliases?: string[]
+  description: string
+  tokens: string[]
+  /** 값은 tokens 페이지가 소개하므로 이름만 태그로 나열하는 토큰. */
+  tokenKeys?: string[]
+  usages?: ComponentUsage[]
+  note?: string
+  /** 도형 대신 썸네일 안에 놓을 내용. */
+  figure?: TemplateResult
+}
+
 /** 조작 상태마다 그 상태의 토큰을 입힌 도형과 이름·선택자·설명을 한 카드로 보여 준다. */
-const operationStates = [
-  { state: 'hover', selector: ':hover', description: '포인터가 올라와 있다는 표시입니다.' },
+const operationStates: StateCard[] = [
+  {
+    state: 'hover',
+    selectors: [':hover'],
+    description: '포인터가 올라와 있다는 표시입니다.',
+    tokens: ['interaction-hover-background-color', 'interaction-hover-lift'],
+  },
   {
     state: 'focus',
-    selector: ':focus-visible',
+    selectors: [':focus-visible'],
+    tokens: ['interaction-focus-outline'],
     description:
       '키보드가 지금 이 요소에 있다는 표시입니다. 포인터로 누른 요소에는 링이 남지 않습니다.',
   },
-  { state: 'active', selector: ':active', description: '지금 누르고 있다는 표시입니다.' },
+  {
+    state: 'active',
+    selectors: [':active'],
+    description: '지금 누르고 있다는 표시입니다.',
+    tokens: ['interaction-active-background-color', 'interaction-active-shadow'],
+  },
   {
     state: 'disabled',
-    selector: 'disabled',
+    selectors: ['disabled'],
     description: '지금은 조작을 받지 않는다는 표시입니다.',
+    tokens: ['interaction-disabled-opacity'],
   },
 ]
 
-// 선택자가 상태 이름과 같으면(disabled) 같은 태그를 두 번 보이지 않는다.
-const renderSelector = (state: string, selector: string) => {
-  if (selector === state) return nothing
+const checkedIndicator = html`
+  <mm-selected-indicator selected></mm-selected-indicator>
+`
+
+const currentIndicator = html`
+  <mm-current-indicator></mm-current-indicator>
+`
+
+const semanticStates: StateCard[] = [
+  {
+    state: 'warning',
+    selectors: [],
+    description: '진행 전에 사용자의 주의가 필요한 상태입니다.',
+    tokens: ['warning-color', 'foreground-warning-color'],
+  },
+  {
+    state: 'error',
+    selectors: ['aria-invalid'],
+    description:
+      '오류, 실패, 수정이 필요한 상태를 나타냅니다. 입력값이 유효하지 않으면 aria-invalid로 알립니다.',
+    tokens: ['danger-color', 'foreground-danger-color'],
+  },
+  {
+    state: 'success',
+    selectors: [],
+    aliases: ['info', 'done'],
+    description: '전용 토큰이 정의되지 않았습니다.',
+    note: '성공은 작업이 성공적으로 완료되었음을, 안내는 참고 가능한 보조 정보를, 완료는 더 이상 진행할 것이 없음을 나타냅니다.',
+    tokens: [],
+  },
+]
+
+const selectedKeys = [
+  'interaction-selected-background-color',
+  'interaction-selected-foreground-color',
+  'interaction-selected-border-color',
+]
+
+const resultStates: StateCard[] = [
+  {
+    state: 'pressed',
+    selectors: ['aria-pressed'],
+    description: '그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다.',
+    usages: pressedUsages,
+    tokens: [],
+    tokenKeys: selectedKeys,
+  },
+  {
+    state: 'checked',
+    selectors: ['aria-checked', 'checked'],
+    description: '컨트롤의 on/off 값이 켜져 있다는 표시입니다.',
+    usages: checkedUsages,
+    figure: checkedIndicator,
+    note: '눌러서 켜고 끄는 버튼은 Pressed, 값을 고르는 컨트롤은 Checked를 씁니다.',
+    tokens: [],
+    tokenKeys: selectedKeys,
+  },
+  {
+    state: 'selected',
+    selectors: ['aria-selected'],
+    description: '목록에서 고른 항목이라는 표시입니다.',
+    usages: selectedUsages,
+    tokens: [],
+    tokenKeys: selectedKeys,
+  },
+  {
+    state: 'current',
+    figure: currentIndicator,
+    selectors: ['aria-current'],
+    description: '내비게이션에서 지금 위치한 곳이라는 표시입니다.',
+    note: 'Current는 논리상 지금 어느 페이지에 있는지를 알리는 위치 표시지만, UI 형태는 선택 상태와 같아 함께 둡니다.',
+    tokens: [],
+    tokenKeys: selectedKeys,
+  },
+]
+
+const renderSelector = (selector: string) => html`
+  <mm-code-tag>${selector}</mm-code-tag>
+`
+
+// 상태가 쓰는 토큰을 카드 안에 이름·값으로 보여 준다. 토큰이 없는 상태는 그리지 않는다.
+const renderStateTokens = (state: string, tokens: string[]) => {
+  if (!tokens.length) return nothing
 
   return html`
-    <mm-code-tag>${selector}</mm-code-tag>
+    <mm-token-group aria-label=${`${state} tokens`}>
+      ${tokens.map(
+        key => html`
+          <mm-token-item key=${key}></mm-token-item>
+        `,
+      )}
+    </mm-token-group>
   `
 }
 
-const renderOperationState = ({
+const renderStateCard = ({
   state,
-  selector,
+  selectors,
+  aliases = [],
   description,
-}: (typeof operationStates)[number]) => html`
+  tokens,
+  tokenKeys,
+  usages,
+  note,
+  figure,
+}: StateCard) => html`
   <mm-flex direction="column" gap="3">
-    <span class="state-figure" data-state=${state} aria-hidden="true"></span>
+    <div class="state-figure" data-state=${state} aria-hidden="true">${figure}</div>
     <mm-flex direction="column" align-items="flex-start" gap="1">
       <mm-tag-group>
-        <mm-code-tag tone="purple">${state}</mm-code-tag>
-        ${renderSelector(state, selector)}
+        ${[state, ...aliases].map(
+          name => html`
+            <mm-code-tag tone="purple">${name}</mm-code-tag>
+          `,
+        )}
+        ${selectors.filter(selector => selector !== state).map(renderSelector)}
       </mm-tag-group>
       <mm-caption>${description}</mm-caption>
     </mm-flex>
+    ${usages ? renderUsages(usages) : nothing}
+    ${note
+      ? html`
+          <mm-caption>${note}</mm-caption>
+        `
+      : nothing}
+    ${renderStateTokens(state, tokens)}
+    ${tokenKeys
+      ? html`
+          <mm-caption>${codeList(tokenKeys)}</mm-caption>
+        `
+      : nothing}
   </mm-flex>
 `
 
@@ -287,86 +364,12 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="조작 상태">
             <mm-paragraph>UI 요소의 상호작용 상태입니다.</mm-paragraph>
-            ${renderTokenSet('조작 상태', operationTokens, operationSwatches)}
-            <mm-grid columns="4" gap="6">${operationStates.map(renderOperationState)}</mm-grid>
+            <mm-grid columns="4" gap="6">${operationStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="결과 상태">
             <mm-paragraph>UI 요소의 상호작용 결과 상태입니다.</mm-paragraph>
-            ${renderTokenSet('결과 상태', selectedTokens, selectedSwatches)}
-            <mm-flex direction="column" gap="6">
-              <mm-flex direction="column" gap="2">
-                <mm-list-item
-                  icon=${ICON_NAMES.PRESSED}
-                  size="medium"
-                  label="Pressed"
-                  description="그룹 없이 스스로 눌린 상태를 유지한다는 표시입니다."
-                >
-                  <mm-code slot="trailing">aria-pressed</mm-code>
-                </mm-list-item>
-                ${renderUsages(pressedUsages)}
-              </mm-flex>
-              <mm-flex direction="column" gap="2">
-                <mm-list-item
-                  icon=${ICON_NAMES.CHECK}
-                  size="medium"
-                  label="Checked"
-                  description="컨트롤의 on/off 값이 켜져 있다는 표시입니다."
-                >
-                  <mm-code slot="trailing">aria-checked/checked</mm-code>
-                </mm-list-item>
-                ${renderUsages(checkedUsages)}
-                <mm-caption>
-                  눌러서 켜고 끄는 버튼은 Pressed, 값을 고르는 컨트롤은 Checked를 씁니다.
-                </mm-caption>
-              </mm-flex>
-              <mm-flex direction="column" gap="2">
-                <mm-list-item
-                  icon=${ICON_NAMES.SELECTED}
-                  size="medium"
-                  label="Selected"
-                  description="목록에서 고른 항목이라는 표시입니다."
-                >
-                  <mm-code slot="trailing">aria-selected</mm-code>
-                </mm-list-item>
-                ${renderUsages(selectedUsages)}
-                <mm-surface variant="outlined" radius="large">
-                  <mm-flex gap="6">
-                    <mm-flex direction="column" gap="2" align-items="center">
-                      <mm-selected-indicator></mm-selected-indicator>
-                      <mm-caption>선택 안 됨</mm-caption>
-                    </mm-flex>
-                    <mm-flex direction="column" gap="2" align-items="center">
-                      <mm-selected-indicator selected></mm-selected-indicator>
-                      <mm-caption>선택됨</mm-caption>
-                    </mm-flex>
-                  </mm-flex>
-                </mm-surface>
-              </mm-flex>
-              <mm-flex direction="column" gap="2">
-                <mm-list-item
-                  icon=${ICON_NAMES.CURRENT}
-                  size="medium"
-                  label="Current"
-                  description="내비게이션에서 지금 위치한 곳이라는 표시입니다."
-                >
-                  <mm-code slot="trailing">aria-current</mm-code>
-                </mm-list-item>
-                <mm-caption>
-                  Current는 논리상 지금 어느 페이지에 있는지를 알리는 위치 표시지만, UI 형태는 선택
-                  상태와 같아 함께 둡니다.
-                </mm-caption>
-              </mm-flex>
-              <mm-separator></mm-separator>
-              <mm-list-item
-                icon=${STATUS_ICONS.error}
-                size="medium"
-                label="Invalid"
-                description="입력값이 유효하지 않아 수정이 필요하다는 표시입니다."
-              >
-                <mm-code slot="trailing">aria-invalid</mm-code>
-              </mm-list-item>
-            </mm-flex>
+            <mm-grid columns="4" gap="6">${resultStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="의미 상태">
@@ -375,40 +378,7 @@ const main = html`
               "오류"라고 하지 않고 무엇이 잘못됐는지 설명해, 사용자가 다시 시도할 수 있게
               안내합니다.
             </mm-paragraph>
-            ${renderTokenSet('의미 상태', semanticTokens, semanticSwatches)}
-
-            <mm-list-item-group>
-              <mm-list-item
-                icon=${STATUS_ICONS.success}
-                size="medium"
-                label="Success"
-                description="작업이 성공적으로 완료되었음을 나타냅니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${STATUS_ICONS.info}
-                size="medium"
-                label="Info"
-                description="사용자에게 참고 가능한 보조 정보를 제공합니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${STATUS_ICONS.warning}
-                size="medium"
-                label="Warning"
-                description="진행 전에 사용자의 주의가 필요한 상태입니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${STATUS_ICONS.error}
-                size="medium"
-                label="Error"
-                description="오류, 실패, 수정이 필요한 상태를 나타냅니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${STATUS_ICONS.done}
-                size="medium"
-                label="Done"
-                description="작업이 끝나 더 이상 진행할 것이 없음을 나타냅니다."
-              ></mm-list-item>
-            </mm-list-item-group>
+            <mm-grid columns="4" gap="6">${semanticStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="데이터 상태">

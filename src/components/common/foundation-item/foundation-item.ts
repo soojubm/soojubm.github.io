@@ -20,7 +20,7 @@ export class FoundationItem extends LitElement {
       a {
         ${surfaceBaseStyles};
         --surface-height: 100%;
-        --surface-border-radius: var(--radius-large);
+        --surface-border-radius: var(--border-radius-large);
         --surface-shadow: var(--material-elevated-shadow);
         --lift: none;
 

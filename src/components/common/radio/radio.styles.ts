@@ -7,7 +7,7 @@ export const radioStyles = css`
   :host {
     --radio-width: var(--size-16);
     --radio-height: var(--size-16);
-    --radio-border-radius: var(--radius-full);
+    --radio-border-radius: var(--border-radius-full);
     --radio-border-color: var(--border-color);
     --radio-background-color: var(--background-color);
   }
@@ -76,7 +76,7 @@ export const radioCardStyles = css`
 
   label {
     ${surfaceBaseStyles};
-    --surface-border-radius: var(--radius-large);
+    --surface-border-radius: var(--border-radius-large);
     --surface-background-color: var(--radio-card-background-color);
     --surface-border: var(--radio-card-border);
 

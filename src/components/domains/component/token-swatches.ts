@@ -31,7 +31,7 @@ export class TokenSwatches extends LitElement {
       flex-shrink: 0;
       width: var(--size-48);
       height: var(--size-48);
-      border-radius: var(--radius);
+      border-radius: var(--border-radius);
       background: var(--background-color);
     }
 

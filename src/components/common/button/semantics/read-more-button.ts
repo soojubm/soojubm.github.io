@@ -20,7 +20,7 @@ export class ReadMoreButton extends LitElement {
 
       button {
         display: inline;
-        border-radius: var(--radius);
+        border-radius: var(--border-radius);
         font-weight: var(--font-weight-bold);
         color: var(--foreground-color);
 

@@ -35,21 +35,26 @@ export class FaqItem extends LitElement {
         display: grid;
         grid-template-rows: 0fr;
         overflow: hidden;
-        transition: grid-template-rows var(--transition-duration) var(--transition-easing);
+        transition: grid-template-rows var(--transition-duration-close) var(--transition-easing);
       }
 
       .answer > div {
         min-height: 0;
-        transition: padding var(--transition-duration) var(--transition-easing);
+        transition: padding var(--transition-duration-close) var(--transition-easing);
       }
 
+      /* 열릴 때만 open duration과 easing으로 펼친다 */
       :host([open]) {
         & .answer {
           grid-template-rows: 1fr;
+          transition-duration: var(--transition-duration-open);
+          transition-timing-function: var(--transition-easing-open);
         }
         & .answer > div {
           padding-top: var(--space-2);
           padding-bottom: var(--space-2);
+          transition-duration: var(--transition-duration-open);
+          transition-timing-function: var(--transition-easing-open);
         }
       }
     `,

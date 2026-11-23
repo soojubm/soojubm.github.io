@@ -25,7 +25,7 @@ export class Main extends LitElement {
       box-sizing: border-box;
       background-color: var(--background-color);
       position: relative;
-      transition: padding-left var(--transition-duration) var(--transition-easing);
+      transition: padding-left var(--sidebar-transition-duration) var(--sidebar-transition-easing);
     }
 
     :host([background='subtle']) {

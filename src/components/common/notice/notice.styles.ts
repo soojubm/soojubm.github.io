@@ -28,7 +28,7 @@ export const noticeStyles = css`
     color: var(--notice-text-color);
 
     --notice-padding: var(--space-3);
-    --notice-border-radius: var(--radius);
+    --notice-border-radius: var(--border-radius);
     --notice-border: var(--border);
     --notice-text-color: var(--foreground-color);
     --notice-background-color: transparent;

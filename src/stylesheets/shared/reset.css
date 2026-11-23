@@ -130,7 +130,7 @@ blockquote {
   padding: var(--space-4);
   border: var(--border);
   border-left: 4px solid var(--border-color);
-  border-radius: var(--radius) 0 0 0;
+  border-radius: var(--border-radius) 0 0 0;
   box-sizing: border-box;
 }
 q {

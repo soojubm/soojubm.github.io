@@ -24,13 +24,13 @@ export class ChartStackedBar extends LitElement {
       display: flex;
       gap: var(--space-1);
       padding: var(--space-1);
-      border-radius: var(--radius);
+      border-radius: var(--border-radius);
       background: var(--background-subtle-color);
     }
 
     .segment {
       height: var(--chart-stacked-bar-height);
-      border-radius: var(--radius);
+      border-radius: var(--border-radius);
     }
   `
   @property({ type: Array }) items: ChartStackedBarItem[] = []

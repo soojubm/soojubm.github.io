@@ -29,7 +29,7 @@ export class AttachmentItem extends LitElement {
       width: calc(100% - var(--space-2) * 2);
       height: var(--space-1);
       border: 0;
-      border-radius: var(--radius);
+      border-radius: var(--border-radius);
       background-color: var(--background-subtle-color);
       overflow: hidden;
       appearance: none;

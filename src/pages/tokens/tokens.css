@@ -14,7 +14,7 @@
   width: var(--size-80);
   height: var(--size-80);
   box-sizing: border-box;
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
 }
 
 .motion-track {
@@ -24,14 +24,14 @@
   width: calc(var(--size-80) * 3);
   height: var(--size-32);
   padding: 0 var(--space-1);
-  border-radius: var(--radius-full);
+  border-radius: var(--border-radius-full);
   background: var(--background-subtle-color);
 }
 
 .motion-dot {
   width: var(--size-24);
   height: var(--size-24);
-  border-radius: var(--radius-full);
+  border-radius: var(--border-radius-full);
   background: var(--primary-color);
   transition-property: transform;
   transition-duration: var(--transition-duration);
@@ -96,7 +96,7 @@ mm-token-stage:hover .motion-dot {
   justify-content: center;
   gap: var(--space-16);
   height: calc(var(--size-16) * 18);
-  border-radius: var(--radius-large);
+  border-radius: var(--border-radius-large);
   background: var(--background-subtle-color);
   overflow: hidden;
 }
@@ -173,7 +173,7 @@ mm-token-stage:hover .motion-dot {
   justify-content: center;
   gap: var(--space-4);
   height: var(--size-80);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   background: var(--background-subtle-color);
 }
 
@@ -181,7 +181,7 @@ mm-token-stage:hover .motion-dot {
 .kind-figure::after {
   width: var(--size-40);
   height: var(--size-40);
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
 }
 
 .kind-figure::before {
@@ -239,7 +239,7 @@ mm-token-stage:hover .motion-dot {
 }
 
 .kind-figure[data-tier='primitive'][data-kind='border']::after {
-  border-radius: var(--radius-full);
+  border-radius: var(--border-radius-full);
 }
 
 /* 같은 글자를 작은 단계와 큰 단계로 놓아 기준선에 맞추고, 줄 전체는 칸 가운데에 둔다. */

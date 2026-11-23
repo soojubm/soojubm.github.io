@@ -27,7 +27,7 @@ export const codeBlockStyles = css`
   /* 코드 면은 surface 면 선언을 조합한다. */
   pre {
     ${surfaceBaseStyles};
-    --surface-border-radius: var(--radius-large);
+    --surface-border-radius: var(--border-radius-large);
   }
 
   /* 면을 걷으면 버튼이 기댈 여백도 없으므로 첫 줄 가운데와 프레임 안쪽 끝에 맞춘다. */

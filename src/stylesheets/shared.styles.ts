@@ -3,7 +3,6 @@ import { css, unsafeCSS } from 'lit'
 import type { JustifyContent } from '@/stylesheets/shared.types'
 import type { AttributeTokens } from '@/utils'
 
-
 import resetCss from '@/stylesheets/shared/reset.css?raw'
 
 export const resetStyles = css`
@@ -89,7 +88,7 @@ export const focusRingStyles = css`
  * 눌림을 막으려 pointer-events를 끄는 행은 이 선언 뒤에 그것만 덧붙인다.
  */
 export const disabledStyles = css`
-  opacity: var(--opacity-50);
+  opacity: var(--interaction-disabled-opacity);
   cursor: not-allowed;
 `
 
@@ -143,7 +142,7 @@ export const scrollbarStyles = css`
   &::-webkit-scrollbar-thumb {
     margin: 0.125rem;
     background: var(--background-subtle-color);
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
   }
   &::-webkit-scrollbar-button {
     display: none;

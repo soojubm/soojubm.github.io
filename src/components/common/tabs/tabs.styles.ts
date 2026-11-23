@@ -56,7 +56,7 @@ export const tabsStyles = css`
   :host([variant='pill']) {
     background-color: var(--background-subtle-color);
     border: var(--tabs-pill-border);
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     padding: var(--space-1);
 
     & .indicator {
@@ -64,7 +64,7 @@ export const tabsStyles = css`
       top: var(--space-1);
       background-color: var(--tabs-pill-indicator-background-color);
       border: var(--tabs-pill-indicator-border);
-      border-radius: var(--radius);
+      border-radius: var(--border-radius);
     }
   }
 

@@ -35,7 +35,7 @@ export const buttonBaseStyles = css`
     --button-min-width: 3rem;
     --button-border: var(--border-transparent);
     --button-padding-inline: var(--space-3);
-    --button-border-radius: var(--radius);
+    --button-border-radius: var(--border-radius);
     --button-background-color: var(--background-subtle-color);
     --button-text-size: inherit;
     --button-text-weight: var(--font-weight-normal);

@@ -14,8 +14,8 @@ export const chatBubbleStyles = css`
     font-size: var(--font-size-14);
     line-height: var(--font-line-height-24);
 
-    --bubble-border-radius: var(--radius) var(--radius-large) var(--radius-large)
-      var(--radius-large);
+    --bubble-border-radius: var(--border-radius) var(--border-radius-large)
+      var(--border-radius-large) var(--border-radius-large);
     --thumbnail-border-radius: var(--bubble-border-radius);
   }
 
@@ -63,8 +63,8 @@ export const myChatBubbleStyles = [
   chatBubbleSurfaceStyles,
   css`
     :host {
-      --bubble-border-radius: var(--radius-large) var(--radius) var(--radius-large)
-        var(--radius-large);
+      --bubble-border-radius: var(--border-radius-large) var(--border-radius)
+        var(--border-radius-large) var(--border-radius-large);
       --thumbnail-border-radius: var(--bubble-border-radius);
       --chat-bubble-background-color: var(--primary-color);
       --chat-bubble-text-color: var(--foreground-on-primary-color);

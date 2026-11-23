@@ -26,10 +26,10 @@ export class TypingIndicator extends LitElement {
     }
 
     span:nth-of-type(2) {
-      animation-delay: var(--animation-delay-first);
+      animation-delay: var(--transition-delay-first);
     }
     span:nth-of-type(3) {
-      animation-delay: var(--animation-delay-second);
+      animation-delay: var(--transition-delay-second);
     }
 
     @keyframes chatting {

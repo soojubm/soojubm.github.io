@@ -25,7 +25,7 @@ export class Code extends LitElement {
         height: 20px;
         padding: 0 var(--space-1);
         border: var(--border);
-        border-radius: var(--radius);
+        border-radius: var(--border-radius);
         box-sizing: border-box;
         background: var(--background-color);
         ${codeTextStyles};

@@ -6,7 +6,7 @@ export const switchStyles = css`
   :host {
     --switch-width: var(--size-32);
     --switch-height: var(--size-16);
-    --switch-border-radius: var(--radius);
+    --switch-border-radius: var(--border-radius);
     --switch-background-color: var(--border-color);
     display: block;
     height: var(--switch-height);

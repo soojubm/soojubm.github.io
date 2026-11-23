@@ -81,7 +81,7 @@ export const listItemInteractiveStyles = css`
   align-items: center;
   width: 100%;
   padding-inline: 0;
-  border-radius: var(--radius);
+  border-radius: var(--border-radius);
   color: inherit;
   box-sizing: border-box;
   cursor: pointer;
@@ -89,7 +89,7 @@ export const listItemInteractiveStyles = css`
 
   /* background state */
   &::before {
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     background-color: var(--list-item-interactive-background-color);
     ${backgroundLayerStyles};
   }

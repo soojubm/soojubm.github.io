@@ -3,7 +3,7 @@
   color-scheme: light dark;
 
   --font-family: 'Alan Sans', 'Gothic A1', system-ui, sans-serif;
-  --font-family-code: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-family-code: 'JetBrains Mono', 'Gothic A1', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* 글자 토큰은 rem이라 html font-size(큰글씨 모드)를 따라 함께 커진다. */
   --font-size-12: 0.75rem;
@@ -81,9 +81,10 @@
   --interaction-focus-outline: 2px solid var(--gray800);
   --interaction-active-shadow: 0 0 0 2px #c8f3fa, inset 0 0 0 2px var(--gray0);
   --interaction-selected-background-color: var(--primary-subtle-color);
-  --interaction-selected-foreground-color: var(--primary-color);
-  --interaction-selected-border-color: var(--primary-color);
+  --interaction-selected-foreground-color: var(--background-strong-color);
+  --interaction-selected-border-color: var(--background-strong-color);
   --interaction-hover-background-color: var(--gray100);
+  --interaction-disabled-opacity: var(--opacity-50);
   /* 채울 배경이 없는 클릭 가능한 떠 있는 표면은 hover에서 배경 대신 이 값만큼 떠오른다. */
   --interaction-hover-lift: translateY(-2px);
 
@@ -125,12 +126,12 @@
   --border-danger: var(--border-width) solid var(--danger-color);
   --border-selected: var(--border-width) solid var(--interaction-selected-border-color);
 
-  --radius: 6px;
-  --radius-large: 1rem;
-  --radius-full: 50%;
+  --border-radius: 6px;
+  --border-radius-large: 1rem;
+  --border-radius-full: 50%;
 
   /* navbar-user 같은 control pill의 모양 토큰(테마 무관 고정값이라 :root 선언이 안전하다) */
-  --control-border-radius: var(--radius-large);
+  --control-border-radius: var(--border-radius-large);
 
   /* 재질 원시값. 값의 종류와 크기로 이름 짓고 테마가 건드리지 않는다.
      소비처는 원시값을 직접 쓰지 않고, 아래 material 티어가 색 토큰과 조합해 내보낸다. */
@@ -183,19 +184,23 @@
   --material-zindex-tooltip: 900; /* 포인터·포커스를 따라 잠깐 뜨는 설명: 모든 표면 위 */
   --material-zindex-toast: 1000; /* 알림, 스낵바: 항상 최상단 */
 
-  /* 모션은 이 duration 하나를 쓰고, easing만 기본과 오버슈트(등장 강조)로 나뉜다. */
+  /* 모션은 기본 duration을 쓰고, easing은 기본과 오버슈트하는 open easing으로 나뉜다. 열고 닫는 방향이 갈리는 모션만 아래 open·close duration을 쓴다. */
   --transition-duration: 180ms;
+  /* 열릴 때는 내용이 자리 잡는 걸 볼 수 있게 기본보다 조금 더 천천히 연다. */
+  --transition-duration-open: 260ms;
+  /* 닫힐 때는 사용자의 다음 행동을 막지 않도록 기본 속도로 빠르게 닫는다. */
+  --transition-duration-close: var(--transition-duration);
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-easing-emphasis: cubic-bezier(0.18, 1.25, 0.4, 1);
+  --transition-easing-open: cubic-bezier(0.18, 1.25, 0.4, 1);
 
-  --animation-delay-first: 0.2s;
-  --animation-delay-second: 0.4s;
+  --transition-delay-first: 0.2s;
+  --transition-delay-second: 0.4s;
 }
 
 .shape-square {
-  --radius: 0px;
-  --radius-large: 0px;
-  --radius-full: 0%;
+  --border-radius: 0px;
+  --border-radius-large: 0px;
+  --border-radius-full: 0%;
 }
 
 /* Primitive는 그대로 두고, 회색을 참조하던 Semantic Token만 초록 틴트 회색으로 옮긴다. */
@@ -236,8 +241,8 @@
   --primary-color: var(--gray100);
   --primary-subtle-color: var(--gray800);
   --interaction-selected-background-color: var(--primary-subtle-color);
-  --interaction-selected-foreground-color: var(--primary-color);
-  --interaction-selected-border-color: var(--primary-color);
+  --interaction-selected-foreground-color: var(--background-strong-color);
+  --interaction-selected-border-color: var(--background-strong-color);
   --border-selected: var(--border-width) solid var(--interaction-selected-border-color);
 
   --background-color: rgb(33, 33, 33);
@@ -290,7 +295,7 @@
    * base 티어는 뎁스가 없는 flush chrome 바용이라
    * 이 테마에서도 재정의하지 않고 :root의 무효과 기본값(불투명 배경·blur 없음·테두리 없음·그림자 없음) 그대로 둔다.
    */
-  /* --radius: var(--radius-large); */
+  /* --border-radius: var(--border-radius-large); */
 
   /* navbar·sidebar를 모서리에서 띄운다. navbar-height는 :root에서 계산돼 여기서 다시 선언해야 inset이 반영된다 */
   --layout-chrome-inset: var(--space-2);
@@ -306,7 +311,7 @@
   --material-chrome-border: var(--border-width) solid
     color-mix(in srgb, var(--gray0) var(--opacity-50), transparent);
   --material-chrome-backdrop-filter: saturate(180%) blur(var(--blur-20));
-  --material-chrome-border-radius: var(--radius-large);
+  --material-chrome-border-radius: var(--border-radius-large);
   --material-chrome-shadow: var(--shadow-12);
 
   /* ===== material-overlay ===== */

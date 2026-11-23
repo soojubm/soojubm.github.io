@@ -49,14 +49,14 @@ const sectionPatterns = {
   space: /^space-/,
   layout: /^(navbar-height$|layout-)/,
   borderColor: /^border-(.+-)?color$/,
+  radius: /^border-radius/,
   border: /^border/,
-  radius: /^radius/,
   shadow: /^shadow-/,
   blur: /^blur-/,
   opacity: /^opacity-/,
   zIndex: /^material-zindex-/,
   material: /^material-/,
-  transition: /^(transition-|animation-delay-)/,
+  transition: /^transition-/,
   category: /^category-/,
   palette: /^(gray|green|red|yellow|orange|blue|black|white)\d+$/,
   background: /^background-/,
@@ -66,7 +66,7 @@ const sectionPatterns = {
  * 이 페이지가 다루지 않는 토큰. 소개되는 자리가 따로 있거나 한 컴포넌트가 소유하는 값이다.
  */
 const documentedElsewhere = [
-  /^interaction-/, // Interaction 페이지가 상태별로 소개한다
+  /^interaction-/, // 색 토큰은 Color 섹션이, 나머지는 Interaction 페이지가 상태별로 소개한다
   /^(primary|accent|warning|danger|foreground)-/, // Color 섹션에 태그·대비쌍으로 나온다
   /^control-/, // control pill의 모양값
   /^newneek-/, // 포트폴리오 사례 전용 브랜드 색
@@ -107,6 +107,13 @@ const renderTokenItems = (keys: string[]) =>
     `,
   )
 
+/** 선택 상태의 색 토큰. Interaction 페이지의 pressed·checked·selected·current가 함께 쓴다. */
+const interactionSelectedColors = [
+  'interaction-selected-background-color',
+  'interaction-selected-foreground-color',
+  'interaction-selected-border-color',
+]
+
 const renderColorTokens = (names: string[]) =>
   names.map(
     name => html`
@@ -141,7 +148,7 @@ const renderSpaceStage = (tokens: string[]) =>
               width: 2px;
               height: var(--size-32);
               background: var(--background-strong-color);
-              border-radius: var(--radius);
+              border-radius: var(--border-radius);
             "
           ></div>
           <div style="width: var(--${token}); height: 4px; background: var(--primary-color)"></div>
@@ -150,7 +157,7 @@ const renderSpaceStage = (tokens: string[]) =>
               width: 2px;
               height: var(--size-32);
               background: var(--background-strong-color);
-              border-radius: var(--radius);
+              border-radius: var(--border-radius);
             "
           ></div>
         </mm-flex>
@@ -175,7 +182,7 @@ const backgroundPairs: Record<string, string[]> = {
     'foreground-warning-color',
     'foreground-danger-color',
   ],
-  'background-strong-color': ['foreground-on-strong-color'],
+  'background-strong-color': ['foreground-on-strong-color', 'foreground-subtle-color'],
 }
 
 const renderBackgroundTokens = (names: string[]) =>
@@ -282,7 +289,7 @@ const renderMotionStage = (tracks: EasingTrack[]) =>
 
 const motionTracks: EasingTrack[] = [
   { easing: 'var(--transition-easing)', label: 'transition-easing' },
-  { easing: 'var(--transition-easing-emphasis)', label: 'transition-easing-emphasis' },
+  { easing: 'var(--transition-easing-open)', label: 'transition-easing-open' },
 ]
 
 /** 토큰이 놓이는 계층. 계층마다 한 색으로 칠해, 사슬이 달라도 같은 계층이 같은 자리에 있음을 보인다. */
@@ -386,11 +393,6 @@ const primitiveKinds: TokenKind[] = [
     description: '표면이 떠 있는 정도와 겹침 순서',
     subtokens: ['shadow', 'blur', 'opacity', 'z-index'],
   },
-]
-
-/** Semantic Token을 묶는 대상 이름. 도형은 그 대상이 화면에서 맡는 역할을 그린다. */
-const semanticKinds: TokenKind[] = [
-  { target: 'interaction', description: 'hover·selected 같은 상태의 값', group: 'state' },
 ]
 
 // 분류가 있는 대상은 분류 색, 나머지는 이름 규칙의 대상 자리 색으로 칠한다.
@@ -565,13 +567,6 @@ const main = html`
               ${renderNameAnatomy(componentNameAnatomy)}
             </mm-flex>
           </mm-token-stage>
-          <mm-token-stage>
-            <mm-flex class="stage-content" direction="column" gap="6">
-              <mm-grid columns="3" gap="6">
-                ${semanticKinds.map(renderTokenKind('semantic'))}
-              </mm-grid>
-            </mm-flex>
-          </mm-token-stage>
         </mm-content-section>
       </mm-content-section-list>
 
@@ -597,6 +592,11 @@ const main = html`
         <mm-separator></mm-separator>
         <mm-grid columns="4" role="group" aria-label="테두리색 토큰">
           ${renderColorTokens(sectionTokens('borderColor'))}
+        </mm-grid>
+
+        <mm-separator></mm-separator>
+        <mm-grid columns="4" role="group" aria-label="선택 상태 색 토큰">
+          ${renderColorTokens(interactionSelectedColors)}
         </mm-grid>
 
         <mm-separator></mm-separator>
@@ -734,24 +734,11 @@ const main = html`
         <mm-token-group aria-label="겹침 순서 토큰">
           ${renderTokenItems(sectionTokens('zIndex'))}
         </mm-token-group>
-        <mm-text-list
-          .texts=${[
-            'base — 형제 요소 위에 그리는 로컬 레이어.',
-            'elevated — 목록·그룹 안에서 형제보다 살짝 뜨는 요소.',
-            'chrome — 화면에 고정된 내비게이션·툴바.',
-            'chrome-top — 고정된 바 위에 남아야 하는 전역 내비게이션.',
-            'backdrop — modal 표면 뒤를 덮는 레이어.',
-            'sheet — viewport를 기준으로 화면을 덮는 표면.',
-            'popover — 트리거에 앵커되는 표면. sheet 안에서 열려도 sheet 위에 보인다.',
-            'tooltip — 가리키는 대상이 어느 표면에 있든 그 위에 보이는 설명.',
-            'toast — 항상 최상단에 보이는 알림.',
-          ]}
-        ></mm-text-list>
       </mm-token-section>
 
       <mm-token-section
         heading="Transition"
-        description="모든 모션은 기본 duration과 easing을 함께 씁니다. 등장을 강조하는 모션만 예외로 더 길고 튀는 emphasis 값을 씁니다. 순차 등장은 delay로 시차를 둡니다. 스테이지에 포인터를 올리면 두 easing을 비교할 수 있습니다."
+        description="모든 모션은 기본 duration과 easing을 함께 씁니다. 열리는 모션은 더 길게 열고, 패널이 나타나는 transform만 살짝 튀는 open easing을 씁니다. 순차 등장은 delay로 시차를 둡니다. 스테이지에 포인터를 올리면 두 easing을 비교할 수 있습니다."
       >
         <mm-token-stage>
           <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>

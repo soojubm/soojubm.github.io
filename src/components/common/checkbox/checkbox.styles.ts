@@ -6,7 +6,7 @@ export const checkboxStyles = css`
   :host {
     --checkbox-width: var(--size-16);
     --checkbox-height: var(--size-16);
-    --checkbox-border-radius: var(--radius);
+    --checkbox-border-radius: var(--border-radius);
     --checkbox-border-color: var(--border-color);
     --checkbox-background-color: var(--background-color);
   }

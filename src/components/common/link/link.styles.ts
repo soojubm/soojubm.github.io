@@ -12,7 +12,7 @@ export const linkStyles = css`
     display: inline-flex;
     align-items: center;
     gap: var(--link-gap);
-    border-radius: var(--radius);
+    border-radius: var(--border-radius);
     text-decoration: underline;
     text-decoration-skip-ink: auto;
     line-height: inherit;

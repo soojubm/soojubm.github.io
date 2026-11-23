@@ -61,7 +61,7 @@ export const surfaceBaseStyles = css`
   --surface-height: auto;
   --surface-padding: var(--space-4);
   --surface-border: var(--border);
-  --surface-border-radius: var(--radius);
+  --surface-border-radius: var(--border-radius);
   --surface-background-color: var(--background-color);
   --surface-text-color: inherit;
   --surface-shadow: none;
@@ -83,8 +83,8 @@ export const surfaceBaseStyles = css`
 `
 
 const surfaceRadiusTokens: AttributeTokens<SurfaceRadius> = {
-  default: { '--surface-border-radius': 'var(--radius)' },
-  large: { '--surface-border-radius': 'var(--radius-large)' },
+  default: { '--surface-border-radius': 'var(--border-radius)' },
+  large: { '--surface-border-radius': 'var(--border-radius-large)' },
 }
 
 const surfaceRadiusStyles = css`

@@ -47,10 +47,10 @@ export class ColorToken extends LitElement {
         flex: 1;
         flex-direction: column;
         justify-content: flex-end;
-        gap: var(--space-2);
+        gap: var(--space-1);
         min-height: var(--size-80);
-        padding: var(--space-3) var(--space-4);
-        border-radius: var(--radius);
+        padding: var(--space-3);
+        border-radius: var(--border-radius);
         background: var(--color-token-background-color);
         box-sizing: border-box;
       }
@@ -85,7 +85,6 @@ export class ColorToken extends LitElement {
       }
 
       figcaption {
-        padding-bottom: var(--space-3);
         margin-top: var(--space-2);
         font-family: var(--font-family-code);
         color: var(--foreground-color);
