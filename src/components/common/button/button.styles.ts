@@ -93,13 +93,13 @@ export const buttonVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', buttonVariantTokens))}
 
   :host([destructive][variant='primary']) {
-    --button-background-color: var(--danger-color);
+    --button-background-color: var(--background-danger-color);
     --button-text-color: var(--foreground-on-danger-color);
   }
 
   :host([destructive][variant='secondary']),
   :host([destructive][variant='tertiary']) {
-    --button-text-color: var(--danger-color);
+    --button-text-color: var(--foreground-danger-color);
   }
 `
 

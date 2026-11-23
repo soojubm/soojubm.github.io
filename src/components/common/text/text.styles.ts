@@ -46,7 +46,7 @@ const textMaxLinesStyles = css`
 
 const textColorTokens: AttributeTokens<Exclude<TextColor, 'inherit'>> = {
   light: { color: 'var(--foreground-subtle-color)' },
-  danger: { color: 'var(--danger-color)' },
+  danger: { color: 'var(--foreground-danger-color)' },
 }
 
 const textSizeTokens: AttributeTokens<TextSize> = {

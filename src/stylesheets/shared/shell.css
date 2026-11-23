@@ -10,7 +10,7 @@
   margin: 0 auto;
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
-  background: var(--danger-color);
+  background: var(--background-danger-color);
   color: var(--foreground-on-strong-color);
   text-align: center;
 

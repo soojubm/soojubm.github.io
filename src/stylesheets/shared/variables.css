@@ -66,10 +66,11 @@
   --primary-color: var(--gray800);
   --primary-subtle-color: #ebebeb;
   --accent-color: var(--yellow800);
-  --warning-color: var(--orange800);
+  --background-warning-color: var(--orange800);
   --foreground-warning-color: var(--orange800);
-  --danger-color: var(--red800);
+  --background-danger-color: var(--red800);
   --foreground-danger-color: var(--red800);
+  --border-danger-color: var(--red800);
 
   /*
    * 시멘틱 컬러.
@@ -123,7 +124,7 @@
   --border-width: 1px;
   --border: var(--border-width) solid var(--border-color);
   --border-transparent: var(--border-width) solid transparent;
-  --border-danger: var(--border-width) solid var(--danger-color);
+  --border-danger: var(--border-width) solid var(--border-danger-color);
   --border-selected: var(--border-width) solid var(--interaction-selected-border-color);
 
   --border-radius: 6px;

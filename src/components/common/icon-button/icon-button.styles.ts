@@ -87,13 +87,13 @@ export const iconButtonStyles = css`
   ${unsafeCSS(buildAttributeRules('size', iconButtonSizeTokens))}
 
   :host([destructive][variant='primary']) button {
-    --icon-button-background-color: var(--danger-color);
+    --icon-button-background-color: var(--background-danger-color);
     --icon-button-text-color: var(--foreground-on-danger-color);
   }
 
   :host([destructive][variant='secondary']) button,
   :host([destructive][variant='tertiary']) button,
   :host([destructive][variant='ghost']) button {
-    --icon-button-text-color: var(--danger-color);
+    --icon-button-text-color: var(--foreground-danger-color);
   }
 `

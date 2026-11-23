@@ -48,11 +48,11 @@ meter::-webkit-meter-optimum-value {
 }
 
 meter::-webkit-meter-suboptimum-value {
-  background: var(--warning-color);
+  background: var(--background-warning-color);
 }
 
 meter::-webkit-meter-even-less-good-value {
-  background: var(--danger-color);
+  background: var(--background-danger-color);
 }
 
 meter:-moz-meter-optimum::-moz-meter-bar {
@@ -60,9 +60,9 @@ meter:-moz-meter-optimum::-moz-meter-bar {
 }
 
 meter:-moz-meter-sub-optimum::-moz-meter-bar {
-  background: var(--warning-color);
+  background: var(--background-warning-color);
 }
 
 meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
-  background: var(--danger-color);
+  background: var(--background-danger-color);
 }

@@ -8,6 +8,6 @@ export const menuItemStyles = css`
 
   /* destructive: color를 행에 지정하면 list-item 내부 텍스트·아이콘이 상속받는다 */
   :host([destructive]) & {
-    color: var(--danger-color);
+    color: var(--foreground-danger-color);
   }
 `

@@ -109,7 +109,7 @@ export const inputBaseStyles = css`
     & .textfield-control,
     & .textarea-control,
     & textarea {
-      border-color: var(--danger-color);
+      border-color: var(--border-danger-color);
     }
   }
 `
