@@ -1,4 +1,4 @@
-import { html, type TemplateResult } from 'lit'
+import { html } from 'lit'
 
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 
@@ -76,111 +76,26 @@ const references: ComponentReferenceItemData[][] = [
   ],
 ]
 
-type FeatureCategory = 'Interaction' | 'Presentation'
-
 type ComponentFeature = {
-  category: FeatureCategory
-  heading: string
-  description: string | TemplateResult
+  tone: 'blue' | 'purple'
+  name: string
 }
 
-const FEATURE_TAG_TONES = { Interaction: 'blue', Presentation: 'purple' } as const
-
+// Interaction은 blue, Presentation은 purple 톤으로 묶음을 구분한다.
 const componentFeatures: ComponentFeature[] = [
-  {
-    category: 'Interaction',
-    heading: 'Interactive - action',
-    description:
-      '누르면 이동하거나 실행되는 최종 상호작용. 결과는 페이지 이동·정보 구조 변화로도 드러나므로 중복해서 알리지 않는다.',
-  },
-  {
-    category: 'Interaction',
-    heading: 'Interactive - selection',
-    description: html`
-      선택 여부를 상태로 유지한다. 기준은
-      <mm-link href="./interaction.html?tab=selection">Selection</mm-link>
-      문서가 정한다.
-    `,
-  },
-  {
-    category: 'Interaction',
-    heading: 'Interactive - input',
-    description: html`
-      제한된 선택지가 아니라 자유 형식 값을 받고, 입력 규칙 검증과 오류 표시를 함께 제공한다. 오류는
-      해당 필드와 연결한다. 기준은
-      <mm-link href="./interaction.html">Interaction</mm-link>
-      문서가 정한다.
-    `,
-  },
-  {
-    category: 'Interaction',
-    heading: 'Feedback',
-    description: '사용자 행동이나 시스템 상태의 결과를 알린다.',
-  },
-  {
-    category: 'Presentation',
-    heading: 'Glanceable',
-    description: html`
-      훑는 것만으로 뜻이 파악되게 한다. 기준은
-      <mm-link href="./content.html">Content</mm-link>
-      문서가 정한다.
-    `,
-  },
-  {
-    category: 'Presentation',
-    heading: 'Representative',
-    description:
-      '사용자·브랜드·객체를 대표하는 시각 정보. 원본이 없거나 실패해도 대체 표현과 대체 텍스트로 형태와 정체성을 유지한다.',
-  },
-  {
-    category: 'Presentation',
-    heading: 'Stateful',
-    description: html`
-      의미 상태를 톤으로 구분하고 아이콘·텍스트를 함께 준다. 기준은
-      <mm-link href="./interaction.html">Interaction</mm-link>
-      문서가 정한다.
-    `,
-  },
-  {
-    category: 'Presentation',
-    heading: 'Structural',
-    description: '상호작용 없이 반복되는 구조와 경계를 잡는다.',
-  },
-  {
-    category: 'Presentation',
-    heading: 'Contextual',
-    description: '상호작용 맥락이나 기준 요소에 따라 표현 방식 또는 동작이 결정되는 컴포넌트 특성',
-  },
-  // dsclosure와 modalty 는 특정 패턴에 가까워서 제외하는 게 낫다. 패턴 문서에서 다루는 게 더 적절하다.
-  // {
-  //   category: 'Presentation',
-  //   heading: 'Disclosure',
-  //   description: html`
-  //     부차적인 정보를 접어 두고 필요할 때만 펼친다. 기준은
-  //     <mm-link href="./pattern.html">Pattern</mm-link>
-  //     문서가 정한다.
-  //   `,
-  // },
-  // {
-  //   category: 'Presentation',
-  //   heading: 'Modality',
-  //   description: html`
-  //     배경 상호작용 차단 여부로 레이어를 규정한다. 기준은
-  //     <mm-link href="./layout.html?tab=overlay">Layout</mm-link>
-  //     문서가 정한다.
-  //   `,
-  // },
+  { tone: 'blue', name: 'Interactive - action' },
+  { tone: 'blue', name: 'Interactive - selection' },
+  { tone: 'blue', name: 'Interactive - input' },
+  { tone: 'blue', name: 'Feedback' },
+  { tone: 'purple', name: 'Glanceable' },
+  { tone: 'purple', name: 'Representative' },
+  { tone: 'purple', name: 'Stateful' },
+  { tone: 'purple', name: 'Structural' },
+  { tone: 'purple', name: 'Contextual' },
 ]
 
-const renderFeatureCard = ({ category, heading, description }: ComponentFeature) => html`
-  <mm-surface>
-    <mm-flex direction="column" gap="2" align-items="flex-start">
-      <mm-tag tone=${FEATURE_TAG_TONES[category]}>${category}</mm-tag>
-      <mm-text-block level="4" heading=${heading}>
-        <mm-text size="14">${description}</mm-text>
-      </mm-text-block>
-    </mm-flex>
-  </mm-surface>
+const renderFeatureTag = ({ tone, name }: ComponentFeature) => html`
+  <mm-code-tag tone=${tone}>${name}</mm-code-tag>
 `
 
 const main = html`
@@ -208,7 +123,7 @@ const main = html`
 
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="Component Feature">
-          <mm-grid columns="4" gap="4">${componentFeatures.map(renderFeatureCard)}</mm-grid>
+          <mm-flex gap="2" wrap="wrap">${componentFeatures.map(renderFeatureTag)}</mm-flex>
         </mm-content-section>
         <mm-component-references .items=${references}></mm-component-references>
       </mm-content-section-list>
