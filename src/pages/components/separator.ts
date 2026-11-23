@@ -68,7 +68,7 @@ const main = html`
           html`
             Article 그룹의 구획에 사용합니다. Element와 Section 그룹은 쓰지 않으며, 레벨별 구획
             규칙은
-            <mm-link href="./layout.html?tab=element">Layout</mm-link>
+            <mm-link href="./layout.html?tab=division">Layout</mm-link>
             문서가 정합니다.
           `,
         ]}

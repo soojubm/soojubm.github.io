@@ -4,6 +4,7 @@ import type { TagTone } from '@/components/common/tag/tag.styles'
 
 import './layout.css'
 
+import '@/components/common/separator/separator'
 import '@/components/domains/component/component-notice'
 import '@/components/domains/ui-placeholder/ui-placeholder'
 import { code, rule } from '@/components/domains/component'
@@ -140,16 +141,26 @@ const renderSpacingSection = (labeled = false) => html`
   </div>
 `
 
-/** 네 가지 간격을 실제 토큰 값만큼 띄운 자리표시자로 한 화면에 그리고, 각 간격에 토큰 이름을 직접 적는다. */
+/** 앞의 섹션들과 형태가 완전히 다른 가운데 정렬 모듈로, 맥락이 바뀌었음을 보여 준다. */
+const renderSpacingOtherContext = () => html`
+  <div class="contrast-module">
+    <mm-ui-placeholder variant="avatar"></mm-ui-placeholder>
+    <mm-ui-placeholder variant="heading"></mm-ui-placeholder>
+    <mm-ui-placeholder variant="text"></mm-ui-placeholder>
+  </div>
+`
+
+/** 같은 형태의 섹션 둘은 간격으로, 형태가 다른 맥락과는 구분선으로 구획한 한 화면을 그린다. */
 const renderSpacingOverview = () => html`
   <mm-token-stage>
-    <div class="spacing-page stage-width">
-      <mm-code-tag class="spacing-page-tag">--layout-padding-inline</mm-code-tag>
+    <mm-flex class="stage-width" direction="column">
       ${renderSpacingSection(true)}${renderSpacingGap(
         'section',
         '--space-section',
       )}${renderSpacingSection()}
-    </div>
+      <mm-separator variant="section"></mm-separator>
+      ${renderSpacingOtherContext()}
+    </mm-flex>
   </mm-token-stage>
 `
 
@@ -226,13 +237,9 @@ const renderAlignmentContrast = () => {
   const renderFlow = (tag: string) => html`
     <div class="contrast-flow">
       <mm-code-tag>${tag}</mm-code-tag>
-      <mm-ui-placeholder
-        style="--ui-placeholder-height: var(--size-24); width: 40%"
-      ></mm-ui-placeholder>
-      <mm-ui-placeholder style="--ui-placeholder-height: var(--size-16)"></mm-ui-placeholder>
-      <mm-ui-placeholder
-        style="--ui-placeholder-height: var(--size-16); width: 75%"
-      ></mm-ui-placeholder>
+      <mm-ui-placeholder variant="heading"></mm-ui-placeholder>
+      <mm-ui-placeholder variant="text"></mm-ui-placeholder>
+      <mm-ui-placeholder variant="text"></mm-ui-placeholder>
     </div>
   `
 
@@ -242,15 +249,9 @@ const renderAlignmentContrast = () => {
         ${renderFlow('text-align: start')}
         <div class="contrast-module">
           <mm-code-tag tone="blue">text-align: center</mm-code-tag>
-          <mm-ui-placeholder
-            style="--ui-placeholder-height: var(--size-48); --ui-placeholder-border-radius: var(--border-radius-full); width: var(--size-48)"
-          ></mm-ui-placeholder>
-          <mm-ui-placeholder
-            style="--ui-placeholder-height: var(--size-24); width: 50%"
-          ></mm-ui-placeholder>
-          <mm-ui-placeholder
-            style="--ui-placeholder-height: var(--size-16); width: 70%"
-          ></mm-ui-placeholder>
+          <mm-ui-placeholder variant="avatar"></mm-ui-placeholder>
+          <mm-ui-placeholder variant="heading"></mm-ui-placeholder>
+          <mm-ui-placeholder variant="text"></mm-ui-placeholder>
         </div>
         ${renderFlow('text-align: start')}
       </div>
@@ -268,7 +269,7 @@ const main = html`
     <mm-page-body>
       <mm-tab-list value="page" variant="text" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
-        <mm-tab value="spacing">Space</mm-tab>
+        <mm-tab value="division">Division</mm-tab>
         <mm-tab value="overlay">Overlay</mm-tab>
       </mm-tab-list>
 
@@ -350,56 +351,71 @@ const main = html`
         </mm-content-section-list>
       </mm-tab-panel>
 
-      <mm-tab-panel value="spacing">
+      <mm-tab-panel value="division">
         <mm-content-section-list>
           <mm-text-block
             level="3"
-            heading="가까울수록 한 덩어리로 읽힌다"
-            description="사용자는 요소를 하나씩 읽기보다 가까이 놓인 것끼리 묶어 읽습니다. 그래서 덩어리 안의 간격은 덩어리 사이의 간격보다 좁아야 하며, 중첩이 한 단계 바깥으로 나갈수록 간격이 한 단계씩 커집니다. 같은 모양의 제목과 여백이 콘텐츠 그룹마다 반복되는 리듬은 구획되었다는 인상을 줍니다."
+            heading=""
+            description="사용자는 요소를 하나씩 읽기보다 가까이 놓인 것끼리 묶어 읽습니다. 그래서 덩어리 안의 간격은 덩어리 사이의 간격보다 좁아야 하며, 중첩이 한 단계 바깥으로 나갈수록 간격이 한 단계씩 커집니다. 한 경계에 간격과 구분선을 함께 쓰지 않습니다."
           >
             ${renderSpacingOverview()}
           </mm-text-block>
 
-          <mm-text-block level="3" heading="간격은 어떻게 정하나요">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    간격은 부모 요소의 ${code('gap')}으로 둔다
-                  `,
-                  html`
-                    형제의 ${code('margin')}·${code('padding')}으로 두지 않는다.
-                    <mm-link href="https://help.figma.com/hc/en-us/articles/360040451373">
-                      Figma 오토 레이아웃
-                    </mm-link>
-                    도 항목 사이 간격을 항목이 아니라 부모 프레임의 간격(Spacing between items)으로
-                    정하며, 항목이 빠지거나 순서가 바뀌어도 간격이 겹치거나 사라지지 않는다
-                  `,
-                ),
-                html`
-                  ${code('mm-content-section-list')}가 섹션 사이의 ${code('gap')}을 맡는다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-text-block>
+          <mm-grid columns="2" gap="4">
+            <mm-flex direction="column" gap="2">
+              <mm-heading level="3">
+                <mm-code-tag size="large">Gap</mm-code-tag>
+              </mm-heading>
+              <mm-tag-group>
+                <mm-code-tag tone="green">같은 맥락</mm-code-tag>
+              </mm-tag-group>
+              <mm-text size="14">
+                같은 맥락의 그룹·섹션·리스트는 간격으로 구획합니다. 같은 모양의 제목과 여백이 콘텐츠
+                그룹마다 반복되는 리듬은 구획되었다는 인상을 줍니다.
+              </mm-text>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    html`
+                      간격은 부모 요소의 ${code('gap')}으로 둔다
+                    `,
+                    html`
+                      형제의 ${code('margin')}·${code('padding')}으로 두지 않는다
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
+              <mm-component-notice heading="Figma 오토 레이아웃도 같은 방식이다">
+                항목 사이 간격을 항목이 아니라 부모 프레임의
+                <mm-link href="https://help.figma.com/hc/en-us/articles/360040451373">
+                  Spacing between items
+                </mm-link>
+                으로 정합니다. 항목이 빠지거나 순서가 바뀌어도 간격이 겹치거나 사라지지 않습니다.
+              </mm-component-notice>
+            </mm-flex>
 
-          <mm-text-block
-            level="3"
-            heading="구분선"
-            description="구분선은 간격만으로 부족할 때 더하는 경계선입니다. 섹션마다 선을 그으면 페이지가 칸막이로 쪼개져 보이므로, 섹션은 기본적으로 여백과 제목으로 나눕니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule('separator는 서로 다른 맥락 사이에만 둔다'),
-                rule(
-                  'separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다',
-                  '선 위아래에 separator의 간격이 이미 있어서, gap이 더해지면 이 경계만 다른 곳보다 넓게 벌어진다',
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-text-block>
+            <mm-flex direction="column" gap="2">
+              <mm-heading level="3">
+                <mm-code-tag size="large">Separator</mm-code-tag>
+              </mm-heading>
+              <mm-tag-group>
+                <mm-code-tag tone="blue">다른 맥락</mm-code-tag>
+              </mm-tag-group>
+              <mm-text size="14">
+                맥락이 달라지는 자리에만 구분선을 긋습니다. 반복되는 패턴의 리듬이 구획되었다는
+                인상을 줄 수 있습니다. 구분선을 과도하게 사용하면 시각적 노이즈로 작용할 수
+                있습니다.
+              </mm-text>
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule('separator는 서로 다른 맥락 사이에만 둔다'),
+                  rule('separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다'),
+                ]}
+              ></mm-text-list>
+            </mm-flex>
+          </mm-grid>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -465,10 +481,6 @@ const main = html`
                     트리거에서 이어지게 한다. 바깥을 눌러 닫을 때는 사용자가 누른 곳의 포커스를
                     빼앗지 않는다
                   `,
-                ),
-                rule(
-                  '겹쳐 열린 overlay는 가장 나중에 연 것부터 한 겹씩 닫는다',
-                  'ESC도 맨 위 하나만 닫아 한 겹씩 돌아온다. 아래 모달은 위 모달이 열린 동안 포커스를 받지 못하고, 위 모달이 닫히면 그 모달을 열었던 자리로 포커스가 돌아와 하던 곳에서 이어 갈 수 있다',
                 ),
               ]}
             ></mm-text-list>

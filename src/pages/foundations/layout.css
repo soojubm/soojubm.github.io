@@ -1,30 +1,7 @@
 /* 자리표시자 사이를 실제 간격 토큰만큼 띄워 거리를 그린다. 태그는 간격 자리 한가운데에 걸쳐 놓는다. */
-.spacing-page {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: var(--layout-padding-inline);
-  border: var(--border);
-  border-radius: var(--border-radius-large);
-  background: var(--background-color);
-}
-
-.spacing-page mm-ui-placeholder {
+.spacing-section mm-ui-placeholder {
   --ui-placeholder-height: var(--size-16);
   --ui-placeholder-border-radius: var(--border-radius);
-}
-
-.spacing-page-tag,
-.spacing-gap mm-code-tag {
-  position: absolute;
-  z-index: 1;
-  translate: -50% -50%;
-}
-
-.spacing-page-tag {
-  top: calc(var(--layout-padding-inline) / 2);
-  left: 50%;
 }
 
 .spacing-gap {
@@ -33,8 +10,11 @@
 }
 
 .spacing-gap mm-code-tag {
+  position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
+  translate: -50% -50%;
 }
 
 .spacing-gap[data-level='section'] {
@@ -114,8 +94,4 @@
   padding: var(--space-6);
   border-radius: var(--border-radius);
   background: var(--background-subtle-color);
-}
-
-.contrast-flow mm-ui-placeholder {
-  width: 100%;
 }
