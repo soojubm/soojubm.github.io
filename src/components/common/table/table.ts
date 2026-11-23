@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { resetStyles } from '@/stylesheets/shared.styles'
+import { resetStyles, scrollbarStyles } from '@/stylesheets/shared.styles'
 import '@/components/common/icon'
 
 export interface TableColumn {
@@ -33,6 +33,8 @@ export class Table extends LitElement {
         height: var(--table-height);
         background-color: var(--background-subtle-color);
         overflow-x: auto;
+
+        ${scrollbarStyles};
       }
 
       .header-label {
