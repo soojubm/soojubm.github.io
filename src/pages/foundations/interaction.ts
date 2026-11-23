@@ -3,12 +3,12 @@ import { html, nothing, type TemplateResult } from 'lit'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
-import { code, codeList, rule } from '@/components/domains/component'
+import { code } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './interaction.css'
 
 const optionItemCode = `type OptionItem = {
-  value: string
+  value: string // 옵션의 key로 사용한다
   label: string
   icon?: IconName
   disabled?: boolean
@@ -18,95 +18,36 @@ type FilterOption = OptionItem & {
   selectAll?: boolean
 }`
 
-type ComponentBlock = { label: string; description?: string; components: string[] }
+type SelectionComponent = { name: string; options: 'options' | 'children' }
 
-const selectionOwnerBlocks: ComponentBlock[] = [
-  {
-    label: 'SingleSelection',
-    description: 'value: string',
-    components: [
-      'mm-radio-group',
-      'mm-radio-card-group',
-      'mm-toggle-button-group',
-      'mm-filter-button-group',
-      'mm-menu-item-radio-group',
-    ],
-  },
-  {
-    label: 'MultipleSelection',
-    description: 'values: string[]',
-    components: ['mm-checkbox-group', 'mm-filter-button-group', 'mm-menu-item-checkbox-group'],
-  },
+const singleSelectionComponents: SelectionComponent[] = [
+  { name: 'mm-radio-group', options: 'options' },
+  { name: 'mm-radio-card-group', options: 'children' },
+  { name: 'mm-toggle-button-group', options: 'options' },
+  { name: 'mm-select', options: 'options' },
+  { name: 'mm-filter-button-group', options: 'options' },
+  { name: 'mm-menu-item-radio-group', options: 'options' },
 ]
 
-/** list-item 하나를 제목으로 두고, 아래 surface에 쓰는 컴포넌트를 나열한다. */
-const renderComponentBlocks = (blocks: ComponentBlock[]) => html`
-  <mm-flex direction="column" gap="6">
-    ${blocks.map(
-      ({ label, description, components }) => html`
-        <mm-flex direction="column" gap="2">
-          <mm-list-item
-            size="medium"
-            label=${label}
-            description=${description ?? ''}
-          ></mm-list-item>
-          <mm-surface>
-            <mm-paragraph>${codeList(components)}</mm-paragraph>
-          </mm-surface>
-        </mm-flex>
+const multipleSelectionComponents: SelectionComponent[] = [
+  { name: 'mm-filter-button-group', options: 'options' },
+  { name: 'mm-checkbox-group', options: 'options' },
+  { name: 'mm-menu-item-checkbox-group', options: 'options' },
+]
+
+/** 선택 컴포넌트 이름과 옵션 전달 방식을 색으로 구분된 코드 태그로 나열한다. */
+const renderSelectionComponents = (components: SelectionComponent[]) => html`
+  <mm-flex direction="column" gap="2">
+    ${components.map(
+      ({ name, options }) => html`
+        <mm-tag-group>
+          <mm-code-tag>${name}</mm-code-tag>
+          <mm-code-tag tone=${options === 'children' ? 'pink' : 'purple'}>${options}</mm-code-tag>
+        </mm-tag-group>
       `,
     )}
   </mm-flex>
 `
-
-const selectionRows = html`
-  <tr>
-    <th scope="row">${code('mm-radio-group')}</th>
-    <td>Single</td>
-    <td>배열</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-radio-card-group')}</th>
-    <td>Single</td>
-    <td>자식 요소</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-toggle-button-group')}</th>
-    <td>Single</td>
-    <td>배열</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-select')}</th>
-    <td>Single</td>
-    <td>배열</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-filter-button-group')}</th>
-    <td>Single · Multiple</td>
-    <td>배열</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-radio-group')}</th>
-    <td>Single</td>
-    <td>배열</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-checkbox-group')}</th>
-    <td>Multiple</td>
-    <td>배열</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-menu-item-checkbox-group')}</th>
-    <td>Multiple</td>
-    <td>배열</td>
-  </tr>
-`
-
-const selectionTableColumns = [
-  { label: '컴포넌트', width: '240px' },
-  { label: '선택', width: '140px' },
-  { label: '옵션 전달' },
-]
 
 type StateCard = {
   state: string
@@ -118,6 +59,8 @@ type StateCard = {
   note?: string
   /** 도형 대신 썸네일 안에 놓을 내용. */
   figure?: TemplateResult
+  /** 이 상태를 화면에 드러내는 컴포넌트. */
+  components?: string[]
 }
 
 /** 조작 상태마다 그 상태의 토큰을 입힌 도형과 이름·선택자·설명을 한 카드로 보여 준다. */
@@ -175,8 +118,53 @@ const semanticStates: StateCard[] = [
     state: 'success',
     selectors: [],
     aliases: ['info', 'done'],
-    description: '전용 토큰이 정의되지 않았습니다.',
+    description: '사용처가 없어 정의하지 않았습니다.',
     note: '성공은 작업이 성공적으로 완료되었음을, 안내는 참고 가능한 보조 정보를, 완료는 더 이상 진행할 것이 없음을 나타냅니다.',
+    tokens: [],
+  },
+]
+
+const dataIcon = (name: string) => html`
+  <mm-icon name=${name}></mm-icon>
+`
+
+const dataStates: StateCard[] = [
+  {
+    state: 'idle',
+    selectors: [],
+    description: '아직 아무 요청도 하지 않은 대기·초기 상태입니다.',
+    figure: dataIcon(ICON_NAMES.IDLE),
+    tokens: [],
+  },
+  {
+    state: 'pending',
+    selectors: [],
+    description: '데이터를 가져오는 중입니다. 진행 중임을 알립니다.',
+    figure: dataIcon(ICON_NAMES.TIMER),
+    components: ['mm-spinner'],
+    tokens: [],
+  },
+  {
+    state: 'resolved',
+    selectors: [],
+    description: '데이터를 성공적으로 가져와 정상 UI를 노출합니다.',
+    figure: dataIcon(ICON_NAMES.SUCCESS),
+    tokens: [],
+  },
+  {
+    state: 'rejected',
+    selectors: [],
+    description: '데이터를 가져오지 못했습니다. 이유와 다시 시도를 제시합니다.',
+    figure: dataIcon(ICON_NAMES.FAILURE),
+    components: ['mm-result'],
+    tokens: [],
+  },
+  {
+    state: 'empty',
+    selectors: [],
+    description: '완료되었으나 데이터가 0건입니다. 빈 상태와 다음 행동을 제시합니다.',
+    figure: dataIcon(ICON_NAMES.EMPTY),
+    components: ['mm-result'],
     tokens: [],
   },
 ]
@@ -245,6 +233,7 @@ const renderStateCard = ({
   tokens,
   note,
   figure,
+  components = [],
 }: StateCard) => html`
   <mm-figure-card description=${description}>
     <span class="state-figure" slot="figure" data-state=${state}>${figure}</span>
@@ -260,6 +249,11 @@ const renderStateCard = ({
           <mm-code-tag slot="tags">${selector}</mm-code-tag>
         `,
       )}
+    ${components.map(
+      component => html`
+        <mm-code-tag slot="tags" tone="green">${component}</mm-code-tag>
+      `,
+    )}
     ${note
       ? html`
           <mm-caption>${note}</mm-caption>
@@ -273,7 +267,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Interaction"
-      description="어떤 요소가 상호작용할 수 있는지, 상호작용할 때 어떻게 반응하는지, 선택지를 어떻게 고르는지를 일관된 시각 언어로 정의합니다. 상태가 색상에만 기대지 않고 같은 방식으로 드러나므로, 사용자는 무엇을 누를 수 있고 지금 어떤 상태인지 바로 알아봅니다."
+      description="어떤 요소가 상호작용할 수 있는지, 상호작용할 때 어떻게 반응하는지, 선택 옵션을 어떻게 고르는지를 일관된 시각 언어로 정의합니다. 상태가 색상에만 기대지 않고 같은 방식으로 드러나므로, 사용자는 무엇을 누를 수 있고 지금 어떤 상태인지 바로 알아봅니다."
     ></mm-page-header>
 
     <mm-page-body>
@@ -332,38 +326,7 @@ const main = html`
 
           <mm-content-section heading-level="3" heading="데이터 상태">
             <mm-paragraph>데이터를 요청한 뒤 화면이 거치는 상태입니다.</mm-paragraph>
-            <mm-list-item-group>
-              <mm-list-item
-                icon=${ICON_NAMES.IDLE}
-                size="medium"
-                label="Idle"
-                description="아직 아무 요청도 하지 않은 대기·초기 상태입니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${ICON_NAMES.TIMER}
-                size="medium"
-                label="Pending"
-                description="데이터를 가져오는 중입니다. mm-spinner로 진행 중임을 알립니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${ICON_NAMES.SUCCESS}
-                size="medium"
-                label="Resolved"
-                description="데이터를 성공적으로 가져와 정상 UI를 노출합니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${ICON_NAMES.FAILURE}
-                size="medium"
-                label="Rejected"
-                description="데이터를 가져오지 못했습니다. mm-result로 이유와 다시 시도를 제시합니다."
-              ></mm-list-item>
-              <mm-list-item
-                icon=${ICON_NAMES.EMPTY}
-                size="medium"
-                label="Empty"
-                description="완료되었으나 데이터가 0건입니다. mm-result로 빈 상태와 다음 행동을 제시합니다."
-              ></mm-list-item>
-            </mm-list-item-group>
+            <mm-grid columns="4" gap="6">${dataStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
@@ -372,24 +335,19 @@ const main = html`
         <mm-content-section-list>
           <mm-flex direction="column" gap="3">
             <mm-grid columns="2" gap="4">
-              <mm-surface>
-                <mm-content-section heading-level="3" heading="단일 선택">
-                  <mm-paragraph>
-                    선택지 가운데 하나만 고르며, 다른 선택지를 고르면 이전 선택이 해제됩니다.
-                  </mm-paragraph>
-                </mm-content-section>
-              </mm-surface>
-              <mm-surface>
-                <mm-content-section heading-level="3" heading="다중 선택">
-                  <mm-paragraph>선택지마다 켜고 꺼서 원하는 만큼 고릅니다.</mm-paragraph>
-                </mm-content-section>
-              </mm-surface>
+              <mm-content-section heading-level="3" heading="단일 선택">
+                <mm-paragraph>
+                  선택 옵션 가운데 하나만 고르며, 다른 선택 옵션을 고르면 이전 선택이 해제됩니다.
+                </mm-paragraph>
+                <mm-code-tag tone="orange">value: string</mm-code-tag>
+                ${renderSelectionComponents(singleSelectionComponents)}
+              </mm-content-section>
+              <mm-content-section heading-level="3" heading="다중 선택">
+                <mm-paragraph>선택 옵션마다 켜고 꺼서 원하는 만큼 고릅니다.</mm-paragraph>
+                <mm-code-tag tone="orange">values: string[]</mm-code-tag>
+                ${renderSelectionComponents(multipleSelectionComponents)}
+              </mm-content-section>
             </mm-grid>
-            <mm-table
-              .rows=${selectionRows}
-              caption="값을 고르는 컴포넌트의 선택 개수·옵션 전달 방식 비교"
-              .columns=${selectionTableColumns}
-            ></mm-table>
             <mm-notice>
               <mm-text size="14">
                 ${code('mm-tab')}은 ${code('aria-selected')}를 쓰지만 값을 고르는 selection이 아니라
@@ -398,48 +356,20 @@ const main = html`
             </mm-notice>
           </mm-flex>
 
-          <mm-content-section heading-level="3" heading="기본값">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '기본값을 설정하지 않는다',
-                  '미리 선택된 값은 응답을 그 값 쪽으로 편향시킨다. 사용자가 직접 고르게 해야 선택이 사용자의 의도를 반영한다',
-                ),
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+          <mm-text-block
+            level="3"
+            heading="기본값"
+            description="선택되지 않은 상태로 제공합니다. 사용자가 의도하지 않은 선택값은 편향된 응답 결과를 가져오는 부작용이 있을 수 있습니다."
+          ></mm-text-block>
 
           <mm-content-section heading-level="3" heading="상태 소유">
             <mm-paragraph>
-              선택 상태는 항목이 아니라 그룹이 소유하고, 바뀌면 ${code('change')}로 알립니다. 값은
-              단일 선택이면 ${code('detail.value')}, 다중 선택이면 ${code('detail.values')}로
-              전달합니다. 선택지 없이 값 하나를 켜고 끄는 컴포넌트만 그룹 없이 자기 상태를 갖습니다.
-            </mm-paragraph>
-            ${renderComponentBlocks(selectionOwnerBlocks)}
-            <mm-paragraph>
-              ${code('mm-radio-card-group')}만 옵션 배열 대신 카드를 자식으로 받습니다. 카드는
-              가격·배지· 설명처럼 배열로 표현할 수 없는 콘텐츠를 담기 때문입니다. 값은 그룹이
-              소유하고, 카드가 바뀌면 그룹이 자기 ${code('change')}로 다시 알립니다.
+              선택 상태는 그룹 컴포넌트가 갖습니다. 단일 체크박스나 스위치, 설정 아이템처럼 켜고
+              끄는 맥락의 컴포넌트만 자기 상태를 갖습니다.
             </mm-paragraph>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="옵션 타입">
-            <mm-text-list
-              .texts=${[
-                html`
-                  선택지를 옵션 배열로 받는 컴포넌트는 ${code('OptionItem')}을 쓴다
-                `,
-                html`
-                  ${code('value')}를 옵션의 key로 사용한다
-                `,
-                html`
-                  고유 필드는 ${code('OptionItem')}에 교차 타입으로 더한다.
-                  ${code('FilterOption')}의 ${code('selectAll')}처럼 한 컴포넌트만 쓰는 필드는 공통
-                  타입에 섞지 않는다
-                `,
-              ]}
-            ></mm-text-list>
             <mm-code-block language="typescript" .code=${optionItemCode}></mm-code-block>
           </mm-content-section>
         </mm-content-section-list>

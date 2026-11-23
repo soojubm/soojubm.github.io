@@ -52,3 +52,12 @@
 .state-figure[data-state='error']::before {
   box-shadow: inset 0 0 0 var(--border-width) var(--foreground-danger-color);
 }
+
+/* 데이터 상태는 도형 칸 없이 아이콘만 보인다. */
+.state-figure[data-state='idle']::before,
+.state-figure[data-state='pending']::before,
+.state-figure[data-state='resolved']::before,
+.state-figure[data-state='rejected']::before,
+.state-figure[data-state='empty']::before {
+  display: none;
+}

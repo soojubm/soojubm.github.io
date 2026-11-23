@@ -6,84 +6,94 @@ import './layout.css'
 
 import '@/components/domains/component/component-notice'
 import '@/components/domains/ui-placeholder/ui-placeholder'
-import { code, no, rule, yes } from '@/components/domains/component'
+import { code, rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
-const classificationRows = html`
-  <tr>
-    <th scope="row"><mm-link href="./dialog.html">Dialog</mm-link></th>
-    <td>${yes}</td>
-    <td>Viewport</td>
-    <td>alertdialog</td>
-    <td>sheet</td>
-    <td>${yes}</td>
-    <td><mm-keyword-tag-group .keywords=${['ESC', 'close() 호출']}></mm-keyword-tag-group></td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-link href="./sheet.html">Sheet</mm-link></th>
-    <td>${yes}</td>
-    <td>Viewport</td>
-    <td>dialog</td>
-    <td>sheet</td>
-    <td>${yes}</td>
-    <td>
-      <mm-keyword-tag-group .keywords=${['바깥 클릭', 'ESC', '닫기 버튼']}></mm-keyword-tag-group>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row">Backdrop</th>
-    <td>${yes}</td>
-    <td>Viewport</td>
-    <td>없음</td>
-    <td>backdrop</td>
-    <td>없음</td>
-    <td>없음</td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-link href="./popover.html">Popover</mm-link></th>
-    <td>${no}</td>
-    <td>Trigger</td>
-    <td>없음</td>
-    <td>popover</td>
-    <td>${yes}</td>
-    <td>
-      <mm-keyword-tag-group
-        .keywords=${['바깥 클릭', 'ESC', '포커스 아웃', 'close() 호출']}
-      ></mm-keyword-tag-group>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-link href="./select.html">Select</mm-link></th>
-    <td>${no}</td>
-    <td>Trigger</td>
-    <td>listbox</td>
-    <td>popover</td>
-    <td>${yes}</td>
-    <td>
-      <mm-keyword-tag-group .keywords=${['바깥 클릭', 'ESC', '옵션 선택']}></mm-keyword-tag-group>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-link href="./tooltip.html">Tooltip</mm-link></th>
-    <td>${no}</td>
-    <td>Trigger</td>
-    <td>tooltip</td>
-    <td>tooltip</td>
-    <td>${no}</td>
-    <td>
-      <mm-keyword-tag-group .keywords=${['포인터 이탈', '포커스 아웃']}></mm-keyword-tag-group>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row"><mm-link href="./toast.html">Toast</mm-link></th>
-    <td>${no}</td>
-    <td>Viewport</td>
-    <td>status</td>
-    <td>toast</td>
-    <td>${no}</td>
-    <td><mm-keyword-tag-group .keywords=${['시간 경과']}></mm-keyword-tag-group></td>
-  </tr>
-`
+type OverlayInfo = {
+  name: string
+  modal: boolean
+  role?: string
+  layer: string
+  focus: boolean
+  close: string[]
+}
+
+const anchoredOverlays: OverlayInfo[] = [
+  {
+    name: 'Popover',
+    modal: false,
+    layer: 'popover',
+    focus: true,
+    close: ['outside click', 'ESC', 'focus out', 'close()'],
+  },
+  {
+    name: 'Select',
+    modal: false,
+    role: 'listbox',
+    layer: 'popover',
+    focus: true,
+    close: ['outside click', 'ESC', 'option select'],
+  },
+  {
+    name: 'Tooltip',
+    modal: false,
+    role: 'tooltip',
+    layer: 'tooltip',
+    focus: false,
+    close: ['pointer leave', 'focus out'],
+  },
+]
+
+const viewportOverlays: OverlayInfo[] = [
+  {
+    name: 'Dialog',
+    modal: true,
+    role: 'alertdialog',
+    layer: 'sheet',
+    focus: true,
+    close: ['ESC', 'close()'],
+  },
+  {
+    name: 'Sheet',
+    modal: true,
+    role: 'dialog',
+    layer: 'sheet',
+    focus: true,
+    close: ['outside click', 'ESC', 'close button'],
+  },
+  { name: 'Backdrop', modal: true, layer: 'backdrop', focus: false, close: [] },
+  {
+    name: 'Toast',
+    modal: false,
+    role: 'status',
+    layer: 'toast',
+    focus: false,
+    close: ['timeout'],
+  },
+]
+
+/** overlay 하나의 이름과 분류 속성을 색으로 구분된 태그로 나열한다. */
+const renderOverlay = (overlay: OverlayInfo) =>
+  html`
+    <mm-flex direction="column" gap="2">
+      <mm-code-tag size="large" tone=${overlay.modal ? 'blue' : 'green'}>
+        ${overlay.name}
+      </mm-code-tag>
+      <mm-tag-group>
+        <mm-code-tag tone=${overlay.modal ? 'blue' : 'green'}>
+          ${overlay.modal ? 'Modal' : 'Non-modal'}
+        </mm-code-tag>
+        <mm-code-tag tone="purple">${overlay.role ?? 'none'}</mm-code-tag>
+        <mm-code-tag tone="orange">${overlay.layer}</mm-code-tag>
+        <mm-code-tag tone="cyan">${overlay.focus ? 'focus move' : 'no focus move'}</mm-code-tag>
+        ${(overlay.close.length ? overlay.close : ['none']).map(
+          method => html`
+            <mm-code-tag>${method}</mm-code-tag>
+          `,
+        )}
+      </mm-tag-group>
+    </mm-flex>
+  `
 
 const placementTypeCode = `type Side = 'top' | 'right' | 'bottom' | 'left'
 type Alignment = 'start' | 'end'
@@ -147,6 +157,8 @@ const renderSpacingOverview = () => html`
 const widthExample = (options: {
   caption: string
   token: string
+  /** 이 너비를 정하는 레이아웃 토큰 이름. */
+  widthToken?: string
   category: number
   tone: TagTone
   maxWidth?: string
@@ -164,6 +176,13 @@ const widthExample = (options: {
         <mm-code-tag tone=${options.tone}>${options.token}</mm-code-tag>
       </div>
     </div>
+    ${options.widthToken
+      ? html`
+          <mm-tag-group>
+            <mm-code-tag>${options.widthToken}</mm-code-tag>
+          </mm-tag-group>
+        `
+      : ''}
     <mm-caption>${options.caption}</mm-caption>
     ${options.description
       ? html`
@@ -193,10 +212,11 @@ const renderBackgroundExample = (options: {
         class="width-bar"
         data-outlined
         style="--width-bar-background-color: var(--background-color); max-width: var(--layout-width-small)"
-      >
-        <mm-code-tag>${options.value}</mm-code-tag>
-      </div>
+      ></div>
     </div>
+    <mm-tag-group>
+      <mm-code-tag>${options.value}</mm-code-tag>
+    </mm-tag-group>
     <mm-caption>${options.caption}</mm-caption>
   </mm-flex>
 `
@@ -248,7 +268,7 @@ const main = html`
     <mm-page-body>
       <mm-tab-list value="page" variant="text" search-param="tab">
         <mm-tab value="page">Page</mm-tab>
-        <mm-tab value="spacing">간격</mm-tab>
+        <mm-tab value="spacing">Space</mm-tab>
         <mm-tab value="overlay">Overlay</mm-tab>
       </mm-tab-list>
 
@@ -265,6 +285,7 @@ const main = html`
                   caption: '집중형 · 폼, 인증',
                   description: '좁은 폭은 폼·인증처럼 한 가지 작업에 집중시킨다',
                   token: '400px',
+                  widthToken: '--layout-width-narrow',
                   category: 2,
                   tone: 'green',
                   maxWidth: 'var(--layout-width-narrow)',
@@ -273,6 +294,7 @@ const main = html`
                 ${widthExample({
                   caption: '일반 문서 · 에디토리얼, 설정, 대화',
                   token: '640px',
+                  widthToken: '--layout-width-small',
                   category: 1,
                   tone: 'blue',
                   maxWidth: 'var(--layout-width-small)',
@@ -391,6 +413,7 @@ const main = html`
                     트리거를 기준으로 엽니다. 트리거 옆에 붙어 떠서, 어느 요소에서 열린 overlay인지
                     위치만으로 이어집니다.
                   </mm-paragraph>
+                  ${anchoredOverlays.map(renderOverlay)}
                 </mm-content-section>
               </mm-surface>
               <mm-surface>
@@ -399,23 +422,22 @@ const main = html`
                     viewport를 기준으로 화면 중앙이나 가장자리에 띄웁니다. 트리거 위치와 상관없이
                     같은 자리에 열려, 어디서 열었든 같은 overlay라는 인상을 줍니다.
                   </mm-paragraph>
+                  ${viewportOverlays.map(renderOverlay)}
                 </mm-content-section>
               </mm-surface>
             </mm-grid>
-
-            <mm-table
-              .rows=${classificationRows}
-              caption="화면 위로 뜨는 overlay의 modal 여부·위치 기준·드러나는 role·레이어·열 때 포커스 이동·닫는 방법 비교"
-              .columns=${[
-                { label: 'UI', width: '140px' },
-                { label: 'Modal', width: '100px' },
-                { label: 'Anchor', width: '120px' },
-                { label: 'Role', width: '140px' },
-                { label: 'Layer', width: '120px' },
-                { label: '열 때 포커스 이동', width: '140px' },
-                { label: '닫는 방법' },
-              ]}
-            ></mm-table>
+            <mm-caption>
+              <mm-code-tag tone="blue">blue</mm-code-tag>
+              modal,
+              <mm-code-tag tone="green">green</mm-code-tag>
+              non-modal,
+              <mm-code-tag tone="purple">purple</mm-code-tag>
+              role,
+              <mm-code-tag tone="orange">orange</mm-code-tag>
+              layer,
+              <mm-code-tag tone="cyan">cyan</mm-code-tag>
+              focus move on open, 무색은 닫는 방법
+            </mm-caption>
           </mm-flex>
 
           <mm-content-section heading-level="3" heading="Modal × Non-Modal">
