@@ -93,6 +93,12 @@ const main = html`
           '트리거를 가리키는 화살표는 두지 않는다. 사용자가 직접 연 패널이라 어디에서 나왔는지 이미 분명하다.',
         ]}
       ></mm-text-list>
+      <mm-component-notice heading="트리거를 slot으로 받지 않는다">
+        mm-popover는 host가 곧 표면이라 열릴 때 portal로 옮겨진다. slot으로 받은 트리거도 함께
+        옮겨져 원래 자리에서 사라지고, 위치를 재는 기준 요소가 표면 안에 들어간다. 그래서 트리거는
+        바깥에 두고 aria-controls로 가리킨다. 펼침 단서도 트리거를 만드는 쪽이 붙이며, 단서를
+        일관되게 붙이려면 mm-more-menu처럼 트리거를 포함한 파생 컴포넌트에서 맡긴다.
+      </mm-component-notice>
     </mm-component-guide>
 
     <mm-component-section

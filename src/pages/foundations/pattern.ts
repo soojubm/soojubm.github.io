@@ -14,54 +14,6 @@ import { code, rule } from '@/components/domains/component'
 import './pattern.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
-const expandedComponentRows = html`
-  <tr>
-    <th scope="row">${code('mm-faq-item')}</th>
-    <td>패널 본문</td>
-    <td>${code('mm-expand-indicator')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-sidebar-section')}</th>
-    <td>하위 페이지 링크</td>
-    <td>${code('mm-expand-indicator')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-select')}</th>
-    <td>옵션 목록</td>
-    <td>${code('mm-expand-indicator')}</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-read-more-button')}</th>
-    <td>잘린 텍스트</td>
-    <td>레이블(더 보기·접기)</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-hamburger-button')}</th>
-    <td>내비게이션 메뉴</td>
-    <td>아이콘</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-more-button')}</th>
-    <td>오버플로 메뉴</td>
-    <td>아이콘</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-navbar-search')}</th>
-    <td>검색 패널</td>
-    <td>아이콘</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-popover')}</th>
-    <td>트리거 옆에 붙는 패널</td>
-    <td>트리거를 넣는 쪽이 정한다</td>
-  </tr>
-  <tr>
-    <th scope="row">${code('mm-chat-source')}</th>
-    <td>출처 상세</td>
-    <td>없음</td>
-  </tr>
-`
-
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
 const suggestionKeywords = [
@@ -122,19 +74,10 @@ const main = html`
               유지되므로, 사용자는 긴 정보 더미를 훑고 관심 있는 것만 골라 읽습니다.
             </mm-paragraph>
             <mm-paragraph>
-              기본은 트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가
-              공개라 트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를
-              그대로 유지합니다. 트리거 옆에 떠서 덮는 표면은 콘텐츠를 밀지 않지만, 펼침을 알리는
-              단서는 같은 규칙을 따릅니다.
+              트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
+              트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
+              유지합니다.
             </mm-paragraph>
-            <mm-link-prompt
-              message="트리거 옆이나 화면 위로 떠서 덮는 표면이 궁금하신가요?"
-              link-label="Overlay"
-              href="./layout.html?tab=overlay"
-            ></mm-link-prompt>
-          </mm-paragraph-group>
-
-          <mm-content-section heading-level="3" heading="접는 기준">
             <mm-text-list
               variant="check"
               .texts=${[
@@ -144,71 +87,35 @@ const main = html`
                 ),
                 rule(
                   '반드시 읽어야 하는 정보는 접은 상태로 제공하지 않는다',
-                  '약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보가 여기에 해당한다',
-                ),
-                rule(
-                  '모든 항목을 읽어야 하면 접지 않는다',
-                  '접는 만큼 사용자가 여는 횟수가 늘어난다. 접는 것 자체가 목적이 되지 않게 한다',
+                  '약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보가 여기에 해당한다. 접는 것 자체가 목적이 되지 않게 한다',
                 ),
               ]}
             ></mm-text-list>
-          </mm-content-section>
+          </mm-paragraph-group>
+
 
           <mm-content-section heading-level="3" heading="펼침 단서">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  html`
-                    펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
-                  `,
-                  html`
-                    컴포넌트마다 다른 아이콘을 직접 그리지 않는다. ${code('expanded')}를 받아 아이콘
-                    회전으로 반영하는 표시만 맡고, 여닫는 상호작용은 펼치는 컴포넌트가 맡는다
-                  `,
-                ),
-                rule(
-                  '레이블이 내용을 가리키는 텍스트 트리거에 붙인다',
-                  '질문·섹션 이름·고른 값은 펼쳐진다는 것을 스스로 말하지 않는다. 아이콘만 있는 트리거는 그 아이콘이, "더 보기"처럼 상태에 따라 바뀌는 레이블은 그 글이 펼침을 알린다',
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-surface variant="outlined" radius="large">
-              <mm-flex gap="6">
-                <mm-flex direction="column" gap="2" align-items="center">
-                  <mm-expand-indicator></mm-expand-indicator>
-                  <mm-caption>접힘</mm-caption>
-                </mm-flex>
-                <mm-flex direction="column" gap="2" align-items="center">
-                  <mm-expand-indicator expanded></mm-expand-indicator>
-                  <mm-caption>펼침</mm-caption>
-                </mm-flex>
-              </mm-flex>
-            </mm-surface>
-            <mm-table
-              .rows=${expandedComponentRows}
-              caption="Expanded 컴포넌트(뜨는 표면 포함)와 펼치는 대상, 펼침을 알리는 단서"
-              .columns=${[
-                { label: '컴포넌트', width: '220px' },
-                { label: '펼치는 대상' },
-                { label: '펼침 단서', width: '220px' },
-              ]}
-            ></mm-table>
-            <mm-component-notice heading="mm-chat-source 트리거의 펼침 단서를 정한다">
-              도메인 이름이 레이블인 텍스트 트리거지만 펼침 단서가 없다.
-              ${code('mm-expand-indicator')}를 붙일지, 출처 칩은 단서 없이 둘지 정하지 않았다
-            </mm-component-notice>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="열고 닫는 상태">
-            <mm-paragraph>
-              열고 닫는 상태와 트리거 클릭에 따른 토글, ${code('aria-expanded')} 동기화는 컴포넌트가
-              맡습니다.
-            </mm-paragraph>
-            <mm-component-notice heading="열고 닫는 상태를 두지 않는 예외 케이스">
-              ${code('mm-component-props')}는 한 번 펼치면 다시 접지 않아 토글이 필요 없으므로 열고
-              닫는 상태를 두지 않는다
-            </mm-component-notice>
+            <mm-grid columns="3" gap="6">
+              <mm-figure-card description="질문·섹션 이름·고른 값처럼 레이블이 내용을 가리키는 트리거 옆에 붙어, 패널 본문·하위 페이지 링크·옵션 목록이 펼쳐진다고 알립니다.">
+                <mm-flex slot="figure" align-items="center" gap="6"><mm-flex direction="column" gap="2" align-items="center"><mm-expand-indicator></mm-expand-indicator><mm-caption>접힘</mm-caption></mm-flex><mm-flex direction="column" gap="2" align-items="center"><mm-expand-indicator expanded></mm-expand-indicator><mm-caption>펼침</mm-caption></mm-flex></mm-flex>
+                <mm-code-tag slot="tags" tone="blue">mm-expand-indicator</mm-code-tag>
+                <mm-code-tag slot="tags">mm-faq-item</mm-code-tag>
+                <mm-code-tag slot="tags">mm-sidebar-section</mm-code-tag>
+                <mm-code-tag slot="tags">mm-select</mm-code-tag>
+<mm-code-tag slot="tags">mm-chat-source</mm-code-tag>
+              </mm-figure-card>
+              <mm-figure-card description="잘린 텍스트를 펼치는 트리거는 레이블이 상태에 따라 바뀌어 펼침을 알립니다. 문단과 함께 있을 때 사용하며, 문단과 구별하려고 볼드체를 쓰되 행동을 유발하는 버튼처럼 보이게 하지 않습니다.">
+                <mm-flex slot="figure" align-items="center" gap="6"><mm-text weight="bold">더 보기</mm-text><mm-text weight="bold">접기</mm-text></mm-flex>
+                <mm-code-tag slot="tags" tone="blue">레이블</mm-code-tag>
+                <mm-code-tag slot="tags">mm-read-more-button</mm-code-tag>
+              </mm-figure-card>
+              <mm-figure-card description="아이콘만 있는 트리거는 그 아이콘이 내비게이션 메뉴·오버플로 메뉴·검색 패널이 펼쳐진다고 알립니다.">
+                <mm-flex slot="figure" align-items="center" gap="6"><mm-hamburger-button></mm-hamburger-button><mm-more-button></mm-more-button></mm-flex>
+                <mm-code-tag slot="tags" tone="blue">아이콘</mm-code-tag>
+                <mm-code-tag slot="tags">mm-hamburger-button</mm-code-tag>
+                <mm-code-tag slot="tags">mm-more-button</mm-code-tag>
+              </mm-figure-card>
+            </mm-grid>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="접근성">
@@ -230,7 +137,7 @@ const main = html`
             ></mm-text-list>
           </mm-content-section>
 
-          <mm-component-section heading="컴포넌트 예시">
+          <mm-content-section heading-level="3" heading="컴포넌트 예시">
             <mm-flex direction="column" gap="6">
               <mm-faq-list>
                 <mm-faq-item question="서비스를 탈퇴하고 싶어요." open>
@@ -256,7 +163,7 @@ const main = html`
                 </mm-sidebar-section>
               </div>
             </mm-flex>
-          </mm-component-section>
+          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -323,7 +230,11 @@ const main = html`
                   '글자마다 목록이 바뀌면 화면이 깜빡이고 요청이 쌓인다',
                 ),
                 rule(
-                  '일치하는 항목이 없으면 결과 자리에 빈 상태를 둔다',
+                  html`
+                    일치하는 항목이 없으면
+                    <mm-code-tag>Search Results</mm-code-tag>
+                    자리에 빈 상태를 둔다
+                  `,
                   '키워드를 고치면 결과가 바로 돌아오므로 별도 결과 화면으로 이동하지 않는다',
                 ),
               ]}
@@ -356,21 +267,25 @@ const main = html`
                   '입력 중에는 키보드 위에 남는 높이 안에서 제안을 하나 이상 보여준다',
                   '일치하는 제안이 없으면 유사·추천 콘텐츠로 채워 다음에 고를 것을 남기고, 키보드에 가린 제안은 화면에 드러나지 않으므로 개수를 그 높이에 맞춘다',
                 ),
+                rule(
+                  '결과 페이지는 URL로 공유할 수 있게 한다',
+                  '같은 URL로 같은 검색 결과를 다시 열 수 있다',
+                ),
               ]}
             ></mm-text-list>
           </mm-text-block>
-
-          <p>결과 페이지는 URL로 공유할 수 있다. 같은 URL로 같은 검색 결과를 다시 열 수 있다.</p>
 
           <mm-content-section heading-level="3" heading="검색 결과 없음" description="제출한 검색에 일치하는 결과가 없으면 결과 없음 상태로 추천 검색어를 제안하여 새 검색을 유도한다.">
 
             <mm-component-example>
               <mm-result heading="'[키워드]'와(과) 일치하는 내용이 없습니다.">
+                <mm-flex justify-content="center">
                 <mm-search-suggestion-group aria-label="추천 검색어">
                   <mm-search-suggestion>버튼</mm-search-suggestion>
                   <mm-search-suggestion>버튼 그룹</mm-search-suggestion>
                   <mm-search-suggestion>아이콘 버튼</mm-search-suggestion>
                 </mm-search-suggestion-group>
+                </mm-flex>
               </mm-result>
             </mm-component-example>
           </mm-content-section>
@@ -380,12 +295,12 @@ const main = html`
               variant="check"
               .texts=${[
                 rule(
-                  '최근 검색 내역은 전체 삭제를 제공하지 않는다',
+                  '전체 삭제를 제공하지 않는다',
                   '사용자 데이터를 실수로 한꺼번에 날릴 수 있으므로 항목마다 삭제 버튼을 두고 하나씩만 지우게 한다',
                 ),
                 rule(
-                  '수집할 검색 데이터와 지울 수 있는 범위를 함께 정한다',
-                  '최근 검색 내역과 개인화 콘텐츠는 수집한 범위 안에서 만들어지므로, 내역만 지우는지 전체 활동 로그까지 지우는지 드러낸다',
+                  '어떤 검색 기록을 모으고 어디까지 지울 수 있는지 함께 정한다',
+                  '최근 검색어와 맞춤 추천은 모아 둔 기록으로 만들어진다. 최근 검색어만 지우는 것인지, 지금까지의 모든 활동 기록까지 지우는 것인지 사용자에게 알려 준다',
                 ),
               ]}
             ></mm-text-list>
@@ -429,9 +344,6 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="검색 바 패턴">
-            <mm-paragraph>
-              검색 바는 ${code('mm-searchfield')} 옆에 검색을 빠져나가는 액션을 둡니다.
-            </mm-paragraph>
             <mm-component-example width="narrow">
               <mm-flex direction="column" gap="3">
                 <mm-flex align-items="center" gap="2">
@@ -487,54 +399,52 @@ const main = html`
       <mm-tab-panel value="collection">
         <mm-content-section-list>
           <mm-paragraph>
-            사용자가 만든 묶음에 항목을 담고, 묶음을 만들고 함께 관리하는 흐름입니다. 담는 흐름
-            안에서 새 묶음을 바로 만들 수 있으므로, 사용자는 화면을 벗어나지 않고 항목을 모아 둘 수
+            사용자가 만든 컬렉션에 항목을 담고, 컬렉션을 만들고 함께 관리하는 흐름입니다. 담는 흐름
+            안에서 새 컬렉션을 바로 만들 수 있으므로, 사용자는 화면을 벗어나지 않고 항목을 모아 둘 수
             있습니다.
           </mm-paragraph>
-          <mm-content-section heading-level="3" heading="컬렉션에 추가">
+
+          <mm-content-section
+            heading-level="3"
+            heading="컬렉션에 추가"
+            description="항목을 담을 컬렉션을 고르는 화면입니다."
+          >
             <mm-text-list
               variant="check"
               .texts=${[
                 rule(
                   '한 항목을 여러 컬렉션에 동시에 담게 한다',
-                  '컬렉션 목록은 체크박스 메뉴 항목으로 두고, 이미 담긴 컬렉션은 선택된 상태로 연다',
+                  '이미 담긴 컬렉션은 선택된 채로 열려, 이 항목이 어디에 있는지 바로 보인다',
                 ),
                 rule(
                   '담는 흐름 안에서 새 컬렉션을 바로 만들게 한다',
-                  '새 컬렉션을 만든 뒤에는 방금 담으려던 항목을 그 컬렉션에 담은 상태로 돌아온다',
+                  '새 컬렉션을 만든 뒤에는 방금 담으려던 항목이 그 컬렉션에 담긴 채로 돌아온다',
                 ),
               ]}
             ></mm-text-list>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="새 컬렉션">
-            <mm-component-notice heading="새 컬렉션 화면의 규칙을 정한다">
-              지금은 화면 구성만 전시한다. 이름과 공개 범위를 받는 기준, 멤버 추가로 이어지는 흐름의
-              규칙은 아직 정하지 않았다
-            </mm-component-notice>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="멤버 추가">
-            <mm-component-notice heading="멤버 검색 결과와 선택 방식을 정한다">
-              지금은 검색 필드만 전시한다. 검색 결과를 보여 주고 멤버를 고르는 단계는 아직 만들지
-              않았다
-            </mm-component-notice>
-          </mm-content-section>
-
-          <mm-component-section heading="컴포넌트 예시" full-width>
-            <mm-grid columns="3" column-min-width="17rem" gap="8">
-              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+            <mm-component-example width="narrow">
+              <mm-flex direction="column" gap="3">
                 <mm-top-bar nav="close" heading="컬렉션에 추가">
                   <mm-button slot="action" variant="tertiary">완료</mm-button>
                 </mm-top-bar>
                 <mm-menu-item-checkbox-group
                   aria-label="컬렉션 선택"
+                  gap="1"
                   .options=${collectionOptions}
                   .values=${['euljiro']}
                 ></mm-menu-item-checkbox-group>
                 <mm-add-button label="새 컬렉션 만들기"></mm-add-button>
               </mm-flex>
-              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+            </mm-component-example>
+          </mm-content-section>
+
+          <mm-content-section
+            heading-level="3"
+            heading="새 컬렉션"
+            description="컬렉션의 이름과 공개 범위를 받는 화면입니다."
+          >
+            <mm-component-example width="narrow">
+              <mm-flex direction="column" gap="3">
                 <mm-top-bar heading="새 컬렉션">
                   <mm-button slot="action" variant="tertiary">완료</mm-button>
                 </mm-top-bar>
@@ -545,14 +455,29 @@ const main = html`
                 ></mm-toggle-button-group>
                 <mm-add-button label="이 컬렉션에 멤버 추가"></mm-add-button>
               </mm-flex>
-              <mm-flex direction="column" gap="3" style="max-width: var(--layout-width-narrow)">
+            </mm-component-example>
+            <mm-component-notice heading="새 컬렉션 화면의 규칙을 정한다">
+              이름과 공개 범위를 받는 기준, 멤버 추가로 이어지는 흐름의 규칙은 아직 정하지 않았다
+            </mm-component-notice>
+          </mm-content-section>
+
+          <mm-content-section
+            heading-level="3"
+            heading="멤버 추가"
+            description="컬렉션을 함께 관리할 멤버를 찾는 화면입니다."
+          >
+            <mm-component-example width="narrow">
+              <mm-flex direction="column" gap="3">
                 <mm-top-bar heading="멤버 추가">
                   <mm-button slot="action" variant="tertiary">완료</mm-button>
                 </mm-top-bar>
                 <mm-textfield label="멤버 검색" placeholder="멤버 이름"></mm-textfield>
               </mm-flex>
-            </mm-grid>
-          </mm-component-section>
+            </mm-component-example>
+            <mm-component-notice heading="멤버 검색 결과와 선택 방식을 정한다">
+              검색 결과를 보여 주고 멤버를 고르는 단계는 아직 정하지 않았다
+            </mm-component-notice>
+          </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
     </mm-page-body>
