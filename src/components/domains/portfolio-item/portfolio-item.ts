@@ -105,8 +105,7 @@ export class PortfolioItem extends LitElement {
         <mm-more-button class="action"></mm-more-button>
         ${this.renderThumbnail()}
         <div class="content">
-          ${this.renderHeading()} ${this.renderDescription()} ${this.renderDatetime()}
-          ${this.renderKeywords()}
+          ${this.renderTextBlock()} ${this.renderDatetime()} ${this.renderKeywords()}
           <slot></slot>
         </div>
       </article>
@@ -129,19 +128,15 @@ export class PortfolioItem extends LitElement {
     `
   }
 
-  private renderHeading() {
+  private renderTextBlock() {
     if (!this.label) return nothing
 
     return html`
-      <mm-heading level="3">${this.label}</mm-heading>
-    `
-  }
-
-  private renderDescription() {
-    if (!this.description) return nothing
-
-    return html`
-      <mm-paragraph>${this.description}</mm-paragraph>
+      <mm-text-block
+        level="4"
+        heading=${this.label}
+        description=${this.description}
+      ></mm-text-block>
     `
   }
 

@@ -173,11 +173,6 @@ const main = html`
 
         <mm-grid columns="4" gap="4">${systemStatCards.map(renderStatCard)}</mm-grid>
 
-        <mm-notice
-          heading="태그 색은 방향만 알립니다"
-          description="오르면 red, 내리면 blue입니다. 디자인 토큰이나 접근성 경고처럼 줄어드는 게 좋은 지표도 파랑이 되므로, 좋고 나쁨까지 색에 나타내려면 지표마다 기준을 따로 정해야 합니다."
-        ></mm-notice>
-
         <mm-grid columns="2" gap="4">
           <mm-surface variant="outlined" radius="large">
             <mm-flex direction="column" gap="4">
@@ -280,8 +275,7 @@ const main = html`
               aria-label="저장 공간 사용량"
             ></meter>
             <mm-notice
-              heading="meter는 작업이 아니라 상태입니다"
-              description="완료를 향해 가지 않고 오르내립니다. low·high·optimum으로 좋은 구간을 정하면 브라우저가 색을 바꿉니다. 프로필 완성도처럼 퍼센트로 보여도, 기다리는 일이 아니면 meter입니다."
+              description="meter는 작업이 아니라 상태입니다. 완료를 향해 가지 않고 오르내립니다. low·high·optimum으로 좋은 구간을 정하면 브라우저가 색을 바꿉니다. 프로필 완성도처럼 퍼센트로 보여도, 기다리는 일이 아니면 meter입니다."
             ></mm-notice>
           </mm-flex>
         </mm-surface>
@@ -302,8 +296,7 @@ const main = html`
               ></progress>
             </mm-flex>
             <mm-notice
-              heading="진행률을 알면 progress, 모르면 스피너입니다"
-              description="둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
+              description="진행률을 알면 progress, 모르면 스피너입니다. 둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
             ></mm-notice>
           </mm-flex>
         </mm-surface>

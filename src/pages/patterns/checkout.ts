@@ -102,7 +102,6 @@ const main = html`
             <mm-add-button label="결제수단 추가"></mm-add-button>
 
             <mm-notice
-              heading="결제 및 환불 안내"
               description="신용카드 결제만 가능하며, 해외에서 발행된 카드는 이용할 수 없습니다."
             >
               <mm-paragraph>

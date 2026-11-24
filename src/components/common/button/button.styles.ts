@@ -32,7 +32,7 @@ const buttonSizeTokens: AttributeTokens<Exclude<ButtonSize, 'medium'>> = {
 export const buttonBaseStyles = css`
   :host {
     --button-height: var(--size-32);
-    --button-min-width: 3rem;
+    --button-min-width: var(--size-32);
     --button-border: var(--border-transparent);
     --button-padding-inline: var(--space-3);
     --button-border-radius: var(--border-radius);

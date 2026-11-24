@@ -42,14 +42,9 @@ export const noticeStyles = css`
     margin-top: var(--space-1);
   }
 
-  mm-text-block,
   div {
     flex: 1;
     min-width: 0;
-  }
-
-  mm-text-block {
-    gap: var(--space-1);
   }
 
   .notice-actions {

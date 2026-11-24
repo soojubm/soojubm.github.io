@@ -28,7 +28,7 @@ export class ChatConfirmation extends LitElement {
 
   render() {
     return html`
-      <mm-notice heading="승인 요청" description=${this.message}>
+      <mm-notice description=${this.message}>
         <slot></slot>
         <mm-button-group>
           <mm-button variant="secondary" size="medium" @click=${this.handleRejectClick}>

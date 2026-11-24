@@ -11,7 +11,6 @@ import '@/components/common/button/button'
 import '@/components/common/button/button-group'
 import '@/components/common/icon'
 import '@/components/common/text/text'
-import '@/components/common/text/semantics/text-block'
 import '@/components/common/icon-button/semantics/dismiss-button'
 
 export type NoticeRole = 'alert' | 'note' | 'status'
@@ -21,7 +20,6 @@ export type NoticeVariant = Extract<StatusTone, 'info' | 'warning' | 'error'>
 export class Notice extends LitElement {
   static styles = [noticeStyles]
   @property({ type: String, reflect: true }) role: NoticeRole = 'note'
-  @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
   @property({ type: String, reflect: true, useDefault: true }) variant: NoticeVariant = 'info'
   @property({ attribute: false }) primaryAction?: ActionConfig
@@ -40,24 +38,11 @@ export class Notice extends LitElement {
   }
 
   private renderContent() {
-    if (!this.heading) {
-      return html`
-        <div>
-          ${this.renderDescription()}
-          <slot></slot>
-        </div>
-      `
-    }
-
     return html`
-      <mm-text-block
-        class="notice-content"
-        level="4"
-        heading=${this.heading}
-        description=${this.description}
-      >
+      <div>
+        ${this.renderDescription()}
         <slot></slot>
-      </mm-text-block>
+      </div>
     `
   }
 

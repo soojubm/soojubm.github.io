@@ -24,34 +24,37 @@ const followerAvatars: AvatarItem[] = [
 const main = html`
   <mm-main class="profile" full-width>
     <section class="profile-user">
-      <mm-user-snippet
-        name="수줍이"
-        email="soojubm@gmail.com"
-        phone="010 3121 7045"
-        description="UI Designer"
-        avatar-src="/src/images/soojubm.png"
-        tag-label="접속 중"
-      ></mm-user-snippet>
-
-      <mm-button-group>
-        <mm-follow-button></mm-follow-button>
-        <mm-button variant="secondary">메시지</mm-button>
-      </mm-button-group>
-      <mm-read-more-paragraph
-        max-length="100"
-        content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring."
-      ></mm-read-more-paragraph>
-      <mm-keyword-tag-group .keywords=${TOPICS}></mm-keyword-tag-group>
-      <mm-flex direction="column" gap="1">
-        <mm-meta-item-group gap="2">
-          <mm-meta-item layout="inline" label="팔로워" value="621.1K"></mm-meta-item>
-          <mm-meta-item layout="inline" label="팔로우 중" value="1,284"></mm-meta-item>
-        </mm-meta-item-group>
-        <mm-avatar-group
-          .avatars=${followerAvatars}
-          label="Followed by 수줍이 외 3명"
-        ></mm-avatar-group>
-      </mm-flex>
+      <mm-flex direction="column" gap="4">
+        <mm-user-snippet
+          name="수줍이"
+          email="soojubm@gmail.com"
+          phone="010 3121 7045"
+          description="UI Designer"
+          avatar-src="/src/images/soojubm.png"
+          tag-label="접속 중"
+        ></mm-user-snippet>
+  
+        <mm-button-group>
+          <mm-follow-button></mm-follow-button>
+          <mm-button variant="secondary">메시지</mm-button>
+        </mm-button-group>
+        <mm-read-more-paragraph
+          max-length="100"
+          content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring."
+        ></mm-read-more-paragraph>
+        <mm-keyword-tag-group .keywords=${TOPICS}></mm-keyword-tag-group>
+        <mm-flex direction="column" gap="1">
+          <mm-meta-item-group gap="2">
+            <mm-meta-item layout="inline" label="팔로워" value="621.1K"></mm-meta-item>
+            <mm-meta-item layout="inline" label="팔로우 중" value="1,284"></mm-meta-item>
+          </mm-meta-item-group>
+          <mm-avatar-group
+            .avatars=${followerAvatars}
+            label="Followed by 수줍이 외 3명"
+          ></mm-avatar-group>
+        </mm-flex>
+      </mm-flex direction="column" gap="2">
+      <mm-separator variant="element"></mm-separator>
       <mm-social-links
         compact
         github="https://github.com/soojubm"

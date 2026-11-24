@@ -107,12 +107,14 @@ const main = html`
 
       <mm-content-section-list>
         <mm-content-section heading-level="3" heading="출연진">
-          <mm-filter-button-group
-            mode="single"
-            .values=${castFilterValues}
-            .options=${castFilterOptions}
-          ></mm-filter-button-group>
-          <mm-cast-list .casts=${casts}></mm-cast-list>
+          <mm-flex direction="column" gap="4">
+            <mm-filter-button-group
+              mode="single"
+              .values=${castFilterValues}
+              .options=${castFilterOptions}
+            ></mm-filter-button-group>
+            <mm-cast-list .casts=${casts}></mm-cast-list>
+          </mm-flex>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="수상내역">

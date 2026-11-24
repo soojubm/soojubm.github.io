@@ -26,12 +26,9 @@ const variantCode = `<mm-notice variant="info" description="새 기능이 추가
 <mm-notice variant="warning" description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."></mm-notice>
 <mm-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></mm-notice>`
 
-const headingCode = `<mm-notice variant="info" heading="헤딩" description="TODO 배너. 히어로와 콜아웃의 차이."></mm-notice>`
-
 const actionCode = `<mm-notice
   variant="warning"
-  heading="구독이 곧 만료됩니다."
-  description="결제 수단을 확인해 주세요."
+  description="구독이 곧 만료됩니다. 결제 수단을 확인해 주세요."
   .primaryAction=\${primaryAction}
   .secondaryAction=\${secondaryAction}
   @dismiss=\${handleDismiss}
@@ -51,7 +48,6 @@ const main = html`
     <mm-flex direction="column" gap="4">
       <mm-tab-list value="variant" variant="pill">
         <mm-tab value="variant">Variant</mm-tab>
-        <mm-tab value="heading">Heading</mm-tab>
         <mm-tab value="action">Action</mm-tab>
       </mm-tab-list>
       <mm-tab-panel value="variant">
@@ -67,36 +63,21 @@ const main = html`
         </mm-component-example>
         <mm-component-code .code=${variantCode}></mm-component-code>
       </mm-tab-panel>
-      <mm-tab-panel value="heading">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-notice
-              variant="info"
-              heading="헤딩"
-              description="TODO 배너. 히어로와 콜아웃의 차이."
-            ></mm-notice>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${headingCode}></mm-component-code>
-      </mm-tab-panel>
       <mm-tab-panel value="action">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="2">
-              <mm-notice
-                variant="warning"
-                heading="구독이 곧 만료됩니다."
-                description="결제 수단을 확인해 주세요."
-                .primaryAction=${primaryAction}
-                .secondaryAction=${secondaryAction}
-                @dismiss=${() => {}}
-              ></mm-notice>
-              <mm-notice
-                variant="info"
-                description="새 기능이 추가되었습니다."
-                @dismiss=${() => {}}
-              ></mm-notice>
-            </mm-flex>
+          <mm-flex direction="column" gap="2">
+            <mm-notice
+              variant="warning"
+              description="구독이 곧 만료됩니다. 결제 수단을 확인해 주세요."
+              .primaryAction=${primaryAction}
+              .secondaryAction=${secondaryAction}
+              @dismiss=${() => {}}
+            ></mm-notice>
+            <mm-notice
+              variant="info"
+              description="새 기능이 추가되었습니다."
+              @dismiss=${() => {}}
+            ></mm-notice>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${actionCode}></mm-component-code>

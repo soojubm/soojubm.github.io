@@ -14,7 +14,8 @@ export class ComponentNotice extends LitElement {
 
   render() {
     return html`
-      <mm-notice variant="info" heading=${this.heading}>
+      <mm-notice variant="info">
+        <mm-text size="14" weight="bold">${this.heading}</mm-text>
         <mm-text size="14"><slot></slot></mm-text>
       </mm-notice>
     `
