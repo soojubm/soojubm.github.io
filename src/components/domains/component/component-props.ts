@@ -72,9 +72,20 @@ export class ComponentProps extends LitElement {
 
   private renderPropItem({ name, type, kind, optional }: ComponentPropItemData) {
     const label = kind === 'event' ? `@${name}` : `${name}${optional ? '?' : ''}`
+    // 기본값(` = x`)은 manifest의 type에 남겨 두고 표시에서만 뺀다.
+    const [typeText] = type.split(' = ')
+    const values = typeText.split(' | ')
 
     return html`
-      <mm-meta-item code layout="stacked" label=${label} value=${type}></mm-meta-item>
+      <mm-tag-group>
+        <mm-code-tag tone="blue">${label}</mm-code-tag>
+        ${values.map(
+          value =>
+            html`
+              <mm-code-tag>${value}</mm-code-tag>
+            `,
+        )}
+      </mm-tag-group>
     `
   }
 

@@ -2,7 +2,6 @@ import { LitElement, html, nothing, type CSSResultOrNative } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { componentTokensStyles } from '@/components/domains/component/component.styles'
-import { formatTokenName } from '@/components/domains/component/token.utils'
 import '@/components/common'
 
 @customElement('mm-component-tokens')
@@ -13,39 +12,35 @@ export class ComponentTokens extends LitElement {
   render() {
     return html`
       <section class="component-content-frame" style="margin-top: var(--space-4)">
-        <div class="token-list">
+        <mm-flex wrap="wrap" gap="2">
           ${this.renderNames()}
           <slot></slot>
-        </div>
+        </mm-flex>
       </section>
     `
   }
 
   // elements가 없으면 슬롯의 토큰 카드가 이름을 대신 보여 주므로 목록을 그리지 않는다.
   private renderNames() {
-    if (!this.elements.length) return nothing
-
-    return html`
-      <mm-flex gap="2" wrap="wrap">
-        ${this.hostTokenNames().map(
-          name =>
-            html`
-              <mm-code-tag>${formatTokenName(name)}</mm-code-tag>
-            `,
-        )}
-      </mm-flex>
-    `
+    return this.elements.flatMap(tagName =>
+      hostTokenNames(tagName).map(
+        name =>
+          html`
+            <mm-token-item element=${tagName} key=${name}></mm-token-item>
+          `,
+      ),
+    )
   }
+}
 
-  // 컴포넌트가 :host에 기본값을 선언한 커스텀 프로퍼티가 곧 공개 토큰이다.
-  // :host([size]) 같은 상태 selector는 같은 토큰에 값을 재할당할 뿐이라 모으지 않는다.
-  private hostTokenNames() {
-    const styles = this.elements.flatMap(tagName => elementStylesOf(tagName))
-    const sheets = styles.map(style => (style instanceof CSSStyleSheet ? style : style.styleSheet))
-    const names = new Set(sheets.flatMap(sheet => hostCustomProperties(sheet?.cssRules)))
+// 컴포넌트가 :host에 기본값을 선언한 커스텀 프로퍼티가 곧 공개 토큰이다.
+// :host([size]) 같은 상태 selector는 같은 토큰에 값을 재할당할 뿐이라 모으지 않는다.
+function hostTokenNames(tagName: string) {
+  const sheets = elementStylesOf(tagName).map(style =>
+    style instanceof CSSStyleSheet ? style : style.styleSheet,
+  )
 
-    return [...names]
-  }
+  return [...new Set(sheets.flatMap(sheet => hostCustomProperties(sheet?.cssRules)))]
 }
 
 function elementStylesOf(tagName: string): CSSResultOrNative[] {

@@ -70,7 +70,7 @@ export const componentPropsStyles = [
     .component-props-list {
       display: flex;
       flex-direction: column;
-      gap: var(--space-3);
+      gap: var(--space-2);
     }
     .component-props-more {
       display: flex;
@@ -92,13 +92,6 @@ export const componentPropsStyles = [
 ]
 
 export const componentTokensStyles = [
-  css`
-    .token-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-  `,
   componentContentFrameStyles,
   css`
     :host {
