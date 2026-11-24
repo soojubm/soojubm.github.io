@@ -1,9 +1,7 @@
 import { LitElement, type PropertyValues, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
 import '@/components/common'
-import '@/components/domains/component/component-prop-item'
 import { componentPropsStyles } from '@/components/domains/component/component.styles'
 import { componentManifest, type ComponentTag } from '@/generated/component-manifest'
 import { uniqueId } from '@/utils'
@@ -41,7 +39,7 @@ const COLLAPSIBLE_PROP_COUNT = 3
 
 /**
  * 컴포넌트 prop 목록. 전체 레이아웃 외곽 틀을 책임지고
- * 각 prop은 mm-component-prop-item으로 렌더합니다.
+ * 각 prop은 mm-meta-item으로 이름과 타입을 보여 줍니다.
  * 접힌 상태에서 아무 곳이나 누르면 펼쳐지며, 펼침 여부는 open으로 드러납니다.
  * prop이 3개 미만이면 처음부터 펼쳐져 더보기 버튼을 노출하지 않습니다.
  */
@@ -78,14 +76,11 @@ export class ComponentProps extends LitElement {
     `
   }
 
-  private renderPropItem(prop: ComponentPropItemData) {
+  private renderPropItem({ name, type, kind, optional }: ComponentPropItemData) {
+    const label = kind === 'event' ? `@${name}` : `${name}${optional ? '?' : ''}`
+
     return html`
-      <mm-component-prop-item
-        name=${prop.name}
-        type=${prop.type}
-        kind=${ifDefined(prop.kind)}
-        ?optional=${prop.optional}
-      ></mm-component-prop-item>
+      <mm-meta-item code layout="stacked" label=${label} value=${type}></mm-meta-item>
     `
   }
 

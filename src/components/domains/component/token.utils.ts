@@ -45,9 +45,6 @@ export const WORD_CATEGORIES = [
   },
 ] as const
 
-// state는 dimension·surface에 딸린 변형이라 단독 카테고리가 아니라 base 뒤에 이어 붙인다.
-const CATEGORY_DISPLAY_ORDER = ['dimension', 'typography', 'surface', 'state'] as const
-
 // border-radius, background-color처럼 '-'로 이어진 카테고리 단어는 조각을 이어붙인 문자열이
 // 아니라, 인접한 조각들이 각 자리에 정확히 대응하는지로 판단해 엉뚱한 이웃 조각까지
 // 함께 묶이지 않게 한다.
@@ -67,37 +64,6 @@ export function categoryNameAt(index: number, parts: string[]) {
     words.some(word => matchesWord(parts, index, word)),
   )
   return category?.name ?? ''
-}
-
-/** 토큰 이름이 속한 카테고리를 중복 없이 표시 순서(dimension/surface → state)로 반환한다. */
-export function tokenCategories(name: string) {
-  const parts = name.split('-')
-  const found = new Set(parts.map((_, index) => categoryNameAt(index, parts)))
-
-  return CATEGORY_DISPLAY_ORDER.filter(category => found.has(category))
-}
-
-function capitalize(word: string) {
-  return `${word[0].toUpperCase()}${word.slice(1)}`
-}
-
-/** 카테고리 태그에 표시할 레이블들. "Dimension"과 "State"처럼 카테고리마다 태그를 따로 둔다. */
-export function tokenCategoryLabels(name: string) {
-  return tokenCategories(name).map(capitalize)
-}
-
-/** 앞선 토큰과 같은 카테고리 구간인지 비교하는 키. */
-export function tokenCategoryLabel(name: string) {
-  return tokenCategoryLabels(name).join('-')
-}
-
-// 같은 카테고리 토큰을 표시 순서(dimension → surface → state)로 묶어 정렬할 때 쓰는 키.
-// 카테고리가 없는 토큰은 맨 뒤로 보낸다.
-export function tokenCategorySortIndex(name: string) {
-  const [primary] = tokenCategories(name)
-  const index = CATEGORY_DISPLAY_ORDER.indexOf(primary as (typeof CATEGORY_DISPLAY_ORDER)[number])
-
-  return index === -1 ? CATEGORY_DISPLAY_ORDER.length : index
 }
 
 // state/surface/dimension 그룹이 바뀌는 경계에서만 '-'를 '.'으로 바꿔, 같은 그룹의 합성어(border-radius 등)는

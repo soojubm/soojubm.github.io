@@ -52,7 +52,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const defaultCode = `<mm-tooltip content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다.">
+const defaultCode = `<mm-tooltip content="...">
   <mm-icon slot="trigger" name="help-circle" role="img" aria-label="해임건의 요건 도움말" tabindex="0"></mm-icon>
 </mm-tooltip>`
 

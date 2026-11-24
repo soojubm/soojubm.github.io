@@ -6,6 +6,10 @@ export const metaItemStyles = css`
     justify-content: space-between;
   }
 
+  :host([code]) {
+    font-family: var(--font-family-code);
+  }
+
   :host([layout='stacked']) {
     flex-direction: column;
     gap: 0;

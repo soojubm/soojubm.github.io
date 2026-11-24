@@ -1,4 +1,4 @@
-import { html } from 'lit'
+import { html, type TemplateResult } from 'lit'
 
 import { ICON_CATALOG } from '@/components/common'
 import { code, rule } from '@/components/domains/component'
@@ -67,40 +67,182 @@ const renderIconCatalog = () =>
       `,
     )
 
-const termRows = html`
-  <tr>
-    <th scope="row">Message</th>
-    <td>사용자의 관점에서 다음에 할 일을 알려주는 문구</td>
-    <td>"확인 후 진행해주세요"</td>
-  </tr>
-  <tr>
-    <th scope="row">Description</th>
-    <td>시스템을 주어로 대상이 무엇을 하는지 서술하는 설명</td>
-    <td>"이 컴포넌트는 ~를 수행합니다"</td>
-  </tr>
-  <tr>
-    <th scope="row">Label</th>
-    <td>
-      대상을 가리키는 이름. 화면에서의 위치가 아니라 대상이 이미 갖고 있는 이름을 그대로 쓰고, 추가
-      설명은 ${code('description')}으로 나눈다
-    </td>
-    <td>목록 행의 사람 이름, 설정 항목의 이름</td>
-  </tr>
-  <tr>
-    <th scope="row">Heading</th>
-    <td>구획·표면·메시지의 제목. 아래에 오는 내용을 한 구로 가리킨다</td>
-    <td>섹션 제목, 다이얼로그 제목</td>
-  </tr>
-  <tr>
-    <th scope="row">Placeholder</th>
-    <td>값을 입력하기 전 필드 안에 보이는 안내</td>
-    <td>"컴포넌트, 패턴을 검색하세요"</td>
-  </tr>
-  <tr>
-    <th scope="row">Validation text</th>
-    <td>입력값이 규칙을 어긴 이유를 필드 아래에서 알리는 문구</td>
-    <td>"이미 등록된 이메일입니다."</td>
-  </tr>
+/** 그 밖의 선택 그룹이 따르는 키. 키마다 다른 색 태그로 나타낸다. */
+/** 이름이 어디서 어떻게 전해지는지를 보여 주는 카드. 도형은 실제 컴포넌트로 보인다. */
+const nameCards: {
+  figure: TemplateResult
+  tags: { text: string; tone: 'blue' | 'yellow' }[]
+  description: string
+}[] = [
+  {
+    figure: html`
+      <mm-icon-button icon="arrow-right" aria-label="다음"></mm-icon-button>
+    `,
+    tags: [{ text: 'aria-label', tone: 'blue' }],
+    description:
+      '화면에 글자가 없어도 버튼의 이름을 들을 수 있게 한다. 이름이 없으면 무엇을 하는 버튼인지 알 수 없다',
+  },
+  {
+    figure: html`
+      <mm-toggle-button-group
+        aria-label="텍스트 정렬"
+        value="center"
+        .options=${[
+          { value: 'left', label: '왼쪽' },
+          { value: 'center', label: '가운데' },
+          { value: 'right', label: '오른쪽' },
+        ]}
+      ></mm-toggle-button-group>
+    `,
+    tags: [{ text: 'aria-label', tone: 'blue' }],
+    description:
+      "묶음 전체에는 항상 이름을 준다. 이름이 없으면 '왼쪽·가운데·오른쪽'만 들려 무엇을 고르는지 알 수 없다",
+  },
+  {
+    figure: html`
+      <mm-toggle-button-group
+        hidden-label
+        value="grid"
+        .options=${[
+          { value: 'grid', icon: 'view-grid', label: 'Grid view' },
+          { value: 'list', icon: 'table-rows', label: 'List view' },
+        ]}
+      ></mm-toggle-button-group>
+    `,
+    tags: [
+      { text: 'hidden-label', tone: 'blue' },
+      { text: 'aria-label', tone: 'blue' },
+    ],
+    description:
+      '아이콘만 보여줄 때는 hidden-label을 켜면 label이 화면 텍스트 대신 aria-label로 옮겨진다',
+  },
+  {
+    figure: html`
+      <mm-toggle-button-group
+        value="grid"
+        .options=${[
+          { value: 'grid', label: 'Grid' },
+          { value: 'list', label: 'List' },
+        ]}
+      ></mm-toggle-button-group>
+    `,
+    tags: [
+      { text: 'aria-pressed', tone: 'yellow' },
+      { text: 'checked', tone: 'yellow' },
+      { text: 'aria-selected', tone: 'yellow' },
+    ],
+    description: '레이블에는 선택지 이름만 쓴다. 선택 여부는 이 속성이 전달한다',
+  },
+]
+
+const POPUP_TONES = {
+  Modal: 'orange',
+  'Non-modal': 'green',
+} as const
+
+/** 팝업 종류별로 포커스가 어떻게 움직이는지. */
+const popupKinds: { kind: keyof typeof POPUP_TONES; description: TemplateResult }[] = [
+  {
+    kind: 'Modal',
+    description: html`
+      뒤 화면을 막고 사용자를 overlay 안에 둔다. 열 때 포커스를 overlay 안으로 옮기고, 닫을 때 열기
+      직전 자리로 되돌린다. 포커스가 밖에 남으면 키보드·스크린리더 사용자는 overlay가 열린 줄 모르고
+      뒤 화면을 헤매며, 되돌리지 않으면 닫힌 overlay에 포커스가 남아 사라진다
+    `,
+  },
+  {
+    kind: 'Non-modal',
+    description: html`
+      뒤 화면을 막지 않는다. 열고 닫을 때의 포커스는 모달과 같게 옮기되, 바깥을 눌러 닫을 때는
+      포커스를 되돌리지 않는다. 눌린 요소가 이미 포커스를 받았는데 트리거로 되돌리면 사용자가 방금
+      고른 곳에서 포커스를 빼앗는다
+    `,
+  },
+]
+
+const popupComponents: { name: string; kind: keyof typeof POPUP_TONES }[] = [
+  { name: 'mm-dialog', kind: 'Modal' },
+  { name: 'mm-sheet', kind: 'Modal' },
+  { name: 'mm-popover', kind: 'Non-modal' },
+]
+
+const KEY_TONES = {
+  'Tab Key': 'purple',
+  'Enter·Space Key': 'pink',
+  'Arrow Keys': 'cyan',
+} as const
+
+/** 각 키가 선택 그룹에서 하는 일. */
+const keyLegend: { key: keyof typeof KEY_TONES; description: TemplateResult }[] = [
+  {
+    key: 'Tab Key',
+    description: html`
+      그룹에 한 번만 들어오고, 선택된 항목에 포커스가 놓인다. 항목 사이는 Arrow Keys로 옮기며
+      ${code('RovingFocusController')}가 이 동작을 맡는다
+    `,
+  },
+  {
+    key: 'Arrow Keys',
+    description: html`
+      항목 사이로 포커스를 옮긴다. 끝 항목에서 더 눌러도 멈추지만 탭은 반대편 끝으로 이어진다.
+      탭에서는 포커스를 옮기는 것이 곧 선택이다
+    `,
+  },
+  {
+    key: 'Enter·Space Key',
+    description: html`
+      포커스가 놓인 버튼을 눌러 선택을 확정한다. 포커스를 옮기는 것이 곧 선택인 탭은 쓰지 않는다
+    `,
+  },
+]
+
+const groupKeys: { name: string; keys: (keyof typeof KEY_TONES)[] }[] = [
+  { name: 'mm-toggle-button-group', keys: ['Tab Key', 'Enter·Space Key'] },
+  { name: 'mm-filter-button-group', keys: ['Tab Key', 'Enter·Space Key'] },
+  { name: 'mm-menu-item-group', keys: ['Tab Key'] },
+  { name: 'mm-select', keys: ['Tab Key'] },
+]
+
+const terms = [
+  {
+    term: 'Message',
+    meaning: '사용자의 관점에서 다음에 할 일을 알려주는 문구',
+    example: '"확인 후 진행해주세요"',
+  },
+  {
+    term: 'Description',
+    meaning: '시스템을 주어로 대상이 무엇을 하는지 서술하는 설명',
+    example: '"이 컴포넌트는 ~를 수행합니다"',
+  },
+  {
+    term: 'Label',
+    meaning:
+      '대상을 가리키는 이름. 화면에서의 위치가 아니라 대상이 이미 갖고 있는 이름을 그대로 쓰고, 추가 설명은 description으로 나눈다',
+    example: '목록 행의 사람 이름, 설정 항목의 이름',
+  },
+  {
+    term: 'Heading',
+    meaning: '구획·표면·메시지의 제목. 아래에 오는 내용을 한 구로 가리킨다',
+    example: '섹션 제목, 다이얼로그 제목',
+  },
+  {
+    term: 'Placeholder',
+    meaning: '값을 입력하기 전 필드 안에 보이는 안내',
+    example: '"컴포넌트, 패턴을 검색하세요"',
+  },
+  {
+    term: 'Validation text',
+    meaning: '입력값이 규칙을 어긴 이유를 필드 아래에서 알리는 문구',
+    example: '"이미 등록된 이메일입니다."',
+  },
+]
+
+/** 용어의 뜻은 description으로, 예는 figure로, 용어 이름은 code-tag로 단다. */
+const renderTermCard = ({ term, meaning, example }: (typeof terms)[number]) => html`
+  <mm-figure-card description=${meaning}>
+    <mm-paragraph slot="figure">${example}</mm-paragraph>
+    <mm-code-tag slot="tags">${term}</mm-code-tag>
+  </mm-figure-card>
 `
 
 const main = html`
@@ -221,29 +363,7 @@ const main = html`
                   </mm-figure-card>
                 </mm-flex>
               </mm-surface>
-              <mm-component-notice heading="어조 규칙을 정한다">
-                말하는 쪽에 따라 어조를 나눈다는 원칙만 있다. 시스템이 말하는 문구와 사용자 행동을
-                가리키는 문구를 각각 어떤 어미로 쓰는지 정하지 않았다
-              </mm-component-notice>
             </mm-content-section-list>
-          </mm-content-section>
-
-          <mm-content-section heading-level="3" heading="제목">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '텍스트는 짧게 유지하고 훑어볼 수 있는 덩어리로 나눈다',
-                '간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
-                rule(
-                  '태그라인의 행갈이는 작성 단계에서 정한다',
-                  '글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 인상을 남긴다',
-                ),
-              ]}
-            ></mm-text-list>
-            <mm-component-notice heading="잘린 제목의 전체를 보여주는 방법을 정한다">
-              폴더블·워치처럼 화면이 점점 작아져 제목이 잘릴 수 있다. 자를지 여부보다, 잘렸을 때
-              사용자가 전체 제목을 확인하는 방법이 필요하다.
-            </mm-component-notice>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="분류명">
@@ -289,10 +409,11 @@ const main = html`
 
                   <mm-figure-card
                     class="do-dont-card"
-                    description="대시로 이으면 두 이름이 한 덩어리로 읽혀 핵심이 묻힙니다."
+                    description="대시나 괄호로 이으면 두 이름이 한 덩어리로 읽혀 핵심이 묻힙니다."
                   >
-                    <mm-flex slot="figure" align-items="center">
+                    <mm-flex slot="figure" direction="column" align-items="center" gap="1">
                       <mm-heading level="4">결제 - 카드 간편결제</mm-heading>
+                      <mm-heading level="4">카드 간편결제 (결제)</mm-heading>
                     </mm-flex>
                     <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
                   </mm-figure-card>
@@ -301,22 +422,29 @@ const main = html`
             </mm-content-section-list>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="용어">
-            <mm-content-section heading-level="4" heading="텍스트 단위">
-              <mm-paragraph>
-                단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)
-              </mm-paragraph>
-            </mm-content-section>
-
-            <mm-table
-              .rows=${termRows}
-              caption="텍스트 용어의 뜻과 예"
-              .columns=${[
-                { label: '용어', width: '150px' },
-                { label: '뜻', width: '340px' },
-                { label: '예', width: '200px' },
+          <mm-content-section heading-level="3" heading="제목">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                '텍스트는 짧게 유지하고 훑어볼 수 있는 덩어리로 나눈다. 간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
+                rule(
+                  '태그라인의 행갈이는 작성 단계에서 정한다',
+                  '글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 인상을 남긴다',
+                ),
               ]}
-            ></mm-table>
+            ></mm-text-list>
+            <mm-component-notice heading="잘린 제목의 전체를 보여주는 방법을 정한다">
+              폴더블·워치처럼 화면이 점점 작아져 제목이 잘릴 수 있다. 자를지 여부를 정하는 시대는
+              지났다. 잘렸을 때 사용자가 전체 제목을 확인하는 방법이 필요하다.
+            </mm-component-notice>
+          </mm-content-section>
+
+          <mm-content-section heading-level="3" heading="용어">
+            <mm-paragraph>단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)</mm-paragraph>
+
+            <mm-grid columns="3" column-min-width="16rem" gap="6">
+              ${terms.map(renderTermCard)}
+            </mm-grid>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>
@@ -376,122 +504,116 @@ const main = html`
       <mm-tab-panel value="accessibility">
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="이름">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '화면에 글자가 없어도 버튼의 이름을 들을 수 있게 한다',
-                  '아이콘만 보이는 버튼은 보조기술 사용자에게 이름이 전해지지 않으면 무엇을 하는 버튼인지 알 수 없다',
-                ),
-                rule(
-                  '묶음 전체에 항상 이름을 준다',
-                  "옵션 레이블만으로는 무엇에 대한 선택인지 알 수 없어서, 이름이 없으면 보조기술 사용자는 '왼쪽·가운데·오른쪽'을 듣고도 무엇을 고르는지 알 수 없다. '텍스트 정렬'처럼 선택의 주제를 이름으로 적는다",
-                ),
-                rule(
-                  html`
-                    아이콘만 보여줄 때는 그룹에 ${code('hidden-label')}을 켠다
-                  `,
-                  html`
-                    ${code('label')}이 화면 텍스트 대신 ${code('aria-label')}로 옮겨진다
-                  `,
-                ),
-                rule(
-                  '레이블에는 선택지 이름만 쓴다',
-                  html`
-                    선택 여부는 ${code('aria-pressed')} · ${code('checked')} ·
-                    ${code('aria-selected')}가 전달한다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
+            <mm-grid columns="2" gap="6">
+              ${nameCards.map(
+                ({ figure, tags, description }) => html`
+                  <mm-figure-card description=${description}>
+                    <mm-flex slot="figure" align-items="center">${figure}</mm-flex>
+                    ${tags.map(
+                      ({ text, tone }) => html`
+                        <mm-code-tag slot="tags" tone=${tone}>${text}</mm-code-tag>
+                      `,
+                    )}
+                  </mm-figure-card>
+                `,
+              )}
+            </mm-grid>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="팝업을 여는 트리거">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '트리거는 어떤 패널이 열리는지 미리 알린다',
-                  html`
-                    누르기 전에 스크린리더가 열릴 패널을 안내해야, 사용자가 열린 뒤의 조작을 예상할
-                    수 있다. 열리는 내용에 맞는 값을 ${code('aria-haspopup')}으로 준다
-                  `,
-                ),
-                rule(
-                  '메뉴를 여는 트리거는 menu로 둔다',
-                  html`
-                    ${code('aria-haspopup="menu"')}
-                  `,
-                ),
-                rule(
-                  '옵션 목록을 여는 트리거는 listbox로 둔다',
-                  html`
-                    ${code('aria-haspopup="listbox"')}
-                  `,
-                ),
-                rule(
-                  '설정 컨트롤을 넣은 패널은 열림 여부만 알린다',
-                  html`
-                    토글·슬라이더 같은 컨트롤을 넣은 패널은 menu·listbox 어느 쪽에도 맞지 않는다.
-                    ${code('aria-haspopup')}을 빼고 ${code('aria-expanded')}만 둔다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
+            <mm-content-section-list size="small">
+              <mm-text-list
+                variant="check"
+                .texts=${[
+                  rule(
+                    '트리거는 어떤 패널이 열리는지 미리 알린다',
+                    html`
+                      누르기 전에 스크린리더가 열릴 패널을 안내해야, 사용자가 열린 뒤의 조작을
+                      예상할 수 있다.
+                    `,
+                  ),
+                ]}
+              ></mm-text-list>
+              <mm-grid columns="3" column-min-width="16rem" gap="6">
+                <mm-figure-card description="메뉴를 여는 트리거는 menu로 둔다">
+                  <mm-button slot="figure">더보기</mm-button>
+                  <mm-code-tag slot="tags">aria-haspopup="menu"</mm-code-tag>
+                </mm-figure-card>
+                <mm-figure-card description="옵션 목록을 여는 트리거는 listbox로 둔다">
+                  <mm-button slot="figure">정렬</mm-button>
+                  <mm-code-tag slot="tags">aria-haspopup="listbox"</mm-code-tag>
+                </mm-figure-card>
+                <mm-figure-card
+                  description="토글·슬라이더 같은 컨트롤을 넣은 패널은 menu·listbox 어느 쪽에도 맞지 않아, aria-haspopup을 빼고 열림 여부만 알린다"
+                >
+                  <mm-button slot="figure">설정</mm-button>
+                  <mm-code-tag slot="tags">aria-expanded</mm-code-tag>
+                </mm-figure-card>
+              </mm-grid>
+            </mm-content-section-list>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="팝업의 포커스">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '열 때 포커스를 overlay 안으로 옮긴다',
-                  '포커스가 밖에 남으면 키보드·스크린리더 사용자는 overlay가 열린 줄 모르고 뒤 화면을 헤맨다',
-                ),
-                rule(
-                  '닫을 때 포커스를 열기 직전 자리로 되돌린다',
-                  '하던 자리에서 이어 갈 수 있고, 닫힌 overlay에 포커스가 남아 사라지는 일도 없다',
-                ),
-                rule(
-                  '비모달은 바깥을 눌러 닫을 때 포커스를 되돌리지 않는다',
-                  '눌린 요소가 이미 포커스를 받았는데 트리거로 되돌리면 사용자가 방금 고른 곳에서 포커스를 빼앗는다',
-                ),
-              ]}
-            ></mm-text-list>
+            <mm-flex direction="column" gap="4">
+              <mm-flex direction="column" gap="4">
+                ${popupKinds.map(
+                  ({ kind, description }) => html`
+                    <mm-flex direction="column" align-items="flex-start" gap="1">
+                      <mm-code-tag tone=${POPUP_TONES[kind]}>${kind}</mm-code-tag>
+                      <mm-paragraph>${description}</mm-paragraph>
+                    </mm-flex>
+                  `,
+                )}
+              </mm-flex>
+              <mm-flex direction="column" gap="2">
+                ${popupComponents.map(
+                  ({ name, kind }) => html`
+                    <mm-tag-group>
+                      <mm-code-tag>${name}</mm-code-tag>
+                      <mm-code-tag tone=${POPUP_TONES[kind]}>${kind}</mm-code-tag>
+                    </mm-tag-group>
+                  `,
+                )}
+              </mm-flex>
+            </mm-flex>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="선택 그룹의 키보드">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '그룹은 Tab 한 번으로 들어가고 화살표 키로 항목 사이를 옮긴다',
-                  html`
-                    Tab으로 그룹에 들어오면 선택된 항목에 포커스가 놓이고, 끝 항목에서 화살표를 더
-                    눌러도 멈춘다. ${code('RovingFocusController')}가 이 동작을 맡으며
-                    ${code('mm-toggle-button-group')} · ${code('mm-filter-button-group')} ·
-                    ${code('mm-menu-item-group')} · ${code('mm-select')}의 옵션 목록이 같은 방식을
-                    쓴다. ${code('mm-tab-list')}만 끝에서 반대편 끝으로 이어진다
+            <mm-flex direction="column" gap="4">
+              <mm-flex direction="column" gap="4">
+                ${keyLegend.map(
+                  ({ key, description }) => html`
+                    <mm-flex direction="column" align-items="flex-start" gap="1">
+                      <mm-code-tag tone=${KEY_TONES[key]}>${key}</mm-code-tag>
+                      <mm-paragraph>${description}</mm-paragraph>
+                    </mm-flex>
                   `,
-                ),
-                rule(
-                  '버튼 그룹은 Space·Enter가 선택을 확정한다',
-                  html`
-                    화살표 키는 포커스만 옮기고, Space·Enter가 버튼을 눌러 선택을 바꾼다.
-                    ${code('mm-toggle-button-group')} · ${code('mm-filter-button-group')}이 이
-                    방식을 따른다
+                )}
+              </mm-flex>
+              <mm-flex direction="column" gap="2">
+                ${groupKeys.map(
+                  ({ name, keys }) => html`
+                    <mm-tag-group>
+                      <mm-code-tag>${name}</mm-code-tag>
+                      ${keys.map(
+                        key => html`
+                          <mm-code-tag tone=${KEY_TONES[key]}>${key}</mm-code-tag>
+                        `,
+                      )}
+                    </mm-tag-group>
                   `,
-                ),
-                rule(
-                  'radio 목록은 포커스를 옮기면 곧 선택된다',
-                  html`
-                    ${code('mm-menu-item-radio-group')}과 네이티브 radio는 이동이 선택이다.
-                    ${code('mm-tab-list')}도 이동이 선택이라 Enter·Space 없이 방향키만으로 탭이
-                    바뀐다
-                  `,
-                ),
-              ]}
-            ></mm-text-list>
+                )}
+                <mm-tag-group>
+                  <mm-code-tag>mm-tab-list</mm-code-tag>
+                  <mm-code-tag tone="cyan">Arrow Keys</mm-code-tag>
+                </mm-tag-group>
+                <mm-tag-group>
+                  <mm-code-tag>mm-menu-item-radio-group</mm-code-tag>
+                  <mm-code-tag>radio</mm-code-tag>
+                  <mm-code-tag tone="cyan">Arrow Keys</mm-code-tag>
+                </mm-tag-group>
+              </mm-flex>
+            </mm-flex>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>

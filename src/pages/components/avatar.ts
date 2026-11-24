@@ -167,7 +167,7 @@ const main = html`
 
     <mm-component-props .props=${componentProps}></mm-component-props>
 
-    <mm-component-tokens .elements=${['mm-avatar']}>
+    <mm-component-tokens>
       <mm-flex gap="2">
         <mm-toggle-button-group
           id="avatar-token-variant"

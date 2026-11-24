@@ -62,12 +62,13 @@ export const SITEMAP: SitemapNode[] = [
     title: 'Utilities',
     icon: ICON_NAMES.GRID_VIEW,
   },
-  {
-    type: 'standalone',
-    id: 'conventions',
-    title: 'Conventions',
-    icon: ICON_NAMES.DOCUMENT,
-  },
+  // 임시 숨김: Conventions 페이지 (src/pages/conventions)
+  // {
+  //   type: 'standalone',
+  //   id: 'conventions',
+  //   title: 'Conventions',
+  //   icon: ICON_NAMES.DOCUMENT,
+  // },
 
   // 2. 접고 펼치는 메뉴 그룹
   {
