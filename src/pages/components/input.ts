@@ -166,7 +166,6 @@ const main = html`
     <mm-component-guide .features=${componentFeatures}></mm-component-guide>
 
     <mm-component-anatomy
-      style="--component-anatomy-stage-width: var(--layout-width-narrow)"
       .parts=${[
         '레이블 — 입력 항목의 이름을 나타냅니다(label).',
         '입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.',
@@ -194,12 +193,18 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-section heading="DatePicker">
-      <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
-        <mm-icon slot="trailing" name="calendar"></mm-icon>
-      </mm-textfield>
-      <mm-textfield name="date-range" label="숙박 기간" placeholder="YYYY. MM. DD. – YYYY. MM. DD.">
-        <mm-icon slot="trailing" name="calendar"></mm-icon>
-      </mm-textfield>
+      <mm-textfield-group>
+        <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
+          <mm-icon slot="trailing" name="calendar"></mm-icon>
+        </mm-textfield>
+        <mm-textfield
+          name="date-range"
+          label="숙박 기간"
+          placeholder="YYYY. MM. DD. – YYYY. MM. DD."
+        >
+          <mm-icon slot="trailing" name="calendar"></mm-icon>
+        </mm-textfield>
+      </mm-textfield-group>
     </mm-component-section>
 
     <mm-component-section
@@ -213,7 +218,6 @@ const main = html`
         description="2자 이상 입력하세요."
       ></mm-textfield>
       <mm-flex direction="column" gap="2">
-        <mm-textfield-description>가입 후에는 변경할 수 없어요.</mm-textfield-description>
         <mm-textfield-validation>올바른 이메일 형식으로 입력하세요.</mm-textfield-validation>
       </mm-flex>
     </mm-component-section>
@@ -247,9 +251,9 @@ const main = html`
 
     <mm-component-section
       heading="PasswordField"
+      description="비밀번호 입력 필드"
       .checks=${[
-        '리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다.',
-        '확인 필드가 있으면 두 번 입력해 오입력을 걸러낼 수 있습니다.',
+        '확인 필드가 있으면 두 번 입력해 오입력을 걸러낼 수 있습습니다. 리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다.',
       ]}
     >
       <mm-passwordfield

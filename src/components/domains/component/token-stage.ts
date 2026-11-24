@@ -23,6 +23,10 @@ export class TokenStage extends LitElement {
       padding: var(--space-8) var(--space-16);
     }
 
+    :host([full-width]) ::slotted(*) {
+      width: 100%;
+    }
+
     :host([backdrop]) mm-surface {
       --surface-background-color: repeating-linear-gradient(
         90deg,
@@ -33,6 +37,8 @@ export class TokenStage extends LitElement {
   `
   /** 재질처럼 뒤에 무엇이 비치는지 보여야 하는 토큰을 위해, 중간 톤과 밝은 면이 번갈아 맞닿는 바탕을 스테이지 전체에 깐다. */
   @property({ type: Boolean, reflect: true }) backdrop = false
+  /** 내용이 줄어들지 않고 스테이지 가로를 채운다. */
+  @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
 
   render() {
     return html`

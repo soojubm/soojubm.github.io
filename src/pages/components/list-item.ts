@@ -279,17 +279,15 @@ const main = html`
             ]}
           ></mm-text-list>
         </mm-content-section>
-        <mm-content-section heading-level="3" heading="시각보정이 필요해요">
-          <mm-paragraph>
-            label과 description이 함께 있으면 글자가 앞의 아이콘보다 아래로 치우쳐 보입니다. 글자만
-            위로 조금 올려 아이콘과 가운데를 맞추고, 행의 크기는 그대로 둡니다.
-          </mm-paragraph>
-        </mm-content-section>
+        <mm-content-section
+          heading-level="3"
+          heading="시각보정이 필요해요"
+          description="label과 description이 함께 있으면 글자가 앞의 아이콘보다 아래로 치우쳐 보입니다. 글자만 위로 조금 올려 아이콘과 가운데를 맞추고, 행의 크기는 그대로 둡니다."
+        ></mm-content-section>
       </mm-content-section-list>
     </mm-component-guide>
 
     <mm-component-anatomy
-      style="--component-anatomy-stage-width: 320px"
       .parts=${[
         'leading — 아이콘 또는 아바타를 넣는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.',
         'content — label과 description으로 구성된 본문. 남은 공간을 채웁니다.',

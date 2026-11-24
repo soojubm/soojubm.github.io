@@ -278,10 +278,11 @@ const main = html`
 
       <mm-tab-panel value="state">
         <mm-content-section-list>
-          <mm-content-section heading-level="3" heading="상호작용 단서">
-            <mm-paragraph>
-              클릭 가능성은 형태로 드러냅니다. 이 단서는 장식이나 일반 강조로 쓰지 않습니다.
-            </mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="상호작용 단서"
+            description="클릭 가능성은 형태로 드러냅니다. 이 단서는 장식이나 일반 강조로 쓰지 않습니다."
+          >
             <mm-grid columns="3">
               <mm-surface variant="elevated">
                 <mm-paragraph>
@@ -301,31 +302,36 @@ const main = html`
             </mm-grid>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="조작 상태">
-            <mm-paragraph>UI 요소의 상호작용 상태입니다.</mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="조작 상태"
+            description="UI 요소의 상호작용 상태입니다."
+          >
             <mm-grid columns="4" gap="6">${operationStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="결과 상태 / 선택 상태">
-            <mm-paragraph>
-              UI 요소의 상호작용 결과 상태입니다. pressed·checked·selected·current는 같은 토큰을
-              씁니다.
-            </mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="결과 상태 / 선택 상태"
+            description="UI 요소의 상호작용 결과 상태입니다. pressed·checked·selected·current는 같은 토큰을 씁니다."
+          >
             <mm-tag-group>${selectedKeys.map(renderSelector)}</mm-tag-group>
             <mm-grid columns="4" gap="6">${resultStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="의미 상태">
-            <mm-paragraph>
-              사용자 행동으로 인한 오류와 시스템 오류를 구분합니다. 시스템 오류로 실패하면 단순히
-              "오류"라고 하지 않고 무엇이 잘못됐는지 설명해, 사용자가 다시 시도할 수 있게
-              안내합니다.
-            </mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="의미 상태"
+            description='사용자 행동으로 인한 오류와 시스템 오류를 구분합니다. 시스템 오류로 실패하면 단순히 "오류"라고 하지 않고 무엇이 잘못됐는지 설명해, 사용자가 다시 시도할 수 있게 안내합니다.'
+          >
             <mm-grid columns="4" gap="6">${semanticStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="데이터 상태">
-            <mm-paragraph>데이터를 요청한 뒤 화면이 거치는 상태입니다.</mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="데이터 상태"
+            description="데이터를 요청한 뒤 화면이 거치는 상태입니다."
+          >
             <mm-grid columns="4" gap="6">${dataStates.map(renderStateCard)}</mm-grid>
           </mm-content-section>
         </mm-content-section-list>
@@ -335,15 +341,19 @@ const main = html`
         <mm-content-section-list>
           <mm-flex direction="column" gap="3">
             <mm-grid columns="2" gap="4">
-              <mm-content-section heading-level="3" heading="단일 선택">
-                <mm-paragraph>
-                  선택 옵션 가운데 하나만 고르며, 다른 선택 옵션을 고르면 이전 선택이 해제됩니다.
-                </mm-paragraph>
+              <mm-content-section
+                heading-level="3"
+                heading="단일 선택"
+                description="선택 옵션 가운데 하나만 고르며, 다른 선택 옵션을 고르면 이전 선택이 해제됩니다."
+              >
                 <mm-code-tag tone="orange">value: string</mm-code-tag>
                 ${renderSelectionComponents(singleSelectionComponents)}
               </mm-content-section>
-              <mm-content-section heading-level="3" heading="다중 선택">
-                <mm-paragraph>선택 옵션마다 켜고 꺼서 원하는 만큼 고릅니다.</mm-paragraph>
+              <mm-content-section
+                heading-level="3"
+                heading="다중 선택"
+                description="선택 옵션마다 켜고 꺼서 원하는 만큼 고릅니다."
+              >
                 <mm-code-tag tone="orange">values: string[]</mm-code-tag>
                 ${renderSelectionComponents(multipleSelectionComponents)}
               </mm-content-section>
@@ -362,12 +372,11 @@ const main = html`
             description="선택되지 않은 상태로 제공합니다. 사용자가 의도하지 않은 선택값은 편향된 응답 결과를 가져오는 부작용이 있을 수 있습니다."
           ></mm-text-block>
 
-          <mm-content-section heading-level="3" heading="상태 소유">
-            <mm-paragraph>
-              선택 상태는 그룹 컴포넌트가 갖습니다. 단일 체크박스나 스위치, 설정 아이템처럼 켜고
-              끄는 맥락의 컴포넌트만 자기 상태를 갖습니다.
-            </mm-paragraph>
-          </mm-content-section>
+          <mm-content-section
+            heading-level="3"
+            heading="상태 소유"
+            description="선택 상태는 그룹 컴포넌트가 갖습니다. 단일 체크박스나 스위치, 설정 아이템처럼 켜고 끄는 맥락의 컴포넌트만 자기 상태를 갖습니다."
+          ></mm-content-section>
 
           <mm-content-section heading-level="3" heading="옵션 타입">
             <mm-code-block language="typescript" .code=${optionItemCode}></mm-code-block>

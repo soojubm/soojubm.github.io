@@ -161,8 +161,8 @@ const renderSpacingOtherContext = () => html`
 
 /** 같은 형태의 섹션 둘은 간격으로, 형태가 다른 맥락과는 구분선으로 구획한 한 화면을 그린다. */
 const renderSpacingOverview = () => html`
-  <mm-token-stage>
-    <mm-flex class="stage-width" direction="column">
+  <mm-token-stage full-width>
+    <mm-flex direction="column">
       ${renderSpacingSection(true)}${renderSpacingGap(
         'section',
         '--space-section',
@@ -253,8 +253,8 @@ const renderAlignmentContrast = () => {
   `
 
   return html`
-    <mm-token-stage>
-      <div class="contrast-page stage-width">
+    <mm-token-stage full-width>
+      <div class="contrast-page">
         ${renderFlow('text-align: start')}
         <div class="contrast-module">
           <mm-code-tag tone="blue">text-align: center</mm-code-tag>
@@ -284,16 +284,16 @@ const main = html`
 
       <mm-tab-panel value="page">
         <mm-content-section-list>
-          <mm-content-section heading-level="3" heading="페이지 너비">
-            <mm-paragraph>
-              너비로 읽기 밀도를 정합니다. 본문 골격은 ${code('mm-main')}의 width로, 떠오르는
-              overlay는 각 컴포넌트의 width로 지정합니다.
-            </mm-paragraph>
-            <mm-token-stage>
-              <mm-flex class="stage-width" direction="column" gap="6">
+          <mm-content-section
+            heading-level="3"
+            heading="페이지 너비"
+            description="너비로 읽기 밀도를 정합니다. 본문 골격은 mm-main의 width로, 떠오르는 overlay는 각 컴포넌트의 width로 지정합니다."
+          >
+            <mm-token-stage full-width>
+              <mm-flex direction="column" gap="6">
                 ${widthExample({
                   caption: '집중형 · 폼, 인증',
-                  description: '좁은 폭은 폼·인증처럼 한 가지 작업에 집중시킨다',
+                  description: '한 가지 작업에 집중시킨다',
                   token: '400px',
                   widthToken: '--layout-width-narrow',
                   category: 2,
@@ -330,13 +330,13 @@ const main = html`
             </mm-token-stage>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="배경 대비">
-            <mm-paragraph>
-              글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계 낮춰
-              다른 맥락으로 넘어왔다는 감각을 줍니다.
-            </mm-paragraph>
-            <mm-token-stage>
-              <mm-flex class="stage-width" direction="column" gap="6">
+          <mm-content-section
+            heading-level="3"
+            heading="배경 대비"
+            description="글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계 낮춰 다른 맥락으로 넘어왔다는 감각을 줍니다."
+          >
+            <mm-token-stage full-width>
+              <mm-flex direction="column" gap="6">
                 ${renderBackgroundExample({ caption: '이전 화면', value: 'background 기본' })}
                 ${renderBackgroundExample({
                   caption: '다른 정보 구조 · 글쓰기, 설정, 소개',
@@ -347,11 +347,11 @@ const main = html`
             </mm-token-stage>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="콘텐츠 모듈의 대비">
-            <mm-paragraph>
-              상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의
-              주의를 끌어옵니다.
-            </mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="콘텐츠 모듈의 대비"
+            description="상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의 주의를 끌어옵니다."
+          >
             <mm-paragraph>
               완료·오류·빈 상태를 보여 주는 ${code('mm-result')}가 이 규칙을 따릅니다.
             </mm-paragraph>
@@ -432,18 +432,18 @@ const main = html`
         <mm-content-section-list>
           <mm-flex direction="column" gap="4">
             <mm-grid columns="2" gap="4">
-              <mm-content-section heading-level="3" heading="Anchored overlay">
-                <mm-paragraph>
-                  트리거를 기준으로 엽니다. 트리거 옆에 붙어 떠서, 어느 요소에서 열린 overlay인지
-                  위치만으로 이어집니다.
-                </mm-paragraph>
+              <mm-content-section
+                heading-level="3"
+                heading="Anchored overlay"
+                description="트리거를 기준으로 엽니다. 트리거 옆에 붙어 떠서, 어느 요소에서 열린 overlay인지 위치만으로 이어집니다."
+              >
                 ${anchoredOverlays.map(renderOverlay)}
               </mm-content-section>
-              <mm-content-section heading-level="3" heading="Viewport overlay">
-                <mm-paragraph>
-                  viewport를 기준으로 화면 중앙이나 가장자리에 띄웁니다. 트리거 위치와 상관없이 같은
-                  자리에 열려, 어디서 열었든 같은 overlay라는 인상을 줍니다.
-                </mm-paragraph>
+              <mm-content-section
+                heading-level="3"
+                heading="Viewport overlay"
+                description="viewport를 기준으로 화면 중앙이나 가장자리에 띄웁니다. 트리거 위치와 상관없이 같은 자리에 열려, 어디서 열었든 같은 overlay라는 인상을 줍니다."
+              >
                 ${viewportOverlays.map(renderOverlay)}
               </mm-content-section>
             </mm-grid>
@@ -461,11 +461,11 @@ const main = html`
             </mm-caption>
           </mm-flex>
 
-          <mm-content-section heading-level="3" heading="Modal × Non-Modal">
-            <mm-paragraph>
-              모달은 열린 동안 뒤의 화면을 막는 overlay입니다. 작업을 마치거나 취소해야 다음으로
-              넘어가는 흐름에 쓰며, 삭제 확인·중요 정보 입력·결제가 여기에 해당합니다.
-            </mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="Modal × Non-Modal"
+            description="모달은 열린 동안 뒤의 화면을 막는 overlay입니다. 작업을 마치거나 취소해야 다음으로 넘어가는 흐름에 쓰며, 삭제 확인·중요 정보 입력·결제가 여기에 해당합니다."
+          >
             <mm-text-list
               variant="check"
               .texts=${[

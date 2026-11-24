@@ -216,12 +216,6 @@ const main = html`
           description="제목과 본문을 한 묶음으로 구성하고 그 사이 간격을 소유합니다. heading-level은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이 문서 구조에서 놓인 자리에 맞춰 지정합니다."
           .code=${contentSectionCode}
         >
-          <mm-component-notice slot="notice" heading="모두 보기 링크를 받는 섹션">
-            ${code('view-all-href')}를 받으면 ${code('action')} 자리에 "모두 보기" 링크를 스스로
-            채우는 파생 컴포넌트를 둔다. 받지 않으면 기본형과 같다. 이동이라 버튼이 아닌 링크로
-            두고, 무엇을 모두 보는지 섹션 제목과 잇는다. 본문이 그리드든 좌우 스크롤이든 섹션은
-            관여하지 않는다
-          </mm-component-notice>
           <mm-flex direction="column" gap="3">
             <mm-content-section heading-level="4" heading="액션이 있는 섹션">
               <mm-link slot="action" href="./post.html">모두 보기</mm-link>
@@ -267,11 +261,6 @@ const main = html`
           description="제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다. level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다. 본문이 딸린 구획에는 mm-content-section을 씁니다."
           .code=${textBlockCode}
         >
-          <mm-component-notice slot="notice" heading="mm-text-block을 유지할지 삭제할지">
-            ${code('mm-page-header')}·${code('mm-feature')}·${code('mm-banner')}처럼 제목–설명 한
-            쌍을 그리는 컴포넌트가 이 컴포넌트에 위임한다. 삭제하면 그 컴포넌트들이 제목–설명 간격을
-            각자 소유하게 된다. 유지할지 삭제할지 정하지 않았다
-          </mm-component-notice>
           <mm-flex direction="column" gap="3">
             <mm-text-block
               level="1"

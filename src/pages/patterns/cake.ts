@@ -130,12 +130,11 @@ const main = html`
           </mm-grid>
         </mm-content-section>
 
-        <mm-content-section heading-level="3" heading="리뷰">
-          <mm-paragraph>
-            이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용
-            장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의
-            귀중품 보관함도 시설 내에 마련되어 있습니다.
-          </mm-paragraph>
+        <mm-content-section
+          heading-level="3"
+          heading="리뷰"
+          description="이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의 귀중품 보관함도 시설 내에 마련되어 있습니다."
+        >
           <mm-button variant="secondary">Read More Reviews</mm-button>
         </mm-content-section>
       </mm-content-section-list>

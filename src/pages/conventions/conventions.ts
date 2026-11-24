@@ -19,8 +19,11 @@ const main = html`
 
       <mm-tab-panel value="code">
         <mm-content-section-list>
-          <mm-content-section heading-level="3" heading="공통 코딩 스타일">
-            <mm-paragraph>들여쓰기·세미콜론 등은 ESLint와 Prettier 규칙에 위임한다</mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="공통 코딩 스타일"
+            description="들여쓰기·세미콜론 등은 ESLint와 Prettier 규칙에 위임한다"
+          >
             <mm-text-list
               variant="check"
               .texts=${[
@@ -122,12 +125,11 @@ const main = html`
             ></mm-text-list>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="컴포넌트 조합/합성">
-            <mm-paragraph>
-              다른 컴포넌트를 재사용해 만들 때는 재사용할 컴포넌트의 역할에 따라 방식을 고릅니다.
-              단순한 시각 요소는 그 컴포넌트를 직접 렌더링하고, 상호작용이나 접근성 의미가 있으면
-              컴포넌트를 중첩하지 않고 공유 스타일과 템플릿만 재사용합니다.
-            </mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="컴포넌트 조합/합성"
+            description="다른 컴포넌트를 재사용해 만들 때는 재사용할 컴포넌트의 역할에 따라 방식을 고릅니다. 단순한 시각 요소는 그 컴포넌트를 직접 렌더링하고, 상호작용이나 접근성 의미가 있으면 컴포넌트를 중첩하지 않고 공유 스타일과 템플릿만 재사용합니다."
+          >
             <mm-text-list
               variant="check"
               .texts=${[
@@ -142,12 +144,11 @@ const main = html`
             ></mm-text-list>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="Prop 이름">
-            <mm-paragraph>
-              한 prop이 종류가 다른 값을 받으면 값을 더할 때마다 어느 쪽인지 다시 따져야 하고, 같은
-              이름이 컴포넌트마다 다르게 동작합니다. 축마다 이름을 따로 두면 조합이 곱으로 늘지
-              않습니다.
-            </mm-paragraph>
+          <mm-content-section
+            heading-level="3"
+            heading="Prop 이름"
+            description="한 prop이 종류가 다른 값을 받으면 값을 더할 때마다 어느 쪽인지 다시 따져야 하고, 같은 이름이 컴포넌트마다 다르게 동작합니다. 축마다 이름을 따로 두면 조합이 곱으로 늘지 않습니다."
+          >
             <mm-text-list
               variant="check"
               .texts=${[

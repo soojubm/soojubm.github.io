@@ -439,9 +439,11 @@ const main = html`
             </mm-component-notice>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="용어">
-            <mm-paragraph>단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)</mm-paragraph>
-
+          <mm-content-section
+            heading-level="3"
+            heading="용어"
+            description="단어(word) → 구(phrase) → 문장(sentence) → 문단(paragraph)"
+          >
             <mm-grid columns="3" column-min-width="16rem" gap="6">
               ${terms.map(renderTermCard)}
             </mm-grid>
@@ -457,26 +459,23 @@ const main = html`
               더미에서 상태와 행동 가능성을 분명히 할 때 사용합니다.
             </mm-paragraph>
 
-            <mm-content-section heading-level="3" heading="하나의 아이콘, 하나의 의미">
-              <mm-paragraph>
-                같은 아이콘을 맥락마다 다른 뜻으로 재사용하지 않습니다. 의미가 흔들리면 사용자가
-                매번 다시 해석해야 합니다.
-              </mm-paragraph>
-            </mm-content-section>
+            <mm-content-section
+              heading-level="3"
+              heading="하나의 아이콘, 하나의 의미"
+              description="같은 아이콘을 맥락마다 다른 뜻으로 재사용하지 않습니다. 의미가 흔들리면 사용자가 매번 다시 해석해야 합니다."
+            ></mm-content-section>
 
-            <mm-content-section heading-level="3" heading="중복 표현하지 않기">
-              <mm-paragraph>
-                보이는 레이블이 이미 가리키는 것을 아이콘으로 되풀이하지 않습니다. 남는 아이콘은
-                뜻을 지니면 대체 텍스트를 주고, 순수한 장식이면 접근성 트리에서 숨깁니다.
-              </mm-paragraph>
-            </mm-content-section>
+            <mm-content-section
+              heading-level="3"
+              heading="중복 표현하지 않기"
+              description="보이는 레이블이 이미 가리키는 것을 아이콘으로 되풀이하지 않습니다. 남는 아이콘은 뜻을 지니면 대체 텍스트를 주고, 순수한 장식이면 접근성 트리에서 숨깁니다."
+            ></mm-content-section>
 
-            <mm-content-section heading-level="3" heading="대비가 필요할 때 쓰기">
-              <mm-paragraph>
-                형제 항목 목록에서 대비가 필요하거나 사용자의 실수를 막을 수 있을 때 아이콘을
-                사용합니다.
-              </mm-paragraph>
-            </mm-content-section>
+            <mm-content-section
+              heading-level="3"
+              heading="대비가 필요할 때 쓰기"
+              description="형제 항목 목록에서 대비가 필요하거나 사용자의 실수를 막을 수 있을 때 아이콘을 사용합니다."
+            ></mm-content-section>
 
             <mm-text-list
               variant="check"

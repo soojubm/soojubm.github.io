@@ -112,19 +112,17 @@ const main = html`
         </mm-paragraph>
       </mm-paragraph-group>
 
-      <mm-content-section heading-level="3" heading="초기값은 무엇인가요?">
-        <mm-paragraph>
-          value가 비어 있으면 첫 번째 활성 옵션이 초기값이 됩니다. 네이티브 select와 같은 동작으로
-          트리거가 빈 값으로 보이지 않게 하며, 비활성 옵션은 고를 수 없어 건너뜁니다.
-        </mm-paragraph>
-      </mm-content-section>
+      <mm-content-section
+        heading-level="3"
+        heading="초기값은 무엇인가요?"
+        description="value가 비어 있으면 첫 번째 활성 옵션이 초기값이 됩니다. 네이티브 select와 같은 동작으로 트리거가 빈 값으로 보이지 않게 하며, 비활성 옵션은 고를 수 없어 건너뜁니다."
+      ></mm-content-section>
 
-      <mm-content-section heading-level="3" heading="시각보정이 필요해요">
-        <mm-paragraph>
-          트리거 오른쪽의 화살표 아이콘 때문에 오른쪽 여백이 왼쪽보다 넓어 보입니다. 아이콘 쪽을
-          보정해 좌우 여백이 같아 보이게 합니다.
-        </mm-paragraph>
-      </mm-content-section>
+      <mm-content-section
+        heading-level="3"
+        heading="시각보정이 필요해요"
+        description="트리거 오른쪽의 화살표 아이콘 때문에 오른쪽 여백이 왼쪽보다 넓어 보입니다. 아이콘 쪽을 보정해 좌우 여백이 같아 보이게 합니다."
+      ></mm-content-section>
 
       <mm-text-list
         .texts=${[

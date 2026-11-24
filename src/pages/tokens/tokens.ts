@@ -5,7 +5,6 @@ import type { DotTone } from '@/components/common/dot/dot.styles'
 import type { TagTone } from '@/components/common/tag/tag.styles'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
 
-import { ICON_NAMES } from '@/components/common'
 import { referencesOtherTokens, rootTokenNames } from '@/components/domains/component/token-values'
 import { WORD_CATEGORIES } from '@/components/domains/component/token.utils'
 import { renderPage } from '@/components/layouts/base-layouts'
@@ -613,12 +612,11 @@ const main = html`
       </mm-page-header>
 
       <mm-content-section-list>
-        <mm-content-section heading-level="3" heading="계층">
-          <mm-paragraph>
-            Primitive는 값을, Semantic은 그 값이 화면에서 맡는 역할을, Component Token은
-            컴포넌트마다 조정할 자리를 맡습니다. 맡은 일이 나뉘어 있어 한 계층을 바꿔도 다른 계층은
-            그대로 둘 수 있습니다.
-          </mm-paragraph>
+        <mm-content-section
+          heading-level="3"
+          heading="계층"
+          description="Primitive는 값을, Semantic은 그 값이 화면에서 맡는 역할을, Component Token은 컴포넌트마다 조정할 자리를 맡습니다. 맡은 일이 나뉘어 있어 한 계층을 바꿔도 다른 계층은 그대로 둘 수 있습니다."
+        >
           <mm-token-stage>
             <mm-flex class="stage-content" direction="column" gap="6">
               ${renderLegend(Object.values(tierLegends))}
@@ -654,11 +652,7 @@ const main = html`
         </mm-content-section>
       </mm-content-section-list>
 
-      <mm-token-section
-        icon=${ICON_NAMES.PALETTE}
-        heading="Color"
-        description="색은 면과 글자의 역할과 상태를 구분합니다."
-      >
+      <mm-token-section heading="Color" description="색은 면과 글자의 역할과 상태를 구분합니다.">
         <mm-notice
           heading="권장 명도 대비"
           description="WCAG 2.1 AA 기준으로 일반 텍스트는 4.5:1 이상, 큰 텍스트(18px 굵게 또는 24px 이상)와 아이콘·테두리 같은 UI 요소는 3:1 이상이어야 합니다. 기준에 못 미치면 저시력 사용자가 글자와 경계를 구분하기 어렵습니다."

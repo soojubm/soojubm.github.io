@@ -1,8 +1,8 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import '@/components/common/text/semantics/heading'
-import '@/components/common/text/semantics/paragraph'
+import '@/components/common/text/semantics/text-block'
+import type { TextBlockLevel } from '@/components/common/text/semantics/text-block'
 
 /**
  * <mm-content-section>
@@ -16,27 +16,15 @@ import '@/components/common/text/semantics/paragraph'
 export class ContentSection extends LitElement {
   static styles = css`
     :host {
-      display: block;
-    }
-
-    section {
       display: flex;
       flex-direction: column;
-      gap: var(--space-4);
+      gap: var(--space-6);
     }
 
-    /* 제목과 설명은 text-block처럼 한 쌍으로 붙이고, 본문과는 더 띄운다. */
     .title {
       display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-
-    header {
-      display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: var(--space-3);
     }
   `
   @property({ type: String }) heading = ''
@@ -45,23 +33,15 @@ export class ContentSection extends LitElement {
 
   render() {
     return html`
-      <section>
-        <div class="title">
-          <header>
-            <mm-heading level=${this.headingLevel}>${this.heading}</mm-heading>
-            <slot name="action"></slot>
-          </header>
-          ${this.renderDescription()}
-        </div>
-        <slot></slot>
-      </section>
-    `
-  }
-
-  private renderDescription() {
-    if (!this.description) return nothing
-    return html`
-      <mm-paragraph>${this.description}</mm-paragraph>
+      <div class="title">
+        <mm-text-block
+          level=${String(this.headingLevel) as TextBlockLevel}
+          heading=${this.heading}
+          description=${this.description}
+        ></mm-text-block>
+        <slot name="action"></slot>
+      </div>
+      <slot></slot>
     `
   }
 }

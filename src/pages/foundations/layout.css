@@ -39,11 +39,6 @@
   flex-direction: column;
 }
 
-/* 트랙은 화면 폭, 막대는 본문 폭이다. 막대가 트랙보다 좁으면 가운데에 놓인다. */
-.stage-width {
-  width: 100%;
-}
-
 .width-track {
   display: flex;
   justify-content: center;

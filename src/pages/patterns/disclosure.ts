@@ -77,12 +77,11 @@ const main = html`
     </mm-flex>
 
     <mm-content-section-list>
-      <mm-content-section heading-level="3" heading="Overview">
-        <mm-paragraph>
-          펼친 내용이 어디에 놓이는지로 구분합니다. 뜨는 표면의 modality·dismiss·겹침 순서는 Overlay
-          문서가 정하고, 이 문서는 흐름 안에서 펼쳐지는 제자리 disclosure와 세 방식이 공유하는
-          상태·접근성 규칙을 정합니다.
-        </mm-paragraph>
+      <mm-content-section
+        heading-level="3"
+        heading="Overview"
+        description="펼친 내용이 어디에 놓이는지로 구분합니다. 뜨는 표면의 modality·dismiss·겹침 순서는 Overlay 문서가 정하고, 이 문서는 흐름 안에서 펼쳐지는 제자리 disclosure와 세 방식이 공유하는 상태·접근성 규칙을 정합니다."
+      >
         <mm-table
           .rows=${surfaceRows}
           caption="펼친 내용이 놓이는 자리에 따른 disclosure 분류"
@@ -115,12 +114,11 @@ const main = html`
         ></mm-text-list>
       </mm-content-section>
 
-      <mm-content-section heading-level="3" heading="제자리 disclosure">
-        <mm-paragraph>
-          트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라
-          트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로
-          유지합니다.
-        </mm-paragraph>
+      <mm-content-section
+        heading-level="3"
+        heading="제자리 disclosure"
+        description="트리거 바로 아래에서 펼쳐지며 뒤의 콘텐츠를 밀어냅니다. 같은 흐름 안의 부가 공개라 트리거와 내용이 세로로 이어지고, 레이어로 전환하지 않아 사용자는 읽던 자리를 그대로 유지합니다."
+      >
         <mm-paragraph>
           접힌 자리에 무엇을 남기는지로 형태를 고릅니다. 항목을 통째로 접으면 제목만 남아 훑어 고를
           수 있고(${code('mm-faq-item')}), 이어지는 본문을 접으면 앞부분이 남아 읽던 문장을
