@@ -1,4 +1,4 @@
-import { html, type TemplateResult } from 'lit'
+import { html } from 'lit'
 
 import type { TagTone } from '@/components/common/tag/tag.styles'
 
@@ -73,203 +73,14 @@ const viewportOverlays: OverlayInfo[] = [
   },
 ]
 
-type ControllerMember = { name: string; description: TemplateResult }
-
-type ControllerInfo = {
-  name: string
-  description: string
-  members?: ControllerMember[]
-  notice?: { heading: string; description: string }
-}
-
-const controllers: ControllerInfo[] = [
-  {
-    name: 'DisclosureController',
-    description:
-      '트리거를 누르면 컴포넌트를 열고 닫는 컨트롤러입니다. overlay뿐 아니라 FAQ·사이드바 섹션처럼 제자리에서 펼치는 컴포넌트에도 씁니다.',
-    members: [
-      {
-        name: 'toggle()',
-        description: html`
-          열림 상태 ${code('open')}을 토글합니다. 컨트롤러는 따로 저장하지 않고
-          ${code('show()')}·${code('close()')}로 바꿉니다. 열림 상태가 바뀔 때마다 ${code('toggle')}
-          이벤트를 발행하며, ESC나 바깥 클릭으로 컴포넌트가 스스로 닫혀도 발행하므로 사용하는 쪽이
-          자기 상태를 맞출 수 있습니다.
-        `,
-      },
-      {
-        name: 'trigger',
-        description: html`
-          이 컴포넌트를 열고 닫는 버튼 요소를 리턴합니다. 트리거의 ${code('aria-controls')}가
-          컴포넌트 ${code('id')}를 가리키면 클릭 시 ${code('toggle()')}이 불립니다.
-          ${code('aria-haspopup')}이 여는 종류를 선언하고, ${code('aria-expanded')}로 열린 상태를
-          스크린리더에 알립니다.
-        `,
-      },
-    ],
-  },
-  {
-    name: 'SheetController',
-    description:
-      'viewport 기준 modal overlay가 열린 동안 뒤 화면을 막고, 닫는 방법을 처리하는 컨트롤러입니다.',
-    members: [
-      {
-        name: '닫기',
-        description: html`
-          ESC로 항상 닫고, ${code('closeOnBackdrop')}을 켜면 배경 클릭으로도 닫습니다.
-        `,
-      },
-      {
-        name: '뒤 화면 잠금',
-        description: html`
-          열릴 때 뒤 화면과 아래쪽 모달을 ${code('inert')}로 만들어 포커스를 ${code('autofocus')}
-          요소나 컴포넌트 안으로 옮기고, 닫힐 때 풀어 포커스를 연 요소로 돌립니다. 배경(backdrop)은
-          마우스 클릭만 막으므로, 막지 않으면 키보드 Tab이나 스크린리더가 뒤 화면으로 빠져나갑니다.
-          모달이 겹쳤을 때는 막은 횟수를 세어, 위 모달이 닫혀도 아래 모달이 열려 있는 동안은 뒤
-          화면을 풀지 않습니다. 닫히는 순서가 달라도 마지막 모달이 닫힐 때만 풀립니다.
-        `,
-      },
-      {
-        name: '함께 쓰는 컨트롤러',
-        description: html`
-          ${code('PortalController')}(이동), ${code('DisclosureController')}(트리거),
-          ${code('EscapeKeyController')}(ESC), ${code('ScrollLockController')}(스크롤 잠금)가 함께
-          연결됩니다.
-        `,
-      },
-    ],
-  },
-  {
-    name: 'AdaptiveOverlay',
-    description:
-      '넓은 화면에서 popover로 열리는 overlay를 좁은 화면에서 bottom sheet로 전환하는 클래스입니다.',
-    members: [
-      {
-        name: 'isViewportCompact',
-        description: html`
-          좁은 화면인지 알려 줍니다. true이면 sheet가, false이면 popover가 맡습니다.
-        `,
-      },
-      {
-        name: 'popoverOpen · sheetOpen',
-        description: html`
-          컴포넌트의 ${code('open')}과 화면 폭을 합쳐, 화면 폭에 맞는 표면에만 열림을 내려 줍니다.
-          열림 상태는 컴포넌트가 ${code('open')}으로 소유하고, 이 클래스는 읽기만 합니다.
-        `,
-      },
-      {
-        name: 'handlePopoverToggle · handleSheetToggle',
-        description: html`
-          ESC 등으로 popover·sheet가 스스로 닫혀도 열림 상태를 맞춥니다. 각 표면의 ${code('toggle')}
-          이벤트에 연결하면, 이벤트가 알리는 ${code('open')} 값으로 컴포넌트를 열거나 닫습니다. 화면
-          폭이 바뀌어 표면이 갈릴 때 물러나는 표면이 닫히며 보내는 이벤트는 무시해, 열림이
-          유지됩니다.
-        `,
-      },
-    ],
-  },
-  {
-    name: 'EscapeKeyController',
-    description: 'ESC를 누르면 열려 있는 overlay를 닫는 컨트롤러입니다.',
-  },
-  {
-    name: 'OutsideClickController',
-    description: 'overlay 바깥을 누르면 콜백을 호출해 닫게 하는 컨트롤러입니다.',
-    members: [
-      {
-        name: 'onOutsideClick',
-        description: html`
-          컴포넌트 바깥을 누르면 부르는 콜백입니다. 누른 곳이 안인지는 ${code('composedPath()')}로
-          판단합니다.
-        `,
-      },
-      {
-        name: 'open',
-        description: html`
-          열려 있는 동안에만 화면 전체에서 누르는 동작(${code('pointerdown')})을 감지하고, 닫히면
-          멈춥니다.
-        `,
-      },
-      {
-        name: 'getTrigger',
-        description: html`
-          넘긴 트리거(열림을 토글하는 요소)를 누르면 바깥을 누른 것으로 보지 않습니다.
-        `,
-      },
-      {
-        name: '배경 클릭',
-        description: html`
-          sheet처럼 ${code('closeOnBackdrop')}을 켠 표면의 배경 클릭은 ${code('SheetController')}가
-          처리합니다. 이 컨트롤러는 ${code('document')}에서 누름을 받아, 모달이 겹쳐 있으면 위 모달
-          패널을 눌러도 아래 모달이 함께 닫히기 때문입니다.
-        `,
-      },
-    ],
-  },
-  {
-    name: 'PortalController',
-    description: 'overlay를 쓰는 자리에서 꺼내 페이지 맨 끝으로 옮겨 띄우는 컨트롤러입니다.',
-    members: [
-      {
-        name: 'hostConnected()',
-        description: html`
-          컴포넌트가 연결되면 ${code('index.html')} 끝의 ${code('#portal-root')}로 옮기고 원래
-          자리에 주석 자리표를 남깁니다. 이 컨테이너는 ${code('body')}의 마지막 자식이라 앱 셸의
-          어떤 요소 안에도 속하지 않습니다.
-        `,
-      },
-      {
-        name: 'originRoot',
-        description: html`
-          옮기기 전 자리의 root를 리턴합니다. 트리거가 다른 컴포넌트의 shadow DOM 안에 있으면 옮겨진
-          뒤의 document에서는 찾을 수 없어, ${code('DisclosureController')}가 트리거를 찾을 때
-          씁니다.
-        `,
-      },
-      {
-        name: 'removeIfOrphaned()',
-        description: html`
-          원래 자리의 컴포넌트가 DOM에서 빠져 자리표가 문서에서 떨어졌으면, 옮겨 둔 컴포넌트도
-          걷어냅니다.
-        `,
-      },
-    ],
-    notice: {
-      heading: 'tooltip은 한 번 만든 말풍선을 다시 그리지 않는다',
-      description:
-        '표처럼 트리거가 수백 개인 페이지에서 말풍선을 미리 다 만들어 두면, 화면에 보이지도 않는 요소가 그만큼 늘어 페이지가 느려집니다. 그래서 사용자가 처음 hover하거나 포커스할 때 그 트리거의 말풍선만 한 번 만들고, 이후에는 다시 그리지 않고 열림 상태만 바꿔 같은 말풍선을 씁니다. 처음 열 때도 두 번째부터와 같은 나타나는 애니메이션이 재생됩니다.',
-    },
-  },
+const controllerNames = [
+  'DisclosureController',
+  'SheetController',
+  'AdaptiveOverlay',
+  'EscapeKeyController',
+  'OutsideClickController',
+  'PortalController',
 ]
-
-/** 컨트롤러 하나를 이름·설명·제공하는 멤버 순으로 세로로 그린다. */
-const renderController = (controller: ControllerInfo) => html`
-  <mm-flex direction="column" gap="4">
-    <mm-flex direction="column" gap="2">
-      <mm-heading level="4">
-        <mm-code-tag size="large" tone="orange">${controller.name}</mm-code-tag>
-      </mm-heading>
-      <mm-text size="14">${controller.description}</mm-text>
-    </mm-flex>
-    ${controller.members?.map(
-      member => html`
-        <mm-flex direction="column" gap="1">
-          <mm-tag-group>
-            <mm-code-tag>${member.name}</mm-code-tag>
-          </mm-tag-group>
-          <mm-text size="14">${member.description}</mm-text>
-        </mm-flex>
-      `,
-    )}
-    ${controller.notice
-      ? html`
-          <mm-component-notice heading=${controller.notice.heading}>
-            ${controller.notice.description}
-          </mm-component-notice>
-        `
-      : ''}
-  </mm-flex>
-`
 
 /** overlay 하나의 이름과 분류 속성을 색으로 구분된 태그로 나열한다. */
 const renderOverlay = (overlay: OverlayInfo) =>
@@ -689,9 +500,13 @@ const main = html`
             heading="컨트롤러"
             description="열림 상태, 스크롤 잠금, portal 이동처럼 overlay가 공통으로 하는 동작은 컨트롤러가 맡고, overlay 컴포넌트는 이를 가져다 씁니다."
           >
-            <mm-flex class="stage-width" direction="column" gap="4">
-              ${controllers.map(renderController)}
-            </mm-flex>
+            <mm-tag-group>
+              ${controllerNames.map(
+                name => html`
+                  <mm-code-tag>${name}</mm-code-tag>
+                `,
+              )}
+            </mm-tag-group>
           </mm-text-block>
         </mm-content-section-list>
       </mm-tab-panel>
