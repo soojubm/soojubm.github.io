@@ -3,7 +3,10 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
+import type {
+  MenuItemGroupGap,
+  MenuItemGroupSize,
+} from '@/components/common/menu-item/menu-item-group'
 import type { MenuOptionItem } from '@/types'
 
 import '@/components/common/menu-item/menu-item-group'
@@ -26,6 +29,7 @@ export class MenuItemCheckboxGroup extends LitElement {
   @property({ attribute: false }) options: MenuOptionItem[] = []
   @property({ attribute: false }) values: string[] = []
   @property({ type: String }) size: MenuItemGroupSize = 'medium'
+  @property({ type: String }) gap?: MenuItemGroupGap
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   private selection = new MultipleSelection({
     getValues: () => this.values,
@@ -37,7 +41,12 @@ export class MenuItemCheckboxGroup extends LitElement {
 
   render() {
     return html`
-      <mm-menu-item-group role="group" size=${this.size} aria-label=${this.ariaLabel || nothing}>
+      <mm-menu-item-group
+        role="group"
+        size=${this.size}
+        gap=${ifDefined(this.gap)}
+        aria-label=${this.ariaLabel || nothing}
+      >
         ${repeat(
           this.options,
           option => option.value,

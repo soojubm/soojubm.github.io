@@ -1,12 +1,16 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html, nothing, unsafeCSS } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
 import type { ComponentSize } from '@/stylesheets/shared.types'
 
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
+import { spaces } from '@/stylesheets/shared.styles'
+import { buildAttributeRules } from '@/utils'
 import '@/components/common/text/semantics/heading'
 
 export type MenuItemGroupSize = Extract<ComponentSize, 'medium' | 'large'>
+/** 행 사이 간격은 기본(size가 정함) 외에 space 1만 고를 수 있다. */
+export type MenuItemGroupGap = '1'
 export type MenuItemGroupRole = 'menu' | 'radiogroup' | 'group'
 
 // 각 항목이 shadow 안에 렌더하는 포커스 대상. 행 조립 규칙은 menu-item 계열이 소유한다.
@@ -34,10 +38,13 @@ export class MenuItemGroup extends LitElement {
     :host([size='large']) .items {
       gap: var(--space-2);
     }
+
+    ${unsafeCSS(buildAttributeRules('gap', { '1': { gap: spaces['1'] } }, '.items'))}
   `
   @property({ type: String, reflect: true }) role: MenuItemGroupRole = 'menu'
   @property({ type: String, reflect: true }) size: MenuItemGroupSize = 'medium'
   @property({ type: String }) heading?: string
+  @property({ type: String, reflect: true }) gap?: MenuItemGroupGap
   @queryAssignedElements({ flatten: true }) private slotElements!: HTMLElement[]
   private rovingFocus = new RovingFocusController(this, {
     getItems: () => this.items,

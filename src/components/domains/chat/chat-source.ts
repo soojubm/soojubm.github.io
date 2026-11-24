@@ -1,5 +1,5 @@
 import { LitElement, css, html, nothing } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import type { IconName } from '@/components/common'
 
@@ -25,19 +25,25 @@ export class ChatSource extends LitElement {
   @property({ type: String }) icon?: IconName
   // popover는 portal로 옮겨져 한 트리에 모이므로, 칩이 여럿이어도 id가 겹치지 않게 한다.
   private readonly detailId = uniqueId('source-detail')
+  @state() private open = false
 
   render() {
     return html`
       <mm-button variant="secondary" aria-controls=${this.detailId}>
         ${this.renderIcon()} ${this.domain}
+        <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
       </mm-button>
-      <mm-popover id=${this.detailId}>
+      <mm-popover id=${this.detailId} @toggle=${this.handlePopoverToggle}>
         <mm-flex direction="column" gap="1">
           ${this.renderDetailHeader()} ${this.renderHeading()} ${this.renderDescription()}
           ${this.renderLink()}
         </mm-flex>
       </mm-popover>
     `
+  }
+
+  private handlePopoverToggle = (event: CustomEvent<{ open: boolean }>) => {
+    this.open = event.detail.open
   }
 
   private renderIcon() {

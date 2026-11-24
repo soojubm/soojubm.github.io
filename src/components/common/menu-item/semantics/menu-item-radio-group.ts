@@ -3,7 +3,10 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import type { MenuItemGroupSize } from '@/components/common/menu-item/menu-item-group'
+import type {
+  MenuItemGroupGap,
+  MenuItemGroupSize,
+} from '@/components/common/menu-item/menu-item-group'
 import type { MenuOptionItem } from '@/types'
 
 import '@/components/common/menu-item/menu-item-group'
@@ -22,6 +25,7 @@ export class MenuItemRadioGroup extends LitElement {
   @property({ type: String }) name = ''
   @property({ type: String }) value = ''
   @property({ type: String }) size: MenuItemGroupSize = 'medium'
+  @property({ type: String }) gap?: MenuItemGroupGap
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
   private selection = new SingleSelection({
     getValue: () => this.value,
@@ -35,6 +39,7 @@ export class MenuItemRadioGroup extends LitElement {
       <mm-menu-item-group
         role="radiogroup"
         size=${this.size}
+        gap=${ifDefined(this.gap)}
         aria-label=${this.ariaLabel || nothing}
       >
         ${repeat(
