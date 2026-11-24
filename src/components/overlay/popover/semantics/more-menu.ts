@@ -17,11 +17,6 @@ import { withOpenState } from '@/utils/open-state'
 // onClick은 항목마다 할 일이 정해진 경우에 쓰고, action 이벤트는 onClick 유무와 상관없이 늘 알린다.
 export type MoreMenuAction = OptionItem & { destructive?: boolean; onClick?: () => void }
 
-/**
- * 더보기 버튼으로 여는 명령 목록. 값을 고르는 mm-select와 달리 선택 상태를 남기지 않고, 누른 명령만 알린다.
- * 좁은 화면에서는 mm-select처럼 목록을 sheet로 올린다. 두 표면은 portal로 옮겨져 slot으로 받은 항목을
- * 투영할 수 없으므로, 항목은 actions 배열로 받아 어느 표면이든 직접 렌더한다.
- */
 @customElement('mm-more-menu')
 export class MoreMenu extends withOpenState(LitElement) {
   static styles = css`

@@ -12,10 +12,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/indicators/expand-indicator/expand-indicator'
 
-/**
- * 사이드바에서 하위 페이지 링크를 접었다 펴는 섹션.
- * 명령이 아니라 탐색이므로 menu가 아닌 list로 읽히고, 열림 상태는 DisclosureController가 소유한다.
- */
 @customElement('mm-sidebar-section')
 export class SidebarSection extends LitElement {
   static styles = [

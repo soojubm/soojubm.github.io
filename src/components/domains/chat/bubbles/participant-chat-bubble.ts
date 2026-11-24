@@ -7,9 +7,6 @@ import {
   participantChatBubbleStyles,
 } from '@/components/domains/chat/chat.styles'
 
-/**
- * 다중 채팅 참여자가 보낸 메시지 버블. 좌측 정렬 + subtle 배경.
- */
 @customElement('mm-participant-chat-bubble')
 export class ParticipantChatBubble extends withChatBubbleImage(LitElement) {
   static styles = [chatBubbleStyles, participantChatBubbleStyles]

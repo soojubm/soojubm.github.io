@@ -7,11 +7,6 @@ import '@/components/common'
 /** 스펙시멘이 소개하는 속성. 값은 화면에서 재서 채운다. */
 const METRICS = ['font-family', 'font-size', 'line-height'] as const
 
-/**
- * 한 size 단계의 타이포그래피 스펙시멘.
- * 값을 옮겨 적지 않고 자기가 그린 mm-text에서 실제로 먹은 스타일을 재므로,
- * 토큰이 바뀌거나 크기와 행간의 짝이 바뀌어도 문서가 따라온다.
- */
 @customElement('mm-type-specimen')
 export class TypeSpecimen extends LitElement {
   static styles = css`

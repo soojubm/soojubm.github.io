@@ -23,7 +23,6 @@ const GAP_OPTIONS: OptionItem[] = [
 
 const ITEM_COUNT = 3
 
-/** Container 문서에서 mm-flex의 direction·gap을 바꿔 가며 배치가 달라지는 모습을 보이는 예제. */
 @customElement('mm-flex-preview')
 export class FlexPreview extends LitElement {
   static styles = css`

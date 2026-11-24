@@ -12,4 +12,5 @@ import '@/components/domains/commerce'
 import '@/components/domains/pricing'
 import '@/components/domains/banner'
 import '@/components/domains/terms'
+import '@/components/domains/auth'
 export {}

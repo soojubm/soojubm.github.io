@@ -4,10 +4,6 @@ import { styleMap } from 'lit/directives/style-map.js'
 
 import '@/components/common/text/text'
 
-/**
- * 진행률을 원 둘레로 채우고 가운데에 퍼센트를 적는 고리.
- * 읽히는 진행률은 곁에 둔 네이티브 progress가 맡으므로 보조 기술에는 드러내지 않는다.
- */
 @customElement('mm-chart-progress-ring')
 export class ChartProgressRing extends LitElement {
   static styles = css`

@@ -4,11 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import { paragraphSizeToTextSize, type ParagraphSize } from '@/components/common/text/text.styles'
 import '@/components/common'
 
-/**
- * mm-product-price
- * 상품 가격 표시. 정가(취소선)·판매가·할인 표기를 한 줄로 보여준다.
- * size는 mm-paragraph의 size와 동일한 의미를 갖는다.
- */
 @customElement('mm-product-price')
 export class ProductPrice extends LitElement {
   static styles = css`

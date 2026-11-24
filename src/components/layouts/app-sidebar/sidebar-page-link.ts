@@ -10,11 +10,6 @@ import { listItemInteractiveStyles } from '@/components/common/list-item/list-it
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { isCurrentPage } from '@/utils'
 
-/**
- * 사이드바에서 사이트 안의 한 페이지로 이동하는 링크 행.
- * 명령이 아니라 탐색이므로 menu가 아닌 list로 읽히고, 링크마다 자기 Tab 순서를 갖는다.
- * 지금 보고 있는 페이지인지는 주소로 알 수 있어 aria-current="page"를 스스로 판단하고, 그 행의 끝에 점을 찍는다.
- */
 @customElement('mm-sidebar-page-link')
 export class SidebarPageLink extends LitElement {
   static styles = [

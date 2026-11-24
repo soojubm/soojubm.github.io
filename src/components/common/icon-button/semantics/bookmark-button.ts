@@ -11,10 +11,6 @@ import {
 import '@/components/common/icon'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 북마크/즐겨찾기 토글 버튼.
- * 아이콘 전용이며 선택 시 채워진 아이콘으로 전환됩니다.
- */
 @customElement('mm-bookmark-button')
 export class BookmarkButton extends withTogglePressed(LitElement) {
   static styles = [

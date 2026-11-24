@@ -4,10 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common'
 import { ICON_NAMES } from '@/components/common'
 
-/**
- * 펼침/접힘 상태를 나타내는 장식용 방향 표시.
- * 열고 닫는 상호작용은 트리거(버튼·메뉴 항목)가 소유하고, 이 요소는 expanded 상태만 받아 아이콘 회전으로 반영한다.
- */
 @customElement('mm-expand-indicator')
 export class ExpandIndicator extends LitElement {
   static styles = css`

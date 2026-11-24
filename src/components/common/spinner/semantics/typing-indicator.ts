@@ -3,10 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { dotSizes, dotStyles } from '@/components/common/dot/dot.styles'
 
-/**
- * 입력 중(typing)·진행 중 상태를 나타내는 3-dot 모션.
- * 채팅 입력 표시, 응답 대기 등에 사용합니다.
- */
 @customElement('mm-typing-indicator')
 export class TypingIndicator extends LitElement {
   static styles = css`

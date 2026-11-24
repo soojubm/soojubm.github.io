@@ -9,10 +9,6 @@ export interface ComponentChangelogItemData {
   description: string
 }
 
-/**
- * <mm-component-changelog>
- * 컴포넌트 문서 최하단에 API·동작 변경 이력을 최신순으로 나열한다.
- */
 @customElement('mm-component-changelog')
 export class ComponentChangelog extends LitElement {
   static styles = css`

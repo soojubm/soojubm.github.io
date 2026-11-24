@@ -3,10 +3,6 @@ import { customElement, queryAssignedElements } from 'lit/decorators.js'
 
 import '@/components/domains/pricing/pricing-card'
 
-/**
- * 비교할 요금제 카드 목록. 카드를 같은 너비의 열로 나란히 놓고, 목록 role과 간격을 소유한다.
- * 좁은 화면에서는 한 열로 쌓인다.
- */
 @customElement('mm-pricing-card-group')
 export class PricingCardGroup extends LitElement {
   static styles = css`

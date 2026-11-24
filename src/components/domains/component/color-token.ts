@@ -19,14 +19,6 @@ import '@/components/common'
 // 상태를 표현하는 색만 붙이고, 표면·전경·테두리처럼 원시 색을 물려받는 나머지 역할은 각자의 목록에서 소개한다.
 const STATUS_ROLES = ['primary', 'accent', 'danger', 'warning']
 
-/**
- * 색상 토큰 카드.
- * 토큰 이름만 받아 스와치·캡션·태그·명도 대비를 모두 그 이름에서 끌어낸다.
- * 값은 자기 자리에서 계산된 스타일로 읽고, 대비는 화면에 실제로 쓰인 두 색을 재서 붙이므로
- * 색을 바꾸거나 테마를 바꿔도 문서가 따라온다.
- * pairs에 전경색 토큰을 주면 그 표면 위에 유효한 조합을 쌓아 시연한다.
- * 색상 토큰 표를 구성하는 단위로 mm-token-item의 색상 대응물이다.
- */
 @customElement('mm-color-token')
 export class ColorToken extends LitElement {
   static styles = [

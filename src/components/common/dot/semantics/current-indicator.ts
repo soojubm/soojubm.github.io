@@ -4,12 +4,6 @@ import { customElement } from 'lit/decorators.js'
 import '@/components/common/dot/dot'
 import '@/components/overlay/tooltip'
 
-/**
- * 지금 위치한 항목을 가리키는 점.
- * 현재라는 의미는 항목의 aria-current가 전하므로, 이 요소는 현재 항목에만 놓여 화면용 표시만 맡는다.
- * 점이 무엇인지는 포인터를 올렸을 때 툴팁으로 알리며, 점보다 넓은 영역을 잡아 가운데에 점을 둔다.
- * 자리는 항목이 정한다: 가로로 늘어선 항목은 아래 가운데(dotBelowStyles), 세로 목록은 행 끝에 둔다.
- */
 @customElement('mm-current-indicator')
 export class CurrentIndicator extends LitElement {
   static styles = css`

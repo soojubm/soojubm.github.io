@@ -9,11 +9,6 @@ import { emit } from '@/utils'
 import '@/components/common/checkbox'
 import '@/components/common/surface'
 
-/**
- * 약관 동의. 전체 동의 체크박스와 약관 목록을 함께 렌더한다.
- * 두 표면이 하나의 선택 값을 공유하므로 선택 값은 이 컴포넌트의 컨트롤러가 소유한다.
- * 전체 동의는 별도 컴포넌트 없이 mm-checkbox로 두고, 컨트롤러의 상태를 따라 표시한다.
- */
 @customElement('mm-terms-agreement')
 export class TermsAgreement extends LitElement {
   static styles = css`

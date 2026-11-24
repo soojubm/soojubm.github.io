@@ -15,11 +15,6 @@ export type StepItemData = {
   content?: TemplateResult
 }
 
-/**
- * <mm-step>
- * 단계를 순서대로 늘어놓고 단계를 잇는 선을 그리는 진행 표시입니다.
- * items 배열로 단계를 받아 번호와 orientation을 순서에 맞춰 채웁니다.
- */
 @customElement('mm-step')
 export class Step extends LitElement {
   static styles = stepStyles

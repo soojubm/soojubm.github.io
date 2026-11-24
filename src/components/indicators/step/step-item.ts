@@ -8,11 +8,6 @@ import '@/components/common/text/text'
 
 export type StepOrientation = 'horizontal' | 'vertical'
 
-/**
- * <mm-step-item>
- * 순서 하나를 마커와 라벨로 그리는 단계입니다.
- * 번호와 orientation은 순서에서 나오므로 mm-step이 채우고, 지나온 단계는 active로 표시합니다.
- */
 @customElement('mm-step-item')
 export class StepItem extends LitElement {
   static styles = stepItemStyles

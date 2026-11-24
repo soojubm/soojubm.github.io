@@ -15,10 +15,6 @@ const listItemGroupGapTokens: AttributeTokens<Exclude<ListItemGroupGap, '3'>> = 
   '2': { gap: spaces['2'] },
 }
 
-/**
- * 같은 성격의 행을 세로로 묶어 하나의 목록으로 읽히게 하는 그룹.
- * 행 사이 간격과 list 의미를 그룹이 소유하고, 각 행은 자기 골격만 그린다.
- */
 @customElement('mm-list-item-group')
 export class ListItemGroup extends LitElement {
   static styles = css`

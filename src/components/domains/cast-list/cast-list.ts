@@ -13,10 +13,6 @@ export interface CastMember {
   imageSrc?: string
 }
 
-/**
- * 작품에 참여한 인물과 그 인물의 상세로 가는 링크를 묶어 보여주는 목록.
- * 행이 눌리지만 명령이 아니라 탐색이므로 menu가 아닌 list로 읽히고, 각 링크가 저마다 Tab 순서를 갖는다.
- */
 @customElement('mm-cast-list')
 export class CastList extends LitElement {
   static styles = [

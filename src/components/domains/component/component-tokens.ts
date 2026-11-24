@@ -5,12 +5,6 @@ import { componentTokensStyles } from '@/components/domains/component/component.
 import { formatTokenName } from '@/components/domains/component/token.utils'
 import '@/components/common'
 
-/**
- * 컴포넌트 CSS 커스텀 프로퍼티(토큰) 목록.
- * 토큰 이름을 분류 없이 mm-code-tag로 평평하게 나열합니다. elements를 생략하면 목록 없이 슬롯만 보여 줍니다.
- * 슬롯에는 토큰 목록 아래에 이어 붙일 콘텐츠(예: 토큰 값 카드)를 넣는다.
- * 목록은 손으로 적지 않고 elements로 넘긴 컴포넌트의 스타일에서 직접 읽어, 코드와 문서가 어긋나지 않게 한다.
- */
 @customElement('mm-component-tokens')
 export class ComponentTokens extends LitElement {
   static styles = componentTokensStyles

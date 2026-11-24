@@ -9,11 +9,6 @@ import { disabledStyles } from '@/stylesheets/shared.styles'
 
 type DisableableElement = HTMLElement & { disabled?: boolean }
 
-/**
- * <mm-setting-item icon="bell" label="알림" description="...">
- *   <mm-switch slot="action"></mm-switch>
- * </mm-setting-item>
- */
 @customElement('mm-setting-item')
 export class SettingItem extends LitElement {
   static styles = css`

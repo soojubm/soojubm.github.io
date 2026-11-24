@@ -3,10 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-/**
- * 감상 기록 한 편을 담는 카드. films·books 목록이 공유한다.
- * 제목(원제 포함)과 감독, 발표 연도·국가를 한 장에 보여준다.
- */
 @customElement('mm-media-card')
 export class MediaCard extends LitElement {
   static styles = css`

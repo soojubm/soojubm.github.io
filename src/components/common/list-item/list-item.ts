@@ -19,11 +19,6 @@ type DescribableSize = Exclude<ListItemSize, 'small'>
 const LABEL_TEXT_SIZE: Record<ListItemSize, string> = { small: '14', medium: '14', large: '18' }
 const DESCRIPTION_TEXT_SIZE: Record<DescribableSize, string> = { medium: '12', large: '14' }
 
-/**
- * leading(아바타·아이콘) + content(title/description) + trailing 한 줄을 구성하는 표현 전용 primitive.
- * 상호작용(role, hover 등)은 포함하지 않는다. 메뉴 의미가 필요하면 mm-menu-item-action을 쓴다.
- * 두 줄이 되는 행은 medium부터다. small은 한 줄만 그리고 description을 받아도 무시한다.
- */
 @customElement('mm-list-item')
 export class ListItem extends LitElement {
   static styles = [listItemStyles]

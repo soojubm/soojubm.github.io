@@ -9,9 +9,6 @@ import {
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 배너, 알림, 토스트 등 비파괴적 해제 버튼.
- */
 @customElement('mm-dismiss-button')
 export class DismissButton extends iconActionElement({
   event: 'dismiss',

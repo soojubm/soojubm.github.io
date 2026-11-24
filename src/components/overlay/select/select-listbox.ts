@@ -5,10 +5,6 @@ import type { SelectOption } from '@/components/overlay/select/select-option'
 
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
 
-/**
- * mm-select의 선택지 목록. menu와 달리 선택 상태를 유지하는 listbox라 menu 계열 그룹을 빌리지 않고,
- * 목록 하나를 tab stop 하나로 두는 방향키 이동을 스스로 소유한다. 선택은 각 항목이 맡는다.
- */
 @customElement('mm-select-listbox')
 export class SelectListbox extends LitElement {
   static styles = css`

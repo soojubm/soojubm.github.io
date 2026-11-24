@@ -12,10 +12,6 @@ import {
 } from '@/components/common/icon-button/icon-button.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 페이지네이션 번호 버튼.
- * 아이콘 대신 페이지 번호 텍스트를 렌더링하고 현재 페이지 상태(aria-current)를 표현한다.
- */
 @customElement('mm-page-button')
 export class PageButton extends LitElement {
   static styles = [

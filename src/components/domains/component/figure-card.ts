@@ -3,10 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-/**
- * 도형 하나와 태그, 설명을 한 카드로 보여 준다.
- * 도형은 `figure` 슬롯에, 이름 태그는 `tags` 슬롯에 넣고, 기본 슬롯에는 설명 아래에 이어질 내용을 둔다.
- */
 @customElement('mm-figure-card')
 export class FigureCard extends LitElement {
   static styles = css`

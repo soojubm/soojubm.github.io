@@ -15,8 +15,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
-// 같은 name의 네이티브 radio가 한 shadow root에 모여야 방향키 이동과 단일 선택을 브라우저가 처리한다.
-// 그래서 mm-radio를 감싸지 않고, 공유 스타일 모듈(radioStyles)을 조합해 input을 직접 렌더한다.
 @customElement('mm-radio-group')
 export class RadioGroup extends LitElement {
   static styles = [resetStyles, inputVisuallyHiddenStyles, inputSelectionGroupStyles, radioStyles]

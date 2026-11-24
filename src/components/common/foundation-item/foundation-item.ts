@@ -5,9 +5,6 @@ import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common/text/semantics/text-block'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * Foundations Overview에서 하위 문서로 이동하는 링크 카드.
- */
 @customElement('mm-foundation-item')
 export class FoundationItem extends LitElement {
   static styles = [

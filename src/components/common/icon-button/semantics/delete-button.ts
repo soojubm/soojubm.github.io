@@ -5,9 +5,6 @@ import { iconButtonStyles } from '@/components/common/icon-button/icon-button.st
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 아이템·데이터를 영구 삭제하는 파괴적 액션 버튼.
- */
 @customElement('mm-delete-button')
 export class DeleteButton extends iconActionElement({
   event: 'delete',

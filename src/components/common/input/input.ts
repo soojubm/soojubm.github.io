@@ -22,11 +22,6 @@ export type InputType =
   | 'color'
   | 'hidden'
 
-/**
- * <mm-input>
- * 공용 input 요소 컴포넌트. textfield 및 파생 컴포넌트(numberfield 등)가 공유한다.
- * 라벨/헬퍼/검증/슬롯은 textfield가 담당하고, 이 컴포넌트는 순수 input 요소만 렌더한다.
- */
 @customElement('mm-input')
 export class Input extends LitElement {
   static styles = [

@@ -3,10 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/tag/tag'
 
-/**
- * <mm-timeline-item>
- * 시점을 태그로 앞세우고 그 아래 그 시점의 기록을 쌓는 이력 한 칸입니다.
- */
 @customElement('mm-timeline-item')
 export class TimelineItem extends LitElement {
   static styles = css`

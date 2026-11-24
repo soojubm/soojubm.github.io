@@ -4,11 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common'
 import '@/components/domains/commerce/product-price'
 
-/**
- * mm-order-product-item
- * 장바구니·주문서·주문완료가 공유하는 주문 상품 한 줄.
- * 상품 이미지와 이름, 선택한 옵션, 가격을 같은 위계로 보여준다.
- */
 @customElement('mm-order-product-item')
 export class OrderProductItem extends LitElement {
   static styles = css`

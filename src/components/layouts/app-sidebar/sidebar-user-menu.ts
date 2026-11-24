@@ -12,10 +12,6 @@ import '@/components/overlay/popover/popover'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 
-/**
- * 사이드바 하단에 고정되는 현재 사용자 영역.
- * 행을 누르면 계정 명령 메뉴가 위로 열린다. 열기·닫기·aria는 mm-popover가 소유한다.
- */
 @customElement('mm-sidebar-user-menu')
 export class SidebarUserMenu extends LitElement {
   static styles = [

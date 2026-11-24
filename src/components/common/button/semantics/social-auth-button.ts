@@ -12,10 +12,6 @@ const PROVIDERS = {
 
 export type SocialAuthProvider = keyof typeof PROVIDERS
 
-/**
- * 외부 계정으로 로그인·가입을 시작하는 버튼.
- * 레이블과 아이콘은 provider가 정하고, 인증 화면의 주 진입점이라 항상 large 크기로 컨테이너 폭을 채운다.
- */
 @customElement('mm-social-auth-button')
 export class SocialAuthButton extends LitElement {
   static styles = css`

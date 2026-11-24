@@ -13,11 +13,6 @@ const MENU_ACTIONS: MoreMenuAction[] = [
   { value: 'delete', label: '삭제', destructive: true },
 ]
 
-/**
- * 댓글 목록의 개별 항목.
- * 작성자(아바타·이름·시간), 본문(기본 슬롯), 답글 버튼, 수정/삭제 메뉴로 구성됩니다.
- * 대댓글은 slot="replies"에 중첩된 mm-comment-item을 배치합니다.
- */
 @customElement('mm-comment-item')
 export class CommentItem extends LitElement {
   static styles = css`

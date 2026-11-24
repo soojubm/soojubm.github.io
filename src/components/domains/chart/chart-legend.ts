@@ -11,10 +11,6 @@ export type ChartLegendItem = {
   tone: TagTone
 }
 
-/**
- * 차트가 그린 시리즈와 이름을 잇는 범례.
- * 점의 색은 mm-dot의 tone 규칙을 따르므로, 막대 같은 짝 차트와 같은 tone을 넘기면 색이 맞는다.
- */
 @customElement('mm-chart-legend')
 export class ChartLegend extends LitElement {
   static styles = css`

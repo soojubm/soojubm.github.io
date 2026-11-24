@@ -10,11 +10,6 @@ import { ScheduleController } from '@/controllers/schedule-controller'
 
 type ScrollHintPlacement = 'start' | 'end'
 
-/**
- * 가로 스크롤 영역의 한쪽 끝. 그쪽에 가려진 콘텐츠가 있는 동안만 흐림 레이어와
- * 그 방향으로 넘기는 버튼을 보인다. 트랙패드·가로 휠이 없어도 넘길 수 있게 하는 것이 버튼의 몫이다.
- * mm-scroll(direction=row)이 양 끝에 렌더한다.
- */
 @customElement('mm-scroll-hint')
 export class ScrollHint extends LitElement {
   static styles = css`

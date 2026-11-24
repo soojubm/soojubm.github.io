@@ -26,9 +26,6 @@ const variantTokens = Object.fromEntries(
   Object.entries(statusDotToneMap).map(([variant, tone]) => [variant, dotToneTokens(tone)]),
 )
 
-/**
- * 색 하나로 상태를 말하는 점. 자기가 의미를 가지므로 role과 읽히는 이름을 스스로 갖는다.
- */
 @customElement('mm-status-dot')
 export class StatusDot extends LitElement {
   static styles = css`

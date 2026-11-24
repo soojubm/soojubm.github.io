@@ -25,7 +25,6 @@ const GAP_OPTIONS: OptionItem[] = [
 
 const ITEM_COUNT = 6
 
-/** Container 문서에서 mm-grid의 columns·gap을 바꿔 가며 배치가 달라지는 모습을 보이는 예제. */
 @customElement('mm-grid-preview')
 export class GridPreview extends LitElement {
   static styles = css`

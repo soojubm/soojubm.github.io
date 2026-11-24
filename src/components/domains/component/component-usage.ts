@@ -20,10 +20,6 @@ export type ComponentUsageItem = {
   pages?: ComponentUsagePage[]
 }
 
-/**
- * 컴포넌트별 사용량을 막대로 보이고, 고른 막대의 사용처를 아래에 편다.
- * 차트는 고른 값만 알리고, 사용처를 어떻게 보일지는 이 컴포넌트가 정한다.
- */
 @customElement('mm-component-usage')
 export class ComponentUsage extends LitElement {
   static styles = css`

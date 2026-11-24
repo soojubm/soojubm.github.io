@@ -15,11 +15,6 @@ export interface SearchResult {
   description?: string
 }
 
-/**
- * 검색어와 일치하는 페이지로 가는 링크 목록.
- * 결과를 누르면 그 페이지로 이동하므로 menu가 아닌 list로 읽히고, 각 링크가 저마다 Tab 순서를 갖는다.
- * heading은 목록 밖에 제목 요소로 렌더하고 목록에 aria-labelledby로 연결한다.
- */
 @customElement('mm-search-result-list')
 export class SearchResultList extends LitElement {
   static styles = [

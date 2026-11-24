@@ -16,15 +16,6 @@ const flexAlignItemsTokens: AttributeTokens<Exclude<AlignItems, 'stretch'>> = {
   baseline: { 'align-items': 'baseline' },
 }
 
-/**
- * 범용 flexbox 레이아웃 프리미티브.
- * 의미별 그룹핑(button/tag/avatar 등)은 각 시멘틱 컴포넌트가 담당하고,
- * mm-flex 는 순수 레이아웃만 책임진다.
- *
- * 레이아웃은 reflect된 attribute를 받는 :host 셀렉터로만 적용한다(인라인 스타일 없음).
- * 기본(as="div")은 host 자체가 flex 컨테이너다. 시멘틱 랜드마크가 필요한 경우(as="section" 등)에만
- * 내부 요소를 컨테이너로 쓰며, 레이아웃 값은 host 계산값에 남아 있어 `inherit`으로 그대로 내려간다.
- */
 @customElement('mm-flex')
 export class Flex extends LitElement {
   static styles = [

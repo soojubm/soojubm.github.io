@@ -37,12 +37,6 @@ export const subComponentPropsOf = (tag: ComponentTag, written: ComponentPropIte
 // 이보다 적은 prop은 접어도 가릴 내용이 없어 처음부터 펼쳐 둔다.
 const COLLAPSIBLE_PROP_COUNT = 3
 
-/**
- * 컴포넌트 prop 목록. 전체 레이아웃 외곽 틀을 책임지고
- * 각 prop은 mm-meta-item으로 이름과 타입을 보여 줍니다.
- * 접힌 상태에서 아무 곳이나 누르면 펼쳐지며, 펼침 여부는 open으로 드러납니다.
- * prop이 3개 미만이면 처음부터 펼쳐져 더보기 버튼을 노출하지 않습니다.
- */
 @customElement('mm-component-props')
 export class ComponentProps extends LitElement {
   static styles = componentPropsStyles

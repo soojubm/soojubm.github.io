@@ -27,11 +27,6 @@ export interface MediaListFilter {
   matches: (item: MediaItem, value: string) => boolean
 }
 
-/**
- * 감상 기록 목록. 필터로 좁힌 항목의 개수와 카드 격자를 보여주고, 한 번에 보이는 양을 넘으면 더 불러오는 버튼을 둔다.
- * 필터 선택과 보이는 양을 스스로 소유하므로, 소비자는 items와 filters만 넘긴다.
- * 필터 구성이 바뀌면 선택을 비우고 처음 양부터 다시 보여준다.
- */
 @customElement('mm-media-list')
 export class MediaList extends LitElement {
   static styles = css`

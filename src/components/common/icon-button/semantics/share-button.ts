@@ -9,10 +9,6 @@ import {
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 콘텐츠를 공유하는 버튼.
- * 무엇을 어떻게 공유할지는 소비처가 정하므로, 누르면 share 이벤트만 알린다.
- */
 @customElement('mm-share-button')
 export class ShareButton extends iconActionElement({
   event: 'share',

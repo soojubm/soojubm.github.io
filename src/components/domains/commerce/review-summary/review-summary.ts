@@ -4,10 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 
-/**
- * mm-review-summary
- * 상품의 평균 별점과 전체 리뷰 수를 간결하게 요약한다.
- */
 @customElement('mm-review-summary')
 export class ReviewSummary extends LitElement {
   static styles = css`

@@ -8,11 +8,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common'
 
-/**
- * 최근 검색어 목록. 검색어를 누르면 그 검색어로 다시 검색하도록 알리고, 삭제 버튼은 항목을 목록에서 스스로 지운 뒤 알린다.
- * 검색어와 삭제 버튼이 저마다 Tab 순서를 갖도록 menu가 아닌 list로 읽히고, 두 버튼은 중첩하지 않고 형제로 둔다.
- * heading은 목록 밖에 제목 요소로 렌더하고 목록에 aria-labelledby로 연결한다.
- */
 @customElement('mm-recent-search-list')
 export class RecentSearchList extends LitElement {
   static styles = [

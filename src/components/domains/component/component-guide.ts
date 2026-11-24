@@ -4,7 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/domains/component/component-feature-list'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 
-/** 컴포넌트 문서에서 특성 목록과 설명 산문을 함께 담는 가이드 영역. */
 @customElement('mm-component-guide')
 export class ComponentGuide extends LitElement {
   static styles = css`

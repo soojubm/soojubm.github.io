@@ -3,11 +3,6 @@ import { customElement } from 'lit/decorators.js'
 
 import '@/components/indicators/step/semantics/timeline-item'
 
-/**
- * <mm-timeline>
- * 지나간 이력을 최근 것부터 한 선 위에 세우는 목록입니다.
- * 항목을 잇는 세로 선은 항목의 leading 아바타 가운데를 지납니다.
- */
 @customElement('mm-timeline')
 export class Timeline extends LitElement {
   static styles = css`

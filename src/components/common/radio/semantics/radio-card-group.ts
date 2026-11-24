@@ -8,12 +8,6 @@ import { SingleSelection } from '@/controllers/single-selection'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
-/**
- * 카드는 가격·배지·설명처럼 옵션 배열로 표현할 수 없는 콘텐츠를 담으므로,
- * mm-radio-group과 달리 mm-radio-card를 자식으로 받는다.
- * 선택 값은 그룹이 소유하고, 자식 카드와의 왕복(초기 선택 흡수 → 값을 카드에 반영 →
- * 카드의 change를 그룹 change로 승격)도 그룹이 맡는다.
- */
 @customElement('mm-radio-card-group')
 export class RadioCardGroup extends LitElement {
   static styles = [resetStyles, inputSelectionGroupStyles]

@@ -16,10 +16,6 @@ const paragraphMaxWidthTokens: AttributeTokens<ParagraphSize> = {
   large: { 'max-width': '800px' },
 }
 
-/**
- * 본문 문단. 글자 크기·색·줄 수는 mm-text를 p로 렌더해 단계를 고르고,
- * 이 컴포넌트는 본문 크기 이름(small·medium·large)과 읽기 폭만 소유한다.
- */
 @customElement('mm-paragraph')
 export class Paragraph extends LitElement {
   static styles = css`

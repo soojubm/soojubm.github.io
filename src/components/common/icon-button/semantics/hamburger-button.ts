@@ -11,9 +11,6 @@ import {
 import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 사이드바/내비게이션 메뉴를 여닫는 햄버거 버튼.
- */
 @customElement('mm-hamburger-button')
 export class HamburgerButton extends LitElement {
   static styles = [

@@ -15,10 +15,6 @@ export const progressDotToneMap = {
 
 export type ProgressDotVariant = keyof typeof progressDotToneMap
 
-/**
- * 작업이 어느 단계에 있는지 점과 라벨로 보이는 표시.
- * 점의 색이 단계를 가르고 이름은 라벨이 맡으므로, 점은 보조 기술에 드러내지 않는다.
- */
 @customElement('mm-progress-dot')
 export class ProgressDot extends LitElement {
   static styles = css`

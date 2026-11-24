@@ -12,9 +12,6 @@ import {
 import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 추가 액션 메뉴를 여는 버튼.
- */
 @customElement('mm-more-button')
 export class MoreButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles, iconButtonSecondarySkinStyles]

@@ -16,8 +16,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text'
 
-// mm-radio-group처럼 mm-checkbox를 감싸지 않고, 공유 스타일 모듈(checkboxStyles)을 조합해 input을 직접 렌더한다.
-// 그래야 선택 상태를 shadow 경계 없이 그룹이 온전히 소유한다.
 @customElement('mm-checkbox-group')
 export class CheckboxGroup extends LitElement {
   static styles = [

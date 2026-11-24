@@ -8,7 +8,6 @@ export interface PostPagerItem {
   title: string
 }
 
-/** 글 상세 끝에서 이전·다음 글로 이동한다. */
 @customElement('mm-post-pager')
 export class PostPager extends LitElement {
   static styles = css`

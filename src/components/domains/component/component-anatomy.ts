@@ -17,20 +17,6 @@ export interface AnatomyMarkerData {
   inset?: boolean
 }
 
-/**
- * 컴포넌트 해부도(Anatomy) 섹션.
- * 슬롯에 시연 대상을 넣어 보여줍니다.
- * parts 배열을 넘기면 번호 매긴 구성요소 범례를 덧붙이고, markers에 같은 순서로 위치를 넘기면
- * 무대 위에 그 번호를 찍습니다. 번호는 배열 순서에서 나오므로 범례와 어긋날 수 없습니다.
- * 나눌 구성요소가 없는 단일 요소 컴포넌트는 parts 없이 시연만 전시합니다.
- *
- * <mm-component-anatomy
- *   .parts=${["컨테이너", "옵션 버튼", "선택 인디케이터"]}
- *   .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', offset: '25%' }]}
- * >
- *   < 시연 마크업 />
- * </mm-component-anatomy>
- */
 @customElement('mm-component-anatomy')
 export class ComponentAnatomy extends LitElement {
   static styles = [

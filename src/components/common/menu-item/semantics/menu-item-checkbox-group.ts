@@ -14,11 +14,6 @@ import '@/components/common/menu-item/semantics/menu-item-checkbox'
 import { MultipleSelection } from '@/controllers/multiple-selection'
 import { emit } from '@/utils'
 
-/**
- * 옵션을 mm-menu-item-checkbox 행으로 그리는 다중 선택 그룹.
- * 선택된 value 목록을 values prop으로 관리하며
- * 변경 시 change 이벤트를 발행합니다.
- */
 @customElement('mm-menu-item-checkbox-group')
 export class MenuItemCheckboxGroup extends LitElement {
   static styles = css`

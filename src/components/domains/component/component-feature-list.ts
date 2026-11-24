@@ -29,9 +29,6 @@ const FEATURE_ICONS: Record<string, string> = {
   Disclosure: ICON_NAMES.DISCLOSURE,
 }
 
-/**
- * 컴포넌트 문서 페이지의 mm-feature 목록 칼럼 레이아웃을 소유한다.
- */
 @customElement('mm-component-feature-list')
 export class ComponentFeatureList extends LitElement {
   static styles = [

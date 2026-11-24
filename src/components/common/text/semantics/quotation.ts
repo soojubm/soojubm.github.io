@@ -4,11 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/text/semantics/paragraph'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * <mm-quotation>
- * 다른 곳에서 가져온 글을 본문과 구분해 인용하는 블록입니다.
- * 기본 slot이 인용문이고, author가 있으면 인용문 아래에 출처를 덧붙입니다.
- */
 @customElement('mm-quotation')
 export class Quotation extends LitElement {
   static styles = [

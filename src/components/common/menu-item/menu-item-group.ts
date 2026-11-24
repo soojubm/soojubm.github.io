@@ -16,11 +16,6 @@ export type MenuItemGroupRole = 'menu' | 'radiogroup' | 'group'
 // 각 항목이 shadow 안에 렌더하는 포커스 대상. 행 조립 규칙은 menu-item 계열이 소유한다.
 const ITEM_SELECTOR = '[role^="menuitem"], [role="radio"]'
 
-/**
- * menu-item 계열 행을 묶어 방향키로 순회하는 목록. heading을 주면 목록 위에 소제목을 함께 보여준다.
- * menu·radiogroup은 항목 역할만 자식으로 가질 수 있어 소제목을 제목 요소로 읽히게 두지 않고,
- * 화면에만 그린 뒤 같은 문구를 목록의 aria-label로 옮긴다(mm-form-field의 label과 같은 방식).
- */
 @customElement('mm-menu-item-group')
 export class MenuItemGroup extends LitElement {
   static styles = css`

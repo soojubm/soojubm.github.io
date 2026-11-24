@@ -12,11 +12,6 @@ export type ChartColumnItem = {
   value?: string
 }
 
-/**
- * 범주별 몫을 세로 막대 높이로 그리는 차트.
- * 한 시리즈를 범주로 나눈 것이므로 막대마다 색을 나누지 않고 하나의 색을 쓴다.
- * selectable이면 각 열이 버튼이 되고, 고른 값은 change로 알리되 쓰임새는 소비처가 정한다.
- */
 @customElement('mm-chart-column')
 export class ChartColumn extends LitElement {
   static styles = [

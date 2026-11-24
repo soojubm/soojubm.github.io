@@ -12,10 +12,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 
-// 누름 상태를 토글하는 버튼 묶음이므로 role="group" 컨테이너에 각 버튼은 aria-pressed로 표현한다.
-// mm-toggle-button을 감싸 토큰으로 re-skin하지 않고, 공유 버튼 스타일 모듈(buttonBaseStyles·
-// buttonSelectedStyles)을 조합해 자체 button을 렌더한다. 그래야 roving focus가 한 renderRoot의
-// button을 바로 순회하고, 단일 선택 규칙도 shadow 경계 없이 그룹이 온전히 소유한다.
 @customElement('mm-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
   static styles = [

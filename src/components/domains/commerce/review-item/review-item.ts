@@ -4,11 +4,6 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 
-/**
- * mm-review-item
- * 상품 상세(커머스) 도메인의 사용자 리뷰 카드.
- * 별점·본문·작성자·작성일을 prop으로 받아 표시한다.
- */
 @customElement('mm-review-item')
 export class ReviewItem extends LitElement {
   static styles = css`

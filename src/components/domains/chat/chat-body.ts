@@ -9,9 +9,6 @@ import '@/components/common'
 /* 맨 아래에서 이만큼 벗어나면 이동 버튼을 보인다. */
 const SCROLL_BOTTOM_THRESHOLD = 96
 
-/**
- * 채팅 스크롤 영역. 스크롤 위치를 알고 있으므로 맨 아래로 돌아가는 버튼도 소유한다.
- */
 @customElement('mm-chat-body')
 export class ChatBody extends LitElement {
   static styles = css`

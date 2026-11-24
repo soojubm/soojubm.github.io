@@ -3,7 +3,6 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-/** 페이지 최상단의 제목과 설명. 기본 slot에 넣은 배너·이미지는 설명 아래에 놓인다. */
 @customElement('mm-page-header')
 export class PageHeader extends LitElement {
   static styles = css`

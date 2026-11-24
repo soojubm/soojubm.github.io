@@ -11,10 +11,6 @@ export type ChartStackedBarItem = {
   share: number
 }
 
-/**
- * 전체를 시리즈별 몫으로 나눠 채우는 가로 막대.
- * 범례의 점과 같은 색이어야 하므로 세그먼트도 mm-dot의 tone 색 규칙을 따른다.
- */
 @customElement('mm-chart-stacked-bar')
 export class ChartStackedBar extends LitElement {
   static styles = css`

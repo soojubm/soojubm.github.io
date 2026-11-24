@@ -5,11 +5,6 @@ import type { ActionConfig } from '@/types'
 import type { ButtonVariant } from '@/components/common/button/button'
 import '@/components/common/text/semantics/text-block'
 
-/**
- * <mm-hero-section>
- * 페이지 최상단에서 가장 먼저 읽히는 제목과 설명을 세우고, 그 아래에 행동 유도 영역을 둡니다.
- * 제목·설명은 level 1 텍스트 블록이 맡고, 행동 유도 버튼은 primaryAction·secondaryAction으로 받고, 목록 같은 그 밖의 후속 콘텐츠는 기본 슬롯으로 받습니다.
- */
 @customElement('mm-hero-section')
 export class HeroSection extends LitElement {
   static styles = css`

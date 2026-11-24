@@ -11,10 +11,6 @@ function hasValue(target: EventTarget | null): target is HTMLInputElement | HTML
   return target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement
 }
 
-/**
- * navbar 검색 트리거와 검색 시트를 함께 소유하는 컴포넌트.
- * 트리거가 내부에 있어 열기/닫기·query·검색 결과 상태를 모두 스스로 관리한다.
- */
 @customElement('mm-navbar-search')
 export class NavbarSearch extends LitElement {
   static styles = css`

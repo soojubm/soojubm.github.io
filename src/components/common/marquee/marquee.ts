@@ -11,10 +11,6 @@ import { buildAttributeRules } from '@/utils'
 
 type MarqueeDirection = 'left' | 'right'
 
-/**
- * 슬롯 콘텐츠를 가로로 반복 재생하는 marquee.
- * 콘텐츠 폭과 뷰포트 폭을 측정해 필요한 복제 수와 이동 거리를 계산한다.
- */
 @customElement('mm-marquee')
 export class Marquee extends LitElement {
   static styles = css`

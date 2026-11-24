@@ -11,10 +11,6 @@ import {
 } from '@/components/common/menu-item/menu-item.utils'
 import { resetStyles, visuallyHiddenStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 메뉴에서 다른 곳으로 이동하는 링크 항목. 기본은 새 창으로 여는 외부 링크다.
- * 지금 보고 있는 페이지를 가리키는 내비게이션 링크 목록은 menu가 아니라 list로 읽히게 두고, 링크가 aria-current를 갖는다.
- */
 @customElement('mm-menu-item-link')
 export class MenuItemLink extends withMenuItemPresentation(LitElement) {
   static styles = [

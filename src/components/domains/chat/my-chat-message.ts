@@ -7,10 +7,6 @@ import { emit } from '@/utils'
 
 import '@/components/common'
 
-/**
- * 내가 보낸 메시지 묶음. 정렬·시간과, 전송에 실패한 버블 아래의 재전송 버튼을 맡는다.
- * 소비자가 retry를 구독할 때만 재전송 버튼을 노출하고, 실패한 버블이 있을 때만 보인다.
- */
 @customElement('mm-my-chat-message')
 export class MyChatMessage extends LitElement {
   static styles = css`

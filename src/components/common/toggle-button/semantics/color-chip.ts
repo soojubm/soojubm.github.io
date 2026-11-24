@@ -6,10 +6,6 @@ import { buttonInteractiveStyles } from '@/components/common/button/button.style
 import { withTogglePressed } from '@/components/common/button/button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-/**
- * 색 하나를 고르는 토글. 면 전체가 색이라 보이는 레이블이 없으므로 aria-label이 색 이름을 맡는다.
- * 칠할 색은 상품 옵션처럼 데이터로 들어오는 값이라 토큰이 아니라 color prop으로 받는다.
- */
 @customElement('mm-color-chip')
 export class ColorChip extends withTogglePressed(LitElement) {
   static styles = [

@@ -10,10 +10,6 @@ import {
 import '@/components/indicators/selected-indicator/selected-indicator'
 import { emit } from '@/utils'
 
-/**
- * mm-select-listbox의 항목. 선택 상태를 유지하는 role=option을 소유한다.
- * menu-item 계열과 행 스킨·콘텐츠만 나눠 쓰고, 포커스 순회는 listbox가 맡는다.
- */
 @customElement('mm-select-option')
 export class SelectOption extends withMenuItemPresentation(LitElement) {
   static styles = [

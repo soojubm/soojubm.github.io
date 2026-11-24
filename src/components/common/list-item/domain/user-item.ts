@@ -6,9 +6,6 @@ import type { IconName } from '@/components/common/icon/icon-names'
 import type { ListItemSize } from '@/components/common/list-item/list-item'
 import '@/components/common/list-item/list-item'
 
-/**
- * avatar를 leading으로 가지는 표현 전용 행.
- */
 @customElement('mm-user-item')
 export class UserItem extends LitElement {
   static styles = [

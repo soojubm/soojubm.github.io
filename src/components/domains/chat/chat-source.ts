@@ -7,10 +7,6 @@ import '@/components/common'
 import '@/components/overlay/popover/popover'
 import { uniqueId } from '@/utils'
 
-/**
- * AI 응답 출처 소스 칩. 클릭하면 칩에 앵커된 popover로 상세 정보를 펼칩니다.
- * 열기·닫기·aria-expanded는 mm-popover가 소유하며, 여러 칩은 mm-button-group으로 묶습니다.
- */
 @customElement('mm-chat-source')
 export class ChatSource extends LitElement {
   static styles = css`

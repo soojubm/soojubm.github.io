@@ -7,12 +7,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/indicators/expand-indicator/expand-indicator'
 
-/**
- * 질문 하나와 접힌 답변. question이 트리거, 기본 슬롯이 펼쳐지는 답변이다.
- * 트리거는 h2로 감싸 스크린리더가 제목 단위로 질문을 건너뛰게 한다(APG accordion).
- * 질문이 글자가 아니라 코드 이름 같은 요소일 때는 question 슬롯에 넣는다.
- * @slot question - question 대신 트리거에 놓을 요소
- */
 @customElement('mm-faq-item')
 export class FaqItem extends LitElement {
   static styles = [

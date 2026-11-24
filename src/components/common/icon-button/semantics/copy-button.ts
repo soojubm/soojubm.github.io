@@ -17,10 +17,6 @@ import { copyToClipboard } from '@/utils/clipboard'
 // 복사됨 표시를 유지하는 시간(ms).
 const COPIED_DURATION = 1500
 
-/**
- * 텍스트를 클립보드에 복사하는 버튼.
- * 복사 성공 시 일시적으로 체크 아이콘으로 전환됩니다.
- */
 @customElement('mm-copy-button')
 export class CopyButton extends LitElement {
   static styles = [

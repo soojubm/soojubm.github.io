@@ -6,10 +6,6 @@ import type { Space } from '@/stylesheets/shared.types'
 import { buildAttributeRules } from '@/utils'
 import '@/components/common'
 
-/**
- * 토큰마다 달라지는 선언 하나씩을 공통 박스에 칠해 번호와 함께 늘어놓는다.
- * 번호는 스와치를 가리키는 순번이며, 아래 토큰 목록과 같은 순서로 놓아야 짝이 맞는다.
- */
 @customElement('mm-token-swatches')
 export class TokenSwatches extends LitElement {
   static styles = css`

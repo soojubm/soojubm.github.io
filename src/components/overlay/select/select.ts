@@ -26,12 +26,6 @@ export type SelectVariant = Extract<ButtonVariant, 'secondary' | 'tertiary'>
 const POPOVER_MAX_HEIGHT =
   'min(400px, calc(5 * var(--size-32) + 2 * (var(--overlay-panel-padding) + var(--border-width))))'
 
-/**
- * popover를 프리미티브로 하는 선택 입력.
- * 좁은 화면에서는 목록을 트리거에 앵커하지 않고 sheet로 올린다. 두 표면은 backdrop·스크롤 잠금·
- * 포커스 가두기를 쥐는 방식이 달라 CSS로 갈아입힐 수 없으므로 표면 컴포넌트 자체를 갈아 끼운다.
- * 그래서 열림 상태는 두 표면이 나눠 갖지 않고 select가 `open`으로 소유하고 AdaptiveOverlay가 화면 폭에 맞는 표면에만 내려준다.
- */
 @customElement('mm-select')
 export class Select extends withOpenState(LitElement) {
   static styles = css`

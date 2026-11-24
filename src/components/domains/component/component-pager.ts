@@ -5,7 +5,6 @@ import '@/components/common/link/semantics/pager'
 import { findAdjacentDocs } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
 
-/** 문서 페이지 끝에서 사이트맵 순서의 이전·다음 문서로 이동한다. */
 @customElement('mm-component-pager')
 export class ComponentPager extends LitElement {
   static styles = css`

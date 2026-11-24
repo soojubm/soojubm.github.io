@@ -7,10 +7,6 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon'
 
-/**
- * 비밀번호 등 가려진 입력값의 노출 여부를 토글하는 버튼.
- * revealed 상태에 따라 eye / eye-closed 아이콘으로 전환됩니다.
- */
 @customElement('mm-reveal-button')
 export class RevealButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles]

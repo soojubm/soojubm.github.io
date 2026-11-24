@@ -8,10 +8,6 @@ import {
 import '@/components/common'
 import { emit } from '@/utils'
 
-/**
- * AI 툴 실행 승인 요청 UI.
- * 승인·거부하면 approve·reject 이벤트만 발행하고, 결과 표시는 소비자가 이어서 맡는다.
- */
 @customElement('mm-chat-confirmation')
 export class ChatConfirmation extends LitElement {
   static styles = css`

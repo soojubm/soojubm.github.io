@@ -10,10 +10,6 @@ import {
 } from '@/components/domains/shared/suggestion-button'
 import { emit } from '@/utils'
 
-/**
- * 검색 추천 키워드 버튼. mm-button(size=small)을 베이스로 합니다.
- * 클릭 시 search-suggestion-select 이벤트를 발행합니다.
- */
 @customElement('mm-search-suggestion')
 export class SearchSuggestion extends LitElement {
   static styles = [suggestionButtonStyles]

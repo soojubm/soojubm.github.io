@@ -18,11 +18,6 @@ const RATINGS: { value: ChatFeedbackValue; label: string }[] = [
   { value: 'good', label: '좋음' },
 ]
 
-/**
- * 대화 전체에 대한 평가 바. 메시지마다 반응을 두지 않고 입력창 위에 한 번만 묻는다.
- * 평가를 고르면 value와 함께 change를 발행하고 감사 문구로 바뀐다.
- * 소비자가 dismiss를 구독할 때만 닫기 버튼을 노출한다.
- */
 @customElement('mm-chat-feedback')
 export class ChatFeedback extends LitElement {
   static styles = css`

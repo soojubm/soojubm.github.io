@@ -10,10 +10,6 @@ import {
 } from '@/components/domains/shared/suggestion-button'
 import { emit } from '@/utils'
 
-/**
- * 채팅 입력 추천 버튼. mm-button(size=small)을 베이스로 합니다.
- * 클릭 시 chat-suggestion-select 이벤트를 발행합니다.
- */
 @customElement('mm-chat-suggestion')
 export class ChatSuggestion extends LitElement {
   static styles = [suggestionButtonStyles]

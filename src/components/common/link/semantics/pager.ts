@@ -14,7 +14,6 @@ export interface PagerLink {
   description: string
 }
 
-/** 이전·다음 링크 카드로 이동한다. 내비게이션 이름(aria-label)과 링크 문구는 감싸는 시멘틱 컴포넌트가 정한다. */
 @customElement('mm-pager')
 export class Pager extends LitElement {
   static styles = [
