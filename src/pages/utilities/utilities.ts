@@ -229,7 +229,7 @@ const main = html`
           description="textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를 같은 규칙으로 붙입니다. 컨트롤은 안에 넣어 받고 필드는 레이블이 붙은 role=group이 됩니다. 컨트롤별 조합은 Input 페이지가 전시합니다."
           .code=${formFieldCode}
         >
-          <mm-flex direction="column" gap="3">
+          <mm-form-fieldset aria-label="프로필" gap="6">
             <mm-form-field label="성별">
               <mm-gender-selector stretch></mm-gender-selector>
             </mm-form-field>
@@ -252,7 +252,7 @@ const main = html`
                 ]}
               ></mm-select>
             </mm-form-field>
-          </mm-flex>
+          </mm-form-fieldset>
         </mm-component-section>
         <mm-component-props .props=${formFieldProps}></mm-component-props>
 

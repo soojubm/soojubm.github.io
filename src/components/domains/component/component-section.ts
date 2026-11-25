@@ -44,10 +44,10 @@ export class ComponentSection extends LitElement {
         ${this.renderChecks()}
       </mm-text-block>
       <div class="example">
-        ${this.renderCode()}
         <div class="component-content-frame">
           <slot></slot>
         </div>
+        ${this.renderCode()}
       </div>
     `
   }
