@@ -126,10 +126,6 @@ const systemStatCards: StatCard[] = systemStats.map(
   }),
 )
 
-const syncTotal = 12480
-const syncDone = 8486
-const syncShare = Math.round((syncDone / syncTotal) * 100)
-
 const goalTarget = 420000000
 const goalSaved = 273000000
 const goalShare = Math.round((goalSaved / goalTarget) * 100)
@@ -174,16 +170,6 @@ const main = html`
         <mm-grid columns="4" gap="4">${systemStatCards.map(renderStatCard)}</mm-grid>
 
         <mm-grid columns="2" gap="4">
-          <mm-surface variant="outlined" radius="large">
-            <mm-flex direction="column" gap="4">
-              <mm-text-block
-                level="3"
-                heading="계열별 파생 컴포넌트"
-                description="기반 하나가 시멘틱으로 몇 갈래 분화했는지 봅니다. 전체 17개 계열 중 상위 여덟."
-              ></mm-text-block>
-              <mm-chart-column .items=${semanticsShares}></mm-chart-column>
-            </mm-flex>
-          </mm-surface>
           <mm-banner
             variant="primary"
             heading="새 계열을 제안해 주세요"
@@ -254,6 +240,9 @@ const main = html`
               <mm-text color="light">${`${goalShare}% 달성`}</mm-text>
               <mm-text>${`${goalSaved.toLocaleString()}원`}</mm-text>
             </mm-flex>
+            <mm-notice
+              description="진행률을 알면 progress, 모르면 스피너입니다. 둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
+            ></mm-notice>
           </mm-flex>
         </mm-surface>
       </mm-grid>
@@ -276,27 +265,6 @@ const main = html`
             ></meter>
             <mm-notice
               description="meter는 작업이 아니라 상태입니다. 완료를 향해 가지 않고 오르내립니다. low·high·optimum으로 좋은 구간을 정하면 브라우저가 색을 바꿉니다. 프로필 완성도처럼 퍼센트로 보여도, 기다리는 일이 아니면 meter입니다."
-            ></mm-notice>
-          </mm-flex>
-        </mm-surface>
-
-        <mm-surface variant="outlined" radius="large">
-          <mm-flex direction="column" gap="4">
-            <mm-text-block
-              level="3"
-              heading="데이터 동기화"
-              description=${`${syncTotal.toLocaleString()}건 중 ${syncDone.toLocaleString()}건 처리됨`}
-            ></mm-text-block>
-            <mm-flex align-items="center" gap="4">
-              <mm-chart-progress-ring value=${syncShare}></mm-chart-progress-ring>
-              <progress
-                value=${syncDone}
-                max=${syncTotal}
-                aria-label="데이터 동기화 진행률"
-              ></progress>
-            </mm-flex>
-            <mm-notice
-              description="진행률을 알면 progress, 모르면 스피너입니다. 둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
             ></mm-notice>
           </mm-flex>
         </mm-surface>
