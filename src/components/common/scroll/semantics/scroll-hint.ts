@@ -20,6 +20,8 @@ export class ScrollHint extends LitElement {
 
       display: flex;
       flex: 0 0 var(--scroll-hint-width);
+      box-sizing: border-box;
+      padding-inline: var(--scroll-hint-padding-inline);
       order: 999;
       align-self: stretch;
       align-items: center;

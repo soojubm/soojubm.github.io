@@ -19,6 +19,7 @@ export const scrollStyles = [
   css`
     :host {
       --scroll-gap: 0;
+      --scroll-hint-padding-inline: 0;
 
       display: flex;
       gap: var(--scroll-gap);

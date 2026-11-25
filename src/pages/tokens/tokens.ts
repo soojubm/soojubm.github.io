@@ -692,7 +692,7 @@ const main = html`
         heading="Material"
         description="표면이 뒤 배경에서 떠 보이는 정도와 겹칠 때의 순서를 정합니다. 사용하는 쪽은 그림자·blur·투명도를 색과 조합한 티어를 쓰고, 원시 값은 티어를 정의할 때만 씁니다. 티어가 정하지 않은 속성은 base를 따릅니다."
       >
-        <mm-token-stage backdrop>
+        <mm-token-stage striped>
           <div class="material-stage">
             <mm-token-swatches
               .swatches=${[
