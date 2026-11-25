@@ -19,7 +19,7 @@ export class ComponentExample extends LitElement {
       ${unsafeCSS(buildAttributeRules('width', exampleWidthTokens))}
 
       .component-example {
-        --component-content-frame-margin: 0 0 0 var(--component-content-margin-inline-start);
+        --component-content-margin: 0 0 0 var(--component-content-margin-inline-start);
 
         box-sizing: border-box;
         border-left-color: var(--foreground-color);

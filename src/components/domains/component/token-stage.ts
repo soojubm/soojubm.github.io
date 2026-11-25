@@ -1,8 +1,9 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
+import { surfaceBaseStyles, surfaceBleedStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common'
+import { MEDIA } from '@/constants'
 
 @customElement('mm-token-stage')
 export class TokenStage extends LitElement {
@@ -17,6 +18,13 @@ export class TokenStage extends LitElement {
       align-self: stretch;
     }
 
+    /* 좁은 화면에서는 페이지 좌우 여백을 넘어 화면 가장자리까지 넓힌다. */
+    @media ${MEDIA.narrow} {
+      :host {
+        ${surfaceBleedStyles};
+      }
+    }
+
     mm-scroll {
       --scroll-hint-padding-inline: var(--space-4);
 
@@ -27,7 +35,7 @@ export class TokenStage extends LitElement {
     .content {
       box-sizing: border-box;
       min-width: 100%;
-      padding: var(--space-8) var(--space-16);
+      padding: var(--space-8) var(--layout-padding-inline);
     }
 
     :host([full-width]) ::slotted(*) {

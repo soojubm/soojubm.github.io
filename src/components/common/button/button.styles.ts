@@ -38,7 +38,7 @@ export const buttonBaseStyles = css`
     --button-border-radius: var(--border-radius);
     --button-background-color: var(--background-subtle-color);
     --button-text-size: inherit;
-    --button-text-weight: var(--font-weight-normal);
+    --button-font-weight: var(--font-weight-normal);
     --button-text-color: var(--foreground-color);
   }
 
@@ -66,7 +66,7 @@ export const buttonBaseStyles = css`
 
     font-family: var(--font-family);
     font-size: var(--button-text-size);
-    font-weight: var(--button-text-weight);
+    font-weight: var(--button-font-weight);
     color: var(--button-text-color);
 
     text-transform: capitalize;

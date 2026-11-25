@@ -88,27 +88,34 @@ const surfaceRadiusTokens: AttributeTokens<SurfaceRadius> = {
 }
 
 const surfaceRadiusStyles = css`
-  ${unsafeCSS(buildAttributeRules('radius', surfaceRadiusTokens))}
+  ${unsafeCSS(buildAttributeRules('radius', surfaceRadiusTokens))};
 `
 
 const surfaceVariantStyles = css`
-  ${unsafeCSS(buildAttributeRules('variant', surfaceVariants))}
+  ${unsafeCSS(buildAttributeRules('variant', surfaceVariants))};
+`
+
+/**
+ * 면을 페이지 좌우 여백 밖 화면 가장자리까지 넓히고 좌우 테두리·radius를 걷는 선언.
+ * 적용할 좁은 화면 조건과 대상은 사용하는 쪽이 정한다. 페이지 본문이 `--layout-padding-inline`만큼 좌우 여백을 가진 맥락을 전제한다.
+ */
+export const surfaceBleedStyles = css`
+  --surface-border-radius: 0;
+
+  width: calc(100% + var(--layout-padding-inline) * 2);
+  margin-inline: calc(var(--layout-padding-inline) * -1);
+  border-inline-width: 0;
 `
 
 /**
  * 좁은 화면에서 면을 페이지 좌우 여백까지 넓힌다. 내용은 여백 안쪽에 그대로 남아 페이지 본문과 정렬된다.
- * 페이지 본문이 `--layout-padding-inline`만큼 좌우 여백을 가진 맥락을 전제한다.
  * radius·variant가 정한 값을 덮어쓰므로 그 규칙들 뒤에 둔다.
  */
-const surfaceBleedStyles = css`
+const surfaceBleedHostStyles = css`
   @media ${MEDIA.narrow} {
     :host([bleed]) {
-      --surface-border-radius: 0;
-
-      width: calc(100% + var(--layout-padding-inline) * 2);
-      margin-inline: calc(var(--layout-padding-inline) * -1);
+      ${surfaceBleedStyles}
       padding-inline: var(--layout-padding-inline);
-      border-inline-width: 0;
     }
   }
 `
@@ -137,6 +144,6 @@ export const surfaceStyles = [
   `,
   surfaceRadiusStyles,
   surfaceVariantStyles,
-  surfaceBleedStyles,
+  surfaceBleedHostStyles,
   surfaceBandStyles,
 ]

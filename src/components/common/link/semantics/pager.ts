@@ -30,17 +30,17 @@ export class Pager extends LitElement {
         ${surfaceBaseStyles};
         --surface-shadow: var(--material-elevated-shadow);
         --surface-border-radius: var(--border-radius-large);
-        --lift: none;
+        --pager-transform: none;
 
         flex: 1;
         gap: var(--space-3);
-        transform: var(--lift);
+        transform: var(--pager-transform);
         transition: box-shadow var(--transition-duration) var(--transition-easing),
           transform var(--transition-duration) var(--transition-easing);
       }
 
       a:hover {
-        --lift: var(--interaction-hover-lift);
+        --pager-transform: var(--interaction-hover-lift);
       }
 
       a[rel='next'] {

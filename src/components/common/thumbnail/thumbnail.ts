@@ -25,7 +25,7 @@ export class Thumbnail extends LitElement {
         width: 100%;
         --thumbnail-border: var(--border-transparent);
         --thumbnail-border-radius: var(--border-radius);
-        --thumbnail-background-color-empty: var(--background-subtle-color);
+        --thumbnail-empty-background-color: var(--background-subtle-color);
       }
 
       figure {
@@ -53,7 +53,7 @@ export class Thumbnail extends LitElement {
         border: var(--thumbnail-border);
         border-radius: var(--thumbnail-border-radius);
         box-sizing: border-box;
-        background-color: var(--thumbnail-background-color-empty);
+        background-color: var(--thumbnail-empty-background-color);
         overflow: hidden;
       }
 

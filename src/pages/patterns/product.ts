@@ -87,7 +87,7 @@ const cartOptions = [
 ]
 
 const main = html`
-  <mm-main>
+  <mm-main width="large">
     <mm-content-section-list>
       <mm-grid columns="2" gap="8">
         <mm-product-image

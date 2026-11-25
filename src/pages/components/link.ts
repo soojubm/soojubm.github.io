@@ -75,7 +75,7 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      style="--component-anatomy-stage-padding: 0.5rem 0"
+      style="--component-anatomy-padding: 0.5rem 0"
       .parts=${[
         '레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.',
         '외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external).',

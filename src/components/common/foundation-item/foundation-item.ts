@@ -19,15 +19,15 @@ export class FoundationItem extends LitElement {
         --surface-height: 100%;
         --surface-border-radius: var(--border-radius-large);
         --surface-shadow: var(--material-elevated-shadow);
-        --lift: none;
+        --foundation-item-transform: none;
 
-        transform: var(--lift);
+        transform: var(--foundation-item-transform);
         transition: box-shadow var(--transition-duration) var(--transition-easing),
           transform var(--transition-duration) var(--transition-easing);
       }
 
       a:hover {
-        --lift: var(--interaction-hover-lift);
+        --foundation-item-transform: var(--interaction-hover-lift);
       }
 
       a:focus-visible {

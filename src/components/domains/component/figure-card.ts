@@ -16,7 +16,8 @@ export class FigureCard extends LitElement {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: var(--size-80);
+      min-height: var(--size-80);
+      padding-block: var(--space-4);
       border-radius: var(--border-radius);
       background: var(--background-color);
       box-shadow: inset 0 0 0 var(--border-width) var(--border-color);

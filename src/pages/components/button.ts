@@ -43,7 +43,6 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-button'),
-  ...subComponentPropsOf('mm-button-group'),
   { name: 'click', type: '(e: MouseEvent) => void', kind: 'event' },
 ]
 

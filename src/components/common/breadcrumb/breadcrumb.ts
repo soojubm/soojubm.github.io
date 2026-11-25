@@ -20,7 +20,7 @@ export class Breadcrumb extends LitElement {
         display: block;
 
         --breadcrumb-item-text-color: var(--primary-color);
-        --breadcrumb-item-text-color-current: var(--foreground-color);
+        --breadcrumb-item-current-text-color: var(--foreground-color);
         --breadcrumb-divider-text-color: var(--border-color);
         --breadcrumb-divider-margin: var(--space-3);
       }
@@ -45,7 +45,7 @@ export class Breadcrumb extends LitElement {
         white-space: nowrap;
 
         &[aria-current='page'] {
-          color: var(--breadcrumb-item-text-color-current);
+          color: var(--breadcrumb-item-current-text-color);
         }
 
         &:focus-visible {

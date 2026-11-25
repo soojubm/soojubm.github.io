@@ -40,8 +40,8 @@ export const backdropStyles = css`
     position: fixed;
     inset: 0;
     z-index: var(--material-zindex-backdrop);
-    backdrop-filter: blur(var(--backdrop-blur));
-    -webkit-backdrop-filter: blur(var(--backdrop-blur));
+    backdrop-filter: var(--backdrop-filter);
+    -webkit-backdrop-filter: var(--backdrop-filter);
   }
 `
 
@@ -98,7 +98,7 @@ export const sheetPositionStyles = css`
     --overlay-panel-padding: var(--space-4);
     --overlay-panel-border-radius: var(--border-radius-large);
     --backdrop-background-color: transparent;
-    --backdrop-blur: 0px;
+    --backdrop-filter: blur(0px);
 
     display: flex;
     justify-content: center;

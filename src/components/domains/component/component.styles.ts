@@ -1,5 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
+import { surfaceBleedStyles } from '@/components/common/surface/surface.styles'
 import { MEDIA } from '@/constants'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
@@ -27,25 +28,24 @@ export const componentContentFrameStyles = css`
     );
     --component-content-padding-block: var(--space-8);
     --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
-    --component-content-bleed-inline: calc(var(--layout-padding-inline) * -1);
-    --component-content-frame-margin: 0 0 0 var(--component-content-margin-inline-start);
-    --component-content-frame-border: var(--border);
-    --component-content-frame-border-radius: var(--border-radius-large);
+    --component-content-margin: 0 0 0 var(--component-content-margin-inline-start);
+    --component-content-border: var(--border);
+    --surface-border-radius: var(--border-radius-large);
 
     position: relative;
-    margin: var(--component-content-frame-margin);
+    margin: var(--component-content-margin);
     padding: var(--component-content-padding-block) var(--component-content-padding-inline);
-    border: var(--component-content-frame-border);
-    border-radius: var(--component-content-frame-border-radius);
+    border: var(--component-content-border);
+    border-radius: var(--surface-border-radius);
   }
 
   @media ${MEDIA.default} {
     .component-content-frame {
       --component-content-padding-inline: var(--layout-padding-inline);
 
-      margin-inline: var(--component-content-bleed-inline);
-      border-inline: 0;
-      border-radius: 0;
+      ${surfaceBleedStyles};
+      /* 블록 요소라 음수 margin만으로 넓어진다. 너비를 지정하면 margin을 덮어쓴 프레임이 넘친다. */
+      width: auto;
     }
   }
 `
@@ -59,12 +59,12 @@ export const componentPropsStyles = [
       gap: var(--space-3);
     }
     .component-props {
-      height: 10rem;
+      height: 8.5rem;
       overflow: hidden;
       background-color: var(--background-subtle-color);
       position: relative;
       cursor: pointer;
-      --component-content-frame-border: var(--border-transparent);
+      --component-content-border: var(--border-transparent);
       --component-content-padding-block: var(--space-6);
     }
     .component-props-list {

@@ -19,19 +19,19 @@ export class PortfolioItem extends LitElement {
     }
 
     article {
-      --lift: none;
+      --portfolio-item-transform: none;
 
       display: flex;
       flex-direction: column;
       width: 100%;
       gap: var(--space-3);
       position: relative;
-      transform: var(--lift);
+      transform: var(--portfolio-item-transform);
       transition: transform var(--transition-duration) var(--transition-easing);
     }
 
     article[role='button']:hover {
-      --lift: var(--interaction-hover-lift);
+      --portfolio-item-transform: var(--interaction-hover-lift);
     }
 
     article[role='button']:focus-visible {

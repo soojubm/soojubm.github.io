@@ -245,6 +245,25 @@ const renderTermCard = ({ term, meaning, example }: (typeof terms)[number]) => h
   </mm-figure-card>
 `
 
+/** 같은 규칙의 맞는 예와 틀린 예를 한 쌍의 카드로 보인다. */
+const renderDoDontPair = (
+  doCard: { description: string; figure: TemplateResult },
+  dontCard: { description: string; figure: TemplateResult },
+) => html`
+  <mm-surface>
+    <mm-flex justify-content="center" wrap="wrap" gap="6">
+      <mm-figure-card class="do-dont-card" description=${doCard.description}>
+        ${doCard.figure}
+        <mm-code-tag slot="tags" tone="green">Do</mm-code-tag>
+      </mm-figure-card>
+      <mm-figure-card class="do-dont-card" description=${dontCard.description}>
+        ${dontCard.figure}
+        <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
+      </mm-figure-card>
+    </mm-flex>
+  </mm-surface>
+`
+
 const main = html`
   <mm-main>
     <mm-page-header
@@ -463,40 +482,132 @@ const main = html`
               heading-level="3"
               heading="하나의 아이콘, 하나의 의미"
               description="같은 아이콘을 맥락마다 다른 뜻으로 재사용하지 않습니다. 의미가 흔들리면 사용자가 매번 다시 해석해야 합니다."
-            ></mm-content-section>
+            >
+              ${renderDoDontPair(
+                {
+                  description: '뜻마다 아이콘을 하나씩 정해, 어디서나 같은 아이콘으로 나타냅니다.',
+                  figure: html`
+                    <mm-flex slot="figure" align-items="center" gap="4">
+                      <mm-icon-button icon="heart" aria-label="좋아요"></mm-icon-button>
+                      <mm-icon-button icon="bookmark" aria-label="보관"></mm-icon-button>
+                      <mm-icon-button icon="star" aria-label="즐겨찾기"></mm-icon-button>
+                    </mm-flex>
+                  `,
+                },
+                {
+                  description:
+                    '같은 하트를 좋아요와 보관에 함께 쓰면 누를 때마다 뜻을 다시 해석해야 합니다.',
+                  figure: html`
+                    <mm-flex slot="figure" align-items="center" gap="4">
+                      <mm-icon-button icon="heart" aria-label="좋아요"></mm-icon-button>
+                      <mm-icon-button icon="heart" aria-label="보관"></mm-icon-button>
+                    </mm-flex>
+                  `,
+                },
+              )}
+            </mm-content-section>
 
             <mm-content-section
               heading-level="3"
               heading="중복 표현하지 않기"
               description="보이는 레이블이 이미 가리키는 것을 아이콘으로 되풀이하지 않습니다. 남는 아이콘은 뜻을 지니면 대체 텍스트를 주고, 순수한 장식이면 접근성 트리에서 숨깁니다."
-            ></mm-content-section>
+            >
+              ${renderDoDontPair(
+                {
+                  description:
+                    '레이블이 있으면 레이블만 두고, 아이콘만 남으면 대체 텍스트를 줍니다.',
+                  figure: html`
+                    <mm-flex slot="figure" align-items="center" gap="4">
+                      <mm-button>삭제</mm-button>
+                      <mm-icon-button icon="trash" aria-label="삭제"></mm-icon-button>
+                    </mm-flex>
+                  `,
+                },
+                {
+                  description:
+                    '레이블이 가리키는 것을 아이콘으로 되풀이하면 같은 뜻을 두 번 읽게 됩니다.',
+                  figure: html`
+                    <mm-flex slot="figure" align-items="center" gap="4">
+                      <mm-button icon="trash">삭제</mm-button>
+                    </mm-flex>
+                  `,
+                },
+              )}
+            </mm-content-section>
 
             <mm-content-section
               heading-level="3"
-              heading="대비가 필요할 때 쓰기"
+              heading="장식적인 용도로 쓰지 않기"
               description="형제 항목 목록에서 대비가 필요하거나 사용자의 실수를 막을 수 있을 때 아이콘을 사용합니다."
-            ></mm-content-section>
+            >
+              ${renderDoDontPair(
+                {
+                  description:
+                    '반복되는 항목은 서로 다른 아이콘으로 구분하고, 파괴적 항목은 실수를 막도록 드러냅니다.',
+                  figure: html`
+                    <mm-menu-item-group slot="figure" aria-label="계정 메뉴">
+                      <mm-menu-item-action icon="user" label="프로필"></mm-menu-item-action>
+                      <mm-menu-item-action icon="settings" label="설정"></mm-menu-item-action>
+                      <mm-menu-item-action
+                        icon="trash"
+                        label="계정 삭제"
+                        destructive
+                      ></mm-menu-item-action>
+                    </mm-menu-item-group>
+                  `,
+                },
+                {
+                  description:
+                    '항목마다 같은 아이콘을 달면 구분에 도움이 되지 않고 장식에 그칩니다.',
+                  figure: html`
+                    <mm-menu-item-group slot="figure" aria-label="계정 메뉴">
+                      <mm-menu-item-action icon="box-iso" label="프로필"></mm-menu-item-action>
+                      <mm-menu-item-action icon="box-iso" label="설정"></mm-menu-item-action>
+                      <mm-menu-item-action
+                        icon="box-iso"
+                        label="계정 삭제"
+                        destructive
+                      ></mm-menu-item-action>
+                    </mm-menu-item-group>
+                  `,
+                },
+              )}
+            </mm-content-section>
 
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                rule(
-                  '널리 통용되는 기호를 쓴다',
-                  '낯선 기호는 사용자가 뜻을 매번 다시 해석해야 한다',
-                ),
-              ]}
-            ></mm-text-list>
+            <mm-content-section
+              heading-level="3"
+              heading="널리 통용되는 기호 쓰기"
+              description="낯선 기호는 사용자가 뜻을 매번 다시 해석해야 합니다."
+            >
+              ${renderDoDontPair(
+                {
+                  description: '검색은 돋보기처럼 누구나 아는 기호로 나타냅니다.',
+                  figure: html`
+                    <mm-icon-button slot="figure" icon="search" aria-label="검색"></mm-icon-button>
+                  `,
+                },
+                {
+                  description: '낯선 기호는 뜻을 짐작할 수 없어 눌러 보기 전에는 알 수 없습니다.',
+                  figure: html`
+                    <mm-icon-button
+                      slot="figure"
+                      icon="cube-scan"
+                      aria-label="검색"
+                    ></mm-icon-button>
+                  `,
+                },
+              )}
+            </mm-content-section>
           </mm-content-section-list>
 
-          <mm-content-section heading-level="3" heading="쓰이는 아이콘">
-            <mm-paragraph>
-              역할은 ${code('icon-names.ts')}의 ${code('ICON_CATALOG')} 한 곳에서만 정의합니다.
-              아이콘이 필요한 곳은 이를 펼친 맵 ${code('ICON_NAMES')}에서 가져옵니다. 파일 이름을
-              코드에 직접 적지 않고, 여러 역할이 같은 파일을 써도 합치지 않으며 역할이 갈라지면 그
-              역할의 값만 바꿉니다.
-            </mm-paragraph>
+          <mm-content-section-list size="small">
+            <mm-text-block
+              level="3"
+              heading="쓰이는 아이콘"
+              description="역할은 icon-names.ts의 ICON_CATALOG 한 곳에서만 정의합니다. 아이콘이 필요한 곳은 이를 펼친 맵 ICON_NAMES에서 가져옵니다. 파일 이름을 코드에 직접 적지 않고, 여러 역할이 같은 파일을 써도 합치지 않으며 역할이 갈라지면 그 역할의 값만 바꿉니다."
+            ></mm-text-block>
             <mm-content-section-list>${renderIconCatalog()}</mm-content-section-list>
-          </mm-content-section>
+          </mm-content-section-list>
         </mm-content-section-list>
       </mm-tab-panel>
 

@@ -33,7 +33,7 @@ export class NavbarSearch extends LitElement {
 
       <mm-sheet
         placement="top"
-        style="--backdrop-blur: 2px"
+        style="--backdrop-filter: blur(2px)"
         ?open=${this.open}
         @toggle=${this.handleSheetToggle}
       >

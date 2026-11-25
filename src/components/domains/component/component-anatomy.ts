@@ -23,8 +23,8 @@ export class ComponentAnatomy extends LitElement {
     componentContentFrameStyles,
     css`
       :host {
-        --component-anatomy-stage-width: auto;
-        --component-anatomy-stage-padding: 0;
+        --component-anatomy-width: auto;
+        --component-anatomy-padding: 0;
 
         display: flex;
         flex-direction: column;
@@ -48,21 +48,21 @@ export class ComponentAnatomy extends LitElement {
 
       /* 슬롯된 시연 대상과 번호 마커가 함께 앉는 무대. */
       .stage {
-        width: var(--component-anatomy-stage-width);
-        padding: var(--component-anatomy-stage-padding);
+        width: var(--component-anatomy-width);
+        padding: var(--component-anatomy-padding);
         position: relative;
       }
 
       /* 마커는 무대의 한 변을 기준으로 앉는다. 변 바깥으로 나가는 거리는
          마커 지름과 무대와의 간격의 합이고, inset이면 변 위로 들어온다. */
       mm-list-marker {
-        --component-anatomy-marker-gutter: calc((var(--size-16) + var(--space-3)) * -1);
+        --component-anatomy-marker-offset: calc((var(--size-16) + var(--space-3)) * -1);
 
         position: absolute;
       }
 
       mm-list-marker[inset] {
-        --component-anatomy-marker-gutter: 0px;
+        --component-anatomy-marker-offset: 0px;
       }
 
       mm-list-marker[placement='inline-start'],
@@ -78,19 +78,19 @@ export class ComponentAnatomy extends LitElement {
       }
 
       mm-list-marker[placement='inline-start'] {
-        left: var(--component-anatomy-marker-gutter);
+        left: var(--component-anatomy-marker-offset);
       }
 
       mm-list-marker[placement='inline-end'] {
-        right: var(--component-anatomy-marker-gutter);
+        right: var(--component-anatomy-marker-offset);
       }
 
       mm-list-marker[placement='block-start'] {
-        top: var(--component-anatomy-marker-gutter);
+        top: var(--component-anatomy-marker-offset);
       }
 
       mm-list-marker[placement='block-end'] {
-        bottom: var(--component-anatomy-marker-gutter);
+        bottom: var(--component-anatomy-marker-offset);
       }
     `,
   ]

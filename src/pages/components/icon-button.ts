@@ -171,7 +171,7 @@ const main = html`
     </mm-component-guide>
 
     <mm-component-anatomy
-      style="--component-anatomy-stage-padding: 0 0 3rem"
+      style="--component-anatomy-padding: 0 0 3rem"
       .parts=${[
         '컨테이너 — variant·size로 형태와 클릭 영역을 정의합니다.',
         '아이콘 — 액션을 나타내는 메타포(icon).',
