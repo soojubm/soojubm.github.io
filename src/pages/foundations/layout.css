@@ -90,3 +90,103 @@
   border-radius: var(--border-radius);
   background: var(--background-subtle-color);
 }
+
+/* 앞에서 뒤로 한 칸씩 물러나는 계단으로 겹침 순서를 보이고, 층 사이를 세로선이 잇는다. */
+.layer-stack {
+  width: 100%;
+}
+
+.layer-tier {
+  position: relative;
+  margin-left: calc(var(--layer-depth) * var(--space-6));
+}
+
+.layer-tier:not(:first-of-type)::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--space-4) * -1);
+  left: calc(var(--space-6) * -1 + var(--space-2));
+  width: calc(var(--space-6) - var(--space-2));
+  height: calc(var(--space-4) + var(--size-16));
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom: var(--border);
+  border-left: var(--border);
+}
+
+/* 앱 셸을 층별로 떼어 비스듬히 쌓는다. 앞 층일수록 위로 올라가 뒤 층 위에 겹친다. */
+.layer-diagram {
+  --plane-size: calc(var(--size-80) * 2);
+
+  position: relative;
+  width: 100%;
+  height: calc(var(--size-80) * 5);
+}
+
+.layer-diagram-row {
+  position: absolute;
+  top: calc(var(--layer-index) * var(--size-80) * 1.1);
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.layer-diagram-plane {
+  position: relative;
+  flex-shrink: 0;
+  width: var(--plane-size);
+  height: var(--plane-size);
+  margin: 0 calc(var(--size-80) * 0.4);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background: var(--background-color);
+  box-shadow: var(--material-elevated-shadow);
+  transform: rotateX(60deg) rotateZ(-45deg);
+}
+
+.layer-diagram-shape {
+  position: absolute;
+  border-radius: var(--border-radius);
+  background: var(--foreground-subtle-color);
+}
+
+.layer-diagram-shape[data-shape='content'] {
+  inset: var(--space-2);
+  background: var(--background-subtle-color);
+}
+
+.layer-diagram-shape[data-shape='topbar'] {
+  top: var(--space-2);
+  left: var(--space-2);
+  right: var(--space-2);
+  height: var(--size-16);
+}
+
+.layer-diagram-shape[data-shape='bottombar'] {
+  bottom: var(--space-2);
+  left: var(--space-2);
+  right: var(--space-2);
+  height: var(--size-16);
+}
+
+.layer-diagram-shape[data-shape='sidebar'] {
+  top: var(--space-2);
+  bottom: var(--space-2);
+  left: var(--space-2);
+  width: var(--size-32);
+}
+
+.layer-diagram-shape[data-shape='overlay'] {
+  right: var(--space-2);
+  bottom: var(--space-2);
+  width: calc(var(--size-80) * 0.8);
+  height: var(--size-32);
+  background: var(--primary-color);
+}
+
+.layer-diagram-leader {
+  flex: 0 0 var(--size-32);
+  height: var(--border-width);
+  background: var(--foreground-subtle-color);
+}

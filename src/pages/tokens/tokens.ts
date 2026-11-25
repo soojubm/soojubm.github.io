@@ -512,94 +512,6 @@ const renderNameAnatomy = (segments: NameSegment[]) => {
   `
 }
 
-interface LayerTier {
-  token: string
-  tone: TagTone
-  role: string
-}
-
-/** 앞에 놓이는 층부터 뒤로 나열한다. 한 칸 뒤로 갈수록 오른쪽으로 물러난다. */
-const layerTiers: LayerTier[] = [
-  { token: 'toast', tone: 'pink', role: '알림. 항상 최상단' },
-  { token: 'tooltip', tone: 'cyan', role: '가리키는 대상이 어느 표면에 있든 그 위에 보이는 설명' },
-  {
-    token: 'popover',
-    tone: 'orange',
-    role: '트리거에 앵커된 표면. sheet 안에서 열려도 그 위에 보임',
-  },
-  { token: 'sheet', tone: 'purple', role: 'viewport를 덮는 표면. backdrop·dialog 포함' },
-  { token: 'chrome', tone: 'blue', role: '화면에 고정된 내비게이션·툴바' },
-  { token: 'base · elevated', tone: 'default', role: '콘텐츠 안에서 형제보다 살짝 뜨는 로컬 정도' },
-]
-
-const renderLayerTier = ({ token, tone, role }: LayerTier, index: number) => html`
-  <mm-flex
-    class="layer-tier"
-    style=${`--layer-depth: ${index}`}
-    direction="column"
-    align-items="flex-start"
-    gap="1"
-  >
-    <mm-code-tag size="large" tone=${tone}>${token}</mm-code-tag>
-    <mm-caption>${role}</mm-caption>
-  </mm-flex>
-`
-
-type PlaneShape = 'content' | 'topbar' | 'sidebar' | 'bottombar' | 'overlay'
-
-interface AppShellLayer {
-  token: string
-  tone: TagTone
-  members: string
-  shapes: PlaneShape[]
-}
-
-/** 앱 셸 예제를 층별로 떼어 낸 그림. 앞에 놓이는 층부터 나열한다. */
-const appShellLayers: AppShellLayer[] = [
-  { token: 'toast', tone: 'pink', members: 'Overlay', shapes: ['overlay'] },
-  { token: 'chrome-top', tone: 'blue', members: 'Sidebar', shapes: ['sidebar'] },
-  {
-    token: 'chrome',
-    tone: 'blue',
-    members: 'Top Bar · Bottom Bar',
-    shapes: ['topbar', 'bottombar'],
-  },
-  { token: 'base', tone: 'default', members: 'Content', shapes: ['content'] },
-]
-
-/** 뒤 층부터 그려야 앞 층이 위에 겹친다. */
-const renderAppShellLayerDiagram = () => html`
-  <div
-    class="layer-diagram"
-    role="img"
-    aria-label="앱 셸의 층: ${appShellLayers
-      .map(({ token, members }) => `${members} ${token}`)
-      .join(', ')}"
-  >
-    ${[...appShellLayers].reverse().map(
-      ({ token, tone, members, shapes }) => html`
-        <div
-          class="layer-diagram-row"
-          style=${`--layer-index: ${appShellLayers.findIndex(layer => layer.token === token)}`}
-        >
-          <div class="layer-diagram-plane">
-            ${shapes.map(
-              shape => html`
-                <span class="layer-diagram-shape" data-shape=${shape}></span>
-              `,
-            )}
-          </div>
-          <span class="layer-diagram-leader" aria-hidden="true"></span>
-          <mm-flex direction="column" align-items="flex-start" gap="1">
-            <mm-code-tag size="large" tone=${tone}>${token}</mm-code-tag>
-            <mm-caption>${members}</mm-caption>
-          </mm-flex>
-        </div>
-      `,
-    )}
-  </div>
-`
-
 const main = html`
   <mm-main>
     <mm-flex direction="column" gap="16">
@@ -806,21 +718,6 @@ const main = html`
           ${renderTokenItems(sectionTokens('material'))}
         </mm-token-group>
 
-        <mm-separator></mm-separator>
-        <mm-token-stage>
-          <mm-flex
-            class="layer-stack"
-            direction="column"
-            gap="4"
-            role="group"
-            aria-label="겹침 순서: 앞에서 뒤로"
-          >
-            <mm-caption>앞</mm-caption>
-            ${layerTiers.map(renderLayerTier)}
-            <mm-caption>뒤</mm-caption>
-          </mm-flex>
-        </mm-token-stage>
-        <mm-token-stage>${renderAppShellLayerDiagram()}</mm-token-stage>
         <mm-token-group aria-label="겹침 순서 토큰">
           ${renderTokenItems(sectionTokens('zIndex'))}
         </mm-token-group>
