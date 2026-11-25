@@ -7,6 +7,8 @@ import '@/components/common'
 export class FigureCard extends LitElement {
   static styles = css`
     :host {
+      --figure-card-padding-block: var(--space-4);
+
       display: flex;
       flex-direction: column;
       gap: var(--space-3);
@@ -17,7 +19,7 @@ export class FigureCard extends LitElement {
       align-items: center;
       justify-content: center;
       min-height: var(--size-80);
-      padding-block: var(--space-4);
+      padding-block: var(--figure-card-padding-block);
       border-radius: var(--border-radius);
       background: var(--background-color);
       box-shadow: inset 0 0 0 var(--border-width) var(--border-color);

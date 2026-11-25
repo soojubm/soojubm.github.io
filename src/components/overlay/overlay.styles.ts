@@ -11,10 +11,10 @@ const sheetWidthTokens: AttributeTokens<Exclude<SheetWidth, 'small'>> = {
 }
 
 /**
- * 오버레이가 기준(트리거나 화면)의 어느 변에 어느 정렬로 놓일지를 나타내는 표준 12개 값.
- * 방향만 쓰면 가운데에 맞춘다. 각 오버레이는 이 중 자기가 지원하는 값만 Extract로 골라 쓴다.
+ * 트리거의 어느 변에 어느 정렬로 붙을지를 나타내는 12개 값. 방향만 쓰면 가운데에 맞춘다.
+ * anchored 오버레이는 이 중 자기가 지원하는 값만 Extract로 골라 쓴다.
  */
-export type OverlayPlacement =
+export type AnchorPlacementType =
   | 'top-start'
   | 'top'
   | 'top-end'
@@ -27,6 +27,9 @@ export type OverlayPlacement =
   | 'left-start'
   | 'left'
   | 'left-end'
+
+/** 화면의 어느 가장자리에서 열릴지를 나타내는 4개 값. viewport 오버레이가 쓴다. */
+export type ViewportPlacementType = 'top' | 'right' | 'bottom' | 'left'
 
 /**
  * modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다.

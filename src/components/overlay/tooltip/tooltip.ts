@@ -1,13 +1,16 @@
 import { LitElement, html } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import type { OverlayPlacement } from '@/components/overlay/overlay.styles'
+import type { AnchorPlacementType } from '@/components/overlay/overlay.styles'
 
 import { TooltipBubble } from '@/components/overlay/tooltip/tooltip-bubble'
 import { tooltipTriggerStyles } from '@/components/overlay/tooltip/tooltip.styles'
 
 /** 말풍선은 트리거 아래에 뜨고, 정렬만 고른다. */
-export type TooltipPlacement = Extract<OverlayPlacement, 'bottom' | 'bottom-start' | 'bottom-end'>
+export type TooltipPlacement = Extract<
+  AnchorPlacementType,
+  'bottom' | 'bottom-start' | 'bottom-end'
+>
 
 @customElement('mm-tooltip')
 export class Tooltip extends LitElement {

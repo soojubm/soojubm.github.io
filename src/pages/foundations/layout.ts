@@ -5,6 +5,8 @@ import type { TagTone } from '@/components/common/tag/tag.styles'
 import './layout.css'
 
 import '@/components/common/separator/separator'
+import '@/components/domains/chart/chart-legend'
+import type { ChartLegendItem } from '@/components/domains/chart/chart-legend'
 import '@/components/domains/component/component-notice'
 import '@/components/domains/ui-placeholder/ui-placeholder'
 import { code, rule } from '@/components/domains/component'
@@ -71,6 +73,46 @@ const viewportOverlays: OverlayInfo[] = [
     focus: false,
     close: ['timeout'],
   },
+]
+
+/** 작은 화면 위에 anchored overlay가 놓이는 자리를 그린다. 패널이 트리거 옆에 붙는다. */
+const renderAnchoredDiagram = () => html`
+  <mm-figure-card
+    class="overlay-figure-card"
+    description="트리거의 아래, 시작 가장자리에 맞춰 붙는다"
+  >
+    <div slot="figure" class="overlay-screen" data-kind="anchored">
+      <span class="overlay-trigger"></span>
+      <span class="overlay-panel"></span>
+    </div>
+    <mm-code-tag slot="tags">bottom-start</mm-code-tag>
+  </mm-figure-card>
+`
+
+/** viewport overlay가 화면 기준으로 놓이는 다섯 자리를 한 화면에서 차례로 옮겨 가며 보인다. */
+const renderViewportDiagram = () => html`
+  <mm-figure-card
+    class="overlay-figure-card"
+    description="트리거 위치와 상관없이 화면 기준의 자리에서 열린다"
+  >
+    <div slot="figure" class="overlay-screen" data-kind="viewport">
+      <span class="overlay-panel"></span>
+    </div>
+    ${['center', 'top', 'right', 'bottom', 'left'].map(
+      placement => html`
+        <mm-code-tag slot="tags">${placement}</mm-code-tag>
+      `,
+    )}
+  </mm-figure-card>
+`
+
+const overlayLegendItems: ChartLegendItem[] = [
+  { label: 'modal', tone: 'blue' },
+  { label: 'non-modal', tone: 'green' },
+  { label: 'role', tone: 'purple' },
+  { label: 'layer', tone: 'orange' },
+  { label: 'focus move on open', tone: 'cyan' },
+  { label: '닫는 방법', tone: 'default' },
 ]
 
 const controllerNames = [
@@ -197,14 +239,14 @@ const placementTypeCode = `type Side = 'top' | 'right' | 'bottom' | 'left'
 type Alignment = 'start' | 'end'
 
 // anchored overlay (popover · select · tooltip): \`\${Side}\` | \`\${Side}-\${Alignment}\`
-type PlacementType =
+type AnchorPlacementType =
   | 'top' | 'top-start' | 'top-end'
   | 'right' | 'right-start' | 'right-end'
   | 'bottom' | 'bottom-start' | 'bottom-end'
   | 'left' | 'left-start' | 'left-end'
 
-// viewport overlay (sheet · dialog)
-type ViewportPlacementType = 'center' | Side`
+// viewport overlay (sheet): 화면의 가장자리. dialog는 위치 값 없이 화면 가운데에 열린다.
+type ViewportPlacementType = Side`
 
 /** 간격 자리. 토큰을 알려 줄 자리에만 태그를 얹어, 태그가 간격의 한가운데에 걸치게 한다. */
 const renderSpacingGap = (level: 'section' | 'group' | 'element', token?: string) => html`
@@ -521,54 +563,35 @@ const main = html`
         <mm-content-section-list>
           <mm-flex direction="column" gap="4">
             <mm-grid columns="2" gap="4">
-              <mm-content-section
-                heading-level="3"
-                heading="Anchored overlay"
-                description="트리거를 기준으로 엽니다. 트리거 옆에 붙어 떠서, 어느 요소에서 열린 overlay인지 위치만으로 이어집니다."
-              >
-                ${anchoredOverlays.map(renderOverlay)}
+              <mm-content-section heading-level="3" heading="Anchored overlay">
+                ${renderAnchoredDiagram()} ${anchoredOverlays.map(renderOverlay)}
               </mm-content-section>
-              <mm-content-section
-                heading-level="3"
-                heading="Viewport overlay"
-                description="viewport를 기준으로 화면 중앙이나 가장자리에 띄웁니다. 트리거 위치와 상관없이 같은 자리에 열려, 어디서 열었든 같은 overlay라는 인상을 줍니다."
-              >
-                ${viewportOverlays.map(renderOverlay)}
+              <mm-content-section heading-level="3" heading="Viewport overlay">
+                ${renderViewportDiagram()} ${viewportOverlays.map(renderOverlay)}
               </mm-content-section>
             </mm-grid>
-            <mm-caption>
-              <mm-code-tag tone="blue">blue</mm-code-tag>
-              modal,
-              <mm-code-tag tone="green">green</mm-code-tag>
-              non-modal,
-              <mm-code-tag tone="purple">purple</mm-code-tag>
-              role,
-              <mm-code-tag tone="orange">orange</mm-code-tag>
-              layer,
-              <mm-code-tag tone="cyan">cyan</mm-code-tag>
-              focus move on open, 무색은 닫는 방법
-            </mm-caption>
+            <mm-chart-legend .items=${overlayLegendItems}></mm-chart-legend>
           </mm-flex>
 
           <mm-content-section
             heading-level="3"
             heading="Modal × Non-Modal"
-            description="모달은 열린 동안 뒤의 화면을 막는 overlay입니다. 작업을 마치거나 취소해야 다음으로 넘어가는 흐름에 쓰며, 삭제 확인·중요 정보 입력·결제가 여기에 해당합니다."
+            description="modal은 열린 동안 뒤의 화면을 막는 overlay입니다. 작업을 마치거나 취소해야 다음으로 넘어가는 흐름에 쓰며, 삭제 확인·중요 정보 입력·결제가 여기에 해당합니다."
           >
             <mm-text-list
               variant="check"
               .texts=${[
                 rule(
-                  '모달이 열려 있는 동안 뒤 화면은 조작할 수 없게 한다',
+                  'modal이 열려 있는 동안 뒤 화면은 조작할 수 없게 한다',
                   html`
-                    뒤 화면에서 포커스가 움직이거나 스크롤되면 사용자가 모달을 벗어났다고 착각하거나
-                    하던 작업의 위치를 잃는다. 뒤 화면은 backdrop으로 흐려 보이게 하고,
+                    뒤 화면에서 포커스가 움직이거나 스크롤되면 사용자가 modal을 벗어났다고
+                    착각하거나 하던 작업의 위치를 잃는다. 뒤 화면은 backdrop으로 흐려 보이게 하고,
                     ${code('inert')}로 포커스를 받지 못하게 하며, 스크롤을 멈춘다. 스크롤 위치는
                     기억했다가 닫을 때 그 자리로 되돌린다
                   `,
                 ),
                 rule(
-                  '비모달 overlay에서 Tab으로 나가면 닫고, 포커스를 트리거로 되돌린다',
+                  'non-modal overlay에서 Tab으로 나가면 닫고, 포커스를 트리거로 되돌린다',
                   html`
                     Tab으로 나갔을 때 포커스가 트리거 다음 요소가 아니라 엉뚱한 곳으로 가면 사용자가
                     위치를 잃는다. overlay를 벗어나면 닫고 포커스를 트리거로 되돌려, 다음 Tab이

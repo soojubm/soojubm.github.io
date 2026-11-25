@@ -4,7 +4,7 @@ import { customElement, property, queryAssignedElements } from 'lit/decorators.j
 import {
   overlaySurfaceStyles,
   popoverPositionStyles,
-  type OverlayPlacement,
+  type AnchorPlacementType,
 } from '@/components/overlay/overlay.styles'
 import '@/components/common'
 import { AnchorController } from '@/controllers/anchor-controller'
@@ -17,7 +17,7 @@ import { getDeepActiveElement } from '@/utils'
 import { withOpenState } from '@/utils/open-state'
 
 export type PopoverPlacement = Extract<
-  OverlayPlacement,
+  AnchorPlacementType,
   'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'
 >
 
