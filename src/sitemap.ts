@@ -43,7 +43,6 @@ export const SITEMAP: SitemapNode[] = [
     title: 'Foundations',
     icon: ICON_NAMES.BOOK,
     children: [
-      { id: 'foundations', name: 'Overview' },
       { id: 'layout', name: 'Layout' },
       { id: 'interaction', name: 'Interaction' },
       { id: 'pattern', name: 'Pattern' },

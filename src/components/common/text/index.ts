@@ -11,5 +11,6 @@ import '@/components/common/text/semantics/text-list'
 import '@/components/common/text/semantics/text-block'
 import '@/components/common/text/semantics/status-message'
 import '@/components/common/text/semantics/hero-section'
+import '@/components/common/text/semantics/tagline'
 
 export {}

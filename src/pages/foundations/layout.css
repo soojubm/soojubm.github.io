@@ -203,16 +203,7 @@
   align-self: stretch;
   width: 100%;
   min-height: calc(var(--size-80) * 1.4);
-  border-radius: var(--border-radius);
-}
-
-.overlay-screen::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
-  pointer-events: none;
+  border-radius: var(--border-radius-large);
 }
 
 .overlay-trigger,

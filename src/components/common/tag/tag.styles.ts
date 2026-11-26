@@ -2,7 +2,7 @@ import { css, unsafeCSS } from 'lit'
 
 import type { StatusTone } from '@/components/common/icon/icon-names'
 
-import { buildAttributeRules } from '@/utils'
+import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 type ToneStyle = {
   background: string
@@ -80,6 +80,16 @@ const tagToneTokens = Object.fromEntries(
   ]),
 )
 
+export type TagSize = 'medium' | 'large'
+
+const tagSizeTokens: AttributeTokens<Exclude<TagSize, 'medium'>> = {
+  large: {
+    '--tag-height': 'var(--size-32)',
+    '--tag-padding-inline': 'var(--space-3)',
+    '--tag-text-size': 'var(--font-size-14)',
+  },
+}
+
 export const tagStyles = css`
   :host {
     --tag-height: var(--size-24);
@@ -109,5 +119,7 @@ export const tagStyles = css`
     line-height: 1;
   }
 
-  ${unsafeCSS(buildAttributeRules('tone', tagToneTokens))}
+  ${unsafeCSS(buildAttributeRules('tone', tagToneTokens))} ${unsafeCSS(
+    buildAttributeRules('size', tagSizeTokens),
+  )}
 `

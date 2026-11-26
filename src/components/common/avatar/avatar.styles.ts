@@ -1,6 +1,7 @@
 import { css, unsafeCSS } from 'lit'
 
 import type { AvatarSize, AvatarVariant } from '@/components/common/avatar/avatar'
+import { tagToneStyles, type CategoryTone } from '@/components/common/tag/tag.styles'
 
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
@@ -33,6 +34,18 @@ const avatarVariantTokens: AttributeTokens<AvatarVariant> = {
     '--avatar-border': 'none',
     'box-shadow': 'none',
   },
+}
+
+// 태그의 category 톤 배경을 그대로 쓴다. variant가 정한 배경보다 뒤에 두어 톤이 이긴다.
+const toneBackground = (tone: CategoryTone) => ({
+  '--avatar-background-color': tagToneStyles[tone].background,
+})
+
+const avatarToneTokens: AttributeTokens<CategoryTone> = {
+  pink: toneBackground('pink'),
+  orange: toneBackground('orange'),
+  cyan: toneBackground('cyan'),
+  purple: toneBackground('purple'),
 }
 
 export const avatarStyles = css`
@@ -68,6 +81,8 @@ export const avatarStyles = css`
   ${unsafeCSS(buildAttributeRules('size', avatarSizeTokens))}
 
   ${unsafeCSS(buildAttributeRules('variant', avatarVariantTokens))}
+
+  ${unsafeCSS(buildAttributeRules('tone', avatarToneTokens))}
 
   img {
     width: 100%;

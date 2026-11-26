@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
@@ -20,9 +20,9 @@ export class FigureCard extends LitElement {
       justify-content: center;
       min-height: var(--size-80);
       padding-block: var(--figure-card-padding-block);
-      border-radius: var(--border-radius);
+      border: var(--border);
+      border-radius: var(--border-radius-large);
       background: var(--background-color);
-      box-shadow: inset 0 0 0 var(--border-width) var(--border-color);
     }
 
     .body {
@@ -33,16 +33,44 @@ export class FigureCard extends LitElement {
     }
   `
 
+  @property({ type: String }) label?: string
+  @property({ type: String }) heading?: string
   @property({ type: String }) description = ''
 
   render() {
     return html`
+      ${this.renderLabel()}
       <div class="figure" aria-hidden="true"><slot name="figure"></slot></div>
       <div class="body">
         <mm-tag-group><slot name="tags"></slot></mm-tag-group>
-        <mm-caption>${this.description}</mm-caption>
+        ${this.renderCaption()}
       </div>
       <slot></slot>
+    `
+  }
+
+  /** 제목이 있으면 설명은 제목 바로 아래에 한 쌍으로 붙는다. */
+  private renderCaption() {
+    if (!this.heading) {
+      return html`
+        <mm-caption>${this.description}</mm-caption>
+      `
+    }
+
+    return html`
+      <mm-text-block
+        level="3"
+        heading=${this.heading}
+        description=${this.description}
+      ></mm-text-block>
+    `
+  }
+
+  private renderLabel() {
+    if (!this.label) return nothing
+
+    return html`
+      <mm-tag size="large">${this.label}</mm-tag>
     `
   }
 }

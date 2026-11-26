@@ -104,6 +104,14 @@ export const ICON_CATALOG = {
     DISCLOSURE: 'nav-arrow-down',
   },
 
+  // Foundations 축 카드의 아이콘. 키는 축 이름이고, 같은 파일을 쓰는 다른 역할과 합치지 않는다.
+  foundation: {
+    LAYOUT: 'table-2-columns',
+    INTERACTION: 'cursor-pointer',
+    PATTERN: 'puzzle',
+    CONTENT: 'text-box',
+  },
+
   etc: {
     AWARD: 'trophy',
     BOOK: 'book',
@@ -144,6 +152,7 @@ export const ICON_NAMES = {
   ...ICON_CATALOG.setting,
   ...ICON_CATALOG.theme,
   ...ICON_CATALOG.feature,
+  ...ICON_CATALOG.foundation,
   ...ICON_CATALOG.etc,
 } as const
 

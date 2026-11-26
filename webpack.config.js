@@ -20,7 +20,8 @@ const addPage = page => {
 
 SITEMAP.forEach(node => {
   if (node.type === 'standalone') {
-    if (node.id !== 'index') addPage({ id: node.id, subDir: node.id })
+    // children이 있는 노드는 묶음 이름일 뿐 자기 페이지가 없다.
+    if (node.id !== 'index' && !node.children?.length) addPage({ id: node.id, subDir: node.id })
     ;(node.children || []).forEach(item => {
       addPage({ id: item.id, subDir: item.subDir || node.id })
     })
