@@ -4,6 +4,8 @@ import { customElement, state } from 'lit/decorators.js'
 import type { GridColumns } from '@/components/common/grid/grid'
 import type { OptionItem } from '@/types'
 
+import { GAP_OPTIONS } from '@/components/domains/component/component.helpers'
+
 import '@/components/common/code-block/code-block'
 import '@/components/common/grid/grid'
 import '@/components/common/button/button-group'
@@ -15,12 +17,6 @@ const COLUMNS_OPTIONS: OptionItem[] = [
   { value: '3', label: 'columns 3' },
   { value: '4', label: 'columns 4' },
   { value: '6', label: 'columns 6' },
-]
-
-const GAP_OPTIONS: OptionItem[] = [
-  { value: '1', label: 'gap 1' },
-  { value: '2', label: 'gap 2' },
-  { value: '4', label: 'gap 4' },
 ]
 
 const ITEM_COUNT = 6

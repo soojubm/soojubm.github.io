@@ -4,6 +4,8 @@ import { customElement, state } from 'lit/decorators.js'
 import type { FlexDirection } from '@/stylesheets/shared.types'
 import type { OptionItem } from '@/types'
 
+import { GAP_OPTIONS } from '@/components/domains/component/component.helpers'
+
 import '@/components/common/code-block/code-block'
 import '@/components/common/flex/flex'
 import '@/components/common/button/button-group'
@@ -13,12 +15,6 @@ import '@/components/domains/ui-placeholder/ui-placeholder'
 const DIRECTION_OPTIONS: OptionItem[] = [
   { value: 'row', label: 'row' },
   { value: 'column', label: 'column' },
-]
-
-const GAP_OPTIONS: OptionItem[] = [
-  { value: '1', label: 'gap 1' },
-  { value: '2', label: 'gap 2' },
-  { value: '4', label: 'gap 4' },
 ]
 
 const ITEM_COUNT = 3

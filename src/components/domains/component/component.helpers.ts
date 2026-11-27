@@ -1,6 +1,7 @@
 import { html, type TemplateResult } from 'lit'
 
 import type { ComponentPropItemData } from '@/components/domains/component/component-props'
+import type { OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 
@@ -28,4 +29,11 @@ export const openStateMethods: ComponentPropItemData[] = [
   { name: 'show()', type: 'method' },
   { name: 'close()', type: 'method' },
   { name: 'toggle()', type: 'method' },
+]
+
+/** flex·grid 미리보기가 고르는 gap 단계. */
+export const GAP_OPTIONS: OptionItem[] = [
+  { value: '1', label: 'gap 1' },
+  { value: '2', label: 'gap 2' },
+  { value: '4', label: 'gap 4' },
 ]
