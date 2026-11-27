@@ -1,12 +1,6 @@
 [
   {
     "category": "os",
-    "brand": "Apple HIG",
-    "page": "Disclosure Controls",
-    "href": "https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
-  },
-  {
-    "category": "os",
     "brand": "Apple Developer",
     "page": "Technologies",
     "href": "https://developer.apple.com/documentation/technologies"
@@ -25,19 +19,19 @@
   },
   {
     "category": "os",
-    "brand": "MD3",
+    "brand": "Material Design 3",
     "page": "Layout Breakpoints",
     "href": "https://m3.material.io/foundations/layout/breakpoints/overview"
   },
   {
     "category": "os",
-    "brand": "MD3",
+    "brand": "Material Design 3",
     "page": "Interaction States",
     "href": "https://m3.material.io/foundations/interaction-states"
   },
   {
     "category": "os",
-    "brand": "MD3",
+    "brand": "Material Design 3",
     "page": "Building with M3 Expressive",
     "href": "https://m3.material.io/blog/building-with-m3-expressive"
   },
@@ -127,7 +121,7 @@
   },
   {
     "category": "os",
-    "brand": "MD3",
+    "brand": "Material Design 3",
     "page": "State Layers",
     "href": "https://m3.material.io/foundations/interaction/states/state-layers"
   },
@@ -139,7 +133,7 @@
   },
   {
     "category": "os",
-    "brand": "MD3",
+    "brand": "Material Design 3",
     "page": "Selection",
     "href": "https://m3.material.io/foundations/interaction/selection"
   },
@@ -163,32 +157,8 @@
   },
   {
     "category": "general",
-    "brand": "WAI-ARIA APG",
-    "page": "Disclosure Pattern",
-    "href": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/"
-  },
-  {
-    "category": "general",
     "brand": "NULI",
     "page": "Web Accessibility",
     "href": "https://nuli.navercorp.com/community/article/1132889"
-  },
-  {
-    "category": "os",
-    "brand": "Apple Developer",
-    "page": "UISearchBar",
-    "href": "https://developer.apple.com/documentation/uikit/uisearchbar"
-  },
-  {
-    "category": "os",
-    "brand": "Material Design",
-    "page": "Search",
-    "href": "https://material.io/design/navigation/search.html"
-  },
-  {
-    "category": "os",
-    "brand": "Android",
-    "page": "SearchView",
-    "href": "https://developer.android.com/reference/android/widget/SearchView"
   }
 ]

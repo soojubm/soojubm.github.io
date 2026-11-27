@@ -29,7 +29,7 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
   {
     href: 'https://m3.material.io/components/segmented-buttons/overview',
-    label: 'MD3 - Segmented Buttons',
+    label: 'Material Design 3 - Segmented Buttons',
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/segmented-controls',

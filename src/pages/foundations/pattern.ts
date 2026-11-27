@@ -2,6 +2,7 @@ import '@/components/common'
 import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
+import type { ComponentReferenceItemData } from '@/components/domains/component'
 import type { MenuOptionItem, OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
@@ -13,6 +14,37 @@ import '@/components/domains/component/component-notice'
 import { code, rule } from '@/components/domains/component'
 import './pattern.css'
 import { renderPage } from '@/components/layouts/base-layouts'
+
+const disclosureReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/',
+    label: 'WAI-ARIA APG - Disclosure Pattern',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls',
+    label: 'Apple HIG - Disclosure Controls',
+    external: true,
+  },
+]
+
+const searchReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://developer.android.com/reference/android/widget/SearchView',
+    label: 'Android - SearchView',
+    external: true,
+  },
+  {
+    href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
+    label: 'Apple Developer - UISearchBar',
+    external: true,
+  },
+  {
+    href: 'https://material.io/design/navigation/search.html',
+    label: 'Material Design 2 - Search',
+    external: true,
+  },
+]
 
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
@@ -164,6 +196,8 @@ const main = html`
               </div>
             </mm-flex>
           </mm-content-section>
+
+          <mm-component-references .items=${disclosureReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
 
@@ -393,6 +427,8 @@ const main = html`
               ]}
             ></mm-text-list>
           </mm-content-section>
+
+          <mm-component-references .items=${searchReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
 

@@ -13,7 +13,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 const componentReferences: ComponentReferenceItemData[] = [
   {
     href: 'https://m3.material.io/components/app-bars/overview',
-    label: 'MD3 - App Bars',
+    label: 'Material Design 3 - App Bars',
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/toolbars',

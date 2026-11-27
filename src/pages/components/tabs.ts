@@ -28,18 +28,18 @@ const componentReferences: ComponentReferenceItemData[] = [
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/selection-and-input/segmented-controls/',
     label: 'Apple HIG - Segmented Controls',
   },
-  { href: 'https://material.io/components/tabs', label: 'Material Design - Tabs' },
+  { href: 'https://material.io/components/tabs', label: 'Material Design 2 - Tabs' },
   {
     href: 'https://m3.material.io/components/top-app-bar/overview',
-    label: 'MD3 - Top App Bar',
+    label: 'Material Design 3 - Top App Bar',
   },
   {
     href: 'https://m2.material.io/components/bottom-navigation',
-    label: 'MD2 - Bottom Navigation',
+    label: 'Material Design 2 - Bottom Navigation',
   },
   {
     href: 'https://m3.material.io/components/navigation-bar/overview',
-    label: 'MD3 - Navigation Bar',
+    label: 'Material Design 3 - Navigation Bar',
   },
   {
     href: 'https://developer.apple.com/design/human-interface-guidelines/components/navigation-and-search/tab-bars',

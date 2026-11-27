@@ -33,7 +33,7 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
   {
     href: 'https://m3.material.io/components/lists/overview',
-    label: 'MD3 - Lists',
+    label: 'Material Design 3 - Lists',
   },
   {
     href: 'https://reactnativeelements.com/docs/components/listitem',
