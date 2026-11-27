@@ -3,6 +3,7 @@ import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
+import type { SearchResult } from '@/components/domains/search'
 import type { MenuOptionItem, OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
@@ -70,6 +71,27 @@ const handleMessageRetry = () => {}
 const handleFeedbackDismiss = () => {}
 
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
+
+const searchResults: SearchResult[] = [
+  {
+    href: 'button.html',
+    label: 'Button',
+    description:
+      '양식 제출이나 저장처럼 사용자 여정의 핵심 과업을 실행하는 컨트롤입니다. 레이블로 수행할 행동을 드러내고 누르는 즉시 작업을 실행하므로, 사용자는 지금 무엇을 할 수 있는지 알고 망설임 없이 다음 단계로 나아갈 수 있습니다.',
+  },
+  {
+    href: 'icon-button.html',
+    label: 'Icon Button',
+    description:
+      '레이블 없이 메타포 아이콘 하나로 행동을 나타내는 간결한 버튼입니다. 좁은 공간에 반복되는 보조 액션을 담고 용도를 툴팁으로 알려 주므로, 사용자는 화면을 복잡하게 만들지 않고도 자주 쓰는 기능에 바로 닿을 수 있습니다.',
+  },
+  {
+    href: 'toggle-button.html',
+    label: 'ToggleButton',
+    description:
+      '누를 때마다 켜짐과 꺼짐이 바뀌는 버튼입니다. 눌린 상태를 버튼 스스로 표시하고, 여러 개를 묶으면 그중 하나만 선택되는 세그먼트로 동작하므로, 사용자는 현재 적용된 설정을 한눈에 보고 한 번의 클릭으로 전환할 수 있습니다.',
+  },
+]
 
 const suggestionKeywords = [
   '버튼',
@@ -310,18 +332,28 @@ const main = html`
             ></mm-text-list>
           </mm-text-block>
 
+          <mm-content-section
+            heading-level="3"
+            heading="검색 결과"
+            description="일치하는 결과는 이름과 설명을 한 행에 보여 주고 행 전체를 링크로 둔다. 사용자는 페이지에 들어가기 전에 찾던 것인지 가려낼 수 있다."
+          >
+            <mm-component-example>
+              <mm-search-result-list heading="검색 결과" .results=${searchResults}></mm-search-result-list>
+            </mm-component-example>
+          </mm-content-section>
+
           <mm-content-section heading-level="3" heading="검색 결과 없음" description="제출한 검색에 일치하는 결과가 없으면 결과 없음 상태로 추천 검색어를 제안하여 새 검색을 유도한다.">
 
             <mm-component-example>
-              <mm-result heading="'[키워드]'와(과) 일치하는 내용이 없습니다.">
+              <mm-search-result-empty query="[키워드]">
                 <mm-flex justify-content="center">
-                <mm-search-suggestion-group aria-label="추천 검색어">
-                  <mm-search-suggestion>버튼</mm-search-suggestion>
-                  <mm-search-suggestion>버튼 그룹</mm-search-suggestion>
-                  <mm-search-suggestion>아이콘 버튼</mm-search-suggestion>
-                </mm-search-suggestion-group>
+                  <mm-search-suggestion-group aria-label="추천 검색어">
+                    <mm-search-suggestion>버튼</mm-search-suggestion>
+                    <mm-search-suggestion>버튼 그룹</mm-search-suggestion>
+                    <mm-search-suggestion>아이콘 버튼</mm-search-suggestion>
+                  </mm-search-suggestion-group>
                 </mm-flex>
-              </mm-result>
+              </mm-search-result-empty>
             </mm-component-example>
           </mm-content-section>
 

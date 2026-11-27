@@ -3,6 +3,7 @@ import { customElement, state } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
+import '@/components/domains/search/search-result-empty'
 import '@/components/domains/search/search-result-list'
 import { PagefindSearchController } from '@/components/layouts/navbar-search/pagefind-search-controller'
 import '@/components/overlay/sheet'
@@ -85,7 +86,7 @@ export class NavbarSearch extends LitElement {
     }
     if (this.search.results.length === 0) {
       return html`
-        <mm-paragraph color="light">'${this.search.query}'에 대한 결과가 없습니다.</mm-paragraph>
+        <mm-search-result-empty query=${this.search.query}></mm-search-result-empty>
       `
     }
     return html`

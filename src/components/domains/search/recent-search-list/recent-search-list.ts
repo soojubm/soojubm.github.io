@@ -1,12 +1,13 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
 import { ICON_NAMES } from '@/components/common'
 import { listItemInteractiveStyles } from '@/components/common/list-item/list-item.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import { emit, uniqueId } from '@/utils'
+import { emit } from '@/utils'
 import '@/components/common'
+import '@/components/domains/search/search-group'
 
 @customElement('mm-recent-search-list')
 export class RecentSearchList extends LitElement {
@@ -19,9 +20,7 @@ export class RecentSearchList extends LitElement {
     `,
     css`
       :host {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-1);
+        display: block;
       }
 
       .item {
@@ -33,25 +32,12 @@ export class RecentSearchList extends LitElement {
   ]
   @property({ type: String }) heading?: string
   @property({ attribute: false }) keywords: string[] = []
-  private readonly headingId = uniqueId('recent-search-heading')
 
   render() {
     return html`
-      ${this.renderHeading()}
-      <mm-list-item-group
-        gap="0"
-        aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}
-      >
+      <mm-search-group heading=${ifDefined(this.heading)}>
         ${this.keywords.map(keyword => this.renderKeyword(keyword))}
-      </mm-list-item-group>
-    `
-  }
-
-  private renderHeading() {
-    if (!this.heading) return nothing
-
-    return html`
-      <mm-heading level="5" id=${this.headingId}>${this.heading}</mm-heading>
+      </mm-search-group>
     `
   }
 
