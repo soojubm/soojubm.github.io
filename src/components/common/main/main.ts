@@ -11,6 +11,7 @@ export class Main extends LitElement {
 
       display: block;
       min-height: calc(100vh - var(--navbar-height));
+      max-width: var(--layout-width-full);
       padding: var(--layout-main-space-top) var(--layout-padding-inline) calc(var(--space-4) * 6);
       padding-left: var(--main-padding-left);
       box-sizing: border-box;

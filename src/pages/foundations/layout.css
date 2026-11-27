@@ -52,6 +52,21 @@
   background: var(--background-subtle-color);
 }
 
+.width-extent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.width-extent-row {
+  display: flex;
+}
+
+.width-extent-label {
+  text-align: center;
+}
+
 .width-bar {
   display: flex;
   align-items: center;
@@ -60,6 +75,17 @@
   height: var(--size-48);
   border-radius: var(--border-radius);
   background: var(--width-bar-background-color);
+}
+
+/* 막대 양옆에 붙어, 본문과 화면 가장자리 사이에 비워 두는 --layout-padding-inline 만큼의 여백. */
+.width-gutter {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--layout-padding-inline);
+  border: var(--border);
+  border-radius: var(--border-radius);
 }
 
 .width-bar[data-outlined] {

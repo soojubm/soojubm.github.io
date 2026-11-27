@@ -319,6 +319,8 @@ const widthExample = (options: {
   token: string
   /** 이 너비를 정하는 레이아웃 토큰 이름. */
   widthToken?: string
+  /** 양끝 여백 토큰 이름을 함께 보인다. 모든 예시가 같은 여백이라 첫 예시에만 쓴다. */
+  gutterToken?: boolean
   category: number
   tone: TagTone
   maxWidth?: string
@@ -328,18 +330,35 @@ const widthExample = (options: {
   <mm-flex direction="column" gap="2">
     <div class="width-track">
       <div
-        class="width-bar"
-        style=${`--width-bar-background-color: var(--category-${
-          options.category
-        }-background-color);${options.maxWidth ? ` max-width: ${options.maxWidth}` : ''}`}
+        class="width-extent"
+        style=${options.maxWidth
+          ? `max-width: calc(${options.maxWidth} + 2 * var(--layout-padding-inline))`
+          : ''}
       >
-        <mm-code-tag tone=${options.tone}>${options.token}</mm-code-tag>
+        <mm-text class="width-extent-label" size="12" data-extent-label></mm-text>
+        <div class="width-extent-row">
+          <div class="width-gutter"><mm-text size="12">5vw</mm-text></div>
+          <div
+            class="width-bar"
+            style=${`--width-bar-background-color: var(--category-${
+              options.category
+            }-background-color);${options.maxWidth ? ` max-width: ${options.maxWidth}` : ''}`}
+          >
+            <mm-code-tag tone=${options.tone}>${options.token}</mm-code-tag>
+          </div>
+          <div class="width-gutter"><mm-text size="12">5vw</mm-text></div>
+        </div>
       </div>
     </div>
     ${options.widthToken
       ? html`
           <mm-tag-group>
             <mm-code-tag>${options.widthToken}</mm-code-tag>
+            ${options.gutterToken
+              ? html`
+                  <mm-code-tag>--layout-padding-inline</mm-code-tag>
+                `
+              : ''}
           </mm-tag-group>
         `
       : ''}
@@ -367,7 +386,7 @@ const widthExample = (options: {
 const renderBackgroundExample = (options: {
   caption: string
   tags?: string[]
-  value: string
+  values: string[]
   subtle?: boolean
 }) => html`
   <mm-flex direction="column" gap="2">
@@ -379,7 +398,12 @@ const renderBackgroundExample = (options: {
       ></div>
     </div>
     <mm-tag-group>
-      <mm-code-tag>${options.value}</mm-code-tag>
+      ${options.values.map(
+        value =>
+          html`
+            <mm-code-tag>${value}</mm-code-tag>
+          `,
+      )}
     </mm-tag-group>
     <mm-caption>${options.caption}</mm-caption>
     <mm-tag-group>${renderUsageTags(options.tags)}</mm-tag-group>
@@ -425,7 +449,7 @@ const main = html`
         <mm-tab value="page">Page</mm-tab>
         <mm-tab value="division">Division</mm-tab>
         <mm-tab value="overlay">Overlay</mm-tab>
-        <mm-tab value="elevations">Elevations</mm-tab>
+        <mm-tab value="elevation">Elevation</mm-tab>
       </mm-tab-list>
 
       <mm-tab-panel value="page">
@@ -442,6 +466,7 @@ const main = html`
                   tags: ['폼', '인증'],
                   token: '400px',
                   widthToken: '--layout-width-narrow',
+                  gutterToken: true,
                   category: 2,
                   tone: 'green',
                   maxWidth: 'var(--layout-width-narrow)',
@@ -462,15 +487,30 @@ const main = html`
                   ],
                 })}
                 ${widthExample({
+                  caption: '와이드형',
+                  tags: ['요금제', '상품'],
+                  description: '비교하며 고르는 화면은 두세 열이 들어갈 폭을 준다',
+                  token: '960px',
+                  widthToken: '--layout-width-large',
+                  category: 4,
+                  tone: 'orange',
+                  maxWidth: 'var(--layout-width-large)',
+                  links: [
+                    ['./pricing.html', 'Pricing'],
+                    ['./product.html', 'Product'],
+                  ],
+                })}
+                ${widthExample({
                   caption: '확장형',
-                  tags: ['목록', '대시보드', '상품', '프로필'],
+                  tags: ['목록', '대시보드', '프로필'],
                   description: '넓은 폭은 목록·대시보드처럼 훑어보는 화면에 쓴다',
-                  token: '콘텐츠 영역 전체',
+                  token: '100%',
+                  widthToken: '--layout-width-full',
                   category: 8,
                   tone: 'purple',
+                  maxWidth: 'var(--layout-width-full)',
                   links: [
                     ['./dashboard.html', 'Dashboard'],
-                    ['./product.html', 'Product'],
                     ['./profile.html', 'Profile'],
                   ],
                 })}
@@ -485,11 +525,14 @@ const main = html`
           >
             <mm-token-stage full-width>
               <mm-flex direction="column" gap="6">
-                ${renderBackgroundExample({ caption: '이전 화면', value: 'background 기본' })}
+                ${renderBackgroundExample({
+                  caption: '이전 화면',
+                  values: ['background', 'default'],
+                })}
                 ${renderBackgroundExample({
                   caption: '다른 정보 구조',
                   tags: ['글쓰기', '설정', '소개'],
-                  value: 'background="subtle"',
+                  values: ['background', 'subtle'],
                   subtle: true,
                 })}
               </mm-flex>
@@ -641,7 +684,7 @@ const main = html`
         </mm-content-section-list>
       </mm-tab-panel>
 
-      <mm-tab-panel value="elevations">
+      <mm-tab-panel value="elevation">
         <mm-content-section-list>
           <mm-content-section
             heading-level="3"
@@ -676,4 +719,16 @@ const main = html`
   </mm-main>
 `
 
-renderPage(main)
+/** 막대와 양옆 여백을 합친 실제 폭을 재어 위 라벨에 적고, 화면 크기가 바뀌면 다시 갱신한다. */
+const showExtentWidths = () => {
+  const observer = new ResizeObserver(entries => {
+    entries.forEach(({ target }) => {
+      const label = target.querySelector('[data-extent-label]')
+      if (!label) return
+      label.textContent = `${Math.round(target.getBoundingClientRect().width)}px`
+    })
+  })
+  document.querySelectorAll('.width-extent').forEach(extent => observer.observe(extent))
+}
+
+renderPage(main, { initialize: showExtentWidths })
