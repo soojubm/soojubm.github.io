@@ -2,6 +2,7 @@ import { css, unsafeCSS } from 'lit'
 
 import type { TooltipPlacement } from '@/components/overlay/tooltip/tooltip'
 
+import { overlayHiddenStyles, overlayVisibleStyles } from '@/components/overlay/overlay.styles'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
 // 말풍선이 트리거의 어느 모서리에 맞춰질지. 기준 좌표(--tooltip-bubble-anchor-*)는 말풍선이 열릴 때 잰다.
@@ -49,18 +50,13 @@ export const tooltipBubbleStyles = css`
     z-index: var(--material-zindex-tooltip);
 
     /* 컴포넌트가 표면 자체라 여기서 뜨고 진다. 닫힐 때만 visibility를 지연시켜 fade-out을 남긴다. */
-    opacity: 0;
-    visibility: hidden;
+    ${overlayHiddenStyles};
     pointer-events: none;
-    transition: opacity var(--transition-duration-close) var(--transition-easing),
-      visibility 0s linear var(--transition-duration-close);
   }
 
   /* 처음 열릴 때도 fade-in이 재생되도록, 만들어지는 순간의 시작 스타일을 밝힌다. */
   :host([open]) {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity var(--transition-duration-open) var(--transition-easing-open), visibility 0s;
+    ${overlayVisibleStyles};
 
     @starting-style {
       opacity: 0;

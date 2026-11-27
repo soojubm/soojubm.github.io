@@ -31,6 +31,20 @@ export type AnchorPlacementType =
 /** 화면의 어느 가장자리에서 열릴지를 나타내는 4개 값. viewport 오버레이가 쓴다. */
 export type ViewportPlacementType = 'top' | 'right' | 'bottom' | 'left'
 
+/** 떠 있는 표면이 fade로 숨고 나타나는 선언. 닫힐 때만 visibility를 지연시켜 fade-out이 끝난 뒤에 숨긴다. */
+export const overlayHiddenStyles = css`
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-duration-close) var(--transition-easing),
+    visibility 0s linear var(--transition-duration-close);
+`
+
+export const overlayVisibleStyles = css`
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--transition-duration-open) var(--transition-easing-open), visibility 0s;
+`
+
 /**
  * modal 표면 뒤를 덮는 dim·blur 재질. 표시 상태는 자신을 품은 레이어가 소유한다.
  * `--backdrop-*` 기본값도 자신이 아니라 자신을 품은 표면이 선언한다.
@@ -113,18 +127,13 @@ export const sheetPositionStyles = css`
 
     /* backdrop과 패널을 한 번에 띄우고 내린다. 닫힐 때만 visibility를 지연시켜
        fade-out이 끝난 뒤에 접근성 트리와 히트 테스트에서 빠지게 한다. */
-    opacity: 0;
-    visibility: hidden;
+    ${overlayHiddenStyles};
     pointer-events: none;
-    transition: opacity var(--transition-duration-close) var(--transition-easing),
-      visibility 0s linear var(--transition-duration-close);
   }
 
   :host([open]) {
-    opacity: 1;
-    visibility: visible;
+    ${overlayVisibleStyles};
     pointer-events: auto;
-    transition: opacity var(--transition-duration-open) var(--transition-easing-open), visibility 0s;
   }
 
   /* 열릴 때 포커스를 받는 표면 자체는 화면 전체를 덮으므로 포커스 링을 그리지 않는다 */
