@@ -563,17 +563,11 @@ const main = html`
           </mm-text-block>
 
           <mm-grid columns="2" gap="4">
-            <mm-flex direction="column" gap="2">
-              <mm-heading level="3">
-                <mm-code-tag size="large">Gap</mm-code-tag>
-              </mm-heading>
-              <mm-tag-group>
-                <mm-code-tag tone="green">같은 맥락</mm-code-tag>
-              </mm-tag-group>
-              <mm-text size="14">
-                같은 맥락의 그룹·섹션·리스트는 간격으로 구획합니다. 같은 모양의 제목과 여백이 콘텐츠
-                그룹마다 반복되는 리듬은 구획되었다는 인상을 줍니다.
-              </mm-text>
+            <mm-term-block
+              term="Gap"
+              description="같은 맥락의 그룹·섹션·리스트는 간격으로 구획합니다. 같은 모양의 제목과 여백이 콘텐츠 그룹마다 반복되는 리듬은 구획되었다는 인상을 줍니다."
+            >
+              <mm-code-tag slot="tags" tone="green">같은 맥락</mm-code-tag>
               <mm-text-list
                 variant="check"
                 .texts=${[
@@ -592,30 +586,20 @@ const main = html`
                 <mm-link href="https://help.figma.com/hc/en-us/articles/360040451373">
                   Spacing between items
                 </mm-link>
-                으로 정합니다. 항목이 빠지거나 순서가 바뀌어도 간격이 겹치거나 사라지지 않습니다.
+                으로 정합니다.
               </mm-component-notice>
-            </mm-flex>
+            </mm-term-block>
 
-            <mm-flex direction="column" gap="2">
-              <mm-heading level="3">
-                <mm-code-tag size="large">Separator</mm-code-tag>
-              </mm-heading>
-              <mm-tag-group>
-                <mm-code-tag tone="blue">다른 맥락</mm-code-tag>
-              </mm-tag-group>
-              <mm-text size="14">
-                맥락이 달라지는 자리에만 구분선을 긋습니다. 반복되는 패턴의 리듬이 구획되었다는
-                인상을 줄 수 있습니다. 구분선을 과도하게 사용하면 시각적 노이즈로 작용할 수
-                있습니다.
-              </mm-text>
+            <mm-term-block
+              term="Separator"
+              description="맥락이 달라지는 자리에만 구분선을 긋습니다. 반복되는 패턴의 리듬이 구획되었다는 인상을 줄 수 있습니다. 구분선을 과도하게 사용하면 시각적 노이즈로 작용할 수 있습니다."
+            >
+              <mm-code-tag slot="tags" tone="blue">다른 맥락</mm-code-tag>
               <mm-text-list
                 variant="check"
-                .texts=${[
-                  rule('separator는 서로 다른 맥락 사이에만 둔다'),
-                  rule('separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다'),
-                ]}
+                .texts=${[rule('separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다')]}
               ></mm-text-list>
-            </mm-flex>
+            </mm-term-block>
           </mm-grid>
         </mm-content-section-list>
       </mm-tab-panel>

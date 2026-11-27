@@ -2,6 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
+import '@/components/domains/component/term-block'
 
 @customElement('mm-token-section')
 export class TokenSection extends LitElement {
@@ -29,10 +30,7 @@ export class TokenSection extends LitElement {
 
   private renderHeader() {
     return html`
-      <mm-flex direction="column" gap="2" align="flex-start">
-        <mm-heading level="2"><mm-code-tag size="large">${this.heading}</mm-code-tag></mm-heading>
-        <mm-text size="14">${this.description}</mm-text>
-      </mm-flex>
+      <mm-term-block level="2" term=${this.heading} description=${this.description}></mm-term-block>
     `
   }
 }
