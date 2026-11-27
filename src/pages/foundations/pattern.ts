@@ -11,7 +11,7 @@ import '@/components/domains/faq'
 import '@/components/layouts/app-sidebar/sidebar-page-link'
 import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-notice'
-import { code, rule } from '@/components/domains/component'
+import { code } from '@/components/domains/component'
 import './pattern.css'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -137,14 +137,8 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '훑어서 고르는 목록을 접는다',
-                  '자주 묻는 질문, 커리큘럼, 필터처럼 항목이 많고 사용자가 그중 일부만 읽는 콘텐츠가 여기에 해당한다',
-                ),
-                rule(
-                  '반드시 읽어야 하는 정보는 접은 상태로 제공하지 않는다',
-                  '약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보가 여기에 해당한다. 접는 것 자체가 목적이 되지 않게 한다',
-                ),
+                '훑어서 고르는 목록을 접는다. 자주 묻는 질문, 커리큘럼, 필터처럼 항목이 많고 사용자가 그중 일부만 읽는 콘텐츠가 여기에 해당한다',
+                '반드시 읽어야 하는 정보는 접은 상태로 제공하지 않는다. 약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보가 여기에 해당한다. 접는 것 자체가 목적이 되지 않게 한다',
               ]}
             ></mm-text-list>
           </mm-paragraph-group>
@@ -178,17 +172,11 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '훑어서 고르는 목록의 트리거는 heading으로 감싼다',
-                  '스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
-                ),
-                rule(
-                  '접힌 내용은 포커스되지 않도록 한다',
-                  html`
-                    시각적으로만 숨기면 화면에 없는 내용이 탭 순서에 남는다. ${code('inert')}로
-                    포커스와 접근성 트리에서 함께 뺀다
-                  `,
-                ),
+                '훑어서 고르는 목록의 트리거는 heading으로 감싼다. 스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
+                html`
+                  접힌 내용은 포커스되지 않도록 한다. 시각적으로만 숨기면 화면에 없는 내용이 탭
+                  순서에 남는다. ${code('inert')}로 포커스와 접근성 트리에서 함께 뺀다
+                `,
               ]}
             ></mm-text-list>
           </mm-content-section>
@@ -283,18 +271,13 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '입력이 멈춘 뒤에 결과를 갱신한다',
-                  '글자마다 목록이 바뀌면 화면이 깜빡이고 요청이 쌓인다',
-                ),
-                rule(
-                  html`
-                    일치하는 항목이 없으면
-                    <mm-code-tag>Search Results</mm-code-tag>
-                    자리에 빈 상태를 둔다
-                  `,
-                  '키워드를 고치면 결과가 바로 돌아오므로 별도 결과 화면으로 이동하지 않는다',
-                ),
+                '입력이 멈춘 뒤에 결과를 갱신한다. 글자마다 목록이 바뀌면 화면이 깜빡이고 요청이 쌓인다',
+                html`
+                  일치하는 항목이 없으면
+                  <mm-code-tag>Search Results</mm-code-tag>
+                  자리에 빈 상태를 둔다. 키워드를 고치면 결과가 바로 돌아오므로 별도 결과 화면으로
+                  이동하지 않는다
+                `,
               ]}
             ></mm-text-list>
           </mm-text-block>
@@ -321,14 +304,8 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '입력 중에는 키보드 위에 남는 높이 안에서 제안을 하나 이상 보여준다',
-                  '일치하는 제안이 없으면 유사·추천 콘텐츠로 채워 다음에 고를 것을 남기고, 키보드에 가린 제안은 화면에 드러나지 않으므로 개수를 그 높이에 맞춘다',
-                ),
-                rule(
-                  '결과 페이지는 URL로 공유할 수 있게 한다',
-                  '같은 URL로 같은 검색 결과를 다시 열 수 있다',
-                ),
+                '입력 중에는 키보드 위에 남는 높이 안에서 제안을 하나 이상 보여준다. 일치하는 제안이 없으면 유사·추천 콘텐츠로 채워 다음에 고를 것을 남기고, 키보드에 가린 제안은 화면에 드러나지 않으므로 개수를 그 높이에 맞춘다',
+                '결과 페이지는 URL로 공유할 수 있게 한다. 같은 URL로 같은 검색 결과를 다시 열 수 있다',
               ]}
             ></mm-text-list>
           </mm-text-block>
@@ -352,14 +329,8 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '전체 삭제를 제공하지 않는다',
-                  '사용자 데이터를 실수로 한꺼번에 날릴 수 있으므로 항목마다 삭제 버튼을 두고 하나씩만 지우게 한다',
-                ),
-                rule(
-                  '어떤 검색 기록을 모으고 어디까지 지울 수 있는지 함께 정한다',
-                  '최근 검색어와 맞춤 추천은 모아 둔 기록으로 만들어진다. 최근 검색어만 지우는 것인지, 지금까지의 모든 활동 기록까지 지우는 것인지 사용자에게 알려 준다',
-                ),
+                '전체 삭제를 제공하지 않는다. 사용자 데이터를 실수로 한꺼번에 날릴 수 있으므로 항목마다 삭제 버튼을 두고 하나씩만 지우게 한다',
+                '어떤 검색 기록을 모으고 어디까지 지울 수 있는지 함께 정한다. 최근 검색어와 맞춤 추천은 모아 둔 기록으로 만들어진다. 최근 검색어만 지우는 것인지, 지금까지의 모든 활동 기록까지 지우는 것인지 사용자에게 알려 준다',
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -428,26 +399,20 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  html`
-                    검색 영역은 ${code('role="search"')}로 감싼다
-                  `,
-                  '스크린리더 사용자가 랜드마크 이동으로 검색에 바로 닿는다',
-                ),
-                rule(
-                  '검색 필드에는 보이는 레이블이 없어도 이름을 준다',
-                  html`
-                    ${code('mm-searchfield')}는 ${code('placeholder')}를 입력 요소의
-                    ${code('aria-label')}로 옮기고, 지우기 버튼에도 이름을 붙인다
-                  `,
-                ),
-                rule(
-                  '추천·최근 검색어 묶음에는 묶음의 이름을 붙인다',
-                  html`
-                    추천 검색어는 ${code('aria-label')}로, 최근 검색어는 제목으로 이름을 준다. 삭제
-                    버튼은 어느 검색어를 지우는지 이름으로 알린다
-                  `,
-                ),
+                html`
+                  검색 영역은 ${code('role="search"')}로 감싼다. 스크린리더 사용자가 랜드마크
+                  이동으로 검색에 바로 닿는다
+                `,
+                html`
+                  검색 필드에는 보이는 레이블이 없어도 이름을 준다. ${code('mm-searchfield')}는
+                  ${code('placeholder')}를 입력 요소의 ${code('aria-label')}로 옮기고, 지우기
+                  버튼에도 이름을 붙인다
+                `,
+                html`
+                  추천·최근 검색어 묶음에는 묶음의 이름을 붙인다. 추천 검색어는
+                  ${code('aria-label')}로, 최근 검색어는 제목으로 이름을 준다. 삭제 버튼은 어느
+                  검색어를 지우는지 이름으로 알린다
+                `,
               ]}
             ></mm-text-list>
           </mm-content-section>
@@ -472,14 +437,8 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '한 항목을 여러 컬렉션에 동시에 담게 한다',
-                  '이미 담긴 컬렉션은 선택된 채로 열려, 이 항목이 어디에 있는지 바로 보인다',
-                ),
-                rule(
-                  '담는 흐름 안에서 새 컬렉션을 바로 만들게 한다',
-                  '새 컬렉션을 만든 뒤에는 방금 담으려던 항목이 그 컬렉션에 담긴 채로 돌아온다',
-                ),
+                '한 항목을 여러 컬렉션에 동시에 담게 한다. 이미 담긴 컬렉션은 선택된 채로 열려, 이 항목이 어디에 있는지 바로 보인다',
+                '담는 흐름 안에서 새 컬렉션을 바로 만들게 한다. 새 컬렉션을 만든 뒤에는 방금 담으려던 항목이 그 컬렉션에 담긴 채로 돌아온다',
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -584,18 +543,12 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '진행 단계를 목록으로 보여준다',
-                  '아무 변화가 없으면 사용자는 멈춘 것인지 기다려야 하는 것인지 알 수 없다. 끝낸 단계, 진행 중인 단계, 남은 단계를 한 목록에 두어 지금 위치를 알린다',
-                ),
-                rule(
-                  '생성을 중단할 수 있게 한다',
-                  html`
-                    잘못 보낸 질문이나 긴 답을 끝까지 기다리게 하면 사용자는 아무것도 할 수 없다.
-                    ${code('mm-prompt-input')}은 ${code('loading')} 동안 전송을 막고,
-                    ${code('stop')} 이벤트를 구독하면 중단 버튼을 보여준다
-                  `,
-                ),
+                '진행 단계를 목록으로 보여준다. 아무 변화가 없으면 사용자는 멈춘 것인지 기다려야 하는 것인지 알 수 없다. 끝낸 단계, 진행 중인 단계, 남은 단계를 한 목록에 두어 지금 위치를 알린다',
+                html`
+                  생성을 중단할 수 있게 한다. 잘못 보낸 질문이나 긴 답을 끝까지 기다리게 하면
+                  사용자는 아무것도 할 수 없다. ${code('mm-prompt-input')}은 ${code('loading')} 동안
+                  전송을 막고, ${code('stop')} 이벤트를 구독하면 중단 버튼을 보여준다
+                `,
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -622,10 +575,7 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '근거 자료는 답변 아래에 출처로 붙인다',
-                  '답변만 있으면 사용자는 그 내용을 믿어도 되는지 판단할 수 없다. 출처 이름과 설명이 있어야 자료를 열기 전에 어떤 자료인지 알 수 있다',
-                ),
+                '근거 자료는 답변 아래에 출처로 붙인다. 답변만 있으면 사용자는 그 내용을 믿어도 되는지 판단할 수 없다. 출처 이름과 설명이 있어야 자료를 열기 전에 어떤 자료인지 알 수 있다',
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -655,14 +605,8 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '되돌릴 수 없는 작업은 실행하기 전에 승인을 받는다',
-                  '삭제처럼 결과를 돌릴 수 없는 일을 사용자 모르게 실행하면 피해를 복구할 수 없다. 승인과 거부를 한 쌍으로 두어 어느 쪽이든 고를 수 있게 한다',
-                ),
-                rule(
-                  '요청 문장에 작업의 대상을 구체적으로 적는다',
-                  '"이 작업" 같은 말로 쓰면 사용자는 무엇을 승인하는지 모른 채 누르게 된다',
-                ),
+                '되돌릴 수 없는 작업은 실행하기 전에 승인을 받는다. 삭제처럼 결과를 돌릴 수 없는 일을 사용자 모르게 실행하면 피해를 복구할 수 없다. 승인과 거부를 한 쌍으로 두어 어느 쪽이든 고를 수 있게 한다',
+                '요청 문장에 작업의 대상을 구체적으로 적는다. "이 작업" 같은 말로 쓰면 사용자는 무엇을 승인하는지 모른 채 누르게 된다',
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -680,14 +624,11 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '실패한 메시지는 그 자리에서 다시 보낸다',
-                  html`
-                    긴 질문을 처음부터 다시 쓰게 하면 사용자는 보내기를 포기한다.
-                    ${code('mm-my-chat-message')}는 ${code('retry')} 이벤트를 구독하면 실패한 말풍선
-                    곁에 재전송 버튼을 보여준다
-                  `,
-                ),
+                html`
+                  실패한 메시지는 그 자리에서 다시 보낸다. 긴 질문을 처음부터 다시 쓰게 하면
+                  사용자는 보내기를 포기한다. ${code('mm-my-chat-message')}는 ${code('retry')}
+                  이벤트를 구독하면 실패한 말풍선 곁에 재전송 버튼을 보여준다
+                `,
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -707,13 +648,10 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '평가는 닫을 수 있게 한다',
-                  html`
-                    평가 요청이 남아 있으면 사용자가 답을 읽는 자리를 계속 차지한다.
-                    ${code('dismiss')} 이벤트를 구독하면 닫기 버튼을 보여준다
-                  `,
-                ),
+                html`
+                  평가는 닫을 수 있게 한다. 평가 요청이 남아 있으면 사용자가 답을 읽는 자리를 계속
+                  차지한다. ${code('dismiss')} 이벤트를 구독하면 닫기 버튼을 보여준다
+                `,
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -732,10 +670,7 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  '다음 질문은 제안 버튼으로 줄여 준다',
-                  '빈 입력창 앞에서는 무엇을 물어야 할지 막힌다. 답에 이어질 말을 버튼으로 두면 한 번 눌러 대화를 이어 간다',
-                ),
+                '다음 질문은 제안 버튼으로 줄여 준다. 빈 입력창 앞에서는 무엇을 물어야 할지 막힌다. 답에 이어질 말을 버튼으로 두면 한 번 눌러 대화를 이어 간다',
               ]}
             ></mm-text-list>
             <mm-component-example width="narrow">
@@ -756,27 +691,19 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  html`
-                    대화 영역은 ${code('role="log"')}로 알린다
-                  `,
-                  html`
-                    스크린리더가 새 메시지를 따로 찾지 않고도 읽어 준다. ${code('mm-chat-feed')}가
-                    ${code('role="log"')}와 ${code('aria-label')}을 직접 갖는다
-                  `,
-                ),
-                rule(
-                  html`
-                    전송 실패는 ${code('role="alert"')}로 즉시 알린다
-                  `,
-                  '화면을 보지 못하는 사용자도 메시지가 전달되지 않았다는 사실을 바로 알아야 다시 보낼 수 있다',
-                ),
-                rule(
-                  html`
-                    장식 이모지는 ${code('aria-hidden')}으로 가린다
-                  `,
-                  '스크린리더가 이모지 이름을 읽으면 문장이 끊겨 들린다',
-                ),
+                html`
+                  대화 영역은 ${code('role="log"')}로 알린다. 스크린리더가 새 메시지를 따로 찾지
+                  않고도 읽어 준다. ${code('mm-chat-feed')}가 ${code('role="log"')}와
+                  ${code('aria-label')}을 직접 갖는다
+                `,
+                html`
+                  전송 실패는 ${code('role="alert"')}로 즉시 알린다. 화면을 보지 못하는 사용자도
+                  메시지가 전달되지 않았다는 사실을 바로 알아야 다시 보낼 수 있다
+                `,
+                html`
+                  장식 이모지는 ${code('aria-hidden')}으로 가린다. 스크린리더가 이모지 이름을 읽으면
+                  문장이 끊겨 들린다
+                `,
               ]}
             ></mm-text-list>
           </mm-content-section>

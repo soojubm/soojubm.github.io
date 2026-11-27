@@ -34,7 +34,6 @@ export {
   codeList,
   no,
   openStateMethods,
-  rule,
   yes,
 } from '@/components/domains/component/component.helpers'
 export {

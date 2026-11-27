@@ -1,7 +1,7 @@
 import { html, type TemplateResult } from 'lit'
 
 import { ICON_CATALOG } from '@/components/common'
-import { code, rule } from '@/components/domains/component'
+import { code } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 import './content.css'
 
@@ -450,10 +450,7 @@ const main = html`
               variant="check"
               .texts=${[
                 '텍스트는 짧게 유지하고 훑어볼 수 있는 덩어리로 나눈다. 간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
-                rule(
-                  '태그라인의 행갈이는 작성 단계에서 정한다',
-                  '글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 인상을 남긴다',
-                ),
+                '태그라인의 행갈이는 작성 단계에서 정한다. 글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 인상을 남긴다',
               ]}
             ></mm-text-list>
             <mm-component-notice heading="잘린 제목의 전체를 보여주는 방법을 정한다">
@@ -639,13 +636,10 @@ const main = html`
               <mm-text-list
                 variant="check"
                 .texts=${[
-                  rule(
-                    '트리거는 어떤 패널이 열리는지 미리 알린다',
-                    html`
-                      누르기 전에 스크린리더가 열릴 패널을 안내해야, 사용자가 열린 뒤의 조작을
-                      예상할 수 있다.
-                    `,
-                  ),
+                  html`
+                    트리거는 어떤 패널이 열리는지 미리 알린다. 누르기 전에 스크린리더가 열릴 패널을
+                    안내해야, 사용자가 열린 뒤의 조작을 예상할 수 있다.
+                  `,
                 ]}
               ></mm-text-list>
               <mm-grid columns="3" column-min-width="16rem" gap="6">

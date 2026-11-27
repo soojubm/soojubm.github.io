@@ -8,7 +8,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { code, componentPropsOf, rule } from '@/components/domains/component'
+import { code, componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const scrollThumbnails = [

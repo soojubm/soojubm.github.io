@@ -7,7 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { componentPropsOf, rule } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [

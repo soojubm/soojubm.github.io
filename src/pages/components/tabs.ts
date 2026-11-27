@@ -7,7 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { subComponentPropsOf, rule } from '@/components/domains/component'
+import { subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -205,22 +205,10 @@ const main = html`
       <mm-text-list
         variant="check"
         .texts=${[
-          rule(
-            '탭은 6개 이내로 구성한다',
-            '탭이 화면 폭을 넘으면 가려진 탭이 있다는 걸 알아채기 어려워, 사용자가 그 탭을 모른 채 지나친다. 항목이 더 많다면 카드로 나열하고, 카드에서 다음 화면으로 넘어가는 흐름으로 설계한다',
-          ),
-          rule(
-            '카테고리는 탭이 아니라 필터로 둔다',
-            '카테고리를 탭으로 두면 사용자는 다른 화면으로 넘어간다고 기대하지만 실제로는 같은 목록이 걸러질 뿐이라 혼란스럽다',
-          ),
-          rule(
-            '탭은 한 단계로만 둔다',
-            '탭이 두 겹으로 쌓이면 어느 쪽이 상위인지, 지금 보는 뷰가 어디에 속하는지 알기 어렵다',
-          ),
-          rule(
-            '페이지를 대표하는 탭은 선택 상태를 URL에 남긴다',
-            '새로고침하거나 링크를 공유해도 사용자가 보던 탭이 그대로 열린다. 탭 전환은 뒤로 가기 기록에 쌓이지 않아, 뒤로 가면 탭을 하나씩 거슬러 가지 않고 이전 페이지로 돌아간다. 문서 예제나 시트 안의 탭에는 쓰지 않는다',
-          ),
+          '탭은 6개 이내로 구성한다. 탭이 화면 폭을 넘으면 가려진 탭이 있다는 걸 알아채기 어려워, 사용자가 그 탭을 모른 채 지나친다. 항목이 더 많다면 카드로 나열하고, 카드에서 다음 화면으로 넘어가는 흐름으로 설계한다',
+          '카테고리는 탭이 아니라 필터로 둔다. 카테고리를 탭으로 두면 사용자는 다른 화면으로 넘어간다고 기대하지만 실제로는 같은 목록이 걸러질 뿐이라 혼란스럽다',
+          '탭은 한 단계로만 둔다. 탭이 두 겹으로 쌓이면 어느 쪽이 상위인지, 지금 보는 뷰가 어디에 속하는지 알기 어렵다',
+          '페이지를 대표하는 탭은 선택 상태를 URL에 남긴다. 새로고침하거나 링크를 공유해도 사용자가 보던 탭이 그대로 열린다. 탭 전환은 뒤로 가기 기록에 쌓이지 않아, 뒤로 가면 탭을 하나씩 거슬러 가지 않고 이전 페이지로 돌아간다. 문서 예제나 시트 안의 탭에는 쓰지 않는다',
         ]}
       ></mm-text-list>
     </mm-component-guide>

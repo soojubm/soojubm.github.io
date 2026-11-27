@@ -9,7 +9,7 @@ import type {
 } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common'
-import { componentPropsOf, subComponentPropsOf, rule } from '@/components/domains/component'
+import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -249,14 +249,8 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              rule(
-                '행을 눌러 명령을 실행하거나 값을 바꾸면 menu-item을 쓴다',
-                '팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 목록 전체에 Tab으로는 한 번만 닿고, 행 사이는 방향키로 옮긴다',
-              ),
-              rule(
-                '다른 곳으로 이동하거나, 행 안의 버튼·스위치로 조작하면 list-item을 쓴다',
-                '행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 버튼·스위치는 trailing에 두어 컨트롤마다 Tab으로 닿게 한다',
-              ),
+              '행을 눌러 명령을 실행하거나 값을 바꾸면 menu-item을 쓴다. 팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 목록 전체에 Tab으로는 한 번만 닿고, 행 사이는 방향키로 옮긴다',
+              '다른 곳으로 이동하거나, 행 안의 버튼·스위치로 조작하면 list-item을 쓴다. 행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 버튼·스위치는 trailing에 두어 컨트롤마다 Tab으로 닿게 한다',
             ]}
           ></mm-text-list>
         </mm-content-section>
@@ -264,18 +258,13 @@ const main = html`
           <mm-text-list
             variant="check"
             .texts=${[
-              rule(
-                '인물·게시물처럼 각 행이 다른 곳으로 이동하는 목록은 menu가 아니라 list로 둔다',
-                '명령을 실행하는 menu로 알리면 보조기술 사용자는 이 목록을 명령 메뉴로 받아들인다. list로 두면 일반 목록으로 읽힌다',
-              ),
-              rule(
-                '한 그룹에는 같은 계열의 role을 갖는 행만 둔다',
-                html`
-                  <mm-code>mm-menu-item-group</mm-code>
-                  는 방향키로 행 사이를 옮겨 다닌다. 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
-                  Tab으로만 닿게 되고, 한 목록 안에서 키보드 동선이 둘로 갈린다
-                `,
-              ),
+              '인물·게시물처럼 각 행이 다른 곳으로 이동하는 목록은 menu가 아니라 list로 둔다. 명령을 실행하는 menu로 알리면 보조기술 사용자는 이 목록을 명령 메뉴로 받아들인다. list로 두면 일반 목록으로 읽힌다',
+              html`
+                한 그룹에는 같은 계열의 role을 갖는 행만 둔다.
+                <mm-code>mm-menu-item-group</mm-code>
+                는 방향키로 행 사이를 옮겨 다닌다. 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
+                Tab으로만 닿게 되고, 한 목록 안에서 키보드 동선이 둘로 갈린다
+              `,
             ]}
           ></mm-text-list>
         </mm-content-section>

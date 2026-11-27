@@ -1,8 +1,7 @@
 import '@/components/common'
 import { html } from 'lit'
 
-import type { ComponentReferenceItemData } from '@/components/domains/component'
-import type { TemplateResult } from 'lit'
+import { code, type ComponentReferenceItemData } from '@/components/domains/component'
 
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import '@/components/common/text/semantics/read-more-paragraph'
@@ -12,18 +11,6 @@ import '@/components/layouts/app-sidebar/sidebar-section'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/copy-page-button'
 import { renderPage } from '@/components/layouts/base-layouts'
-
-// 앞뒤 공백이 문장 안 여백으로 렌더되지 않도록 한 줄로 둔다.
-// prettier-ignore
-const code = (name: string) => html`<mm-code>${name}</mm-code>`
-
-// 목록 항목은 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다.
-const rule = (title: string | TemplateResult, description: string | TemplateResult) => html`
-  <span>
-    <mm-text weight="bold">${title}</mm-text>
-    ${description}
-  </span>
-`
 
 const componentReferences: ComponentReferenceItemData[] = [
   {
@@ -98,18 +85,9 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            rule(
-              '훑어서 고르는 목록을 접는다',
-              '자주 묻는 질문, 커리큘럼, 필터처럼 항목이 많고 사용자가 그중 일부만 읽는 콘텐츠가 여기에 해당한다',
-            ),
-            rule(
-              '반드시 읽어야 하는 정보는 펼친 채로 둔다',
-              '약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보는 접지 않는다',
-            ),
-            rule(
-              '모든 항목을 읽어야 하면 접지 않는다',
-              '접는 만큼 사용자가 여는 횟수가 늘어난다. 접는 것 자체가 목적이 되지 않게 한다',
-            ),
+            '훑어서 고르는 목록을 접는다. 자주 묻는 질문, 커리큘럼, 필터처럼 항목이 많고 사용자가 그중 일부만 읽는 콘텐츠가 여기에 해당한다',
+            '반드시 읽어야 하는 정보는 펼친 채로 둔다. 약관·경고·오류처럼 읽지 않으면 사용자가 손해를 보는 정보는 접지 않는다',
+            '모든 항목을 읽어야 하면 접지 않는다. 접는 만큼 사용자가 여는 횟수가 늘어난다. 접는 것 자체가 목적이 되지 않게 한다',
           ]}
         ></mm-text-list>
       </mm-content-section>
@@ -158,14 +136,8 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            rule(
-              '트리거 텍스트는 펼칠 내용을 한 문장으로 말한다',
-              '"더 보기"처럼 무엇이 열리는지 알 수 없는 문구는 쓰지 않는다',
-            ),
-            rule(
-              '펼친 내용 안의 링크·버튼은 그대로 둔다',
-              '내용을 눌러 다시 접히게 하면 그 안의 인터랙션을 쓸 수 없다. 접는 조작은 트리거만 갖는다',
-            ),
+            '트리거 텍스트는 펼칠 내용을 한 문장으로 말한다. "더 보기"처럼 무엇이 열리는지 알 수 없는 문구는 쓰지 않는다',
+            '펼친 내용 안의 링크·버튼은 그대로 둔다. 내용을 눌러 다시 접히게 하면 그 안의 인터랙션을 쓸 수 없다. 접는 조작은 트리거만 갖는다',
           ]}
         ></mm-text-list>
       </mm-content-section>
@@ -174,38 +146,21 @@ const main = html`
         <mm-text-list
           variant="check"
           .texts=${[
-            rule(
-              html`
-                열고 닫는 상태는 컴포넌트에 맡긴다
-              `,
-              html`
-                트리거 클릭에 따른 토글과 ${code('aria-expanded')} 동기화는 컴포넌트가 맡고,
-                사용하는 쪽은 트리거를 ${code('aria-controls')}로 대상에 연결하기만 한다. 외부
-                클릭으로 닫혀야 하는 표면만 ${code('closeOnBackdrop')}을 켠다
-              `,
-            ),
-            rule(
-              '훑어서 고르는 목록의 트리거는 heading으로 감싼다',
-              '스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
-            ),
-            rule(
-              html`
-                접힌 내용은 ${code('inert')}로 포커스에서 뺀다
-              `,
-              html`
-                높이만 0으로 줄이면 내용이 화면에 없는데도 탭 순서에 남는다.
-                ${code('aria-hidden')}은 포커스를 막지 않으므로 ${code('inert')}를 쓴다
-              `,
-            ),
-            rule(
-              html`
-                펼침 방향은 ${code('mm-expand-indicator')}가 표시한다
-              `,
-              html`
-                ${code('expanded')}를 받아 아이콘 회전으로 반영한다. 컴포넌트마다 다른 아이콘을 직접
-                그리지 않는다
-              `,
-            ),
+            html`
+              열고 닫는 상태는 컴포넌트에 맡긴다. 트리거 클릭에 따른 토글과 ${code('aria-expanded')}
+              동기화는 컴포넌트가 맡고, 사용하는 쪽은 트리거를 ${code('aria-controls')}로 대상에
+              연결하기만 한다. 외부 클릭으로 닫혀야 하는 표면만 ${code('closeOnBackdrop')}을 켠다
+            `,
+            '훑어서 고르는 목록의 트리거는 heading으로 감싼다. 스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
+            html`
+              접힌 내용은 ${code('inert')}로 포커스에서 뺀다. 높이만 0으로 줄이면 내용이 화면에
+              없는데도 탭 순서에 남는다. ${code('aria-hidden')}은 포커스를 막지 않으므로
+              ${code('inert')}를 쓴다
+            `,
+            html`
+              펼침 방향은 ${code('mm-expand-indicator')}가 표시한다. ${code('expanded')}를 받아
+              아이콘 회전으로 반영한다. 컴포넌트마다 다른 아이콘을 직접 그리지 않는다
+            `,
           ]}
         ></mm-text-list>
       </mm-content-section>

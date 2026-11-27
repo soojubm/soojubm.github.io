@@ -9,7 +9,7 @@ import '@/components/domains/chart/chart-legend'
 import type { ChartLegendItem } from '@/components/domains/chart/chart-legend'
 import '@/components/domains/component/component-notice'
 import '@/components/domains/ui-placeholder/ui-placeholder'
-import { code, rule } from '@/components/domains/component'
+import { code } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 type OverlayInfo = {
@@ -571,14 +571,10 @@ const main = html`
               <mm-text-list
                 variant="check"
                 .texts=${[
-                  rule(
-                    html`
-                      간격은 부모 요소의 ${code('gap')}으로 둔다
-                    `,
-                    html`
-                      형제의 ${code('margin')}·${code('padding')}으로 두지 않는다
-                    `,
-                  ),
+                  html`
+                    간격은 부모 요소의 ${code('gap')}으로 둔다. 형제의
+                    ${code('margin')}·${code('padding')}으로 두지 않는다
+                  `,
                 ]}
               ></mm-text-list>
               <mm-component-notice heading="Figma 오토 레이아웃도 같은 방식이다">
@@ -597,7 +593,7 @@ const main = html`
               <mm-code-tag slot="tags" tone="blue">다른 맥락</mm-code-tag>
               <mm-text-list
                 variant="check"
-                .texts=${[rule('separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다')]}
+                .texts=${['separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다']}
               ></mm-text-list>
             </mm-term-block>
           </mm-grid>
@@ -626,24 +622,18 @@ const main = html`
             <mm-text-list
               variant="check"
               .texts=${[
-                rule(
-                  'modal이 열려 있는 동안 뒤 화면은 조작할 수 없게 한다',
-                  html`
-                    뒤 화면에서 포커스가 움직이거나 스크롤되면 사용자가 modal을 벗어났다고
-                    착각하거나 하던 작업의 위치를 잃는다. 뒤 화면은 backdrop으로 흐려 보이게 하고,
-                    ${code('inert')}로 포커스를 받지 못하게 하며, 스크롤을 멈춘다. 스크롤 위치는
-                    기억했다가 닫을 때 그 자리로 되돌린다
-                  `,
-                ),
-                rule(
-                  'non-modal overlay에서 Tab으로 나가면 닫고, 포커스를 트리거로 되돌린다',
-                  html`
-                    Tab으로 나갔을 때 포커스가 트리거 다음 요소가 아니라 엉뚱한 곳으로 가면 사용자가
-                    위치를 잃는다. overlay를 벗어나면 닫고 포커스를 트리거로 되돌려, 다음 Tab이
-                    트리거에서 이어지게 한다. 바깥을 눌러 닫을 때는 사용자가 누른 곳의 포커스를
-                    빼앗지 않는다
-                  `,
-                ),
+                html`
+                  modal이 열려 있는 동안 뒤 화면은 조작할 수 없게 한다. 뒤 화면에서 포커스가
+                  움직이거나 스크롤되면 사용자가 modal을 벗어났다고 착각하거나 하던 작업의 위치를
+                  잃는다. 뒤 화면은 backdrop으로 흐려 보이게 하고, ${code('inert')}로 포커스를 받지
+                  못하게 하며, 스크롤을 멈춘다. 스크롤 위치는 기억했다가 닫을 때 그 자리로 되돌린다
+                `,
+                html`
+                  non-modal overlay에서 Tab으로 나가면 닫고, 포커스를 트리거로 되돌린다. Tab으로
+                  나갔을 때 포커스가 트리거 다음 요소가 아니라 엉뚱한 곳으로 가면 사용자가 위치를
+                  잃는다. overlay를 벗어나면 닫고 포커스를 트리거로 되돌려, 다음 Tab이 트리거에서
+                  이어지게 한다. 바깥을 눌러 닫을 때는 사용자가 누른 곳의 포커스를 빼앗지 않는다
+                `,
               ]}
             ></mm-text-list>
           </mm-content-section>

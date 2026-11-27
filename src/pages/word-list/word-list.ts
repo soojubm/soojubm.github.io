@@ -1,6 +1,5 @@
 import { html, type TemplateResult } from 'lit'
 
-import { rule } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 interface Word {
@@ -50,18 +49,9 @@ const words: Word[] = [
 ]
 
 const criteria = [
-  rule(
-    '디자이너와 개발자가 다르게 부르거나 다르게 이해하는 말을 올린다',
-    '같은 대상을 서로 다른 이름으로 부르면 요청과 구현이 어긋나, 확인하고 고치는 왕복이 늘어난다',
-  ),
-  rule(
-    '둘 이상의 페이지에서 쓰는 말을 올린다',
-    '한 페이지에서만 쓰는 말은 그 페이지에서 설명한다. 여러 곳에 흩어진 설명이 서로 달라지는 것을 막는다',
-  ),
-  rule(
-    '용어마다 뜻과 표기를 하나로 정한다',
-    '표기가 둘이면 같은 말인지 다른 말인지 알 수 없어 서로 다른 대상으로 오해한다. 정한 표기만 문서와 코드에서 함께 쓴다',
-  ),
+  '디자이너와 개발자가 다르게 부르거나 다르게 이해하는 말을 올린다. 같은 대상을 서로 다른 이름으로 부르면 요청과 구현이 어긋나, 확인하고 고치는 왕복이 늘어난다',
+  '둘 이상의 페이지에서 쓰는 말을 올린다. 한 페이지에서만 쓰는 말은 그 페이지에서 설명한다. 여러 곳에 흩어진 설명이 서로 달라지는 것을 막는다',
+  '용어마다 뜻과 표기를 하나로 정한다. 표기가 둘이면 같은 말인지 다른 말인지 알 수 없어 서로 다른 대상으로 오해한다. 정한 표기만 문서와 코드에서 함께 쓴다',
 ]
 
 const renderWord = ({ term, definition }: Word): TemplateResult => html`

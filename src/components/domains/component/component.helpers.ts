@@ -13,14 +13,6 @@ export const code = (name: string) => html`<mm-code>${name}</mm-code>`
 // prettier-ignore
 export const codeList = (names: string[]) => names.map((name, index) => html`${index ? ', ' : ''}${code(name)}`)
 
-/** 규칙 목록 항목. 해야 할 일을 굵은 한 줄로 먼저 두고 설명을 잇는다. */
-export const rule = (title: string | TemplateResult, description?: string | TemplateResult) => html`
-  <span>
-    <mm-text weight="bold">${title}</mm-text>
-    ${description}
-  </span>
-`
-
 /** 표 칸의 예·아니오 표시. 아이콘만으로는 뜻이 읽히지 않으므로 이름을 함께 단다. */
 export const yes = html`
   <span role="img" aria-label="예"><mm-icon name=${ICON_NAMES.CHECK} size="small"></mm-icon></span>
