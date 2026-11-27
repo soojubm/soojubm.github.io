@@ -3,7 +3,7 @@ import { html } from 'lit'
 
 import type { SearchField } from '@/components/common/input/semantics/searchfield'
 import type { ComponentReferenceItemData } from '@/components/domains/component'
-import type { SearchResult } from '@/components/domains/search'
+import type { SearchResult, SearchResultSegment } from '@/components/domains/search'
 import type { MenuOptionItem, OptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
@@ -72,24 +72,40 @@ const handleFeedbackDismiss = () => {}
 
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
+const searchKeyword = '버튼'
+
+const toSegments = (text: string, keyword: string): SearchResultSegment[] =>
+  text
+    .split(keyword)
+    .flatMap((part, index) =>
+      index === 0 ? [{ text: part }] : [{ text: keyword, match: true }, { text: part }],
+    )
+    .filter(segment => segment.text)
+
 const searchResults: SearchResult[] = [
   {
     href: 'button.html',
     label: 'Button',
-    description:
+    description: toSegments(
       '양식 제출이나 저장처럼 사용자 여정의 핵심 과업을 실행하는 컨트롤입니다. 레이블로 수행할 행동을 드러내고 누르는 즉시 작업을 실행하므로, 사용자는 지금 무엇을 할 수 있는지 알고 망설임 없이 다음 단계로 나아갈 수 있습니다.',
+      searchKeyword,
+    ),
   },
   {
     href: 'icon-button.html',
     label: 'Icon Button',
-    description:
+    description: toSegments(
       '레이블 없이 메타포 아이콘 하나로 행동을 나타내는 간결한 버튼입니다. 좁은 공간에 반복되는 보조 액션을 담고 용도를 툴팁으로 알려 주므로, 사용자는 화면을 복잡하게 만들지 않고도 자주 쓰는 기능에 바로 닿을 수 있습니다.',
+      searchKeyword,
+    ),
   },
   {
     href: 'toggle-button.html',
     label: 'ToggleButton',
-    description:
+    description: toSegments(
       '누를 때마다 켜짐과 꺼짐이 바뀌는 버튼입니다. 눌린 상태를 버튼 스스로 표시하고, 여러 개를 묶으면 그중 하나만 선택되는 세그먼트로 동작하므로, 사용자는 현재 적용된 설정을 한눈에 보고 한 번의 클릭으로 전환할 수 있습니다.',
+      searchKeyword,
+    ),
   },
 ]
 

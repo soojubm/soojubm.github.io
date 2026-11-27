@@ -15,13 +15,14 @@ export class SearchGroup extends LitElement {
     }
   `
   @property({ type: String }) heading?: string
+  @property({ type: String }) gap: '0' | '2' = '0'
   private readonly headingId = uniqueId('search-group-heading')
 
   render() {
     return html`
       ${this.renderHeading()}
       <mm-list-item-group
-        gap="0"
+        gap=${this.gap}
         aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}
       >
         <slot></slot>

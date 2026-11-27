@@ -47,6 +47,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('mm-list-item'),
+  { name: 'slot: description', type: 'HTMLElement', optional: true },
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
   ...subComponentPropsOf('mm-list-item-group'),
 ]

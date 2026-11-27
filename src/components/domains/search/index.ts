@@ -5,4 +5,7 @@ import '@/components/domains/search/search-result-item'
 import '@/components/domains/search/search-result-list'
 import '@/components/domains/search/search-suggestion'
 
-export type { SearchResult } from '@/components/domains/search/search-result-list'
+export type {
+  SearchResult,
+  SearchResultSegment,
+} from '@/components/domains/search/search-result-list'

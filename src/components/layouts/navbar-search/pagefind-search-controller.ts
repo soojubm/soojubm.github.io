@@ -1,4 +1,7 @@
-import type { SearchResult } from '@/components/domains/search/search-result-list'
+import type {
+  SearchResult,
+  SearchResultSegment,
+} from '@/components/domains/search/search-result-list'
 import type { ReactiveController, ReactiveControllerHost } from 'lit'
 
 import { ScheduleController } from '@/controllers/schedule-controller'
@@ -15,12 +18,30 @@ interface PagefindSearchControllerOptions {
 const DEBOUNCE_MS = 200
 const MAX_RESULTS = 8
 
-// Pagefind excerpt는 일치 구간을 <mark>로 감싼 HTML이라 태그를 걷어 설명 문구로 쓴다.
+// textarea는 스크립트를 실행하지 않아, 엔티티를 글자로 푸는 데 안전하다.
+function decodeEntities(text: string) {
+  const textarea = document.createElement('textarea')
+  textarea.innerHTML = text
+  return textarea.value
+}
+
+// Pagefind excerpt는 일치 구간을 <mark>로 감싼 HTML이라, 태그를 걷고 일치 여부만 조각에 남긴다.
+function toSegments(excerpt: string): SearchResultSegment[] {
+  const parts = excerpt.split(/<mark>(.*?)<\/mark>/g)
+
+  return parts
+    .map((part, index) => ({
+      text: decodeEntities(part.replace(/<[^>]*>/g, '')),
+      match: index % 2 === 1,
+    }))
+    .filter(segment => segment.text)
+}
+
 function toSearchResult(result: PagefindResult): SearchResult {
   return {
     href: result.url,
     label: result.meta.title || result.url,
-    description: result.excerpt.replace(/<[^>]*>/g, ''),
+    description: toSegments(result.excerpt),
   }
 }
 

@@ -7,10 +7,15 @@ import '@/components/common'
 import '@/components/domains/search/search-group'
 import '@/components/domains/search/search-result-item'
 
+export interface SearchResultSegment {
+  text: string
+  match?: boolean
+}
+
 export interface SearchResult {
   href: string
   label: string
-  description?: string
+  description?: string | SearchResultSegment[]
 }
 
 @customElement('mm-search-result-list')
@@ -25,7 +30,7 @@ export class SearchResultList extends LitElement {
 
   render() {
     return html`
-      <mm-search-group heading=${ifDefined(this.heading)}>
+      <mm-search-group heading=${ifDefined(this.heading)} gap="2">
         ${repeat(
           this.results,
           result => result.href,
@@ -35,12 +40,16 @@ export class SearchResultList extends LitElement {
     `
   }
 
-  private renderResult(result: SearchResult) {
+  private renderResult({ href, label, description = '' }: SearchResult) {
+    const segments = typeof description === 'string' ? undefined : description
+    const text = segments ? segments.map(segment => segment.text).join('') : description
+
     return html`
       <mm-search-result-item
-        href=${result.href}
-        label=${result.label}
-        description=${result.description ?? ''}
+        href=${href}
+        label=${label}
+        description=${text}
+        .segments=${segments}
       ></mm-search-result-item>
     `
   }

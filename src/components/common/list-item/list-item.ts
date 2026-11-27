@@ -103,7 +103,9 @@ export class ListItem extends LitElement {
     if (size === 'small' || !this.description) return nothing
 
     return html`
-      <mm-text size=${DESCRIPTION_TEXT_SIZE[size]} color="light">${this.description}</mm-text>
+      <mm-text size=${DESCRIPTION_TEXT_SIZE[size]} color="light">
+        <slot name="description">${this.description}</slot>
+      </mm-text>
     `
   }
 
