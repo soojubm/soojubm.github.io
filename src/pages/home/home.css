@@ -1,7 +1,82 @@
+/* fff 표식 전용. 세 f의 가로획이 하나로 이어지는 글꼴이라 홈에서만 불러온다. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
 /* 홈은 브랜드 페이지라 디자인 시스템의 --border를 따르지 않고, 페이지 안의 모든 선을 검정 하나로 맞춘다.
    전역에 선언하지 않고 홈 본문(.home)에서만 정의한다. */
 .home {
   --home-border: var(--border-width) solid #000;
+}
+
+/*
+ * 세 문장의 머리글자(fff)를 네모난 표식에 담아 태그라인 영역 한가운데에 띄운다. 흐름에서 빼서 줄 높이를 바꾸지 않고,
+ * 바탕을 채워 지나가는 선 위에 얹힌 도장처럼 보인다. 문장이 이미 읽히므로 표식은 보조 기술이 읽지 않게 숨긴다.
+ */
+.tagline-section {
+  position: relative;
+}
+
+.tagline-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 바깥 두 겹까지 기울여도 태그라인 영역을 크게 넘지 않는 크기. */
+  width: calc(var(--size-32) * 4);
+  aspect-ratio: 1;
+  border: var(--home-border);
+  background: var(--background-color);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: calc(var(--font-size-32) * 1.5);
+  font-weight: var(--font-weight-normal);
+  translate: -50% -50%;
+  /* 글자가 오른쪽 위로 올라가도록 기울인다. */
+  rotate: -45deg;
+}
+
+/* 네모는 45도 마름모로 두고, 글자는 15도 되돌려 30도로 덜 가파르게 기울인다. */
+.tagline-mark-text {
+  rotate: 15deg;
+}
+
+/* 표식 바깥으로 같은 간격의 네모 두 겹을 더 그려 천천히 돌린다. 선만 그려 뒤 글자를 가리지 않는다. */
+.tagline-mark::before,
+.tagline-mark::after {
+  content: '';
+  position: absolute;
+  inset: calc(var(--space-4) * -1);
+  border: var(--home-border);
+}
+
+.tagline-mark::before {
+  animation: mark-spin 24s linear infinite;
+}
+
+/* 바깥 겹은 반대로 돌아, 두 겹이 엇갈리며 겹친다. */
+.tagline-mark::after {
+  inset: calc(var(--space-4) * -2);
+  animation: mark-spin 36s linear infinite reverse;
+}
+
+@keyframes mark-spin {
+  to {
+    rotate: 1turn;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagline-mark::before,
+  .tagline-mark::after {
+    animation: none;
+  }
+}
+
+/* 문장이 줄 폭을 거의 채우는 좁은 화면에서는 표식이 글자를 가리므로 그리지 않는다. */
+@media (max-width: 960px) {
+  .tagline-mark {
+    display: none;
+  }
 }
 
 .scroll-spy-sampler-body {

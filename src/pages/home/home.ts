@@ -295,7 +295,8 @@ const heroHeading = 'Fewer decisions,\nfaster releases.'
 
 const main = html`
   <mm-main class="home">
-    <section style="margin-bottom:1rem;">
+    <section class="tagline-section" style="margin-bottom:1rem;">
+      <span class="tagline-mark" aria-hidden="true"><span class="tagline-mark-text">fff</span></span>
       <div style="border-top:var(--home-border);padding:1rem 0;">
         <mm-tagline>
           <span data-reveal style=${styleMap({
