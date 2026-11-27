@@ -46,6 +46,29 @@ const searchReferences: ComponentReferenceItemData[] = [
   },
 ]
 
+const conversationReferences: ComponentReferenceItemData[] = [
+  {
+    href: 'https://pair.withgoogle.com/guidebook/',
+    label: 'Google PAIR - People + AI Guidebook',
+    external: true,
+  },
+  {
+    href: 'https://www.microsoft.com/en-us/haxtoolkit/',
+    label: 'Microsoft - HAX Toolkit',
+    external: true,
+  },
+  {
+    href: 'https://www.w3.org/TR/wai-aria-1.2/#log',
+    label: 'WAI-ARIA 1.2 - log role',
+    external: true,
+  },
+]
+
+// 데모라 동작은 연결하지 않는다. 이벤트를 구독해야 중단·재전송·닫기 버튼이 나타난다.
+const handleGenerationStop = () => {}
+const handleMessageRetry = () => {}
+const handleFeedbackDismiss = () => {}
+
 const recentSearchKeywords = ['고슴도치', '로얄 테넌바움', '이탈리아 여행']
 
 const suggestionKeywords = [
@@ -88,7 +111,7 @@ const main = html`
   <mm-main>
     <mm-page-header
       heading="Pattern"
-      description="여러 컴포넌트가 이어져 하나의 흐름을 이루는 방식을 정합니다. 펼치고, 찾고, 모으는 흐름을 같은 규칙으로 조립하므로, 사용자는 어느 화면에서든 같은 방식으로 정보를 다룹니다."
+      description="여러 컴포넌트가 이어져 하나의 흐름을 이루는 방식을 정합니다. 같은 흐름은 같은 규칙으로 조립하므로, 사용자는 어느 화면에서든 같은 흐름을 경험합니다."
     ></mm-page-header>
 
     <mm-page-body>
@@ -96,6 +119,7 @@ const main = html`
         <mm-tab value="disclosure">Disclosure</mm-tab>
         <mm-tab value="search">Search</mm-tab>
         <mm-tab value="collection">Collection</mm-tab>
+        <mm-tab value="conversation">Conversation</mm-tab>
       </mm-tab-list>
 
       <mm-tab-panel value="disclosure">
@@ -514,6 +538,250 @@ const main = html`
               검색 결과를 보여 주고 멤버를 고르는 단계는 아직 정하지 않았다
             </mm-component-notice>
           </mm-content-section>
+        </mm-content-section-list>
+      </mm-tab-panel>
+
+      <mm-tab-panel value="conversation">
+        <mm-content-section-list>
+          <mm-paragraph>
+            AI와 질문과 답을 주고받는 흐름입니다. 답을 만드는 동안의 진행, 근거, 승인, 평가, 다음
+            질문을 정해진 자리에 놓으므로, 사용자는 답을 기다리는 동안에도 지금 무슨 일이 일어나는지
+            알 수 있습니다.
+          </mm-paragraph>
+
+          <mm-text-block
+            level="3"
+            heading="응답의 단계"
+            description="한 번의 응답은 생성 중, 응답 완료, 다음 입력 순서로 진행하며 단계마다 보이는 요소가 바뀝니다."
+          >
+            <mm-flex direction="column" gap="2">
+              <mm-tag-group>
+                <mm-code-tag tone="gold">생성 중</mm-code-tag>
+                <mm-code-tag>mm-process-status-list</mm-code-tag>
+                <mm-code-tag>mm-prompt-input</mm-code-tag>
+              </mm-tag-group>
+              <mm-tag-group>
+                <mm-code-tag tone="cyan">응답 완료</mm-code-tag>
+                <mm-code-tag>mm-ai-chat-bubble</mm-code-tag>
+                <mm-code-tag>mm-chat-source</mm-code-tag>
+                <mm-code-tag>mm-chat-attachment</mm-code-tag>
+                <mm-code-tag>mm-chat-confirmation</mm-code-tag>
+              </mm-tag-group>
+              <mm-tag-group>
+                <mm-code-tag tone="blue">다음 입력</mm-code-tag>
+                <mm-code-tag>mm-chat-feedback</mm-code-tag>
+                <mm-code-tag>mm-chat-suggestions</mm-code-tag>
+                <mm-code-tag>mm-prompt-input</mm-code-tag>
+              </mm-tag-group>
+            </mm-flex>
+          </mm-text-block>
+
+          <mm-content-section
+            heading-level="3"
+            heading="생성 중"
+            description="답이 나오기 전의 기다림을 채우는 단계입니다."
+          >
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '진행 단계를 목록으로 보여준다',
+                  '아무 변화가 없으면 사용자는 멈춘 것인지 기다려야 하는 것인지 알 수 없다. 끝낸 단계, 진행 중인 단계, 남은 단계를 한 목록에 두어 지금 위치를 알린다',
+                ),
+                rule(
+                  '생성을 중단할 수 있게 한다',
+                  html`
+                    잘못 보낸 질문이나 긴 답을 끝까지 기다리게 하면 사용자는 아무것도 할 수 없다.
+                    ${code('mm-prompt-input')}은 ${code('loading')} 동안 전송을 막고,
+                    ${code('stop')} 이벤트를 구독하면 중단 버튼을 보여준다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-example width="narrow">
+              <mm-flex direction="column" gap="4">
+                <mm-process-status-list>
+                  <mm-process-status variant="success" label="요청을 확인함"></mm-process-status>
+                  <mm-process-status label="관련 자료를 탐색함"></mm-process-status>
+                  <mm-process-status variant="pending" label="답변 문장 다듬기"></mm-process-status>
+                </mm-process-status-list>
+                <mm-prompt-input
+                  loading
+                  placeholder="메시지를 입력하세요..."
+                  @stop=${handleGenerationStop}
+                ></mm-prompt-input>
+              </mm-flex>
+            </mm-component-example>
+          </mm-content-section>
+
+          <mm-content-section
+            heading-level="3"
+            heading="출처"
+            description="답변이 어디에 근거하는지 밝히는 자료입니다."
+          >
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '근거 자료는 답변 아래에 출처로 붙인다',
+                  '답변만 있으면 사용자는 그 내용을 믿어도 되는지 판단할 수 없다. 출처 이름과 설명이 있어야 자료를 열기 전에 어떤 자료인지 알 수 있다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-example width="narrow">
+              <mm-button-group>
+                <mm-chat-source
+                  href="https://atlassian.design/foundations/design-tokens"
+                  heading="Design Tokens – Atlassian Design System"
+                  description="Atlassian이 글로벌·앨리어스·컴포넌트 토큰을 어떻게 분리했는지 다룹니다."
+                  icon=${ICON_NAMES.BOOK}
+                ></mm-chat-source>
+                <mm-chat-source
+                  href="https://github.com/amzn/style-dictionary"
+                  heading="Style Dictionary – Amazon"
+                  description="토큰을 플랫폼별 변수로 변환하는 오픈소스 빌드 시스템입니다."
+                  label="GitHub"
+                  icon=${ICON_NAMES.GITHUB}
+                ></mm-chat-source>
+              </mm-button-group>
+            </mm-component-example>
+          </mm-content-section>
+
+          <mm-content-section
+            heading-level="3"
+            heading="승인 요청"
+            description="AI가 사용자의 데이터를 바꾸는 일을 하기 전에 허락을 구하는 단계입니다."
+          >
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '되돌릴 수 없는 작업은 실행하기 전에 승인을 받는다',
+                  '삭제처럼 결과를 돌릴 수 없는 일을 사용자 모르게 실행하면 피해를 복구할 수 없다. 승인과 거부를 한 쌍으로 두어 어느 쪽이든 고를 수 있게 한다',
+                ),
+                rule(
+                  '요청 문장에 작업의 대상을 구체적으로 적는다',
+                  '"이 작업" 같은 말로 쓰면 사용자는 무엇을 승인하는지 모른 채 누르게 된다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-example width="narrow">
+              <mm-chat-confirmation
+                message="example.txt 파일을 삭제하려고 합니다. 이 작업을 승인하시겠어요?"
+              ></mm-chat-confirmation>
+            </mm-component-example>
+          </mm-content-section>
+
+          <mm-content-section
+            heading-level="3"
+            heading="전송 실패"
+            description="사용자의 메시지가 전달되지 못했을 때의 단계입니다."
+          >
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '실패한 메시지는 그 자리에서 다시 보낸다',
+                  html`
+                    긴 질문을 처음부터 다시 쓰게 하면 사용자는 보내기를 포기한다.
+                    ${code('mm-my-chat-message')}는 ${code('retry')} 이벤트를 구독하면 실패한 말풍선
+                    곁에 재전송 버튼을 보여준다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-example width="narrow">
+              <mm-my-chat-message @retry=${handleMessageRetry}>
+                <mm-my-chat-bubble status="failed">
+                  네트워크 오류로 전송에 실패한 메시지입니다.
+                </mm-my-chat-bubble>
+              </mm-my-chat-message>
+            </mm-component-example>
+          </mm-content-section>
+
+          <mm-content-section
+            heading-level="3"
+            heading="평가"
+            description="답이 도움이 되었는지 사용자에게 묻는 단계입니다."
+          >
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '평가는 닫을 수 있게 한다',
+                  html`
+                    평가 요청이 남아 있으면 사용자가 답을 읽는 자리를 계속 차지한다.
+                    ${code('dismiss')} 이벤트를 구독하면 닫기 버튼을 보여준다
+                  `,
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-example width="narrow">
+              <mm-chat-feedback
+                question="이번 대화는 어떤가요?"
+                @dismiss=${handleFeedbackDismiss}
+              ></mm-chat-feedback>
+            </mm-component-example>
+          </mm-content-section>
+
+          <mm-content-section
+            heading-level="3"
+            heading="다음 질문"
+            description="답에 이어서 사용자가 물을 만한 말을 미리 내놓는 단계입니다."
+          >
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  '다음 질문은 제안 버튼으로 줄여 준다',
+                  '빈 입력창 앞에서는 무엇을 물어야 할지 막힌다. 답에 이어질 말을 버튼으로 두면 한 번 눌러 대화를 이어 간다',
+                ),
+              ]}
+            ></mm-text-list>
+            <mm-component-example width="narrow">
+              <mm-chat-suggestions>
+                <mm-chat-suggestion>다시 설명해 주세요</mm-chat-suggestion>
+                <mm-chat-suggestion icon=${ICON_NAMES.DATE}>일정 잡기</mm-chat-suggestion>
+                <mm-chat-suggestion>나중에 할게요</mm-chat-suggestion>
+              </mm-chat-suggestions>
+            </mm-component-example>
+          </mm-content-section>
+
+          <mm-component-notice heading="새 메시지의 자동 스크롤 규칙을 정한다">
+            바닥에 있으면 따라 내려가고, 위로 올려 둔 상태에서는 새 메시지를 알리는 방식은 아직
+            정하지 않았다
+          </mm-component-notice>
+
+          <mm-content-section heading-level="3" heading="접근성">
+            <mm-text-list
+              variant="check"
+              .texts=${[
+                rule(
+                  html`
+                    대화 영역은 ${code('role="log"')}로 알린다
+                  `,
+                  html`
+                    스크린리더가 새 메시지를 따로 찾지 않고도 읽어 준다. ${code('mm-chat-feed')}가
+                    ${code('role="log"')}와 ${code('aria-label')}을 직접 갖는다
+                  `,
+                ),
+                rule(
+                  html`
+                    전송 실패는 ${code('role="alert"')}로 즉시 알린다
+                  `,
+                  '화면을 보지 못하는 사용자도 메시지가 전달되지 않았다는 사실을 바로 알아야 다시 보낼 수 있다',
+                ),
+                rule(
+                  html`
+                    장식 이모지는 ${code('aria-hidden')}으로 가린다
+                  `,
+                  '스크린리더가 이모지 이름을 읽으면 문장이 끊겨 들린다',
+                ),
+              ]}
+            ></mm-text-list>
+          </mm-content-section>
+
+          <mm-component-references .items=${conversationReferences}></mm-component-references>
         </mm-content-section-list>
       </mm-tab-panel>
     </mm-page-body>
