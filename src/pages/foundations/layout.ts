@@ -398,7 +398,7 @@ const renderAlignmentContrast = () => {
   `
 
   return html`
-    <mm-token-stage full-width>
+    <mm-token-stage>
       <div class="contrast-page">
         ${renderFlow('text-align: start')}
         <div class="contrast-module">
