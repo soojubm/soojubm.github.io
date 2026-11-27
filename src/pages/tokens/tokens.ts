@@ -95,9 +95,11 @@ const sectionTokens = (key: keyof typeof sectionPatterns) => tokensBySection[key
 /** 타이포그래피 스펙시멘으로 소개할 mm-text의 size 단계. 값과 행간은 스펙시멘이 직접 잰다. */
 const TEXT_SIZES = ['12', '14', '18', '24', '32']
 
-/** 다른 토큰을 참조해 만들어지는 레이아웃 토큰. chrome-inset은 :root에서 0px이지만 테마가 space 토큰으로 바꾸는 여백이라 여기 묶는다. */
+/** 다른 토큰을 참조해 만들어지는 레이아웃 토큰. chrome-inset은 :root에서 0px이지만 테마가 space 토큰으로 바꾸는 여백이고, sidebar-width는 사이드바 컴포넌트가 쓰는 값이라 여기 묶는다. */
+const layoutComponentTokens = ['layout-chrome-inset', 'layout-sidebar-width']
+
 const isLayoutComposite = (name: string) =>
-  referencesOtherTokens(name) || name === 'layout-chrome-inset'
+  referencesOtherTokens(name) || layoutComponentTokens.includes(name)
 
 const renderTokenItems = (keys: string[]) =>
   keys.map(
@@ -519,13 +521,6 @@ const main = html`
         heading="Tokens"
         description="제품의 시각 결정에 이름을 붙인 값입니다. 컴포넌트와 페이지는 값을 직접 쓰지 않고 토큰을 참조합니다. 토큰 하나만 바꿔 그 값을 쓰는 모든 화면을 함께 바꿀 수 있습니다."
       >
-        <mm-tag-group>
-          ${primitiveKinds.map(
-            ({ target, group }) => html`
-              <mm-code-tag tone=${kindTone(group)} size="large">${target}</mm-code-tag>
-            `,
-          )}
-        </mm-tag-group>
         <mm-grid columns="3" gap="6">${primitiveKinds.map(renderTokenKind('primitive'))}</mm-grid>
       </mm-page-header>
 
@@ -533,19 +528,12 @@ const main = html`
         <mm-content-section
           heading-level="3"
           heading="계층"
-          description="Primitive는 값을, Semantic은 그 값이 화면에서 맡는 역할을, Component Token은 컴포넌트마다 조정할 자리를 맡습니다. 맡은 일이 나뉘어 있어 한 계층을 바꿔도 다른 계층은 그대로 둘 수 있습니다."
+          description="Primitive는 값을, Semantic은 그 값이 화면에서 맡는 역할을, Component Token은 컴포넌트마다 조정할 자리를 맡습니다."
         >
           <mm-example-stage>
             <mm-flex class="stage-content" direction="column" gap="6">
               ${renderLegend(Object.values(tierLegends))}
               <mm-flex direction="column" gap="6">${tierChains.map(renderTierChain)}</mm-flex>
-              <mm-text-list
-                .texts=${[
-                  'Primitive Token은 변하지 않는 기본 값이다.',
-                  'Semantic Token은 Primitive에 인터페이스에서의 역할을 붙인 값이다.',
-                  'Component Token은 Semantic Token을 한 컴포넌트의 속성에 연결한 값이다.',
-                ]}
-              ></mm-text-list>
             </mm-flex>
           </mm-example-stage>
         </mm-content-section>
@@ -572,45 +560,46 @@ const main = html`
 
       <mm-token-section heading="Color" description="색은 면과 글자의 역할과 상태를 구분합니다.">
         <mm-notice
-          description="권장 명도 대비: WCAG 2.1 AA 기준으로 일반 텍스트는 4.5:1 이상, 큰 텍스트(18px 굵게 또는 24px 이상)와 아이콘·테두리 같은 UI 요소는 3:1 이상이어야 합니다. 기준에 못 미치면 저시력 사용자가 글자와 경계를 구분하기 어렵습니다."
+          description="권장 명도 대비. WCAG 2.1 AA 기준 일반 텍스트 4.5:1 이상, 큰 텍스트(18px 굵게 또는 24px 이상)·아이콘·테두리 3:1 이상"
         ></mm-notice>
 
-        <mm-grid columns="6" role="group" aria-label="팔레트 색상 토큰">
-          ${renderColorTokens(sectionTokens('palette'))}
-        </mm-grid>
+        <mm-flex direction="column">
+          <mm-grid columns="6" role="group" aria-label="팔레트 색상 토큰">
+            ${renderColorTokens(sectionTokens('palette'))}
+          </mm-grid>
 
-        <mm-separator></mm-separator>
-        <mm-grid columns="4" role="group" aria-label="배경색 토큰">
-          ${renderBackgroundTokens(sectionTokens('background'))}
-        </mm-grid>
+          <mm-separator></mm-separator>
+          <mm-grid columns="4" role="group" aria-label="배경색 토큰">
+            ${renderBackgroundTokens(sectionTokens('background'))}
+          </mm-grid>
 
-        <mm-separator></mm-separator>
-        <mm-grid columns="4" role="group" aria-label="테두리색 토큰">
-          ${renderColorTokens(sectionTokens('borderColor'))}
-        </mm-grid>
+          <mm-separator></mm-separator>
+          <mm-grid columns="4" role="group" aria-label="테두리색 토큰">
+            ${renderColorTokens(sectionTokens('borderColor'))}
+          </mm-grid>
 
-        <mm-separator></mm-separator>
-        <mm-grid columns="4" role="group" aria-label="선택 상태 색 토큰">
-          ${renderColorTokens(interactionSelectedColors)}
-        </mm-grid>
+          <mm-separator></mm-separator>
+          <mm-grid columns="4" role="group" aria-label="선택 상태 색 토큰">
+            ${renderColorTokens(interactionSelectedColors)}
+          </mm-grid>
 
-        <mm-separator></mm-separator>
-        <mm-example-stage>
-          <mm-token-swatches
-            .swatches=${categorySwatches(categoryNumbers)}
-            .contents=${categoryNumbers.map(() => 'Aa')}
-          ></mm-token-swatches>
-        </mm-example-stage>
-        <mm-token-group>${renderTokenItems(sectionTokens('category'))}</mm-token-group>
+          <mm-separator></mm-separator>
+          <mm-flex direction="column" gap="4">
+            <mm-example-stage>
+              <mm-token-swatches
+                .swatches=${categorySwatches(categoryNumbers)}
+                .contents=${categoryNumbers.map(() => 'Aa')}
+              ></mm-token-swatches>
+            </mm-example-stage>
+            <mm-token-group>${renderTokenItems(sectionTokens('category'))}</mm-token-group>
+          </mm-flex>
+        </mm-flex>
       </mm-token-section>
 
       <mm-token-section
         heading="Typography"
         description="글자 크기와 행간을 한 쌍으로 씁니다. 같은 크기의 글은 어디서나 줄 간격이 같아 읽는 리듬이 흔들리지 않습니다."
       >
-        <mm-notice
-          description="크기와 행간의 비율: 행간은 비율이 아니라 4px 배수로 정합니다. 제목용 24·32는 1.25~1.33, 본문용 14·18은 1.56~1.71이고, 14와 18은 제목에도 쓰여 넓은 행간이 제목에 그대로 적용됩니다. 두 본문 크기를 같은 비율로 맞추면 4px 배수로는 28/36(2.0)이 가장 작아, 2px 단위를 허용한 22/28(약 1.57)이 가장 가까운 안입니다."
-        ></mm-notice>
         <mm-flex direction="column" gap="4">
           ${TEXT_SIZES.map(
             size => html`
@@ -639,59 +628,71 @@ const main = html`
         heading="Space"
         description="요소 사이의 거리를 정합니다. 구조의 층위가 정해진 간격은 Semantic Token을, 나머지는 Primitive 단계를 씁니다. 같은 관계의 요소는 어느 화면에서나 간격이 같아 묶임과 나뉨이 자연스럽게 전해집니다."
       >
-        <mm-example-stage>
-          <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
-        </mm-example-stage>
-        <mm-token-group aria-label="space Primitive Token">
-          ${renderTokenItems(sectionTokens('space'))}
-        </mm-token-group>
-
-        <mm-separator></mm-separator>
-        <mm-example-stage>
-          <mm-flex gap="4">${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}</mm-flex>
-        </mm-example-stage>
-        <mm-token-group aria-label="space Semantic Token">
-          ${renderTokenItems(sectionTokens('spaceSemantic'))}
-        </mm-token-group>
+        <mm-flex direction="column">
+          <mm-flex direction="column" gap="4">
+            <mm-example-stage>
+              <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
+            </mm-example-stage>
+            <mm-token-group aria-label="space Primitive Token">
+              ${renderTokenItems(sectionTokens('space'))}
+            </mm-token-group>
+          </mm-flex>
+          <mm-separator></mm-separator>
+          <mm-flex direction="column" gap="4">
+            <mm-example-stage>
+              <mm-flex gap="4">${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}</mm-flex>
+            </mm-example-stage>
+            <mm-token-group aria-label="space Semantic Token">
+              ${renderTokenItems(sectionTokens('spaceSemantic'))}
+            </mm-token-group>
+          </mm-flex>
+        </mm-flex>
       </mm-token-section>
 
       <mm-token-section
         heading="Layout"
         description="반복되는 구조의 최대 너비와 여백을 정합니다. 같은 구조는 어느 페이지에서나 같은 폭으로 놓여 화면을 옮겨도 읽는 자리가 흔들리지 않습니다."
       >
-        <mm-token-group aria-label="layout Primitive Token">
-          ${renderTokenItems(sectionTokens('layout').filter(name => !isLayoutComposite(name)))}
-        </mm-token-group>
+        <mm-flex direction="column">
+          <mm-token-group aria-label="layout Primitive Token">
+            ${renderTokenItems(sectionTokens('layout').filter(name => !isLayoutComposite(name)))}
+          </mm-token-group>
 
-        <mm-separator></mm-separator>
-        <mm-token-group aria-label="layout Component·Semantic Token">
-          ${renderTokenItems(sectionTokens('layout').filter(isLayoutComposite))}
-        </mm-token-group>
+          <mm-separator></mm-separator>
+          <mm-token-group aria-label="layout Component·Semantic Token">
+            ${renderTokenItems(sectionTokens('layout').filter(isLayoutComposite))}
+          </mm-token-group>
+        </mm-flex>
       </mm-token-section>
 
       <mm-token-section
         heading="Border"
         description="테두리는 표면의 경계를 긋고, 모서리 곡률은 표면의 위계를 구분합니다."
       >
-        <mm-example-stage>
-          <mm-token-swatches
-            .swatches=${[
-              ...borderSwatches(borderWidthTokens),
-              ...radiusSwatches(sectionTokens('radius')),
-            ]}
-          ></mm-token-swatches>
-        </mm-example-stage>
-        <mm-token-group aria-label="border Primitive Token">
-          ${renderTokenItems([...borderWidthTokens, ...sectionTokens('radius')])}
-        </mm-token-group>
-
-        <mm-separator></mm-separator>
-        <mm-example-stage>
-          <mm-token-swatches .swatches=${borderSwatches(borderStyleTokens)}></mm-token-swatches>
-        </mm-example-stage>
-        <mm-token-group aria-label="border Component·Semantic Token">
-          ${renderTokenItems(borderStyleTokens)}
-        </mm-token-group>
+        <mm-flex direction="column">
+          <mm-flex direction="column" gap="4">
+            <mm-example-stage>
+              <mm-token-swatches
+                .swatches=${[
+                  ...borderSwatches(borderWidthTokens),
+                  ...radiusSwatches(sectionTokens('radius')),
+                ]}
+              ></mm-token-swatches>
+            </mm-example-stage>
+            <mm-token-group aria-label="border Primitive Token">
+              ${renderTokenItems([...borderWidthTokens, ...sectionTokens('radius')])}
+            </mm-token-group>
+          </mm-flex>
+          <mm-separator></mm-separator>
+          <mm-flex direction="column" gap="4">
+            <mm-example-stage>
+              <mm-token-swatches .swatches=${borderSwatches(borderStyleTokens)}></mm-token-swatches>
+            </mm-example-stage>
+            <mm-token-group aria-label="border Component·Semantic Token">
+              ${renderTokenItems(borderStyleTokens)}
+            </mm-token-group>
+          </mm-flex>
+        </mm-flex>
       </mm-token-section>
 
       <mm-token-section

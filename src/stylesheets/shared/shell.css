@@ -55,7 +55,7 @@ body:has(mm-sidebar[open]) {
   --sidebar-transition-duration: var(--transition-duration-open);
   --sidebar-transition-easing: var(--transition-easing-open);
   --sidebar-content-shift: calc(
-    var(--layout-width-sidebar) + var(--layout-padding-inline) + var(--layout-padding-inline) +
+    var(--layout-sidebar-width) + var(--layout-padding-inline) + var(--layout-padding-inline) +
       var(--space-4)
   );
 }

@@ -47,7 +47,8 @@ export class TypeSpecimen extends LitElement {
 
   private measure() {
     const style = getComputedStyle(this.sample)
-    const measured = [style.fontFamily, style.fontSize, style.lineHeight]
+    const ratio = Number((parseFloat(style.lineHeight) / parseFloat(style.fontSize)).toFixed(2))
+    const measured = [style.fontFamily, style.fontSize, `${style.lineHeight} (${ratio})`]
 
     if (measured.join() === this.values.join()) return
 

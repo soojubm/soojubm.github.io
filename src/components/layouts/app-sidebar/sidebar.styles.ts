@@ -12,7 +12,7 @@ export const sidebarStyles = css`
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: var(--layout-width-sidebar);
+    max-width: var(--layout-sidebar-width);
     gap: var(--space-4);
     /* margin-top으로 하면 brutal theme border가 연결되지 않음 */
     padding: var(--layout-sidebar-space-top) var(--space-3)
