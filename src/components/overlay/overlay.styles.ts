@@ -347,8 +347,12 @@ export const sheetBodyStyles = css`
     min-height: 0;
   }
 
+  /* 스크롤 영역이 바깥을 자르므로, 안쪽에 포커스 링이 들어갈 여백을 두고 같은 만큼 바깥으로 물려 내용 위치는 그대로 둔다 */
   mm-scroll {
-    width: 100%;
+    width: calc(100% + var(--space-2));
+    margin: calc(var(--space-1) * -1);
+    padding: var(--space-1);
+    box-sizing: border-box;
   }
 `
 
