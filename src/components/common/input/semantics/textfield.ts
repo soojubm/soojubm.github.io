@@ -42,8 +42,8 @@ export class Textfield extends withTextfieldState(LitElement) {
         ></mm-input>
         <slot name="trailing"></slot>
       </div>
-      ${renderFieldDescription(this.description, `${this.inputId}-description`)}
-      ${renderFieldValidation(`${this.inputId}-validation`, this.resolvedValidationText)}
+      ${renderFieldDescription(this.description, this.descriptionId)}
+      ${renderFieldValidation(this.validationId, this.resolvedValidationText)}
     `
   }
 }

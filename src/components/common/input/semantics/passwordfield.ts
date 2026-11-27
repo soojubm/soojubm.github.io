@@ -32,6 +32,7 @@ export class PasswordField extends withTextfieldState(LitElement) {
           .name=${this.name}
           .placeholder=${this.placeholder}
           aria-label=${this.label ?? this.placeholder ?? nothing}
+          ?disabled=${this.disabled}
           aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
           aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
@@ -39,11 +40,12 @@ export class PasswordField extends withTextfieldState(LitElement) {
         ></mm-input>
         <mm-reveal-button
           .revealed=${this.revealed}
+          ?disabled=${this.disabled}
           @toggle=${this.handleRevealToggle}
         ></mm-reveal-button>
       </div>
-      ${renderFieldDescription(this.description, `${this.inputId}-description`)}
-      ${renderFieldValidation(`${this.inputId}-validation`, this.resolvedValidationText)}
+      ${renderFieldDescription(this.description, this.descriptionId)}
+      ${renderFieldValidation(this.validationId, this.resolvedValidationText)}
     `
   }
 

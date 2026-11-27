@@ -1,6 +1,7 @@
 import { LitElement, html } from 'lit'
 import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
+import { html as staticHtml, type StaticValue } from 'lit/static-html.js'
 
 import type { AvatarShape, AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
@@ -46,10 +47,45 @@ export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base
 }
 
 /** 행이 포커스됐을 때 Enter·Space를 클릭과 같은 활성화로 처리한다. */
-export function activateOnKeydown(event: KeyboardEvent, activate: () => void) {
+function activateOnKeydown(event: KeyboardEvent, activate: () => void) {
   if (event.key !== 'Enter' && event.key !== ' ') return
   event.preventDefault()
   activate()
+}
+
+export type MenuItemCheckedRowRole = 'checkbox' | 'radio' | 'switch' | 'menuitemcheckbox'
+
+interface MenuItemCheckedRowOptions {
+  role: MenuItemCheckedRowRole
+  /** 트레일링에 놓을 컨트롤 태그. 예: literal`mm-checkbox` */
+  control: StaticValue
+  activate: () => void
+}
+
+/**
+ * checked 상태를 가진 행(checkbox·radio·switch)을 그린다.
+ * 행이 role·checked·키보드 활성화를 소유하고, control은 같은 상태를 보여 주기만 한다.
+ */
+export function renderMenuItemCheckedRow(
+  props: MenuItemPresentation & { disabled: boolean; checked: boolean },
+  { role, control, activate }: MenuItemCheckedRowOptions,
+) {
+  // 행이 상호작용을 소유하므로 내부 컨트롤은 시각 표시 전용(inert)이다.
+  // eslint-disable-next-line lit/binding-positions, lit/no-invalid-html -- lit/static-html의 태그 자리 바인딩이라 정상이다.
+  const trailing = staticHtml`<${control} slot="trailing" inert aria-hidden="true" .checked=${props.checked} ?disabled=${props.disabled}></${control}>`
+
+  return html`
+    <div
+      role=${role}
+      tabindex=${props.disabled ? '-1' : '0'}
+      aria-checked=${props.checked}
+      aria-disabled=${ifDefined(props.disabled ? 'true' : undefined)}
+      @click=${activate}
+      @keydown=${(event: KeyboardEvent) => activateOnKeydown(event, activate)}
+    >
+      ${renderMenuItemContent(props, trailing)}
+    </div>
+  `
 }
 
 export function renderMenuItemContent(props: MenuItemPresentation, trailing: unknown) {

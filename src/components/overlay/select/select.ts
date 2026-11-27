@@ -2,7 +2,6 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
-import { styleMap } from 'lit/directives/style-map.js'
 
 import type { ButtonVariant } from '@/components/common/button/button'
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
@@ -10,10 +9,9 @@ import type { OptionItem } from '@/types'
 
 import '@/components/common'
 import '@/components/indicators/expand-indicator/expand-indicator'
-import '@/components/overlay/popover/popover'
 import '@/components/overlay/select/select-listbox'
 import '@/components/overlay/select/select-option'
-import '@/components/overlay/sheet'
+import { renderAdaptiveOverlay } from '@/components/overlay/adaptive-overlay.helpers'
 import { AdaptiveOverlay } from '@/controllers/adaptive-overlay'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
@@ -22,7 +20,6 @@ import { withOpenState } from '@/utils/open-state'
 export type SelectVariant = Extract<ButtonVariant, 'secondary' | 'tertiary'>
 
 // 옵션 5개까지 보이고 나머지는 스크롤한다. 옵션 행은 small list-item 높이이고, 패널의 padding·border를 더한다.
-// popover는 portal로 옮겨져 이 컴포넌트의 shadow 스타일이 닿지 않으므로 인라인으로 싣는다.
 const POPOVER_MAX_HEIGHT =
   'min(400px, calc(5 * var(--size-32) + 2 * (var(--overlay-panel-padding) + var(--border-width))))'
 
@@ -53,40 +50,13 @@ export class Select extends withOpenState(LitElement) {
 
   render() {
     return html`
-      ${this.renderTrigger()} ${this.renderPopover()} ${this.renderSheet()}
-    `
-  }
-
-  /**
-   * popover·sheet는 연결되는 순간 portal 컨테이너로 자리를 옮겨 Lit의 템플릿 범위를 벗어나므로,
-   * 조건부로 걷어내면 그 자리에 남는다. 표면은 늘 마운트해 두고 목록만 넣고 뺀다.
-   */
-  private renderPopover() {
-    return html`
-      <mm-popover
-        placement=${this.placement}
-        .anchor=${this.disclosure.trigger}
-        ?open=${this.overlay.popoverOpen}
-        style=${styleMap({ '--overlay-panel-max-height': POPOVER_MAX_HEIGHT })}
-        @toggle=${this.overlay.handlePopoverToggle}
-      >
-        ${this.overlay.isViewportCompact ? nothing : this.renderOptionList()}
-      </mm-popover>
-    `
-  }
-
-  private renderSheet() {
-    return html`
-      <mm-sheet
-        aria-label=${this.ariaLabel || nothing}
-        ?open=${this.overlay.sheetOpen}
-        @toggle=${this.overlay.handleSheetToggle}
-      >
-        <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
-        <mm-sheet-body>
-          ${this.overlay.isViewportCompact ? this.renderOptionList() : nothing}
-        </mm-sheet-body>
-      </mm-sheet>
+      ${this.renderTrigger()}
+      ${renderAdaptiveOverlay(this.overlay, this.renderOptionList(), {
+        label: this.ariaLabel,
+        placement: this.placement,
+        anchor: this.disclosure.trigger,
+        popoverStyle: { '--overlay-panel-max-height': POPOVER_MAX_HEIGHT },
+      })}
     `
   }
 

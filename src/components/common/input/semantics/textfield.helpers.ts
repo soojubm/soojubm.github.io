@@ -112,6 +112,8 @@ export interface TextfieldState {
   validator?: FieldValidator
   ariaInvalid: AriaInvalid
   readonly inputId: string
+  readonly descriptionId: string
+  readonly validationId: string
   readonly describedBy: string
   readonly resolvedValidationText: string
   readonly resolvedAriaInvalid: AriaInvalid
@@ -121,7 +123,7 @@ export interface TextfieldState {
 }
 
 /**
- * textfield·quantity-field가 공유하는 필드 상태, input 값 동기화, 포커스 위임, 입력 규칙 검증.
+ * textfield·passwordfield·quantity-field가 공유하는 필드 상태, input 값 동기화, 포커스 위임, 입력 규칙 검증.
  * 검증은 브라우저의 제약 검증에 기대지 않고 필드가 직접 판정한다(required·minlength·maxlength·
  * pattern·type 이메일/URL·min/max·validator). 환경마다 다른 판정과 문구를 피하고 커스텀 규칙을 같은 경로에 둔다.
  * 시점은 포커스를 벗어날 때 처음 검사하고, 오류가 표시된 뒤에는 입력할 때마다 다시 검사해
@@ -166,10 +168,18 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
       return null
     }
 
+    get descriptionId() {
+      return `${this.inputId}-description`
+    }
+
+    get validationId() {
+      return `${this.inputId}-validation`
+    }
+
     get describedBy() {
       return [
-        this.description && `${this.inputId}-description`,
-        this.resolvedValidationText && `${this.inputId}-validation`,
+        this.description && this.descriptionId,
+        this.resolvedValidationText && this.validationId,
       ]
         .filter(Boolean)
         .join(' ')

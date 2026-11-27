@@ -70,8 +70,8 @@ export class QuantityField extends withTextfieldState(LitElement) {
           @click=${this.handleIncrementClick}
         ></mm-icon-button>
       </div>
-      ${renderFieldDescription(this.description, `${this.inputId}-description`)}
-      ${renderFieldValidation(`${this.inputId}-validation`, this.resolvedValidationText)}
+      ${renderFieldDescription(this.description, this.descriptionId)}
+      ${renderFieldValidation(this.validationId, this.resolvedValidationText)}
     `
   }
 

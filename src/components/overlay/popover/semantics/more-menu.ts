@@ -1,4 +1,4 @@
-import { LitElement, css, html, nothing } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
@@ -7,8 +7,7 @@ import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { OptionItem } from '@/types'
 
 import '@/components/common'
-import '@/components/overlay/popover/popover'
-import '@/components/overlay/sheet'
+import { renderAdaptiveOverlay } from '@/components/overlay/adaptive-overlay.helpers'
 import { AdaptiveOverlay } from '@/controllers/adaptive-overlay'
 import { DisclosureController } from '@/controllers/disclosure-controller'
 import { emit } from '@/utils'
@@ -35,36 +34,12 @@ export class MoreMenu extends withOpenState(LitElement) {
 
   render() {
     return html`
-      ${this.renderTrigger()} ${this.renderPopover()} ${this.renderSheet()}
-    `
-  }
-
-  // popover·sheet는 portal로 옮겨져 조건부로 걷어낼 수 없으므로 늘 마운트해 두고 목록만 넣고 뺀다.
-  private renderPopover() {
-    return html`
-      <mm-popover
-        placement=${this.placement}
-        .anchor=${this.disclosure.trigger}
-        ?open=${this.overlay.popoverOpen}
-        @toggle=${this.overlay.handlePopoverToggle}
-      >
-        ${this.overlay.isViewportCompact ? nothing : this.renderActionList()}
-      </mm-popover>
-    `
-  }
-
-  private renderSheet() {
-    return html`
-      <mm-sheet
-        aria-label=${this.ariaLabel}
-        ?open=${this.overlay.sheetOpen}
-        @toggle=${this.overlay.handleSheetToggle}
-      >
-        <mm-sheet-header heading=${this.ariaLabel}></mm-sheet-header>
-        <mm-sheet-body>
-          ${this.overlay.isViewportCompact ? this.renderActionList() : nothing}
-        </mm-sheet-body>
-      </mm-sheet>
+      ${this.renderTrigger()}
+      ${renderAdaptiveOverlay(this.overlay, this.renderActionList(), {
+        label: this.ariaLabel,
+        placement: this.placement,
+        anchor: this.disclosure.trigger,
+      })}
     `
   }
 
