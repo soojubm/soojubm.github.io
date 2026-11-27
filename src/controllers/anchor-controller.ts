@@ -10,6 +10,8 @@ interface AnchorOptions {
   open: () => boolean
   /** 기준 요소의 좌표와 그 값을 host에 싣는 CSS 변수. CSS가 읽는 좌표만 넘긴다 */
   variables: Partial<Record<AnchorEdge, string>>
+  /** 잴 때마다 기준 요소의 좌표를 받는다. 남은 공간에 따라 열 방향을 고르는 표면이 쓴다 */
+  onMeasure?: (rect: DOMRect) => void
 }
 
 /**
@@ -63,5 +65,6 @@ export class AnchorController implements ReactiveController {
     const rect = anchor.getBoundingClientRect()
     const edges = Object.entries(this.options.variables) as [AnchorEdge, string][]
     for (const [edge, variable] of edges) this.host.style.setProperty(variable, `${rect[edge]}px`)
+    this.options.onMeasure?.(rect)
   }
 }

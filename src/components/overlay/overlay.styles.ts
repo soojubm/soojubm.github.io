@@ -201,7 +201,7 @@ export const sheetPositionStyles = css`
  * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
  * 컴포넌트는 portal 컨테이너로 옮겨져 트리거의 자손이 아니므로, 트리거와 같은 자리·크기로 겹쳐 놓인
  * 투명한 박스가 되어 패널의 기준(positioned 앵커)이 된다. 좌표(--popover-anchor-*)는 열릴 때 잰다.
- * placement별로 패널을 그 박스의 어느 모서리에 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가 맡는다.
+ * 패널이 실제로 놓일 방향(data-placement)별로 그 박스의 어느 모서리에 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가 맡는다.
  * `--overlay-panel-*` 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
  */
 export const popoverPositionStyles = css`
@@ -270,16 +270,16 @@ export const popoverPositionStyles = css`
       transform var(--transition-duration-open) var(--transition-easing-open), visibility 0s;
   }
 
-  :host([placement='bottom-end']) .panel,
-  :host([placement='top-end']) .panel {
+  .panel[data-placement='bottom-end'],
+  .panel[data-placement='top-end'] {
     --popover-origin-inline: right;
 
     left: auto;
     right: 0;
   }
 
-  :host([placement='top-start']) .panel,
-  :host([placement='top-end']) .panel {
+  .panel[data-placement='top-start'],
+  .panel[data-placement='top-end'] {
     --popover-origin-block: bottom;
 
     top: auto;

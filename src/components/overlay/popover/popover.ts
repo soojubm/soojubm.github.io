@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit'
-import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
+import { customElement, property, query, queryAssignedElements } from 'lit/decorators.js'
 
 import {
   overlaySurfaceStyles,
@@ -25,12 +25,34 @@ export type PopoverPlacement = Extract<
 // 방향키 탐색은 이 목록이 소유한다.
 const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
 
+// 선호한 방향으로 열면 화면 밖으로 넘칠 때 축마다 뒤집을 방향
+const BLOCK_FLIPPED = {
+  'bottom-start': 'top-start',
+  'bottom-end': 'top-end',
+  'top-start': 'bottom-start',
+  'top-end': 'bottom-end',
+} as const satisfies Record<PopoverPlacement, PopoverPlacement>
+
+const INLINE_FLIPPED = {
+  'bottom-start': 'bottom-end',
+  'bottom-end': 'bottom-start',
+  'top-start': 'top-end',
+  'top-end': 'top-start',
+} as const satisfies Record<PopoverPlacement, PopoverPlacement>
+
+// 선호 방향이 넘치고 반대쪽이 덜 넘칠 때만 뒤집는다. 둘 다 넘치면 덜 넘치는 쪽이 낫다.
+function shouldFlip(preferredOverflow: number, oppositeOverflow: number) {
+  return preferredOverflow > 0 && oppositeOverflow < preferredOverflow
+}
+
 @customElement('mm-popover')
 export class Popover extends withOpenState(LitElement) {
   static styles = [overlaySurfaceStyles, popoverPositionStyles]
-  @property({ type: String, reflect: true }) placement: PopoverPlacement = 'bottom-start'
+  /** 선호하는 열 방향. 그쪽 공간이 모자라 화면 밖으로 넘치면 반대쪽으로 뒤집어 연다. */
+  @property({ type: String }) placement: PopoverPlacement = 'bottom-start'
   /** 위치를 재는 기준 요소. 생략하면 aria-controls로 이 popover를 가리키는 트리거가 기준이다. */
   @property({ attribute: false }) anchor?: HTMLElement
+  @query('.panel') private panel!: HTMLElement
   @queryAssignedElements({ flatten: true })
   private contentElements!: HTMLElement[]
   private returnFocusElement?: HTMLElement
@@ -52,6 +74,7 @@ export class Popover extends withOpenState(LitElement) {
       width: '--popover-anchor-width',
       height: '--popover-anchor-height',
     },
+    onMeasure: rect => this.fitPlacement(rect),
   })
   private focusExitCheck = new ScheduleController(this, () => this.closeIfFocusLeft(), { delay: 0 })
 
@@ -90,6 +113,30 @@ export class Popover extends withOpenState(LitElement) {
 
   private get anchorElement() {
     return this.anchor ?? this.disclosure.trigger
+  }
+
+  // 패널이 실제로 놓일 방향을 정한다. 패널 크기는 열린 뒤에야 알 수 있어 렌더가 아니라 측정 시점에 패널에 바로 싣는다.
+  private fitPlacement(anchor: DOMRect) {
+    const { offsetWidth: width, offsetHeight: height } = this.panel
+    const { clientWidth, clientHeight } = document.documentElement
+    const overflowAbove = height - anchor.top
+    const overflowBelow = anchor.bottom + height - clientHeight
+    // start 정렬은 트리거 왼쪽 끝에서 오른쪽으로, end 정렬은 오른쪽 끝에서 왼쪽으로 자란다
+    const overflowRight = anchor.left + width - clientWidth
+    const overflowLeft = width - anchor.right
+
+    const opensUp = this.placement.startsWith('top')
+    const opensLeft = this.placement.endsWith('end')
+    const flipBlock = opensUp
+      ? shouldFlip(overflowAbove, overflowBelow)
+      : shouldFlip(overflowBelow, overflowAbove)
+    const flipInline = opensLeft
+      ? shouldFlip(overflowLeft, overflowRight)
+      : shouldFlip(overflowRight, overflowLeft)
+
+    const blockFitted = flipBlock ? BLOCK_FLIPPED[this.placement] : this.placement
+    const fitted = flipInline ? INLINE_FLIPPED[blockFitted] : blockFitted
+    this.panel.dataset.placement = fitted
   }
 
   // portal로 문서 끝에 놓여 Tab으로 밖에 나가면 엉뚱한 곳에 닿으므로, 포커스가 표면을 벗어나면 닫고 트리거로 돌려보낸다.
