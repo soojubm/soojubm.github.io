@@ -4,13 +4,12 @@ import { customElement, property } from 'lit/decorators.js'
 import type { IconName } from '@/components/common/icon/icon-names'
 
 import '@/components/common/icon/icon'
-import { tagStyles, type TagSize, type TagTone } from '@/components/common/tag/tag.styles'
+import { tagStyles, type TagTone } from '@/components/common/tag/tag.styles'
 
 @customElement('mm-tag')
 export class Tag extends LitElement {
   static styles = [tagStyles]
   @property({ type: String, reflect: true, useDefault: true }) tone: TagTone = 'default'
-  @property({ type: String, reflect: true, useDefault: true }) size: TagSize = 'medium'
   @property({ type: String }) icon?: IconName
 
   render() {

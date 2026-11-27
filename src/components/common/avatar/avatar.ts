@@ -7,7 +7,6 @@ import type { IconSize } from '@/components/common/icon/icon.styles'
 import { avatarStyles } from '@/components/common/avatar/avatar.styles'
 import { ICON_NAMES, type IconName } from '@/components/common/icon/icon-names'
 import { resetStyles } from '@/stylesheets/shared.styles'
-import type { CategoryTone } from '@/components/common/tag/tag.styles'
 import type { ComponentVariant } from '@/stylesheets/shared.types'
 
 export const AVATAR_VARIANTS = [
@@ -26,7 +25,6 @@ export class Avatar extends LitElement {
   @property({ type: String, reflect: true, useDefault: true }) variant: AvatarVariant = 'primary'
   @property({ type: String, reflect: true, useDefault: true }) size: AvatarSize = '40'
   @property({ type: String, reflect: true, useDefault: true }) shape: AvatarShape = 'square'
-  @property({ type: String, reflect: true }) tone?: CategoryTone
   @property({ type: String }) src?: string
   @property({ type: String }) icon?: IconName
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''

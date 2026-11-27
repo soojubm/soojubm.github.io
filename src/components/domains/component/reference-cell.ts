@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/icon/icon'
@@ -19,14 +19,20 @@ export class ReferenceCell extends LitElement {
       a {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: var(--space-2);
         min-height: var(--size-48);
-        padding-inline: var(--space-6);
+        padding: var(--space-3) var(--space-6);
         color: var(--foreground-color);
         font-family: var(--font-family-code);
         font-size: var(--font-size-14);
         text-transform: uppercase;
         transition: background-color var(--transition-duration) var(--transition-easing);
+      }
+
+      .text {
+        display: flex;
+        flex-direction: column;
       }
 
       a:hover {
@@ -39,12 +45,20 @@ export class ReferenceCell extends LitElement {
     `,
   ]
   @property({ type: String }) href = ''
-  @property({ type: String }) label = ''
+  @property({ type: String }) brand = ''
+  @property({ type: String }) page = ''
 
   render() {
     return html`
       <a href=${this.href} target="_blank" rel="noopener noreferrer">
-        ${this.label}
+        <span class="text">
+          <span>${this.brand}</span>
+          ${this.page
+            ? html`
+                <span>${this.page}</span>
+              `
+            : nothing}
+        </span>
         <mm-icon name=${ICON_NAMES.EXTERNAL_LINK} aria-hidden="true"></mm-icon>
       </a>
     `

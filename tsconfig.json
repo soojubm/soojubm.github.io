@@ -11,6 +11,7 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "inlineSourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,

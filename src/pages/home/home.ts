@@ -1,194 +1,33 @@
-import { html } from 'lit'
+import { html, nothing } from 'lit'
 import { styleMap } from 'lit/directives/style-map.js'
-
-import type { CategoryTone } from '@/components/common/tag/tag.styles'
 
 import { ICON_NAMES, type IconName, type ToggleButtonGroup } from '@/components/common'
 
-import {
-  ComponentFeatureItem,
-  type ComponentReferenceItemData,
-} from '@/components/domains/component'
+import { type ComponentFeatureItem } from '@/components/domains/component'
+import '@/components/domains/component/reference-cell'
 import { renderPage } from '@/components/layouts/base-layouts'
+import referencesData from './references.json'
 import { SITEMAP } from '@/sitemap'
 import './home.css'
 
-const platformReferences: ComponentReferenceItemData[] = [
-  {
-    href: 'https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls',
-    label: 'Apple HIG - Disclosure Controls',
-  },
-  {
-    href: 'https://developer.apple.com/documentation/technologies',
-    label: 'Apple Developer - Technologies',
-  },
-  {
-    href: 'https://developer.apple.com/kr/design/tips/',
-    label: 'Apple - Design Tips',
-  },
-  {
-    href: 'https://developer.android.com/reference',
-    label: 'Android - API Reference',
-  },
-  {
-    href: 'https://m3.material.io/foundations/layout/breakpoints/overview',
-    label: 'MD3 - Layout Breakpoints',
-  },
-  {
-    href: 'https://m3.material.io/foundations/interaction-states',
-    label: 'MD3 - Interaction States',
-  },
-  {
-    href: 'https://m3.material.io/blog/building-with-m3-expressive',
-    label: 'MD3 - Building with M3 Expressive',
-  },
-]
+type ReferenceCategory = 'os' | 'general' | 'company'
 
-const generalReferences: ComponentReferenceItemData[] = [
-  {
-    href: 'https://react.dev/learn/preserving-and-resetting-state',
-    label: 'React - Preserving and Resetting State',
-  },
-  { href: 'https://www.digitala11y.com/', label: 'Digital A11Y' },
-  {
-    href: 'https://www.w3.org/WAI/ARIA/apg/',
-    label: 'WAI-ARIA APG',
-  },
-  {
-    href: 'https://en.wikipedia.org/wiki/Universal_design',
-    label: 'Wikipedia - Universal Design',
-  },
-  { href: 'https://html.spec.whatwg.org/', label: 'WHATWG - HTML Spec' },
-  {
-    href: 'https://www.sitemaps.org/protocol.html',
-    label: 'Sitemaps.org - Protocol',
-  },
-  {
-    href: 'https://w3c.github.io/wcag/understanding/target-size-minimum.html',
-    label: 'W3C - Target Size Minimum',
-  },
-  {
-    href: 'https://simplicable.com/new/visual-information',
-    label: 'Simplicable - Visual Information',
-  },
-  {
-    href: 'https://codelabs.developers.google.com/codelabs/the-lit-path?hl=ko#0',
-    label: 'Google Codelabs - The Lit Path',
-  },
-  {
-    href: 'https://developer.mozilla.org/ko/docs/Web/Accessibility/Guides/Understanding_WCAG',
-    label: 'MDN - Understanding WCAG',
-  },
-  {
-    href: 'https://www.atlassian.com/ko/work-management/knowledge-sharing/documentation',
-    label: 'Atlassian - Documentation',
-  },
-  {
-    href: 'https://getdesign.md/',
-    label: 'Get Design MD',
-  },
-]
-
-const supplementaryReferences: ComponentReferenceItemData[] = [
-  {
-    href: 'https://www.uber.com/us/en/blog/design-system-at-scale/',
-    label: 'Uber - Design System at Scale',
-  },
-]
-
-// 안쪽부터 바깥으로 겹쳐 쌓이는 고리의 순번.
-const featureRings = [1, 2, 3, 4, 5, 6, 7, 8]
-
-// 축마다 category 톤 하나씩. 상태 톤(green·yellow·red·blue)은 의미가 있어 쓰지 않는다.
-const FOUNDATION_TONES: Record<string, CategoryTone> = {
-  layout: 'pink',
-  interaction: 'orange',
-  pattern: 'cyan',
-  content: 'purple',
+interface Reference {
+  category: ReferenceCategory
+  brand: string
+  page: string
+  href: string
 }
 
-const FOUNDATION_ICONS: Record<string, IconName> = {
-  layout: ICON_NAMES.LAYOUT,
-  interaction: ICON_NAMES.INTERACTION,
-  pattern: ICON_NAMES.PATTERN,
-  content: ICON_NAMES.CONTENT,
-}
+// 레퍼런스는 references.json에서 읽고, 분류 순서 → 브랜드 → 페이지 순으로 정렬한다.
+const REFERENCE_CATEGORY_ORDER: ReferenceCategory[] = ['os', 'general', 'company']
 
-// 각 페이지의 mm-tab-list 순서와 맞춘다. search-param="tab"으로 해당 탭을 바로 연다.
-const FOUNDATION_TABS: Record<string, string[]> = {
-  layout: ['Page', 'Division', 'Overlay', 'Elevations'],
-  interaction: ['State', 'Selection'],
-  pattern: ['Disclosure', 'Search', 'Collection'],
-  content: ['Writing', 'Iconography', 'Accessibility'],
-}
-
-// 사이드바와 같은 목록에서 만들어, 축을 추가하거나 옮겨도 카드가 빠지지 않는다.
-const foundationsNode = SITEMAP.find(node => node.id === 'foundations')
-const foundationItems = foundationsNode?.type === 'standalone' ? foundationsNode.children ?? [] : []
-
-const foundationReferences: ComponentReferenceItemData[][] = [
-  [
-    {
-      href: 'https://ix.siemens.io/docs/components/card-list/guide',
-      label: 'Siemens iX - Card list',
-    },
-  ],
-  [
-    {
-      href: 'https://m3.material.io/foundations/interaction/states/state-layers',
-      label: 'MD3 - State Layers',
-    },
-    {
-      href: 'https://spectrum.adobe.com/page/states/',
-      label: 'Adobe Spectrum - States',
-    },
-    {
-      href: 'https://m3.material.io/foundations/interaction/selection',
-      label: 'MD3 - Selection',
-    },
-    {
-      href: 'https://designsystem.maersk.com/guidelines/selection-components/',
-      label: 'Maersk - Selection components',
-    },
-    {
-      href: 'https://design.basis.com/patterns/selection-ui',
-      label: 'Basis - Selection UI',
-    },
-  ],
-  [
-    {
-      href: 'https://www.w3.org/WAI/ARIA/apg/patterns/accordion/',
-      label: 'WAI-ARIA APG - Accordion Pattern',
-    },
-    {
-      href: 'https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/',
-      label: 'WAI-ARIA APG - Disclosure Pattern',
-    },
-    {
-      href: 'https://nuli.navercorp.com/community/article/1132889',
-      label: 'NULI - Web Accessibility',
-    },
-    {
-      href: 'https://developer.apple.com/documentation/uikit/uisearchbar',
-      label: 'Apple Developer - UISearchBar',
-    },
-    {
-      href: 'https://material.io/design/navigation/search.html',
-      label: 'Material Design - Search',
-    },
-    {
-      href: 'https://developer.android.com/reference/android/widget/SearchView',
-      label: 'Android - SearchView',
-    },
-  ],
-]
-
-const componentReferences: ComponentReferenceItemData[][] = [
-  platformReferences,
-  generalReferences,
-  supplementaryReferences,
-  ...foundationReferences,
-]
+const sortedReferences = [...(referencesData as Reference[])].sort(
+  (a, b) =>
+    REFERENCE_CATEGORY_ORDER.indexOf(a.category) - REFERENCE_CATEGORY_ORDER.indexOf(b.category) ||
+    a.brand.localeCompare(b.brand) ||
+    a.page.localeCompare(b.page),
+)
 
 type ComponentFeature = {
   tone: 'blue' | 'purple'
@@ -211,6 +50,118 @@ const componentFeatures: ComponentFeature[] = [
 const renderFeatureTag = ({ tone, name }: ComponentFeature) => html`
   <mm-code-tag tone=${tone} size="large">${name}</mm-code-tag>
 `
+
+// 제목을 한 칼럼에 세 줄로 되풀이하는 테두리 상자. 읽는 제목은 한 번만 두고, 반복한 글자는 보조 기술이 읽지 않게 숨긴다.
+const renderRepeatTitle = (title: string) => html`
+  <h2 class="repeat-title">
+    <span class="visually-hidden">${title}</span>
+    <span aria-hidden="true">
+      ${[1, 2, 3].map(
+        () => html`
+          <span class="repeat-title-row">${title}</span>
+        `,
+      )}
+    </span>
+  </h2>
+`
+
+// 원칙마다 핵심 하나를 선으로만 그린다. 설명은 글이 맡으므로 그림은 보조 기술이 읽지 않게 숨긴다.
+// constraint: 많은 선택지를 틀이 좁혀 몇 개만 남긴다.
+// lean: 처음엔 하나만 만들어 내보내고, 필요한 칸만 나중에 채운다.
+// rule: 이미 적힌 규칙은 그대로 있고, 새 규칙 하나가 그 아래에 한 줄씩 적힌다(명문화).
+const renderThoughtFigure = (figure: ThoughtFigure) => {
+  if (figure === 'constraint') {
+    return html`
+      <div class="figure figure-constraint" aria-hidden="true">
+        ${Array.from(
+          { length: 12 },
+          (_, index) =>
+            html`
+              <span data-picked=${index === 5 || index === 6}></span>
+            `,
+        )}
+        <i></i>
+      </div>
+    `
+  }
+
+  if (figure === 'lean') {
+    return html`
+      <div class="figure figure-lean" aria-hidden="true">
+        <span data-state="shipped"></span>
+        <span></span>
+        <span data-state="improved"></span>
+        <span></span>
+      </div>
+    `
+  }
+
+  return html`
+    <div class="figure figure-rule" aria-hidden="true">
+      <div class="rule-page">
+        <div class="rule-item">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <div class="rule-item">
+          <i></i>
+          <i></i>
+        </div>
+        <div class="rule-item" data-new>
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+      </div>
+    </div>
+  `
+}
+
+const renderThoughtPoint = (point: ThoughtPoint) => {
+  const { text, tags } = typeof point === 'string' ? { text: point, tags: [] } : point
+
+  return html`
+    <mm-flex direction="column" gap="2" align-items="flex-start">
+      ${tags.length
+        ? html`
+            <mm-tag-group>
+              ${tags.map(
+                tag =>
+                  html`
+                    <mm-code-tag>${tag}</mm-code-tag>
+                  `,
+              )}
+            </mm-tag-group>
+          `
+        : nothing}
+      <mm-paragraph size="large">${text}</mm-paragraph>
+    </mm-flex>
+  `
+}
+
+// 브랜드 페이지라 디자인 시스템 컴포넌트를 바꾸지 않고, 기존 아이콘 역할과 색 토큰을 그대로 가져다 쓴다.
+const FOUNDATION_ICONS: Record<string, IconName> = {
+  layout: ICON_NAMES.GRID_VIEW,
+  interaction: ICON_NAMES.MOUSE_BUTTON,
+  pattern: ICON_NAMES.CUBE_SCAN,
+  content: ICON_NAMES.DOCUMENT,
+}
+
+// 각 페이지의 mm-tab-list 순서와 맞춘다. search-param="tab"으로 해당 탭을 바로 연다.
+const FOUNDATION_TABS: Record<string, string[]> = {
+  layout: ['Page', 'Division', 'Overlay', 'Elevations'],
+  interaction: ['State', 'Selection'],
+  pattern: ['Disclosure', 'Search', 'Collection'],
+  content: ['Writing', 'Iconography', 'Accessibility'],
+}
+
+// 사이드바와 같은 목록에서 만들어, 축을 추가하거나 옮겨도 줄이 빠지지 않는다.
+const foundationsNode = SITEMAP.find(node => node.id === 'foundations')
+const foundationItems = foundationsNode?.type === 'standalone' ? foundationsNode.children ?? [] : []
+
+// 안쪽부터 바깥으로 겹쳐 쌓이는 고리의 순번.
+const featureRings = [1, 2, 3, 4, 5, 6, 7, 8]
 
 interface SamplerSection {
   id: string
@@ -252,32 +203,66 @@ const samplerSections: SamplerSection[] = [
 
 const samplerOptions = samplerSections.map(({ id, label }) => ({ value: id, label }))
 
+// 항목은 글만 쓰거나, 위에 코드 태그를 달아 무엇에 대한 항목인지 먼저 보인다.
+type ThoughtPoint = string | { text: string; tags: string[] }
+
+type ThoughtFigure = 'constraint' | 'lean' | 'rule'
+
 interface Thought {
+  figure: ThoughtFigure
   label: string
   heading: string
   body: string
-  points: string[]
+  points: ThoughtPoint[]
 }
 
 const designSystemThoughts: Thought[] = [
   {
+    figure: 'constraint',
+    label: 'Principle',
+    heading: 'Constraint-driven design',
+    body: '디자인의 문제는 선택지가 부족한 것이 아니라 너무 많은 것이다. 제약은 그택지를 줄여 주는 설계의 출발점이다.',
+    points: [
+      {
+        text: '검증된 웹 표준과 기존 인터페이스 관습을 우선하고, 사용자에게 새로운 학습을 요구하는 패턴을 징ㅑㅇ한다. ',
+        tags: ['Web Standards', 'Accessibility'],
+      },
+      {
+        text: '작은 화면을 기준으로 한다. 어디서나 동작하게 만들면 선택지가 줄고, 해결책은 모든 환경에 그대로 통한다. 새로운 디바이스가 새로운 레이아웃으로 출시되어도 지장이 없도록 만든다.',
+        tags: ['Responsive'],
+      },
+    ],
+  },
+  {
+    figure: 'lean',
     label: 'Implementation 1',
     heading: 'Lean design',
     body: '제품은 린하게 만들면서 디자인 시스템은 왜 완결된 체계를 추구하는가. 디자인 시스템의 목적은 체계를 구축하는 것이 아니라 제품 개발을 더 효율적으로 만드는 것이다.',
     points: [
-      '필요한 만큼만 추상화한다. 중복을 없애려고 불필요한 추상화를 만들지 않는다.',
-      '필요한 변경을 적은 비용으로 반영할 수 있는 구조를 먼저 갖춘다.',
-      '실제 제품을 만드는 과정에서 드러나는 문제와 동료의 피드백을 모아 필요한 부분부터 개선한다.',
+      {
+        text: '있음직한 것을 미리 설계하지 않는다. 필요한 변경을 적은 비용으로 반영할 수 있는 구조를 먼저 갖춘다.',
+        tags: ['YAGNI'],
+      },
+      {
+        text: '출시를 먼저 한다. 실제 제품을 만드는 과정에서 드러나는 문제와 동료나 사용자의 피드백을 검증한 뒤, 필요한 부분부터 개선한다.',
+        tags: ['Ship First'],
+      },
     ],
   },
   {
+    figure: 'rule',
     label: 'Implementation 2',
     heading: 'Rule-based design',
     body: '우리가 해결하려는 문제는 인터페이스 자체가 아니라, 제품을 만드는 과정에서 반복되는 불필요한 의사결정이다.',
     points: [
-      '세부사항에 대한 논의를 줄이려면 규칙을 명확히 정하고 기본값으로 따라야 한다.',
-      '규칙은 목적이 아니라 수단이다. 출시를 앞당기거나 제품 성과를 개선할 수 있다면 예외를 허용한다.',
-      '규칙을 변경하려면 기존 규칙의 문제와 변경에 따른 기대 효과를 설명해야 한다. 프로덕트 디자이너는 규칙의 필요성을 제안하고, 그 효과를 검증할 책임이 있다.',
+      {
+        text: '규칙을 지키는 과정에서 반복되는 문제는 명문화한다.',
+        tags: ['Convention'],
+      },
+      {
+        text: '규칙은 목적이 아니라 수단이다. 출시를 앞당기거나 제품 성과를 측정할 수 있다면 예외를 허용한다. 규칙을 변경하려면 기존 규칙의 문제와 변경에 따른 기대 효과를 설명해야 한다. ',
+        tags: ['Exception'],
+      },
     ],
   },
 ]
@@ -321,9 +306,9 @@ const features: ComponentFeatureItem[] = [
 const heroHeading = 'Fewer decisions,\nfaster releases.'
 
 const main = html`
-  <mm-main>
+  <mm-main class="home">
     <section style="margin-bottom:1rem;">
-      <div style="border-top:1px solid #000;padding:1rem 0;">
+      <div style="border-top:var(--home-border);padding:1rem 0;">
         <mm-tagline>
           <span data-reveal style=${styleMap({
             '--tagline-chars': String('Fewer decisions'.length),
@@ -333,7 +318,7 @@ const main = html`
         </mm-tagline>
       </div>
       <div
-        style="border-top:1px solid #000;border-bottom:1px solid #000;text-align:right;padding:1rem 0;"
+        style="border-top:var(--home-border);border-bottom:var(--home-border);text-align:right;padding:1rem 0;"
       >
         <mm-tagline>
           <span data-reveal style=${styleMap({
@@ -341,6 +326,13 @@ const main = html`
             '--tagline-delay': '1.9s',
           })}>
             Faster releases
+          </span>
+          <br />
+          <span data-reveal style=${styleMap({
+            '--tagline-chars': String('Faster learning'.length),
+            '--tagline-delay': '3.5s',
+          })}>
+            Faster learning
           </span>
         </mm-tagline>
       </div>
@@ -363,18 +355,16 @@ const main = html`
         </mm-flex>
       </mm-flex> -->
 
+      <mm-flex direction="column" gap="6" class="foundations">
+        ${renderRepeatTitle('Foundations')}
       <ul class="foundation-list">
         ${foundationItems.map(
           ({ id, name }) => html`
             <li class="foundation-row">
               <div class="foundation-name">
-                <mm-avatar
-                  variant="primary"
-                  size="80"
-                  shape="circle"
-                  tone=${FOUNDATION_TONES[id]}
-                  icon=${FOUNDATION_ICONS[id]}
-                ></mm-avatar>
+                <span class="foundation-badge" data-axis=${id}>
+                  <mm-icon name=${FOUNDATION_ICONS[id]} aria-hidden="true"></mm-icon>
+                </span>
                 <mm-heading level="3">${name}</mm-heading>
               </div>
               <nav class="foundation-tabs" aria-label=${`${name} 탭`}>
@@ -391,6 +381,7 @@ const main = html`
           `,
         )}
       </ul>
+      </mm-flex>
 
       <div hidden>
         <mm-surface>
@@ -430,50 +421,58 @@ const main = html`
         </mm-surface>
       </div>
 
-      <mm-flex direction="column" gap="4" align-items="center">
+      <mm-flex direction="column" gap="4" align-items="center" class="pattern-first">
         <mm-code-tag size="large">Approach</mm-code-tag>
-        <mm-tagline centered>Pattern-first</mm-tagline>
-        <mm-paragraph centered class="approach-description">
-          운영체제 수준의 디자인 시스템을 기준으로 토큰과 컴포넌트를 먼저 정의하지 않는다. 제품에
-          필요한 패턴에서 반복되는 구조와 동작을 추출한 뒤, 그것을 컴포넌트 · 토큰 · 레이아웃으로
+        <div class="cycle">
+          <div class="cycle-track">
+            <div class="cycle-title">
+              <mm-tagline centered>Pattern-first</mm-tagline>
+            </div>
+            <div class="cycle-lane" data-lane="top" aria-hidden="true">
+              <span class="cycle-arrow" data-direction="forward"></span>
+              <span class="cycle-step">
+                <b>Pattern</b>
+                <i>제품에 필요한 패턴</i>
+              </span>
+              <span class="cycle-arrow" data-direction="forward"></span>
+              <span class="cycle-step">
+                <b>Extract</b>
+                <i>반복되는 구조와 동작</i>
+              </span>
+            </div>
+            <div class="cycle-lane" data-lane="bottom" aria-hidden="true">
+              <span class="cycle-step">
+                <b>Define</b>
+                <i>컴포넌트 · 토큰 · 레이아웃</i>
+              </span>
+              <span class="cycle-arrow" data-direction="back"></span>
+            </div>
+          </div>
+        </div>
+        <mm-paragraph size="large" centered class="approach-description">
+          제품에서 반복되는 구조와 동작을 추출한 뒤, 그것을 컴포넌트 · 토큰 · 레이아웃으로
           정의한다.
         </mm-paragraph>
+        <!-- 운영체제 수준의 디자인 시스템을 기준으로 토큰과 컴포넌트를 먼저 정의하지 않는다.  -->
       </mm-flex>
 
-      <mm-grid columns="3" gap="4" column-min-width="18rem">
-        <mm-surface variant="ghost" radius="large">
-          <mm-flex direction="column" gap="3" align-items="flex-start">
-            <mm-code-tag size="large">Principle</mm-code-tag>
-            <mm-flex direction="column" gap="1">
-              <mm-heading level="2" class="design-title">Constraint-driven design</mm-heading>
-              <mm-paragraph>
-                디자인의 문제는 선택지가 부족한 것이 아니라 너무 많은 것이다. 제약 없는 자유는 고민만 늘릴 뿐이고, 제약은 그 선택지를 줄여 주는 설계의 출발점이다.
-              </mm-paragraph>
-            </mm-flex>
-            <mm-text-list
-              .texts=${[
-                '표준과 관습을 활용한다. 검증된 웹 표준과 기존 인터페이스 관습을 우선하고, 사용자에게 새로운 학습을 요구하는 패턴을 최소화한다. 네이티브 요소와 ARIA 같은 표준을 따르면 보조 기술이 별도 설정 없이도 의미를 읽을 수 있어, 접근성도 함께 확보된다.',
-                '모든 환경에서 이상적인 구조를 추구하기보다 주어진 기술 환경에서 효율적인 해결책을 찾는다. 모든 플랫폼에 일관되게 적용하면 일관된 사용자 경험을 확보하면서 더 적은 선택지로 해결책을 찾을 수 있다.',
-              ]}
-            ></mm-text-list>
-          </mm-flex>
-        </mm-surface>
-
+      <div class="principle-list">
         ${designSystemThoughts.map(
-          ({ label, heading, body, points }) => html`
-            <mm-surface variant="ghost" radius="large">
-              <mm-flex direction="column" gap="3" align-items="flex-start">
-                <mm-code-tag size="large">${label}</mm-code-tag>
-                <mm-flex direction="column" gap="1">
-                  <mm-heading level="2" class="design-title">${heading}</mm-heading>
-                  <mm-paragraph>${body}</mm-paragraph>
-                </mm-flex>
-                <mm-text-list .texts=${points}></mm-text-list>
+          ({ figure, label, heading, body, points }) => html`
+            <section class="principle-row">
+              <mm-code-tag size="large" class="principle-label">${label}</mm-code-tag>
+              ${renderThoughtFigure(figure)}
+              <mm-flex direction="column" gap="3">
+                <mm-heading level="2" class="design-title">${heading}</mm-heading>
+                <mm-paragraph size="large">${body}</mm-paragraph>
               </mm-flex>
-            </mm-surface>
+              <mm-paragraph-group class="principle-points">
+                ${points.map(renderThoughtPoint)}
+              </mm-paragraph-group>
+            </section>
           `,
         )}
-      </mm-grid>
+      </div>
 
       <!-- <mm-content-section heading="React로 옮긴 MoreMenu 패턴">
         <mm-code-block language="typescript" .code=${reactMoreMenuCode}></mm-code-block>
@@ -527,11 +526,11 @@ const main = html`
       </div>
 
       <mm-flex direction="column" gap="6">
-        <mm-text-block level="3" heading="References"></mm-text-block>
+        ${renderRepeatTitle('References')}
         <div class="reference-grid">
-          ${componentReferences.flat().map(
-            ({ href, label }) => html`
-              <mm-reference-cell href=${href} label=${label}></mm-reference-cell>
+          ${sortedReferences.map(
+            ({ href, brand, page }) => html`
+              <mm-reference-cell href=${href} brand=${brand} page=${page}></mm-reference-cell>
             `,
           )}
         </div>

@@ -1,3 +1,9 @@
+/* 홈은 브랜드 페이지라 디자인 시스템의 --border를 따르지 않고, 페이지 안의 모든 선을 검정 하나로 맞춘다.
+   전역에 선언하지 않고 홈 본문(.home)에서만 정의한다. */
+.home {
+  --home-border: var(--border-width) solid #000;
+}
+
 .scroll-spy-sampler-body {
   flex: 1 1 18rem;
   min-width: 0;
@@ -27,7 +33,7 @@
   align-items: center;
   justify-content: center;
   min-height: calc(var(--ring-size) * 16);
-  padding-block: var(--space-8);
+  padding-block: var(--space-12);
 }
 
 .feature-rings {
@@ -42,8 +48,7 @@
   position: absolute;
   width: calc(var(--ring-size) * 2 * var(--ring));
   aspect-ratio: 1;
-  border: var(--border);
-  border-color: var(--gray800);
+  border: var(--home-border);
   border-radius: var(--border-radius-full);
   opacity: 0;
   animation: ring-bubble 8s var(--transition-easing) infinite;
@@ -83,8 +88,8 @@
 .reference-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: var(--border);
-  border-left: var(--border);
+  border-top: var(--home-border);
+  border-left: var(--home-border);
 }
 
 @media (max-width: 800px) {
@@ -95,7 +100,10 @@
 
 /* 풀어 쓴 설명이 한 줄로 길게 늘어지지 않도록 좁은 폭에 가운데로 모은다. */
 .approach-description {
+  --font-size-18: 1rem;
+
   max-width: var(--layout-width-small);
+  margin-top: var(--space-4);
 }
 
 /*
@@ -106,8 +114,7 @@
   margin: 0 0 var(--space-section);
   padding: 0;
   list-style: none;
-  border-top: var(--border);
-  border-color: var(--foreground-subtle-color);
+  border-top: var(--home-border);
 }
 
 .foundation-row {
@@ -117,8 +124,7 @@
   gap: var(--space-6);
   padding-block: var(--space-3);
   font-family: var(--font-family-code);
-  border-bottom: var(--border);
-  border-color: var(--foreground-subtle-color);
+  border-bottom: var(--home-border);
 }
 
 .foundation-name {
@@ -149,4 +155,429 @@
 /* 원칙 이름은 코드 글꼴로 쓰고, 아래 설명은 기본 글꼴을 유지한다. */
 .design-title {
   font-family: var(--font-family-code);
+}
+
+/* 태그라인 아래 원칙 목록과 떨어져 보이도록 아래에 여백을 더한다. */
+.pattern-first {
+  margin-bottom: var(--space-8);
+}
+
+/* 축마다 category 배경색 하나씩 가진 원형 배지. 아바타 컴포넌트를 바꾸지 않고 이 페이지에서만 그린다. */
+.foundation-badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-80);
+  height: var(--size-80);
+  border-radius: var(--border-radius-full);
+  background: var(--category-3-background-color);
+}
+
+.foundation-badge[data-axis='interaction'] {
+  background: var(--category-4-background-color);
+}
+
+.foundation-badge[data-axis='pattern'] {
+  background: var(--category-5-background-color);
+}
+
+.foundation-badge[data-axis='content'] {
+  background: var(--category-8-background-color);
+}
+
+/*
+ * 제목을 한 칼럼에 세 줄로 되풀이해 한 덩어리 활자로 보인다. 읽는 제목은 한 번만 두고
+ * 반복한 글자는 보조 기술이 읽지 않게 숨긴다. 테두리 상자 안에 빽빽하게 놓는다.
+ */
+.repeat-title {
+  align-self: flex-start;
+  margin: 0;
+  padding: var(--space-4) var(--space-6);
+  border: var(--home-border);
+  background: var(--background-color);
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-32);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.repeat-title-row {
+  display: block;
+  white-space: nowrap;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/*
+ * 패턴을 정의하는 순서를 경주로처럼 한 바퀴 도는 흐름으로 보인다.
+ * 윗줄은 왼쪽에서 오른쪽으로 Pattern → Extract, 아랫줄은 오른쪽에서 왼쪽으로 Define을 지나
+ * 다시 Pattern으로 돌아온다. 화살촉은 각 글자가 들어오는 쪽에 붙어 선이 화살촉에서 끝나고,
+ * 글자는 면 색으로 선을 덮어 끊어 보인다.
+ * 양 끝을 반원으로 말려면 높이의 절반보다 큰 radius를 주고, 넘치는 값은 브라우저가 줄여 준다.
+ */
+/*
+ * 화면이 좁아지면 경주로 전체가 비율을 지킨 채 줄어든다. 크기는 넓을 때의 값과 영역 폭의 비율(cqw) 중
+ * 작은 쪽을 써서, 640px 이상에서는 지금 크기 그대로, 그보다 좁으면 원·선·글자가 함께 줄어든다.
+ */
+.pattern-first {
+  container-type: inline-size;
+}
+
+.cycle {
+  --cycle-height: min(calc(var(--size-80) * 2), 25cqw);
+  --cycle-radius: calc(var(--cycle-height) / 2);
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--layout-width-small);
+  padding: min(calc(var(--space-8) + var(--space-3)), 6.25cqw) min(var(--space-12), 7.5cqw);
+  border-radius: calc(var(--size-80) * 4);
+  background: var(--category-4-background-color);
+}
+
+.cycle-track {
+  position: relative;
+  height: var(--cycle-height);
+  border: var(--home-border);
+  border-radius: calc(var(--size-80) * 4);
+}
+
+/* 반원이 끝나고 선이 곧아지는 자리부터 놓는다. */
+.cycle-title {
+  /* 태그라인 크기(32px 단계의 1.5배)도 영역 폭에 맞춰 줄인다. */
+  --font-size-32: min(2rem, 5cqw);
+
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cycle-lane {
+  position: absolute;
+  right: var(--cycle-radius);
+  left: var(--cycle-radius);
+  display: flex;
+  align-items: center;
+  translate: 0 -50%;
+}
+
+.cycle-lane[data-lane='top'] {
+  top: 0;
+}
+
+.cycle-lane[data-lane='bottom'] {
+  top: 100%;
+  justify-content: center;
+}
+
+/* 윗줄의 둘째 화살촉은 선의 끝, Extract 바로 앞에 붙인다. */
+.cycle-lane[data-lane='top'] .cycle-step + .cycle-arrow {
+  margin-left: auto;
+}
+
+.cycle-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: min(var(--space-4), 2.5cqw);
+  background: var(--category-4-background-color);
+  font-family: var(--font-family-code);
+  font-size: clamp(calc(var(--font-size-12) * 0.85), 2.2cqw, var(--font-size-14));
+}
+
+.cycle-step b {
+  font-weight: var(--font-weight-bold);
+}
+
+.cycle-step i {
+  font-size: clamp(calc(var(--font-size-12) * 0.85), 1.9cqw, var(--font-size-12));
+  font-style: normal;
+}
+
+/* 좁은 화면에서는 단계 이름만 남기고 풀이 글은 숨겨, 줄어든 경주로 안에 글자가 겹치지 않게 한다. */
+@container (max-width: 480px) {
+  .cycle-step i {
+    display: none;
+  }
+}
+
+/* 선 끝의 굵은 열린 화살촉. 네모의 두 변만 그려 45도 돌린다. */
+.cycle-arrow {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: var(--size-16);
+  height: var(--size-16);
+  border-top: var(--home-border);
+  border-right: var(--home-border);
+  border-width: calc(var(--border-width) * 2);
+  scale: 0.7;
+}
+
+.cycle-arrow[data-direction='forward'] {
+  rotate: 45deg;
+}
+
+.cycle-arrow[data-direction='back'] {
+  rotate: -135deg;
+}
+
+/*
+ * 원칙 셋을 카드가 아니라 한 줄씩 맡긴다. 제목은 왼쪽 절반, 내용은 오른쪽 절반에 두고
+ * 좁은 화면에서는 제목 아래로 내용이 쌓인다.
+ */
+.principle-list {
+  display: grid;
+  /* 넓은 화면에서 세 칸이 한없이 벌어지지 않게 하고, 가운데에 둔다. */
+  max-width: calc(var(--layout-width-large) * 1.25);
+  margin-inline: auto;
+  /* 그림 · 제목과 설명 · 내용 세 칸을 1:1.5:1.5로 나눈다. 모든 줄이 같은 칸 폭을 쓴다. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1.5fr);
+  column-gap: var(--space-6);
+}
+
+.principle-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: start;
+  row-gap: var(--space-4);
+  padding-block: var(--space-8);
+}
+
+/* 라벨 태그는 네 칸 위로 올려 왼쪽 끝에 둔다. */
+.principle-label {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+/* 본문은 16px로 쓴다. 타입 스케일에 없는 크기라 토큰을 새로 만들지 않고, 이 줄 안에서만 18px 단계의 값을 16px로 읽게 한다. */
+.principle-row mm-paragraph {
+  --font-size-18: 1rem;
+}
+
+@media (max-width: 800px) {
+  .principle-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .principle-row {
+    row-gap: var(--space-4);
+  }
+}
+
+/* 위의 태그라인 영역과 구획 간격만큼 띄운다. */
+.foundations {
+  margin-top: var(--space-section);
+}
+
+/* 레퍼런스 칸은 컴포넌트가 --border로 그리므로, 홈에서는 같은 검정 선으로 덮어쓴다. */
+.reference-grid mm-reference-cell {
+  border-right: var(--home-border);
+  border-bottom: var(--home-border);
+}
+
+/*
+ * 원칙마다 하나씩 그리는 선 그림. 검정 선(--home-border)과 코드체 페이지의 결을 따라 선 위주로만 그리고,
+ * 강조에만 category 주황 면을 쓴다. 모션은 천천히 오가며, 움직임을 줄이면 멈춘 모습으로 보인다.
+ */
+.figure {
+  box-sizing: border-box;
+  --figure-accent: var(--category-4-background-color);
+  --figure-unit: calc(var(--size-16) * 0.5);
+
+  position: relative;
+  width: 100%;
+  /* 한 열로 쌓이는 좁은 화면에서 칸 폭만큼 커지지 않게 크기를 묶는다. 넓은 화면의 칸 폭(약 215px)보다 커서 그때는 영향이 없다. */
+  max-width: calc(var(--size-80) * 3);
+  /* 세 그림이 같은 테두리와 같은 가로세로(정사각형)를 가진다. */
+  aspect-ratio: 1;
+  padding: var(--space-4);
+  /* 안쪽 내용이 커져도 정사각형을 지키도록 넘치는 부분은 자른다. */
+  overflow: hidden;
+  border: var(--home-border);
+}
+
+/* constraint: 열두 선택지를 틀이 좁혀 둘만 남긴다. */
+.figure-constraint {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+}
+
+.figure-constraint span {
+  width: var(--figure-unit);
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-full);
+  background: var(--foreground-color);
+  animation: figure-fade 6s ease-in-out infinite alternate;
+}
+
+.figure-constraint span[data-picked='true'] {
+  animation: none;
+}
+
+.figure-constraint i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - var(--space-2) * 2);
+  height: calc(100% - var(--space-2) * 2);
+  border: var(--home-border);
+  background: var(--figure-accent);
+  mix-blend-mode: multiply;
+  translate: -50% -50%;
+  animation: figure-close 6s ease-in-out infinite alternate;
+}
+
+/* lean: 하나만 만들어 내보내고, 필요한 칸만 나중에 채운다. */
+.figure-lean {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-3);
+}
+
+.figure-lean span {
+  flex: 1;
+  height: 100%;
+  border: var(--home-border);
+  border-style: dashed;
+}
+
+.figure-lean span[data-state='shipped'] {
+  border-style: solid;
+  background: var(--figure-accent);
+}
+
+.figure-lean span[data-state='improved'] {
+  animation: figure-improve 6s ease-in-out infinite alternate;
+}
+
+/*
+ * rule: 이미 적힌 규칙은 움직이지 않고, 새 규칙 하나만 그 아래에 한 줄씩 적힌다(명문화).
+ * 규칙마다 짧은 이름 줄과 내용 줄로 이루어지고, 새 규칙의 이름만 주황으로 표시한다.
+ */
+.figure-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rule-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-sizing: border-box;
+  width: 72%;
+  height: 100%;
+  padding: var(--space-3);
+  border: var(--home-border);
+}
+
+.rule-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.rule-item i {
+  height: calc(var(--size-16) * 0.25);
+  background: var(--foreground-subtle-color);
+  transform-origin: left;
+}
+
+/* 규칙의 이름 줄 */
+.rule-item i:first-child {
+  width: 45%;
+  height: calc(var(--size-16) * 0.5);
+  margin-bottom: calc(var(--space-1) * 0.5);
+}
+
+.rule-item i:last-child:not(:first-child) {
+  width: 70%;
+}
+
+/* 새로 적히는 규칙 */
+.rule-item[data-new] i {
+  animation: figure-write 7s ease-out infinite;
+}
+
+.rule-item[data-new] i:first-child {
+  box-sizing: border-box;
+  border: var(--home-border);
+  background: var(--figure-accent);
+}
+
+.rule-item[data-new] i:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.rule-item[data-new] i:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes figure-fade {
+  to {
+    opacity: 0.15;
+  }
+}
+
+@keyframes figure-close {
+  from {
+    width: calc(100% - var(--space-2) * 2);
+    height: calc(100% - var(--space-2) * 2);
+  }
+
+  to {
+    width: calc(var(--size-16) * 4.5);
+    height: calc(var(--size-16) * 2);
+  }
+}
+
+@keyframes figure-improve {
+  from {
+    border-style: dashed;
+    background: transparent;
+  }
+
+  to {
+    border-style: solid;
+    background: var(--figure-accent);
+  }
+}
+
+@keyframes figure-write {
+  0%,
+  8% {
+    scale: 0 1;
+  }
+
+  18%,
+  88% {
+    scale: 1 1;
+  }
+
+  100% {
+    scale: 0 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figure-constraint span,
+  .figure-constraint i,
+  .figure-lean span,
+  .rule-item i {
+    animation: none;
+  }
 }

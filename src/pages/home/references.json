@@ -1,0 +1,194 @@
+[
+  {
+    "category": "os",
+    "brand": "Apple HIG",
+    "page": "Disclosure Controls",
+    "href": "https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/disclosure-controls"
+  },
+  {
+    "category": "os",
+    "brand": "Apple Developer",
+    "page": "Technologies",
+    "href": "https://developer.apple.com/documentation/technologies"
+  },
+  {
+    "category": "os",
+    "brand": "Apple",
+    "page": "Design Tips",
+    "href": "https://developer.apple.com/kr/design/tips/"
+  },
+  {
+    "category": "os",
+    "brand": "Android",
+    "page": "API Reference",
+    "href": "https://developer.android.com/reference"
+  },
+  {
+    "category": "os",
+    "brand": "MD3",
+    "page": "Layout Breakpoints",
+    "href": "https://m3.material.io/foundations/layout/breakpoints/overview"
+  },
+  {
+    "category": "os",
+    "brand": "MD3",
+    "page": "Interaction States",
+    "href": "https://m3.material.io/foundations/interaction-states"
+  },
+  {
+    "category": "os",
+    "brand": "MD3",
+    "page": "Building with M3 Expressive",
+    "href": "https://m3.material.io/blog/building-with-m3-expressive"
+  },
+  {
+    "category": "general",
+    "brand": "React",
+    "page": "Preserving and Resetting State",
+    "href": "https://react.dev/learn/preserving-and-resetting-state"
+  },
+  {
+    "category": "general",
+    "brand": "Digital A11Y",
+    "page": "",
+    "href": "https://www.digitala11y.com/"
+  },
+  {
+    "category": "general",
+    "brand": "WAI-ARIA APG",
+    "page": "",
+    "href": "https://www.w3.org/WAI/ARIA/apg/"
+  },
+  {
+    "category": "general",
+    "brand": "Wikipedia",
+    "page": "Universal Design",
+    "href": "https://en.wikipedia.org/wiki/Universal_design"
+  },
+  {
+    "category": "general",
+    "brand": "WHATWG",
+    "page": "HTML Spec",
+    "href": "https://html.spec.whatwg.org/"
+  },
+  {
+    "category": "general",
+    "brand": "Sitemaps.org",
+    "page": "Protocol",
+    "href": "https://www.sitemaps.org/protocol.html"
+  },
+  {
+    "category": "general",
+    "brand": "W3C",
+    "page": "Target Size Minimum",
+    "href": "https://w3c.github.io/wcag/understanding/target-size-minimum.html"
+  },
+  {
+    "category": "general",
+    "brand": "Simplicable",
+    "page": "Visual Information",
+    "href": "https://simplicable.com/new/visual-information"
+  },
+  {
+    "category": "general",
+    "brand": "Google Codelabs",
+    "page": "The Lit Path",
+    "href": "https://codelabs.developers.google.com/codelabs/the-lit-path?hl=ko#0"
+  },
+  {
+    "category": "general",
+    "brand": "MDN",
+    "page": "Understanding WCAG",
+    "href": "https://developer.mozilla.org/ko/docs/Web/Accessibility/Guides/Understanding_WCAG"
+  },
+  {
+    "category": "general",
+    "brand": "Atlassian",
+    "page": "Documentation",
+    "href": "https://www.atlassian.com/ko/work-management/knowledge-sharing/documentation"
+  },
+  {
+    "category": "general",
+    "brand": "Get Design MD",
+    "page": "",
+    "href": "https://getdesign.md/"
+  },
+  {
+    "category": "company",
+    "brand": "Uber",
+    "page": "Design System at Scale",
+    "href": "https://www.uber.com/us/en/blog/design-system-at-scale/"
+  },
+  {
+    "category": "company",
+    "brand": "Siemens iX",
+    "page": "Card list",
+    "href": "https://ix.siemens.io/docs/components/card-list/guide"
+  },
+  {
+    "category": "os",
+    "brand": "MD3",
+    "page": "State Layers",
+    "href": "https://m3.material.io/foundations/interaction/states/state-layers"
+  },
+  {
+    "category": "company",
+    "brand": "Adobe Spectrum",
+    "page": "States",
+    "href": "https://spectrum.adobe.com/page/states/"
+  },
+  {
+    "category": "os",
+    "brand": "MD3",
+    "page": "Selection",
+    "href": "https://m3.material.io/foundations/interaction/selection"
+  },
+  {
+    "category": "company",
+    "brand": "Maersk",
+    "page": "Selection components",
+    "href": "https://designsystem.maersk.com/guidelines/selection-components/"
+  },
+  {
+    "category": "company",
+    "brand": "Basis",
+    "page": "Selection UI",
+    "href": "https://design.basis.com/patterns/selection-ui"
+  },
+  {
+    "category": "general",
+    "brand": "WAI-ARIA APG",
+    "page": "Accordion Pattern",
+    "href": "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/"
+  },
+  {
+    "category": "general",
+    "brand": "WAI-ARIA APG",
+    "page": "Disclosure Pattern",
+    "href": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/"
+  },
+  {
+    "category": "general",
+    "brand": "NULI",
+    "page": "Web Accessibility",
+    "href": "https://nuli.navercorp.com/community/article/1132889"
+  },
+  {
+    "category": "os",
+    "brand": "Apple Developer",
+    "page": "UISearchBar",
+    "href": "https://developer.apple.com/documentation/uikit/uisearchbar"
+  },
+  {
+    "category": "os",
+    "brand": "Material Design",
+    "page": "Search",
+    "href": "https://material.io/design/navigation/search.html"
+  },
+  {
+    "category": "os",
+    "brand": "Android",
+    "page": "SearchView",
+    "href": "https://developer.android.com/reference/android/widget/SearchView"
+  }
+]
