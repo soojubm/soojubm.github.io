@@ -81,6 +81,19 @@ const ratingShares = [5, 4, 3, 2, 1].map(rating => {
   return { label: `${rating}점`, share, value: `${share}%` }
 })
 
+const sizeOptions = ['XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL']
+
+const colorOptions = [
+  { value: 'black', label: '블랙', color: 'var(--gray800)' },
+  { value: 'gray', label: '그레이', color: 'var(--gray400)' },
+  { value: 'white', label: '화이트', color: 'var(--gray0)' },
+  { value: 'green', label: '그린', color: 'var(--green800)' },
+  { value: 'red', label: '레드', color: 'var(--red800)' },
+  { value: 'yellow', label: '옐로', color: 'var(--yellow800)' },
+  { value: 'orange', label: '오렌지', color: 'var(--orange800)' },
+  { value: 'newneek', label: '뉴닉', color: 'var(--newneek-color)' },
+]
+
 const cartOptions = [
   { value: 'lifetime', label: '평생 소장' },
   { value: 'rental', label: '1년 대여' },
@@ -120,6 +133,43 @@ const main = html`
                 rating=${averageRating}
                 review-count=${reviewCount}
               ></mm-review-summary>
+            </mm-flex>
+
+            <mm-flex direction="column" gap="4">
+              <mm-flex direction="column" gap="2">
+                <mm-flex gap="2">
+                  <mm-text>사이즈</mm-text>
+                  <mm-text id="size-value">M</mm-text>
+                </mm-flex>
+                <mm-scroll id="size-options" gap="2" hide-scrollbar>
+                  ${sizeOptions.map(
+                    size => html`
+                      <mm-toggle-button value=${size} .pressed=${size === 'M'}>
+                        ${size}
+                      </mm-toggle-button>
+                    `,
+                  )}
+                </mm-scroll>
+              </mm-flex>
+
+              <mm-flex direction="column" gap="2">
+                <mm-flex gap="2">
+                  <mm-text>색상</mm-text>
+                  <mm-text id="color-value">블랙</mm-text>
+                </mm-flex>
+                <mm-scroll id="color-options" gap="2" hide-scrollbar>
+                  ${colorOptions.map(
+                    option => html`
+                      <mm-color-chip
+                        value=${option.value}
+                        color=${option.color}
+                        aria-label=${option.label}
+                        .pressed=${option.value === 'black'}
+                      ></mm-color-chip>
+                    `,
+                  )}
+                </mm-scroll>
+              </mm-flex>
             </mm-flex>
 
             <mm-button
@@ -399,6 +449,10 @@ function setupCartSheet() {
   setupSectionNav()
   setupPurchaseBar()
   setupReviews()
+  setupSingleChoice('#size-options', '#size-value', value => value)
+  setupSingleChoice('#color-options', '#color-value', value => {
+    return colorOptions.find(option => option.value === value)?.label ?? value
+  })
 
   const cartQuantity = document.querySelector<ValueElement>('#cart-quantity')
   const cartTotal = document.querySelector<ValueElement>('#cart-total')
@@ -408,6 +462,30 @@ function setupCartSheet() {
   cartQuantity.addEventListener('input', () => {
     const quantity = Math.max(1, Number(cartQuantity.value) || 1)
     cartTotal.value = `₩ ${(quantity * 16000).toLocaleString('ko-KR')}`
+  })
+}
+
+// 칩은 각자 토글이지만 옵션은 하나만 고르므로, 눌린 칩 하나만 남기고 선택값을 라벨 옆에 보인다.
+function setupSingleChoice(
+  groupSelector: string,
+  valueSelector: string,
+  getLabel: (value: string) => string,
+) {
+  const group = document.querySelector<HTMLElement>(groupSelector)
+  const valueText = document.querySelector<HTMLElement>(valueSelector)
+
+  if (!group || !valueText) return
+
+  const items = Array.from(group.children) as (ValueElement & { pressed: boolean })[]
+
+  group.addEventListener('change', event => {
+    const selected = (event.target as ValueElement & { pressed: boolean }) ?? null
+    if (!selected) return
+
+    items.forEach(item => {
+      item.pressed = item === selected
+    })
+    valueText.textContent = getLabel(selected.value)
   })
 }
 
