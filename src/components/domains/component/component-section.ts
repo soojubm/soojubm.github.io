@@ -44,9 +44,9 @@ export class ComponentSection extends LitElement {
         ${this.renderChecks()}
       </mm-text-block>
       <div class="example">
-        <div class="component-content-frame">
+        <mm-example-stage aligned>
           <slot></slot>
-        </div>
+        </mm-example-stage>
         ${this.renderCode()}
       </div>
     `

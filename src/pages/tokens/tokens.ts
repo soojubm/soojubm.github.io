@@ -535,7 +535,7 @@ const main = html`
           heading="계층"
           description="Primitive는 값을, Semantic은 그 값이 화면에서 맡는 역할을, Component Token은 컴포넌트마다 조정할 자리를 맡습니다. 맡은 일이 나뉘어 있어 한 계층을 바꿔도 다른 계층은 그대로 둘 수 있습니다."
         >
-          <mm-token-stage>
+          <mm-example-stage>
             <mm-flex class="stage-content" direction="column" gap="6">
               ${renderLegend(Object.values(tierLegends))}
               <mm-flex direction="column" gap="6">${tierChains.map(renderTierChain)}</mm-flex>
@@ -547,7 +547,7 @@ const main = html`
                 ]}
               ></mm-text-list>
             </mm-flex>
-          </mm-token-stage>
+          </mm-example-stage>
         </mm-content-section>
 
         <mm-content-section heading-level="3" heading="이름 규칙">
@@ -558,7 +558,7 @@ const main = html`
               '강한 표면 위 글자색은 on- 뒤에 표면 이름을 붙인다. 테마가 표면 색을 바꿀 때 그 위 글자색도 같은 이름으로 함께 바꿀 수 있어, 테마마다 대비가 깨지지 않는다.',
             ]}
           ></mm-text-list>
-          <mm-token-stage>
+          <mm-example-stage>
             <mm-flex class="stage-content" direction="column">
               <mm-flex direction="column" gap="6">
                 ${semanticNameAnatomies.map(renderNameAnatomy)}
@@ -566,7 +566,7 @@ const main = html`
               <mm-separator></mm-separator>
               ${renderNameAnatomy(componentNameAnatomy)}
             </mm-flex>
-          </mm-token-stage>
+          </mm-example-stage>
         </mm-content-section>
       </mm-content-section-list>
 
@@ -595,12 +595,12 @@ const main = html`
         </mm-grid>
 
         <mm-separator></mm-separator>
-        <mm-token-stage>
+        <mm-example-stage>
           <mm-token-swatches
             .swatches=${categorySwatches(categoryNumbers)}
             .contents=${categoryNumbers.map(() => 'Aa')}
           ></mm-token-swatches>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group>${renderTokenItems(sectionTokens('category'))}</mm-token-group>
       </mm-token-section>
 
@@ -626,12 +626,12 @@ const main = html`
         heading="Size"
         description="요소의 높이를 정합니다. 정사각형 요소는 예외로 너비에도 씁니다. 같은 단계를 쓴 요소끼리는 나란히 놓여도 높이가 어긋나지 않습니다."
       >
-        <mm-token-stage>
+        <mm-example-stage>
           <mm-token-swatches
             gap="8"
             .swatches=${sizeSwatches(sectionTokens('size'))}
           ></mm-token-swatches>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group>${renderTokenItems(sectionTokens('size'))}</mm-token-group>
       </mm-token-section>
 
@@ -639,17 +639,17 @@ const main = html`
         heading="Space"
         description="요소 사이의 거리를 정합니다. 구조의 층위가 정해진 간격은 Semantic Token을, 나머지는 Primitive 단계를 씁니다. 같은 관계의 요소는 어느 화면에서나 간격이 같아 묶임과 나뉨이 자연스럽게 전해집니다."
       >
-        <mm-token-stage>
+        <mm-example-stage>
           <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group aria-label="space Primitive Token">
           ${renderTokenItems(sectionTokens('space'))}
         </mm-token-group>
 
         <mm-separator></mm-separator>
-        <mm-token-stage>
+        <mm-example-stage>
           <mm-flex gap="4">${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}</mm-flex>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group aria-label="space Semantic Token">
           ${renderTokenItems(sectionTokens('spaceSemantic'))}
         </mm-token-group>
@@ -673,22 +673,22 @@ const main = html`
         heading="Border"
         description="테두리는 표면의 경계를 긋고, 모서리 곡률은 표면의 위계를 구분합니다."
       >
-        <mm-token-stage>
+        <mm-example-stage>
           <mm-token-swatches
             .swatches=${[
               ...borderSwatches(borderWidthTokens),
               ...radiusSwatches(sectionTokens('radius')),
             ]}
           ></mm-token-swatches>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group aria-label="border Primitive Token">
           ${renderTokenItems([...borderWidthTokens, ...sectionTokens('radius')])}
         </mm-token-group>
 
         <mm-separator></mm-separator>
-        <mm-token-stage>
+        <mm-example-stage>
           <mm-token-swatches .swatches=${borderSwatches(borderStyleTokens)}></mm-token-swatches>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group aria-label="border Component·Semantic Token">
           ${renderTokenItems(borderStyleTokens)}
         </mm-token-group>
@@ -698,7 +698,7 @@ const main = html`
         heading="Material"
         description="표면이 뒤 배경에서 떠 보이는 정도와 겹칠 때의 순서를 정합니다. 사용하는 쪽은 그림자·blur·투명도를 색과 조합한 티어를 쓰고, 원시 값은 티어를 정의할 때만 씁니다. 티어가 정하지 않은 속성은 base를 따릅니다."
       >
-        <mm-token-stage striped>
+        <mm-example-stage striped>
           <div class="material-stage">
             <mm-token-swatches
               .swatches=${[
@@ -708,7 +708,7 @@ const main = html`
               ]}
             ></mm-token-swatches>
           </div>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group aria-label="재질 Primitive Token">
           ${renderTokenItems([
             ...sectionTokens('shadow'),
@@ -717,9 +717,9 @@ const main = html`
           ])}
         </mm-token-group>
 
-        <mm-token-stage>
+        <mm-example-stage>
           <div class="material-stage">${renderMaterialStage(sectionTokens('material'))}</div>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group aria-label="재질 티어 토큰">
           ${renderTokenItems(sectionTokens('material'))}
         </mm-token-group>
@@ -733,9 +733,9 @@ const main = html`
         heading="Transition"
         description="모든 모션은 기본 duration과 easing을 함께 씁니다. 열리는 모션은 더 길게 열고, 패널이 나타나는 transform만 살짝 튀는 open easing을 씁니다. 순차 등장은 delay로 시차를 둡니다. 스테이지에 포인터를 올리면 두 easing을 비교할 수 있습니다."
       >
-        <mm-token-stage>
+        <mm-example-stage>
           <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>
-        </mm-token-stage>
+        </mm-example-stage>
         <mm-token-group>${renderTokenItems(sectionTokens('transition'))}</mm-token-group>
       </mm-token-section>
 

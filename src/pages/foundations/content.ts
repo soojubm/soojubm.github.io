@@ -165,9 +165,9 @@ const popupKinds: { kind: keyof typeof POPUP_TONES; description: TemplateResult 
   {
     kind: 'Non-modal',
     description: html`
-      뒤 화면을 막지 않는다. 열고 닫을 때의 포커스는 모달과 같게 옮기되, 바깥을 눌러 닫을 때는
-      포커스를 되돌리지 않는다. 눌린 요소가 이미 포커스를 받았는데 트리거로 되돌리면 사용자가 방금
-      고른 곳에서 포커스를 빼앗는다
+      뒤 화면과 계속 상호작용할 수 있다. 열고 닫을 때의 포커스는 모달과 같게 옮기되, 바깥을 눌러
+      닫을 때는 눌린 요소의 포커스를 유지한다. 눌린 요소가 이미 포커스를 받았는데 트리거로 되돌리면
+      사용자가 방금 고른 곳에서 포커스를 빼앗는다
     `,
   },
 ]
@@ -203,7 +203,7 @@ const keyLegend: { key: keyof typeof KEY_TONES; description: TemplateResult }[] 
   {
     key: 'Enter·Space Key',
     description: html`
-      포커스가 놓인 버튼을 눌러 선택을 확정한다. 포커스를 옮기는 것이 곧 선택인 탭은 쓰지 않는다
+      포커스가 놓인 버튼을 눌러 선택을 확정한다. 포커스를 옮긴 뒤 버튼을 눌러 선택하는 탭만 쓴다
     `,
   },
 ]
@@ -293,8 +293,8 @@ const main = html`
       <mm-tab-panel value="writing">
         <mm-content-section-list>
           <mm-content-section heading-level="3" heading="콜 투 액션">
-            <mm-content-section-list size="small">
-              <mm-surface>
+            <mm-example-stage>
+              <mm-flex direction="column" gap="8">
                 <mm-flex justify-content="center" wrap="wrap" gap="6">
                   <mm-figure-card
                     class="do-dont-card"
@@ -318,8 +318,6 @@ const main = html`
                     <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
                   </mm-figure-card>
                 </mm-flex>
-              </mm-surface>
-              <mm-surface>
                 <mm-flex justify-content="center" wrap="wrap" gap="6">
                   <mm-figure-card
                     class="do-dont-card"
@@ -341,12 +339,10 @@ const main = html`
                     <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
                   </mm-figure-card>
                 </mm-flex>
-              </mm-surface>
-              <mm-surface>
                 <mm-flex justify-content="center" wrap="wrap" gap="6">
                   <mm-figure-card
                     class="do-dont-card"
-                    description="질문은 부정어로 만들지 않고, 실행 레이블은 사용자 시점의 동사로 씁니다."
+                    description="질문은 긍정문으로 묻고, 실행 레이블은 사용자 시점의 동사로 씁니다."
                   >
                     <mm-flex slot="figure" align-items="center" gap="3">
                       <mm-heading level="5">변경 사항을 저장할까요?</mm-heading>
@@ -368,8 +364,6 @@ const main = html`
                     <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
                   </mm-figure-card>
                 </mm-flex>
-              </mm-surface>
-              <mm-surface>
                 <mm-flex justify-content="center" wrap="wrap" gap="6">
                   <mm-figure-card
                     class="do-dont-card"
@@ -393,13 +387,13 @@ const main = html`
                     <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
                   </mm-figure-card>
                 </mm-flex>
-              </mm-surface>
-            </mm-content-section-list>
+              </mm-flex>
+            </mm-example-stage>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="분류명">
-            <mm-content-section-list size="small">
-              <mm-surface>
+            <mm-example-stage>
+              <mm-flex direction="column" gap="8">
                 <mm-flex justify-content="center" wrap="wrap" gap="6">
                   <mm-figure-card
                     class="do-dont-card"
@@ -424,8 +418,6 @@ const main = html`
                     <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
                   </mm-figure-card>
                 </mm-flex>
-              </mm-surface>
-              <mm-surface>
                 <mm-flex justify-content="center" wrap="wrap" gap="6">
                   <mm-figure-card
                     class="do-dont-card"
@@ -449,8 +441,8 @@ const main = html`
                     <mm-code-tag slot="tags" tone="red">Don't</mm-code-tag>
                   </mm-figure-card>
                 </mm-flex>
-              </mm-surface>
-            </mm-content-section-list>
+              </mm-flex>
+            </mm-example-stage>
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="제목">
@@ -616,7 +608,7 @@ const main = html`
             <mm-text-block
               level="3"
               heading="쓰이는 아이콘"
-              description="역할은 icon-names.ts의 ICON_CATALOG 한 곳에서만 정의합니다. 아이콘이 필요한 곳은 이를 펼친 맵 ICON_NAMES에서 가져옵니다. 파일 이름을 코드에 직접 적지 않고, 여러 역할이 같은 파일을 써도 합치지 않으며 역할이 갈라지면 그 역할의 값만 바꿉니다."
+              description="역할은 icon-names.ts의 ICON_CATALOG 한 곳에서만 정의합니다. 아이콘이 필요한 곳은 이를 펼친 맵 ICON_NAMES에서 가져옵니다. 파일 이름은 ICON_NAMES를 거쳐 쓰고, 여러 역할이 같은 파일을 써도 역할마다 값을 따로 두며 역할이 갈라지면 그 역할의 값만 바꿉니다."
             ></mm-text-block>
             <mm-content-section-list>${renderIconCatalog()}</mm-content-section-list>
           </mm-content-section-list>

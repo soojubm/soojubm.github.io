@@ -18,10 +18,7 @@ export class ComponentExample extends LitElement {
 
       ${unsafeCSS(buildAttributeRules('width', exampleWidthTokens))}
 
-      .component-example {
-        --component-content-margin: 0 0 0 var(--component-content-margin-inline-start);
-
-        box-sizing: border-box;
+      mm-example-stage {
         border-left-color: var(--foreground-color);
       }
     `,
@@ -32,9 +29,9 @@ export class ComponentExample extends LitElement {
 
   render() {
     return html`
-      <section class="component-example component-content-frame">
+      <mm-example-stage aligned>
         <slot></slot>
-      </section>
+      </mm-example-stage>
     `
   }
 }

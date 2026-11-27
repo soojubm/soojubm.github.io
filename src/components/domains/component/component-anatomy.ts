@@ -23,7 +23,7 @@ export class ComponentAnatomy extends LitElement {
     componentContentFrameStyles,
     css`
       :host {
-        --component-anatomy-width: auto;
+        --component-anatomy-width: fit-content;
         --component-anatomy-padding: 0;
 
         display: flex;
@@ -32,23 +32,16 @@ export class ComponentAnatomy extends LitElement {
         margin-top: var(--space-section);
       }
 
-      /* 프레임은 가장자리까지 흘리고, 시연은 그 안의 measure에서 가운데로 모인다. */
-      .measure {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: var(--layout-width-small);
-        margin-inline: auto;
-      }
-
       /* 시연 대상 없이 코드만 전시할 때는 빈 무대 프레임을 걷어낸다. */
-      :host(:empty) .component-content-frame:has(.stage) {
+      :host(:empty) mm-example-stage {
         display: none;
       }
 
-      /* 슬롯된 시연 대상과 번호 마커가 함께 앉는 무대. */
+      /* 슬롯된 시연 대상과 번호 마커가 함께 앉는 무대. 내용 폭으로 줄어 프레임 안 가운데에 모인다. */
       .stage {
         width: var(--component-anatomy-width);
+        max-width: var(--layout-width-small);
+        margin-inline: auto;
         padding: var(--component-anatomy-padding);
         position: relative;
       }
@@ -102,14 +95,12 @@ export class ComponentAnatomy extends LitElement {
   render() {
     return html`
       <mm-heading level="2">${this.heading}</mm-heading>
-      <div class="component-content-frame">
-        <div class="measure">
-          <div class="stage">
-            <slot></slot>
-            ${this.renderMarkers()}
-          </div>
+      <mm-example-stage aligned>
+        <div class="stage">
+          <slot></slot>
+          ${this.renderMarkers()}
         </div>
-      </div>
+      </mm-example-stage>
       ${this.renderParts()}
     `
   }

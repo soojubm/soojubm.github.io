@@ -291,7 +291,7 @@ const renderSpacingOtherContext = () => html`
 
 /** 같은 형태의 섹션 둘은 간격으로, 형태가 다른 맥락과는 구분선으로 구획한 한 화면을 그린다. */
 const renderSpacingOverview = () => html`
-  <mm-token-stage full-width>
+  <mm-example-stage full-width>
     <mm-flex direction="column">
       ${renderSpacingSection(true)}${renderSpacingGap(
         'section',
@@ -300,7 +300,7 @@ const renderSpacingOverview = () => html`
       <mm-separator variant="section"></mm-separator>
       ${renderSpacingOtherContext()}
     </mm-flex>
-  </mm-token-stage>
+  </mm-example-stage>
 `
 
 const renderUsageTags = (tags: string[] = []) =>
@@ -422,7 +422,7 @@ const renderAlignmentContrast = () => {
   `
 
   return html`
-    <mm-token-stage>
+    <mm-example-stage>
       <div class="contrast-page">
         ${renderFlow('text-align: start')}
         <div class="contrast-module">
@@ -433,7 +433,7 @@ const renderAlignmentContrast = () => {
         </div>
         ${renderFlow('text-align: start')}
       </div>
-    </mm-token-stage>
+    </mm-example-stage>
   `
 }
 
@@ -459,7 +459,7 @@ const main = html`
             heading="페이지 너비"
             description="너비로 읽기 밀도를 정합니다. 본문 골격은 mm-main의 width로, 떠오르는 overlay는 각 컴포넌트의 width로 지정합니다."
           >
-            <mm-token-stage full-width>
+            <mm-example-stage full-width>
               <mm-flex direction="column" gap="6">
                 ${widthExample({
                   caption: '집중형',
@@ -515,7 +515,7 @@ const main = html`
                   ],
                 })}
               </mm-flex>
-            </mm-token-stage>
+            </mm-example-stage>
           </mm-content-section>
 
           <mm-content-section
@@ -523,7 +523,7 @@ const main = html`
             heading="배경 대비"
             description="글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계 낮춰 다른 맥락으로 넘어왔다는 감각을 줍니다."
           >
-            <mm-token-stage full-width>
+            <mm-example-stage full-width>
               <mm-flex direction="column" gap="6">
                 ${renderBackgroundExample({
                   caption: '이전 화면',
@@ -536,7 +536,7 @@ const main = html`
                   subtle: true,
                 })}
               </mm-flex>
-            </mm-token-stage>
+            </mm-example-stage>
           </mm-content-section>
 
           <mm-content-section
@@ -691,7 +691,7 @@ const main = html`
             heading="겹침 순서"
             description="앞에서 뒤로 층위를 나열합니다. 화면 위로 뜨는 요소는 역할에 맞는 층을 골라, 어느 표면에서 열려도 같은 순서로 겹치게 합니다."
           >
-            <mm-token-stage>
+            <mm-example-stage>
               <mm-flex
                 class="layer-stack"
                 direction="column"
@@ -703,7 +703,7 @@ const main = html`
                 ${layerTiers.map(renderLayerTier)}
                 <mm-caption>뒤</mm-caption>
               </mm-flex>
-            </mm-token-stage>
+            </mm-example-stage>
           </mm-content-section>
 
           <mm-content-section
@@ -711,7 +711,7 @@ const main = html`
             heading="앱 셸"
             description="앱 셸 예제를 층별로 떼어 낸 그림입니다."
           >
-            <mm-token-stage>${renderAppShellLayerDiagram()}</mm-token-stage>
+            <mm-example-stage>${renderAppShellLayerDiagram()}</mm-example-stage>
           </mm-content-section>
         </mm-content-section-list>
       </mm-tab-panel>

@@ -5,8 +5,8 @@ import { surfaceBaseStyles, surfaceBleedStyles } from '@/components/common/surfa
 import '@/components/common'
 import { MEDIA } from '@/constants'
 
-@customElement('mm-token-stage')
-export class TokenStage extends LitElement {
+@customElement('mm-example-stage')
+export class ExampleStage extends LitElement {
   static styles = css`
     :host {
       ${surfaceBaseStyles};
@@ -38,6 +38,26 @@ export class TokenStage extends LitElement {
       padding: var(--space-8) var(--layout-padding-inline);
     }
 
+    /* 틀만 왼쪽으로 넓히고 내용은 페이지 본문 글자의 왼쪽 선에 맞춘다. */
+    :host([aligned]) {
+      width: auto;
+      margin-inline-start: calc(var(--layout-padding-inline) * -1 + var(--space-4));
+    }
+
+    :host([aligned]) .content {
+      padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
+    }
+
+    @media ${MEDIA.default} {
+      :host([aligned]) {
+        ${surfaceBleedStyles};
+      }
+
+      :host([aligned]) .content {
+        padding-inline: var(--layout-padding-inline);
+      }
+    }
+
     :host([full-width]) ::slotted(*) {
       width: 100%;
     }
@@ -54,6 +74,8 @@ export class TokenStage extends LitElement {
   @property({ type: Boolean, reflect: true }) striped = false
   /** 내용이 줄어들지 않고 스테이지 가로를 채운다. */
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
+  /** 내용을 본문 글자의 왼쪽 선에 맞추고 틀만 왼쪽으로 넓힌다. */
+  @property({ type: Boolean, reflect: true }) aligned = false
 
   render() {
     return html`
