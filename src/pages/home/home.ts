@@ -22,34 +22,19 @@ interface Reference {
 // 레퍼런스는 references.json에서 읽고, 분류 순서 → 브랜드 → 페이지 순으로 정렬한다.
 const REFERENCE_CATEGORY_ORDER: ReferenceCategory[] = ['os', 'general', 'company']
 
+const REFERENCE_FILTER_OPTIONS = [
+  { value: 'all', label: 'All' },
+  { value: 'os', label: 'OS' },
+  { value: 'general', label: 'General' },
+  { value: 'company', label: 'Company' },
+]
+
 const sortedReferences = [...(referencesData as Reference[])].sort(
   (a, b) =>
     REFERENCE_CATEGORY_ORDER.indexOf(a.category) - REFERENCE_CATEGORY_ORDER.indexOf(b.category) ||
     a.brand.localeCompare(b.brand) ||
     a.page.localeCompare(b.page),
 )
-
-type ComponentFeature = {
-  tone: 'blue' | 'purple'
-  name: string
-}
-
-// Interaction은 blue, Presentation은 purple 톤으로 묶음을 구분한다.
-const componentFeatures: ComponentFeature[] = [
-  { tone: 'blue', name: 'Interactive - action' },
-  { tone: 'blue', name: 'Interactive - selection' },
-  { tone: 'blue', name: 'Interactive - input' },
-  { tone: 'blue', name: 'Feedback' },
-  { tone: 'purple', name: 'Glanceable' },
-  { tone: 'purple', name: 'Representative' },
-  { tone: 'purple', name: 'Stateful' },
-  { tone: 'purple', name: 'Structural' },
-  { tone: 'purple', name: 'Contextual' },
-]
-
-const renderFeatureTag = ({ tone, name }: ComponentFeature) => html`
-  <mm-code-tag tone=${tone} size="large">${name}</mm-code-tag>
-`
 
 // 제목을 한 칼럼에 세 줄로 되풀이하는 테두리 상자. 읽는 제목은 한 번만 두고, 반복한 글자는 보조 기술이 읽지 않게 숨긴다.
 const renderRepeatTitle = (title: string) => html`
@@ -160,8 +145,11 @@ const FOUNDATION_TABS: Record<string, string[]> = {
 const foundationsNode = SITEMAP.find(node => node.id === 'foundations')
 const foundationItems = foundationsNode?.type === 'standalone' ? foundationsNode.children ?? [] : []
 
+// 토큰 페이지 머리의 종류 목록과 같은 순서로 이름만 보인다.
+const TOKEN_KINDS = ['color', 'size', 'space', 'border', 'typography', 'material']
+
 // 안쪽부터 바깥으로 겹쳐 쌓이는 고리의 순번.
-const featureRings = [1, 2, 3, 4, 5, 6, 7, 8]
+const tokenRings = [1, 2, 3, 4, 5, 6, 7, 8]
 
 interface SamplerSection {
   id: string
@@ -337,90 +325,8 @@ const main = html`
         </mm-tagline>
       </div>
     </section>
-    <!-- <mm-flex direction="column" gap="section">
-      <mm-flex direction="column" gap="8" align-items="center">
-        <mm-tagline centered multiline>${heroHeading}</mm-tagline>
-        <mm-flex direction="column" gap="3" align-items="center">
-          <mm-tag-group>
-            <mm-tag>목표</mm-tag>
-            <mm-code-tag>Release</mm-code-tag>
-            <mm-code-tag>Experiment</mm-code-tag>
-          </mm-tag-group>
-          <mm-text-block
-            centered
-            level="3"
-            heading="Fast release / Fast experiment"
-            description="제품을 완성하고 사용자에게 전달하는 시간, 가설을 검증하고 제품을 개선하는 주기 단축"
-          ></mm-text-block>
-        </mm-flex>
-      </mm-flex> -->
-
-      <mm-flex direction="column" gap="6" class="foundations">
-        ${renderRepeatTitle('Foundations')}
-      <ul class="foundation-list">
-        ${foundationItems.map(
-          ({ id, name }) => html`
-            <li class="foundation-row">
-              <div class="foundation-name">
-                <span class="foundation-badge" data-axis=${id}>
-                  <mm-icon name=${FOUNDATION_ICONS[id]} aria-hidden="true"></mm-icon>
-                </span>
-                <mm-heading level="3">${name}</mm-heading>
-              </div>
-              <nav class="foundation-tabs" aria-label=${`${name} 탭`}>
-                ${FOUNDATION_TABS[id].map(
-                  label => html`
-                    <mm-link href=${`./${id}.html?tab=${label.toLowerCase()}`}>
-                      ${label}
-                      <mm-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></mm-icon>
-                    </mm-link>
-                  `,
-                )}
-              </nav>
-            </li>
-          `,
-        )}
-      </ul>
-      </mm-flex>
-
-      <div hidden>
-        <mm-surface>
-          <mm-text size="24" weight="bold" as="h2">Scroll Spy Sampler</mm-text>
-          <div class="scroll-spy-sampler js-scroll-spy-sampler">
-            <mm-toggle-button-group
-              class="js-scroll-spy-nav"
-              aria-label="Scroll spy sampler"
-              orientation="vertical"
-              stretch
-              .options=${samplerOptions}
-              value=${samplerOptions[0].value}
-            ></mm-toggle-button-group>
-            <mm-scroll
-              direction="column"
-              gap="3"
-              class="scroll-spy-sampler-body js-scroll-spy-body"
-              tabindex="0"
-            >
-              ${samplerSections.map(
-                section => html`
-                  <mm-surface
-                    id=${section.id}
-                    class="scroll-spy-sampler-section"
-                    data-scroll-spy-section
-                  >
-                    <mm-text-block
-                      level="3"
-                      heading=${section.heading}
-                      description=${section.description}
-                    ></mm-text-block>
-                  </mm-surface>
-                `,
-              )}
-            </mm-scroll>
-          </div>
-        </mm-surface>
-      </div>
-
+      <section class="approach-section">
+        ${renderRepeatTitle('Philosophy')}
       <mm-flex direction="column" gap="4" align-items="center" class="pattern-first">
         <mm-code-tag size="large">Approach</mm-code-tag>
         <div class="cycle">
@@ -473,6 +379,115 @@ const main = html`
           `,
         )}
       </div>
+      </section>
+
+      <!-- <mm-flex direction="column" gap="section">
+<mm-flex direction="column" gap="8" align-items="center">
+  <mm-tagline centered multiline>${heroHeading}</mm-tagline>
+  <mm-flex direction="column" gap="3" align-items="center">
+    <mm-tag-group>
+      <mm-tag>목표</mm-tag>
+      <mm-code-tag>Release</mm-code-tag>
+      <mm-code-tag>Experiment</mm-code-tag>
+    </mm-tag-group>
+    <mm-text-block
+      centered
+      level="3"
+      heading="Fast release / Fast experiment"
+      description="제품을 완성하고 사용자에게 전달하는 시간, 가설을 검증하고 제품을 개선하는 주기 단축"
+    ></mm-text-block>
+  </mm-flex>
+</mm-flex> -->
+
+      <mm-flex direction="column" gap="6" class="foundations">
+        ${renderRepeatTitle('Foundations')}
+        <ul class="foundation-list">
+          ${foundationItems.map(
+            ({ id, name }) => html`
+              <li class="foundation-row">
+                <div class="foundation-name">
+                  <span class="foundation-badge" data-axis=${id}>
+                    <mm-icon name=${FOUNDATION_ICONS[id]} aria-hidden="true"></mm-icon>
+                  </span>
+                  <mm-heading level="3">${name}</mm-heading>
+                </div>
+                <nav class="foundation-tabs" aria-label=${`${name} 탭`}>
+                  ${FOUNDATION_TABS[id].map(
+                    label => html`
+                      <mm-link href=${`./${id}.html?tab=${label.toLowerCase()}`}>
+                        ${label}
+                        <mm-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></mm-icon>
+                      </mm-link>
+                    `,
+                  )}
+                </nav>
+              </li>
+            `,
+          )}
+        </ul>
+      </mm-flex>
+
+      <section class="tokens-stage">
+        <div class="tokens-rings" aria-hidden="true">
+          ${tokenRings.map(
+            ring => html`
+              <span style=${styleMap({ '--ring': String(ring) })}></span>
+            `,
+          )}
+        </div>
+        <div class="tokens-stage-title">${renderRepeatTitle('Tokens')}</div>
+        <div class="tokens-stage-content">
+          <mm-tag-group>
+            ${TOKEN_KINDS.map(
+              kind => html`
+                <mm-code-tag tone="blue" size="large">${kind}</mm-code-tag>
+              `,
+            )}
+          </mm-tag-group>
+        </div>
+        <mm-link class="tokens-stage-link" href="./tokens.html">
+          Explore tokens
+          <mm-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></mm-icon>
+        </mm-link>
+      </section>
+
+      <div hidden>
+        <mm-surface>
+          <mm-text size="24" weight="bold" as="h2">Scroll Spy Sampler</mm-text>
+          <div class="scroll-spy-sampler js-scroll-spy-sampler">
+            <mm-toggle-button-group
+              class="js-scroll-spy-nav"
+              aria-label="Scroll spy sampler"
+              orientation="vertical"
+              stretch
+              .options=${samplerOptions}
+              value=${samplerOptions[0].value}
+            ></mm-toggle-button-group>
+            <mm-scroll
+              direction="column"
+              gap="3"
+              class="scroll-spy-sampler-body js-scroll-spy-body"
+              tabindex="0"
+            >
+              ${samplerSections.map(
+                section => html`
+                  <mm-surface
+                    id=${section.id}
+                    class="scroll-spy-sampler-section"
+                    data-scroll-spy-section
+                  >
+                    <mm-text-block
+                      level="3"
+                      heading=${section.heading}
+                      description=${section.description}
+                    ></mm-text-block>
+                  </mm-surface>
+                `,
+              )}
+            </mm-scroll>
+          </div>
+        </mm-surface>
+      </div>
 
       <!-- <mm-content-section heading="React로 옮긴 MoreMenu 패턴">
         <mm-code-block language="typescript" .code=${reactMoreMenuCode}></mm-code-block>
@@ -505,32 +520,23 @@ const main = html`
         ></mm-text-list>
       </mm-content-section> -->
 
-      <div class="feature-stage">
-        <div class="feature-rings" aria-hidden="true">
-          ${featureRings.map(
-            ring => html`
-              <span style=${styleMap({ '--ring': String(ring) })}></span>
-            `,
-          )}
-        </div>
-        <mm-flex
-          gap="2"
-          wrap="wrap"
-          justify-content="center"
-          role="group"
-          aria-label="Component Feature"
-          class="feature-tags"
-        >
-          ${componentFeatures.map(renderFeatureTag)}
-        </mm-flex>
-      </div>
-
       <mm-flex direction="column" gap="6">
         ${renderRepeatTitle('References')}
-        <div class="reference-grid">
+        <mm-toggle-button-group
+          class="js-reference-filter"
+          aria-label="Reference category"
+          value="all"
+          .options=${REFERENCE_FILTER_OPTIONS}
+        ></mm-toggle-button-group>
+        <div class="reference-grid js-reference-grid">
           ${sortedReferences.map(
-            ({ href, brand, page }) => html`
-              <mm-reference-cell href=${href} brand=${brand} page=${page}></mm-reference-cell>
+            ({ category, href, brand, page }) => html`
+              <mm-reference-cell
+                data-category=${category}
+                href=${href}
+                brand=${brand}
+                page=${page}
+              ></mm-reference-cell>
             `,
           )}
         </div>
@@ -544,8 +550,25 @@ renderPage(main, {
   closeSidebar: true,
   initialize: () => {
     setupScrollSpySampler()
+    setupReferenceFilter()
   },
 })
+
+// 분류 버튼을 고르면 그 분류의 레퍼런스만 남기고, All이면 모두 보인다.
+function setupReferenceFilter() {
+  const filter = document.querySelector<ToggleButtonGroup>('.js-reference-filter')
+  const cells = Array.from(
+    document.querySelectorAll<HTMLElement>('.js-reference-grid mm-reference-cell'),
+  )
+  if (!filter || !cells.length) return
+
+  filter.addEventListener('change', event => {
+    const { value } = (event as CustomEvent<{ value: string }>).detail
+    cells.forEach(cell => {
+      cell.hidden = value !== 'all' && cell.dataset.category !== value
+    })
+  })
+}
 
 function setupScrollSpySampler() {
   const sampler = document.querySelector<HTMLElement>('.js-scroll-spy-sampler')

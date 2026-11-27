@@ -16,16 +16,11 @@
   min-height: 18rem;
 }
 
-/* 태그 묶음을 좁은 폭의 가운데에 모아 줄바꿈되게 한다. */
-.feature-tags {
-  /* 위치를 가진 원 패턴보다 뒤에 그려지지 않도록, 태그를 같은 쌓임 층에서 위로 올린다. */
-  position: relative;
-  max-width: var(--layout-width-small);
-  margin-inline: auto;
-}
-
-/* tokens 배너의 동그란 패턴 하나를 태그 뒤에 두고, 안쪽 고리부터 차례로 버블처럼 떠오르게 한다. */
-.feature-stage {
+/*
+ * 토큰 페이지로 가는 구획. 위에 걸친 제목까지 숨 쉴 자리가 있도록 위아래를 구획 간격만큼 더 띄운다. 동그란 고리를 뒤에 깔아, 위 Foundations의 선 목록과 다른 모양으로 흐름에 대비를 준다.
+ * 안쪽 고리부터 차례로 버블처럼 떠오르고, 가운데에 제목·종류 태그·링크를 둔다.
+ */
+.tokens-stage {
   --ring-size: var(--size-24);
 
   position: relative;
@@ -33,18 +28,20 @@
   align-items: center;
   justify-content: center;
   min-height: calc(var(--ring-size) * 16);
+  margin-block: var(--space-section);
   padding-block: var(--space-12);
 }
 
-.feature-rings {
+.tokens-rings {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.feature-rings span {
+.tokens-rings span {
   position: absolute;
   width: calc(var(--ring-size) * 2 * var(--ring));
   aspect-ratio: 1;
@@ -53,6 +50,60 @@
   opacity: 0;
   animation: ring-bubble 8s var(--transition-easing) infinite;
   animation-delay: calc(var(--ring) * 0.45s);
+}
+
+/*
+ * 섹션 제목을 바깥 고리의 왼쪽 위(10시 반 방향)에 걸쳐 둔다. 제목 상자의 오른쪽 아래 모서리가
+ * 고리 선 안쪽으로 조금 들어오게 하고, 바탕을 채워 걸친 부분의 선은 가린다.
+ */
+.tokens-stage-title {
+  --ring-radius: calc(var(--ring-size) * 8);
+  --title-overlap: var(--space-12);
+
+  position: absolute;
+  right: calc(50% + var(--ring-radius) * 0.7071 - var(--title-overlap));
+  bottom: calc(50% + var(--ring-radius) * 0.7071 - var(--title-overlap));
+  background: var(--background-color);
+}
+
+/* 고리 위에 그려지도록 위치를 주되 바탕은 비워 고리가 그대로 보이게 하고, 좁은 폭에 모아 가운데 정렬한다. */
+.tokens-stage-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  max-width: var(--layout-width-small);
+  text-align: center;
+}
+
+.tokens-stage-content mm-tag-group {
+  justify-content: center;
+}
+
+.tokens-stage-link {
+  --ring-radius: calc(var(--ring-size) * 8);
+
+  position: absolute;
+  /* 제목과 마주 보도록 바깥 고리의 오른쪽 아래(4시 반 방향) 바깥에 둔다. */
+  top: calc(50% + var(--ring-radius) * 0.7071);
+  left: calc(50% + var(--ring-radius) * 0.7071);
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-24);
+  white-space: nowrap;
+}
+
+/* 고리 양옆에 제목·링크가 들어갈 폭이 없으면 제목은 왼쪽 끝, 링크는 오른쪽 끝에 붙인다. */
+@media (max-width: 640px) {
+  .tokens-stage-title {
+    right: auto;
+    left: 0;
+  }
+
+  .tokens-stage-link {
+    right: 0;
+    left: auto;
+  }
 }
 
 @keyframes ring-bubble {
@@ -78,7 +129,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .feature-rings span {
+  .tokens-rings span {
     opacity: 1;
     animation: none;
   }
@@ -157,9 +208,17 @@
   font-family: var(--font-family-code);
 }
 
-/* 태그라인 아래 원칙 목록과 떨어져 보이도록 아래에 여백을 더한다. */
-.pattern-first {
-  margin-bottom: var(--space-8);
+/* 접근 방식(Pattern-first)과 그 원칙 목록을 한 구획으로 묶고, 위아래를 넓게 띄운다. */
+.approach-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-block: calc(var(--space-section) * 2);
+}
+
+/* 이 섹션은 Pattern-first 그림이 가운데 정렬이라 섹션 제목도 가운데에 둔다. */
+.approach-section > .repeat-title {
+  align-self: center;
 }
 
 /* 축마다 category 배경색 하나씩 가진 원형 배지. 아바타 컴포넌트를 바꾸지 않고 이 페이지에서만 그린다. */
@@ -374,17 +433,22 @@
   .principle-row {
     row-gap: var(--space-4);
   }
-}
 
-/* 위의 태그라인 영역과 구획 간격만큼 띄운다. */
-.foundations {
-  margin-top: var(--space-section);
+  /* 한 열로 쌓이면 높이를 맞출 옆 칸이 없으므로 가로 폭에 비례한 높이를 준다. */
+  .figure {
+    aspect-ratio: 2;
+  }
 }
 
 /* 레퍼런스 칸은 컴포넌트가 --border로 그리므로, 홈에서는 같은 검정 선으로 덮어쓴다. */
 .reference-grid mm-reference-cell {
   border-right: var(--home-border);
   border-bottom: var(--home-border);
+}
+
+/* 셀 host의 display가 hidden 속성을 덮지 않도록 한다. */
+.reference-grid mm-reference-cell[hidden] {
+  display: none;
 }
 
 /*
@@ -397,13 +461,12 @@
   --figure-unit: calc(var(--size-16) * 0.5);
 
   position: relative;
+  /* 그림 칸을 가로세로 모두 채운다. 높이는 같은 줄의 제목·내용 칸을 따른다. */
+  align-self: stretch;
   width: 100%;
-  /* 한 열로 쌓이는 좁은 화면에서 칸 폭만큼 커지지 않게 크기를 묶는다. 넓은 화면의 칸 폭(약 215px)보다 커서 그때는 영향이 없다. */
-  max-width: calc(var(--size-80) * 3);
-  /* 세 그림이 같은 테두리와 같은 가로세로(정사각형)를 가진다. */
-  aspect-ratio: 1;
+  min-height: var(--size-80);
   padding: var(--space-4);
-  /* 안쪽 내용이 커져도 정사각형을 지키도록 넘치는 부분은 자른다. */
+  /* 안쪽 내용이 칸보다 커지면 넘치는 부분은 자른다. */
   overflow: hidden;
   border: var(--home-border);
 }

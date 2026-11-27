@@ -519,7 +519,13 @@ const main = html`
         heading="Tokens"
         description="제품의 시각 결정에 이름을 붙인 값입니다. 컴포넌트와 페이지는 값을 직접 쓰지 않고 토큰을 참조합니다. 토큰 하나만 바꿔 그 값을 쓰는 모든 화면을 함께 바꿀 수 있습니다."
       >
-        <div class="tokens-banner"></div>
+        <mm-tag-group>
+          ${primitiveKinds.map(
+            ({ target, group }) => html`
+              <mm-code-tag tone=${kindTone(group)} size="large">${target}</mm-code-tag>
+            `,
+          )}
+        </mm-tag-group>
         <mm-grid columns="3" gap="6">${primitiveKinds.map(renderTokenKind('primitive'))}</mm-grid>
       </mm-page-header>
 

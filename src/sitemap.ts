@@ -61,6 +61,12 @@ export const SITEMAP: SitemapNode[] = [
     title: 'Utilities',
     icon: ICON_NAMES.GRID_VIEW,
   },
+  {
+    type: 'standalone',
+    id: 'word-list',
+    title: 'Word list',
+    icon: ICON_NAMES.DOCUMENT,
+  },
   // 임시 숨김: Conventions 페이지 (src/pages/conventions)
   // {
   //   type: 'standalone',
