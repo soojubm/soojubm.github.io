@@ -1,8 +1,6 @@
 import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-import { SITEMAP } from '@/sitemap'
-import { getCurrentPageId } from '@/utils'
 import './navbar.css'
 
 @customElement('mm-navbar')
@@ -24,22 +22,7 @@ export class Navbar extends LitElement {
         </div>
       </nav>
       <div class="navbar-backdrop"></div>
-
-      <mm-fixed-bottom class="site-bottom-bar">
-        <mm-bottom-bar .items=${this.bottomBarItems}></mm-bottom-bar>
-      </mm-fixed-bottom>
     `
-  }
-
-  private get bottomBarItems() {
-    return SITEMAP.filter(node => node.type === 'standalone' && node.id !== 'foundations').map(
-      node => ({
-        label: node.title,
-        href: `${node.id}.html`,
-        icon: node.icon,
-        active: node.id === getCurrentPageId(),
-      }),
-    )
   }
 
   /**
