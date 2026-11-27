@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
+import { indicatorBoxStyles } from '@/components/indicators/indicator.styles'
 import '@/components/common/dot/dot'
 import '@/components/overlay/tooltip'
 
@@ -14,11 +15,7 @@ export class CurrentIndicator extends LitElement {
 
     /* 툴팁은 트리거 위에서 열리므로, 점이 아니라 24 영역 전체를 트리거로 잡고 점은 가운데 둔다. */
     [slot='trigger'] {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: var(--size-24);
-      height: var(--size-24);
+      ${indicatorBoxStyles};
     }
   `
 

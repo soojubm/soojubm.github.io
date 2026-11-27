@@ -3,16 +3,13 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 import { ICON_NAMES } from '@/components/common'
+import { indicatorBoxStyles } from '@/components/indicators/indicator.styles'
 
 @customElement('mm-selected-indicator')
 export class SelectedIndicator extends LitElement {
   static styles = css`
     :host {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: var(--size-24);
-      height: var(--size-24);
+      ${indicatorBoxStyles};
     }
 
     mm-icon {
