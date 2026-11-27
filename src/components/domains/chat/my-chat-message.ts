@@ -3,6 +3,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 
 import { ICON_NAMES } from '@/components/common'
 import { renderChatMessageTime } from '@/components/domains/chat/chat.helpers'
+import { EventSubscriptionController } from '@/controllers/event-subscription-controller'
 import { emit } from '@/utils'
 
 import '@/components/common'
@@ -22,9 +23,8 @@ export class MyChatMessage extends LitElement {
     }
   `
   @property({ type: String }) datetime = ''
-  @state() private retryable = false
   @state() private failed = false
-  private retryListenerCount = 0
+  private readonly retrySubscription = new EventSubscriptionController(this, 'retry')
   // 버블의 status는 자식 attribute라 바뀌어도 이 컴포넌트가 알 수 없으므로 직접 지켜본다.
   private readonly statusObserver = new MutationObserver(() => this.updateFailed())
 
@@ -52,7 +52,7 @@ export class MyChatMessage extends LitElement {
   }
 
   private renderRetryButton() {
-    if (!this.retryable || !this.failed) return nothing
+    if (!this.retrySubscription.subscribed || !this.failed) return nothing
 
     return html`
       <mm-icon-button
@@ -63,31 +63,6 @@ export class MyChatMessage extends LitElement {
         @click=${this.handleRetryClick}
       ></mm-icon-button>
     `
-  }
-
-  // 소비자가 retry를 구독할 때만 재전송 버튼을 노출한다.
-  override addEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | AddEventListenerOptions,
-  ): void {
-    super.addEventListener(type, listener, options)
-
-    if (type !== 'retry') return
-    this.retryListenerCount += 1
-    this.retryable = true
-  }
-
-  override removeEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | EventListenerOptions,
-  ): void {
-    super.removeEventListener(type, listener, options)
-
-    if (type !== 'retry') return
-    this.retryListenerCount = Math.max(0, this.retryListenerCount - 1)
-    this.retryable = this.retryListenerCount > 0
   }
 
   private updateFailed() {

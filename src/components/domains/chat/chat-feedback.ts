@@ -6,6 +6,7 @@ import {
   surfaceBaseStyles,
   surfaceElevatedStyles,
 } from '@/components/common/surface/surface.styles'
+import { EventSubscriptionController } from '@/controllers/event-subscription-controller'
 import { emit } from '@/utils'
 
 import '@/components/common'
@@ -43,8 +44,7 @@ export class ChatFeedback extends LitElement {
   `
   @property({ type: String }) question = ''
   @state() private value: ChatFeedbackValue | null = null
-  @state() private dismissible = false
-  private dismissListenerCount = 0
+  private readonly dismissSubscription = new EventSubscriptionController(this, 'dismiss')
 
   render() {
     return html`
@@ -80,7 +80,7 @@ export class ChatFeedback extends LitElement {
   }
 
   private renderDismissButton() {
-    if (!this.dismissible) return nothing
+    if (!this.dismissSubscription.subscribed) return nothing
 
     return html`
       <mm-icon-button
@@ -91,31 +91,6 @@ export class ChatFeedback extends LitElement {
         @click=${this.handleDismissClick}
       ></mm-icon-button>
     `
-  }
-
-  // 소비자가 dismiss를 구독할 때만 닫기 버튼을 노출한다.
-  override addEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | AddEventListenerOptions,
-  ): void {
-    super.addEventListener(type, listener, options)
-
-    if (type !== 'dismiss') return
-    this.dismissListenerCount += 1
-    this.dismissible = true
-  }
-
-  override removeEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | EventListenerOptions,
-  ): void {
-    super.removeEventListener(type, listener, options)
-
-    if (type !== 'dismiss') return
-    this.dismissListenerCount = Math.max(0, this.dismissListenerCount - 1)
-    this.dismissible = this.dismissListenerCount > 0
   }
 
   private handleRatingClick(value: ChatFeedbackValue) {

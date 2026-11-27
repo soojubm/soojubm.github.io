@@ -6,6 +6,7 @@ import type { ActionConfig } from '@/types'
 import { renderActionButtons } from '@/components/common/button/button.utils'
 import { STATUS_ICONS, type StatusTone } from '@/components/common/icon/icon-names'
 import { noticeStyles } from '@/components/common/notice/notice.styles'
+import { EventSubscriptionController } from '@/controllers/event-subscription-controller'
 import { emit } from '@/utils'
 import '@/components/common/button/button'
 import '@/components/common/button/button-group'
@@ -25,8 +26,7 @@ export class Notice extends LitElement {
   @property({ attribute: false }) primaryAction?: ActionConfig
   @property({ attribute: false }) secondaryAction?: ActionConfig
   @state() private dismissed = false
-  @state() private dismissible = false
-  private dismissListenerCount = 0
+  private readonly dismissSubscription = new EventSubscriptionController(this, 'dismiss')
 
   render() {
     if (this.dismissed) return html``
@@ -55,7 +55,8 @@ export class Notice extends LitElement {
   }
 
   private renderActions() {
-    if (!this.primaryAction && !this.secondaryAction && !this.dismissible) return nothing
+    if (!this.primaryAction && !this.secondaryAction && !this.dismissSubscription.subscribed)
+      return nothing
 
     return html`
       <div class="notice-actions">
@@ -69,36 +70,11 @@ export class Notice extends LitElement {
   }
 
   private renderDismissButton() {
-    if (!this.dismissible) return nothing
+    if (!this.dismissSubscription.subscribed) return nothing
 
     return html`
       <mm-dismiss-button @dismiss=${this.handleDismiss}></mm-dismiss-button>
     `
-  }
-
-  // 소비자가 dismiss를 구독할 때만 닫기 버튼을 노출한다.
-  override addEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | AddEventListenerOptions,
-  ): void {
-    super.addEventListener(type, listener, options)
-
-    if (type !== 'dismiss') return
-    this.dismissListenerCount += 1
-    this.dismissible = true
-  }
-
-  override removeEventListener(
-    type: string,
-    listener: EventListenerOrEventListenerObject,
-    options?: boolean | EventListenerOptions,
-  ): void {
-    super.removeEventListener(type, listener, options)
-
-    if (type !== 'dismiss') return
-    this.dismissListenerCount = Math.max(0, this.dismissListenerCount - 1)
-    this.dismissible = this.dismissListenerCount > 0
   }
 
   private get icon() {
