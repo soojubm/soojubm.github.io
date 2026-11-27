@@ -303,9 +303,19 @@ const renderSpacingOverview = () => html`
   </mm-token-stage>
 `
 
+const renderUsageTags = (tags: string[] = []) =>
+  tags.map(
+    tag =>
+      html`
+        <mm-tag>${tag}</mm-tag>
+      `,
+  )
+
 /** 화면 폭을 나타내는 트랙 위에, 본문이 차지하는 너비만큼의 막대를 가운데에 놓는다. */
 const widthExample = (options: {
   caption: string
+  /** 캡션이 가리키는 페이지 성격에 해당하는 용도들. */
+  tags?: string[]
   token: string
   /** 이 너비를 정하는 레이아웃 토큰 이름. */
   widthToken?: string
@@ -333,7 +343,10 @@ const widthExample = (options: {
           </mm-tag-group>
         `
       : ''}
-    <mm-caption>${options.caption}</mm-caption>
+    <mm-tag-group>
+      <mm-tag tone=${options.tone}>${options.caption}</mm-tag>
+      ${renderUsageTags(options.tags)}
+    </mm-tag-group>
     ${options.description
       ? html`
           <mm-paragraph>${options.description}</mm-paragraph>
@@ -353,6 +366,7 @@ const widthExample = (options: {
 /** 페이지 너비와 같은 트랙·막대 모양으로, 트랙의 배경만 달리해 배경 대비를 보인다. */
 const renderBackgroundExample = (options: {
   caption: string
+  tags?: string[]
   value: string
   subtle?: boolean
 }) => html`
@@ -368,6 +382,7 @@ const renderBackgroundExample = (options: {
       <mm-code-tag>${options.value}</mm-code-tag>
     </mm-tag-group>
     <mm-caption>${options.caption}</mm-caption>
+    <mm-tag-group>${renderUsageTags(options.tags)}</mm-tag-group>
   </mm-flex>
 `
 
@@ -423,8 +438,8 @@ const main = html`
             <mm-token-stage full-width>
               <mm-flex direction="column" gap="6">
                 ${widthExample({
-                  caption: '집중형 · 폼, 인증',
-                  description: '한 가지 작업에 집중시킨다',
+                  caption: '집중형',
+                  tags: ['폼', '인증'],
                   token: '400px',
                   widthToken: '--layout-width-narrow',
                   category: 2,
@@ -433,7 +448,8 @@ const main = html`
                   links: [['./auth.html', 'Auth']],
                 })}
                 ${widthExample({
-                  caption: '일반 문서 · 에디토리얼, 설정, 대화',
+                  caption: '일반 문서',
+                  tags: ['에디토리얼', '설정', '대화'],
                   token: '640px',
                   widthToken: '--layout-width-small',
                   category: 1,
@@ -446,7 +462,8 @@ const main = html`
                   ],
                 })}
                 ${widthExample({
-                  caption: '확장형 · 목록, 대시보드, 상품, 프로필',
+                  caption: '확장형',
+                  tags: ['목록', '대시보드', '상품', '프로필'],
                   description: '넓은 폭은 목록·대시보드처럼 훑어보는 화면에 쓴다',
                   token: '콘텐츠 영역 전체',
                   category: 8,
@@ -470,7 +487,8 @@ const main = html`
               <mm-flex direction="column" gap="6">
                 ${renderBackgroundExample({ caption: '이전 화면', value: 'background 기본' })}
                 ${renderBackgroundExample({
-                  caption: '다른 정보 구조 · 글쓰기, 설정, 소개',
+                  caption: '다른 정보 구조',
+                  tags: ['글쓰기', '설정', '소개'],
                   value: 'background="subtle"',
                   subtle: true,
                 })}

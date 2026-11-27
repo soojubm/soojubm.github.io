@@ -54,18 +54,30 @@ const groupRoles = (icons: Record<string, string>) => {
     })
 }
 
+const CODE_TAG_CATEGORIES = ['actions', 'navigations', 'status', 'selection', 'brand', 'setting']
+
 const renderIconCatalog = () =>
   Object.entries(ICON_CATALOG)
     .filter(([, icons]) => Object.keys(icons).length > 0)
-    .map(
-      ([category, icons]) => html`
-        <mm-content-section heading-level="4" heading=${category}>
-          <mm-grid columns="6" column-min-width="4rem" gap="6">
-            ${groupRoles(icons).map(renderRoleCard)}
-          </mm-grid>
-        </mm-content-section>
-      `,
-    )
+    .map(([category, icons]) => {
+      const grid = html`
+        <mm-grid columns="6" column-min-width="4rem" gap="6">
+          ${groupRoles(icons).map(renderRoleCard)}
+        </mm-grid>
+      `
+      if (!CODE_TAG_CATEGORIES.includes(category)) {
+        return html`
+          <mm-content-section heading-level="4" heading=${category}>${grid}</mm-content-section>
+        `
+      }
+
+      return html`
+        <mm-flex direction="column" gap="6">
+          <mm-code-tag size="large">${category}</mm-code-tag>
+          ${grid}
+        </mm-flex>
+      `
+    })
 
 /** 그 밖의 선택 그룹이 따르는 키. 키마다 다른 색 태그로 나타낸다. */
 /** 이름이 어디서 어떻게 전해지는지를 보여 주는 카드. 도형은 실제 컴포넌트로 보인다. */
