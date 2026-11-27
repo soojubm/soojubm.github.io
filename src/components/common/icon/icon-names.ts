@@ -113,7 +113,7 @@ export const ICON_CATALOG = {
     FLOWER: 'flower',
     TREND_UP: 'graph-up',
     TREND_DOWN: 'graph-down',
-    EXTERNAL_LINK: 'link',
+    EXTERNAL_LINK: 'arrow-up-right',
     VIDEO: 'media-video',
     BOX: 'box-iso',
     CREDIT_CARD: 'credit-card',
