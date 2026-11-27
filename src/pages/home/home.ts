@@ -221,10 +221,10 @@ const designSystemThoughts: Thought[] = [
     figure: 'constraint',
     label: 'Principle',
     heading: 'Constraint-driven design',
-    body: '디자인의 문제는 선택지가 부족한 것이 아니라 너무 많은 것이다. 제약은 그택지를 줄여 주는 설계의 출발점이다.',
+    body: '디자인의 문제는 선택지가 부족한 것이 아니라 너무 많은 것이다. 제약은 그 선택지를 줄여 주는 설계의 출발점이다.',
     points: [
       {
-        text: '검증된 웹 표준과 기존 인터페이스 관습을 우선하고, 사용자에게 새로운 학습을 요구하는 패턴을 징ㅑㅇ한다. ',
+        text: '검증된 웹 표준과 기존 인터페이스 관습을 우선하고, 사용자에게 새로운 학습을 요구하는 패턴을 지양한다.',
         tags: ['Web Standards', 'Accessibility'],
       },
       {

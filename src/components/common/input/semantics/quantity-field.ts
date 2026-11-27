@@ -1,4 +1,4 @@
-import { LitElement, html, nothing } from 'lit'
+import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
@@ -14,9 +14,16 @@ import '@/components/common/icon-button/icon-button'
 import '@/components/common/input/input'
 import { emit } from '@/utils'
 
-@customElement('mm-numberfield')
-export class NumberField extends withTextfieldState(LitElement) {
-  static styles = textfieldStyles
+@customElement('mm-quantity-field')
+export class QuantityField extends withTextfieldState(LitElement) {
+  static styles = [
+    textfieldStyles,
+    css`
+      .textfield-control {
+        max-width: 10rem;
+      }
+    `,
+  ]
   @property({ type: Number }) min?: number
   @property({ type: Number }) max?: number
   @property({ type: Number }) step = 1

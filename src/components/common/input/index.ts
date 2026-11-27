@@ -9,7 +9,7 @@ import '@/components/common/input/semantics/form-fieldset'
 import '@/components/common/input/semantics/form'
 import '@/components/common/input/semantics/searchfield'
 import '@/components/common/input/semantics/passwordfield'
-import '@/components/common/input/semantics/numberfield'
+import '@/components/common/input/semantics/quantity-field'
 import '@/components/common/input/textarea'
 import '@/components/common/input/semantics/textarea-field'
 

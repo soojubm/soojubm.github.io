@@ -86,14 +86,9 @@ const main = html`
       </mm-tab-list>
       <mm-tab-panel value="size">
         <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-textfield placeholder="Default"></mm-textfield>
-              <mm-textfield size="small" placeholder="Small"></mm-textfield>
-            </mm-flex>
-            <mm-paragraph>
-              small은 수량 입력처럼 다른 컨트롤 안에 들어가는 필드에 씁니다.
-            </mm-paragraph>
+          <mm-flex direction="column" gap="3">
+            <mm-textfield placeholder="Default"></mm-textfield>
+            <mm-textfield size="small" placeholder="Small"></mm-textfield>
           </mm-flex>
         </mm-component-example>
         <mm-component-code .code=${sizeCode}></mm-component-code>
@@ -193,18 +188,9 @@ const main = html`
     </mm-component-anatomy>
 
     <mm-component-section heading="DatePicker">
-      <mm-textfield-group>
-        <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
-          <mm-icon slot="trailing" name="calendar"></mm-icon>
-        </mm-textfield>
-        <mm-textfield
-          name="date-range"
-          label="숙박 기간"
-          placeholder="YYYY. MM. DD. – YYYY. MM. DD."
-        >
-          <mm-icon slot="trailing" name="calendar"></mm-icon>
-        </mm-textfield>
-      </mm-textfield-group>
+      <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
+        <mm-icon slot="trailing" name="calendar"></mm-icon>
+      </mm-textfield>
     </mm-component-section>
 
     <mm-component-section
@@ -223,11 +209,11 @@ const main = html`
     </mm-component-section>
 
     <mm-component-section
-      heading="NumberField"
-      description="숫자 입력 필드. 수량, 가격, step/count 입력에 사용합니다."
+      heading="QuantityField"
+      description="수량 입력 필드. step/count 입력에 사용합니다."
     >
       <mm-flex direction="column" gap="3">
-        <mm-numberfield
+        <mm-quantity-field
           label="수량"
           name="quantity"
           value="2"
@@ -235,17 +221,9 @@ const main = html`
           max="20"
           step="1"
           description="1개 이상 20개 이하로 입력하세요."
-        ></mm-numberfield>
+        ></mm-quantity-field>
 
-        <mm-numberfield
-          label="가격"
-          name="price"
-          value="30000"
-          min="0"
-          step="1000"
-        ></mm-numberfield>
-
-        <mm-numberfield label="비활성" value="10" disabled></mm-numberfield>
+        <mm-quantity-field label="비활성" value="10" disabled></mm-quantity-field>
       </mm-flex>
     </mm-component-section>
 

@@ -359,7 +359,13 @@ const main = html`
           .options=${cartOptions}
         ></mm-radio-group>
 
-        <mm-numberfield id="cart-quantity" value="1" min="1" max="99" label="수량"></mm-numberfield>
+        <mm-quantity-field
+          id="cart-quantity"
+          value="1"
+          min="1"
+          max="99"
+          label="수량"
+        ></mm-quantity-field>
 
         <mm-separator></mm-separator>
 

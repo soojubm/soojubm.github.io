@@ -121,7 +121,7 @@ export interface TextfieldState {
 }
 
 /**
- * textfield·numberfield가 공유하는 필드 상태, input 값 동기화, 포커스 위임, 입력 규칙 검증.
+ * textfield·quantity-field가 공유하는 필드 상태, input 값 동기화, 포커스 위임, 입력 규칙 검증.
  * 검증은 브라우저의 제약 검증에 기대지 않고 필드가 직접 판정한다(required·minlength·maxlength·
  * pattern·type 이메일/URL·min/max·validator). 환경마다 다른 판정과 문구를 피하고 커스텀 규칙을 같은 경로에 둔다.
  * 시점은 포커스를 벗어날 때 처음 검사하고, 오류가 표시된 뒤에는 입력할 때마다 다시 검사해
@@ -147,7 +147,7 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     @property({ type: Number }) maxLength?: number
     @property({ type: String }) pattern?: string
     @property({ attribute: false }) validator?: FieldValidator
-    // 규칙에 쓰는 값은 각 필드가 소유한다(textfield는 type, numberfield는 min·max).
+    // 규칙에 쓰는 값은 각 필드가 소유한다(textfield는 type, quantity-field은 min·max).
     declare type?: InputType
     declare min?: number
     declare max?: number
