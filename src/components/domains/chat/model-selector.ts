@@ -11,7 +11,7 @@ const MODEL_OPTIONS: OptionItem[] = [
   { value: 'claude-haiku', label: 'Claude Haiku' },
 ]
 
-@customElement('mm-model-selector')
+@customElement('fff-model-selector')
 export class ModelSelector extends LitElement {
   static styles = css`
     :host {
@@ -22,13 +22,13 @@ export class ModelSelector extends LitElement {
 
   render() {
     return html`
-      <mm-select
+      <fff-select
         aria-label="모델"
         .value=${this.value}
         .options=${MODEL_OPTIONS}
         placement="top-start"
         @change=${this.handleSelectChange}
-      ></mm-select>
+      ></fff-select>
     `
   }
 

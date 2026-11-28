@@ -6,7 +6,7 @@ import { ScheduleController } from '@/controllers/schedule-controller'
 const FOCUSABLE_SELECTOR =
   'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"]), audio[controls], video[controls]'
 
-@customElement('mm-tab-panel')
+@customElement('fff-tab-panel')
 export class TabPanel extends LitElement {
   static styles = css`
     :host {
@@ -17,7 +17,7 @@ export class TabPanel extends LitElement {
     }
   `
   @property({ type: String }) value = ''
-  /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
+  /** @internal 선택 값을 소유한 fff-tab-list가 채운다. */
   @property({ type: Boolean, reflect: true }) active = false
   private tabStopFrame = new ScheduleController(this, () => this.syncTabStop())
 

@@ -12,8 +12,8 @@ description: 컴포넌트 문서 페이지(src/pages/components/*.ts)의 props·
 
 | 대상 | 진실의 원천 | 문서 쪽 |
 | --- | --- | --- |
-| props | 컴포넌트의 `@property` 선언 → `npm run manifest`가 `src/generated/component-manifest.ts` 생성 | `componentPropsOf('mm-x')`로 가져오므로 표는 자동. 손으로 쓴 이벤트·slot·메서드 항목만 수동 |
-| tokens | 컴포넌트 `*.styles.ts`·`static styles`에 선언된 `--x-*` | `<mm-component-tokens .elements=${[...]}>`가 자동. 손으로 쓴 `componentTokens` 배열이 있으면 수동 |
+| props | 컴포넌트의 `@property` 선언 → `npm run manifest`가 `src/generated/component-manifest.ts` 생성 | `componentPropsOf('fff-x')`로 가져오므로 표는 자동. 손으로 쓴 이벤트·slot·메서드 항목만 수동 |
+| tokens | 컴포넌트 `*.styles.ts`·`static styles`에 선언된 `--x-*` | `<fff-component-tokens .elements=${[...]}>`가 자동. 손으로 쓴 `componentTokens` 배열이 있으면 수동 |
 | code | 컴포넌트 API(prop 이름·허용 값·slot·이벤트) | 페이지의 `*Code` 문자열, 라이브 예제 마크업, 본문·anatomy·features 속 prop/token 언급 |
 
 구현이 진실이다. 문서를 구현에 맞춘다. 문서가 옳아 보이면(구현이 잘못) 고치지 말고 사용자에게 보고한다.
@@ -27,10 +27,10 @@ description: 컴포넌트 문서 페이지(src/pages/components/*.ts)의 props·
    ```
    `check:docs`는 문서에만 있는 토큰을 잡는다. `typecheck`는 manifest에서 사라진 prop을 참조하는 코드를 잡는다. 실패는 그대로 보고 항목에 넣는다.
 3. **페이지별 대조** (기계가 못 잡는 부분). 컴포넌트마다 아래를 확인한다.
-   - **code**: 각 `*Code` 문자열과 라이브 예제의 `<mm-x ...>` 마크업에서 쓰는 attribute를 모은다. 각각 manifest에 있는 prop이거나 표준 네이티브·ARIA attribute여야 한다. 값은 prop 타입의 union 안에 있어야 한다. 이름이 바뀐 prop(별칭 포함), 지워진 값, 폐지된 slot을 찾는다. 코드 문자열과 라이브 예제가 서로 같은 API를 쓰는지도 본다(예: 한쪽만 `size="medium"`).
+   - **code**: 각 `*Code` 문자열과 라이브 예제의 `<fff-x ...>` 마크업에서 쓰는 attribute를 모은다. 각각 manifest에 있는 prop이거나 표준 네이티브·ARIA attribute여야 한다. 값은 prop 타입의 union 안에 있어야 한다. 이름이 바뀐 prop(별칭 포함), 지워진 값, 폐지된 slot을 찾는다. 코드 문자열과 라이브 예제가 서로 같은 API를 쓰는지도 본다(예: 한쪽만 `size="medium"`).
    - **props**: 페이지가 수동으로 덧붙인 이벤트·slot·메서드가 구현의 `dispatchEvent`·`<slot>`·public 메서드와 맞는지 본다. 부모가 채우는 prop은 선언에 `/** @internal */`가 있어야 표에서 빠진다.
-   - **tokens**: 수동 `componentTokens`가 있으면 구현에 선언된 토큰과 이름·설명·기본값을 대조한다. 자동 표(`mm-component-tokens`)면 `elements` 배열이 실제 렌더되는 호스트(sub-component 포함)를 가리키는지만 본다.
-   - **서술**: 본문·`mm-component-anatomy`의 `parts`·`mm-component-guide`의 features가 prop/token 이름을 말하면 그 이름이 실존하는지 본다.
+   - **tokens**: 수동 `componentTokens`가 있으면 구현에 선언된 토큰과 이름·설명·기본값을 대조한다. 자동 표(`fff-component-tokens`)면 `elements` 배열이 실제 렌더되는 호스트(sub-component 포함)를 가리키는지만 본다.
+   - **서술**: 본문·`fff-component-anatomy`의 `parts`·`fff-component-guide`의 features가 prop/token 이름을 말하면 그 이름이 실존하는지 본다.
    - **관련 링크**: `relatedComponents`의 `href`가 실제 페이지 파일인지 본다.
 4. **수정.** 불일치마다 문서를 구현에 맞춘다. 컴포넌트 API를 바꾸는 작업은 이 스킬의 범위가 아니다. 구조·예제 구성·문안 개편도 범위 밖이다(어긋난 이름·값만 고친다). 한 곳이 바뀌면 같은 페이지의 코드 문자열과 라이브 예제를 함께 맞춘다.
 5. **마무리.** Prettier를 돌리고 `npm run check:docs && npm run typecheck`를 다시 통과시킨다. attribute 값만 바뀐 정도면 CLAUDE.md의 "토큰 절감"에 따라 브라우저 검증은 생략하고, 마크업 구조가 바뀌었거나 사용자가 요청했을 때만 개발 서버로 해당 페이지를 확인한다. 커밋은 사용자가 요청할 때만 한다.

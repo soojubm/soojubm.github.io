@@ -21,7 +21,7 @@ const COLUMNS_OPTIONS: OptionItem[] = [
 
 const ITEM_COUNT = 6
 
-@customElement('mm-grid-preview')
+@customElement('fff-grid-preview')
 export class GridPreview extends LitElement {
   static styles = css`
     :host {
@@ -35,31 +35,31 @@ export class GridPreview extends LitElement {
 
   render() {
     return html`
-      <mm-button-group>
-        <mm-toggle-button-group
+      <fff-button-group>
+        <fff-toggle-button-group
           aria-label="columns"
           .options=${COLUMNS_OPTIONS}
           .value=${String(this.columns)}
           @change=${this.handleColumnsChange}
-        ></mm-toggle-button-group>
-        <mm-toggle-button-group
+        ></fff-toggle-button-group>
+        <fff-toggle-button-group
           aria-label="gap"
           .options=${GAP_OPTIONS}
           .value=${this.gap}
           @change=${this.handleGapChange}
-        ></mm-toggle-button-group>
-      </mm-button-group>
+        ></fff-toggle-button-group>
+      </fff-button-group>
 
-      <mm-grid .columns=${this.columns} gap=${this.gap}>
+      <fff-grid .columns=${this.columns} gap=${this.gap}>
         ${Array.from(
           { length: ITEM_COUNT },
           () => html`
-            <mm-ui-placeholder></mm-ui-placeholder>
+            <fff-ui-placeholder></fff-ui-placeholder>
           `,
         )}
-      </mm-grid>
+      </fff-grid>
 
-      <mm-code-block .code=${this.buildCode()}></mm-code-block>
+      <fff-code-block .code=${this.buildCode()}></fff-code-block>
     `
   }
 
@@ -72,8 +72,8 @@ export class GridPreview extends LitElement {
   }
 
   private buildCode() {
-    return `<mm-grid columns="${this.columns}" gap="${this.gap}">
+    return `<fff-grid columns="${this.columns}" gap="${this.gap}">
   <!-- 반복 항목 -->
-</mm-grid>`
+</fff-grid>`
   }
 }

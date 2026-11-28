@@ -11,7 +11,7 @@ import {
 } from '@/components/common/menu-item/menu-item.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-menu-item-action')
+@customElement('fff-menu-item-action')
 export class MenuItemAction extends withMenuItemPresentation(LitElement) {
   static styles = [
     resetStyles,
@@ -44,7 +44,7 @@ export class MenuItemAction extends withMenuItemPresentation(LitElement) {
     }
 
     return html`
-      <mm-icon slot="trailing" name=${this.trailingIcon}></mm-icon>
+      <fff-icon slot="trailing" name=${this.trailingIcon}></fff-icon>
     `
   }
 }

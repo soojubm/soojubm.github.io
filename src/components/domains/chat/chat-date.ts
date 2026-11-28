@@ -5,7 +5,7 @@ import { renderChatDate } from '@/components/domains/chat/chat.helpers'
 
 import '@/components/common'
 
-@customElement('mm-chat-date')
+@customElement('fff-chat-date')
 export class ChatDate extends LitElement {
   static styles = css`
     :host {
@@ -17,7 +17,7 @@ export class ChatDate extends LitElement {
 
   render() {
     return html`
-      <mm-tag>${renderChatDate(this.datetime)}</mm-tag>
+      <fff-tag>${renderChatDate(this.datetime)}</fff-tag>
     `
   }
 }

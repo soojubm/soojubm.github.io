@@ -6,7 +6,7 @@ import type { AriaBoolean } from '@/types'
 import { focusRingStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
-@customElement('mm-tab')
+@customElement('fff-tab')
 export class Tab extends LitElement {
   static styles = css`
     :host {
@@ -44,12 +44,12 @@ export class Tab extends LitElement {
     }
 
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
-    /* :host-context(mm-tab-list[variant="pill"])[active] { color: var(--interaction-selected-foreground-color); } */
+    /* :host-context(fff-tab-list[variant="pill"])[active] { color: var(--interaction-selected-foreground-color); } */
   `
   @property({ type: String }) value = ''
-  /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
+  /** @internal 선택 값을 소유한 fff-tab-list가 채운다. */
   @property({ type: Boolean, reflect: true }) active = false
-  /** @internal 선택 값을 소유한 mm-tab-list가 채운다. */
+  /** @internal 선택 값을 소유한 fff-tab-list가 채운다. */
   @property({ type: String, attribute: 'aria-selected', reflect: true }) ariaSelected: AriaBoolean =
     'false'
 

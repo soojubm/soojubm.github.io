@@ -19,7 +19,7 @@ import '@/components/common'
 // 상태를 표현하는 색만 붙이고, 표면·전경·테두리처럼 원시 색을 물려받는 나머지 역할은 각자의 목록에서 소개한다.
 const STATUS_ROLES = ['primary', 'accent', 'danger', 'warning']
 
-@customElement('mm-color-token')
+@customElement('fff-color-token')
 export class ColorToken extends LitElement {
   static styles = [
     resetStyles,
@@ -53,7 +53,7 @@ export class ColorToken extends LitElement {
       }
 
       /* 이 색을 물려받는 상태 역할 태그: 칩 위쪽에 두고 대비쌍을 아래로 민다. */
-      mm-code-tag {
+      fff-code-tag {
         align-self: flex-start;
         margin-bottom: auto;
       }
@@ -116,7 +116,7 @@ export class ColorToken extends LitElement {
     if (!role) return nothing
 
     return html`
-      <mm-code-tag>${role}</mm-code-tag>
+      <fff-code-tag>${role}</fff-code-tag>
     `
   }
 
@@ -124,11 +124,11 @@ export class ColorToken extends LitElement {
     return this.pairs.map(
       (pair, index) => html`
         <div class="label-row" style=${styleMap({ color: `var(--${pair})` })}>
-          <mm-text class="key" size="12" weight="bold">${pair}</mm-text>
-          <mm-text size="12" weight="bold">
+          <fff-text class="key" size="12" weight="bold">${pair}</fff-text>
+          <fff-text size="12" weight="bold">
             ${this.referencedValue(pair)}
             <span class="detail">${this.contrasts[index] ?? ''}</span>
-          </mm-text>
+          </fff-text>
         </div>
       `,
     )
@@ -143,8 +143,8 @@ export class ColorToken extends LitElement {
 
     return html`
       <figcaption>
-        <mm-text size="12" weight="bold" color="light">${this.name}</mm-text>
-        <mm-text size="12" weight="bold">${value}</mm-text>
+        <fff-text size="12" weight="bold" color="light">${this.name}</fff-text>
+        <fff-text size="12" weight="bold">${value}</fff-text>
       </figcaption>
     `
   }

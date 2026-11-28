@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 
-@customElement('mm-review-summary')
+@customElement('fff-review-summary')
 export class ReviewSummary extends LitElement {
   static styles = css`
     :host {
@@ -31,14 +31,14 @@ export class ReviewSummary extends LitElement {
         ${Array.from(
           { length: 5 },
           (_, index) => html`
-            <mm-icon
+            <fff-icon
               name=${index < filledStars ? ICON_NAMES.FAVORITE_SELECTED : ICON_NAMES.FAVORITE}
-            ></mm-icon>
+            ></fff-icon>
           `,
         )}
       </div>
-      <mm-text weight="bold">${rating.toFixed(1)}</mm-text>
-      <mm-text>리뷰 ${this.reviewCount.toLocaleString('ko-KR')}개</mm-text>
+      <fff-text weight="bold">${rating.toFixed(1)}</fff-text>
+      <fff-text>리뷰 ${this.reviewCount.toLocaleString('ko-KR')}개</fff-text>
     `
   }
 }

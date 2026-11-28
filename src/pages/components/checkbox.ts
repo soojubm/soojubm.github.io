@@ -15,12 +15,12 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-checkbox'),
-  ...subComponentPropsOf('mm-checkbox-group'),
+  ...componentPropsOf('fff-checkbox'),
+  ...subComponentPropsOf('fff-checkbox-group'),
   { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
-  { name: 'mm-checkbox-group change', type: 'CustomEvent detail: values', kind: 'event' },
-  ...subComponentPropsOf('mm-terms-agreement'),
-  { name: 'mm-terms-agreement change', type: 'CustomEvent detail: values', kind: 'event' },
+  { name: 'fff-checkbox-group change', type: 'CustomEvent detail: values', kind: 'event' },
+  ...subComponentPropsOf('fff-terms-agreement'),
+  { name: 'fff-terms-agreement change', type: 'CustomEvent detail: values', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -36,59 +36,59 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const singleCode = `<mm-checkbox name="remember" value="remember">로그인 상태 유지</mm-checkbox>`
+const singleCode = `<fff-checkbox name="remember" value="remember">로그인 상태 유지</fff-checkbox>`
 
-const sizeCode = `<mm-checkbox-group name="size-default" .options=\${options}></mm-checkbox-group>
-<mm-checkbox-group name="size-large" size="large" .options=\${options}></mm-checkbox-group>`
+const sizeCode = `<fff-checkbox-group name="size-default" .options=\${options}></fff-checkbox-group>
+<fff-checkbox-group name="size-large" size="large" .options=\${options}></fff-checkbox-group>`
 
-const stateCode = `<mm-checkbox-group name="state" .options=\${options} .values=\${['checked', 'disabled-checked']}></mm-checkbox-group>
-<mm-checkbox indeterminate>Indeterminate</mm-checkbox>`
+const stateCode = `<fff-checkbox-group name="state" .options=\${options} .values=\${['checked', 'disabled-checked']}></fff-checkbox-group>
+<fff-checkbox indeterminate>Indeterminate</fff-checkbox>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Checkbox"
       description="옵션 목록에서 여러 개를 고르거나 하나의 동의를 표시하는 선택 컨트롤입니다. 누를 때마다 체크 상태가 바뀌고 각 옵션이 서로 독립적으로 동작하므로, 사용자는 해당하는 항목을 모두 골라 원하는 조합을 만들 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="size" variant="pill">
-        <mm-tab value="size">Size</mm-tab>
-        <mm-tab value="single">Single</mm-tab>
-        <mm-tab value="state">State</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="size">
-        <mm-component-example>
-          <mm-flex direction="column" gap="4">
-            <mm-checkbox-group
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="size" variant="pill">
+        <fff-tab value="size">Size</fff-tab>
+        <fff-tab value="single">Single</fff-tab>
+        <fff-tab value="state">State</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="size">
+        <fff-component-example>
+          <fff-flex direction="column" gap="4">
+            <fff-checkbox-group
               name="size-default"
               .options=${[
                 { value: 'a', label: '기본 크기' },
                 { value: 'b', label: '기본 크기' },
               ]}
-            ></mm-checkbox-group>
-            <mm-checkbox-group
+            ></fff-checkbox-group>
+            <fff-checkbox-group
               name="size-large"
               size="large"
               .options=${[
                 { value: 'a', label: 'large 크기' },
                 { value: 'b', label: 'large 크기' },
               ]}
-            ></mm-checkbox-group>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${sizeCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="single">
-        <mm-component-example>
-          <mm-checkbox name="remember" value="remember">로그인 상태 유지</mm-checkbox>
-        </mm-component-example>
-        <mm-component-code .code=${singleCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="state">
-        <mm-component-example>
-          <mm-flex direction="column" gap="4">
-            <mm-checkbox-group
+            ></fff-checkbox-group>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${sizeCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="single">
+        <fff-component-example>
+          <fff-checkbox name="remember" value="remember">로그인 상태 유지</fff-checkbox>
+        </fff-component-example>
+        <fff-component-code .code=${singleCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="state">
+        <fff-component-example>
+          <fff-flex direction="column" gap="4">
+            <fff-checkbox-group
               name="state"
               .options=${[
                 { value: 'unchecked', label: 'Unchecked' },
@@ -97,21 +97,21 @@ const main = html`
                 { value: 'disabled-checked', label: 'Disabled checked', disabled: true },
               ]}
               .values=${['checked', 'disabled-checked']}
-            ></mm-checkbox-group>
-            <mm-checkbox indeterminate>Indeterminate</mm-checkbox>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${stateCode}></mm-component-code>
-      </mm-tab-panel>
-    </mm-flex>
+            ></fff-checkbox-group>
+            <fff-checkbox indeterminate>Indeterminate</fff-checkbox>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${stateCode}></fff-component-code>
+      </fff-tab-panel>
+    </fff-flex>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-checkbox']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-checkbox']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-anatomy
+    <fff-component-anatomy
       .parts=${[
         '컨트롤(인디케이터) — 체크 여부를 시각적으로 나타내는 사각형 박스입니다.',
         '체크 표식 — 선택 시 나타나는 체크 아이콘(또는 indeterminate 표식).',
@@ -123,14 +123,14 @@ const main = html`
         { placement: 'inline-end' },
       ]}
     >
-      <mm-checkbox size="large" checked>관심 분야</mm-checkbox>
-    </mm-component-anatomy>
+      <fff-checkbox size="large" checked>관심 분야</fff-checkbox>
+    </fff-component-anatomy>
 
-    <mm-component-section
+    <fff-component-section
       heading="TermsAgreement"
       description="약관 목록이 일부만 선택되면 전체 동의 체크박스는 indeterminate로 표시합니다."
     >
-      <mm-terms-agreement
+      <fff-terms-agreement
         name="terms"
         .options=${[
           { value: 'terms5', label: '이용약관 동의 (필수)' },
@@ -139,23 +139,23 @@ const main = html`
         ]}
       >
         모두 동의합니다 (선택동의 포함)
-      </mm-terms-agreement>
+      </fff-terms-agreement>
 
-      <mm-surface variant="outlined">
-        <mm-checkbox-group
+      <fff-surface variant="outlined">
+        <fff-checkbox-group
           name="terms-detail"
           .options=${[
             { value: 'gender', label: '성별' },
             { value: 'birth', label: '생년월일' },
           ]}
-        ></mm-checkbox-group>
-      </mm-surface>
-    </mm-component-section>
+        ></fff-checkbox-group>
+      </fff-surface>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

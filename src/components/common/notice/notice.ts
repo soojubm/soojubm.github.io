@@ -17,7 +17,7 @@ import '@/components/common/icon-button/semantics/dismiss-button'
 export type NoticeRole = 'alert' | 'note' | 'status'
 export type NoticeVariant = Extract<StatusTone, 'info' | 'warning' | 'error'>
 
-@customElement('mm-notice')
+@customElement('fff-notice')
 export class Notice extends LitElement {
   static styles = [noticeStyles]
   @property({ type: String, reflect: true }) role: NoticeRole = 'note'
@@ -32,7 +32,7 @@ export class Notice extends LitElement {
     if (this.dismissed) return html``
 
     return html`
-      <mm-icon name=${this.icon} class="notice-icon"></mm-icon>
+      <fff-icon name=${this.icon} class="notice-icon"></fff-icon>
       ${this.renderContent()} ${this.renderActions()}
     `
   }
@@ -50,7 +50,7 @@ export class Notice extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-text size="14">${this.description}</mm-text>
+      <fff-text size="14">${this.description}</fff-text>
     `
   }
 
@@ -73,7 +73,7 @@ export class Notice extends LitElement {
     if (!this.dismissSubscription.subscribed) return nothing
 
     return html`
-      <mm-dismiss-button @dismiss=${this.handleDismiss}></mm-dismiss-button>
+      <fff-dismiss-button @dismiss=${this.handleDismiss}></fff-dismiss-button>
     `
   }
 

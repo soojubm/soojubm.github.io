@@ -23,7 +23,7 @@ type SocialLink = {
   href: string
 }
 
-@customElement('mm-social-links')
+@customElement('fff-social-links')
 export class SocialLinks extends LitElement {
   static styles = [
     resetStyles,
@@ -83,9 +83,9 @@ export class SocialLinks extends LitElement {
     return html`
       <div role="listitem">
         <a href=${href} target="_blank" rel="noopener noreferrer">
-          <mm-list-item label=${label} icon=${icon}>
-            <mm-icon slot="trailing" name=${ICON_NAMES.SHARE} size="small"></mm-icon>
-          </mm-list-item>
+          <fff-list-item label=${label} icon=${icon}>
+            <fff-icon slot="trailing" name=${ICON_NAMES.SHARE} size="small"></fff-icon>
+          </fff-list-item>
         </a>
       </div>
     `
@@ -98,7 +98,7 @@ export class SocialLinks extends LitElement {
   private renderCompactLink({ label, icon, href }: SocialLink) {
     return html`
       <a href=${href} target="_blank" rel="noopener noreferrer" aria-label=${label}>
-        <mm-avatar variant="primary" size="32" icon=${icon}></mm-avatar>
+        <fff-avatar variant="primary" size="32" icon=${icon}></fff-avatar>
       </a>
     `
   }

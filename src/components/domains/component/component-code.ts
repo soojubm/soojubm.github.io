@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { componentContentFrameStyles } from '@/components/domains/component/component.styles'
 
-@customElement('mm-component-code')
+@customElement('fff-component-code')
 export class ComponentCode extends LitElement {
   static styles = [
     componentContentFrameStyles,
@@ -13,7 +13,7 @@ export class ComponentCode extends LitElement {
       }
 
       /* 코드 하이라이터 색은 토큰 정의와 별개라 에디터 팔레트 값을 그대로 쓴다. */
-      mm-code-block {
+      fff-code-block {
         --code-block-tag-text-color: #d73a49;
         --code-block-attr-name-text-color: #b08800;
         --code-block-attr-value-text-color: #22863a;
@@ -31,7 +31,7 @@ export class ComponentCode extends LitElement {
   render() {
     return html`
       <div class="component-content-frame">
-        <mm-code-block variant="plain" .code=${this.code}></mm-code-block>
+        <fff-code-block variant="plain" .code=${this.code}></fff-code-block>
       </div>
     `
   }

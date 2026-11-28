@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/domains/component/component-feature-list'
 import type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
 
-@customElement('mm-component-guide')
+@customElement('fff-component-guide')
 export class ComponentGuide extends LitElement {
   static styles = css`
     :host {
@@ -26,7 +26,7 @@ export class ComponentGuide extends LitElement {
     if (!this.features.length) return nothing
 
     return html`
-      <mm-component-feature-list .features=${this.features}></mm-component-feature-list>
+      <fff-component-feature-list .features=${this.features}></fff-component-feature-list>
     `
   }
 }

@@ -21,7 +21,7 @@ const processStatusVariantTokens: AttributeTokens<
   error: { '--process-status-icon-color': 'var(--foreground-danger-color)' },
 }
 
-@customElement('mm-process-status')
+@customElement('fff-process-status')
 export class ProcessStatus extends LitElement {
   static styles = css`
     :host {
@@ -45,7 +45,7 @@ export class ProcessStatus extends LitElement {
       height: var(--size-16);
     }
 
-    mm-icon {
+    fff-icon {
       color: var(--process-status-icon-color);
     }
 
@@ -67,7 +67,7 @@ export class ProcessStatus extends LitElement {
   render() {
     return html`
       <span class="indicator">${this.renderIndicator()}</span>
-      <mm-text>${this.label}</mm-text>
+      <fff-text>${this.label}</fff-text>
       ${this.renderMeta()}
     `
   }
@@ -76,18 +76,18 @@ export class ProcessStatus extends LitElement {
   private renderIndicator() {
     if (this.variant === 'pending') {
       return html`
-        <mm-dot></mm-dot>
+        <fff-dot></fff-dot>
       `
     }
 
     if (this.variant === 'running') {
       return html`
-        <mm-spinner aria-hidden="true"></mm-spinner>
+        <fff-spinner aria-hidden="true"></fff-spinner>
       `
     }
 
     return html`
-      <mm-icon name=${STATUS_ICONS[this.variant]} aria-hidden="true"></mm-icon>
+      <fff-icon name=${STATUS_ICONS[this.variant]} aria-hidden="true"></fff-icon>
     `
   }
 
@@ -98,8 +98,8 @@ export class ProcessStatus extends LitElement {
       <div class="meta">
         ${this.meta.map(
           item => html`
-            <mm-bullet></mm-bullet>
-            <mm-text>${item}</mm-text>
+            <fff-bullet></fff-bullet>
+            <fff-text>${item}</fff-text>
           `,
         )}
       </div>

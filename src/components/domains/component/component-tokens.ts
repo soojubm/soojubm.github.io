@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { componentTokensStyles } from '@/components/domains/component/component.styles'
 import '@/components/common'
 
-@customElement('mm-component-tokens')
+@customElement('fff-component-tokens')
 export class ComponentTokens extends LitElement {
   static styles = componentTokensStyles
   @property({ attribute: false }) elements: string[] = []
@@ -12,10 +12,10 @@ export class ComponentTokens extends LitElement {
   render() {
     return html`
       <section class="component-content-frame" style="margin-top: var(--space-4)">
-        <mm-flex wrap="wrap" gap="2">
+        <fff-flex wrap="wrap" gap="2">
           ${this.renderNames()}
           <slot></slot>
-        </mm-flex>
+        </fff-flex>
       </section>
     `
   }
@@ -26,7 +26,7 @@ export class ComponentTokens extends LitElement {
       hostTokenNames(tagName).map(
         name =>
           html`
-            <mm-token-item element=${tagName} key=${name}></mm-token-item>
+            <fff-token-item element=${tagName} key=${name}></fff-token-item>
           `,
       ),
     )

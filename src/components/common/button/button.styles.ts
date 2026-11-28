@@ -88,7 +88,7 @@ const buttonVariantTokens: AttributeTokens<ButtonVariant> = {
   },
 }
 
-/** mm-button 색 변형(variant)과, 파괴적 행동임을 알리는 destructive 의도. */
+/** fff-button 색 변형(variant)과, 파괴적 행동임을 알리는 destructive 의도. */
 export const buttonVariantStyles = css`
   ${unsafeCSS(buildAttributeRules('variant', buttonVariantTokens))}
 

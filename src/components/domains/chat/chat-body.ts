@@ -9,7 +9,7 @@ import '@/components/common'
 /* 맨 아래에서 이만큼 벗어나면 이동 버튼을 보인다. */
 const SCROLL_BOTTOM_THRESHOLD = 96
 
-@customElement('mm-chat-body')
+@customElement('fff-chat-body')
 export class ChatBody extends LitElement {
   static styles = css`
     :host {
@@ -37,7 +37,7 @@ export class ChatBody extends LitElement {
       z-index: var(--material-zindex-elevated);
     }
 
-    .scroll-bottom mm-icon-button {
+    .scroll-bottom fff-icon-button {
       pointer-events: auto;
     }
 
@@ -65,12 +65,12 @@ export class ChatBody extends LitElement {
     return html`
       <slot @slotchange=${this.handleSlotChange}></slot>
       <div class="scroll-bottom" ?hidden=${!this.awayFromBottom}>
-        <mm-icon-button
+        <fff-icon-button
           variant="secondary"
           icon=${ICON_NAMES.SCROLL_BOTTOM}
           aria-label="맨 아래로 이동"
           @click=${this.handleScrollBottomClick}
-        ></mm-icon-button>
+        ></fff-icon-button>
       </div>
     `
   }

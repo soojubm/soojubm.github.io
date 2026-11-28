@@ -58,19 +58,19 @@
   flex-wrap: wrap;
   gap: var(--space-8);
 }
-.today-poll mm-flex > div {
+.today-poll fff-flex > div {
   min-width: 80px;
   background: var(--background-color);
   text-align: center;
 }
-.today-poll mm-flex > div figure {
+.today-poll fff-flex > div figure {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--foreground-color);
   border-bottom-width: 1px;
 }
-.today-poll mm-flex > div figure span {
+.today-poll fff-flex > div figure span {
   display: block;
   margin-top: -3rem;
   padding: 1.5rem 1.5rem 0.5rem;

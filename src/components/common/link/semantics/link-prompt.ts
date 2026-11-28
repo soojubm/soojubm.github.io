@@ -6,7 +6,7 @@ import '@/components/common/text/semantics/paragraph'
 import '@/components/common/link/link'
 import '@/components/common/icon'
 
-@customElement('mm-link-prompt')
+@customElement('fff-link-prompt')
 export class LinkPrompt extends LitElement {
   static styles = css`
     :host {
@@ -30,10 +30,10 @@ export class LinkPrompt extends LitElement {
   render() {
     return html`
       ${this.renderIcon()}
-      <mm-paragraph>
+      <fff-paragraph>
         ${this.message}
-        <mm-link href=${this.href} ?external=${this.external}>${this.linkLabel}</mm-link>
-      </mm-paragraph>
+        <fff-link href=${this.href} ?external=${this.external}>${this.linkLabel}</fff-link>
+      </fff-paragraph>
     `
   }
 
@@ -41,7 +41,7 @@ export class LinkPrompt extends LitElement {
     if (!this.icon) return nothing
 
     return html`
-      <mm-icon name=${this.icon} aria-hidden="true"></mm-icon>
+      <fff-icon name=${this.icon} aria-hidden="true"></fff-icon>
     `
   }
 }

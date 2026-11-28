@@ -5,7 +5,7 @@ import '@/components/common/icon/icon'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-reference-cell')
+@customElement('fff-reference-cell')
 export class ReferenceCell extends LitElement {
   static styles = [
     resetStyles,
@@ -59,7 +59,7 @@ export class ReferenceCell extends LitElement {
               `
             : nothing}
         </span>
-        <mm-icon name=${ICON_NAMES.EXTERNAL_LINK} aria-hidden="true"></mm-icon>
+        <fff-icon name=${ICON_NAMES.EXTERNAL_LINK} aria-hidden="true"></fff-icon>
       </a>
     `
   }

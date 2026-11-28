@@ -14,7 +14,7 @@ const metaItemGroupGapTokens: AttributeTokens<Exclude<MetaItemGroupGap, '4'>> = 
   '8': { gap: spaces['8'] },
 }
 
-@customElement('mm-meta-item-group')
+@customElement('fff-meta-item-group')
 export class MetaItemGroup extends LitElement {
   static styles = css`
     :host {

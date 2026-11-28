@@ -13,7 +13,7 @@ const MENU_ACTIONS: MoreMenuAction[] = [
   { value: 'delete', label: '삭제', destructive: true },
 ]
 
-@customElement('mm-comment-item')
+@customElement('fff-comment-item')
 export class CommentItem extends LitElement {
   static styles = css`
     :host {
@@ -29,7 +29,7 @@ export class CommentItem extends LitElement {
       position: relative;
     }
 
-    mm-button {
+    fff-button {
       align-self: flex-start;
     }
 
@@ -49,14 +49,14 @@ export class CommentItem extends LitElement {
   render() {
     return html`
       <article>
-        <mm-user-item
+        <fff-user-item
           size="medium"
           label=${this.author}
           description=${this.datetime}
           avatar-src=${this.avatarSrc}
         >
           ${this.renderMenu()}
-        </mm-user-item>
+        </fff-user-item>
 
         <slot></slot>
 
@@ -71,9 +71,9 @@ export class CommentItem extends LitElement {
     if (!this.replyLabel) return nothing
 
     return html`
-      <mm-button variant="tertiary" @click=${() => this.emitAction('reply')}>
+      <fff-button variant="tertiary" @click=${() => this.emitAction('reply')}>
         ${this.replyLabel}
-      </mm-button>
+      </fff-button>
     `
   }
 
@@ -81,12 +81,12 @@ export class CommentItem extends LitElement {
     if (!this.editable) return nothing
 
     return html`
-      <mm-more-menu
+      <fff-more-menu
         slot="trailing"
         aria-label="댓글 메뉴"
         .actions=${MENU_ACTIONS}
         @action=${this.handleMenuAction}
-      ></mm-more-menu>
+      ></fff-more-menu>
     `
   }
 

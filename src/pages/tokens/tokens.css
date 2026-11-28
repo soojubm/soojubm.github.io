@@ -37,7 +37,7 @@
   transition-duration: var(--transition-duration);
 }
 
-mm-example-stage:hover .motion-dot {
+fff-example-stage:hover .motion-dot {
   transform: translateX(calc(var(--size-80) * 3 - var(--size-24) - var(--space-2)));
 }
 
@@ -60,7 +60,7 @@ mm-example-stage:hover .motion-dot {
   gap: var(--space-1);
 }
 
-/* mm-scroll은 자식을 내용 너비로 두므로, 줄바꿈·그리드가 스테이지 너비를 쓰려면 너비를 직접 채운다. */
+/* fff-scroll은 자식을 내용 너비로 두므로, 줄바꿈·그리드가 스테이지 너비를 쓰려면 너비를 직접 채운다. */
 .stage-content {
   width: 100%;
 }

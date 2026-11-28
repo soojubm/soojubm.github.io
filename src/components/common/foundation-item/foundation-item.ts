@@ -5,7 +5,7 @@ import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common/text/semantics/text-block'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-foundation-item')
+@customElement('fff-foundation-item')
 export class FoundationItem extends LitElement {
   static styles = [
     resetStyles,
@@ -43,11 +43,11 @@ export class FoundationItem extends LitElement {
   render() {
     return html`
       <a href=${this.href}>
-        <mm-text-block
+        <fff-text-block
           level="3"
           heading=${this.heading}
           description=${this.description}
-        ></mm-text-block>
+        ></fff-text-block>
       </a>
     `
   }

@@ -18,26 +18,26 @@ type StatCard = {
 }
 
 const renderStatCard = ({ icon, trendIcon, label, value, tone, change, notes }: StatCard) => html`
-  <mm-surface variant="outlined" radius="large">
-    <mm-flex direction="column" gap="3">
-      <mm-avatar variant="secondary" size="40" icon=${icon}></mm-avatar>
-      <mm-flex direction="column" gap="1">
-        <mm-flex direction="column" gap="0">
-          <mm-text size="12">${label}</mm-text>
-          <mm-heading>${value}</mm-heading>
-        </mm-flex>
-        <mm-tag icon=${trendIcon} tone=${tone}>${change}</mm-tag>
-      </mm-flex>
-      <mm-flex direction="column" gap="0">
+  <fff-surface variant="outlined" radius="large">
+    <fff-flex direction="column" gap="3">
+      <fff-avatar variant="secondary" size="40" icon=${icon}></fff-avatar>
+      <fff-flex direction="column" gap="1">
+        <fff-flex direction="column" gap="0">
+          <fff-text size="12">${label}</fff-text>
+          <fff-heading>${value}</fff-heading>
+        </fff-flex>
+        <fff-tag icon=${trendIcon} tone=${tone}>${change}</fff-tag>
+      </fff-flex>
+      <fff-flex direction="column" gap="0">
         ${notes.map(
           note =>
             html`
-              <mm-text size="12" color="light">${note}</mm-text>
+              <fff-text size="12" color="light">${note}</fff-text>
             `,
         )}
-      </mm-flex>
-    </mm-flex>
-  </mm-surface>
+      </fff-flex>
+    </fff-flex>
+  </fff-surface>
 `
 
 /** 변화율은 지난 분기 대비. */
@@ -147,113 +147,113 @@ const adSpendItems = categoryAdSpends.map(({ category, share, value }) => ({
 const toPages = (ids: string[]) => ids.map(id => ({ href: `./${id}.html`, label: id }))
 
 const main = html`
-  <mm-main>
-    <mm-content-section-list>
-      <mm-flex direction="column" gap="4">
-        <mm-flex justify-content="space-between" align-items="center" gap="4">
-          <mm-heading level="2">
+  <fff-main>
+    <fff-content-section-list>
+      <fff-flex direction="column" gap="4">
+        <fff-flex justify-content="space-between" align-items="center" gap="4">
+          <fff-heading level="2">
             <span aria-hidden="true">🌙</span>
             Tender is the night.
-          </mm-heading>
-          <mm-button-group>
-            <mm-button icon=${ICON_NAMES.IMPORT}>가져오기</mm-button>
-            <mm-button variant="primary">추가하기</mm-button>
-          </mm-button-group>
-        </mm-flex>
+          </fff-heading>
+          <fff-button-group>
+            <fff-button icon=${ICON_NAMES.IMPORT}>가져오기</fff-button>
+            <fff-button variant="primary">추가하기</fff-button>
+          </fff-button-group>
+        </fff-flex>
 
-        <mm-tab-list value="daily" variant="pill" search-param="period">
-          <mm-tab value="daily">일간</mm-tab>
-          <mm-tab value="weekly">주간</mm-tab>
-          <mm-tab value="monthly">월간</mm-tab>
-        </mm-tab-list>
+        <fff-tab-list value="daily" variant="pill" search-param="period">
+          <fff-tab value="daily">일간</fff-tab>
+          <fff-tab value="weekly">주간</fff-tab>
+          <fff-tab value="monthly">월간</fff-tab>
+        </fff-tab-list>
 
-        <mm-grid columns="4" gap="4">${systemStatCards.map(renderStatCard)}</mm-grid>
+        <fff-grid columns="4" gap="4">${systemStatCards.map(renderStatCard)}</fff-grid>
 
-        <mm-grid columns="2" gap="4">
-          <mm-banner
+        <fff-grid columns="2" gap="4">
+          <fff-banner
             variant="primary"
             heading="새 계열을 제안해 주세요"
             description="기존 기반으로 다루지 못하는 패턴을 발견했다면 알려 주세요."
           >
-            <mm-button slot="action" variant="primary">제안하기</mm-button>
-          </mm-banner>
-          <mm-surface variant="outlined" radius="large">
-            <mm-flex direction="column" gap="4">
-              <mm-text-block
+            <fff-button slot="action" variant="primary">제안하기</fff-button>
+          </fff-banner>
+          <fff-surface variant="outlined" radius="large">
+            <fff-flex direction="column" gap="4">
+              <fff-text-block
                 level="3"
                 heading="카테고리별 광고비"
                 description="이번 달 집행액 2,000,000원"
-              ></mm-text-block>
-              <mm-chart-stacked-bar .items=${adSpendItems}></mm-chart-stacked-bar>
-              <mm-chart-legend .items=${adSpendItems}></mm-chart-legend>
-            </mm-flex>
-          </mm-surface>
-        </mm-grid>
-      </mm-flex>
+              ></fff-text-block>
+              <fff-chart-stacked-bar .items=${adSpendItems}></fff-chart-stacked-bar>
+              <fff-chart-legend .items=${adSpendItems}></fff-chart-legend>
+            </fff-flex>
+          </fff-surface>
+        </fff-grid>
+      </fff-flex>
 
-      <mm-grid columns="2">
-        <mm-surface variant="outlined" radius="large">
-          <mm-flex direction="column" gap="2">
-            <mm-tag tone="red">3건</mm-tag>
-            <mm-text-block
+      <fff-grid columns="2">
+        <fff-surface variant="outlined" radius="large">
+          <fff-flex direction="column" gap="2">
+            <fff-tag tone="red">3건</fff-tag>
+            <fff-text-block
               level="3"
               heading="오늘 할 일"
               description="마감이 가까운 업무부터 확인하세요."
-            ></mm-text-block>
-            <mm-menu-item-group size="large">
-              <mm-menu-item-action
+            ></fff-text-block>
+            <fff-menu-item-group size="large">
+              <fff-menu-item-action
                 size="medium"
                 emoji="📦"
                 trailing-icon=${ICON_NAMES.FORWARD}
                 label="출고 지연 주문 확인"
                 description="오늘 오전 11:00까지"
-              ></mm-menu-item-action>
-              <mm-menu-item-action
+              ></fff-menu-item-action>
+              <fff-menu-item-action
                 size="medium"
                 emoji="💬"
                 trailing-icon=${ICON_NAMES.FORWARD}
                 label="고객 문의 답변"
                 description="미응답 문의 17건"
-              ></mm-menu-item-action>
-              <mm-menu-item-action
+              ></fff-menu-item-action>
+              <fff-menu-item-action
                 size="medium"
                 emoji="📊"
                 trailing-icon=${ICON_NAMES.FORWARD}
                 label="주간 성과 보고서 공유"
                 description="오늘 오후 4:00까지"
-              ></mm-menu-item-action>
-            </mm-menu-item-group>
-          </mm-flex>
-        </mm-surface>
-        <mm-surface radius="large">
-          <mm-flex direction="column" gap="4">
-            <mm-flex direction="column" gap="1">
-              <mm-text size="12" color="light">노후 자금</mm-text>
-              <mm-heading level="1">${`${goalTarget.toLocaleString()}원`}</mm-heading>
-            </mm-flex>
+              ></fff-menu-item-action>
+            </fff-menu-item-group>
+          </fff-flex>
+        </fff-surface>
+        <fff-surface radius="large">
+          <fff-flex direction="column" gap="4">
+            <fff-flex direction="column" gap="1">
+              <fff-text size="12" color="light">노후 자금</fff-text>
+              <fff-heading level="1">${`${goalTarget.toLocaleString()}원`}</fff-heading>
+            </fff-flex>
             <progress
               value=${goalSaved}
               max=${goalTarget}
               aria-label="노후 자금 목표 달성률"
             ></progress>
-            <mm-flex justify-content="space-between" align-items="center" gap="4">
-              <mm-text color="light">${`${goalShare}% 달성`}</mm-text>
-              <mm-text>${`${goalSaved.toLocaleString()}원`}</mm-text>
-            </mm-flex>
-            <mm-notice
+            <fff-flex justify-content="space-between" align-items="center" gap="4">
+              <fff-text color="light">${`${goalShare}% 달성`}</fff-text>
+              <fff-text>${`${goalSaved.toLocaleString()}원`}</fff-text>
+            </fff-flex>
+            <fff-notice
               description="진행률을 알면 progress, 모르면 스피너입니다. 둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
-            ></mm-notice>
-          </mm-flex>
-        </mm-surface>
-      </mm-grid>
-      <mm-grid columns="2" gap="4">
-        <mm-surface variant="outlined" radius="large">
-          <mm-flex direction="column" gap="4">
-            <mm-text-block
+            ></fff-notice>
+          </fff-flex>
+        </fff-surface>
+      </fff-grid>
+      <fff-grid columns="2" gap="4">
+        <fff-surface variant="outlined" radius="large">
+          <fff-flex direction="column" gap="4">
+            <fff-text-block
               level="3"
               heading="저장 공간"
               description="200 GB 중 187.23 GB 사용됨"
-            ></mm-text-block>
+            ></fff-text-block>
             <meter
               value="187.23"
               min="0"
@@ -263,14 +263,14 @@ const main = html`
               optimum="0"
               aria-label="저장 공간 사용량"
             ></meter>
-            <mm-notice
+            <fff-notice
               description="meter는 작업이 아니라 상태입니다. 완료를 향해 가지 않고 오르내립니다. low·high·optimum으로 좋은 구간을 정하면 브라우저가 색을 바꿉니다. 프로필 완성도처럼 퍼센트로 보여도, 기다리는 일이 아니면 meter입니다."
-            ></mm-notice>
-          </mm-flex>
-        </mm-surface>
-      </mm-grid>
-    </mm-content-section-list>
-  </mm-main>
+            ></fff-notice>
+          </fff-flex>
+        </fff-surface>
+      </fff-grid>
+    </fff-content-section-list>
+  </fff-main>
 `
 
 renderPage(main)

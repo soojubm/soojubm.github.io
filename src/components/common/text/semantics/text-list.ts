@@ -7,7 +7,7 @@ import { textStyles } from '@/components/common/text/text.styles'
 import '@/components/indicators/list-marker/list-marker'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-text-list')
+@customElement('fff-text-list')
 export class TextList extends LitElement {
   static styles = [
     resetStyles,
@@ -27,7 +27,7 @@ export class TextList extends LitElement {
       }
 
       /* 마커는 항목 첫 줄의 글자 가운데에 맞춘다. */
-      .list li mm-list-marker {
+      .list li fff-list-marker {
         margin-top: var(--space-1);
       }
     `,
@@ -61,7 +61,7 @@ export class TextList extends LitElement {
   private renderItem(text: string | TemplateResult, index: number) {
     return html`
       <li>
-        <mm-list-marker variant=${this.variant} value=${index + 1}></mm-list-marker>
+        <fff-list-marker variant=${this.variant} value=${index + 1}></fff-list-marker>
         <span>${text}</span>
       </li>
     `

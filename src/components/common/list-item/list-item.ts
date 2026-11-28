@@ -19,7 +19,7 @@ type DescribableSize = Exclude<ListItemSize, 'small'>
 const LABEL_TEXT_SIZE: Record<ListItemSize, string> = { small: '14', medium: '14', large: '18' }
 const DESCRIPTION_TEXT_SIZE: Record<DescribableSize, string> = { medium: '12', large: '14' }
 
-@customElement('mm-list-item')
+@customElement('fff-list-item')
 export class ListItem extends LitElement {
   static styles = [listItemStyles]
   @property({ type: String, reflect: true }) size: ListItemSize = 'small'
@@ -70,7 +70,7 @@ export class ListItem extends LitElement {
 
   private renderLeadingContent() {
     return html`
-      <mm-avatar
+      <fff-avatar
         size=${this.avatarSize}
         variant=${this.avatarVariant}
         shape=${this.avatarShape}
@@ -78,7 +78,7 @@ export class ListItem extends LitElement {
         src=${ifDefined(this.avatarSrc || undefined)}
       >
         ${this.renderEmoji()}
-      </mm-avatar>
+      </fff-avatar>
     `
   }
 
@@ -94,7 +94,7 @@ export class ListItem extends LitElement {
     if (!this.label) return nothing
 
     return html`
-      <mm-text size=${LABEL_TEXT_SIZE[this.size]}>${this.label}</mm-text>
+      <fff-text size=${LABEL_TEXT_SIZE[this.size]}>${this.label}</fff-text>
     `
   }
 
@@ -103,9 +103,9 @@ export class ListItem extends LitElement {
     if (size === 'small' || !this.description) return nothing
 
     return html`
-      <mm-text size=${DESCRIPTION_TEXT_SIZE[size]} color="light">
+      <fff-text size=${DESCRIPTION_TEXT_SIZE[size]} color="light">
         <slot name="description">${this.description}</slot>
-      </mm-text>
+      </fff-text>
     `
   }
 

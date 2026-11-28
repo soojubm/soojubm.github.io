@@ -12,7 +12,7 @@ import {
 import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-more-button')
+@customElement('fff-more-button')
 export class MoreButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'

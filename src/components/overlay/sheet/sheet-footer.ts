@@ -7,7 +7,7 @@ import { renderActionButtons } from '@/components/common/button/button.utils'
 import { sheetFooterStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common'
 
-@customElement('mm-sheet-footer')
+@customElement('fff-sheet-footer')
 export class SheetFooter extends LitElement {
   static styles = sheetFooterStyles
   @property({ attribute: false }) primaryAction?: ActionConfig

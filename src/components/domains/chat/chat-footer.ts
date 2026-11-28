@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators.js'
 import '@/components/common'
 import { backgroundLayerStyles, layerContainerStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-chat-footer')
+@customElement('fff-chat-footer')
 export class ChatFooter extends LitElement {
   static styles = css`
     :host {

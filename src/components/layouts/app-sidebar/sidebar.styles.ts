@@ -37,7 +37,7 @@ export const sidebarStyles = css`
     inset: 0 var(--layout-chrome-inset) var(--layout-chrome-inset);
   }
 
-  mm-scroll {
+  fff-scroll {
     flex: 1;
     min-height: 0;
     /* 메뉴 hover 면이 스크롤바에 붙지 않게 띄운다 */
@@ -50,7 +50,7 @@ export const sidebarStyles = css`
     transition-timing-function: var(--transition-easing-open);
   }
 
-  :host([open]) mm-scroll {
+  :host([open]) fff-scroll {
     overscroll-behavior: contain;
   }
 

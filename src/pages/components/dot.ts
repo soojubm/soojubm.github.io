@@ -22,7 +22,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'avatar.html', label: 'Avatar' },
 ]
 
-const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-dot')]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('fff-dot')]
 
 const tones = Object.keys(dotToneColors) as DotTone[]
 
@@ -37,115 +37,115 @@ const legendItems: ChartLegendItem[] = Object.values(CATEGORIES).map(({ label, t
   tone,
 }))
 
-const toneCode = `<mm-dot tone="blue"></mm-dot>
-<mm-dot tone="green"></mm-dot>
-<mm-dot tone="gray"></mm-dot>`
+const toneCode = `<fff-dot tone="blue"></fff-dot>
+<fff-dot tone="green"></fff-dot>
+<fff-dot tone="gray"></fff-dot>`
 
-const sizeCode = `<mm-dot tone="blue" size="16"></mm-dot>
-<mm-dot tone="blue" size="12"></mm-dot>
-<mm-dot tone="blue" size="8"></mm-dot>
-<mm-dot tone="blue" size="6"></mm-dot>`
+const sizeCode = `<fff-dot tone="blue" size="16"></fff-dot>
+<fff-dot tone="blue" size="12"></fff-dot>
+<fff-dot tone="blue" size="8"></fff-dot>
+<fff-dot tone="blue" size="6"></fff-dot>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Dot"
       description="색 하나로 정보를 전하는 가장 작은 표시입니다. 글자를 쓰지 않아 행이나 아바타처럼 좁은 자리에 얹을 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka
+    <fff-component-aka
       .items=${['Indicator', 'Badge', 'Swatch', 'Legend marker', 'Presence']}
-    ></mm-component-aka>
+    ></fff-component-aka>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="tone" variant="pill">
-        <mm-tab value="tone">Tone</mm-tab>
-        <mm-tab value="size">Size</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="tone">
-        <mm-component-example>
-          <mm-flex gap="2" align-items="center">
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="tone" variant="pill">
+        <fff-tab value="tone">Tone</fff-tab>
+        <fff-tab value="size">Size</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="tone">
+        <fff-component-example>
+          <fff-flex gap="2" align-items="center">
             ${tones.map(
               tone => html`
-                <mm-dot tone=${tone}></mm-dot>
+                <fff-dot tone=${tone}></fff-dot>
               `,
             )}
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${toneCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="size">
-        <mm-component-example>
-          <mm-flex gap="4" align-items="flex-end">
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${toneCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="size">
+        <fff-component-example>
+          <fff-flex gap="4" align-items="flex-end">
             ${dotSizeList.map(
               size => html`
-                <mm-flex direction="column" gap="2" align-items="center">
-                  <mm-dot tone="blue" size=${size}></mm-dot>
-                  <mm-caption>${size}</mm-caption>
-                </mm-flex>
+                <fff-flex direction="column" gap="2" align-items="center">
+                  <fff-dot tone="blue" size=${size}></fff-dot>
+                  <fff-caption>${size}</fff-caption>
+                </fff-flex>
               `,
             )}
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${sizeCode}></mm-component-code>
-      </mm-tab-panel>
-    </mm-flex>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${sizeCode}></fff-component-code>
+      </fff-tab-panel>
+    </fff-flex>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-dot']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-dot']}></fff-component-tokens>
 
-    <mm-component-section heading="StatusDot" description="항목의 상태를 알립니다.">
-      <mm-flex direction="column" gap="6">
-        <mm-flex gap="4" align-items="center">
+    <fff-component-section heading="StatusDot" description="항목의 상태를 알립니다.">
+      <fff-flex direction="column" gap="6">
+        <fff-flex gap="4" align-items="center">
           ${statusVariants.map(
             variant => html`
-              <mm-flex gap="1" align-items="center">
-                <mm-status-dot variant=${variant}></mm-status-dot>
-                <mm-caption>${variant}</mm-caption>
-              </mm-flex>
+              <fff-flex gap="1" align-items="center">
+                <fff-status-dot variant=${variant}></fff-status-dot>
+                <fff-caption>${variant}</fff-caption>
+              </fff-flex>
             `,
           )}
-        </mm-flex>
-        <mm-flex gap="4" align-items="flex-end">
+        </fff-flex>
+        <fff-flex gap="4" align-items="flex-end">
           ${userAvatarSizes.map(
             size => html`
-              <mm-flex direction="column" gap="2" align-items="center">
-                <mm-user-avatar
+              <fff-flex direction="column" gap="2" align-items="center">
+                <fff-user-avatar
                   size=${size}
                   name="수줍이"
                   src="/src/images/soojubm.png"
                   online
-                ></mm-user-avatar>
-                <mm-caption>${size}</mm-caption>
-              </mm-flex>
+                ></fff-user-avatar>
+                <fff-caption>${size}</fff-caption>
+              </fff-flex>
             `,
           )}
-        </mm-flex>
-      </mm-flex>
-    </mm-component-section>
+        </fff-flex>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-section heading="ProgressDot" description="작업의 진행 단계를 알립니다.">
-      <mm-flex gap="4" align-items="center">
-        <mm-progress-dot variant="todo">시작 전</mm-progress-dot>
-        <mm-progress-dot variant="in-progress">진행 중</mm-progress-dot>
-        <mm-progress-dot variant="done">완료</mm-progress-dot>
-        <mm-progress-dot variant="blocked">보류</mm-progress-dot>
-      </mm-flex>
-    </mm-component-section>
+    <fff-component-section heading="ProgressDot" description="작업의 진행 단계를 알립니다.">
+      <fff-flex gap="4" align-items="center">
+        <fff-progress-dot variant="todo">시작 전</fff-progress-dot>
+        <fff-progress-dot variant="in-progress">진행 중</fff-progress-dot>
+        <fff-progress-dot variant="done">완료</fff-progress-dot>
+        <fff-progress-dot variant="blocked">보류</fff-progress-dot>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-section heading="CurrentIndicator" description="현재 항목을 가리킵니다.">
-      <mm-pagination current-page="2" page-count="5"></mm-pagination>
-    </mm-component-section>
+    <fff-component-section heading="CurrentIndicator" description="현재 항목을 가리킵니다.">
+      <fff-pagination current-page="2" page-count="5"></fff-pagination>
+    </fff-component-section>
 
-    <mm-component-section heading="ChartLegend" description="차트의 시리즈가 무엇인지 알립니다.">
-      <mm-chart-legend .items=${legendItems}></mm-chart-legend>
-    </mm-component-section>
+    <fff-component-section heading="ChartLegend" description="차트의 시리즈가 무엇인지 알립니다.">
+      <fff-chart-legend .items=${legendItems}></fff-chart-legend>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

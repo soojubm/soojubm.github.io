@@ -11,7 +11,7 @@ export interface AvatarItem {
   src?: string
 }
 
-@customElement('mm-avatar-group')
+@customElement('fff-avatar-group')
 export class AvatarGroup extends LitElement {
   static styles = css`
     :host {
@@ -64,7 +64,7 @@ export class AvatarGroup extends LitElement {
 
   private renderAvatar({ name, src }: AvatarItem) {
     return html`
-      <mm-user-avatar size="32" .name=${name ?? ''} .src=${src}></mm-user-avatar>
+      <fff-user-avatar size="32" .name=${name ?? ''} .src=${src}></fff-user-avatar>
     `
   }
 
@@ -72,7 +72,7 @@ export class AvatarGroup extends LitElement {
     if (overflowCount <= 0) return nothing
 
     return html`
-      <mm-avatar size="32" shape="circle">+${overflowCount}</mm-avatar>
+      <fff-avatar size="32" shape="circle">+${overflowCount}</fff-avatar>
     `
   }
 
@@ -80,7 +80,7 @@ export class AvatarGroup extends LitElement {
     if (!this.label) return nothing
 
     return html`
-      <mm-text class="label">${this.label}</mm-text>
+      <fff-text class="label">${this.label}</fff-text>
     `
   }
 }

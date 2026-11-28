@@ -9,7 +9,7 @@ export interface ComponentChangelogItemData {
   description: string
 }
 
-@customElement('mm-component-changelog')
+@customElement('fff-component-changelog')
 export class ComponentChangelog extends LitElement {
   static styles = css`
     :host {
@@ -37,18 +37,18 @@ export class ComponentChangelog extends LitElement {
     if (this.items.length === 0) return nothing
 
     return html`
-      <mm-heading>${this.heading}</mm-heading>
-      <mm-surface variant="outlined" radius="large">
+      <fff-heading>${this.heading}</fff-heading>
+      <fff-surface variant="outlined" radius="large">
         <div class="changelog-items">${this.items.map(item => this.renderItem(item))}</div>
-      </mm-surface>
+      </fff-surface>
     `
   }
 
   private renderItem(item: ComponentChangelogItemData) {
     return html`
       <div class="changelog-item">
-        <mm-text color="light">${item.date}</mm-text>
-        <mm-paragraph>${item.description}</mm-paragraph>
+        <fff-text color="light">${item.date}</fff-text>
+        <fff-paragraph>${item.description}</fff-paragraph>
       </div>
     `
   }

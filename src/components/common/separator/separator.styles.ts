@@ -24,7 +24,7 @@ export const separatorStyles = css`
   }
 
   /* 가운데 레이블 박스: 텍스트가 없으면 ::after가 선을 가리고, 있으면 slot 요소가 표시 */
-  mm-caption {
+  fff-caption {
     display: block;
     padding: 0 var(--separator-padding);
     background: var(--separator-text-background-color);

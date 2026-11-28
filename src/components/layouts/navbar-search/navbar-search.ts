@@ -12,7 +12,7 @@ function hasValue(target: EventTarget | null): target is HTMLInputElement | HTML
   return target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement
 }
 
-@customElement('mm-navbar-search')
+@customElement('fff-navbar-search')
 export class NavbarSearch extends LitElement {
   static styles = css`
     :host {
@@ -25,31 +25,31 @@ export class NavbarSearch extends LitElement {
   /* eslint-disable lit-a11y/no-autofocus -- 시트가 열릴 때 검색 입력으로 바로 들어가는 것이 이 표면의 목적이다. */
   render() {
     return html`
-      <mm-icon-button
+      <fff-icon-button
         icon=${ICON_NAMES.SEARCH}
         aria-label="검색"
         aria-expanded=${this.open ? 'true' : 'false'}
         @click=${this.handleSearchButtonClick}
-      ></mm-icon-button>
+      ></fff-icon-button>
 
-      <mm-sheet
+      <fff-sheet
         placement="top"
         style="--backdrop-filter: blur(2px)"
         ?open=${this.open}
         @toggle=${this.handleSheetToggle}
       >
-        <mm-sheet-body>
+        <fff-sheet-body>
           <form role="search" style="display: flex; flex-direction: column; gap: var(--space-2)">
-            <mm-searchfield
+            <fff-searchfield
               autofocus
               placeholder="컴포넌트, 패턴을 검색하세요"
               .value=${this.search.query}
               @input=${this.handleSearchInput}
-            ></mm-searchfield>
+            ></fff-searchfield>
             ${this.renderResults()}
           </form>
-        </mm-sheet-body>
-      </mm-sheet>
+        </fff-sheet-body>
+      </fff-sheet>
     `
   }
 
@@ -81,19 +81,19 @@ export class NavbarSearch extends LitElement {
     if (!this.search.query) return nothing
     if (this.search.searching) {
       return html`
-        <mm-paragraph color="light">검색 중...</mm-paragraph>
+        <fff-paragraph color="light">검색 중...</fff-paragraph>
       `
     }
     if (this.search.results.length === 0) {
       return html`
-        <mm-search-result-empty query=${this.search.query}></mm-search-result-empty>
+        <fff-search-result-empty query=${this.search.query}></fff-search-result-empty>
       `
     }
     return html`
-      <mm-search-result-list
+      <fff-search-result-list
         heading="검색 결과"
         .results=${this.search.results}
-      ></mm-search-result-list>
+      ></fff-search-result-list>
     `
   }
 }

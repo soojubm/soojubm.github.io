@@ -16,7 +16,7 @@ export type MenuItemGroupRole = 'menu' | 'radiogroup' | 'group'
 // 각 항목이 shadow 안에 렌더하는 포커스 대상. 행 조립 규칙은 menu-item 계열이 소유한다.
 const ITEM_SELECTOR = '[role^="menuitem"], [role="radio"]'
 
-@customElement('mm-menu-item-group')
+@customElement('fff-menu-item-group')
 export class MenuItemGroup extends LitElement {
   static styles = css`
     :host {
@@ -76,7 +76,7 @@ export class MenuItemGroup extends LitElement {
     if (!this.heading) return nothing
 
     return html`
-      <mm-heading level="5" aria-hidden="true">${this.heading}</mm-heading>
+      <fff-heading level="5" aria-hidden="true">${this.heading}</fff-heading>
     `
   }
 

@@ -15,7 +15,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
-@customElement('mm-radio-group')
+@customElement('fff-radio-group')
 export class RadioGroup extends LitElement {
   static styles = [resetStyles, inputVisuallyHiddenStyles, inputSelectionGroupStyles, radioStyles]
   @property({ attribute: false }) options: OptionItem[] = []
@@ -61,7 +61,7 @@ export class RadioGroup extends LitElement {
       />
       <label for=${inputId}>
         <span class="indicator"></span>
-        <mm-paragraph>${option.label}</mm-paragraph>
+        <fff-paragraph>${option.label}</fff-paragraph>
       </label>
     `
   }

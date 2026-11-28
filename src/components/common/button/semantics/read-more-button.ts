@@ -5,7 +5,7 @@ import type { AriaBoolean, AriaIdRef } from '@/types'
 
 import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-read-more-button')
+@customElement('fff-read-more-button')
 export class ReadMoreButton extends LitElement {
   static styles = [
     resetStyles,

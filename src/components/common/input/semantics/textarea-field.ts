@@ -12,7 +12,7 @@ import {
 import '@/components/common/input/textarea'
 import { uniqueId } from '@/utils'
 
-@customElement('mm-textarea-field')
+@customElement('fff-textarea-field')
 export class TextareaField extends LitElement {
   static styles = textfieldStyles
   @property({ type: String }) value = ''
@@ -24,13 +24,13 @@ export class TextareaField extends LitElement {
   @property({ type: Boolean }) optional = false
   @property({ type: Boolean }) disabled = false
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
-  @query('mm-textarea') private textarea?: HTMLElement
-  private inputId = uniqueId('mm-textarea')
+  @query('fff-textarea') private textarea?: HTMLElement
+  private inputId = uniqueId('fff-textarea')
 
   render() {
     return html`
       ${renderFieldLabel(this.inputId, this.label, this.optional)}
-      <mm-textarea
+      <fff-textarea
         input-id=${this.inputId}
         .value=${this.value}
         .name=${this.name}
@@ -43,12 +43,12 @@ export class TextareaField extends LitElement {
       >
         <slot name="leading" slot="leading"></slot>
         <slot name="trailing" slot="trailing"></slot>
-      </mm-textarea>
+      </fff-textarea>
       ${renderFieldDescription(this.description, this.descriptionId)}
     `
   }
 
-  // 컴포넌트 자체는 포커스를 받지 않으므로 mm-textarea로 넘긴다.
+  // 컴포넌트 자체는 포커스를 받지 않으므로 fff-textarea로 넘긴다.
   focus(options?: FocusOptions) {
     this.textarea?.focus(options)
   }

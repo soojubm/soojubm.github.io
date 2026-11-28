@@ -15,7 +15,7 @@ export const renderFieldLabel = (forId: string, label: string | undefined, optio
   if (!label) return nothing
 
   return html`
-    <mm-textfield-label for=${forId} ?optional=${optional}>${label}</mm-textfield-label>
+    <fff-textfield-label for=${forId} ?optional=${optional}>${label}</fff-textfield-label>
   `
 }
 
@@ -23,7 +23,7 @@ export const renderFieldDescription = (description: string | undefined, id?: str
   if (!description) return nothing
 
   return html`
-    <mm-textfield-description id=${ifDefined(id)}>${description}</mm-textfield-description>
+    <fff-textfield-description id=${ifDefined(id)}>${description}</fff-textfield-description>
   `
 }
 
@@ -31,7 +31,7 @@ export const renderFieldValidation = (id: string, text: string | undefined) => {
   if (!text) return nothing
 
   return html`
-    <mm-textfield-validation id=${id}>${text}</mm-textfield-validation>
+    <fff-textfield-validation id=${id}>${text}</fff-textfield-validation>
   `
 }
 
@@ -155,7 +155,7 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
     declare max?: number
     @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
     @state() private validityText = ''
-    @query('mm-input') private input?: HTMLElement
+    @query('fff-input') private input?: HTMLElement
     readonly inputId = uniqueId('input')
 
     get resolvedValidationText() {
@@ -185,7 +185,7 @@ export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) =
         .join(' ')
     }
 
-    // 컴포넌트 자체는 포커스를 받지 않으므로 mm-input으로 넘긴다.
+    // 컴포넌트 자체는 포커스를 받지 않으므로 fff-input으로 넘긴다.
     focus(options?: FocusOptions) {
       this.input?.focus(options)
     }

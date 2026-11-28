@@ -140,9 +140,9 @@ module.exports = (env, argv) => {
           options: {
             sources: {
               list: [
-                { tag: 'mm-avatar', attribute: 'src', type: 'src' },
-                { tag: 'mm-user-row', attribute: 'avatar-src', type: 'src' },
-                { tag: 'mm-user-snippet', attribute: 'avatar-src', type: 'src' },
+                { tag: 'fff-avatar', attribute: 'src', type: 'src' },
+                { tag: 'fff-user-row', attribute: 'avatar-src', type: 'src' },
+                { tag: 'fff-user-snippet', attribute: 'avatar-src', type: 'src' },
               ],
             },
           },

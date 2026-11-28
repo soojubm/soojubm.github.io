@@ -11,7 +11,7 @@ import {
 import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-hamburger-button')
+@customElement('fff-hamburger-button')
 export class HamburgerButton extends LitElement {
   static styles = [
     resetStyles,

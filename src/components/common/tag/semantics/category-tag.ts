@@ -7,7 +7,7 @@ import type { CategoryTone } from '@/components/common/tag/tag.styles'
 import '@/components/common/tag/tag'
 import { renderTag } from '@/components/common/tag/tag.utils'
 
-@customElement('mm-category-tag')
+@customElement('fff-category-tag')
 export class CategoryTag extends LitElement {
   @property({ type: String }) tone: CategoryTone = 'pink'
   @property({ type: String }) icon?: IconName

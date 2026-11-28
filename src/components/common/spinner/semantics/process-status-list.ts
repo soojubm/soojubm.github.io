@@ -3,7 +3,7 @@ import { customElement, queryAssignedElements } from 'lit/decorators.js'
 
 import '@/components/common/spinner/semantics/process-status'
 
-@customElement('mm-process-status-list')
+@customElement('fff-process-status-list')
 export class ProcessStatusList extends LitElement {
   static styles = css`
     :host {

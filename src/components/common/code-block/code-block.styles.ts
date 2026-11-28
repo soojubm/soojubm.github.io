@@ -18,7 +18,7 @@ export const codeBlockStyles = css`
   }
 
   /* 면을 가진 pre 뒤에 두어야 그 위에 그려진다. code의 padding-right가 글이 깔릴 자리를 비워둔다. */
-  mm-copy-button {
+  fff-copy-button {
     position: absolute;
     top: var(--space-3);
     right: var(--space-3);
@@ -31,7 +31,7 @@ export const codeBlockStyles = css`
   }
 
   /* 면을 걷으면 버튼이 기댈 여백도 없으므로 첫 줄 가운데와 프레임 안쪽 끝에 맞춘다. */
-  :host([variant='plain']) mm-copy-button {
+  :host([variant='plain']) fff-copy-button {
     top: calc(var(--font-line-height-24) / 2);
     right: 0;
     transform: translateY(-50%);
@@ -55,7 +55,7 @@ export const codeBlockStyles = css`
   }
 
   /* 복사 버튼이 있을 때만 글이 버튼 아래로 깔릴 자리를 비운다. */
-  pre:has(+ mm-copy-button) code {
+  pre:has(+ fff-copy-button) code {
     padding-right: var(--space-12);
   }
 

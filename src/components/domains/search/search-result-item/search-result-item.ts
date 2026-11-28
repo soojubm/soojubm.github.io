@@ -8,7 +8,7 @@ import { listItemInteractiveStyles } from '@/components/common/list-item/list-it
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common'
 
-@customElement('mm-search-result-item')
+@customElement('fff-search-result-item')
 export class SearchResultItem extends LitElement {
   static styles = [
     resetStyles,
@@ -22,7 +22,7 @@ export class SearchResultItem extends LitElement {
         display: block;
       }
 
-      mm-paragraph {
+      fff-paragraph {
         color: var(--foreground-color);
       }
     `,
@@ -35,7 +35,7 @@ export class SearchResultItem extends LitElement {
   render() {
     return html`
       <a href=${this.href}>
-        <mm-list-item
+        <fff-list-item
           size="medium"
           icon=${ICON_NAMES.SEARCH}
           avatar-variant="tertiary"
@@ -43,7 +43,7 @@ export class SearchResultItem extends LitElement {
           description=${this.description}
         >
           ${this.renderDescription()}
-        </mm-list-item>
+        </fff-list-item>
       </a>
     `
   }
@@ -52,9 +52,9 @@ export class SearchResultItem extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-paragraph slot="description" size="medium" max-lines="1">
+      <fff-paragraph slot="description" size="medium" max-lines="1">
         ${this.renderSegments()}
-      </mm-paragraph>
+      </fff-paragraph>
     `
   }
 
@@ -63,6 +63,6 @@ export class SearchResultItem extends LitElement {
   private renderSegments() {
     if (!this.segments) return this.description
 
-    return this.segments.map(({ text, match }) => (match ? html`<mm-highlight>${text}</mm-highlight>` : text))
+    return this.segments.map(({ text, match }) => (match ? html`<fff-highlight>${text}</fff-highlight>` : text))
   }
 }

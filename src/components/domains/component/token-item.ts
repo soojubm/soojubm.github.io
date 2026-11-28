@@ -6,7 +6,7 @@ import { componentTokenValue, displayTokenValue } from '@/components/domains/com
 import { ThemeChangeController } from '@/controllers/theme-change-controller'
 import '@/components/common'
 
-@customElement('mm-token-item')
+@customElement('fff-token-item')
 export class TokenItem extends LitElement {
   static styles = css`
     /* 토큰 묶음 안에서 줄바꿈으로 흐르므로 표면 기본 폭(100%) 대신 내용 폭을 갖는다. */
@@ -39,7 +39,7 @@ export class TokenItem extends LitElement {
 
   render() {
     return html`
-      <mm-meta-item code layout="stacked" label=${this.key} value=${this.value}></mm-meta-item>
+      <fff-meta-item code layout="stacked" label=${this.key} value=${this.value}></fff-meta-item>
     `
   }
 

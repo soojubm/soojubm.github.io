@@ -26,7 +26,7 @@ const variantTokens = Object.fromEntries(
   Object.entries(statusDotToneMap).map(([variant, tone]) => [variant, dotToneTokens(tone)]),
 )
 
-@customElement('mm-status-dot')
+@customElement('fff-status-dot')
 export class StatusDot extends LitElement {
   static styles = css`
     :host {

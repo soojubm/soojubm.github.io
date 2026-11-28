@@ -6,7 +6,7 @@ import type { FilterOption } from '@/components/common'
 import { emit } from '@/utils'
 import '@/components/common'
 
-@customElement('mm-media-filter')
+@customElement('fff-media-filter')
 export class MediaFilter extends LitElement {
   static styles = css`
     :host {
@@ -15,11 +15,11 @@ export class MediaFilter extends LitElement {
       gap: var(--space-3);
     }
 
-    mm-text {
+    fff-text {
       min-width: var(--size-32);
     }
 
-    mm-filter-button-group {
+    fff-filter-button-group {
       flex: 1;
     }
   `
@@ -28,13 +28,13 @@ export class MediaFilter extends LitElement {
 
   render() {
     return html`
-      <mm-text size="12" color="light" aria-hidden="true">${this.label}</mm-text>
-      <mm-filter-button-group
+      <fff-text size="12" color="light" aria-hidden="true">${this.label}</fff-text>
+      <fff-filter-button-group
         mode="single"
         aria-label=${this.label}
         .options=${this.options}
         @change=${this.handleGroupChange}
-      ></mm-filter-button-group>
+      ></fff-filter-button-group>
     `
   }
 

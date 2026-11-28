@@ -11,7 +11,7 @@ export type ChartStackedBarItem = {
   share: number
 }
 
-@customElement('mm-chart-stacked-bar')
+@customElement('fff-chart-stacked-bar')
 export class ChartStackedBar extends LitElement {
   static styles = css`
     :host {

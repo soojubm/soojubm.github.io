@@ -100,79 +100,79 @@ const cartOptions = [
 ]
 
 const main = html`
-  <mm-main width="large">
-    <mm-content-section-list>
-      <mm-grid columns="2" gap="8">
-        <mm-product-image
+  <fff-main width="large">
+    <fff-content-section-list>
+      <fff-grid columns="2" gap="8">
+        <fff-product-image
           src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
           alt="제품 이미지"
-        ></mm-product-image>
+        ></fff-product-image>
 
-        <mm-flex direction="column" justify-content="space-between" gap="6">
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-flex align-items="center" justify-content="space-between" gap="2">
-                <mm-link href="#">Hachimitsupai</mm-link>
-                <mm-flex align-items="center" gap="1">
-                  <mm-bookmark-button shape="heart"></mm-bookmark-button>
-                  <mm-share-button></mm-share-button>
-                </mm-flex>
-              </mm-flex>
-              <mm-heading level="1">センチメンタル通り</mm-heading>
-              <mm-product-price
+        <fff-flex direction="column" justify-content="space-between" gap="6">
+          <fff-flex direction="column" gap="6">
+            <fff-flex direction="column" gap="3">
+              <fff-flex align-items="center" justify-content="space-between" gap="2">
+                <fff-link href="#">Hachimitsupai</fff-link>
+                <fff-flex align-items="center" gap="1">
+                  <fff-bookmark-button shape="heart"></fff-bookmark-button>
+                  <fff-share-button></fff-share-button>
+                </fff-flex>
+              </fff-flex>
+              <fff-heading level="1">センチメンタル通り</fff-heading>
+              <fff-product-price
                 size="large"
                 original-price="₩ 25,000"
                 discount="36% 할인"
                 price="₩ 16,000"
-              ></mm-product-price>
-              <mm-paragraph>
+              ></fff-product-price>
+              <fff-paragraph>
                 I have 2 kids so sleep is hard to come by, these have helped me to wake up feeling
                 more refreshed and ready to start the day
-              </mm-paragraph>
-              <mm-review-summary
+              </fff-paragraph>
+              <fff-review-summary
                 rating=${averageRating}
                 review-count=${reviewCount}
-              ></mm-review-summary>
-            </mm-flex>
+              ></fff-review-summary>
+            </fff-flex>
 
-            <mm-flex direction="column" gap="4">
-              <mm-flex direction="column" gap="2">
-                <mm-flex gap="2">
-                  <mm-text>사이즈</mm-text>
-                  <mm-text id="size-value">M</mm-text>
-                </mm-flex>
-                <mm-scroll id="size-options" gap="2" hide-scrollbar>
+            <fff-flex direction="column" gap="4">
+              <fff-flex direction="column" gap="2">
+                <fff-flex gap="2">
+                  <fff-text>사이즈</fff-text>
+                  <fff-text id="size-value">M</fff-text>
+                </fff-flex>
+                <fff-scroll id="size-options" gap="2" hide-scrollbar>
                   ${sizeOptions.map(
                     size => html`
-                      <mm-toggle-button value=${size} .pressed=${size === 'M'}>
+                      <fff-toggle-button value=${size} .pressed=${size === 'M'}>
                         ${size}
-                      </mm-toggle-button>
+                      </fff-toggle-button>
                     `,
                   )}
-                </mm-scroll>
-              </mm-flex>
+                </fff-scroll>
+              </fff-flex>
 
-              <mm-flex direction="column" gap="2">
-                <mm-flex gap="2">
-                  <mm-text>색상</mm-text>
-                  <mm-text id="color-value">블랙</mm-text>
-                </mm-flex>
-                <mm-scroll id="color-options" gap="2" hide-scrollbar>
+              <fff-flex direction="column" gap="2">
+                <fff-flex gap="2">
+                  <fff-text>색상</fff-text>
+                  <fff-text id="color-value">블랙</fff-text>
+                </fff-flex>
+                <fff-scroll id="color-options" gap="2" hide-scrollbar>
                   ${colorOptions.map(
                     option => html`
-                      <mm-color-chip
+                      <fff-color-chip
                         value=${option.value}
                         color=${option.color}
                         aria-label=${option.label}
                         .pressed=${option.value === 'black'}
-                      ></mm-color-chip>
+                      ></fff-color-chip>
                     `,
                   )}
-                </mm-scroll>
-              </mm-flex>
-            </mm-flex>
+                </fff-scroll>
+              </fff-flex>
+            </fff-flex>
 
-            <mm-button
+            <fff-button
               id="product-cta"
               aria-controls="cart-sheet"
               aria-haspopup="dialog"
@@ -181,204 +181,204 @@ const main = html`
               full-width
             >
               장바구니 추가
-            </mm-button>
-          </mm-flex>
+            </fff-button>
+          </fff-flex>
 
-          <mm-list-item-group gap="0">
-            <mm-list-item
+          <fff-list-item-group gap="0">
+            <fff-list-item
               avatar-variant="tertiary"
               icon=${ICON_NAMES.DELIVERY}
               label="Free shipping on all U.S. orders of $40+"
-            ></mm-list-item>
-            <mm-list-item
+            ></fff-list-item>
+            <fff-list-item
               avatar-variant="tertiary"
               icon=${ICON_NAMES.BOX}
               label="Free returns and exchanges"
-            ></mm-list-item>
-          </mm-list-item-group>
-        </mm-flex>
-      </mm-grid>
+            ></fff-list-item>
+          </fff-list-item-group>
+        </fff-flex>
+      </fff-grid>
 
-      <mm-fixed-top style="top: var(--navbar-height); background: var(--background-color)">
-        <mm-toggle-button-group
+      <fff-fixed-top style="top: var(--navbar-height); background: var(--background-color)">
+        <fff-toggle-button-group
           id="section-nav"
           value="detail"
           .options=${sectionNavOptions}
-        ></mm-toggle-button-group>
-      </mm-fixed-top>
+        ></fff-toggle-button-group>
+      </fff-fixed-top>
 
       <!-- 마케팅 스토리: 중앙 정렬 + 특징 -->
-      <mm-grid id="detail" columns="1" gap="4">
-        <mm-flex direction="column" align-items="center" gap="3">
-          <mm-tag tone="purple">Why prebiotics?</mm-tag>
-          <mm-text-block
+      <fff-grid id="detail" columns="1" gap="4">
+        <fff-flex direction="column" align-items="center" gap="3">
+          <fff-tag tone="purple">Why prebiotics?</fff-tag>
+          <fff-text-block
             centered
             level="1"
             heading="Prebiotics are fibers that feed good bacteria"
             description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-        </mm-flex>
-        <mm-feature-group columns="4">
-          <mm-feature
+          ></fff-text-block>
+        </fff-flex>
+        <fff-feature-group columns="4">
+          <fff-feature
             centered
             icon=${ICON_NAMES.FLOWER}
             heading="Tangerine Oil"
             description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-          <mm-feature
+          ></fff-feature>
+          <fff-feature
             centered
             icon=${ICON_NAMES.SPARKS}
             heading="Tangerine Oil"
             description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-          <mm-feature
+          ></fff-feature>
+          <fff-feature
             centered
             icon=${ICON_NAMES.FAVORITE}
             heading="Tangerine Oil"
             description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-          <mm-feature
+          ></fff-feature>
+          <fff-feature
             centered
             icon=${ICON_NAMES.LIKE}
             heading="Tangerine Oil"
             description="A microbial substrate that has a positive impact on the oral environment"
-          ></mm-feature>
-        </mm-feature-group>
-      </mm-grid>
+          ></fff-feature>
+        </fff-feature-group>
+      </fff-grid>
 
       <!-- 마케팅 스토리: 이미지 + 텍스트 -->
-      <mm-grid columns="2" gap="8">
-        <mm-flex direction="column" gap="3">
-          <mm-tag tone="purple">Why prebiotics?</mm-tag>
-          <mm-text-block
+      <fff-grid columns="2" gap="8">
+        <fff-flex direction="column" gap="3">
+          <fff-tag tone="purple">Why prebiotics?</fff-tag>
+          <fff-text-block
             level="1"
             heading="Prebiotics are fibers that feed good bacteria"
             description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-        </mm-flex>
-        <mm-thumbnail ratio="1:1"></mm-thumbnail>
-      </mm-grid>
+          ></fff-text-block>
+        </fff-flex>
+        <fff-thumbnail ratio="1:1"></fff-thumbnail>
+      </fff-grid>
 
       <!-- 마케팅 스토리: bleed 배경 + 특징 -->
-      <mm-surface variant="filled" band>
-        <mm-grid columns="1" gap="4">
-          <mm-flex direction="column" align-items="center" gap="3">
-            <mm-tag tone="purple">Why prebiotics?</mm-tag>
-            <mm-text-block
+      <fff-surface variant="filled" band>
+        <fff-grid columns="1" gap="4">
+          <fff-flex direction="column" align-items="center" gap="3">
+            <fff-tag tone="purple">Why prebiotics?</fff-tag>
+            <fff-text-block
               centered
               level="1"
               heading="Prebiotics are fibers that feed good bacteria"
               description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-            ></mm-text-block>
-          </mm-flex>
-          <mm-feature-group columns="4">
-            <mm-feature
+            ></fff-text-block>
+          </fff-flex>
+          <fff-feature-group columns="4">
+            <fff-feature
               centered
               icon=${ICON_NAMES.LIKE}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
-            ></mm-feature>
-            <mm-feature
+            ></fff-feature>
+            <fff-feature
               centered
               icon=${ICON_NAMES.FAVORITE}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
-            ></mm-feature>
-            <mm-feature
+            ></fff-feature>
+            <fff-feature
               centered
               icon=${ICON_NAMES.FLOWER}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
-            ></mm-feature>
-            <mm-feature
+            ></fff-feature>
+            <fff-feature
               centered
               icon=${ICON_NAMES.SPARKS}
               heading="Tangerine Oil"
               description="A microbial substrate that has a positive impact on the oral environment"
-            ></mm-feature>
-          </mm-feature-group>
-        </mm-grid>
-      </mm-surface>
+            ></fff-feature>
+          </fff-feature-group>
+        </fff-grid>
+      </fff-surface>
 
       <!-- 마케팅 스토리: 이미지 + 텍스트 -->
-      <mm-grid columns="2" gap="8">
-        <mm-thumbnail ratio="1:1"></mm-thumbnail>
-        <mm-flex direction="column" gap="3">
-          <mm-tag tone="purple">Why prebiotics?</mm-tag>
-          <mm-text-block
+      <fff-grid columns="2" gap="8">
+        <fff-thumbnail ratio="1:1"></fff-thumbnail>
+        <fff-flex direction="column" gap="3">
+          <fff-tag tone="purple">Why prebiotics?</fff-tag>
+          <fff-text-block
             level="1"
             heading="Prebiotics are fibers that feed good bacteria"
             description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
-          ></mm-text-block>
-        </mm-flex>
-      </mm-grid>
+          ></fff-text-block>
+        </fff-flex>
+      </fff-grid>
 
-      <mm-flex as="section" id="review" direction="column" gap="8">
-        <mm-text-block
+      <fff-flex as="section" id="review" direction="column" gap="8">
+        <fff-text-block
           centered
           level="1"
           heading="Loved By Over +70,000 Smiles!"
           description="Toothpaste so good, you’ll actually look forward to brushing —just ask our customers."
-        ></mm-text-block>
-        <mm-surface variant="outlined" radius="large">
-          <mm-flex direction="column" gap="4">
-            <mm-review-summary
+        ></fff-text-block>
+        <fff-surface variant="outlined" radius="large">
+          <fff-flex direction="column" gap="4">
+            <fff-review-summary
               rating=${averageRating}
               review-count=${reviewCount}
-            ></mm-review-summary>
-            <mm-paragraph centered>
+            ></fff-review-summary>
+            <fff-paragraph centered>
               구매하신 분들이 남긴 별점입니다. 점수를 누르면 해당 리뷰만 볼 수 있어요.
-            </mm-paragraph>
-            <mm-chart-column
+            </fff-paragraph>
+            <fff-chart-column
               id="review-rating"
               selectable
               style="--chart-column-width: var(--size-32)"
               .items=${ratingShares}
-            ></mm-chart-column>
-          </mm-flex>
-        </mm-surface>
-        <mm-flex direction="column" gap="4">
-          <mm-flex justify-content="space-between" align-items="center" gap="2">
-            <mm-text id="review-result"></mm-text>
-            <mm-select
+            ></fff-chart-column>
+          </fff-flex>
+        </fff-surface>
+        <fff-flex direction="column" gap="4">
+          <fff-flex justify-content="space-between" align-items="center" gap="2">
+            <fff-text id="review-result"></fff-text>
+            <fff-select
               id="review-sort"
               aria-label="정렬"
               value="latest"
               .options=${reviewSortOptions}
-            ></mm-select>
-          </mm-flex>
-          <mm-grid id="review-list" columns="2" gap="4"></mm-grid>
-        </mm-flex>
-      </mm-flex>
+            ></fff-select>
+          </fff-flex>
+          <fff-grid id="review-list" columns="2" gap="4"></fff-grid>
+        </fff-flex>
+      </fff-flex>
 
-      <mm-flex as="section" id="info" direction="column" gap="3">
-        <mm-heading level="2">상품상세정보 고지</mm-heading>
-        <mm-meta-item-group direction="column">
-          <mm-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></mm-meta-item>
-          <mm-meta-item layout="inline" label="소재" value="금속"></mm-meta-item>
-          <mm-meta-item layout="inline" label="치수" value="20mm * 40mm"></mm-meta-item>
-          <mm-meta-item
+      <fff-flex as="section" id="info" direction="column" gap="3">
+        <fff-heading level="2">상품상세정보 고지</fff-heading>
+        <fff-meta-item-group direction="column">
+          <fff-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></fff-meta-item>
+          <fff-meta-item layout="inline" label="소재" value="금속"></fff-meta-item>
+          <fff-meta-item layout="inline" label="치수" value="20mm * 40mm"></fff-meta-item>
+          <fff-meta-item
             layout="inline"
             label="전성분"
             value="정제수, 아리수, 활명수"
-          ></mm-meta-item>
-          <mm-meta-item layout="inline" label="제조일자" value="2019. 11. 08."></mm-meta-item>
-          <mm-meta-item layout="inline" label="제조업자" value="별도표기"></mm-meta-item>
-          <mm-meta-item layout="inline" label="제조국" value="대한민국"></mm-meta-item>
-          <mm-meta-item layout="inline" label="문의전화" value="02-000-2000"></mm-meta-item>
-        </mm-meta-item-group>
-      </mm-flex>
-    </mm-content-section-list>
+          ></fff-meta-item>
+          <fff-meta-item layout="inline" label="제조일자" value="2019. 11. 08."></fff-meta-item>
+          <fff-meta-item layout="inline" label="제조업자" value="별도표기"></fff-meta-item>
+          <fff-meta-item layout="inline" label="제조국" value="대한민국"></fff-meta-item>
+          <fff-meta-item layout="inline" label="문의전화" value="02-000-2000"></fff-meta-item>
+        </fff-meta-item-group>
+      </fff-flex>
+    </fff-content-section-list>
 
-    <mm-fixed-bottom id="purchase-bar">
-      <mm-product-purchase-bar
+    <fff-fixed-bottom id="purchase-bar">
+      <fff-product-purchase-bar
         image-src="/src/images/cake_gosum.jpg"
         name="뉴닉이 풀어 쓴 경제상식사전"
         price="₩ 16,000"
         original-price="₩ 25,000"
         discount="36% 할인"
       >
-        <mm-button
+        <fff-button
           slot="action"
           aria-controls="cart-sheet"
           aria-haspopup="dialog"
@@ -386,56 +386,56 @@ const main = html`
           size="large"
         >
           장바구니 추가
-        </mm-button>
-      </mm-product-purchase-bar>
-    </mm-fixed-bottom>
-  </mm-main>
+        </fff-button>
+      </fff-product-purchase-bar>
+    </fff-fixed-bottom>
+  </fff-main>
 
-  <mm-sheet id="cart-sheet" placement="right">
-    <mm-sheet-header heading="장바구니"></mm-sheet-header>
-    <mm-sheet-body>
-      <mm-flex direction="column" gap="4">
-        <mm-list-item
+  <fff-sheet id="cart-sheet" placement="right">
+    <fff-sheet-header heading="장바구니"></fff-sheet-header>
+    <fff-sheet-body>
+      <fff-flex direction="column" gap="4">
+        <fff-list-item
           size="large"
           avatar-src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
           label="センチメンタル通り"
           description="Hachimitsupai"
-        ></mm-list-item>
+        ></fff-list-item>
 
-        <mm-radio-group
+        <fff-radio-group
           legend="옵션"
           name="cart-option"
           value="lifetime"
           .options=${cartOptions}
-        ></mm-radio-group>
+        ></fff-radio-group>
 
-        <mm-quantity-field
+        <fff-quantity-field
           id="cart-quantity"
           value="1"
           min="1"
           max="99"
           label="수량"
-        ></mm-quantity-field>
+        ></fff-quantity-field>
 
-        <mm-separator></mm-separator>
+        <fff-separator></fff-separator>
 
-        <mm-heading level="2">결제 금액</mm-heading>
-        <mm-meta-item-group direction="column">
-          <mm-meta-item label="상품 금액" value="₩ 16,000"></mm-meta-item>
-          <mm-meta-item label="배송비" value="무료"></mm-meta-item>
-          <mm-meta-item
+        <fff-heading level="2">결제 금액</fff-heading>
+        <fff-meta-item-group direction="column">
+          <fff-meta-item label="상품 금액" value="₩ 16,000"></fff-meta-item>
+          <fff-meta-item label="배송비" value="무료"></fff-meta-item>
+          <fff-meta-item
             id="cart-total"
             label="총 결제 금액"
             value="₩ 16,000"
             value-size="large"
-          ></mm-meta-item>
-        </mm-meta-item-group>
+          ></fff-meta-item>
+        </fff-meta-item-group>
 
-        <mm-paragraph>미국 내 $40 이상 주문은 무료로 배송됩니다.</mm-paragraph>
-        <mm-button variant="primary" size="large" full-width>결제하기</mm-button>
-      </mm-flex>
-    </mm-sheet-body>
-  </mm-sheet>
+        <fff-paragraph>미국 내 $40 이상 주문은 무료로 배송됩니다.</fff-paragraph>
+        <fff-button variant="primary" size="large" full-width>결제하기</fff-button>
+      </fff-flex>
+    </fff-sheet-body>
+  </fff-sheet>
 `
 
 renderPage(main, { closeSidebar: true, initialize: setupCartSheet })
@@ -444,7 +444,7 @@ type ValueElement = HTMLElement & {
   value: string
 }
 
-// 여는 동작은 aria-controls를 통해 mm-sheet가 소유한다. 여기서는 시트의 수량에 맞춰 총액만 갱신한다.
+// 여는 동작은 aria-controls를 통해 fff-sheet가 소유한다. 여기서는 시트의 수량에 맞춰 총액만 갱신한다.
 function setupCartSheet() {
   setupSectionNav()
   setupPurchaseBar()
@@ -574,7 +574,7 @@ function setupReviews() {
     if (sorted.length === 0) {
       render(
         html`
-          <mm-paragraph>해당 별점의 리뷰가 없습니다.</mm-paragraph>
+          <fff-paragraph>해당 별점의 리뷰가 없습니다.</fff-paragraph>
         `,
         list,
       )
@@ -585,12 +585,12 @@ function setupReviews() {
       html`
         ${sorted.map(
           review => html`
-            <mm-review-item
+            <fff-review-item
               rating=${review.rating}
               content=${review.content}
               author=${review.author}
               datetime=${review.datetime}
-            ></mm-review-item>
+            ></fff-review-item>
           `,
         )}
       `,

@@ -12,7 +12,7 @@ import '@/components/overlay/popover/popover'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 
-@customElement('mm-sidebar-user-menu')
+@customElement('fff-sidebar-user-menu')
 export class SidebarUserMenu extends LitElement {
   static styles = [
     resetStyles,
@@ -26,7 +26,7 @@ export class SidebarUserMenu extends LitElement {
         display: block;
       }
 
-      mm-user-item {
+      fff-user-item {
         flex: 1;
       }
     `,
@@ -40,27 +40,27 @@ export class SidebarUserMenu extends LitElement {
   render() {
     return html`
       <button type="button" aria-haspopup="menu" aria-controls=${this.menuId}>
-        <mm-user-item
+        <fff-user-item
           size="medium"
           label=${this.name}
           description=${this.description}
           avatar-src=${this.avatarSrc}
         >
-          <mm-icon slot="trailing" name=${ICON_NAMES.MORE_ACTIONS} size="small"></mm-icon>
-        </mm-user-item>
+          <fff-icon slot="trailing" name=${ICON_NAMES.MORE_ACTIONS} size="small"></fff-icon>
+        </fff-user-item>
       </button>
-      <mm-popover id=${this.menuId} placement="top-start">
-        <mm-menu-item-group aria-label="계정" @click=${this.handleMenuClick}>
-          <mm-menu-item-action icon=${ICON_NAMES.PROFILE} label="프로필"></mm-menu-item-action>
-          <mm-menu-item-action icon=${ICON_NAMES.SETTINGS} label="설정"></mm-menu-item-action>
-          <mm-menu-item-action icon=${ICON_NAMES.LOG_OUT} label="로그아웃"></mm-menu-item-action>
-        </mm-menu-item-group>
-      </mm-popover>
+      <fff-popover id=${this.menuId} placement="top-start">
+        <fff-menu-item-group aria-label="계정" @click=${this.handleMenuClick}>
+          <fff-menu-item-action icon=${ICON_NAMES.PROFILE} label="프로필"></fff-menu-item-action>
+          <fff-menu-item-action icon=${ICON_NAMES.SETTINGS} label="설정"></fff-menu-item-action>
+          <fff-menu-item-action icon=${ICON_NAMES.LOG_OUT} label="로그아웃"></fff-menu-item-action>
+        </fff-menu-item-group>
+      </fff-popover>
     `
   }
 
   // 명령을 고르면 메뉴를 닫는다. popover는 portal로 옮겨져 이 shadow에서 찾을 수 없어 이벤트가 닿은 자리에서 찾는다.
   private handleMenuClick(event: Event) {
-    ;(event.currentTarget as HTMLElement).closest<Popover>('mm-popover')?.close()
+    ;(event.currentTarget as HTMLElement).closest<Popover>('fff-popover')?.close()
   }
 }

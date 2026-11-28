@@ -36,7 +36,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-tooltip'),
+  ...componentPropsOf('fff-tooltip'),
   { name: 'slot: trigger', type: 'HTMLElement' },
 ]
 
@@ -52,107 +52,107 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const defaultCode = `<mm-tooltip content="...">
-  <mm-icon slot="trigger" name="help-circle" role="img" aria-label="해임건의 요건 도움말" tabindex="0"></mm-icon>
-</mm-tooltip>`
+const defaultCode = `<fff-tooltip content="...">
+  <fff-icon slot="trigger" name="help-circle" role="img" aria-label="해임건의 요건 도움말" tabindex="0"></fff-icon>
+</fff-tooltip>`
 
-const placementCode = `<mm-button-group>
-  <mm-icon-button icon="user" aria-label="좌측 정렬" tooltip-placement="bottom-start"></mm-icon-button>
-  <mm-icon-button icon="user" aria-label="가운데 정렬" tooltip-placement="bottom"></mm-icon-button>
-  <mm-icon-button icon="user" aria-label="우측 정렬" tooltip-placement="bottom-end"></mm-icon-button>
-</mm-button-group>`
+const placementCode = `<fff-button-group>
+  <fff-icon-button icon="user" aria-label="좌측 정렬" tooltip-placement="bottom-start"></fff-icon-button>
+  <fff-icon-button icon="user" aria-label="가운데 정렬" tooltip-placement="bottom"></fff-icon-button>
+  <fff-icon-button icon="user" aria-label="우측 정렬" tooltip-placement="bottom-end"></fff-icon-button>
+</fff-button-group>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Tooltip"
       description="트리거 요소에 붙는 짧은 보조 설명입니다. 마우스를 올리거나 포커스가 닿을 때만 트리거 곁에 나타나고 벗어나면 사라지므로, 사용자는 화면을 어지럽히지 않은 채 필요한 순간에 용어의 뜻이나 정보의 근거를 확인할 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka .items=${['Coachmark']}></mm-component-aka>
+    <fff-component-aka .items=${['Coachmark']}></fff-component-aka>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="default" variant="pill">
-        <mm-tab value="default">Default</mm-tab>
-        <mm-tab value="placement">Placement</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="default">
-        <mm-component-example>
-          <mm-tooltip
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="default" variant="pill">
+        <fff-tab value="default">Default</fff-tab>
+        <fff-tab value="placement">Placement</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="default">
+        <fff-component-example>
+          <fff-tooltip
             content="제1항의 해임건의는 국회재적의원 3분의 1 이상의 발의에 의하여 국회재적의원 과반수의 찬성이 있어야 한다."
           >
-            <mm-icon
+            <fff-icon
               slot="trigger"
               name="help-circle"
               role="img"
               aria-label="해임건의 요건 도움말"
               tabindex="0"
-            ></mm-icon>
-          </mm-tooltip>
-        </mm-component-example>
-        <mm-component-code .code=${defaultCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="placement">
-        <mm-component-example>
-          <mm-button-group>
-            <mm-icon-button
+            ></fff-icon>
+          </fff-tooltip>
+        </fff-component-example>
+        <fff-component-code .code=${defaultCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="placement">
+        <fff-component-example>
+          <fff-button-group>
+            <fff-icon-button
               icon=${ICON_NAMES.USER}
               aria-label="좌측 정렬"
               tooltip-placement="bottom-start"
-            ></mm-icon-button>
-            <mm-icon-button
+            ></fff-icon-button>
+            <fff-icon-button
               icon=${ICON_NAMES.USER}
               aria-label="가운데 정렬"
               tooltip-placement="bottom"
-            ></mm-icon-button>
-            <mm-icon-button
+            ></fff-icon-button>
+            <fff-icon-button
               icon=${ICON_NAMES.USER}
               aria-label="우측 정렬"
               tooltip-placement="bottom-end"
-            ></mm-icon-button>
-          </mm-button-group>
-        </mm-component-example>
-        <mm-component-code .code=${placementCode}></mm-component-code>
-      </mm-tab-panel>
-    </mm-flex>
-    <mm-component-props .props=${componentProps}></mm-component-props>
+            ></fff-icon-button>
+          </fff-button-group>
+        </fff-component-example>
+        <fff-component-code .code=${placementCode}></fff-component-code>
+      </fff-tab-panel>
+    </fff-flex>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-tooltip-bubble']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-tooltip-bubble']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
+    <fff-component-guide .features=${componentFeatures}>
+      <fff-text-list
         .texts=${[
           'hover뿐 아니라 키보드 포커스로도 열 수 있어야 한다.',
           '트리거를 가리키는 화살표는 두지 않는다. 사용자가 포인터나 손가락으로 직접 연 표면이라 어디에서 나왔는지 이미 분명하다. 화살표는 로딩 시점에 이미 열려 대상을 지목하는 GuideTip이 쓴다.',
           'short text, long form text. Material Design 3 rich tooltip(title, description, actions-link/button) / plain tooltip',
         ]}
-      ></mm-text-list>
+      ></fff-text-list>
 
-      <mm-content-section heading-level="3" heading="접근성">
-        <mm-text-block
+      <fff-content-section heading-level="3" heading="접근성">
+        <fff-text-block
           level="4"
           heading="액션 보완형"
           description="아이콘 버튼의 이름을 보여주는 툴팁이라 따로 감싸지 않습니다. 이름과 같은 내용을 설명으로 다시 읽어 주지 않습니다."
-        ></mm-text-block>
-        <mm-text-block
+        ></fff-text-block>
+        <fff-text-block
           level="4"
           heading="정보 설명형"
           description="이미 이름이 있는 대상의 부가 설명이라, 보조기술에는 이름과 별개의 설명으로 전달됩니다."
-        ></mm-text-block>
-      </mm-content-section>
-    </mm-component-guide>
+        ></fff-text-block>
+      </fff-content-section>
+    </fff-component-guide>
 
-    <mm-component-section
+    <fff-component-section
       heading="GuideTip"
       description="TODO arrow tooltip, tourtip, coachmark, 로딩 시점에 이미 열려 있다. doorhanger/pointing arrow."
-    ></mm-component-section>
+    ></fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
+    <fff-component-references .items=${componentReferences}></fff-component-references>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

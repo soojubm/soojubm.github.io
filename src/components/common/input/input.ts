@@ -22,7 +22,7 @@ export type InputType =
   | 'color'
   | 'hidden'
 
-@customElement('mm-input')
+@customElement('fff-input')
 export class Input extends LitElement {
   static styles = [
     resetStyles,

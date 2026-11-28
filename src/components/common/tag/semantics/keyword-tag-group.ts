@@ -5,7 +5,7 @@ import '@/components/common/tag/tag-group'
 import '@/components/common/tag/semantics/accent-tag'
 import '@/components/common/tag/semantics/keyword-tag'
 
-@customElement('mm-keyword-tag-group')
+@customElement('fff-keyword-tag-group')
 export class KeywordTagGroup extends LitElement {
   @property({ type: String }) heading = ''
   @property({ attribute: false }) keywords: string[] = []
@@ -13,7 +13,7 @@ export class KeywordTagGroup extends LitElement {
   render() {
     if (!this.keywords.length) return nothing
     return html`
-      <mm-tag-group>${this.renderHeading()} ${this.renderKeywords()}</mm-tag-group>
+      <fff-tag-group>${this.renderHeading()} ${this.renderKeywords()}</fff-tag-group>
     `
   }
 
@@ -21,7 +21,7 @@ export class KeywordTagGroup extends LitElement {
     if (!this.heading) return nothing
 
     return html`
-      <mm-accent-tag>${this.heading}</mm-accent-tag>
+      <fff-accent-tag>${this.heading}</fff-accent-tag>
     `
   }
 
@@ -31,7 +31,7 @@ export class KeywordTagGroup extends LitElement {
 
   private renderKeyword(keyword: string) {
     return html`
-      <mm-keyword-tag>${keyword}</mm-keyword-tag>
+      <fff-keyword-tag>${keyword}</fff-keyword-tag>
     `
   }
 }

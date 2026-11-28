@@ -28,7 +28,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-textarea-field'),
+  ...componentPropsOf('fff-textarea-field'),
   { name: 'slot="leading"', type: '입력 영역 위쪽 액션', optional: true },
   { name: 'slot="trailing"', type: '입력 영역 아래쪽 액션', optional: true },
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
@@ -42,107 +42,107 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const defaultCode = `<mm-textarea placeholder="자유롭게 적어주세요"></mm-textarea>`
+const defaultCode = `<fff-textarea placeholder="자유롭게 적어주세요"></fff-textarea>`
 
-const labelCode = `<mm-textarea-field label="자기소개" description="200자 이내로 입력하세요." placeholder="자유롭게 적어주세요"></mm-textarea-field>`
+const labelCode = `<fff-textarea-field label="자기소개" description="200자 이내로 입력하세요." placeholder="자유롭게 적어주세요"></fff-textarea-field>`
 
-const optionalCode = `<mm-textarea-field label="요청 사항" placeholder="직접 입력" optional></mm-textarea-field>`
+const optionalCode = `<fff-textarea-field label="요청 사항" placeholder="직접 입력" optional></fff-textarea-field>`
 
-const stateCode = `<mm-textarea placeholder="Placeholder"></mm-textarea>
-<mm-textarea placeholder="Disabled" disabled></mm-textarea>
-<mm-textarea value="Invalid" aria-invalid="true"></mm-textarea>`
+const stateCode = `<fff-textarea placeholder="Placeholder"></fff-textarea>
+<fff-textarea placeholder="Disabled" disabled></fff-textarea>
+<fff-textarea value="Invalid" aria-invalid="true"></fff-textarea>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Textarea"
       description="여러 줄의 긴 텍스트를 받는 입력 필드입니다. 기본 여러 줄 높이로 한 줄 입력과 구분되고 글자 수 같은 규칙을 미리 알려 주므로, 사용자는 긴 내용을 한눈에 보며 작성하고 제한을 넘기기 전에 조절할 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="default" variant="pill">
-        <mm-tab value="default">Default</mm-tab>
-        <mm-tab value="label">With Label</mm-tab>
-        <mm-tab value="optional">Optional</mm-tab>
-        <mm-tab value="state">State</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="default">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-textarea placeholder="자유롭게 적어주세요"></mm-textarea>
-            <mm-paragraph>
-              <mm-code>mm-textarea</mm-code>
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="default" variant="pill">
+        <fff-tab value="default">Default</fff-tab>
+        <fff-tab value="label">With Label</fff-tab>
+        <fff-tab value="optional">Optional</fff-tab>
+        <fff-tab value="state">State</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="default">
+        <fff-component-example>
+          <fff-flex direction="column" gap="6">
+            <fff-textarea placeholder="자유롭게 적어주세요"></fff-textarea>
+            <fff-paragraph>
+              <fff-code>fff-textarea</fff-code>
               는 레이블 없이 입력 영역만 보여 줍니다. 주변 제목이나 맥락이 입력 항목을 설명할 때
               씁니다.
-            </mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${defaultCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="label">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-textarea-field
+            </fff-paragraph>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${defaultCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="label">
+        <fff-component-example>
+          <fff-flex direction="column" gap="6">
+            <fff-textarea-field
               label="자기소개"
               description="200자 이내로 입력하세요."
               placeholder="자유롭게 적어주세요"
-            ></mm-textarea-field>
-            <mm-paragraph>
+            ></fff-textarea-field>
+            <fff-paragraph>
               레이블과 설명이 필요하면
-              <mm-code>mm-textarea-field</mm-code>
+              <fff-code>fff-textarea-field</fff-code>
               를 씁니다.
-            </mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${labelCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="optional">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-textarea-field
+            </fff-paragraph>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${labelCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="optional">
+        <fff-component-example>
+          <fff-flex direction="column" gap="6">
+            <fff-textarea-field
               label="요청 사항"
               placeholder="직접 입력"
               optional
-            ></mm-textarea-field>
-            <mm-paragraph>텍스트 영역은 기본적으로 필수 입력입니다.</mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${optionalCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="state">
-        <mm-component-example>
-          <mm-flex direction="column" gap="3">
-            <mm-textarea placeholder="Placeholder"></mm-textarea>
-            <mm-textarea placeholder="Disabled" disabled></mm-textarea>
-            <mm-textarea value="Invalid" aria-invalid="true"></mm-textarea>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${stateCode}></mm-component-code>
-      </mm-tab-panel>
-    </mm-flex>
+            ></fff-textarea-field>
+            <fff-paragraph>텍스트 영역은 기본적으로 필수 입력입니다.</fff-paragraph>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${optionalCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="state">
+        <fff-component-example>
+          <fff-flex direction="column" gap="3">
+            <fff-textarea placeholder="Placeholder"></fff-textarea>
+            <fff-textarea placeholder="Disabled" disabled></fff-textarea>
+            <fff-textarea value="Invalid" aria-invalid="true"></fff-textarea>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${stateCode}></fff-component-code>
+      </fff-tab-panel>
+    </fff-flex>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-textarea']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-textarea']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-section heading="Comment Input" description="댓글 작성 입력 패턴">
-      <mm-comment-input
+    <fff-component-section heading="Comment Input" description="댓글 작성 입력 패턴">
+      <fff-comment-input
         placeholder="무슨 생각을 하고 계신가요?"
         submit-label="댓글 게시"
-      ></mm-comment-input>
-    </mm-component-section>
+      ></fff-comment-input>
+    </fff-component-section>
 
-    <mm-component-section heading="Prompt Input" description="">
-      <mm-prompt-input placeholder="Ask me anything..."></mm-prompt-input>
-    </mm-component-section>
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-section heading="Prompt Input" description="">
+      <fff-prompt-input placeholder="Ask me anything..."></fff-prompt-input>
+    </fff-component-section>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
+    <fff-component-references .items=${componentReferences}></fff-component-references>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

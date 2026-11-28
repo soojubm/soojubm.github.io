@@ -8,12 +8,12 @@ import '@/components/common/text/text'
 
 export type StepOrientation = 'horizontal' | 'vertical'
 
-@customElement('mm-step-item')
+@customElement('fff-step-item')
 export class StepItem extends LitElement {
   static styles = stepItemStyles
-  /** @internal 순서를 소유한 mm-step이 채운다. */
+  /** @internal 순서를 소유한 fff-step이 채운다. */
   @property({ type: String, reflect: true }) orientation: StepOrientation = 'horizontal'
-  /** @internal 순서를 소유한 mm-step이 채운다. */
+  /** @internal 순서를 소유한 fff-step이 채운다. */
   @property({ type: Number }) value = 1
   @property({ type: String }) label = ''
   @property({ type: Boolean, reflect: true }) active = false
@@ -41,7 +41,7 @@ export class StepItem extends LitElement {
 
   private renderLabel() {
     return html`
-      <mm-text class="label">${this.label}</mm-text>
+      <fff-text class="label">${this.label}</fff-text>
     `
   }
 

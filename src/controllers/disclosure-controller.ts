@@ -53,7 +53,7 @@ export class DisclosureController implements ReactiveController {
     this.dispatchToggle()
   }
 
-  /** 이 표면의 트리거. 표면이 기준 위치로 쓰기도 한다(mm-popover). */
+  /** 이 표면의 트리거. 표면이 기준 위치로 쓰기도 한다(fff-popover). */
   get trigger() {
     const explicit = this.options.getTrigger?.()
     if (explicit) return explicit

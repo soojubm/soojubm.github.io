@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { paragraphSizeToTextSize, type ParagraphSize } from '@/components/common/text/text.styles'
 import '@/components/common'
 
-@customElement('mm-product-price')
+@customElement('fff-product-price')
 export class ProductPrice extends LitElement {
   static styles = css`
     :host {
@@ -43,7 +43,7 @@ export class ProductPrice extends LitElement {
 
     return html`
       <del>
-        <mm-text size=${this.textSize} color="light">${this.originalPrice}</mm-text>
+        <fff-text size=${this.textSize} color="light">${this.originalPrice}</fff-text>
       </del>
     `
   }
@@ -51,13 +51,13 @@ export class ProductPrice extends LitElement {
   private renderPrice() {
     if (!this.originalPrice) {
       return html`
-        <mm-text size=${this.textSize} weight="bold">${this.price}</mm-text>
+        <fff-text size=${this.textSize} weight="bold">${this.price}</fff-text>
       `
     }
 
     return html`
       <ins>
-        <mm-text size=${this.textSize} weight="bold">${this.price}</mm-text>
+        <fff-text size=${this.textSize} weight="bold">${this.price}</fff-text>
       </ins>
     `
   }
@@ -66,7 +66,7 @@ export class ProductPrice extends LitElement {
     if (!this.discount) return nothing
 
     return html`
-      <mm-text size=${this.textSize}>(${this.discount})</mm-text>
+      <fff-text size=${this.textSize}>(${this.discount})</fff-text>
     `
   }
 }

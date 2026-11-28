@@ -7,7 +7,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/indicators/expand-indicator/expand-indicator'
 
-@customElement('mm-faq-item')
+@customElement('fff-faq-item')
 export class FaqItem extends LitElement {
   static styles = [
     resetStyles,
@@ -72,7 +72,7 @@ export class FaqItem extends LitElement {
       <h2>
         <button class="question" aria-controls=${this.answerId}>
           <slot name="question">${this.question}</slot>
-          <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
+          <fff-expand-indicator ?expanded=${this.open}></fff-expand-indicator>
         </button>
       </h2>
 

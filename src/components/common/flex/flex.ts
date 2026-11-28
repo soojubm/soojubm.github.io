@@ -16,7 +16,7 @@ const flexAlignItemsTokens: AttributeTokens<Exclude<AlignItems, 'stretch'>> = {
   baseline: { 'align-items': 'baseline' },
 }
 
-@customElement('mm-flex')
+@customElement('fff-flex')
 export class Flex extends LitElement {
   static styles = [
     resetStyles,

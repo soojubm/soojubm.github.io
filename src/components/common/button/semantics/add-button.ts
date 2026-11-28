@@ -8,7 +8,7 @@ import {
   surfaceElevatedStyles,
 } from '@/components/common/surface/surface.styles'
 
-@customElement('mm-add-button')
+@customElement('fff-add-button')
 export class AddButton extends LitElement {
   static styles = css`
     :host {
@@ -21,7 +21,10 @@ export class AddButton extends LitElement {
 
   render() {
     return html`
-      <mm-menu-item-action icon=${ICON_NAMES.ADD_CIRCLE} label=${this.label}></mm-menu-item-action>
+      <fff-menu-item-action
+        icon=${ICON_NAMES.ADD_CIRCLE}
+        label=${this.label}
+      ></fff-menu-item-action>
     `
   }
 }

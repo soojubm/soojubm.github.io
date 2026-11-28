@@ -5,7 +5,7 @@ import type { ActionConfig } from '@/types'
 import type { ButtonVariant } from '@/components/common/button/button'
 import '@/components/common/text/semantics/text-block'
 
-@customElement('mm-hero-section')
+@customElement('fff-hero-section')
 export class HeroSection extends LitElement {
   static styles = css`
     :host {
@@ -22,11 +22,11 @@ export class HeroSection extends LitElement {
 
   render() {
     return html`
-      <mm-text-block
+      <fff-text-block
         level="1"
         heading=${this.heading}
         description=${this.description}
-      ></mm-text-block>
+      ></fff-text-block>
       ${this.renderActions()}
       <slot></slot>
     `
@@ -37,10 +37,10 @@ export class HeroSection extends LitElement {
     if (!this.primaryAction && !this.secondaryAction) return nothing
 
     return html`
-      <mm-button-group>
+      <fff-button-group>
         ${this.renderActionButton(this.primaryAction, 'primary')}
         ${this.renderActionButton(this.secondaryAction, 'tertiary')}
-      </mm-button-group>
+      </fff-button-group>
     `
   }
 
@@ -48,14 +48,14 @@ export class HeroSection extends LitElement {
     if (!action) return nothing
 
     return html`
-      <mm-button
+      <fff-button
         variant=${variant}
         size="large"
         ?disabled=${action.disabled}
         @click=${() => action.onClick?.()}
       >
         ${action.label}
-      </mm-button>
+      </fff-button>
     `
   }
 }

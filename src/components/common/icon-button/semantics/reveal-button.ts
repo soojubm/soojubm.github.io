@@ -7,7 +7,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon'
 
-@customElement('mm-reveal-button')
+@customElement('fff-reveal-button')
 export class RevealButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles]
   @property({ type: Boolean }) revealed = false
@@ -22,7 +22,7 @@ export class RevealButton extends LitElement {
         ?disabled=${this.disabled}
         @click=${this.handleClick}
       >
-        <mm-icon name=${this.revealed ? ICON_NAMES.HIDE : ICON_NAMES.VIEW}></mm-icon>
+        <fff-icon name=${this.revealed ? ICON_NAMES.HIDE : ICON_NAMES.VIEW}></fff-icon>
       </button>
     `
   }

@@ -10,7 +10,7 @@ import {
 import { emit } from '@/utils'
 import '@/components/common/radio'
 
-@customElement('mm-menu-item-radio')
+@customElement('fff-menu-item-radio')
 export class MenuItemRadio extends withMenuItemPresentation(LitElement) {
   static styles = [
     css`
@@ -32,7 +32,7 @@ export class MenuItemRadio extends withMenuItemPresentation(LitElement) {
   render() {
     return renderMenuItemCheckedRow(this, {
       role: 'radio',
-      control: literal`mm-radio`,
+      control: literal`fff-radio`,
       activate: this.activate,
     })
   }

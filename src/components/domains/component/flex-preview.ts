@@ -19,7 +19,7 @@ const DIRECTION_OPTIONS: OptionItem[] = [
 
 const ITEM_COUNT = 3
 
-@customElement('mm-flex-preview')
+@customElement('fff-flex-preview')
 export class FlexPreview extends LitElement {
   static styles = css`
     :host {
@@ -33,31 +33,31 @@ export class FlexPreview extends LitElement {
 
   render() {
     return html`
-      <mm-button-group>
-        <mm-toggle-button-group
+      <fff-button-group>
+        <fff-toggle-button-group
           aria-label="direction"
           .options=${DIRECTION_OPTIONS}
           .value=${this.direction}
           @change=${this.handleDirectionChange}
-        ></mm-toggle-button-group>
-        <mm-toggle-button-group
+        ></fff-toggle-button-group>
+        <fff-toggle-button-group
           aria-label="gap"
           .options=${GAP_OPTIONS}
           .value=${this.gap}
           @change=${this.handleGapChange}
-        ></mm-toggle-button-group>
-      </mm-button-group>
+        ></fff-toggle-button-group>
+      </fff-button-group>
 
-      <mm-flex direction=${this.direction} gap=${this.gap} stretch>
+      <fff-flex direction=${this.direction} gap=${this.gap} stretch>
         ${Array.from(
           { length: ITEM_COUNT },
           () => html`
-            <mm-ui-placeholder></mm-ui-placeholder>
+            <fff-ui-placeholder></fff-ui-placeholder>
           `,
         )}
-      </mm-flex>
+      </fff-flex>
 
-      <mm-code-block .code=${this.buildCode()}></mm-code-block>
+      <fff-code-block .code=${this.buildCode()}></fff-code-block>
     `
   }
 
@@ -73,8 +73,8 @@ export class FlexPreview extends LitElement {
   private buildCode() {
     const direction = this.direction === 'row' ? '' : ` direction="${this.direction}"`
 
-    return `<mm-flex${direction} gap="${this.gap}">
+    return `<fff-flex${direction} gap="${this.gap}">
   <!-- 항목 -->
-</mm-flex>`
+</fff-flex>`
   }
 }

@@ -15,7 +15,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-switch'),
+  ...componentPropsOf('fff-switch'),
   { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
 ]
 
@@ -27,33 +27,33 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<mm-switch name="newsletter">뉴스레터 받아보기</mm-switch>
-<mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>`
+const exampleCode = `<fff-switch name="newsletter">뉴스레터 받아보기</fff-switch>
+<fff-switch name="newsletter" checked disabled>Receive weekly newsletter</fff-switch>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Switch"
       description="설정을 켜고 끄는 즉시 반영형 컨트롤입니다. 누르는 순간 상태가 바뀌고 별도의 저장 없이 곧바로 적용되므로, 사용자는 실행한 설정의 결과를 즉시 확인할 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka .items=${['Toggle']}></mm-component-aka>
+    <fff-component-aka .items=${['Toggle']}></fff-component-aka>
 
-    <mm-component-example>
-      <mm-flex direction="column" gap="3">
-        <mm-switch name="newsletter">뉴스레터 받아보기</mm-switch>
-        <mm-switch name="newsletter" checked disabled>Receive weekly newsletter</mm-switch>
-      </mm-flex>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+    <fff-component-example>
+      <fff-flex direction="column" gap="3">
+        <fff-switch name="newsletter">뉴스레터 받아보기</fff-switch>
+        <fff-switch name="newsletter" checked disabled>Receive weekly newsletter</fff-switch>
+      </fff-flex>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-switch']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-switch']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-anatomy
+    <fff-component-anatomy
       .parts=${[
         '트랙 — on/off 상태를 배경색으로 나타내는 가로 막대입니다.',
         '썸(Thumb) — 트랙 위를 좌우로 이동하며 상태를 나타내는 손잡이.',
@@ -65,12 +65,12 @@ const main = html`
         { placement: 'inline-end' },
       ]}
     >
-      <mm-switch checked>뉴스레터 받아보기</mm-switch>
-    </mm-component-anatomy>
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+      <fff-switch checked>뉴스레터 받아보기</fff-switch>
+    </fff-component-anatomy>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

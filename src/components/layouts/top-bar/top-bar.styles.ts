@@ -11,7 +11,7 @@ export const topBarStyles = css`
     background: inherit;
   }
 
-  /* 페이지 단위 상단 바라 높이를 스스로 갖고 배경은 부모를 따른다. 고정 위치는 mm-fixed-top이 맡는다. */
+  /* 페이지 단위 상단 바라 높이를 스스로 갖고 배경은 부모를 따른다. 고정 위치는 fff-fixed-top이 맡는다. */
   header {
     display: flex;
     align-items: center;

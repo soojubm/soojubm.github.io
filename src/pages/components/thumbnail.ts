@@ -34,7 +34,7 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
-const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-thumbnail')]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('fff-thumbnail')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -44,69 +44,69 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<mm-thumbnail src="..." alt="..." ratio="1:1"></mm-thumbnail>
-<mm-thumbnail src="..." alt="..." ratio="4:3" href="/video/1025"></mm-thumbnail>
-<mm-thumbnail src="..." alt="..." ratio="16:9"></mm-thumbnail>
-<mm-thumbnail src="..." alt="..." ratio="full"></mm-thumbnail>`
+const exampleCode = `<fff-thumbnail src="..." alt="..." ratio="1:1"></fff-thumbnail>
+<fff-thumbnail src="..." alt="..." ratio="4:3" href="/video/1025"></fff-thumbnail>
+<fff-thumbnail src="..." alt="..." ratio="16:9"></fff-thumbnail>
+<fff-thumbnail src="..." alt="..." ratio="full"></fff-thumbnail>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Thumbnail"
       description="이미지나 미디어를 정해진 비율 안에서 미리 보여줍니다. 콘텐츠의 성격을 빠르게 알아볼 수 있어야 하며, 장식 목적의 반복 사용은 피합니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-example full-width>
-      <mm-grid columns="4" column-min-width="160px" gap="4">
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>1:1</mm-paragraph>
-          <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="1:1"></mm-thumbnail>
-        </mm-flex>
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>4:3</mm-paragraph>
-          <mm-thumbnail
+    <fff-component-example full-width>
+      <fff-grid columns="4" column-min-width="160px" gap="4">
+        <fff-flex direction="column" gap="2">
+          <fff-paragraph>1:1</fff-paragraph>
+          <fff-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="1:1"></fff-thumbnail>
+        </fff-flex>
+        <fff-flex direction="column" gap="2">
+          <fff-paragraph>4:3</fff-paragraph>
+          <fff-thumbnail
             src="/src/images/temp.png"
             alt="멋진 풍경"
             ratio="4:3"
             href="/video/1025"
-          ></mm-thumbnail>
-        </mm-flex>
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>16:9</mm-paragraph>
-          <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></mm-thumbnail>
-        </mm-flex>
-        <mm-flex direction="column" gap="2">
-          <mm-paragraph>full</mm-paragraph>
-          <mm-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="full"></mm-thumbnail>
-        </mm-flex>
-      </mm-grid>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+          ></fff-thumbnail>
+        </fff-flex>
+        <fff-flex direction="column" gap="2">
+          <fff-paragraph>16:9</fff-paragraph>
+          <fff-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="16:9"></fff-thumbnail>
+        </fff-flex>
+        <fff-flex direction="column" gap="2">
+          <fff-paragraph>full</fff-paragraph>
+          <fff-thumbnail src="/src/images/temp.png" alt="멋진 풍경" ratio="full"></fff-thumbnail>
+        </fff-flex>
+      </fff-grid>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-thumbnail']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-thumbnail']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-section
+    <fff-component-section
       heading="Caption"
       description="이미지 아래에 짧은 설명을 덧붙입니다. 출처나 촬영 정보처럼 이미지를 보조하는 내용만 넣고, 본문으로 읽을 텍스트는 넣지 않습니다."
     >
-      <mm-thumbnail
+      <fff-thumbnail
         src="/src/images/temp.png"
         alt="노을 지는 협재 해변"
         ratio="16:9"
         caption="제주 협재 해변, 2024년 봄"
-      ></mm-thumbnail>
-    </mm-component-section>
+      ></fff-thumbnail>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
+    <fff-component-references .items=${componentReferences}></fff-component-references>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

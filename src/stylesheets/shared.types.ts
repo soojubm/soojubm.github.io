@@ -20,5 +20,5 @@ export type FlexDirection = 'row' | 'column'
 /** flex 컨테이너 컴포넌트의 wrap prop 값. */
 export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse'
 
-/** flex 컨테이너 컴포넌트(mm-flex·mm-button-group)의 justify-content prop 값. 기본값 flex-start는 각 :host가 선언한다. */
+/** flex 컨테이너 컴포넌트(fff-flex·fff-button-group)의 justify-content prop 값. 기본값 flex-start는 각 :host가 선언한다. */
 export type JustifyContent = 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around'

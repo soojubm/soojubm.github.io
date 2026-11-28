@@ -1,7 +1,7 @@
 import { LitElement, css } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('mm-bullet')
+@customElement('fff-bullet')
 export class Bullet extends LitElement {
   static styles = css`
     :host {

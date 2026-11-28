@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js'
 
 import '@/components/indicators/step/semantics/timeline-item'
 
-@customElement('mm-timeline')
+@customElement('fff-timeline')
 export class Timeline extends LitElement {
   static styles = css`
     :host {

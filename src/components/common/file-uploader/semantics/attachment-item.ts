@@ -10,7 +10,7 @@ import '@/components/common/icon-button/semantics/clear-button'
 import '@/components/common/text/semantics/caption'
 import '@/components/common/text/text'
 
-@customElement('mm-attachment-item')
+@customElement('fff-attachment-item')
 export class AttachmentItem extends LitElement {
   static styles = css`
     :host {
@@ -50,14 +50,14 @@ export class AttachmentItem extends LitElement {
       background-color: var(--primary-color);
     }
 
-    .preview mm-icon-button {
+    .preview fff-icon-button {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
 
-    mm-clear-button {
+    fff-clear-button {
       position: absolute;
       right: var(--space-1-minus);
       top: var(--space-1-minus);
@@ -75,20 +75,20 @@ export class AttachmentItem extends LitElement {
   render() {
     return html`
       <div class="preview">
-        <mm-avatar
+        <fff-avatar
           shape="square"
           size="80"
           src=${ifDefined(this.previewUrl)}
           icon=${this.fallbackIconName}
-        ></mm-avatar>
+        ></fff-avatar>
         ${this.renderProgress()} ${this.renderRetryButton()}
       </div>
-      <mm-caption>${this.fileName}</mm-caption>
+      <fff-caption>${this.fileName}</fff-caption>
       ${this.renderStatus()}
-      <mm-clear-button
+      <fff-clear-button
         aria-label=${this.isUploading ? '업로드 취소' : '삭제'}
         @click=${this.handleRemoveClick}
-      ></mm-clear-button>
+      ></fff-clear-button>
     `
   }
 
@@ -108,32 +108,32 @@ export class AttachmentItem extends LitElement {
     if (!this.error) return nothing
 
     return html`
-      <mm-icon-button
+      <fff-icon-button
         size="small"
         icon=${ICON_NAMES.RETRY}
         aria-label=${`${this.fileName} 다시 업로드`}
         @click=${this.handleRetryClick}
-      ></mm-icon-button>
+      ></fff-icon-button>
     `
   }
 
   private renderStatus() {
     if (this.error) {
       return html`
-        <mm-text as="span" size="12" weight="medium" color="danger" role="alert">
+        <fff-text as="span" size="12" weight="medium" color="danger" role="alert">
           ${this.error}
-        </mm-text>
+        </fff-text>
       `
     }
 
     if (this.isUploading) {
       return html`
-        <mm-caption>업로드 중 ${this.progress}%</mm-caption>
+        <fff-caption>업로드 중 ${this.progress}%</fff-caption>
       `
     }
 
     return html`
-      <mm-caption>${this.fileSize}</mm-caption>
+      <fff-caption>${this.fileSize}</fff-caption>
     `
   }
 

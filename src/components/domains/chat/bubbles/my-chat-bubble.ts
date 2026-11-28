@@ -14,7 +14,7 @@ const STATUS_LABELS: Record<MyChatBubbleStatus, string> = {
   failed: '전송 실패',
 }
 
-@customElement('mm-my-chat-bubble')
+@customElement('fff-my-chat-bubble')
 export class MyChatBubble extends withChatBubbleImage(LitElement) {
   static styles = [chatBubbleStyles, myChatBubbleStyles]
   @property({ type: String, reflect: true }) status?: MyChatBubbleStatus
@@ -33,9 +33,9 @@ export class MyChatBubble extends withChatBubbleImage(LitElement) {
     if (!this.status) return nothing
 
     return html`
-      <mm-text class="status" role=${this.status === 'failed' ? 'alert' : nothing}>
+      <fff-text class="status" role=${this.status === 'failed' ? 'alert' : nothing}>
         ${STATUS_LABELS[this.status]}
-      </mm-text>
+      </fff-text>
     `
   }
 }

@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('mm-token-group')
+@customElement('fff-token-group')
 export class TokenGroup extends LitElement {
   static styles = css`
     :host {

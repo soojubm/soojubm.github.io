@@ -10,7 +10,7 @@ import { ScheduleController } from '@/controllers/schedule-controller'
 
 type ScrollHintPlacement = 'start' | 'end'
 
-@customElement('mm-scroll-hint')
+@customElement('fff-scroll-hint')
 export class ScrollHint extends LitElement {
   static styles = css`
     :host {
@@ -59,8 +59,8 @@ export class ScrollHint extends LitElement {
       visibility: hidden;
     }
 
-    mm-prev-button,
-    mm-next-button {
+    fff-prev-button,
+    fff-next-button {
       pointer-events: auto;
     }
   `
@@ -96,12 +96,12 @@ export class ScrollHint extends LitElement {
   render() {
     if (this.placement === 'start') {
       return html`
-        <mm-prev-button size=${this.size} @prev=${this.handlePrevClick}></mm-prev-button>
+        <fff-prev-button size=${this.size} @prev=${this.handlePrevClick}></fff-prev-button>
       `
     }
 
     return html`
-      <mm-next-button size=${this.size} @next=${this.handleNextClick}></mm-next-button>
+      <fff-next-button size=${this.size} @next=${this.handleNextClick}></fff-next-button>
     `
   }
 

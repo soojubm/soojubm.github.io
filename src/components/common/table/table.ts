@@ -15,7 +15,7 @@ export interface TableColumn {
   textAlign?: 'left' | 'center' | 'right'
 }
 
-@customElement('mm-table')
+@customElement('fff-table')
 export class Table extends LitElement {
   static styles = [
     resetStyles,
@@ -187,7 +187,7 @@ export class Table extends LitElement {
         style=${styleMap({ justifyContent: this.getHeaderJustifyContent(column) })}
       >
         ${column.label}
-        <mm-icon name=${ICON_NAMES.SORT} size="tiny"></mm-icon>
+        <fff-icon name=${ICON_NAMES.SORT} size="tiny"></fff-icon>
       </span>
     `
   }

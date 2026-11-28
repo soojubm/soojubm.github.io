@@ -9,7 +9,7 @@ import { emit } from '@/utils'
 import '@/components/common'
 import '@/components/domains/search/search-group'
 
-@customElement('mm-recent-search-list')
+@customElement('fff-recent-search-list')
 export class RecentSearchList extends LitElement {
   static styles = [
     resetStyles,
@@ -35,9 +35,9 @@ export class RecentSearchList extends LitElement {
 
   render() {
     return html`
-      <mm-search-group heading=${ifDefined(this.heading)}>
+      <fff-search-group heading=${ifDefined(this.heading)}>
         ${this.keywords.map(keyword => this.renderKeyword(keyword))}
-      </mm-search-group>
+      </fff-search-group>
     `
   }
 
@@ -45,14 +45,14 @@ export class RecentSearchList extends LitElement {
     return html`
       <div class="item">
         <button type="button" @click=${() => this.handleKeywordClick(keyword)}>
-          <mm-list-item label=${keyword}></mm-list-item>
+          <fff-list-item label=${keyword}></fff-list-item>
         </button>
-        <mm-icon-button
+        <fff-icon-button
           size="small"
           icon=${ICON_NAMES.DISMISS}
           aria-label="'${keyword}' 검색 기록 삭제"
           @click=${() => this.handleRemoveClick(keyword)}
-        ></mm-icon-button>
+        ></fff-icon-button>
       </div>
     `
   }

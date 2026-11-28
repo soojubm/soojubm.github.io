@@ -32,9 +32,9 @@ export const renderChatMessageTime = (datetime: string) => {
   if (!datetime) return nothing
 
   return html`
-    <mm-text size="12">
+    <fff-text size="12">
       <time datetime=${datetime}>${formatChatDatetime(datetime, chatTimeFormat)}</time>
-    </mm-text>
+    </fff-text>
   `
 }
 
@@ -50,13 +50,13 @@ const renderChatBubbleImages = (images: ChatImage[], typing: boolean) => {
   if (!isChatBubbleImage(images, typing)) return nothing
 
   return html`
-    <mm-grid columns=${images.length === 1 ? 1 : 2} column-min-width="6rem" gap="1">
+    <fff-grid columns=${images.length === 1 ? 1 : 2} column-min-width="6rem" gap="1">
       ${images.map(
         ({ src, alt }) => html`
-          <mm-thumbnail src=${src} alt=${alt} ratio="4:3"></mm-thumbnail>
+          <fff-thumbnail src=${src} alt=${alt} ratio="4:3"></fff-thumbnail>
         `,
       )}
-    </mm-grid>
+    </fff-grid>
   `
 }
 
@@ -87,7 +87,7 @@ export const withChatBubbleImage = <T extends Constructor<LitElement>>(Base: T) 
 export const renderChatBubbleShell = (host: ChatBubbleImage, message: unknown) => html`
   ${host.typing
     ? html`
-        <mm-typing-indicator></mm-typing-indicator>
+        <fff-typing-indicator></fff-typing-indicator>
       `
     : nothing}
   ${renderChatBubbleImages(host.images, host.typing)}

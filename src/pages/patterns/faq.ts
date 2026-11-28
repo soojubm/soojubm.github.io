@@ -66,24 +66,24 @@ const faqCategories: FaqCategory[] = [
 ]
 
 const renderFaqCategory = ({ icon, label, description, items }: FaqCategory) => html`
-  <mm-flex direction="column" gap="2">
-    <mm-list-item
+  <fff-flex direction="column" gap="2">
+    <fff-list-item
       avatar-variant="tertiary"
       size="medium"
       icon=${icon}
       label=${label}
       description=${description}
-    ></mm-list-item>
-    <mm-faq-list>
+    ></fff-list-item>
+    <fff-faq-list>
       ${items.map(
         ({ question, answer }) => html`
-          <mm-faq-item question=${question}>
-            <mm-paragraph>${answer}</mm-paragraph>
-          </mm-faq-item>
+          <fff-faq-item question=${question}>
+            <fff-paragraph>${answer}</fff-paragraph>
+          </fff-faq-item>
         `,
       )}
-    </mm-faq-list>
-  </mm-flex>
+    </fff-faq-list>
+  </fff-flex>
 `
 
 const handleContactClick = () => {
@@ -91,21 +91,21 @@ const handleContactClick = () => {
 }
 
 const main = html`
-  <mm-main width="small">
-    <mm-flex direction="column" gap="8">
-      <mm-page-header
+  <fff-main width="small">
+    <fff-flex direction="column" gap="8">
+      <fff-page-header
         heading="자주 묻는 질문"
         description="원하는 답을 찾지 못했다면 고객센터로 문의해 주세요."
-      ></mm-page-header>
+      ></fff-page-header>
 
-      <mm-flex direction="column" gap="8">${faqCategories.map(renderFaqCategory)}</mm-flex>
+      <fff-flex direction="column" gap="8">${faqCategories.map(renderFaqCategory)}</fff-flex>
 
-      <mm-flex direction="column" align-items="center" gap="2">
-        <mm-paragraph>원하는 답을 찾지 못하셨나요?</mm-paragraph>
-        <mm-button variant="primary" @click=${handleContactClick}>문의하기</mm-button>
-      </mm-flex>
-    </mm-flex>
-  </mm-main>
+      <fff-flex direction="column" align-items="center" gap="2">
+        <fff-paragraph>원하는 답을 찾지 못하셨나요?</fff-paragraph>
+        <fff-button variant="primary" @click=${handleContactClick}>문의하기</fff-button>
+      </fff-flex>
+    </fff-flex>
+  </fff-main>
 `
 
 renderPage(main, { closeSidebar: true })

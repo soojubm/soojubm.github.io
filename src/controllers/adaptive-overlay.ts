@@ -7,7 +7,7 @@ import { MediaQueryController } from '@/controllers/media-query-controller'
 type Host = ReactiveControllerHost & OpenState
 
 /**
- * 넓은 화면에서는 popover로, 좁은 화면에서는 sheet로 목록을 여는 컴포넌트(mm-select, mm-more-menu)가 열릴 표면을 고르는 클래스.
+ * 넓은 화면에서는 popover로, 좁은 화면에서는 sheet로 목록을 여는 컴포넌트(fff-select, fff-more-menu)가 열릴 표면을 고르는 클래스.
  * 열림 상태는 컴포넌트의 `open`이 쥐고, 이 클래스는 화면 폭에 맞는 표면에만 열림을 내려준다. 표면이 스스로 닫히면 컴포넌트의 상태를 맞춘다.
  */
 export class AdaptiveOverlay {

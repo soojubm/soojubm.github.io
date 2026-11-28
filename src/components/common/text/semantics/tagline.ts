@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-tagline')
+@customElement('fff-tagline')
 export class Tagline extends LitElement {
   static styles = [
     resetStyles,

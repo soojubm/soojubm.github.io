@@ -21,7 +21,7 @@ const defaultItems: BottomBarItem[] = [
   { label: '설정', href: '#', icon: ICON_NAMES.SETTINGS },
 ]
 
-@customElement('mm-bottom-bar')
+@customElement('fff-bottom-bar')
 export class BottomBar extends LitElement {
   static styles = [
     resetStyles,
@@ -64,16 +64,16 @@ export class BottomBar extends LitElement {
         color: var(--interaction-selected-foreground-color);
       }
 
-      a[aria-current='page'] mm-avatar {
+      a[aria-current='page'] fff-avatar {
         --avatar-icon-color: var(--interaction-selected-foreground-color);
       }
 
-      a[aria-current='page'] mm-caption {
+      a[aria-current='page'] fff-caption {
         --foreground-subtle-color: var(--interaction-selected-foreground-color);
       }
 
       /* 막대 안에는 캡션 아래 자리가 없어, 가운데 놓인 아바타의 오른쪽 위 모서리에 얹는다. */
-      mm-current-indicator {
+      fff-current-indicator {
         position: absolute;
         top: var(--space-1);
         left: calc(50% + var(--size-32) / 2);
@@ -144,8 +144,8 @@ export class BottomBar extends LitElement {
         aria-current=${ifDefined(activeIndex === index ? 'page' : undefined)}
         @click=${(e: Event) => this.handleItemClick(e, index, item)}
       >
-        <mm-avatar variant="tertiary" size="32" icon=${item.icon ?? ICON_NAMES.INFO}></mm-avatar>
-        <mm-caption>${item.label}</mm-caption>
+        <fff-avatar variant="tertiary" size="32" icon=${item.icon ?? ICON_NAMES.INFO}></fff-avatar>
+        <fff-caption>${item.label}</fff-caption>
         ${this.renderCurrentIndicator(activeIndex === index)}
       </a>
     `
@@ -155,7 +155,7 @@ export class BottomBar extends LitElement {
     if (!isCurrent) return nothing
 
     return html`
-      <mm-current-indicator></mm-current-indicator>
+      <fff-current-indicator></fff-current-indicator>
     `
   }
 

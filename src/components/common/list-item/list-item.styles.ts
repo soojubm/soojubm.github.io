@@ -123,7 +123,7 @@ export const listItemInteractiveStyles = css`
     pointer-events: none;
   }
 
-  mm-list-item {
+  fff-list-item {
     flex: 1;
   }
 `

@@ -4,7 +4,7 @@ import { styleMap } from 'lit/directives/style-map.js'
 
 import '@/components/common/text/text'
 
-@customElement('mm-chart-progress-ring')
+@customElement('fff-chart-progress-ring')
 export class ChartProgressRing extends LitElement {
   static styles = css`
     :host {
@@ -16,7 +16,7 @@ export class ChartProgressRing extends LitElement {
     }
 
     svg,
-    mm-text {
+    fff-text {
       grid-area: 1 / 1;
     }
 
@@ -65,7 +65,7 @@ export class ChartProgressRing extends LitElement {
           ></circle>
         `}
       </svg>
-      <mm-text>${this.value}%</mm-text>
+      <fff-text>${this.value}%</fff-text>
     `
   }
 }

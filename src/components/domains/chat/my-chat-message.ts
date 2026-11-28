@@ -8,7 +8,7 @@ import { emit } from '@/utils'
 
 import '@/components/common'
 
-@customElement('mm-my-chat-message')
+@customElement('fff-my-chat-message')
 export class MyChatMessage extends LitElement {
   static styles = css`
     :host {
@@ -18,7 +18,7 @@ export class MyChatMessage extends LitElement {
       gap: var(--space-2);
     }
 
-    ::slotted(mm-my-chat-bubble) {
+    ::slotted(fff-my-chat-bubble) {
       align-self: flex-end;
     }
   `
@@ -55,18 +55,18 @@ export class MyChatMessage extends LitElement {
     if (!this.retrySubscription.subscribed || !this.failed) return nothing
 
     return html`
-      <mm-icon-button
+      <fff-icon-button
         size="small"
         variant="ghost"
         icon=${ICON_NAMES.RETRY}
         aria-label="재전송"
         @click=${this.handleRetryClick}
-      ></mm-icon-button>
+      ></fff-icon-button>
     `
   }
 
   private updateFailed() {
-    this.failed = !!this.querySelector(':scope > mm-my-chat-bubble[status="failed"]')
+    this.failed = !!this.querySelector(':scope > fff-my-chat-bubble[status="failed"]')
   }
 
   private handleSlotChange() {

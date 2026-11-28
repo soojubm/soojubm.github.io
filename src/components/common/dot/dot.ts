@@ -15,7 +15,7 @@ const toneTokens = Object.fromEntries(
   Object.keys(dotToneColors).map(tone => [tone, dotToneTokens(tone as DotTone)]),
 )
 
-@customElement('mm-dot')
+@customElement('fff-dot')
 export class Dot extends LitElement {
   static styles = css`
     :host {

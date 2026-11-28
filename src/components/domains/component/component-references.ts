@@ -12,7 +12,7 @@ export interface ComponentReferenceItemData {
 
 const isAbsoluteUrl = (href: string) => /^https?:\/\//.test(href)
 
-@customElement('mm-component-references')
+@customElement('fff-component-references')
 export class ComponentReferences extends LitElement {
   static styles = css`
     :host {
@@ -52,10 +52,10 @@ export class ComponentReferences extends LitElement {
   render() {
     return html`
       <div class="references-body">
-        <mm-heading>${this.heading}</mm-heading>
-        <mm-surface variant="filled" radius="large" style="padding-inline: 1.25rem">
+        <fff-heading>${this.heading}</fff-heading>
+        <fff-surface variant="filled" radius="large" style="padding-inline: 1.25rem">
           ${this.groups.map((group, index) => this.renderGroup(group, index))}
-        </mm-surface>
+        </fff-surface>
       </div>
     `
   }
@@ -64,7 +64,7 @@ export class ComponentReferences extends LitElement {
     return html`
       ${index > 0
         ? html`
-            <mm-separator></mm-separator>
+            <fff-separator></fff-separator>
           `
         : null}
       <div class="references-links">${group.map(item => this.renderLink(item))}</div>
@@ -75,7 +75,7 @@ export class ComponentReferences extends LitElement {
     const isExternal = external ?? isAbsoluteUrl(href)
 
     return html`
-      <mm-link ?external=${isExternal} href=${href}>${label}</mm-link>
+      <fff-link ?external=${isExternal} href=${href}>${label}</fff-link>
     `
   }
 }

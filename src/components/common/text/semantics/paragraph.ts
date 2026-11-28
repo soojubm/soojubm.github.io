@@ -16,7 +16,7 @@ const paragraphMaxWidthTokens: AttributeTokens<ParagraphSize> = {
   large: { 'max-width': '800px' },
 }
 
-@customElement('mm-paragraph')
+@customElement('fff-paragraph')
 export class Paragraph extends LitElement {
   static styles = css`
     :host {
@@ -33,7 +33,7 @@ export class Paragraph extends LitElement {
 
   render() {
     return html`
-      <mm-text
+      <fff-text
         as="p"
         size=${paragraphSizeToTextSize[this.size]}
         color=${this.color}
@@ -41,7 +41,7 @@ export class Paragraph extends LitElement {
         ?centered=${this.centered}
       >
         <slot></slot>
-      </mm-text>
+      </fff-text>
     `
   }
 }

@@ -31,12 +31,12 @@ function findPageSource(id) {
   return pageSources.get(id === 'index' ? 'home' : id) ?? null
 }
 
-// mm-page-header 태그 전체를 추출한 뒤 title/description 파싱
+// fff-page-header 태그 전체를 추출한 뒤 title/description 파싱
 function extractPageMeta(html) {
-  // 코드 샘플 문자열에 든 mm-page-header를 지나치도록 페이지 본문(mm-main)부터 찾는다
-  const body = html.slice(Math.max(html.indexOf('<mm-main'), 0))
-  // mm-page-header 여는 태그 전체 (여러 줄 포함)
-  const tagMatch = body.match(/<mm-page-header([\s\S]*?)(?:\/>|>)/)
+  // 코드 샘플 문자열에 든 fff-page-header를 지나치도록 페이지 본문(fff-main)부터 찾는다
+  const body = html.slice(Math.max(html.indexOf('<fff-main'), 0))
+  // fff-page-header 여는 태그 전체 (여러 줄 포함)
+  const tagMatch = body.match(/<fff-page-header([\s\S]*?)(?:\/>|>)/)
   if (!tagMatch) return { title: '', description: '' }
 
   const tag = tagMatch[1]

@@ -5,7 +5,7 @@ import '@/components/common/text/text'
 
 export type SpinnerVariant = 'element' | 'section'
 
-@customElement('mm-spinner')
+@customElement('fff-spinner')
 export class Spinner extends LitElement {
   static styles = css`
     :host {
@@ -64,7 +64,7 @@ export class Spinner extends LitElement {
     if (this.variant !== 'section') return nothing
 
     return html`
-      <mm-text class="label" aria-hidden="true">${this.label}</mm-text>
+      <fff-text class="label" aria-hidden="true">${this.label}</fff-text>
     `
   }
 }

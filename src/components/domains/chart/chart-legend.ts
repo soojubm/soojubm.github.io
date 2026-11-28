@@ -11,7 +11,7 @@ export type ChartLegendItem = {
   tone: TagTone
 }
 
-@customElement('mm-chart-legend')
+@customElement('fff-chart-legend')
 export class ChartLegend extends LitElement {
   static styles = css`
     :host {
@@ -46,11 +46,11 @@ export class ChartLegend extends LitElement {
   private renderItem({ label, value, tone }: ChartLegendItem) {
     return html`
       <div class="item" role="listitem">
-        <mm-dot tone=${tone}></mm-dot>
-        <mm-text>${label}</mm-text>
+        <fff-dot tone=${tone}></fff-dot>
+        <fff-text>${label}</fff-text>
         ${value
           ? html`
-              <mm-text class="value">${value}</mm-text>
+              <fff-text class="value">${value}</fff-text>
             `
           : nothing}
       </div>

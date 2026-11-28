@@ -19,7 +19,7 @@ const RATINGS: { value: ChatFeedbackValue; label: string }[] = [
   { value: 'good', label: '좋음' },
 ]
 
-@customElement('mm-chat-feedback')
+@customElement('fff-chat-feedback')
 export class ChatFeedback extends LitElement {
   static styles = css`
     :host {
@@ -48,7 +48,7 @@ export class ChatFeedback extends LitElement {
 
   render() {
     return html`
-      <mm-text>${this.renderMessage()}</mm-text>
+      <fff-text>${this.renderMessage()}</fff-text>
       <div class="actions">${this.renderRatings()} ${this.renderDismissButton()}</div>
     `
   }
@@ -63,19 +63,19 @@ export class ChatFeedback extends LitElement {
     if (this.value) return nothing
 
     return html`
-      <mm-button-group role="group" aria-label="평가">
+      <fff-button-group role="group" aria-label="평가">
         ${RATINGS.map(
           ({ value, label }) => html`
-            <mm-button
+            <fff-button
               variant="tertiary"
               size="small"
               @click=${() => this.handleRatingClick(value)}
             >
               ${label}
-            </mm-button>
+            </fff-button>
           `,
         )}
-      </mm-button-group>
+      </fff-button-group>
     `
   }
 
@@ -83,13 +83,13 @@ export class ChatFeedback extends LitElement {
     if (!this.dismissSubscription.subscribed) return nothing
 
     return html`
-      <mm-icon-button
+      <fff-icon-button
         variant="secondary"
         size="small"
         icon=${ICON_NAMES.DISMISS}
         aria-label="닫기"
         @click=${this.handleDismissClick}
-      ></mm-icon-button>
+      ></fff-icon-button>
     `
   }
 

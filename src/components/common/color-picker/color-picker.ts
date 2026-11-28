@@ -13,7 +13,7 @@ const COLOR_OPTIONS: { value: Color; label: string; color: string }[] = [
   { value: 'green', label: 'Green', color: 'var(--green800)' },
 ]
 
-@customElement('mm-color-picker')
+@customElement('fff-color-picker')
 export class ColorPicker extends LitElement {
   static styles = css`
     :host {
@@ -24,22 +24,22 @@ export class ColorPicker extends LitElement {
 
   render() {
     return html`
-      <mm-button-group>
+      <fff-button-group>
         ${COLOR_OPTIONS.map(option => this.renderColorChip(option))}
-      </mm-button-group>
+      </fff-button-group>
     `
   }
 
   // 칩은 각자 토글이지만 테마 색은 하나만 고르므로, 눌린 칩을 다시 눌러도 선택이 풀리지 않게 live로 상태를 되돌린다.
   private renderColorChip(option: (typeof COLOR_OPTIONS)[number]) {
     return html`
-      <mm-color-chip
+      <fff-color-chip
         value=${option.value}
         color=${option.color}
         aria-label=${option.label}
         .pressed=${live(this.color === option.value)}
         @change=${this.handleColorChange}
-      ></mm-color-chip>
+      ></fff-color-chip>
     `
   }
 

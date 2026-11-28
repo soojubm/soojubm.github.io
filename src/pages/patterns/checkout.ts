@@ -8,12 +8,12 @@ import { findSitemapItem } from '@/sitemap'
 
 // 주문상품 줄은 주문/결제와 주문완료 화면이 같은 형태로 쓴다.
 const orderedProduct = html`
-  <mm-order-product-item
+  <fff-order-product-item
     image-src="/src/images/cake_gosum.jpg"
     name="뉴닉이 풀어 쓴 경제상식사전"
     option="평생 소장"
     price="₩ 11,900"
-  ></mm-order-product-item>
+  ></fff-order-product-item>
 `
 
 const paymentOptions: MenuOptionItem[] = [
@@ -23,231 +23,235 @@ const paymentOptions: MenuOptionItem[] = [
 ]
 
 const main = html`
-  <mm-fixed-top style="background: var(--background-color)">
-    <mm-top-bar
+  <fff-fixed-top style="background: var(--background-color)">
+    <fff-top-bar
       id="checkout-top-bar"
       heading="주문/결제"
       style="
       padding-inline: var(--layout-padding-inline);
     "
-    ></mm-top-bar>
-  </mm-fixed-top>
-  <mm-main width="small">
-    <mm-content-section-list>
+    ></fff-top-bar>
+  </fff-fixed-top>
+  <fff-main width="small">
+    <fff-content-section-list>
       <!-- 주문/결제 -->
-      <mm-flex as="section" direction="column" gap="6">
-        <mm-content-section-list>
-          <mm-content-section heading="주문상품" heading-level="3">
+      <fff-flex as="section" direction="column" gap="6">
+        <fff-content-section-list>
+          <fff-content-section heading="주문상품" heading-level="3">
             ${orderedProduct}
-            <mm-list-item
+            <fff-list-item
               size="medium"
               label="AppleCare+ for Macbook/MacBook Air"
               description="Automatically registered with your Apple hardware."
             >
-              <mm-text slot="trailing">₩ 20,000</mm-text>
-            </mm-list-item>
-            <mm-button>수량/옵션 변경</mm-button>
-          </mm-content-section>
+              <fff-text slot="trailing">₩ 20,000</fff-text>
+            </fff-list-item>
+            <fff-button>수량/옵션 변경</fff-button>
+          </fff-content-section>
 
-          <mm-content-section heading="배송지" heading-level="3">
-            <mm-radio-card-group name="shipping" value="default" legend="배송지 선택">
-              <mm-radio-card value="default">
-                <mm-flex gap="1">
-                  <mm-paragraph>수줍이 집</mm-paragraph>
-                  <mm-tag>기본배송지</mm-tag>
-                </mm-flex>
-                <mm-paragraph>[07655] 서울특별시 강서구 까치산로 182 1202호</mm-paragraph>
-                <mm-paragraph color="light">010-3121-7045</mm-paragraph>
-              </mm-radio-card>
-              <mm-radio-card value="office">
-                <mm-paragraph>회사</mm-paragraph>
-                <mm-paragraph>[03925] 서울특별시 마포구 월드컵북로 400 상암동</mm-paragraph>
-                <mm-paragraph color="light">010-9876-5432</mm-paragraph>
-              </mm-radio-card>
-            </mm-radio-card-group>
-            <mm-add-button label="배송지 변경/추가"></mm-add-button>
-          </mm-content-section>
+          <fff-content-section heading="배송지" heading-level="3">
+            <fff-radio-card-group name="shipping" value="default" legend="배송지 선택">
+              <fff-radio-card value="default">
+                <fff-flex gap="1">
+                  <fff-paragraph>수줍이 집</fff-paragraph>
+                  <fff-tag>기본배송지</fff-tag>
+                </fff-flex>
+                <fff-paragraph>[07655] 서울특별시 강서구 까치산로 182 1202호</fff-paragraph>
+                <fff-paragraph color="light">010-3121-7045</fff-paragraph>
+              </fff-radio-card>
+              <fff-radio-card value="office">
+                <fff-paragraph>회사</fff-paragraph>
+                <fff-paragraph>[03925] 서울특별시 마포구 월드컵북로 400 상암동</fff-paragraph>
+                <fff-paragraph color="light">010-9876-5432</fff-paragraph>
+              </fff-radio-card>
+            </fff-radio-card-group>
+            <fff-add-button label="배송지 변경/추가"></fff-add-button>
+          </fff-content-section>
 
-          <mm-content-section heading="결제수단" heading-level="3">
-            <mm-form-field label="보너스 쿠폰">
-              <mm-select
+          <fff-content-section heading="결제수단" heading-level="3">
+            <fff-form-field label="보너스 쿠폰">
+              <fff-select
                 value="welcome"
                 .options=${[
                   { value: 'welcome', label: '신규 가입 쿠폰 (-₩ 2,000)' },
                   { value: 'birthday', label: '생일 쿠폰 (-₩ 3,000)', disabled: true },
                   { value: 'none', label: '쿠폰 적용 안 함' },
                 ]}
-              ></mm-select>
-            </mm-form-field>
-            <mm-textfield label="사용 마일리지" placeholder="0 마일리지" value="980"></mm-textfield>
-            <mm-button>보유 마일리지 1,186p 모두사용</mm-button>
+              ></fff-select>
+            </fff-form-field>
+            <fff-textfield
+              label="사용 마일리지"
+              placeholder="0 마일리지"
+              value="980"
+            ></fff-textfield>
+            <fff-button>보유 마일리지 1,186p 모두사용</fff-button>
 
-            <mm-surface>
-              <mm-menu-item-radio-group
+            <fff-surface>
+              <fff-menu-item-radio-group
                 name="payment"
                 value="card"
                 aria-label="결제수단 선택"
                 .options=${paymentOptions}
-              ></mm-menu-item-radio-group>
-            </mm-surface>
+              ></fff-menu-item-radio-group>
+            </fff-surface>
 
-            <mm-list-item
+            <fff-list-item
               size="medium"
               icon=${ICON_NAMES.CREDIT_CARD}
               label="VISA 1988 XXXX 1111"
               description="Expires on 10/23"
             >
-              <mm-link slot="trailing" href="#">수정</mm-link>
-            </mm-list-item>
-            <mm-add-button label="결제수단 추가"></mm-add-button>
+              <fff-link slot="trailing" href="#">수정</fff-link>
+            </fff-list-item>
+            <fff-add-button label="결제수단 추가"></fff-add-button>
 
-            <mm-notice
+            <fff-notice
               description="신용카드 결제만 가능하며, 해외에서 발행된 카드는 이용할 수 없습니다."
             >
-              <mm-paragraph>
+              <fff-paragraph>
                 주문취소 또는 환불은
-                <mm-link href="#">고객센터</mm-link>
+                <fff-link href="#">고객센터</fff-link>
                 로 문의해 주세요.
-              </mm-paragraph>
-            </mm-notice>
-          </mm-content-section>
+              </fff-paragraph>
+            </fff-notice>
+          </fff-content-section>
 
-          <mm-content-section heading="결제상세" heading-level="3">
-            <mm-meta-item-group direction="column" gap="2">
-              <mm-meta-item label="마일리지 사용" value="₩ 980"></mm-meta-item>
-              <mm-meta-item label="카드 결제" value="₩ 31,920"></mm-meta-item>
-            </mm-meta-item-group>
+          <fff-content-section heading="결제상세" heading-level="3">
+            <fff-meta-item-group direction="column" gap="2">
+              <fff-meta-item label="마일리지 사용" value="₩ 980"></fff-meta-item>
+              <fff-meta-item label="카드 결제" value="₩ 31,920"></fff-meta-item>
+            </fff-meta-item-group>
 
-            <mm-surface>
-              <mm-flex direction="column" gap="4">
-                <mm-meta-item-group direction="column" gap="2">
-                  <mm-meta-item label="총 상품금액" value="₩ 31,900"></mm-meta-item>
-                  <mm-meta-item label="배송료" value="₩ 3,000"></mm-meta-item>
-                  <mm-meta-item label="쿠폰 할인" value="-₩ 2,000"></mm-meta-item>
-                  <mm-meta-item
+            <fff-surface>
+              <fff-flex direction="column" gap="4">
+                <fff-meta-item-group direction="column" gap="2">
+                  <fff-meta-item label="총 상품금액" value="₩ 31,900"></fff-meta-item>
+                  <fff-meta-item label="배송료" value="₩ 3,000"></fff-meta-item>
+                  <fff-meta-item label="쿠폰 할인" value="-₩ 2,000"></fff-meta-item>
+                  <fff-meta-item
                     label="최종 결제 금액"
                     value="₩ 32,900"
                     value-size="large"
-                  ></mm-meta-item>
-                </mm-meta-item-group>
-                <mm-meta-item label="적립 예정 포인트" value="최대 1,147원"></mm-meta-item>
-                <mm-button variant="primary" size="large" full-width>결제</mm-button>
-              </mm-flex>
-            </mm-surface>
-          </mm-content-section>
-        </mm-content-section-list>
-      </mm-flex>
+                  ></fff-meta-item>
+                </fff-meta-item-group>
+                <fff-meta-item label="적립 예정 포인트" value="최대 1,147원"></fff-meta-item>
+                <fff-button variant="primary" size="large" full-width>결제</fff-button>
+              </fff-flex>
+            </fff-surface>
+          </fff-content-section>
+        </fff-content-section-list>
+      </fff-flex>
 
       <!-- 배송지 등록 -->
-      <mm-flex as="section" direction="column" gap="6">
-        <mm-top-bar heading="배송지 등록"></mm-top-bar>
+      <fff-flex as="section" direction="column" gap="6">
+        <fff-top-bar heading="배송지 등록"></fff-top-bar>
 
-        <mm-flex direction="column" gap="3">
-          <mm-textfield
+        <fff-flex direction="column" gap="3">
+          <fff-textfield
             label="받는 사람"
             type="text"
             name="recipient"
             id="checkout-recipient"
             placeholder="수줍이"
-          ></mm-textfield>
-          <mm-textfield
+          ></fff-textfield>
+          <fff-textfield
             label="연락처"
             type="text"
             name="phone"
             id="checkout-phone"
             placeholder="01012345678"
-          ></mm-textfield>
-          <mm-textfield
+          ></fff-textfield>
+          <fff-textfield
             label="주소"
             type="text"
             name="address"
             id="checkout-address"
             placeholder="클릭하여 우편번호 찾기"
-          ></mm-textfield>
-          <mm-textfield
+          ></fff-textfield>
+          <fff-textfield
             label="상세주소"
             type="text"
             name="address-detail"
             id="checkout-address-detail"
             placeholder="동 호수"
             optional
-          ></mm-textfield>
-          <mm-textfield
+          ></fff-textfield>
+          <fff-textfield
             label="배송 메시지"
             type="text"
             name="message"
             id="checkout-message"
             placeholder="직접 입력"
             optional
-          ></mm-textfield>
-        </mm-flex>
+          ></fff-textfield>
+        </fff-flex>
 
-        <mm-flex as="footer" direction="column" gap="3">
-          <mm-checkbox size="large">개인정보 수집 및 이용 동의</mm-checkbox>
-          <mm-button variant="primary" size="large" full-width>배송지 등록</mm-button>
-        </mm-flex>
-      </mm-flex>
+        <fff-flex as="footer" direction="column" gap="3">
+          <fff-checkbox size="large">개인정보 수집 및 이용 동의</fff-checkbox>
+          <fff-button variant="primary" size="large" full-width>배송지 등록</fff-button>
+        </fff-flex>
+      </fff-flex>
 
       <!-- 주문완료 -->
-      <mm-flex as="section" direction="column" gap="6">
-        <mm-text-block
+      <fff-flex as="section" direction="column" gap="6">
+        <fff-text-block
           centered
           level="2"
           heading="주문완료 되었습니다."
           description="2024.08.19 23:55"
-        ></mm-text-block>
+        ></fff-text-block>
 
-        <mm-surface>
-          <mm-flex direction="column">
-            <mm-flex as="header" align-items="center" justify-content="space-between" gap="2">
-              <mm-paragraph color="light">주문번호</mm-paragraph>
-              <mm-link href="#">2024040436292081</mm-link>
-            </mm-flex>
+        <fff-surface>
+          <fff-flex direction="column">
+            <fff-flex as="header" align-items="center" justify-content="space-between" gap="2">
+              <fff-paragraph color="light">주문번호</fff-paragraph>
+              <fff-link href="#">2024040436292081</fff-link>
+            </fff-flex>
 
-            <mm-separator></mm-separator>
+            <fff-separator></fff-separator>
 
-            <mm-text-block
+            <fff-text-block
               level="4"
               heading="수줍이"
               description="서울특별시 중구 퇴계로27길 49 (저동2가, 센트럴에쓰) 2층 (04555), 010-3121-7045"
-            ></mm-text-block>
+            ></fff-text-block>
 
-            <mm-separator></mm-separator>
+            <fff-separator></fff-separator>
 
-            <mm-flex direction="column" gap="2">
-              <mm-text-block
+            <fff-flex direction="column" gap="2">
+              <fff-text-block
                 level="4"
                 heading="주문상품 1건"
                 description="13:00 까지 결제 시 오늘 발송"
-              ></mm-text-block>
+              ></fff-text-block>
               ${orderedProduct}
-            </mm-flex>
+            </fff-flex>
 
-            <mm-separator></mm-separator>
+            <fff-separator></fff-separator>
 
-            <mm-flex as="footer" direction="column">
-              <mm-meta-item-group direction="column" gap="2">
-                <mm-meta-item label="상품금액" value="31,900원"></mm-meta-item>
-                <mm-meta-item label="배송료" value="3,000원"></mm-meta-item>
-                <mm-meta-item label="쿠폰 할인" value="-2,000원"></mm-meta-item>
-                <mm-meta-item label="주문금액" value="32,900원" value-size="large"></mm-meta-item>
-              </mm-meta-item-group>
+            <fff-flex as="footer" direction="column">
+              <fff-meta-item-group direction="column" gap="2">
+                <fff-meta-item label="상품금액" value="31,900원"></fff-meta-item>
+                <fff-meta-item label="배송료" value="3,000원"></fff-meta-item>
+                <fff-meta-item label="쿠폰 할인" value="-2,000원"></fff-meta-item>
+                <fff-meta-item label="주문금액" value="32,900원" value-size="large"></fff-meta-item>
+              </fff-meta-item-group>
 
-              <mm-separator></mm-separator>
+              <fff-separator></fff-separator>
 
-              <mm-flex direction="column" gap="4">
-                <mm-meta-item-group direction="column">
-                  <mm-meta-item label="결제상세" value="카드 간편결제 + 마일리지"></mm-meta-item>
-                  <mm-meta-item label="포인트 혜택" value="최대 1,147원"></mm-meta-item>
-                </mm-meta-item-group>
-                <mm-button variant="secondary" size="large" full-width>주문 상세 보기</mm-button>
-              </mm-flex>
-            </mm-flex>
-          </mm-flex>
-        </mm-surface>
-      </mm-flex>
-    </mm-content-section-list>
-  </mm-main>
+              <fff-flex direction="column" gap="4">
+                <fff-meta-item-group direction="column">
+                  <fff-meta-item label="결제상세" value="카드 간편결제 + 마일리지"></fff-meta-item>
+                  <fff-meta-item label="포인트 혜택" value="최대 1,147원"></fff-meta-item>
+                </fff-meta-item-group>
+                <fff-button variant="secondary" size="large" full-width>주문 상세 보기</fff-button>
+              </fff-flex>
+            </fff-flex>
+          </fff-flex>
+        </fff-surface>
+      </fff-flex>
+    </fff-content-section-list>
+  </fff-main>
 `
 
 const checkoutPage = findSitemapItem('checkout')

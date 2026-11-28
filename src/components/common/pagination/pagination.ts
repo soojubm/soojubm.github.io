@@ -14,7 +14,7 @@ type PaginationItem = number | 'ellipsis'
 // 현재 페이지 양옆에 번호로 남기는 페이지 수. 나머지는 말줄임으로 접는다.
 const SIBLING_COUNT = 1
 
-@customElement('mm-pagination')
+@customElement('fff-pagination')
 export class Pagination extends LitElement {
   static styles = paginationStyles
   @property({ type: Number, attribute: 'current-page' }) currentPage = 1
@@ -26,21 +26,21 @@ export class Pagination extends LitElement {
 
     return html`
       <nav class="pagination" aria-label=${this.ariaLabel}>
-        <mm-prev-button
+        <fff-prev-button
           aria-label="이전 페이지로 이동"
           ?disabled=${currentPage === 1}
           @click=${() => this.setPage(currentPage - 1)}
-        ></mm-prev-button>
+        ></fff-prev-button>
         ${repeat(
           this.pages,
           (item, index) => (item === 'ellipsis' ? `ellipsis-${index}` : item),
           item => this.renderPage(item),
         )}
-        <mm-next-button
+        <fff-next-button
           aria-label="다음 페이지로 이동"
           ?disabled=${currentPage === this.safePageCount}
           @click=${() => this.setPage(currentPage + 1)}
-        ></mm-next-button>
+        ></fff-next-button>
       </nav>
     `
   }
@@ -101,11 +101,11 @@ export class Pagination extends LitElement {
     const isCurrent = item === this.safeCurrentPage
 
     return html`
-      <mm-page-button
+      <fff-page-button
         .page=${item}
         aria-current=${ifDefined(isCurrent ? 'page' : undefined)}
         @click=${() => this.setPage(item)}
-      ></mm-page-button>
+      ></fff-page-button>
     `
   }
 }

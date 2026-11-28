@@ -26,14 +26,14 @@ export const renderLayout = (content: TemplateResult | string, options: LayoutOp
     html`
       ${navbar
         ? html`
-            <mm-navbar></mm-navbar>
-            <mm-sidebar id="site-sidebar" ?open=${!options.closeSidebar}></mm-sidebar>
+            <fff-navbar></fff-navbar>
+            <fff-sidebar id="site-sidebar" ?open=${!options.closeSidebar}></fff-sidebar>
           `
         : nothing}
       ${body}
       ${options.footer
         ? html`
-            <mm-footer></mm-footer>
+            <fff-footer></fff-footer>
           `
         : nothing}
     `,

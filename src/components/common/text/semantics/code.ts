@@ -4,7 +4,7 @@ import { customElement } from 'lit/decorators.js'
 import { codeTextStyles } from '@/components/common/text/semantics/code.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-code')
+@customElement('fff-code')
 export class Code extends LitElement {
   static styles = [
     resetStyles,

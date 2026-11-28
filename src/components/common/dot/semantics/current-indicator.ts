@@ -5,7 +5,7 @@ import { indicatorBoxStyles } from '@/components/indicators/indicator.styles'
 import '@/components/common/dot/dot'
 import '@/components/overlay/tooltip'
 
-@customElement('mm-current-indicator')
+@customElement('fff-current-indicator')
 export class CurrentIndicator extends LitElement {
   static styles = css`
     :host {
@@ -26,11 +26,11 @@ export class CurrentIndicator extends LitElement {
 
   render() {
     return html`
-      <mm-tooltip content="현재 위치" placement="bottom">
+      <fff-tooltip content="현재 위치" placement="bottom">
         <span slot="trigger">
-          <mm-dot tone="gray" size="6"></mm-dot>
+          <fff-dot tone="gray" size="6"></fff-dot>
         </span>
-      </mm-tooltip>
+      </fff-tooltip>
     `
   }
 }

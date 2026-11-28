@@ -10,7 +10,7 @@ import {
 } from '@/components/domains/shared/suggestion-button'
 import { emit } from '@/utils'
 
-@customElement('mm-chat-suggestion')
+@customElement('fff-chat-suggestion')
 export class ChatSuggestion extends LitElement {
   static styles = [suggestionButtonStyles]
   @property({ type: String }) value = ''

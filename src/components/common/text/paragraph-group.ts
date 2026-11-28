@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('mm-paragraph-group')
+@customElement('fff-paragraph-group')
 export class ParagraphGroup extends LitElement {
   static styles = css`
     :host {

@@ -17,7 +17,7 @@ import { copyToClipboard } from '@/utils/clipboard'
 // 복사됨 표시를 유지하는 시간(ms).
 const COPIED_DURATION = 1500
 
-@customElement('mm-copy-button')
+@customElement('fff-copy-button')
 export class CopyButton extends LitElement {
   static styles = [
     resetStyles,

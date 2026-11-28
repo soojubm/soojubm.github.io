@@ -12,7 +12,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/icon/icon'
 
-@customElement('mm-toggle-button-group')
+@customElement('fff-toggle-button-group')
 export class ToggleButtonGroup extends LitElement {
   static styles = [
     resetStyles,
@@ -98,7 +98,7 @@ export class ToggleButtonGroup extends LitElement {
     if (!icon) return nothing
 
     return html`
-      <mm-icon name=${icon}></mm-icon>
+      <fff-icon name=${icon}></fff-icon>
     `
   }
 

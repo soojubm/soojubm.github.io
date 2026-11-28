@@ -12,7 +12,7 @@ import '@/components/common/text/semantics/paragraph'
 
 export type CheckboxSize = Extract<ComponentSize, 'medium' | 'large'>
 
-@customElement('mm-checkbox')
+@customElement('fff-checkbox')
 export class Checkbox extends LitElement {
   static styles = [resetStyles, inputVisuallyHiddenStyles, checkboxStyles]
   @property({ type: String })
@@ -49,9 +49,9 @@ export class Checkbox extends LitElement {
 
         <label for=${inputId}>
           <span class="indicator"></span>
-          <mm-paragraph>
+          <fff-paragraph>
             <slot></slot>
-          </mm-paragraph>
+          </fff-paragraph>
         </label>
       </div>
     `

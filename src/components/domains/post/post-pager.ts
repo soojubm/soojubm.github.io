@@ -8,7 +8,7 @@ export interface PostPagerItem {
   title: string
 }
 
-@customElement('mm-post-pager')
+@customElement('fff-post-pager')
 export class PostPager extends LitElement {
   static styles = css`
     :host {
@@ -22,7 +22,7 @@ export class PostPager extends LitElement {
     const { previous, next } = this
 
     return html`
-      <mm-pager
+      <fff-pager
         aria-label="글 이동"
         .previous=${previous && {
           href: previous.href,
@@ -30,7 +30,7 @@ export class PostPager extends LitElement {
           description: '이전 글',
         }}
         .next=${next && { href: next.href, heading: next.title, description: '다음 글' }}
-      ></mm-pager>
+      ></fff-pager>
     `
   }
 }

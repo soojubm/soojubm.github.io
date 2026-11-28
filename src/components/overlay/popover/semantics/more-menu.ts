@@ -16,7 +16,7 @@ import { withOpenState } from '@/utils/open-state'
 // onClick은 항목마다 할 일이 정해진 경우에 쓰고, action 이벤트는 onClick 유무와 상관없이 늘 알린다.
 export type MoreMenuAction = OptionItem & { destructive?: boolean; onClick?: () => void }
 
-@customElement('mm-more-menu')
+@customElement('fff-more-menu')
 export class MoreMenu extends withOpenState(LitElement) {
   static styles = css`
     :host {
@@ -26,7 +26,7 @@ export class MoreMenu extends withOpenState(LitElement) {
   @property({ attribute: false }) actions: MoreMenuAction[] = []
   @property({ type: String }) placement: PopoverPlacement = 'bottom-end'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = '더보기'
-  @query('mm-more-button') private triggerElement?: HTMLElement
+  @query('fff-more-button') private triggerElement?: HTMLElement
   private overlay = new AdaptiveOverlay(this)
   private disclosure = new DisclosureController(this, {
     getTrigger: () => this.triggerElement ?? undefined,
@@ -47,34 +47,34 @@ export class MoreMenu extends withOpenState(LitElement) {
   // 클릭 토글과 aria-expanded는 DisclosureController가 getTrigger로 받은 이 버튼에 배선한다.
   private renderTrigger() {
     return html`
-      <mm-more-button
+      <fff-more-button
         aria-label=${this.ariaLabel}
         aria-haspopup=${this.overlay.isViewportCompact ? 'dialog' : 'menu'}
-      ></mm-more-button>
+      ></fff-more-button>
     `
   }
 
   private renderActionList() {
     return html`
-      <mm-menu-item-group aria-label=${this.ariaLabel}>
+      <fff-menu-item-group aria-label=${this.ariaLabel}>
         ${repeat(
           this.actions,
           action => action.value,
           action => this.renderAction(action),
         )}
-      </mm-menu-item-group>
+      </fff-menu-item-group>
     `
   }
 
   private renderAction(action: MoreMenuAction) {
     return html`
-      <mm-menu-item-action
+      <fff-menu-item-action
         label=${action.label}
         icon=${ifDefined(action.icon)}
         ?destructive=${action.destructive}
         ?disabled=${action.disabled}
         @click=${() => this.handleActionClick(action)}
-      ></mm-menu-item-action>
+      ></fff-menu-item-action>
     `
   }
 

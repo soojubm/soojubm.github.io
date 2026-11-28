@@ -4,7 +4,7 @@ import { customElement, queryAssignedElements } from 'lit/decorators.js'
 import '@/components/domains/post/post-item'
 import { MEDIA } from '@/constants'
 
-@customElement('mm-post-list')
+@customElement('fff-post-list')
 export class PostList extends LitElement {
   static styles = css`
     :host {

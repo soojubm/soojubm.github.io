@@ -11,7 +11,7 @@ const SHAPE_OPTIONS = [
   { value: 'square', label: 'Square' },
 ]
 
-@customElement('mm-radius-picker')
+@customElement('fff-radius-picker')
 export class RadiusPicker extends LitElement {
   static styles = css`
     :host {
@@ -22,12 +22,12 @@ export class RadiusPicker extends LitElement {
 
   render() {
     return html`
-      <mm-toggle-button-group
+      <fff-toggle-button-group
         stretch
         .options=${SHAPE_OPTIONS}
         .value=${this.shape}
         @change=${this.handleShapeChange}
-      ></mm-toggle-button-group>
+      ></fff-toggle-button-group>
     `
   }
 

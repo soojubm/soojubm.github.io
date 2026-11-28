@@ -7,7 +7,7 @@ import { gridStyles } from '@/components/common/grid/grid.styles'
 
 export type GridColumns = 1 | 2 | 3 | 4 | 6
 
-@customElement('mm-grid')
+@customElement('fff-grid')
 export class Grid extends LitElement {
   static styles = gridStyles
   @property({ type: Number, reflect: true }) columns: GridColumns = 2

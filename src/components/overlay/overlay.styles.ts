@@ -100,9 +100,9 @@ export const overlaySurfaceStyles = css`
 `
 
 /**
- * viewport 기준 modal 표면(mm-sheet, mm-dialog)의 위치.
+ * viewport 기준 modal 표면(fff-sheet, fff-dialog)의 위치.
  * 컴포넌트가 패널을 화면 기준으로 앉히는 고정 컨테이너가 되고, placement별로 패널을 어느 변에
- * 붙일지 정한다. placement가 없는 표면(mm-dialog)은 화면 가운데에 앉는다. 표면 재질은 overlaySurfaceStyles가, 뒤를 덮는 재질은 mm-backdrop이 맡는다.
+ * 붙일지 정한다. placement가 없는 표면(fff-dialog)은 화면 가운데에 앉는다. 표면 재질은 overlaySurfaceStyles가, 뒤를 덮는 재질은 fff-backdrop이 맡는다.
  * `--overlay-panel-*`와 backdrop 토큰의 기본값을 함께 선언하는 이유는 재할당이 `:host`에서 일어나기 때문이다.
  */
 export const sheetPositionStyles = css`
@@ -207,7 +207,7 @@ export const sheetPositionStyles = css`
 `
 
 /**
- * 트리거에 앵커되는 non-modal 레이어(mm-popover)의 위치.
+ * 트리거에 앵커되는 non-modal 레이어(fff-popover)의 위치.
  * 컴포넌트는 portal 컨테이너로 옮겨져 트리거의 자손이 아니므로, 트리거와 같은 자리·크기로 겹쳐 놓인
  * 투명한 박스가 되어 패널의 기준(positioned 앵커)이 된다. 좌표(--popover-anchor-*)는 열릴 때 잰다.
  * 패널이 실제로 놓일 방향(data-placement)별로 그 박스의 어느 모서리에 붙일지 정한다. 표면 재질은 overlaySurfaceStyles가 맡는다.
@@ -219,7 +219,7 @@ export const popoverPositionStyles = css`
     --overlay-panel-min-width: 240px;
     --overlay-panel-max-width: none;
     --overlay-panel-height: auto;
-    /* 길어진 목록은 패널을 키우지 않고 안의 mm-scroll이 스크롤한다 */
+    /* 길어진 목록은 패널을 키우지 않고 안의 fff-scroll이 스크롤한다 */
     --overlay-panel-max-height: min(400px, 50vh);
     --overlay-panel-gap: var(--space-2);
     --overlay-panel-padding: var(--space-2);
@@ -265,7 +265,7 @@ export const popoverPositionStyles = css`
       visibility 0s linear var(--transition-duration-close);
   }
 
-  .panel mm-scroll {
+  .panel fff-scroll {
     flex: 1 1 auto;
     min-height: 0;
   }
@@ -348,7 +348,7 @@ export const sheetBodyStyles = css`
   }
 
   /* 스크롤 영역이 바깥을 자르므로, 안쪽에 포커스 링이 들어갈 여백을 두고 같은 만큼 바깥으로 물려 내용 위치는 그대로 둔다 */
-  mm-scroll {
+  fff-scroll {
     width: calc(100% + var(--space-2));
     margin: calc(var(--space-1) * -1);
     padding: var(--space-1);

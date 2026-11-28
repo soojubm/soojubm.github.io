@@ -17,7 +17,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-dialog'),
+  ...componentPropsOf('fff-dialog'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
   ...openStateMethods,
   { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
@@ -36,48 +36,48 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<mm-button aria-controls="dialog-confirm" aria-haspopup="dialog">Confirm</mm-button>
-<mm-dialog id="dialog-confirm" heading="페이지를 나가시겠어요?" description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."></mm-dialog>`
+const exampleCode = `<fff-button aria-controls="dialog-confirm" aria-haspopup="dialog">Confirm</fff-button>
+<fff-dialog id="dialog-confirm" heading="페이지를 나가시겠어요?" description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."></fff-dialog>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Dialog"
       description="되돌리기 어려운 작업 앞에서 확인을 받는 modal 창입니다. 제목과 설명, 확인·취소 액션만 넣어 배경 클릭으로는 닫히지 않으므로, 사용자는 정보나 재산을 바꾸거나 지우기 전에 결과를 한 번 더 확인할 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka .items=${['Alert', 'Modal', 'Prompt']}></mm-component-aka>
+    <fff-component-aka .items=${['Alert', 'Modal', 'Prompt']}></fff-component-aka>
 
-    <mm-component-example>
-      <mm-button-group>
-        <mm-button aria-controls="dialog-alert" aria-haspopup="dialog">Alert</mm-button>
-        <mm-button aria-controls="dialog-confirm" aria-haspopup="dialog">Confirm</mm-button>
-      </mm-button-group>
+    <fff-component-example>
+      <fff-button-group>
+        <fff-button aria-controls="dialog-alert" aria-haspopup="dialog">Alert</fff-button>
+        <fff-button aria-controls="dialog-confirm" aria-haspopup="dialog">Confirm</fff-button>
+      </fff-button-group>
 
-      <mm-dialog
+      <fff-dialog
         id="dialog-alert"
         heading="Alert Dialog"
         description="부끄러우니까 보지마요!"
-      ></mm-dialog>
+      ></fff-dialog>
 
-      <mm-dialog
+      <fff-dialog
         id="dialog-confirm"
         heading="페이지를 나가시겠어요?"
         description="저장되지 않은 변경 사항이 있습니다. 이 페이지에서 나가면 변경 사항이 취소됩니다."
-      ></mm-dialog>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+      ></fff-dialog>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-dialog']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-dialog']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 type DialogElement = HTMLElement & {

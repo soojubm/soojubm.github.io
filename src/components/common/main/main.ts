@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { MEDIA } from '@/constants'
 
-@customElement('mm-main')
+@customElement('fff-main')
 export class Main extends LitElement {
   static styles = css`
     :host {
@@ -58,7 +58,7 @@ export class Main extends LitElement {
       overflow: hidden;
     }
 
-    :host([layout='chat']) ::slotted(mm-chat-room) {
+    :host([layout='chat']) ::slotted(fff-chat-room) {
       flex: 1;
       min-height: 0;
     }

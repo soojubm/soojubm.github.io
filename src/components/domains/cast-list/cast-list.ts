@@ -13,7 +13,7 @@ export interface CastMember {
   imageSrc?: string
 }
 
-@customElement('mm-cast-list')
+@customElement('fff-cast-list')
 export class CastList extends LitElement {
   static styles = [
     resetStyles,
@@ -32,7 +32,7 @@ export class CastList extends LitElement {
 
   render() {
     return html`
-      <mm-list-item-group>${this.casts.map(cast => this.renderCast(cast))}</mm-list-item-group>
+      <fff-list-item-group>${this.casts.map(cast => this.renderCast(cast))}</fff-list-item-group>
     `
   }
 
@@ -40,13 +40,13 @@ export class CastList extends LitElement {
     return html`
       <div>
         <a href=${cast.href}>
-          <mm-list-item
+          <fff-list-item
             size="large"
             label=${cast.name}
             description=${cast.credit}
             avatar-src=${cast.imageSrc ?? ''}
             avatar-shape="circle"
-          ></mm-list-item>
+          ></fff-list-item>
         </a>
       </div>
     `

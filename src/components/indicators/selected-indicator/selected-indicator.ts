@@ -5,18 +5,18 @@ import '@/components/common'
 import { ICON_NAMES } from '@/components/common'
 import { indicatorBoxStyles } from '@/components/indicators/indicator.styles'
 
-@customElement('mm-selected-indicator')
+@customElement('fff-selected-indicator')
 export class SelectedIndicator extends LitElement {
   static styles = css`
     :host {
       ${indicatorBoxStyles};
     }
 
-    mm-icon {
+    fff-icon {
       visibility: hidden;
     }
 
-    :host([selected]) mm-icon {
+    :host([selected]) fff-icon {
       visibility: visible;
     }
   `
@@ -29,7 +29,7 @@ export class SelectedIndicator extends LitElement {
 
   render() {
     return html`
-      <mm-icon name=${ICON_NAMES.CHECK}></mm-icon>
+      <fff-icon name=${ICON_NAMES.CHECK}></fff-icon>
     `
   }
 }

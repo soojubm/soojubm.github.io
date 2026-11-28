@@ -6,7 +6,7 @@ import '@/components/common'
 /** 주기가 없는 카드도 가격 블록 높이를 같게 유지해 버튼 줄이 맞도록 비운 줄을 채운다. */
 const NO_BREAK_SPACE = '\u00a0'
 
-@customElement('mm-pricing-card')
+@customElement('fff-pricing-card')
 export class PricingCard extends LitElement {
   static styles = css`
     :host {
@@ -32,12 +32,12 @@ export class PricingCard extends LitElement {
   render() {
     return html`
       <div>
-        <mm-text as="h2" size="18" weight="bold">${this.plan}</mm-text>
-        <mm-paragraph>${this.description}</mm-paragraph>
+        <fff-text as="h2" size="18" weight="bold">${this.plan}</fff-text>
+        <fff-paragraph>${this.description}</fff-paragraph>
       </div>
       <div>
-        <mm-text size="24" weight="bold">${this.price}</mm-text>
-        <mm-text size="12" color="light">${this.period || NO_BREAK_SPACE}</mm-text>
+        <fff-text size="24" weight="bold">${this.price}</fff-text>
+        <fff-text size="12" color="light">${this.period || NO_BREAK_SPACE}</fff-text>
       </div>
       <slot name="action"></slot>
       ${this.renderFeatures()}
@@ -49,7 +49,7 @@ export class PricingCard extends LitElement {
     if (!this.features.length) return nothing
 
     return html`
-      <mm-text-list .texts=${this.features}></mm-text-list>
+      <fff-text-list .texts=${this.features}></fff-text-list>
     `
   }
 }

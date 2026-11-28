@@ -14,7 +14,7 @@ import '@/components/common/menu-item/semantics/menu-item-checkbox'
 import { MultipleSelection } from '@/controllers/multiple-selection'
 import { emit } from '@/utils'
 
-@customElement('mm-menu-item-checkbox-group')
+@customElement('fff-menu-item-checkbox-group')
 export class MenuItemCheckboxGroup extends LitElement {
   static styles = css`
     :host {
@@ -36,7 +36,7 @@ export class MenuItemCheckboxGroup extends LitElement {
 
   render() {
     return html`
-      <mm-menu-item-group
+      <fff-menu-item-group
         role="group"
         size=${this.size}
         gap=${ifDefined(this.gap)}
@@ -47,14 +47,14 @@ export class MenuItemCheckboxGroup extends LitElement {
           option => option.value,
           option => this.renderOption(option),
         )}
-      </mm-menu-item-group>
+      </fff-menu-item-group>
     `
   }
 
   // 보조 설명이 붙은 행은 두 줄을 담아야 하므로 medium으로 그린다.
   private renderOption(option: MenuOptionItem) {
     return html`
-      <mm-menu-item-checkbox
+      <fff-menu-item-checkbox
         size=${option.description ? 'medium' : 'small'}
         value=${option.value}
         label=${option.label}
@@ -64,7 +64,7 @@ export class MenuItemCheckboxGroup extends LitElement {
         ?disabled=${option.disabled}
         .checked=${this.selection.isOptionSelected(option)}
         @change=${(event: Event) => this.handleOptionChange(event, option)}
-      ></mm-menu-item-checkbox>
+      ></fff-menu-item-checkbox>
     `
   }
 

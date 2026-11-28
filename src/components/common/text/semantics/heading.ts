@@ -15,7 +15,7 @@ const LEVEL_SIZE: Record<HeadingLevel, TextSize> = {
   5: '12',
 }
 
-@customElement('mm-heading')
+@customElement('fff-heading')
 export class Heading extends LitElement {
   static styles = css`
     :host {
@@ -32,9 +32,9 @@ export class Heading extends LitElement {
   render() {
     const size = LEVEL_SIZE[this.level] ?? '24'
     return html`
-      <mm-text as="h${this.level}" size=${size} weight="bold">
+      <fff-text as="h${this.level}" size=${size} weight="bold">
         <slot></slot>
-      </mm-text>
+      </fff-text>
     `
   }
 }

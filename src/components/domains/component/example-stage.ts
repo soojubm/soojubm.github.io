@@ -5,7 +5,7 @@ import { surfaceBaseStyles, surfaceBleedStyles } from '@/components/common/surfa
 import '@/components/common'
 import { MEDIA } from '@/constants'
 
-@customElement('mm-example-stage')
+@customElement('fff-example-stage')
 export class ExampleStage extends LitElement {
   static styles = css`
     :host {
@@ -14,7 +14,7 @@ export class ExampleStage extends LitElement {
       --surface-border-radius: var(--border-radius-large);
 
       overflow: hidden;
-      /* 왼쪽 정렬 flex 부모(mm-text-block 등) 안에서도 내용 폭으로 줄지 않고 가로를 채운다. */
+      /* 왼쪽 정렬 flex 부모(fff-text-block 등) 안에서도 내용 폭으로 줄지 않고 가로를 채운다. */
       align-self: stretch;
     }
 
@@ -25,7 +25,7 @@ export class ExampleStage extends LitElement {
       }
     }
 
-    mm-scroll {
+    fff-scroll {
       --scroll-hint-padding-inline: var(--space-4);
 
       width: 100%;
@@ -79,11 +79,11 @@ export class ExampleStage extends LitElement {
 
   render() {
     return html`
-      <mm-scroll>
+      <fff-scroll>
         <div class="content">
           <slot></slot>
         </div>
-      </mm-scroll>
+      </fff-scroll>
     `
   }
 }

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/text/semantics/text-block'
 
-@customElement('mm-auth-layout')
+@customElement('fff-auth-layout')
 export class AuthLayout extends LitElement {
   static styles = css`
     :host {
@@ -18,12 +18,12 @@ export class AuthLayout extends LitElement {
 
   render() {
     return html`
-      <mm-text-block
+      <fff-text-block
         level="2"
         heading=${this.heading}
         description=${this.description}
         ?centered=${this.centered}
-      ></mm-text-block>
+      ></fff-text-block>
       <div>
         <slot></slot>
       </div>

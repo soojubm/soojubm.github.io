@@ -10,7 +10,7 @@ import {
 import '@/components/indicators/selected-indicator/selected-indicator'
 import { emit } from '@/utils'
 
-@customElement('mm-select-option')
+@customElement('fff-select-option')
 export class SelectOption extends withMenuItemPresentation(LitElement) {
   static styles = [
     css`
@@ -45,7 +45,7 @@ export class SelectOption extends withMenuItemPresentation(LitElement) {
   // 선택은 aria-selected가 전달하므로 체크 표시는 장식으로만 둔다.
   private renderSelectedIndicator() {
     return html`
-      <mm-selected-indicator slot="trailing" ?selected=${this.selected}></mm-selected-indicator>
+      <fff-selected-indicator slot="trailing" ?selected=${this.selected}></fff-selected-indicator>
     `
   }
 

@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-@customElement('mm-content-section-list')
+@customElement('fff-content-section-list')
 export class ContentSectionList extends LitElement {
   static styles = css`
     :host {

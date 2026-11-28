@@ -16,7 +16,7 @@ import type { ComponentSize, ComponentVariant } from '@/stylesheets/shared.types
 export type IconButtonVariant = Exclude<ComponentVariant, 'danger'>
 export type IconButtonSize = Extract<ComponentSize, 'small' | 'medium'>
 
-@customElement('mm-icon-button')
+@customElement('fff-icon-button')
 export class IconButton extends LitElement {
   static styles = [
     resetStyles,

@@ -13,7 +13,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type TextAs = 'span' | 'p' | 'strong' | 'time' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
-@customElement('mm-text')
+@customElement('fff-text')
 export class Text extends LitElement {
   static styles = [resetStyles, textStyles]
   @property({ type: String }) as: TextAs = 'span'

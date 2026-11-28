@@ -7,7 +7,7 @@ import '@/components/common'
 import '@/components/overlay/popover/popover'
 import { uniqueId } from '@/utils'
 
-@customElement('mm-chat-source')
+@customElement('fff-chat-source')
 export class ChatSource extends LitElement {
   static styles = css`
     :host {
@@ -25,16 +25,16 @@ export class ChatSource extends LitElement {
 
   render() {
     return html`
-      <mm-button variant="secondary" aria-controls=${this.detailId}>
+      <fff-button variant="secondary" aria-controls=${this.detailId}>
         ${this.renderIcon()} ${this.domain}
-        <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
-      </mm-button>
-      <mm-popover id=${this.detailId} @toggle=${this.handlePopoverToggle}>
-        <mm-flex direction="column" gap="1">
+        <fff-expand-indicator ?expanded=${this.open}></fff-expand-indicator>
+      </fff-button>
+      <fff-popover id=${this.detailId} @toggle=${this.handlePopoverToggle}>
+        <fff-flex direction="column" gap="1">
           ${this.renderDetailHeader()} ${this.renderHeading()} ${this.renderDescription()}
           ${this.renderLink()}
-        </mm-flex>
-      </mm-popover>
+        </fff-flex>
+      </fff-popover>
     `
   }
 
@@ -46,7 +46,7 @@ export class ChatSource extends LitElement {
     if (!this.icon) return nothing
 
     return html`
-      <mm-icon name=${this.icon}></mm-icon>
+      <fff-icon name=${this.icon}></fff-icon>
     `
   }
 
@@ -54,10 +54,10 @@ export class ChatSource extends LitElement {
     if (!this.href) return nothing
 
     return html`
-      <mm-flex align-items="center" gap="1">
+      <fff-flex align-items="center" gap="1">
         ${this.renderIcon()}
-        <mm-text size="12" max-lines="1" color="light">${this.domain}</mm-text>
-      </mm-flex>
+        <fff-text size="12" max-lines="1" color="light">${this.domain}</fff-text>
+      </fff-flex>
     `
   }
 
@@ -65,7 +65,7 @@ export class ChatSource extends LitElement {
     if (!this.heading) return nothing
 
     return html`
-      <mm-paragraph max-lines="3">${this.heading}</mm-paragraph>
+      <fff-paragraph max-lines="3">${this.heading}</fff-paragraph>
     `
   }
 
@@ -73,7 +73,7 @@ export class ChatSource extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-paragraph size="small" max-lines="3">${this.description}</mm-paragraph>
+      <fff-paragraph size="small" max-lines="3">${this.description}</fff-paragraph>
     `
   }
 
@@ -81,7 +81,7 @@ export class ChatSource extends LitElement {
     if (!this.href) return nothing
 
     return html`
-      <mm-link href=${this.href} external>방문하기</mm-link>
+      <fff-link href=${this.href} external>방문하기</fff-link>
     `
   }
 

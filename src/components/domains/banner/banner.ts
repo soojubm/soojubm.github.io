@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { surfaceBaseStyles, surfaceFilledStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common'
 
-@customElement('mm-banner')
+@customElement('fff-banner')
 export class Banner extends LitElement {
   static styles = css`
     :host {
@@ -28,12 +28,12 @@ export class Banner extends LitElement {
 
   render() {
     return html`
-      <mm-text-block
+      <fff-text-block
         level="2"
         centered
         heading=${this.heading}
         description=${this.description}
-      ></mm-text-block>
+      ></fff-text-block>
       <slot name="action"></slot>
     `
   }

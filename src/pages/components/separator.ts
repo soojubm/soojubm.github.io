@@ -15,7 +15,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-separator'),
+  ...componentPropsOf('fff-separator'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
 ]
 
@@ -27,39 +27,39 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<mm-separator></mm-separator>
-<mm-separator>또는</mm-separator>`
+const exampleCode = `<fff-separator></fff-separator>
+<fff-separator>또는</fff-separator>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Separator"
       description="서로 다른 맥락 사이에 긋는 경계선입니다. 요소 사이에는 좁은 간격으로, 섹션 사이에는 넓은 간격으로 선을 두어 내용을 나누므로, 사용자는 화면이 의미 단위로 정돈되어 있다는 인상 속에서 흐름을 따라 읽을 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-example>
-      <mm-grid columns="2">
+    <fff-component-example>
+      <fff-grid columns="2">
         <div>
-          <mm-ui-placeholder></mm-ui-placeholder>
-          <mm-separator></mm-separator>
-          <mm-ui-placeholder></mm-ui-placeholder>
+          <fff-ui-placeholder></fff-ui-placeholder>
+          <fff-separator></fff-separator>
+          <fff-ui-placeholder></fff-ui-placeholder>
         </div>
 
         <div>
-          <mm-ui-placeholder></mm-ui-placeholder>
-          <mm-separator>또는</mm-separator>
-          <mm-ui-placeholder></mm-ui-placeholder>
+          <fff-ui-placeholder></fff-ui-placeholder>
+          <fff-separator>또는</fff-separator>
+          <fff-ui-placeholder></fff-ui-placeholder>
         </div>
-      </mm-grid>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+      </fff-grid>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-separator']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-separator']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
+    <fff-component-guide .features=${componentFeatures}>
+      <fff-text-list
         .texts=${[
           html`
             주제가 바뀌는 지점을 보조기술에도 알린다. 내부에서 ${code('<hr>')}를 렌더하므로 화면
@@ -68,30 +68,30 @@ const main = html`
           html`
             Article 그룹의 구획에 사용합니다. Element와 Section 그룹은 쓰지 않으며, 레벨별 구획
             규칙은
-            <mm-link href="./layout.html?tab=division">Layout</mm-link>
+            <fff-link href="./layout.html?tab=division">Layout</fff-link>
             문서가 정합니다.
           `,
         ]}
-      ></mm-text-list>
-    </mm-component-guide>
+      ></fff-text-list>
+    </fff-component-guide>
 
-    <mm-component-section
+    <fff-component-section
       heading="Bullet"
       description="단어 사이의 구분선입니다. 콤마·콜론·슬래시·따옴표·괄호처럼 항목을 나열하는 맥락에 쓰며, 텍스트를 드래그해 복사할 때 선택되지 않습니다."
     >
-      <mm-flex gap="2">
-        <mm-text>업로드 중</mm-text>
-        <mm-bullet></mm-bullet>
-        <mm-text>3/12개</mm-text>
-        <mm-bullet></mm-bullet>
-        <mm-text>1m 04s</mm-text>
-      </mm-flex>
-    </mm-component-section>
+      <fff-flex gap="2">
+        <fff-text>업로드 중</fff-text>
+        <fff-bullet></fff-bullet>
+        <fff-text>3/12개</fff-text>
+        <fff-bullet></fff-bullet>
+        <fff-text>1m 04s</fff-text>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

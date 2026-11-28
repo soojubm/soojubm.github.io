@@ -62,7 +62,7 @@
 }
 
 /* 카드가 줄바꿈될 때 행 사이 경계를 셀이 직접 그리므로 컨테이너 경계는 비운다. */
-.class-order > mm-grid {
+.class-order > fff-grid {
   padding: 0;
   border-top: 0;
 }
@@ -79,14 +79,14 @@
 .minicard--closed {
   position: relative;
 }
-.minicard--closed mm-paragraph:last-child {
+.minicard--closed fff-paragraph:last-child {
   position: absolute;
   left: 50%;
   top: 45%;
   transform: translate(-50%, -50%) rotate(-3.75deg);
 }
 
-mm-marquee {
+fff-marquee {
   border: var(--border);
   border-top: 0;
   box-sizing: border-box;
@@ -159,14 +159,14 @@ mm-marquee {
   gap: 1.25rem;
 }
 
-.class-curriculum > div mm-thumbnail {
+.class-curriculum > div fff-thumbnail {
   width: 240px;
   max-width: 100%;
 }
-.class-curriculum > div mm-flex {
+.class-curriculum > div fff-flex {
   flex: 1 1 18rem;
 }
-.class-curriculum > div mm-tag {
+.class-curriculum > div fff-tag {
   margin: 0 0 var(--space-2) 0;
 }
 

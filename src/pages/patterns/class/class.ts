@@ -33,12 +33,12 @@ const renderEpisodeItems = (items: EpisodeItem[]) =>
   items.map(
     ({ tag, title, description }) => html`
       <div>
-        <mm-thumbnail></mm-thumbnail>
-        <mm-flex direction="column" gap="1">
-          <mm-tag>${tag}</mm-tag>
-          <mm-text size="18" weight="bold">${title}</mm-text>
-          <mm-paragraph>${description}</mm-paragraph>
-        </mm-flex>
+        <fff-thumbnail></fff-thumbnail>
+        <fff-flex direction="column" gap="1">
+          <fff-tag>${tag}</fff-tag>
+          <fff-text size="18" weight="bold">${title}</fff-text>
+          <fff-paragraph>${description}</fff-paragraph>
+        </fff-flex>
       </div>
     `,
   )
@@ -58,13 +58,13 @@ const productItems: ProductItem[] = [
 const renderProductItems = (items: ProductItem[]) =>
   items.map(
     ({ title, price }) => html`
-      <mm-flex direction="column" style="border: var(--border); border-width: 0 1px 1px 0">
-        <mm-thumbnail ratio="1:1" style="border-bottom: var(--border)"></mm-thumbnail>
-        <mm-flex direction="column" gap="4" style="padding: var(--space-4) var(--space-6)">
-          <mm-text size="18">${title}</mm-text>
-          <mm-product-price price=${price}></mm-product-price>
-        </mm-flex>
-      </mm-flex>
+      <fff-flex direction="column" style="border: var(--border); border-width: 0 1px 1px 0">
+        <fff-thumbnail ratio="1:1" style="border-bottom: var(--border)"></fff-thumbnail>
+        <fff-flex direction="column" gap="4" style="padding: var(--space-4) var(--space-6)">
+          <fff-text size="18">${title}</fff-text>
+          <fff-product-price price=${price}></fff-product-price>
+        </fff-flex>
+      </fff-flex>
     `,
   )
 
@@ -74,8 +74,8 @@ const renderFaqItems = (questions: string[]) =>
   questions.map(
     question => html`
       <button class="class-faq-item">
-        <mm-paragraph size="large">${question}</mm-paragraph>
-        <mm-expand-indicator></mm-expand-indicator>
+        <fff-paragraph size="large">${question}</fff-paragraph>
+        <fff-expand-indicator></fff-expand-indicator>
       </button>
     `,
   )
@@ -86,67 +86,67 @@ const main = html`
       --border-radius: 0;
       --border-radius-large: 0;
 
-      mm-paragraph {
+      fff-paragraph {
         max-width: 100%;
       }
     }
   </style>
-  <!-- 이 페이지는 mm-main을 쓰지 않는 유일한 페이지다. 브랜드 재현용 전면 레이아웃이라
+  <!-- 이 페이지는 fff-main을 쓰지 않는 유일한 페이지다. 브랜드 재현용 전면 레이아웃이라
        페이지 패딩이 없어야 하고, min-height·사이드바 shift·position 컨텍스트도 쓰지 않는다.
        벗겨낼 것만 있는 셸을 씌우지 않고 main 랜드마크를 그대로 둔다. -->
   <main class="class">
-    <mm-grid class="class-hero" columns="2" gap="0" column-min-width="400px">
+    <fff-grid class="class-hero" columns="2" gap="0" column-min-width="400px">
       <figure class="class-media"><img src="" alt="" /></figure>
       <header class="class-order">
         <div>
-          <mm-tag>고슴이 생존기 - 경제 기본기편</mm-tag>
+          <fff-tag>고슴이 생존기 - 경제 기본기편</fff-tag>
         </div>
         <div>
-          <mm-text size="32">
+          <fff-text size="32">
             고슴이와 함께
             <br />
             경제 기본기 마스터하겠슴?
-          </mm-text>
+          </fff-text>
         </div>
         <div>
-          <mm-paragraph size="large">
+          <fff-paragraph size="large">
             고슴이 에피소드 읽으면서 쉽고 재밌게
             <br />
             하루 5분으로 열흘 만에 경제 기본기를 마스터할 수 있어요.
-          </mm-paragraph>
+          </fff-paragraph>
         </div>
-        <mm-grid columns="4" gap="0" column-min-width="0px">
+        <fff-grid columns="4" gap="0" column-min-width="0px">
           <figure class="minicard">
             <span aria-hidden="true">⏰</span>
-            <mm-paragraph>하루 5분</mm-paragraph>
+            <fff-paragraph>하루 5분</fff-paragraph>
           </figure>
           <figure class="minicard">
             <span aria-hidden="true">📖</span>
-            <mm-paragraph>에피소드 10개</mm-paragraph>
+            <fff-paragraph>에피소드 10개</fff-paragraph>
           </figure>
           <figure class="minicard">
             <span aria-hidden="true">🗓️</span>
-            <mm-paragraph>이용기간 무제한</mm-paragraph>
+            <fff-paragraph>이용기간 무제한</fff-paragraph>
           </figure>
           <figure class="minicard minicard--closed">
             <span aria-hidden="true">🤼</span>
-            <mm-paragraph><del>얼리버드 500명</del></mm-paragraph>
-            <mm-paragraph>
-              <mm-tag>
+            <fff-paragraph><del>얼리버드 500명</del></fff-paragraph>
+            <fff-paragraph>
+              <fff-tag>
                 <span aria-hidden="true">✨</span>
                 마감
                 <span aria-hidden="true">✨</span>
-              </mm-tag>
-            </mm-paragraph>
+              </fff-tag>
+            </fff-paragraph>
           </figure>
-        </mm-grid>
+        </fff-grid>
         <div>
-          <mm-product-price
+          <fff-product-price
             size="large"
             original-price="₩ 30,000"
             price="₩ 20,000"
             discount="30%"
-          ></mm-product-price>
+          ></fff-product-price>
         </div>
         <footer>
           <button class="class-order-btn">
@@ -156,44 +156,44 @@ const main = html`
             </div>
           </button>
         </footer>
-        <mm-paragraph>
+        <fff-paragraph>
           더 궁금한 점이 있다면
-          <mm-link href="#">
+          <fff-link href="#">
             <span aria-hidden="true">👉</span>
             고객센터
-          </mm-link>
+          </fff-link>
           로 문의해 주세요. 고맙슴!
-        </mm-paragraph>
+        </fff-paragraph>
       </header>
-    </mm-grid>
+    </fff-grid>
 
-    <mm-marquee height="80px" pause-on-hover>
+    <fff-marquee height="80px" pause-on-hover>
       ${Array.from(
         { length: MARQUEE_REPEAT },
         () => html`
-          <mm-paragraph size="large">
+          <fff-paragraph size="large">
             <span aria-hidden="true">🦔</span>
             고슴이: 지금부터 설명 들어가겠슴!
-          </mm-paragraph>
+          </fff-paragraph>
         `,
       )}
-    </mm-marquee>
+    </fff-marquee>
 
     <section class="class-intro">
-      <mm-paragraph-group>
-        <mm-text size="32" centered>
+      <fff-paragraph-group>
+        <fff-text size="32" centered>
           주식부터 환율까지
           <br />
           삶에서 필수적인
           <br />
           경제 개념들을 마스터합니다.
-        </mm-text>
-        <mm-paragraph size="large" centered>
+        </fff-text>
+        <fff-paragraph size="large" centered>
           주제 당 5분 분량의 기사로 구성되어 있으며,
           <br />
           경제초보 고슴이의 성장기를 담았답니다.
-        </mm-paragraph>
-      </mm-paragraph-group>
+        </fff-paragraph>
+      </fff-paragraph-group>
       <figure class="class-intro-image">
         <img src="/src/images/cake_gosum.jpg" alt="" />
         <figcaption>
@@ -204,118 +204,118 @@ const main = html`
     </section>
 
     <section class="class-why">
-      <mm-flex direction="column" gap="8">
-        <mm-paragraph-group>
-          <mm-text size="32">
+      <fff-flex direction="column" gap="8">
+        <fff-paragraph-group>
+          <fff-text size="32">
             경제라니...
             <br />
             나 좀 머리 아파. 왜 읽어야 해?
-          </mm-text>
-        </mm-paragraph-group>
-        <mm-feature-group columns="1">
-          <mm-feature
+          </fff-text>
+        </fff-paragraph-group>
+        <fff-feature-group columns="1">
+          <fff-feature
             emoji="🌏"
             heading="세상을 이해하려면, 경제는 필수니까"
             description="하지만 학교, 학원, 부모님도 제대로 안 알려준 그것. 경제를 안다는 건 우리 사회가 어떻게 굴러가는지 이해하고 해석하기 위해 꼭 필요한 첫걸음이죠."
-          ></mm-feature>
-          <mm-feature
+          ></fff-feature>
+          <fff-feature
             emoji="💰"
             heading="돈을 다루려면, 경제는 필수니까"
             description="돈을 모으고, 불리고, 지키는 모든 과정에서 경제를 이해하는 건 필수입니다. 경제를 알아야 돈이 어떻게 움직이는지, 내가 어떤 선택을 해야 하는지 알 수 있죠."
-          ></mm-feature>
-        </mm-feature-group>
-      </mm-flex>
+          ></fff-feature>
+        </fff-feature-group>
+      </fff-flex>
     </section>
 
-    <mm-grid class="class-feature" columns="2" gap="0" column-min-width="400px">
+    <fff-grid class="class-feature" columns="2" gap="0" column-min-width="400px">
       <div></div>
       <div>
-        <mm-flex direction="column" gap="8">
-          <mm-paragraph-group>
-            <mm-text size="32">[고슴이 생존기: 경제 기본기편] 은요</mm-text>
-            <mm-paragraph size="large">이런 말이 절로 나오는 사람들!</mm-paragraph>
-          </mm-paragraph-group>
-          <mm-feature-group columns="1">
-            <mm-feature
+        <fff-flex direction="column" gap="8">
+          <fff-paragraph-group>
+            <fff-text size="32">[고슴이 생존기: 경제 기본기편] 은요</fff-text>
+            <fff-paragraph size="large">이런 말이 절로 나오는 사람들!</fff-paragraph>
+          </fff-paragraph-group>
+          <fff-feature-group columns="1">
+            <fff-feature
               emoji="💁‍♂️"
               heading="쉽고 재밌어요"
               description="뉴니커라면 아시죠? 뉴닉이 뉴닉하면 어려운 내용도 얼마나 쉽고 재밌어지는지. 고슴이의 10개의 에피소드를 재밌어서 읽고 나면, 이미 똑똑해져있을 거예요."
-            ></mm-feature>
-            <mm-feature
+            ></fff-feature>
+            <fff-feature
               emoji="👩🏻‍🎓"
               heading="경제 기초를 개괄했어요"
               description="부분 부분 지식을 알긴 쉽지만, 전체적인 그림을 한 번 훑기는 어렵죠. 뉴닉에서는 [물가, 금리, 주식, 환율, 국제경제] 이 5개의 카테고리를 통해 전체적인 맥락을 모두 짚었습니다."
-            ></mm-feature>
-            <mm-feature
+            ></fff-feature>
+            <fff-feature
               emoji="🦔"
               heading="고슴이가 리마인드 해줘요"
               description="설레는 마음으로 책 사던 나와는 달리, 이걸 읽는 나는 설레지 않을 수 있다는 거... 이쯤 되면 우리 모두 알잖아요? 이 콘텐츠를 끝까지 재밌게 읽을 수 있도록 고슴이가 리마인드 이메일을 보내 줄 예정."
-            ></mm-feature>
-          </mm-feature-group>
-        </mm-flex>
+            ></fff-feature>
+          </fff-feature-group>
+        </fff-flex>
       </div>
-    </mm-grid>
+    </fff-grid>
 
     <section class="class-who">
-      <mm-paragraph-group>
-        <mm-text size="32" centered>이건 누가 읽으면 좋아?</mm-text>
-        <mm-paragraph size="large" centered>이런 말이 절로 나오는 사람들!</mm-paragraph>
-      </mm-paragraph-group>
-      <mm-feature-group columns="3" class="class-who-grid">
-        <mm-feature
+      <fff-paragraph-group>
+        <fff-text size="32" centered>이건 누가 읽으면 좋아?</fff-text>
+        <fff-paragraph size="large" centered>이런 말이 절로 나오는 사람들!</fff-paragraph>
+      </fff-paragraph-group>
+      <fff-feature-group columns="3" class="class-who-grid">
+        <fff-feature
           emoji="😱"
           heading="남들은 재테크 한다는데 나는 금리도 몰라!"
           description="부동산, 주식 등에 도전하기 전, 기본적인 용어들과 전체 경제의 흐름을 이해할 수 있어요."
-        ></mm-feature>
-        <mm-feature
+        ></fff-feature>
+        <fff-feature
           emoji="🤑"
           heading="전문 용어로 빼곡한 경제 뉴스, 영자신문보다 어려워!"
           description="기준금리, CPI, 관세가 어쩌구... 뉴닉은 다 쉽게 풀어낼 수 있습니다. 뉴닉이니까요."
-        ></mm-feature>
-        <mm-feature
+        ></fff-feature>
+        <fff-feature
           emoji="😵"
           heading="경제 개론서를 사봤지만 첫 챕터에서 늘 덮게 돼!"
           description="이미 경제 공부를 혼자 도전했지만 어렵고 지루했다면 고슴이 생존기가 정답!"
-        ></mm-feature>
-      </mm-feature-group>
+        ></fff-feature>
+      </fff-feature-group>
       <div class="class-who-note">
-        <mm-surface>
-          <mm-flex direction="column" gap="2">
-            <mm-paragraph size="large">그리고 또...</mm-paragraph>
-            <mm-text-list
+        <fff-surface>
+          <fff-flex direction="column" gap="2">
+            <fff-paragraph size="large">그리고 또...</fff-paragraph>
+            <fff-text-list
               .texts=${[
                 '경제 기본기가 아예 없는 사람',
                 '경제 막 공부 시작했는데, 누가 전체적인 그림 한 번 싹 알려주면 좋겠다고 생각한 사람',
                 '주변 사람들 주식하고 부동산 한다는데, 적금길만 걸어온 사람',
                 '고슴이의 생존스토리 궁금한 사람',
               ]}
-            ></mm-text-list>
-          </mm-flex>
-        </mm-surface>
+            ></fff-text-list>
+          </fff-flex>
+        </fff-surface>
       </div>
     </section>
 
     <section class="class-curriculum">
       <header>
-        <mm-text size="32">에피소드 (관련 도메인에서 주로 커리큘럼)</mm-text>
+        <fff-text size="32">에피소드 (관련 도메인에서 주로 커리큘럼)</fff-text>
       </header>
       ${renderEpisodeItems(episodeItems)}
     </section>
 
-    <mm-grid
+    <fff-grid
       columns="4"
       gap="0"
       column-min-width="240px"
       style="border-left: var(--border); box-sizing: border-box"
     >
       ${renderProductItems(productItems)}
-    </mm-grid>
+    </fff-grid>
 
     <section class="class-faq">
-      <mm-flex direction="column">
-        <mm-text size="24">Frequently asked questions</mm-text>
-        <mm-text size="32">자주 묻는 질문</mm-text>
-      </mm-flex>
+      <fff-flex direction="column">
+        <fff-text size="24">Frequently asked questions</fff-text>
+        <fff-text size="32">자주 묻는 질문</fff-text>
+      </fff-flex>
       ${renderFaqItems(faqQuestions)}
     </section>
   </main>

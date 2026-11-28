@@ -8,7 +8,7 @@ import '@/components/common/tag/semantics/accent-tag'
 import '@/components/common/text/semantics/paragraph'
 import '@/components/common/text/text'
 
-@customElement('mm-user-snippet')
+@customElement('fff-user-snippet')
 export class UserSnippet extends LitElement {
   static styles = [userSnippetStyles]
   @property({ type: String }) name = ''
@@ -20,17 +20,17 @@ export class UserSnippet extends LitElement {
 
   render() {
     return html`
-      <mm-user-avatar
+      <fff-user-avatar
         size="80"
         name=${this.name}
         src=${ifDefined(this.avatarSrc || undefined)}
-      ></mm-user-avatar>
+      ></fff-user-avatar>
       ${this.renderTag()}
       <div class="detail">
-        <mm-text size="24">${this.name}</mm-text>
+        <fff-text size="24">${this.name}</fff-text>
         ${this.renderDescription()}
-        <mm-text size="12">${this.email}</mm-text>
-        <mm-text size="12">${this.phone}</mm-text>
+        <fff-text size="12">${this.email}</fff-text>
+        <fff-text size="12">${this.phone}</fff-text>
       </div>
     `
   }
@@ -39,7 +39,7 @@ export class UserSnippet extends LitElement {
     if (!this.tagLabel) return nothing
 
     return html`
-      <mm-accent-tag>${this.tagLabel}</mm-accent-tag>
+      <fff-accent-tag>${this.tagLabel}</fff-accent-tag>
     `
   }
 
@@ -47,7 +47,7 @@ export class UserSnippet extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-paragraph>${this.description}</mm-paragraph>
+      <fff-paragraph>${this.description}</fff-paragraph>
     `
   }
 }

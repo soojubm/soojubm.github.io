@@ -13,7 +13,7 @@ import {
 } from '@/components/common/input/semantics/textfield.helpers'
 import '@/components/common/input/input'
 
-@customElement('mm-textfield')
+@customElement('fff-textfield')
 export class Textfield extends withTextfieldState(LitElement) {
   static styles = textfieldStyles
   @property({ type: String }) type: InputType = 'text'
@@ -27,7 +27,7 @@ export class Textfield extends withTextfieldState(LitElement) {
         aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
       >
         <slot name="leading"></slot>
-        <mm-input
+        <fff-input
           input-id=${this.inputId}
           .type=${this.type}
           .value=${this.value}
@@ -39,7 +39,7 @@ export class Textfield extends withTextfieldState(LitElement) {
           aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
           @focusout=${this.handleInputFocusout}
-        ></mm-input>
+        ></fff-input>
         <slot name="trailing"></slot>
       </div>
       ${renderFieldDescription(this.description, this.descriptionId)}

@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('mm-form')
+@customElement('fff-form')
 export class Form extends LitElement {
   static styles = css`
     :host {

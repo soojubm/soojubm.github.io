@@ -7,7 +7,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 const ICONOIR_STYLESHEET_URL =
   'https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css'
 
-// mm-icon은 shadow DOM 안에서 렌더되므로 document의 전역 Iconoir CSS를 직접 사용할 수 없다.
+// fff-icon은 shadow DOM 안에서 렌더되므로 document의 전역 Iconoir CSS를 직접 사용할 수 없다.
 // 각 인스턴스가 <link>를 만들지 않도록 CSS를 한 번만 가져와 공유 stylesheet로 재사용한다.
 let iconoirStylesheetPromise: Promise<CSSStyleSheet | null> | null = null
 
@@ -32,7 +32,7 @@ const loadIconoirStylesheet = () => {
   return iconoirStylesheetPromise
 }
 
-@customElement('mm-icon')
+@customElement('fff-icon')
 export class Icon extends LitElement {
   static styles = [resetStyles, iconStyles]
   @property({ type: String }) name = ''

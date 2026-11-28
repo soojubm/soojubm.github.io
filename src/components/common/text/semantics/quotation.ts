@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/text/semantics/paragraph'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-quotation')
+@customElement('fff-quotation')
 export class Quotation extends LitElement {
   static styles = [
     resetStyles,
@@ -36,7 +36,7 @@ export class Quotation extends LitElement {
     return html`
       <figure>
         <blockquote>
-          <mm-paragraph size="large"><slot></slot></mm-paragraph>
+          <fff-paragraph size="large"><slot></slot></fff-paragraph>
         </blockquote>
         ${this.renderAuthor()}
       </figure>
@@ -47,7 +47,7 @@ export class Quotation extends LitElement {
     if (!this.author) return nothing
     return html`
       <figcaption>
-        <mm-paragraph size="large">${this.author}</mm-paragraph>
+        <fff-paragraph size="large">${this.author}</fff-paragraph>
       </figcaption>
     `
   }

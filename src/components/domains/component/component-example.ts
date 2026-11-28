@@ -7,7 +7,7 @@ import {
 } from '@/components/domains/component/component.styles'
 import { buildAttributeRules } from '@/utils'
 
-@customElement('mm-component-example')
+@customElement('fff-component-example')
 export class ComponentExample extends LitElement {
   static styles = [
     componentContentFrameStyles,
@@ -18,7 +18,7 @@ export class ComponentExample extends LitElement {
 
       ${unsafeCSS(buildAttributeRules('width', exampleWidthTokens))}
 
-      mm-example-stage {
+      fff-example-stage {
         border-left-color: var(--foreground-color);
       }
     `,
@@ -29,9 +29,9 @@ export class ComponentExample extends LitElement {
 
   render() {
     return html`
-      <mm-example-stage aligned>
+      <fff-example-stage aligned>
         <slot></slot>
-      </mm-example-stage>
+      </fff-example-stage>
     `
   }
 }

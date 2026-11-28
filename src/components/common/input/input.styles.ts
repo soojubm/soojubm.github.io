@@ -118,13 +118,13 @@ export const inputBaseStyles = css`
 export const textfieldStyles = [
   inputBaseStyles,
   css`
-    mm-textfield-description,
-    mm-textfield-validation {
+    fff-textfield-description,
+    fff-textfield-validation {
       margin: var(--space-1) 0 0;
     }
 
     /* 라벨을 시각적으로만 감추고 스크린리더에는 남김 (for 연결 유지) */
-    :host([hidden-label]) mm-textfield-label {
+    :host([hidden-label]) fff-textfield-label {
       ${visuallyHiddenStyles};
     }
   `,

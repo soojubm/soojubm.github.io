@@ -20,7 +20,7 @@ export type ComponentUsageItem = {
   pages?: ComponentUsagePage[]
 }
 
-@customElement('mm-component-usage')
+@customElement('fff-component-usage')
 export class ComponentUsage extends LitElement {
   static styles = css`
     :host {
@@ -40,12 +40,12 @@ export class ComponentUsage extends LitElement {
 
   render() {
     return html`
-      <mm-chart-column
+      <fff-chart-column
         selectable
         .items=${this.shares}
         .selected=${this.selected}
         @change=${this.handleSelectionChange}
-      ></mm-chart-column>
+      ></fff-chart-column>
       ${this.renderUsage()}
     `
   }
@@ -55,7 +55,7 @@ export class ComponentUsage extends LitElement {
     if (!item) return nothing
 
     return html`
-      <mm-text size="12" color="light">${item.pageCount}개 페이지에서 씁니다.</mm-text>
+      <fff-text size="12" color="light">${item.pageCount}개 페이지에서 씁니다.</fff-text>
       ${this.renderPages(item)}
     `
   }
@@ -67,7 +67,7 @@ export class ComponentUsage extends LitElement {
       <div class="pages">
         ${pages.map(
           ({ href, label }) => html`
-            <mm-link href=${href}>${label}</mm-link>
+            <fff-link href=${href}>${label}</fff-link>
           `,
         )}
       </div>

@@ -17,7 +17,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'button.html', label: 'Button' },
 ]
 
-const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-tag')]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('fff-tag')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -29,18 +29,18 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const tones = Object.keys(tagToneStyles)
 
-const toneCode = tones.map(tone => `<mm-tag tone="${tone}">${tone}</mm-tag>`).join('\n')
+const toneCode = tones.map(tone => `<fff-tag tone="${tone}">${tone}</fff-tag>`).join('\n')
 
-const iconCode = `<mm-tag icon="check-circle">Tag</mm-tag>`
+const iconCode = `<fff-tag icon="check-circle">Tag</fff-tag>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Tag"
       description="인접 요소나 부모 요소를 부연하는 시각 정보입니다. 상태, 카테고리, 키워드로 강조된 시각 정보는 사용자가 복잡한 정보 더미에서 중요한 정보를 우선적으로 파악하도록 돕습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka
+    <fff-component-aka
       .items=${[
         'Badge',
         'Label',
@@ -51,41 +51,41 @@ const main = html`
         'Health',
         'Status Pill',
       ]}
-    ></mm-component-aka>
+    ></fff-component-aka>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="tone" variant="pill">
-        <mm-tab value="tone">Tone</mm-tab>
-        <mm-tab value="icon">With Icon</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="tone">
-        <mm-component-example>
-          <mm-tag-group>
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="tone" variant="pill">
+        <fff-tab value="tone">Tone</fff-tab>
+        <fff-tab value="icon">With Icon</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="tone">
+        <fff-component-example>
+          <fff-tag-group>
             ${tones.map(
               tone =>
                 html`
-                  <mm-tag tone=${tone}>${tone}</mm-tag>
+                  <fff-tag tone=${tone}>${tone}</fff-tag>
                 `,
             )}
-          </mm-tag-group>
-        </mm-component-example>
-        <mm-component-code .code=${toneCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="icon">
-        <mm-component-example>
-          <mm-tag icon=${ICON_NAMES.SUCCESS}>Tag</mm-tag>
-        </mm-component-example>
-        <mm-component-code .code=${iconCode}></mm-component-code>
-      </mm-tab-panel>
-    </mm-flex>
+          </fff-tag-group>
+        </fff-component-example>
+        <fff-component-code .code=${toneCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="icon">
+        <fff-component-example>
+          <fff-tag icon=${ICON_NAMES.SUCCESS}>Tag</fff-tag>
+        </fff-component-example>
+        <fff-component-code .code=${iconCode}></fff-component-code>
+      </fff-tab-panel>
+    </fff-flex>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-tag']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-tag']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-anatomy
+    <fff-component-anatomy
       .parts=${[
         '컨테이너 — tone으로 배경·글자 색상을 정의하는 배지 형태입니다.',
         '아이콘 — 분류나 상태를 보조하는 선택적 메타포입니다.',
@@ -97,69 +97,69 @@ const main = html`
         { placement: 'block-end', offset: 'calc(100% - 0.75rem)' },
       ]}
     >
-      <mm-tag tone="green" icon=${ICON_NAMES.SUCCESS}>승인됨</mm-tag>
-    </mm-component-anatomy>
+      <fff-tag tone="green" icon=${ICON_NAMES.SUCCESS}>승인됨</fff-tag>
+    </fff-component-anatomy>
 
-    <mm-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
-      <mm-tag>
+    <fff-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
+      <fff-tag>
         <span aria-hidden="true">🔥</span>
         Most Popular
-      </mm-tag>
-    </mm-component-section>
+      </fff-tag>
+    </fff-component-section>
 
-    <mm-component-section heading="KeywordTagGroup" description="">
-      <mm-keyword-tag-group
+    <fff-component-section heading="KeywordTagGroup" description="">
+      <fff-keyword-tag-group
         .keywords=${['keyword1', 'keyword2', 'keyword3']}
-      ></mm-keyword-tag-group>
-    </mm-component-section>
+      ></fff-keyword-tag-group>
+    </fff-component-section>
 
-    <mm-component-section
+    <fff-component-section
       heading="AccentTag"
       description="단일 엘리먼트에 시각적 강조를 부여하는 작은 라벨형 컴포넌트입니다. 리스트나 카드 안에서 특정 항목 하나를 다른 항목들과 구분 짓거나 콘텐츠의 상태·속성을 짧은 텍스트로 표시할 때 사용합니다."
     >
-      <mm-tag-group>
-        <mm-accent-tag>Featured</mm-accent-tag>
-        <mm-accent-tag>New</mm-accent-tag>
-        <mm-accent-tag>Beta</mm-accent-tag>
-      </mm-tag-group>
-    </mm-component-section>
+      <fff-tag-group>
+        <fff-accent-tag>Featured</fff-accent-tag>
+        <fff-accent-tag>New</fff-accent-tag>
+        <fff-accent-tag>Beta</fff-accent-tag>
+      </fff-tag-group>
+    </fff-component-section>
 
-    <mm-component-section heading="CategoryTag" description="">
-      <mm-tag-group>
+    <fff-component-section heading="CategoryTag" description="">
+      <fff-tag-group>
         ${Object.values(CATEGORIES).map(
           ({ label, tone }) => html`
-            <mm-category-tag tone=${tone}>${label}</mm-category-tag>
+            <fff-category-tag tone=${tone}>${label}</fff-category-tag>
           `,
         )}
-      </mm-tag-group>
-    </mm-component-section>
+      </fff-tag-group>
+    </fff-component-section>
 
-    <mm-component-section heading="StatusTag" description="">
-      <mm-tag-group>
-        <mm-status-tag variant="success">success</mm-status-tag>
-        <mm-status-tag variant="warning">warning</mm-status-tag>
-        <mm-status-tag variant="error">error</mm-status-tag>
-        <mm-status-tag variant="info">info</mm-status-tag>
-      </mm-tag-group>
-    </mm-component-section>
+    <fff-component-section heading="StatusTag" description="">
+      <fff-tag-group>
+        <fff-status-tag variant="success">success</fff-status-tag>
+        <fff-status-tag variant="warning">warning</fff-status-tag>
+        <fff-status-tag variant="error">error</fff-status-tag>
+        <fff-status-tag variant="info">info</fff-status-tag>
+      </fff-tag-group>
+    </fff-component-section>
 
-    <mm-component-section
+    <fff-component-section
       heading="CodeTag"
-      description="토큰·속성 이름처럼 코드로 읽어야 하는 조각을 태그로 보여 줍니다. 톤은 Tag와 같아, 이름의 자리마다 색을 나눠 칠할 수 있습니다. 문장 속 코드 조각은 mm-code를 씁니다."
+      description="토큰·속성 이름처럼 코드로 읽어야 하는 조각을 태그로 보여 줍니다. 톤은 Tag와 같아, 이름의 자리마다 색을 나눠 칠할 수 있습니다. 문장 속 코드 조각은 fff-code를 씁니다."
     >
-      <mm-code-tag size="large" tone="pink">avatar.background-color</mm-code-tag>
-      <mm-tag-group>
-        <mm-code-tag>button</mm-code-tag>
-        <mm-code-tag tone="blue">background</mm-code-tag>
-        <mm-code-tag tone="orange">subtle</mm-code-tag>
-        <mm-code-tag tone="green">color</mm-code-tag>
-      </mm-tag-group>
-    </mm-component-section>
+      <fff-code-tag size="large" tone="pink">avatar.background-color</fff-code-tag>
+      <fff-tag-group>
+        <fff-code-tag>button</fff-code-tag>
+        <fff-code-tag tone="blue">background</fff-code-tag>
+        <fff-code-tag tone="orange">subtle</fff-code-tag>
+        <fff-code-tag tone="green">color</fff-code-tag>
+      </fff-tag-group>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

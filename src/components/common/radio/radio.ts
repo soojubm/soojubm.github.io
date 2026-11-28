@@ -12,7 +12,7 @@ import '@/components/common/text/semantics/paragraph'
 
 export type RadioSize = Extract<ComponentSize, 'medium' | 'large'>
 
-@customElement('mm-radio')
+@customElement('fff-radio')
 export class Radio extends LitElement {
   static styles = [resetStyles, inputVisuallyHiddenStyles, radioStyles]
   @property({ type: String }) name = ''
@@ -30,7 +30,7 @@ export class Radio extends LitElement {
           this,
           this.inputId,
           html`
-            <mm-paragraph><slot></slot></mm-paragraph>
+            <fff-paragraph><slot></slot></fff-paragraph>
           `,
         )}
       </div>

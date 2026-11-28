@@ -9,7 +9,7 @@ import { withOpenState } from '@/utils/open-state'
 // 스스로 닫히기까지의 표시 시간(ms). transient 동작은 내부 책임이라 prop으로 노출하지 않는다.
 const DURATION = 3000
 
-@customElement('mm-toast')
+@customElement('fff-toast')
 export class Toast extends withOpenState(LitElement) {
   static styles = toastStyles
   private hideTimer = new ScheduleController(this, () => this.close(), { delay: DURATION })

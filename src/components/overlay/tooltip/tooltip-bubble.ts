@@ -8,16 +8,16 @@ import '@/components/common'
 import { AnchorController } from '@/controllers/anchor-controller'
 import { PortalController } from '@/controllers/portal-controller'
 
-@customElement('mm-tooltip-bubble')
+@customElement('fff-tooltip-bubble')
 export class TooltipBubble extends LitElement {
   static styles = tooltipBubbleStyles
-  /** @internal 말풍선을 소유한 mm-tooltip이 채운다. */
+  /** @internal 말풍선을 소유한 fff-tooltip이 채운다. */
   @property({ type: String }) content = ''
-  /** @internal 말풍선을 소유한 mm-tooltip이 채운다. */
+  /** @internal 말풍선을 소유한 fff-tooltip이 채운다. */
   @property({ type: String, reflect: true }) placement: TooltipPlacement = 'bottom-start'
-  /** @internal 말풍선을 소유한 mm-tooltip이 채운다. */
+  /** @internal 말풍선을 소유한 fff-tooltip이 채운다. */
   @property({ type: Boolean, reflect: true }) open = false
-  /** @internal 위치를 재는 기준 요소. 말풍선을 소유한 mm-tooltip이 채운다. */
+  /** @internal 위치를 재는 기준 요소. 말풍선을 소유한 fff-tooltip이 채운다. */
   @property({ attribute: false }) anchor?: HTMLElement
   private portal = new PortalController(this)
   private anchorPosition = new AnchorController(this, {
@@ -32,7 +32,7 @@ export class TooltipBubble extends LitElement {
 
   render() {
     return html`
-      <mm-text size="12">${this.content}</mm-text>
+      <fff-text size="12">${this.content}</fff-text>
     `
   }
 

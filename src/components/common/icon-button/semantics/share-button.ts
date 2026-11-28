@@ -9,7 +9,7 @@ import {
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-share-button')
+@customElement('fff-share-button')
 export class ShareButton extends iconActionElement({
   event: 'share',
   icon: ICON_NAMES.SHARE,

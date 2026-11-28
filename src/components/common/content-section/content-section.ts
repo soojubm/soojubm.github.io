@@ -6,7 +6,7 @@ import '@/components/common/text/semantics/text-list'
 import type { TextBlockLevel } from '@/components/common/text/semantics/text-block'
 import type { ListMarkerVariant } from '@/components/indicators/list-marker/list-marker'
 
-@customElement('mm-content-section')
+@customElement('fff-content-section')
 export class ContentSection extends LitElement {
   static styles = css`
     :host {
@@ -37,11 +37,11 @@ export class ContentSection extends LitElement {
     return html`
       <div class="title">
         <div class="intro">
-          <mm-text-block
+          <fff-text-block
             level=${String(this.headingLevel) as TextBlockLevel}
             heading=${this.heading}
             description=${this.description}
-          ></mm-text-block>
+          ></fff-text-block>
           ${this.renderTexts()}
         </div>
         <slot name="action"></slot>
@@ -54,7 +54,7 @@ export class ContentSection extends LitElement {
     if (!this.texts) return nothing
 
     return html`
-      <mm-text-list variant=${this.variant} .texts=${this.texts}></mm-text-list>
+      <fff-text-list variant=${this.variant} .texts=${this.texts}></fff-text-list>
     `
   }
 }

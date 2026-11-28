@@ -6,7 +6,7 @@ import type { IconName } from '@/components/common/icon/icon-names'
 import '@/components/common/icon/icon'
 import { tagStyles, type TagTone } from '@/components/common/tag/tag.styles'
 
-@customElement('mm-tag')
+@customElement('fff-tag')
 export class Tag extends LitElement {
   static styles = [tagStyles]
   @property({ type: String, reflect: true, useDefault: true }) tone: TagTone = 'default'
@@ -23,7 +23,7 @@ export class Tag extends LitElement {
     if (!this.icon) return nothing
 
     return html`
-      <mm-icon part="icon" name=${this.icon}></mm-icon>
+      <fff-icon part="icon" name=${this.icon}></fff-icon>
     `
   }
 }

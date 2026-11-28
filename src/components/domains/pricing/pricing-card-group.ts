@@ -3,7 +3,7 @@ import { customElement, queryAssignedElements } from 'lit/decorators.js'
 
 import '@/components/domains/pricing/pricing-card'
 
-@customElement('mm-pricing-card-group')
+@customElement('fff-pricing-card-group')
 export class PricingCardGroup extends LitElement {
   static styles = css`
     :host {

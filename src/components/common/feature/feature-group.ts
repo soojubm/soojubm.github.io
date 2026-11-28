@@ -5,7 +5,7 @@ import type { GridColumns } from '@/components/common/grid/grid'
 
 import '@/components/common/grid/grid'
 
-@customElement('mm-feature-group')
+@customElement('fff-feature-group')
 export class FeatureGroup extends LitElement {
   static styles = css`
     :host {
@@ -16,9 +16,9 @@ export class FeatureGroup extends LitElement {
 
   render() {
     return html`
-      <mm-grid columns=${this.columns} gap="8" role="group">
+      <fff-grid columns=${this.columns} gap="8" role="group">
         <slot></slot>
-      </mm-grid>
+      </fff-grid>
     `
   }
 }

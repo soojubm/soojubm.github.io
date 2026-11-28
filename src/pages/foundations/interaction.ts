@@ -21,32 +21,32 @@ type FilterOption = OptionItem & {
 type SelectionComponent = { name: string; options: 'options' | 'children' }
 
 const singleSelectionComponents: SelectionComponent[] = [
-  { name: 'mm-radio-group', options: 'options' },
-  { name: 'mm-radio-card-group', options: 'children' },
-  { name: 'mm-toggle-button-group', options: 'options' },
-  { name: 'mm-select', options: 'options' },
-  { name: 'mm-filter-button-group', options: 'options' },
-  { name: 'mm-menu-item-radio-group', options: 'options' },
+  { name: 'fff-radio-group', options: 'options' },
+  { name: 'fff-radio-card-group', options: 'children' },
+  { name: 'fff-toggle-button-group', options: 'options' },
+  { name: 'fff-select', options: 'options' },
+  { name: 'fff-filter-button-group', options: 'options' },
+  { name: 'fff-menu-item-radio-group', options: 'options' },
 ]
 
 const multipleSelectionComponents: SelectionComponent[] = [
-  { name: 'mm-filter-button-group', options: 'options' },
-  { name: 'mm-checkbox-group', options: 'options' },
-  { name: 'mm-menu-item-checkbox-group', options: 'options' },
+  { name: 'fff-filter-button-group', options: 'options' },
+  { name: 'fff-checkbox-group', options: 'options' },
+  { name: 'fff-menu-item-checkbox-group', options: 'options' },
 ]
 
 /** 선택 컴포넌트 이름과 옵션 전달 방식을 색으로 구분된 코드 태그로 나열한다. */
 const renderSelectionComponents = (components: SelectionComponent[]) => html`
-  <mm-flex direction="column" gap="2">
+  <fff-flex direction="column" gap="2">
     ${components.map(
       ({ name, options }) => html`
-        <mm-tag-group>
-          <mm-code-tag>${name}</mm-code-tag>
-          <mm-code-tag tone=${options === 'children' ? 'pink' : 'purple'}>${options}</mm-code-tag>
-        </mm-tag-group>
+        <fff-tag-group>
+          <fff-code-tag>${name}</fff-code-tag>
+          <fff-code-tag tone=${options === 'children' ? 'pink' : 'purple'}>${options}</fff-code-tag>
+        </fff-tag-group>
       `,
     )}
-  </mm-flex>
+  </fff-flex>
 `
 
 type StateCard = {
@@ -93,11 +93,11 @@ const operationStates: StateCard[] = [
 ]
 
 const checkedIndicator = html`
-  <mm-selected-indicator selected></mm-selected-indicator>
+  <fff-selected-indicator selected></fff-selected-indicator>
 `
 
 const currentIndicator = html`
-  <mm-current-indicator></mm-current-indicator>
+  <fff-current-indicator></fff-current-indicator>
 `
 
 const semanticStates: StateCard[] = [
@@ -125,7 +125,7 @@ const semanticStates: StateCard[] = [
 ]
 
 const dataIcon = (name: string) => html`
-  <mm-icon name=${name}></mm-icon>
+  <fff-icon name=${name}></fff-icon>
 `
 
 const dataStates: StateCard[] = [
@@ -141,7 +141,7 @@ const dataStates: StateCard[] = [
     selectors: [],
     description: '데이터를 가져오는 중입니다. 진행 중임을 알립니다.',
     figure: dataIcon(ICON_NAMES.TIMER),
-    components: ['mm-spinner'],
+    components: ['fff-spinner'],
     tokens: [],
   },
   {
@@ -156,7 +156,7 @@ const dataStates: StateCard[] = [
     selectors: [],
     description: '데이터를 가져오지 못했습니다. 이유와 다시 시도를 제시합니다.',
     figure: dataIcon(ICON_NAMES.FAILURE),
-    components: ['mm-result'],
+    components: ['fff-result'],
     tokens: [],
   },
   {
@@ -164,7 +164,7 @@ const dataStates: StateCard[] = [
     selectors: [],
     description: '완료되었으나 데이터가 0건입니다. 빈 상태와 다음 행동을 제시합니다.',
     figure: dataIcon(ICON_NAMES.EMPTY),
-    components: ['mm-result'],
+    components: ['fff-result'],
     tokens: [],
   },
 ]
@@ -207,7 +207,7 @@ const resultStates: StateCard[] = [
 ]
 
 const renderSelector = (selector: string) => html`
-  <mm-code-tag>${selector}</mm-code-tag>
+  <fff-code-tag>${selector}</fff-code-tag>
 `
 
 // 상태가 쓰는 토큰을 카드 안에 이름·값으로 보여 준다. 토큰이 없는 상태는 그리지 않는다.
@@ -215,13 +215,13 @@ const renderStateTokens = (state: string, tokens: string[]) => {
   if (!tokens.length) return nothing
 
   return html`
-    <mm-token-group aria-label=${`${state} tokens`}>
+    <fff-token-group aria-label=${`${state} tokens`}>
       ${tokens.map(
         key => html`
-          <mm-token-item key=${key}></mm-token-item>
+          <fff-token-item key=${key}></fff-token-item>
         `,
       )}
-    </mm-token-group>
+    </fff-token-group>
   `
 }
 
@@ -235,156 +235,158 @@ const renderStateCard = ({
   figure,
   components = [],
 }: StateCard) => html`
-  <mm-figure-card description=${description}>
+  <fff-figure-card description=${description}>
     <span class="state-figure" slot="figure" data-state=${state}>${figure}</span>
     ${[state, ...aliases].map(
       name => html`
-        <mm-code-tag slot="tags" tone="purple">${name}</mm-code-tag>
+        <fff-code-tag slot="tags" tone="purple">${name}</fff-code-tag>
       `,
     )}
     ${selectors
       .filter(selector => selector !== state)
       .map(
         selector => html`
-          <mm-code-tag slot="tags">${selector}</mm-code-tag>
+          <fff-code-tag slot="tags">${selector}</fff-code-tag>
         `,
       )}
     ${components.map(
       component => html`
-        <mm-code-tag slot="tags" tone="green">${component}</mm-code-tag>
+        <fff-code-tag slot="tags" tone="green">${component}</fff-code-tag>
       `,
     )}
     ${note
       ? html`
-          <mm-caption>${note}</mm-caption>
+          <fff-caption>${note}</fff-caption>
         `
       : nothing}
     ${renderStateTokens(state, tokens)}
-  </mm-figure-card>
+  </fff-figure-card>
 `
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Interaction"
       description="어떤 요소가 상호작용할 수 있는지, 상호작용할 때 어떻게 반응하는지, 선택 옵션을 어떻게 고르는지를 일관된 시각 언어로 정의합니다. 상태가 색상에만 기대지 않고 같은 방식으로 드러나므로, 사용자는 무엇을 누를 수 있고 지금 어떤 상태인지 바로 알아봅니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-page-body>
-      <mm-tab-list value="state" variant="text" search-param="tab">
-        <mm-tab value="state">State</mm-tab>
-        <mm-tab value="selection">Selection</mm-tab>
-      </mm-tab-list>
+    <fff-page-body>
+      <fff-tab-list value="state" variant="text" search-param="tab">
+        <fff-tab value="state">State</fff-tab>
+        <fff-tab value="selection">Selection</fff-tab>
+      </fff-tab-list>
 
-      <mm-tab-panel value="state">
-        <mm-content-section-list>
-          <mm-content-section
+      <fff-tab-panel value="state">
+        <fff-content-section-list>
+          <fff-content-section
             heading-level="3"
             heading="상호작용 단서"
             description="클릭 가능성은 형태로 드러냅니다. 이 단서는 장식이나 일반 강조로 쓰지 않습니다."
           >
-            <mm-grid columns="3">
-              <mm-surface variant="elevated">
-                <mm-paragraph>
+            <fff-grid columns="3">
+              <fff-surface variant="elevated">
+                <fff-paragraph>
                   떠 있는 표면은 그 자체가 클릭 대상이거나 안에 클릭할 요소를 넣습니다. 표면 자체가
                   대상이면 hover에서 한 단계 더 떠올라 이를 확인시킵니다.
-                </mm-paragraph>
-              </mm-surface>
-              <mm-surface variant="filled">
-                <mm-paragraph>채워진 배경은 안에 실행 가능한 액션이 있음을 알립니다.</mm-paragraph>
-              </mm-surface>
-              <mm-surface variant="ghost">
-                <mm-paragraph>
-                  <mm-link href="#">브랜드 색 텍스트·아이콘</mm-link>
+                </fff-paragraph>
+              </fff-surface>
+              <fff-surface variant="filled">
+                <fff-paragraph>
+                  채워진 배경은 안에 실행 가능한 액션이 있음을 알립니다.
+                </fff-paragraph>
+              </fff-surface>
+              <fff-surface variant="ghost">
+                <fff-paragraph>
+                  <fff-link href="#">브랜드 색 텍스트·아이콘</fff-link>
                   은 이동하거나 실행하는 링크입니다.
-                </mm-paragraph>
-              </mm-surface>
-            </mm-grid>
-          </mm-content-section>
+                </fff-paragraph>
+              </fff-surface>
+            </fff-grid>
+          </fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="조작 상태"
             description="UI 요소의 상호작용 상태입니다."
           >
-            <mm-grid columns="4" gap="6">${operationStates.map(renderStateCard)}</mm-grid>
-          </mm-content-section>
+            <fff-grid columns="4" gap="6">${operationStates.map(renderStateCard)}</fff-grid>
+          </fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="결과 상태 / 선택 상태"
             description="UI 요소의 상호작용 결과 상태입니다. pressed·checked·selected·current는 같은 토큰을 씁니다."
           >
-            <mm-tag-group>${selectedKeys.map(renderSelector)}</mm-tag-group>
-            <mm-grid columns="4" gap="6">${resultStates.map(renderStateCard)}</mm-grid>
-          </mm-content-section>
+            <fff-tag-group>${selectedKeys.map(renderSelector)}</fff-tag-group>
+            <fff-grid columns="4" gap="6">${resultStates.map(renderStateCard)}</fff-grid>
+          </fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="의미 상태"
             description='사용자 행동으로 인한 오류와 시스템 오류를 구분합니다. 시스템 오류로 실패하면 단순히 "오류"라고 하지 않고 무엇이 잘못됐는지 설명해, 사용자가 다시 시도할 수 있게 안내합니다.'
           >
-            <mm-grid columns="4" gap="6">${semanticStates.map(renderStateCard)}</mm-grid>
-          </mm-content-section>
+            <fff-grid columns="4" gap="6">${semanticStates.map(renderStateCard)}</fff-grid>
+          </fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="데이터 상태"
             description="데이터를 요청한 뒤 화면이 거치는 상태입니다."
           >
-            <mm-grid columns="4" gap="6">${dataStates.map(renderStateCard)}</mm-grid>
-          </mm-content-section>
-        </mm-content-section-list>
-      </mm-tab-panel>
+            <fff-grid columns="4" gap="6">${dataStates.map(renderStateCard)}</fff-grid>
+          </fff-content-section>
+        </fff-content-section-list>
+      </fff-tab-panel>
 
-      <mm-tab-panel value="selection">
-        <mm-content-section-list>
-          <mm-flex direction="column" gap="3">
-            <mm-grid columns="2" gap="4">
-              <mm-content-section
+      <fff-tab-panel value="selection">
+        <fff-content-section-list>
+          <fff-flex direction="column" gap="3">
+            <fff-grid columns="2" gap="4">
+              <fff-content-section
                 heading-level="3"
                 heading="단일 선택"
                 description="선택 옵션 가운데 하나만 고르며, 다른 선택 옵션을 고르면 이전 선택이 해제됩니다."
               >
-                <mm-code-tag tone="orange">value: string</mm-code-tag>
+                <fff-code-tag tone="orange">value: string</fff-code-tag>
                 ${renderSelectionComponents(singleSelectionComponents)}
-              </mm-content-section>
-              <mm-content-section
+              </fff-content-section>
+              <fff-content-section
                 heading-level="3"
                 heading="다중 선택"
                 description="선택 옵션마다 켜고 꺼서 원하는 만큼 고릅니다."
               >
-                <mm-code-tag tone="orange">values: string[]</mm-code-tag>
+                <fff-code-tag tone="orange">values: string[]</fff-code-tag>
                 ${renderSelectionComponents(multipleSelectionComponents)}
-              </mm-content-section>
-            </mm-grid>
-            <mm-notice>
-              <mm-text size="14">
-                ${code('mm-tab')}은 ${code('aria-selected')}를 쓰지만 값을 고르는 selection이 아니라
-                보이는 콘텐츠를 바꾸는 content switching 맥락에 속합니다.
-              </mm-text>
-            </mm-notice>
-          </mm-flex>
+              </fff-content-section>
+            </fff-grid>
+            <fff-notice>
+              <fff-text size="14">
+                ${code('fff-tab')}은 ${code('aria-selected')}를 쓰지만 값을 고르는 selection이
+                아니라 보이는 콘텐츠를 바꾸는 content switching 맥락에 속합니다.
+              </fff-text>
+            </fff-notice>
+          </fff-flex>
 
-          <mm-text-block
+          <fff-text-block
             level="3"
             heading="기본값"
             description="선택되지 않은 상태로 제공합니다. 사용자가 의도하지 않은 선택값은 편향된 응답 결과를 가져오는 부작용이 있을 수 있습니다."
-          ></mm-text-block>
+          ></fff-text-block>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="상태 소유"
             description="선택 상태는 그룹 컴포넌트가 갖습니다. 단일 체크박스나 스위치, 설정 아이템처럼 켜고 끄는 맥락의 컴포넌트만 자기 상태를 갖습니다."
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section heading-level="3" heading="옵션 타입">
-            <mm-code-block language="typescript" .code=${optionItemCode}></mm-code-block>
-          </mm-content-section>
-        </mm-content-section-list>
-      </mm-tab-panel>
-    </mm-page-body>
-  </mm-main>
+          <fff-content-section heading-level="3" heading="옵션 타입">
+            <fff-code-block language="typescript" .code=${optionItemCode}></fff-code-block>
+          </fff-content-section>
+        </fff-content-section-list>
+      </fff-tab-panel>
+    </fff-page-body>
+  </fff-main>
 `
 
 renderPage(main)

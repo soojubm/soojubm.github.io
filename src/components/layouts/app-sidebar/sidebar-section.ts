@@ -12,7 +12,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 import '@/components/indicators/expand-indicator/expand-indicator'
 
-@customElement('mm-sidebar-section')
+@customElement('fff-sidebar-section')
 export class SidebarSection extends LitElement {
   static styles = [
     resetStyles,
@@ -32,7 +32,7 @@ export class SidebarSection extends LitElement {
         grid-template-rows: 0fr;
       }
 
-      mm-list-item-group {
+      fff-list-item-group {
         overflow: hidden;
       }
 
@@ -41,7 +41,7 @@ export class SidebarSection extends LitElement {
       }
 
       /* 트리거와 하위 링크 간격. 닫힐 때 패널이 완전히 접히도록 열림 상태에서만 준다 */
-      :host([open]) mm-list-item-group {
+      :host([open]) fff-list-item-group {
         padding-top: var(--space-1);
       }
     `,
@@ -62,13 +62,13 @@ export class SidebarSection extends LitElement {
   render() {
     return html`
       <button type="button" aria-controls=${this.panelId}>
-        <mm-list-item avatar-variant="tertiary" label=${this.label} icon=${ifDefined(this.icon)}>
-          <mm-expand-indicator slot="trailing" ?expanded=${this.open}></mm-expand-indicator>
-        </mm-list-item>
+        <fff-list-item avatar-variant="tertiary" label=${this.label} icon=${ifDefined(this.icon)}>
+          <fff-expand-indicator slot="trailing" ?expanded=${this.open}></fff-expand-indicator>
+        </fff-list-item>
       </button>
 
       <div id=${this.panelId} class="panel" ?inert=${!this.open}>
-        <mm-list-item-group gap="0"><slot></slot></mm-list-item-group>
+        <fff-list-item-group gap="0"><slot></slot></fff-list-item-group>
       </div>
     `
   }

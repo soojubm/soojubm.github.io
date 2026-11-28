@@ -10,7 +10,7 @@ import '@/components/common/icon-button/semantics/copy-button'
 
 export type CodeBlockVariant = 'default' | 'plain'
 
-@customElement('mm-code-block')
+@customElement('fff-code-block')
 export class CodeBlock extends LitElement {
   static styles = [resetStyles, codeBlockStyles]
   @property({ type: String, reflect: true }) variant: CodeBlockVariant = 'default'
@@ -29,7 +29,7 @@ export class CodeBlock extends LitElement {
     if (!this.copyable) return nothing
 
     return html`
-      <mm-copy-button value=${this.code}></mm-copy-button>
+      <fff-copy-button value=${this.code}></fff-copy-button>
     `
   }
 

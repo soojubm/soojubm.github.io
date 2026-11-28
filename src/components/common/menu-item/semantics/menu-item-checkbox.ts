@@ -10,7 +10,7 @@ import {
 } from '@/components/common/menu-item/menu-item.utils'
 import '@/components/common/checkbox'
 
-@customElement('mm-menu-item-checkbox')
+@customElement('fff-menu-item-checkbox')
 export class MenuItemCheckbox extends withMenuItemToggleState(
   withMenuItemPresentation(LitElement),
 ) {
@@ -30,7 +30,7 @@ export class MenuItemCheckbox extends withMenuItemToggleState(
   render() {
     return renderMenuItemCheckedRow(this, {
       role: 'checkbox',
-      control: literal`mm-checkbox`,
+      control: literal`fff-checkbox`,
       activate: this.activate,
     })
   }

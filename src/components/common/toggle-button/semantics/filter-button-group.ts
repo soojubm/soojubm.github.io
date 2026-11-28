@@ -18,7 +18,7 @@ export type FilterOption = OptionItem & {
   selectAll?: boolean
 }
 
-@customElement('mm-filter-button-group')
+@customElement('fff-filter-button-group')
 export class FilterButtonGroup extends LitElement {
   static styles = [
     resetStyles,
@@ -95,7 +95,7 @@ export class FilterButtonGroup extends LitElement {
     if (!icon) return nothing
 
     return html`
-      <mm-icon name=${icon}></mm-icon>
+      <fff-icon name=${icon}></fff-icon>
     `
   }
 

@@ -18,7 +18,7 @@ export interface SearchResult {
   description?: string | SearchResultSegment[]
 }
 
-@customElement('mm-search-result-list')
+@customElement('fff-search-result-list')
 export class SearchResultList extends LitElement {
   static styles = css`
     :host {
@@ -30,13 +30,13 @@ export class SearchResultList extends LitElement {
 
   render() {
     return html`
-      <mm-search-group heading=${ifDefined(this.heading)} gap="2">
+      <fff-search-group heading=${ifDefined(this.heading)} gap="2">
         ${repeat(
           this.results,
           result => result.href,
           result => this.renderResult(result),
         )}
-      </mm-search-group>
+      </fff-search-group>
     `
   }
 
@@ -45,12 +45,12 @@ export class SearchResultList extends LitElement {
     const text = segments ? segments.map(segment => segment.text).join('') : description
 
     return html`
-      <mm-search-result-item
+      <fff-search-result-item
         href=${href}
         label=${label}
         description=${text}
         .segments=${segments}
-      ></mm-search-result-item>
+      ></fff-search-result-item>
     `
   }
 }

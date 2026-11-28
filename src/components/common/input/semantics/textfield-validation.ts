@@ -2,11 +2,11 @@ import { LitElement, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 import '@/components/common/text/semantics/paragraph'
 
-@customElement('mm-textfield-validation')
+@customElement('fff-textfield-validation')
 export class TextfieldValidation extends LitElement {
   render() {
     return html`
-      <mm-paragraph color="danger"><slot></slot></mm-paragraph>
+      <fff-paragraph color="danger"><slot></slot></fff-paragraph>
     `
   }
 }

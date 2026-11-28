@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { dotSizes, dotStyles } from '@/components/common/dot/dot.styles'
 
-@customElement('mm-typing-indicator')
+@customElement('fff-typing-indicator')
 export class TypingIndicator extends LitElement {
   static styles = css`
     :host {

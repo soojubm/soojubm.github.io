@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import '@/components/common/text/semantics/caption'
 
-@customElement('mm-textfield-label')
+@customElement('fff-textfield-label')
 export class TextfieldLabel extends LitElement {
   static styles = css`
     label {
@@ -29,7 +29,7 @@ export class TextfieldLabel extends LitElement {
     if (!this.optional) return nothing
 
     return html`
-      <mm-caption>선택입력</mm-caption>
+      <fff-caption>선택입력</fff-caption>
     `
   }
 }

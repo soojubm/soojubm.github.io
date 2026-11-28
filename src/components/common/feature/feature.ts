@@ -7,7 +7,7 @@ import '@/components/common/text/semantics/text-block'
 import '@/components/common/avatar'
 import '@/components/common/icon'
 
-@customElement('mm-feature')
+@customElement('fff-feature')
 export class Feature extends LitElement {
   static styles = [featureStyles]
   @property({ type: String }) icon?: IconName
@@ -20,12 +20,12 @@ export class Feature extends LitElement {
     return html`
       ${this.renderVisual()}
 
-      <mm-text-block
+      <fff-text-block
         level="3"
         ?centered=${this.centered}
         .heading=${this.heading}
         .description=${this.description}
-      ></mm-text-block>
+      ></fff-text-block>
 
       <slot></slot>
     `
@@ -35,7 +35,7 @@ export class Feature extends LitElement {
     if (!this.emoji && !this.icon) return nothing
 
     return html`
-      <mm-avatar variant="secondary" size="48">${this.renderGlyph()}</mm-avatar>
+      <fff-avatar variant="secondary" size="48">${this.renderGlyph()}</fff-avatar>
     `
   }
 
@@ -48,7 +48,7 @@ export class Feature extends LitElement {
     }
 
     return html`
-      <mm-icon size="large" name=${this.icon}></mm-icon>
+      <fff-icon size="large" name=${this.icon}></fff-icon>
     `
   }
 }

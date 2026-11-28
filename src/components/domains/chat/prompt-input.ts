@@ -8,7 +8,7 @@ import { EventSubscriptionController } from '@/controllers/event-subscription-co
 import { emit, uniqueId } from '@/utils'
 import '@/components/domains/chat/model-selector'
 
-@customElement('mm-prompt-input')
+@customElement('fff-prompt-input')
 export class PromptInput extends LitElement {
   static styles = css`
     :host {
@@ -42,7 +42,7 @@ export class PromptInput extends LitElement {
   render() {
     return html`
       <form>
-        <mm-textarea
+        <fff-textarea
           .value=${this.value}
           .name=${this.name}
           .placeholder=${this.placeholder}
@@ -53,7 +53,7 @@ export class PromptInput extends LitElement {
           <div slot="trailing" class="toolbar">
             ${this.renderStartActions()} ${this.renderEndActions()}
           </div>
-        </mm-textarea>
+        </fff-textarea>
       </form>
     `
   }
@@ -64,7 +64,7 @@ export class PromptInput extends LitElement {
     emit(this, 'input', { value: this.value })
   }
   private handleTextareaKeydown = (e: KeyboardEvent) => {
-    // 슬롯에 둔 툴바 버튼의 키 입력도 mm-textarea를 거쳐 올라오므로 입력 영역에서 온 것만 받는다.
+    // 슬롯에 둔 툴바 버튼의 키 입력도 fff-textarea를 거쳐 올라오므로 입력 영역에서 온 것만 받는다.
     if (e.target !== e.currentTarget) return
     if (e.isComposing) return
     if (e.key !== 'Enter' || e.shiftKey) return
@@ -81,30 +81,30 @@ export class PromptInput extends LitElement {
   private renderStartActions() {
     return html`
       <div class="actions">
-        <mm-icon-button
+        <fff-icon-button
           icon=${ICON_NAMES.ADD_CIRCLE}
           aria-label="이미지 첨부"
           aria-haspopup="menu"
           aria-controls=${this.attachMenuId}
-        ></mm-icon-button>
-        <mm-popover id=${this.attachMenuId} placement="top-start">
-          <mm-menu-item-group aria-label="이미지 첨부">
-            <mm-menu-item-action
+        ></fff-icon-button>
+        <fff-popover id=${this.attachMenuId} placement="top-start">
+          <fff-menu-item-group aria-label="이미지 첨부">
+            <fff-menu-item-action
               icon=${ICON_NAMES.IMPORT}
               label="이미지 업로드"
-            ></mm-menu-item-action>
-            <mm-menu-item-action
+            ></fff-menu-item-action>
+            <fff-menu-item-action
               icon=${ICON_NAMES.CAMERA}
               label="카메라 촬영"
-            ></mm-menu-item-action>
-            <mm-menu-item-action
+            ></fff-menu-item-action>
+            <fff-menu-item-action
               icon=${ICON_NAMES.EXTERNAL_LINK}
               label="URL로 추가"
-            ></mm-menu-item-action>
-          </mm-menu-item-group>
-        </mm-popover>
+            ></fff-menu-item-action>
+          </fff-menu-item-group>
+        </fff-popover>
         <slot name="leading-actions"></slot>
-        <!-- <mm-model-selector></mm-model-selector> -->
+        <!-- <fff-model-selector></fff-model-selector> -->
       </div>
     `
   }
@@ -122,23 +122,23 @@ export class PromptInput extends LitElement {
   private renderSubmitOrStop() {
     if (this.loading && this.stopSubscription.subscribed) {
       return html`
-        <mm-icon-button
+        <fff-icon-button
           variant="primary"
           icon=${ICON_NAMES.STOP}
           aria-label=${this.stopLabel}
           @click=${this.handleStopClick}
-        ></mm-icon-button>
+        ></fff-icon-button>
       `
     }
 
     return html`
-      <mm-icon-button
+      <fff-icon-button
         variant="primary"
         icon=${ICON_NAMES.SUBMIT}
         aria-label=${this.submitLabel}
         ?disabled=${this.loading}
         @click=${this.handleSubmitClick}
-      ></mm-icon-button>
+      ></fff-icon-button>
     `
   }
 

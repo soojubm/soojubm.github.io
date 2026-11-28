@@ -7,7 +7,7 @@ import { renderRadioInput } from '@/components/common/radio/radio.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { uniqueId } from '@/utils'
 
-@customElement('mm-radio-card')
+@customElement('fff-radio-card')
 export class RadioCard extends LitElement {
   static styles = [resetStyles, inputVisuallyHiddenStyles, radioStyles, radioCardStyles]
   @property({ type: String }) name = ''

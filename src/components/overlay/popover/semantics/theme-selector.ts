@@ -11,7 +11,7 @@ import { uniqueId } from '@/utils'
 import { isLargeText, saveLargeText } from '@/utils/large-text'
 import { getPreferredTheme, saveTheme, THEMES, type Theme } from '@/utils/theme'
 
-@customElement('mm-theme-selector')
+@customElement('fff-theme-selector')
 export class ThemeSelector extends LitElement {
   static styles = css`
     :host {
@@ -25,35 +25,35 @@ export class ThemeSelector extends LitElement {
 
   render() {
     return html`
-      <mm-icon-button
+      <fff-icon-button
         variant="ghost"
         icon=${this.currentIcon}
         aria-label="테마 변경"
         aria-controls=${this.panelId}
-      ></mm-icon-button>
-      <mm-popover id=${this.panelId} placement="bottom-end">
-        <mm-menu-item-radio-group
+      ></fff-icon-button>
+      <fff-popover id=${this.panelId} placement="bottom-end">
+        <fff-menu-item-radio-group
           name="theme"
           value=${this.value}
           aria-label="테마 선택"
           .options=${THEMES}
           @change=${this.handleThemeChange}
-        ></mm-menu-item-radio-group>
-        <mm-separator></mm-separator>
-        <mm-menu-item-group aria-label="글자 크기">
-          <mm-menu-item-switch
+        ></fff-menu-item-radio-group>
+        <fff-separator></fff-separator>
+        <fff-menu-item-group aria-label="글자 크기">
+          <fff-menu-item-switch
             icon=${ICON_NAMES.TEXT_SIZE}
             label="큰글씨"
             ?checked=${this.largeText}
             @change=${this.handleLargeTextChange}
-          ></mm-menu-item-switch>
-        </mm-menu-item-group>
-        <mm-separator></mm-separator>
-        <mm-flex direction="column" gap="2">
-          <mm-radius-picker></mm-radius-picker>
-          <mm-color-picker></mm-color-picker>
-        </mm-flex>
-      </mm-popover>
+          ></fff-menu-item-switch>
+        </fff-menu-item-group>
+        <fff-separator></fff-separator>
+        <fff-flex direction="column" gap="2">
+          <fff-radius-picker></fff-radius-picker>
+          <fff-color-picker></fff-color-picker>
+        </fff-flex>
+      </fff-popover>
     `
   }
 
@@ -69,7 +69,7 @@ export class ThemeSelector extends LitElement {
   // 선택 시 테마를 저장하고 현재 값을 동기화. popover는 portal로 옮겨져 이 shadow에서 찾을 수 없어 이벤트가 닿은 자리에서 찾는다.
   private handleThemeChange(event: CustomEvent<{ value: string }>) {
     this.value = saveTheme(event.detail.value as Theme)
-    ;(event.currentTarget as HTMLElement).closest<Popover>('mm-popover')?.close()
+    ;(event.currentTarget as HTMLElement).closest<Popover>('fff-popover')?.close()
   }
 
   private handleLargeTextChange(event: CustomEvent<{ checked: boolean }>) {

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/tag/tag'
 
-@customElement('mm-timeline-item')
+@customElement('fff-timeline-item')
 export class TimelineItem extends LitElement {
   static styles = css`
     :host {
@@ -13,7 +13,7 @@ export class TimelineItem extends LitElement {
     }
 
     /* 행에 딸린 세부 목록은 행의 글자 자리에 맞춰 들여쓴다. */
-    ::slotted(mm-text-list) {
+    ::slotted(fff-text-list) {
       margin-left: calc(var(--size-40) + var(--space-2));
     }
   `
@@ -26,7 +26,7 @@ export class TimelineItem extends LitElement {
 
   render() {
     return html`
-      <mm-tag>${this.label}</mm-tag>
+      <fff-tag>${this.label}</fff-tag>
       <slot></slot>
     `
   }

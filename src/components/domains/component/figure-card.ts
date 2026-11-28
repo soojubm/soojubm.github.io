@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-@customElement('mm-figure-card')
+@customElement('fff-figure-card')
 export class FigureCard extends LitElement {
   static styles = css`
     :host {
@@ -39,8 +39,8 @@ export class FigureCard extends LitElement {
     return html`
       <div class="figure" aria-hidden="true"><slot name="figure"></slot></div>
       <div class="body">
-        <mm-tag-group><slot name="tags"></slot></mm-tag-group>
-        <mm-caption>${this.description}</mm-caption>
+        <fff-tag-group><slot name="tags"></slot></fff-tag-group>
+        <fff-caption>${this.description}</fff-caption>
       </div>
       <slot></slot>
     `

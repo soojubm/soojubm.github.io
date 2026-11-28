@@ -6,20 +6,20 @@ import { renderPage } from '@/components/layouts/base-layouts'
 import { countryFilter, loadJson } from '@/pages/my/list-page'
 
 const main = html`
-  <mm-main>
-    <mm-flex direction="column" gap="4">
-      <mm-page-header heading="독서 목록" description="읽은 책을 기록합니다."></mm-page-header>
+  <fff-main>
+    <fff-flex direction="column" gap="4">
+      <fff-page-header heading="독서 목록" description="읽은 책을 기록합니다."></fff-page-header>
 
-      <mm-media-list unit="권"></mm-media-list>
-    </mm-flex>
-  </mm-main>
+      <fff-media-list unit="권"></fff-media-list>
+    </fff-flex>
+  </fff-main>
 `
 
 renderPage(main, { initialize: initPage })
 
 async function initPage() {
   const books = await loadJson<MediaItem>('/src/pages/my/books/books.json')
-  const list = document.querySelector<MediaList>('mm-media-list')
+  const list = document.querySelector<MediaList>('fff-media-list')
   if (!books?.length || !list) return
 
   list.items = books

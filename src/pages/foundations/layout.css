@@ -1,5 +1,5 @@
 /* 자리표시자 사이를 실제 간격 토큰만큼 띄워 거리를 그린다. 태그는 간격 자리 한가운데에 걸쳐 놓는다. */
-.spacing-section mm-ui-placeholder {
+.spacing-section fff-ui-placeholder {
   --ui-placeholder-height: var(--size-16);
   --ui-placeholder-border-radius: var(--border-radius);
 }
@@ -9,7 +9,7 @@
   flex: none;
 }
 
-.spacing-gap mm-code-tag {
+.spacing-gap fff-code-tag {
   position: absolute;
   top: 50%;
   left: 50%;

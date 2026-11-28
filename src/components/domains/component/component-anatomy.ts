@@ -17,7 +17,7 @@ export interface AnatomyMarkerData {
   inset?: boolean
 }
 
-@customElement('mm-component-anatomy')
+@customElement('fff-component-anatomy')
 export class ComponentAnatomy extends LitElement {
   static styles = [
     componentContentFrameStyles,
@@ -33,7 +33,7 @@ export class ComponentAnatomy extends LitElement {
       }
 
       /* 시연 대상 없이 코드만 전시할 때는 빈 무대 프레임을 걷어낸다. */
-      :host(:empty) mm-example-stage {
+      :host(:empty) fff-example-stage {
         display: none;
       }
 
@@ -49,41 +49,41 @@ export class ComponentAnatomy extends LitElement {
 
       /* 마커는 무대의 한 변을 기준으로 앉는다. 변 바깥으로 나가는 거리는
          마커 지름과 무대와의 간격의 합이고, inset이면 변 위로 들어온다. */
-      mm-list-marker {
+      fff-list-marker {
         --component-anatomy-marker-offset: calc((var(--size-16) + var(--space-3)) * -1);
 
         position: absolute;
       }
 
-      mm-list-marker[inset] {
+      fff-list-marker[inset] {
         --component-anatomy-marker-offset: 0px;
       }
 
-      mm-list-marker[placement='inline-start'],
-      mm-list-marker[placement='inline-end'] {
+      fff-list-marker[placement='inline-start'],
+      fff-list-marker[placement='inline-end'] {
         top: var(--component-anatomy-marker-offset);
         transform: translateY(-50%);
       }
 
-      mm-list-marker[placement='block-start'],
-      mm-list-marker[placement='block-end'] {
+      fff-list-marker[placement='block-start'],
+      fff-list-marker[placement='block-end'] {
         left: var(--component-anatomy-marker-offset);
         transform: translateX(-50%);
       }
 
-      mm-list-marker[placement='inline-start'] {
+      fff-list-marker[placement='inline-start'] {
         left: var(--component-anatomy-marker-offset);
       }
 
-      mm-list-marker[placement='inline-end'] {
+      fff-list-marker[placement='inline-end'] {
         right: var(--component-anatomy-marker-offset);
       }
 
-      mm-list-marker[placement='block-start'] {
+      fff-list-marker[placement='block-start'] {
         top: var(--component-anatomy-marker-offset);
       }
 
-      mm-list-marker[placement='block-end'] {
+      fff-list-marker[placement='block-end'] {
         bottom: var(--component-anatomy-marker-offset);
       }
     `,
@@ -95,13 +95,13 @@ export class ComponentAnatomy extends LitElement {
 
   render() {
     return html`
-      <mm-heading level="2">${this.heading}</mm-heading>
-      <mm-example-stage aligned>
+      <fff-heading level="2">${this.heading}</fff-heading>
+      <fff-example-stage aligned>
         <div class="stage">
           <slot></slot>
           ${this.renderMarkers()}
         </div>
-      </mm-example-stage>
+      </fff-example-stage>
       ${this.renderParts()}
     `
   }
@@ -109,13 +109,13 @@ export class ComponentAnatomy extends LitElement {
   private renderMarkers() {
     return this.markers.map(
       (marker, index) => html`
-        <mm-list-marker
+        <fff-list-marker
           variant="number"
           value=${index + 1}
           placement=${marker.placement}
           ?inset=${marker.inset}
           style=${styleMap({ '--component-anatomy-marker-offset': marker.offset ?? '50%' })}
-        ></mm-list-marker>
+        ></fff-list-marker>
       `,
     )
   }
@@ -124,7 +124,7 @@ export class ComponentAnatomy extends LitElement {
     if (!this.parts.length) return nothing
 
     return html`
-      <mm-text-list variant="number" .texts=${this.parts}></mm-text-list>
+      <fff-text-list variant="number" .texts=${this.parts}></fff-text-list>
     `
   }
 }

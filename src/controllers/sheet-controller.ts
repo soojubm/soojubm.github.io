@@ -43,7 +43,7 @@ interface SheetControllerOptions {
 }
 
 /**
- * viewport 기준 modal 표면(mm-sheet, mm-dialog)을 트리거로 열고, portal로 옮기고, 스크롤을 잠그고,
+ * viewport 기준 modal 표면(fff-sheet, fff-dialog)을 트리거로 열고, portal로 옮기고, 스크롤을 잠그고,
  * ESC와 closeOnBackdrop을 켠 배경 클릭으로 닫아 주는 ReactiveController.
  * 트리거는 aria-controls로 컴포넌트를 가리키는 요소이며, 열림 상태는 컴포넌트의 `open`을 따른다.
  * 열린 동안 나머지 화면을 inert로 만들어 포커스를 표면 안에 가두고, 닫히면 연 요소로 돌려준다.

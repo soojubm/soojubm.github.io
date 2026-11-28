@@ -27,7 +27,7 @@ export interface MediaListFilter {
   matches: (item: MediaItem, value: string) => boolean
 }
 
-@customElement('mm-media-list')
+@customElement('fff-media-list')
 export class MediaList extends LitElement {
   static styles = css`
     :host {
@@ -90,37 +90,37 @@ export class MediaList extends LitElement {
 
   private renderFilter(filter: MediaListFilter, index: number) {
     return html`
-      <mm-media-filter
+      <fff-media-filter
         label=${filter.label}
         .options=${filter.options}
         @change=${(e: CustomEvent<{ values: string[] }>) => this.handleFilterChange(index, e)}
-      ></mm-media-filter>
+      ></fff-media-filter>
     `
   }
 
   private renderCount(total: number) {
     return html`
-      <mm-paragraph size="small" color="light">${total} ${this.unit}</mm-paragraph>
+      <fff-paragraph size="small" color="light">${total} ${this.unit}</fff-paragraph>
     `
   }
 
   private renderCards(items: MediaItem[]) {
     return html`
-      <mm-flex gap="3" wrap="wrap">
+      <fff-flex gap="3" wrap="wrap">
         ${items.slice(0, this.visibleCount).map(item => this.renderCard(item))}
-      </mm-flex>
+      </fff-flex>
     `
   }
 
   private renderCard(item: MediaItem) {
     return html`
-      <mm-media-card
+      <fff-media-card
         title=${item.titlekorean}
         subtitle=${item.titleenglish}
         director=${item.director}
         country=${item.country ?? ''}
         year=${item.releasedate ?? ''}
-      ></mm-media-card>
+      ></fff-media-card>
     `
   }
 
@@ -128,7 +128,7 @@ export class MediaList extends LitElement {
     if (this.visibleCount >= total) return nothing
 
     return html`
-      <mm-show-more-button @click=${this.handleShowMoreClick}></mm-show-more-button>
+      <fff-show-more-button @click=${this.handleShowMoreClick}></fff-show-more-button>
     `
   }
 

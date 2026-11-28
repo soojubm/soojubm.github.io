@@ -8,12 +8,12 @@ import '@/components/common'
 
 /**
  * 화면 단위 상단 바.
- * heading 레벨은 상단 바 크기에 맞춰 고정한다. mm-heading이 의미 단계와 타입 스케일을 함께 정해
+ * heading 레벨은 상단 바 크기에 맞춰 고정한다. fff-heading이 의미 단계와 타입 스케일을 함께 정해
  * 레벨을 올리면 글자도 커지므로, 페이지 최상위 제목은 본문의 page-header가 맡는다.
  */
 export type TopBarNav = 'back' | 'close'
 
-@customElement('mm-top-bar')
+@customElement('fff-top-bar')
 export class TopBar extends LitElement {
   static styles = [topBarStyles]
   @property({ type: String }) heading = ''
@@ -23,7 +23,7 @@ export class TopBar extends LitElement {
     return html`
       <header>
         ${this.renderBackButton()}
-        <mm-heading level="3">${this.heading}</mm-heading>
+        <fff-heading level="3">${this.heading}</fff-heading>
         <div class="trailing-area">
           <slot name="action"></slot>
           ${this.renderCloseButton()}
@@ -36,12 +36,12 @@ export class TopBar extends LitElement {
     if (this.nav !== 'back') return nothing
 
     return html`
-      <mm-icon-button
+      <fff-icon-button
         variant="secondary"
         icon=${ICON_NAMES.BACK}
         aria-label="뒤로"
         @click=${this.handleNavClick}
-      ></mm-icon-button>
+      ></fff-icon-button>
     `
   }
 
@@ -49,12 +49,12 @@ export class TopBar extends LitElement {
     if (this.nav !== 'close') return nothing
 
     return html`
-      <mm-icon-button
+      <fff-icon-button
         variant="secondary"
         icon=${ICON_NAMES.CLOSE}
         aria-label="닫기"
         @click=${this.handleNavClick}
-      ></mm-icon-button>
+      ></fff-icon-button>
     `
   }
 

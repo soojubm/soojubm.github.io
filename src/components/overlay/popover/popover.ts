@@ -23,7 +23,7 @@ export type PopoverPlacement = Extract<
 
 // 열리면 포커스를 먼저 받아 방향키로 탐색하는 목록(없으면 autofocus 요소, 그것도 없으면 표면 자체가 받는다).
 // 방향키 탐색은 이 목록이 소유한다.
-const LIST_SELECTOR = 'mm-menu-item-group, mm-select-listbox'
+const LIST_SELECTOR = 'fff-menu-item-group, fff-select-listbox'
 
 // 선호한 방향으로 열면 화면 밖으로 넘칠 때 축마다 뒤집을 방향
 const BLOCK_FLIPPED = {
@@ -45,7 +45,7 @@ function shouldFlip(preferredOverflow: number, oppositeOverflow: number) {
   return preferredOverflow > 0 && oppositeOverflow < preferredOverflow
 }
 
-@customElement('mm-popover')
+@customElement('fff-popover')
 export class Popover extends withOpenState(LitElement) {
   static styles = [overlaySurfaceStyles, popoverPositionStyles]
   /** 선호하는 열 방향. 그쪽 공간이 모자라 화면 밖으로 넘치면 반대쪽으로 뒤집어 연다. */
@@ -87,9 +87,9 @@ export class Popover extends withOpenState(LitElement) {
   render() {
     return html`
       <div class="panel">
-        <mm-scroll direction="column">
+        <fff-scroll direction="column">
           <slot></slot>
-        </mm-scroll>
+        </fff-scroll>
       </div>
     `
   }

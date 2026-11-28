@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-component-aka')
+@customElement('fff-component-aka')
 export class ComponentAka extends LitElement {
   static styles = [
     resetStyles,

@@ -48,9 +48,9 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...subComponentPropsOf('mm-tab-list'),
-  ...subComponentPropsOf('mm-tab'),
-  ...subComponentPropsOf('mm-tab-panel'),
+  ...subComponentPropsOf('fff-tab-list'),
+  ...subComponentPropsOf('fff-tab'),
+  ...subComponentPropsOf('fff-tab-panel'),
   { name: 'change', type: 'CustomEvent detail: value', kind: 'event' },
 ]
 
@@ -79,130 +79,130 @@ const productTabs = [
 const settingsTabs = ['프로필', '계정 보안', '알림 설정', '개인정보 보호', '결제 수단', '연결된 앱']
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Tabs"
       description="한 페이지 안에서 같은 맥락의 콘텐츠 뷰를 전환하는 내비게이션입니다. 탭을 누르면 해당 뷰 하나만 보이고 선택된 탭이 표시되므로, 사용자는 페이지를 떠나지 않고 관련 정보 사이를 오가며 지금 어느 뷰를 보고 있는지 알 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="variant" variant="pill">
-        <mm-tab value="variant">Variant</mm-tab>
-        <mm-tab value="overflow">Overflow</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="variant">
-        <mm-component-example>
-          <mm-flex direction="column" gap="4">
-            <mm-flex direction="column" gap="3">
-              <mm-tab-list value="menu1" variant="line">
-                <mm-tab value="menu1">첫 번째 메뉴</mm-tab>
-                <mm-tab value="menu2">두 번째 메뉴</mm-tab>
-                <mm-tab value="menu3">세 번째 메뉴</mm-tab>
-              </mm-tab-list>
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="variant" variant="pill">
+        <fff-tab value="variant">Variant</fff-tab>
+        <fff-tab value="overflow">Overflow</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="variant">
+        <fff-component-example>
+          <fff-flex direction="column" gap="4">
+            <fff-flex direction="column" gap="3">
+              <fff-tab-list value="menu1" variant="line">
+                <fff-tab value="menu1">첫 번째 메뉴</fff-tab>
+                <fff-tab value="menu2">두 번째 메뉴</fff-tab>
+                <fff-tab value="menu3">세 번째 메뉴</fff-tab>
+              </fff-tab-list>
 
-              <mm-tab-panel value="menu1">
+              <fff-tab-panel value="menu1">
                 <span aria-hidden="true">🍎</span>
                 1번 콘텐츠 영역입니다.
-              </mm-tab-panel>
-              <mm-tab-panel value="menu2">
+              </fff-tab-panel>
+              <fff-tab-panel value="menu2">
                 <span aria-hidden="true">🍌</span>
                 2번 콘텐츠 영역입니다.
-              </mm-tab-panel>
-              <mm-tab-panel value="menu3">
+              </fff-tab-panel>
+              <fff-tab-panel value="menu3">
                 <span aria-hidden="true">🍇</span>
                 3번 콘텐츠 영역입니다.
-              </mm-tab-panel>
-            </mm-flex>
+              </fff-tab-panel>
+            </fff-flex>
 
-            <mm-flex direction="column" gap="3">
-              <mm-tab-list value="daily" variant="pill">
-                <mm-tab value="daily">일간</mm-tab>
-                <mm-tab value="weekly">주간</mm-tab>
-                <mm-tab value="monthly">월간</mm-tab>
-              </mm-tab-list>
+            <fff-flex direction="column" gap="3">
+              <fff-tab-list value="daily" variant="pill">
+                <fff-tab value="daily">일간</fff-tab>
+                <fff-tab value="weekly">주간</fff-tab>
+                <fff-tab value="monthly">월간</fff-tab>
+              </fff-tab-list>
 
-              <mm-tab-panel value="daily">
+              <fff-tab-panel value="daily">
                 <span aria-hidden="true">📅</span>
                 오늘 생성된 데이터...
-              </mm-tab-panel>
-              <mm-tab-panel value="weekly">
+              </fff-tab-panel>
+              <fff-tab-panel value="weekly">
                 <span aria-hidden="true">🗓️</span>
                 이번 주 누적 데이터...
-              </mm-tab-panel>
-              <mm-tab-panel value="monthly">
+              </fff-tab-panel>
+              <fff-tab-panel value="monthly">
                 <span aria-hidden="true">📊</span>
                 이번 달 정산 데이터...
-              </mm-tab-panel>
-            </mm-flex>
+              </fff-tab-panel>
+            </fff-flex>
 
-            <mm-flex direction="column" gap="3">
-              <mm-tab-list value="posts" variant="text">
-                <mm-tab value="posts">게시글</mm-tab>
-                <mm-tab value="comments">댓글</mm-tab>
-                <mm-tab value="bookmarks">북마크</mm-tab>
-              </mm-tab-list>
+            <fff-flex direction="column" gap="3">
+              <fff-tab-list value="posts" variant="text">
+                <fff-tab value="posts">게시글</fff-tab>
+                <fff-tab value="comments">댓글</fff-tab>
+                <fff-tab value="bookmarks">북마크</fff-tab>
+              </fff-tab-list>
 
-              <mm-tab-panel value="posts">
+              <fff-tab-panel value="posts">
                 <span aria-hidden="true">📝</span>
                 작성한 게시글...
-              </mm-tab-panel>
-              <mm-tab-panel value="comments">
+              </fff-tab-panel>
+              <fff-tab-panel value="comments">
                 <span aria-hidden="true">💬</span>
                 작성한 댓글...
-              </mm-tab-panel>
-              <mm-tab-panel value="bookmarks">
+              </fff-tab-panel>
+              <fff-tab-panel value="bookmarks">
                 <span aria-hidden="true">🔖</span>
                 저장한 북마크...
-              </mm-tab-panel>
-            </mm-flex>
-          </mm-flex>
-        </mm-component-example>
-      </mm-tab-panel>
-      <mm-tab-panel value="overflow">
-        <mm-component-example>
-          <mm-flex direction="column" gap="4">
-            <mm-flex direction="column" gap="3">
-              <mm-tab-list value="product-0" variant="line">
+              </fff-tab-panel>
+            </fff-flex>
+          </fff-flex>
+        </fff-component-example>
+      </fff-tab-panel>
+      <fff-tab-panel value="overflow">
+        <fff-component-example>
+          <fff-flex direction="column" gap="4">
+            <fff-flex direction="column" gap="3">
+              <fff-tab-list value="product-0" variant="line">
                 ${productTabs.map(
                   (label, index) => html`
-                    <mm-tab value="product-${index}">${label}</mm-tab>
+                    <fff-tab value="product-${index}">${label}</fff-tab>
                   `,
                 )}
-              </mm-tab-list>
+              </fff-tab-list>
 
               ${productTabs.map(
                 (label, index) => html`
-                  <mm-tab-panel value="product-${index}">${label} 영역입니다.</mm-tab-panel>
+                  <fff-tab-panel value="product-${index}">${label} 영역입니다.</fff-tab-panel>
                 `,
               )}
-            </mm-flex>
+            </fff-flex>
 
-            <mm-flex direction="column" gap="3">
-              <mm-tab-list value="settings-0" variant="pill">
+            <fff-flex direction="column" gap="3">
+              <fff-tab-list value="settings-0" variant="pill">
                 ${settingsTabs.map(
                   (label, index) => html`
-                    <mm-tab value="settings-${index}">${label}</mm-tab>
+                    <fff-tab value="settings-${index}">${label}</fff-tab>
                   `,
                 )}
-              </mm-tab-list>
+              </fff-tab-list>
 
               ${settingsTabs.map(
                 (label, index) => html`
-                  <mm-tab-panel value="settings-${index}">${label} 설정 영역입니다.</mm-tab-panel>
+                  <fff-tab-panel value="settings-${index}">${label} 설정 영역입니다.</fff-tab-panel>
                 `,
               )}
-            </mm-flex>
-          </mm-flex>
-        </mm-component-example>
-      </mm-tab-panel>
-    </mm-flex>
+            </fff-flex>
+          </fff-flex>
+        </fff-component-example>
+      </fff-tab-panel>
+    </fff-flex>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-tab-list', 'mm-tab']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-tab-list', 'fff-tab']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
+    <fff-component-guide .features=${componentFeatures}>
+      <fff-text-list
         variant="check"
         .texts=${[
           '탭은 6개 이내로 구성한다. 탭이 화면 폭을 넘으면 가려진 탭이 있다는 걸 알아채기 어려워, 사용자가 그 탭을 모른 채 지나친다. 항목이 더 많다면 카드로 나열하고, 카드에서 다음 화면으로 넘어가는 흐름으로 설계한다',
@@ -210,15 +210,15 @@ const main = html`
           '탭은 한 단계로만 둔다. 탭이 두 겹으로 쌓이면 어느 쪽이 상위인지, 지금 보는 뷰가 어디에 속하는지 알기 어렵다',
           '페이지를 대표하는 탭은 선택 상태를 URL에 남긴다. 새로고침하거나 링크를 공유해도 사용자가 보던 탭이 그대로 열린다. 탭 전환은 뒤로 가기 기록에 쌓이지 않아, 뒤로 가면 탭을 하나씩 거슬러 가지 않고 이전 페이지로 돌아간다. 문서 예제나 시트 안의 탭에는 쓰지 않는다',
         ]}
-      ></mm-text-list>
-    </mm-component-guide>
+      ></fff-text-list>
+    </fff-component-guide>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
+    <fff-component-references .items=${componentReferences}></fff-component-references>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

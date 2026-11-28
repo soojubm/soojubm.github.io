@@ -14,7 +14,7 @@ export interface PagerLink {
   description: string
 }
 
-@customElement('mm-pager')
+@customElement('fff-pager')
 export class Pager extends LitElement {
   static styles = [
     resetStyles,
@@ -48,7 +48,7 @@ export class Pager extends LitElement {
         text-align: right;
       }
 
-      a[rel='next'] mm-text-block {
+      a[rel='next'] fff-text-block {
         align-items: flex-end;
       }
 
@@ -78,15 +78,15 @@ export class Pager extends LitElement {
 
     return html`
       <a rel=${rel} href=${link.href}>
-        <mm-icon
+        <fff-icon
           name=${rel === 'prev' ? ICON_NAMES.PREVIOUS : ICON_NAMES.NEXT}
           aria-hidden="true"
-        ></mm-icon>
-        <mm-text-block
+        ></fff-icon>
+        <fff-text-block
           level="3"
           heading=${link.heading}
           description=${link.description}
-        ></mm-text-block>
+        ></fff-text-block>
       </a>
     `
   }

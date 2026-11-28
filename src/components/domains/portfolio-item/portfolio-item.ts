@@ -9,7 +9,7 @@ import '@/components/common'
 
 export type PortfolioItemLayout = 'grid' | 'list'
 
-@customElement('mm-portfolio-item')
+@customElement('fff-portfolio-item')
 export class PortfolioItem extends LitElement {
   static styles = css`
     :host {
@@ -74,7 +74,7 @@ export class PortfolioItem extends LitElement {
       flex-direction: row;
     }
 
-    :host([layout='list']) mm-thumbnail {
+    :host([layout='list']) fff-thumbnail {
       width: 156px;
       flex: none;
     }
@@ -102,7 +102,7 @@ export class PortfolioItem extends LitElement {
         @keydown=${this.handleKeyDown}
       >
         ${this.renderBadge()}
-        <mm-more-button class="action"></mm-more-button>
+        <fff-more-button class="action"></fff-more-button>
         ${this.renderThumbnail()}
         <div class="content">
           ${this.renderTextBlock()} ${this.renderDatetime()} ${this.renderKeywords()}
@@ -116,7 +116,7 @@ export class PortfolioItem extends LitElement {
     if (!this.badge) return nothing
 
     return html`
-      <mm-accent-tag class="badge">${this.badge}</mm-accent-tag>
+      <fff-accent-tag class="badge">${this.badge}</fff-accent-tag>
     `
   }
 
@@ -124,7 +124,7 @@ export class PortfolioItem extends LitElement {
     if (!this.src) return nothing
 
     return html`
-      <mm-thumbnail src=${this.src} alt=${this.alt}></mm-thumbnail>
+      <fff-thumbnail src=${this.src} alt=${this.alt}></fff-thumbnail>
     `
   }
 
@@ -132,11 +132,11 @@ export class PortfolioItem extends LitElement {
     if (!this.label) return nothing
 
     return html`
-      <mm-text-block
+      <fff-text-block
         level="4"
         heading=${this.label}
         description=${this.description}
-      ></mm-text-block>
+      ></fff-text-block>
     `
   }
 
@@ -152,7 +152,10 @@ export class PortfolioItem extends LitElement {
     if (!this.keywords.length) return nothing
 
     return html`
-      <mm-keyword-tag-group class="keyword-tags" .keywords=${this.keywords}></mm-keyword-tag-group>
+      <fff-keyword-tag-group
+        class="keyword-tags"
+        .keywords=${this.keywords}
+      ></fff-keyword-tag-group>
     `
   }
 

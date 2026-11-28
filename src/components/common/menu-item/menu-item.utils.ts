@@ -14,7 +14,7 @@ import '@/components/common/list-item/list-item'
 
 /**
  * menu-item 계열이 공유하는 표시 prop의 공개 인터페이스.
- * 행 콘텐츠 prop은 mm-list-item의 계약에서 파생해 두 곳이 어긋나면 컴파일 에러로 잡히게 한다.
+ * 행 콘텐츠 prop은 fff-list-item의 계약에서 파생해 두 곳이 어긋나면 컴파일 에러로 잡히게 한다.
  * destructive는 행으로 전달되지 않는 host 스타일 상태로, CSS 상속을 통해 행 내부 색에 영향을 준다.
  */
 /** 메뉴 항목은 명령을 고르는 행이라, 아바타로 개체를 대표하는 large는 갖지 않는다. */
@@ -57,7 +57,7 @@ export type MenuItemCheckedRowRole = 'checkbox' | 'radio' | 'switch' | 'menuitem
 
 interface MenuItemCheckedRowOptions {
   role: MenuItemCheckedRowRole
-  /** 트레일링에 놓을 컨트롤 태그. 예: literal`mm-checkbox` */
+  /** 트레일링에 놓을 컨트롤 태그. 예: literal`fff-checkbox` */
   control: StaticValue
   activate: () => void
 }
@@ -90,7 +90,7 @@ export function renderMenuItemCheckedRow(
 
 export function renderMenuItemContent(props: MenuItemPresentation, trailing: unknown) {
   return html`
-    <mm-list-item
+    <fff-list-item
       size=${props.size}
       label=${props.label}
       description=${props.description}
@@ -101,7 +101,7 @@ export function renderMenuItemContent(props: MenuItemPresentation, trailing: unk
       avatar-shape=${props.avatarShape}
     >
       ${trailing}
-    </mm-list-item>
+    </fff-list-item>
   `
 }
 
@@ -114,7 +114,7 @@ export interface MenuItemToggleState {
 
 /**
  * menu-item-checkbox·menu-item-switch가 공유하는 checked 상태와 토글 배선.
- * 트레일링 컨트롤(mm-checkbox/mm-switch)만 각 컴포넌트가 소유한다.
+ * 트레일링 컨트롤(fff-checkbox/fff-switch)만 각 컴포넌트가 소유한다.
  */
 export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base: T) => {
   class MenuItemToggleStateElement extends Base {

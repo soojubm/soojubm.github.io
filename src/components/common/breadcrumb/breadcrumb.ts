@@ -11,7 +11,7 @@ export interface BreadcrumbItem {
   href?: string
 }
 
-@customElement('mm-breadcrumb')
+@customElement('fff-breadcrumb')
 export class Breadcrumb extends LitElement {
   static styles = [
     resetStyles,
@@ -86,9 +86,9 @@ export class Breadcrumb extends LitElement {
     }
 
     return html`
-      <mm-text class="breadcrumb-item" aria-current=${ifDefined(isLast ? 'page' : undefined)}>
+      <fff-text class="breadcrumb-item" aria-current=${ifDefined(isLast ? 'page' : undefined)}>
         ${item.label}
-      </mm-text>
+      </fff-text>
     `
   }
 
@@ -96,7 +96,7 @@ export class Breadcrumb extends LitElement {
     if (!isLast) return nothing
 
     return html`
-      <mm-current-indicator></mm-current-indicator>
+      <fff-current-indicator></fff-current-indicator>
     `
   }
 

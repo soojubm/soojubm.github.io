@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common'
 import '@/components/domains/component/term-block'
 
-@customElement('mm-token-section')
+@customElement('fff-token-section')
 export class TokenSection extends LitElement {
   static styles = css`
     :host {
@@ -30,7 +30,11 @@ export class TokenSection extends LitElement {
 
   private renderHeader() {
     return html`
-      <mm-term-block level="2" term=${this.heading} description=${this.description}></mm-term-block>
+      <fff-term-block
+        level="2"
+        term=${this.heading}
+        description=${this.description}
+      ></fff-term-block>
     `
   }
 }

@@ -55,10 +55,10 @@ const criteria = [
 ]
 
 const renderWord = ({ term, definition }: Word): TemplateResult => html`
-  <mm-flex direction="column" align-items="flex-start" gap="2">
-    <mm-code-tag size="large">${term}</mm-code-tag>
-    <mm-text size="14">${definition}</mm-text>
-  </mm-flex>
+  <fff-flex direction="column" align-items="flex-start" gap="2">
+    <fff-code-tag size="large">${term}</fff-code-tag>
+    <fff-text size="14">${definition}</fff-text>
+  </fff-flex>
 `
 
 // 임시: 홈에서 빼낸 Component Feature 태그를 자리를 정할 때까지 이 페이지 하단에 둔다.
@@ -76,34 +76,34 @@ const componentFeatures: { tone: 'blue' | 'purple'; name: string }[] = [
 ]
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Word list"
       description="문서 전반에서 쓰는 용어의 뜻을 한곳에 모읍니다. 같은 용어를 같은 뜻과 표기로 쓰므로, 읽는 사람이 페이지마다 설명을 맞춰 볼 필요 없이 바로 이해합니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-page-body>
-      <mm-content-section
+    <fff-page-body>
+      <fff-content-section
         heading-level="3"
         heading="등재 기준"
         .texts=${criteria}
-      ></mm-content-section>
+      ></fff-content-section>
 
-      <mm-content-section heading-level="3" heading="용어">
-        <mm-flex direction="column" gap="6">${words.map(renderWord)}</mm-flex>
-      </mm-content-section>
+      <fff-content-section heading-level="3" heading="용어">
+        <fff-flex direction="column" gap="6">${words.map(renderWord)}</fff-flex>
+      </fff-content-section>
 
-      <mm-content-section heading-level="3" heading="Component Feature">
-        <mm-tag-group>
+      <fff-content-section heading-level="3" heading="Component Feature">
+        <fff-tag-group>
           ${componentFeatures.map(
             ({ tone, name }) => html`
-              <mm-code-tag tone=${tone} size="large">${name}</mm-code-tag>
+              <fff-code-tag tone=${tone} size="large">${name}</fff-code-tag>
             `,
           )}
-        </mm-tag-group>
-      </mm-content-section>
-    </mm-page-body>
-  </mm-main>
+        </fff-tag-group>
+      </fff-content-section>
+    </fff-page-body>
+  </fff-main>
 `
 
 renderPage(main)

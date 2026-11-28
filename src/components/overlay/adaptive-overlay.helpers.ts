@@ -26,7 +26,7 @@ export function renderAdaptiveOverlay(
   { label, placement, anchor, popoverStyle = {} }: AdaptiveOverlayOptions,
 ) {
   return html`
-    <mm-popover
+    <fff-popover
       placement=${placement}
       .anchor=${anchor}
       ?open=${overlay.popoverOpen}
@@ -34,14 +34,14 @@ export function renderAdaptiveOverlay(
       @toggle=${overlay.handlePopoverToggle}
     >
       ${overlay.isViewportCompact ? nothing : content}
-    </mm-popover>
-    <mm-sheet
+    </fff-popover>
+    <fff-sheet
       aria-label=${label || nothing}
       ?open=${overlay.sheetOpen}
       @toggle=${overlay.handleSheetToggle}
     >
-      <mm-sheet-header heading=${label}></mm-sheet-header>
-      <mm-sheet-body>${overlay.isViewportCompact ? content : nothing}</mm-sheet-body>
-    </mm-sheet>
+      <fff-sheet-header heading=${label}></fff-sheet-header>
+      <fff-sheet-body>${overlay.isViewportCompact ? content : nothing}</fff-sheet-body>
+    </fff-sheet>
   `
 }

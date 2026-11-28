@@ -9,7 +9,7 @@ import {
 import { renderIconButton } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-to-top-button')
+@customElement('fff-to-top-button')
 export class ToTopButton extends LitElement {
   static styles = [resetStyles, iconButtonStyles, iconButtonSecondarySkinStyles]
 

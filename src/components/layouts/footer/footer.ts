@@ -8,7 +8,7 @@ import '@/components/common/avatar/domain/user-snippet'
 import '@/components/common/button/semantics/social-links'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-footer')
+@customElement('fff-footer')
 export class Footer extends LitElement {
   static styles = [resetStyles, footerStyles]
 
@@ -18,26 +18,26 @@ export class Footer extends LitElement {
     return html`
       <footer class="footer" id="footer" role="contentinfo">
         <figure hidden></figure>
-        <mm-user-snippet
+        <fff-user-snippet
           name="수줍이"
           email="soojubm@gmail.com"
           phone="010 3121 7045"
           description="UI Designer"
           avatar-src=${soojubmImage}
           avatar-variant="secondary"
-        ></mm-user-snippet>
+        ></fff-user-snippet>
 
         <div class="footer-links">
-          <mm-social-links
+          <fff-social-links
             notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
             github="https://github.com/soojubm"
-          ></mm-social-links>
+          ></fff-social-links>
           <div role="list">
             <div role="listitem">
-              <mm-link href="/my/films/">영화감상 목록</mm-link>
+              <fff-link href="/my/films/">영화감상 목록</fff-link>
             </div>
             <div role="listitem">
-              <mm-link href="/my/books/">독서 목록</mm-link>
+              <fff-link href="/my/books/">독서 목록</fff-link>
             </div>
           </div>
         </div>
@@ -57,12 +57,12 @@ export class Footer extends LitElement {
           <dt>통신판매업신고번호</dt>
           <dd>2018-서울강서구-1234</dd>
         </dl>
-        <mm-caption>© 2019 soojubm. All rights reserved.</mm-caption>
+        <fff-caption>© 2019 soojubm. All rights reserved.</fff-caption>
         <address>
-          <mm-paragraph size="large">Making things better.</mm-paragraph>
+          <fff-paragraph size="large">Making things better.</fff-paragraph>
         </address>
 
-        <mm-to-top-button></mm-to-top-button>
+        <fff-to-top-button></fff-to-top-button>
       </footer>
     `
   }

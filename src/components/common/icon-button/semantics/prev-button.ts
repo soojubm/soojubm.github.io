@@ -5,7 +5,7 @@ import type { IconButtonSize } from '@/components/common/icon-button/icon-button
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 
-@customElement('mm-prev-button')
+@customElement('fff-prev-button')
 export class PrevButton extends iconActionElement({
   event: 'prev',
   icon: ICON_NAMES.PREVIOUS,

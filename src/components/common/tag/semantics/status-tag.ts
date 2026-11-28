@@ -7,7 +7,7 @@ import '@/components/common/tag/tag'
 import { statusToneMap, type StatusTagVariant } from '@/components/common/tag/tag.styles'
 import { renderTag } from '@/components/common/tag/tag.utils'
 
-@customElement('mm-status-tag')
+@customElement('fff-status-tag')
 export class StatusTag extends LitElement {
   @property({ type: String }) variant: StatusTagVariant = 'info'
   @property({ type: String }) icon?: IconName

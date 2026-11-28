@@ -9,7 +9,7 @@ import { emit } from '@/utils'
 import '@/components/common/checkbox'
 import '@/components/common/surface'
 
-@customElement('mm-terms-agreement')
+@customElement('fff-terms-agreement')
 export class TermsAgreement extends LitElement {
   static styles = css`
     :host {
@@ -31,24 +31,24 @@ export class TermsAgreement extends LitElement {
 
   render() {
     return html`
-      <mm-surface variant="elevated">
-        <mm-checkbox
+      <fff-surface variant="elevated">
+        <fff-checkbox
           size="large"
           .checked=${this.selection.isAllSelected()}
           .indeterminate=${this.selection.isPartiallySelected()}
           @change=${this.handleAllChange}
         >
           <slot>모두 동의합니다.</slot>
-        </mm-checkbox>
-      </mm-surface>
+        </fff-checkbox>
+      </fff-surface>
 
-      <mm-checkbox-group
+      <fff-checkbox-group
         name=${ifDefined(this.name)}
         size="large"
         .options=${this.options}
         .values=${this.values}
         @change=${this.handleGroupChange}
-      ></mm-checkbox-group>
+      ></fff-checkbox-group>
     `
   }
 

@@ -11,7 +11,7 @@ import { buildAttributeRules } from '@/utils'
 
 type MarqueeDirection = 'left' | 'right'
 
-@customElement('mm-marquee')
+@customElement('fff-marquee')
 export class Marquee extends LitElement {
   static styles = css`
     :host {

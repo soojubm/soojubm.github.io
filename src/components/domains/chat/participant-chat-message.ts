@@ -6,7 +6,7 @@ import { renderChatMessageTime } from '@/components/domains/chat/chat.helpers'
 
 import '@/components/common'
 
-@customElement('mm-participant-chat-message')
+@customElement('fff-participant-chat-message')
 export class ParticipantChatMessage extends LitElement {
   static styles = css`
     :host {
@@ -38,11 +38,11 @@ export class ParticipantChatMessage extends LitElement {
 
   render() {
     return html`
-      <mm-user-avatar
+      <fff-user-avatar
         size="32"
         name=${this.name}
         src=${ifDefined(this.avatarSrc || undefined)}
-      ></mm-user-avatar>
+      ></fff-user-avatar>
       <div class="body">
         ${this.renderMeta()}
         <div class="bubbles">
@@ -57,7 +57,7 @@ export class ParticipantChatMessage extends LitElement {
 
     return html`
       <div class="meta">
-        <mm-text class="name" size="12">${this.name}</mm-text>
+        <fff-text class="name" size="12">${this.name}</fff-text>
         ${renderChatMessageTime(this.datetime)}
       </div>
     `

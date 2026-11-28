@@ -6,7 +6,7 @@ import type { Space } from '@/stylesheets/shared.types'
 import { buildAttributeRules } from '@/utils'
 import '@/components/common'
 
-@customElement('mm-token-swatches')
+@customElement('fff-token-swatches')
 export class TokenSwatches extends LitElement {
   static styles = css`
     :host {
@@ -15,7 +15,7 @@ export class TokenSwatches extends LitElement {
       display: flex;
       align-items: flex-end;
       gap: var(--token-swatches-gap);
-      /* hover lift 스와치가 위로 뜬 만큼 mm-scroll의 overflow가 잘라내지 않도록 남기는 여유 */
+      /* hover lift 스와치가 위로 뜬 만큼 fff-scroll의 overflow가 잘라내지 않도록 남기는 여유 */
       padding-top: var(--space-1);
     }
 
@@ -54,7 +54,7 @@ export class TokenSwatches extends LitElement {
     return html`
       <div class="column">
         <div class="swatch" style=${swatch}>${this.renderContent(index)}</div>
-        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
+        <fff-list-marker variant="number" value=${index + 1}></fff-list-marker>
       </div>
     `
   }
@@ -64,7 +64,7 @@ export class TokenSwatches extends LitElement {
     if (!content) return nothing
 
     return html`
-      <mm-text size="12" weight="bold">${content}</mm-text>
+      <fff-text size="12" weight="bold">${content}</fff-text>
     `
   }
 }

@@ -14,7 +14,7 @@ import '@/components/common/menu-item/semantics/menu-item-radio'
 import { SingleSelection } from '@/controllers/single-selection'
 import { emit } from '@/utils'
 
-@customElement('mm-menu-item-radio-group')
+@customElement('fff-menu-item-radio-group')
 export class MenuItemRadioGroup extends LitElement {
   static styles = css`
     :host {
@@ -36,7 +36,7 @@ export class MenuItemRadioGroup extends LitElement {
 
   render() {
     return html`
-      <mm-menu-item-group
+      <fff-menu-item-group
         role="radiogroup"
         size=${this.size}
         gap=${ifDefined(this.gap)}
@@ -47,14 +47,14 @@ export class MenuItemRadioGroup extends LitElement {
           option => option.value,
           option => this.renderOption(option),
         )}
-      </mm-menu-item-group>
+      </fff-menu-item-group>
     `
   }
 
   // 보조 설명이 붙은 행은 두 줄을 담아야 하므로 medium으로 그린다.
   private renderOption(option: MenuOptionItem) {
     return html`
-      <mm-menu-item-radio
+      <fff-menu-item-radio
         size=${option.description ? 'medium' : 'small'}
         name=${ifDefined(this.name || undefined)}
         value=${option.value}
@@ -65,7 +65,7 @@ export class MenuItemRadioGroup extends LitElement {
         ?disabled=${option.disabled}
         .checked=${this.selection.isOptionSelected(option)}
         @change=${(event: Event) => this.handleOptionChange(event, option)}
-      ></mm-menu-item-radio>
+      ></fff-menu-item-radio>
     `
   }
 

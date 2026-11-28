@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js'
 
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-highlight')
+@customElement('fff-highlight')
 export class Highlight extends LitElement {
   static styles = [
     resetStyles,

@@ -20,23 +20,23 @@ const nextPost: PostPagerItem = {
 }
 
 const main = html`
-  <mm-main width="small">
-    <mm-flex direction="column" gap="8">
+  <fff-main width="small">
+    <fff-flex direction="column" gap="8">
       <header>
-        <mm-flex direction="column" gap="3">
-          <mm-link href="post.html">${CATEGORIES.product.label}</mm-link>
-          <mm-heading level="1">
+        <fff-flex direction="column" gap="3">
+          <fff-link href="post.html">${CATEGORIES.product.label}</fff-link>
+          <fff-heading level="1">
             Runway enables next-generation content creation with AI and Vercel
-          </mm-heading>
-          <mm-text as="time" color="light">2024년 3월 23일</mm-text>
-        </mm-flex>
+          </fff-heading>
+          <fff-text as="time" color="light">2024년 3월 23일</fff-text>
+        </fff-flex>
       </header>
 
-      <mm-thumbnail src="/src/images/soojubm.png" ratio="16:9"></mm-thumbnail>
+      <fff-thumbnail src="/src/images/soojubm.png" ratio="16:9"></fff-thumbnail>
 
       <section>
-        <mm-paragraph-group>
-          <mm-text-list
+        <fff-paragraph-group>
+          <fff-text-list
             .texts=${[
               'title',
               'kicker',
@@ -45,41 +45,41 @@ const main = html`
               'images',
               'subhead - paragraph / text list / byline / share actions / comment',
             ]}
-          ></mm-text-list>
-          <mm-paragraph size="large">
+          ></fff-text-list>
+          <fff-paragraph size="large">
             An ecosystem of content that celebrates inclusion and diversity
-          </mm-paragraph>
-          <mm-paragraph size="large">
+          </fff-paragraph>
+          <fff-paragraph size="large">
             콘텐츠가 다른 플랫폼에 공유되는 횟수가 많다면 페이지의 상단에 byline을 보여주는 것이
             좋다. byline은 상단 고정되지 않기 때문에 byline에 작성 시간과 리딩 시간 등을 포함하는
             것이 좋다.
-          </mm-paragraph>
-          <mm-paragraph size="large">
+          </fff-paragraph>
+          <fff-paragraph size="large">
             무제한(스트리밍) / 1개 무제한(미디엄) / 여러 개 중 1개 (총 1 페이스북) / 여러 개 중 여러
             개에 각 1번 (깃허브)
-          </mm-paragraph>
-          <mm-paragraph size="large">
+          </fff-paragraph>
+          <fff-paragraph size="large">
             Vertical scroll progressbar 유행 지난 듯. 전체 윈도우 영영 혹은 본문 영역track, media,
             supporting text(supporter), elevated (hover), 도어메트 네비게이션, 유틸리티
             링크(네비게이션)
-          </mm-paragraph>
+          </fff-paragraph>
 
-          <mm-quotation author="Kelly Emanuelli, Head of Luxury at Pinterest">
+          <fff-quotation author="Kelly Emanuelli, Head of Luxury at Pinterest">
             Luxury brands around the world have been connecting with their ideal audience on
             Pinterest: one that is coming to the platform with intent, looking for inspiration to
             curate ideas and refine their taste for which luxury brands to invest in. With 3 in 5
             luxury shoppers saying they use Pinterest to research luxury brands and products, these
             brands have the opportunity to reach this highly engaged audience the moment they form
             an opinion and make a purchase decision.
-          </mm-quotation>
+          </fff-quotation>
 
-          <mm-heading level="3">포스트를 수정하고 삭제하기 위한 버튼이 필요하다.</mm-heading>
-          <mm-paragraph size="large">
+          <fff-heading level="3">포스트를 수정하고 삭제하기 위한 버튼이 필요하다.</fff-heading>
+          <fff-paragraph size="large">
             신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은
             콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다. Input zooming on iOS devices ::
             iOS devices will slightly zoom into the input when the font size is less than 16px.
-          </mm-paragraph>
-          <mm-paragraph size="large">
+          </fff-paragraph>
+          <fff-paragraph size="large">
             leading, name, trailing는 언더스코어(_)로 구분합니다. direction / shape / status / color
             / size trailing에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개
             이상의 trailing가 사용되는 경우 direction, shape, status, color, size의 순서로
@@ -90,56 +90,56 @@ const main = html`
             같이 프로그램에 의해 자동으로 trailing가 붙는 경우는 1x, 2x 가이드를 따르지 않아도
             됩니다. 이미 배포되어 적용된 에셋에서 trailing가 추가되는 경우, 기존 에셋을 변형하지
             않고 구별자를 추가합니다.
-          </mm-paragraph>
-        </mm-paragraph-group>
+          </fff-paragraph>
+        </fff-paragraph-group>
       </section>
 
-      <mm-post-paywall>
-        <mm-result
+      <fff-post-paywall>
+        <fff-result
           heading="다음 내용이 궁금하신가요?"
           description="한 달 동안 무료로 모든 콘텐츠를 체험해보세요. 언제든 해지하실 수 있어요."
           .primaryAction=${membershipAction}
         >
-          <mm-text-list
+          <fff-text-list
             .texts=${[
               'Medium의 모든 회원 전용 스토리에 액세스하세요.',
               '자신에게 중요한 주제에 대해 더 자세히 알아보세요.',
               '수천 가지 질문에 답하는 심층 기사를 받아보세요.',
               '개인적, 직업적 목표를 달성하세요',
             ]}
-          ></mm-text-list>
-        </mm-result>
-      </mm-post-paywall>
+          ></fff-text-list>
+        </fff-result>
+      </fff-post-paywall>
 
-      <mm-surface variant="elevated" radius="large">
-        <mm-flex direction="column" gap="8">
-          <mm-button-group>
+      <fff-surface variant="elevated" radius="large">
+        <fff-flex direction="column" gap="8">
+          <fff-button-group>
             ${TOPICS.map(
               topic => html`
-                <mm-hashtag-link>${topic}</mm-hashtag-link>
+                <fff-hashtag-link>${topic}</fff-hashtag-link>
               `,
             )}
-          </mm-button-group>
-          <mm-user-item
+          </fff-button-group>
+          <fff-user-item
             size="medium"
             label="수줍이"
             description="Youtube Subscriber"
             avatar-variant="secondary"
             avatar-src="/src/images/soojubm.png"
-          ></mm-user-item>
-        </mm-flex>
-      </mm-surface>
-    </mm-flex>
-    <mm-separator variant="section"></mm-separator>
-    <mm-content-section heading="댓글 192" heading-level="3">
-      <mm-flex direction="column" gap="8">
-        <mm-comment-input
+          ></fff-user-item>
+        </fff-flex>
+      </fff-surface>
+    </fff-flex>
+    <fff-separator variant="section"></fff-separator>
+    <fff-content-section heading="댓글 192" heading-level="3">
+      <fff-flex direction="column" gap="8">
+        <fff-comment-input
           placeholder="댓글을 입력해 주세요."
           submit-label="댓글 게시"
-        ></mm-comment-input>
+        ></fff-comment-input>
 
-        <mm-comment-list>
-          <mm-comment-item
+        <fff-comment-list>
+          <fff-comment-item
             author="수줍이"
             datetime="1 day ago"
             avatar-src="/src/images/soojubm.png"
@@ -150,8 +150,8 @@ const main = html`
           >
             우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
             우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-          </mm-comment-item>
-          <mm-comment-item
+          </fff-comment-item>
+          <fff-comment-item
             author="수줍이"
             datetime="1 day ago"
             avatar-src="/src/images/soojubm.png"
@@ -159,32 +159,32 @@ const main = html`
           >
             우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
             우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
-          </mm-comment-item>
-        </mm-comment-list>
-      </mm-flex>
-    </mm-content-section>
-  </mm-main>
+          </fff-comment-item>
+        </fff-comment-list>
+      </fff-flex>
+    </fff-content-section>
+  </fff-main>
 
-  <mm-flex direction="column" gap="8" style="padding: var(--space-8) var(--layout-padding-inline)">
-    <mm-content-section heading="더 읽어보기" heading-level="3">
-      <mm-link slot="action" href="post.html">모두 보기</mm-link>
-      <mm-post-list>
+  <fff-flex direction="column" gap="8" style="padding: var(--space-8) var(--layout-padding-inline)">
+    <fff-content-section heading="더 읽어보기" heading-level="3">
+      <fff-link slot="action" href="post.html">모두 보기</fff-link>
+      <fff-post-list>
         ${POSTS.map(
           post => html`
-            <mm-post-item
+            <fff-post-item
               href="post-detail.html"
               thumbnail="/src/images/soojubm.png"
               title=${post.title}
               category=${CATEGORIES[post.category].label}
               date=${post.date}
-            ></mm-post-item>
+            ></fff-post-item>
           `,
         )}
-      </mm-post-list>
-    </mm-content-section>
+      </fff-post-list>
+    </fff-content-section>
 
-    <mm-post-pager .previous=${previousPost} .next=${nextPost}></mm-post-pager>
-  </mm-flex>
+    <fff-post-pager .previous=${previousPost} .next=${nextPost}></fff-post-pager>
+  </fff-flex>
 `
 
 renderPage(main, { closeSidebar: true })

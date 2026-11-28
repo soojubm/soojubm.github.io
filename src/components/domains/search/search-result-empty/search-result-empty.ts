@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-@customElement('mm-search-result-empty')
+@customElement('fff-search-result-empty')
 export class SearchResultEmpty extends LitElement {
   static styles = css`
     :host {
@@ -14,9 +14,9 @@ export class SearchResultEmpty extends LitElement {
 
   render() {
     return html`
-      <mm-result heading="'${this.query}'와(과) 일치하는 내용이 없습니다.">
+      <fff-result heading="'${this.query}'와(과) 일치하는 내용이 없습니다.">
         <slot></slot>
-      </mm-result>
+      </fff-result>
     `
   }
 }

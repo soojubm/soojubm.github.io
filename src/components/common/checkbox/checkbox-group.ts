@@ -16,7 +16,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 import '@/components/common/text'
 
-@customElement('mm-checkbox-group')
+@customElement('fff-checkbox-group')
 export class CheckboxGroup extends LitElement {
   static styles = [
     resetStyles,
@@ -75,7 +75,7 @@ export class CheckboxGroup extends LitElement {
       />
       <label for=${inputId}>
         <span class="indicator"></span>
-        <mm-paragraph>${option.label}</mm-paragraph>
+        <fff-paragraph>${option.label}</fff-paragraph>
       </label>
     `
   }

@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 import '@/components/common/text/semantics/text-block'
 
-@customElement('mm-status-message')
+@customElement('fff-status-message')
 export class StatusMessage extends LitElement {
   static styles = css`
     :host {
@@ -17,12 +17,12 @@ export class StatusMessage extends LitElement {
 
   render() {
     return html`
-      <mm-text-block
+      <fff-text-block
         level="3"
         heading=${this.heading}
         description=${this.message}
         centered
-      ></mm-text-block>
+      ></fff-text-block>
     `
   }
 }

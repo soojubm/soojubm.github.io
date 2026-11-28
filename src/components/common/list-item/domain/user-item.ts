@@ -6,7 +6,7 @@ import type { IconName } from '@/components/common/icon/icon-names'
 import type { ListItemSize } from '@/components/common/list-item/list-item'
 import '@/components/common/list-item/list-item'
 
-@customElement('mm-user-item')
+@customElement('fff-user-item')
 export class UserItem extends LitElement {
   static styles = [
     css`
@@ -24,7 +24,7 @@ export class UserItem extends LitElement {
 
   render() {
     return html`
-      <mm-list-item
+      <fff-list-item
         size=${this.size}
         label=${this.label}
         description=${this.description}
@@ -34,7 +34,7 @@ export class UserItem extends LitElement {
         avatar-shape="circle"
       >
         <slot name="trailing" slot="trailing"></slot>
-      </mm-list-item>
+      </fff-list-item>
     `
   }
 }

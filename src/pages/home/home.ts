@@ -107,21 +107,21 @@ const renderThoughtPoint = (point: ThoughtPoint) => {
   const { text, tags } = typeof point === 'string' ? { text: point, tags: [] } : point
 
   return html`
-    <mm-flex direction="column" gap="2" align-items="flex-start">
+    <fff-flex direction="column" gap="2" align-items="flex-start">
       ${tags.length
         ? html`
-            <mm-tag-group>
+            <fff-tag-group>
               ${tags.map(
                 tag =>
                   html`
-                    <mm-code-tag>${tag}</mm-code-tag>
+                    <fff-code-tag>${tag}</fff-code-tag>
                   `,
               )}
-            </mm-tag-group>
+            </fff-tag-group>
           `
         : nothing}
-      <mm-paragraph size="large">${text}</mm-paragraph>
-    </mm-flex>
+      <fff-paragraph size="large">${text}</fff-paragraph>
+    </fff-flex>
   `
 }
 
@@ -133,7 +133,7 @@ const FOUNDATION_ICONS: Record<string, IconName> = {
   content: ICON_NAMES.DOCUMENT,
 }
 
-// 각 페이지의 mm-tab-list 순서와 맞춘다. search-param="tab"으로 해당 탭을 바로 연다.
+// 각 페이지의 fff-tab-list 순서와 맞춘다. search-param="tab"으로 해당 탭을 바로 연다.
 const FOUNDATION_TABS: Record<string, string[]> = {
   layout: ['Page', 'Division', 'Overlay', 'Elevations'],
   interaction: ['State', 'Selection'],
@@ -294,22 +294,22 @@ const features: ComponentFeatureItem[] = [
 const heroHeading = 'Fewer decisions,\nfaster releases.'
 
 const main = html`
-  <mm-main class="home">
+  <fff-main class="home">
     <section class="tagline-section" style="margin-bottom:1rem;">
       <span class="tagline-mark" aria-hidden="true"><span class="tagline-mark-text">fff</span></span>
       <div style="border-top:var(--home-border);padding:1rem 0;">
-        <mm-tagline>
+        <fff-tagline>
           <span data-reveal style=${styleMap({
             '--tagline-chars': String('Fewer decisions'.length),
           })}>
             Fewer decisions
           </span>
-        </mm-tagline>
+        </fff-tagline>
       </div>
       <div
         style="border-top:var(--home-border);border-bottom:var(--home-border);text-align:right;padding:1rem 0;"
       >
-        <mm-tagline>
+        <fff-tagline>
           <span data-reveal style=${styleMap({
             '--tagline-chars': String('Faster releases'.length),
             '--tagline-delay': '1.9s',
@@ -323,17 +323,17 @@ const main = html`
           })}>
             Faster learning
           </span>
-        </mm-tagline>
+        </fff-tagline>
       </div>
     </section>
       <section class="approach-section">
         ${renderRepeatTitle('Philosophy')}
-      <mm-flex direction="column" gap="4" align-items="center" class="pattern-first">
-        <mm-code-tag size="large">Approach</mm-code-tag>
+      <fff-flex direction="column" gap="4" align-items="center" class="pattern-first">
+        <fff-code-tag size="large">Approach</fff-code-tag>
         <div class="cycle">
           <div class="cycle-track">
             <div class="cycle-title">
-              <mm-tagline centered>Pattern-first</mm-tagline>
+              <fff-tagline centered>Pattern-first</fff-tagline>
             </div>
             <div class="cycle-lane" data-lane="top" aria-hidden="true">
               <span class="cycle-arrow" data-direction="forward"></span>
@@ -356,51 +356,51 @@ const main = html`
             </div>
           </div>
         </div>
-        <mm-paragraph size="large" centered class="approach-description">
+        <fff-paragraph size="large" centered class="approach-description">
           제품에서 반복되는 구조와 동작을 추출한 뒤, 그것을 컴포넌트 · 토큰 · 레이아웃으로
           정의한다.
-        </mm-paragraph>
+        </fff-paragraph>
         <!-- 운영체제 수준의 디자인 시스템을 기준으로 토큰과 컴포넌트를 먼저 정의하지 않는다.  -->
-      </mm-flex>
+      </fff-flex>
 
       <div class="principle-list">
         ${designSystemThoughts.map(
           ({ figure, label, heading, body, points }) => html`
             <section class="principle-row">
-              <mm-code-tag size="large" class="principle-label">${label}</mm-code-tag>
+              <fff-code-tag size="large" class="principle-label">${label}</fff-code-tag>
               ${renderThoughtFigure(figure)}
-              <mm-flex direction="column" gap="3">
-                <mm-heading level="2" class="design-title">${heading}</mm-heading>
-                <mm-paragraph size="large">${body}</mm-paragraph>
-              </mm-flex>
-              <mm-paragraph-group class="principle-points">
+              <fff-flex direction="column" gap="3">
+                <fff-heading level="2" class="design-title">${heading}</fff-heading>
+                <fff-paragraph size="large">${body}</fff-paragraph>
+              </fff-flex>
+              <fff-paragraph-group class="principle-points">
                 ${points.map(renderThoughtPoint)}
-              </mm-paragraph-group>
+              </fff-paragraph-group>
             </section>
           `,
         )}
       </div>
       </section>
 
-      <!-- <mm-flex direction="column" gap="section">
-<mm-flex direction="column" gap="8" align-items="center">
-  <mm-tagline centered multiline>${heroHeading}</mm-tagline>
-  <mm-flex direction="column" gap="3" align-items="center">
-    <mm-tag-group>
-      <mm-tag>목표</mm-tag>
-      <mm-code-tag>Release</mm-code-tag>
-      <mm-code-tag>Experiment</mm-code-tag>
-    </mm-tag-group>
-    <mm-text-block
+      <!-- <fff-flex direction="column" gap="section">
+<fff-flex direction="column" gap="8" align-items="center">
+  <fff-tagline centered multiline>${heroHeading}</fff-tagline>
+  <fff-flex direction="column" gap="3" align-items="center">
+    <fff-tag-group>
+      <fff-tag>목표</fff-tag>
+      <fff-code-tag>Release</fff-code-tag>
+      <fff-code-tag>Experiment</fff-code-tag>
+    </fff-tag-group>
+    <fff-text-block
       centered
       level="3"
       heading="Fast release / Fast experiment"
       description="제품을 완성하고 사용자에게 전달하는 시간, 가설을 검증하고 제품을 개선하는 주기 단축"
-    ></mm-text-block>
-  </mm-flex>
-</mm-flex> -->
+    ></fff-text-block>
+  </fff-flex>
+</fff-flex> -->
 
-      <mm-flex direction="column" gap="6" class="foundations">
+      <fff-flex direction="column" gap="6" class="foundations">
         ${renderRepeatTitle('Foundations')}
         <ul class="foundation-list">
           ${foundationItems.map(
@@ -408,17 +408,17 @@ const main = html`
               <li class="foundation-row">
                 <div class="foundation-name">
                   <span class="foundation-badge" data-axis=${id}>
-                    <mm-icon name=${FOUNDATION_ICONS[id]} aria-hidden="true"></mm-icon>
+                    <fff-icon name=${FOUNDATION_ICONS[id]} aria-hidden="true"></fff-icon>
                   </span>
-                  <mm-heading level="3">${name}</mm-heading>
+                  <fff-heading level="3">${name}</fff-heading>
                 </div>
                 <nav class="foundation-tabs" aria-label=${`${name} 탭`}>
                   ${FOUNDATION_TABS[id].map(
                     label => html`
-                      <mm-link href=${`./${id}.html?tab=${label.toLowerCase()}`}>
+                      <fff-link href=${`./${id}.html?tab=${label.toLowerCase()}`}>
                         ${label}
-                        <mm-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></mm-icon>
-                      </mm-link>
+                        <fff-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></fff-icon>
+                      </fff-link>
                     `,
                   )}
                 </nav>
@@ -426,7 +426,7 @@ const main = html`
             `,
           )}
         </ul>
-      </mm-flex>
+      </fff-flex>
 
       <section class="tokens-stage">
         <div class="tokens-rings" aria-hidden="true">
@@ -438,33 +438,33 @@ const main = html`
         </div>
         <div class="tokens-stage-title">${renderRepeatTitle('Tokens')}</div>
         <div class="tokens-stage-content">
-          <mm-tag-group>
+          <fff-tag-group>
             ${TOKEN_KINDS.map(
               kind => html`
-                <mm-code-tag tone="blue" size="large">${kind}</mm-code-tag>
+                <fff-code-tag tone="blue" size="large">${kind}</fff-code-tag>
               `,
             )}
-          </mm-tag-group>
+          </fff-tag-group>
         </div>
-        <mm-link class="tokens-stage-link" href="./tokens.html">
+        <fff-link class="tokens-stage-link" href="./tokens.html">
           Explore tokens
-          <mm-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></mm-icon>
-        </mm-link>
+          <fff-icon name=${ICON_NAMES.FORWARD} aria-hidden="true"></fff-icon>
+        </fff-link>
       </section>
 
       <div hidden>
-        <mm-surface>
-          <mm-text size="24" weight="bold" as="h2">Scroll Spy Sampler</mm-text>
+        <fff-surface>
+          <fff-text size="24" weight="bold" as="h2">Scroll Spy Sampler</fff-text>
           <div class="scroll-spy-sampler js-scroll-spy-sampler">
-            <mm-toggle-button-group
+            <fff-toggle-button-group
               class="js-scroll-spy-nav"
               aria-label="Scroll spy sampler"
               orientation="vertical"
               stretch
               .options=${samplerOptions}
               value=${samplerOptions[0].value}
-            ></mm-toggle-button-group>
-            <mm-scroll
+            ></fff-toggle-button-group>
+            <fff-scroll
               direction="column"
               gap="3"
               class="scroll-spy-sampler-body js-scroll-spy-body"
@@ -472,70 +472,70 @@ const main = html`
             >
               ${samplerSections.map(
                 section => html`
-                  <mm-surface
+                  <fff-surface
                     id=${section.id}
                     class="scroll-spy-sampler-section"
                     data-scroll-spy-section
                   >
-                    <mm-text-block
+                    <fff-text-block
                       level="3"
                       heading=${section.heading}
                       description=${section.description}
-                    ></mm-text-block>
-                  </mm-surface>
+                    ></fff-text-block>
+                  </fff-surface>
                 `,
               )}
-            </mm-scroll>
+            </fff-scroll>
           </div>
-        </mm-surface>
+        </fff-surface>
       </div>
 
-      <!-- <mm-content-section heading="React로 옮긴 MoreMenu 패턴">
-        <mm-code-block language="typescript" .code=${reactMoreMenuCode}></mm-code-block>
-      </mm-content-section>
+      <!-- <fff-content-section heading="React로 옮긴 MoreMenu 패턴">
+        <fff-code-block language="typescript" .code=${reactMoreMenuCode}></fff-code-block>
+      </fff-content-section>
 
-      <mm-content-section heading="Event Notes" .texts=${[
+      <fff-content-section heading="Event Notes" .texts=${[
         '버블링은 이벤트가 낸 요소에서 끝나지 않고 부모, 그 부모, document까지 차례로 올라가는 것이다. 그래서 조상 어디에 리스너를 달아도 받을 수 있다.',
         'toggle은 "이 요소가 열렸다/닫혔다"는 자기 상태 알림이라 버블링하지 않는다. 네이티브 details·popover의 toggle도 버블링하지 않는다.',
         '같은 이름의 이벤트가 버블링하면 섞인다. 시트 안에 select를 두고 시트에 toggle 리스너를 달면, select 목록이 닫힐 때의 toggle이 시트까지 올라와 시트가 닫힌 것처럼 처리된다.',
         'change·input은 네이티브처럼 버블링한다. 폼이나 그룹이 자식의 값 변경을 위에서 받아야 하기 때문이다. 기준은 같은 이름의 네이티브 이벤트와 같은 전파 방식이다.',
         '받는 쪽에서 e.target === e.currentTarget로 거르는 건 보조책이다. 사용하는 쪽이 모두 챙겨야 하고, shadow DOM 경계를 넘으면 target이 컴포넌트로 바뀌어(retarget) 걸러지지 않는 경우가 있다. 전파 범위는 이벤트를 내는 컴포넌트가 정한다.',
         '"닫아 달라"는 요청과 "닫혔다"는 알림을 이벤트 하나로 겸하지 않는다. 시트 헤더의 닫기 버튼은 시트의 close()를 직접 부르고, 시트는 닫힌 뒤 toggle로 알린다.',
-      ]}></mm-content-section> -->
+      ]}></fff-content-section> -->
 
-      <!-- <mm-content-section heading="Accessibility Notes" .texts=${[
+      <!-- <fff-content-section heading="Accessibility Notes" .texts=${[
         'role="menu" 안에는 menuitem, menuitemcheckbox, menuitemradio와 이를 묶는 group, separator만 둘 수 있다.',
         'menuitemradio는 menu·menubar(또는 그 안의 group) 안에서만 유효하다. menu가 아닌 곳(disclosure 패널 등)의 선택지는 radiogroup > radio로 둔다.',
         '항목의 role은 겉모습이 아니라 놓인 부모로 정한다. 같은 모양의 행도 menu 안이면 menuitemradio, 밖이면 radio다.',
         'menu는 선택 즉시 닫혀야 하는 개념이 아니다. APG 기준 Enter는 실행 후 닫고, Space는 menuitemcheckbox·menuitemradio의 상태만 바꾸고 연 채로 둔다.',
         'disclosure는 aria-expanded로 영역을 여닫는 패턴일 뿐 위치를 정하지 않는다. 트리거에 앵커되어 뜨면 popover, 화면을 덮으면 sheet로 표면을 따로 고른다.',
         'role="list" 안에는 listitem만 둘 수 있다. 그래서 목록 그룹 안에 제목을 넣으면 제목 요소로 읽히게 둘 수 없고, 화면에만 그린 뒤 같은 문구를 aria-label로 옮겨야 한다.',
-        '제목 달린 목록은 목록 그룹(mm-list-item-group)이 제목을 받지 않고, 쓰는 쪽이 mm-heading에 id를 주고 그룹에 aria-labelledby로 연결한다. 그룹이 제목을 받아 aria-label로 옮기면 그룹이 목록의 접근성 이름까지 정하게 되어 책임이 커지고, 쓰는 쪽이 준 aria-label과 충돌하며, heading prop이 aria-label의 별칭이 된다. 제목도 heading 요소가 아니게 되어 제목 단위로 건너뛰는 탐색을 잃는다.',
-      ]}></mm-content-section> -->
+        '제목 달린 목록은 목록 그룹(fff-list-item-group)이 제목을 받지 않고, 쓰는 쪽이 fff-heading에 id를 주고 그룹에 aria-labelledby로 연결한다. 그룹이 제목을 받아 aria-label로 옮기면 그룹이 목록의 접근성 이름까지 정하게 되어 책임이 커지고, 쓰는 쪽이 준 aria-label과 충돌하며, heading prop이 aria-label의 별칭이 된다. 제목도 heading 요소가 아니게 되어 제목 단위로 건너뛰는 탐색을 잃는다.',
+      ]}></fff-content-section> -->
 
-      <mm-flex direction="column" gap="6">
+      <fff-flex direction="column" gap="6">
         ${renderRepeatTitle('References')}
-        <mm-toggle-button-group
+        <fff-toggle-button-group
           class="js-reference-filter"
           aria-label="Reference category"
           value="all"
           .options=${REFERENCE_FILTER_OPTIONS}
-        ></mm-toggle-button-group>
+        ></fff-toggle-button-group>
         <div class="reference-grid js-reference-grid">
           ${sortedReferences.map(
             ({ category, href, brand, page }) => html`
-              <mm-reference-cell
+              <fff-reference-cell
                 data-category=${category}
                 href=${href}
                 brand=${brand}
                 page=${page}
-              ></mm-reference-cell>
+              ></fff-reference-cell>
             `,
           )}
         </div>
-      </mm-flex>
-    </mm-flex>
-  </mm-main>
+      </fff-flex>
+    </fff-flex>
+  </fff-main>
 `
 
 renderPage(main, {
@@ -551,7 +551,7 @@ renderPage(main, {
 function setupReferenceFilter() {
   const filter = document.querySelector<ToggleButtonGroup>('.js-reference-filter')
   const cells = Array.from(
-    document.querySelectorAll<HTMLElement>('.js-reference-grid mm-reference-cell'),
+    document.querySelectorAll<HTMLElement>('.js-reference-grid fff-reference-cell'),
   )
   if (!filter || !cells.length) return
 
@@ -596,6 +596,6 @@ function setupScrollSpySampler() {
   })
 }
 
-// TODO: menu-item-radio·checkbox·switch가 입력을 가진 mm-radio·mm-checkbox·mm-switch를 inert로 중첩해
+// TODO: menu-item-radio·checkbox·switch가 입력을 가진 fff-radio·fff-checkbox·fff-switch를 inert로 중첩해
 // 모양만 쓴다. 입력 없이 시각 부분만 담은 공유 스타일 조각을 radio·checkbox·switch의 *.styles.ts에 두고
 // 행이 <span>에 입히도록 바꿔, inert·aria-hidden 중첩을 없앤다.

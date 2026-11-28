@@ -69,7 +69,7 @@ export const renderIconButton = ({
   ariaPressed,
   ariaControls,
 }: IconButtonRenderOptions): TemplateResult => html`
-  <mm-tooltip content=${ariaLabel} placement=${tooltipPlacement}>
+  <fff-tooltip content=${ariaLabel} placement=${tooltipPlacement}>
     <button
       slot="trigger"
       type="button"
@@ -81,9 +81,9 @@ export const renderIconButton = ({
       ?disabled=${disabled}
       @click=${onClick}
     >
-      <mm-icon name=${icon}></mm-icon>
+      <fff-icon name=${icon}></fff-icon>
     </button>
-  </mm-tooltip>
+  </fff-tooltip>
 `
 
 export interface IconActionDefinition {

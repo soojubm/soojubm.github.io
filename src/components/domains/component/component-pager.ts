@@ -5,7 +5,7 @@ import '@/components/common/link/semantics/pager'
 import { findAdjacentDocs } from '@/sitemap'
 import { getCurrentPageId } from '@/utils'
 
-@customElement('mm-component-pager')
+@customElement('fff-component-pager')
 export class ComponentPager extends LitElement {
   static styles = css`
     :host {
@@ -18,7 +18,7 @@ export class ComponentPager extends LitElement {
     const { previous, next } = this.docs
 
     return html`
-      <mm-pager
+      <fff-pager
         aria-label="문서 이동"
         .previous=${previous && {
           href: `${previous.id}.html`,
@@ -26,7 +26,7 @@ export class ComponentPager extends LitElement {
           description: '이전 문서',
         }}
         .next=${next && { href: `${next.id}.html`, heading: next.name, description: '다음 문서' }}
-      ></mm-pager>
+      ></fff-pager>
     `
   }
 }

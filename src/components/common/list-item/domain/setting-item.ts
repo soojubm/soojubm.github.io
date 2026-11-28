@@ -9,7 +9,7 @@ import { disabledStyles } from '@/stylesheets/shared.styles'
 
 type DisableableElement = HTMLElement & { disabled?: boolean }
 
-@customElement('mm-setting-item')
+@customElement('fff-setting-item')
 export class SettingItem extends LitElement {
   static styles = css`
     :host {
@@ -31,7 +31,7 @@ export class SettingItem extends LitElement {
 
   render() {
     return html`
-      <mm-list-item
+      <fff-list-item
         size=${this.description ? 'medium' : 'small'}
         icon=${this.icon || nothing}
         avatar-variant=${this.avatarVariant}
@@ -39,7 +39,7 @@ export class SettingItem extends LitElement {
         description=${this.description}
       >
         <slot name="action" slot="trailing" @slotchange=${this.handleActionSlotChange}></slot>
-      </mm-list-item>
+      </fff-list-item>
     `
   }
 

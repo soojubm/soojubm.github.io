@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { metaItemStyles } from '@/components/common/meta-item/meta-item.styles'
 import '@/components/common/text/semantics/paragraph'
 
-@customElement('mm-meta-item')
+@customElement('fff-meta-item')
 export class MetaItem extends LitElement {
   static styles = [metaItemStyles]
   @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' =
@@ -21,8 +21,8 @@ export class MetaItem extends LitElement {
     const valueSize = this.code ? 'small' : this.valueSize
 
     return html`
-      <mm-paragraph size=${labelSize} color="light">${this.label}</mm-paragraph>
-      <mm-paragraph size=${valueSize}>${this.value}</mm-paragraph>
+      <fff-paragraph size=${labelSize} color="light">${this.label}</fff-paragraph>
+      <fff-paragraph size=${valueSize}>${this.value}</fff-paragraph>
     `
   }
 }

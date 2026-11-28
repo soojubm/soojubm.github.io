@@ -12,7 +12,7 @@ import {
 } from '@/components/common/icon-button/icon-button.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-page-button')
+@customElement('fff-page-button')
 export class PageButton extends LitElement {
   static styles = [
     resetStyles,
@@ -28,7 +28,7 @@ export class PageButton extends LitElement {
         position: relative;
       }
 
-      mm-current-indicator {
+      fff-current-indicator {
         ${dotBelowStyles};
       }
     `,
@@ -56,7 +56,7 @@ export class PageButton extends LitElement {
     if (this.ariaCurrent !== 'page') return nothing
 
     return html`
-      <mm-current-indicator></mm-current-indicator>
+      <fff-current-indicator></fff-current-indicator>
     `
   }
 }

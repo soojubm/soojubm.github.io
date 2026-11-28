@@ -7,26 +7,26 @@ import { DisclosureController } from '@/controllers/disclosure-controller'
 import { uniqueId } from '@/utils'
 import '@/components/common/text/semantics/paragraph'
 
-@customElement('mm-read-more-paragraph')
+@customElement('fff-read-more-paragraph')
 export class ReadMoreParagraph extends LitElement {
   static styles = css`
     :host {
       display: block;
     }
 
-    mm-read-more-button {
+    fff-read-more-button {
       margin: 0;
       margin-left: var(--space-1);
     }
 
-    mm-text {
+    fff-text {
       display: inline;
     }
   `
   @property({ type: String }) content = ''
   @property({ type: Number, attribute: 'max-length' }) maxLength = 100
   @state() private expanded = false
-  @query('mm-read-more-button') private trigger?: HTMLElement
+  @query('fff-read-more-button') private trigger?: HTMLElement
   private readonly contentId = uniqueId('read-more-content')
   private disclosure = new DisclosureController(this, {
     open: () => this.expanded,
@@ -44,10 +44,10 @@ export class ReadMoreParagraph extends LitElement {
         : this.content
 
     return html`
-      <mm-paragraph>
-        <mm-text id=${this.contentId}>${displayText}</mm-text>
+      <fff-paragraph>
+        <fff-text id=${this.contentId}>${displayText}</fff-text>
         ${this.renderToggleButton(truncated)}
-      </mm-paragraph>
+      </fff-paragraph>
     `
   }
 
@@ -55,7 +55,7 @@ export class ReadMoreParagraph extends LitElement {
     if (!truncated) return nothing
 
     return html`
-      <mm-read-more-button aria-controls=${this.contentId}></mm-read-more-button>
+      <fff-read-more-button aria-controls=${this.contentId}></fff-read-more-button>
     `
   }
 }

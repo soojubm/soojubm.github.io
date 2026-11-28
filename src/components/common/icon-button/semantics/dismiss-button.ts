@@ -9,7 +9,7 @@ import {
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-dismiss-button')
+@customElement('fff-dismiss-button')
 export class DismissButton extends iconActionElement({
   event: 'dismiss',
   icon: ICON_NAMES.DISMISS,

@@ -11,7 +11,7 @@ import { emit } from '@/utils'
 
 let uniqueIdCounter = 0
 
-@customElement('mm-textarea')
+@customElement('fff-textarea')
 export class Textarea extends LitElement {
   static styles = [
     resetStyles,
@@ -54,7 +54,7 @@ export class Textarea extends LitElement {
   @property({ type: String, attribute: 'aria-invalid' }) ariaInvalid: AriaInvalid = null
   @query('textarea') protected textarea!: HTMLTextAreaElement
   @queryAll('slot') private actionSlots!: NodeListOf<HTMLSlotElement>
-  @state() protected defaultTextareaId = `mm-textarea-${uniqueIdCounter++}`
+  @state() protected defaultTextareaId = `fff-textarea-${uniqueIdCounter++}`
   @state() private hasActions = false
   private autoHeight = new TextareaAutoHeightController(this, {
     getTextarea: () => this.textarea,

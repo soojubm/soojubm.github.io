@@ -4,22 +4,22 @@ import { code } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Conventions"
       description="코드와 문서를 쓰는 방식을 정합니다. 작업 규칙을 한 곳에서 정하므로, 누가 만들어도 같은 구조와 이름으로 읽힙니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-page-body>
-      <mm-tab-list value="code" variant="text" search-param="tab">
-        <mm-tab value="code">Code</mm-tab>
-        <mm-tab value="documentation">Documentation</mm-tab>
-        <mm-tab value="agent">Agent Guide</mm-tab>
-      </mm-tab-list>
+    <fff-page-body>
+      <fff-tab-list value="code" variant="text" search-param="tab">
+        <fff-tab value="code">Code</fff-tab>
+        <fff-tab value="documentation">Documentation</fff-tab>
+        <fff-tab value="agent">Agent Guide</fff-tab>
+      </fff-tab-list>
 
-      <mm-tab-panel value="code">
-        <mm-content-section-list>
-          <mm-content-section
+      <fff-tab-panel value="code">
+        <fff-content-section-list>
+          <fff-content-section
             heading-level="3"
             heading="공통 코딩 스타일"
             description="들여쓰기·세미콜론 등은 ESLint와 Prettier 규칙에 위임한다"
@@ -33,9 +33,9 @@ const main = html`
                 ${code('onSubmit')}
               `,
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="Lit 코딩 스타일"
             .texts=${[
@@ -51,9 +51,9 @@ const main = html`
                 ${code('renderImage()')}
               `,
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="공통 동작의 분리"
             .texts=${[
@@ -65,9 +65,9 @@ const main = html`
                 함수로 충분하다
               `,
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="토글 상태"
             .texts=${[
@@ -79,29 +79,29 @@ const main = html`
               html`
                 네이티브 ${code('input')}이 상태를 가진 컨트롤은 그 값을 옮겨 적고, 그렇지 않은
                 컨트롤은 ${code('toggleState')}로 뒤집는다.
-                ${code('mm-checkbox')}·${code('mm-switch')}·${code('mm-radio')}는 눌린 뒤의 값을
+                ${code('fff-checkbox')}·${code('fff-switch')}·${code('fff-radio')}는 눌린 뒤의 값을
                 ${code('input')}에서 읽어 ${code('checked')}에 대입하고 ${code('change')}를 낸다.
                 ${code('aria-pressed')}로만 표현하는 버튼은 읽을 값이 없어 현재 값을 뒤집는다
               `,
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="컴포넌트 조합/합성"
             description="다른 컴포넌트를 재사용해 만들 때는 재사용할 컴포넌트의 역할에 따라 방식을 고릅니다. 단순한 시각 요소는 그 컴포넌트를 직접 렌더링하고, 상호작용이나 접근성 의미가 있으면 컴포넌트를 중첩하지 않고 공유 스타일과 템플릿만 재사용합니다."
             .texts=${[
               html`
-                ${code('mm-current-indicator')}는 ${code('mm-dot')}을 렌더링한다.
+                ${code('fff-current-indicator')}는 ${code('fff-dot')}을 렌더링한다.
               `,
               html`
-                ${code('mm-dismiss-button')}은 ${code('iconButtonStyles')}와
+                ${code('fff-dismiss-button')}은 ${code('iconButtonStyles')}와
                 ${code('renderIconButton')}을 조합한다.
               `,
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="Prop 이름"
             description="한 prop이 종류가 다른 값을 받으면 값을 더할 때마다 어느 쪽인지 다시 따져야 하고, 같은 이름이 컴포넌트마다 다르게 동작합니다. 축마다 이름을 따로 두면 조합이 곱으로 늘지 않습니다."
@@ -117,15 +117,15 @@ const main = html`
                 강조 단계는 그대로 두고 의도만 얹을 수 있다
               `,
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section heading-level="3" heading="열림 상태 이름">
-            <mm-paragraph>
+          <fff-content-section heading-level="3" heading="열림 상태 이름">
+            <fff-paragraph>
               열고 닫는 컴포넌트마다 상태와 동작의 이름이 다르면, 컨트롤러가 어느 이름을 읽고 불러야
               할지 컴포넌트마다 따로 알아야 합니다. 네이티브 ${code('dialog')}·${code('details')}와
               같은 이름으로 맞추면 사용하는 쪽이 이미 아는 방식 그대로 쓸 수 있습니다.
-            </mm-paragraph>
-            <mm-text-list
+            </fff-paragraph>
+            <fff-text-list
               variant="check"
               .texts=${[
                 html`
@@ -144,44 +144,44 @@ const main = html`
                   자동 닫힘 타이머)는 ${code('open')}을 직접 바꾸면 그 동작이 실행되지 않는다
                 `,
               ]}
-            ></mm-text-list>
-          </mm-content-section>
-        </mm-content-section-list>
-      </mm-tab-panel>
+            ></fff-text-list>
+          </fff-content-section>
+        </fff-content-section-list>
+      </fff-tab-panel>
 
-      <mm-tab-panel value="documentation">
-        <mm-content-section-list>
-          <mm-content-section
+      <fff-tab-panel value="documentation">
+        <fff-content-section-list>
+          <fff-content-section
             heading-level="3"
             heading="문서화 기준"
             .texts=${[
               '규칙의 예외 케이스는 항상 문서로 남긴다',
               '같은 코드가 2회 이상 쓰이면 컴포넌트나 공통 함수로 만든다',
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <!-- <mm-content-section heading-level="3" heading="Prop 표" .texts=${[
+          <!-- <fff-content-section heading-level="3" heading="Prop 표" .texts=${[
             '컴포넌트 페이지의 prop 표는 손으로 적지 않는다. 스크립트가 컴포넌트 코드의 @property 선언을 읽어 표를 만든다(npm run manifest). 이름·타입·기본값이 코드 한 곳에서 나오므로 문서가 구현과 어긋나지 않는다.',
             '이벤트·slot·메서드는 선언에서 읽을 수 없어 페이지에 손으로 덧붙인다.',
-            '부모가 대신 채우는 prop은 선언에 @internal을 달아 표에서 뺀다. 예: mm-step이 번호를 매기는 mm-step-item의 value',
+            '부모가 대신 채우는 prop은 선언에 @internal을 달아 표에서 뺀다. 예: fff-step이 번호를 매기는 fff-step-item의 value',
             '만든 결과(src/generated)는 커밋하지 않는다. 설치·개발 서버·빌드 때마다 새로 만든다.',
-          ]}></mm-content-section> -->
-        </mm-content-section-list>
-      </mm-tab-panel>
+          ]}></fff-content-section> -->
+        </fff-content-section-list>
+      </fff-tab-panel>
 
-      <mm-tab-panel value="agent">
-        <mm-content-section-list>
-          <mm-content-section
+      <fff-tab-panel value="agent">
+        <fff-content-section-list>
+          <fff-content-section
             heading-level="3"
             heading="컴포넌트 페이지의 헤더 디스크립션"
             .texts=${[
               '컴포넌트 페이지 설명은 무엇인지, 어떻게 동작하는지, 사용자에게 어떤 이득인지 순서로 쓴다.',
             ]}
-          ></mm-content-section>
-        </mm-content-section-list>
-      </mm-tab-panel>
-    </mm-page-body>
-  </mm-main>
+          ></fff-content-section>
+        </fff-content-section-list>
+      </fff-tab-panel>
+    </fff-page-body>
+  </fff-main>
 `
 
 renderPage(main)

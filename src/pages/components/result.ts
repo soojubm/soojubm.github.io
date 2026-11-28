@@ -17,7 +17,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-result'),
+  ...componentPropsOf('fff-result'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
 ]
 
@@ -38,60 +38,60 @@ const secondaryAction: ActionConfig = {
   onClick: () => {},
 }
 
-const exampleCode = `<mm-result
+const exampleCode = `<fff-result
   avatar-icon="clipboard-check"
   heading="주문을 확인해주세요."
   description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
   .primaryAction=\${primaryAction}
   .secondaryAction=\${secondaryAction}
 >
-  <mm-meta-item-group direction="column" gap="2">
-    <mm-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></mm-meta-item>
-    <mm-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></mm-meta-item>
-  </mm-meta-item-group>
-</mm-result>`
+  <fff-meta-item-group direction="column" gap="2">
+    <fff-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></fff-meta-item>
+    <fff-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></fff-meta-item>
+  </fff-meta-item-group>
+</fff-result>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Result"
       description="작업이 끝난 뒤 그 결과를 보여 주는 섹션 또는 페이지 단위의 화면입니다. 완료·오류·빈 상태를 아이콘과 메시지로 알리고 다음 행동을 버튼으로 제시하므로, 사용자는 결과를 확인한 자리에서 곧바로 다음 단계를 고를 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka .items=${['EmptyState', 'Blankslate']}></mm-component-aka>
+    <fff-component-aka .items=${['EmptyState', 'Blankslate']}></fff-component-aka>
 
-    <mm-component-example>
-      <mm-result
+    <fff-component-example>
+      <fff-result
         avatar-icon=${ICON_NAMES.DOCUMENT_CHECK}
         heading="주문을 확인해주세요."
         description="헌법재판소 재판관의 임기는 6년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다."
         .primaryAction=${primaryAction}
         .secondaryAction=${secondaryAction}
       >
-        <mm-meta-item-group direction="column" gap="2">
-          <mm-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></mm-meta-item>
-          <mm-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></mm-meta-item>
-        </mm-meta-item-group>
-      </mm-result>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+        <fff-meta-item-group direction="column" gap="2">
+          <fff-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></fff-meta-item>
+          <fff-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></fff-meta-item>
+        </fff-meta-item-group>
+      </fff-result>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-paragraph-group>
-        <mm-heading level="3">언제 사용하나요</mm-heading>
-        <mm-paragraph>
+    <fff-component-guide .features=${componentFeatures}>
+      <fff-paragraph-group>
+        <fff-heading level="3">언제 사용하나요</fff-heading>
+        <fff-paragraph>
           주문 완료·예약 확정·가입 완료·결제 성공처럼 작업의 결과를 알릴 때, 그리고 빈 콘텐츠나
           오류처럼 화면이 비어 결과를 대신 설명해야 할 때 사용합니다.
-        </mm-paragraph>
-      </mm-paragraph-group>
-    </mm-component-guide>
+        </fff-paragraph>
+      </fff-paragraph-group>
+    </fff-component-guide>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

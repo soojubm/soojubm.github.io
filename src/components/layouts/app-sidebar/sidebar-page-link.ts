@@ -10,7 +10,7 @@ import { listItemInteractiveStyles } from '@/components/common/list-item/list-it
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { isCurrentPage } from '@/utils'
 
-@customElement('mm-sidebar-page-link')
+@customElement('fff-sidebar-page-link')
 export class SidebarPageLink extends LitElement {
   static styles = [
     resetStyles,
@@ -35,7 +35,7 @@ export class SidebarPageLink extends LitElement {
 
     return html`
       <a href=${this.href} aria-current=${ifDefined(isCurrent ? 'page' : undefined)}>
-        <mm-list-item
+        <fff-list-item
           avatar-variant="tertiary"
           label=${this.label}
           icon=${ifDefined(this.icon)}
@@ -43,7 +43,7 @@ export class SidebarPageLink extends LitElement {
         >
           ${this.renderCurrentIndicator(isCurrent)}
           <slot name="trailing" slot="trailing"></slot>
-        </mm-list-item>
+        </fff-list-item>
       </a>
     `
   }
@@ -52,7 +52,7 @@ export class SidebarPageLink extends LitElement {
     if (!isCurrent) return nothing
 
     return html`
-      <mm-current-indicator slot="trailing"></mm-current-indicator>
+      <fff-current-indicator slot="trailing"></fff-current-indicator>
     `
   }
 }

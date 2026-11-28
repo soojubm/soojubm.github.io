@@ -15,7 +15,7 @@ export const progressDotToneMap = {
 
 export type ProgressDotVariant = keyof typeof progressDotToneMap
 
-@customElement('mm-progress-dot')
+@customElement('fff-progress-dot')
 export class ProgressDot extends LitElement {
   static styles = css`
     :host {
@@ -29,10 +29,10 @@ export class ProgressDot extends LitElement {
 
   render() {
     return html`
-      <mm-dot tone=${progressDotToneMap[this.variant]}></mm-dot>
-      <mm-text size="12">
+      <fff-dot tone=${progressDotToneMap[this.variant]}></fff-dot>
+      <fff-text size="12">
         <slot>${this.variant}</slot>
-      </mm-text>
+      </fff-text>
     `
   }
 }

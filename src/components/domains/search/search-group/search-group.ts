@@ -5,7 +5,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 import { uniqueId } from '@/utils'
 import '@/components/common'
 
-@customElement('mm-search-group')
+@customElement('fff-search-group')
 export class SearchGroup extends LitElement {
   static styles = css`
     :host {
@@ -21,12 +21,12 @@ export class SearchGroup extends LitElement {
   render() {
     return html`
       ${this.renderHeading()}
-      <mm-list-item-group
+      <fff-list-item-group
         gap=${this.gap}
         aria-labelledby=${ifDefined(this.heading ? this.headingId : undefined)}
       >
         <slot></slot>
-      </mm-list-item-group>
+      </fff-list-item-group>
     `
   }
 
@@ -34,7 +34,7 @@ export class SearchGroup extends LitElement {
     if (!this.heading) return nothing
 
     return html`
-      <mm-heading level="5" id=${this.headingId}>${this.heading}</mm-heading>
+      <fff-heading level="5" id=${this.headingId}>${this.heading}</fff-heading>
     `
   }
 }

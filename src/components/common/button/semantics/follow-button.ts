@@ -9,7 +9,7 @@ import {
 import { withTogglePressed } from '@/components/common/button/button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-follow-button')
+@customElement('fff-follow-button')
 export class FollowButton extends withTogglePressed(LitElement) {
   static styles = [
     resetStyles,

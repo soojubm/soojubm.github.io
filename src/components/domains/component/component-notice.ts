@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-@customElement('mm-component-notice')
+@customElement('fff-component-notice')
 export class ComponentNotice extends LitElement {
   static styles = css`
     :host {
@@ -14,10 +14,10 @@ export class ComponentNotice extends LitElement {
 
   render() {
     return html`
-      <mm-notice variant="info">
-        <mm-text size="14" weight="bold">${this.heading}</mm-text>
-        <mm-text size="14"><slot></slot></mm-text>
-      </mm-notice>
+      <fff-notice variant="info">
+        <fff-text size="14" weight="bold">${this.heading}</fff-text>
+        <fff-text size="14"><slot></slot></fff-text>
+      </fff-notice>
     `
   }
 }

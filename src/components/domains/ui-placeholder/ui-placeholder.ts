@@ -23,7 +23,7 @@ const variantTokens = {
   },
 }
 
-@customElement('mm-ui-placeholder')
+@customElement('fff-ui-placeholder')
 export class UiPlaceholder extends LitElement {
   static styles = css`
     :host {

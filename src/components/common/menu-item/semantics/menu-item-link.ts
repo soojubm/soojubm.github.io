@@ -11,7 +11,7 @@ import {
 } from '@/components/common/menu-item/menu-item.utils'
 import { resetStyles, visuallyHiddenStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-menu-item-link')
+@customElement('fff-menu-item-link')
 export class MenuItemLink extends withMenuItemPresentation(LitElement) {
   static styles = [
     resetStyles,
@@ -67,7 +67,7 @@ export class MenuItemLink extends withMenuItemPresentation(LitElement) {
     const name = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
 
     return html`
-      <mm-icon name=${name} size="small"></mm-icon>
+      <fff-icon name=${name} size="small"></fff-icon>
     `
   }
 }

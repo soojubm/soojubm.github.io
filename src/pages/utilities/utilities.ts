@@ -16,23 +16,23 @@ import tagStylesSource from '@/components/common/tag/tag.styles.ts?raw'
 import { renderPage } from '@/components/layouts/base-layouts'
 import overlayStylesSource from '@/components/overlay/overlay.styles.ts?raw'
 
-const contentSectionCode = `<mm-content-section heading-level="3" heading="액션이 있는 섹션">
-  <mm-link slot="action" href="./post.html">모두 보기</mm-link>
-</mm-content-section>`
+const contentSectionCode = `<fff-content-section heading-level="3" heading="액션이 있는 섹션">
+  <fff-link slot="action" href="./post.html">모두 보기</fff-link>
+</fff-content-section>`
 
-const formFieldCode = `<mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
-  <mm-checkbox-group name="topics" .options=\${topicOptions}></mm-checkbox-group>
-</mm-form-field>`
+const formFieldCode = `<fff-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
+  <fff-checkbox-group name="topics" .options=\${topicOptions}></fff-checkbox-group>
+</fff-form-field>`
 
-const pageHeaderCode = `<mm-flex justify-content="space-between" align-items="flex-start">
-  <mm-page-header heading="설정" description="계정과 알림을 관리합니다."></mm-page-header>
-  <mm-button-group>
-    <mm-button variant="secondary">취소</mm-button>
-    <mm-button>저장</mm-button>
-  </mm-button-group>
-</mm-flex>`
+const pageHeaderCode = `<fff-flex justify-content="space-between" align-items="flex-start">
+  <fff-page-header heading="설정" description="계정과 알림을 관리합니다."></fff-page-header>
+  <fff-button-group>
+    <fff-button variant="secondary">취소</fff-button>
+    <fff-button>저장</fff-button>
+  </fff-button-group>
+</fff-flex>`
 
-const textBlockCode = `<mm-text-block level="3" heading="제목" description="제목을 보충하는 설명"></mm-text-block>`
+const textBlockCode = `<fff-text-block level="3" heading="제목" description="제목을 보충하는 설명"></fff-text-block>`
 
 // 공유 스타일 파일에서 export 선언 하나를 원문 그대로 잘라 보여 준다. 여러 줄 선언은 0열에서 닫힌다.
 const exportSourceOf = (source: string, name: string) => {
@@ -123,170 +123,170 @@ const styleGroups: StyleGroup[] = [
 ]
 
 const renderStyleGroup = ({ heading, exports }: StyleGroup) => html`
-  <mm-content-section heading-level="3" heading=${heading}>
-    <mm-faq-list>
+  <fff-content-section heading-level="3" heading=${heading}>
+    <fff-faq-list>
       ${exports.map(
         ({ name, code }) => html`
-          <mm-faq-item>
-            <mm-code-tag slot="question">${name}</mm-code-tag>
-            <mm-code-block language="typescript" .code=${code}></mm-code-block>
-          </mm-faq-item>
+          <fff-faq-item>
+            <fff-code-tag slot="question">${name}</fff-code-tag>
+            <fff-code-block language="typescript" .code=${code}></fff-code-block>
+          </fff-faq-item>
         `,
       )}
-    </mm-faq-list>
-  </mm-content-section>
+    </fff-faq-list>
+  </fff-content-section>
 `
 
 const flexProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-flex'),
+  ...componentPropsOf('fff-flex'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
 ]
 
 const gridProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-grid'),
+  ...componentPropsOf('fff-grid'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
 ]
 
 const contentSectionProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-content-section'),
+  ...componentPropsOf('fff-content-section'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
   { name: 'slot: action', type: 'HTMLElement', optional: true },
 ]
 
-const pageHeaderProps: ComponentPropItemData[] = componentPropsOf('mm-page-header')
+const pageHeaderProps: ComponentPropItemData[] = componentPropsOf('fff-page-header')
 
-const textBlockProps: ComponentPropItemData[] = componentPropsOf('mm-text-block')
+const textBlockProps: ComponentPropItemData[] = componentPropsOf('fff-text-block')
 
 const formFieldProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-form-field'),
+  ...componentPropsOf('fff-form-field'),
   { name: 'slot: default', type: 'HTMLElement', optional: true },
 ]
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Utilities"
       description="콘텐츠를 배치하고 구획하는 유틸리티입니다. 한 줄로 이어 놓으면 Flex, 열 단위로 늘어놓으면 Grid를 쓰고, 제목과 본문은 Content Section, 레이블이 붙는 컨트롤은 Form Field로 묶으므로 사용자는 어느 화면에서나 같은 간격 감각으로 정돈된 배치를 읽습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-page-body>
-      <mm-tab-list value="styles" variant="text" search-param="tab">
-        <mm-tab value="styles">Styles</mm-tab>
-        <mm-tab value="components">Components</mm-tab>
-      </mm-tab-list>
+    <fff-page-body>
+      <fff-tab-list value="styles" variant="text" search-param="tab">
+        <fff-tab value="styles">Styles</fff-tab>
+        <fff-tab value="components">Components</fff-tab>
+      </fff-tab-list>
 
-      <mm-tab-panel value="styles">
-        <mm-content-section-list>${styleGroups.map(renderStyleGroup)}</mm-content-section-list>
-      </mm-tab-panel>
+      <fff-tab-panel value="styles">
+        <fff-content-section-list>${styleGroups.map(renderStyleGroup)}</fff-content-section-list>
+      </fff-tab-panel>
 
-      <mm-tab-panel value="components">
-        <mm-component-section heading="Flex" description="자식을 가로나 세로 한 줄로 배치합니다.">
-          <mm-flex-preview></mm-flex-preview>
-        </mm-component-section>
-        <mm-component-props .props=${flexProps}></mm-component-props>
+      <fff-tab-panel value="components">
+        <fff-component-section heading="Flex" description="자식을 가로나 세로 한 줄로 배치합니다.">
+          <fff-flex-preview></fff-flex-preview>
+        </fff-component-section>
+        <fff-component-props .props=${flexProps}></fff-component-props>
 
-        <mm-component-section heading="Grid" description="반복되는 항목을 열 단위로 늘어놓습니다.">
-          <mm-grid-preview></mm-grid-preview>
-        </mm-component-section>
-        <mm-component-props .props=${gridProps}></mm-component-props>
+        <fff-component-section heading="Grid" description="반복되는 항목을 열 단위로 늘어놓습니다.">
+          <fff-grid-preview></fff-grid-preview>
+        </fff-component-section>
+        <fff-component-props .props=${gridProps}></fff-component-props>
 
-        <mm-component-section
+        <fff-component-section
           heading="Page Header"
           description="제목이 놓이는 자리가 쓸 컴포넌트를 정합니다. 페이지 최상단의 제목과 설명을 구성하고, 아래 구획과의 간격을 자기 아래 여백으로 소유합니다. centered로 가운데 정렬합니다."
           full-width
           .code=${pageHeaderCode}
         >
-          <mm-flex direction="column" gap="3">
-            <mm-flex justify-content="space-between" align-items="flex-start">
-              <mm-page-header
+          <fff-flex direction="column" gap="3">
+            <fff-flex justify-content="space-between" align-items="flex-start">
+              <fff-page-header
                 heading="설정"
                 description="계정과 알림을 관리합니다."
-              ></mm-page-header>
-              <mm-button-group>
-                <mm-button variant="secondary">취소</mm-button>
-                <mm-button>저장</mm-button>
-              </mm-button-group>
-            </mm-flex>
-          </mm-flex>
-        </mm-component-section>
-        <mm-component-props .props=${pageHeaderProps}></mm-component-props>
+              ></fff-page-header>
+              <fff-button-group>
+                <fff-button variant="secondary">취소</fff-button>
+                <fff-button>저장</fff-button>
+              </fff-button-group>
+            </fff-flex>
+          </fff-flex>
+        </fff-component-section>
+        <fff-component-props .props=${pageHeaderProps}></fff-component-props>
 
-        <mm-component-section
+        <fff-component-section
           heading="Content Section"
           description="제목과 본문을 한 묶음으로 구성하고 그 사이 간격을 소유합니다. heading-level은 제목의 단계(h2–h5)와 크기를 정하며, 섹션이 문서 구조에서 놓인 자리에 맞춰 지정합니다."
           .code=${contentSectionCode}
         >
-          <mm-flex direction="column" gap="3">
-            <mm-content-section heading-level="4" heading="액션이 있는 섹션">
-              <mm-link slot="action" href="./post.html">모두 보기</mm-link>
-            </mm-content-section>
-          </mm-flex>
-        </mm-component-section>
-        <mm-component-props .props=${contentSectionProps}></mm-component-props>
+          <fff-flex direction="column" gap="3">
+            <fff-content-section heading-level="4" heading="액션이 있는 섹션">
+              <fff-link slot="action" href="./post.html">모두 보기</fff-link>
+            </fff-content-section>
+          </fff-flex>
+        </fff-component-section>
+        <fff-component-props .props=${contentSectionProps}></fff-component-props>
 
-        <mm-component-section
+        <fff-component-section
           heading="Form Field"
           description="textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를 같은 규칙으로 붙입니다. 컨트롤은 안에 넣어 받고 필드는 레이블이 붙은 role=group이 됩니다. 컨트롤별 조합은 Input 페이지가 전시합니다."
           .code=${formFieldCode}
         >
-          <mm-form-fieldset aria-label="프로필" gap="6">
-            <mm-form-field label="성별">
-              <mm-gender-selector stretch></mm-gender-selector>
-            </mm-form-field>
-            <mm-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
-              <mm-checkbox-group
+          <fff-form-fieldset aria-label="프로필" gap="6">
+            <fff-form-field label="성별">
+              <fff-gender-selector stretch></fff-gender-selector>
+            </fff-form-field>
+            <fff-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
+              <fff-checkbox-group
                 name="topics"
                 .options=${[
                   { value: 'tech', label: '기술' },
                   { value: 'design', label: '디자인' },
                   { value: 'biz', label: '비즈니스' },
                 ]}
-              ></mm-checkbox-group>
-            </mm-form-field>
-            <mm-form-field label="국가" description="배송 가능한 국가만 표시됩니다.">
-              <mm-select
+              ></fff-checkbox-group>
+            </fff-form-field>
+            <fff-form-field label="국가" description="배송 가능한 국가만 표시됩니다.">
+              <fff-select
                 .options=${[
                   { value: 'kr', label: '대한민국' },
                   { value: 'jp', label: '일본' },
                   { value: 'us', label: '미국' },
                 ]}
-              ></mm-select>
-            </mm-form-field>
-          </mm-form-fieldset>
-        </mm-component-section>
-        <mm-component-props .props=${formFieldProps}></mm-component-props>
+              ></fff-select>
+            </fff-form-field>
+          </fff-form-fieldset>
+        </fff-component-section>
+        <fff-component-props .props=${formFieldProps}></fff-component-props>
 
-        <mm-component-section
+        <fff-component-section
           heading="Text Block"
-          description="제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다. level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다. 본문이 딸린 구획에는 mm-content-section을 씁니다."
+          description="제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다. level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다. 본문이 딸린 구획에는 fff-content-section을 씁니다."
           .code=${textBlockCode}
         >
-          <mm-flex direction="column" gap="3">
-            <mm-text-block
+          <fff-flex direction="column" gap="3">
+            <fff-text-block
               level="1"
               heading="Level 1 Title"
               description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
-            ></mm-text-block>
-            <mm-separator></mm-separator>
-            <mm-text-block
+            ></fff-text-block>
+            <fff-separator></fff-separator>
+            <fff-text-block
               level="3"
               heading="Level 3 Title"
               description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
-            ></mm-text-block>
-            <mm-separator></mm-separator>
-            <mm-text-block
+            ></fff-text-block>
+            <fff-separator></fff-separator>
+            <fff-text-block
               level="4"
               heading="Level 4 Title"
               description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
-            ></mm-text-block>
-          </mm-flex>
-        </mm-component-section>
-        <mm-component-props .props=${textBlockProps}></mm-component-props>
-      </mm-tab-panel>
-    </mm-page-body>
+            ></fff-text-block>
+          </fff-flex>
+        </fff-component-section>
+        <fff-component-props .props=${textBlockProps}></fff-component-props>
+      </fff-tab-panel>
+    </fff-page-body>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

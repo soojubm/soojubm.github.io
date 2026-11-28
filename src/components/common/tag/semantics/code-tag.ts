@@ -14,7 +14,7 @@ const codeTagSizeTokens: AttributeTokens<Exclude<CodeTagSize, 'medium'>> = {
   },
 }
 
-@customElement('mm-code-tag')
+@customElement('fff-code-tag')
 export class CodeTag extends LitElement {
   static styles = [
     tagStyles,

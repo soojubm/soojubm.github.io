@@ -24,7 +24,7 @@ const presenceDotSizeTokens = Object.fromEntries(
   ]),
 )
 
-@customElement('mm-user-avatar')
+@customElement('fff-user-avatar')
 export class UserAvatar extends LitElement {
   static styles = css`
     /* 겹쳐 놓을 때 소비자가 host에 두르는 ring이 아바타의 원을 따라가게 한다. */
@@ -38,14 +38,14 @@ export class UserAvatar extends LitElement {
     }
 
     /* 원의 45° 지점에 점의 중심을 얹는다. 모서리에서 반지름의 29.3%가 그 지점이다. */
-    mm-status-dot {
+    fff-status-dot {
       outline: calc(var(--border-width) * 2) solid var(--background-color);
       position: absolute;
       inset-inline-end: calc(14.6% - var(--dot-width) / 2);
       inset-block-end: calc(14.6% - var(--dot-height) / 2);
     }
 
-    ${unsafeCSS(buildAttributeRules('size', presenceDotSizeTokens, 'mm-status-dot'))}
+    ${unsafeCSS(buildAttributeRules('size', presenceDotSizeTokens, 'fff-status-dot'))}
   `
   @property({ type: String }) name = ''
   @property({ type: String }) src?: string
@@ -55,14 +55,14 @@ export class UserAvatar extends LitElement {
 
   render() {
     return html`
-      <mm-avatar
+      <fff-avatar
         shape="circle"
         size=${this.size}
         src=${ifDefined(this.src)}
         aria-label=${this.ariaLabel}
       >
         ${this.renderInitials()}
-      </mm-avatar>
+      </fff-avatar>
       ${this.renderPresence()}
     `
   }
@@ -77,7 +77,7 @@ export class UserAvatar extends LitElement {
     if (!this.online) return nothing
 
     return html`
-      <mm-status-dot variant="online"></mm-status-dot>
+      <fff-status-dot variant="online"></fff-status-dot>
     `
   }
 

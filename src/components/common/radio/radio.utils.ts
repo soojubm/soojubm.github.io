@@ -11,7 +11,7 @@ interface RadioInputHost extends HTMLElement {
 }
 
 /**
- * radio 계열(mm-radio, mm-radio-card)이 공유하는 네이티브 input·label·인디케이터 조립과 change 처리.
+ * radio 계열(fff-radio, fff-radio-card)이 공유하는 네이티브 input·label·인디케이터 조립과 change 처리.
  * label 안에 무엇을 둘지는 각 컴포넌트가 정한다.
  */
 export function renderRadioInput(host: RadioInputHost, inputId: string, label: unknown) {

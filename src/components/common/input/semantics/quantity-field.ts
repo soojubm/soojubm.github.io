@@ -14,7 +14,7 @@ import '@/components/common/icon-button/icon-button'
 import '@/components/common/input/input'
 import { emit } from '@/utils'
 
-@customElement('mm-quantity-field')
+@customElement('fff-quantity-field')
 export class QuantityField extends withTextfieldState(LitElement) {
   static styles = [
     textfieldStyles,
@@ -35,7 +35,7 @@ export class QuantityField extends withTextfieldState(LitElement) {
         class="textfield-control"
         aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
       >
-        <mm-input
+        <fff-input
           input-id=${this.inputId}
           .type=${'number'}
           .value=${this.value}
@@ -50,8 +50,8 @@ export class QuantityField extends withTextfieldState(LitElement) {
           aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
           @focusout=${this.handleInputFocusout}
-        ></mm-input>
-        <mm-icon-button
+        ></fff-input>
+        <fff-icon-button
           variant="secondary"
           size="small"
           icon=${ICON_NAMES.SUBTRACT}
@@ -59,8 +59,8 @@ export class QuantityField extends withTextfieldState(LitElement) {
           tooltip-placement="bottom"
           ?disabled=${this.disabled}
           @click=${this.handleDecrementClick}
-        ></mm-icon-button>
-        <mm-icon-button
+        ></fff-icon-button>
+        <fff-icon-button
           variant="secondary"
           size="small"
           icon=${ICON_NAMES.ADD}
@@ -68,7 +68,7 @@ export class QuantityField extends withTextfieldState(LitElement) {
           tooltip-placement="bottom"
           ?disabled=${this.disabled}
           @click=${this.handleIncrementClick}
-        ></mm-icon-button>
+        ></fff-icon-button>
       </div>
       ${renderFieldDescription(this.description, this.descriptionId)}
       ${renderFieldValidation(this.validationId, this.resolvedValidationText)}

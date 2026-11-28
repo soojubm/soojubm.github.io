@@ -20,7 +20,7 @@ async function createSampleFiles(): Promise<File[]> {
   ]
 }
 
-@customElement('mm-file-uploader')
+@customElement('fff-file-uploader')
 export class FileUploader extends LitElement {
   static styles = css`
     :host {
@@ -56,18 +56,18 @@ export class FileUploader extends LitElement {
 
   render() {
     return html`
-      <mm-attachment-button
+      <fff-attachment-button
         label=${this.label}
         accept=${this.accept}
         ?multiple=${this.multiple}
         ?capture=${this.capture}
         @change=${this.handleFilesChange}
-      ></mm-attachment-button>
-      <mm-keyword-tag-group
+      ></fff-attachment-button>
+      <fff-keyword-tag-group
         .keywords=${[this.description, this.filesStatusText].filter(Boolean)}
-      ></mm-keyword-tag-group>
+      ></fff-keyword-tag-group>
       <div class="attachments">
-        <mm-paragraph color="light">첨부한 파일</mm-paragraph>
+        <fff-paragraph color="light">첨부한 파일</fff-paragraph>
         ${this.renderAttachments()}
       </div>
     `
@@ -92,13 +92,13 @@ export class FileUploader extends LitElement {
           this.files,
           file => file,
           (file, index) => html`
-            <mm-attachment-item
+            <fff-attachment-item
               file-name=${file.name}
               file-size=${this.formatFileSize(file.size)}
               preview-url=${ifDefined(this.previewUrls.get(file))}
               type=${file.type}
               @remove=${() => this.handleRemoveClick(index)}
-            ></mm-attachment-item>
+            ></fff-attachment-item>
           `,
         )}
       </div>

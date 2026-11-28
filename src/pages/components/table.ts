@@ -17,7 +17,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'surface.html', label: 'Surface' },
 ]
 
-const componentProps: ComponentPropItemData[] = [...componentPropsOf('mm-table')]
+const componentProps: ComponentPropItemData[] = [...componentPropsOf('fff-table')]
 
 const componentFeatures: ComponentFeatureItem[] = [
   {
@@ -55,76 +55,81 @@ const guideTexts = [
   'TODO 모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요',
 ]
 
-const exampleCode = `<mm-table
+const exampleCode = `<fff-table
   caption="히라가나 오십음도"
   height="320px"
   .columns=\${columns}
   .rows=\${rows}
-></mm-table>`
+></fff-table>`
 
 const rows = html`
   <tr>
-    <td><mm-checkbox></mm-checkbox></td>
+    <td><fff-checkbox></fff-checkbox></td>
     <th scope="row">
-      <mm-flex align-items="center" gap="2">
-        <mm-avatar variant="secondary" size="32"></mm-avatar>
+      <fff-flex align-items="center" gap="2">
+        <fff-avatar variant="secondary" size="32"></fff-avatar>
         Gabriel
-      </mm-flex>
+      </fff-flex>
     </th>
     <td>
-      <mm-flex align-items="center" gap="2">
-        <mm-tag>Male</mm-tag>
-        <mm-text>타이틀</mm-text>
-      </mm-flex>
+      <fff-flex align-items="center" gap="2">
+        <fff-tag>Male</fff-tag>
+        <fff-text>타이틀</fff-text>
+      </fff-flex>
     </td>
-    <td><mm-link external>External link</mm-link></td>
+    <td><fff-link external>External link</fff-link></td>
     <td>
-      <mm-category-tag tone=${CATEGORIES.product.tone}>${CATEGORIES.product.label}</mm-category-tag>
+      <fff-category-tag tone=${CATEGORIES.product.tone}>
+        ${CATEGORIES.product.label}
+      </fff-category-tag>
     </td>
-    <td><mm-progress-dot variant="in-progress">진행 중</mm-progress-dot></td>
+    <td><fff-progress-dot variant="in-progress">진행 중</fff-progress-dot></td>
     <td class="cell-align-right">13</td>
     <td>
-      <mm-flex justify-content="flex-end" gap="2">
-        <mm-button>액션</mm-button>
-        <mm-more-button tooltip-placement="bottom-end"></mm-more-button>
-      </mm-flex>
+      <fff-flex justify-content="flex-end" gap="2">
+        <fff-button>액션</fff-button>
+        <fff-more-button tooltip-placement="bottom-end"></fff-more-button>
+      </fff-flex>
     </td>
   </tr>
   <tr>
-    <td><mm-checkbox checked></mm-checkbox></td>
+    <td><fff-checkbox checked></fff-checkbox></td>
     <th scope="row">
-      <mm-flex align-items="center" gap="2">
-        <mm-avatar variant="secondary" size="32"></mm-avatar>
+      <fff-flex align-items="center" gap="2">
+        <fff-avatar variant="secondary" size="32"></fff-avatar>
         Ella
-      </mm-flex>
+      </fff-flex>
     </th>
     <td>
-      <mm-flex align-items="center" gap="2">
-        <mm-tag>Female</mm-tag>
-        <mm-text class="table-cell-ellipsis">
+      <fff-flex align-items="center" gap="2">
+        <fff-tag>Female</fff-tag>
+        <fff-text class="table-cell-ellipsis">
           You can't compress the program without quantifying the open-source SSD pixel!
-        </mm-text>
-      </mm-flex>
+        </fff-text>
+      </fff-flex>
     </td>
-    <td><mm-link external>External link</mm-link></td>
+    <td><fff-link external>External link</fff-link></td>
     <td>
-      <mm-category-tag tone=${CATEGORIES.design.tone}>${CATEGORIES.design.label}</mm-category-tag>
+      <fff-category-tag tone=${CATEGORIES.design.tone}>${CATEGORIES.design.label}</fff-category-tag>
     </td>
-    <td><mm-progress-dot variant="done">완료</mm-progress-dot></td>
+    <td><fff-progress-dot variant="done">완료</fff-progress-dot></td>
     <td class="cell-align-right">8</td>
     <td>
-      <mm-flex justify-content="flex-end" gap="2">
-        <mm-button>액션</mm-button>
-        <mm-more-button tooltip-placement="bottom-end"></mm-more-button>
-      </mm-flex>
+      <fff-flex justify-content="flex-end" gap="2">
+        <fff-button>액션</fff-button>
+        <fff-more-button tooltip-placement="bottom-end"></fff-more-button>
+      </fff-flex>
     </td>
   </tr>
 `
 
 const main = html`
-  <mm-main>
-    <mm-page-header heading="Table" description="표와 관련된 컴포넌트 및 패턴들."></mm-page-header>
-    <mm-component-example full-width>
+  <fff-main>
+    <fff-page-header
+      heading="Table"
+      description="표와 관련된 컴포넌트 및 패턴들."
+    ></fff-page-header>
+    <fff-component-example full-width>
       <header
         style="
           display: flex;
@@ -133,56 +138,56 @@ const main = html`
           padding: var(--space-4) 0;
         "
       >
-        <mm-text size="24">Products</mm-text>
-        <mm-button-group>
-          <mm-button icon=${ICON_NAMES.IMPORT}>가져오기</mm-button>
-          <mm-button variant="primary">추가하기</mm-button>
-        </mm-button-group>
+        <fff-text size="24">Products</fff-text>
+        <fff-button-group>
+          <fff-button icon=${ICON_NAMES.IMPORT}>가져오기</fff-button>
+          <fff-button variant="primary">추가하기</fff-button>
+        </fff-button-group>
       </header>
 
-      <mm-button-group>
-        <mm-toggle-button-group
+      <fff-button-group>
+        <fff-toggle-button-group
           .options=${statusFilterOptions}
           value="all"
-        ></mm-toggle-button-group>
-        <mm-toggle-button-group
+        ></fff-toggle-button-group>
+        <fff-toggle-button-group
           .options=${publishFilterOptions}
           value="all"
-        ></mm-toggle-button-group>
-      </mm-button-group>
+        ></fff-toggle-button-group>
+      </fff-button-group>
 
-      <mm-flex align-items="center" gap="4" style="margin: var(--space-3) 0">
-        <mm-searchfield
+      <fff-flex align-items="center" gap="4" style="margin: var(--space-3) 0">
+        <fff-searchfield
           size="small"
           hidden-label
           placeholder="검색꾸"
           value="유저"
-        ></mm-searchfield>
-        <mm-checkbox name="test1">28 selected</mm-checkbox>
-      </mm-flex>
-      <mm-table
+        ></fff-searchfield>
+        <fff-checkbox name="test1">28 selected</fff-checkbox>
+      </fff-flex>
+      <fff-table
         id="product-table"
         caption="히라가나 오십음도"
         height="320px"
         .columns=${columns}
         .rows=${rows}
-      ></mm-table>
-      <mm-pagination current-page="7" page-count="50"></mm-pagination>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+      ></fff-table>
+      <fff-pagination current-page="7" page-count="50"></fff-pagination>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-table']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-table']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list .texts=${guideTexts}></mm-text-list>
-    </mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}>
+      <fff-text-list .texts=${guideTexts}></fff-text-list>
+    </fff-component-guide>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

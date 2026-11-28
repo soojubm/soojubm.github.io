@@ -37,7 +37,7 @@ export const subComponentPropsOf = (tag: ComponentTag, written: ComponentPropIte
 // 이보다 적은 prop은 접어도 가릴 내용이 없어 처음부터 펼쳐 둔다.
 const COLLAPSIBLE_PROP_COUNT = 3
 
-@customElement('mm-component-props')
+@customElement('fff-component-props')
 export class ComponentProps extends LitElement {
   static styles = componentPropsStyles
   @property({ attribute: false }) props: ComponentPropItemData[] = []
@@ -50,21 +50,21 @@ export class ComponentProps extends LitElement {
   }
 
   /* eslint-disable lit-a11y/click-events-have-key-events -- 키보드로 펼치는 경로는 안쪽
-     mm-read-more-button이 갖고, 그 click이 올라와 이 핸들러에 닿는다. section의 click은
+     fff-read-more-button이 갖고, 그 click이 올라와 이 핸들러에 닿는다. section의 click은
      포인터 전용 단축이라 section 자체를 포커스 대상으로 만들지 않는다. */
   render() {
     return html`
       <section class="component-props component-content-frame" @click=${this.handleClick}>
-        <div hidden><mm-text as="h2">Props</mm-text></div>
+        <div hidden><fff-text as="h2">Props</fff-text></div>
         <div class="component-props-list" id=${this.propsId}>
           ${this.props.map(prop => this.renderPropItem(prop))}
         </div>
         <div class="component-props-more" aria-hidden=${this.open}>
-          <mm-read-more-button
+          <fff-read-more-button
             more-label="...펼쳐서 더보기"
             aria-controls=${this.propsId}
             aria-expanded=${this.open}
-          ></mm-read-more-button>
+          ></fff-read-more-button>
         </div>
       </section>
     `
@@ -77,15 +77,15 @@ export class ComponentProps extends LitElement {
     const values = typeText.split(' | ')
 
     return html`
-      <mm-tag-group>
-        <mm-code-tag tone="blue">${label}</mm-code-tag>
+      <fff-tag-group>
+        <fff-code-tag tone="blue">${label}</fff-code-tag>
         ${values.map(
           value =>
             html`
-              <mm-code-tag>${value}</mm-code-tag>
+              <fff-code-tag>${value}</fff-code-tag>
             `,
         )}
-      </mm-tag-group>
+      </fff-tag-group>
     `
   }
 

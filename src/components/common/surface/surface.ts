@@ -7,7 +7,7 @@ import {
   type SurfaceRadius,
 } from '@/components/common/surface/surface.styles'
 
-@customElement('mm-surface')
+@customElement('fff-surface')
 export class Surface extends LitElement {
   static styles = surfaceStyles
   /** `filled`는 상호작용 가능한 액션이 있는 맥락에서만 사용한다. */

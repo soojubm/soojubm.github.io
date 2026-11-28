@@ -15,7 +15,7 @@ export type StepItemData = {
   content?: TemplateResult
 }
 
-@customElement('mm-step')
+@customElement('fff-step')
 export class Step extends LitElement {
   static styles = stepStyles
   @property({ type: String, reflect: true }) orientation: StepOrientation = 'horizontal'
@@ -34,7 +34,7 @@ export class Step extends LitElement {
 
   private renderItem(item: StepItemData, index: number) {
     return html`
-      <mm-step-item
+      <fff-step-item
         .orientation=${this.orientation}
         .value=${index + 1}
         .label=${item.label}
@@ -42,7 +42,7 @@ export class Step extends LitElement {
         .ariaCurrent=${item.ariaCurrent ?? null}
       >
         ${item.content ?? nothing}
-      </mm-step-item>
+      </fff-step-item>
     `
   }
 }

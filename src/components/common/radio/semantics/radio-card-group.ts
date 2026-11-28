@@ -8,14 +8,14 @@ import { SingleSelection } from '@/controllers/single-selection'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 
-@customElement('mm-radio-card-group')
+@customElement('fff-radio-card-group')
 export class RadioCardGroup extends LitElement {
   static styles = [resetStyles, inputSelectionGroupStyles]
   @property({ type: String }) value = ''
   @property({ type: String }) name = ''
   @property({ type: Boolean }) disabled = false
   @property({ type: String }) legend = ''
-  @queryAssignedElements({ selector: 'mm-radio-card' })
+  @queryAssignedElements({ selector: 'fff-radio-card' })
   private cards!: RadioCard[]
   private selection = new SingleSelection({
     getValue: () => this.value,

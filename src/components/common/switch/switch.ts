@@ -6,7 +6,7 @@ import { switchStyles } from '@/components/common/switch/switch.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import { emit, uniqueId } from '@/utils'
 
-@customElement('mm-switch')
+@customElement('fff-switch')
 export class Switch extends LitElement {
   static styles = [resetStyles, switchStyles]
   @property({ type: String }) name = ''

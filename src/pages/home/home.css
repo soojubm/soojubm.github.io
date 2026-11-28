@@ -152,7 +152,7 @@
   text-align: center;
 }
 
-.tokens-stage-content mm-tag-group {
+.tokens-stage-content fff-tag-group {
   justify-content: center;
 }
 
@@ -496,7 +496,7 @@
 }
 
 /* 본문은 16px로 쓴다. 타입 스케일에 없는 크기라 토큰을 새로 만들지 않고, 이 줄 안에서만 18px 단계의 값을 16px로 읽게 한다. */
-.principle-row mm-paragraph {
+.principle-row fff-paragraph {
   --font-size-18: 1rem;
 }
 
@@ -516,13 +516,13 @@
 }
 
 /* 레퍼런스 칸은 컴포넌트가 --border로 그리므로, 홈에서는 같은 검정 선으로 덮어쓴다. */
-.reference-grid mm-reference-cell {
+.reference-grid fff-reference-cell {
   border-right: var(--home-border);
   border-bottom: var(--home-border);
 }
 
 /* 셀 host의 display가 hidden 속성을 덮지 않도록 한다. */
-.reference-grid mm-reference-cell[hidden] {
+.reference-grid fff-reference-cell[hidden] {
   display: none;
 }
 

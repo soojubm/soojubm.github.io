@@ -11,7 +11,7 @@ import { sheetPositionStyles, overlaySurfaceStyles } from '@/components/overlay/
 import { SheetController } from '@/controllers/sheet-controller'
 import { withOpenState } from '@/utils/open-state'
 
-@customElement('mm-dialog')
+@customElement('fff-dialog')
 export class Dialog extends withOpenState(LitElement) {
   static styles = [
     overlaySurfaceStyles,
@@ -43,19 +43,19 @@ export class Dialog extends withOpenState(LitElement) {
 
   render() {
     return html`
-      <mm-backdrop></mm-backdrop>
+      <fff-backdrop></fff-backdrop>
       <div class="panel" ?open=${this.open}>
-        <mm-sheet-body>
-          <mm-status-message
+        <fff-sheet-body>
+          <fff-status-message
             heading=${this.heading}
             message=${this.description}
-          ></mm-status-message>
+          ></fff-status-message>
           <slot></slot>
-        </mm-sheet-body>
-        <mm-sheet-footer
+        </fff-sheet-body>
+        <fff-sheet-footer
           .primaryAction=${this.primaryAction}
           .secondaryAction=${this.secondaryAction}
-        ></mm-sheet-footer>
+        ></fff-sheet-footer>
       </div>
     `
   }

@@ -5,7 +5,7 @@ import { justifyContentTokens } from '@/stylesheets/shared.styles'
 import type { JustifyContent, FlexDirection } from '@/stylesheets/shared.types'
 import { buildAttributeRules } from '@/utils'
 
-@customElement('mm-button-group')
+@customElement('fff-button-group')
 export class ButtonGroup extends LitElement {
   static styles = css`
     :host {

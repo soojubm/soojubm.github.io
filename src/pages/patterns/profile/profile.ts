@@ -22,62 +22,62 @@ const followerAvatars: AvatarItem[] = [
 ]
 
 const main = html`
-  <mm-main class="profile" full-width>
+  <fff-main class="profile" full-width>
     <section class="profile-user">
-      <mm-flex direction="column" gap="4">
-        <mm-user-snippet
+      <fff-flex direction="column" gap="4">
+        <fff-user-snippet
           name="수줍이"
           email="soojubm@gmail.com"
           phone="010 3121 7045"
           description="UI Designer"
           avatar-src="/src/images/soojubm.png"
           tag-label="접속 중"
-        ></mm-user-snippet>
+        ></fff-user-snippet>
   
-        <mm-button-group>
-          <mm-follow-button></mm-follow-button>
-          <mm-button variant="secondary">메시지</mm-button>
-        </mm-button-group>
-        <mm-read-more-paragraph
+        <fff-button-group>
+          <fff-follow-button></fff-follow-button>
+          <fff-button variant="secondary">메시지</fff-button>
+        </fff-button-group>
+        <fff-read-more-paragraph
           max-length="100"
           content="Sometimes at night, I find myself behind the computer. When I finally blink, a mess of code is drawing random structures on the screen. I spend the rest of the night staring."
-        ></mm-read-more-paragraph>
-        <mm-keyword-tag-group .keywords=${TOPICS}></mm-keyword-tag-group>
-        <mm-flex direction="column" gap="1">
-          <mm-meta-item-group gap="2">
-            <mm-meta-item layout="inline" label="팔로워" value="621.1K"></mm-meta-item>
-            <mm-meta-item layout="inline" label="팔로우 중" value="1,284"></mm-meta-item>
-          </mm-meta-item-group>
-          <mm-avatar-group
+        ></fff-read-more-paragraph>
+        <fff-keyword-tag-group .keywords=${TOPICS}></fff-keyword-tag-group>
+        <fff-flex direction="column" gap="1">
+          <fff-meta-item-group gap="2">
+            <fff-meta-item layout="inline" label="팔로워" value="621.1K"></fff-meta-item>
+            <fff-meta-item layout="inline" label="팔로우 중" value="1,284"></fff-meta-item>
+          </fff-meta-item-group>
+          <fff-avatar-group
             .avatars=${followerAvatars}
             label="Followed by 수줍이 외 3명"
-          ></mm-avatar-group>
-        </mm-flex>
-      </mm-flex direction="column" gap="2">
-      <mm-separator variant="element"></mm-separator>
-      <mm-social-links
+          ></fff-avatar-group>
+        </fff-flex>
+      </fff-flex direction="column" gap="2">
+      <fff-separator variant="element"></fff-separator>
+      <fff-social-links
         compact
         github="https://github.com/soojubm"
         pinterest="https://www.pinterest.co.kr/soojubm/"
         facebook="https://www.facebook.com/soojubm/"
-      ></mm-social-links>
+      ></fff-social-links>
     </section>
 
     <section class="profile-body">
-      <mm-flex direction="column" gap="3">
-        <mm-tab-list value="projects" variant="pill" search-param="tab">
-          <mm-tab value="projects">프로젝트</mm-tab>
-          <mm-tab value="second">아티클</mm-tab>
-        </mm-tab-list>
+      <fff-flex direction="column" gap="3">
+        <fff-tab-list value="projects" variant="pill" search-param="tab">
+          <fff-tab value="projects">프로젝트</fff-tab>
+          <fff-tab value="second">아티클</fff-tab>
+        </fff-tab-list>
 
-        <mm-flex justify-content="space-between" gap="2">
-          <mm-view-mode-switcher></mm-view-mode-switcher>
-          <mm-sort-selector></mm-sort-selector>
-        </mm-flex>
+        <fff-flex justify-content="space-between" gap="2">
+          <fff-view-mode-switcher></fff-view-mode-switcher>
+          <fff-sort-selector></fff-sort-selector>
+        </fff-flex>
 
-        <mm-tab-panel value="projects">
-          <mm-grid columns=${portfolioGridColumns}>
-            <mm-portfolio-item
+        <fff-tab-panel value="projects">
+          <fff-grid columns=${portfolioGridColumns}>
+            <fff-portfolio-item
               aria-controls="sheet-newneek"
               aria-haspopup="dialog"
               label="뉴닉"
@@ -86,9 +86,9 @@ const main = html`
               badge="최신"
               datetime="2024-06-20"
               .keywords=${['프로젝트관리', '디자인', '프론트엔드개발']}
-            ></mm-portfolio-item>
+            ></fff-portfolio-item>
 
-            <mm-portfolio-item
+            <fff-portfolio-item
               aria-controls="sheet-etc-works"
               aria-haspopup="dialog"
               label="프리랜서"
@@ -96,9 +96,9 @@ const main = html`
               src="/src/images/work-studium.jpg"
               datetime="2022-09-12"
               .keywords=${['프리랜서', '디자인', '워드프레스']}
-            ></mm-portfolio-item>
+            ></fff-portfolio-item>
 
-            <mm-portfolio-item
+            <fff-portfolio-item
               aria-controls="sheet-lettering"
               aria-haspopup="dialog"
               label="레터링"
@@ -106,23 +106,23 @@ const main = html`
               src="/src/images/budha.png"
               datetime="2021-02-22"
               .keywords=${['취미생활', '레터링']}
-            ></mm-portfolio-item>
-          </mm-grid>
-        </mm-tab-panel>
+            ></fff-portfolio-item>
+          </fff-grid>
+        </fff-tab-panel>
 
-        <mm-tab-panel value="second">
-          <mm-grid columns=${portfolioGridColumns}>
-            <mm-portfolio-item
+        <fff-tab-panel value="second">
+          <fff-grid columns=${portfolioGridColumns}>
+            <fff-portfolio-item
               aria-controls="sheet-flat_sitemap"
               aria-haspopup="dialog"
               label="Flat sitemap"
               datetime="2023-04-01"
-            ></mm-portfolio-item>
-          </mm-grid>
-        </mm-tab-panel>
-      </mm-flex>
+            ></fff-portfolio-item>
+          </fff-grid>
+        </fff-tab-panel>
+      </fff-flex>
     </section>
-  </mm-main>
+  </fff-main>
 
   ${newneekSheet} ${worksSheet} ${letteringSheet} ${flatSitemapSheet}
 `
@@ -134,9 +134,11 @@ renderPage(main, {
   closeSidebar: true,
   initialize: () => {
     document
-      .querySelector('mm-view-mode-switcher')
+      .querySelector('fff-view-mode-switcher')
       ?.addEventListener('change', handleViewModeSwitcherChange)
-    document.querySelector('mm-sort-selector')?.addEventListener('change', handleSortSelectorChange)
+    document
+      .querySelector('fff-sort-selector')
+      ?.addEventListener('change', handleSortSelectorChange)
   },
 })
 
@@ -146,10 +148,10 @@ function handleViewModeSwitcherChange(event: Event) {
   const containerElement = target.closest<HTMLElement>('.profile-body')
   const layout = viewModeEvent.detail.value
 
-  containerElement?.querySelectorAll<PortfolioItem>('mm-portfolio-item').forEach(item => {
+  containerElement?.querySelectorAll<PortfolioItem>('fff-portfolio-item').forEach(item => {
     item.layout = layout
   })
-  containerElement?.querySelectorAll<Grid>('mm-grid').forEach(gridElement => {
+  containerElement?.querySelectorAll<Grid>('fff-grid').forEach(gridElement => {
     gridElement.columns = layout === 'list' ? 1 : portfolioGridColumns
   })
 }
@@ -159,8 +161,8 @@ function handleSortSelectorChange(event: Event) {
   const sortEvent = event as SortEvent
   const containerElement = target.closest<HTMLElement>('.profile-body')
 
-  containerElement?.querySelectorAll<HTMLElement>('mm-grid').forEach(gridElement => {
-    const items = Array.from(gridElement.querySelectorAll<HTMLElement>('mm-portfolio-item'))
+  containerElement?.querySelectorAll<HTMLElement>('fff-grid').forEach(gridElement => {
+    const items = Array.from(gridElement.querySelectorAll<HTMLElement>('fff-portfolio-item'))
     items
       .sort((a, b) => {
         const aDate = Date.parse(a.getAttribute('datetime') ?? '')

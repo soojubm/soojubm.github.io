@@ -43,7 +43,7 @@
   font-size: 14px;
 }
 
-/* 사이드바가 열렸을 때 mm-main과 mm-footer가 밀려나는 폭은
+/* 사이드바가 열렸을 때 fff-main과 fff-footer가 밀려나는 폭은
    body에 노출하는 이 전역 변수로만 전달한다. */
 body {
   --sidebar-content-shift: var(--layout-padding-inline);
@@ -51,7 +51,7 @@ body {
   --sidebar-transition-easing: var(--transition-easing);
 }
 
-body:has(mm-sidebar[open]) {
+body:has(fff-sidebar[open]) {
   --sidebar-transition-duration: var(--transition-duration-open);
   --sidebar-transition-easing: var(--transition-easing-open);
   --sidebar-content-shift: calc(
@@ -61,7 +61,7 @@ body:has(mm-sidebar[open]) {
 }
 
 @media (max-width: 1200px) {
-  body:has(mm-sidebar[open]) {
+  body:has(fff-sidebar[open]) {
     --sidebar-content-shift: var(--layout-padding-inline);
   }
 }

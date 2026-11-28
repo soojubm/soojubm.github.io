@@ -23,7 +23,7 @@ export type SelectVariant = Extract<ButtonVariant, 'secondary' | 'tertiary'>
 const POPOVER_MAX_HEIGHT =
   'min(400px, calc(5 * var(--size-32) + 2 * (var(--overlay-panel-padding) + var(--border-width))))'
 
-@customElement('mm-select')
+@customElement('fff-select')
 export class Select extends withOpenState(LitElement) {
   static styles = css`
     /* 트리거 콘텐츠 폭을 따른다. 패널은 트리거 폭에 맞춰 늘어나므로, 컴포넌트가 부모를 채우면 놓인 자리마다 목록 폭이 달라진다 */
@@ -32,7 +32,7 @@ export class Select extends withOpenState(LitElement) {
     }
 
     /* 시각보정: indicator는 아이콘보다 큰 박스라 트리거 끝 여백이 padding보다 넓어 보인다. 그 차이만큼 바깥으로 당긴다 */
-    mm-expand-indicator {
+    fff-expand-indicator {
       margin-inline-end: calc(-1 * var(--space-1));
     }
   `
@@ -42,7 +42,7 @@ export class Select extends withOpenState(LitElement) {
   @property({ type: String }) variant: SelectVariant = 'secondary'
   @property({ type: String }) placement: PopoverPlacement = 'bottom-start'
   @property({ type: String, attribute: 'aria-label' }) ariaLabel = ''
-  @query('mm-button[aria-haspopup]') private triggerElement?: HTMLElement
+  @query('fff-button[aria-haspopup]') private triggerElement?: HTMLElement
   private overlay = new AdaptiveOverlay(this)
   private disclosure = new DisclosureController(this, {
     getTrigger: () => this.triggerElement ?? undefined,
@@ -66,39 +66,39 @@ export class Select extends withOpenState(LitElement) {
    */
   private renderTrigger() {
     return html`
-      <mm-button
+      <fff-button
         variant=${this.variant}
         aria-haspopup=${this.overlay.isViewportCompact ? 'dialog' : 'listbox'}
         aria-label=${this.triggerLabel || nothing}
       >
         ${this.currentLabel}
-        <mm-expand-indicator ?expanded=${this.open}></mm-expand-indicator>
-      </mm-button>
+        <fff-expand-indicator ?expanded=${this.open}></fff-expand-indicator>
+      </fff-button>
     `
   }
 
   private renderOptionList() {
     return html`
-      <mm-select-listbox aria-label=${this.ariaLabel || nothing} @input=${this.handleOptionInput}>
+      <fff-select-listbox aria-label=${this.ariaLabel || nothing} @input=${this.handleOptionInput}>
         ${repeat(
           this.options,
           option => option.value,
           option => this.renderOption(option),
         )}
-      </mm-select-listbox>
+      </fff-select-listbox>
     `
   }
 
   // 옵션: 선택 시 닫히며 현재 선택된 옵션은 aria-selected로 강조
   private renderOption(option: OptionItem) {
     return html`
-      <mm-select-option
+      <fff-select-option
         .value=${option.value}
         label=${option.label}
         icon=${ifDefined(option.icon)}
         ?disabled=${option.disabled}
         ?selected=${option.value === this.value}
-      ></mm-select-option>
+      ></fff-select-option>
     `
   }
 

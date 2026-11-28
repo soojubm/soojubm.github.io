@@ -4,15 +4,15 @@ import { customElement } from 'lit/decorators.js'
 import { sheetBodyStyles } from '@/components/overlay/overlay.styles'
 import '@/components/common'
 
-@customElement('mm-sheet-body')
+@customElement('fff-sheet-body')
 export class SheetBody extends LitElement {
   static styles = sheetBodyStyles
 
   render() {
     return html`
-      <mm-scroll direction="column">
+      <fff-scroll direction="column">
         <slot></slot>
-      </mm-scroll>
+      </fff-scroll>
     `
   }
 }

@@ -9,7 +9,7 @@ import {
   surfaceElevatedStyles,
 } from '@/components/common/surface/surface.styles'
 
-@customElement('mm-chat-attachment')
+@customElement('fff-chat-attachment')
 export class ChatAttachment extends LitElement {
   static styles = css`
     :host {
@@ -25,7 +25,7 @@ export class ChatAttachment extends LitElement {
 
   render() {
     return html`
-      <mm-list-item
+      <fff-list-item
         size="medium"
         icon=${this.icon}
         label=${this.label}
@@ -33,7 +33,7 @@ export class ChatAttachment extends LitElement {
         avatar-variant="secondary"
       >
         <slot name="trailing" slot="trailing"></slot>
-      </mm-list-item>
+      </fff-list-item>
     `
   }
 }

@@ -15,7 +15,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-toast'),
+  ...componentPropsOf('fff-toast'),
   ...openStateMethods,
 ]
 
@@ -44,51 +44,51 @@ function setupToastTrigger() {
   trigger.addEventListener('click', () => toast.show())
 }
 
-const exampleCode = `<mm-button data-open-toast>토스트 띄우기</mm-button>
-<mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>`
+const exampleCode = `<fff-button data-open-toast>토스트 띄우기</fff-button>
+<fff-toast class="js-demo-toast">저장되었습니다.</fff-toast>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Toast"
       description="사용자 행동의 결과를 짧게 알리는 일시적인 피드백입니다. 화면 가장자리에 잠시 나타났다가 자동으로 사라지므로, 사용자는 하던 일을 멈추거나 따로 닫지 않고도 작업이 반영되었음을 확인하고 흐름을 이어갈 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka .items=${['Snackbar']}></mm-component-aka>
+    <fff-component-aka .items=${['Snackbar']}></fff-component-aka>
 
-    <mm-component-example>
-      <mm-button data-open-toast>토스트 띄우기</mm-button>
-      <mm-toast class="js-demo-toast">저장되었습니다.</mm-toast>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+    <fff-component-example>
+      <fff-button data-open-toast>토스트 띄우기</fff-button>
+      <fff-toast class="js-demo-toast">저장되었습니다.</fff-toast>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-toast']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-toast']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-paragraph-group>
-        <mm-heading level="3">언제 사용하나요</mm-heading>
-        <mm-paragraph>
+    <fff-component-guide .features=${componentFeatures}>
+      <fff-paragraph-group>
+        <fff-heading level="3">언제 사용하나요</fff-heading>
+        <fff-paragraph>
           복사·저장·삭제처럼 사용자가 한 행동의 결과를 짧게 알릴 때 사용합니다. 놓쳐도 흐름에 지장이
           없는 피드백이어야 하며, 사용자의 확인이 필요하면
-          <mm-code>mm-dialog</mm-code>
+          <fff-code>fff-dialog</fff-code>
           , 화면에 계속 남아야 하면
-          <mm-code>mm-notice</mm-code>
+          <fff-code>fff-notice</fff-code>
           를 사용하세요.
-        </mm-paragraph>
-      </mm-paragraph-group>
+        </fff-paragraph>
+      </fff-paragraph-group>
 
-      <mm-paragraph-group>
-        <mm-heading level="3">접근성</mm-heading>
-        <mm-paragraph>스크린리더는 사용자의 흐름을 끊지 않고 읽습니다.</mm-paragraph>
-      </mm-paragraph-group>
-    </mm-component-guide>
+      <fff-paragraph-group>
+        <fff-heading level="3">접근성</fff-heading>
+        <fff-paragraph>스크린리더는 사용자의 흐름을 끊지 않고 읽습니다.</fff-paragraph>
+      </fff-paragraph-group>
+    </fff-component-guide>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main, { initialize: setupToastTrigger })

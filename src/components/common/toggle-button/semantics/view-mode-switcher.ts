@@ -9,7 +9,7 @@ import '@/components/common/toggle-button/toggle-button-group'
 
 type ViewMode = 'grid' | 'list'
 
-@customElement('mm-view-mode-switcher')
+@customElement('fff-view-mode-switcher')
 export class ViewModeSwitcher extends LitElement {
   @property({ type: String }) value: ViewMode = 'grid'
   private readonly options: OptionItem[] = [
@@ -19,12 +19,12 @@ export class ViewModeSwitcher extends LitElement {
 
   render() {
     return html`
-      <mm-toggle-button-group
+      <fff-toggle-button-group
         hidden-label
         .options=${this.options}
         .value=${this.value}
         @change=${this.handleOptionChange}
-      ></mm-toggle-button-group>
+      ></fff-toggle-button-group>
     `
   }
 

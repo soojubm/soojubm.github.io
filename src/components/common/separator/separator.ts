@@ -7,7 +7,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 
 export type SeparatorVariant = 'element' | 'section'
 
-@customElement('mm-separator')
+@customElement('fff-separator')
 export class Separator extends LitElement {
   static styles = [resetStyles, separatorStyles]
   @property({ type: String, reflect: true }) variant: SeparatorVariant = 'element'
@@ -15,7 +15,7 @@ export class Separator extends LitElement {
   render() {
     return html`
       <hr />
-      <mm-caption><slot></slot></mm-caption>
+      <fff-caption><slot></slot></fff-caption>
     `
   }
 }

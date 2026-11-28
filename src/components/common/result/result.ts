@@ -13,7 +13,7 @@ import '@/components/common/text/semantics/status-message'
 
 export type ResultRole = 'alert' | 'status'
 
-@customElement('mm-result')
+@customElement('fff-result')
 export class Result extends LitElement {
   static styles = [resultStyles]
   @property({ type: String, attribute: 'avatar-icon' }) avatarIcon?: IconName
@@ -26,7 +26,7 @@ export class Result extends LitElement {
   render() {
     return html`
       ${this.renderAvatar()}
-      <mm-status-message heading=${this.heading} message=${this.description}></mm-status-message>
+      <fff-status-message heading=${this.heading} message=${this.description}></fff-status-message>
       <slot></slot>
       ${renderActionButtons({
         primaryAction: this.primaryAction,
@@ -40,7 +40,7 @@ export class Result extends LitElement {
     if (!this.avatarIcon) return nothing
 
     return html`
-      <mm-avatar size="80" variant="secondary" icon=${this.avatarIcon}></mm-avatar>
+      <fff-avatar size="80" variant="secondary" icon=${this.avatarIcon}></fff-avatar>
     `
   }
 }

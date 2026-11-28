@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-@customElement('mm-page-header')
+@customElement('fff-page-header')
 export class PageHeader extends LitElement {
   static styles = css`
     :host {
@@ -24,11 +24,11 @@ export class PageHeader extends LitElement {
   render() {
     return html`
       <header>
-        <mm-text-block
+        <fff-text-block
           heading=${this.heading}
           description=${this.description}
           ?centered=${this.centered}
-        ></mm-text-block>
+        ></fff-text-block>
         <slot></slot>
       </header>
     `

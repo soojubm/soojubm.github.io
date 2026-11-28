@@ -19,7 +19,7 @@ export const AVATAR_SIZES = ['80', '48', '40', '32'] as const
 export type AvatarSize = (typeof AVATAR_SIZES)[number]
 export const AVATAR_SHAPES = ['square', 'circle'] as const
 export type AvatarShape = (typeof AVATAR_SHAPES)[number]
-@customElement('mm-avatar')
+@customElement('fff-avatar')
 export class Avatar extends LitElement {
   static styles = [resetStyles, avatarStyles]
   @property({ type: String, reflect: true, useDefault: true }) variant: AvatarVariant = 'primary'
@@ -54,7 +54,7 @@ export class Avatar extends LitElement {
     if (this.src || !this.icon) return nothing
 
     return html`
-      <mm-icon name=${this.icon} size=${this.iconSize} aria-hidden="true"></mm-icon>
+      <fff-icon name=${this.icon} size=${this.iconSize} aria-hidden="true"></fff-icon>
     `
   }
 
@@ -63,7 +63,7 @@ export class Avatar extends LitElement {
 
     return html`
       <slot>
-        <mm-icon name=${ICON_NAMES.PROFILE} size=${this.iconSize} aria-hidden="true"></mm-icon>
+        <fff-icon name=${ICON_NAMES.PROFILE} size=${this.iconSize} aria-hidden="true"></fff-icon>
       </slot>
     `
   }

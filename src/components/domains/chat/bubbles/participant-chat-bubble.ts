@@ -7,7 +7,7 @@ import {
   participantChatBubbleStyles,
 } from '@/components/domains/chat/chat.styles'
 
-@customElement('mm-participant-chat-bubble')
+@customElement('fff-participant-chat-bubble')
 export class ParticipantChatBubble extends withChatBubbleImage(LitElement) {
   static styles = [chatBubbleStyles, participantChatBubbleStyles]
 

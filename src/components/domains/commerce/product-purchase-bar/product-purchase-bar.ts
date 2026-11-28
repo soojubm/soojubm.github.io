@@ -6,7 +6,7 @@ import { MEDIA } from '@/constants'
 import '@/components/domains/commerce/order-product-item'
 import '@/components/domains/commerce/product-price'
 
-@customElement('mm-product-purchase-bar')
+@customElement('fff-product-purchase-bar')
 export class ProductPurchaseBar extends LitElement {
   static styles = css`
     :host {
@@ -22,7 +22,7 @@ export class ProductPurchaseBar extends LitElement {
     }
 
     /* 상품 요약이 남는 폭을 가져가 가격을 구매 버튼 곁으로 민다. */
-    mm-order-product-item {
+    fff-order-product-item {
       flex: 1;
       min-width: 0;
     }
@@ -33,11 +33,11 @@ export class ProductPurchaseBar extends LitElement {
         flex-wrap: wrap;
       }
 
-      mm-order-product-item {
+      fff-order-product-item {
         flex-basis: 100%;
       }
 
-      mm-product-price {
+      fff-product-price {
         flex: 1;
       }
     }
@@ -51,17 +51,17 @@ export class ProductPurchaseBar extends LitElement {
 
   render() {
     return html`
-      <mm-order-product-item
+      <fff-order-product-item
         image-src=${this.imageSrc}
         name=${this.name}
         option=${this.option}
-      ></mm-order-product-item>
-      <mm-product-price
+      ></fff-order-product-item>
+      <fff-product-price
         size="large"
         price=${this.price}
         original-price=${this.originalPrice}
         discount=${this.discount}
-      ></mm-product-price>
+      ></fff-product-price>
       <slot name="action"></slot>
     `
   }

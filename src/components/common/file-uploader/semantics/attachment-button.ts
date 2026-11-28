@@ -6,7 +6,7 @@ import { visuallyHiddenStyles, resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
 import '@/components/common/button/semantics/add-button'
 
-@customElement('mm-attachment-button')
+@customElement('fff-attachment-button')
 export class AttachmentButton extends LitElement {
   static styles = [
     resetStyles,
@@ -28,7 +28,7 @@ export class AttachmentButton extends LitElement {
 
   render() {
     return html`
-      <mm-add-button @click=${this.handleAddButtonClick} label=${this.label}></mm-add-button>
+      <fff-add-button @click=${this.handleAddButtonClick} label=${this.label}></fff-add-button>
       <input
         type="file"
         accept=${ifDefined(this.accept || undefined)}

@@ -5,7 +5,7 @@ import { postLinkStyles } from '@/components/domains/post/post.styles'
 import { resetStyles } from '@/stylesheets/shared.styles'
 import '@/components/common'
 
-@customElement('mm-post-item')
+@customElement('fff-post-item')
 export class PostItem extends LitElement {
   static styles = [
     resetStyles,
@@ -30,12 +30,12 @@ export class PostItem extends LitElement {
 
   render() {
     const body = html`
-      <mm-thumbnail src=${this.thumbnail} ratio="1:1"></mm-thumbnail>
-      <mm-heading level=${this.headingLevel}>${this.title}</mm-heading>
-      <mm-meta-item-group gap="2">
-        <mm-text>${this.category}</mm-text>
-        <mm-text as="time" color="light">${this.date}</mm-text>
-      </mm-meta-item-group>
+      <fff-thumbnail src=${this.thumbnail} ratio="1:1"></fff-thumbnail>
+      <fff-heading level=${this.headingLevel}>${this.title}</fff-heading>
+      <fff-meta-item-group gap="2">
+        <fff-text>${this.category}</fff-text>
+        <fff-text as="time" color="light">${this.date}</fff-text>
+      </fff-meta-item-group>
     `
 
     if (!this.href) {

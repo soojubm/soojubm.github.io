@@ -27,7 +27,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-bottom-bar'),
+  ...componentPropsOf('fff-bottom-bar'),
   { name: 'change', type: 'CustomEvent detail: index', kind: 'event' },
 ]
 
@@ -37,28 +37,28 @@ const navItems: BottomBarItem[] = [
   { label: '설정', href: '#', icon: 'settings' },
 ]
 
-const exampleCode = `<mm-bottom-bar .items=\${navItems}></mm-bottom-bar>`
+const exampleCode = `<fff-bottom-bar .items=\${navItems}></fff-bottom-bar>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Bottom Bar"
       description="작은 화면 하단에 고정되는 주요 목적지 내비게이션입니다. 최상위 목적지를 아이콘과 레이블로 나란히 두고 현재 위치를 표시하므로, 사용자는 엄지가 닿는 자리에서 한 번의 탭으로 주요 화면 사이를 오갈 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-example>
-      <mm-bottom-bar .items=${navItems}></mm-bottom-bar>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+    <fff-component-example>
+      <fff-bottom-bar .items=${navItems}></fff-bottom-bar>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
+    <fff-component-references .items=${componentReferences}></fff-component-references>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

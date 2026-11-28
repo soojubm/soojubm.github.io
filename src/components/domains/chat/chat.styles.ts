@@ -24,7 +24,7 @@ export const chatBubbleStyles = css`
     max-width: none;
   }
 
-  :host([typing]) mm-typing-indicator {
+  :host([typing]) fff-typing-indicator {
     display: flex;
   }
 
@@ -34,7 +34,7 @@ export const chatBubbleStyles = css`
     overflow: hidden;
   }
 
-  :host([image]) mm-grid {
+  :host([image]) fff-grid {
     width: calc(var(--size-80) * 3);
     max-width: 100%;
   }

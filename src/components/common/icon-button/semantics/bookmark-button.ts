@@ -11,7 +11,7 @@ import {
 import '@/components/common/icon'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-bookmark-button')
+@customElement('fff-bookmark-button')
 export class BookmarkButton extends withTogglePressed(LitElement) {
   static styles = [
     resetStyles,
@@ -35,7 +35,7 @@ export class BookmarkButton extends withTogglePressed(LitElement) {
         ?disabled=${this.disabled}
         @click=${this.handleToggleClick}
       >
-        <mm-icon name=${this.iconName}></mm-icon>
+        <fff-icon name=${this.iconName}></fff-icon>
       </button>
     `
   }

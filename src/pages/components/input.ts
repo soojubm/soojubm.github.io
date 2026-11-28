@@ -22,7 +22,7 @@ const componentChangelog: ComponentChangelogItemData[] = [
   {
     date: '2026-09-17',
     description:
-      'field 계열 전체에서 helper를 description으로 변경하고(mm-textfield-helper → mm-textfield-description), 설명 텍스트를 입력 필드 아래로 옮겼습니다.',
+      'field 계열 전체에서 helper를 description으로 변경하고(fff-textfield-helper → fff-textfield-description), 설명 텍스트를 입력 필드 아래로 옮겼습니다.',
   },
 ]
 
@@ -34,7 +34,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-textfield'),
+  ...componentPropsOf('fff-textfield'),
   { name: 'input', type: 'CustomEvent detail: value', kind: 'event' },
   { name: 'validation-change', type: 'CustomEvent detail: valid', kind: 'event' },
 ]
@@ -47,120 +47,120 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const sizeCode = `<mm-textfield placeholder="Default"></mm-textfield>
-<mm-textfield size="small" placeholder="Small"></mm-textfield>`
+const sizeCode = `<fff-textfield placeholder="Default"></fff-textfield>
+<fff-textfield size="small" placeholder="Small"></fff-textfield>`
 
-const labelCode = `<mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
-<mm-textfield label="이메일" description="가입 후에는 변경할 수 없어요." placeholder="name@example.com"></mm-textfield>`
+const labelCode = `<fff-textfield label="이메일" placeholder="name@example.com"></fff-textfield>
+<fff-textfield label="이메일" description="가입 후에는 변경할 수 없어요." placeholder="name@example.com"></fff-textfield>`
 
-const iconCode = `<mm-textfield placeholder="name@example.com">
-  <mm-icon slot="leading" name="mail"></mm-icon>
-</mm-textfield>
-<mm-textfield type="date" placeholder="YYYY. MM. DD.">
-  <mm-icon slot="trailing" name="calendar"></mm-icon>
-</mm-textfield>`
+const iconCode = `<fff-textfield placeholder="name@example.com">
+  <fff-icon slot="leading" name="mail"></fff-icon>
+</fff-textfield>
+<fff-textfield type="date" placeholder="YYYY. MM. DD.">
+  <fff-icon slot="trailing" name="calendar"></fff-icon>
+</fff-textfield>`
 
-const optionalCode = `<mm-textfield label="받는 분" placeholder="이름"></mm-textfield>
-<mm-textfield label="배송 메시지" placeholder="직접 입력" optional></mm-textfield>`
+const optionalCode = `<fff-textfield label="받는 분" placeholder="이름"></fff-textfield>
+<fff-textfield label="배송 메시지" placeholder="직접 입력" optional></fff-textfield>`
 
-const stateCode = `<mm-textfield placeholder="Placeholder"></mm-textfield>
-<mm-textfield placeholder="Disabled" disabled></mm-textfield>
-<mm-textfield value="Invalid" placeholder="Placeholder..." aria-invalid="true" validation-text="이미 등록된 이메일입니다."></mm-textfield>`
+const stateCode = `<fff-textfield placeholder="Placeholder"></fff-textfield>
+<fff-textfield placeholder="Disabled" disabled></fff-textfield>
+<fff-textfield value="Invalid" placeholder="Placeholder..." aria-invalid="true" validation-text="이미 등록된 이메일입니다."></fff-textfield>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Input"
       description="한 줄의 자유 형식 값을 받는 입력 필드입니다. 레이블과 도움말로 입력할 내용을 안내하고 규칙에 어긋나면 필드 곁에 오류를 표시하므로, 사용자는 무엇을 입력해야 하는지 알고 잘못된 부분을 그 자리에서 고칠 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka .items=${['TextInput', 'Input']}></mm-component-aka>
+    <fff-component-aka .items=${['TextInput', 'Input']}></fff-component-aka>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="size" variant="pill">
-        <mm-tab value="size">Size</mm-tab>
-        <mm-tab value="label">With Label</mm-tab>
-        <mm-tab value="icon">With Icon</mm-tab>
-        <mm-tab value="optional">Optional</mm-tab>
-        <mm-tab value="state">State</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="size">
-        <mm-component-example>
-          <mm-flex direction="column" gap="3">
-            <mm-textfield placeholder="Default"></mm-textfield>
-            <mm-textfield size="small" placeholder="Small"></mm-textfield>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${sizeCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="label">
-        <mm-component-example>
-          <mm-flex direction="column" gap="3">
-            <mm-textfield label="이메일" placeholder="name@example.com"></mm-textfield>
-            <mm-textfield
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="size" variant="pill">
+        <fff-tab value="size">Size</fff-tab>
+        <fff-tab value="label">With Label</fff-tab>
+        <fff-tab value="icon">With Icon</fff-tab>
+        <fff-tab value="optional">Optional</fff-tab>
+        <fff-tab value="state">State</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="size">
+        <fff-component-example>
+          <fff-flex direction="column" gap="3">
+            <fff-textfield placeholder="Default"></fff-textfield>
+            <fff-textfield size="small" placeholder="Small"></fff-textfield>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${sizeCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="label">
+        <fff-component-example>
+          <fff-flex direction="column" gap="3">
+            <fff-textfield label="이메일" placeholder="name@example.com"></fff-textfield>
+            <fff-textfield
               label="이메일"
               description="가입 후에는 변경할 수 없어요."
               placeholder="name@example.com"
-            ></mm-textfield>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${labelCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="icon">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-textfield placeholder="name@example.com">
-                <mm-icon slot="leading" name=${ICON_NAMES.MAIL}></mm-icon>
-              </mm-textfield>
-              <mm-textfield type="date" placeholder="YYYY. MM. DD.">
-                <mm-icon slot="trailing" name=${ICON_NAMES.DATE}></mm-icon>
-              </mm-textfield>
-            </mm-flex>
-            <mm-paragraph>
+            ></fff-textfield>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${labelCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="icon">
+        <fff-component-example>
+          <fff-flex direction="column" gap="6">
+            <fff-flex direction="column" gap="3">
+              <fff-textfield placeholder="name@example.com">
+                <fff-icon slot="leading" name=${ICON_NAMES.MAIL}></fff-icon>
+              </fff-textfield>
+              <fff-textfield type="date" placeholder="YYYY. MM. DD.">
+                <fff-icon slot="trailing" name=${ICON_NAMES.DATE}></fff-icon>
+              </fff-textfield>
+            </fff-flex>
+            <fff-paragraph>
               입력값의 종류를 알리는 아이콘은 앞쪽에, 입력을 돕는 아이콘이나 단위는 뒤쪽에 둡니다.
               앞쪽 아이콘이 레이블 역할을 하면 label은 함께 쓰지 않습니다.
-            </mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${iconCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="optional">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="3">
-              <mm-textfield label="받는 분" placeholder="이름"></mm-textfield>
-              <mm-textfield label="배송 메시지" placeholder="직접 입력" optional></mm-textfield>
-            </mm-flex>
-            <mm-paragraph>텍스트필드는 기본적으로 필수 입력입니다.</mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${optionalCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="state">
-        <mm-component-example>
-          <mm-flex direction="column" gap="3">
-            <mm-textfield placeholder="Placeholder"></mm-textfield>
-            <mm-textfield placeholder="Disabled" disabled></mm-textfield>
-            <mm-textfield
+            </fff-paragraph>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${iconCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="optional">
+        <fff-component-example>
+          <fff-flex direction="column" gap="6">
+            <fff-flex direction="column" gap="3">
+              <fff-textfield label="받는 분" placeholder="이름"></fff-textfield>
+              <fff-textfield label="배송 메시지" placeholder="직접 입력" optional></fff-textfield>
+            </fff-flex>
+            <fff-paragraph>텍스트필드는 기본적으로 필수 입력입니다.</fff-paragraph>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${optionalCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="state">
+        <fff-component-example>
+          <fff-flex direction="column" gap="3">
+            <fff-textfield placeholder="Placeholder"></fff-textfield>
+            <fff-textfield placeholder="Disabled" disabled></fff-textfield>
+            <fff-textfield
               value="Invalid"
               placeholder="Placeholder..."
               aria-invalid="true"
               validation-text="이미 등록된 이메일입니다."
-            ></mm-textfield>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${stateCode}></mm-component-code>
-      </mm-tab-panel>
-    </mm-flex>
+            ></fff-textfield>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${stateCode}></fff-component-code>
+      </fff-tab-panel>
+    </fff-flex>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-textfield']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-textfield']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-anatomy
+    <fff-component-anatomy
       .parts=${[
         '레이블 — 입력 항목의 이름을 나타냅니다(label).',
         '입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.',
@@ -176,44 +176,44 @@ const main = html`
         { placement: 'inline-start', offset: 'calc(100% - 0.75rem)' },
       ]}
     >
-      <mm-textfield
+      <fff-textfield
         label="이메일"
         placeholder="name@example.com"
         description="가입 후에는 변경할 수 없어요."
         validation-text="올바른 이메일 형식으로 입력하세요."
         aria-invalid="true"
       >
-        <mm-icon slot="leading" name="mail"></mm-icon>
-      </mm-textfield>
-    </mm-component-anatomy>
+        <fff-icon slot="leading" name="mail"></fff-icon>
+      </fff-textfield>
+    </fff-component-anatomy>
 
-    <mm-component-section heading="DatePicker">
-      <mm-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
-        <mm-icon slot="trailing" name="calendar"></mm-icon>
-      </mm-textfield>
-    </mm-component-section>
+    <fff-component-section heading="DatePicker">
+      <fff-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
+        <fff-icon slot="trailing" name="calendar"></fff-icon>
+      </fff-textfield>
+    </fff-component-section>
 
-    <mm-component-section
+    <fff-component-section
       heading="Validation Text"
       description="입력을 돕는 설명과 오류의 이유를 입력 필드 아래에 전달합니다. 테두리 색만으로는 무엇을 고칠지 알 수 없으므로, 검증 텍스트는 스크린리더도 필드와 함께 읽습니다. 다른 시스템에서는 각각 helper text, error message(MUI는 error prop과 helperText)로 부릅니다."
     >
-      <mm-textfield
+      <fff-textfield
         label="닉네임"
         required
         minlength="2"
         description="2자 이상 입력하세요."
-      ></mm-textfield>
-      <mm-flex direction="column" gap="2">
-        <mm-textfield-validation>올바른 이메일 형식으로 입력하세요.</mm-textfield-validation>
-      </mm-flex>
-    </mm-component-section>
+      ></fff-textfield>
+      <fff-flex direction="column" gap="2">
+        <fff-textfield-validation>올바른 이메일 형식으로 입력하세요.</fff-textfield-validation>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-section
+    <fff-component-section
       heading="QuantityField"
       description="수량 입력 필드. step/count 입력에 사용합니다."
     >
-      <mm-flex direction="column" gap="3">
-        <mm-quantity-field
+      <fff-flex direction="column" gap="3">
+        <fff-quantity-field
           label="수량"
           name="quantity"
           value="2"
@@ -221,52 +221,52 @@ const main = html`
           max="20"
           step="1"
           description="1개 이상 20개 이하로 입력하세요."
-        ></mm-quantity-field>
+        ></fff-quantity-field>
 
-        <mm-quantity-field label="비활성" value="10" disabled></mm-quantity-field>
-      </mm-flex>
-    </mm-component-section>
+        <fff-quantity-field label="비활성" value="10" disabled></fff-quantity-field>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-section
+    <fff-component-section
       heading="PasswordField"
       description="비밀번호 입력 필드"
       .checks=${[
         '확인 필드가 있으면 두 번 입력해 오입력을 걸러낼 수 있습습니다. 리빌 버튼은 비밀번호 확인 필드가 없는 폼에서만 씁니다.',
       ]}
     >
-      <mm-passwordfield
+      <fff-passwordfield
         label="비밀번호"
         placeholder="비밀번호를 입력하세요"
         description="8자 이상, 영문·숫자·특수문자를 포함하세요."
-      ></mm-passwordfield>
-    </mm-component-section>
+      ></fff-passwordfield>
+    </fff-component-section>
 
-    <mm-component-section heading="SearchField">
-      <mm-flex direction="column" gap="3">
-        <mm-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></mm-searchfield>
-        <mm-searchfield size="small" placeholder="작은 검색 필드"></mm-searchfield>
-      </mm-flex>
-    </mm-component-section>
+    <fff-component-section heading="SearchField">
+      <fff-flex direction="column" gap="3">
+        <fff-searchfield placeholder="궁금한 인물이나 이슈가 있나요?"></fff-searchfield>
+        <fff-searchfield size="small" placeholder="작은 검색 필드"></fff-searchfield>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-section heading="NewsletterField">
+    <fff-component-section heading="NewsletterField">
       <form>
-        <mm-textfield type="email" placeholder="Enter Your Email..">
-          <mm-icon slot="leading" name="mail"></mm-icon>
-          <mm-button slot="trailing" type="submit" variant="primary" size="medium">
+        <fff-textfield type="email" placeholder="Enter Your Email..">
+          <fff-icon slot="leading" name="mail"></fff-icon>
+          <fff-button slot="trailing" type="submit" variant="primary" size="medium">
             뉴스레터 구독
-          </mm-button>
-        </mm-textfield>
+          </fff-button>
+        </fff-textfield>
       </form>
-    </mm-component-section>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
+    <fff-component-references .items=${componentReferences}></fff-component-references>
 
-    <mm-component-changelog .items=${componentChangelog}></mm-component-changelog>
+    <fff-component-changelog .items=${componentChangelog}></fff-component-changelog>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

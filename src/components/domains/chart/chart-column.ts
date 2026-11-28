@@ -12,7 +12,7 @@ export type ChartColumnItem = {
   value?: string
 }
 
-@customElement('mm-chart-column')
+@customElement('fff-chart-column')
 export class ChartColumn extends LitElement {
   static styles = [
     resetStyles,
@@ -117,13 +117,13 @@ export class ChartColumn extends LitElement {
     return html`
       ${value
         ? html`
-            <mm-text size="12">${value}</mm-text>
+            <fff-text size="12">${value}</fff-text>
           `
         : nothing}
       <div class="track">
         <div class="bar" style=${styleMap({ height: `${share}%` })}></div>
       </div>
-      <mm-text size="12">${label}</mm-text>
+      <fff-text size="12">${label}</fff-text>
     `
   }
 

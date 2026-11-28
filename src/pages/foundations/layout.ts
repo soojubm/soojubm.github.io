@@ -77,7 +77,7 @@ const viewportOverlays: OverlayInfo[] = [
 
 /** 작은 화면 위에 anchored overlay가 놓이는 자리를 그린다. 패널이 트리거 옆에 붙는다. */
 const renderAnchoredDiagram = () => html`
-  <mm-figure-card
+  <fff-figure-card
     class="overlay-figure-card"
     description="트리거의 아래, 시작 가장자리에 맞춰 붙는다"
   >
@@ -85,13 +85,13 @@ const renderAnchoredDiagram = () => html`
       <span class="overlay-trigger"></span>
       <span class="overlay-panel"></span>
     </div>
-    <mm-code-tag slot="tags">bottom-start</mm-code-tag>
-  </mm-figure-card>
+    <fff-code-tag slot="tags">bottom-start</fff-code-tag>
+  </fff-figure-card>
 `
 
 /** viewport overlay가 화면 기준으로 놓이는 다섯 자리를 한 화면에서 차례로 옮겨 가며 보인다. */
 const renderViewportDiagram = () => html`
-  <mm-figure-card
+  <fff-figure-card
     class="overlay-figure-card"
     description="트리거 위치와 상관없이 화면 기준의 자리에서 열린다"
   >
@@ -100,10 +100,10 @@ const renderViewportDiagram = () => html`
     </div>
     ${['center', 'top', 'right', 'bottom', 'left'].map(
       placement => html`
-        <mm-code-tag slot="tags">${placement}</mm-code-tag>
+        <fff-code-tag slot="tags">${placement}</fff-code-tag>
       `,
     )}
-  </mm-figure-card>
+  </fff-figure-card>
 `
 
 const overlayLegendItems: ChartLegendItem[] = [
@@ -127,24 +127,24 @@ const controllerNames = [
 /** overlay 하나의 이름과 분류 속성을 색으로 구분된 태그로 나열한다. */
 const renderOverlay = (overlay: OverlayInfo) =>
   html`
-    <mm-flex direction="column" gap="2">
-      <mm-code-tag size="large" tone=${overlay.modal ? 'blue' : 'green'}>
+    <fff-flex direction="column" gap="2">
+      <fff-code-tag size="large" tone=${overlay.modal ? 'blue' : 'green'}>
         ${overlay.name}
-      </mm-code-tag>
-      <mm-tag-group>
-        <mm-code-tag tone=${overlay.modal ? 'blue' : 'green'}>
+      </fff-code-tag>
+      <fff-tag-group>
+        <fff-code-tag tone=${overlay.modal ? 'blue' : 'green'}>
           ${overlay.modal ? 'Modal' : 'Non-modal'}
-        </mm-code-tag>
-        <mm-code-tag tone="purple">${overlay.role ?? 'none'}</mm-code-tag>
-        <mm-code-tag tone="orange">${overlay.layer}</mm-code-tag>
-        <mm-code-tag tone="cyan">${overlay.focus ? 'focus move' : 'no focus move'}</mm-code-tag>
+        </fff-code-tag>
+        <fff-code-tag tone="purple">${overlay.role ?? 'none'}</fff-code-tag>
+        <fff-code-tag tone="orange">${overlay.layer}</fff-code-tag>
+        <fff-code-tag tone="cyan">${overlay.focus ? 'focus move' : 'no focus move'}</fff-code-tag>
         ${(overlay.close.length ? overlay.close : ['none']).map(
           method => html`
-            <mm-code-tag>${method}</mm-code-tag>
+            <fff-code-tag>${method}</fff-code-tag>
           `,
         )}
-      </mm-tag-group>
-    </mm-flex>
+      </fff-tag-group>
+    </fff-flex>
   `
 
 interface LayerTier {
@@ -168,16 +168,16 @@ const layerTiers: LayerTier[] = [
 ]
 
 const renderLayerTier = ({ token, tone, role }: LayerTier, index: number) => html`
-  <mm-flex
+  <fff-flex
     class="layer-tier"
     style=${`--layer-depth: ${index}`}
     direction="column"
     align-items="flex-start"
     gap="1"
   >
-    <mm-code-tag size="large" tone=${tone}>${token}</mm-code-tag>
-    <mm-caption>${role}</mm-caption>
-  </mm-flex>
+    <fff-code-tag size="large" tone=${tone}>${token}</fff-code-tag>
+    <fff-caption>${role}</fff-caption>
+  </fff-flex>
 `
 
 type PlaneShape = 'content' | 'topbar' | 'sidebar' | 'bottombar' | 'overlay'
@@ -225,10 +225,10 @@ const renderAppShellLayerDiagram = () => html`
             )}
           </div>
           <span class="layer-diagram-leader" aria-hidden="true"></span>
-          <mm-flex direction="column" align-items="flex-start" gap="1">
-            <mm-code-tag size="large" tone=${tone}>${token}</mm-code-tag>
-            <mm-caption>${members}</mm-caption>
-          </mm-flex>
+          <fff-flex direction="column" align-items="flex-start" gap="1">
+            <fff-code-tag size="large" tone=${tone}>${token}</fff-code-tag>
+            <fff-caption>${members}</fff-caption>
+          </fff-flex>
         </div>
       `,
     )}
@@ -253,14 +253,14 @@ const renderSpacingGap = (level: 'section' | 'group' | 'element', token?: string
   <span class="spacing-gap" data-level=${level}>
     ${token
       ? html`
-          <mm-code-tag>${token}</mm-code-tag>
+          <fff-code-tag>${token}</fff-code-tag>
         `
       : ''}
   </span>
 `
 
 const renderSpacingElement = () => html`
-  <mm-ui-placeholder></mm-ui-placeholder>
+  <fff-ui-placeholder></fff-ui-placeholder>
 `
 
 /** 첫 그룹의 첫 요소 사이에만 토큰을 적고 나머지는 같은 간격만 둔다. */
@@ -283,31 +283,31 @@ const renderSpacingSection = (labeled = false) => html`
 /** 앞의 섹션들과 형태가 완전히 다른 가운데 정렬 모듈로, 맥락이 바뀌었음을 보여 준다. */
 const renderSpacingOtherContext = () => html`
   <div class="contrast-module">
-    <mm-ui-placeholder variant="avatar"></mm-ui-placeholder>
-    <mm-ui-placeholder variant="heading"></mm-ui-placeholder>
-    <mm-ui-placeholder variant="text"></mm-ui-placeholder>
+    <fff-ui-placeholder variant="avatar"></fff-ui-placeholder>
+    <fff-ui-placeholder variant="heading"></fff-ui-placeholder>
+    <fff-ui-placeholder variant="text"></fff-ui-placeholder>
   </div>
 `
 
 /** 같은 형태의 섹션 둘은 간격으로, 형태가 다른 맥락과는 구분선으로 구획한 한 화면을 그린다. */
 const renderSpacingOverview = () => html`
-  <mm-example-stage full-width>
-    <mm-flex direction="column">
+  <fff-example-stage full-width>
+    <fff-flex direction="column">
       ${renderSpacingSection(true)}${renderSpacingGap(
         'section',
         '--space-section',
       )}${renderSpacingSection()}
-      <mm-separator variant="section"></mm-separator>
+      <fff-separator variant="section"></fff-separator>
       ${renderSpacingOtherContext()}
-    </mm-flex>
-  </mm-example-stage>
+    </fff-flex>
+  </fff-example-stage>
 `
 
 const renderUsageTags = (tags: string[] = []) =>
   tags.map(
     tag =>
       html`
-        <mm-tag>${tag}</mm-tag>
+        <fff-tag>${tag}</fff-tag>
       `,
   )
 
@@ -327,7 +327,7 @@ const widthExample = (options: {
   description?: string
   links: [href: string, label: string][]
 }) => html`
-  <mm-flex direction="column" gap="2">
+  <fff-flex direction="column" gap="2">
     <div class="width-track">
       <div
         class="width-extent"
@@ -335,51 +335,51 @@ const widthExample = (options: {
           ? `max-width: calc(${options.maxWidth} + 2 * var(--layout-padding-inline))`
           : ''}
       >
-        <mm-text class="width-extent-label" size="12" data-extent-label></mm-text>
+        <fff-text class="width-extent-label" size="12" data-extent-label></fff-text>
         <div class="width-extent-row">
-          <div class="width-gutter"><mm-text size="12">5vw</mm-text></div>
+          <div class="width-gutter"><fff-text size="12">5vw</fff-text></div>
           <div
             class="width-bar"
             style=${`--width-bar-background-color: var(--category-${
               options.category
             }-background-color);${options.maxWidth ? ` max-width: ${options.maxWidth}` : ''}`}
           >
-            <mm-code-tag tone=${options.tone}>${options.token}</mm-code-tag>
+            <fff-code-tag tone=${options.tone}>${options.token}</fff-code-tag>
           </div>
-          <div class="width-gutter"><mm-text size="12">5vw</mm-text></div>
+          <div class="width-gutter"><fff-text size="12">5vw</fff-text></div>
         </div>
       </div>
     </div>
     ${options.widthToken
       ? html`
-          <mm-tag-group>
-            <mm-code-tag>${options.widthToken}</mm-code-tag>
+          <fff-tag-group>
+            <fff-code-tag>${options.widthToken}</fff-code-tag>
             ${options.gutterToken
               ? html`
-                  <mm-code-tag>--layout-padding-inline</mm-code-tag>
+                  <fff-code-tag>--layout-padding-inline</fff-code-tag>
                 `
               : ''}
-          </mm-tag-group>
+          </fff-tag-group>
         `
       : ''}
-    <mm-tag-group>
-      <mm-tag tone=${options.tone}>${options.caption}</mm-tag>
+    <fff-tag-group>
+      <fff-tag tone=${options.tone}>${options.caption}</fff-tag>
       ${renderUsageTags(options.tags)}
-    </mm-tag-group>
+    </fff-tag-group>
     ${options.description
       ? html`
-          <mm-paragraph>${options.description}</mm-paragraph>
+          <fff-paragraph>${options.description}</fff-paragraph>
         `
       : ''}
-    <mm-flex gap="3" wrap="wrap">
+    <fff-flex gap="3" wrap="wrap">
       ${options.links.map(
         ([href, label]) =>
           html`
-            <mm-link href=${href}>${label}</mm-link>
+            <fff-link href=${href}>${label}</fff-link>
           `,
       )}
-    </mm-flex>
-  </mm-flex>
+    </fff-flex>
+  </fff-flex>
 `
 
 /** 페이지 너비와 같은 트랙·막대 모양으로, 트랙의 배경만 달리해 배경 대비를 보인다. */
@@ -389,7 +389,7 @@ const renderBackgroundExample = (options: {
   values: string[]
   subtle?: boolean
 }) => html`
-  <mm-flex direction="column" gap="2">
+  <fff-flex direction="column" gap="2">
     <div class="width-track" data-subtle=${options.subtle ? 'true' : 'false'}>
       <div
         class="width-bar"
@@ -397,70 +397,70 @@ const renderBackgroundExample = (options: {
         style="--width-bar-background-color: var(--background-color); max-width: var(--layout-width-small)"
       ></div>
     </div>
-    <mm-tag-group>
+    <fff-tag-group>
       ${options.values.map(
         value =>
           html`
-            <mm-code-tag>${value}</mm-code-tag>
+            <fff-code-tag>${value}</fff-code-tag>
           `,
       )}
-    </mm-tag-group>
-    <mm-caption>${options.caption}</mm-caption>
-    <mm-tag-group>${renderUsageTags(options.tags)}</mm-tag-group>
-  </mm-flex>
+    </fff-tag-group>
+    <fff-caption>${options.caption}</fff-caption>
+    <fff-tag-group>${renderUsageTags(options.tags)}</fff-tag-group>
+  </fff-flex>
 `
 
 /** 왼쪽 정렬로 흐르는 본문 사이에 가운데 정렬 모듈을 끼워, 정렬의 대비를 한 화면에 그린다. */
 const renderAlignmentContrast = () => {
   const renderFlow = (tag: string) => html`
     <div class="contrast-flow">
-      <mm-code-tag>${tag}</mm-code-tag>
-      <mm-ui-placeholder variant="heading"></mm-ui-placeholder>
-      <mm-ui-placeholder variant="text"></mm-ui-placeholder>
-      <mm-ui-placeholder variant="text"></mm-ui-placeholder>
+      <fff-code-tag>${tag}</fff-code-tag>
+      <fff-ui-placeholder variant="heading"></fff-ui-placeholder>
+      <fff-ui-placeholder variant="text"></fff-ui-placeholder>
+      <fff-ui-placeholder variant="text"></fff-ui-placeholder>
     </div>
   `
 
   return html`
-    <mm-example-stage>
+    <fff-example-stage>
       <div class="contrast-page">
         ${renderFlow('text-align: start')}
         <div class="contrast-module">
-          <mm-code-tag tone="blue">text-align: center</mm-code-tag>
-          <mm-ui-placeholder variant="avatar"></mm-ui-placeholder>
-          <mm-ui-placeholder variant="heading"></mm-ui-placeholder>
-          <mm-ui-placeholder variant="text"></mm-ui-placeholder>
+          <fff-code-tag tone="blue">text-align: center</fff-code-tag>
+          <fff-ui-placeholder variant="avatar"></fff-ui-placeholder>
+          <fff-ui-placeholder variant="heading"></fff-ui-placeholder>
+          <fff-ui-placeholder variant="text"></fff-ui-placeholder>
         </div>
         ${renderFlow('text-align: start')}
       </div>
-    </mm-example-stage>
+    </fff-example-stage>
   `
 }
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Layout"
       description="페이지 너비, 요소 사이의 간격, 화면 위로 뜨는 overlay의 층위를 정합니다. 이 신호들은 장식이 아니라 페이지의 성격과 작업 맥락을 드러내므로, 사용자는 의식하지 못해도 맥락이 달라졌다는 미묘한 감각을 얻습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-page-body>
-      <mm-tab-list value="page" variant="text" search-param="tab">
-        <mm-tab value="page">Page</mm-tab>
-        <mm-tab value="division">Division</mm-tab>
-        <mm-tab value="overlay">Overlay</mm-tab>
-        <mm-tab value="elevation">Elevation</mm-tab>
-      </mm-tab-list>
+    <fff-page-body>
+      <fff-tab-list value="page" variant="text" search-param="tab">
+        <fff-tab value="page">Page</fff-tab>
+        <fff-tab value="division">Division</fff-tab>
+        <fff-tab value="overlay">Overlay</fff-tab>
+        <fff-tab value="elevation">Elevation</fff-tab>
+      </fff-tab-list>
 
-      <mm-tab-panel value="page">
-        <mm-content-section-list>
-          <mm-content-section
+      <fff-tab-panel value="page">
+        <fff-content-section-list>
+          <fff-content-section
             heading-level="3"
             heading="페이지 너비"
-            description="너비로 읽기 밀도를 정합니다. 본문 골격은 mm-main의 width로, 떠오르는 overlay는 각 컴포넌트의 width로 지정합니다."
+            description="너비로 읽기 밀도를 정합니다. 본문 골격은 fff-main의 width로, 떠오르는 overlay는 각 컴포넌트의 width로 지정합니다."
           >
-            <mm-example-stage full-width>
-              <mm-flex direction="column" gap="6">
+            <fff-example-stage full-width>
+              <fff-flex direction="column" gap="6">
                 ${widthExample({
                   caption: '집중형',
                   tags: ['폼', '인증'],
@@ -514,17 +514,17 @@ const main = html`
                     ['./profile.html', 'Profile'],
                   ],
                 })}
-              </mm-flex>
-            </mm-example-stage>
-          </mm-content-section>
+              </fff-flex>
+            </fff-example-stage>
+          </fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="배경 대비"
             description="글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계 낮춰 다른 맥락으로 넘어왔다는 감각을 줍니다."
           >
-            <mm-example-stage full-width>
-              <mm-flex direction="column" gap="6">
+            <fff-example-stage full-width>
+              <fff-flex direction="column" gap="6">
                 ${renderBackgroundExample({
                   caption: '이전 화면',
                   values: ['background', 'default'],
@@ -535,40 +535,40 @@ const main = html`
                   values: ['background', 'subtle'],
                   subtle: true,
                 })}
-              </mm-flex>
-            </mm-example-stage>
-          </mm-content-section>
+              </fff-flex>
+            </fff-example-stage>
+          </fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="콘텐츠 모듈의 대비"
             description="상태 변화·결과·맥락 전환을 전달하는 콘텐츠 모듈은 주변 콘텐츠와 대비를 만들어 사용자의 주의를 끌어옵니다."
           >
-            <mm-paragraph>
-              완료·오류·빈 상태를 보여 주는 ${code('mm-result')}가 이 규칙을 따릅니다.
-            </mm-paragraph>
+            <fff-paragraph>
+              완료·오류·빈 상태를 보여 주는 ${code('fff-result')}가 이 규칙을 따릅니다.
+            </fff-paragraph>
             ${renderAlignmentContrast()}
-          </mm-content-section>
-        </mm-content-section-list>
-      </mm-tab-panel>
+          </fff-content-section>
+        </fff-content-section-list>
+      </fff-tab-panel>
 
-      <mm-tab-panel value="division">
-        <mm-content-section-list>
-          <mm-text-block
+      <fff-tab-panel value="division">
+        <fff-content-section-list>
+          <fff-text-block
             level="3"
             heading=""
             description="사용자는 요소를 하나씩 읽기보다 가까이 놓인 것끼리 묶어 읽습니다. 그래서 덩어리 안의 간격은 덩어리 사이의 간격보다 좁아야 하며, 중첩이 한 단계 바깥으로 나갈수록 간격이 한 단계씩 커집니다. 한 경계에 간격과 구분선을 함께 쓰지 않습니다."
           >
             ${renderSpacingOverview()}
-          </mm-text-block>
+          </fff-text-block>
 
-          <mm-grid columns="2" gap="4">
-            <mm-term-block
+          <fff-grid columns="2" gap="4">
+            <fff-term-block
               term="Gap"
               description="같은 맥락의 그룹·섹션·리스트는 간격으로 구획합니다. 같은 모양의 제목과 여백이 콘텐츠 그룹마다 반복되는 리듬은 구획되었다는 인상을 줍니다."
             >
-              <mm-code-tag slot="tags" tone="green">같은 맥락</mm-code-tag>
-              <mm-text-list
+              <fff-code-tag slot="tags" tone="green">같은 맥락</fff-code-tag>
+              <fff-text-list
                 variant="check"
                 .texts=${[
                   html`
@@ -576,45 +576,45 @@ const main = html`
                     ${code('margin')}·${code('padding')}으로 두지 않는다
                   `,
                 ]}
-              ></mm-text-list>
-              <mm-component-notice heading="Figma 오토 레이아웃도 같은 방식이다">
+              ></fff-text-list>
+              <fff-component-notice heading="Figma 오토 레이아웃도 같은 방식이다">
                 항목 사이 간격을 항목이 아니라 부모 프레임의
-                <mm-link href="https://help.figma.com/hc/en-us/articles/360040451373">
+                <fff-link href="https://help.figma.com/hc/en-us/articles/360040451373">
                   Spacing between items
-                </mm-link>
+                </fff-link>
                 으로 정합니다.
-              </mm-component-notice>
-            </mm-term-block>
+              </fff-component-notice>
+            </fff-term-block>
 
-            <mm-term-block
+            <fff-term-block
               term="Separator"
               description="맥락이 달라지는 자리에만 구분선을 긋습니다. 반복되는 패턴의 리듬이 구획되었다는 인상을 줄 수 있습니다. 구분선을 과도하게 사용하면 시각적 노이즈로 작용할 수 있습니다."
             >
-              <mm-code-tag slot="tags" tone="blue">다른 맥락</mm-code-tag>
-              <mm-text-list
+              <fff-code-tag slot="tags" tone="blue">다른 맥락</fff-code-tag>
+              <fff-text-list
                 variant="check"
                 .texts=${['separator가 구획을 맡으면 컨테이너에 gap을 두지 않는다']}
-              ></mm-text-list>
-            </mm-term-block>
-          </mm-grid>
-        </mm-content-section-list>
-      </mm-tab-panel>
+              ></fff-text-list>
+            </fff-term-block>
+          </fff-grid>
+        </fff-content-section-list>
+      </fff-tab-panel>
 
-      <mm-tab-panel value="overlay">
-        <mm-content-section-list>
-          <mm-flex direction="column" gap="4">
-            <mm-grid columns="2" gap="4">
-              <mm-content-section heading-level="3" heading="Anchored overlay">
+      <fff-tab-panel value="overlay">
+        <fff-content-section-list>
+          <fff-flex direction="column" gap="4">
+            <fff-grid columns="2" gap="4">
+              <fff-content-section heading-level="3" heading="Anchored overlay">
                 ${renderAnchoredDiagram()} ${anchoredOverlays.map(renderOverlay)}
-              </mm-content-section>
-              <mm-content-section heading-level="3" heading="Viewport overlay">
+              </fff-content-section>
+              <fff-content-section heading-level="3" heading="Viewport overlay">
                 ${renderViewportDiagram()} ${viewportOverlays.map(renderOverlay)}
-              </mm-content-section>
-            </mm-grid>
-            <mm-chart-legend .items=${overlayLegendItems}></mm-chart-legend>
-          </mm-flex>
+              </fff-content-section>
+            </fff-grid>
+            <fff-chart-legend .items=${overlayLegendItems}></fff-chart-legend>
+          </fff-flex>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="Modal × Non-Modal"
             description="modal은 열린 동안 뒤의 화면을 막는 overlay입니다. 작업을 마치거나 취소해야 다음으로 넘어가는 흐름에 쓰며, 삭제 확인·중요 정보 입력·결제가 여기에 해당합니다."
@@ -632,61 +632,61 @@ const main = html`
                 이어지게 한다. 바깥을 눌러 닫을 때는 사용자가 누른 곳의 포커스를 빼앗지 않는다
               `,
             ]}
-          ></mm-content-section>
+          ></fff-content-section>
 
-          <mm-content-section heading-level="3" heading="Placement Type">
-            <mm-code-block language="typescript" .code=${placementTypeCode}></mm-code-block>
-          </mm-content-section>
+          <fff-content-section heading-level="3" heading="Placement Type">
+            <fff-code-block language="typescript" .code=${placementTypeCode}></fff-code-block>
+          </fff-content-section>
 
-          <mm-text-block
+          <fff-text-block
             level="3"
             heading="컨트롤러"
             description="열림 상태, 스크롤 잠금, portal 이동처럼 overlay가 공통으로 하는 동작은 컨트롤러가 맡고, overlay 컴포넌트는 이를 가져다 씁니다."
           >
-            <mm-tag-group>
+            <fff-tag-group>
               ${controllerNames.map(
                 name => html`
-                  <mm-code-tag>${name}</mm-code-tag>
+                  <fff-code-tag>${name}</fff-code-tag>
                 `,
               )}
-            </mm-tag-group>
-          </mm-text-block>
-        </mm-content-section-list>
-      </mm-tab-panel>
+            </fff-tag-group>
+          </fff-text-block>
+        </fff-content-section-list>
+      </fff-tab-panel>
 
-      <mm-tab-panel value="elevation">
-        <mm-content-section-list>
-          <mm-content-section
+      <fff-tab-panel value="elevation">
+        <fff-content-section-list>
+          <fff-content-section
             heading-level="3"
             heading="겹침 순서"
             description="앞에서 뒤로 층위를 나열합니다. 화면 위로 뜨는 요소는 역할에 맞는 층을 골라, 어느 표면에서 열려도 같은 순서로 겹치게 합니다."
           >
-            <mm-example-stage>
-              <mm-flex
+            <fff-example-stage>
+              <fff-flex
                 class="layer-stack"
                 direction="column"
                 gap="4"
                 role="group"
                 aria-label="겹침 순서: 앞에서 뒤로"
               >
-                <mm-caption>앞</mm-caption>
+                <fff-caption>앞</fff-caption>
                 ${layerTiers.map(renderLayerTier)}
-                <mm-caption>뒤</mm-caption>
-              </mm-flex>
-            </mm-example-stage>
-          </mm-content-section>
+                <fff-caption>뒤</fff-caption>
+              </fff-flex>
+            </fff-example-stage>
+          </fff-content-section>
 
-          <mm-content-section
+          <fff-content-section
             heading-level="3"
             heading="앱 셸"
             description="앱 셸 예제를 층별로 떼어 낸 그림입니다."
           >
-            <mm-example-stage>${renderAppShellLayerDiagram()}</mm-example-stage>
-          </mm-content-section>
-        </mm-content-section-list>
-      </mm-tab-panel>
-    </mm-page-body>
-  </mm-main>
+            <fff-example-stage>${renderAppShellLayerDiagram()}</fff-example-stage>
+          </fff-content-section>
+        </fff-content-section-list>
+      </fff-tab-panel>
+    </fff-page-body>
+  </fff-main>
 `
 
 /** 막대와 양옆 여백을 합친 실제 폭을 재어 위 라벨에 적고, 화면 크기가 바뀌면 다시 갱신한다. */

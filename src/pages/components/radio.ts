@@ -32,13 +32,13 @@ const componentReferences: ComponentReferenceItemData[] = [
   },
 ]
 
-const groupProps = componentPropsOf('mm-radio-group')
+const groupProps = componentPropsOf('fff-radio-group')
 
 const componentProps: ComponentPropItemData[] = [
   ...groupProps,
   { name: 'change', type: 'CustomEvent detail: value, name', kind: 'event' },
-  ...subComponentPropsOf('mm-radio', groupProps),
-  { name: 'mm-radio change', type: 'CustomEvent detail: checked, value', kind: 'event' },
+  ...subComponentPropsOf('fff-radio', groupProps),
+  { name: 'fff-radio change', type: 'CustomEvent detail: checked, value', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -60,74 +60,74 @@ const membershipOptions: OptionItem[] = [
   { value: 'ultimate', label: '얼티메이트 요금제', disabled: true },
 ]
 
-const sizeCode = `<mm-radio-group name="membership-size-default" value="basic" .options=\${options}></mm-radio-group>
-<mm-radio-group name="membership-size-large" size="large" value="basic" .options=\${options}></mm-radio-group>`
+const sizeCode = `<fff-radio-group name="membership-size-default" value="basic" .options=\${options}></fff-radio-group>
+<fff-radio-group name="membership-size-large" size="large" value="basic" .options=\${options}></fff-radio-group>`
 
-const stateCode = `<mm-radio-group name="membership-option-disabled" value="premium" .options=\${options}></mm-radio-group>
-<mm-radio-group name="membership-disabled" value="premium" disabled .options=\${options}></mm-radio-group>`
+const stateCode = `<fff-radio-group name="membership-option-disabled" value="premium" .options=\${options}></fff-radio-group>
+<fff-radio-group name="membership-disabled" value="premium" disabled .options=\${options}></fff-radio-group>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="RadioGroup"
       description="옵션 목록에서 하나만 고르는 선택 컨트롤입니다. 한 옵션을 고르면 그룹 안의 다른 선택이 해제되므로, 사용자는 모든 선택지를 한눈에 비교한 뒤 서로 배타적인 옵션 중 하나를 확실하게 고를 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-flex direction="column" gap="4">
-      <mm-tab-list value="size" variant="pill">
-        <mm-tab value="size">Size</mm-tab>
-        <mm-tab value="state">State</mm-tab>
-      </mm-tab-list>
-      <mm-tab-panel value="size">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="4">
-              <mm-radio-group
+    <fff-flex direction="column" gap="4">
+      <fff-tab-list value="size" variant="pill">
+        <fff-tab value="size">Size</fff-tab>
+        <fff-tab value="state">State</fff-tab>
+      </fff-tab-list>
+      <fff-tab-panel value="size">
+        <fff-component-example>
+          <fff-flex direction="column" gap="6">
+            <fff-flex direction="column" gap="4">
+              <fff-radio-group
                 name="membership-size-default"
                 value="basic"
                 .options=${membershipOptions.slice(0, 2)}
-              ></mm-radio-group>
-              <mm-radio-group
+              ></fff-radio-group>
+              <fff-radio-group
                 name="membership-size-large"
                 size="large"
                 value="basic"
                 .options=${membershipOptions.slice(0, 2)}
-              ></mm-radio-group>
-            </mm-flex>
-            <mm-paragraph>선택지가 화면의 주요 입력일 때 크게 씁니다.</mm-paragraph>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${sizeCode}></mm-component-code>
-      </mm-tab-panel>
-      <mm-tab-panel value="state">
-        <mm-component-example>
-          <mm-flex direction="column" gap="6">
-            <mm-flex direction="column" gap="4">
-              <mm-radio-group
+              ></fff-radio-group>
+            </fff-flex>
+            <fff-paragraph>선택지가 화면의 주요 입력일 때 크게 씁니다.</fff-paragraph>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${sizeCode}></fff-component-code>
+      </fff-tab-panel>
+      <fff-tab-panel value="state">
+        <fff-component-example>
+          <fff-flex direction="column" gap="6">
+            <fff-flex direction="column" gap="4">
+              <fff-radio-group
                 name="membership-option-disabled"
                 value="premium"
                 .options=${membershipOptions}
-              ></mm-radio-group>
-              <mm-radio-group
+              ></fff-radio-group>
+              <fff-radio-group
                 name="membership-disabled"
                 value="premium"
                 disabled
                 .options=${membershipOptions.slice(0, 2)}
-              ></mm-radio-group>
-            </mm-flex>
-          </mm-flex>
-        </mm-component-example>
-        <mm-component-code .code=${stateCode}></mm-component-code>
-      </mm-tab-panel>
-    </mm-flex>
+              ></fff-radio-group>
+            </fff-flex>
+          </fff-flex>
+        </fff-component-example>
+        <fff-component-code .code=${stateCode}></fff-component-code>
+      </fff-tab-panel>
+    </fff-flex>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-radio']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-radio']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}></mm-component-guide>
+    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
 
-    <mm-component-anatomy
+    <fff-component-anatomy
       .parts=${[
         '그룹 — 라디오를 묶어 이름을 공유하고 하나만 선택되도록 보장합니다.',
         '컨트롤(인디케이터) — 선택 여부를 나타내는 원형 버튼입니다.',
@@ -141,49 +141,49 @@ const main = html`
         { placement: 'inline-end', offset: 'calc(100% - 0.5rem)' },
       ]}
     >
-      <mm-radio-group
+      <fff-radio-group
         name="membership-anatomy"
         value="premium"
         .options=${membershipOptions.slice(0, 2)}
-      ></mm-radio-group>
-    </mm-component-anatomy>
+      ></fff-radio-group>
+    </fff-component-anatomy>
 
-    <mm-component-section
+    <fff-component-section
       heading="RadioCard"
       description="레이블만으로 부족해 가격·배지·설명을 넣어야 할 때, 면 전체를 선택지로 만듭니다."
     >
-      <mm-radio-card-group name="license" value="standard">
-        <mm-radio-card value="standard" checked>
-          <mm-text-block
+      <fff-radio-card-group name="license" value="standard">
+        <fff-radio-card value="standard" checked>
+          <fff-text-block
             level="4"
             heading="Standard License"
             description="개인·사내 프로젝트에 사용할 수 있습니다."
-          ></mm-text-block>
-          <mm-flex align-items="center" gap="2">
-            <mm-text>₩ 2,000</mm-text>
-            <mm-tag>460P 적립</mm-tag>
-          </mm-flex>
-        </mm-radio-card>
-        <mm-radio-card value="extended">
-          <mm-text-block
+          ></fff-text-block>
+          <fff-flex align-items="center" gap="2">
+            <fff-text>₩ 2,000</fff-text>
+            <fff-tag>460P 적립</fff-tag>
+          </fff-flex>
+        </fff-radio-card>
+        <fff-radio-card value="extended">
+          <fff-text-block
             level="4"
             heading="Extended License"
             description="재판매·배포용 제품에 포함할 수 있습니다."
-          ></mm-text-block>
-          <mm-flex align-items="center" gap="2">
-            <mm-text>₩ 12,000</mm-text>
-            <mm-tag>2,760P 적립</mm-tag>
-          </mm-flex>
-        </mm-radio-card>
-      </mm-radio-card-group>
-    </mm-component-section>
+          ></fff-text-block>
+          <fff-flex align-items="center" gap="2">
+            <fff-text>₩ 12,000</fff-text>
+            <fff-tag>2,760P 적립</fff-tag>
+          </fff-flex>
+        </fff-radio-card>
+      </fff-radio-card-group>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-references .items=${componentReferences}></mm-component-references>
+    <fff-component-references .items=${componentReferences}></fff-component-references>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

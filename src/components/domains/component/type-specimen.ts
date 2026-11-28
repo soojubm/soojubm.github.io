@@ -7,7 +7,7 @@ import '@/components/common'
 /** 스펙시멘이 소개하는 속성. 값은 화면에서 재서 채운다. */
 const METRICS = ['font-family', 'font-size', 'line-height'] as const
 
-@customElement('mm-type-specimen')
+@customElement('fff-type-specimen')
 export class TypeSpecimen extends LitElement {
   static styles = css`
     :host {
@@ -15,24 +15,24 @@ export class TypeSpecimen extends LitElement {
     }
   `
   private themeChange = new ThemeChangeController(this)
-  /** 소개할 mm-text의 size 단계 */
+  /** 소개할 fff-text의 size 단계 */
   @property({ type: String }) size = ''
   @state() private values: string[] = []
-  @query('mm-text') private sample!: HTMLElement
+  @query('fff-text') private sample!: HTMLElement
 
   render() {
     return html`
-      <mm-surface variant="outlined" radius="large">
-        <mm-marquee gap="4" speed=${this.speed} pause-on-hover>
+      <fff-surface variant="outlined" radius="large">
+        <fff-marquee gap="4" speed=${this.speed} pause-on-hover>
           ${METRICS.map(
             (metric, index) => html`
-              <mm-text size=${this.size} weight="bold">
+              <fff-text size=${this.size} weight="bold">
                 ${metric}: ${this.values[index] ?? ''}
-              </mm-text>
+              </fff-text>
             `,
           )}
-        </mm-marquee>
-      </mm-surface>
+        </fff-marquee>
+      </fff-surface>
     `
   }
 

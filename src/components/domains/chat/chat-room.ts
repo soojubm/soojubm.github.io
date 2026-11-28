@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('mm-chat-room')
+@customElement('fff-chat-room')
 export class ChatRoom extends LitElement {
   static styles = css`
     :host {

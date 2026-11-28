@@ -13,7 +13,7 @@ const textBlockLevelTokens = {
   4: { '--text-block-header-gap': 'var(--space-1)' },
 }
 
-@customElement('mm-text-block')
+@customElement('fff-text-block')
 export class TextBlock extends LitElement {
   static styles = css`
     :host {
@@ -33,11 +33,11 @@ export class TextBlock extends LitElement {
     :host([centered]) {
       align-items: center;
     }
-    :host([centered]) mm-heading {
+    :host([centered]) fff-heading {
       text-align: center;
     }
     /* Level 1 전용 본문 최대 너비 제한 (가독성 최적화) */
-    :host([level='1']) mm-paragraph {
+    :host([level='1']) fff-paragraph {
       max-width: 720px;
     }
   `
@@ -49,7 +49,7 @@ export class TextBlock extends LitElement {
   render() {
     return html`
       <header>
-        <mm-heading level=${Number(this.level)}>${this.renderHeadingLines()}</mm-heading>
+        <fff-heading level=${Number(this.level)}>${this.renderHeadingLines()}</fff-heading>
         ${this.renderDescription()}
       </header>
       <slot></slot>
@@ -74,12 +74,12 @@ export class TextBlock extends LitElement {
 
     if (this.level === '1') {
       return html`
-        <mm-paragraph size="large" ?centered=${this.centered}>${this.description}</mm-paragraph>
+        <fff-paragraph size="large" ?centered=${this.centered}>${this.description}</fff-paragraph>
       `
     }
 
     return html`
-      <mm-text size="14" ?centered=${this.centered}>${this.description}</mm-text>
+      <fff-text size="14" ?centered=${this.centered}>${this.description}</fff-text>
     `
   }
 }

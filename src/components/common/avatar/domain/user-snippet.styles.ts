@@ -13,7 +13,7 @@ export const userSnippetStyles = css`
     flex-direction: column;
   }
 
-  mm-accent-tag {
+  fff-accent-tag {
     position: absolute;
     left: var(--space-1-minus);
     top: var(--space-1-minus);

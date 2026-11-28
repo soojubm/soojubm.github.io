@@ -6,7 +6,7 @@ import { buttonInteractiveStyles } from '@/components/common/button/button.style
 import { withTogglePressed } from '@/components/common/button/button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-color-chip')
+@customElement('fff-color-chip')
 export class ColorChip extends withTogglePressed(LitElement) {
   static styles = [
     resetStyles,

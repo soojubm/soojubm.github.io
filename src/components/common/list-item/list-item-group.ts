@@ -15,7 +15,7 @@ const listItemGroupGapTokens: AttributeTokens<Exclude<ListItemGroupGap, '3'>> = 
   '2': { gap: spaces['2'] },
 }
 
-@customElement('mm-list-item-group')
+@customElement('fff-list-item-group')
 export class ListItemGroup extends LitElement {
   static styles = css`
     :host {

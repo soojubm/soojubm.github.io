@@ -10,7 +10,7 @@ import {
 } from '@/components/domains/shared/suggestion-button'
 import { emit } from '@/utils'
 
-@customElement('mm-search-suggestion')
+@customElement('fff-search-suggestion')
 export class SearchSuggestion extends LitElement {
   static styles = [suggestionButtonStyles]
   @property({ type: String }) value = ''

@@ -8,7 +8,7 @@ import '@/components/common/scroll/semantics/scroll-hint'
 import { MEDIA_QUERY } from '@/constants'
 import { MediaQueryController } from '@/controllers/media-query-controller'
 
-@customElement('mm-scroll')
+@customElement('fff-scroll')
 export class Scroll extends LitElement {
   static styles = scrollStyles
   @property({ type: String, reflect: true }) direction: FlexDirection = 'row'
@@ -26,9 +26,9 @@ export class Scroll extends LitElement {
     }
 
     return html`
-      <mm-scroll-hint placement="start"></mm-scroll-hint>
+      <fff-scroll-hint placement="start"></fff-scroll-hint>
       <slot></slot>
-      <mm-scroll-hint placement="end"></mm-scroll-hint>
+      <fff-scroll-hint placement="end"></fff-scroll-hint>
     `
   }
 }

@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import { ICON_NAMES } from '@/components/common'
 import '@/components/common'
 
-@customElement('mm-review-item')
+@customElement('fff-review-item')
 export class ReviewItem extends LitElement {
   static styles = css`
     :host {
@@ -33,21 +33,21 @@ export class ReviewItem extends LitElement {
 
   render() {
     return html`
-      <mm-surface variant="outlined">
+      <fff-surface variant="outlined">
         <div class="body">
           <div class="rating" role="img" aria-label="${this.rating}점">
             ${Array.from(
               { length: this.rating },
               () => html`
-                <mm-icon name=${ICON_NAMES.FAVORITE_SELECTED}></mm-icon>
+                <fff-icon name=${ICON_NAMES.FAVORITE_SELECTED}></fff-icon>
               `,
             )}
           </div>
 
-          <mm-paragraph>${this.content}</mm-paragraph>
+          <fff-paragraph>${this.content}</fff-paragraph>
           ${this.renderMeta()}
         </div>
-      </mm-surface>
+      </fff-surface>
     `
   }
 
@@ -55,7 +55,11 @@ export class ReviewItem extends LitElement {
     if (!this.author && !this.datetime) return nothing
 
     return html`
-      <mm-list-item size="medium" label=${this.author} description=${this.datetime}></mm-list-item>
+      <fff-list-item
+        size="medium"
+        label=${this.author}
+        description=${this.datetime}
+      ></fff-list-item>
     `
   }
 }

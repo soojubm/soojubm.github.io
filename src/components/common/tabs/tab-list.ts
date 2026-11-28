@@ -13,7 +13,7 @@ import '@/components/common/scroll/semantics/scroll-hint'
 
 export type TabListVariant = 'line' | 'pill' | 'text'
 
-@customElement('mm-tab-list')
+@customElement('fff-tab-list')
 export class TabList extends LitElement {
   static styles = [tabsStyles]
   private readonly tabsId = uniqueId('tabs')
@@ -25,7 +25,7 @@ export class TabList extends LitElement {
   @query('.indicator') private indicator?: HTMLElement
   private indicatorPosition = new SelectionIndicatorController(this, {
     getIndicator: () => this.indicator,
-    getTarget: () => this.querySelector<HTMLElement>('mm-tab[active]') ?? undefined,
+    getTarget: () => this.querySelector<HTMLElement>('fff-tab[active]') ?? undefined,
   })
   // 방향키로 포커스가 옮겨지면 곧 선택이 따라오는 자동 활성화 탭이라, 포커스 이동이 선택이고 끝에서는 순환한다.
   private rovingFocus = new RovingFocusController(this, {
@@ -43,10 +43,10 @@ export class TabList extends LitElement {
 
   render() {
     return html`
-      <mm-scroll-hint placement="start" size="small"></mm-scroll-hint>
+      <fff-scroll-hint placement="start" size="small"></fff-scroll-hint>
       <div class="indicator">${this.renderDot()}</div>
       <slot @slotchange=${this.handleSlotChange}></slot>
-      <mm-scroll-hint placement="end" size="small"></mm-scroll-hint>
+      <fff-scroll-hint placement="end" size="small"></fff-scroll-hint>
     `
   }
 
@@ -54,7 +54,7 @@ export class TabList extends LitElement {
     if (this.variant !== 'text') return nothing
 
     return html`
-      <mm-dot tone="gray" size="6"></mm-dot>
+      <fff-dot tone="gray" size="6"></fff-dot>
     `
   }
 
@@ -62,7 +62,7 @@ export class TabList extends LitElement {
     return this.assignedElements.filter((element): element is Tab => element instanceof Tab)
   }
 
-  /** 같은 부모에서 다음 mm-tab-list 전까지 이어지는 형제 패널을 이 탭리스트의 패널로 본다. */
+  /** 같은 부모에서 다음 fff-tab-list 전까지 이어지는 형제 패널을 이 탭리스트의 패널로 본다. */
   private get panels(): TabPanel[] {
     const panels: TabPanel[] = []
     let sibling = this.nextElementSibling

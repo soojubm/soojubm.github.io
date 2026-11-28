@@ -8,7 +8,7 @@ import { resetStyles } from '@/stylesheets/shared.styles'
 import { toggleState } from '@/utils'
 import '@/components/common/icon/icon'
 
-@customElement('mm-toggle-button')
+@customElement('fff-toggle-button')
 export class ToggleButton extends LitElement {
   static styles = [
     resetStyles,
@@ -53,7 +53,7 @@ export class ToggleButton extends LitElement {
     if (!this.icon) return nothing
 
     return html`
-      <mm-icon name=${this.icon}></mm-icon>
+      <fff-icon name=${this.icon}></fff-icon>
     `
   }
 

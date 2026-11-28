@@ -5,7 +5,7 @@ import { iconButtonStyles } from '@/components/common/icon-button/icon-button.st
 import { iconActionElement } from '@/components/common/icon-button/icon-button.utils'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-delete-button')
+@customElement('fff-delete-button')
 export class DeleteButton extends iconActionElement({
   event: 'delete',
   icon: ICON_NAMES.DELETE,

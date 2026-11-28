@@ -5,7 +5,7 @@ import { renderChatMessageTime } from '@/components/domains/chat/chat.helpers'
 
 import '@/components/common'
 
-@customElement('mm-ai-chat-message')
+@customElement('fff-ai-chat-message')
 export class AiChatMessage extends LitElement {
   static styles = css`
     :host {
@@ -14,7 +14,7 @@ export class AiChatMessage extends LitElement {
       gap: var(--space-2);
     }
 
-    ::slotted(mm-ai-chat-bubble) {
+    ::slotted(fff-ai-chat-bubble) {
       align-self: flex-start;
     }
   `

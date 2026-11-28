@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js'
 import '@/components/common'
 import '@/components/domains/commerce/product-price'
 
-@customElement('mm-order-product-item')
+@customElement('fff-order-product-item')
 export class OrderProductItem extends LitElement {
   static styles = css`
     :host {
@@ -18,14 +18,14 @@ export class OrderProductItem extends LitElement {
 
   render() {
     return html`
-      <mm-list-item
+      <fff-list-item
         size="large"
         label=${this.name}
         description=${this.option}
         avatar-src=${this.imageSrc}
       >
         ${this.renderPrice()}
-      </mm-list-item>
+      </fff-list-item>
     `
   }
 
@@ -33,7 +33,7 @@ export class OrderProductItem extends LitElement {
     if (!this.price) return nothing
 
     return html`
-      <mm-product-price slot="trailing" size="large" price=${this.price}></mm-product-price>
+      <fff-product-price slot="trailing" size="large" price=${this.price}></fff-product-price>
     `
   }
 }

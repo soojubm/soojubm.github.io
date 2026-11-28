@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement } from 'lit/decorators.js'
 
-@customElement('mm-fixed-bottom')
+@customElement('fff-fixed-bottom')
 export class FixedBottom extends LitElement {
   static styles = css`
     :host {

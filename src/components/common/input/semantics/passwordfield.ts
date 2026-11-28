@@ -12,7 +12,7 @@ import {
 import '@/components/common/icon-button/semantics/reveal-button'
 import '@/components/common/input/input'
 
-@customElement('mm-passwordfield')
+@customElement('fff-passwordfield')
 export class PasswordField extends withTextfieldState(LitElement) {
   static styles = textfieldStyles
   @state() private revealed = false
@@ -25,7 +25,7 @@ export class PasswordField extends withTextfieldState(LitElement) {
         class="textfield-control"
         aria-invalid=${ifDefined(this.resolvedAriaInvalid ?? undefined)}
       >
-        <mm-input
+        <fff-input
           input-id=${this.inputId}
           .type=${this.revealed ? 'text' : 'password'}
           .value=${this.value}
@@ -37,12 +37,12 @@ export class PasswordField extends withTextfieldState(LitElement) {
           aria-describedby=${this.describedBy || nothing}
           @input=${this.handleInput}
           @focusout=${this.handleInputFocusout}
-        ></mm-input>
-        <mm-reveal-button
+        ></fff-input>
+        <fff-reveal-button
           .revealed=${this.revealed}
           ?disabled=${this.disabled}
           @toggle=${this.handleRevealToggle}
-        ></mm-reveal-button>
+        ></fff-reveal-button>
       </div>
       ${renderFieldDescription(this.description, this.descriptionId)}
       ${renderFieldValidation(this.validationId, this.resolvedValidationText)}

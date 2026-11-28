@@ -17,7 +17,7 @@ export type ButtonSize = Extract<ComponentSize, 'medium' | 'large'>
 export type ButtonIconPosition = 'leading' | 'trailing'
 export type ButtonType = 'button' | 'submit' | 'reset'
 
-@customElement('mm-button')
+@customElement('fff-button')
 export class Button extends LitElement {
   static styles = [
     resetStyles,
@@ -28,7 +28,7 @@ export class Button extends LitElement {
         position: relative;
       }
 
-      mm-current-indicator {
+      fff-current-indicator {
         ${dotBelowStyles};
       }
     `,
@@ -79,7 +79,7 @@ export class Button extends LitElement {
     if (!this.ariaCurrent || this.ariaCurrent === 'false') return nothing
 
     return html`
-      <mm-current-indicator></mm-current-indicator>
+      <fff-current-indicator></fff-current-indicator>
     `
   }
 
@@ -87,7 +87,7 @@ export class Button extends LitElement {
     if (!this.icon || this.iconPosition !== position) return nothing
 
     return html`
-      <mm-icon name=${this.icon}></mm-icon>
+      <fff-icon name=${this.icon}></fff-icon>
     `
   }
 }

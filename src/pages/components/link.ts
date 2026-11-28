@@ -17,9 +17,9 @@ const relatedComponents: ComponentRelatedItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-link'),
-  ...subComponentPropsOf('mm-link-prompt'),
-  ...subComponentPropsOf('mm-pager'),
+  ...componentPropsOf('fff-link'),
+  ...subComponentPropsOf('fff-link-prompt'),
+  ...subComponentPropsOf('fff-pager'),
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -37,44 +37,44 @@ const previousLink: PagerLink = {
 }
 const nextLink: PagerLink = { href: '#', heading: 'Button', description: '다음 문서' }
 
-const pagerCode = `<mm-pager
+const pagerCode = `<fff-pager
   aria-label="문서 이동"
   .previous=\${{ href: 'breadcrumb.html', heading: 'Breadcrumb', description: '이전 문서' }}
   .next=\${{ href: 'button.html', heading: 'Button', description: '다음 문서' }}
-></mm-pager>`
+></fff-pager>`
 
-const linkPromptCode = `<mm-link-prompt icon="message" message="궁금증이 해결되지 않는다면?" link-label="지금 문의하기" href="#"></mm-link-prompt>`
+const linkPromptCode = `<fff-link-prompt icon="message" message="궁금증이 해결되지 않는다면?" link-label="지금 문의하기" href="#"></fff-link-prompt>`
 
-const readMoreParagraphCode = `<mm-read-more-paragraph max-length="120" content="긴 문단의 전체 내용"></mm-read-more-paragraph>
-<mm-keyword-tag-group .keywords=\${keywords}></mm-keyword-tag-group>`
+const readMoreParagraphCode = `<fff-read-more-paragraph max-length="120" content="긴 문단의 전체 내용"></fff-read-more-paragraph>
+<fff-keyword-tag-group .keywords=\${keywords}></fff-keyword-tag-group>`
 
-const exampleCode = `<mm-link href="#" external>고래잡이</mm-link>`
+const exampleCode = `<fff-link href="#" external>고래잡이</fff-link>`
 
 const main = html`
-  <mm-main>
-    <mm-page-header
+  <fff-main>
+    <fff-page-header
       heading="Link"
       description="다른 페이지나 위치로 이동시키는 목적지입니다. 색상과 밑줄로 누를 수 있음을 드러내고 주소를 가진 이동으로 동작하므로, 사용자는 어디로 가는지 예상한 채 이동하고 그 위치를 북마크하거나 공유할 수 있습니다."
-    ></mm-page-header>
+    ></fff-page-header>
 
-    <mm-component-aka .items=${['Anchor']}></mm-component-aka>
+    <fff-component-aka .items=${['Anchor']}></fff-component-aka>
 
-    <mm-component-example>
-      <mm-link href="#" external="true">고래잡이</mm-link>
-    </mm-component-example>
-    <mm-component-code .code=${exampleCode}></mm-component-code>
+    <fff-component-example>
+      <fff-link href="#" external="true">고래잡이</fff-link>
+    </fff-component-example>
+    <fff-component-code .code=${exampleCode}></fff-component-code>
 
-    <mm-component-props .props=${componentProps}></mm-component-props>
+    <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <mm-component-tokens .elements=${['mm-link']}></mm-component-tokens>
+    <fff-component-tokens .elements=${['fff-link']}></fff-component-tokens>
 
-    <mm-component-guide .features=${componentFeatures}>
-      <mm-text-list
+    <fff-component-guide .features=${componentFeatures}>
+      <fff-text-list
         .texts=${['Link는 text button과 달리 항상 텍스트 단락 안에서 사용한다.']}
-      ></mm-text-list>
-    </mm-component-guide>
+      ></fff-text-list>
+    </fff-component-guide>
 
-    <mm-component-anatomy
+    <fff-component-anatomy
       style="--component-anatomy-padding: 0.5rem 0"
       .parts=${[
         '레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.',
@@ -82,58 +82,58 @@ const main = html`
       ]}
       .markers=${[{ placement: 'block-start', offset: '2.5rem' }, { placement: 'inline-end' }]}
     >
-      <mm-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</mm-link>
-    </mm-component-anatomy>
+      <fff-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</fff-link>
+    </fff-component-anatomy>
 
-    <mm-component-section
+    <fff-component-section
       heading="Read More Paragraph"
       description="긴 문단을 지정한 글자 수에서 줄이고 더 보기와 접기 버튼으로 전체 내용을 전환합니다. 이어서 문단과 관련된 키워드를 태그로 모아 보여줍니다."
       .code=${readMoreParagraphCode}
     >
-      <mm-flex direction="column" gap="3">
-        <mm-read-more-paragraph
+      <fff-flex direction="column" gap="3">
+        <fff-read-more-paragraph
           max-length="120"
           content="이런 생각을 한 건 다들 식탁에 앉은 후였고, 나는 재미있는 고래잡이 이야기를 들을 기대에 부풀었다. 그런데 이거 참 놀랍게도 거의 모두가 깊은 침묵에 잠겼다. 그것도 모자라 다들 난감해하는 눈치였다. 아니, 폭풍우가 몰아치는 가운데 엄청나게 큰 고래, 그것도 생전 처음 보는 고래를 수줍은 기색 없이 잡아 올리고 눈도 깜빡하지 않은 채 사투를 벌여서 죽이는 용맹한 바닷사람들이 직업도 똑같고 취향까지 비슷한 사람들이 모여 앉은 아침 식탁에서는 그린 산맥의 목장을 한 번도 떠나 본 적 없는 양 떼마냥 부끄러워하며 서로를 힐끔거릴 뿐이었다. 이 얼마나 희한한 광경인가! 숫기 없는 곰, 소심한 전사 같은 고래잡이들이라니!"
-        ></mm-read-more-paragraph>
-        <mm-keyword-tag-group
+        ></fff-read-more-paragraph>
+        <fff-keyword-tag-group
           .keywords=${['이것은헤시태그', '해시태그는클릭할수있다?', '해시태그를통한검색']}
-        ></mm-keyword-tag-group>
-      </mm-flex>
-    </mm-component-section>
+        ></fff-keyword-tag-group>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-section
+    <fff-component-section
       heading="Link Prompt"
       description="안내 문구 뒤에 링크를 이어 붙여 도움이나 다음 행동으로 안내합니다. 문구가 상황을 먼저 말하고 링크가 행동을 제안하므로, 사용자는 막혔을 때 어디로 가야 하는지 바로 알 수 있습니다."
       .code=${linkPromptCode}
     >
-      <mm-flex direction="column" gap="2">
-        <mm-link-prompt
+      <fff-flex direction="column" gap="2">
+        <fff-link-prompt
           icon=${ICON_NAMES.COMMENT}
           message="궁금증이 해결되지 않는다면?"
           link-label="지금 문의하기"
           href="#"
-        ></mm-link-prompt>
-        <mm-link-prompt
+        ></fff-link-prompt>
+        <fff-link-prompt
           icon=${ICON_NAMES.COMMENT}
           message="Something's not right?"
           link-label="Get in touch with us."
           href="#"
-        ></mm-link-prompt>
-      </mm-flex>
-    </mm-component-section>
+        ></fff-link-prompt>
+      </fff-flex>
+    </fff-component-section>
 
-    <mm-component-section
+    <fff-component-section
       heading="Pager"
       description="콘텐츠 끝에서 앞뒤 콘텐츠로 이어 가는 이전·다음 링크 카드입니다. 목적지 제목을 카드에 드러내 어디로 가는지 예상한 채 이동하게 하며, 문서·글처럼 순서가 있는 콘텐츠는 이 외형을 공유하고 내비게이션 이름과 링크 문구만 각자 정합니다."
       .code=${pagerCode}
     >
-      <mm-pager aria-label="문서 이동" .previous=${previousLink} .next=${nextLink}></mm-pager>
-    </mm-component-section>
+      <fff-pager aria-label="문서 이동" .previous=${previousLink} .next=${nextLink}></fff-pager>
+    </fff-component-section>
 
-    <mm-component-related .items=${relatedComponents}></mm-component-related>
+    <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

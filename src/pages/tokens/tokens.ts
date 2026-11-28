@@ -92,7 +92,7 @@ const tokensBySection = groupedTokens()
 
 const sectionTokens = (key: keyof typeof sectionPatterns) => tokensBySection[key] ?? []
 
-/** 타이포그래피 스펙시멘으로 소개할 mm-text의 size 단계. 값과 행간은 스펙시멘이 직접 잰다. */
+/** 타이포그래피 스펙시멘으로 소개할 fff-text의 size 단계. 값과 행간은 스펙시멘이 직접 잰다. */
 const TEXT_SIZES = ['12', '14', '18', '24', '32']
 
 /** 다른 토큰을 참조해 만들어지는 레이아웃 토큰. chrome-inset은 :root에서 0px이지만 테마가 space 토큰으로 바꾸는 여백이고, sidebar-width는 사이드바 컴포넌트가 쓰는 값이라 여기 묶는다. */
@@ -104,7 +104,7 @@ const isLayoutComposite = (name: string) =>
 const renderTokenItems = (keys: string[]) =>
   keys.map(
     key => html`
-      <mm-token-item key=${key}></mm-token-item>
+      <fff-token-item key=${key}></fff-token-item>
     `,
   )
 
@@ -118,7 +118,7 @@ const interactionSelectedColors = [
 const renderColorTokens = (names: string[]) =>
   names.map(
     name => html`
-      <mm-color-token name=${name}></mm-color-token>
+      <fff-color-token name=${name}></fff-color-token>
     `,
   )
 
@@ -142,8 +142,8 @@ const shadowSwatches = (tokens: string[]) => tokens.map(token => `box-shadow: va
 const renderSpaceStage = (tokens: string[]) =>
   tokens.map(
     (token, index) => html`
-      <mm-flex direction="column" align-items="center" gap="2">
-        <mm-flex align-items="center" gap="0">
+      <fff-flex direction="column" align-items="center" gap="2">
+        <fff-flex align-items="center" gap="0">
           <div
             style="
               width: 2px;
@@ -161,9 +161,9 @@ const renderSpaceStage = (tokens: string[]) =>
               border-radius: var(--border-radius);
             "
           ></div>
-        </mm-flex>
-        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
-      </mm-flex>
+        </fff-flex>
+        <fff-list-marker variant="number" value=${index + 1}></fff-list-marker>
+      </fff-flex>
     `,
   )
 
@@ -190,7 +190,7 @@ const backgroundPairs: Record<string, string[]> = {
 const renderBackgroundTokens = (names: string[]) =>
   names.map(
     name => html`
-      <mm-color-token name=${name} .pairs=${backgroundPairs[name] ?? []}></mm-color-token>
+      <fff-color-token name=${name} .pairs=${backgroundPairs[name] ?? []}></fff-color-token>
     `,
   )
 
@@ -198,14 +198,14 @@ const renderBackgroundTokens = (names: string[]) =>
 const renderSpaceSemanticStage = (tokens: string[]) =>
   tokens.map(
     (token, index) => html`
-      <mm-flex class="space-cell" direction="column" align-items="center" gap="2">
+      <fff-flex class="space-cell" direction="column" align-items="center" gap="2">
         <div class="space-demo">
-          <mm-ui-placeholder></mm-ui-placeholder>
-          <mm-ui-placeholder space=${token.replace('space-', '')}></mm-ui-placeholder>
-          <mm-ui-placeholder></mm-ui-placeholder>
+          <fff-ui-placeholder></fff-ui-placeholder>
+          <fff-ui-placeholder space=${token.replace('space-', '')}></fff-ui-placeholder>
+          <fff-ui-placeholder></fff-ui-placeholder>
         </div>
-        <mm-list-marker variant="number" value=${index + 1}></mm-list-marker>
-      </mm-flex>
+        <fff-list-marker variant="number" value=${index + 1}></fff-list-marker>
+      </fff-flex>
     `,
   )
 
@@ -246,7 +246,7 @@ const renderMaterialStage = (tokens: string[]) =>
   [...new Set(tokens.map(token => token.split('-')[1]))].map(
     tier => html`
       <div class="material-swatch" style=${materialSwatch(tier, tokens)}>
-        <mm-caption>${tier}</mm-caption>
+        <fff-caption>${tier}</fff-caption>
       </div>
     `,
   )
@@ -280,12 +280,12 @@ interface EasingTrack {
 const renderMotionStage = (tracks: EasingTrack[]) =>
   tracks.map(
     ({ easing, label }) => html`
-      <mm-flex direction="column" gap="2">
+      <fff-flex direction="column" gap="2">
         <div class="motion-track">
           <div class="motion-dot" style="transition-timing-function: ${easing}"></div>
         </div>
-        <mm-caption>${label}</mm-caption>
-      </mm-flex>
+        <fff-caption>${label}</fff-caption>
+      </fff-flex>
     `,
   )
 
@@ -317,16 +317,16 @@ const tierTones: Record<TokenTier, TagTone> = {
 }
 
 const renderLegend = (items: LegendItem[]) => html`
-  <mm-flex gap="4" wrap="wrap">
+  <fff-flex gap="4" wrap="wrap">
     ${items.map(
       ({ label, tone }) => html`
-        <mm-flex align-items="center" gap="2">
-          <mm-dot tone=${tone} size="12"></mm-dot>
-          <mm-caption>${label}</mm-caption>
-        </mm-flex>
+        <fff-flex align-items="center" gap="2">
+          <fff-dot tone=${tone} size="12"></fff-dot>
+          <fff-caption>${label}</fff-caption>
+        </fff-flex>
       `,
     )}
-  </mm-flex>
+  </fff-flex>
 `
 
 /** Primitive 값이 Semantic Token을 거쳐 Component Token에 이르는 실제 사슬. */
@@ -350,10 +350,10 @@ const renderTierChain = (chain: [TokenTier, string][]) => {
                 <span class="name-joiner" aria-hidden="true">→</span>
               `
             : ''}
-          <mm-flex direction="column" align-items="flex-start" gap="1">
-            <mm-code-tag size="large" tone=${tierTones[tier]}>${name}</mm-code-tag>
-            <mm-caption>${tierLegends[tier].label}</mm-caption>
-          </mm-flex>
+          <fff-flex direction="column" align-items="flex-start" gap="1">
+            <fff-code-tag size="large" tone=${tierTones[tier]}>${name}</fff-code-tag>
+            <fff-caption>${tierLegends[tier].label}</fff-caption>
+          </fff-flex>
         `,
       )}
     </div>
@@ -409,15 +409,15 @@ const renderTokenKind =
   (tier: TokenTier) =>
   ({ target, description, group, subtokens = [] }: TokenKind) =>
     html`
-      <mm-figure-card description=${description}>
+      <fff-figure-card description=${description}>
         <span class="kind-figure" slot="figure" data-tier=${tier} data-kind=${target}></span>
-        <mm-code-tag slot="tags" tone=${kindTone(group)}>${target}</mm-code-tag>
+        <fff-code-tag slot="tags" tone=${kindTone(group)}>${target}</fff-code-tag>
         ${subtokens.map(
           subtoken => html`
-            <mm-code-tag slot="tags" tone=${tierTones.semantic}>${subtoken}</mm-code-tag>
+            <fff-code-tag slot="tags" tone=${tierTones.semantic}>${subtoken}</fff-code-tag>
           `,
         )}
-      </mm-figure-card>
+      </fff-figure-card>
     `
 
 type CategoryName = (typeof WORD_CATEGORIES)[number]['name']
@@ -484,16 +484,16 @@ const slotColumns = (texts: string[]) => {
 }
 
 const renderNameSegment = ({ texts, part, label }: NameSegment) => html`
-  <mm-flex class="name-slot" direction="column" align-items="flex-start" gap="1">
+  <fff-flex class="name-slot" direction="column" align-items="flex-start" gap="1">
     <div class="slot-words" style=${styleMap({ '--slot-columns': String(slotColumns(texts)) })}>
       ${texts.map(
         text => html`
-          <mm-code-tag tone=${namePartTones[part]}>${text}</mm-code-tag>
+          <fff-code-tag tone=${namePartTones[part]}>${text}</fff-code-tag>
         `,
       )}
     </div>
-    <mm-caption>${label}</mm-caption>
-  </mm-flex>
+    <fff-caption>${label}</fff-caption>
+  </fff-flex>
 `
 
 const renderNameAnatomy = (segments: NameSegment[]) => {
@@ -515,30 +515,30 @@ const renderNameAnatomy = (segments: NameSegment[]) => {
 }
 
 const main = html`
-  <mm-main>
-    <mm-flex direction="column" gap="16">
-      <mm-page-header
+  <fff-main>
+    <fff-flex direction="column" gap="16">
+      <fff-page-header
         heading="Tokens"
         description="제품의 시각 결정에 이름을 붙인 값입니다. 컴포넌트와 페이지는 값을 직접 쓰지 않고 토큰을 참조합니다. 토큰 하나만 바꿔 그 값을 쓰는 모든 화면을 함께 바꿀 수 있습니다."
       >
-        <mm-grid columns="3" gap="6">${primitiveKinds.map(renderTokenKind('primitive'))}</mm-grid>
-      </mm-page-header>
+        <fff-grid columns="3" gap="6">${primitiveKinds.map(renderTokenKind('primitive'))}</fff-grid>
+      </fff-page-header>
 
-      <mm-content-section-list>
-        <mm-content-section
+      <fff-content-section-list>
+        <fff-content-section
           heading-level="3"
           heading="계층"
           description="Primitive는 값을, Semantic은 그 값이 화면에서 맡는 역할을, Component Token은 컴포넌트마다 조정할 자리를 맡습니다."
         >
-          <mm-example-stage>
-            <mm-flex class="stage-content" direction="column" gap="6">
+          <fff-example-stage>
+            <fff-flex class="stage-content" direction="column" gap="6">
               ${renderLegend(Object.values(tierLegends))}
-              <mm-flex direction="column" gap="6">${tierChains.map(renderTierChain)}</mm-flex>
-            </mm-flex>
-          </mm-example-stage>
-        </mm-content-section>
+              <fff-flex direction="column" gap="6">${tierChains.map(renderTierChain)}</fff-flex>
+            </fff-flex>
+          </fff-example-stage>
+        </fff-content-section>
 
-        <mm-content-section
+        <fff-content-section
           heading-level="3"
           heading="이름 규칙"
           .texts=${[
@@ -547,205 +547,211 @@ const main = html`
             '강한 표면 위 글자색은 on- 뒤에 표면 이름을 붙인다. 테마가 표면 색을 바꿀 때 그 위 글자색도 같은 이름으로 함께 바꿀 수 있어, 테마마다 대비가 깨지지 않는다.',
           ]}
         >
-          <mm-example-stage>
-            <mm-flex class="stage-content" direction="column">
-              <mm-flex direction="column" gap="6">
+          <fff-example-stage>
+            <fff-flex class="stage-content" direction="column">
+              <fff-flex direction="column" gap="6">
                 ${semanticNameAnatomies.map(renderNameAnatomy)}
-              </mm-flex>
-              <mm-separator></mm-separator>
+              </fff-flex>
+              <fff-separator></fff-separator>
               ${renderNameAnatomy(componentNameAnatomy)}
-            </mm-flex>
-          </mm-example-stage>
-        </mm-content-section>
-      </mm-content-section-list>
+            </fff-flex>
+          </fff-example-stage>
+        </fff-content-section>
+      </fff-content-section-list>
 
-      <mm-token-section heading="Color" description="색은 면과 글자의 역할과 상태를 구분합니다.">
-        <mm-notice
+      <fff-token-section heading="Color" description="색은 면과 글자의 역할과 상태를 구분합니다.">
+        <fff-notice
           description="권장 명도 대비. WCAG 2.1 AA 기준 일반 텍스트 4.5:1 이상, 큰 텍스트(18px 굵게 또는 24px 이상)·아이콘·테두리 3:1 이상"
-        ></mm-notice>
+        ></fff-notice>
 
-        <mm-flex direction="column">
-          <mm-grid columns="6" role="group" aria-label="팔레트 색상 토큰">
+        <fff-flex direction="column">
+          <fff-grid columns="6" role="group" aria-label="팔레트 색상 토큰">
             ${renderColorTokens(sectionTokens('palette'))}
-          </mm-grid>
+          </fff-grid>
 
-          <mm-separator></mm-separator>
-          <mm-grid columns="4" role="group" aria-label="배경색 토큰">
+          <fff-separator></fff-separator>
+          <fff-grid columns="4" role="group" aria-label="배경색 토큰">
             ${renderBackgroundTokens(sectionTokens('background'))}
-          </mm-grid>
+          </fff-grid>
 
-          <mm-separator></mm-separator>
-          <mm-grid columns="4" role="group" aria-label="테두리색 토큰">
+          <fff-separator></fff-separator>
+          <fff-grid columns="4" role="group" aria-label="테두리색 토큰">
             ${renderColorTokens(sectionTokens('borderColor'))}
-          </mm-grid>
+          </fff-grid>
 
-          <mm-separator></mm-separator>
-          <mm-grid columns="4" role="group" aria-label="선택 상태 색 토큰">
+          <fff-separator></fff-separator>
+          <fff-grid columns="4" role="group" aria-label="선택 상태 색 토큰">
             ${renderColorTokens(interactionSelectedColors)}
-          </mm-grid>
+          </fff-grid>
 
-          <mm-separator></mm-separator>
-          <mm-flex direction="column" gap="4">
-            <mm-example-stage>
-              <mm-token-swatches
+          <fff-separator></fff-separator>
+          <fff-flex direction="column" gap="4">
+            <fff-example-stage>
+              <fff-token-swatches
                 .swatches=${categorySwatches(categoryNumbers)}
                 .contents=${categoryNumbers.map(() => 'Aa')}
-              ></mm-token-swatches>
-            </mm-example-stage>
-            <mm-token-group>${renderTokenItems(sectionTokens('category'))}</mm-token-group>
-          </mm-flex>
-        </mm-flex>
-      </mm-token-section>
+              ></fff-token-swatches>
+            </fff-example-stage>
+            <fff-token-group>${renderTokenItems(sectionTokens('category'))}</fff-token-group>
+          </fff-flex>
+        </fff-flex>
+      </fff-token-section>
 
-      <mm-token-section
+      <fff-token-section
         heading="Typography"
         description="글자 크기와 행간을 한 쌍으로 씁니다. 같은 크기의 글은 어디서나 줄 간격이 같아 읽는 리듬이 흔들리지 않습니다."
       >
-        <mm-flex direction="column" gap="4">
+        <fff-flex direction="column" gap="4">
           ${TEXT_SIZES.map(
             size => html`
-              <mm-type-specimen size=${size}></mm-type-specimen>
+              <fff-type-specimen size=${size}></fff-type-specimen>
             `,
           )}
-        </mm-flex>
+        </fff-flex>
 
-        <mm-token-group>${renderTokenItems(sectionTokens('typography'))}</mm-token-group>
-      </mm-token-section>
+        <fff-token-group>${renderTokenItems(sectionTokens('typography'))}</fff-token-group>
+      </fff-token-section>
 
-      <mm-token-section
+      <fff-token-section
         heading="Size"
         description="요소의 높이를 정합니다. 정사각형 요소는 예외로 너비에도 씁니다. 같은 단계를 쓴 요소끼리는 나란히 놓여도 높이가 어긋나지 않습니다."
       >
-        <mm-example-stage>
-          <mm-token-swatches
+        <fff-example-stage>
+          <fff-token-swatches
             gap="8"
             .swatches=${sizeSwatches(sectionTokens('size'))}
-          ></mm-token-swatches>
-        </mm-example-stage>
-        <mm-token-group>${renderTokenItems(sectionTokens('size'))}</mm-token-group>
-      </mm-token-section>
+          ></fff-token-swatches>
+        </fff-example-stage>
+        <fff-token-group>${renderTokenItems(sectionTokens('size'))}</fff-token-group>
+      </fff-token-section>
 
-      <mm-token-section
+      <fff-token-section
         heading="Space"
         description="요소 사이의 거리를 정합니다. 구조의 층위가 정해진 간격은 Semantic Token을, 나머지는 Primitive 단계를 씁니다. 같은 관계의 요소는 어느 화면에서나 간격이 같아 묶임과 나뉨이 자연스럽게 전해집니다."
       >
-        <mm-flex direction="column">
-          <mm-flex direction="column" gap="4">
-            <mm-example-stage>
-              <mm-flex align-items="center" gap="8">${renderSpaceStage(spaceStageTokens)}</mm-flex>
-            </mm-example-stage>
-            <mm-token-group aria-label="space Primitive Token">
+        <fff-flex direction="column">
+          <fff-flex direction="column" gap="4">
+            <fff-example-stage>
+              <fff-flex align-items="center" gap="8">
+                ${renderSpaceStage(spaceStageTokens)}
+              </fff-flex>
+            </fff-example-stage>
+            <fff-token-group aria-label="space Primitive Token">
               ${renderTokenItems(sectionTokens('space'))}
-            </mm-token-group>
-          </mm-flex>
-          <mm-separator></mm-separator>
-          <mm-flex direction="column" gap="4">
-            <mm-example-stage>
-              <mm-flex gap="4">${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}</mm-flex>
-            </mm-example-stage>
-            <mm-token-group aria-label="space Semantic Token">
+            </fff-token-group>
+          </fff-flex>
+          <fff-separator></fff-separator>
+          <fff-flex direction="column" gap="4">
+            <fff-example-stage>
+              <fff-flex gap="4">
+                ${renderSpaceSemanticStage(sectionTokens('spaceSemantic'))}
+              </fff-flex>
+            </fff-example-stage>
+            <fff-token-group aria-label="space Semantic Token">
               ${renderTokenItems(sectionTokens('spaceSemantic'))}
-            </mm-token-group>
-          </mm-flex>
-        </mm-flex>
-      </mm-token-section>
+            </fff-token-group>
+          </fff-flex>
+        </fff-flex>
+      </fff-token-section>
 
-      <mm-token-section
+      <fff-token-section
         heading="Layout"
         description="반복되는 구조의 최대 너비와 여백을 정합니다. 같은 구조는 어느 페이지에서나 같은 폭으로 놓여 화면을 옮겨도 읽는 자리가 흔들리지 않습니다."
       >
-        <mm-flex direction="column">
-          <mm-token-group aria-label="layout Primitive Token">
+        <fff-flex direction="column">
+          <fff-token-group aria-label="layout Primitive Token">
             ${renderTokenItems(sectionTokens('layout').filter(name => !isLayoutComposite(name)))}
-          </mm-token-group>
+          </fff-token-group>
 
-          <mm-separator></mm-separator>
-          <mm-token-group aria-label="layout Component·Semantic Token">
+          <fff-separator></fff-separator>
+          <fff-token-group aria-label="layout Component·Semantic Token">
             ${renderTokenItems(sectionTokens('layout').filter(isLayoutComposite))}
-          </mm-token-group>
-        </mm-flex>
-      </mm-token-section>
+          </fff-token-group>
+        </fff-flex>
+      </fff-token-section>
 
-      <mm-token-section
+      <fff-token-section
         heading="Border"
         description="테두리는 표면의 경계를 긋고, 모서리 곡률은 표면의 위계를 구분합니다."
       >
-        <mm-flex direction="column">
-          <mm-flex direction="column" gap="4">
-            <mm-example-stage>
-              <mm-token-swatches
+        <fff-flex direction="column">
+          <fff-flex direction="column" gap="4">
+            <fff-example-stage>
+              <fff-token-swatches
                 .swatches=${[
                   ...borderSwatches(borderWidthTokens),
                   ...radiusSwatches(sectionTokens('radius')),
                 ]}
-              ></mm-token-swatches>
-            </mm-example-stage>
-            <mm-token-group aria-label="border Primitive Token">
+              ></fff-token-swatches>
+            </fff-example-stage>
+            <fff-token-group aria-label="border Primitive Token">
               ${renderTokenItems([...borderWidthTokens, ...sectionTokens('radius')])}
-            </mm-token-group>
-          </mm-flex>
-          <mm-separator></mm-separator>
-          <mm-flex direction="column" gap="4">
-            <mm-example-stage>
-              <mm-token-swatches .swatches=${borderSwatches(borderStyleTokens)}></mm-token-swatches>
-            </mm-example-stage>
-            <mm-token-group aria-label="border Component·Semantic Token">
+            </fff-token-group>
+          </fff-flex>
+          <fff-separator></fff-separator>
+          <fff-flex direction="column" gap="4">
+            <fff-example-stage>
+              <fff-token-swatches
+                .swatches=${borderSwatches(borderStyleTokens)}
+              ></fff-token-swatches>
+            </fff-example-stage>
+            <fff-token-group aria-label="border Component·Semantic Token">
               ${renderTokenItems(borderStyleTokens)}
-            </mm-token-group>
-          </mm-flex>
-        </mm-flex>
-      </mm-token-section>
+            </fff-token-group>
+          </fff-flex>
+        </fff-flex>
+      </fff-token-section>
 
-      <mm-token-section
+      <fff-token-section
         heading="Material"
         description="표면이 뒤 배경에서 떠 보이는 정도와 겹칠 때의 순서를 정합니다. 사용하는 쪽은 그림자·blur·투명도를 색과 조합한 티어를 쓰고, 원시 값은 티어를 정의할 때만 씁니다. 티어가 정하지 않은 속성은 base를 따릅니다."
       >
-        <mm-example-stage striped>
+        <fff-example-stage striped>
           <div class="material-stage">
-            <mm-token-swatches
+            <fff-token-swatches
               .swatches=${[
                 ...shadowSwatches(sectionTokens('shadow')),
                 ...blurSwatches(sectionTokens('blur')),
                 ...opacitySwatches(sectionTokens('opacity')),
               ]}
-            ></mm-token-swatches>
+            ></fff-token-swatches>
           </div>
-        </mm-example-stage>
-        <mm-token-group aria-label="재질 Primitive Token">
+        </fff-example-stage>
+        <fff-token-group aria-label="재질 Primitive Token">
           ${renderTokenItems([
             ...sectionTokens('shadow'),
             ...sectionTokens('blur'),
             ...sectionTokens('opacity'),
           ])}
-        </mm-token-group>
+        </fff-token-group>
 
-        <mm-example-stage>
+        <fff-example-stage>
           <div class="material-stage">${renderMaterialStage(sectionTokens('material'))}</div>
-        </mm-example-stage>
-        <mm-token-group aria-label="재질 티어 토큰">
+        </fff-example-stage>
+        <fff-token-group aria-label="재질 티어 토큰">
           ${renderTokenItems(sectionTokens('material'))}
-        </mm-token-group>
+        </fff-token-group>
 
-        <mm-token-group aria-label="겹침 순서 토큰">
+        <fff-token-group aria-label="겹침 순서 토큰">
           ${renderTokenItems(sectionTokens('zIndex'))}
-        </mm-token-group>
-      </mm-token-section>
+        </fff-token-group>
+      </fff-token-section>
 
-      <mm-token-section
+      <fff-token-section
         heading="Transition"
         description="모든 모션은 기본 duration과 easing을 함께 씁니다. 열리는 모션은 더 길게 열고, 패널이 나타나는 transform만 살짝 튀는 open easing을 씁니다. 순차 등장은 delay로 시차를 둡니다. 스테이지에 포인터를 올리면 두 easing을 비교할 수 있습니다."
       >
-        <mm-example-stage>
-          <mm-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</mm-flex>
-        </mm-example-stage>
-        <mm-token-group>${renderTokenItems(sectionTokens('transition'))}</mm-token-group>
-      </mm-token-section>
+        <fff-example-stage>
+          <fff-flex direction="column" gap="4">${renderMotionStage(motionTracks)}</fff-flex>
+        </fff-example-stage>
+        <fff-token-group>${renderTokenItems(sectionTokens('transition'))}</fff-token-group>
+      </fff-token-section>
 
-      <mm-component-references .items=${componentReferences}></mm-component-references>
-    </mm-flex>
+      <fff-component-references .items=${componentReferences}></fff-component-references>
+    </fff-flex>
 
-    <mm-component-pager></mm-component-pager>
-  </mm-main>
+    <fff-component-pager></fff-component-pager>
+  </fff-main>
 `
 
 renderPage(main)

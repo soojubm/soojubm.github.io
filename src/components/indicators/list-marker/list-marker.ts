@@ -5,7 +5,7 @@ import { listMarkerStyles } from '@/components/indicators/list-marker/list-marke
 
 export type ListMarkerVariant = 'number' | 'check'
 
-@customElement('mm-list-marker')
+@customElement('fff-list-marker')
 export class ListMarker extends LitElement {
   static styles = listMarkerStyles
   @property({ type: String, reflect: true }) variant: ListMarkerVariant = 'number'

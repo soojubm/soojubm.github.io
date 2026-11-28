@@ -12,7 +12,7 @@ const SORT_OPTIONS: OptionItem[] = [
   { label: '오래된순', value: 'oldest' },
 ]
 
-@customElement('mm-sort-selector')
+@customElement('fff-sort-selector')
 export class SortSelector extends LitElement {
   static styles = css`
     :host {
@@ -23,12 +23,12 @@ export class SortSelector extends LitElement {
 
   render() {
     return html`
-      <mm-select
+      <fff-select
         aria-label="정렬"
         .value=${this.value}
         .options=${SORT_OPTIONS}
         @change=${this.handleSelectChange}
-      ></mm-select>
+      ></fff-select>
     `
   }
 

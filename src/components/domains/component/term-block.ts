@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
 
-@customElement('mm-term-block')
+@customElement('fff-term-block')
 export class TermBlock extends LitElement {
   static styles = css`
     :host {
@@ -27,12 +27,12 @@ export class TermBlock extends LitElement {
   render() {
     return html`
       <header>
-        <mm-heading level=${Number(this.level)}>
-          <mm-tag-group>
-            <mm-code-tag size="large">${this.term}</mm-code-tag>
+        <fff-heading level=${Number(this.level)}>
+          <fff-tag-group>
+            <fff-code-tag size="large">${this.term}</fff-code-tag>
             <slot name="tags"></slot>
-          </mm-tag-group>
-        </mm-heading>
+          </fff-tag-group>
+        </fff-heading>
         ${this.renderDescription()}
       </header>
       <slot></slot>
@@ -43,7 +43,7 @@ export class TermBlock extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-text size="14">${this.description}</mm-text>
+      <fff-text size="14">${this.description}</fff-text>
     `
   }
 }

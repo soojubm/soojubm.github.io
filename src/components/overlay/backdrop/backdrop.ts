@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js'
 
 import { backdropStyles } from '@/components/overlay/overlay.styles'
 
-@customElement('mm-backdrop')
+@customElement('fff-backdrop')
 export class Backdrop extends LitElement {
   static styles = backdropStyles
 }

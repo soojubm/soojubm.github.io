@@ -12,7 +12,7 @@ export type TooltipPlacement = Extract<
   'bottom' | 'bottom-start' | 'bottom-end'
 >
 
-@customElement('mm-tooltip')
+@customElement('fff-tooltip')
 export class Tooltip extends LitElement {
   static styles = [tooltipTriggerStyles]
   @property({ type: String }) content = ''

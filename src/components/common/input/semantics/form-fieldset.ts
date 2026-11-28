@@ -8,7 +8,7 @@ const gapTokens: AttributeTokens<'3' | '6'> = {
   '6': { gap: 'var(--space-6)' },
 }
 
-@customElement('mm-form-fieldset')
+@customElement('fff-form-fieldset')
 export class FormFieldset extends LitElement {
   static styles = css`
     :host {

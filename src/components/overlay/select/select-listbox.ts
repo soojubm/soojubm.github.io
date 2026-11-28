@@ -5,7 +5,7 @@ import type { SelectOption } from '@/components/overlay/select/select-option'
 
 import { RovingFocusController } from '@/controllers/roving-focus-controller'
 
-@customElement('mm-select-listbox')
+@customElement('fff-select-listbox')
 export class SelectListbox extends LitElement {
   static styles = css`
     :host {
@@ -13,7 +13,7 @@ export class SelectListbox extends LitElement {
       flex-direction: column;
     }
   `
-  @queryAssignedElements({ selector: 'mm-select-option' }) private options!: SelectOption[]
+  @queryAssignedElements({ selector: 'fff-select-option' }) private options!: SelectOption[]
   private rovingFocus = new RovingFocusController(this, {
     getItems: () => this.items,
     orientation: 'vertical',

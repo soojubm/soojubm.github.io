@@ -12,7 +12,7 @@ const PROVIDERS = {
 
 export type SocialAuthProvider = keyof typeof PROVIDERS
 
-@customElement('mm-social-auth-button')
+@customElement('fff-social-auth-button')
 export class SocialAuthButton extends LitElement {
   static styles = css`
     :host {
@@ -25,7 +25,7 @@ export class SocialAuthButton extends LitElement {
     const { label, icon } = PROVIDERS[this.provider]
 
     return html`
-      <mm-button size="large" full-width icon=${icon}>${label}</mm-button>
+      <fff-button size="large" full-width icon=${icon}>${label}</fff-button>
     `
   }
 }

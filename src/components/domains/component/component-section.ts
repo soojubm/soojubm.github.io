@@ -9,7 +9,7 @@ import {
 } from '@/components/domains/component/component.styles'
 import { buildAttributeRules } from '@/utils'
 
-@customElement('mm-component-section')
+@customElement('fff-component-section')
 export class ComponentSection extends LitElement {
   static styles = [
     componentContentFrameStyles,
@@ -40,13 +40,13 @@ export class ComponentSection extends LitElement {
 
   render() {
     return html`
-      <mm-text-block level="2" heading=${this.heading} description=${this.description}>
+      <fff-text-block level="2" heading=${this.heading} description=${this.description}>
         ${this.renderChecks()}
-      </mm-text-block>
+      </fff-text-block>
       <div class="example">
-        <mm-example-stage aligned>
+        <fff-example-stage aligned>
           <slot></slot>
-        </mm-example-stage>
+        </fff-example-stage>
         ${this.renderCode()}
       </div>
     `
@@ -56,7 +56,7 @@ export class ComponentSection extends LitElement {
     if (!this.checks.length) return nothing
 
     return html`
-      <mm-text-list .texts=${this.checks}></mm-text-list>
+      <fff-text-list .texts=${this.checks}></fff-text-list>
     `
   }
 
@@ -65,7 +65,7 @@ export class ComponentSection extends LitElement {
 
     return html`
       <div class="component-content-frame">
-        <mm-code-block variant="plain" .code=${this.code}></mm-code-block>
+        <fff-code-block variant="plain" .code=${this.code}></fff-code-block>
       </div>
     `
   }

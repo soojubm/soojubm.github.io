@@ -26,7 +26,7 @@ const componentChangelog: ComponentChangelogItemData[] = [
   {
     date: '2026-09-20',
     description:
-      'placement에서 center를 빼고 top을 더했습니다. 기본값은 bottom이며, 화면 가운데에 뜨는 표면은 mm-dialog가 맡습니다. navbar 검색 패널은 top sheet로 바꿨습니다.',
+      'placement에서 center를 빼고 top을 더했습니다. 기본값은 bottom이며, 화면 가운데에 뜨는 표면은 fff-dialog가 맡습니다. navbar 검색 패널은 top sheet로 바꿨습니다.',
   },
   {
     date: '2026-09-20',
@@ -62,9 +62,9 @@ const componentReferences: ComponentReferenceItemData[] = [
 ]
 
 const componentProps: ComponentPropItemData[] = [
-  ...componentPropsOf('mm-sheet'),
-  ...subComponentPropsOf('mm-sheet-header'),
-  ...subComponentPropsOf('mm-sheet-footer'),
+  ...componentPropsOf('fff-sheet'),
+  ...subComponentPropsOf('fff-sheet-header'),
+  ...subComponentPropsOf('fff-sheet-footer'),
   ...openStateMethods,
   { name: 'toggle', type: 'CustomEvent<{ open: boolean }>', kind: 'event' },
 ]
@@ -82,49 +82,49 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<mm-button aria-controls="bottom-sheet" aria-haspopup="dialog">Bottom</mm-button>
-<mm-sheet id="bottom-sheet" placement="bottom" height="360px">
-  <mm-sheet-header heading="Bottom Sheet"></mm-sheet-header>
-  <mm-sheet-body>
-    <mm-paragraph>콘텐츠</mm-paragraph>
-  </mm-sheet-body>
-  <mm-sheet-footer></mm-sheet-footer>
-</mm-sheet>`
+const exampleCode = `<fff-button aria-controls="bottom-sheet" aria-haspopup="dialog">Bottom</fff-button>
+<fff-sheet id="bottom-sheet" placement="bottom" height="360px">
+  <fff-sheet-header heading="Bottom Sheet"></fff-sheet-header>
+  <fff-sheet-body>
+    <fff-paragraph>콘텐츠</fff-paragraph>
+  </fff-sheet-body>
+  <fff-sheet-footer></fff-sheet-footer>
+</fff-sheet>`
 
 renderPage(sheetPageTemplate())
 
 function sheetPageTemplate() {
   return html`
-    <mm-main>
-      <mm-page-header
+    <fff-main>
+      <fff-page-header
         heading="Sheet"
         description="화면 위를 덮어 독립된 작업 공간을 여는 modal 표면입니다. 화면 가장자리에서 밀려 들어와 배경 상호작용을 막고 backdrop·ESC·닫기 버튼으로 닫히므로, 사용자는 현재 페이지를 벗어나지 않고 하위 작업에 집중한 뒤 원래 흐름으로 돌아갈 수 있습니다."
-      ></mm-page-header>
+      ></fff-page-header>
 
-      <mm-component-aka
+      <fff-component-aka
         .items=${['Drawer', 'Panel', 'Bottom Sheet', 'Side Sheet', 'Modal']}
-      ></mm-component-aka>
+      ></fff-component-aka>
 
-      <mm-component-example>${sheetExampleTemplate()}</mm-component-example>
-      <mm-component-code .code=${exampleCode}></mm-component-code>
+      <fff-component-example>${sheetExampleTemplate()}</fff-component-example>
+      <fff-component-code .code=${exampleCode}></fff-component-code>
 
-      <mm-component-props .props=${componentProps}></mm-component-props>
+      <fff-component-props .props=${componentProps}></fff-component-props>
 
-      <mm-component-tokens .elements=${['mm-sheet']}></mm-component-tokens>
+      <fff-component-tokens .elements=${['fff-sheet']}></fff-component-tokens>
 
-      <mm-component-guide .features=${componentFeatures}>
-        <mm-content-section
+      <fff-component-guide .features=${componentFeatures}>
+        <fff-content-section
           heading-level="3"
           heading="안전마진도 고려해야 하나요?"
           description="패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백이 더해집니다. footer 유무와 상관없이 같은 여백이 유지되므로, footer나 사용하는 쪽에서 따로 두지 않습니다."
-        ></mm-content-section>
+        ></fff-content-section>
 
-        <mm-text-list
-          .texts=${['사용자의 확인이 필요하거나 꼭 알려야 하는 내용은 mm-dialog를 사용합니다.']}
-        ></mm-text-list>
-      </mm-component-guide>
+        <fff-text-list
+          .texts=${['사용자의 확인이 필요하거나 꼭 알려야 하는 내용은 fff-dialog를 사용합니다.']}
+        ></fff-text-list>
+      </fff-component-guide>
 
-      <mm-component-anatomy
+      <fff-component-anatomy
         .parts=${[
           '헤더 — 타이틀과 닫기 버튼.',
           '바디 — header·footer를 제외한 나머지를 채우고, 콘텐츠가 넘치면 내부에서 스크롤됩니다.',
@@ -137,150 +137,150 @@ function sheetPageTemplate() {
         ]}
       >
         ${sheetAnatomyTemplate()}
-      </mm-component-anatomy>
+      </fff-component-anatomy>
 
-      <mm-component-section heading="Filter" description="샘플">
+      <fff-component-section heading="Filter" description="샘플">
         ${filterSheetTemplate()}
-      </mm-component-section>
+      </fff-component-section>
 
-      <mm-component-related .items=${relatedComponents}></mm-component-related>
+      <fff-component-related .items=${relatedComponents}></fff-component-related>
 
-      <mm-component-references .items=${componentReferences}></mm-component-references>
+      <fff-component-references .items=${componentReferences}></fff-component-references>
 
-      <mm-component-changelog .items=${componentChangelog}></mm-component-changelog>
+      <fff-component-changelog .items=${componentChangelog}></fff-component-changelog>
 
-      <mm-component-pager></mm-component-pager>
-    </mm-main>
+      <fff-component-pager></fff-component-pager>
+    </fff-main>
   `
 }
 
 // 패널 gap(--overlay-panel-gap)이 벌리는 간격을 placeholder의 space로 드러낸다.
 function sheetAnatomyTemplate() {
   const gapPlaceholder = html`
-    <mm-ui-placeholder space="4">
-      <mm-text size="12" weight="bold">space-4</mm-text>
-    </mm-ui-placeholder>
+    <fff-ui-placeholder space="4">
+      <fff-text size="12" weight="bold">space-4</fff-text>
+    </fff-ui-placeholder>
   `
 
   return html`
-    <mm-flex direction="column">
-      <mm-sheet-header heading="필터"></mm-sheet-header>
+    <fff-flex direction="column">
+      <fff-sheet-header heading="필터"></fff-sheet-header>
       ${gapPlaceholder}
-      <mm-sheet-body>
-        <mm-paragraph>넘치는 콘텐츠는 body 안에서 스크롤됩니다.</mm-paragraph>
-      </mm-sheet-body>
+      <fff-sheet-body>
+        <fff-paragraph>넘치는 콘텐츠는 body 안에서 스크롤됩니다.</fff-paragraph>
+      </fff-sheet-body>
       ${gapPlaceholder}
-      <mm-sheet-footer .primaryAction=${{ label: '적용' }}></mm-sheet-footer>
-    </mm-flex>
+      <fff-sheet-footer .primaryAction=${{ label: '적용' }}></fff-sheet-footer>
+    </fff-flex>
   `
 }
 
 function sheetExampleTemplate() {
   return html`
-    <mm-button-group>
-      <mm-button aria-controls="top-sheet" aria-haspopup="dialog">Top</mm-button>
-      <mm-button aria-controls="bottom-sheet" aria-haspopup="dialog">Bottom</mm-button>
-      <mm-button aria-controls="left-sheet" aria-haspopup="dialog">Left</mm-button>
-      <mm-button aria-controls="right-sheet" aria-haspopup="dialog">Right</mm-button>
-    </mm-button-group>
+    <fff-button-group>
+      <fff-button aria-controls="top-sheet" aria-haspopup="dialog">Top</fff-button>
+      <fff-button aria-controls="bottom-sheet" aria-haspopup="dialog">Bottom</fff-button>
+      <fff-button aria-controls="left-sheet" aria-haspopup="dialog">Left</fff-button>
+      <fff-button aria-controls="right-sheet" aria-haspopup="dialog">Right</fff-button>
+    </fff-button-group>
 
-    <mm-sheet id="top-sheet" placement="top">
-      <mm-sheet-header heading="Top Sheet"></mm-sheet-header>
-      <mm-sheet-body>
-        <mm-paragraph>
+    <fff-sheet id="top-sheet" placement="top">
+      <fff-sheet-header heading="Top Sheet"></fff-sheet-header>
+      <fff-sheet-body>
+        <fff-paragraph>
           상단 트리거에서 여는 검색·알림처럼 시작점이 위쪽인 흐름에 씁니다.
-        </mm-paragraph>
-      </mm-sheet-body>
-    </mm-sheet>
-    <mm-sheet id="bottom-sheet" placement="bottom" height="360px">
-      <mm-sheet-header heading="Bottom Sheet"></mm-sheet-header>
-      <mm-sheet-body>
-        <mm-menu-item-group size="large">
-          <mm-menu-item-action size="medium" label="검색"></mm-menu-item-action>
-          <mm-menu-item-action size="medium" label="저장"></mm-menu-item-action>
-          <mm-menu-item-action size="medium" label="공유"></mm-menu-item-action>
-          <mm-menu-item-action size="medium" label="보관"></mm-menu-item-action>
-          <mm-menu-item-action size="medium" label="숨기기"></mm-menu-item-action>
-          <mm-menu-item-action size="medium" label="신고"></mm-menu-item-action>
-          <mm-menu-item-action size="medium" label="삭제" destructive></mm-menu-item-action>
-        </mm-menu-item-group>
-      </mm-sheet-body>
-      <mm-sheet-footer
+        </fff-paragraph>
+      </fff-sheet-body>
+    </fff-sheet>
+    <fff-sheet id="bottom-sheet" placement="bottom" height="360px">
+      <fff-sheet-header heading="Bottom Sheet"></fff-sheet-header>
+      <fff-sheet-body>
+        <fff-menu-item-group size="large">
+          <fff-menu-item-action size="medium" label="검색"></fff-menu-item-action>
+          <fff-menu-item-action size="medium" label="저장"></fff-menu-item-action>
+          <fff-menu-item-action size="medium" label="공유"></fff-menu-item-action>
+          <fff-menu-item-action size="medium" label="보관"></fff-menu-item-action>
+          <fff-menu-item-action size="medium" label="숨기기"></fff-menu-item-action>
+          <fff-menu-item-action size="medium" label="신고"></fff-menu-item-action>
+          <fff-menu-item-action size="medium" label="삭제" destructive></fff-menu-item-action>
+        </fff-menu-item-group>
+      </fff-sheet-body>
+      <fff-sheet-footer
         .primaryAction=${{ label: '저장', onClick: () => {} }}
         .secondaryAction=${{ label: '취소', onClick: () => {} }}
-      ></mm-sheet-footer>
-    </mm-sheet>
-    <mm-sheet id="left-sheet" placement="left">
-      <mm-sheet-header heading="Left Sheet"></mm-sheet-header>
-      <mm-sheet-body><mm-paragraph>왼쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
-    </mm-sheet>
-    <mm-sheet id="right-sheet" placement="right">
-      <mm-sheet-header heading="Right Sheet"></mm-sheet-header>
-      <mm-sheet-body><mm-paragraph>오른쪽 패널 콘텐츠</mm-paragraph></mm-sheet-body>
-    </mm-sheet>
+      ></fff-sheet-footer>
+    </fff-sheet>
+    <fff-sheet id="left-sheet" placement="left">
+      <fff-sheet-header heading="Left Sheet"></fff-sheet-header>
+      <fff-sheet-body><fff-paragraph>왼쪽 패널 콘텐츠</fff-paragraph></fff-sheet-body>
+    </fff-sheet>
+    <fff-sheet id="right-sheet" placement="right">
+      <fff-sheet-header heading="Right Sheet"></fff-sheet-header>
+      <fff-sheet-body><fff-paragraph>오른쪽 패널 콘텐츠</fff-paragraph></fff-sheet-body>
+    </fff-sheet>
   `
 }
 
 function filterSheetTemplate() {
   return html`
-    <mm-icon-button
+    <fff-icon-button
       icon=${ICON_NAMES.FILTER}
       aria-label="필터"
       aria-controls="filter-sheet"
       aria-haspopup="dialog"
-    ></mm-icon-button>
-    <mm-sheet placement="bottom" id="filter-sheet">
-      <mm-sheet-header heading="필터"></mm-sheet-header>
-      <mm-sheet-body>
+    ></fff-icon-button>
+    <fff-sheet placement="bottom" id="filter-sheet">
+      <fff-sheet-header heading="필터"></fff-sheet-header>
+      <fff-sheet-body>
         <form>
-          <mm-menu-item-switch
+          <fff-menu-item-switch
             size="medium"
             icon=${ICON_NAMES.DATE}
             label="즉시 예약"
             value="instant"
             description="호스트 승인을 기다릴 필요 없이 예약할 수 있는 숙소"
-          ></mm-menu-item-switch>
-          <mm-separator></mm-separator>
-          <mm-form-field label="예산">
-            <mm-menu-item-radio-group
+          ></fff-menu-item-switch>
+          <fff-separator></fff-separator>
+          <fff-form-field label="예산">
+            <fff-menu-item-radio-group
               name="budget"
               .options=${[
                 { value: '50000', label: '50,000원 미만' },
                 { value: '100000', label: '100,000원 미만' },
                 { value: '150000', label: '150,000원 미만' },
               ]}
-            ></mm-menu-item-radio-group>
-          </mm-form-field>
-          <mm-separator></mm-separator>
-          <mm-form-field label="평수">
-            <mm-filter-button-group
+            ></fff-menu-item-radio-group>
+          </fff-form-field>
+          <fff-separator></fff-separator>
+          <fff-form-field label="평수">
+            <fff-filter-button-group
               mode="single"
               .options=${[
                 { value: '10', label: '10평 미만' },
                 { value: '20', label: '20평' },
                 { value: '30', label: '30평' },
               ]}
-            ></mm-filter-button-group>
-          </mm-form-field>
-          <mm-separator></mm-separator>
-          <mm-form-field
+            ></fff-filter-button-group>
+          </fff-form-field>
+          <fff-separator></fff-separator>
+          <fff-form-field
             label="접근성 편의"
             description="호스트가 제공하고 에어비앤비에서 검토한 정보입니다."
           >
-            <mm-menu-item-checkbox-group
+            <fff-menu-item-checkbox-group
               .options=${[
                 { value: 'no-stairs', label: '게스트 출입구에 계단이나 문턱 없음' },
                 { value: 'entrance-width', label: '너비 81cm 이상의 게스트 출입구' },
                 { value: 'parking', label: '휠체어 접근 가능 주차 공간' },
               ]}
-            ></mm-menu-item-checkbox-group>
-          </mm-form-field>
+            ></fff-menu-item-checkbox-group>
+          </fff-form-field>
         </form>
-      </mm-sheet-body>
-      <mm-sheet-footer
+      </fff-sheet-body>
+      <fff-sheet-footer
         .primaryAction=${{ label: '숙소 25개 표시', onClick: () => {} }}
         .secondaryAction=${{ label: '초기화', onClick: () => {} }}
-      ></mm-sheet-footer>
-    </mm-sheet>
+      ></fff-sheet-footer>
+    </fff-sheet>
   `
 }

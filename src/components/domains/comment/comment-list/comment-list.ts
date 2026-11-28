@@ -3,7 +3,7 @@ import { customElement, queryAssignedElements } from 'lit/decorators.js'
 
 import '@/components/domains/comment/comment-item/comment-item'
 
-@customElement('mm-comment-list')
+@customElement('fff-comment-list')
 export class CommentList extends LitElement {
   static styles = css`
     :host {

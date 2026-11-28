@@ -3,7 +3,7 @@ import { customElement, queryAssignedElements } from 'lit/decorators.js'
 
 import '@/components/domains/faq/faq-item'
 
-@customElement('mm-faq-list')
+@customElement('fff-faq-list')
 export class FaqList extends LitElement {
   static styles = css`
     :host {

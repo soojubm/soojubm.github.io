@@ -8,7 +8,7 @@ export interface ComponentRelatedItemData {
   label: string
 }
 
-@customElement('mm-component-related')
+@customElement('fff-component-related')
 export class ComponentRelated extends LitElement {
   static styles = css`
     :host {
@@ -28,15 +28,15 @@ export class ComponentRelated extends LitElement {
   render() {
     return html`
       <section class="component-related">
-        <mm-heading level="2">${this.heading}</mm-heading>
-        <mm-button-group>
+        <fff-heading level="2">${this.heading}</fff-heading>
+        <fff-button-group>
           ${this.items.map(
             item =>
               html`
-                <mm-hashtag-link href=${item.href}>${item.label}</mm-hashtag-link>
+                <fff-hashtag-link href=${item.href}>${item.label}</fff-hashtag-link>
               `,
           )}
-        </mm-button-group>
+        </fff-button-group>
       </section>
     `
   }

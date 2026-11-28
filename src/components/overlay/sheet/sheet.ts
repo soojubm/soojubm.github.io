@@ -19,7 +19,7 @@ export type SheetWidth = 'small' | 'large'
 // 드래그로 내린 거리가 패널 높이의 이 비율을 넘으면 닫힘으로 판정한다.
 const DRAG_CLOSE_THRESHOLD_RATIO = 0.25
 
-@customElement('mm-sheet')
+@customElement('fff-sheet')
 export class Sheet extends withOpenState(LitElement) {
   static styles = [overlaySurfaceStyles, sheetPositionStyles, sheetDragHandleStyles]
   @property({ type: String, attribute: 'aria-modal', reflect: true }) ariaModal: AriaBoolean =
@@ -43,7 +43,7 @@ export class Sheet extends withOpenState(LitElement) {
 
   render() {
     return html`
-      <mm-backdrop></mm-backdrop>
+      <fff-backdrop></fff-backdrop>
       <aside class="panel" ?open=${this.open}>
         ${this.renderDragHandle()}
         <slot></slot>

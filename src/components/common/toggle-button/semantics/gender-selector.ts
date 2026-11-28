@@ -8,7 +8,7 @@ import '@/components/common/toggle-button/toggle-button-group'
 
 type Gender = 'other' | 'female' | 'male'
 
-@customElement('mm-gender-selector')
+@customElement('fff-gender-selector')
 export class GenderSelector extends LitElement {
   static styles = css`
     :host {
@@ -29,13 +29,13 @@ export class GenderSelector extends LitElement {
 
   render() {
     return html`
-      <mm-toggle-button-group
+      <fff-toggle-button-group
         aria-label="성별"
         .options=${this.options}
         .value=${this.value}
         ?stretch=${this.stretch}
         @change=${this.handleGenderChange}
-      ></mm-toggle-button-group>
+      ></fff-toggle-button-group>
     `
   }
 

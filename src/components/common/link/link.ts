@@ -6,7 +6,7 @@ import { linkStyles } from '@/components/common/link/link.styles'
 import '@/components/common/icon'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-@customElement('mm-link')
+@customElement('fff-link')
 export class Link extends LitElement {
   static styles = [resetStyles, linkStyles]
   @property({ type: String }) href = ''
@@ -32,7 +32,7 @@ export class Link extends LitElement {
     if (!this.external) return nothing
 
     return html`
-      <mm-icon name=${ICON_NAMES.EXTERNAL_LINK}></mm-icon>
+      <fff-icon name=${ICON_NAMES.EXTERNAL_LINK}></fff-icon>
     `
   }
 }

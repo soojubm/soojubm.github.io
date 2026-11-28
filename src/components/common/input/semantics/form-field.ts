@@ -5,7 +5,7 @@ import '@/components/common/input/semantics/textfield-label'
 import '@/components/common/input/semantics/textfield-description'
 import '@/components/common/input/semantics/textfield-validation'
 
-@customElement('mm-form-field')
+@customElement('fff-form-field')
 export class FormField extends LitElement {
   static styles = css`
     :host {
@@ -26,7 +26,9 @@ export class FormField extends LitElement {
   render() {
     return html`
       <div class="group" role="group" aria-labelledby="label">
-        <mm-textfield-label id="label" ?optional=${this.optional}>${this.label}</mm-textfield-label>
+        <fff-textfield-label id="label" ?optional=${this.optional}>
+          ${this.label}
+        </fff-textfield-label>
         <slot></slot>
         ${this.renderDescription()} ${this.renderValidation()}
       </div>
@@ -37,7 +39,7 @@ export class FormField extends LitElement {
     if (!this.description) return nothing
 
     return html`
-      <mm-textfield-description>${this.description}</mm-textfield-description>
+      <fff-textfield-description>${this.description}</fff-textfield-description>
     `
   }
 
@@ -45,7 +47,7 @@ export class FormField extends LitElement {
     if (!this.validationText) return nothing
 
     return html`
-      <mm-textfield-validation>${this.validationText}</mm-textfield-validation>
+      <fff-textfield-validation>${this.validationText}</fff-textfield-validation>
     `
   }
 }

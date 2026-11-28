@@ -12,7 +12,7 @@ import {
 } from '@/components/common/menu-item/menu-item.utils'
 import '@/components/common/switch'
 
-@customElement('mm-menu-item-switch')
+@customElement('fff-menu-item-switch')
 export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresentation(LitElement)) {
   static styles = [
     css`
@@ -29,14 +29,14 @@ export class MenuItemSwitch extends withMenuItemToggleState(withMenuItemPresenta
 
   connectedCallback() {
     super.connectedCallback()
-    const group = this.closest<MenuItemGroup>('mm-menu-item-group')
+    const group = this.closest<MenuItemGroup>('fff-menu-item-group')
     this.rowRole = group?.role === 'menu' ? 'menuitemcheckbox' : 'switch'
   }
 
   render() {
     return renderMenuItemCheckedRow(this, {
       role: this.rowRole,
-      control: literal`mm-switch`,
+      control: literal`fff-switch`,
       activate: this.activate,
     })
   }

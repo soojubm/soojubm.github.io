@@ -13,7 +13,7 @@ export const footerStyles = css`
     transition: padding-left var(--sidebar-transition-duration) var(--sidebar-transition-easing);
   }
 
-  .footer address mm-paragraph {
+  .footer address fff-paragraph {
     margin: var(--space-4) 0;
   }
 

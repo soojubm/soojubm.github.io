@@ -29,7 +29,7 @@ const FEATURE_ICONS: Record<string, string> = {
   Disclosure: ICON_NAMES.DISCLOSURE,
 }
 
-@customElement('mm-component-feature-list')
+@customElement('fff-component-feature-list')
 export class ComponentFeatureList extends LitElement {
   static styles = [
     componentContentFrameStyles,
@@ -45,19 +45,19 @@ export class ComponentFeatureList extends LitElement {
   render() {
     return html`
       <div class="component-content-frame">
-        <mm-feature-group columns="2">
+        <fff-feature-group columns="2">
           ${this.features.map(
             feature => html`
-              <mm-feature
+              <fff-feature
                 heading=${feature.heading}
                 description=${feature.description}
                 icon=${FEATURE_ICONS[feature.heading] ?? ICON_NAMES.INFO}
               >
                 ${this.renderRules(feature.rules)}
-              </mm-feature>
+              </fff-feature>
             `,
           )}
-        </mm-feature-group>
+        </fff-feature-group>
       </div>
     `
   }
@@ -66,7 +66,7 @@ export class ComponentFeatureList extends LitElement {
     if (!rules?.length) return nothing
 
     return html`
-      <mm-text-list .texts=${rules}></mm-text-list>
+      <fff-text-list .texts=${rules}></fff-text-list>
     `
   }
 }

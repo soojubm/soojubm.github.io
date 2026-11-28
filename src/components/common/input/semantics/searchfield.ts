@@ -8,13 +8,13 @@ import { emit, uniqueId } from '@/utils'
 import '@/components/common/icon'
 import '@/components/common/icon-button/semantics/clear-button'
 
-@customElement('mm-searchfield')
+@customElement('fff-searchfield')
 export class SearchField extends LitElement {
   static styles = [
     inputBaseStyles,
     css`
       /* 값이 없어도 자리를 남겨, 내용 폭을 따르는 배치에서 지울 때 필드 폭이 줄지 않게 한다. */
-      mm-clear-button[hidden] {
+      fff-clear-button[hidden] {
         display: inline-flex;
         visibility: hidden;
       }
@@ -24,14 +24,14 @@ export class SearchField extends LitElement {
   @property({ type: String }) placeholder = ''
   @property({ type: Boolean, reflect: true }) disabled = false
   @property({ type: String, reflect: true }) size: InputSize = 'medium'
-  @query('mm-input') private input?: HTMLElement
+  @query('fff-input') private input?: HTMLElement
   private inputId = uniqueId('input')
 
   render() {
     return html`
       <div class="textfield-control">
-        <mm-icon name=${ICON_NAMES.SEARCH}></mm-icon>
-        <mm-input
+        <fff-icon name=${ICON_NAMES.SEARCH}></fff-icon>
+        <fff-input
           input-id=${this.inputId}
           .type=${'search'}
           .value=${this.value}
@@ -39,7 +39,7 @@ export class SearchField extends LitElement {
           aria-label=${this.placeholder || '검색'}
           ?disabled=${this.disabled}
           @input=${this.handleInput}
-        ></mm-input>
+        ></fff-input>
         ${this.renderClearButton()}
       </div>
     `
@@ -52,15 +52,15 @@ export class SearchField extends LitElement {
 
   private renderClearButton() {
     return html`
-      <mm-clear-button
+      <fff-clear-button
         aria-label="검색어 지우기"
         ?hidden=${!this.value || this.disabled}
         @click=${this.handleClearClick}
-      ></mm-clear-button>
+      ></fff-clear-button>
     `
   }
 
-  // mm-input의 input 이벤트를 여기서 멈추지 않으면, detail 없는 원본이 뒤따라 올라가 소비자의 값을 덮는다.
+  // fff-input의 input 이벤트를 여기서 멈추지 않으면, detail 없는 원본이 뒤따라 올라가 소비자의 값을 덮는다.
   private handleInput(event: Event) {
     const target = event.target as HTMLInputElement
     event.stopPropagation()
