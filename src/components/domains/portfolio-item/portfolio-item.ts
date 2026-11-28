@@ -74,7 +74,7 @@ export class PortfolioItem extends LitElement {
       flex-direction: row;
     }
 
-    :host([layout='list']) fff-thumbnail {
+    :host([layout='list']) fff-image {
       width: 156px;
       flex: none;
     }
@@ -103,7 +103,7 @@ export class PortfolioItem extends LitElement {
       >
         ${this.renderBadge()}
         <fff-more-button class="action"></fff-more-button>
-        ${this.renderThumbnail()}
+        ${this.renderImage()}
         <div class="content">
           ${this.renderTextBlock()} ${this.renderDatetime()} ${this.renderKeywords()}
           <slot></slot>
@@ -120,11 +120,11 @@ export class PortfolioItem extends LitElement {
     `
   }
 
-  private renderThumbnail() {
+  private renderImage() {
     if (!this.src) return nothing
 
     return html`
-      <fff-thumbnail src=${this.src} alt=${this.alt}></fff-thumbnail>
+      <fff-image src=${this.src} alt=${this.alt}></fff-image>
     `
   }
 

@@ -53,7 +53,7 @@ const renderChatBubbleImages = (images: ChatImage[], typing: boolean) => {
     <fff-grid columns=${images.length === 1 ? 1 : 2} column-min-width="6rem" gap="1">
       ${images.map(
         ({ src, alt }) => html`
-          <fff-thumbnail src=${src} alt=${alt} ratio="4:3"></fff-thumbnail>
+          <fff-image src=${src} alt=${alt} ratio="4:3"></fff-image>
         `,
       )}
     </fff-grid>

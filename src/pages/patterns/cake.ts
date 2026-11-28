@@ -31,11 +31,7 @@ const awards = [
 
 const main = html`
   <fff-main width="large" layout="split">
-    <fff-thumbnail
-      ratio="full"
-      src="/src/images/coolhandluke.jpg"
-      alt="Cool Hand Luke"
-    ></fff-thumbnail>
+    <fff-image ratio="full" src="/src/images/coolhandluke.jpg" alt="Cool Hand Luke"></fff-image>
 
     <fff-content-section-list>
       <fff-flex direction="column" gap="4">

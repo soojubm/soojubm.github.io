@@ -16,7 +16,7 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'notice.html', label: 'Notice' },
   { href: 'list-item.html', label: 'List Item' },
   { href: 'menu-item.html', label: 'Menu Item' },
-  { href: 'thumbnail.html', label: 'Thumbnail' },
+  { href: 'image.html', label: 'Image' },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -150,7 +150,7 @@ const main = html`
       heading="Caption"
       description="보조 설명, 메타 정보, 이미지 캡션처럼 낮은 위계의 텍스트입니다."
     >
-      <fff-thumbnail ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></fff-thumbnail>
+      <fff-image ratio="16:9" caption="이미지 하단에 배치되는 설명 텍스트"></fff-image>
     </fff-component-section>
 
     <fff-component-section

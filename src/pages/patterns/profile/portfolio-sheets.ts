@@ -5,29 +5,29 @@ export const worksSheet = html`
     <fff-sheet-header heading="스터디움 프로모션 웹사이트"></fff-sheet-header>
     <fff-sheet-body>
       <fff-flex direction="column" gap="3">
-        <fff-thumbnail
+        <fff-image
           ratio="full"
           src="/src/images/work-studium.jpg"
           alt="스터디움 프로모션 웹사이트 화면"
-        ></fff-thumbnail>
+        ></fff-image>
         <fff-paragraph size="large">페이머스 프로덕트 디자인</fff-paragraph>
-        <fff-thumbnail
+        <fff-image
           ratio="full"
           src="/src/images/work-famus.jpg"
           alt="페이머스 프로덕트 디자인 화면"
-        ></fff-thumbnail>
+        ></fff-image>
         <fff-paragraph size="large">한국문화예술위원회 창작산실 - 올해의 신작 2018</fff-paragraph>
         <fff-paragraph>보름 남짓한 일정. 워드프레스로 개발.</fff-paragraph>
-        <fff-thumbnail
+        <fff-image
           ratio="full"
           src="/src/images/arko-main.jpg"
           alt="올해의 신작 2018 메인 화면"
-        ></fff-thumbnail>
-        <fff-thumbnail
+        ></fff-image>
+        <fff-image
           ratio="full"
           src="/src/images/arko-sub.jpg"
           alt="올해의 신작 2018 서브 화면"
-        ></fff-thumbnail>
+        ></fff-image>
       </fff-flex>
     </fff-sheet-body>
   </fff-sheet>
@@ -38,16 +38,12 @@ export const letteringSheet = html`
     <fff-sheet-header heading="레터링"></fff-sheet-header>
     <fff-sheet-body>
       <fff-flex direction="column" gap="3">
-        <fff-thumbnail
+        <fff-image
           ratio="full"
           src="/src/images/budha.png"
           alt="부처를 모티브로 한 레터링 작업"
-        ></fff-thumbnail>
-        <fff-thumbnail
-          ratio="full"
-          src="/src/images/lettering.png"
-          alt="레터링 작업물"
-        ></fff-thumbnail>
+        ></fff-image>
+        <fff-image ratio="full" src="/src/images/lettering.png" alt="레터링 작업물"></fff-image>
       </fff-flex>
     </fff-sheet-body>
   </fff-sheet>

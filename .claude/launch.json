@@ -2,6 +2,11 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "attach",
+      "url": "http://localhost:9000",
+      "port": 9000
+    },
+    {
       "name": "dev",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["webpack", "serve", "--mode=development", "--port", "9100"],

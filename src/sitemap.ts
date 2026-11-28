@@ -86,7 +86,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'dot', name: 'Dot' },
       { id: 'text', name: 'Text' },
       { id: 'tag', name: 'Tag' },
-      { id: 'thumbnail', name: 'Thumbnail' },
+      { id: 'image', name: 'Image' },
     ],
   },
   {

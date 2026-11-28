@@ -11,7 +11,7 @@ import { ICON_NAMES } from '@/components/common'
 import { code, componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
-const scrollThumbnails = [
+const scrollImages = [
   { src: '/src/images/temp.png', alt: '풍경 샘플' },
   { src: '/src/images/soojubm.png', alt: '프로필 샘플' },
   { src: '/src/images/work-studium.jpg', alt: '작업 샘플' },
@@ -283,7 +283,7 @@ const main = html`
               ></fff-user-item>
             </fff-flex>
             <fff-flex direction="column" gap="3">
-              <fff-thumbnail ratio="16:9" src="/src/images/soojubm.png" alt=""></fff-thumbnail>
+              <fff-image ratio="16:9" src="/src/images/soojubm.png" alt=""></fff-image>
               <fff-paragraph>
                 Monotonectally productivate progressive human capital without user friendly portals.
                 Globally benchmark top-line ideas with distributed catalysts for change.
@@ -347,14 +347,9 @@ const main = html`
         <fff-tab-panel value="row">
           <fff-flex direction="column" gap="6">
             <fff-scroll gap="3" hide-scrollbar>
-              ${scrollThumbnails.map(
+              ${scrollImages.map(
                 ({ src, alt }) => html`
-                  <fff-thumbnail
-                    ratio="1:1"
-                    src=${src}
-                    alt=${alt}
-                    style="width: 220px"
-                  ></fff-thumbnail>
+                  <fff-image ratio="1:1" src=${src} alt=${alt} style="width: 220px"></fff-image>
                 `,
               )}
             </fff-scroll>
@@ -397,9 +392,9 @@ const main = html`
           <fff-paragraph>화면 폭이 달라져도 빈틈 없이 이어집니다.</fff-paragraph>
         </fff-marquee>
         <fff-marquee gap="3" height="120px" speed="72" pause-on-hover>
-          ${scrollThumbnails.slice(0, 4).map(
+          ${scrollImages.slice(0, 4).map(
             ({ src, alt }) => html`
-              <fff-thumbnail style="width: 120px" ratio="1:1" src=${src} alt=${alt}></fff-thumbnail>
+              <fff-image style="width: 120px" ratio="1:1" src=${src} alt=${alt}></fff-image>
             `,
           )}
         </fff-marquee>

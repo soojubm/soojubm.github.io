@@ -5,27 +5,27 @@ import '@/components/common/text/semantics/caption'
 import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-export type ThumbnailRatio = '1:1' | '16:9' | '4:3' | 'full'
-export type ThumbnailLoading = 'eager' | 'lazy'
-export type ThumbnailFetchPriority = 'high' | 'low' | 'auto'
+export type ImageRatio = '1:1' | '16:9' | '4:3' | 'full'
+export type ImageLoading = 'eager' | 'lazy'
+export type ImageFetchPriority = 'high' | 'low' | 'auto'
 
-const thumbnailRatioTokens: AttributeTokens<Exclude<ThumbnailRatio, '16:9'>> = {
+const imageRatioTokens: AttributeTokens<Exclude<ImageRatio, '16:9'>> = {
   '1:1': { 'aspect-ratio': '1 / 1' },
   '4:3': { 'aspect-ratio': '4 / 3' },
   full: { 'aspect-ratio': 'auto' },
 }
 
-@customElement('fff-thumbnail')
-export class Thumbnail extends LitElement {
+@customElement('fff-image')
+export class Image extends LitElement {
   static styles = [
     resetStyles,
     css`
       :host {
         display: block;
         width: 100%;
-        --thumbnail-border: var(--border-transparent);
-        --thumbnail-border-radius: var(--border-radius);
-        --thumbnail-empty-background-color: var(--background-subtle-color);
+        --image-border: var(--border-transparent);
+        --image-border-radius: var(--border-radius);
+        --image-empty-background-color: var(--background-subtle-color);
       }
 
       figure {
@@ -40,7 +40,7 @@ export class Thumbnail extends LitElement {
       }
 
       a:hover .image-wrapper {
-        --thumbnail-border: var(--border);
+        --image-border: var(--border);
       }
       /* a:focus-visible {
       ${focusRingStyles}
@@ -50,14 +50,14 @@ export class Thumbnail extends LitElement {
         width: 100%;
         position: relative;
         aspect-ratio: 16 / 9;
-        border: var(--thumbnail-border);
-        border-radius: var(--thumbnail-border-radius);
+        border: var(--image-border);
+        border-radius: var(--image-border-radius);
         box-sizing: border-box;
-        background-color: var(--thumbnail-empty-background-color);
+        background-color: var(--image-empty-background-color);
         overflow: hidden;
       }
 
-      ${unsafeCSS(buildAttributeRules('ratio', thumbnailRatioTokens, '.image-wrapper'))}
+      ${unsafeCSS(buildAttributeRules('ratio', imageRatioTokens, '.image-wrapper'))}
 
       :host([ratio='full']) img {
         height: auto;
@@ -72,10 +72,9 @@ export class Thumbnail extends LitElement {
   ]
   @property({ type: String }) src = ''
   @property({ type: String }) alt = ''
-  @property({ type: String, reflect: true }) ratio: ThumbnailRatio = '16:9'
-  @property({ type: String }) loading: ThumbnailLoading = 'lazy'
-  @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: ThumbnailFetchPriority =
-    'auto'
+  @property({ type: String, reflect: true }) ratio: ImageRatio = '16:9'
+  @property({ type: String }) loading: ImageLoading = 'lazy'
+  @property({ type: String, attribute: 'fetchpriority' }) fetchPriority: ImageFetchPriority = 'auto'
   @property({ type: String }) href = ''
   @property({ type: String }) caption = ''
   @state() private hasError = false

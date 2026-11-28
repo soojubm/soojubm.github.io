@@ -256,7 +256,7 @@ const main = html`
             description="And good bacteria creates a healthy oral environment. In addition to positively impacting the things you can taste and feel, like fresher breath and less sensitive teeth, a balanced oral environment is directly linked to cardiovascular, respiratory, and immune health."
           ></fff-text-block>
         </fff-flex>
-        <fff-thumbnail ratio="1:1"></fff-thumbnail>
+        <fff-image ratio="1:1"></fff-image>
       </fff-grid>
 
       <!-- 마케팅 스토리: bleed 배경 + 특징 -->
@@ -302,7 +302,7 @@ const main = html`
 
       <!-- 마케팅 스토리: 이미지 + 텍스트 -->
       <fff-grid columns="2" gap="8">
-        <fff-thumbnail ratio="1:1"></fff-thumbnail>
+        <fff-image ratio="1:1"></fff-image>
         <fff-flex direction="column" gap="3">
           <fff-tag tone="purple">Why prebiotics?</fff-tag>
           <fff-text-block

@@ -32,7 +32,7 @@ const main = html`
         </fff-flex>
       </header>
 
-      <fff-thumbnail src="/src/images/soojubm.png" ratio="16:9"></fff-thumbnail>
+      <fff-image src="/src/images/soojubm.png" ratio="16:9"></fff-image>
 
       <section>
         <fff-paragraph-group>

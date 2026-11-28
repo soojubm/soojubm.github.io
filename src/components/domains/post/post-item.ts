@@ -30,7 +30,7 @@ export class PostItem extends LitElement {
 
   render() {
     const body = html`
-      <fff-thumbnail src=${this.thumbnail} ratio="1:1"></fff-thumbnail>
+      <fff-image src=${this.thumbnail} ratio="1:1"></fff-image>
       <fff-heading level=${this.headingLevel}>${this.title}</fff-heading>
       <fff-meta-item-group gap="2">
         <fff-text>${this.category}</fff-text>

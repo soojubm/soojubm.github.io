@@ -33,7 +33,7 @@ const renderEpisodeItems = (items: EpisodeItem[]) =>
   items.map(
     ({ tag, title, description }) => html`
       <div>
-        <fff-thumbnail></fff-thumbnail>
+        <fff-image></fff-image>
         <fff-flex direction="column" gap="1">
           <fff-tag>${tag}</fff-tag>
           <fff-text size="18" weight="bold">${title}</fff-text>
@@ -59,7 +59,7 @@ const renderProductItems = (items: ProductItem[]) =>
   items.map(
     ({ title, price }) => html`
       <fff-flex direction="column" style="border: var(--border); border-width: 0 1px 1px 0">
-        <fff-thumbnail ratio="1:1" style="border-bottom: var(--border)"></fff-thumbnail>
+        <fff-image ratio="1:1" style="border-bottom: var(--border)"></fff-image>
         <fff-flex direction="column" gap="4" style="padding: var(--space-4) var(--space-6)">
           <fff-text size="18">${title}</fff-text>
           <fff-product-price price=${price}></fff-product-price>

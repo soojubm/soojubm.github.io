@@ -16,7 +16,7 @@ export const chatBubbleStyles = css`
 
     --bubble-border-radius: var(--border-radius) var(--border-radius-large)
       var(--border-radius-large) var(--border-radius-large);
-    --thumbnail-border-radius: var(--bubble-border-radius);
+    --image-border-radius: var(--bubble-border-radius);
   }
 
   /* 점 3개는 너비가 고정이라 부모 기준 max-width 비율에 눌리면 안 된다. */
@@ -65,7 +65,7 @@ export const myChatBubbleStyles = [
     :host {
       --bubble-border-radius: var(--border-radius-large) var(--border-radius)
         var(--border-radius-large) var(--border-radius-large);
-      --thumbnail-border-radius: var(--bubble-border-radius);
+      --image-border-radius: var(--bubble-border-radius);
       --chat-bubble-background-color: var(--primary-color);
       --chat-bubble-text-color: var(--foreground-on-primary-color);
     }

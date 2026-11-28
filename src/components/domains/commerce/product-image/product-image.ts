@@ -2,7 +2,7 @@ import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { surfaceBaseStyles, surfaceFilledStyles } from '@/components/common/surface/surface.styles'
-import '@/components/common/thumbnail'
+import '@/components/common/image'
 
 @customElement('fff-product-image')
 export class ProductImage extends LitElement {
@@ -18,7 +18,7 @@ export class ProductImage extends LitElement {
 
   render() {
     return html`
-      <fff-thumbnail src=${this.src} alt=${this.alt} ratio="1:1"></fff-thumbnail>
+      <fff-image src=${this.src} alt=${this.alt} ratio="1:1"></fff-image>
     `
   }
 }

@@ -159,7 +159,7 @@ fff-marquee {
   gap: 1.25rem;
 }
 
-.class-curriculum > div fff-thumbnail {
+.class-curriculum > div fff-image {
   width: 240px;
   max-width: 100%;
 }
