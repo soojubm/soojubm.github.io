@@ -191,6 +191,12 @@ const main = html`
       >
         <fff-grid columns="2" gap="6">
           <fff-figure-card
+            description="첫 페이지와 마지막 페이지 번호를 보여 줘서 바로 이동하고 분량도 가늠하게 한다"
+          >
+            <fff-pagination slot="figure" current-page="7" page-count="50"></fff-pagination>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card
             description="더블 화살표는 이동하는 곳이 어디인지, 전체가 얼마나 되는지 알려 주지 않는다"
           >
             <fff-flex slot="figure" align-items="center" gap="1">
@@ -207,12 +213,6 @@ const main = html`
               ></fff-icon-button>
             </fff-flex>
             <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-          </fff-figure-card>
-          <fff-figure-card
-            description="첫 페이지와 마지막 페이지 번호를 보여 줘서 바로 이동하고 분량도 가늠하게 한다"
-          >
-            <fff-pagination slot="figure" current-page="7" page-count="50"></fff-pagination>
-            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
           </fff-figure-card>
         </fff-grid>
       </fff-content-section>

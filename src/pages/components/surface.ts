@@ -236,6 +236,19 @@ const main = html`
         <fff-grid columns="2" gap="6">
           <fff-figure-card
             height="9rem"
+            description="text-block 아래에 마진을 4px 더 줘 위아래가 같아 보이게 한다"
+          >
+            <fff-surface slot="figure" variant="outlined" style="width: 80%">
+              <fff-text-block
+                level="3"
+                heading="제목"
+                description="면 안의 제목과 설명"
+              ></fff-text-block>
+            </fff-surface>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card
+            height="9rem"
             description="보정 전에는 아래쪽 여백이 위쪽보다 좁아 보인다"
           >
             <fff-surface slot="figure" variant="outlined" style="width: 80%">
@@ -248,19 +261,6 @@ const main = html`
               </div>
             </fff-surface>
             <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-          </fff-figure-card>
-          <fff-figure-card
-            height="9rem"
-            description="text-block 아래에 마진을 4px 더 줘 위아래가 같아 보이게 한다"
-          >
-            <fff-surface slot="figure" variant="outlined" style="width: 80%">
-              <fff-text-block
-                level="3"
-                heading="제목"
-                description="면 안의 제목과 설명"
-              ></fff-text-block>
-            </fff-surface>
-            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
           </fff-figure-card>
         </fff-grid>
       </fff-content-section>

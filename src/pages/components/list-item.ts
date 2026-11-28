@@ -99,16 +99,6 @@ const multilineCode = `<fff-list-item-group>
 // 보정 전은 list-item의 보정을 거치지 않은 같은 구조를 직접 그려 보여 준다.
 function renderCorrectionSample() {
   return html`
-    <fff-figure-card description="보정 전에는 글자 묶음이 아이콘보다 아래로 치우쳐 보인다">
-      <fff-flex slot="figure" align-items="center" gap="2">
-        <fff-avatar size="40" icon=${ICON_NAMES.USER}></fff-avatar>
-        <fff-flex direction="column">
-          <fff-text size="14">수줍이</fff-text>
-          <fff-text size="12" color="light">UI Designer</fff-text>
-        </fff-flex>
-      </fff-flex>
-      <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-    </fff-figure-card>
     <fff-figure-card description="글자만 위로 1.5px 올려 아이콘과 가운데를 맞춘다">
       <fff-list-item
         slot="figure"
@@ -118,6 +108,16 @@ function renderCorrectionSample() {
         description="UI Designer"
       ></fff-list-item>
       <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+    </fff-figure-card>
+    <fff-figure-card description="보정 전에는 글자 묶음이 아이콘보다 아래로 치우쳐 보인다">
+      <fff-flex slot="figure" align-items="center" gap="2">
+        <fff-avatar size="40" icon=${ICON_NAMES.USER}></fff-avatar>
+        <fff-flex direction="column">
+          <fff-text size="14">수줍이</fff-text>
+          <fff-text size="12" color="light">UI Designer</fff-text>
+        </fff-flex>
+      </fff-flex>
+      <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
     </fff-figure-card>
   `
 }

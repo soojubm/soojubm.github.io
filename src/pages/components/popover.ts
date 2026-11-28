@@ -102,6 +102,15 @@ const main = html`
         description="사용자가 직접 연 패널이라 어디에서 나왔는지 이미 분명하므로 화살표를 두지 않습니다."
       >
         <fff-grid columns="2" gap="6">
+          <fff-figure-card description="트리거 바로 아래에 붙여 열어 출처를 전한다">
+            <fff-flex slot="figure" direction="column" align-items="center" gap="2">
+              <fff-button variant="secondary">더보기</fff-button>
+              <fff-surface style=${panelStyle}>
+                <fff-paragraph>오버레이 패널</fff-paragraph>
+              </fff-surface>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
           <fff-figure-card description="화살표가 없어도 출처가 분명한데 시각 요소만 늘어난다">
             <fff-flex slot="figure" direction="column" align-items="center" gap="1">
               <fff-button variant="secondary">더보기</fff-button>
@@ -115,15 +124,6 @@ const main = html`
               </fff-flex>
             </fff-flex>
             <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-          </fff-figure-card>
-          <fff-figure-card description="트리거 바로 아래에 붙여 열어 출처를 전한다">
-            <fff-flex slot="figure" direction="column" align-items="center" gap="2">
-              <fff-button variant="secondary">더보기</fff-button>
-              <fff-surface style=${panelStyle}>
-                <fff-paragraph>오버레이 패널</fff-paragraph>
-              </fff-surface>
-            </fff-flex>
-            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
           </fff-figure-card>
         </fff-grid>
       </fff-content-section>

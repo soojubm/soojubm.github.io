@@ -119,13 +119,6 @@ const main = html`
         description="트리거 오른쪽의 화살표 아이콘 때문에 오른쪽 여백이 왼쪽보다 넓어 보입니다. 아이콘 쪽을 보정해 좌우 여백이 같아 보이게 합니다."
       >
         <fff-grid columns="2" gap="6">
-          <fff-figure-card description="보정 전에는 오른쪽 여백이 왼쪽보다 넓어 보인다">
-            <fff-button slot="figure" variant="secondary">
-              Stable
-              <fff-expand-indicator></fff-expand-indicator>
-            </fff-button>
-            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-          </fff-figure-card>
           <fff-figure-card description="화살표를 바깥으로 4px 당겨 좌우 여백이 같아 보이게 한다">
             <fff-select
               slot="figure"
@@ -134,6 +127,13 @@ const main = html`
               .options=${releaseChannelOptions}
             ></fff-select>
             <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card description="보정 전에는 오른쪽 여백이 왼쪽보다 넓어 보인다">
+            <fff-button slot="figure" variant="secondary">
+              Stable
+              <fff-expand-indicator></fff-expand-indicator>
+            </fff-button>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
           </fff-figure-card>
         </fff-grid>
       </fff-content-section>

@@ -107,10 +107,6 @@ function sheetPageTemplate() {
           heading="안전마진도 고려해야 하나요?"
           description="패널이 닿은 화면 변에는 노치·홈 인디케이터 영역만큼 여백이 더해집니다. footer 유무와 상관없이 같은 여백이 유지되므로, footer나 사용하는 쪽에서 따로 두지 않습니다."
         ></fff-content-section>
-
-        <fff-text-list
-          .texts=${['사용자의 확인이 필요하거나 꼭 알려야 하는 내용은 fff-dialog를 사용합니다.']}
-        ></fff-text-list>
       </fff-component-guide>
 
       <fff-component-section heading="Filter" description="샘플">
