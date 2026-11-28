@@ -9,6 +9,7 @@ export const resultStyles = css`
     max-width: var(--layout-width-narrow);
     gap: var(--space-4);
     margin: 0 auto;
+    box-sizing: border-box;
   }
 
   ::slotted(*) {

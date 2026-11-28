@@ -43,6 +43,7 @@ export class ComponentAnatomy extends LitElement {
         max-width: var(--layout-width-small);
         margin-inline: auto;
         padding: var(--component-anatomy-padding);
+        box-sizing: border-box;
         position: relative;
       }
 

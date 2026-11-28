@@ -22,6 +22,7 @@ export const footerStyles = css`
     flex-direction: column;
     max-width: var(--layout-width-narrow);
     margin: var(--space-4) 0;
+    box-sizing: border-box;
   }
 
   .footer-address-break {
