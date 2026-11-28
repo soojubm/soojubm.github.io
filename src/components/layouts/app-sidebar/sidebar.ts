@@ -24,6 +24,7 @@ type SidebarGroup = Extract<SitemapNode, { type: 'group' }>
 const standaloneNodes = SITEMAP.filter((node): node is SidebarSection => node.type === 'standalone')
 const groupNodes = SITEMAP.filter((node): node is SidebarGroup => node.type === 'group')
 
+const isVisibleItem = (item: SitemapItem) => !item.hideSidebar
 const hasChildren = (node: SidebarSection) => !!node.children?.length
 
 @customElement('fff-sidebar')
@@ -74,7 +75,7 @@ export class Sidebar extends withOpenState(LitElement) {
       icon=${node.icon}
       ?open=${this.containsCurrentPage(node)}
     >
-      ${repeat(node.children ?? [], item => item.id, this.renderItemLink)}
+      ${repeat((node.children ?? []).filter(isVisibleItem), item => item.id, this.renderItemLink)}
     </fff-sidebar-section>
   `
   private renderGroup = (node: SidebarGroup) => {
@@ -84,7 +85,7 @@ export class Sidebar extends withOpenState(LitElement) {
       <div class="group">
         <fff-heading level="5" id=${headingId}>${node.title}</fff-heading>
         <fff-list-item-group gap="0" aria-labelledby=${headingId}>
-          ${repeat(node.items, item => item.id, this.renderItemLink)}
+          ${repeat(node.items.filter(isVisibleItem), item => item.id, this.renderItemLink)}
         </fff-list-item-group>
       </div>
     `

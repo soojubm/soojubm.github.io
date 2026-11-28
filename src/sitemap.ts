@@ -7,6 +7,8 @@ export interface SitemapItem {
   badge?: string
   /** true면 페이지에서 navbar를 렌더하지 않는다 */
   hideNavbar?: boolean
+  /** true면 사이드바 목록에서 숨긴다. 페이지는 그대로 빌드된다 */
+  hideSidebar?: boolean
 }
 
 interface SitemapStandaloneNode {
@@ -181,7 +183,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'product', name: 'Product' },
       { id: 'auth', name: 'Auth' },
       { id: 'post', name: 'Post' },
-      { id: 'post-detail', name: 'Post Detail' },
+      { id: 'post-detail', name: 'Post Detail', hideSidebar: true },
       { id: 'checkout', name: 'Checkout', hideNavbar: true },
       { id: 'pricing', name: 'Pricing' },
       { id: 'faq', name: 'FAQ' },

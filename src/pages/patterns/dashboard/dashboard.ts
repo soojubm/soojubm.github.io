@@ -194,86 +194,87 @@ const main = html`
             </fff-flex>
           </fff-surface>
         </fff-grid>
-      </fff-flex>
 
-      <fff-grid columns="2">
-        <fff-surface variant="outlined" radius="large">
-          <fff-flex direction="column" gap="2">
-            <fff-tag tone="red">3건</fff-tag>
-            <fff-text-block
-              level="3"
-              heading="오늘 할 일"
-              description="마감이 가까운 업무부터 확인하세요."
-            ></fff-text-block>
-            <fff-menu-item-group size="large">
-              <fff-menu-item-action
-                size="medium"
-                emoji="📦"
-                trailing-icon=${ICON_NAMES.FORWARD}
-                label="출고 지연 주문 확인"
-                description="오늘 오전 11:00까지"
-              ></fff-menu-item-action>
-              <fff-menu-item-action
-                size="medium"
-                emoji="💬"
-                trailing-icon=${ICON_NAMES.FORWARD}
-                label="고객 문의 답변"
-                description="미응답 문의 17건"
-              ></fff-menu-item-action>
-              <fff-menu-item-action
-                size="medium"
-                emoji="📊"
-                trailing-icon=${ICON_NAMES.FORWARD}
-                label="주간 성과 보고서 공유"
-                description="오늘 오후 4:00까지"
-              ></fff-menu-item-action>
-            </fff-menu-item-group>
-          </fff-flex>
-        </fff-surface>
-        <fff-surface radius="large">
-          <fff-flex direction="column" gap="4">
-            <fff-flex direction="column" gap="1">
-              <fff-text size="12" color="light">노후 자금</fff-text>
-              <fff-heading level="1">${`${goalTarget.toLocaleString()}원`}</fff-heading>
+        <fff-grid columns="2" gap="4">
+          <fff-surface variant="outlined" radius="large">
+            <fff-flex direction="column" gap="2">
+              <fff-tag tone="red">3건</fff-tag>
+              <fff-text-block
+                level="3"
+                heading="오늘 할 일"
+                description="마감이 가까운 업무부터 확인하세요."
+              ></fff-text-block>
+              <fff-menu-item-group size="large">
+                <fff-menu-item-action
+                  size="medium"
+                  emoji="📦"
+                  trailing-icon=${ICON_NAMES.FORWARD}
+                  label="출고 지연 주문 확인"
+                  description="오늘 오전 11:00까지"
+                ></fff-menu-item-action>
+                <fff-menu-item-action
+                  size="medium"
+                  emoji="💬"
+                  trailing-icon=${ICON_NAMES.FORWARD}
+                  label="고객 문의 답변"
+                  description="미응답 문의 17건"
+                ></fff-menu-item-action>
+                <fff-menu-item-action
+                  size="medium"
+                  emoji="📊"
+                  trailing-icon=${ICON_NAMES.FORWARD}
+                  label="주간 성과 보고서 공유"
+                  description="오늘 오후 4:00까지"
+                ></fff-menu-item-action>
+              </fff-menu-item-group>
             </fff-flex>
-            <progress
-              value=${goalSaved}
-              max=${goalTarget}
-              aria-label="노후 자금 목표 달성률"
-            ></progress>
-            <fff-flex justify-content="space-between" align-items="center" gap="4">
-              <fff-text color="light">${`${goalShare}% 달성`}</fff-text>
-              <fff-text>${`${goalSaved.toLocaleString()}원`}</fff-text>
+          </fff-surface>
+          <fff-surface radius="large">
+            <fff-flex direction="column" gap="4">
+              <fff-flex direction="column" gap="1">
+                <fff-text size="12" color="light">노후 자금</fff-text>
+                <fff-heading level="1">${`${goalTarget.toLocaleString()}원`}</fff-heading>
+              </fff-flex>
+              <progress
+                value=${goalSaved}
+                max=${goalTarget}
+                aria-label="노후 자금 목표 달성률"
+              ></progress>
+              <fff-flex justify-content="space-between" align-items="center" gap="4">
+                <fff-text color="light">${`${goalShare}% 달성`}</fff-text>
+                <fff-text>${`${goalSaved.toLocaleString()}원`}</fff-text>
+              </fff-flex>
+              <fff-notice
+                description="진행률을 알면 progress, 모르면 스피너입니다. 둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
+              ></fff-notice>
             </fff-flex>
-            <fff-notice
-              description="진행률을 알면 progress, 모르면 스피너입니다. 둘은 같은 뜻의 다른 그림입니다. 스피너는 얼마나 남았는지 모른다는 정보를 전하기 때문에, 알면서 쓰면 사용자가 기다릴지 판단할 근거를 잃습니다."
-            ></fff-notice>
-          </fff-flex>
-        </fff-surface>
-      </fff-grid>
-      <fff-grid columns="2" gap="4">
-        <fff-surface variant="outlined" radius="large">
-          <fff-flex direction="column" gap="4">
-            <fff-text-block
-              level="3"
-              heading="저장 공간"
-              description="200 GB 중 187.23 GB 사용됨"
-            ></fff-text-block>
-            <meter
-              value="187.23"
-              min="0"
-              max="200"
-              low="100"
-              high="180"
-              optimum="0"
-              aria-label="저장 공간 사용량"
-            ></meter>
-            <fff-notice
-              description="meter는 작업이 아니라 상태입니다. 완료를 향해 가지 않고 오르내립니다. low·high·optimum으로 좋은 구간을 정하면 브라우저가 색을 바꿉니다. 프로필 완성도처럼 퍼센트로 보여도, 기다리는 일이 아니면 meter입니다."
-            ></fff-notice>
-          </fff-flex>
-        </fff-surface>
-      </fff-grid>
+          </fff-surface>
+        </fff-grid>
+
+        <fff-grid columns="2" gap="4">
+          <fff-surface variant="outlined" radius="large">
+            <fff-flex direction="column" gap="4">
+              <fff-text-block
+                level="3"
+                heading="저장 공간"
+                description="200 GB 중 187.23 GB 사용됨"
+              ></fff-text-block>
+              <meter
+                value="187.23"
+                min="0"
+                max="200"
+                low="100"
+                high="180"
+                optimum="0"
+                aria-label="저장 공간 사용량"
+              ></meter>
+              <fff-notice
+                description="meter는 작업이 아니라 상태입니다. 완료를 향해 가지 않고 오르내립니다. low·high·optimum으로 좋은 구간을 정하면 브라우저가 색을 바꿉니다. 프로필 완성도처럼 퍼센트로 보여도, 기다리는 일이 아니면 meter입니다."
+              ></fff-notice>
+            </fff-flex>
+          </fff-surface>
+        </fff-grid>
+      </fff-flex>
     </fff-content-section-list>
   </fff-main>
 `
