@@ -1,7 +1,6 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { ICON_NAMES } from '@/components/common'
 import {
   surfaceBaseStyles,
   surfaceElevatedStyles,
@@ -83,13 +82,7 @@ export class ChatFeedback extends LitElement {
     if (!this.dismissSubscription.subscribed) return nothing
 
     return html`
-      <fff-icon-button
-        variant="secondary"
-        size="small"
-        icon=${ICON_NAMES.DISMISS}
-        aria-label="닫기"
-        @click=${this.handleDismissClick}
-      ></fff-icon-button>
+      <fff-dismiss-button @dismiss=${this.handleDismissClick}></fff-dismiss-button>
     `
   }
 
@@ -98,7 +91,10 @@ export class ChatFeedback extends LitElement {
     emit(this, 'change', { value })
   }
 
-  private handleDismissClick() {
+  // 버튼의 dismiss는 여기서 멈추고, chat-feedback 자신의 dismiss로 바꿔 알린다.
+  private handleDismissClick(event: Event) {
+    event.stopPropagation()
+
     this.hidden = true
     emit(this, 'dismiss')
   }

@@ -37,7 +37,7 @@ export const conversationPanel = html`
   <fff-tab-panel value="conversation">
     <fff-content-section-list>
       <fff-paragraph>
-        AI와 질문과 답을 주고받는 흐름입니다. 답을 만드는 동안의 진행, 근거, 승인, 평가, 다음 질문을
+        AI와 질문과 답을 주고받는 흐름입니다. 답을 만드는 동안의 진행, 근거, 승인, 평가, 제안을
         정해진 자리에 놓으므로, 사용자는 답을 기다리는 동안에도 지금 무슨 일이 일어나는지 알 수
         있습니다.
       </fff-paragraph>
@@ -183,10 +183,10 @@ export const conversationPanel = html`
 
       <fff-content-section
         heading-level="3"
-        heading="다음 질문"
+        heading="제안"
         description="답에 이어서 사용자가 물을 만한 말을 미리 내놓는 단계입니다."
         .texts=${[
-          '다음 질문은 제안 버튼으로 줄여 준다. 빈 입력창 앞에서는 무엇을 물어야 할지 막힌다. 답에 이어질 말을 버튼으로 두면 한 번 눌러 대화를 이어 간다',
+          '제안은 버튼으로 내놓는다. 빈 입력창 앞에서는 무엇을 물어야 할지 막힌다. 답에 이어질 말을 버튼으로 두면 한 번 눌러 대화를 이어 간다',
         ]}
       >
         <fff-component-example width="narrow">

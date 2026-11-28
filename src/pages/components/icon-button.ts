@@ -256,15 +256,6 @@ const main = html`
         </fff-component-notice>
       </fff-flex>
     </fff-component-section>
-    <fff-component-section heading="Expand Button" description="누르면 펼침 여부가 바뀝니다.">
-      <fff-icon-button
-        variant="secondary"
-        size="small"
-        icon=${ICON_NAMES.EXPAND}
-        aria-label="펼치기"
-        tooltip-placement="bottom"
-      ></fff-icon-button>
-    </fff-component-section>
     <fff-component-section
       heading="Expand Indicator"
       description="펼침 여부를 방향으로 보여 주는 장식 요소입니다. 상호작용은 갖지 않습니다."

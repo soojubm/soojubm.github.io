@@ -21,7 +21,6 @@ export class ShareButton extends iconActionElement({
     css`
       :host {
         ${iconButtonVariantSkin('ghost')}
-        --icon-button-text-color: var(--foreground-subtle-color);
       }
     `,
   ]

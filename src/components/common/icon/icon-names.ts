@@ -19,7 +19,7 @@ export const ICON_CATALOG = {
     RETRY: 'refresh-double',
     SUBMIT: 'arrow-up',
     STOP: 'square',
-    SHARE: 'arrow-up-right',
+    SHARE: 'share-android',
     CAMERA: 'camera',
     HIDE: 'eye-closed',
     VIEW: 'eye',
