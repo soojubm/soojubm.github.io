@@ -127,12 +127,16 @@ const main = html`
     ></fff-page-header>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="variant" variant="pill">
-        <fff-tab value="variant">Variant</fff-tab>
-        <fff-tab value="size">Size</fff-tab>
-        <fff-tab value="icon">Icon</fff-tab>
-        <fff-tab value="state">State</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="variant"
+        variant="pill"
+        .tabs=${[
+          { value: 'variant', label: 'Variant' },
+          { value: 'size', label: 'Size' },
+          { value: 'icon', label: 'Icon' },
+          { value: 'state', label: 'State' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="variant">
         <fff-component-example full-width>
           <fff-button-group>

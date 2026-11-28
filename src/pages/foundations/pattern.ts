@@ -19,13 +19,18 @@ const main = html`
     ></fff-page-header>
 
     <fff-page-body>
-      <fff-tab-list value="disclosure" variant="text" search-param="tab">
-        <fff-tab value="disclosure">Disclosure</fff-tab>
-        <fff-tab value="search">Search</fff-tab>
-        <fff-tab value="collection">Collection</fff-tab>
-        <fff-tab value="conversation">Conversation</fff-tab>
-        <fff-tab value="commerce">Commerce</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="disclosure"
+        variant="text"
+        search-param="tab"
+        .tabs=${[
+          { value: 'disclosure', label: 'Disclosure' },
+          { value: 'search', label: 'Search' },
+          { value: 'collection', label: 'Collection' },
+          { value: 'conversation', label: 'Conversation' },
+          { value: 'commerce', label: 'Commerce' },
+        ]}
+      ></fff-tab-list>
 
       ${disclosurePanel} ${searchPanel} ${collectionPanel} ${conversationPanel} ${commercePanel}
     </fff-page-body>

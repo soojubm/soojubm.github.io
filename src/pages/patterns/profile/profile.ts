@@ -65,10 +65,10 @@ const main = html`
 
     <section class="profile-body">
       <fff-flex direction="column" gap="3">
-        <fff-tab-list value="projects" variant="pill" search-param="tab">
-          <fff-tab value="projects">프로젝트</fff-tab>
-          <fff-tab value="second">아티클</fff-tab>
-        </fff-tab-list>
+        <fff-tab-list value="projects" variant="pill" search-param="tab" .tabs=${[
+          { value: 'projects', label: '프로젝트' },
+          { value: 'second', label: '아티클' },
+        ]}></fff-tab-list>
 
         <fff-flex justify-content="space-between" gap="2">
           <fff-view-mode-switcher></fff-view-mode-switcher>

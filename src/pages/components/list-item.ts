@@ -132,12 +132,16 @@ const main = html`
     <fff-component-aka .items=${['ListTile', 'Media Object']}></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="size" variant="pill">
-        <fff-tab value="size">Size</fff-tab>
-        <fff-tab value="leading">Leading</fff-tab>
-        <fff-tab value="trailing">Trailing</fff-tab>
-        <fff-tab value="multiline">Multiline</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="size"
+        variant="pill"
+        .tabs=${[
+          { value: 'size', label: 'Size' },
+          { value: 'leading', label: 'Leading' },
+          { value: 'trailing', label: 'Trailing' },
+          { value: 'multiline', label: 'Multiline' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="size">
         <fff-component-example>
           <fff-flex direction="column" gap="6">

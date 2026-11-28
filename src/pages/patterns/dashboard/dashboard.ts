@@ -161,11 +161,16 @@ const main = html`
           </fff-button-group>
         </fff-flex>
 
-        <fff-tab-list value="daily" variant="pill" search-param="period">
-          <fff-tab value="daily">일간</fff-tab>
-          <fff-tab value="weekly">주간</fff-tab>
-          <fff-tab value="monthly">월간</fff-tab>
-        </fff-tab-list>
+        <fff-tab-list
+          value="daily"
+          variant="pill"
+          search-param="period"
+          .tabs=${[
+            { value: 'daily', label: '일간' },
+            { value: 'weekly', label: '주간' },
+            { value: 'monthly', label: '월간' },
+          ]}
+        ></fff-tab-list>
 
         <fff-grid columns="4" gap="4">${systemStatCards.map(renderStatCard)}</fff-grid>
 

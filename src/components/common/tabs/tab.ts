@@ -46,6 +46,7 @@ export class Tab extends LitElement {
     /* 부모 탭리스트가 pill 형태일 때 활성화된 글자 색상을 커스텀하고 싶다면 하단 주석 해제 */
     /* :host-context(fff-tab-list[variant="pill"])[active] { color: var(--interaction-selected-foreground-color); } */
   `
+  /** @internal fff-tab-list가 tabs 데이터로 채운다. */
   @property({ type: String }) value = ''
   /** @internal 선택 값을 소유한 fff-tab-list가 채운다. */
   @property({ type: Boolean, reflect: true }) active = false

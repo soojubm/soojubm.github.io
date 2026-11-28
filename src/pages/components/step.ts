@@ -71,10 +71,14 @@ const main = html`
     <fff-component-aka .items=${['Timeline', 'Stepper']}></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="horizontal" variant="pill">
-        <fff-tab value="horizontal">Horizontal</fff-tab>
-        <fff-tab value="vertical">Vertical</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="horizontal"
+        variant="pill"
+        .tabs=${[
+          { value: 'horizontal', label: 'Horizontal' },
+          { value: 'vertical', label: 'Vertical' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="horizontal">
         <fff-component-example full-width>
           <fff-step .items=${horizontalItems}></fff-step>

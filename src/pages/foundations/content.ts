@@ -284,11 +284,16 @@ const main = html`
     ></fff-page-header>
 
     <fff-page-body>
-      <fff-tab-list value="writing" variant="text" search-param="tab">
-        <fff-tab value="writing">Writing</fff-tab>
-        <fff-tab value="iconography">Iconography</fff-tab>
-        <fff-tab value="accessibility">Accessibility</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="writing"
+        variant="text"
+        search-param="tab"
+        .tabs=${[
+          { value: 'writing', label: 'Writing' },
+          { value: 'iconography', label: 'Iconography' },
+          { value: 'accessibility', label: 'Accessibility' },
+        ]}
+      ></fff-tab-list>
 
       <fff-tab-panel value="writing">
         <fff-content-section-list>

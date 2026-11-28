@@ -134,7 +134,7 @@ export const SITEMAP: SitemapNode[] = [
     title: 'Navigations',
     icon: ICON_NAMES.MENU,
     items: [
-      { id: 'tabs', name: 'Tabs' },
+      { id: 'tab-list', name: 'Tab List' },
       { id: 'top-bar', name: 'Top Bar' },
       { id: 'bottom-bar', name: 'Bottom Bar' },
       { id: 'breadcrumb', name: 'Breadcrumb', badge: '' },

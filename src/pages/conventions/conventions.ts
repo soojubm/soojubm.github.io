@@ -11,11 +11,16 @@ const main = html`
     ></fff-page-header>
 
     <fff-page-body>
-      <fff-tab-list value="code" variant="text" search-param="tab">
-        <fff-tab value="code">Code</fff-tab>
-        <fff-tab value="documentation">Documentation</fff-tab>
-        <fff-tab value="agent">Agent Guide</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="code"
+        variant="text"
+        search-param="tab"
+        .tabs=${[
+          { value: 'code', label: 'Code' },
+          { value: 'documentation', label: 'Documentation' },
+          { value: 'agent', label: 'Agent Guide' },
+        ]}
+      ></fff-tab-list>
 
       <fff-tab-panel value="code">
         <fff-content-section-list>

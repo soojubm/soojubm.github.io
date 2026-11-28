@@ -60,12 +60,16 @@ const main = html`
     ></fff-page-header>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="default" variant="pill">
-        <fff-tab value="default">Default</fff-tab>
-        <fff-tab value="label">With Label</fff-tab>
-        <fff-tab value="optional">Optional</fff-tab>
-        <fff-tab value="state">State</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="default"
+        variant="pill"
+        .tabs=${[
+          { value: 'default', label: 'Default' },
+          { value: 'label', label: 'With Label' },
+          { value: 'optional', label: 'Optional' },
+          { value: 'state', label: 'State' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="default">
         <fff-component-example>
           <fff-flex direction="column" gap="6">

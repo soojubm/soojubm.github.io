@@ -72,10 +72,14 @@ const main = html`
     <fff-component-aka .items=${['Coachmark']}></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="default" variant="pill">
-        <fff-tab value="default">Default</fff-tab>
-        <fff-tab value="placement">Placement</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="default"
+        variant="pill"
+        .tabs=${[
+          { value: 'default', label: 'Default' },
+          { value: 'placement', label: 'Placement' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="default">
         <fff-component-example>
           <fff-tooltip

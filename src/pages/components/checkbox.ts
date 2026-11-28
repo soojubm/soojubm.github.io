@@ -52,11 +52,15 @@ const main = html`
     ></fff-page-header>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="size" variant="pill">
-        <fff-tab value="size">Size</fff-tab>
-        <fff-tab value="single">Single</fff-tab>
-        <fff-tab value="state">State</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="size"
+        variant="pill"
+        .tabs=${[
+          { value: 'size', label: 'Size' },
+          { value: 'single', label: 'Single' },
+          { value: 'state', label: 'State' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="size">
         <fff-component-example>
           <fff-flex direction="column" gap="4">

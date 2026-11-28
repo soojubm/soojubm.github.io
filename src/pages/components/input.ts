@@ -77,13 +77,17 @@ const main = html`
     <fff-component-aka .items=${['TextInput', 'Input']}></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="size" variant="pill">
-        <fff-tab value="size">Size</fff-tab>
-        <fff-tab value="label">With Label</fff-tab>
-        <fff-tab value="icon">With Icon</fff-tab>
-        <fff-tab value="optional">Optional</fff-tab>
-        <fff-tab value="state">State</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="size"
+        variant="pill"
+        .tabs=${[
+          { value: 'size', label: 'Size' },
+          { value: 'label', label: 'With Label' },
+          { value: 'icon', label: 'With Icon' },
+          { value: 'optional', label: 'Optional' },
+          { value: 'state', label: 'State' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="size">
         <fff-component-example>
           <fff-flex direction="column" gap="3">

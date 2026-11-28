@@ -121,12 +121,16 @@ const main = html`
     ></fff-page-header>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="size" variant="pill">
-        <fff-tab value="size">Size</fff-tab>
-        <fff-tab value="leading">Leading</fff-tab>
-        <fff-tab value="destructive">Destructive</fff-tab>
-        <fff-tab value="disabled">Disabled</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="size"
+        variant="pill"
+        .tabs=${[
+          { value: 'size', label: 'Size' },
+          { value: 'leading', label: 'Leading' },
+          { value: 'destructive', label: 'Destructive' },
+          { value: 'disabled', label: 'Disabled' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="size">
         <fff-component-example>
           <fff-menu-item-group aria-label="크기 메뉴" size="large">

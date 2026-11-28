@@ -23,7 +23,7 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'top-bar.html', label: 'Top Bar' },
-  { href: 'tabs.html', label: 'Tabs' },
+  { href: 'tab-list.html', label: 'Tab List' },
 ]
 
 const componentProps: ComponentPropItemData[] = [

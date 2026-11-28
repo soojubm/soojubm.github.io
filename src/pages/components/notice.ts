@@ -46,10 +46,14 @@ const main = html`
     ></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="variant" variant="pill">
-        <fff-tab value="variant">Variant</fff-tab>
-        <fff-tab value="action">Action</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="variant"
+        variant="pill"
+        .tabs=${[
+          { value: 'variant', label: 'Variant' },
+          { value: 'action', label: 'Action' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="variant">
         <fff-component-example>
           <fff-flex direction="column" gap="2">

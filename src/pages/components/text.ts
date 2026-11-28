@@ -63,12 +63,16 @@ const main = html`
     ></fff-page-header>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="size" variant="pill">
-        <fff-tab value="size">Size</fff-tab>
-        <fff-tab value="weight">Weight</fff-tab>
-        <fff-tab value="color">Color</fff-tab>
-        <fff-tab value="max-lines">Max Lines</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="size"
+        variant="pill"
+        .tabs=${[
+          { value: 'size', label: 'Size' },
+          { value: 'weight', label: 'Weight' },
+          { value: 'color', label: 'Color' },
+          { value: 'max-lines', label: 'Max Lines' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="size">
         <fff-component-example>
           <fff-flex direction="column" gap="1">

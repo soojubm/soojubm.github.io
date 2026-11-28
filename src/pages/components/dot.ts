@@ -58,10 +58,14 @@ const main = html`
     ></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="tone" variant="pill">
-        <fff-tab value="tone">Tone</fff-tab>
-        <fff-tab value="size">Size</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="tone"
+        variant="pill"
+        .tabs=${[
+          { value: 'tone', label: 'Tone' },
+          { value: 'size', label: 'Size' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="tone">
         <fff-component-example>
           <fff-flex gap="2" align-items="center">

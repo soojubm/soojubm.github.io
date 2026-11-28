@@ -117,12 +117,16 @@ const main = html`
     ></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="variant" variant="pill">
-        <fff-tab value="variant">Variant</fff-tab>
-        <fff-tab value="radius">Radius</fff-tab>
-        <fff-tab value="bleed">Bleed</fff-tab>
-        <fff-tab value="band">Band</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="variant"
+        variant="pill"
+        .tabs=${[
+          { value: 'variant', label: 'Variant' },
+          { value: 'radius', label: 'Radius' },
+          { value: 'bleed', label: 'Bleed' },
+          { value: 'band', label: 'Band' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="variant">
         <fff-component-example>
           <fff-flex direction="column" gap="3">
@@ -332,10 +336,14 @@ const main = html`
       description="내용이 프레임을 넘칠 때 그 안에서 스크롤되는 영역입니다."
     >
       <fff-flex direction="column" gap="4">
-        <fff-tab-list value="row" variant="pill">
-          <fff-tab value="row">Row</fff-tab>
-          <fff-tab value="column">Column</fff-tab>
-        </fff-tab-list>
+        <fff-tab-list
+          value="row"
+          variant="pill"
+          .tabs=${[
+            { value: 'row', label: 'Row' },
+            { value: 'column', label: 'Column' },
+          ]}
+        ></fff-tab-list>
         <fff-tab-panel value="row">
           <fff-flex direction="column" gap="6">
             <fff-scroll gap="3" hide-scrollbar>

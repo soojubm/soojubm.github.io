@@ -445,12 +445,17 @@ const main = html`
     ></fff-page-header>
 
     <fff-page-body>
-      <fff-tab-list value="page" variant="text" search-param="tab">
-        <fff-tab value="page">Page</fff-tab>
-        <fff-tab value="division">Division</fff-tab>
-        <fff-tab value="overlay">Overlay</fff-tab>
-        <fff-tab value="elevation">Elevation</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="page"
+        variant="text"
+        search-param="tab"
+        .tabs=${[
+          { value: 'page', label: 'Page' },
+          { value: 'division', label: 'Division' },
+          { value: 'overlay', label: 'Overlay' },
+          { value: 'elevation', label: 'Elevation' },
+        ]}
+      ></fff-tab-list>
 
       <fff-tab-panel value="page">
         <fff-content-section-list>

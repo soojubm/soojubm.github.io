@@ -81,14 +81,14 @@ export const tabsStyles = css`
   }
 
   /* 글자 크기는 페이지 제목(fff-heading level 1)과 같은 단계다. 탭 토큰은 탭 요소 자신에게 재할당한다. */
-  :host([variant='text']) ::slotted(fff-tab) {
+  :host([variant='text']) fff-tab {
     --tab-height: var(--size-48);
     --tab-padding-inline: 0;
     --tab-text-size: var(--font-size-24);
     font-weight: var(--font-weight-bold);
   }
 
-  :host([variant='text']) ::slotted(fff-tab[aria-selected='true']) {
+  :host([variant='text']) fff-tab[aria-selected='true'] {
     --tab-text-color: var(--foreground-color);
   }
 `

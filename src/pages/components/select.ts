@@ -58,10 +58,14 @@ const main = html`
     <fff-component-aka .items=${['Dropdown', 'Picker']}></fff-component-aka>
 
     <fff-flex direction="column" gap="4">
-      <fff-tab-list value="variant" variant="pill">
-        <fff-tab value="variant">Variant</fff-tab>
-        <fff-tab value="placement">Placement</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="variant"
+        variant="pill"
+        .tabs=${[
+          { value: 'variant', label: 'Variant' },
+          { value: 'placement', label: 'Placement' },
+        ]}
+      ></fff-tab-list>
       <fff-tab-panel value="variant">
         <fff-component-example>
           <fff-button-group>

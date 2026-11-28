@@ -271,10 +271,15 @@ const main = html`
     ></fff-page-header>
 
     <fff-page-body>
-      <fff-tab-list value="state" variant="text" search-param="tab">
-        <fff-tab value="state">State</fff-tab>
-        <fff-tab value="selection">Selection</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="state"
+        variant="text"
+        search-param="tab"
+        .tabs=${[
+          { value: 'state', label: 'State' },
+          { value: 'selection', label: 'Selection' },
+        ]}
+      ></fff-tab-list>
 
       <fff-tab-panel value="state">
         <fff-content-section-list>

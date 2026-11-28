@@ -170,10 +170,15 @@ const main = html`
     ></fff-page-header>
 
     <fff-page-body>
-      <fff-tab-list value="styles" variant="text" search-param="tab">
-        <fff-tab value="styles">Styles</fff-tab>
-        <fff-tab value="components">Components</fff-tab>
-      </fff-tab-list>
+      <fff-tab-list
+        value="styles"
+        variant="text"
+        search-param="tab"
+        .tabs=${[
+          { value: 'styles', label: 'Styles' },
+          { value: 'components', label: 'Components' },
+        ]}
+      ></fff-tab-list>
 
       <fff-tab-panel value="styles">
         <fff-content-section-list>${styleGroups.map(renderStyleGroup)}</fff-content-section-list>
