@@ -13,13 +13,11 @@ const listItemSizeTokens: AttributeTokens<Exclude<ListItemSize, 'small'>> = {
   medium: {
     '--list-item-min-height': 'var(--size-40)',
     '--list-item-gap': 'var(--space-2)',
-    '--list-item-text-size': 'var(--font-size-24)',
     '--list-item-label-leading': 'calc(var(--font-line-height-24) - var(--font-size-14))',
   },
   large: {
     '--list-item-min-height': 'var(--size-80)',
     '--list-item-gap': 'var(--space-3)',
-    '--list-item-text-size': 'var(--font-size-24)',
     '--list-item-label-leading': 'calc(var(--font-line-height-28) - var(--font-size-18))',
     '--list-item-description-leading': 'calc(var(--font-line-height-24) - var(--font-size-14))',
   },
@@ -34,7 +32,6 @@ export const listItemStyles = css`
 
     --list-item-min-height: var(--size-32);
     --list-item-gap: var(--space-2);
-    --list-item-text-size: var(--font-size-14);
     --list-item-label-leading: calc(var(--font-line-height-24) - var(--font-size-14));
     --list-item-description-leading: calc(var(--font-line-height-16) - var(--font-size-12));
   }
@@ -65,8 +62,13 @@ export const listItemStyles = css`
 
   /* 이모지는 avatar 안의 글리프이며, 크기는 행 사이즈가 정한다. */
   .emoji {
-    font-size: var(--list-item-text-size);
+    font-size: var(--font-size-14);
     line-height: 1;
+  }
+
+  :host([size='medium']) .emoji,
+  :host([size='large']) .emoji {
+    font-size: var(--font-size-24);
   }
 `
 
