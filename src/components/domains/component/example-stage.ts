@@ -51,6 +51,7 @@ export class ExampleStage extends LitElement {
     @media ${MEDIA.default} {
       :host([aligned]) {
         ${surfaceBleedStyles};
+        --surface-border-radius: var(--border-radius-large);
       }
 
       :host([aligned]) .content {
