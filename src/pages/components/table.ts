@@ -50,7 +50,6 @@ const publishFilterOptions = [
 ]
 
 const guideTexts = [
-  '첫 페이지와 마지막 페이지에 더블 화살표 아이콘을 사용하지 마세요. 최초 페이지와 최종 페이지 넘버를 제공하면 사용자는 대략적인 콘텐츠 수량을 파악할 수 있습니다.',
   'TODO 서버에서 offset을 0으로 줄 때도 있었고 1로 줄 때도 있다.',
   'TODO 모든 행이 DOM에 존재하는 경우 aria-rowindex 불필요',
 ]
@@ -184,6 +183,39 @@ const main = html`
 
     <fff-component-guide>
       <fff-text-list .texts=${guideTexts}></fff-text-list>
+
+      <fff-content-section
+        heading-level="3"
+        heading="첫 페이지와 마지막 페이지로는 어떻게 이동하나요?"
+        description="더블 화살표 아이콘 대신 첫 페이지와 마지막 페이지 번호를 그대로 보여 줍니다. 마지막 페이지 번호만 봐도 사용자가 전체 콘텐츠 분량을 가늠할 수 있습니다."
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card
+            description="더블 화살표는 이동하는 곳이 어디인지, 전체가 얼마나 되는지 알려 주지 않는다"
+          >
+            <fff-flex slot="figure" align-items="center" gap="1">
+              <fff-icon-button
+                icon="fast-arrow-left"
+                aria-label="첫 페이지로 이동"
+              ></fff-icon-button>
+              <fff-prev-button aria-label="이전 페이지로 이동"></fff-prev-button>
+              <fff-text>7 / 50</fff-text>
+              <fff-next-button aria-label="다음 페이지로 이동"></fff-next-button>
+              <fff-icon-button
+                icon="fast-arrow-right"
+                aria-label="마지막 페이지로 이동"
+              ></fff-icon-button>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card
+            description="첫 페이지와 마지막 페이지 번호를 보여 줘서 바로 이동하고 분량도 가늠하게 한다"
+          >
+            <fff-pagination slot="figure" current-page="7" page-count="50"></fff-pagination>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
     </fff-component-guide>
 
     <fff-component-related .items=${relatedComponents}></fff-component-related>

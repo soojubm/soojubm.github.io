@@ -54,7 +54,7 @@ const main = html`
           ></fff-avatar-group>
         </fff-flex>
       </fff-flex direction="column" gap="2">
-      <fff-separator variant="element"></fff-separator>
+      <fff-separator level="element"></fff-separator>
       <fff-social-links
         compact
         github="https://github.com/soojubm"

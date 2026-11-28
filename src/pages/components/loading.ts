@@ -48,7 +48,7 @@ const main = html`
           불러오기
         </fff-button>
       </fff-button-group>
-      <fff-separator variant="section"></fff-separator>
+      <fff-separator level="section"></fff-separator>
       <fff-spinner variant="section" label="불러오는 중"></fff-spinner>
     </fff-component-example>
     <fff-component-code .code=${exampleCode}></fff-component-code>

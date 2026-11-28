@@ -3,16 +3,14 @@ import { css } from 'lit'
 export const separatorStyles = css`
   :host {
     --separator-margin: var(--space-3);
-    --separator-padding: var(--space-3);
     --separator-border: var(--border);
-    --separator-text-background-color: var(--background-color);
+    --separator-foreground-background-color: var(--background-color);
 
     position: relative;
   }
 
-  :host([variant='section']) {
-    --separator-margin: var(--space-4);
-    --separator-padding: var(--space-4);
+  :host([level='section']) {
+    --separator-margin: var(--space-8);
   }
 
   hr {
@@ -26,8 +24,8 @@ export const separatorStyles = css`
   /* 가운데 레이블 박스: 텍스트가 없으면 ::after가 선을 가리고, 있으면 slot 요소가 표시 */
   fff-caption {
     display: block;
-    padding: 0 var(--separator-padding);
-    background: var(--separator-text-background-color);
+    padding: 0 var(--separator-margin);
+    background: var(--separator-foreground-background-color);
     position: absolute;
     left: 50%;
     top: 50%;

@@ -16,7 +16,7 @@ const main = html`
           description="Lorem Ipsum is simply dummy text."
         >
           <fff-social-auth-button provider="facebook"></fff-social-auth-button>
-          <fff-separator variant="section">또는</fff-separator>
+          <fff-separator level="section">또는</fff-separator>
 
           <fff-form aria-label="로그인">
             <fff-form-fieldset aria-label="로그인 정보">
@@ -54,7 +54,7 @@ const main = html`
           description="Find your people. Engage your customers. Build your brand. Do it all with Mailchimp's Marketing Platform."
         >
           <fff-social-auth-button provider="facebook"></fff-social-auth-button>
-          <fff-separator variant="section">또는</fff-separator>
+          <fff-separator level="section">또는</fff-separator>
           <fff-form aria-label="회원가입">
             <fff-form-fieldset aria-label="필수입력">
               <fff-textfield

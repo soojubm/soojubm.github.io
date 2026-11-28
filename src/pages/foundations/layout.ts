@@ -297,7 +297,7 @@ const renderSpacingOverview = () => html`
         'section',
         '--space-section',
       )}${renderSpacingSection()}
-      <fff-separator variant="section"></fff-separator>
+      <fff-separator level="section"></fff-separator>
       ${renderSpacingOtherContext()}
     </fff-flex>
   </fff-example-stage>

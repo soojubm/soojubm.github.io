@@ -5,12 +5,12 @@ import { separatorStyles } from '@/components/common/separator/separator.styles'
 import '@/components/common/text/semantics/caption'
 import { resetStyles } from '@/stylesheets/shared.styles'
 
-export type SeparatorVariant = 'element' | 'section'
+export type SeparatorLevel = 'element' | 'section'
 
 @customElement('fff-separator')
 export class Separator extends LitElement {
   static styles = [resetStyles, separatorStyles]
-  @property({ type: String, reflect: true }) variant: SeparatorVariant = 'element'
+  @property({ type: String, reflect: true }) level: SeparatorLevel = 'element'
 
   render() {
     return html`

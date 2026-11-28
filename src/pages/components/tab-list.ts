@@ -152,7 +152,7 @@ const main = html`
               이번 달 정산 데이터...
             </fff-tab-panel>
           </fff-flex>
-          <fff-separator></fff-separator>
+          <fff-separator level="section"></fff-separator>
           <fff-flex direction="column" gap="3">
             <fff-tab-list
               value="posts"
@@ -176,7 +176,7 @@ const main = html`
               저장한 북마크...
             </fff-tab-panel>
           </fff-flex>
-          <fff-separator></fff-separator>
+          <fff-separator level="section"></fff-separator>
           <fff-flex direction="column" gap="3">
             <fff-code-tag tone="orange">Duplicated</fff-code-tag>
             <fff-tab-list

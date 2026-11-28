@@ -269,7 +269,7 @@ const main = html`
             '마커는 number 변형을 사용합니다.',
           ]}
         ></fff-text-list>
-        <fff-separator variant="section"></fff-separator>
+        <fff-separator level="section"></fff-separator>
         <fff-text-list
           variant="check"
           .texts=${[
@@ -278,7 +278,7 @@ const main = html`
             '마커는 check 변형을 사용합니다.',
           ]}
         ></fff-text-list>
-        <fff-separator variant="section"></fff-separator>
+        <fff-separator level="section"></fff-separator>
         <fff-product-price
           size="large"
           original-price="₩ 30,000"

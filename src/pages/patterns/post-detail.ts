@@ -117,7 +117,7 @@ const main = html`
         </fff-flex>
       </fff-surface>
     </fff-flex>
-    <fff-separator variant="section"></fff-separator>
+    <fff-separator level="section"></fff-separator>
     <fff-content-section heading="댓글 192" heading-level="3">
       <fff-flex direction="column" gap="8">
         <fff-comment-input
