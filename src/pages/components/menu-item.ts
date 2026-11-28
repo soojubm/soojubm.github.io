@@ -103,10 +103,7 @@ const leadingCode = `<fff-menu-item-group aria-label="리딩 메뉴">
   <fff-menu-item-action .avatar=\${{ src: '...', shape: 'circle' }} label="아바타"></fff-menu-item-action>
 </fff-menu-item-group>`
 
-const destructiveCode = `<fff-menu-item-group aria-label="파괴적 명령 메뉴">
-  <fff-menu-item-action icon="user" label="프로필"></fff-menu-item-action>
-  <fff-menu-item-action icon="trash" label="삭제" destructive></fff-menu-item-action>
-</fff-menu-item-group>`
+const destructiveCode = `<fff-menu-item-action icon="trash" label="삭제" destructive></fff-menu-item-action>`
 
 const disabledCode = `<fff-menu-item-group aria-label="비활성 메뉴">
   <fff-menu-item-action icon="user" label="프로필"></fff-menu-item-action>
@@ -160,33 +157,24 @@ const main = html`
       </fff-tab-panel>
       <fff-tab-panel value="destructive">
         <fff-component-example>
-          <fff-flex direction="column" gap="6">
-            <fff-menu-item-group aria-label="파괴적 명령 메뉴">
-              <fff-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></fff-menu-item-action>
-              <fff-menu-item-action
-                icon=${ICON_NAMES.DELETE}
-                label="삭제"
-                destructive
-              ></fff-menu-item-action>
-            </fff-menu-item-group>
-            <fff-paragraph>되돌리기 어려운 명령에 씁니다.</fff-paragraph>
-          </fff-flex>
+          <fff-menu-item-action
+            icon=${ICON_NAMES.DELETE}
+            label="삭제"
+            destructive
+          ></fff-menu-item-action>
         </fff-component-example>
         <fff-component-code .code=${destructiveCode}></fff-component-code>
       </fff-tab-panel>
       <fff-tab-panel value="disabled">
         <fff-component-example>
-          <fff-flex direction="column" gap="6">
-            <fff-menu-item-group aria-label="비활성 메뉴">
-              <fff-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></fff-menu-item-action>
-              <fff-menu-item-action
-                icon=${ICON_NAMES.LOG_OUT}
-                label="로그아웃"
-                disabled
-              ></fff-menu-item-action>
-            </fff-menu-item-group>
-            <fff-paragraph>지금 실행할 수 없는 명령도 목록 안의 위치를 유지합니다.</fff-paragraph>
-          </fff-flex>
+          <fff-menu-item-group aria-label="비활성 메뉴">
+            <fff-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></fff-menu-item-action>
+            <fff-menu-item-action
+              icon=${ICON_NAMES.LOG_OUT}
+              label="로그아웃"
+              disabled
+            ></fff-menu-item-action>
+          </fff-menu-item-group>
         </fff-component-example>
         <fff-component-code .code=${disabledCode}></fff-component-code>
       </fff-tab-panel>
@@ -283,21 +271,12 @@ const main = html`
 
     <fff-component-section
       heading="MenuItemLink"
-      description="메뉴에서 다른 곳으로 나가는 링크라 현재 위치를 표시하지 않습니다. 현재 페이지를 가리키는 내비게이션은 list로 만듭니다. 새 창으로 열리는 링크는 그 사실을 이름에 덧붙입니다."
+      description="메뉴에서 다른 페이지나 사이트로 이동하는 링크입니다."
     >
       <fff-menu-item-group size="large">
         <fff-menu-item-link
           size="medium"
-          icon=${ICON_NAMES.HOME_PAGE}
-          label="수줍이 앱"
-          target="_self"
-          description="앱에서 게시물을 엽니다."
-        >
-          <fff-accent-tag slot="trailing">신규</fff-accent-tag>
-        </fff-menu-item-link>
-        <fff-menu-item-link
-          size="medium"
-          icon=${ICON_NAMES.EXTERNAL_LINK}
+          icon=${ICON_NAMES.BOOK}
           label="MDN Web Docs"
           href="https://developer.mozilla.org"
           description="외부 링크"

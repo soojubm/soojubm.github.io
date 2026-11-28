@@ -149,30 +149,24 @@ const main = html`
       ></fff-tab-list>
       <fff-tab-panel value="size">
         <fff-component-example>
-          <fff-flex direction="column" gap="6">
-            <fff-list-item-group>
-              <fff-list-item
-                label="Small"
-                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
-              ></fff-list-item>
-              <fff-list-item
-                size="medium"
-                label="Medium"
-                description="Youtube Subscriber"
-                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
-              ></fff-list-item>
-              <fff-list-item
-                size="large"
-                label="Large"
-                description="Youtube Subscriber"
-                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
-              ></fff-list-item>
-            </fff-list-item-group>
-            <fff-paragraph>
-              small은 한 줄만 그리는 행이라 description을 받아도 그리지 않습니다. 설명이 필요하면
-              medium 이상을 씁니다.
-            </fff-paragraph>
-          </fff-flex>
+          <fff-list-item-group>
+            <fff-list-item
+              label="Small"
+              .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
+            ></fff-list-item>
+            <fff-list-item
+              size="medium"
+              label="Medium"
+              description="Youtube Subscriber"
+              .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
+            ></fff-list-item>
+            <fff-list-item
+              size="large"
+              label="Large"
+              description="Youtube Subscriber"
+              .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
+            ></fff-list-item>
+          </fff-list-item-group>
         </fff-component-example>
         <fff-component-code .code=${sizeCode}></fff-component-code>
       </fff-tab-panel>
@@ -280,7 +274,7 @@ const main = html`
                 description="UI Designer"
                 .avatar=${{ src: '/src/images/soojubm.png' }}
               >
-                <fff-follow-button slot="trailing"></fff-follow-button>
+                <fff-button slot="trailing">메시지</fff-button>
               </fff-user-item>
               <fff-user-item
                 size="medium"
@@ -288,7 +282,7 @@ const main = html`
                 description="Product Designer"
                 .avatar=${{ src: '/src/images/soojubm.png' }}
               >
-                <fff-follow-button slot="trailing"></fff-follow-button>
+                <fff-button slot="trailing">메시지</fff-button>
               </fff-user-item>
             </fff-list-item-group>
             <fff-code-tag slot="tags" tone="blue">List Item</fff-code-tag>

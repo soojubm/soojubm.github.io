@@ -64,7 +64,7 @@ export class MenuItemLink extends withMenuItemPresentation(LitElement) {
   }
 
   private renderDefaultTrailing() {
-    const name = this.target === '_blank' ? ICON_NAMES.SHARE : ICON_NAMES.FORWARD
+    const name = this.target === '_blank' ? ICON_NAMES.EXTERNAL_LINK : ICON_NAMES.FORWARD
 
     return html`
       <fff-icon name=${name} size="small"></fff-icon>
