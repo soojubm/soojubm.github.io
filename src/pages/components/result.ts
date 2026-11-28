@@ -45,10 +45,14 @@ const exampleCode = `<fff-result
   .primaryAction=\${primaryAction}
   .secondaryAction=\${secondaryAction}
 >
-  <fff-meta-item-group direction="column" gap="2">
-    <fff-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></fff-meta-item>
-    <fff-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></fff-meta-item>
-  </fff-meta-item-group>
+  <fff-meta-item-group
+    direction="column"
+    gap="2"
+    .items=\${[
+      { label: '주문일자', value: '2019.08.10.', layout: 'horizontal' },
+      { label: '결제금액', value: '₩ 54,000', layout: 'horizontal' },
+    ]}
+  ></fff-meta-item-group>
 </fff-result>`
 
 const main = html`
@@ -68,10 +72,14 @@ const main = html`
         .primaryAction=${primaryAction}
         .secondaryAction=${secondaryAction}
       >
-        <fff-meta-item-group direction="column" gap="2">
-          <fff-meta-item layout="horizontal" label="주문일자" value="2019.08.10."></fff-meta-item>
-          <fff-meta-item layout="horizontal" label="결제금액" value="₩ 54,000"></fff-meta-item>
-        </fff-meta-item-group>
+        <fff-meta-item-group
+          direction="column"
+          gap="2"
+          .items=${[
+            { label: '주문일자', value: '2019.08.10.', layout: 'horizontal' },
+            { label: '결제금액', value: '₩ 54,000', layout: 'horizontal' },
+          ]}
+        ></fff-meta-item-group>
       </fff-result>
     </fff-component-example>
     <fff-component-code .code=${exampleCode}></fff-component-code>

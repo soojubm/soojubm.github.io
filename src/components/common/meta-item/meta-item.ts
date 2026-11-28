@@ -4,6 +4,14 @@ import { customElement, property } from 'lit/decorators.js'
 import { metaItemStyles } from '@/components/common/meta-item/meta-item.styles'
 import '@/components/common/text/semantics/paragraph'
 
+export interface MetaItemData {
+  label: string
+  value: string
+  layout?: 'horizontal' | 'stacked' | 'inline'
+  align?: 'start' | 'center'
+  valueSize?: 'medium' | 'large'
+}
+
 @customElement('fff-meta-item')
 export class MetaItem extends LitElement {
   static styles = [metaItemStyles]

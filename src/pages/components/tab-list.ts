@@ -114,81 +114,79 @@ const main = html`
       ></fff-tab-list>
       <fff-tab-panel value="variant">
         <fff-component-example>
-          <fff-flex direction="column" gap="4">
-            <fff-flex direction="column" gap="3">
-              <fff-tab-list
-                value="daily"
-                variant="pill"
-                .tabs=${[
-                  { value: 'daily', label: '일간' },
-                  { value: 'weekly', label: '주간' },
-                  { value: 'monthly', label: '월간' },
-                ]}
-              ></fff-tab-list>
+          <fff-flex direction="column" gap="3">
+            <fff-tab-list
+              value="daily"
+              variant="pill"
+              .tabs=${[
+                { value: 'daily', label: '일간' },
+                { value: 'weekly', label: '주간' },
+                { value: 'monthly', label: '월간' },
+              ]}
+            ></fff-tab-list>
 
-              <fff-tab-panel value="daily">
-                <span aria-hidden="true">📅</span>
-                오늘 생성된 데이터...
-              </fff-tab-panel>
-              <fff-tab-panel value="weekly">
-                <span aria-hidden="true">🗓️</span>
-                이번 주 누적 데이터...
-              </fff-tab-panel>
-              <fff-tab-panel value="monthly">
-                <span aria-hidden="true">📊</span>
-                이번 달 정산 데이터...
-              </fff-tab-panel>
-            </fff-flex>
-            <fff-separator></fff-separator>
-            <fff-flex direction="column" gap="3">
-              <fff-tab-list
-                value="posts"
-                variant="text"
-                .tabs=${[
-                  { value: 'posts', label: '게시글' },
-                  { value: 'comments', label: '댓글' },
-                  { value: 'bookmarks', label: '북마크' },
-                ]}
-              ></fff-tab-list>
-              <fff-tab-panel value="posts">
-                <span aria-hidden="true">📝</span>
-                작성한 게시글...
-              </fff-tab-panel>
-              <fff-tab-panel value="comments">
-                <span aria-hidden="true">💬</span>
-                작성한 댓글...
-              </fff-tab-panel>
-              <fff-tab-panel value="bookmarks">
-                <span aria-hidden="true">🔖</span>
-                저장한 북마크...
-              </fff-tab-panel>
-            </fff-flex>
-            <fff-separator></fff-separator>
-            <fff-flex direction="column" gap="3">
-              <fff-code-tag tone="orange">Duplicated</fff-code-tag>
-              <fff-tab-list
-                value="menu1"
-                variant="line"
-                .tabs=${[
-                  { value: 'menu1', label: '첫 번째 메뉴' },
-                  { value: 'menu2', label: '두 번째 메뉴' },
-                  { value: 'menu3', label: '세 번째 메뉴' },
-                ]}
-              ></fff-tab-list>
+            <fff-tab-panel value="daily">
+              <span aria-hidden="true">📅</span>
+              오늘 생성된 데이터...
+            </fff-tab-panel>
+            <fff-tab-panel value="weekly">
+              <span aria-hidden="true">🗓️</span>
+              이번 주 누적 데이터...
+            </fff-tab-panel>
+            <fff-tab-panel value="monthly">
+              <span aria-hidden="true">📊</span>
+              이번 달 정산 데이터...
+            </fff-tab-panel>
+          </fff-flex>
+          <fff-separator></fff-separator>
+          <fff-flex direction="column" gap="3">
+            <fff-tab-list
+              value="posts"
+              variant="text"
+              .tabs=${[
+                { value: 'posts', label: '게시글' },
+                { value: 'comments', label: '댓글' },
+                { value: 'bookmarks', label: '북마크' },
+              ]}
+            ></fff-tab-list>
+            <fff-tab-panel value="posts">
+              <span aria-hidden="true">📝</span>
+              작성한 게시글...
+            </fff-tab-panel>
+            <fff-tab-panel value="comments">
+              <span aria-hidden="true">💬</span>
+              작성한 댓글...
+            </fff-tab-panel>
+            <fff-tab-panel value="bookmarks">
+              <span aria-hidden="true">🔖</span>
+              저장한 북마크...
+            </fff-tab-panel>
+          </fff-flex>
+          <fff-separator></fff-separator>
+          <fff-flex direction="column" gap="3">
+            <fff-code-tag tone="orange">Duplicated</fff-code-tag>
+            <fff-tab-list
+              value="menu1"
+              variant="line"
+              .tabs=${[
+                { value: 'menu1', label: '첫 번째 메뉴' },
+                { value: 'menu2', label: '두 번째 메뉴' },
+                { value: 'menu3', label: '세 번째 메뉴' },
+              ]}
+            ></fff-tab-list>
 
-              <fff-tab-panel value="menu1">
-                <span aria-hidden="true">🍎</span>
-                1번 콘텐츠 영역입니다.
-              </fff-tab-panel>
-              <fff-tab-panel value="menu2">
-                <span aria-hidden="true">🍌</span>
-                2번 콘텐츠 영역입니다.
-              </fff-tab-panel>
-              <fff-tab-panel value="menu3">
-                <span aria-hidden="true">🍇</span>
-                3번 콘텐츠 영역입니다.
-              </fff-tab-panel>
-            </fff-flex>
+            <fff-tab-panel value="menu1">
+              <span aria-hidden="true">🍎</span>
+              1번 콘텐츠 영역입니다.
+            </fff-tab-panel>
+            <fff-tab-panel value="menu2">
+              <span aria-hidden="true">🍌</span>
+              2번 콘텐츠 영역입니다.
+            </fff-tab-panel>
+            <fff-tab-panel value="menu3">
+              <span aria-hidden="true">🍇</span>
+              3번 콘텐츠 영역입니다.
+            </fff-tab-panel>
           </fff-flex>
         </fff-component-example>
       </fff-tab-panel>

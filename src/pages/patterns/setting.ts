@@ -234,11 +234,15 @@ const main = html`
               <fff-button slot="action">구독 관리</fff-button>
             </fff-setting-item>
             <fff-separator></fff-separator>
-            <fff-meta-item-group direction="column" gap="2">
-              <fff-meta-item label="다음 결제 예정일" value="2024.04.02."></fff-meta-item>
-              <fff-meta-item label="결제금액" value="매달 46,800원"></fff-meta-item>
-              <fff-meta-item label="결제수단" value="현대카드 ****-****-****-7922"></fff-meta-item>
-            </fff-meta-item-group>
+            <fff-meta-item-group
+              direction="column"
+              gap="2"
+              .items=${[
+                { label: '다음 결제 예정일', value: '2024.04.02.' },
+                { label: '결제금액', value: '매달 46,800원' },
+                { label: '결제수단', value: '현대카드 ****-****-****-7922' },
+              ]}
+            ></fff-meta-item-group>
           </fff-flex>
         </fff-surface>
       </fff-flex>

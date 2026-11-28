@@ -117,10 +117,14 @@ const main = html`
           </fff-content-section>
 
           <fff-content-section heading="결제상세" heading-level="3">
-            <fff-meta-item-group direction="column" gap="2">
-              <fff-meta-item label="마일리지 사용" value="₩ 980"></fff-meta-item>
-              <fff-meta-item label="카드 결제" value="₩ 31,920"></fff-meta-item>
-            </fff-meta-item-group>
+            <fff-meta-item-group
+              direction="column"
+              gap="2"
+              .items=${[
+                { label: '마일리지 사용', value: '₩ 980' },
+                { label: '카드 결제', value: '₩ 31,920' },
+              ]}
+            ></fff-meta-item-group>
 
             <fff-surface>
               <fff-flex direction="column" gap="4">
@@ -236,10 +240,13 @@ const main = html`
               <fff-separator></fff-separator>
 
               <fff-flex direction="column" gap="4">
-                <fff-meta-item-group direction="column">
-                  <fff-meta-item label="결제상세" value="카드 간편결제 + 마일리지"></fff-meta-item>
-                  <fff-meta-item label="포인트 혜택" value="최대 1,147원"></fff-meta-item>
-                </fff-meta-item-group>
+                <fff-meta-item-group
+                  direction="column"
+                  .items=${[
+                    { label: '결제상세', value: '카드 간편결제 + 마일리지' },
+                    { label: '포인트 혜택', value: '최대 1,147원' },
+                  ]}
+                ></fff-meta-item-group>
                 <fff-button variant="secondary" size="large" full-width>주문 상세 보기</fff-button>
               </fff-flex>
             </fff-flex>

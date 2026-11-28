@@ -52,17 +52,16 @@ const main = html`
         <fff-flex direction="column" gap="2">
           <fff-flex gap="2">
             <time datetime="1967"><fff-text>1967</fff-text></time>
-            <fff-meta-item-group gap="2">
-              <fff-meta-item
-                layout="inline"
-                label="Directed by"
-                value="스튜어트 로젠버그"
-              ></fff-meta-item>
-              <fff-meta-item layout="inline" label="국가" value="미국"></fff-meta-item>
-              <fff-meta-item layout="inline" label="언어" value="영어"></fff-meta-item>
-              <fff-meta-item layout="inline" label="장르" value="드라마"></fff-meta-item>
-              <fff-meta-item layout="inline" label="러닝타임" value="103분"></fff-meta-item>
-            </fff-meta-item-group>
+            <fff-meta-item-group
+              gap="2"
+              .items=${[
+                { label: 'Directed by', value: '스튜어트 로젠버그', layout: 'inline' },
+                { label: '국가', value: '미국', layout: 'inline' },
+                { label: '언어', value: '영어', layout: 'inline' },
+                { label: '장르', value: '드라마', layout: 'inline' },
+                { label: '러닝타임', value: '103분', layout: 'inline' },
+              ]}
+            ></fff-meta-item-group>
           </fff-flex>
 
           <fff-flex direction="column">
@@ -74,29 +73,33 @@ const main = html`
           </fff-flex>
 
           <fff-surface>
-            <fff-meta-item-group gap="8" justify-content="center">
-              <fff-meta-item
-                layout="stacked"
-                align="center"
-                label="리뷰 116개"
-                value="⭐ 4.8"
-                value-size="large"
-              ></fff-meta-item>
-              <fff-meta-item
-                layout="stacked"
-                align="center"
-                label="Tomatometer"
-                value="🍅 97%"
-                value-size="large"
-              ></fff-meta-item>
-              <fff-meta-item
-                layout="stacked"
-                align="center"
-                label="등급"
-                value="18세 이상"
-                value-size="large"
-              ></fff-meta-item>
-            </fff-meta-item-group>
+            <fff-meta-item-group
+              gap="8"
+              justify-content="center"
+              .items=${[
+                {
+                  label: '리뷰 116개',
+                  value: '⭐ 4.8',
+                  layout: 'stacked',
+                  align: 'center',
+                  valueSize: 'large',
+                },
+                {
+                  label: 'Tomatometer',
+                  value: '🍅 97%',
+                  layout: 'stacked',
+                  align: 'center',
+                  valueSize: 'large',
+                },
+                {
+                  label: '등급',
+                  value: '18세 이상',
+                  layout: 'stacked',
+                  align: 'center',
+                  valueSize: 'large',
+                },
+              ]}
+            ></fff-meta-item-group>
           </fff-surface>
         </fff-flex>
 

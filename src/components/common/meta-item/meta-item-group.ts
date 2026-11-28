@@ -1,5 +1,8 @@
 import { LitElement, css, html, unsafeCSS } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
+import { ifDefined } from 'lit/directives/if-defined.js'
+
+import type { MetaItemData } from '@/components/common/meta-item/meta-item'
 
 import { spaces } from '@/stylesheets/shared.styles'
 import type { FlexDirection, FlexWrap, Space } from '@/stylesheets/shared.types'
@@ -42,6 +45,7 @@ export class MetaItemGroup extends LitElement {
 
     ${unsafeCSS(buildAttributeRules('gap', metaItemGroupGapTokens))}
   `
+  @property({ attribute: false }) items: MetaItemData[] = []
   @property({ type: String, reflect: true }) direction: FlexDirection = 'row'
   @property({ type: String, reflect: true }) gap: MetaItemGroupGap = '4'
   @property({ type: String, reflect: true }) wrap: FlexWrap = 'nowrap'
@@ -56,6 +60,17 @@ export class MetaItemGroup extends LitElement {
 
   render() {
     return html`
+      ${this.items.map(
+        item => html`
+          <fff-meta-item
+            label=${item.label}
+            value=${item.value}
+            layout=${ifDefined(item.layout)}
+            align=${ifDefined(item.align)}
+            value-size=${ifDefined(item.valueSize)}
+          ></fff-meta-item>
+        `,
+      )}
       <slot></slot>
     `
   }

@@ -204,45 +204,43 @@ const main = html`
     </fff-component-section>
 
     <fff-component-section heading="Meta Item Group">
-      <fff-meta-item-group direction="column" gap="2">
-        <fff-meta-item label="상품 금액" value="₩ 16,000"></fff-meta-item>
-        <fff-meta-item label="배송비" value="무료"></fff-meta-item>
-        <fff-meta-item label="총 결제 금액" value="₩ 16,000"></fff-meta-item>
-      </fff-meta-item-group>
+      <fff-meta-item-group
+        direction="column"
+        gap="2"
+        .items=${[
+          { label: '상품 금액', value: '₩ 16,000' },
+          { label: '배송비', value: '무료' },
+          { label: '총 결제 금액', value: '₩ 16,000' },
+        ]}
+      ></fff-meta-item-group>
       <fff-separator></fff-separator>
-      <fff-meta-item-group gap="2">
-        <fff-meta-item layout="inline" label="국가" value="미국"></fff-meta-item>
-        <fff-meta-item layout="inline" label="언어" value="영어"></fff-meta-item>
-        <fff-meta-item layout="inline" label="장르" value="드라마"></fff-meta-item>
-        <fff-meta-item layout="inline" label="러닝타임" value="103분"></fff-meta-item>
-      </fff-meta-item-group>
+      <fff-meta-item-group
+        gap="2"
+        .items=${[
+          { label: '국가', value: '미국', layout: 'inline' },
+          { label: '언어', value: '영어', layout: 'inline' },
+          { label: '장르', value: '드라마', layout: 'inline' },
+          { label: '러닝타임', value: '103분', layout: 'inline' },
+        ]}
+      ></fff-meta-item-group>
       <fff-separator></fff-separator>
-      <fff-meta-item-group gap="2">
-        <fff-meta-item layout="stacked" label="사이즈" value="보통"></fff-meta-item>
-        <fff-meta-item layout="stacked" label="한글" value="작은 거 필요하나"></fff-meta-item>
-        <fff-meta-item layout="stacked" label="Move" value="562 kcal"></fff-meta-item>
-      </fff-meta-item-group>
+      <fff-meta-item-group
+        gap="2"
+        .items=${[
+          { label: '사이즈', value: '보통', layout: 'stacked' },
+          { label: '한글', value: '작은 거 필요하나', layout: 'stacked' },
+          { label: 'Move', value: '562 kcal', layout: 'stacked' },
+        ]}
+      ></fff-meta-item-group>
       <fff-separator></fff-separator>
-      <fff-meta-item-group gap="2">
-        <fff-meta-item
-          layout="stacked"
-          label="리뷰 116개"
-          value="⭐ 4.8"
-          value-size="large"
-        ></fff-meta-item>
-        <fff-meta-item
-          layout="stacked"
-          label="토마토미터"
-          value="🍅 97%"
-          value-size="large"
-        ></fff-meta-item>
-        <fff-meta-item
-          layout="stacked"
-          label="등급"
-          value="18세 이상"
-          value-size="large"
-        ></fff-meta-item>
-      </fff-meta-item-group>
+      <fff-meta-item-group
+        gap="2"
+        .items=${[
+          { label: '리뷰 116개', value: '⭐ 4.8', layout: 'stacked', valueSize: 'large' },
+          { label: '토마토미터', value: '🍅 97%', layout: 'stacked', valueSize: 'large' },
+          { label: '등급', value: '18세 이상', layout: 'stacked', valueSize: 'large' },
+        ]}
+      ></fff-meta-item-group>
     </fff-component-section>
 
     <fff-component-section

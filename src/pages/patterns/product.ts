@@ -353,20 +353,19 @@ const main = html`
 
       <fff-flex as="section" id="info" direction="column" gap="3">
         <fff-heading level="2">상품상세정보 고지</fff-heading>
-        <fff-meta-item-group direction="column">
-          <fff-meta-item layout="inline" label="제품명" value="노멀 헤어퍼퓸"></fff-meta-item>
-          <fff-meta-item layout="inline" label="소재" value="금속"></fff-meta-item>
-          <fff-meta-item layout="inline" label="치수" value="20mm * 40mm"></fff-meta-item>
-          <fff-meta-item
-            layout="inline"
-            label="전성분"
-            value="정제수, 아리수, 활명수"
-          ></fff-meta-item>
-          <fff-meta-item layout="inline" label="제조일자" value="2019. 11. 08."></fff-meta-item>
-          <fff-meta-item layout="inline" label="제조업자" value="별도표기"></fff-meta-item>
-          <fff-meta-item layout="inline" label="제조국" value="대한민국"></fff-meta-item>
-          <fff-meta-item layout="inline" label="문의전화" value="02-000-2000"></fff-meta-item>
-        </fff-meta-item-group>
+        <fff-meta-item-group
+          direction="column"
+          .items=${[
+            { label: '제품명', value: '노멀 헤어퍼퓸', layout: 'inline' },
+            { label: '소재', value: '금속', layout: 'inline' },
+            { label: '치수', value: '20mm * 40mm', layout: 'inline' },
+            { label: '전성분', value: '정제수, 아리수, 활명수', layout: 'inline' },
+            { label: '제조일자', value: '2019. 11. 08.', layout: 'inline' },
+            { label: '제조업자', value: '별도표기', layout: 'inline' },
+            { label: '제조국', value: '대한민국', layout: 'inline' },
+            { label: '문의전화', value: '02-000-2000', layout: 'inline' },
+          ]}
+        ></fff-meta-item-group>
       </fff-flex>
     </fff-content-section-list>
 
