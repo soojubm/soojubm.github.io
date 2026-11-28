@@ -116,7 +116,7 @@ const main = html`
               <fff-button variant="secondary">더보기</fff-button>
               <fff-flex direction="column" align-items="center" gap="0">
                 <div
-                  style="position: relative; z-index: 1; width: var(--size-16); aspect-ratio: 2; background: var(--border-color); clip-path: polygon(50% 0, 0 100%, 100% 100%)"
+                  style="width: var(--size-16); aspect-ratio: 2; background: var(--border-color); clip-path: polygon(50% 0, 0 100%, 100% 100%)"
                 ></div>
                 <fff-surface style=${panelStyle}>
                   <fff-paragraph>오버레이 패널</fff-paragraph>

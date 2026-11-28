@@ -32,7 +32,7 @@ const episodeItems: EpisodeItem[] = [
 const renderEpisodeItems = (items: EpisodeItem[]) =>
   items.map(
     ({ tag, title, description }) => html`
-      <div>
+      <div class="class-episode">
         <fff-image></fff-image>
         <fff-flex direction="column" gap="1">
           <fff-tag>${tag}</fff-tag>
@@ -58,8 +58,8 @@ const productItems: ProductItem[] = [
 const renderProductItems = (items: ProductItem[]) =>
   items.map(
     ({ title, price }) => html`
-      <fff-flex direction="column" style="border: var(--border); border-width: 0 1px 1px 0">
-        <fff-image ratio="1:1" style="border-bottom: var(--border)"></fff-image>
+      <fff-flex class="class-product" direction="column">
+        <fff-image ratio="1:1"></fff-image>
         <fff-flex direction="column" gap="4" style="padding: var(--space-4) var(--space-6)">
           <fff-text size="18">${title}</fff-text>
           <fff-product-price price=${price}></fff-product-price>
@@ -116,19 +116,19 @@ const main = html`
           </fff-paragraph>
         </div>
         <fff-grid columns="4" gap="0" column-min-width="0px">
-          <figure class="minicard">
+          <figure class="class-minicard">
             <span aria-hidden="true">⏰</span>
             <fff-paragraph>하루 5분</fff-paragraph>
           </figure>
-          <figure class="minicard">
+          <figure class="class-minicard">
             <span aria-hidden="true">📖</span>
             <fff-paragraph>에피소드 10개</fff-paragraph>
           </figure>
-          <figure class="minicard">
+          <figure class="class-minicard">
             <span aria-hidden="true">🗓️</span>
             <fff-paragraph>이용기간 무제한</fff-paragraph>
           </figure>
-          <figure class="minicard minicard--closed">
+          <figure class="class-minicard class-minicard--closed">
             <span aria-hidden="true">🤼</span>
             <fff-paragraph><del>얼리버드 500명</del></fff-paragraph>
             <fff-paragraph>
@@ -167,7 +167,7 @@ const main = html`
       </header>
     </fff-grid>
 
-    <fff-marquee height="80px" pause-on-hover>
+    <fff-marquee class="class-marquee" height="80px" pause-on-hover>
       ${Array.from(
         { length: MARQUEE_REPEAT },
         () => html`
@@ -228,8 +228,8 @@ const main = html`
     </section>
 
     <fff-grid class="class-feature" columns="2" gap="0" column-min-width="400px">
-      <div></div>
-      <div>
+      <div class="class-feature-media"></div>
+      <div class="class-feature-body">
         <fff-flex direction="column" gap="8">
           <fff-paragraph-group>
             <fff-text size="32">[고슴이 생존기: 경제 기본기편] 은요</fff-text>
@@ -302,12 +302,7 @@ const main = html`
       ${renderEpisodeItems(episodeItems)}
     </section>
 
-    <fff-grid
-      columns="4"
-      gap="0"
-      column-min-width="240px"
-      style="border-left: var(--border); box-sizing: border-box"
-    >
+    <fff-grid class="class-products" columns="4" gap="0" column-min-width="240px">
       ${renderProductItems(productItems)}
     </fff-grid>
 
