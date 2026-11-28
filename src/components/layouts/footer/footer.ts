@@ -32,13 +32,15 @@ export class Footer extends LitElement {
             notion="https://soojubm.notion.site/UI-Designer-9c18f4dd39eb4181b9f9c2ee76896618"
             github="https://github.com/soojubm"
           ></fff-social-links>
-          <div role="list">
-            <div role="listitem">
-              <fff-link href="/my/films/">영화감상 목록</fff-link>
-            </div>
-            <div role="listitem">
-              <fff-link href="/my/books/">독서 목록</fff-link>
-            </div>
+          <div role="list" style="margin: var(--space-4) 0 0">
+            <fff-button-group>
+              <div role="listitem">
+                <fff-link href="/my/films/">영화감상 목록</fff-link>
+              </div>
+              <div role="listitem">
+                <fff-link href="/my/books/">독서 목록</fff-link>
+              </div>
+            </fff-button-group>
           </div>
         </div>
 

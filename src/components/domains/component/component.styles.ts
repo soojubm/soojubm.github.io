@@ -59,7 +59,7 @@ export const componentPropsStyles = [
       gap: var(--space-3);
     }
     .component-props {
-      height: 8.5rem;
+      height: 9.5rem;
       overflow: hidden;
       background-color: var(--background-subtle-color);
       position: relative;

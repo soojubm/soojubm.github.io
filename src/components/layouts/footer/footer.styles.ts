@@ -20,7 +20,7 @@ export const footerStyles = css`
   .footer-links {
     display: flex;
     flex-direction: column;
-    max-width: var(--layout-width-narrow);
+    max-width: calc(var(--size-80) * 3.5);
     margin: var(--space-4) 0;
     box-sizing: border-box;
   }
