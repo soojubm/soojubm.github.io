@@ -31,6 +31,6 @@ export const postLinkStyles = css`
 
   a.link:focus-visible {
     outline: var(--interaction-focus-outline);
-    outline-offset: -1px;
+    outline-offset: calc(var(--border-width) * -1);
   }
 `

@@ -100,7 +100,7 @@ export const listItemInteractiveStyles = css`
 
   &:focus-visible {
     outline: var(--interaction-focus-outline);
-    outline-offset: -1px;
+    outline-offset: calc(var(--border-width) * -1);
   }
 
   &[aria-current='page'] {

@@ -9,6 +9,9 @@ export class Tagline extends LitElement {
     resetStyles,
     css`
       :host {
+        --tagline-chars: 1;
+        --tagline-delay: 0.3s;
+
         display: block;
       }
 
@@ -32,8 +35,7 @@ export class Tagline extends LitElement {
       /* data-reveal을 단 글자는 한 글자씩 왼쪽에서 오른쪽으로 나타난다. 글자 수를 --tagline-chars, 시작 지연을 --tagline-delay로 받는다. */
       ::slotted([data-reveal]) {
         display: inline-block;
-        animation: tagline-reveal 1.4s steps(var(--tagline-chars, 1), end)
-          var(--tagline-delay, 0.3s) both;
+        animation: tagline-reveal 1.4s steps(var(--tagline-chars), end) var(--tagline-delay) both;
       }
 
       @keyframes tagline-reveal {
