@@ -420,16 +420,12 @@ const main = html`
         <fff-separator></fff-separator>
 
         <fff-heading level="2">결제 금액</fff-heading>
-        <fff-meta-item-group direction="column">
-          <fff-meta-item label="상품 금액" value="₩ 16,000"></fff-meta-item>
-          <fff-meta-item label="배송비" value="무료"></fff-meta-item>
-          <fff-meta-item
-            id="cart-total"
-            label="총 결제 금액"
-            value="₩ 16,000"
-            value-size="large"
-          ></fff-meta-item>
-        </fff-meta-item-group>
+        <fff-order-price-summary
+          id="cart-summary"
+          subtotal="₩ 16,000"
+          shipping="무료"
+          total="₩ 16,000"
+        ></fff-order-price-summary>
 
         <fff-paragraph>미국 내 $40 이상 주문은 무료로 배송됩니다.</fff-paragraph>
         <fff-button variant="primary" size="large" full-width>결제하기</fff-button>
@@ -439,6 +435,11 @@ const main = html`
 `
 
 renderPage(main, { closeSidebar: true, initialize: setupCartSheet })
+
+type OrderPriceSummary = HTMLElement & {
+  subtotal: string
+  total: string
+}
 
 type ValueElement = HTMLElement & {
   value: string
@@ -455,13 +456,15 @@ function setupCartSheet() {
   })
 
   const cartQuantity = document.querySelector<ValueElement>('#cart-quantity')
-  const cartTotal = document.querySelector<ValueElement>('#cart-total')
+  const cartSummary = document.querySelector<OrderPriceSummary>('#cart-summary')
 
-  if (!cartQuantity || !cartTotal) return
+  if (!cartQuantity || !cartSummary) return
 
   cartQuantity.addEventListener('input', () => {
     const quantity = Math.max(1, Number(cartQuantity.value) || 1)
-    cartTotal.value = `₩ ${(quantity * 16000).toLocaleString('ko-KR')}`
+    const price = `₩ ${(quantity * 16000).toLocaleString('ko-KR')}`
+    cartSummary.subtotal = price
+    cartSummary.total = price
   })
 }
 

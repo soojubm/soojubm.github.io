@@ -5,10 +5,11 @@ import { spaces } from '@/stylesheets/shared.styles'
 import type { FlexDirection, FlexWrap, Space } from '@/stylesheets/shared.types'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
-/** 메타 정보 사이 간격은 space 단계 중 이 넷만 쓴다. 기본 4는 :host가 선언한다. */
-type MetaItemGroupGap = Extract<Space, '2' | '3' | '4' | '8'>
+/** 메타 정보 사이 간격은 space 단계 중 이 다섯만 쓴다. 기본 4는 :host가 선언한다. */
+type MetaItemGroupGap = Extract<Space, '1' | '2' | '3' | '4' | '8'>
 
 const metaItemGroupGapTokens: AttributeTokens<Exclude<MetaItemGroupGap, '4'>> = {
+  '1': { gap: spaces['1'] },
   '2': { gap: spaces['2'] },
   '3': { gap: spaces['3'] },
   '8': { gap: spaces['8'] },

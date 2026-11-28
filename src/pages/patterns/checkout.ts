@@ -124,16 +124,12 @@ const main = html`
 
             <fff-surface>
               <fff-flex direction="column" gap="4">
-                <fff-meta-item-group direction="column" gap="2">
-                  <fff-meta-item label="총 상품금액" value="₩ 31,900"></fff-meta-item>
-                  <fff-meta-item label="배송료" value="₩ 3,000"></fff-meta-item>
-                  <fff-meta-item label="쿠폰 할인" value="-₩ 2,000"></fff-meta-item>
-                  <fff-meta-item
-                    label="최종 결제 금액"
-                    value="₩ 32,900"
-                    value-size="large"
-                  ></fff-meta-item>
-                </fff-meta-item-group>
+                <fff-order-price-summary
+                  subtotal="₩ 31,900"
+                  shipping="₩ 3,000"
+                  discount="-₩ 2,000"
+                  total="₩ 32,900"
+                ></fff-order-price-summary>
                 <fff-meta-item label="적립 예정 포인트" value="최대 1,147원"></fff-meta-item>
                 <fff-button variant="primary" size="large" full-width>결제</fff-button>
               </fff-flex>
@@ -230,12 +226,12 @@ const main = html`
             <fff-separator></fff-separator>
 
             <fff-flex as="footer" direction="column">
-              <fff-meta-item-group direction="column" gap="2">
-                <fff-meta-item label="상품금액" value="31,900원"></fff-meta-item>
-                <fff-meta-item label="배송료" value="3,000원"></fff-meta-item>
-                <fff-meta-item label="쿠폰 할인" value="-2,000원"></fff-meta-item>
-                <fff-meta-item label="주문금액" value="32,900원" value-size="large"></fff-meta-item>
-              </fff-meta-item-group>
+              <fff-order-price-summary
+                subtotal="₩ 31,900"
+                shipping="₩ 3,000"
+                discount="-₩ 2,000"
+                total="₩ 32,900"
+              ></fff-order-price-summary>
 
               <fff-separator></fff-separator>
 
