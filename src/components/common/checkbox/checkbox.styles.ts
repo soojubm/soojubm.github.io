@@ -6,8 +6,8 @@ export const checkboxStyles = css`
   :host {
     --checkbox-width: var(--size-16);
     --checkbox-height: var(--size-16);
+    --checkbox-border: var(--border);
     --checkbox-border-radius: var(--border-radius);
-    --checkbox-border-color: var(--border-color);
     --checkbox-background-color: var(--background-color);
   }
 
@@ -26,8 +26,7 @@ export const checkboxStyles = css`
     user-select: none;
     width: var(--checkbox-width);
     height: var(--checkbox-height);
-    border: var(--border);
-    border-color: var(--checkbox-border-color);
+    border: var(--checkbox-border);
     box-sizing: border-box;
     border-radius: var(--checkbox-border-radius);
     background: var(--checkbox-background-color);
@@ -40,7 +39,7 @@ export const checkboxStyles = css`
     height: calc(var(--checkbox-height) / 8);
     border-left: var(--border-width) solid;
     border-bottom: var(--border-width) solid;
-    border-color: var(--checkbox-border-color);
+    border-color: var(--interaction-selected-border-color);
     position: absolute;
     left: calc(var(--checkbox-width) / 4);
     top: calc(var(--checkbox-height) * 0.3125);
@@ -48,7 +47,7 @@ export const checkboxStyles = css`
   }
 
   input[type='checkbox']:checked + label > .indicator {
-    --checkbox-border-color: var(--interaction-selected-border-color);
+    --checkbox-border: var(--border-selected);
   }
 
   input[type='checkbox']:checked + label > .indicator::after {
@@ -65,7 +64,7 @@ export const checkboxStyles = css`
   }
 
   input[type='checkbox']:indeterminate + label > .indicator {
-    --checkbox-border-color: var(--interaction-selected-border-color);
+    --checkbox-border: var(--border-selected);
     --checkbox-background-color: var(--interaction-selected-background-color);
   }
 

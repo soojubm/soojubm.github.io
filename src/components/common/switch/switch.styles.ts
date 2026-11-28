@@ -7,7 +7,10 @@ export const switchStyles = css`
     --switch-width: var(--size-32);
     --switch-height: var(--size-16);
     --switch-border-radius: var(--border-radius);
-    --switch-background-color: var(--border-color);
+    --switch-background-color: var(--background-subtle-color);
+    --switch-thumb-size: var(--switch-height);
+    --switch-thumb-border: var(--border);
+    --switch-thumb-background-color: var(--background-color);
     display: block;
     height: var(--switch-height);
     position: relative;
@@ -27,8 +30,8 @@ export const switchStyles = css`
       --switch-background-color: var(--interaction-selected-foreground-color);
 
       &:after {
-        /* 썸은 트랙 높이만 한 정사각형이라, 이동 거리는 트랙 너비에서 썸 크기를 뺀 값이다. */
-        transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+        /* 이동 거리는 트랙 너비에서 썸 크기를 뺀 값이다. */
+        transform: translateX(calc(var(--switch-width) - var(--switch-thumb-size)));
       }
     }
 
@@ -57,12 +60,12 @@ export const switchStyles = css`
     &:after {
       content: '';
       display: block;
-      width: var(--switch-height);
-      height: var(--switch-height);
-      border: var(--border);
+      width: var(--switch-thumb-size);
+      height: var(--switch-thumb-size);
+      border: var(--switch-thumb-border);
       border-radius: var(--switch-border-radius);
       box-sizing: border-box;
-      background: var(--background-color);
+      background: var(--switch-thumb-background-color);
       position: absolute;
       left: 0;
       top: 0;

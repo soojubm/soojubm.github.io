@@ -31,7 +31,7 @@ export const noticeStyles = css`
     --notice-border-radius: var(--border-radius);
     --notice-border: var(--border);
     --notice-text-color: var(--foreground-color);
-    --notice-background-color: transparent;
+    --notice-background-color: var(--background-color);
     --notice-border-color: var(--border-color);
   }
 
