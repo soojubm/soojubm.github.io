@@ -36,6 +36,7 @@ SITEMAP.forEach(node => {
 const MY_PAGES = [
   { id: 'films', name: '영화감상 목록' },
   { id: 'books', name: '독서 목록' },
+  { id: 'likes', name: 'Things I like' },
 ]
 
 // 페이지 폴더에 파일이 하나뿐이면 상위로 꺼내 평평하게 두므로, 남아있는 폴더만 예외로 처리한다.

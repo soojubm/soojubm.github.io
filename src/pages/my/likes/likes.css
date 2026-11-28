@@ -1,0 +1,31 @@
+.likes-stage {
+  position: relative;
+  height: 80vh;
+  min-height: 560px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.likes-bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--bubble-size) * 0.7);
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-full);
+  background: var(--background-strong-color);
+  color: var(--foreground-on-strong-color);
+  text-align: center;
+  will-change: translate;
+}
+
+/* 짙은 원 사이에 옅은 원을 섞어 명암에 리듬을 준다. */
+.likes-bubble:nth-child(3n) {
+  background: var(--primary-subtle-color);
+  color: var(--foreground-color);
+}

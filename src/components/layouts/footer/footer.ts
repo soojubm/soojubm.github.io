@@ -39,6 +39,9 @@ export class Footer extends LitElement {
               <div role="listitem">
                 <fff-link href="/my/books/">독서 목록</fff-link>
               </div>
+              <div role="listitem">
+                <fff-link href="/my/likes/">Things I like</fff-link>
+              </div>
             </fff-button-group>
           </div>
         </div>
