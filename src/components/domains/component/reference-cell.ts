@@ -12,8 +12,6 @@ export class ReferenceCell extends LitElement {
     css`
       :host {
         display: block;
-        border-right: var(--border);
-        border-bottom: var(--border);
       }
 
       a {
