@@ -247,189 +247,187 @@ const main = html`
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-guide>
-      <fff-content-section-list size="small">
-        <fff-content-section
-          heading-level="3"
-          heading="탭은 몇 개까지 둘 수 있나요?"
-          description="탭은 6개 이내로 둡니다. 항목이 더 많으면 목록으로 나열하고, 항목을 눌러 다음 화면으로 넘어가게 합니다."
-        >
-          <fff-grid columns="2" gap="6">
-            <fff-figure-card
-              height="10rem"
-              description="항목을 눌러 다음 화면으로 넘어가는 흐름으로 설계합니다."
-            >
-              <fff-flex slot="figure" gap="2" style="width: 80%">
-                <fff-surface
-                  variant="filled"
-                  style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
-                >
-                  <fff-flex direction="column" justify-content="space-between" style="height: 100%">
-                    <fff-flex direction="column" gap="1">
-                      <fff-avatar size="40" icon=${ICON_NAMES.INFO}></fff-avatar>
-                      <fff-text>상품 정보</fff-text>
-                    </fff-flex>
-                    <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+      <fff-content-section
+        heading-level="3"
+        heading="탭은 몇 개까지 둘 수 있나요?"
+        description="탭은 6개 이내로 둡니다. 항목이 더 많으면 목록으로 나열하고, 항목을 눌러 다음 화면으로 넘어가게 합니다."
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card
+            height="10rem"
+            description="항목을 눌러 다음 화면으로 넘어가는 흐름으로 설계합니다."
+          >
+            <fff-flex slot="figure" gap="2" style="width: 80%">
+              <fff-surface
+                variant="filled"
+                style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
+              >
+                <fff-flex direction="column" justify-content="space-between" style="height: 100%">
+                  <fff-flex direction="column" gap="1">
+                    <fff-avatar size="40" icon=${ICON_NAMES.INFO}></fff-avatar>
+                    <fff-text>상품 정보</fff-text>
                   </fff-flex>
-                </fff-surface>
-                <fff-surface
-                  variant="filled"
-                  style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
-                >
-                  <fff-flex direction="column" justify-content="space-between" style="height: 100%">
-                    <fff-flex direction="column" gap="1">
-                      <fff-avatar size="40" icon=${ICON_NAMES.DOCUMENT}></fff-avatar>
-                      <fff-text>상세 설명</fff-text>
-                    </fff-flex>
-                    <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                  <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                </fff-flex>
+              </fff-surface>
+              <fff-surface
+                variant="filled"
+                style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
+              >
+                <fff-flex direction="column" justify-content="space-between" style="height: 100%">
+                  <fff-flex direction="column" gap="1">
+                    <fff-avatar size="40" icon=${ICON_NAMES.DOCUMENT}></fff-avatar>
+                    <fff-text>상세 설명</fff-text>
                   </fff-flex>
-                </fff-surface>
-                <fff-surface
-                  variant="filled"
-                  style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
-                >
-                  <fff-flex direction="column" justify-content="space-between" style="height: 100%">
-                    <fff-flex direction="column" gap="1">
-                      <fff-avatar size="40" icon=${ICON_NAMES.COMMENT}></fff-avatar>
-                      <fff-text>구매 후기</fff-text>
-                    </fff-flex>
-                    <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                  <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                </fff-flex>
+              </fff-surface>
+              <fff-surface
+                variant="filled"
+                style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
+              >
+                <fff-flex direction="column" justify-content="space-between" style="height: 100%">
+                  <fff-flex direction="column" gap="1">
+                    <fff-avatar size="40" icon=${ICON_NAMES.COMMENT}></fff-avatar>
+                    <fff-text>구매 후기</fff-text>
                   </fff-flex>
-                </fff-surface>
-              </fff-flex>
-              <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
-            </fff-figure-card>
-            <fff-figure-card
-              height="10rem"
-              description="화면 폭을 넘어 가려진 탭이 있다는 걸 알아채기 어려워, 그 탭을 모른 채 지나칩니다."
-            >
-              <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
-                <fff-tab-list value="many-0" variant="pill" .tabs=${manyTabItems}></fff-tab-list>
-                ${manyTabs.map(
-                  (label, index) => html`
-                    <fff-tab-panel value="many-${index}">${label} 영역입니다.</fff-tab-panel>
-                  `,
-                )}
-              </fff-flex>
-              <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-            </fff-figure-card>
-          </fff-grid>
-        </fff-content-section>
-        <fff-content-section
-          heading-level="3"
-          heading="카테고리는 탭으로 두어도 되나요?"
-          description="탭은 다른 뷰로 넘어가는 내비게이션입니다. 같은 목록을 거르는 카테고리는 필터로 둡니다."
-        >
-          <fff-grid columns="2" gap="6">
-            <fff-figure-card height="8rem" description="같은 목록이 걸러진다는 걸 보여 줍니다.">
-              <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
+                  <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                </fff-flex>
+              </fff-surface>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card
+            height="10rem"
+            description="화면 폭을 넘어 가려진 탭이 있다는 걸 알아채기 어려워, 그 탭을 모른 채 지나칩니다."
+          >
+            <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
+              <fff-tab-list value="many-0" variant="pill" .tabs=${manyTabItems}></fff-tab-list>
+              ${manyTabs.map(
+                (label, index) => html`
+                  <fff-tab-panel value="many-${index}">${label} 영역입니다.</fff-tab-panel>
+                `,
+              )}
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
+      <fff-content-section
+        heading-level="3"
+        heading="카테고리는 탭으로 두어도 되나요?"
+        description="탭은 다른 뷰로 넘어가는 내비게이션입니다. 같은 목록을 거르는 카테고리는 필터로 둡니다."
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card height="8rem" description="같은 목록이 걸러진다는 걸 보여 줍니다.">
+            <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
+              <fff-filter-button-group
+                mode="single"
+                .values=${['all']}
+                .options=${[
+                  { value: 'all', label: '전체' },
+                  { value: 'top', label: '상의' },
+                  { value: 'bottom', label: '하의' },
+                ]}
+              ></fff-filter-button-group>
+              <fff-paragraph>상품 24개</fff-paragraph>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card
+            height="8rem"
+            description="다른 화면을 기대하지만 같은 목록이 걸러질 뿐입니다."
+          >
+            <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
+              <fff-tab-list
+                value="category-all"
+                variant="line"
+                .tabs=${[
+                  { value: 'category-all', label: '전체' },
+                  { value: 'category-top', label: '상의' },
+                  { value: 'category-bottom', label: '하의' },
+                ]}
+              ></fff-tab-list>
+              <fff-tab-panel value="category-all">상품 24개</fff-tab-panel>
+              <fff-tab-panel value="category-top">상품 10개</fff-tab-panel>
+              <fff-tab-panel value="category-bottom">상품 14개</fff-tab-panel>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
+      <fff-content-section
+        heading-level="3"
+        heading="탭을 두 겹으로 쌓아도 되나요?"
+        description="탭은 한 단계로만 둡니다. 패널 안의 하위 구분은 필터로 나눕니다."
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card
+            height="10rem"
+            description="상위는 탭 하나뿐이라 지금 보는 뷰가 분명합니다."
+          >
+            <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
+              <fff-tab-list
+                value="flat-1"
+                variant="line"
+                .tabs=${[
+                  { value: 'flat-1', label: '상품' },
+                  { value: 'flat-2', label: '후기' },
+                ]}
+              ></fff-tab-list>
+              <fff-tab-panel value="flat-1">
                 <fff-filter-button-group
                   mode="single"
-                  .values=${['all']}
+                  .values=${['top']}
                   .options=${[
-                    { value: 'all', label: '전체' },
                     { value: 'top', label: '상의' },
                     { value: 'bottom', label: '하의' },
                   ]}
                 ></fff-filter-button-group>
-                <fff-paragraph>상품 24개</fff-paragraph>
-              </fff-flex>
-              <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
-            </fff-figure-card>
-            <fff-figure-card
-              height="8rem"
-              description="다른 화면을 기대하지만 같은 목록이 걸러질 뿐입니다."
-            >
-              <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
+              </fff-tab-panel>
+              <fff-tab-panel value="flat-2">후기 영역입니다.</fff-tab-panel>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card
+            height="10rem"
+            description="어느 쪽이 상위인지, 지금 보는 뷰가 어디에 속하는지 알기 어렵습니다."
+          >
+            <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
+              <fff-tab-list
+                value="nested-outer-1"
+                variant="line"
+                .tabs=${[
+                  { value: 'nested-outer-1', label: '상품' },
+                  { value: 'nested-outer-2', label: '후기' },
+                ]}
+              ></fff-tab-list>
+              <fff-tab-panel value="nested-outer-1">
                 <fff-tab-list
-                  value="category-all"
-                  variant="line"
+                  value="nested-inner-1"
+                  variant="pill"
                   .tabs=${[
-                    { value: 'category-all', label: '전체' },
-                    { value: 'category-top', label: '상의' },
-                    { value: 'category-bottom', label: '하의' },
+                    { value: 'nested-inner-1', label: '상의' },
+                    { value: 'nested-inner-2', label: '하의' },
                   ]}
                 ></fff-tab-list>
-                <fff-tab-panel value="category-all">상품 24개</fff-tab-panel>
-                <fff-tab-panel value="category-top">상품 10개</fff-tab-panel>
-                <fff-tab-panel value="category-bottom">상품 14개</fff-tab-panel>
-              </fff-flex>
-              <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-            </fff-figure-card>
-          </fff-grid>
-        </fff-content-section>
-        <fff-content-section
-          heading-level="3"
-          heading="탭을 두 겹으로 쌓아도 되나요?"
-          description="탭은 한 단계로만 둡니다. 패널 안의 하위 구분은 필터로 나눕니다."
-        >
-          <fff-grid columns="2" gap="6">
-            <fff-figure-card
-              height="10rem"
-              description="상위는 탭 하나뿐이라 지금 보는 뷰가 분명합니다."
-            >
-              <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
-                <fff-tab-list
-                  value="flat-1"
-                  variant="line"
-                  .tabs=${[
-                    { value: 'flat-1', label: '상품' },
-                    { value: 'flat-2', label: '후기' },
-                  ]}
-                ></fff-tab-list>
-                <fff-tab-panel value="flat-1">
-                  <fff-filter-button-group
-                    mode="single"
-                    .values=${['top']}
-                    .options=${[
-                      { value: 'top', label: '상의' },
-                      { value: 'bottom', label: '하의' },
-                    ]}
-                  ></fff-filter-button-group>
-                </fff-tab-panel>
-                <fff-tab-panel value="flat-2">후기 영역입니다.</fff-tab-panel>
-              </fff-flex>
-              <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
-            </fff-figure-card>
-            <fff-figure-card
-              height="10rem"
-              description="어느 쪽이 상위인지, 지금 보는 뷰가 어디에 속하는지 알기 어렵습니다."
-            >
-              <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
-                <fff-tab-list
-                  value="nested-outer-1"
-                  variant="line"
-                  .tabs=${[
-                    { value: 'nested-outer-1', label: '상품' },
-                    { value: 'nested-outer-2', label: '후기' },
-                  ]}
-                ></fff-tab-list>
-                <fff-tab-panel value="nested-outer-1">
-                  <fff-tab-list
-                    value="nested-inner-1"
-                    variant="pill"
-                    .tabs=${[
-                      { value: 'nested-inner-1', label: '상의' },
-                      { value: 'nested-inner-2', label: '하의' },
-                    ]}
-                  ></fff-tab-list>
-                </fff-tab-panel>
-                <fff-tab-panel value="nested-outer-2">후기 영역입니다.</fff-tab-panel>
-              </fff-flex>
-              <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
-            </fff-figure-card>
-          </fff-grid>
-        </fff-content-section>
-        <fff-content-section
-          heading-level="3"
-          heading="탭 히스토리 및 상태 관리"
-          description="페이지를 대표하는 탭은 선택 상태를 URL에 남깁니다. 탭 리스트에 search-param을 지정하면 선택한 탭이 URL에 담기고, 그 값으로 탭이 열립니다."
-          .texts=${[
-            '페이지를 대표하는 탭은 선택 상태를 URL에 남긴다. 새로고침하거나 링크를 공유해도 사용자가 보던 탭이 그대로 열린다',
-            '탭 전환은 뒤로 가기 기록에 쌓지 않는다. 쌓이면 뒤로 갈 때 탭을 하나씩 거슬러 가느라 이전 페이지로 돌아가지 못한다',
-            '문서 예제나 시트 안의 탭에는 쓰지 않는다',
-          ]}
-        ></fff-content-section>
-      </fff-content-section-list>
+              </fff-tab-panel>
+              <fff-tab-panel value="nested-outer-2">후기 영역입니다.</fff-tab-panel>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
+      <fff-content-section
+        heading-level="3"
+        heading="탭 히스토리 및 상태 관리"
+        description="페이지를 대표하는 탭은 선택 상태를 URL에 남깁니다. 탭 리스트에 search-param을 지정하면 선택한 탭이 URL에 담기고, 그 값으로 탭이 열립니다."
+        .texts=${[
+          '페이지를 대표하는 탭은 선택 상태를 URL에 남긴다. 새로고침하거나 링크를 공유해도 사용자가 보던 탭이 그대로 열린다',
+          '탭 전환은 뒤로 가기 기록에 쌓지 않는다. 쌓이면 뒤로 갈 때 탭을 하나씩 거슬러 가느라 이전 페이지로 돌아가지 못한다',
+          '문서 예제나 시트 안의 탭에는 쓰지 않는다',
+        ]}
+      ></fff-content-section>
     </fff-component-guide>
 
     <fff-component-related .items=${relatedComponents}></fff-component-related>

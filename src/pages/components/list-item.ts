@@ -258,62 +258,62 @@ const main = html`
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-guide>
-        <fff-content-section
-          heading-level="3"
-          heading="menu-item과는 어떤 차이가 있나요?"
-          description="list-item은 행의 골격만 그립니다. menu-item 계열은 이 골격을 바탕으로, 눌러서 명령을 실행하는 행입니다."
-          .texts=${[
-            html`
-              그룹에는 같은 role 계열의 행만 둔다.
-              <fff-code>fff-menu-item-group</fff-code>
-              안에서는 방향키로 행 사이를 옮기는데, 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
-              Tab으로만 닿아 키보드 동선이 둘로 갈린다
-            `,
-          ]}
-        >
-          <fff-grid columns="2" gap="6">
-            <fff-figure-card height="8rem" description="각 행이 다른 곳으로 이동하는 목록">
-              <fff-list-item-group slot="figure" style="width: 80%">
-                <fff-user-item
-                  size="medium"
-                  label="수줍이"
-                  description="UI Designer"
-                  .avatar=${{ src: '/src/images/soojubm.png' }}
-                >
-                  <fff-follow-button slot="trailing"></fff-follow-button>
-                </fff-user-item>
-                <fff-user-item
-                  size="medium"
-                  label="수줍이"
-                  description="Product Designer"
-                  .avatar=${{ src: '/src/images/soojubm.png' }}
-                >
-                  <fff-follow-button slot="trailing"></fff-follow-button>
-                </fff-user-item>
-              </fff-list-item-group>
-              <fff-code-tag slot="tags" tone="blue">List Item</fff-code-tag>
-              <fff-code-tag slot="tags">role="list"</fff-code-tag>
-            </fff-figure-card>
-            <fff-figure-card height="8rem" description="눌러서 명령을 실행하는 목록">
-              <fff-menu-item-group slot="figure" aria-label="계정 메뉴" style="width: 80%">
-                <fff-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></fff-menu-item-action>
-                <fff-menu-item-action
-                  icon=${ICON_NAMES.DARK_MODE}
-                  label="설정"
-                ></fff-menu-item-action>
-              </fff-menu-item-group>
-              <fff-code-tag slot="tags" tone="orange">Menu Item</fff-code-tag>
-              <fff-code-tag slot="tags">role="menu"</fff-code-tag>
-            </fff-figure-card>
-          </fff-grid>
-        </fff-content-section>
-        <fff-content-section
-          heading-level="3"
-          heading="시각보정이 필요해요"
-          description="label과 description이 함께 있으면 글자가 앞의 아이콘보다 아래로 치우쳐 보입니다. 글자만 위로 조금 올려 아이콘과 가운데를 맞추고, 행의 크기는 그대로 둡니다."
-        >
-          <fff-grid columns="2" gap="6">${renderCorrectionSample()}</fff-grid>
-        </fff-content-section>
+      <fff-content-section
+        heading-level="3"
+        heading="menu-item과는 어떤 차이가 있나요?"
+        description="list-item은 행의 골격만 그립니다. menu-item 계열은 이 골격을 바탕으로, 눌러서 명령을 실행하는 행입니다."
+        .texts=${[
+          html`
+            그룹에는 같은 role 계열의 행만 둔다.
+            <fff-code>fff-menu-item-group</fff-code>
+            안에서는 방향키로 행 사이를 옮기는데, 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
+            Tab으로만 닿아 키보드 동선이 둘로 갈린다
+          `,
+        ]}
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card height="8rem" description="각 행이 다른 곳으로 이동하는 목록">
+            <fff-list-item-group slot="figure" style="width: 80%">
+              <fff-user-item
+                size="medium"
+                label="수줍이"
+                description="UI Designer"
+                .avatar=${{ src: '/src/images/soojubm.png' }}
+              >
+                <fff-follow-button slot="trailing"></fff-follow-button>
+              </fff-user-item>
+              <fff-user-item
+                size="medium"
+                label="수줍이"
+                description="Product Designer"
+                .avatar=${{ src: '/src/images/soojubm.png' }}
+              >
+                <fff-follow-button slot="trailing"></fff-follow-button>
+              </fff-user-item>
+            </fff-list-item-group>
+            <fff-code-tag slot="tags" tone="blue">List Item</fff-code-tag>
+            <fff-code-tag slot="tags">role="list"</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card height="8rem" description="눌러서 명령을 실행하는 목록">
+            <fff-menu-item-group slot="figure" aria-label="계정 메뉴" style="width: 80%">
+              <fff-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></fff-menu-item-action>
+              <fff-menu-item-action
+                icon=${ICON_NAMES.DARK_MODE}
+                label="설정"
+              ></fff-menu-item-action>
+            </fff-menu-item-group>
+            <fff-code-tag slot="tags" tone="orange">Menu Item</fff-code-tag>
+            <fff-code-tag slot="tags">role="menu"</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
+      <fff-content-section
+        heading-level="3"
+        heading="시각보정이 필요해요"
+        description="label과 description이 함께 있으면 글자가 앞의 아이콘보다 아래로 치우쳐 보입니다. 글자만 위로 조금 올려 아이콘과 가운데를 맞추고, 행의 크기는 그대로 둡니다."
+      >
+        <fff-grid columns="2" gap="6">${renderCorrectionSample()}</fff-grid>
+      </fff-content-section>
     </fff-component-guide>
 
     <fff-component-section heading="UserItem" description="사용자 도메인">
