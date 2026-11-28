@@ -55,6 +55,14 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-bottom-bar']}></fff-component-tokens>
 
+    <fff-component-guide>
+      <fff-text-block
+        level="3"
+        heading="아이폰 듀오 대응"
+        description="TODO 아이폰 듀오처럼 화면이 둘로 나뉘는 기기에서 Bottom Bar를 두는 방법 작성."
+      ></fff-text-block>
+    </fff-component-guide>
+
     <fff-component-related .items=${relatedComponents}></fff-component-related>
 
     <fff-component-references .items=${componentReferences}></fff-component-references>

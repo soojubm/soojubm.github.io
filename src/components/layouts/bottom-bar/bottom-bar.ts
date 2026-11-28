@@ -68,12 +68,12 @@ export class BottomBar extends LitElement {
         color: var(--interaction-selected-foreground-color);
       }
 
-      a[aria-current='page'] fff-avatar {
-        --avatar-icon-color: var(--interaction-selected-foreground-color);
+      fff-caption {
+        --foreground-subtle-color: var(--foreground-color);
       }
 
-      a[aria-current='page'] fff-caption {
-        --foreground-subtle-color: var(--interaction-selected-foreground-color);
+      a[aria-current='page'] fff-avatar {
+        --avatar-icon-color: var(--interaction-selected-foreground-color);
       }
 
       /* 막대 안에는 캡션 아래 자리가 없어, 가운데 놓인 아바타의 오른쪽 위 모서리에 얹는다. */
