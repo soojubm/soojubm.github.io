@@ -44,7 +44,7 @@ const componentFeatures: ComponentFeatureItem[] = [
 
 const defaultCode = `<fff-textarea placeholder="자유롭게 적어주세요"></fff-textarea>`
 
-const labelCode = `<fff-textarea-field label="자기소개" description="200자 이내로 입력하세요." placeholder="자유롭게 적어주세요"></fff-textarea-field>`
+const labelCode = `<fff-textarea-field label="자기소개" description="..." placeholder="자유롭게 적어주세요"></fff-textarea-field>`
 
 const optionalCode = `<fff-textarea-field label="요청 사항" placeholder="직접 입력" optional></fff-textarea-field>`
 

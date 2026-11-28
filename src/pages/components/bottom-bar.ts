@@ -53,6 +53,8 @@ const main = html`
 
     <fff-component-props .props=${componentProps}></fff-component-props>
 
+    <fff-component-tokens .elements=${['fff-bottom-bar']}></fff-component-tokens>
+
     <fff-component-related .items=${relatedComponents}></fff-component-related>
 
     <fff-component-references .items=${componentReferences}></fff-component-references>

@@ -42,7 +42,7 @@ const sizeCode = `<fff-textfield placeholder="Default"></fff-textfield>
 <fff-textfield size="small" placeholder="Small"></fff-textfield>`
 
 const labelCode = `<fff-textfield label="이메일" placeholder="name@example.com"></fff-textfield>
-<fff-textfield label="이메일" description="가입 후에는 변경할 수 없어요." placeholder="name@example.com"></fff-textfield>`
+<fff-textfield label="이메일" description="..." placeholder="name@example.com"></fff-textfield>`
 
 const iconCode = `<fff-textfield placeholder="name@example.com">
   <fff-icon slot="leading" name="mail"></fff-icon>

@@ -68,7 +68,7 @@ const faqCategories: FaqCategory[] = [
 const renderFaqCategory = ({ icon, label, description, items }: FaqCategory) => html`
   <fff-flex direction="column" gap="2">
     <fff-list-item
-      avatar-variant="tertiary"
+      .avatar=${{ variant: 'tertiary' }}
       size="medium"
       icon=${icon}
       label=${label}

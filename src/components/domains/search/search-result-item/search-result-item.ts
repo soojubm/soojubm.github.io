@@ -38,7 +38,7 @@ export class SearchResultItem extends LitElement {
         <fff-list-item
           size="medium"
           icon=${ICON_NAMES.SEARCH}
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           label=${this.label}
           description=${this.description}
         >

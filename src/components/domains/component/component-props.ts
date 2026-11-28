@@ -11,6 +11,8 @@ export interface ComponentPropItemData {
   type: string
   kind?: 'event'
   optional?: boolean
+  /** 이 항목을 실제로 쓰는 컴포넌트 태그. 행 오른쪽에 태그로 보여 준다. */
+  usedBy?: string[]
 }
 
 /**
@@ -70,7 +72,7 @@ export class ComponentProps extends LitElement {
     `
   }
 
-  private renderPropItem({ name, type, kind, optional }: ComponentPropItemData) {
+  private renderPropItem({ name, type, kind, optional, usedBy = [] }: ComponentPropItemData) {
     const label = kind === 'event' ? `@${name}` : `${name}${optional ? '?' : ''}`
     // 기본값(` = x`)은 manifest의 type에 남겨 두고 표시에서만 뺀다.
     const [typeText] = type.split(' = ')
@@ -83,6 +85,12 @@ export class ComponentProps extends LitElement {
           value =>
             html`
               <fff-code-tag>${value}</fff-code-tag>
+            `,
+        )}
+        ${usedBy.map(
+          tag =>
+            html`
+              <fff-code-tag tone="green">${tag}</fff-code-tag>
             `,
         )}
       </fff-tag-group>

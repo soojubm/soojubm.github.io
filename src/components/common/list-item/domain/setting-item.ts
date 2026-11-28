@@ -1,8 +1,8 @@
 import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, queryAssignedElements } from 'lit/decorators.js'
 
-import type { AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
+import type { ListItemAvatar } from '@/components/common/list-item/list-item'
 
 import '@/components/common/list-item/list-item'
 import { disabledStyles } from '@/stylesheets/shared.styles'
@@ -24,7 +24,7 @@ export class SettingItem extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
+  @property({ attribute: false }) avatar?: Pick<ListItemAvatar, 'variant'>
   @property({ type: Boolean, reflect: true }) disabled = false
   @queryAssignedElements({ slot: 'action', flatten: true })
   private actions!: DisableableElement[]
@@ -34,7 +34,7 @@ export class SettingItem extends LitElement {
       <fff-list-item
         size=${this.description ? 'medium' : 'small'}
         icon=${this.icon || nothing}
-        avatar-variant=${this.avatarVariant}
+        .avatar=${this.avatar}
         label=${this.label}
         description=${this.description}
       >

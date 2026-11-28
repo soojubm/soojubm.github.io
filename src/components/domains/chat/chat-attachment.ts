@@ -30,7 +30,7 @@ export class ChatAttachment extends LitElement {
         icon=${this.icon}
         label=${this.label}
         description=${this.description}
-        avatar-variant="secondary"
+        .avatar=${{ variant: 'secondary' }}
       >
         <slot name="trailing" slot="trailing"></slot>
       </fff-list-item>

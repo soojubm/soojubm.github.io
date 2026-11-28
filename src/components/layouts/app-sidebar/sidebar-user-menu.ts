@@ -44,7 +44,7 @@ export class SidebarUserMenu extends LitElement {
           size="medium"
           label=${this.name}
           description=${this.description}
-          avatar-src=${this.avatarSrc}
+          .avatar=${{ src: this.avatarSrc }}
         >
           <fff-icon slot="trailing" name=${ICON_NAMES.MORE_ACTIONS} size="small"></fff-icon>
         </fff-user-item>

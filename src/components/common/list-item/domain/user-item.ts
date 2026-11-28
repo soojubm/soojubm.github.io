@@ -1,9 +1,8 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import type { AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
-import type { ListItemSize } from '@/components/common/list-item/list-item'
+import type { ListItemAvatar, ListItemSize } from '@/components/common/list-item/list-item'
 import '@/components/common/list-item/list-item'
 
 @customElement('fff-user-item')
@@ -19,8 +18,7 @@ export class UserItem extends LitElement {
   @property({ type: String }) label = ''
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
+  @property({ attribute: false }) avatar?: Omit<ListItemAvatar, 'shape'>
 
   render() {
     return html`
@@ -29,9 +27,7 @@ export class UserItem extends LitElement {
         label=${this.label}
         description=${this.description}
         icon=${this.icon}
-        avatar-variant=${this.avatarVariant}
-        avatar-src=${this.avatarSrc}
-        avatar-shape="circle"
+        .avatar=${{ ...this.avatar, shape: 'circle' }}
       >
         <slot name="trailing" slot="trailing"></slot>
       </fff-list-item>

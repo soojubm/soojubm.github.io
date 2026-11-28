@@ -85,6 +85,14 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-top-bar']}></fff-component-tokens>
 
+    <fff-component-guide>
+      <fff-text-block
+        level="3"
+        heading="언제 사용하나요"
+        description="TODO Top Bar를 사용하는 상황 작성."
+      ></fff-text-block>
+    </fff-component-guide>
+
     <fff-component-related .items=${relatedComponents}></fff-component-related>
 
     <fff-component-references .items=${componentReferences}></fff-component-references>

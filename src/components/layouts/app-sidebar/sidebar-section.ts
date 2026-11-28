@@ -62,7 +62,11 @@ export class SidebarSection extends LitElement {
   render() {
     return html`
       <button type="button" aria-controls=${this.panelId}>
-        <fff-list-item avatar-variant="tertiary" label=${this.label} icon=${ifDefined(this.icon)}>
+        <fff-list-item
+          .avatar=${{ variant: 'tertiary' }}
+          label=${this.label}
+          icon=${ifDefined(this.icon)}
+        >
           <fff-expand-indicator slot="trailing" ?expanded=${this.open}></fff-expand-indicator>
         </fff-list-item>
       </button>

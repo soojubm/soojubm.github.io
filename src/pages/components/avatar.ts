@@ -49,7 +49,7 @@ const sizeCode = [...AVATAR_SIZES]
   )
   .join('\n')
 
-const shapeCode = `<fff-avatar size="40" shape="circle" src="/src/images/soojubm.png"></fff-avatar>
+const shapeCode = `<fff-avatar size="40" shape="circle" src="..."></fff-avatar>
 <fff-avatar size="40" icon="github"></fff-avatar>`
 
 const fallbackCode = `<fff-avatar size="40"></fff-avatar>

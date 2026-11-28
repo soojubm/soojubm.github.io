@@ -111,8 +111,7 @@ const main = html`
             size="medium"
             label="수줍이"
             description="Youtube Subscriber"
-            avatar-variant="secondary"
-            avatar-src="/src/images/soojubm.png"
+            .avatar=${{ src: '/src/images/soojubm.png', variant: 'secondary' }}
           ></fff-user-item>
         </fff-flex>
       </fff-surface>

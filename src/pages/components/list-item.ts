@@ -47,7 +47,12 @@ const componentReferences: ComponentReferenceItemData[] = [
 
 const componentProps: ComponentPropItemData[] = [
   ...componentPropsOf('fff-list-item'),
-  { name: 'slot: description', type: 'HTMLElement', optional: true },
+  {
+    name: 'slot: description',
+    type: 'HTMLElement',
+    optional: true,
+    usedBy: ['fff-search-result-item'],
+  },
   { name: 'slot: trailing', type: 'HTMLElement', optional: true },
   ...subComponentPropsOf('fff-list-item-group'),
 ]
@@ -61,24 +66,24 @@ const componentFeatures: ComponentFeatureItem[] = [
 ]
 
 const sizeCode = `<fff-list-item-group>
-  <fff-list-item label="Small" avatar-shape="circle" avatar-src="/src/images/soojubm.png"></fff-list-item>
-  <fff-list-item size="medium" label="Medium" description="Youtube Subscriber" avatar-shape="circle" avatar-src="/src/images/soojubm.png"></fff-list-item>
-  <fff-list-item size="large" label="Large" description="Youtube Subscriber" avatar-shape="circle" avatar-src="/src/images/soojubm.png"></fff-list-item>
+  <fff-list-item label="Small" .avatar=\${{ src: '...', shape: 'circle' }}></fff-list-item>
+  <fff-list-item size="medium" label="Medium" description="..." .avatar=\${{ src: '...', shape: 'circle' }}></fff-list-item>
+  <fff-list-item size="large" label="Large" description="..." .avatar=\${{ src: '...', shape: 'circle' }}></fff-list-item>
 </fff-list-item-group>`
 
 const leadingCode = `<fff-list-item-group>
   <fff-list-item icon="user" label="아이콘"></fff-list-item>
   <fff-list-item emoji="🦔" label="이모지"></fff-list-item>
-  <fff-list-item avatar-src="/src/images/soojubm.png" avatar-shape="circle" label="아바타"></fff-list-item>
+  <fff-list-item .avatar=\${{ src: '...', shape: 'circle' }} label="아바타"></fff-list-item>
 </fff-list-item-group>
 <fff-list-item-group>
-  <fff-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
+  <fff-list-item size="medium" label="이메일 주소" description="...">
     <fff-button slot="trailing">변경</fff-button>
   </fff-list-item>
 </fff-list-item-group>`
 
 const trailingCode = `<fff-list-item-group>
-  <fff-list-item size="medium" label="수줍이" description="UI Designer" avatar-shape="circle" avatar-src="/src/images/soojubm.png">
+  <fff-list-item size="medium" label="수줍이" description="..." .avatar=\${{ src: '...', shape: 'circle' }}>
     <fff-follow-button slot="trailing"></fff-follow-button>
   </fff-list-item>
   <fff-list-item icon="bell" label="알림">
@@ -90,10 +95,10 @@ const multilineCode = `<fff-list-item-group>
   <fff-list-item icon="bell" label="small 행의 라벨이 영역보다 길어져서 두 줄 이상으로 넘어가는 경우">
     <fff-tag slot="trailing">신규</fff-tag>
   </fff-list-item>
-  <fff-list-item size="medium" label="medium 행의 라벨이 영역보다 길어져서 두 줄로 넘어가는 경우" description="설명도 영역을 넘치면 줄바꿈되어 행의 높이가 내용만큼 늘어납니다." avatar-shape="circle" avatar-src="/src/images/soojubm.png">
+  <fff-list-item size="medium" label="medium 행의 라벨이 영역보다 길어져서 두 줄로 넘어가는 경우" description="..." .avatar=\${{ src: '...', shape: 'circle' }}>
     <fff-button slot="trailing">변경</fff-button>
   </fff-list-item>
-  <fff-list-item size="large" label="large 행의 긴 라벨이 두 줄로 넘어가는 경우" description="설명이 길어 여러 줄이 되면 leading과 trailing은 content 높이의 가운데에 정렬됩니다." avatar-shape="circle" avatar-src="/src/images/soojubm.png"></fff-list-item>
+  <fff-list-item size="large" label="large 행의 긴 라벨이 두 줄로 넘어가는 경우" description="..." .avatar=\${{ src: '...', shape: 'circle' }}></fff-list-item>
 </fff-list-item-group>`
 
 // 보정 전은 list-item의 보정을 거치지 않은 같은 구조를 직접 그려 보여 준다.
@@ -148,22 +153,19 @@ const main = html`
             <fff-list-item-group>
               <fff-list-item
                 label="Small"
-                avatar-shape="circle"
-                avatar-src="/src/images/soojubm.png"
+                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
               ></fff-list-item>
               <fff-list-item
                 size="medium"
                 label="Medium"
                 description="Youtube Subscriber"
-                avatar-shape="circle"
-                avatar-src="/src/images/soojubm.png"
+                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
               ></fff-list-item>
               <fff-list-item
                 size="large"
                 label="Large"
                 description="Youtube Subscriber"
-                avatar-shape="circle"
-                avatar-src="/src/images/soojubm.png"
+                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
               ></fff-list-item>
             </fff-list-item-group>
             <fff-paragraph>
@@ -181,8 +183,7 @@ const main = html`
               <fff-list-item icon=${ICON_NAMES.USER} label="아이콘"></fff-list-item>
               <fff-list-item emoji="🦔" label="이모지"></fff-list-item>
               <fff-list-item
-                avatar-src="/src/images/soojubm.png"
-                avatar-shape="circle"
+                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
                 label="아바타"
               ></fff-list-item>
             </fff-list-item-group>
@@ -202,8 +203,7 @@ const main = html`
               size="medium"
               label="수줍이"
               description="UI Designer"
-              avatar-shape="circle"
-              avatar-src="/src/images/soojubm.png"
+              .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
             >
               <fff-follow-button slot="trailing"></fff-follow-button>
             </fff-list-item>
@@ -228,8 +228,7 @@ const main = html`
                 size="medium"
                 label="medium 행의 라벨이 영역보다 길어져서 두 줄로 넘어가는 경우"
                 description="설명도 영역을 넘치면 줄바꿈되어 행의 높이가 내용만큼 늘어납니다."
-                avatar-shape="circle"
-                avatar-src="/src/images/soojubm.png"
+                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
               >
                 <fff-button slot="trailing">변경</fff-button>
               </fff-list-item>
@@ -237,8 +236,7 @@ const main = html`
                 size="large"
                 label="large 행의 긴 라벨이 두 줄로 넘어가는 경우"
                 description="설명이 길어 여러 줄이 되면 leading과 trailing은 content 높이의 가운데에 정렬됩니다."
-                avatar-shape="circle"
-                avatar-src="/src/images/soojubm.png"
+                .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
               ></fff-list-item>
             </fff-list-item-group>
             <fff-component-notice heading="여러 줄일 때의 line-height와 정렬">
@@ -281,7 +279,7 @@ const main = html`
                   size="medium"
                   label="수줍이"
                   description="UI Designer"
-                  avatar-src="/src/images/soojubm.png"
+                  .avatar=${{ src: '/src/images/soojubm.png' }}
                 >
                   <fff-follow-button slot="trailing"></fff-follow-button>
                 </fff-user-item>
@@ -289,7 +287,7 @@ const main = html`
                   size="medium"
                   label="수줍이"
                   description="Product Designer"
-                  avatar-src="/src/images/soojubm.png"
+                  .avatar=${{ src: '/src/images/soojubm.png' }}
                 >
                   <fff-follow-button slot="trailing"></fff-follow-button>
                 </fff-user-item>
@@ -326,13 +324,13 @@ const main = html`
           size="medium"
           label="수줍이"
           description="UI Designer"
-          avatar-src="/src/images/soojubm.png"
+          .avatar=${{ src: '/src/images/soojubm.png' }}
         ></fff-user-item>
         <fff-user-item
           size="medium"
           label="수줍이"
           description="바보"
-          avatar-src="/src/images/soojubm.png"
+          .avatar=${{ src: '/src/images/soojubm.png' }}
         >
           <fff-follow-button slot="trailing"></fff-follow-button>
         </fff-user-item>
@@ -340,7 +338,7 @@ const main = html`
           size="medium"
           label="알 수 없는 사용자"
           description="아바타 이미지가 없을 때"
-          avatar-variant="secondary"
+          .avatar=${{ variant: 'secondary' }}
           icon=${ICON_NAMES.USER}
         >
           <fff-tag slot="trailing">테스트용 태그</fff-tag>

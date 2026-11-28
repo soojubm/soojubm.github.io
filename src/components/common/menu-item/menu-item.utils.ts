@@ -3,9 +3,12 @@ import { property } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { html as staticHtml, type StaticValue } from 'lit/static-html.js'
 
-import type { AvatarShape, AvatarVariant } from '@/components/common/avatar/avatar'
 import type { IconName } from '@/components/common/icon/icon-names'
-import type { ListItem, ListItemSize } from '@/components/common/list-item/list-item'
+import type {
+  ListItem,
+  ListItemAvatar,
+  ListItemSize,
+} from '@/components/common/list-item/list-item'
 import type { Constructor } from '@/utils'
 
 import { toggleState } from '@/utils'
@@ -22,7 +25,7 @@ export type MenuItemSize = Exclude<ListItemSize, 'large'>
 
 export type MenuItemPresentation = Pick<
   ListItem,
-  'label' | 'description' | 'icon' | 'emoji' | 'avatarSrc' | 'avatarVariant' | 'avatarShape'
+  'label' | 'description' | 'icon' | 'emoji' | 'avatar'
 > & { size: MenuItemSize; destructive: boolean }
 
 /**
@@ -37,10 +40,7 @@ export const withMenuItemPresentation = <T extends Constructor<LitElement>>(Base
     @property({ type: String }) description = ''
     @property({ type: String }) icon?: IconName
     @property({ type: String }) emoji = ''
-    @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-    @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant =
-      'tertiary'
-    @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
+    @property({ attribute: false }) avatar?: ListItemAvatar
   }
 
   return MenuItemPresentationElement as Constructor<MenuItemPresentation> & T
@@ -96,9 +96,7 @@ export function renderMenuItemContent(props: MenuItemPresentation, trailing: unk
       description=${props.description}
       icon=${ifDefined(props.icon)}
       emoji=${ifDefined(props.emoji || undefined)}
-      avatar-src=${ifDefined(props.avatarSrc || undefined)}
-      avatar-variant=${props.avatarVariant}
-      avatar-shape=${props.avatarShape}
+      .avatar=${{ variant: 'tertiary', ...props.avatar }}
     >
       ${trailing}
     </fff-list-item>

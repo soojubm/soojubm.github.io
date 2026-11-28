@@ -94,13 +94,13 @@ const accessOptions: MenuOptionItem[] = [
 
 const sizeCode = `<fff-menu-item-group aria-label="크기 메뉴" size="large">
   <fff-menu-item-action icon="user" label="Small"></fff-menu-item-action>
-  <fff-menu-item-action size="medium" icon="group" label="Frontend Group" description="프론트엔드 개발자 모임"></fff-menu-item-action>
+  <fff-menu-item-action size="medium" icon="group" label="Frontend Group" description="..."></fff-menu-item-action>
 </fff-menu-item-group>`
 
 const leadingCode = `<fff-menu-item-group aria-label="리딩 메뉴">
   <fff-menu-item-action icon="user" label="아이콘"></fff-menu-item-action>
   <fff-menu-item-action emoji="🦔" label="이모지"></fff-menu-item-action>
-  <fff-menu-item-action avatar-src="/src/images/soojubm.png" avatar-shape="circle" label="아바타"></fff-menu-item-action>
+  <fff-menu-item-action .avatar=\${{ src: '...', shape: 'circle' }} label="아바타"></fff-menu-item-action>
 </fff-menu-item-group>`
 
 const destructiveCode = `<fff-menu-item-group aria-label="파괴적 명령 메뉴">
@@ -151,8 +151,7 @@ const main = html`
             <fff-menu-item-action icon=${ICON_NAMES.USER} label="아이콘"></fff-menu-item-action>
             <fff-menu-item-action emoji="🦔" label="이모지"></fff-menu-item-action>
             <fff-menu-item-action
-              avatar-src="/src/images/soojubm.png"
-              avatar-shape="circle"
+              .avatar=${{ src: '/src/images/soojubm.png', shape: 'circle' }}
               label="아바타"
             ></fff-menu-item-action>
           </fff-menu-item-group>

@@ -44,8 +44,7 @@ export class CastList extends LitElement {
             size="large"
             label=${cast.name}
             description=${cast.credit}
-            avatar-src=${cast.imageSrc ?? ''}
-            avatar-shape="circle"
+            .avatar=${{ src: cast.imageSrc ?? '', shape: 'circle' }}
           ></fff-list-item>
         </a>
       </div>

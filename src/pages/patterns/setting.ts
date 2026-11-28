@@ -37,7 +37,7 @@ const main = html`
     <fff-flex direction="column" gap="8">
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.USER}
           label="계정 정보"
@@ -63,7 +63,7 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.USER}
           label="프로필 정보"
@@ -91,7 +91,7 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.DELIVERY}
           label="서비스 설정"
@@ -129,7 +129,7 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.NOTIFICATION}
           label="알림"
@@ -160,19 +160,27 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.PALETTE}
           label="화면"
           description="테마, 언어"
         ></fff-list-item>
         <fff-surface variant="paper" radius="large" bleed>
-          <fff-setting-item avatar-variant="tertiary" icon=${ICON_NAMES.PALETTE} label="테마">
+          <fff-setting-item
+            .avatar=${{ variant: 'tertiary' }}
+            icon=${ICON_NAMES.PALETTE}
+            label="테마"
+          >
             <fff-theme-selector slot="action"></fff-theme-selector>
           </fff-setting-item>
         </fff-surface>
         <fff-surface variant="paper" radius="large" bleed>
-          <fff-setting-item avatar-variant="tertiary" icon=${ICON_NAMES.WINDOW} label="언어">
+          <fff-setting-item
+            .avatar=${{ variant: 'tertiary' }}
+            icon=${ICON_NAMES.WINDOW}
+            label="언어"
+          >
             <fff-select
               slot="action"
               aria-label="언어"
@@ -188,7 +196,7 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.EXTERNAL_LINK}
           label="소셜 네트워크로 로그인"
@@ -196,7 +204,7 @@ const main = html`
         ></fff-list-item>
         <fff-surface variant="paper" radius="large" bleed>
           <fff-setting-item
-            avatar-variant="tertiary"
+            .avatar=${{ variant: 'tertiary' }}
             icon=${ICON_NAMES.GOOGLE}
             label="구글 계정으로 로그인"
           >
@@ -207,7 +215,7 @@ const main = html`
         </fff-surface>
         <fff-surface variant="paper" radius="large" bleed>
           <fff-setting-item
-            avatar-variant="tertiary"
+            .avatar=${{ variant: 'tertiary' }}
             icon=${ICON_NAMES.APPLE}
             label="애플 계정으로 로그인"
           >
@@ -222,7 +230,7 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.CREDIT_CARD}
           label="구독 정보"
@@ -249,7 +257,7 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.INFO}
           label="정보·지원"
@@ -274,7 +282,7 @@ const main = html`
 
       <fff-flex direction="column" gap="2">
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           size="medium"
           icon=${ICON_NAMES.LOCK}
           label="계정 관리"

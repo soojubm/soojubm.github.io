@@ -311,13 +311,13 @@ const main = html`
                       size="medium"
                       label="Kakao"
                       description="https://www.kakaocorp.com"
-                      avatar-src="/src/images/soojubm.png"
+                      .avatar=${{ src: '/src/images/soojubm.png' }}
                     ></fff-menu-item-action>
                     <fff-menu-item-action
                       size="medium"
                       label="Naver"
                       description="https://www.naver.com"
-                      avatar-src="/src/images/soojubm.png"
+                      .avatar=${{ src: '/src/images/soojubm.png' }}
                     ></fff-menu-item-action>
                   </fff-menu-item-group>
                 </fff-flex>

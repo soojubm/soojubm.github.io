@@ -186,12 +186,12 @@ const main = html`
 
           <fff-list-item-group gap="0">
             <fff-list-item
-              avatar-variant="tertiary"
+              .avatar=${{ variant: 'tertiary' }}
               icon=${ICON_NAMES.DELIVERY}
               label="Free shipping on all U.S. orders of $40+"
             ></fff-list-item>
             <fff-list-item
-              avatar-variant="tertiary"
+              .avatar=${{ variant: 'tertiary' }}
               icon=${ICON_NAMES.BOX}
               label="Free returns and exchanges"
             ></fff-list-item>
@@ -396,7 +396,9 @@ const main = html`
       <fff-flex direction="column" gap="4">
         <fff-list-item
           size="large"
-          avatar-src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
+          .avatar=${{
+            src: '/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg',
+          }}
           label="センチメンタル通り"
           description="Hachimitsupai"
         ></fff-list-item>

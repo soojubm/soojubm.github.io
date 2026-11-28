@@ -36,7 +36,7 @@ export class SidebarPageLink extends LitElement {
     return html`
       <a href=${this.href} aria-current=${ifDefined(isCurrent ? 'page' : undefined)}>
         <fff-list-item
-          avatar-variant="tertiary"
+          .avatar=${{ variant: 'tertiary' }}
           label=${this.label}
           icon=${ifDefined(this.icon)}
           emoji=${ifDefined(this.emoji || undefined)}

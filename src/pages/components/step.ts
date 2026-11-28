@@ -103,7 +103,7 @@ const main = html`
         <fff-timeline-item label="2022. 11. 4.">
           <fff-list-item
             size="medium"
-            avatar-variant="secondary"
+            .avatar=${{ variant: 'secondary' }}
             emoji="🐺"
             label="폰트 디자인"
             description="이도타입 / 한동훈"
@@ -112,7 +112,7 @@ const main = html`
         <fff-timeline-item label="2020. 02. - 2021. 02">
           <fff-list-item
             size="medium"
-            avatar-variant="secondary"
+            .avatar=${{ variant: 'secondary' }}
             emoji="🦔"
             label="뉴닉, 프로덕트 디자이너"
           ></fff-list-item>
@@ -129,7 +129,7 @@ const main = html`
         <fff-timeline-item label="2020">
           <fff-list-item
             size="medium"
-            avatar-variant="secondary"
+            .avatar=${{ variant: 'secondary' }}
             emoji="🔢"
             label="그로스해킹 - 데이터와 실험을 통해 성장하는 서비스를 만드는 방법"
             description="인프런 양승화"
@@ -138,7 +138,7 @@ const main = html`
         <fff-timeline-item label="2019">
           <fff-list-item
             size="medium"
-            avatar-variant="secondary"
+            .avatar=${{ variant: 'secondary' }}
             emoji="🔢"
             label="FE CONF2020 프론트엔드 컨퍼런스"
             description="롯데타워"
@@ -147,7 +147,7 @@ const main = html`
         <fff-timeline-item label="2018.07 ~ 2018.09">
           <fff-list-item
             size="medium"
-            avatar-variant="secondary"
+            .avatar=${{ variant: 'secondary' }}
             emoji="🐺"
             label="자바스크립트 기본"
             description="양재동코드랩 / 서울창업허브 세미나실 3 김영보"
@@ -157,21 +157,21 @@ const main = html`
           <fff-list-item-group gap="2">
             <fff-list-item
               size="medium"
-              avatar-variant="secondary"
+              .avatar=${{ variant: 'secondary' }}
               emoji="🔢"
               label="글자, 그리고 표현"
               description="한글타이포그래피학교 현승재"
             ></fff-list-item>
             <fff-list-item
               size="medium"
-              avatar-variant="secondary"
+              .avatar=${{ variant: 'secondary' }}
               emoji="🐺"
               label="GUI 디자인"
               description="SK 상생협력센터 T아카데미"
             ></fff-list-item>
             <fff-list-item
               size="medium"
-              avatar-variant="secondary"
+              .avatar=${{ variant: 'secondary' }}
               emoji="🐺"
               label="크로스브라우징 디지털 퍼블리싱 4기"
               description="경원직업전문학교"

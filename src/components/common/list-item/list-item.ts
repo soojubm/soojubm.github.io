@@ -12,6 +12,11 @@ import '@/components/common/flex/flex'
 import '@/components/common/text'
 
 export type ListItemSize = ComponentSize
+export interface ListItemAvatar {
+  src?: string
+  variant?: AvatarVariant
+  shape?: AvatarShape
+}
 /** description을 그리는 사이즈. small은 한 줄이라 설명 자리를 갖지 않는다. */
 type DescribableSize = Exclude<ListItemSize, 'small'>
 
@@ -27,9 +32,7 @@ export class ListItem extends LitElement {
   @property({ type: String }) description = ''
   @property({ type: String }) icon?: IconName
   @property({ type: String }) emoji = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
-  @property({ type: String, attribute: 'avatar-variant' }) avatarVariant: AvatarVariant = 'primary'
-  @property({ type: String, attribute: 'avatar-shape' }) avatarShape: AvatarShape = 'square'
+  @property({ attribute: false }) avatar?: ListItemAvatar
   @state() private hasTrailing = false
 
   protected willUpdate(changed: PropertyValues) {
@@ -72,10 +75,10 @@ export class ListItem extends LitElement {
     return html`
       <fff-avatar
         size=${this.avatarSize}
-        variant=${this.avatarVariant}
-        shape=${this.avatarShape}
+        variant=${this.avatar?.variant ?? 'primary'}
+        shape=${this.avatar?.shape ?? 'square'}
         icon=${ifDefined(this.icon)}
-        src=${ifDefined(this.avatarSrc || undefined)}
+        src=${ifDefined(this.avatar?.src || undefined)}
       >
         ${this.renderEmoji()}
       </fff-avatar>
@@ -116,7 +119,7 @@ export class ListItem extends LitElement {
   }
 
   private get hasLeading() {
-    return !!(this.icon || this.avatarSrc || this.emoji)
+    return !!(this.icon || this.avatar?.src || this.emoji)
   }
 
   private handleTrailingSlotChange(event: Event) {

@@ -53,7 +53,7 @@ export class CommentItem extends LitElement {
           size="medium"
           label=${this.author}
           description=${this.datetime}
-          avatar-src=${this.avatarSrc}
+          .avatar=${{ src: this.avatarSrc }}
         >
           ${this.renderMenu()}
         </fff-user-item>

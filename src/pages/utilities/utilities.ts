@@ -20,19 +20,19 @@ const contentSectionCode = `<fff-content-section heading-level="3" heading="액�
   <fff-link slot="action" href="./post.html">모두 보기</fff-link>
 </fff-content-section>`
 
-const formFieldCode = `<fff-form-field label="관심 주제" optional description="여러 개를 선택할 수 있습니다.">
+const formFieldCode = `<fff-form-field label="관심 주제" optional description="...">
   <fff-checkbox-group name="topics" .options=\${topicOptions}></fff-checkbox-group>
 </fff-form-field>`
 
 const pageHeaderCode = `<fff-flex justify-content="space-between" align-items="flex-start">
-  <fff-page-header heading="설정" description="계정과 알림을 관리합니다."></fff-page-header>
+  <fff-page-header heading="설정" description="..."></fff-page-header>
   <fff-button-group>
     <fff-button variant="secondary">취소</fff-button>
     <fff-button>저장</fff-button>
   </fff-button-group>
 </fff-flex>`
 
-const textBlockCode = `<fff-text-block level="3" heading="제목" description="제목을 보충하는 설명"></fff-text-block>`
+const textBlockCode = `<fff-text-block level="3" heading="제목" description="..."></fff-text-block>`
 
 // 공유 스타일 파일에서 export 선언 하나를 원문 그대로 잘라 보여 준다. 여러 줄 선언은 0열에서 닫힌다.
 const exportSourceOf = (source: string, name: string) => {

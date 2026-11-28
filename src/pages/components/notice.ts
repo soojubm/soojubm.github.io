@@ -22,13 +22,13 @@ const componentProps: ComponentPropItemData[] = [
 const primaryAction: ActionConfig = { label: '갱신하기', onClick: () => {} }
 const secondaryAction: ActionConfig = { label: '나중에', onClick: () => {} }
 
-const variantCode = `<fff-notice variant="info" description="새 기능이 추가되었습니다."></fff-notice>
-<fff-notice variant="warning" description="바시니의 작품은 페라라 부르주아사회의 유대인 박해라는 깊은 상처에 기인한다는 점에서 정치적이다."></fff-notice>
-<fff-notice variant="error" description="인터넷에 연결되어 있지 않습니다."></fff-notice>`
+const variantCode = `<fff-notice variant="info" description="..."></fff-notice>
+<fff-notice variant="warning" description="..."></fff-notice>
+<fff-notice variant="error" description="..."></fff-notice>`
 
 const actionCode = `<fff-notice
   variant="warning"
-  description="구독이 곧 만료됩니다. 결제 수단을 확인해 주세요."
+  description="..."
   .primaryAction=\${primaryAction}
   .secondaryAction=\${secondaryAction}
   @dismiss=\${handleDismiss}
