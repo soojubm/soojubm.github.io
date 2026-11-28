@@ -2,9 +2,10 @@ import { LitElement, css, html, nothing } from 'lit'
 import { customElement, property, query } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 
+import { ICON_NAMES } from '@/components/common/icon/icon-names'
 import { visuallyHiddenStyles, resetStyles } from '@/stylesheets/shared.styles'
 import { emit } from '@/utils'
-import '@/components/common/button/semantics/add-button'
+import '@/components/common/menu-item/semantics/menu-item-action'
 
 @customElement('fff-attachment-button')
 export class AttachmentButton extends LitElement {
@@ -28,7 +29,11 @@ export class AttachmentButton extends LitElement {
 
   render() {
     return html`
-      <fff-add-button @click=${this.handleAddButtonClick} label=${this.label}></fff-add-button>
+      <fff-menu-item-action
+        icon=${ICON_NAMES.ADD_CIRCLE}
+        label=${this.label}
+        @click=${this.handleActionClick}
+      ></fff-menu-item-action>
       <input
         type="file"
         accept=${ifDefined(this.accept || undefined)}
@@ -39,7 +44,7 @@ export class AttachmentButton extends LitElement {
     `
   }
 
-  private handleAddButtonClick() {
+  private handleActionClick() {
     this.input.click()
   }
 

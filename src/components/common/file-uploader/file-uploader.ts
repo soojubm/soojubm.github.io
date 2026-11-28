@@ -3,22 +3,11 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { ifDefined } from 'lit/directives/if-defined.js'
 import { repeat } from 'lit/directives/repeat.js'
 
-import soojubmImage from '@/images/soojubm.png'
 import { emit } from '@/utils'
 import '@/components/common/file-uploader/semantics/attachment-button'
 import '@/components/common/file-uploader/semantics/attachment-item'
+import '@/components/common/file-uploader/semantics/attachment-item-list'
 import '@/components/common/tag/semantics/keyword-tag-group'
-import '@/components/common/text/semantics/paragraph'
-
-async function createSampleFiles(): Promise<File[]> {
-  const photoBlob = await fetch(soojubmImage).then(response => response.blob())
-
-  return [
-    new File([photoBlob], 'sample-photo.png', { type: photoBlob.type }),
-    new File([new Uint8Array(48_000)], 'sample-document.pdf', { type: 'application/pdf' }),
-    new File([new Uint8Array(1_200_000)], 'sample-video.mp4', { type: 'video/mp4' }),
-  ]
-}
 
 @customElement('fff-file-uploader')
 export class FileUploader extends LitElement {
@@ -28,31 +17,14 @@ export class FileUploader extends LitElement {
       flex-direction: column;
       gap: var(--space-2);
     }
-
-    .attachments {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-
-    .attachment-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-    }
   `
   @property({ type: String }) label = '파일 업로드'
-  @property({ type: String }) description = ''
+  @property({ type: String, attribute: 'max-size' }) maxSize = ''
   @property({ type: String }) accept = ''
   @property({ type: Boolean }) multiple = false
   @property({ type: Boolean }) capture = false
   @state() private files: File[] = []
   private previewUrls = new Map<File, string>()
-
-  async connectedCallback() {
-    super.connectedCallback()
-    this.setFiles(await createSampleFiles())
-  }
 
   render() {
     return html`
@@ -63,14 +35,30 @@ export class FileUploader extends LitElement {
         ?capture=${this.capture}
         @change=${this.handleFilesChange}
       ></fff-attachment-button>
-      <fff-keyword-tag-group
-        .keywords=${[this.description, this.filesStatusText].filter(Boolean)}
-      ></fff-keyword-tag-group>
-      <div class="attachments">
-        <fff-paragraph color="light">첨부한 파일</fff-paragraph>
-        ${this.renderAttachments()}
-      </div>
+      <fff-keyword-tag-group .keywords=${this.keywords}></fff-keyword-tag-group>
+      ${this.renderAttachmentList()}
     `
+  }
+
+  private get keywords() {
+    return [this.acceptText, this.maxSizeText, this.filesStatusText].filter(Boolean)
+  }
+
+  private get acceptText() {
+    const extensions = this.accept
+      .split(',')
+      .map(extension => extension.trim())
+      .filter(Boolean)
+    if (!extensions.length) return ''
+
+    const last = extensions.pop()
+    const list = extensions.length ? `${extensions.join(', ')} and ${last}` : last
+
+    return `Only ${list} files.`
+  }
+
+  private get maxSizeText() {
+    return this.maxSize ? `${this.maxSize} max file size.` : ''
   }
 
   private get hasFiles() {
@@ -83,11 +71,11 @@ export class FileUploader extends LitElement {
     return `${this.files.length} file${this.files.length > 1 ? 's' : ''} selected.`
   }
 
-  private renderAttachments() {
+  private renderAttachmentList() {
     if (!this.hasFiles) return nothing
 
     return html`
-      <div class="attachment-list">
+      <fff-attachment-item-list heading="첨부한 파일">
         ${repeat(
           this.files,
           file => file,
@@ -101,7 +89,7 @@ export class FileUploader extends LitElement {
             ></fff-attachment-item>
           `,
         )}
-      </div>
+      </fff-attachment-item-list>
     `
   }
 
