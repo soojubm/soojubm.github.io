@@ -22,7 +22,7 @@ export class OrderProductItem extends LitElement {
         size="large"
         label=${this.name}
         description=${this.option}
-        .avatar=${{ src: this.imageSrc }}
+        .avatar=${{ variant: 'secondary', src: this.imageSrc }}
       >
         ${this.renderPrice()}
       </fff-list-item>

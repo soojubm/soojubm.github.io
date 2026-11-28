@@ -284,22 +284,17 @@ const main = html`
             </fff-flex>
             <fff-flex direction="column" gap="3">
               <fff-image ratio="16:9" src="/src/images/soojubm.png" alt=""></fff-image>
-              <fff-paragraph>
-                Monotonectally productivate progressive human capital without user friendly portals.
-                Globally benchmark top-line ideas with distributed catalysts for change.
-                Authoritatively restore ubiquitous partnerships vis-a-vis
-                <fff-link href="#">synergistic models</fff-link>
-                .
-              </fff-paragraph>
-              <fff-text-list
-                .texts=${[
-                  'TODO 원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가 노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은 피드를 결정할 권리가 있다.',
-                  'TODO 글줄의 길이를 상대적으로 좁게 짜는 경향이 있다.',
-                  'TODO 리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한 사용자 목록을 어떻게 보여줄 것인가.',
-                  'TODO 중복 리액션과 횟수 등 기능 정의.',
-                  '리액션 =&gt; 알림.',
-                ]}
-              ></fff-text-list>
+              <fff-paragraph-group>
+                <fff-paragraph>
+                  원활한 피드 탐색 경험을 위해 모든 피드를 보여주지 않는 것이 좋을 수 있다. 피드가
+                  노출되는 이유를 알려줄 수 있다. 또한 사용자는 보고 싶은 피드와 보고 싶지 않은
+                  피드를 결정할 권리가 있다.
+                </fff-paragraph>
+                <fff-paragraph>
+                  리액션 버튼과 리액션 수치를 각각 제공할 수 있고 따로 제공할 수 있다. 리액션한
+                  사용자 목록을 어떻게 보여줄 것인가.
+                </fff-paragraph>
+              </fff-paragraph-group>
               <fff-keyword-tag-group
                 .keywords=${['Google', 'Meta', 'Nvidia']}
               ></fff-keyword-tag-group>

@@ -6,7 +6,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { code, componentPropsOf } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -27,8 +27,8 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const exampleCode = `<fff-separator level="element"></fff-separator>
-<fff-separator level="section">또는</fff-separator>`
+const exampleCode = `<fff-separator level="element">또는</fff-separator>
+<fff-separator level="section"></fff-separator>`
 
 const main = html`
   <fff-main>
@@ -41,13 +41,13 @@ const main = html`
       <fff-grid columns="2">
         <div>
           <fff-ui-placeholder></fff-ui-placeholder>
-          <fff-separator level="element"></fff-separator>
+          <fff-separator level="element">또는</fff-separator>
           <fff-ui-placeholder></fff-ui-placeholder>
         </div>
 
         <div>
           <fff-ui-placeholder></fff-ui-placeholder>
-          <fff-separator level="section">또는</fff-separator>
+          <fff-separator level="section"></fff-separator>
           <fff-ui-placeholder></fff-ui-placeholder>
         </div>
       </fff-grid>
@@ -61,18 +61,6 @@ const main = html`
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-guide>
-      <fff-text-list
-        .texts=${[
-          html`
-            서로 다른 맥락 사이에만 긋는다. 같은 맥락의 항목 사이는 부모의 ${code('gap')}으로
-            구획하고, 선이 구획을 맡은 경계에는 ${code('gap')}을 함께 두지 않는다
-          `,
-          html`
-            레이블은 두 맥락을 잇는 짧은 접속어에만 쓴다. 예: "또는"
-          `,
-        ]}
-      ></fff-text-list>
-
       <fff-text-block
         level="3"
         heading="접근성"
