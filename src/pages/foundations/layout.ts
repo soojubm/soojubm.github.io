@@ -6,7 +6,6 @@ import './layout.css'
 
 import '@/components/common/separator/separator'
 import '@/components/domains/chart/chart-legend'
-import type { ChartLegendItem } from '@/components/domains/chart/chart-legend'
 import '@/components/domains/component/component-notice'
 import '@/components/domains/ui-placeholder/ui-placeholder'
 import { code } from '@/components/domains/component'
@@ -15,8 +14,10 @@ import { renderPage } from '@/components/layouts/base-layouts'
 type OverlayInfo = {
   name: string
   modal: boolean
-  role?: string
-  layer: string
+  /** 생략하면 'none'으로 보이고, null이면 role 태그를 그리지 않는다. */
+  role?: string | null
+  /** null이면 layer 태그를 그리지 않는다. */
+  layer: string | null
   focus: boolean
   close: string[]
 }
@@ -27,7 +28,7 @@ const anchoredOverlays: OverlayInfo[] = [
     modal: false,
     layer: 'popover',
     focus: true,
-    close: ['outside click', 'ESC', 'focus out', 'close()'],
+    close: ['outside click', 'ESC', 'close()'],
   },
   {
     name: 'Select',
@@ -41,9 +42,9 @@ const anchoredOverlays: OverlayInfo[] = [
     name: 'Tooltip',
     modal: false,
     role: 'tooltip',
-    layer: 'tooltip',
+    layer: null,
     focus: false,
-    close: ['pointer leave', 'focus out'],
+    close: ['pointer leave'],
   },
 ]
 
@@ -64,11 +65,11 @@ const viewportOverlays: OverlayInfo[] = [
     focus: true,
     close: ['outside click', 'ESC', 'close button'],
   },
-  { name: 'Backdrop', modal: true, layer: 'backdrop', focus: false, close: [] },
+  { name: 'Backdrop', modal: true, role: null, layer: 'backdrop', focus: false, close: [] },
   {
     name: 'Toast',
     modal: false,
-    role: 'status',
+    role: null,
     layer: 'toast',
     focus: false,
     close: ['timeout'],
@@ -106,14 +107,35 @@ const renderViewportDiagram = () => html`
   </fff-figure-card>
 `
 
-const overlayLegendItems: ChartLegendItem[] = [
-  { label: 'modal', tone: 'blue' },
-  { label: 'non-modal', tone: 'green' },
-  { label: 'role', tone: 'purple' },
-  { label: 'layer', tone: 'orange' },
-  { label: 'focus move on open', tone: 'cyan' },
-  { label: '닫는 방법', tone: 'default' },
-]
+/** modal은 뒤 화면을 가리고, non-modal은 트리거 옆에 떠서 뒤 화면을 그대로 둔다. */
+const renderModalContrast = () => html`
+  <fff-grid columns="2" gap="4">
+    <fff-figure-card
+      class="overlay-figure-card"
+      description="뒤 화면은 흐리게 가리고 포커스와 스크롤을 막는다. 닫을 때 스크롤 위치를 되돌린다"
+    >
+      <div slot="figure" class="overlay-screen" data-kind="modal">
+        <span class="overlay-panel"></span>
+      </div>
+      <fff-code-tag slot="tags" tone="blue">Modal</fff-code-tag>
+      <fff-code-tag slot="tags">backdrop</fff-code-tag>
+      <fff-code-tag slot="tags">inert</fff-code-tag>
+      <fff-code-tag slot="tags">scroll lock</fff-code-tag>
+    </fff-figure-card>
+    <fff-figure-card
+      class="overlay-figure-card"
+      description="Tab으로 나가면 닫고 포커스를 트리거로 되돌린다. 바깥을 눌러 닫을 때는 누른 곳의 포커스를 빼앗지 않는다"
+    >
+      <div slot="figure" class="overlay-screen" data-kind="anchored">
+        <span class="overlay-trigger"></span>
+        <span class="overlay-panel"></span>
+      </div>
+      <fff-code-tag slot="tags" tone="green">Non-modal</fff-code-tag>
+      <fff-code-tag slot="tags">Tab Key</fff-code-tag>
+      <fff-code-tag slot="tags">outside click</fff-code-tag>
+    </fff-figure-card>
+  </fff-grid>
+`
 
 const controllerNames = [
   'DisclosureController',
@@ -135,9 +157,21 @@ const renderOverlay = (overlay: OverlayInfo) =>
         <fff-code-tag tone=${overlay.modal ? 'blue' : 'green'}>
           ${overlay.modal ? 'Modal' : 'Non-modal'}
         </fff-code-tag>
-        <fff-code-tag tone="purple">${overlay.role ?? 'none'}</fff-code-tag>
-        <fff-code-tag tone="orange">${overlay.layer}</fff-code-tag>
-        <fff-code-tag tone="cyan">${overlay.focus ? 'focus move' : 'no focus move'}</fff-code-tag>
+        ${overlay.role === null
+          ? ''
+          : html`
+              <fff-code-tag tone="purple">${overlay.role ?? 'none'}</fff-code-tag>
+            `}
+        ${overlay.layer === null
+          ? ''
+          : html`
+              <fff-code-tag tone="orange">${overlay.layer}</fff-code-tag>
+            `}
+        ${overlay.focus
+          ? html`
+              <fff-code-tag tone="cyan">focus move</fff-code-tag>
+            `
+          : ''}
         ${(overlay.close.length ? overlay.close : ['none']).map(
           method => html`
             <fff-code-tag>${method}</fff-code-tag>
@@ -313,18 +347,14 @@ const renderUsageTags = (tags: string[] = []) =>
 
 /** 화면 폭을 나타내는 트랙 위에, 본문이 차지하는 너비만큼의 막대를 가운데에 놓는다. */
 const widthExample = (options: {
-  caption: string
   /** 캡션이 가리키는 페이지 성격에 해당하는 용도들. */
   tags?: string[]
   token: string
   /** 이 너비를 정하는 레이아웃 토큰 이름. */
   widthToken?: string
-  /** 양끝 여백 토큰 이름을 함께 보인다. 모든 예시가 같은 여백이라 첫 예시에만 쓴다. */
-  gutterToken?: boolean
   category: number
   tone: TagTone
   maxWidth?: string
-  description?: string
   links: [href: string, label: string][]
 }) => html`
   <fff-flex direction="column" gap="2">
@@ -335,7 +365,6 @@ const widthExample = (options: {
           ? `max-width: calc(${options.maxWidth} + 2 * var(--layout-padding-inline))`
           : ''}
       >
-        <fff-text class="width-extent-label" size="12" data-extent-label></fff-text>
         <div class="width-extent-row">
           <div class="width-gutter"><fff-text size="12">5vw</fff-text></div>
           <div
@@ -350,27 +379,14 @@ const widthExample = (options: {
         </div>
       </div>
     </div>
-    ${options.widthToken
-      ? html`
-          <fff-tag-group>
-            <fff-code-tag>${options.widthToken}</fff-code-tag>
-            ${options.gutterToken
-              ? html`
-                  <fff-code-tag>--layout-padding-inline</fff-code-tag>
-                `
-              : ''}
-          </fff-tag-group>
-        `
-      : ''}
     <fff-tag-group>
-      <fff-tag tone=${options.tone}>${options.caption}</fff-tag>
+      ${options.widthToken
+        ? html`
+            <fff-code-tag>${options.widthToken}</fff-code-tag>
+          `
+        : ''}
       ${renderUsageTags(options.tags)}
     </fff-tag-group>
-    ${options.description
-      ? html`
-          <fff-paragraph>${options.description}</fff-paragraph>
-        `
-      : ''}
     <fff-flex gap="3" wrap="wrap">
       ${options.links.map(
         ([href, label]) =>
@@ -382,32 +398,27 @@ const widthExample = (options: {
   </fff-flex>
 `
 
-/** 페이지 너비와 같은 트랙·막대 모양으로, 트랙의 배경만 달리해 배경 대비를 보인다. */
+/** 화면 배경만 달리한 작은 화면으로 배경 대비를 보인다. 본문 막대는 같은 모양으로 둔다. */
 const renderBackgroundExample = (options: {
-  caption: string
+  description: string
   tags?: string[]
-  values: string[]
-  subtle?: boolean
+  background: 'default' | 'subtle'
 }) => html`
-  <fff-flex direction="column" gap="2">
-    <div class="width-track" data-subtle=${options.subtle ? 'true' : 'false'}>
-      <div
-        class="width-bar"
-        data-outlined
-        style="--width-bar-background-color: var(--background-color); max-width: var(--layout-width-small)"
-      ></div>
+  <fff-figure-card class="overlay-figure-card" description=${options.description}>
+    <div
+      slot="figure"
+      class="background-screen"
+      data-subtle=${options.background === 'subtle' ? 'true' : 'false'}
+    >
+      <div class="width-bar" data-outlined></div>
     </div>
-    <fff-tag-group>
-      ${options.values.map(
-        value =>
-          html`
-            <fff-code-tag>${value}</fff-code-tag>
-          `,
-      )}
-    </fff-tag-group>
-    <fff-caption>${options.caption}</fff-caption>
-    <fff-tag-group>${renderUsageTags(options.tags)}</fff-tag-group>
-  </fff-flex>
+    <fff-code-tag slot="tags">background='${options.background}'</fff-code-tag>
+    ${(options.tags ?? []).map(
+      tag => html`
+        <fff-tag slot="tags">${tag}</fff-tag>
+      `,
+    )}
+  </fff-figure-card>
 `
 
 /** 왼쪽 정렬로 흐르는 본문 사이에 가운데 정렬 모듈을 끼워, 정렬의 대비를 한 화면에 그린다. */
@@ -467,18 +478,15 @@ const main = html`
             <fff-example-stage full-width>
               <fff-flex direction="column" gap="6">
                 ${widthExample({
-                  caption: '집중형',
                   tags: ['폼', '인증'],
                   token: '400px',
                   widthToken: '--layout-width-narrow',
-                  gutterToken: true,
                   category: 2,
                   tone: 'green',
                   maxWidth: 'var(--layout-width-narrow)',
                   links: [['./auth.html', 'Auth']],
                 })}
                 ${widthExample({
-                  caption: '일반 문서',
                   tags: ['에디토리얼', '설정', '대화'],
                   token: '640px',
                   widthToken: '--layout-width-small',
@@ -492,9 +500,7 @@ const main = html`
                   ],
                 })}
                 ${widthExample({
-                  caption: '와이드형',
                   tags: ['요금제', '상품'],
-                  description: '비교하며 고르는 화면은 두세 열이 들어갈 폭을 준다',
                   token: '960px',
                   widthToken: '--layout-width-large',
                   category: 4,
@@ -506,9 +512,7 @@ const main = html`
                   ],
                 })}
                 ${widthExample({
-                  caption: '확장형',
-                  tags: ['목록', '대시보드', '프로필'],
-                  description: '넓은 폭은 목록·대시보드처럼 훑어보는 화면에 쓴다',
+                  tags: ['대시보드', '프로필'],
                   token: '100%',
                   widthToken: '--layout-width-full',
                   category: 8,
@@ -528,20 +532,17 @@ const main = html`
             heading="배경 대비"
             description="글쓰기·설정·소개처럼 이전 화면과 다른 정보 구조로 들어갈 때 페이지 배경을 한 단계 낮춰 다른 맥락으로 넘어왔다는 감각을 줍니다."
           >
-            <fff-example-stage full-width>
-              <fff-flex direction="column" gap="6">
-                ${renderBackgroundExample({
-                  caption: '이전 화면',
-                  values: ['background', 'default'],
-                })}
-                ${renderBackgroundExample({
-                  caption: '다른 정보 구조',
-                  tags: ['글쓰기', '설정', '소개'],
-                  values: ['background', 'subtle'],
-                  subtle: true,
-                })}
-              </fff-flex>
-            </fff-example-stage>
+            <fff-grid columns="2" gap="4">
+              ${renderBackgroundExample({
+                description: '이전 화면',
+                background: 'default',
+              })}
+              ${renderBackgroundExample({
+                description: '다른 정보 구조',
+                tags: ['글쓰기', '설정', '소개'],
+                background: 'subtle',
+              })}
+            </fff-grid>
           </fff-content-section>
 
           <fff-content-section
@@ -607,37 +608,22 @@ const main = html`
 
       <fff-tab-panel value="overlay">
         <fff-content-section-list>
-          <fff-flex direction="column" gap="4">
-            <fff-grid columns="2" gap="4">
-              <fff-content-section heading-level="3" heading="Anchored overlay">
-                ${renderAnchoredDiagram()} ${anchoredOverlays.map(renderOverlay)}
-              </fff-content-section>
-              <fff-content-section heading-level="3" heading="Viewport overlay">
-                ${renderViewportDiagram()} ${viewportOverlays.map(renderOverlay)}
-              </fff-content-section>
-            </fff-grid>
-            <fff-chart-legend .items=${overlayLegendItems}></fff-chart-legend>
-          </fff-flex>
+          <fff-grid columns="2" gap="4">
+            <fff-content-section heading-level="3" heading="Anchored overlay">
+              ${renderAnchoredDiagram()} ${anchoredOverlays.map(renderOverlay)}
+            </fff-content-section>
+            <fff-content-section heading-level="3" heading="Viewport overlay">
+              ${renderViewportDiagram()} ${viewportOverlays.map(renderOverlay)}
+            </fff-content-section>
+          </fff-grid>
 
           <fff-content-section
             heading-level="3"
             heading="Modal × Non-Modal"
             description="modal은 열린 동안 뒤의 화면을 막는 overlay입니다. 작업을 마치거나 취소해야 다음으로 넘어가는 흐름에 쓰며, 삭제 확인·중요 정보 입력·결제가 여기에 해당합니다."
-            .texts=${[
-              html`
-                modal이 열려 있는 동안 뒤 화면은 조작할 수 없게 한다. 뒤 화면에서 포커스가
-                움직이거나 스크롤되면 사용자가 modal을 벗어났다고 착각하거나 하던 작업의 위치를
-                잃는다. 뒤 화면은 backdrop으로 흐려 보이게 하고, ${code('inert')}로 포커스를 받지
-                못하게 하며, 스크롤을 멈춘다. 스크롤 위치는 기억했다가 닫을 때 그 자리로 되돌린다
-              `,
-              html`
-                non-modal overlay에서 Tab으로 나가면 닫고, 포커스를 트리거로 되돌린다. Tab으로
-                나갔을 때 포커스가 트리거 다음 요소가 아니라 엉뚱한 곳으로 가면 사용자가 위치를
-                잃는다. overlay를 벗어나면 닫고 포커스를 트리거로 되돌려, 다음 Tab이 트리거에서
-                이어지게 한다. 바깥을 눌러 닫을 때는 사용자가 누른 곳의 포커스를 빼앗지 않는다
-              `,
-            ]}
-          ></fff-content-section>
+          >
+            ${renderModalContrast()}
+          </fff-content-section>
 
           <fff-content-section heading-level="3" heading="Placement Type">
             <fff-code-block language="typescript" .code=${placementTypeCode}></fff-code-block>
@@ -694,16 +680,4 @@ const main = html`
   </fff-main>
 `
 
-/** 막대와 양옆 여백을 합친 실제 폭을 재어 위 라벨에 적고, 화면 크기가 바뀌면 다시 갱신한다. */
-const showExtentWidths = () => {
-  const observer = new ResizeObserver(entries => {
-    entries.forEach(({ target }) => {
-      const label = target.querySelector('[data-extent-label]')
-      if (!label) return
-      label.textContent = `${Math.round(target.getBoundingClientRect().width)}px`
-    })
-  })
-  document.querySelectorAll('.width-extent').forEach(extent => observer.observe(extent))
-}
-
-renderPage(main, { initialize: showExtentWidths })
+renderPage(main)

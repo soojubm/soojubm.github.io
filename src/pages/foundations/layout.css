@@ -48,23 +48,35 @@
   background: var(--background-color);
 }
 
-.width-track[data-subtle='true'] {
+/* 배경 대비: 화면 전체가 페이지 배경이 되고, 본문 막대가 가운데에 놓인다. */
+.background-screen {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(var(--size-80) * 1.4);
+  border-radius: var(--border-radius-large);
+  background: var(--background-color);
+}
+
+.background-screen[data-subtle='true'] {
   background: var(--background-subtle-color);
+}
+
+.background-screen .width-bar {
+  width: 60%;
+  background: var(--background-color);
 }
 
 .width-extent {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
   width: 100%;
 }
 
 .width-extent-row {
   display: flex;
-}
-
-.width-extent-label {
-  text-align: center;
 }
 
 .width-bar {
@@ -259,6 +271,22 @@
   left: var(--space-4);
   width: var(--size-80);
   height: var(--size-32);
+}
+
+/* modal: backdrop이 화면을 덮고 패널이 가운데에 놓인다. */
+.overlay-screen[data-kind='modal']::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--foreground-subtle-color);
+  opacity: 0.5;
+}
+
+.overlay-screen[data-kind='modal'] .overlay-panel {
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
 }
 
 /* backdrop이 화면을 덮고, 패널이 다섯 자리를 차례로 옮겨 간다. */
