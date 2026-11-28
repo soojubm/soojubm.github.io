@@ -50,7 +50,8 @@ export const conversationPanel = html`
         <fff-flex direction="column" gap="2">
           <fff-tag-group>
             <fff-code-tag tone="gold">생성 중</fff-code-tag>
-            <fff-code-tag>fff-process-status-list</fff-code-tag>
+            <fff-code-tag>fff-typing-indicator</fff-code-tag>
+            <fff-code-tag>fff-process-status</fff-code-tag>
             <fff-code-tag>fff-prompt-input</fff-code-tag>
           </fff-tag-group>
           <fff-tag-group>
@@ -74,6 +75,11 @@ export const conversationPanel = html`
         heading="생성 중"
         description="답이 나오기 전의 기다림을 채우는 단계입니다."
         .texts=${[
+          html`
+            답이 시작되기 전에는 입력 중임을 알린다. 빈 화면으로 두면 사용자는 요청이 전달됐는지 알
+            수 없다. ${code('fff-typing-indicator')}가 말풍선 자리에서 점으로 응답을 준비 중임을
+            보여준다
+          `,
           '진행 단계를 목록으로 보여준다. 아무 변화가 없으면 사용자는 멈춘 것인지 기다려야 하는 것인지 알 수 없다. 끝낸 단계, 진행 중인 단계, 남은 단계를 한 목록에 두어 지금 위치를 알린다',
           html`
             생성을 중단할 수 있게 한다. 잘못 보낸 질문이나 긴 답을 끝까지 기다리게 하면 사용자는
@@ -84,11 +90,14 @@ export const conversationPanel = html`
       >
         <fff-component-example width="narrow">
           <fff-flex direction="column" gap="4">
-            <fff-process-status-list>
-              <fff-process-status variant="success" label="요청을 확인함"></fff-process-status>
-              <fff-process-status label="관련 자료를 탐색함"></fff-process-status>
-              <fff-process-status variant="pending" label="답변 문장 다듬기"></fff-process-status>
-            </fff-process-status-list>
+            <fff-typing-indicator></fff-typing-indicator>
+            <fff-process-status
+              .items=${[
+                { variant: 'success', label: '요청을 확인함' },
+                { label: '관련 자료를 탐색함' },
+                { variant: 'pending', label: '답변 문장 다듬기' },
+              ]}
+            ></fff-process-status>
             <fff-prompt-input
               loading
               placeholder="메시지를 입력하세요..."

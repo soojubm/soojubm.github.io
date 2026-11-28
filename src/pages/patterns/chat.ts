@@ -75,15 +75,14 @@ const main = html`
             </fff-ai-chat-message>
 
             <fff-ai-chat-message>
-              <fff-process-status-list>
-                <fff-process-status variant="success" label="요청을 확인함"></fff-process-status>
-                <fff-process-status
-                  variant="success"
-                  label="관련 자료를 탐색함"
-                ></fff-process-status>
-                <fff-process-status label="핵심 구조 정리 중"></fff-process-status>
-                <fff-process-status variant="pending" label="답변 문장 다듬기"></fff-process-status>
-              </fff-process-status-list>
+              <fff-process-status
+                .items=${[
+                  { variant: 'success', label: '요청을 확인함' },
+                  { variant: 'success', label: '관련 자료를 탐색함' },
+                  { label: '핵심 구조 정리 중' },
+                  { variant: 'pending', label: '답변 문장 다듬기' },
+                ]}
+              ></fff-process-status>
 
               <fff-chat-confirmation
                 message="example.txt 파일을 삭제하려고 합니다. 이 작업을 승인하시겠어요?"
