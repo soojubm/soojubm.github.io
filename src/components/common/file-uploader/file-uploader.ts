@@ -51,14 +51,11 @@ export class FileUploader extends LitElement {
       .filter(Boolean)
     if (!extensions.length) return ''
 
-    const last = extensions.pop()
-    const list = extensions.length ? `${extensions.join(', ')} and ${last}` : last
-
-    return `Only ${list} files.`
+    return `${extensions.join(', ')} 파일만 올릴 수 있습니다.`
   }
 
   private get maxSizeText() {
-    return this.maxSize ? `${this.maxSize} max file size.` : ''
+    return this.maxSize ? `파일 최대 용량은 ${this.maxSize}입니다.` : ''
   }
 
   private get hasFiles() {
@@ -66,9 +63,9 @@ export class FileUploader extends LitElement {
   }
 
   private get filesStatusText() {
-    if (!this.hasFiles) return 'No files currently selected for upload.'
+    if (!this.hasFiles) return '선택된 파일이 없습니다.'
 
-    return `${this.files.length} file${this.files.length > 1 ? 's' : ''} selected.`
+    return `${this.files.length}개 파일을 선택했습니다.`
   }
 
   private renderAttachmentList() {
