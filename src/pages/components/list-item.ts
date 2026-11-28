@@ -258,7 +258,6 @@ const main = html`
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-guide>
-      <fff-content-section-list size="small">
         <fff-content-section
           heading-level="3"
           heading="menu-item과는 어떤 차이가 있나요?"
@@ -315,7 +314,6 @@ const main = html`
         >
           <fff-grid columns="2" gap="6">${renderCorrectionSample()}</fff-grid>
         </fff-content-section>
-      </fff-content-section-list>
     </fff-component-guide>
 
     <fff-component-section heading="UserItem" description="사용자 도메인">

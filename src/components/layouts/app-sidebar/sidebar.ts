@@ -50,7 +50,7 @@ export class Sidebar extends withOpenState(LitElement) {
         <fff-sidebar-user-menu
           name="soojubm"
           description="soojubm.github.io"
-          avatar-src="/src/images/soojubm.png"
+          .avatar=${{ src: '/src/images/soojubm.png' }}
         ></fff-sidebar-user-menu>
       </nav>
     `

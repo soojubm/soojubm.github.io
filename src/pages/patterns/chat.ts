@@ -114,7 +114,7 @@ const main = html`
 
             <fff-participant-chat-message
               name="지현"
-              avatar-src="/src/images/soojubm.png"
+              .avatar=${{ src: '/src/images/soojubm.png' }}
               datetime="2022-05-18T00:03"
             >
               <fff-participant-chat-bubble>
@@ -140,7 +140,7 @@ const main = html`
               </fff-my-chat-bubble>
             </fff-my-chat-message>
 
-            <fff-participant-chat-message name="지현" avatar-src="/src/images/soojubm.png">
+            <fff-participant-chat-message name="지현" .avatar=${{ src: '/src/images/soojubm.png' }}>
               <fff-participant-chat-bubble typing></fff-participant-chat-bubble>
             </fff-participant-chat-message>
           </fff-flex>

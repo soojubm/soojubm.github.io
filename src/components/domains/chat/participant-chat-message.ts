@@ -33,7 +33,7 @@ export class ParticipantChatMessage extends LitElement {
     }
   `
   @property({ type: String }) name = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ attribute: false }) avatar?: { src?: string }
   @property({ type: String }) datetime = ''
 
   render() {
@@ -41,7 +41,7 @@ export class ParticipantChatMessage extends LitElement {
       <fff-user-avatar
         size="32"
         name=${this.name}
-        src=${ifDefined(this.avatarSrc || undefined)}
+        src=${ifDefined(this.avatar?.src || undefined)}
       ></fff-user-avatar>
       <div class="body">
         ${this.renderMeta()}

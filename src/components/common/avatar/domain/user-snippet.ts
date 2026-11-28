@@ -15,7 +15,7 @@ export class UserSnippet extends LitElement {
   @property({ type: String }) phone = ''
   @property({ type: String }) email = ''
   @property({ type: String }) description = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ attribute: false }) avatar?: { src?: string }
   @property({ type: String, attribute: 'tag-label' }) tagLabel = ''
 
   render() {
@@ -23,7 +23,7 @@ export class UserSnippet extends LitElement {
       <fff-user-avatar
         size="80"
         name=${this.name}
-        src=${ifDefined(this.avatarSrc || undefined)}
+        src=${ifDefined(this.avatar?.src || undefined)}
       ></fff-user-avatar>
       ${this.renderTag()}
       <div class="detail">

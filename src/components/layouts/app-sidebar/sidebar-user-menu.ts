@@ -33,7 +33,7 @@ export class SidebarUserMenu extends LitElement {
   ]
   @property({ type: String }) name = ''
   @property({ type: String }) description = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ attribute: false }) avatar?: { src?: string }
   // popover는 portal로 옮겨져 한 트리에 모이므로, 인스턴스가 여럿이어도 id가 겹치지 않게 한다.
   private readonly menuId = uniqueId('account-menu')
 
@@ -44,7 +44,7 @@ export class SidebarUserMenu extends LitElement {
           size="medium"
           label=${this.name}
           description=${this.description}
-          .avatar=${{ src: this.avatarSrc }}
+          .avatar=${this.avatar}
         >
           <fff-icon slot="trailing" name=${ICON_NAMES.MORE_ACTIONS} size="small"></fff-icon>
         </fff-user-item>

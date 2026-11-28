@@ -42,7 +42,7 @@ export class CommentItem extends LitElement {
   `
   @property({ type: String }) author = ''
   @property({ type: String }) datetime = ''
-  @property({ type: String, attribute: 'avatar-src' }) avatarSrc = ''
+  @property({ attribute: false }) avatar?: { src?: string }
   @property({ type: String, attribute: 'reply-label' }) replyLabel = ''
   @property({ type: Boolean }) editable = false
 
@@ -53,7 +53,7 @@ export class CommentItem extends LitElement {
           size="medium"
           label=${this.author}
           description=${this.datetime}
-          .avatar=${{ src: this.avatarSrc }}
+          .avatar=${this.avatar}
         >
           ${this.renderMenu()}
         </fff-user-item>

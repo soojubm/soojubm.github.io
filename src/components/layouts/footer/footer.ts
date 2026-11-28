@@ -23,8 +23,7 @@ export class Footer extends LitElement {
           email="soojubm@gmail.com"
           phone="010 3121 7045"
           description="UI Designer"
-          avatar-src=${soojubmImage}
-          avatar-variant="secondary"
+          .avatar=${{ src: soojubmImage }}
         ></fff-user-snippet>
 
         <div class="footer-links">

@@ -30,7 +30,7 @@ const main = html`
           email="soojubm@gmail.com"
           phone="010 3121 7045"
           description="UI Designer"
-          avatar-src="/src/images/soojubm.png"
+          .avatar=${{ src: '/src/images/soojubm.png' }}
           tag-label="접속 중"
         ></fff-user-snippet>
   

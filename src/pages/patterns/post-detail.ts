@@ -128,7 +128,7 @@ const main = html`
           <fff-comment-item
             author="수줍이"
             datetime="1 day ago"
-            avatar-src="/src/images/soojubm.png"
+            .avatar=${{ src: '/src/images/soojubm.png' }}
             reply-label="답글 10개"
             editable
             @edit=${() => alert('수정 clicked')}
@@ -140,7 +140,7 @@ const main = html`
           <fff-comment-item
             author="수줍이"
             datetime="1 day ago"
-            avatar-src="/src/images/soojubm.png"
+            .avatar=${{ src: '/src/images/soojubm.png' }}
             reply-label="답글"
           >
             우와 처음으로 댓글 남겨요! 댓글이 길어지면 어떻게 보일까요? 두 줄로 세 줄로 안녕하세요.
