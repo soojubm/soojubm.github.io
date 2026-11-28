@@ -1,6 +1,6 @@
 import { css, unsafeCSS } from 'lit'
 
-import { surfaceBleedStyles } from '@/components/common/surface/surface.styles'
+import { surfaceBaseStyles, surfaceBleedStyles } from '@/components/common/surface/surface.styles'
 import { MEDIA } from '@/constants'
 import { buildAttributeRules, type AttributeTokens } from '@/utils'
 
@@ -23,20 +23,20 @@ export const componentContentFrameStyles = css`
   }
 
   .component-content-frame {
+    ${surfaceBaseStyles};
     --component-content-margin-inline-start: calc(
       var(--layout-padding-inline) * -1 + var(--space-4)
     );
     --component-content-padding-block: var(--space-8);
     --component-content-padding-inline: calc(var(--layout-padding-inline) - var(--space-4));
     --component-content-margin: 0 0 0 var(--component-content-margin-inline-start);
-    --component-content-border: var(--border);
+    --surface-padding: var(--component-content-padding-block)
+      var(--component-content-padding-inline);
     --surface-border-radius: var(--border-radius-large);
 
-    position: relative;
+    display: block;
+    width: auto;
     margin: var(--component-content-margin);
-    padding: var(--component-content-padding-block) var(--component-content-padding-inline);
-    border: var(--component-content-border);
-    border-radius: var(--surface-border-radius);
   }
 
   @media ${MEDIA.default} {
@@ -64,7 +64,7 @@ export const componentPropsStyles = [
       background-color: var(--background-subtle-color);
       position: relative;
       cursor: pointer;
-      --component-content-border: var(--border-transparent);
+      --surface-border: var(--border-transparent);
       --component-content-padding-block: var(--space-6);
     }
     .component-props-list {

@@ -1,6 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
+import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
 import '@/components/common'
 
 @customElement('fff-figure-card')
@@ -15,14 +16,14 @@ export class FigureCard extends LitElement {
     }
 
     .figure {
-      display: flex;
+      ${surfaceBaseStyles};
+      --surface-padding: var(--figure-card-padding-block) 0;
+      --surface-border-radius: var(--border-radius-large);
+
+      flex-direction: row;
       align-items: center;
       justify-content: center;
       min-height: var(--size-80);
-      padding-block: var(--figure-card-padding-block);
-      border: var(--border);
-      border-radius: var(--border-radius-large);
-      background: var(--background-color);
     }
 
     .body {
