@@ -13,6 +13,7 @@ import { renderPage } from '@/components/layouts/base-layouts'
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'button.html', label: 'Button' },
   { href: 'toggle-button.html', label: 'Toggle Button' },
+  { href: 'content.html?tab=iconography', label: 'Iconography' },
 ]
 
 const componentProps: ComponentPropItemData[] = [...componentPropsOf('fff-icon-button')]
@@ -230,20 +231,6 @@ const main = html`
           올리지 않는다
         </fff-component-notice>
       </fff-flex>
-    </fff-component-section>
-    <fff-component-section
-      heading="Expand Indicator"
-      description="펼침 여부를 방향으로 보여 주는 장식 요소입니다. 상호작용은 갖지 않습니다."
-    >
-      <fff-expand-indicator></fff-expand-indicator>
-      <fff-expand-indicator expanded></fff-expand-indicator>
-    </fff-component-section>
-    <fff-component-section
-      heading="Selected Indicator"
-      description="선택 여부를 체크로 보여 주는 장식 요소입니다. 선택되지 않아도 자리를 유지합니다."
-    >
-      <fff-selected-indicator></fff-selected-indicator>
-      <fff-selected-indicator selected></fff-selected-indicator>
     </fff-component-section>
     <fff-component-section heading="ToTopButton" description="페이지의 최상단으로 스크롤합니다.">
       <fff-to-top-button></fff-to-top-button>
