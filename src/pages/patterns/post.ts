@@ -21,7 +21,7 @@ const main = html`
       description="팀이 직접 전하는 최신 소식을 확인하세요."
     ></fff-page-header>
 
-    <fff-content-section-list>
+    <fff-flex direction="column" gap="section">
       <fff-flex direction="column" gap="4">
         <fff-filter-button-group
           aria-label="카테고리"
@@ -45,7 +45,8 @@ const main = html`
         <div style="height:.5rem"></div>
         <fff-show-more-button></fff-show-more-button>
       </fff-flex>
-      <fff-content-section heading-level="3" heading="인기 주제">
+      <fff-flex direction="column" gap="4">
+        <fff-text-block level="3" heading="인기 주제"></fff-text-block>
         <fff-button-group>
           ${TOPICS.map(
             topic => html`
@@ -53,8 +54,8 @@ const main = html`
             `,
           )}
         </fff-button-group>
-      </fff-content-section>
-    </fff-content-section-list>
+      </fff-flex>
+    </fff-flex>
   </fff-main>
 `
 

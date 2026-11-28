@@ -101,7 +101,7 @@ const cartOptions = [
 
 const main = html`
   <fff-main width="large">
-    <fff-content-section-list>
+    <fff-flex direction="column" gap="section">
       <fff-grid columns="2" gap="8">
         <fff-product-image
           src="/src/images/AlbumArt_{B5020207-474E-4720-B8A7-C6073790C400}_Large.jpg"
@@ -367,7 +367,7 @@ const main = html`
           ]}
         ></fff-meta-item-group>
       </fff-flex>
-    </fff-content-section-list>
+    </fff-flex>
 
     <fff-fixed-bottom id="purchase-bar">
       <fff-product-purchase-bar

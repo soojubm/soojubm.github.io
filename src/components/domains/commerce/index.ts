@@ -1,3 +1,5 @@
+import '@/components/domains/commerce/checkout-section'
+import '@/components/domains/commerce/checkout-screen'
 import '@/components/domains/commerce/review-item'
 import '@/components/domains/commerce/review-summary'
 import '@/components/domains/commerce/product-price'

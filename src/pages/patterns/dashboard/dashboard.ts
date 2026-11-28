@@ -148,7 +148,7 @@ const toPages = (ids: string[]) => ids.map(id => ({ href: `./${id}.html`, label:
 
 const main = html`
   <fff-main>
-    <fff-content-section-list>
+    <fff-flex direction="column" gap="section">
       <fff-flex direction="column" gap="4">
         <fff-flex justify-content="space-between" align-items="center" gap="4">
           <fff-heading level="2">
@@ -275,7 +275,7 @@ const main = html`
           </fff-surface>
         </fff-grid>
       </fff-flex>
-    </fff-content-section-list>
+    </fff-flex>
   </fff-main>
 `
 

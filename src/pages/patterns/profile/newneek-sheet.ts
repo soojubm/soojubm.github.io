@@ -7,7 +7,7 @@ export const newneekSheet = html`
   <fff-sheet id="sheet-newneek" placement="bottom" width="large" height="90vh">
     <fff-sheet-header heading="뉴닉"></fff-sheet-header>
     <fff-sheet-body>
-      <fff-content-section-list>
+      <fff-flex direction="column" gap="section">
         <div class="home-mangrove">
           <div>
             <img class="mangrove1" src="/src/images/newneek/home-mangrove1.png" alt="" />
@@ -101,7 +101,7 @@ export const newneekSheet = html`
         </fff-chat-feed>
 
         <img src="/src/images/newneek-book.png" alt="뉴닉 책 표지" />
-      </fff-content-section-list>
+      </fff-flex>
     </fff-sheet-body>
   </fff-sheet>
 `

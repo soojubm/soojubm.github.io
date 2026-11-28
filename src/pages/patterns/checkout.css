@@ -1,0 +1,7 @@
+.checkout-header {
+  background: var(--background-color);
+}
+
+.checkout-header fff-top-bar {
+  padding-inline: var(--layout-padding-inline);
+}

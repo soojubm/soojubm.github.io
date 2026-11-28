@@ -33,7 +33,7 @@ const main = html`
   <fff-main width="large" layout="split">
     <fff-image ratio="full" src="/src/images/coolhandluke.jpg" alt="Cool Hand Luke"></fff-image>
 
-    <fff-content-section-list>
+    <fff-flex direction="column" gap="section">
       <fff-flex direction="column" gap="4">
         <fff-keyword-tag-group
           heading="개봉예정 D-12"
@@ -104,8 +104,9 @@ const main = html`
         </fff-button-group>
       </fff-flex>
 
-      <fff-content-section-list>
-        <fff-content-section heading-level="3" heading="출연진">
+      <fff-flex direction="column" gap="section">
+        <fff-flex direction="column" gap="4">
+          <fff-text-block level="3" heading="출연진"></fff-text-block>
           <fff-flex direction="column" gap="4">
             <fff-filter-button-group
               mode="single"
@@ -114,9 +115,10 @@ const main = html`
             ></fff-filter-button-group>
             <fff-cast-list .casts=${casts}></fff-cast-list>
           </fff-flex>
-        </fff-content-section>
+        </fff-flex>
 
-        <fff-content-section heading-level="3" heading="수상내역">
+        <fff-flex direction="column" gap="4">
+          <fff-text-block level="3" heading="수상내역"></fff-text-block>
           <fff-grid columns="2" gap="4" role="list">
             ${awards.map(
               award => html`
@@ -129,17 +131,18 @@ const main = html`
               `,
             )}
           </fff-grid>
-        </fff-content-section>
+        </fff-flex>
 
-        <fff-content-section
-          heading-level="3"
-          heading="리뷰"
-          description="이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의 귀중품 보관함도 시설 내에 마련되어 있습니다."
-        >
+        <fff-flex direction="column" gap="4">
+          <fff-text-block
+            level="3"
+            heading="리뷰"
+            description="이 호텔에는 레스토랑, 사우나, 셀프 주차(요금 별도) 등이 마련되어 있습니다. 공용 장소에서의 WiFi의 경우 무료입니다. 이 밖에 24시간 운영 프런트 데스크 및 프런트 데스크의 귀중품 보관함도 시설 내에 마련되어 있습니다."
+          ></fff-text-block>
           <fff-button variant="secondary">Read More Reviews</fff-button>
-        </fff-content-section>
-      </fff-content-section-list>
-    </fff-content-section-list>
+        </fff-flex>
+      </fff-flex>
+    </fff-flex>
   </fff-main>
 `
 

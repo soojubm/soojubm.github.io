@@ -117,7 +117,8 @@ const main = html`
       </fff-surface>
     </fff-flex>
     <fff-separator level="section"></fff-separator>
-    <fff-content-section heading="댓글 192" heading-level="3">
+    <fff-flex direction="column" gap="4">
+      <fff-text-block level="3" heading="댓글 192"></fff-text-block>
       <fff-flex direction="column" gap="8">
         <fff-comment-input
           placeholder="댓글을 입력해 주세요."
@@ -148,12 +149,15 @@ const main = html`
           </fff-comment-item>
         </fff-comment-list>
       </fff-flex>
-    </fff-content-section>
+    </fff-flex>
   </fff-main>
 
   <fff-flex direction="column" gap="8" style="padding: var(--space-8) var(--layout-padding-inline)">
-    <fff-content-section heading="더 읽어보기" heading-level="3">
-      <fff-link slot="action" href="post.html">모두 보기</fff-link>
+    <fff-flex direction="column" gap="4">
+      <fff-flex align-items="flex-start" justify-content="space-between" gap="2">
+        <fff-text-block level="3" heading="더 읽어보기"></fff-text-block>
+        <fff-link href="post.html">모두 보기</fff-link>
+      </fff-flex>
       <fff-post-list>
         ${POSTS.map(
           post => html`
@@ -167,7 +171,7 @@ const main = html`
           `,
         )}
       </fff-post-list>
-    </fff-content-section>
+    </fff-flex>
 
     <fff-post-pager .previous=${previousPost} .next=${nextPost}></fff-post-pager>
   </fff-flex>

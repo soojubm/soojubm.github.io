@@ -7,7 +7,7 @@ const main = html`
     <fff-grid columns="2" gap="0">
       <fff-image src=""></fff-image>
 
-      <fff-content-section-list style="padding: var(--space-8)">
+      <fff-flex direction="column" gap="section" style="padding: var(--space-8)">
         <fff-text size="32">
           Contact To buy our products or to learn more about Sandy Shore, don’t hesitate to reach
           out. We’ll be happy to respond.
@@ -23,7 +23,7 @@ const main = html`
             },
           ]}
         ></fff-meta-item-group>
-      </fff-content-section-list>
+      </fff-flex>
     </fff-grid>
   </fff-main>
 `
