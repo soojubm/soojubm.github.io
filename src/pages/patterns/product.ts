@@ -99,6 +99,17 @@ const cartOptions = [
   { value: 'rental', label: '1년 대여' },
 ]
 
+const productInfoItems = [
+  { label: '제품명', value: '노멀 헤어퍼퓸' },
+  { label: '소재', value: '금속' },
+  { label: '치수', value: '20mm * 40mm' },
+  { label: '전성분', value: '정제수, 아리수, 활명수' },
+  { label: '제조일자', value: '2019. 11. 08.' },
+  { label: '제조업자', value: '별도표기' },
+  { label: '제조국', value: '대한민국' },
+  { label: '문의전화', value: '02-000-2000' },
+]
+
 const main = html`
   <fff-main width="large">
     <fff-flex direction="column" gap="section">
@@ -354,41 +365,33 @@ const main = html`
       <fff-flex as="section" id="info" direction="column" gap="3">
         <fff-heading level="2">상품상세정보 고지</fff-heading>
         <fff-meta-item-group
+          layout="inline"
           direction="column"
-          .items=${[
-            { label: '제품명', value: '노멀 헤어퍼퓸', layout: 'inline' },
-            { label: '소재', value: '금속', layout: 'inline' },
-            { label: '치수', value: '20mm * 40mm', layout: 'inline' },
-            { label: '전성분', value: '정제수, 아리수, 활명수', layout: 'inline' },
-            { label: '제조일자', value: '2019. 11. 08.', layout: 'inline' },
-            { label: '제조업자', value: '별도표기', layout: 'inline' },
-            { label: '제조국', value: '대한민국', layout: 'inline' },
-            { label: '문의전화', value: '02-000-2000', layout: 'inline' },
-          ]}
+          .items=${productInfoItems}
         ></fff-meta-item-group>
       </fff-flex>
     </fff-flex>
-
-    <fff-fixed-bottom id="purchase-bar">
-      <fff-product-purchase-bar
-        image-src="/src/images/cake_gosum.jpg"
-        name="뉴닉이 풀어 쓴 경제상식사전"
-        price="₩ 16,000"
-        original-price="₩ 25,000"
-        discount="36% 할인"
-      >
-        <fff-button
-          slot="action"
-          aria-controls="cart-sheet"
-          aria-haspopup="dialog"
-          variant="primary"
-          size="large"
-        >
-          장바구니 추가
-        </fff-button>
-      </fff-product-purchase-bar>
-    </fff-fixed-bottom>
   </fff-main>
+
+  <fff-fixed-bottom id="purchase-bar">
+    <fff-product-purchase-bar
+      image-src="/src/images/cake_gosum.jpg"
+      name="뉴닉이 풀어 쓴 경제상식사전"
+      price="₩ 16,000"
+      original-price="₩ 25,000"
+      discount="36% 할인"
+    >
+      <fff-button
+        slot="action"
+        aria-controls="cart-sheet"
+        aria-haspopup="dialog"
+        variant="primary"
+        size="large"
+      >
+        장바구니 추가
+      </fff-button>
+    </fff-product-purchase-bar>
+  </fff-fixed-bottom>
 
   <fff-sheet id="cart-sheet" placement="right">
     <fff-sheet-header heading="장바구니"></fff-sheet-header>

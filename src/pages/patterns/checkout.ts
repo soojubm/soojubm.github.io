@@ -1,5 +1,6 @@
 import { html } from 'lit'
 
+import type { Sheet } from '@/components/overlay/sheet/sheet'
 import type { MenuOptionItem } from '@/types'
 
 import { ICON_NAMES } from '@/components/common'
@@ -33,6 +34,10 @@ const paymentOptions: MenuOptionItem[] = [
   { value: 'cash', label: '현금' },
   { value: 'bank', label: '무통장입금', disabled: true },
 ]
+
+const closeShippingSheet = () => {
+  document.querySelector<Sheet>('#shipping-sheet')?.close()
+}
 
 const main = html`
   <fff-fixed-top class="checkout-header">
@@ -74,7 +79,11 @@ const main = html`
                   <fff-paragraph color="light">010-9876-5432</fff-paragraph>
                 </fff-radio-card>
               </fff-radio-card-group>
-              <fff-add-button label="배송지 변경/추가"></fff-add-button>
+              <fff-add-button
+                label="배송지 변경/추가"
+                aria-controls="shipping-sheet"
+                aria-haspopup="dialog"
+              ></fff-add-button>
             </fff-flex>
           </fff-checkout-section>
 
@@ -134,68 +143,21 @@ const main = html`
           </fff-checkout-section>
 
           <fff-checkout-section heading="결제상세">
-            <fff-meta-item-group
-              direction="column"
-              gap="1"
-              .items=${[
-                { label: '마일리지 사용', value: '₩ 980' },
-                { label: '카드 결제', value: '₩ 31,920' },
-              ]}
-            ></fff-meta-item-group>
-
             <fff-surface>
               <fff-flex direction="column" gap="4">
                 ${priceSummary}
-                <fff-meta-item label="적립 예정 포인트" value="최대 1,147원"></fff-meta-item>
+                <fff-meta-item-group
+                  direction="column"
+                  .items=${[
+                    { label: '마일리지 사용', value: '₩ 980' },
+                    { label: '카드 결제', value: '₩ 31,920' },
+                    { label: '적립 예정 포인트', value: '최대 1,147원' },
+                  ]}
+                ></fff-meta-item-group>
                 <fff-button variant="primary" size="large" full-width>결제</fff-button>
               </fff-flex>
             </fff-surface>
           </fff-checkout-section>
-        </fff-flex>
-      </fff-checkout-screen>
-
-      <!-- 배송지 등록 -->
-      <fff-checkout-screen aria-label="배송지 등록">
-        <fff-top-bar heading="배송지 등록"></fff-top-bar>
-
-        <fff-flex direction="column" gap="3">
-          <fff-textfield
-            label="받는 사람"
-            type="text"
-            name="recipient"
-            placeholder="수줍이"
-          ></fff-textfield>
-          <fff-textfield
-            label="연락처"
-            type="text"
-            name="phone"
-            placeholder="01012345678"
-          ></fff-textfield>
-          <fff-textfield
-            label="주소"
-            type="text"
-            name="address"
-            placeholder="클릭하여 우편번호 찾기"
-          ></fff-textfield>
-          <fff-textfield
-            label="상세주소"
-            type="text"
-            name="address-detail"
-            placeholder="동 호수"
-            optional
-          ></fff-textfield>
-          <fff-textfield
-            label="배송 메시지"
-            type="text"
-            name="message"
-            placeholder="직접 입력"
-            optional
-          ></fff-textfield>
-        </fff-flex>
-
-        <fff-flex as="footer" direction="column" gap="3">
-          <fff-checkbox size="large">개인정보 수집 및 이용 동의</fff-checkbox>
-          <fff-button variant="primary" size="large" full-width>배송지 등록</fff-button>
         </fff-flex>
       </fff-checkout-screen>
 
@@ -244,7 +206,6 @@ const main = html`
               <fff-flex direction="column" gap="4">
                 <fff-meta-item-group
                   direction="column"
-                  gap="1"
                   .items=${[
                     { label: '결제상세', value: '카드 간편결제 + 마일리지' },
                     { label: '포인트 혜택', value: '최대 1,147원' },
@@ -258,6 +219,52 @@ const main = html`
       </fff-checkout-screen>
     </fff-flex>
   </fff-main>
+
+  <fff-sheet id="shipping-sheet" placement="bottom">
+    <fff-sheet-header heading="배송지 등록"></fff-sheet-header>
+    <fff-sheet-body>
+      <fff-flex direction="column" gap="6">
+        <fff-flex direction="column" gap="3">
+          <fff-textfield
+            label="받는 사람"
+            type="text"
+            name="recipient"
+            placeholder="수줍이"
+          ></fff-textfield>
+          <fff-textfield
+            label="연락처"
+            type="text"
+            name="phone"
+            placeholder="01012345678"
+          ></fff-textfield>
+          <fff-textfield
+            label="주소"
+            type="text"
+            name="address"
+            placeholder="클릭하여 우편번호 찾기"
+          ></fff-textfield>
+          <fff-textfield
+            label="상세주소"
+            type="text"
+            name="address-detail"
+            placeholder="동 호수"
+            optional
+          ></fff-textfield>
+          <fff-textfield
+            label="배송 메시지"
+            type="text"
+            name="message"
+            placeholder="직접 입력"
+            optional
+          ></fff-textfield>
+        </fff-flex>
+        <fff-checkbox size="large">개인정보 수집 및 이용 동의</fff-checkbox>
+      </fff-flex>
+    </fff-sheet-body>
+    <fff-sheet-footer
+      .primaryAction=${{ label: '배송지 등록', onClick: closeShippingSheet }}
+    ></fff-sheet-footer>
+  </fff-sheet>
 `
 
 const checkoutPage = findSitemapItem('checkout')

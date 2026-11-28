@@ -9,10 +9,8 @@ export class FixedBottom extends LitElement {
       width: 100%;
       padding-bottom: env(safe-area-inset-bottom);
       box-sizing: border-box;
-      position: fixed;
-      right: 0;
+      position: sticky;
       bottom: 0;
-      left: 0;
       z-index: var(--material-zindex-chrome);
     }
 
