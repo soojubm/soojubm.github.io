@@ -122,7 +122,10 @@ export const listItemInteractiveStyles = css`
   &[disabled],
   &[aria-disabled='true'] {
     ${disabledStyles};
-    pointer-events: none;
+
+    &:hover {
+      --list-item-interactive-background-color: transparent;
+    }
   }
 
   fff-list-item {

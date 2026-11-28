@@ -120,6 +120,7 @@ export const withMenuItemToggleState = <T extends Constructor<LitElement>>(Base:
     @property({ type: Boolean }) checked = false
     @property({ type: String }) value = ''
     activate = () => {
+      if (this.disabled) return
       toggleState(this, 'checked')
     }
   }
