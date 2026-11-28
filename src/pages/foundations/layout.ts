@@ -618,25 +618,21 @@ const main = html`
             heading-level="3"
             heading="Modal × Non-Modal"
             description="modal은 열린 동안 뒤의 화면을 막는 overlay입니다. 작업을 마치거나 취소해야 다음으로 넘어가는 흐름에 쓰며, 삭제 확인·중요 정보 입력·결제가 여기에 해당합니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                html`
-                  modal이 열려 있는 동안 뒤 화면은 조작할 수 없게 한다. 뒤 화면에서 포커스가
-                  움직이거나 스크롤되면 사용자가 modal을 벗어났다고 착각하거나 하던 작업의 위치를
-                  잃는다. 뒤 화면은 backdrop으로 흐려 보이게 하고, ${code('inert')}로 포커스를 받지
-                  못하게 하며, 스크롤을 멈춘다. 스크롤 위치는 기억했다가 닫을 때 그 자리로 되돌린다
-                `,
-                html`
-                  non-modal overlay에서 Tab으로 나가면 닫고, 포커스를 트리거로 되돌린다. Tab으로
-                  나갔을 때 포커스가 트리거 다음 요소가 아니라 엉뚱한 곳으로 가면 사용자가 위치를
-                  잃는다. overlay를 벗어나면 닫고 포커스를 트리거로 되돌려, 다음 Tab이 트리거에서
-                  이어지게 한다. 바깥을 눌러 닫을 때는 사용자가 누른 곳의 포커스를 빼앗지 않는다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+            .texts=${[
+              html`
+                modal이 열려 있는 동안 뒤 화면은 조작할 수 없게 한다. 뒤 화면에서 포커스가
+                움직이거나 스크롤되면 사용자가 modal을 벗어났다고 착각하거나 하던 작업의 위치를
+                잃는다. 뒤 화면은 backdrop으로 흐려 보이게 하고, ${code('inert')}로 포커스를 받지
+                못하게 하며, 스크롤을 멈춘다. 스크롤 위치는 기억했다가 닫을 때 그 자리로 되돌린다
+              `,
+              html`
+                non-modal overlay에서 Tab으로 나가면 닫고, 포커스를 트리거로 되돌린다. Tab으로
+                나갔을 때 포커스가 트리거 다음 요소가 아니라 엉뚱한 곳으로 가면 사용자가 위치를
+                잃는다. overlay를 벗어나면 닫고 포커스를 트리거로 되돌려, 다음 Tab이 트리거에서
+                이어지게 한다. 바깥을 눌러 닫을 때는 사용자가 누른 곳의 포커스를 빼앗지 않는다
+              `,
+            ]}
+          ></mm-content-section>
 
           <mm-content-section heading-level="3" heading="Placement Type">
             <mm-code-block language="typescript" .code=${placementTypeCode}></mm-code-block>

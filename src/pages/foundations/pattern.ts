@@ -206,18 +206,13 @@ const main = html`
             </mm-grid>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="접근성">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '훑어서 고르는 목록의 트리거는 heading으로 감싼다. 스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
-                html`
-                  접힌 내용은 포커스되지 않도록 한다. 시각적으로만 숨기면 화면에 없는 내용이 탭
-                  순서에 남는다. ${code('inert')}로 포커스와 접근성 트리에서 함께 뺀다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+          <mm-content-section heading-level="3" heading="접근성" .texts=${[
+            '훑어서 고르는 목록의 트리거는 heading으로 감싼다. 스크린리더가 제목 단위로 질문을 건너뛸 수 있다. heading은 문서 구조만 맡고 트리거의 타이포그래피는 그대로 두며, 레벨은 그 목록이 놓이는 자리에 맞춘다',
+            html`
+              접힌 내용은 포커스되지 않도록 한다. 시각적으로만 숨기면 화면에 없는 내용이 탭 순서에
+              남는다. ${code('inert')}로 포커스와 접근성 트리에서 함께 뺀다
+            `,
+          ]}></mm-content-section>
 
           <mm-content-section heading-level="3" heading="컴포넌트 예시">
             <mm-flex direction="column" gap="6">
@@ -373,14 +368,10 @@ const main = html`
             </mm-component-example>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="최근 검색어">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '전체 삭제를 제공하지 않는다. 사용자 데이터를 실수로 한꺼번에 날릴 수 있으므로 항목마다 삭제 버튼을 두고 하나씩만 지우게 한다',
-                '어떤 검색 기록을 모으고 어디까지 지울 수 있는지 함께 정한다. 최근 검색어와 맞춤 추천은 모아 둔 기록으로 만들어진다. 최근 검색어만 지우는 것인지, 지금까지의 모든 활동 기록까지 지우는 것인지 사용자에게 알려 준다',
-              ]}
-            ></mm-text-list>
+          <mm-content-section heading-level="3" heading="최근 검색어" .texts=${[
+            '전체 삭제를 제공하지 않는다. 사용자 데이터를 실수로 한꺼번에 날릴 수 있으므로 항목마다 삭제 버튼을 두고 하나씩만 지우게 한다',
+            '어떤 검색 기록을 모으고 어디까지 지울 수 있는지 함께 정한다. 최근 검색어와 맞춤 추천은 모아 둔 기록으로 만들어진다. 최근 검색어만 지우는 것인지, 지금까지의 모든 활동 기록까지 지우는 것인지 사용자에게 알려 준다',
+          ]}>
             <mm-component-example width="narrow">
               <mm-flex direction="column" gap="4">
                 <mm-searchfield
@@ -443,27 +434,21 @@ const main = html`
             </mm-component-example>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="접근성">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                html`
-                  검색 영역은 ${code('role="search"')}로 감싼다. 스크린리더 사용자가 랜드마크
-                  이동으로 검색에 바로 닿는다
-                `,
-                html`
-                  검색 필드에는 보이는 레이블이 없어도 이름을 준다. ${code('mm-searchfield')}는
-                  ${code('placeholder')}를 입력 요소의 ${code('aria-label')}로 옮기고, 지우기
-                  버튼에도 이름을 붙인다
-                `,
-                html`
-                  추천·최근 검색어 묶음에는 묶음의 이름을 붙인다. 추천 검색어는
-                  ${code('aria-label')}로, 최근 검색어는 제목으로 이름을 준다. 삭제 버튼은 어느
-                  검색어를 지우는지 이름으로 알린다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+          <mm-content-section heading-level="3" heading="접근성" .texts=${[
+            html`
+              검색 영역은 ${code('role="search"')}로 감싼다. 스크린리더 사용자가 랜드마크 이동으로
+              검색에 바로 닿는다
+            `,
+            html`
+              검색 필드에는 보이는 레이블이 없어도 이름을 준다. ${code('mm-searchfield')}는
+              ${code('placeholder')}를 입력 요소의 ${code('aria-label')}로 옮기고, 지우기 버튼에도
+              이름을 붙인다
+            `,
+            html`
+              추천·최근 검색어 묶음에는 묶음의 이름을 붙인다. 추천 검색어는 ${code('aria-label')}로,
+              최근 검색어는 제목으로 이름을 준다. 삭제 버튼은 어느 검색어를 지우는지 이름으로 알린다
+            `,
+          ]}></mm-content-section>
 
           <mm-component-references .items=${searchReferences}></mm-component-references>
         </mm-content-section-list>
@@ -480,15 +465,10 @@ const main = html`
           <mm-content-section
             heading-level="3"
             heading="컬렉션에 추가"
-            description="항목을 담을 컬렉션을 고르는 화면입니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '한 항목을 여러 컬렉션에 동시에 담게 한다. 이미 담긴 컬렉션은 선택된 채로 열려, 이 항목이 어디에 있는지 바로 보인다',
-                '담는 흐름 안에서 새 컬렉션을 바로 만들게 한다. 새 컬렉션을 만든 뒤에는 방금 담으려던 항목이 그 컬렉션에 담긴 채로 돌아온다',
-              ]}
-            ></mm-text-list>
+            description="항목을 담을 컬렉션을 고르는 화면입니다." .texts=${[
+              '한 항목을 여러 컬렉션에 동시에 담게 한다. 이미 담긴 컬렉션은 선택된 채로 열려, 이 항목이 어디에 있는지 바로 보인다',
+              '담는 흐름 안에서 새 컬렉션을 바로 만들게 한다. 새 컬렉션을 만든 뒤에는 방금 담으려던 항목이 그 컬렉션에 담긴 채로 돌아온다',
+            ]}>
             <mm-component-example width="narrow">
               <mm-flex direction="column" gap="3">
                 <mm-top-bar nav="close" heading="컬렉션에 추가">
@@ -586,19 +566,14 @@ const main = html`
           <mm-content-section
             heading-level="3"
             heading="생성 중"
-            description="답이 나오기 전의 기다림을 채우는 단계입니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '진행 단계를 목록으로 보여준다. 아무 변화가 없으면 사용자는 멈춘 것인지 기다려야 하는 것인지 알 수 없다. 끝낸 단계, 진행 중인 단계, 남은 단계를 한 목록에 두어 지금 위치를 알린다',
-                html`
-                  생성을 중단할 수 있게 한다. 잘못 보낸 질문이나 긴 답을 끝까지 기다리게 하면
-                  사용자는 아무것도 할 수 없다. ${code('mm-prompt-input')}은 ${code('loading')} 동안
-                  전송을 막고, ${code('stop')} 이벤트를 구독하면 중단 버튼을 보여준다
-                `,
-              ]}
-            ></mm-text-list>
+            description="답이 나오기 전의 기다림을 채우는 단계입니다." .texts=${[
+              '진행 단계를 목록으로 보여준다. 아무 변화가 없으면 사용자는 멈춘 것인지 기다려야 하는 것인지 알 수 없다. 끝낸 단계, 진행 중인 단계, 남은 단계를 한 목록에 두어 지금 위치를 알린다',
+              html`
+                생성을 중단할 수 있게 한다. 잘못 보낸 질문이나 긴 답을 끝까지 기다리게 하면 사용자는
+                아무것도 할 수 없다. ${code('mm-prompt-input')}은 ${code('loading')} 동안 전송을
+                막고, ${code('stop')} 이벤트를 구독하면 중단 버튼을 보여준다
+              `,
+            ]}>
             <mm-component-example width="narrow">
               <mm-flex direction="column" gap="4">
                 <mm-process-status-list>
@@ -618,14 +593,9 @@ const main = html`
           <mm-content-section
             heading-level="3"
             heading="출처"
-            description="답변이 어디에 근거하는지 밝히는 자료입니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '근거 자료는 답변 아래에 출처로 붙인다. 답변만 있으면 사용자는 그 내용을 믿어도 되는지 판단할 수 없다. 출처 이름과 설명이 있어야 자료를 열기 전에 어떤 자료인지 알 수 있다',
-              ]}
-            ></mm-text-list>
+            description="답변이 어디에 근거하는지 밝히는 자료입니다." .texts=${[
+              '근거 자료는 답변 아래에 출처로 붙인다. 답변만 있으면 사용자는 그 내용을 믿어도 되는지 판단할 수 없다. 출처 이름과 설명이 있어야 자료를 열기 전에 어떤 자료인지 알 수 있다',
+            ]}>
             <mm-component-example width="narrow">
               <mm-button-group>
                 <mm-chat-source
@@ -648,15 +618,10 @@ const main = html`
           <mm-content-section
             heading-level="3"
             heading="승인 요청"
-            description="AI가 사용자의 데이터를 바꾸는 일을 하기 전에 허락을 구하는 단계입니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '되돌릴 수 없는 작업은 실행하기 전에 승인을 받는다. 삭제처럼 결과를 돌릴 수 없는 일을 사용자 모르게 실행하면 피해를 복구할 수 없다. 승인과 거부를 한 쌍으로 두어 어느 쪽이든 고를 수 있게 한다',
-                '요청 문장에 작업의 대상을 구체적으로 적는다. "이 작업" 같은 말로 쓰면 사용자는 무엇을 승인하는지 모른 채 누르게 된다',
-              ]}
-            ></mm-text-list>
+            description="AI가 사용자의 데이터를 바꾸는 일을 하기 전에 허락을 구하는 단계입니다." .texts=${[
+              '되돌릴 수 없는 작업은 실행하기 전에 승인을 받는다. 삭제처럼 결과를 돌릴 수 없는 일을 사용자 모르게 실행하면 피해를 복구할 수 없다. 승인과 거부를 한 쌍으로 두어 어느 쪽이든 고를 수 있게 한다',
+              '요청 문장에 작업의 대상을 구체적으로 적는다. "이 작업" 같은 말로 쓰면 사용자는 무엇을 승인하는지 모른 채 누르게 된다',
+            ]}>
             <mm-component-example width="narrow">
               <mm-chat-confirmation
                 message="example.txt 파일을 삭제하려고 합니다. 이 작업을 승인하시겠어요?"
@@ -667,18 +632,13 @@ const main = html`
           <mm-content-section
             heading-level="3"
             heading="전송 실패"
-            description="사용자의 메시지가 전달되지 못했을 때의 단계입니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                html`
-                  실패한 메시지는 그 자리에서 다시 보낸다. 긴 질문을 처음부터 다시 쓰게 하면
-                  사용자는 보내기를 포기한다. ${code('mm-my-chat-message')}는 ${code('retry')}
-                  이벤트를 구독하면 실패한 말풍선 곁에 재전송 버튼을 보여준다
-                `,
-              ]}
-            ></mm-text-list>
+            description="사용자의 메시지가 전달되지 못했을 때의 단계입니다." .texts=${[
+              html`
+                실패한 메시지는 그 자리에서 다시 보낸다. 긴 질문을 처음부터 다시 쓰게 하면 사용자는
+                보내기를 포기한다. ${code('mm-my-chat-message')}는 ${code('retry')} 이벤트를
+                구독하면 실패한 말풍선 곁에 재전송 버튼을 보여준다
+              `,
+            ]}>
             <mm-component-example width="narrow">
               <mm-my-chat-message @retry=${handleMessageRetry}>
                 <mm-my-chat-bubble status="failed">
@@ -691,17 +651,12 @@ const main = html`
           <mm-content-section
             heading-level="3"
             heading="평가"
-            description="답이 도움이 되었는지 사용자에게 묻는 단계입니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                html`
-                  평가는 닫을 수 있게 한다. 평가 요청이 남아 있으면 사용자가 답을 읽는 자리를 계속
-                  차지한다. ${code('dismiss')} 이벤트를 구독하면 닫기 버튼을 보여준다
-                `,
-              ]}
-            ></mm-text-list>
+            description="답이 도움이 되었는지 사용자에게 묻는 단계입니다." .texts=${[
+              html`
+                평가는 닫을 수 있게 한다. 평가 요청이 남아 있으면 사용자가 답을 읽는 자리를 계속
+                차지한다. ${code('dismiss')} 이벤트를 구독하면 닫기 버튼을 보여준다
+              `,
+            ]}>
             <mm-component-example width="narrow">
               <mm-chat-feedback
                 question="이번 대화는 어떤가요?"
@@ -713,14 +668,9 @@ const main = html`
           <mm-content-section
             heading-level="3"
             heading="다음 질문"
-            description="답에 이어서 사용자가 물을 만한 말을 미리 내놓는 단계입니다."
-          >
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '다음 질문은 제안 버튼으로 줄여 준다. 빈 입력창 앞에서는 무엇을 물어야 할지 막힌다. 답에 이어질 말을 버튼으로 두면 한 번 눌러 대화를 이어 간다',
-              ]}
-            ></mm-text-list>
+            description="답에 이어서 사용자가 물을 만한 말을 미리 내놓는 단계입니다." .texts=${[
+              '다음 질문은 제안 버튼으로 줄여 준다. 빈 입력창 앞에서는 무엇을 물어야 할지 막힌다. 답에 이어질 말을 버튼으로 두면 한 번 눌러 대화를 이어 간다',
+            ]}>
             <mm-component-example width="narrow">
               <mm-chat-suggestions>
                 <mm-chat-suggestion>다시 설명해 주세요</mm-chat-suggestion>
@@ -735,26 +685,21 @@ const main = html`
             정하지 않았다
           </mm-component-notice>
 
-          <mm-content-section heading-level="3" heading="접근성">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                html`
-                  대화 영역은 ${code('role="log"')}로 알린다. 스크린리더가 새 메시지를 따로 찾지
-                  않고도 읽어 준다. ${code('mm-chat-feed')}가 ${code('role="log"')}와
-                  ${code('aria-label')}을 직접 갖는다
-                `,
-                html`
-                  전송 실패는 ${code('role="alert"')}로 즉시 알린다. 화면을 보지 못하는 사용자도
-                  메시지가 전달되지 않았다는 사실을 바로 알아야 다시 보낼 수 있다
-                `,
-                html`
-                  장식 이모지는 ${code('aria-hidden')}으로 가린다. 스크린리더가 이모지 이름을 읽으면
-                  문장이 끊겨 들린다
-                `,
-              ]}
-            ></mm-text-list>
-          </mm-content-section>
+          <mm-content-section heading-level="3" heading="접근성" .texts=${[
+            html`
+              대화 영역은 ${code('role="log"')}로 알린다. 스크린리더가 새 메시지를 따로 찾지 않고도
+              읽어 준다. ${code('mm-chat-feed')}가 ${code('role="log"')}와 ${code('aria-label')}을
+              직접 갖는다
+            `,
+            html`
+              전송 실패는 ${code('role="alert"')}로 즉시 알린다. 화면을 보지 못하는 사용자도
+              메시지가 전달되지 않았다는 사실을 바로 알아야 다시 보낼 수 있다
+            `,
+            html`
+              장식 이모지는 ${code('aria-hidden')}으로 가린다. 스크린리더가 이모지 이름을 읽으면
+              문장이 끊겨 들린다
+            `,
+          ]}></mm-content-section>
 
           <mm-component-references .items=${conversationReferences}></mm-component-references>
         </mm-content-section-list>

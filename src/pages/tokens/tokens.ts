@@ -538,14 +538,15 @@ const main = html`
           </mm-example-stage>
         </mm-content-section>
 
-        <mm-content-section heading-level="3" heading="이름 규칙">
-          <mm-text-list
-            .texts=${[
-              '기본값에는 base·default를 붙이지 않는다. base가 대상 이름인 material-base는 예외로 그대로 쓴다.',
-              '같은 값을 쓰더라도 역할이 다르면 이름을 나눈다. foreground-color와 background-strong-color는 라이트 테마에서 같은 gray800이지만, 다크 테마에서는 서로 다른 값으로 바뀐다.',
-              '강한 표면 위 글자색은 on- 뒤에 표면 이름을 붙인다. 테마가 표면 색을 바꿀 때 그 위 글자색도 같은 이름으로 함께 바꿀 수 있어, 테마마다 대비가 깨지지 않는다.',
-            ]}
-          ></mm-text-list>
+        <mm-content-section
+          heading-level="3"
+          heading="이름 규칙"
+          .texts=${[
+            '기본값에는 base·default를 붙이지 않는다. base가 대상 이름인 material-base는 예외로 그대로 쓴다.',
+            '같은 값을 쓰더라도 역할이 다르면 이름을 나눈다. foreground-color와 background-strong-color는 라이트 테마에서 같은 gray800이지만, 다크 테마에서는 서로 다른 값으로 바뀐다.',
+            '강한 표면 위 글자색은 on- 뒤에 표면 이름을 붙인다. 테마가 표면 색을 바꿀 때 그 위 글자색도 같은 이름으로 함께 바꿀 수 있어, 테마마다 대비가 깨지지 않는다.',
+          ]}
+        >
           <mm-example-stage>
             <mm-flex class="stage-content" direction="column">
               <mm-flex direction="column" gap="6">

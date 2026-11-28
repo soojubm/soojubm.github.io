@@ -83,9 +83,11 @@ const main = html`
     ></mm-page-header>
 
     <mm-page-body>
-      <mm-content-section heading-level="3" heading="등재 기준">
-        <mm-text-list variant="check" .texts=${criteria}></mm-text-list>
-      </mm-content-section>
+      <mm-content-section
+        heading-level="3"
+        heading="등재 기준"
+        .texts=${criteria}
+      ></mm-content-section>
 
       <mm-content-section heading-level="3" heading="용어">
         <mm-flex direction="column" gap="6">${words.map(renderWord)}</mm-flex>

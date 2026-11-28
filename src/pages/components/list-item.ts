@@ -255,20 +255,19 @@ const main = html`
             ]}
           ></mm-text-list>
         </mm-content-section>
-        <mm-content-section heading-level="3" heading="접근성">
-          <mm-text-list
-            variant="check"
-            .texts=${[
-              '인물·게시물처럼 각 행이 다른 곳으로 이동하는 목록은 menu가 아니라 list로 둔다. 명령을 실행하는 menu로 알리면 보조기술 사용자는 이 목록을 명령 메뉴로 받아들인다. list로 두면 일반 목록으로 읽힌다',
-              html`
-                한 그룹에는 같은 계열의 role을 갖는 행만 둔다.
-                <mm-code>mm-menu-item-group</mm-code>
-                는 방향키로 행 사이를 옮겨 다닌다. 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
-                Tab으로만 닿게 되고, 한 목록 안에서 키보드 동선이 둘로 갈린다
-              `,
-            ]}
-          ></mm-text-list>
-        </mm-content-section>
+        <mm-content-section
+          heading-level="3"
+          heading="접근성"
+          .texts=${[
+            '인물·게시물처럼 각 행이 다른 곳으로 이동하는 목록은 menu가 아니라 list로 둔다. 명령을 실행하는 menu로 알리면 보조기술 사용자는 이 목록을 명령 메뉴로 받아들인다. list로 두면 일반 목록으로 읽힌다',
+            html`
+              한 그룹에는 같은 계열의 role을 갖는 행만 둔다.
+              <mm-code>mm-menu-item-group</mm-code>
+              는 방향키로 행 사이를 옮겨 다닌다. 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
+              Tab으로만 닿게 되고, 한 목록 안에서 키보드 동선이 둘로 갈린다
+            `,
+          ]}
+        ></mm-content-section>
         <mm-content-section
           heading-level="3"
           heading="시각보정이 필요해요"

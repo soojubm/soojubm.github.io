@@ -445,14 +445,14 @@ const main = html`
             </mm-example-stage>
           </mm-content-section>
 
-          <mm-content-section heading-level="3" heading="제목">
-            <mm-text-list
-              variant="check"
-              .texts=${[
-                '텍스트는 짧게 유지하고 훑어볼 수 있는 덩어리로 나눈다. 간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
-                '태그라인의 행갈이는 작성 단계에서 정한다. 글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 인상을 남긴다',
-              ]}
-            ></mm-text-list>
+          <mm-content-section
+            heading-level="3"
+            heading="제목"
+            .texts=${[
+              '텍스트는 짧게 유지하고 훑어볼 수 있는 덩어리로 나눈다. 간결한 문구는 사용자가 서비스를 이해하고 다룰 수 있다는 신뢰를 만든다',
+              '태그라인의 행갈이는 작성 단계에서 정한다. 글자 또는 단어의 수를 제한하고 개행 조건을 정의해, 작은 화면에서도 인상을 남긴다',
+            ]}
+          >
             <mm-component-notice heading="잘린 제목의 전체를 보여주는 방법을 정한다">
               폴더블·워치처럼 화면이 점점 작아져 제목이 잘릴 수 있다. 자를지 여부를 정하는 시대는
               지났다. 잘렸을 때 사용자가 전체 제목을 확인하는 방법이 필요하다.
@@ -632,16 +632,15 @@ const main = html`
           </mm-content-section>
 
           <mm-content-section heading-level="3" heading="팝업을 여는 트리거">
-            <mm-content-section-list size="small">
-              <mm-text-list
-                variant="check"
-                .texts=${[
-                  html`
-                    트리거는 어떤 패널이 열리는지 미리 알린다. 누르기 전에 스크린리더가 열릴 패널을
-                    안내해야, 사용자가 열린 뒤의 조작을 예상할 수 있다.
-                  `,
-                ]}
-              ></mm-text-list>
+            <mm-content-section-list
+              size="small"
+              .texts=${[
+                html`
+                  트리거는 어떤 패널이 열리는지 미리 알린다. 누르기 전에 스크린리더가 열릴 패널을
+                  안내해야, 사용자가 열린 뒤의 조작을 예상할 수 있다.
+                `,
+              ]}
+            >
               <mm-grid columns="3" column-min-width="16rem" gap="6">
                 <mm-figure-card description="메뉴를 여는 트리거는 menu로 둔다">
                   <mm-button slot="figure">더보기</mm-button>
