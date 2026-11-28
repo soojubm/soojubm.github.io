@@ -31,7 +31,7 @@
 .skip-link {
   display: block;
   background: var(--background-strong-color);
-  color: var(--background-color);
+  color: var(--foreground-on-strong-color);
   text-align: center;
   height: 0;
   font-size: 0;

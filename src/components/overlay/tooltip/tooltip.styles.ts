@@ -31,7 +31,7 @@ export const tooltipBubbleStyles = css`
     --tooltip-bubble-padding: 0.5rem var(--space-3);
     --tooltip-bubble-border-radius: var(--border-radius);
     --tooltip-bubble-background-color: var(--background-strong-color);
-    --tooltip-bubble-text-color: var(--background-color);
+    --tooltip-bubble-text-color: var(--foreground-on-strong-color);
     --tooltip-bubble-shadow: var(--material-base-shadow);
 
     display: block;

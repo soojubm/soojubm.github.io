@@ -6,7 +6,7 @@ export const toastStyles = css`
     --toast-min-height: var(--size-48);
     --toast-gap: var(--space-2);
     --toast-background-color: var(--background-strong-color);
-    --toast-text-color: var(--background-color);
+    --toast-text-color: var(--foreground-on-strong-color);
     --toast-border-radius: var(--border-radius-large);
     --toast-padding-block: var(--space-2);
     --toast-padding-inline: var(--space-4);
