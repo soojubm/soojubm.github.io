@@ -99,12 +99,10 @@ export class Pagination extends LitElement {
     }
 
     const isCurrent = item === this.safeCurrentPage
-    const isEdge = item === 1 || item === this.safePageCount
 
     return html`
       <fff-page-button
         .page=${item}
-        variant=${isEdge ? 'secondary' : 'ghost'}
         aria-current=${ifDefined(isCurrent ? 'page' : undefined)}
         @click=${() => this.setPage(item)}
       ></fff-page-button>

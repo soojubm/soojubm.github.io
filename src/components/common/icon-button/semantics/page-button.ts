@@ -22,10 +22,6 @@ export class PageButton extends LitElement {
         ${iconButtonVariantSkin('ghost')}
       }
 
-      :host([variant='secondary']) {
-        ${iconButtonVariantSkin('secondary')}
-      }
-
       button[aria-current='page'] {
         border-color: var(--interaction-selected-border-color);
         color: var(--interaction-selected-foreground-color);
@@ -38,7 +34,6 @@ export class PageButton extends LitElement {
     `,
   ]
   @property({ type: Number }) page = 1
-  @property({ type: String, reflect: true }) variant: 'ghost' | 'secondary' = 'ghost'
   @property({ type: String, attribute: 'aria-current', reflect: true }) ariaCurrent: AriaCurrent =
     null
   @property({ type: Boolean }) disabled = false

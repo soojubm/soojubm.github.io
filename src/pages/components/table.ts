@@ -202,6 +202,7 @@ const main = html`
             <fff-flex slot="figure" align-items="center" gap="1">
               <fff-icon-button
                 icon="fast-arrow-left"
+                variant="secondary"
                 aria-label="첫 페이지로 이동"
               ></fff-icon-button>
               <fff-prev-button aria-label="이전 페이지로 이동"></fff-prev-button>
@@ -209,6 +210,7 @@ const main = html`
               <fff-next-button aria-label="다음 페이지로 이동"></fff-next-button>
               <fff-icon-button
                 icon="fast-arrow-right"
+                variant="secondary"
                 aria-label="마지막 페이지로 이동"
               ></fff-icon-button>
             </fff-flex>
