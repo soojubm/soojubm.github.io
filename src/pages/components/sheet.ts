@@ -1,7 +1,6 @@
 import { html } from 'lit'
 
 import type {
-  ComponentChangelogItemData,
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentReferenceItemData,
@@ -20,18 +19,6 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'dialog.html', label: 'Dialog' },
   { href: 'popover.html', label: 'Popover' },
   { href: 'surface.html', label: 'Surface' },
-]
-
-const componentChangelog: ComponentChangelogItemData[] = [
-  {
-    date: '2026-09-20',
-    description:
-      'placement에서 center를 빼고 top을 더했습니다. 기본값은 bottom이며, 화면 가운데에 뜨는 표면은 fff-dialog가 맡습니다. navbar 검색 패널은 top sheet로 바꿨습니다.',
-  },
-  {
-    date: '2026-09-20',
-    description: 'full을 다른 컴포넌트와 같은 이름인 full-width로 바꿨습니다.',
-  },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -148,8 +135,6 @@ function sheetPageTemplate() {
       <fff-component-related .items=${relatedComponents}></fff-component-related>
 
       <fff-component-references .items=${componentReferences}></fff-component-references>
-
-      <fff-component-changelog .items=${componentChangelog}></fff-component-changelog>
 
       <fff-component-pager></fff-component-pager>
     </fff-main>

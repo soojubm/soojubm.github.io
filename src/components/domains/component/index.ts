@@ -6,7 +6,6 @@ import '@/components/domains/component/component-tokens'
 import '@/components/domains/component/component-section'
 import '@/components/domains/component/component-references'
 import '@/components/domains/component/reference-cell'
-import '@/components/domains/component/component-changelog'
 import '@/components/domains/component/component-related'
 import '@/components/domains/component/component-pager'
 import '@/components/domains/component/component-aka'
@@ -27,7 +26,6 @@ import '@/components/domains/component/component-usage'
 import '@/components/domains/component/component-notice'
 
 export type { ComponentFeatureItem } from '@/components/domains/component/component-feature-list'
-export type { ComponentChangelogItemData } from '@/components/domains/component/component-changelog'
 export type { ComponentPropItemData } from '@/components/domains/component/component-props'
 export {
   code,

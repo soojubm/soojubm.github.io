@@ -1,7 +1,6 @@
 import { html } from 'lit'
 
 import type {
-  ComponentChangelogItemData,
   ComponentFeatureItem,
   ComponentPropItemData,
   ComponentReferenceItemData,
@@ -16,14 +15,6 @@ const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'textarea.html', label: 'Textarea' },
   { href: 'select.html', label: 'Select' },
   { href: 'pattern.html?tab=search', label: 'Search' },
-]
-
-const componentChangelog: ComponentChangelogItemData[] = [
-  {
-    date: '2026-09-17',
-    description:
-      'field 계열 전체에서 helper를 description으로 변경하고(fff-textfield-helper → fff-textfield-description), 설명 텍스트를 입력 필드 아래로 옮겼습니다.',
-  },
 ]
 
 const componentReferences: ComponentReferenceItemData[] = [
@@ -266,8 +257,6 @@ const main = html`
     <fff-component-related .items=${relatedComponents}></fff-component-related>
 
     <fff-component-references .items=${componentReferences}></fff-component-references>
-
-    <fff-component-changelog .items=${componentChangelog}></fff-component-changelog>
 
     <fff-component-pager></fff-component-pager>
   </fff-main>
