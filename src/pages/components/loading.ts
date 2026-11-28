@@ -20,7 +20,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Feedback',
     description:
-      '작업이 진행 중이며 시스템이 응답하고 있음을 알립니다. 결과를 기다리는 동안 사용자의 불확실성을 줄입니다.',
+      '작업이 진행 중이며 시스템이 응답하고 있음을 보여 줍니다. 결과를 기다리는 동안 사용자의 불확실성을 줄입니다.',
   },
 ]
 
@@ -59,7 +59,7 @@ const main = html`
 
     <fff-component-section
       heading="ProcessStatus"
-      description="진행률을 알 수 없는 작업의 현재 상태를 한 줄로 알립니다. 채울 막대가 없으므로 시도 횟수나 경과 시간처럼 기다릴지 판단할 근거를 글로 줍니다."
+      description="진행률을 알 수 없는 작업의 현재 상태를 한 줄로 보여 줍니다. 채울 막대가 없으므로 시도 횟수나 경과 시간처럼 기다릴지 판단할 근거를 글로 줍니다."
     >
       <fff-flex direction="column" gap="3">
         <fff-process-status label="업로드 중" .meta=${['3/12개', '1m 04s']}></fff-process-status>
@@ -95,7 +95,7 @@ const main = html`
 
     <fff-component-section
       heading="TypingIndicator"
-      description="입력 중·응답 대기 등 진행 상태를 알립니다. 채팅 입력 표시에 사용합니다."
+      description="입력 중·응답 대기 등 진행 상태를 보여 줍니다. 채팅 입력 표시에 사용합니다."
     >
       <fff-flex>
         <fff-typing-indicator></fff-typing-indicator>

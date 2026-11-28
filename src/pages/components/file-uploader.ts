@@ -123,7 +123,8 @@ const main = html`
 
     <fff-component-section heading="Drag and Drop Area" description="TODO">
       <fff-paragraph color="light">
-        파일을 끌어다 놓아 첨부하는 영역입니다. 드래그하는 동안에는 놓을 수 있다는 상태를 알립니다.
+        파일을 끌어다 놓아 첨부하는 영역입니다. 드래그하는 동안에는 놓을 수 있다는 상태를 보여
+        줍니다.
       </fff-paragraph>
     </fff-component-section>
 

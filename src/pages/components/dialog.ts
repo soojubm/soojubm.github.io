@@ -27,7 +27,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Feedback',
     description:
-      '되돌리기 어려운 작업을 실행하기 전에 그 결과를 알리고 확인을 받습니다. 확인 없이 끝나는 결과는 토스트나 인라인 메시지가 알립니다.',
+      '되돌리기 어려운 작업을 실행하기 전에 그 결과를 알리고 확인을 받습니다. 확인 없이 끝나는 결과는 토스트나 인라인 메시지가 전합니다.',
   },
   {
     heading: 'Modality',

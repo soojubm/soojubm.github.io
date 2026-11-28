@@ -26,7 +26,7 @@ const componentFeatures: ComponentFeatureItem[] = [
   {
     heading: 'Glanceable',
     description:
-      '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 하며, 용도는 툴팁으로도 알려 줍니다.',
+      '레이블 없이 아이콘 하나로 용도를 즉시 알아볼 수 있어야 하며, 용도는 툴팁으로도 보여 줍니다.',
   },
 ]
 
@@ -284,7 +284,7 @@ const main = html`
     </fff-component-section>
     <fff-component-section
       heading="Share Button"
-      description="콘텐츠를 공유합니다. 무엇을 어떻게 공유할지는 쓰는 곳이 정하므로 누르면 share 이벤트만 알립니다."
+      description="콘텐츠를 공유합니다. 무엇을 어떻게 공유할지는 쓰는 곳이 정하므로 누르면 share 이벤트만 발행합니다."
     >
       <fff-share-button tooltip-placement="bottom"></fff-share-button>
     </fff-component-section>

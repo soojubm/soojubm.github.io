@@ -99,7 +99,7 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-dot']}></fff-component-tokens>
 
-    <fff-component-section heading="StatusDot" description="항목의 상태를 알립니다.">
+    <fff-component-section heading="StatusDot" description="항목의 상태를 나타냅니다.">
       <fff-flex direction="column" gap="6">
         <fff-flex gap="4" align-items="center">
           ${statusVariants.map(
@@ -129,7 +129,7 @@ const main = html`
       </fff-flex>
     </fff-component-section>
 
-    <fff-component-section heading="ProgressDot" description="작업의 진행 단계를 알립니다.">
+    <fff-component-section heading="ProgressDot" description="작업의 진행 단계를 나타냅니다.">
       <fff-flex gap="4" align-items="center">
         <fff-progress-dot variant="todo">시작 전</fff-progress-dot>
         <fff-progress-dot variant="in-progress">진행 중</fff-progress-dot>
@@ -142,7 +142,10 @@ const main = html`
       <fff-pagination current-page="2" page-count="5"></fff-pagination>
     </fff-component-section>
 
-    <fff-component-section heading="ChartLegend" description="차트의 시리즈가 무엇인지 알립니다.">
+    <fff-component-section
+      heading="ChartLegend"
+      description="차트의 각 시리즈가 어떤 값을 나타내는지 보여 줍니다."
+    >
       <fff-chart-legend .items=${legendItems}></fff-chart-legend>
     </fff-component-section>
 

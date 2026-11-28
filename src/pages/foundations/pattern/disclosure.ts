@@ -48,7 +48,7 @@ export const disclosurePanel = html`
       <fff-content-section heading-level="3" heading="펼침 단서">
         <fff-grid columns="3" gap="6">
           <fff-figure-card
-            description="질문·섹션 이름·고른 값처럼 레이블이 내용을 가리키는 트리거 옆에 붙어, 패널 본문·하위 페이지 링크·옵션 목록이 펼쳐진다고 알립니다."
+            description="질문·섹션 이름·고른 값처럼 레이블이 내용을 가리키는 트리거 옆에 붙어, 패널 본문·하위 페이지 링크·옵션 목록이 펼쳐진다는 것을 보여 줍니다."
           >
             <fff-flex slot="figure" align-items="center" gap="6">
               <fff-flex direction="column" gap="2" align-items="center">
@@ -67,7 +67,7 @@ export const disclosurePanel = html`
             <fff-code-tag slot="tags">fff-chat-source</fff-code-tag>
           </fff-figure-card>
           <fff-figure-card
-            description="잘린 텍스트를 펼치는 트리거는 레이블이 상태에 따라 바뀌어 펼침을 알립니다. 문단과 함께 있을 때 사용하며, 문단과 구별하려고 볼드체를 쓰되 행동을 유발하는 버튼처럼 보이게 하지 않습니다."
+            description="잘린 텍스트를 펼치는 트리거는 레이블이 상태에 따라 바뀌어 펼침 여부를 보여 줍니다. 문단과 함께 있을 때 사용하며, 문단과 구별하려고 볼드체를 쓰되 행동을 유발하는 버튼처럼 보이게 하지 않습니다."
           >
             <fff-flex slot="figure" align-items="center" gap="6">
               <fff-text weight="bold">더 보기</fff-text>
@@ -77,7 +77,7 @@ export const disclosurePanel = html`
             <fff-code-tag slot="tags">fff-read-more-button</fff-code-tag>
           </fff-figure-card>
           <fff-figure-card
-            description="아이콘만 있는 트리거는 그 아이콘이 내비게이션 메뉴·오버플로 메뉴·검색 패널이 펼쳐진다고 알립니다."
+            description="아이콘만 있는 트리거는 그 아이콘이 내비게이션 메뉴·오버플로 메뉴·검색 패널이 펼쳐진다는 것을 보여 줍니다."
           >
             <fff-flex slot="figure" align-items="center" gap="6">
               <fff-hamburger-button></fff-hamburger-button>

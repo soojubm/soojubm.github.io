@@ -111,7 +111,7 @@ const semanticStates: StateCard[] = [
     state: 'error',
     selectors: ['aria-invalid'],
     description:
-      '오류, 실패, 수정이 필요한 상태를 나타냅니다. 입력값이 유효하지 않으면 aria-invalid로 알립니다.',
+      '오류, 실패, 수정이 필요한 상태를 나타냅니다. 입력값이 유효하지 않으면 aria-invalid로 표시합니다.',
     tokens: ['foreground-danger-color'],
   },
   {
@@ -139,7 +139,7 @@ const dataStates: StateCard[] = [
   {
     state: 'pending',
     selectors: [],
-    description: '데이터를 가져오는 중입니다. 진행 중임을 알립니다.',
+    description: '데이터를 가져오는 중입니다. 진행 중임을 보여 줍니다.',
     figure: dataIcon(ICON_NAMES.TIMER),
     components: ['fff-spinner'],
     tokens: [],
@@ -297,7 +297,7 @@ const main = html`
               </fff-surface>
               <fff-surface variant="filled">
                 <fff-paragraph>
-                  채워진 배경은 안에 실행 가능한 액션이 있음을 알립니다.
+                  채워진 배경은 안에 실행 가능한 액션이 있음을 나타냅니다.
                 </fff-paragraph>
               </fff-surface>
               <fff-surface variant="ghost">

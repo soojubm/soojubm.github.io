@@ -201,7 +201,7 @@ const main = html`
 
     <fff-component-section
       heading="UserAvatar"
-      description="사람을 대표하는 아바타입니다. 원형을 고정하고 이름의 앞 글자로 폴백하며, 접속 중이면 우하단에 점을 띄워 지금 닿을 수 있는 상대인지 알립니다."
+      description="사람을 대표하는 아바타입니다. 원형을 고정하고 이름의 앞 글자로 폴백하며, 접속 중이면 우하단에 점을 띄워 지금 닿을 수 있는 상대인지 보여 줍니다."
     >
       <fff-flex gap="2" align-items="flex-end">
         <fff-user-avatar
