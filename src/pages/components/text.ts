@@ -206,7 +206,6 @@ const main = html`
     <fff-component-section heading="Meta Item Group">
       <fff-meta-item-group
         direction="column"
-        gap="2"
         .items=${[
           { label: '상품 금액', value: '₩ 16,000' },
           { label: '배송비', value: '무료' },
@@ -215,30 +214,30 @@ const main = html`
       ></fff-meta-item-group>
       <fff-separator></fff-separator>
       <fff-meta-item-group
-        gap="2"
+        layout="inline"
         .items=${[
-          { label: '국가', value: '미국', layout: 'inline' },
-          { label: '언어', value: '영어', layout: 'inline' },
-          { label: '장르', value: '드라마', layout: 'inline' },
-          { label: '러닝타임', value: '103분', layout: 'inline' },
+          { label: '국가', value: '미국' },
+          { label: '언어', value: '영어' },
+          { label: '장르', value: '드라마' },
+          { label: '러닝타임', value: '103분' },
         ]}
       ></fff-meta-item-group>
       <fff-separator></fff-separator>
       <fff-meta-item-group
-        gap="2"
+        layout="stacked"
         .items=${[
-          { label: '사이즈', value: '보통', layout: 'stacked' },
-          { label: '한글', value: '작은 거 필요하나', layout: 'stacked' },
-          { label: 'Move', value: '562 kcal', layout: 'stacked' },
+          { label: '사이즈', value: '보통' },
+          { label: '한글', value: '작은 거 필요하나' },
+          { label: 'Move', value: '562 kcal' },
         ]}
       ></fff-meta-item-group>
       <fff-separator></fff-separator>
       <fff-meta-item-group
-        gap="2"
+        layout="stacked"
         .items=${[
-          { label: '리뷰 116개', value: '⭐ 4.8', layout: 'stacked', valueSize: 'large' },
-          { label: '토마토미터', value: '🍅 97%', layout: 'stacked', valueSize: 'large' },
-          { label: '등급', value: '18세 이상', layout: 'stacked', valueSize: 'large' },
+          { label: '리뷰 116개', value: '⭐ 4.8', valueSize: 'large' },
+          { label: '토마토미터', value: '🍅 97%', valueSize: 'large' },
+          { label: '등급', value: '18세 이상', valueSize: 'large' },
         ]}
       ></fff-meta-item-group>
     </fff-component-section>

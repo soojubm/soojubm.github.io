@@ -19,7 +19,7 @@ export class OrderPriceSummary extends LitElement {
 
   render() {
     return html`
-      <fff-meta-item-group direction="column" gap="1" .items=${this.items}></fff-meta-item-group>
+      <fff-meta-item-group direction="column" .items=${this.items}></fff-meta-item-group>
     `
   }
 

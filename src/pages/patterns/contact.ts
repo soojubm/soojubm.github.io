@@ -13,13 +13,12 @@ const main = html`
           out. We’ll be happy to respond.
         </fff-text>
         <fff-meta-item-group
-          gap="2"
+          layout="stacked"
           .items=${[
-            { label: 'Phone', value: '519-875-3382', layout: 'stacked' },
+            { label: 'Phone', value: '519-875-3382' },
             {
               label: 'Address',
               value: '731 Lakeshore Road,Norfolk, ON, N0J 1T0',
-              layout: 'stacked',
             },
           ]}
         ></fff-meta-item-group>

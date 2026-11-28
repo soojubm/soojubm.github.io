@@ -4,19 +4,18 @@ import { customElement, property } from 'lit/decorators.js'
 import { metaItemStyles } from '@/components/common/meta-item/meta-item.styles'
 import '@/components/common/text/semantics/paragraph'
 
+export type MetaItemLayout = 'horizontal' | 'stacked' | 'inline'
+
 export interface MetaItemData {
   label: string
   value: string
-  layout?: 'horizontal' | 'stacked' | 'inline'
-  align?: 'start' | 'center'
   valueSize?: 'medium' | 'large'
 }
 
 @customElement('fff-meta-item')
 export class MetaItem extends LitElement {
   static styles = [metaItemStyles]
-  @property({ type: String, reflect: true }) layout: 'horizontal' | 'stacked' | 'inline' =
-    'horizontal'
+  @property({ type: String, reflect: true }) layout: MetaItemLayout = 'horizontal'
   @property({ type: String, reflect: true }) align: 'start' | 'center' = 'start'
   @property({ type: Boolean, reflect: true }) code = false
   @property({ type: String }) label = ''

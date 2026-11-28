@@ -47,10 +47,9 @@ const exampleCode = `<fff-result
 >
   <fff-meta-item-group
     direction="column"
-    gap="2"
     .items=\${[
-      { label: '주문일자', value: '2019.08.10.', layout: 'horizontal' },
-      { label: '결제금액', value: '₩ 54,000', layout: 'horizontal' },
+      { label: '주문일자', value: '2019.08.10.' },
+      { label: '결제금액', value: '₩ 54,000' },
     ]}
   ></fff-meta-item-group>
 </fff-result>`
@@ -74,10 +73,9 @@ const main = html`
       >
         <fff-meta-item-group
           direction="column"
-          gap="2"
           .items=${[
-            { label: '주문일자', value: '2019.08.10.', layout: 'horizontal' },
-            { label: '결제금액', value: '₩ 54,000', layout: 'horizontal' },
+            { label: '주문일자', value: '2019.08.10.' },
+            { label: '결제금액', value: '₩ 54,000' },
           ]}
         ></fff-meta-item-group>
       </fff-result>

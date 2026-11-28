@@ -44,9 +44,9 @@ const main = html`
         ></fff-read-more-paragraph>
         <fff-keyword-tag-group .keywords=${TOPICS}></fff-keyword-tag-group>
         <fff-flex direction="column" gap="1">
-          <fff-meta-item-group gap="2" .items=${[
-            { label: '팔로워', value: '621.1K', layout: 'inline' },
-            { label: '팔로우 중', value: '1,284', layout: 'inline' },
+          <fff-meta-item-group layout="inline" .items=${[
+            { label: '팔로워', value: '621.1K' },
+            { label: '팔로우 중', value: '1,284' },
           ]}></fff-meta-item-group>
           <fff-avatar-group
             .avatars=${followerAvatars}

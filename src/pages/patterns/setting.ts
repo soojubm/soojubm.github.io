@@ -244,7 +244,6 @@ const main = html`
             <fff-separator></fff-separator>
             <fff-meta-item-group
               direction="column"
-              gap="2"
               .items=${[
                 { label: '다음 결제 예정일', value: '2024.04.02.' },
                 { label: '결제금액', value: '매달 46,800원' },

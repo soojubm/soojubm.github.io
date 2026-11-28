@@ -1,22 +1,9 @@
-import { LitElement, css, html, unsafeCSS } from 'lit'
+import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import { ifDefined } from 'lit/directives/if-defined.js'
 
-import type { MetaItemData } from '@/components/common/meta-item/meta-item'
+import type { MetaItemData, MetaItemLayout } from '@/components/common/meta-item/meta-item'
 
-import { spaces } from '@/stylesheets/shared.styles'
-import type { FlexDirection, FlexWrap, Space } from '@/stylesheets/shared.types'
-import { buildAttributeRules, type AttributeTokens } from '@/utils'
-
-/** 메타 정보 사이 간격은 space 단계 중 이 다섯만 쓴다. 기본 4는 :host가 선언한다. */
-type MetaItemGroupGap = Extract<Space, '1' | '2' | '3' | '4' | '8'>
-
-const metaItemGroupGapTokens: AttributeTokens<Exclude<MetaItemGroupGap, '4'>> = {
-  '1': { gap: spaces['1'] },
-  '2': { gap: spaces['2'] },
-  '3': { gap: spaces['3'] },
-  '8': { gap: spaces['8'] },
-}
+import type { FlexDirection } from '@/stylesheets/shared.types'
 
 @customElement('fff-meta-item-group')
 export class MetaItemGroup extends LitElement {
@@ -24,34 +11,26 @@ export class MetaItemGroup extends LitElement {
     :host {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
-      gap: ${unsafeCSS(spaces['4'])};
+      gap: var(--space-2);
     }
 
     :host([direction='column']) {
       flex-direction: column;
     }
 
-    :host([justify-content='center']) {
+    :host([layout='horizontal']) {
+      gap: var(--space-1);
+    }
+
+    :host([layout='stacked'][align='center']) {
       justify-content: center;
+      gap: var(--space-8);
     }
-
-    :host([wrap='wrap']) {
-      flex-wrap: wrap;
-    }
-    :host([wrap='wrap-reverse']) {
-      flex-wrap: wrap-reverse;
-    }
-
-    ${unsafeCSS(buildAttributeRules('gap', metaItemGroupGapTokens))}
   `
   @property({ attribute: false }) items: MetaItemData[] = []
+  @property({ type: String, reflect: true }) layout: MetaItemLayout = 'horizontal'
   @property({ type: String, reflect: true }) direction: FlexDirection = 'row'
-  @property({ type: String, reflect: true }) gap: MetaItemGroupGap = '4'
-  @property({ type: String, reflect: true }) wrap: FlexWrap = 'nowrap'
-  @property({ type: String, reflect: true, attribute: 'justify-content' }) justifyContent:
-    | 'flex-start'
-    | 'center' = 'flex-start'
+  @property({ type: String, reflect: true }) align: 'start' | 'center' = 'start'
 
   connectedCallback() {
     super.connectedCallback()
@@ -63,11 +42,11 @@ export class MetaItemGroup extends LitElement {
       ${this.items.map(
         item => html`
           <fff-meta-item
+            layout=${this.layout}
+            align=${this.align}
             label=${item.label}
             value=${item.value}
-            layout=${ifDefined(item.layout)}
-            align=${ifDefined(item.align)}
-            value-size=${ifDefined(item.valueSize)}
+            value-size=${item.valueSize ?? 'medium'}
           ></fff-meta-item>
         `,
       )}

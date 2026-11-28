@@ -32,7 +32,7 @@ export class PostItem extends LitElement {
     const body = html`
       <fff-image src=${this.thumbnail} ratio="1:1"></fff-image>
       <fff-heading level=${this.headingLevel}>${this.title}</fff-heading>
-      <fff-meta-item-group gap="2">
+      <fff-meta-item-group layout="inline">
         <fff-text>${this.category}</fff-text>
         <fff-text as="time" color="light">${this.date}</fff-text>
       </fff-meta-item-group>
