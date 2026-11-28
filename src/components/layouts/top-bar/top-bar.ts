@@ -6,11 +6,6 @@ import { topBarStyles } from '@/components/layouts/top-bar/top-bar.styles'
 import { emit } from '@/utils'
 import '@/components/common'
 
-/**
- * 화면 단위 상단 바.
- * heading 레벨은 상단 바 크기에 맞춰 고정한다. fff-heading이 의미 단계와 타입 스케일을 함께 정해
- * 레벨을 올리면 글자도 커지므로, 페이지 최상위 제목은 본문의 page-header가 맡는다.
- */
 export type TopBarNav = 'back' | 'close'
 
 @customElement('fff-top-bar')
@@ -23,6 +18,7 @@ export class TopBar extends LitElement {
     return html`
       <header>
         ${this.renderBackButton()}
+        <!-- 레벨이 타입 스케일을 정해 올리면 글자도 커지므로 3으로 고정한다. 최상위 제목은 page-header가 맡는다. -->
         <fff-heading level="3">${this.heading}</fff-heading>
         <div class="trailing-area">
           <slot name="action"></slot>

@@ -3,10 +3,8 @@ import type { LitElement } from 'lit'
 import variablesCss from '@/stylesheets/shared/variables.css?raw'
 
 /**
- * 문서가 소개하는 토큰 목록은 variables.css의 :root 선언을 단일 출처로 읽는다.
- * 목록을 문서에 손으로 옮겨 적으면 토큰이 늘거나 줄 때 조용히 어긋나기 때문이다.
- * 값은 여기서 읽지 않는다. 테마가 같은 이름을 다시 선언하므로, 화면에 실제로 먹은 값은
- * 문서 요소가 자기 자리에서 계산된 스타일로 읽는다.
+ * 문서가 소개하는 토큰 목록을 variables.css의 :root 선언에서 읽는다.
+ * 값은 읽지 않는다. 테마가 같은 이름을 다시 선언하므로 실제 값은 문서 요소가 계산된 스타일로 읽는다.
  */
 const rootBlock = () => {
   const start = variablesCss.indexOf(':root')

@@ -17,12 +17,7 @@ const categoryTone = (token: number): ToneStyle => ({
 
 const defineToneMap = <Map extends Record<string, TagTone>>(map: Map) => map
 
-/**
- * --------------------------------------------------
- * primitive visual tones
- * purely visual layer
- * --------------------------------------------------
- */
+/** 의미 없이 색만 정하는 시각 톤. */
 
 export const tagToneStyles = {
   default: {

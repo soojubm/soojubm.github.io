@@ -96,8 +96,7 @@ export interface IconActionDefinition {
 /**
  * 아이콘 하나로 단일 행동만 알리는 시맨틱 버튼의 기반 클래스를 만든다.
  * 스타일과 템플릿은 계열이 공유하고, 태그명·행동 이름·레이블은 각 컴포넌트가 자기 API로 갖는다.
- * 기본 스킨이 아니면 자기 static styles로 덮고, 다른 템플릿이 필요하면
- * withIconAction으로 상태만 받아 자기 render를 쓴다.
+ * 다른 템플릿이 필요하면 withIconAction으로 상태만 받아 자기 render를 쓴다.
  */
 export const iconActionElement = ({ event, icon, ariaLabel }: IconActionDefinition) => {
   class IconActionButton extends withIconAction(LitElement, event) {

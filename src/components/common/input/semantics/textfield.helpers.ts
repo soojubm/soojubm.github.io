@@ -124,12 +124,8 @@ export interface TextfieldState {
 
 /**
  * textfield·passwordfield·quantity-field가 공유하는 필드 상태, input 값 동기화, 포커스 위임, 입력 규칙 검증.
- * 검증은 브라우저의 제약 검증에 기대지 않고 필드가 직접 판정한다(required·minlength·maxlength·
- * pattern·type 이메일/URL·min/max·validator). 환경마다 다른 판정과 문구를 피하고 커스텀 규칙을 같은 경로에 둔다.
- * 시점은 포커스를 벗어날 때 처음 검사하고, 오류가 표시된 뒤에는 입력할 때마다 다시 검사해
- * 고치는 즉시 오류가 사라지게 한다. 제출 시점은 소비자가 validate()로 부른다.
- * 값·규칙 속성이 코드로 바뀌어도 오류가 표시 중이면 다시 검사한다.
- * 소비자가 넘긴 validation-text(서버 오류 등)는 필드의 자체 검사 결과보다 우선한다.
+ * 검증은 포커스를 벗어날 때 처음 하고, 오류가 표시된 뒤에는 입력할 때마다 다시 해 고치는 즉시 오류가 사라진다.
+ * 제출 시점은 소비자가 validate()로 부르고, 소비자가 넘긴 validation-text가 자체 검사 결과보다 우선한다.
  * 컨트롤 영역(슬롯 구성, 증감 버튼 등)은 각 컴포넌트가 소유한다.
  */
 export const withTextfieldState = <T extends Constructor<LitElement>>(Base: T) => {
