@@ -177,7 +177,7 @@ export const SITEMAP: SitemapNode[] = [
       { id: 'profile', name: 'User Profile', badge: '🔥' },
       { id: 'setting', name: 'Setting', hideNavbar: true },
       { id: 'class', name: 'Product 3 - Class' },
-      { id: 'cake', name: 'Movie Detail' },
+      { id: 'cake', name: 'Movie Detail', hideSidebar: true },
       { id: 'chat', name: 'Chat' },
       { id: 'dashboard', name: 'Dashboard' },
       { id: 'product', name: 'Product' },
