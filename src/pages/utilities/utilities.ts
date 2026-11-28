@@ -24,13 +24,12 @@ const formFieldCode = `<fff-form-field label="관심 주제" optional descriptio
   <fff-checkbox-group name="topics" .options=\${topicOptions}></fff-checkbox-group>
 </fff-form-field>`
 
-const pageHeaderCode = `<fff-flex justify-content="space-between" align-items="flex-start">
-  <fff-page-header heading="설정" description="..."></fff-page-header>
-  <fff-button-group>
+const pageHeaderCode = `<fff-page-header heading="설정" description="...">
+  <fff-button-group slot="action">
     <fff-button variant="secondary">취소</fff-button>
-    <fff-button>저장</fff-button>
+    <fff-button variant="primary">저장</fff-button>
   </fff-button-group>
-</fff-flex>`
+</fff-page-header>`
 
 const textBlockCode = `<fff-text-block level="3" heading="제목" description="..."></fff-text-block>`
 
@@ -153,7 +152,10 @@ const contentSectionProps: ComponentPropItemData[] = [
   { name: 'slot: action', type: 'HTMLElement', optional: true },
 ]
 
-const pageHeaderProps: ComponentPropItemData[] = componentPropsOf('fff-page-header')
+const pageHeaderProps: ComponentPropItemData[] = [
+  ...componentPropsOf('fff-page-header'),
+  { name: 'slot: action', type: 'HTMLElement', optional: true },
+]
 
 const textBlockProps: ComponentPropItemData[] = componentPropsOf('fff-text-block')
 
@@ -202,16 +204,12 @@ const main = html`
           .code=${pageHeaderCode}
         >
           <fff-flex direction="column" gap="3">
-            <fff-flex justify-content="space-between" align-items="flex-start">
-              <fff-page-header
-                heading="설정"
-                description="계정과 알림을 관리합니다."
-              ></fff-page-header>
-              <fff-button-group>
+            <fff-page-header heading="설정" description="계정과 알림을 관리합니다.">
+              <fff-button-group slot="action">
                 <fff-button variant="secondary">취소</fff-button>
-                <fff-button>저장</fff-button>
+                <fff-button variant="primary">저장</fff-button>
               </fff-button-group>
-            </fff-flex>
+            </fff-page-header>
           </fff-flex>
         </fff-component-section>
         <fff-component-props .props=${pageHeaderProps}></fff-component-props>
@@ -231,7 +229,7 @@ const main = html`
 
         <fff-component-section
           heading="Form Field"
-          description="textfield 계열이 아닌 컨트롤에 레이블·설명·검증 텍스트를 같은 규칙으로 붙입니다. 컨트롤은 안에 넣어 받고 필드는 레이블이 붙은 role=group이 됩니다. 컨트롤별 조합은 Input 페이지가 전시합니다."
+          description="컨트롤에 레이블·설명·검증 텍스트를 한 묶음으로 붙이는 필드입니다. 어떤 컨트롤이든 같은 규칙으로 붙으므로, 사용자는 무엇을 입력하는지와 어디가 잘못됐는지를 같은 자리에서 확인할 수 있습니다."
           .code=${formFieldCode}
         >
           <fff-form-fieldset aria-label="프로필" gap="6">
@@ -263,7 +261,7 @@ const main = html`
 
         <fff-component-section
           heading="Text Block"
-          description="제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다. level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다. 본문이 딸린 구획에는 fff-content-section을 씁니다."
+          description="제목과 설명 한 쌍을 놓는 텍스트 유틸리티입니다. level로 문서 안의 깊이와 두 텍스트의 크기 단계를 함께 정합니다."
           .code=${textBlockCode}
         >
           <fff-flex direction="column" gap="3">
@@ -272,13 +270,11 @@ const main = html`
               heading="Level 1 Title"
               description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
             ></fff-text-block>
-            <fff-separator></fff-separator>
             <fff-text-block
               level="3"
               heading="Level 3 Title"
               description="제목과 설명 사이 간격은 level을 따라 함께 움직입니다."
             ></fff-text-block>
-            <fff-separator></fff-separator>
             <fff-text-block
               level="4"
               heading="Level 4 Title"

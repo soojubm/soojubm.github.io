@@ -16,6 +16,13 @@ export class PageHeader extends LitElement {
       flex-direction: column;
       gap: var(--space-8);
     }
+
+    .title {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
   `
   @property({ type: String }) heading = ''
   @property({ type: String }) description = ''
@@ -24,11 +31,14 @@ export class PageHeader extends LitElement {
   render() {
     return html`
       <header>
-        <fff-text-block
-          heading=${this.heading}
-          description=${this.description}
-          ?centered=${this.centered}
-        ></fff-text-block>
+        <div class="title">
+          <fff-text-block
+            heading=${this.heading}
+            description=${this.description}
+            ?centered=${this.centered}
+          ></fff-text-block>
+          <slot name="action"></slot>
+        </div>
         <slot></slot>
       </header>
     `
