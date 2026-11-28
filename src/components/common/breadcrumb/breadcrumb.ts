@@ -19,8 +19,8 @@ export class Breadcrumb extends LitElement {
       :host {
         display: block;
 
-        --breadcrumb-item-text-color: var(--primary-color);
-        --breadcrumb-item-current-text-color: var(--foreground-color);
+        --breadcrumb-item-text-color: var(--foreground-color);
+        --breadcrumb-item-current-text-color: var(--primary-color);
         --breadcrumb-divider-text-color: var(--border-color);
         --breadcrumb-divider-margin: var(--space-3);
       }

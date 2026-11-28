@@ -40,6 +40,15 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
+// popover 패널과 같은 재질. 패널 토큰은 fff-popover :host에만 선언돼 있어 같은 값을 직접 건다.
+const panelStyle = [
+  'width: calc(var(--size-80) * 3)',
+  '--surface-padding: var(--space-2)',
+  '--surface-border-radius: var(--border-radius)',
+  '--surface-border: var(--material-overlay-border)',
+  '--surface-shadow: var(--material-overlay-shadow)',
+].join(';')
+
 const triggerCode = `<fff-button aria-controls="menu-popover" aria-haspopup="menu">더보기</fff-button>
 <fff-popover id="menu-popover" placement="bottom-start">
   ...
@@ -87,20 +96,52 @@ const main = html`
         ]}
       ></fff-content-section>
 
-      <fff-text-list
+      <fff-content-section
+        heading-level="3"
+        heading="트리거를 가리키는 화살표를 두나요?"
+        description="사용자가 직접 연 패널이라 어디에서 나왔는지 이미 분명하므로 화살표를 두지 않습니다."
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card description="화살표가 없어도 출처가 분명한데 시각 요소만 늘어난다">
+            <fff-flex slot="figure" direction="column" align-items="center" gap="1">
+              <fff-button variant="secondary">더보기</fff-button>
+              <fff-flex direction="column" align-items="center" gap="0">
+                <div
+                  style="position: relative; z-index: 1; width: var(--size-16); aspect-ratio: 2; background: var(--border-color); clip-path: polygon(50% 0, 0 100%, 100% 100%)"
+                ></div>
+                <fff-surface style=${panelStyle}>
+                  <fff-paragraph>오버레이 패널</fff-paragraph>
+                </fff-surface>
+              </fff-flex>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card description="트리거 바로 아래에 붙여 열어 출처를 전한다">
+            <fff-flex slot="figure" direction="column" align-items="center" gap="2">
+              <fff-button variant="secondary">더보기</fff-button>
+              <fff-surface style=${panelStyle}>
+                <fff-paragraph>오버레이 패널</fff-paragraph>
+              </fff-surface>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
+
+      <fff-content-section
+        heading-level="3"
+        heading="접근성"
         .texts=${[
-          '내용이 최대 높이(400px)보다 길면 패널 안에서 스크롤된다.',
-          '패널이 열리면 포커스가 패널 안으로 옮겨 간다.',
+          '패널이 열리면 포커스가 패널 안으로 옮겨 가 키보드 사용자가 바로 조작할 수 있다.',
           '메뉴·목록이면 선택된 항목(없으면 첫 항목)에서 시작해 방향키로 탐색한다.',
-          '패널이 닫히면 포커스는 트리거로 돌아온다. Tab으로 패널을 벗어나도 닫힌다.',
-          '트리거를 가리키는 화살표는 두지 않는다. 사용자가 직접 연 패널이라 어디에서 나왔는지 이미 분명하다.',
+          '패널이 닫히면 포커스가 트리거로 돌아와 하던 자리에서 이어 간다. Tab으로 패널을 벗어나도 닫힌다.',
         ]}
-      ></fff-text-list>
-      <fff-component-notice heading="트리거를 slot으로 받지 않는다">
-        fff-popover는 host가 곧 표면이라 열릴 때 portal로 옮겨진다. slot으로 받은 트리거도 함께
-        옮겨져 원래 자리에서 사라지고, 위치를 재는 기준 요소가 표면 안에 들어간다. 그래서 트리거는
-        바깥에 두고 aria-controls로 가리킨다. 펼침 단서도 트리거를 만드는 쪽이 붙이며, 단서를
-        일관되게 붙이려면 fff-more-menu처럼 트리거를 포함한 파생 컴포넌트에서 맡긴다.
+      ></fff-content-section>
+
+      <fff-component-notice heading="트리거를 slot으로 받지 않는 이유">
+        slot으로 받으면 트리거가 패널과 함께 옮겨져, 패널이 열리는 순간 원래 자리에서 사라진다.
+        그래서 트리거는 바깥에 두고 aria-controls로 가리킨다. 트리거까지 함께 쓰는 곳은 역할이
+        분명한 도메인 컴포넌트가 맡는다. 예: fff-more-menu.
       </fff-component-notice>
     </fff-component-guide>
 

@@ -44,11 +44,12 @@ function hostTokenNames(tagName: string) {
   return names.sort((a, b) => tokenOrder(a) - tokenOrder(b))
 }
 
-// 스타일 선언 순서(크기, 간격, 경계)를 따르고, 같은 단계 안에서는 선언 순서를 유지한다.
+// 스타일 선언 순서(크기, 간격, 테두리, 모서리)를 따르고, 같은 단계 안에서는 선언 순서를 유지한다.
 const tokenOrderPatterns = [
   /(width|height)$/,
   /(padding|margin|gap|offset)(-|$)/,
-  /(border|radius)/,
+  /border(?!-radius)/,
+  /radius/,
 ]
 
 function tokenOrder(name: string) {

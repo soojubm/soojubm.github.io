@@ -109,21 +109,6 @@ const main = html`
     <fff-component-guide>
       <fff-content-section
         heading-level="3"
-        heading="언제 사용하나요"
-        description="주로 목록의 정렬 기준을 고를 때 사용합니다."
-        .texts=${[
-          html`
-            select는 선택지를 접어 두고 현재 값 하나만 보여 주므로, 선택에 따라 보이는 데이터가
-            달라지는 필터는 옵션을 펼쳐 나열하는 것이 정론이다. 이때는
-            <fff-code>fff-filter-button-group</fff-code>
-            을 사용한다
-          `,
-          '옵션 목록은 5개까지 보이고, 넘치면 안에서 스크롤된다',
-        ]}
-      ></fff-content-section>
-
-      <fff-content-section
-        heading-level="3"
         heading="초기값은 무엇인가요?"
         description="value가 비어 있으면 첫 번째 활성 옵션이 초기값이 됩니다. 네이티브 select와 같은 동작으로 트리거가 빈 값으로 보이지 않게 하며, 비활성 옵션은 고를 수 없어 건너뜁니다."
       ></fff-content-section>
