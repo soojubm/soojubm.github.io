@@ -33,7 +33,9 @@ export class ComponentRelated extends LitElement {
           ${this.items.map(
             item =>
               html`
-                <fff-hashtag-link href=${item.href}>${item.label}</fff-hashtag-link>
+                <fff-component-related-link href=${item.href}>
+                  ${item.label}
+                </fff-component-related-link>
               `,
           )}
         </fff-button-group>

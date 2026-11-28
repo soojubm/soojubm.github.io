@@ -3,42 +3,18 @@ import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common/icon/icon'
 import { ICON_NAMES } from '@/components/common/icon/icon-names'
-import { focusRingStyles, resetStyles } from '@/stylesheets/shared.styles'
+import { referenceCellStyles } from '@/components/domains/component/reference-cell.styles'
+import { resetStyles } from '@/stylesheets/shared.styles'
 
 @customElement('fff-reference-cell')
 export class ReferenceCell extends LitElement {
   static styles = [
     resetStyles,
+    referenceCellStyles,
     css`
-      :host {
-        display: block;
-      }
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: var(--space-2);
-        min-height: var(--size-48);
-        padding: var(--space-3) var(--space-6);
-        color: var(--foreground-color);
-        font-family: var(--font-family-code);
-        font-size: var(--font-size-14);
-        text-transform: uppercase;
-        transition: background-color var(--transition-duration) var(--transition-easing);
-      }
-
       .text {
         display: flex;
         flex-direction: column;
-      }
-
-      a:hover {
-        background: var(--background-subtle-color);
-      }
-
-      a:focus-visible {
-        ${focusRingStyles};
       }
     `,
   ]

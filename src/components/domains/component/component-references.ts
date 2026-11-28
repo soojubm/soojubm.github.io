@@ -25,12 +25,6 @@ export class ComponentReferences extends LitElement {
       gap: var(--space-3);
     }
 
-    .references-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-1) var(--space-4);
-    }
-
     .component-references {
       display: flex;
       flex-direction: column;
@@ -57,9 +51,7 @@ export class ComponentReferences extends LitElement {
     return html`
       <div class="references-body">
         <fff-heading>${this.heading}</fff-heading>
-        <fff-surface variant="filled" radius="large" style="padding-inline: 1.25rem">
-          ${this.groups.map((group, index) => this.renderGroup(group, index))}
-        </fff-surface>
+        <div>${this.groups.map((group, index) => this.renderGroup(group, index))}</div>
       </div>
     `
   }
@@ -71,7 +63,7 @@ export class ComponentReferences extends LitElement {
             <fff-separator></fff-separator>
           `
         : null}
-      <div class="references-links">${group.map(item => this.renderLink(item))}</div>
+      ${group.map(item => this.renderLink(item))}
     `
   }
 
@@ -79,7 +71,9 @@ export class ComponentReferences extends LitElement {
     const isExternal = external ?? isAbsoluteUrl(href)
 
     return html`
-      <fff-link ?external=${isExternal} href=${href}>${label}</fff-link>
+      <fff-component-reference-link ?external=${isExternal} href=${href}>
+        ${label}
+      </fff-component-reference-link>
     `
   }
 }
