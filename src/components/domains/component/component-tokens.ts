@@ -40,7 +40,20 @@ function hostTokenNames(tagName: string) {
     style instanceof CSSStyleSheet ? style : style.styleSheet,
   )
 
-  return [...new Set(sheets.flatMap(sheet => hostCustomProperties(sheet?.cssRules)))]
+  const names = [...new Set(sheets.flatMap(sheet => hostCustomProperties(sheet?.cssRules)))]
+  return names.sort((a, b) => tokenOrder(a) - tokenOrder(b))
+}
+
+// 스타일 선언 순서(크기, 간격, 경계)를 따르고, 같은 단계 안에서는 선언 순서를 유지한다.
+const tokenOrderPatterns = [
+  /(width|height)$/,
+  /(padding|margin|gap|offset)(-|$)/,
+  /(border|radius)/,
+]
+
+function tokenOrder(name: string) {
+  const order = tokenOrderPatterns.findIndex(pattern => pattern.test(name))
+  return order === -1 ? tokenOrderPatterns.length : order
 }
 
 function elementStylesOf(tagName: string): CSSResultOrNative[] {

@@ -8,12 +8,13 @@ import type {
 } from '@/components/domains/component'
 import type { OptionItem } from '@/types'
 
-import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
+import { componentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
   { href: 'checkbox.html', label: 'Checkbox' },
   { href: 'switch.html', label: 'Switch' },
+  { href: 'menu-item.html', label: 'Menu Item' },
 ]
 
 // 카드형 라디오를 별도 페이지로 문서화하는 디자인 시스템.
@@ -37,8 +38,6 @@ const groupProps = componentPropsOf('fff-radio-group')
 const componentProps: ComponentPropItemData[] = [
   ...groupProps,
   { name: 'change', type: 'CustomEvent detail: value, name', kind: 'event' },
-  ...subComponentPropsOf('fff-radio', groupProps),
-  { name: 'fff-radio change', type: 'CustomEvent detail: checked, value', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -84,21 +83,18 @@ const main = html`
       ></fff-tab-list>
       <fff-tab-panel value="size">
         <fff-component-example>
-          <fff-flex direction="column" gap="6">
-            <fff-flex direction="column" gap="4">
-              <fff-radio-group
-                name="membership-size-default"
-                value="basic"
-                .options=${membershipOptions.slice(0, 2)}
-              ></fff-radio-group>
-              <fff-radio-group
-                name="membership-size-large"
-                size="large"
-                value="basic"
-                .options=${membershipOptions.slice(0, 2)}
-              ></fff-radio-group>
-            </fff-flex>
-            <fff-paragraph>선택지가 화면의 주요 입력일 때 크게 씁니다.</fff-paragraph>
+          <fff-flex direction="column" gap="4">
+            <fff-radio-group
+              name="membership-size-default"
+              value="basic"
+              .options=${membershipOptions.slice(0, 2)}
+            ></fff-radio-group>
+            <fff-radio-group
+              name="membership-size-large"
+              size="large"
+              value="basic"
+              .options=${membershipOptions.slice(0, 2)}
+            ></fff-radio-group>
           </fff-flex>
         </fff-component-example>
         <fff-component-code .code=${sizeCode}></fff-component-code>
@@ -130,27 +126,6 @@ const main = html`
     <fff-component-tokens .elements=${['fff-radio']}></fff-component-tokens>
 
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
-
-    <fff-component-anatomy
-      .parts=${[
-        '그룹 — 라디오를 묶어 이름을 공유하고 하나만 선택되도록 보장합니다.',
-        '컨트롤(인디케이터) — 선택 여부를 나타내는 원형 버튼입니다.',
-        '선택 표식 — 선택 시 원 안에 채워지는 점(dot).',
-        '레이블 — 선택지를 설명하는 클릭 가능한 텍스트.',
-      ]}
-      .markers=${[
-        { placement: 'block-start' },
-        { placement: 'inline-start', offset: 'calc(100% - 0.5rem)' },
-        { placement: 'block-end', offset: '0.5rem' },
-        { placement: 'inline-end', offset: 'calc(100% - 0.5rem)' },
-      ]}
-    >
-      <fff-radio-group
-        name="membership-anatomy"
-        value="premium"
-        .options=${membershipOptions.slice(0, 2)}
-      ></fff-radio-group>
-    </fff-component-anatomy>
 
     <fff-component-section
       heading="RadioCard"

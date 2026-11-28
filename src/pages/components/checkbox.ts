@@ -19,8 +19,6 @@ const componentProps: ComponentPropItemData[] = [
   ...subComponentPropsOf('fff-checkbox-group'),
   { name: 'change', type: 'CustomEvent detail: checked', kind: 'event' },
   { name: 'fff-checkbox-group change', type: 'CustomEvent detail: values', kind: 'event' },
-  ...subComponentPropsOf('fff-terms-agreement'),
-  { name: 'fff-terms-agreement change', type: 'CustomEvent detail: values', kind: 'event' },
 ]
 
 const componentFeatures: ComponentFeatureItem[] = [
@@ -114,21 +112,6 @@ const main = html`
     <fff-component-tokens .elements=${['fff-checkbox']}></fff-component-tokens>
 
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
-
-    <fff-component-anatomy
-      .parts=${[
-        '컨트롤(인디케이터) — 체크 여부를 시각적으로 나타내는 사각형 박스입니다.',
-        '체크 표식 — 선택 시 나타나는 체크 아이콘(또는 indeterminate 표식).',
-        '레이블 — 선택지를 설명하는 클릭 가능한 텍스트.',
-      ]}
-      .markers=${[
-        { placement: 'inline-start' },
-        { placement: 'block-end', offset: '0.5rem' },
-        { placement: 'inline-end' },
-      ]}
-    >
-      <fff-checkbox size="large" checked>관심 분야</fff-checkbox>
-    </fff-component-anatomy>
 
     <fff-component-section
       heading="TermsAgreement"

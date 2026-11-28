@@ -64,7 +64,7 @@ const main = html`
 
     <fff-component-aka .items=${['EmptyState', 'Blankslate']}></fff-component-aka>
 
-    <fff-component-example>
+    <fff-component-example width="narrow">
       <fff-result
         avatar-icon=${ICON_NAMES.DOCUMENT_CHECK}
         heading="주문을 확인해주세요."

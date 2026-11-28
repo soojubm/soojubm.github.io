@@ -67,6 +67,31 @@ const main = html`
     >
       <fff-switch checked>뉴스레터 받아보기</fff-switch>
     </fff-component-anatomy>
+
+    <fff-component-guide>
+      <fff-content-section
+        heading-level="3"
+        heading="레이블은 어디에 두나요?"
+        description="레이블은 스위치 오른쪽에 둡니다. 왼쪽에 두면 사용자가 스위치를 먼저 조작한 뒤에야 무엇을 바꾸는지 알게 됩니다."
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card
+            description="레이블이 왼쪽에 있으면 스위치가 무엇을 바꾸는지 늦게 읽힌다"
+          >
+            <fff-flex slot="figure" align-items="center" gap="3">
+              <fff-text>뉴스레터 받아보기</fff-text>
+              <fff-switch name="label-left" aria-label="뉴스레터 받아보기"></fff-switch>
+            </fff-flex>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card description="스위치 오른쪽의 레이블이 바로 무엇을 켜고 끄는지 알려 준다">
+            <fff-switch slot="figure" name="label-right">뉴스레터 받아보기</fff-switch>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
+    </fff-component-guide>
+
     <fff-component-related .items=${relatedComponents}></fff-component-related>
 
     <fff-component-pager></fff-component-pager>
