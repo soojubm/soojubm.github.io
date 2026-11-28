@@ -6,7 +6,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { code, componentPropsOf, openStateMethods } from '@/components/domains/component'
+import { componentPropsOf, openStateMethods } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -38,14 +38,14 @@ type ToastElement = HTMLElement & {
 
 function setupToastTrigger() {
   const trigger = document.querySelector<HTMLElement>('[data-open-toast]')
-  const toast = document.querySelector<ToastElement>('.js-demo-toast')
+  const toast = document.querySelector<ToastElement>('fff-toast')
   if (!trigger || !toast) return
 
   trigger.addEventListener('click', () => toast.show())
 }
 
 const exampleCode = `<fff-button data-open-toast>토스트 띄우기</fff-button>
-<fff-toast class="js-demo-toast">저장되었습니다.</fff-toast>`
+<fff-toast>저장되었습니다.</fff-toast>`
 
 const main = html`
   <fff-main>
@@ -58,7 +58,7 @@ const main = html`
 
     <fff-component-example>
       <fff-button data-open-toast>토스트 띄우기</fff-button>
-      <fff-toast class="js-demo-toast">저장되었습니다.</fff-toast>
+      <fff-toast>저장되었습니다.</fff-toast>
     </fff-component-example>
     <fff-component-code .code=${exampleCode}></fff-component-code>
 
@@ -73,15 +73,7 @@ const main = html`
         heading-level="3"
         heading="언제 사용하나요"
         description="복사·저장·삭제처럼 사용자가 한 행동의 결과를 짧게 알릴 때 사용합니다."
-        .texts=${[
-          '놓쳐도 흐름에 지장이 없는 피드백이어야 한다',
-          html`
-            사용자의 확인이 필요하면 ${code('fff-dialog')}를 사용한다
-          `,
-          html`
-            화면에 계속 남아야 하면 ${code('fff-notice')}를 사용한다
-          `,
-        ]}
+        .texts=${['놓쳐도 흐름에 지장이 없는 피드백이어야 한다']}
       ></fff-content-section>
 
       <fff-text-block
