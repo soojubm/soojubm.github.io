@@ -320,30 +320,6 @@ const main = html`
       </fff-content-section-list>
     </fff-component-guide>
 
-    <fff-component-anatomy
-      .parts=${[
-        'leading — 아이콘 또는 아바타를 넣는 선택적 영역. 없으면 content가 왼쪽 끝에서 시작합니다.',
-        'content — label과 description으로 구성된 본문. 남은 공간을 채웁니다.',
-        'trailing — 오른쪽에 배치되는 선택적 영역. 액션 버튼·뱃지·메타 텍스트 등을 넣습니다.',
-      ]}
-      .markers=${[
-        { placement: 'block-end', offset: '1.5rem' },
-        { placement: 'block-end', offset: '9.41rem' },
-        { placement: 'block-end', offset: 'calc(100% - 2.09rem)' },
-      ]}
-    >
-      <fff-list-item
-        label="수줍이"
-        description="바보"
-        size="medium"
-        avatar-variant="primary"
-        avatar-shape="circle"
-        avatar-src="/src/images/soojubm.png"
-      >
-        <fff-follow-button slot="trailing"></fff-follow-button>
-      </fff-list-item>
-    </fff-component-anatomy>
-
     <fff-component-section heading="UserItem" description="사용자 도메인">
       <fff-list-item-group>
         <fff-user-item

@@ -89,21 +89,6 @@ const main = html`
 
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
-    <fff-component-anatomy
-      .parts=${[
-        '컨테이너 — tone으로 배경·글자 색상을 정의하는 배지 형태입니다.',
-        '아이콘 — 분류나 상태를 보조하는 선택적 메타포입니다.',
-        '레이블 — 분류·상태를 나타내는 짧은 텍스트.',
-      ]}
-      .markers=${[
-        { placement: 'inline-start' },
-        { placement: 'block-end', offset: '0.75rem' },
-        { placement: 'block-end', offset: 'calc(100% - 0.75rem)' },
-      ]}
-    >
-      <fff-tag tone="green" icon=${ICON_NAMES.SUCCESS}>승인됨</fff-tag>
-    </fff-component-anatomy>
-
     <fff-component-section heading="MostPopularTag" description="구체 레벨. 가장 인기있는 태그">
       <fff-tag>
         <span aria-hidden="true">🔥</span>

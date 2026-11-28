@@ -80,16 +80,6 @@ const main = html`
       ></fff-text-list>
     </fff-component-guide>
 
-    <fff-component-anatomy
-      .parts=${[
-        '첨부 버튼 — 파일 선택 대화상자를 여는 트리거(label).',
-        '상태 텍스트 — 허용 조건(description)과 현재 선택 개수를 함께 전달합니다.',
-        '첨부 목록 — 첨부한 파일을 유형·크기와 함께 보여주고 개별로 제거합니다.',
-      ]}
-    >
-      <fff-file-uploader label="사진 업로드" accept=".jpg,.png" multiple></fff-file-uploader>
-    </fff-component-anatomy>
-
     <fff-component-section heading="AttachmentButton">
       <fff-attachment-button label="파일 선택" accept=".jpg,.png" multiple></fff-attachment-button>
     </fff-component-section>

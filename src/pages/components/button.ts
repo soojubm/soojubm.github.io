@@ -200,21 +200,6 @@ const main = html`
       </fff-paragraph-group>
     </fff-component-guide>
 
-    <fff-component-anatomy
-      .parts=${[
-        '컨테이너 — variant·size로 형태와 위계를 정의하고 클릭 영역을 만듭니다.',
-        '아이콘 — 레이블을 보조하는 선택적 메타포(icon).',
-        '레이블 — 실행 결과를 예측할 수 있는 동사형 텍스트.',
-      ]}
-      .markers=${[
-        { placement: 'inline-start' },
-        { placement: 'block-end', offset: '1.75rem' },
-        { placement: 'block-end', offset: 'calc(100% - 1.5rem)' },
-      ]}
-    >
-      <fff-button variant="primary" icon=${ICON_NAMES.SUBMIT}>보내기</fff-button>
-    </fff-component-anatomy>
-
     <fff-component-section
       heading="Button Group"
       .checks=${[

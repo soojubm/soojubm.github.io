@@ -43,11 +43,6 @@ const componentFeatures: ComponentFeatureItem[] = [
   },
 ]
 
-const anatomyViewOptions: OptionItem[] = [
-  { value: 'list', icon: 'table-rows', label: '목록' },
-  { value: 'grid', icon: 'view-grid', label: '그리드' },
-]
-
 const iconOnlyViewOptions: OptionItem[] = [
   { value: 'grid', icon: 'view-grid', label: 'Grid view' },
   { value: 'list', icon: 'table-rows', label: 'List view' },
@@ -127,26 +122,6 @@ const main = html`
         ]}
       ></fff-text-list>
     </fff-component-guide>
-
-    <fff-component-anatomy
-      .parts=${[
-        '컨테이너 — 옵션들을 감싸고 단일 선택 그룹임을 나타냅니다.',
-        '옵션 버튼 — 각 선택지. 아이콘과 레이블을 가질 수 있습니다.',
-        '선택 인디케이터 — 현재 선택된 옵션을 배경·색상으로 표시합니다.',
-        '구분선 — 옵션 사이의 시각적 경계(선택).',
-      ]}
-      .markers=${[
-        { placement: 'inline-start' },
-        { placement: 'block-start' },
-        { placement: 'block-end', offset: '25%' },
-        { placement: 'block-end' },
-      ]}
-    >
-      <fff-toggle-button-group
-        value="list"
-        .options=${anatomyViewOptions}
-      ></fff-toggle-button-group>
-    </fff-component-anatomy>
 
     <fff-component-section heading="ToggleButtonGroup">
       <fff-flex direction="column" gap="4">

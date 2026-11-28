@@ -113,21 +113,6 @@ function sheetPageTemplate() {
         ></fff-text-list>
       </fff-component-guide>
 
-      <fff-component-anatomy
-        .parts=${[
-          '헤더 — 타이틀과 닫기 버튼.',
-          '바디 — header·footer를 제외한 나머지를 채우고, 콘텐츠가 넘치면 내부에서 스크롤됩니다.',
-          '푸터 — 주요·보조 액션 버튼을 배치합니다.',
-        ]}
-        .markers=${[
-          { placement: 'inline-start', offset: '1rem' },
-          { placement: 'inline-start', offset: '3.75rem' },
-          { placement: 'inline-start', offset: 'calc(100% - 1.5rem)' },
-        ]}
-      >
-        ${sheetAnatomyTemplate()}
-      </fff-component-anatomy>
-
       <fff-component-section heading="Filter" description="샘플">
         ${filterSheetTemplate()}
       </fff-component-section>
@@ -138,27 +123,6 @@ function sheetPageTemplate() {
 
       <fff-component-pager></fff-component-pager>
     </fff-main>
-  `
-}
-
-// 패널 gap(--overlay-panel-gap)이 벌리는 간격을 placeholder의 space로 드러낸다.
-function sheetAnatomyTemplate() {
-  const gapPlaceholder = html`
-    <fff-ui-placeholder space="4">
-      <fff-text size="12" weight="bold">space-4</fff-text>
-    </fff-ui-placeholder>
-  `
-
-  return html`
-    <fff-flex direction="column">
-      <fff-sheet-header heading="필터"></fff-sheet-header>
-      ${gapPlaceholder}
-      <fff-sheet-body>
-        <fff-paragraph>넘치는 콘텐츠는 body 안에서 스크롤됩니다.</fff-paragraph>
-      </fff-sheet-body>
-      ${gapPlaceholder}
-      <fff-sheet-footer .primaryAction=${{ label: '적용' }}></fff-sheet-footer>
-    </fff-flex>
   `
 }
 

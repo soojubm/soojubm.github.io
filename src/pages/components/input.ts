@@ -155,33 +155,6 @@ const main = html`
 
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
-    <fff-component-anatomy
-      .parts=${[
-        '레이블 — 입력 항목의 이름을 나타냅니다(label).',
-        '입력 필드 — 값을 입력·표시하는 영역. placeholder로 입력 형식을 안내합니다.',
-        '접두/접미 요소 — 아이콘·단위·버튼 등 보조 요소(slot: leading / trailing).',
-        '설명 텍스트 — 입력 필드 아래에서 입력 형식이나 보조 정보를 안내합니다(description).',
-        '검증 텍스트 — 입력 필드 아래에서 오류나 검증 결과를 전달합니다(validation-text).',
-      ]}
-      .markers=${[
-        { placement: 'inline-start', offset: '0.75rem' },
-        { placement: 'inline-start', offset: '2.5rem' },
-        { placement: 'inline-start', offset: '2.5rem', inset: true },
-        { placement: 'inline-start', offset: '4.75rem' },
-        { placement: 'inline-start', offset: 'calc(100% - 0.75rem)' },
-      ]}
-    >
-      <fff-textfield
-        label="이메일"
-        placeholder="name@example.com"
-        description="가입 후에는 변경할 수 없어요."
-        validation-text="올바른 이메일 형식으로 입력하세요."
-        aria-invalid="true"
-      >
-        <fff-icon slot="leading" name="mail"></fff-icon>
-      </fff-textfield>
-    </fff-component-anatomy>
-
     <fff-component-section heading="DatePicker">
       <fff-textfield type="date" name="date" label="날짜" placeholder="YYYY. MM. DD.">
         <fff-icon slot="trailing" name="calendar"></fff-icon>

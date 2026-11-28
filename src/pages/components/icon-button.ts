@@ -176,31 +176,6 @@ const main = html`
       </fff-paragraph-group>
     </fff-component-guide>
 
-    <fff-component-anatomy
-      style="--component-anatomy-padding: 0 0 3rem"
-      .parts=${[
-        '컨테이너 — variant·size로 형태와 클릭 영역을 정의합니다.',
-        '아이콘 — 액션을 나타내는 메타포(icon).',
-        '접근성 레이블 — 화면에 보이지 않지만 액션을 설명하는 텍스트(aria-label).',
-        '툴팁 — 접근성 레이블을 화면에 보여줍니다.',
-      ]}
-      .markers=${[
-        { placement: 'inline-start' },
-        { placement: 'block-end' },
-        { placement: 'inline-end' },
-        { placement: 'block-end', inset: true },
-      ]}
-    >
-      <fff-tooltip content="좋아요" placement="bottom" open>
-        <fff-icon-button
-          slot="trigger"
-          variant="primary"
-          icon=${ICON_NAMES.LIKE}
-          aria-label="좋아요"
-        ></fff-icon-button>
-      </fff-tooltip>
-    </fff-component-anatomy>
-
     <fff-component-section heading="HamburgerButton" description="내비게이션 메뉴를 여닫습니다.">
       <fff-hamburger-button aria-controls="hamburger-menu-example"></fff-hamburger-button>
       <div id="hamburger-menu-example" hidden></div>

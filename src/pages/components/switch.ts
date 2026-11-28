@@ -53,21 +53,6 @@ const main = html`
 
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
-    <fff-component-anatomy
-      .parts=${[
-        '트랙 — on/off 상태를 배경색으로 나타내는 가로 막대입니다.',
-        '썸(Thumb) — 트랙 위를 좌우로 이동하며 상태를 나타내는 손잡이.',
-        '레이블 — 설정 항목을 설명하는 텍스트.',
-      ]}
-      .markers=${[
-        { placement: 'block-start', offset: '0.75rem' },
-        { placement: 'block-end', offset: '1.25rem' },
-        { placement: 'inline-end' },
-      ]}
-    >
-      <fff-switch checked>뉴스레터 받아보기</fff-switch>
-    </fff-component-anatomy>
-
     <fff-component-guide>
       <fff-content-section
         heading-level="3"

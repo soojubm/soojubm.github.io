@@ -217,21 +217,6 @@ const main = html`
       ></fff-content-section>
     </fff-component-guide>
 
-    <fff-component-anatomy
-      .parts=${[
-        '컨테이너 — 눌러서 실행하는 행입니다.',
-        '아이콘 — 액션을 보조하는 선택 요소입니다.',
-        '레이블 — 실행 결과를 예측할 수 있는 텍스트.',
-      ]}
-      .markers=${[
-        { placement: 'inline-start' },
-        { placement: 'block-end', offset: '1rem' },
-        { placement: 'block-end', offset: '3.75rem' },
-      ]}
-    >
-      <fff-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></fff-menu-item-action>
-    </fff-component-anatomy>
-
     <fff-component-section
       heading="MenuItemGroup"
       description="값을 고르는 드롭다운은 fff-select를 사용하세요."
