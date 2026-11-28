@@ -13,12 +13,12 @@ export const tabsStyles = css`
     overflow-y: hidden;
     scrollbar-width: none;
 
-    --tabs-indicator-background-color: var(--interaction-selected-foreground-color);
-    --tabs-border-color: var(--border-color);
-    --tabs-border-width: var(--border-width);
-    --tabs-pill-indicator-background-color: var(--interaction-selected-background-color);
-    --tabs-pill-border: var(--border-transparent);
-    --tabs-pill-indicator-border: var(--border-selected);
+    --tablist-indicator-background-color: var(--interaction-selected-foreground-color);
+    --tablist-border-color: var(--border-color);
+    --tablist-border-width: var(--border-width);
+    --tablist-pill-indicator-background-color: var(--interaction-selected-background-color);
+    --tablist-pill-border: var(--border-transparent);
+    --tablist-pill-indicator-border: var(--border-selected);
   }
 
   :host::-webkit-scrollbar {
@@ -41,12 +41,12 @@ export const tabsStyles = css`
   :host([variant='line']) {
     /* 스크롤 컨테이너는 border 영역의 자식을 잘라내므로, 기준선을 안쪽 그림자로 그려 인디케이터와 같은 줄에 둔다. */
     width: 100%;
-    box-shadow: inset 0 calc(var(--tabs-border-width) * -1) 0 var(--tabs-border-color);
+    box-shadow: inset 0 calc(var(--tablist-border-width) * -1) 0 var(--tablist-border-color);
 
     & .indicator {
       bottom: 0;
-      height: var(--tabs-border-width);
-      background-color: var(--tabs-indicator-background-color);
+      height: var(--tablist-border-width);
+      background-color: var(--tablist-indicator-background-color);
     }
   }
 
@@ -55,15 +55,15 @@ export const tabsStyles = css`
      ========================================================== */
   :host([variant='pill']) {
     background-color: var(--background-subtle-color);
-    border: var(--tabs-pill-border);
+    border: var(--tablist-pill-border);
     border-radius: var(--border-radius);
     padding: var(--space-1);
 
     & .indicator {
       height: var(--size-32);
       top: var(--space-1);
-      background-color: var(--tabs-pill-indicator-background-color);
-      border: var(--tabs-pill-indicator-border);
+      background-color: var(--tablist-pill-indicator-background-color);
+      border: var(--tablist-pill-indicator-border);
       border-radius: var(--border-radius);
     }
   }
@@ -84,7 +84,7 @@ export const tabsStyles = css`
   :host([variant='text']) fff-tab {
     --tab-height: var(--size-48);
     --tab-padding-inline: 0;
-    --tab-text-size: var(--font-size-24);
+    --tab-font-size: var(--font-size-24);
     font-weight: var(--font-weight-bold);
   }
 

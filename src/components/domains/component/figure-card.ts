@@ -9,6 +9,7 @@ export class FigureCard extends LitElement {
   static styles = css`
     :host {
       --figure-card-padding-block: var(--space-4);
+      --figure-card-height: var(--size-80);
 
       display: flex;
       flex-direction: column;
@@ -23,8 +24,7 @@ export class FigureCard extends LitElement {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      height: var(--figure-card-height);
-      min-height: var(--size-80);
+      min-height: var(--figure-card-height);
     }
 
     .body {

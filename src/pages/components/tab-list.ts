@@ -7,6 +7,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
+import { ICON_NAMES } from '@/components/common'
 import { componentPropsOf, subComponentPropsOf } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
@@ -95,6 +96,19 @@ const productTabItems = tabItemsOf('product', productTabs)
 const settingsTabs = ['프로필', '계정 보안', '알림 설정', '개인정보 보호', '결제 수단', '연결된 앱']
 
 const settingsTabItems = tabItemsOf('settings', settingsTabs)
+
+const exampleCode = `<fff-tab-list
+  value="daily"
+  variant="pill"
+  .tabs=\${[
+    { value: 'daily', label: '일간' },
+    { value: 'weekly', label: '주간' },
+    { value: 'monthly', label: '월간' },
+  ]}
+></fff-tab-list>
+<fff-tab-panel value="daily">오늘 생성된 데이터...</fff-tab-panel>
+<fff-tab-panel value="weekly">이번 주 누적 데이터...</fff-tab-panel>
+<fff-tab-panel value="monthly">이번 달 정산 데이터...</fff-tab-panel>`
 
 const main = html`
   <fff-main>
@@ -189,6 +203,7 @@ const main = html`
             </fff-tab-panel>
           </fff-flex>
         </fff-component-example>
+        <fff-component-code .code=${exampleCode}></fff-component-code>
       </fff-tab-panel>
       <fff-tab-panel value="overflow">
         <fff-component-example>
@@ -232,12 +247,6 @@ const main = html`
     <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-guide>
-      <fff-text-list
-        variant="check"
-        .texts=${[
-          '페이지를 대표하는 탭은 선택 상태를 URL에 남긴다. 새로고침하거나 링크를 공유해도 사용자가 보던 탭이 그대로 열린다. 탭 전환은 뒤로 가기 기록에 쌓이지 않아, 뒤로 가면 탭을 하나씩 거슬러 가지 않고 이전 페이지로 돌아간다. 문서 예제나 시트 안의 탭에는 쓰지 않는다',
-        ]}
-      ></fff-text-list>
       <fff-content-section-list size="small">
         <fff-content-section
           heading-level="3"
@@ -246,11 +255,11 @@ const main = html`
         >
           <fff-grid columns="2" gap="6">
             <fff-figure-card
-              height="8rem"
+              height="10rem"
               description="화면 폭을 넘어 가려진 탭이 있다는 걸 알아채기 어려워, 그 탭을 모른 채 지나칩니다."
             >
               <fff-flex slot="figure" direction="column" gap="3" style="width: 80%">
-                <fff-tab-list value="many-0" variant="line" .tabs=${manyTabItems}></fff-tab-list>
+                <fff-tab-list value="many-0" variant="pill" .tabs=${manyTabItems}></fff-tab-list>
                 ${manyTabs.map(
                   (label, index) => html`
                     <fff-tab-panel value="many-${index}">${label} 영역입니다.</fff-tab-panel>
@@ -260,16 +269,47 @@ const main = html`
               <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
             </fff-figure-card>
             <fff-figure-card
-              height="8rem"
+              height="10rem"
               description="항목을 눌러 다음 화면으로 넘어가는 흐름으로 설계합니다."
             >
-              <fff-list-item-group slot="figure" style="width: 80%">
-                ${manyTabs.slice(0, 3).map(
-                  label => html`
-                    <fff-list-item label=${label}></fff-list-item>
-                  `,
-                )}
-              </fff-list-item-group>
+              <fff-flex slot="figure" gap="2" style="width: 80%">
+                <fff-surface
+                  variant="filled"
+                  style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
+                >
+                  <fff-flex direction="column" justify-content="space-between" style="height: 100%">
+                    <fff-flex direction="column" gap="1">
+                      <fff-avatar size="40" icon=${ICON_NAMES.INFO}></fff-avatar>
+                      <fff-text>상품 정보</fff-text>
+                    </fff-flex>
+                    <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                  </fff-flex>
+                </fff-surface>
+                <fff-surface
+                  variant="filled"
+                  style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
+                >
+                  <fff-flex direction="column" justify-content="space-between" style="height: 100%">
+                    <fff-flex direction="column" gap="1">
+                      <fff-avatar size="40" icon=${ICON_NAMES.DOCUMENT}></fff-avatar>
+                      <fff-text>상세 설명</fff-text>
+                    </fff-flex>
+                    <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                  </fff-flex>
+                </fff-surface>
+                <fff-surface
+                  variant="filled"
+                  style="--surface-padding: var(--space-2); flex: 1; min-width: 0; aspect-ratio: 1"
+                >
+                  <fff-flex direction="column" justify-content="space-between" style="height: 100%">
+                    <fff-flex direction="column" gap="1">
+                      <fff-avatar size="40" icon=${ICON_NAMES.COMMENT}></fff-avatar>
+                      <fff-text>구매 후기</fff-text>
+                    </fff-flex>
+                    <fff-icon name=${ICON_NAMES.NEXT} size="16"></fff-icon>
+                  </fff-flex>
+                </fff-surface>
+              </fff-flex>
               <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
             </fff-figure-card>
           </fff-grid>
@@ -379,6 +419,16 @@ const main = html`
             </fff-figure-card>
           </fff-grid>
         </fff-content-section>
+        <fff-content-section
+          heading-level="3"
+          heading="탭 히스토리 및 상태 관리"
+          description="페이지를 대표하는 탭은 선택 상태를 URL에 남깁니다. 탭 리스트에 search-param을 지정하면 선택한 탭이 URL에 담기고, 그 값으로 탭이 열립니다."
+          .texts=${[
+            '페이지를 대표하는 탭은 선택 상태를 URL에 남긴다. 새로고침하거나 링크를 공유해도 사용자가 보던 탭이 그대로 열린다',
+            '탭 전환은 뒤로 가기 기록에 쌓지 않는다. 쌓이면 뒤로 갈 때 탭을 하나씩 거슬러 가느라 이전 페이지로 돌아가지 못한다',
+            '문서 예제나 시트 안의 탭에는 쓰지 않는다',
+          ]}
+        ></fff-content-section>
       </fff-content-section-list>
     </fff-component-guide>
 

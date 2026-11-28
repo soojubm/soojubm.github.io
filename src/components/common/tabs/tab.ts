@@ -16,7 +16,7 @@ export class Tab extends LitElement {
 
       --tab-height: var(--size-32);
       --tab-padding-inline: var(--space-3);
-      --tab-text-size: var(--font-size-14);
+      --tab-font-size: var(--font-size-14);
       --tab-text-color: var(--foreground-subtle-color);
     }
 
@@ -27,7 +27,7 @@ export class Tab extends LitElement {
       height: var(--tab-height);
       padding: 0 var(--tab-padding-inline);
       white-space: nowrap;
-      font-size: var(--tab-text-size);
+      font-size: var(--tab-font-size);
       color: var(--tab-text-color);
       cursor: pointer;
       user-select: none;
