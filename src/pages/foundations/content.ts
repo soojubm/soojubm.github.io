@@ -624,7 +624,7 @@ const main = html`
       <fff-tab-panel value="accessibility">
         <fff-content-section-list>
           <fff-content-section heading-level="3" heading="이름">
-            <fff-grid columns="2" gap="6">
+            <fff-grid columns="4" gap="6">
               ${nameCards.map(
                 ({ figure, tags, description }) => html`
                   <fff-figure-card description=${description}>
