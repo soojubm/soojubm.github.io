@@ -58,7 +58,9 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-separator']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-text-list
         .texts=${[
           html`

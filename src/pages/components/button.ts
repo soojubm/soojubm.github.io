@@ -181,7 +181,9 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-button']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-paragraph-group>
         <fff-component-aka
           .items=${['Tag', 'Pill', 'Badge', 'Token', 'Label', 'Pick Button']}

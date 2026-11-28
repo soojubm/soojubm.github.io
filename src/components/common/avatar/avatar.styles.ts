@@ -8,17 +8,17 @@ const avatarSizeTokens: AttributeTokens<Exclude<AvatarSize, '40'>> = {
   '80': {
     '--avatar-width': 'var(--size-80)',
     '--avatar-height': 'var(--size-80)',
-    'font-size': 'var(--font-size-32)',
+    '--avatar-font-size': 'var(--font-size-32)',
   },
   '48': {
     '--avatar-width': 'var(--size-48)',
     '--avatar-height': 'var(--size-48)',
-    'font-size': 'var(--font-size-24)',
+    '--avatar-font-size': 'var(--font-size-24)',
   },
   '32': {
     '--avatar-width': 'var(--size-32)',
     '--avatar-height': 'var(--size-32)',
-    'font-size': 'var(--font-size-12)',
+    '--avatar-font-size': 'var(--font-size-12)',
   },
 }
 
@@ -43,6 +43,7 @@ export const avatarStyles = css`
     --avatar-icon-color: var(--foreground-color);
     --avatar-border: var(--border-transparent);
     --avatar-border-radius: var(--border-radius);
+    --avatar-font-size: var(--font-size-18);
 
     display: inline-flex;
     flex-shrink: 0;
@@ -51,6 +52,7 @@ export const avatarStyles = css`
     width: var(--avatar-width);
     height: var(--avatar-height);
     max-height: var(--avatar-height);
+    font-size: var(--avatar-font-size);
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--avatar-background-color);

@@ -26,10 +26,11 @@ export class ComponentExample extends LitElement {
 
   @property({ type: String, reflect: true }) width: 'narrow' | '' = ''
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
+  @property({ type: Boolean, reflect: true }) contained = false
 
   render() {
     return html`
-      <fff-example-stage aligned>
+      <fff-example-stage aligned ?contained=${this.contained}>
         <slot></slot>
       </fff-example-stage>
     `

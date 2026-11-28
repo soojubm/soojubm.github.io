@@ -1,4 +1,4 @@
-import { LitElement, css, html } from 'lit'
+import { LitElement, css, html, type PropertyValues } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { surfaceBaseStyles } from '@/components/common/surface/surface.styles'
@@ -23,6 +23,7 @@ export class FigureCard extends LitElement {
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      height: var(--figure-card-height);
       min-height: var(--size-80);
     }
 
@@ -35,6 +36,19 @@ export class FigureCard extends LitElement {
   `
 
   @property({ type: String }) description = ''
+  @property({ type: String }) height?: string
+
+  // 임의 값이라 나열할 수 없고 host가 소비하므로 host에 직접 주입한다.
+  protected updated(changedProperties: PropertyValues) {
+    if (!changedProperties.has('height')) return
+
+    if (!this.height) {
+      this.style.removeProperty('--figure-card-height')
+      return
+    }
+
+    this.style.setProperty('--figure-card-height', this.height)
+  }
 
   render() {
     return html`

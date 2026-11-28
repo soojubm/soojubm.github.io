@@ -119,7 +119,9 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-tooltip-bubble']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-text-list
         .texts=${[
           'hover뿐 아니라 키보드 포커스로도 열 수 있어야 한다.',

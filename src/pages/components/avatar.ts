@@ -40,7 +40,7 @@ const groupAvatars: AvatarItem[] = [
 ]
 
 const variantCode = AVATAR_VARIANTS.map(
-  variant => `<fff-avatar variant="${variant}" size="48" icon="profile-circle"></fff-avatar>`,
+  variant => `<fff-avatar variant="${variant}" size="40" icon="profile-circle"></fff-avatar>`,
 ).join('\n')
 
 const sizeCode = [...AVATAR_SIZES]
@@ -49,14 +49,14 @@ const sizeCode = [...AVATAR_SIZES]
   )
   .join('\n')
 
-const shapeCode = `<fff-avatar size="48" shape="circle" src="/src/images/soojubm.png"></fff-avatar>
-<fff-avatar size="48" icon="github"></fff-avatar>`
+const shapeCode = `<fff-avatar size="40" shape="circle" src="/src/images/soojubm.png"></fff-avatar>
+<fff-avatar size="40" icon="github"></fff-avatar>`
 
-const fallbackCode = `<fff-avatar size="40">MM</fff-avatar>
+const fallbackCode = `<fff-avatar size="40"></fff-avatar>
+<fff-avatar size="40">MM</fff-avatar>
 <fff-avatar size="40">
   <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
-</fff-avatar>
-<fff-avatar size="40"></fff-avatar>`
+</fff-avatar>`
 
 const toOptions = (values: readonly string[]) => values.map(value => ({ value, label: value }))
 const avatarTokenVariants = toOptions(AVATAR_VARIANTS)
@@ -104,7 +104,7 @@ const main = html`
           <fff-flex gap="2">
             ${AVATAR_VARIANTS.map(
               variant => html`
-                <fff-avatar variant=${variant} size="48" icon=${ICON_NAMES.PROFILE}></fff-avatar>
+                <fff-avatar variant=${variant} size="40" icon=${ICON_NAMES.PROFILE}></fff-avatar>
               `,
             )}
           </fff-flex>
@@ -134,8 +134,8 @@ const main = html`
         <fff-component-example>
           <fff-flex direction="column" gap="6">
             <fff-flex gap="2">
-              <fff-avatar size="48" shape="circle" src="/src/images/soojubm.png"></fff-avatar>
-              <fff-avatar size="48" icon=${ICON_NAMES.GITHUB}></fff-avatar>
+              <fff-avatar size="40" shape="circle" src="/src/images/soojubm.png"></fff-avatar>
+              <fff-avatar size="40" icon=${ICON_NAMES.GITHUB}></fff-avatar>
             </fff-flex>
             <fff-paragraph>
               사람을 나타내면 circle을, 아이콘이나 조직·브랜드를 나타내면 기본값인 square를 씁니다.
@@ -146,23 +146,12 @@ const main = html`
       </fff-tab-panel>
       <fff-tab-panel value="fallback">
         <fff-component-example>
-          <fff-flex direction="column" gap="6">
-            <fff-flex gap="2">
-              <fff-avatar size="48">MM</fff-avatar>
-              <fff-avatar size="48">
-                <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
-              </fff-avatar>
-              <fff-avatar size="48"></fff-avatar>
-            </fff-flex>
-            <fff-paragraph-group>
-              <fff-paragraph>
-                src가 없으면 안에 넣은 이니셜·이모지를, 그것도 비어 있으면 기본 아이콘을 표시합니다.
-              </fff-paragraph>
-              <fff-paragraph>
-                이모지 크기는 아바타 크기를 따르고, 기본 크기(40)에서만 주변 본문 크기를
-                물려받습니다.
-              </fff-paragraph>
-            </fff-paragraph-group>
+          <fff-flex gap="2">
+            <fff-avatar size="40"></fff-avatar>
+            <fff-avatar size="40">MM</fff-avatar>
+            <fff-avatar size="40">
+              <span aria-hidden="true" style="font-size: var(--font-size-24)">🦔</span>
+            </fff-avatar>
           </fff-flex>
         </fff-component-example>
         <fff-component-code .code=${fallbackCode}></fff-component-code>
@@ -200,20 +189,11 @@ const main = html`
         <fff-token-item element="fff-avatar" key="avatar-icon-color"></fff-token-item>
         <fff-token-item element="fff-avatar" key="avatar-border"></fff-token-item>
         <fff-token-item element="fff-avatar" key="avatar-border-radius"></fff-token-item>
+        <fff-token-item element="fff-avatar" key="avatar-font-size"></fff-token-item>
       </fff-token-group>
     </fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
-
-    <fff-component-anatomy
-      .parts=${[
-        '컨테이너 — variant·size로 형태와 크기·배경을 정의합니다.',
-        '콘텐츠 — 이미지 &gt; 이니셜 &gt; 기본 아이콘 순서로 폴백합니다.',
-      ]}
-      .markers=${[{ placement: 'inline-start' }, { placement: 'block-end', inset: true }]}
-    >
-      <fff-avatar size="80" variant="secondary"></fff-avatar>
-    </fff-component-anatomy>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-section
       heading="UserAvatar"

@@ -68,22 +68,13 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-link']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-text-list
         .texts=${['Link는 text button과 달리 항상 텍스트 단락 안에서 사용한다.']}
       ></fff-text-list>
     </fff-component-guide>
-
-    <fff-component-anatomy
-      style="--component-anatomy-padding: 0.5rem 0"
-      .parts=${[
-        '레이블 — 이동할 목적지를 설명하는 클릭 가능한 텍스트입니다.',
-        '외부 링크 아이콘 — 새 탭/외부 사이트로 이동함을 나타내는 표식(external).',
-      ]}
-      .markers=${[{ placement: 'block-start', offset: '2.5rem' }, { placement: 'inline-end' }]}
-    >
-      <fff-link href="https://soojubm.github.io" external>수줍이 디자인 시스템</fff-link>
-    </fff-component-anatomy>
 
     <fff-component-section
       heading="Read More Paragraph"

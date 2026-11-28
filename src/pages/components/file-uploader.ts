@@ -68,7 +68,9 @@ const main = html`
 
     <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-text-list
         .texts=${[
           '미리보기가 의미 있는 이미지는 썸네일로, 그 외 파일은 유형과 크기로 표현합니다.',

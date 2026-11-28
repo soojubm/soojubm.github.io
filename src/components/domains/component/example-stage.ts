@@ -58,6 +58,10 @@ export class ExampleStage extends LitElement {
       }
     }
 
+    :host([contained]) .content {
+      min-width: 0;
+    }
+
     :host([full-width]) ::slotted(*) {
       width: 100%;
     }
@@ -76,14 +80,22 @@ export class ExampleStage extends LitElement {
   @property({ type: Boolean, attribute: 'full-width', reflect: true }) fullWidth = false
   /** 내용을 본문 글자의 왼쪽 선에 맞추고 틀만 왼쪽으로 넓힌다. */
   @property({ type: Boolean, reflect: true }) aligned = false
+  /** 스테이지가 스크롤을 만들지 않고, 내용이 스테이지 폭 안에서 스스로 스크롤한다. */
+  @property({ type: Boolean, reflect: true }) contained = false
 
   render() {
+    if (this.contained) return this.renderContent()
+
     return html`
-      <fff-scroll>
-        <div class="content">
-          <slot></slot>
-        </div>
-      </fff-scroll>
+      <fff-scroll>${this.renderContent()}</fff-scroll>
+    `
+  }
+
+  private renderContent() {
+    return html`
+      <div class="content">
+        <slot></slot>
+      </div>
     `
   }
 }

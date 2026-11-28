@@ -193,16 +193,24 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-menu-item-action']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
-      <fff-paragraph-group>
-        <fff-heading level="3">언제 사용하나요</fff-heading>
-        <fff-paragraph>
-          더보기·컨텍스트 메뉴처럼 눌러서 실행하는 명령 목록에 사용합니다. 메뉴 안에서 값을 하나
-          고르거나 여러 개 켜고 끌 때는 ${code('fff-menu-item-radio-group')}·
-          ${code('fff-menu-item-checkbox-group')}으로 행을 묶습니다. 이 그룹은 ${code('options')}로
-          받은 옵션을 메뉴 행으로 그립니다.
-        </fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
+      <fff-content-section
+        heading-level="3"
+        heading="언제 사용하나요"
+        description="더보기·컨텍스트 메뉴처럼 눌러서 실행하는 명령 목록에 사용합니다."
+        .texts=${[
+          html`
+            메뉴 안에서 값을 하나 고르거나 여러 개 켜고 끌 때는
+            ${code('fff-menu-item-radio-group')}·${code('fff-menu-item-checkbox-group')}으로 행을
+            묶는다
+          `,
+          html`
+            이 그룹은 ${code('options')}로 받은 옵션을 메뉴 행으로 그린다
+          `,
+        ]}
+      ></fff-content-section>
     </fff-component-guide>
 
     <fff-component-anatomy

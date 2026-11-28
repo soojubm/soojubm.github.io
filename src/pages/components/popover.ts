@@ -8,7 +8,7 @@ import type {
 import type { PopoverPlacement } from '@/components/overlay/popover/popover'
 import type { MoreMenuAction } from '@/components/overlay/popover/semantics/more-menu'
 
-import { componentPropsOf, openStateMethods } from '@/components/domains/component'
+import { code, componentPropsOf, openStateMethods } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const placements: PopoverPlacement[] = ['bottom-start', 'bottom-end', 'top-start', 'top-end']
@@ -73,16 +73,19 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-popover']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
-      <fff-paragraph-group>
-        <fff-heading level="3">언제 사용하나요</fff-heading>
-        <fff-paragraph>
-          컨텍스트 메뉴나 댓글 항목의 수정·삭제 메뉴처럼, 보던 맥락을 떠나지 않고 추가 동작을 꺼낼
-          때 사용합니다. 값을 고르는 드롭다운에는
-          <fff-code>fff-select</fff-code>
-          를 사용하세요.
-        </fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
+      <fff-content-section
+        heading-level="3"
+        heading="언제 사용하나요"
+        description="컨텍스트 메뉴나 댓글 항목의 수정·삭제 메뉴처럼, 보던 맥락을 떠나지 않고 추가 동작을 꺼낼 때 사용합니다."
+        .texts=${[
+          html`
+            값을 고르는 드롭다운에는 ${code('fff-select')}를 사용한다
+          `,
+        ]}
+      ></fff-content-section>
 
       <fff-text-list
         .texts=${[

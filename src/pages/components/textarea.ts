@@ -125,7 +125,7 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-textarea']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-section heading="Comment Input" description="댓글 작성 입력 패턴">
       <fff-comment-input

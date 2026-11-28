@@ -159,7 +159,9 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-icon-button']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-paragraph-group>
         <fff-paragraph>
           Toggled states. Buttons can swap icons based on data states.

@@ -129,7 +129,7 @@ const main = html`
       heading="Table"
       description="표와 관련된 컴포넌트 및 패턴들."
     ></fff-page-header>
-    <fff-component-example full-width>
+    <fff-component-example full-width contained>
       <header
         style="
           display: flex;
@@ -180,7 +180,9 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-table']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-text-list .texts=${guideTexts}></fff-text-list>
     </fff-component-guide>
 

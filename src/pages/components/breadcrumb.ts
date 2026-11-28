@@ -43,7 +43,9 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-breadcrumb']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-text-list
         .texts=${[
           '평평한 사이트맵과 모바일에서는 계층이 얕아 쓸 일이 드물다. 대부분 필요하지 않으며, 도움말이나 상품 카테고리처럼 계층이 깊은 곳과 페이지 제목이 길어지는 곳에서 제한적으로 쓴다.',

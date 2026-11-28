@@ -75,9 +75,6 @@ const leadingCode = `<fff-list-item-group>
   <fff-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
     <fff-button slot="trailing">변경</fff-button>
   </fff-list-item>
-  <fff-list-item size="medium" label="관심분야" description="문화/예술, 인권, 경제">
-    <fff-tag slot="trailing">3개</fff-tag>
-  </fff-list-item>
 </fff-list-item-group>`
 
 const trailingCode = `<fff-list-item-group>
@@ -85,7 +82,7 @@ const trailingCode = `<fff-list-item-group>
     <fff-follow-button slot="trailing"></fff-follow-button>
   </fff-list-item>
   <fff-list-item icon="bell" label="알림">
-    <fff-tag slot="trailing">신규</fff-tag>
+    <fff-new-tag slot="trailing"></fff-new-tag>
   </fff-list-item>
 </fff-list-item-group>`
 
@@ -98,6 +95,32 @@ const multilineCode = `<fff-list-item-group>
   </fff-list-item>
   <fff-list-item size="large" label="large 행의 긴 라벨이 두 줄로 넘어가는 경우" description="설명이 길어 여러 줄이 되면 leading과 trailing은 content 높이의 가운데에 정렬됩니다." avatar-shape="circle" avatar-src="/src/images/soojubm.png"></fff-list-item>
 </fff-list-item-group>`
+
+// 보정 전은 list-item의 보정을 거치지 않은 같은 구조를 직접 그려 보여 준다.
+function renderCorrectionSample() {
+  return html`
+    <fff-figure-card description="보정 전에는 글자 묶음이 아이콘보다 아래로 치우쳐 보인다">
+      <fff-flex slot="figure" align-items="center" gap="2">
+        <fff-avatar size="40" icon=${ICON_NAMES.USER}></fff-avatar>
+        <fff-flex direction="column">
+          <fff-text size="14">수줍이</fff-text>
+          <fff-text size="12" color="light">UI Designer</fff-text>
+        </fff-flex>
+      </fff-flex>
+      <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+    </fff-figure-card>
+    <fff-figure-card description="글자만 위로 1.5px 올려 아이콘과 가운데를 맞춘다">
+      <fff-list-item
+        slot="figure"
+        size="medium"
+        icon=${ICON_NAMES.USER}
+        label="수줍이"
+        description="UI Designer"
+      ></fff-list-item>
+      <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+    </fff-figure-card>
+  `
+}
 
 const main = html`
   <fff-main>
@@ -159,19 +182,11 @@ const main = html`
                 label="아바타"
               ></fff-list-item>
             </fff-list-item-group>
-            <fff-paragraph>사람·상품처럼 행이 개체를 대표할 때 씁니다.</fff-paragraph>
             <fff-list-item-group>
               <fff-list-item size="medium" label="이메일 주소" description="soojubm@gmail.com">
                 <fff-button slot="trailing">변경</fff-button>
               </fff-list-item>
-              <fff-list-item size="medium" label="관심분야" description="문화/예술, 인권, 경제">
-                <fff-tag slot="trailing">3개</fff-tag>
-              </fff-list-item>
             </fff-list-item-group>
-            <fff-paragraph>
-              모두 없으면 content가 왼쪽 끝에서 시작합니다. 설정처럼 항목끼리 성격이 같은 목록은
-              왼쪽 그림이 구분에 보태는 것이 없어 비워 둡니다.
-            </fff-paragraph>
           </fff-flex>
         </fff-component-example>
         <fff-component-code .code=${leadingCode}></fff-component-code>
@@ -189,7 +204,7 @@ const main = html`
               <fff-follow-button slot="trailing"></fff-follow-button>
             </fff-list-item>
             <fff-list-item icon=${ICON_NAMES.NOTIFICATION} label="알림">
-              <fff-tag slot="trailing">신규</fff-tag>
+              <fff-new-tag slot="trailing"></fff-new-tag>
             </fff-list-item>
           </fff-list-item-group>
         </fff-component-example>
@@ -238,41 +253,66 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-list-item']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
-      <fff-content-section-list>
-        <fff-content-section heading-level="3" heading="menu-item과는 어떤 차이가 있나요?">
-          <fff-paragraph>
-            <fff-code>fff-list-item</fff-code>
-            은 행의 골격만 그리고,
-            <fff-code>fff-menu-item-action</fff-code>
-            같은 menu-item 계열은 이 골격에 눌러서 실행하는 동작을 더합니다.
-          </fff-paragraph>
-          <fff-text-list
-            variant="check"
-            .texts=${[
-              '행을 눌러 명령을 실행하거나 값을 바꾸면 menu-item을 쓴다. 팝오버·시트 안이든 페이지에 붙박이로 놓이든 같다. 목록 전체에 Tab으로는 한 번만 닿고, 행 사이는 방향키로 옮긴다',
-              '다른 곳으로 이동하거나, 행 안의 버튼·스위치로 조작하면 list-item을 쓴다. 행 전체가 눌리더라도 다른 곳으로 이동하는 것은 명령이 아니라 목록이다. 버튼·스위치는 trailing에 두어 컨트롤마다 Tab으로 닿게 한다',
-            ]}
-          ></fff-text-list>
-        </fff-content-section>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
+      <fff-content-section-list size="small">
         <fff-content-section
           heading-level="3"
-          heading="접근성"
+          heading="menu-item과는 어떤 차이가 있나요?"
+          description="list-item은 행의 골격만 그립니다. menu-item 계열은 이 골격을 바탕으로, 눌러서 명령을 실행하는 행입니다."
           .texts=${[
-            '인물·게시물처럼 각 행이 다른 곳으로 이동하는 목록은 menu가 아니라 list로 둔다. 명령을 실행하는 menu로 알리면 보조기술 사용자는 이 목록을 명령 메뉴로 받아들인다. list로 두면 일반 목록으로 읽힌다',
             html`
-              한 그룹에는 같은 계열의 role을 갖는 행만 둔다.
+              그룹에는 같은 role 계열의 행만 둔다.
               <fff-code>fff-menu-item-group</fff-code>
-              는 방향키로 행 사이를 옮겨 다닌다. 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
-              Tab으로만 닿게 되고, 한 목록 안에서 키보드 동선이 둘로 갈린다
+              안에서는 방향키로 행 사이를 옮기는데, 다른 계열의 행이 섞이면 그 행만 방향키에서 빠져
+              Tab으로만 닿아 키보드 동선이 둘로 갈린다
             `,
           ]}
-        ></fff-content-section>
+        >
+          <fff-grid columns="2" gap="6">
+            <fff-figure-card height="8rem" description="각 행이 다른 곳으로 이동하는 목록">
+              <fff-list-item-group slot="figure" style="width: 80%">
+                <fff-user-item
+                  size="medium"
+                  label="수줍이"
+                  description="UI Designer"
+                  avatar-src="/src/images/soojubm.png"
+                >
+                  <fff-follow-button slot="trailing"></fff-follow-button>
+                </fff-user-item>
+                <fff-user-item
+                  size="medium"
+                  label="수줍이"
+                  description="Product Designer"
+                  avatar-src="/src/images/soojubm.png"
+                >
+                  <fff-follow-button slot="trailing"></fff-follow-button>
+                </fff-user-item>
+              </fff-list-item-group>
+              <fff-code-tag slot="tags" tone="blue">List Item</fff-code-tag>
+              <fff-code-tag slot="tags">role="list"</fff-code-tag>
+            </fff-figure-card>
+            <fff-figure-card height="8rem" description="눌러서 명령을 실행하는 목록">
+              <fff-menu-item-group slot="figure" aria-label="계정 메뉴" style="width: 80%">
+                <fff-menu-item-action icon=${ICON_NAMES.USER} label="프로필"></fff-menu-item-action>
+                <fff-menu-item-action
+                  icon=${ICON_NAMES.DARK_MODE}
+                  label="설정"
+                ></fff-menu-item-action>
+              </fff-menu-item-group>
+              <fff-code-tag slot="tags" tone="orange">Menu Item</fff-code-tag>
+              <fff-code-tag slot="tags">role="menu"</fff-code-tag>
+            </fff-figure-card>
+          </fff-grid>
+        </fff-content-section>
         <fff-content-section
           heading-level="3"
           heading="시각보정이 필요해요"
           description="label과 description이 함께 있으면 글자가 앞의 아이콘보다 아래로 치우쳐 보입니다. 글자만 위로 조금 올려 아이콘과 가운데를 맞추고, 행의 크기는 그대로 둡니다."
-        ></fff-content-section>
+        >
+          <fff-grid columns="2" gap="6">${renderCorrectionSample()}</fff-grid>
+        </fff-content-section>
       </fff-content-section-list>
     </fff-component-guide>
 
@@ -300,7 +340,7 @@ const main = html`
       </fff-list-item>
     </fff-component-anatomy>
 
-    <fff-component-section heading="UserItem" description="사용자 맥락">
+    <fff-component-section heading="UserItem" description="사용자 도메인">
       <fff-list-item-group>
         <fff-user-item
           size="medium"
@@ -330,7 +370,7 @@ const main = html`
 
     <fff-component-section
       heading="SettingItem"
-      description="설정 맥락. 행은 라벨과 설명만 그리고, action 자리에 놓인 스위치·버튼이 조작을 직접 받습니다."
+      description="설정 도메인. 행은 라벨과 설명만 그리고, action 자리에 놓인 스위치·버튼이 조작을 직접 받습니다."
     >
       <fff-list-item-group>
         <fff-setting-item
@@ -352,14 +392,14 @@ const main = html`
 
     <fff-component-section
       heading="CastList"
-      description="크레딧 맥락. 행 전체가 인물 상세로 가는 링크이고, 명령이 아닌 탐색이라 목록으로 다룹니다."
+      description="크레딧 도메인. 행 전체가 인물 상세로 가는 링크이고, 명령이 아닌 탐색이라 목록으로 다룹니다."
     >
       <fff-cast-list .casts=${casts}></fff-cast-list>
     </fff-component-section>
 
     <fff-component-section
       heading="OrderProductItem"
-      description="커머스 맥락. 상품 이미지와 이름, 선택한 옵션, 가격을 한 줄에 같은 위계로 놓아 장바구니·주문서·주문완료가 같은 행을 공유합니다."
+      description="커머스 도메인. 상품 이미지와 이름, 선택한 옵션, 가격을 한 줄에 같은 위계로 놓아 장바구니·주문서·주문완료가 같은 행을 공유합니다."
     >
       <fff-list-item-group>
         <fff-order-product-item

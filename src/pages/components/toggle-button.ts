@@ -118,7 +118,9 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-toggle-button']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
       <fff-text-list
         .texts=${[
           '맥락이 다른 액션을 묶어 제공할 때는 단일선택·다중선택·삭제·펼침메뉴 같은 성격을 기표로 충분히 드러낸다.',

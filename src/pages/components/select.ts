@@ -100,17 +100,23 @@ const main = html`
 
     <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <fff-component-guide .features=${componentFeatures}>
-      <fff-paragraph-group>
-        <fff-heading level="3">언제 사용하나요</fff-heading>
-        <fff-paragraph>
-          주로 목록의 정렬 기준을 고를 때 사용합니다. select는 선택지를 접어 두고 현재 값 하나만
-          보여 주므로, 선택에 따라 보이는 데이터가 달라지는 필터는 옵션을 펼쳐 나열하는 것이
-          정론입니다. 이때는
-          <fff-code>fff-filter-button-group</fff-code>
-          을 사용하세요.
-        </fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
+      <fff-content-section
+        heading-level="3"
+        heading="언제 사용하나요"
+        description="주로 목록의 정렬 기준을 고를 때 사용합니다."
+        .texts=${[
+          html`
+            select는 선택지를 접어 두고 현재 값 하나만 보여 주므로, 선택에 따라 보이는 데이터가
+            달라지는 필터는 옵션을 펼쳐 나열하는 것이 정론이다. 이때는
+            <fff-code>fff-filter-button-group</fff-code>
+            을 사용한다
+          `,
+          '옵션 목록은 5개까지 보이고, 넘치면 안에서 스크롤된다',
+        ]}
+      ></fff-content-section>
 
       <fff-content-section
         heading-level="3"
@@ -122,14 +128,32 @@ const main = html`
         heading-level="3"
         heading="시각보정이 필요해요"
         description="트리거 오른쪽의 화살표 아이콘 때문에 오른쪽 여백이 왼쪽보다 넓어 보입니다. 아이콘 쪽을 보정해 좌우 여백이 같아 보이게 합니다."
-      ></fff-content-section>
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card description="보정 전에는 오른쪽 여백이 왼쪽보다 넓어 보인다">
+            <fff-button slot="figure" variant="secondary">
+              Stable
+              <fff-expand-indicator></fff-expand-indicator>
+            </fff-button>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card description="화살표를 바깥으로 4px 당겨 좌우 여백이 같아 보이게 한다">
+            <fff-select
+              slot="figure"
+              aria-label="릴리스 채널"
+              value="stable"
+              .options=${releaseChannelOptions}
+            ></fff-select>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
 
-      <fff-text-list
-        .texts=${[
-          '좁은 화면에서는 목록이 화면 아래의 bottom sheet로 열린다.',
-          '옵션 목록은 5개까지 보이고, 넘치면 안에서 스크롤된다.',
-        ]}
-      ></fff-text-list>
+      <fff-text-block
+        level="3"
+        heading="좁은 화면에서는 어떻게 보이나요"
+        description="좁은 화면에서는 목록이 화면 아래의 bottom sheet로 열립니다."
+      ></fff-text-block>
     </fff-component-guide>
 
     <fff-component-section

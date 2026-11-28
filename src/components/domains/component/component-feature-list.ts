@@ -36,7 +36,7 @@ export class ComponentFeatureList extends LitElement {
     css`
       :host {
         display: block;
-        padding: var(--space-4) 0 0;
+        margin-top: var(--space-4);
       }
     `,
   ]

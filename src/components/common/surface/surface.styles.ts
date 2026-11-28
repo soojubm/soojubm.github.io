@@ -136,12 +136,20 @@ const surfaceBandStyles = css`
   }
 `
 
+/** 제목이 들어간 면은 text-block 아래에 마진을 조금 더 준다. padding은 사용처가 --surface-padding으로 정하므로 건드리지 않는다. */
+const surfaceTextBlockStyles = css`
+  ::slotted(fff-text-block:last-child) {
+    margin-bottom: var(--space-1);
+  }
+`
+
 export const surfaceStyles = [
   css`
     :host {
       ${surfaceBaseStyles};
     }
   `,
+  surfaceTextBlockStyles,
   surfaceRadiusStyles,
   surfaceVariantStyles,
   surfaceBleedHostStyles,

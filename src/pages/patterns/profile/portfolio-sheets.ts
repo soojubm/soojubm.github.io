@@ -58,16 +58,11 @@ export const flatSitemapSheet = html`
     <fff-sheet-header heading='"Flat" Site Architecture'></fff-sheet-header>
     <fff-sheet-body>
       <fff-flex direction="column" gap="3">
-        <fff-flex direction="column" gap="2">
-          <fff-heading level="3">사이트맵을 만들고 유지하는 이유는 무엇일까요?</fff-heading>
-          <fff-paragraph-group>
-            <fff-paragraph>필요 이상으로 사이트가 복잡해지지 않도록 하기 위해서에요.</fff-paragraph>
-            <fff-paragraph>
-              A Flat Architecture means that users (and search engine crawlers) can reach any page
-              on your site in 4 clicks or less.
-            </fff-paragraph>
-          </fff-paragraph-group>
-        </fff-flex>
+        <fff-text-block
+          level="3"
+          heading="사이트맵을 만들고 유지하는 이유는 무엇일까요?"
+          description="필요 이상으로 사이트가 복잡해지지 않도록 하기 위해서에요. A Flat Architecture means that users (and search engine crawlers) can reach any page on your site in 4 clicks or less."
+        ></fff-text-block>
         <fff-keyword-tag-group
           .keywords=${['URL Structure', 'Category Pages']}
         ></fff-keyword-tag-group>

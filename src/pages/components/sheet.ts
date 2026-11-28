@@ -112,7 +112,9 @@ function sheetPageTemplate() {
 
       <fff-component-tokens .elements=${['fff-sheet']}></fff-component-tokens>
 
-      <fff-component-guide .features=${componentFeatures}>
+      <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+      <fff-component-guide>
         <fff-content-section
           heading-level="3"
           heading="안전마진도 고려해야 하나요?"

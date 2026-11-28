@@ -209,32 +209,57 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-surface']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
-      <fff-paragraph-group>
-        <fff-heading level="3">언제 사용하나요</fff-heading>
-        <fff-paragraph>
-          관련된 콘텐츠를 하나의 영역으로 묶어 배경과 시각적으로 분리해야 할 때 사용합니다. 명도
-          대비나 그림자로 영역의 층위를 드러내야 하거나, 그 배경 변화 자체가 클릭 가능 여부를 알리는
-          기표로 쓰여야 하는 경우에 적합합니다. 단순히 요소 사이 여백만 필요하다면 surface 대신
-          레이아웃 컴포넌트를 사용하세요.
-        </fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
-      <fff-paragraph-group>
-        <fff-heading level="3">좁은 화면에서는 어떻게 보이나요</fff-heading>
-        <fff-paragraph>
-          페이지 좌우 여백 안에 놓인 섹션 단위 면에는 ${code('bleed')}를 사용합니다. 좁은 화면에서
-          면이 화면 가장자리까지 넓어지고 내용은 본문과 같은 위치에 남아, 바깥 여백 때문에 내용이
-          좁아지는 일을 막습니다.
-        </fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-guide>
+      <fff-text-block
+        level="3"
+        heading="언제 사용하나요"
+        description="관련된 콘텐츠를 하나의 영역으로 묶어 배경과 시각적으로 분리해야 할 때 사용합니다. 명도 대비나 그림자로 영역의 층위를 드러내야 하거나, 그 배경 변화 자체가 클릭 가능 여부를 알리는 기표로 쓰여야 하는 경우에 적합합니다. 단순히 요소 사이 여백만 필요하다면 surface 대신 레이아웃 컴포넌트를 사용하세요."
+      ></fff-text-block>
 
-      <fff-paragraph-group>
-        <fff-heading level="3">시각보정이 필요해요</fff-heading>
-        <fff-paragraph>
-          surface 안의 leading·trailing 요소에 따라 위치를 맞추는 보정이 필요할 수 있습니다.
-        </fff-paragraph>
-      </fff-paragraph-group>
+      <fff-text-block
+        level="3"
+        heading="좁은 화면에서는 어떻게 보이나요"
+        description="페이지 좌우 여백 안에 놓인 섹션 단위 면에는 bleed를 사용합니다. 좁은 화면에서 면이 화면 가장자리까지 넓어지고 내용은 본문과 같은 위치에 남아, 바깥 여백 때문에 내용이 좁아지는 일을 막습니다."
+      ></fff-text-block>
+
+      <fff-content-section
+        heading-level="3"
+        heading="시각보정이 필요해요"
+        description="제목이 들어간 면은 아래쪽 여백을 조금 더 줘 위아래가 같아 보이게 합니다."
+      >
+        <fff-grid columns="2" gap="6">
+          <fff-figure-card
+            height="9rem"
+            description="보정 전에는 아래쪽 여백이 위쪽보다 좁아 보인다"
+          >
+            <fff-surface slot="figure" variant="outlined" style="width: 80%">
+              <div>
+                <fff-text-block
+                  level="3"
+                  heading="제목"
+                  description="면 안의 제목과 설명"
+                ></fff-text-block>
+              </div>
+            </fff-surface>
+            <fff-code-tag slot="tags" tone="red">Don't</fff-code-tag>
+          </fff-figure-card>
+          <fff-figure-card
+            height="9rem"
+            description="text-block 아래에 마진을 4px 더 줘 위아래가 같아 보이게 한다"
+          >
+            <fff-surface slot="figure" variant="outlined" style="width: 80%">
+              <fff-text-block
+                level="3"
+                heading="제목"
+                description="면 안의 제목과 설명"
+              ></fff-text-block>
+            </fff-surface>
+            <fff-code-tag slot="tags" tone="green">Do</fff-code-tag>
+          </fff-figure-card>
+        </fff-grid>
+      </fff-content-section>
     </fff-component-guide>
 
     <fff-component-section heading="FeedSurface" description="" width="narrow">

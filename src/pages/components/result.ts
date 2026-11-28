@@ -78,14 +78,14 @@ const main = html`
 
     <fff-component-props .props=${componentProps}></fff-component-props>
 
-    <fff-component-guide .features=${componentFeatures}>
-      <fff-paragraph-group>
-        <fff-heading level="3">언제 사용하나요</fff-heading>
-        <fff-paragraph>
-          주문 완료·예약 확정·가입 완료·결제 성공처럼 작업의 결과를 알릴 때, 그리고 빈 콘텐츠나
-          오류처럼 화면이 비어 결과를 대신 설명해야 할 때 사용합니다.
-        </fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
+
+    <fff-component-guide>
+      <fff-text-block
+        level="3"
+        heading="언제 사용하나요"
+        description="주문 완료·예약 확정·가입 완료·결제 성공처럼 작업의 결과를 알릴 때, 그리고 빈 콘텐츠나 오류처럼 화면이 비어 결과를 대신 설명해야 할 때 사용합니다."
+      ></fff-text-block>
     </fff-component-guide>
 
     <fff-component-related .items=${relatedComponents}></fff-component-related>

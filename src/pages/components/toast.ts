@@ -6,7 +6,7 @@ import type {
   ComponentRelatedItemData,
 } from '@/components/domains/component'
 
-import { componentPropsOf, openStateMethods } from '@/components/domains/component'
+import { code, componentPropsOf, openStateMethods } from '@/components/domains/component'
 import { renderPage } from '@/components/layouts/base-layouts'
 
 const relatedComponents: ComponentRelatedItemData[] = [
@@ -66,23 +66,29 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-toast']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}>
-      <fff-paragraph-group>
-        <fff-heading level="3">언제 사용하나요</fff-heading>
-        <fff-paragraph>
-          복사·저장·삭제처럼 사용자가 한 행동의 결과를 짧게 알릴 때 사용합니다. 놓쳐도 흐름에 지장이
-          없는 피드백이어야 하며, 사용자의 확인이 필요하면
-          <fff-code>fff-dialog</fff-code>
-          , 화면에 계속 남아야 하면
-          <fff-code>fff-notice</fff-code>
-          를 사용하세요.
-        </fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
-      <fff-paragraph-group>
-        <fff-heading level="3">접근성</fff-heading>
-        <fff-paragraph>스크린리더는 사용자의 흐름을 끊지 않고 읽습니다.</fff-paragraph>
-      </fff-paragraph-group>
+    <fff-component-guide>
+      <fff-content-section
+        heading-level="3"
+        heading="언제 사용하나요"
+        description="복사·저장·삭제처럼 사용자가 한 행동의 결과를 짧게 알릴 때 사용합니다."
+        .texts=${[
+          '놓쳐도 흐름에 지장이 없는 피드백이어야 한다',
+          html`
+            사용자의 확인이 필요하면 ${code('fff-dialog')}를 사용한다
+          `,
+          html`
+            화면에 계속 남아야 하면 ${code('fff-notice')}를 사용한다
+          `,
+        ]}
+      ></fff-content-section>
+
+      <fff-text-block
+        level="3"
+        heading="접근성"
+        description="스크린리더는 사용자의 흐름을 끊지 않고 읽습니다."
+      ></fff-text-block>
     </fff-component-guide>
 
     <fff-component-related .items=${relatedComponents}></fff-component-related>

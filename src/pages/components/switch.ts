@@ -51,7 +51,7 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-switch']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-anatomy
       .parts=${[

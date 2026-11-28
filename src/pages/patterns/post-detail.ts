@@ -73,24 +73,11 @@ const main = html`
             an opinion and make a purchase decision.
           </fff-quotation>
 
-          <fff-heading level="3">포스트를 수정하고 삭제하기 위한 버튼이 필요하다.</fff-heading>
-          <fff-paragraph size="large">
-            신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은
-            콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다. Input zooming on iOS devices ::
-            iOS devices will slightly zoom into the input when the font size is less than 16px.
-          </fff-paragraph>
-          <fff-paragraph size="large">
-            leading, name, trailing는 언더스코어(_)로 구분합니다. direction / shape / status / color
-            / size trailing에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개
-            이상의 trailing가 사용되는 경우 direction, shape, status, color, size의 순서로
-            작성합니다. trailing에서는 단어를 축약하지 않습니다. status는 에셋의 동작에 따른 상태를
-            정의합니다. size는 셋의 크기를 숫자와 단위를 조합하여 작성합니다. 단위는 플랫폼에 맞춰서
-            작성합니다. 예시) android → dp, iOS → px, web → px size는 가로를 기준으로 작성하고
-            세로는 표기하지 않습니다. 해상도별로 구분해야 하는 경우 1x, 2x를 사용합니다. 제플린과
-            같이 프로그램에 의해 자동으로 trailing가 붙는 경우는 1x, 2x 가이드를 따르지 않아도
-            됩니다. 이미 배포되어 적용된 에셋에서 trailing가 추가되는 경우, 기존 에셋을 변형하지
-            않고 구별자를 추가합니다.
-          </fff-paragraph>
+          <fff-text-block
+            level="3"
+            heading="포스트를 수정하고 삭제하기 위한 버튼이 필요하다."
+            description="신고를 위한 버튼은 처음부터 필요한 기능은 아니기 때문에 뺀다. 작성자에게만 필요한 버튼은 콘텐츠 내부가 아닌 브라우저의 구석에 눈에 띄게 배치한다. Input zooming on iOS devices :: iOS devices will slightly zoom into the input when the font size is less than 16px. leading, name, trailing는 언더스코어(_)로 구분합니다. direction / shape / status / color / size trailing에서는 direction, shape, status, color, size 등의 요소를 정의합니다. 2개 이상의 trailing가 사용되는 경우 direction, shape, status, color, size의 순서로 작성합니다. trailing에서는 단어를 축약하지 않습니다. status는 에셋의 동작에 따른 상태를 정의합니다. size는 셋의 크기를 숫자와 단위를 조합하여 작성합니다. 단위는 플랫폼에 맞춰서 작성합니다. 예시) android → dp, iOS → px, web → px size는 가로를 기준으로 작성하고 세로는 표기하지 않습니다. 해상도별로 구분해야 하는 경우 1x, 2x를 사용합니다. 제플린과 같이 프로그램에 의해 자동으로 trailing가 붙는 경우는 1x, 2x 가이드를 따르지 않아도 됩니다. 이미 배포되어 적용된 에셋에서 trailing가 추가되는 경우, 기존 에셋을 변형하지 않고 구별자를 추가합니다."
+          ></fff-text-block>
         </fff-paragraph-group>
       </section>
 

@@ -83,7 +83,7 @@ const main = html`
 
     <fff-component-tokens .elements=${['fff-tag']}></fff-component-tokens>
 
-    <fff-component-guide .features=${componentFeatures}></fff-component-guide>
+    <fff-component-feature-list .features=${componentFeatures}></fff-component-feature-list>
 
     <fff-component-anatomy
       .parts=${[
@@ -122,6 +122,13 @@ const main = html`
         <fff-accent-tag>New</fff-accent-tag>
         <fff-accent-tag>Beta</fff-accent-tag>
       </fff-tag-group>
+    </fff-component-section>
+
+    <fff-component-section
+      heading="NewTag"
+      description="방금 올라왔거나 추가된 항목임을 알리는 태그입니다. 제목 옆에 붙여 처음 보는 항목을 먼저 눈에 띄게 합니다."
+    >
+      <fff-new-tag></fff-new-tag>
     </fff-component-section>
 
     <fff-component-section heading="CategoryTag" description="">

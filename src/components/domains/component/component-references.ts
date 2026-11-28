@@ -1,4 +1,4 @@
-import { LitElement, html, css } from 'lit'
+import { LitElement, html, css, nothing } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import '@/components/common'
@@ -45,11 +45,15 @@ export class ComponentReferences extends LitElement {
 
   private get groups(): ComponentReferenceItemData[][] {
     if (this.items.length === 0) return []
-    if (Array.isArray(this.items[0])) return this.items as ComponentReferenceItemData[][]
-    return [this.items as ComponentReferenceItemData[]]
+    const groups = Array.isArray(this.items[0])
+      ? (this.items as ComponentReferenceItemData[][])
+      : [this.items as ComponentReferenceItemData[]]
+    return groups.filter(group => group.length > 0)
   }
 
   render() {
+    if (this.groups.length === 0) return nothing
+
     return html`
       <div class="references-body">
         <fff-heading>${this.heading}</fff-heading>
